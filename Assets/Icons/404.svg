@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800"
+   height="800"
+   viewBox="0 0 211.66667 211.66667"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1">
+    <g
+       id="g1544"
+       transform="matrix(1.0132143,0,0,1.0013678,-1.3985135,-0.14475883)">
+      <rect
+         style="fill:#1e1e1e;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none"
+         id="rect1079"
+         width="208.90611"
+         height="211.37755"
+         x="1.3802787"
+         y="0.14456089" />
+      <g
+         id="g1536"
+         transform="translate(-1.4392144,-13.843723)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:73.9342px;font-family:serif;-inkscape-font-specification:'serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4d4d4d;stroke:none;stroke-width:0;stroke-dasharray:none"
+           x="43.395866"
+           y="132.22784"
+           id="text975"><tspan
+             id="tspan973"
+             style="fill:#4d4d4d;stroke-width:0"
+             x="43.395866"
+             y="132.22784">404</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21.1667px;font-family:serif;-inkscape-font-specification:'serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none"
+           x="7.2598381"
+           y="160.44296"
+           id="text1135"><tspan
+             id="tspan1133"
+             style="fill:#4d4d4d;fill-opacity:1;stroke-width:0"
+             x="7.2598381"
+             y="160.44296">No Internet Access</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

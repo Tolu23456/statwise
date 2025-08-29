@@ -1,0 +1,201 @@
+/* ================= Reset & Base ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Optimistic", sans-serif;
+}
+
+@font-face {
+  font-family: 'FontName';
+  src: url('../Assets/Fonts/Optimistic_Text_A_Md.ttf');
+}
+
+html, body {
+  height: 100%;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: "Optimistic";
+}
+
+/* ================= Container ================= */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ================= Card ================= */
+.auth-card {
+  background-color: #2d2d30;
+  padding: 35px 28px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ================= Titles ================= */
+.auth-title {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #0e639c;
+}
+
+.auth-subtitle {
+  font-size: 16px;
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+/* ================= Form ================= */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ================= Input Fields ================= */
+.auth-form input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-size: 14px;
+  transition: border 0.25s, background 0.25s;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #0e639c;
+  background-color: #252526;
+}
+
+/* ================= Error & Success ================= */
+.error-msg,
+.success-msg {
+  font-size: 13px;
+  min-height: 18px;
+  text-align: center;
+}
+
+.error-msg {
+  color: #e74c3c;
+}
+
+.success-msg {
+  color: #4caf50;
+}
+
+/* ================= Buttons ================= */
+.auth-btn {
+  position: relative;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0e639c;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.auth-btn:hover {
+  background-color: #0b4f7a;
+}
+
+.auth-btn:active {
+  transform: scale(0.97);
+}
+
+/* ================= Spinner ================= */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+.auth-btn.loading .spinner {
+  display: inline-block;
+}
+
+.auth-btn.loading .btn-text {
+  visibility: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= Success State ================= */
+.auth-btn.success {
+  background-color: #4caf50 !important;
+  color: #fff;
+}
+
+.auth-btn.success .btn-text {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+/* ================= Auth Switch Links ================= */
+.switch-auth {
+  text-align: center;
+  font-size: 13px;
+}
+
+.switch-auth a {
+  color: #0e639c;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.switch-auth a:hover {
+  color: #0b4f7a;
+  text-decoration: underline;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 450px) {
+  .auth-card {
+    padding: 28px 20px;
+  }
+
+  .auth-title {
+    font-size: 22px;
+  }
+
+  .auth-subtitle {
+    font-size: 14px;
+  }
+
+  .auth-form input {
+    font-size: 13px;
+  }
+
+  .auth-btn {
+    font-size: 14px;
+  }
+}
