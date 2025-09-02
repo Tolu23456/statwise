@@ -578,8 +578,8 @@ async function initProfilePage(userId) {
         onConfirm: async () => {
             await signOut(auth);
             await addHistoryUnique(userId, "Logged out");
-            localStorage.clear();
-            window.location.href = './Auth/login.html';
+            localStorage.clear(); // Clear storage on logout
+            window.location.href = '/Auth/login.html';
         }
     });
 
@@ -619,8 +619,8 @@ async function initProfilePage(userId) {
                                 try {
                                     const deleteUser = httpsCallable(functions, 'deleteUserAccount');
                                     await deleteUser();
-                                    await signOut(auth);
-                                    window.location.href = './Auth/login.html';
+                                    // No need to sign out, auth user is deleted server-side
+                                    window.location.href = '/Auth/login.html';
                                 } catch (error) {
                                     showModal({ message: `Error: ${error.message}`, confirmClass: 'btn-danger' });
                                 } finally { hideLoader(); }
@@ -942,7 +942,7 @@ async function loadPage(page, userId, addToHistory = true) {
     await new Promise(resolve => setTimeout(resolve, 200)); // Match animation duration
 
     try {
-        const response = await fetch(`Pages/${page}.html`);
+        const response = await fetch(`/Pages/${page}.html`);
         if (!response.ok) throw new Error(`Page not found: ${page}`);
         const html = await response.text();
         const parser = new DOMParser();
@@ -1289,7 +1289,7 @@ async function startWelcomeTour(userId) {
 // ===== Initial Auth Check =====
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
-        window.location.href = './Auth/login.html';
+        window.location.href = '/Auth/login.html';
     } else {
         const userRef = doc(db, "users", user.uid);
         const snapshot = await getDoc(userRef);

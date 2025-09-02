@@ -3,8 +3,8 @@
 // Firebase Auth + Firestore Setup
 // =====================================
 
-import { auth, db } from "../env.js";
-import { addHistoryUnique } from "../utils.js";
+import { auth, db } from "/env.js";
+import { addHistoryUnique } from "/utils.js";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -132,7 +132,7 @@ if (loginForm) {
             }
 
             showSuccess(loginBtn);
-            setTimeout(() => window.location.href = "../index.html", 1000);
+            setTimeout(() => window.location.href = "/index.html", 1000);
 
         } catch (error) {
             console.error(error);
@@ -222,7 +222,7 @@ if (signupForm) {
             });
 
             showSuccess(signupBtn);
-            setTimeout(() => window.location.href = "../index.html", 1000);
+            setTimeout(() => window.location.href = "/index.html", 1000);
 
         } catch (error) {
             console.error(error);
