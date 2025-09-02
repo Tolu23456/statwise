@@ -1,11 +1,12 @@
 // main.js
-import { auth, db, FLWPUBK, storage } from './env.js';
+import { auth, db, FLWPUBK, storage, functions } from './env.js';
 import { showLoader, hideLoader } from './Loader/loader.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
     ref, uploadBytes, getDownloadURL
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+import { httpsCallable } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-functions.js";
 import {
     doc, getDoc, setDoc, updateDoc,
     collection, addDoc, query, orderBy, getDocs, serverTimestamp, limit, deleteDoc, onSnapshot, arrayUnion
@@ -112,6 +113,8 @@ async function updateCurrentTierDisplay(userId) {
 
 // Flutterwave payment + trial/free handling
 async function handlePayment(userId, tier, amount, period) {
+    let paymentCompleted = false; // Flag to prevent onclose modal after success
+
     if (amount === 0 || amount === "0") {
         await updateUserTier(userId, tier, period);
         showModal({ message: `You have selected the ${tier}` });
@@ -134,29 +137,37 @@ async function handlePayment(userId, tier, amount, period) {
             title: "Statwise Subscription",
             description: `${tier} (${period}) plan`,
         },
-        callback: async function (data) {
-            if (data.status === "successful") {
-                await updateUserTier(userId, tier, period);
-                showModal({ message: `Payment successful! You are now subscribed to ${tier}` });
-                await addHistoryUnique(userId, `Subscribed to ${tier} (${period})`);
+        callback: async function(data) {
+            paymentCompleted = true;
+            if (data.status === "successful" || data.status === "completed") {
+                showModal({ message: "Payment received. Verifying transaction..." });
 
-                // Add transaction to subscription history
-                const subscriptionRef = doc(db, "subscriptions", userId);
-                await updateDoc(subscriptionRef, {
-                    transactions: arrayUnion({
-                        amount: amount,
-                        currency: "NGN",
-                        description: `${tier} (${period})`,
-                        status: data.status,
+                try {
+                    const verifyPayment = httpsCallable(functions, 'verifyFlutterwavePayment');
+                    const result = await verifyPayment({
                         transactionId: data.transaction_id,
-                        createdAt: serverTimestamp()
-                    })
-                });
+                        tx_ref: txRef,
+                        tier: tier,
+                        period: period,
+                        amount: amount
+                    });
+
+                    showModal({ message: result.data.message, confirmClass: 'btn-primary' });
+                    await addHistoryUnique(userId, `Subscribed to ${tier} (${period})`);
+                    await updateCurrentTierDisplay(userId); // Refresh display after successful verification
+                } catch (error) {
+                    console.error("Verification failed:", error);
+                    showModal({ message: `Verification failed: ${error.message}`, confirmClass: 'btn-danger' });
+                }
             } else {
                 showModal({ message: "Payment was not completed.", confirmClass: 'btn-danger' });
             }
         },
-        onclose: function () { console.log("Payment modal closed"); }
+        onclose: function () {
+            if (!paymentCompleted) {
+                showModal({ message: "Payment window closed. Your transaction was not completed." });
+            }
+        }
     });
 }
 
@@ -164,15 +175,9 @@ async function updateUserTier(userId, tier, period = null) {
     const userRef = doc(db, "users", userId);
     const updateData = { tier };
 
-    if (period && tier !== 'Free Tier') {
-        const expiry = new Date();
-        if (period === 'daily') {
-            expiry.setDate(expiry.getDate() + 1);
-        } else if (period === 'monthly') {
-            expiry.setMonth(expiry.getMonth() + 1);
-        }
-        updateData.tierExpiry = expiry.toISOString();
-        updateData.autoRenew = true; // Set auto-renew on new subscription
+    // Expiry and auto-renew are now handled server-side for paid tiers.
+    // This function is now only for non-payment changes (e.g., cancellation).
+    if (tier === 'Free Tier') {
     } else {
         updateData.tierExpiry = null;
         updateData.autoRenew = false; // Disable auto-renew for free tier/cancellation
@@ -212,11 +217,17 @@ async function attachSubscriptionButtons(userId) {
         } else { // cardRank > currentRank
             btn.textContent = 'Upgrade';
             btn.disabled = false;
-            btn.onclick = async (e) => {
+            btn.onclick = function(e) { // Use a function to ensure 'this' refers to the button
                 e.preventDefault();
                 const amount = parseFloat(btn.dataset.amount) || 0;
                 const period = btn.dataset.period || "monthly";
-                await handlePayment(userId, cardTier, amount, period);
+                
+                showModal({
+                    message: `Proceed to upgrade to ${cardTier} for ₦${amount.toLocaleString()} (${period})?`,
+                    showCancel: true,
+                    confirmText: 'Proceed to Payment',
+                    onConfirm: () => handlePayment(userId, cardTier, amount, period)
+                });
             };
         }
     });
@@ -629,10 +640,12 @@ async function fetchHistory(userId) {
 function initPullToRefresh(container, onRefresh) {
     let startY = 0;
     let isDragging = false;
+    let pullDistance = 0;
+    let animationFrameId = null;
     const pullThreshold = 85; // Pixels to pull before refresh triggers
 
     // Create or find the refresh indicator in the BODY
-    let refreshIndicator = document.getElementById('refresh-indicator');
+    const refreshIndicator = document.getElementById('refresh-indicator');
     if (!refreshIndicator) {
         refreshIndicator = document.createElement('div');
         refreshIndicator.id = 'refresh-indicator';
@@ -641,14 +654,14 @@ function initPullToRefresh(container, onRefresh) {
     }
 
     const resetIndicator = () => {
-        refreshIndicator.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+        refreshIndicator.classList.add('transitioning');
         refreshIndicator.style.transform = 'translateX(-50%) scale(0)';
         refreshIndicator.style.opacity = '0';
         refreshIndicator.classList.remove('refreshing');
         // Remove transition after animation so next pull is instant
         setTimeout(() => {
-            if (refreshIndicator) refreshIndicator.style.transition = '';
-        }, 300);
+            refreshIndicator.classList.remove('transitioning');
+        }, 300); // Match CSS transition duration
     };
 
     container.addEventListener('touchstart', (e) => {
@@ -658,40 +671,49 @@ function initPullToRefresh(container, onRefresh) {
         }
         isDragging = true;
         startY = e.touches[0].pageY;
-        refreshIndicator.style.transition = ''; // Remove transition for direct manipulation
+        pullDistance = 0;
+        refreshIndicator.classList.remove('transitioning');
     }, { passive: true });
+
+    const updateIndicator = () => {
+        const pullRatio = Math.min(pullDistance / pullThreshold, 1);
+        refreshIndicator.style.opacity = pullRatio;
+        refreshIndicator.style.transform = `translateX(-50%) scale(${pullRatio}) rotate(${pullDistance * 2.5}deg)`;
+        animationFrameId = null; // Allow next frame to be requested
+    };
 
     container.addEventListener('touchmove', (e) => {
         if (!isDragging) return;
 
         const currentY = e.touches[0].pageY;
-        const pullDistance = currentY - startY;
+        const newPullDistance = currentY - startY;
 
-        if (pullDistance > 0) {
+        if (newPullDistance > 0) {
             // Prevent the browser's overscroll-bounce effect on mobile
             e.preventDefault();
-            
-            const pullRatio = Math.min(pullDistance / pullThreshold, 1);
-            refreshIndicator.style.opacity = pullRatio;
-            // Rotate the icon as you pull
-            refreshIndicator.style.transform = `translateX(-50%) scale(${pullRatio}) rotate(${pullDistance * 2.5}deg)`;
+            pullDistance = newPullDistance;
+
+            // Schedule a single update for the next animation frame
+            if (!animationFrameId) {
+                animationFrameId = requestAnimationFrame(updateIndicator);
+            }
         } else {
             // If user starts scrolling up, stop the pull-to-refresh gesture
             isDragging = false;
-            startY = 0;
         }
     }, { passive: false }); // passive:false is needed for preventDefault()
 
     container.addEventListener('touchend', async (e) => {
         if (!isDragging) return;
         isDragging = false;
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
 
-        const pullDistance = e.changedTouches[0].pageY - startY;
-        startY = 0;
-
-        if (pullDistance > pullThreshold) {
+        if (pullDistance >= pullThreshold) {
             // User pulled enough, trigger refresh
-            refreshIndicator.style.transition = 'transform 0.2s ease';
+            refreshIndicator.classList.add('transitioning');
             refreshIndicator.style.transform = 'translateX(-50%) scale(1)';
             refreshIndicator.classList.add('refreshing');
             
@@ -995,16 +1017,9 @@ onAuthStateChanged(auth, async (user) => {
             }
         });
 
+        // Set the initial verified tier from the database. The scheduled function handles expirations.
         const userData = snapshot.exists() ? snapshot.data() : {};
-
-        // Check for expired subscription
-        if (userData.tierExpiry && new Date(userData.tierExpiry) < new Date() && userData.tier !== 'Free Tier') {
-            await updateUserTier(user.uid, 'Free Tier');
-            await addHistoryUnique(user.uid, `Subscription expired, reverted to Free Tier.`);
-            verifiedTier = 'Free Tier';
-        } else {
-            verifiedTier = userData.tier || "Free Tier";
-        }
+        verifiedTier = userData.tier || "Free Tier";
 
         startTierWatchdog(user.uid);
 

@@ -833,6 +833,10 @@ input:checked+.slider::before {
     z-index: 10;
 }
 
+#refresh-indicator.transitioning {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
 #refresh-indicator.refreshing span {
     animation: spin 1s linear infinite;
 }

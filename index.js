@@ -1,0 +1,156 @@
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const axios = require("axios");
+
+admin.initializeApp();
+const db = admin.firestore();
+
+// Get secret key from environment variables
+// In your terminal, run: firebase functions:config:set flutterwave.secret="YOUR_FLWSECK_TEST_KEY"
+const FLW_SECRET_KEY = functions.config().flutterwave.secret;
+
+/**
+ * Verifies a Flutterwave transaction and updates the user's tier if successful.
+ */
+exports.verifyFlutterwavePayment = functions.https.onCall(async (data, context) => {
+    // 1. Check for authentication
+    if (!context.auth) {
+        throw new functions.https.HttpsError(
+            "unauthenticated",
+            "The function must be called while authenticated.",
+        );
+    }
+
+    const { transactionId, tx_ref, tier, period, amount } = data;
+    const userId = context.auth.uid;
+
+    if (!transactionId || !tier || !period || !amount || !tx_ref) {
+        throw new functions.https.HttpsError(
+            "invalid-argument",
+            "Missing required data for verification.",
+        );
+    }
+
+    try {
+        // 2. Call Flutterwave's verification endpoint
+        const response = await axios.get(
+            `https://api.flutterwave.com/v3/transactions/${transactionId}/verify`,
+            {
+                headers: {
+                    "Authorization": `Bearer ${FLW_SECRET_KEY}`,
+                },
+            },
+        );
+
+        const verificationData = response.data.data;
+
+        // 3. Perform crucial server-side checks
+        if (
+            verificationData.status === "successful" &&
+            verificationData.tx_ref === tx_ref &&
+            verificationData.amount >= amount && // Use >= in case of minor discrepancies
+            verificationData.currency === "NGN"
+        ) {
+            // 4. Verification successful, update user's tier in Firestore
+            const userRef = db.collection("users").doc(userId);
+            const subRef = db.collection("subscriptions").doc(userId);
+
+            const expiry = new Date();
+            if (period === 'daily') {
+                expiry.setDate(expiry.getDate() + 1);
+            } else if (period === 'monthly') {
+                expiry.setMonth(expiry.getMonth() + 1);
+            }
+
+            // Update user document
+            await userRef.update({
+                tier: tier,
+                tierExpiry: expiry.toISOString(),
+                autoRenew: true,
+            });
+
+            // Log the verified transaction
+            const transactionData = {
+                amount: verificationData.amount,
+                currency: verificationData.currency,
+                description: `${tier} (${period})`,
+                status: verificationData.status,
+                transactionId: verificationData.id,
+                tx_ref: verificationData.tx_ref,
+                createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            };
+
+            await subRef.set({
+                transactions: admin.firestore.FieldValue.arrayUnion(transactionData),
+            }, { merge: true });
+
+            return { status: "success", message: `Successfully subscribed to ${tier}!` };
+        } else {
+            // 5. Verification failed
+            throw new functions.https.HttpsError(
+                "failed-precondition",
+                "Payment verification failed. The transaction was not successful or data mismatch.",
+                { details: verificationData },
+            );
+        }
+    } catch (error) {
+        console.error("Verification Error:", error.response ? error.response.data : error.message);
+        throw new functions.https.HttpsError(
+            "internal",
+            "An error occurred while verifying the payment.",
+            error.message,
+        );
+    }
+});
+
+/**
+ * A scheduled function that runs daily to check for and handle expired subscriptions.
+ */
+exports.handleExpiredSubscriptions = functions.pubsub.schedule('every 24 hours').onRun(async (context) => {
+    const now = new Date();
+    console.log(`Running daily subscription check at: ${now.toISOString()}`);
+
+    // Query for users whose subscription has expired and are not already on the Free Tier.
+    const expiredUsersQuery = db.collection('users')
+        .where('tier', '!=', 'Free Tier')
+        .where('tierExpiry', '<=', now.toISOString());
+
+    try {
+        const snapshot = await expiredUsersQuery.get();
+
+        if (snapshot.empty) {
+            console.log('No expired subscriptions found.');
+            return null;
+        }
+
+        const batch = db.batch();
+        const historyPromises = [];
+
+        snapshot.forEach(doc => {
+            const userId = doc.id;
+            console.log(`Processing expired user: ${userId}`);
+
+            const userRef = db.collection('users').doc(userId);
+            // Downgrade the user in the batch operation.
+            batch.update(userRef, {
+                tier: 'Free Tier',
+                tierExpiry: null,
+                autoRenew: false
+            });
+
+            // Add a history log entry. This is done separately from the batch.
+            const historyRef = db.collection('users', userId, 'history');
+            historyPromises.push(historyRef.add({ action: 'Subscription expired, reverted to Free Tier.', createdAt: admin.firestore.FieldValue.serverTimestamp() }));
+        });
+
+        await batch.commit(); // Commit all user downgrades at once.
+        await Promise.all(historyPromises); // Wait for all history logs to be added.
+
+        console.log(`Successfully processed ${snapshot.size} expired subscriptions.`);
+        return null;
+    } catch (error) {
+        console.error('Error handling expired subscriptions:', error);
+        // Throwing an error will cause the function to be retried.
+        throw new functions.https.HttpsError('internal', 'Failed to process expired subscriptions.');
+    }
+});
