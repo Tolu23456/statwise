@@ -1295,11 +1295,15 @@ onAuthStateChanged(auth, async (user) => {
 
         startTierWatchdog(user.uid);
 
-        const lastPage = localStorage.getItem("lastPage") || defaultPage;
-        loadPage(lastPage, user.uid);
+        // Determine the initial page to load with correct priority: URL hash > localStorage > default.
+        const initialHash = window.location.hash.substring(1);
+        const pageToLoad = initialHash || localStorage.getItem("lastPage") || defaultPage;
+        // Load the page without adding a new entry to the browser's history,
+        // as we are just restoring the state on page reload.
+        loadPage(pageToLoad, user.uid, false);
 
         // Check if the user is new to start the welcome tour
-        if (userData.isNewUser && lastPage === 'home') {
+        if (userData.isNewUser && pageToLoad === 'home') {
             setTimeout(() => startWelcomeTour(user.uid), 1000); // Delay to ensure page elements are rendered
         }
     }
