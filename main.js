@@ -1,5 +1,5 @@
 // main.js
-import { auth, db, FLWPUBK, storage, functions } from './env.js';
+import { auth, db, FLWPUBK, storage, functions, messaging } from './env.js';
 import { showLoader, hideLoader } from './Loader/loader.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
@@ -7,6 +7,9 @@ import {
     ref, uploadBytes, getDownloadURL
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 import { httpsCallable } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-functions.js";
+import {
+    getToken, onMessage
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js";
 import {
     doc, getDoc, setDoc, updateDoc,
     collection, addDoc, query, orderBy, getDocs, serverTimestamp, limit, deleteDoc, onSnapshot, arrayUnion
@@ -16,11 +19,9 @@ import {
 const main = document.querySelector("main");
 const navButtons = document.querySelectorAll(".bottom-nav button");
 const defaultPage = "home";
+let verifiedTier = "Free Tier"; // In-memory tier
 
 initializeTheme(); // Apply theme on initial load
-
-// ===== In-Memory Tier Verification =====
-let verifiedTier = "Free Tier";
 
 // ===== Helper: Clear dynamic assets =====
 function clearDynamicAssets() {
@@ -371,14 +372,60 @@ function startTierWatchdog(userId) {
     const userRef = doc(db, "users", userId);
     onSnapshot(userRef, async (snapshot) => {
         if (!snapshot.exists()) return;
-        const currentTier = snapshot.data().tier;
-        if (TIER_ORDER.indexOf(currentTier) > TIER_ORDER.indexOf(verifiedTier)) {
+        const dbTier = snapshot.data().tier || "Free Tier";
+        const dbRank = TIER_ORDER.indexOf(dbTier);
+        const memoryRank = TIER_ORDER.indexOf(verifiedTier);
+
+        // If the tier in the DB is higher than what we have in memory, it's a valid upgrade.
+        // If the tier in memory is higher than the DB, it's a client-side manipulation.
+        if (memoryRank > dbRank) {
             await updateDoc(userRef, { tier: verifiedTier });
             await addHistoryUnique(userId, `Unauthorized tier correction (watchdog)`);
         } else {
-            verifiedTier = currentTier;
+            verifiedTier = dbTier; // Trust the database as the source of truth
         }
         enforceTierRestrictions();
+    });
+}
+
+// ===== Firebase Cloud Messaging (FCM) Functions =====
+async function initFirebaseMessaging(userId) {
+    try {
+        const permission = await Notification.requestPermission();
+        if (permission === 'granted') {
+            console.log('Notification permission granted.');
+            const fcmToken = await getToken(messaging, { vapidKey: 'BDSGq_wLG253v1g2sUjC6l9L8b1xQjC_H_r_r_r_r_r_r_r_r_r_r_r_r_r_r_r_r' }); // Replace with your VAPID key from Firebase Console
+
+            if (fcmToken) {
+                // Save the new token to the user's document
+                const userRef = doc(db, "users", userId);
+                await updateDoc(userRef, {
+                    fcmTokens: arrayUnion(fcmToken),
+                    notifications: true // Also enable the general flag
+                });
+                console.log('FCM Token saved:', fcmToken);
+            } else {
+                console.log('No registration token available. Request permission to generate one.');
+            }
+        } else {
+            console.log('Unable to get permission to notify.');
+            // If permission is denied, ensure the toggle is off
+            const userRef = doc(db, "users", userId);
+            await updateDoc(userRef, { notifications: false });
+            const toggle = document.getElementById('predictionAlertsToggle');
+            if (toggle) toggle.checked = false;
+        }
+    } catch (error) {
+        console.error('An error occurred while retrieving token. ', error);
+    }
+
+    // Handle foreground messages
+    onMessage(messaging, (payload) => {
+        console.log('Message received in foreground.', payload);
+        showModal({
+            message: `${payload.notification.title}: ${payload.notification.body}`,
+            confirmText: 'Awesome!',
+        });
     });
 }
 
@@ -451,11 +498,14 @@ async function initProfilePage(userId) {
     }
 
     // 3. Notification Toggle
-    const notifToggle = document.getElementById("notificationToggle");
-    if (notifToggle) {
-        notifToggle.checked = userData.notifications ?? true; // Default to true if undefined
-        notifToggle.addEventListener("change", async () => {
-            await updateDoc(userRef, { notifications: notifToggle.checked });
+    const predictionAlertsToggle = document.getElementById("predictionAlertsToggle");
+    if (predictionAlertsToggle) {
+        // The card is hidden by CSS/JS, but we set the state anyway
+        predictionAlertsToggle.checked = userData.notifications ?? false;
+        predictionAlertsToggle.addEventListener("change", async () => {
+            if (predictionAlertsToggle.checked) {
+                await initFirebaseMessaging(userId); // Request permission and get token
+            }
         });
     }
 
@@ -794,6 +844,14 @@ async function loadPage(page, userId, addToHistory = true) {
         if (page === "history") {
             await fetchHistory(userId);
         }
+        if (page === "insights") {
+            // Placeholder for any future JS needed for the insights page
+            const cards = document.querySelectorAll('.insights-container .card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 100}ms`;
+                card.classList.add('card-animation');
+            });
+        }
         if (page === "home") {
             main.dataset.pullToRefreshActive = 'true'; // Activate for home page
 
@@ -889,30 +947,38 @@ async function loadPage(page, userId, addToHistory = true) {
                     noResultsEl.style.display = visibleCount === 0 && value.trim() !== '' ? 'block' : 'none';
 
                     const ghostEl = document.getElementById('search-ghost-text');
-                    if (ghostEl) {
+                    if (ghostEl && value) { // Only show suggestions if there's input
                         let suggestion = '';
-                        // Match Title Autocomplete
+                        const commandsInValue = value.match(commandRegex) || [];
+                        const textInValue = value.replace(commandRegex, '').trim();
+
+                        // 1. Command Autocomplete
+                        const lastChar = value.slice(-1);
+                        const lastWord = value.split(' ').pop();
+
+                        if (lastChar === '/') {
+                            suggestion = value + 'odds';
+                        } else if (lastWord.startsWith('/') && '/odds'.startsWith(lastWord) && lastWord !== '/odds') {
+                            suggestion = value.substring(0, value.lastIndexOf(lastWord)) + '/odds';
+                        } else if (lastWord === '/c') {
+                            suggestion = value + '75';
+                        }
+
+                        // 2. Text Autocomplete (only if no command is being suggested)
                         if (textQuery) {
                             const allTitles = originalCardElements.map(card => card.querySelector('.match-title')?.textContent || '');
-                            const matchedTitle = allTitles.find(title => title.toLowerCase().startsWith(textQuery));
+                            // Find a title that starts with the query, otherwise one that includes it.
+                            let matchedTitle = allTitles.find(title => title.toLowerCase().startsWith(textQuery));
+
                             if (matchedTitle) {
-                                const textQueryStartIndex = lowerCaseValue.lastIndexOf(textQuery);
-                                if (textQueryStartIndex !== -1) {
-                                    suggestion = value.substring(0, textQueryStartIndex) + matchedTitle;
-                                }
+                                // Reconstruct suggestion, preserving commands
+                                suggestion = commandsInValue.join(' ') + ' ' + matchedTitle;
                             }
                         }
-                        // Command Autocomplete (only if no text is being typed)
-                        else if (!lowerCaseValue.includes(' ')) {
-                            if (lowerCaseValue === '/') {
-                                suggestion = '/odds';
-                            } else if ('/odds'.startsWith(lowerCaseValue) && lowerCaseValue.length > 0 && lowerCaseValue !== '/odds') {
-                                suggestion = '/odds';
-                            } else if (lowerCaseValue === '/c') {
-                                suggestion = '/c75';
-                            }
-                        }
+
                         ghostEl.textContent = suggestion;
+                    } else if (ghostEl) {
+                        ghostEl.textContent = ''; // Clear suggestion on empty input
                     }
                 });
             }
@@ -952,6 +1018,117 @@ window.addEventListener("popstate", (e) => {
     loadPage(page, auth.currentUser?.uid, false);
 });
 
+// ===== Security Hardening =====
+function initSecurity() {
+    // 1. Disable Right-Click Context Menu
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // 2. Disable DevTools Keyboard Shortcuts
+    document.addEventListener('keydown', function (e) {
+        // Block F12
+        if (e.keyCode === 123) {
+            e.preventDefault();
+        }
+        // Block Ctrl+Shift+I
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+            e.preventDefault();
+        }
+        // Block Ctrl+Shift+J
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+            e.preventDefault();
+        }
+        // Block Ctrl+U
+        if (e.ctrlKey && e.keyCode === 85) {
+            e.preventDefault();
+        }
+    });
+
+    // 3. Periodically clear the console to deter inspection
+    // Note: A determined user can bypass this, but it's a strong deterrent.
+    setInterval(() => {
+        console.clear();
+        console.log("%cInspecting this area is not allowed.", "color:red; font-size:16px;");
+    }, 3000);
+}
+
+// ===== Welcome Tour for New Users =====
+let introJsLoaded = false;
+
+function loadIntroJsAssets() {
+    if (introJsLoaded) return Promise.resolve();
+    return new Promise((resolve, reject) => {
+        // Load CSS
+        const cssLink = document.createElement('link');
+        cssLink.rel = 'stylesheet';
+        cssLink.href = 'https://unpkg.com/intro.js/minified/introjs.min.css';
+        document.head.appendChild(cssLink);
+
+        // Load JS
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/intro.js/minified/intro.min.js';
+        script.onload = () => {
+            introJsLoaded = true;
+            resolve();
+        };
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
+}
+
+async function startWelcomeTour(userId) {
+    try {
+        await loadIntroJsAssets();
+
+        const intro = introJs();
+        intro.setOptions({
+            steps: [
+                {
+                    title: 'Welcome to StatWise!',
+                    intro: 'Let\'s take a quick tour of the main features.'
+                },
+                {
+                    element: document.querySelector('.search-container'),
+                    title: 'Search & Filter',
+                    intro: 'Quickly find matches or use commands like <strong>/odds</strong> to sort by the highest odds.'
+                },
+                {
+                    element: document.querySelector('.prediction-card'),
+                    title: 'Prediction Cards',
+                    intro: 'Each card gives you an AI-powered prediction, confidence level, and odds.'
+                },
+                {
+                    element: document.querySelector('.bottom-nav [data-page="history"]'),
+                    title: 'Your History',
+                    intro: 'Track your past predictions, transactions, and account activity here.'
+                },
+                {
+                    element: document.querySelector('.bottom-nav [data-page="profile"]'),
+                    title: 'Your Profile',
+                    intro: 'Manage your subscription, settings, and logout from your profile.'
+                }
+            ],
+            showStepNumbers: true,
+            exitOnOverlayClick: false,
+            doneLabel: 'Got it!'
+        });
+
+        intro.oncomplete(async () => {
+            await updateDoc(doc(db, "users", userId), { isNewUser: false });
+        });
+
+        intro.onexit(async () => {
+            await updateDoc(doc(db, "users", userId), { isNewUser: false });
+        });
+
+        intro.start();
+
+    } catch (error) {
+        console.error("Failed to start welcome tour:", error);
+        // Ensure the flag is still set to false even if the tour fails to load
+        await updateDoc(doc(db, "users", userId), { isNewUser: false });
+    }
+}
+
 // ===== Initial Auth Check =====
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
@@ -978,6 +1155,9 @@ onAuthStateChanged(auth, async (user) => {
             await addHistoryUnique(user.uid, "Logged in");
         }
 
+        // Initialize client-side security measures
+        initSecurity();
+
         // Initialize core features that persist across pages
         initPullToRefresh(main, async () => {
             await loadPage('home', user.uid, false);
@@ -986,6 +1166,22 @@ onAuthStateChanged(auth, async (user) => {
         // Global click handler for locked features and dynamic tabs using event delegation
         main.addEventListener('click', (e) => {
             // 1. Locked features
+            const notificationCard = document.getElementById('notification-settings-card');
+            if (notificationCard) {
+                const requiredTier = notificationCard.dataset.tier;
+                const requiredRank = TIER_ORDER.indexOf(CLASS_TO_TIER[requiredTier]);
+                notificationCard.style.display = TIER_ORDER.indexOf(verifiedTier) >= requiredRank ? 'block' : 'none';
+            }
+            
+            // Show/hide tier-gated nav buttons
+            document.querySelectorAll('.bottom-nav button[data-tier]').forEach(navBtn => {
+                const requiredTier = navBtn.dataset.tier;
+                const requiredTierName = CLASS_TO_TIER[requiredTier] || requiredTier;
+                const requiredRank = TIER_ORDER.indexOf(requiredTierName);
+                // Use 'display' for nav buttons to prevent layout shifts
+                navBtn.style.display = TIER_ORDER.indexOf(verifiedTier) >= requiredRank ? 'flex' : 'none';
+            });
+
             const lockedEl = e.target.closest('[data-locked="true"]');
             if (lockedEl) {
                 e.preventDefault();
@@ -1025,5 +1221,10 @@ onAuthStateChanged(auth, async (user) => {
 
         const lastPage = localStorage.getItem("lastPage") || defaultPage;
         loadPage(lastPage, user.uid);
+
+        // Check if the user is new to start the welcome tour
+        if (userData.isNewUser && lastPage === 'home') {
+            setTimeout(() => startWelcomeTour(user.uid), 1000); // Delay to ensure page elements are rendered
+        }
     }
 });

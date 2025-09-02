@@ -156,6 +156,10 @@ main {
     -webkit-mask-image: url(./Assets/Icons/user.svg);
     mask-image: url(./Assets/Icons/user.svg);
 }
+.icon-insights {
+    -webkit-mask-image: url(./Assets/Icons/insights.svg); /* You need to add this icon */
+    mask-image: url(./Assets/Icons/insights.svg);
+}
 
 .bottom-nav button.active {
     color: #0e639c;

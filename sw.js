@@ -1,5 +1,10 @@
 // sw.js
 
+// Import and initialize the Firebase SDK
+importScripts("https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js");
+importScripts("https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging-compat.js");
+
+// Your web app's Firebase configuration
 const CACHE_NAME = 'statwise-offline-v1';
 const OFFLINE_URL = './Offline/offline.html';
 
@@ -10,6 +15,18 @@ const OFFLINE_ASSETS = [
     './Assets/Fonts/Optimistic_Text_A_Md.ttf'
 ];
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDpPTmDw7RpxTo2AXf8ZDTq4AG46xKB16g",
+  authDomain: "statwise-319a4.firebaseapp.com",
+  databaseURL: "https://statwise-319a4-default-rtdb.firebaseio.com",
+  projectId: "statwise-319a4",
+  storageBucket: "statwise-319a4.firebasestorage.app",
+  messagingSenderId: "416700134653",
+  appId: "1:416700134653:web:f3a6f9766a2fafa8fdba94",
+};
+
+firebase.initializeApp(firebaseConfig);
+const messaging = firebase.messaging();
 /**
  * 1. Install the service worker and cache the offline assets.
  */
@@ -51,4 +68,19 @@ self.addEventListener('fetch', (event) => {
             fetch(event.request).catch(() => caches.match(OFFLINE_URL))
         );
     }
+});
+
+/**
+ * 4. Handle background push notifications.
+ */
+messaging.onBackgroundMessage((payload) => {
+    console.log('[sw.js] Received background message ', payload);
+
+    const notificationTitle = payload.notification.title;
+    const notificationOptions = {
+        body: payload.notification.body,
+        icon: './Assets/Icons/icon-192.png' // Add an icon for notifications
+    };
+
+    self.registration.showNotification(notificationTitle, notificationOptions);
 });

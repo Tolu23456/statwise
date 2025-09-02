@@ -9,7 +9,8 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     updateProfile,
-    signOut
+    signOut,
+    sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 import {
@@ -46,6 +47,7 @@ const loginEmail = document.querySelector("#login-email");
 const loginPassword = document.querySelector("#login-password");
 const loginBtn = document.querySelector("#login-btn");
 const loginError = document.querySelector("#login-error");
+const forgotPasswordLink = document.querySelector("#forgot-password-link");
 
 // Signup
 const signupForm = document.querySelector("#signup-form");
@@ -131,6 +133,31 @@ if (loginForm) {
             loginError.textContent = error.message;
         }
     });
+
+    // Forgot Password Logic
+    if (forgotPasswordLink) {
+        forgotPasswordLink.addEventListener("click", async (e) => {
+            e.preventDefault();
+            loginError.textContent = "";
+
+            const email = loginEmail.value.trim();
+            if (!email) {
+                loginError.textContent = "Please enter your email address to reset your password.";
+                return;
+            }
+
+            try {
+                await sendPasswordResetEmail(auth, email);
+                // Use the same error div for success message, with a different style
+                loginError.textContent = "Password reset email sent! Please check your inbox.";
+                loginError.style.color = "#28a745"; // Success green color
+            } catch (error) {
+                console.error("Password reset error:", error);
+                loginError.textContent = error.message;
+                loginError.style.color = ""; // Revert to default error color
+            }
+        });
+    }
 }
 
 // ===== Signup Logic =====
@@ -167,10 +194,11 @@ if (signupForm) {
                 notifications: true,
                 autoRenew: false,
                 createdAt: new Date().toISOString(),
-                lastLogin: new Date().toISOString()
+                lastLogin: new Date().toISOString(),
+                isNewUser: true // Flag for the welcome tour
             });
 
-            // Create default subscription
+            // Create default subscription document
             const subRef = doc(subscriptionsCol, user.uid);
             await setDoc(subRef, {
                 currentTier: "Free Tier",

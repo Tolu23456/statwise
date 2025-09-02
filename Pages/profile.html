@@ -1,58 +1,51 @@
 <main>
-  <h1 class="page-title">My Profile</h1>
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div id="profileAvatarContainer" class="profile-avatar">
+                <!-- Avatar or initial will be loaded here -->
+            </div>
+            <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+            <h2 id="userName" class="profile-username">Loading...</h2>
+            <p id="userEmail" class="profile-email">Loading...</p>
+        </div>
 
-  <!-- Profile Header with Avatar -->
-  <div class="profile-header">
-    <div class="profile-avatar" id="profileAvatarContainer">
-      <!-- Avatar image or initials will be loaded here by JS -->
+        <!-- General Settings -->
+        <div class="profile-card">
+            <h2>Settings</h2>
+            <div class="setting-item">
+                <span>Dark Mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Tier-gated Notification Settings -->
+        <div id="notification-settings-card" class="profile-card" data-tier="premium" style="display: none;">
+            <h2>Premium Notifications</h2>
+            <div class="setting-item">
+                <span>New Prediction Alerts</span>
+                <label class="switch">
+                    <input type="checkbox" id="predictionAlertsToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p class="setting-description">Get a push notification when a new high-confidence prediction is available.</p>
+        </div>
+
+        <!-- Account Management -->
+        <div class="profile-card">
+            <h2>Account</h2>
+            <button id="manageSubscription" class="button">Manage Subscription</button>
+            <button id="logoutBtn" class="button btn-danger">Logout</button>
+        </div>
+
+        <!-- App Data -->
+        <div class="profile-card">
+            <h2>App Data</h2>
+            <button id="resetStorage" class="button btn-danger">Reset Cached Data</button>
+        </div>
     </div>
-    <h2 id="userName" class="profile-username">Loading...</h2>
-    <p id="userEmail" class="profile-email">Loading...</p>
-    <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
-  </div>
-
-  <div class="profile-container">
-
-    <!-- Subscription -->
-    <div class="profile-card">
-      <h2>Subscription</h2>
-      <p>Manage your subscription plan.</p>
-      <a href="#" id="manageSubscription" class="button">Manage</a>
-    </div>
-
-    <!-- Dark Mode Toggle -->
-    <div class="profile-card">
-      <h2>Dark Mode</h2>
-      <p>Enable or disable dark theme.</p>
-      <label class="switch">
-        <input type="checkbox" id="darkModeToggle">
-        <span class="slider"></span>
-      </label>
-    </div>
-
-    <!-- Notifications Toggle -->
-    <div class="profile-card">
-      <h2>Notifications</h2>
-      <p>Enable or disable app notifications.</p>
-      <label class="switch">
-        <input type="checkbox" id="notificationToggle">
-        <span class="slider"></span>
-      </label>
-    </div>
-
-    <!-- Logout -->
-    <div class="profile-card">
-      <h2>Logout</h2>
-      <p>Sign out from your account.</p>
-      <button id="logoutBtn" type="button" class="button btn-danger">Logout</button>
-    </div>
-
-    <!-- Reset Storage -->
-    <div class="profile-card">
-      <h2>Reset App Data</h2>
-      <p>Clear all local storage and reset app settings.</p>
-      <button id="resetStorage" type="button" class="button btn-danger">Reset Storage</button>
-    </div>
-
-  </div>
 </main>

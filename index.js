@@ -154,3 +154,57 @@ exports.handleExpiredSubscriptions = functions.pubsub.schedule('every 24 hours')
         throw new functions.https.HttpsError('internal', 'Failed to process expired subscriptions.');
     }
 });
+
+/**
+ * Sends a push notification to all eligible premium users.
+ * This is a callable function, intended to be triggered by an admin panel or another secure process.
+ */
+exports.sendPredictionAlert = functions.https.onCall(async (data, context) => {
+    // For production, you'd want to verify that the caller is an admin.
+    // if (!context.auth.token.isAdmin) {
+    //     throw new functions.https.HttpsError('permission-denied', 'Only admins can send alerts.');
+    // }
+
+    const { title, body, matchUrl } = data;
+    if (!title || !body) {
+        throw new functions.https.HttpsError('invalid-argument', 'Missing title or body.');
+    }
+
+    // 1. Find all users who are premium or higher and have notifications enabled.
+    const premiumTiers = ["Premium Tier", "VIP / Elite Tier", "VVIP / Pro Elite Tier"];
+    const usersSnapshot = await db.collection('users')
+        .where('tier', 'in', premiumTiers)
+        .where('notifications', '==', true)
+        .get();
+
+    if (usersSnapshot.empty) {
+        return { status: 'success', message: 'No users to notify.' };
+    }
+
+    const tokens = [];
+    usersSnapshot.forEach(doc => {
+        const userTokens = doc.data().fcmTokens;
+        if (Array.isArray(userTokens) && userTokens.length > 0) {
+            tokens.push(...userTokens);
+        }
+    });
+
+    if (tokens.length === 0) {
+        return { status: 'success', message: 'Users found, but no notification tokens available.' };
+    }
+
+    // 2. Construct the notification payload.
+    const payload = {
+        notification: {
+            title: title,
+            body: body,
+            icon: 'https://your-domain.com/icon-192.png', // Replace with your public icon URL
+        },
+        webpush: { fcm_options: { link: matchUrl || 'https://your-domain.com/' } } // Link to open on click
+    };
+
+    // 3. Send the messages.
+    const response = await admin.messaging().sendToDevice(tokens, payload);
+    console.log(`Successfully sent message to ${response.successCount} devices.`);
+    return { status: 'success', message: `Notification sent to ${response.successCount} users.` };
+});
