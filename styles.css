@@ -161,6 +161,11 @@ main {
     mask-image: url(./Assets/Icons/insights.svg);
 }
 
+/* Hide tier-gated nav buttons by default to prevent flash of content */
+.bottom-nav button[data-tier] {
+    display: none;
+}
+
 .bottom-nav button.active {
     color: #0e639c;
 }

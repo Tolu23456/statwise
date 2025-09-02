@@ -355,14 +355,22 @@ function enforceTierRestrictions() {
         if (!requiredTier) return;
 
         const requiredTierName = CLASS_TO_TIER[requiredTier] || requiredTier;
-        if (TIER_ORDER.indexOf(verifiedTier) < TIER_ORDER.indexOf(requiredTierName)) {
-            el.style.opacity = "0.8";
-            el.dataset.locked = "true";
-            el.setAttribute("title", `Requires ${requiredTierName} subscription`);
+        const hasAccess = TIER_ORDER.indexOf(verifiedTier) >= TIER_ORDER.indexOf(requiredTierName);
+
+        // Handle navigation buttons separately: show/hide them completely.
+        if (el.matches('.bottom-nav button')) {
+            el.style.display = hasAccess ? 'flex' : 'none';
         } else {
-            el.style.opacity = "1";
-            el.dataset.locked = "false";
-            el.removeAttribute("title");
+            // For other elements (like cards), lock them with an overlay effect.
+            if (!hasAccess) {
+                el.style.opacity = "0.8";
+                el.dataset.locked = "true";
+                el.setAttribute("title", `Requires ${requiredTierName} subscription`);
+            } else {
+                el.style.opacity = "1";
+                el.dataset.locked = "false";
+                el.removeAttribute("title");
+            }
         }
     });
 }
@@ -1172,15 +1180,6 @@ onAuthStateChanged(auth, async (user) => {
                 const requiredRank = TIER_ORDER.indexOf(CLASS_TO_TIER[requiredTier]);
                 notificationCard.style.display = TIER_ORDER.indexOf(verifiedTier) >= requiredRank ? 'block' : 'none';
             }
-            
-            // Show/hide tier-gated nav buttons
-            document.querySelectorAll('.bottom-nav button[data-tier]').forEach(navBtn => {
-                const requiredTier = navBtn.dataset.tier;
-                const requiredTierName = CLASS_TO_TIER[requiredTier] || requiredTier;
-                const requiredRank = TIER_ORDER.indexOf(requiredTierName);
-                // Use 'display' for nav buttons to prevent layout shifts
-                navBtn.style.display = TIER_ORDER.indexOf(verifiedTier) >= requiredRank ? 'flex' : 'none';
-            });
 
             const lockedEl = e.target.closest('[data-locked="true"]');
             if (lockedEl) {
