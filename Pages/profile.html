@@ -6,7 +6,10 @@
                 <!-- Avatar or initial will be loaded here -->
             </div>
             <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
-            <h2 id="userName" class="profile-username">Loading...</h2>
+            <div class="username-container">
+                <h2 id="userName" class="profile-username">Loading...</h2>
+                <span id="editUsernameBtn" class="edit-icon" title="Edit Username">&#9998;</span>
+            </div>
             <p id="userEmail" class="profile-email">Loading...</p>
         </div>
 
@@ -46,6 +49,12 @@
         <div class="profile-card">
             <h2>App Data</h2>
             <button id="resetStorage" class="button btn-danger">Reset Cached Data</button>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="profile-card danger-zone">
+            <h2>Danger Zone</h2>
+            <button id="deleteAccountBtn" class="button btn-danger">Delete Account</button>
         </div>
     </div>
 </main>

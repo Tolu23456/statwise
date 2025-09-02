@@ -38,6 +38,9 @@ function showModal(options) {
         onCancel: () => {},
         confirmClass: 'btn-primary',
         showCancel: false,
+        inputType: null, // e.g., 'text' or 'password'
+        inputValue: '',
+        inputPlaceholder: ''
     };
     const config = { ...defaults, ...options };
 
@@ -49,6 +52,7 @@ function showModal(options) {
         modal.innerHTML = `
             <div class="modal-content">
                 <p id="modalMessage"></p>
+                <input type="text" id="modalInput" style="display: none;" />
                 <div class="modal-actions">
                     <button id="modalCancel"></button>
                     <button id="modalConfirm"></button>
@@ -60,6 +64,7 @@ function showModal(options) {
     const modalMessage = modal.querySelector("#modalMessage");
     const confirmBtn = modal.querySelector("#modalConfirm");
     const cancelBtn = modal.querySelector("#modalCancel");
+    const modalInput = modal.querySelector("#modalInput");
 
     modalMessage.textContent = config.message;
     confirmBtn.textContent = config.confirmText;
@@ -69,8 +74,18 @@ function showModal(options) {
     cancelBtn.style.display = config.showCancel ? 'inline-block' : 'none';
     modal.style.display = "flex";
 
-    const cleanup = () => { modal.style.display = "none"; confirmBtn.onclick = null; cancelBtn.onclick = null; };
-    confirmBtn.onclick = () => { cleanup(); config.onConfirm(); };
+    // Handle input field
+    if (config.inputType) {
+        modalInput.style.display = 'block';
+        modalInput.type = config.inputType;
+        modalInput.value = config.inputValue;
+        modalInput.placeholder = config.inputPlaceholder;
+    } else {
+        modalInput.style.display = 'none';
+    }
+
+    const cleanup = () => { modal.style.display = "none"; confirmBtn.onclick = null; cancelBtn.onclick = null; modalInput.style.display = 'none'; };
+    confirmBtn.onclick = () => { cleanup(); config.onConfirm(modalInput.value); };
     cancelBtn.onclick = () => { cleanup(); config.onCancel(); };
 }
 
@@ -253,7 +268,6 @@ async function initManageSubscriptionPage(userId) {
         "VVIP / Pro Elite Tier": ["All VIP Features", "1-on-1 Coaching", "Early Access"]
     };
 
-    showLoader();
     try {
         const userRef = doc(db, "users", userId);
         const snapshot = await getDoc(userRef);
@@ -325,8 +339,6 @@ async function initManageSubscriptionPage(userId) {
     } catch (error) {
         console.error("Failed to load subscription management page:", error);
         planInfoCard.innerHTML = `<h2>Error</h2><p>Could not load your subscription details. Please try again later.</p>`;
-    } finally {
-        hideLoader();
     }
 }
 
@@ -453,6 +465,7 @@ async function initProfilePage(userId) {
     const avatarContainer = document.getElementById('profileAvatarContainer');
     const avatarUploadInput = document.getElementById('avatarUpload');
     const userNameEl = document.getElementById('userName');
+    const editUsernameBtn = document.getElementById('editUsernameBtn');
     const userEmailEl = document.getElementById('userEmail');
 
     const displayAvatar = (url, name) => {
@@ -491,6 +504,28 @@ async function initProfilePage(userId) {
             } finally {
                 hideLoader();
             }
+        });
+    }
+
+    if (editUsernameBtn && userNameEl) {
+        editUsernameBtn.addEventListener('click', () => {
+            showModal({
+                message: 'Enter your new username:',
+                showCancel: true,
+                confirmText: 'Save',
+                inputType: 'text',
+                inputValue: userNameEl.textContent,
+                onConfirm: async (newUsername) => {
+                    if (newUsername && newUsername.trim() !== '' && newUsername !== userNameEl.textContent) {
+                        showLoader();
+                        await updateDoc(userRef, { username: newUsername.trim() });
+                        await auth.currentUser.updateProfile({ displayName: newUsername.trim() });
+                        await addHistoryUnique(userId, `Username changed to ${newUsername.trim()}`);
+                        userNameEl.textContent = newUsername.trim();
+                        hideLoader();
+                    }
+                }
+            });
         });
     }
 
@@ -551,6 +586,42 @@ async function initProfilePage(userId) {
             location.reload();
         }
     });
+
+    // 7. Delete Account Button
+    const deleteAccountBtn = document.getElementById("deleteAccountBtn");
+    if (deleteAccountBtn) {
+        deleteAccountBtn.onclick = () => {
+            showModal({
+                message: "Are you absolutely sure you want to delete your account? This action is irreversible.",
+                showCancel: true,
+                confirmText: "I Understand, Continue",
+                confirmClass: 'btn-danger',
+                onConfirm: () => {
+                    showModal({
+                        message: 'To confirm, please type "DELETE" in the box below.',
+                        showCancel: true,
+                        confirmText: "Delete My Account",
+                        confirmClass: 'btn-danger',
+                        inputType: 'text',
+                        inputPlaceholder: 'DELETE',
+                        onConfirm: async (confirmationText) => {
+                            if (confirmationText === "DELETE") {
+                                showLoader();
+                                try {
+                                    const deleteUser = httpsCallable(functions, 'deleteUserAccount');
+                                    await deleteUser();
+                                    await signOut(auth);
+                                    window.location.href = './Auth/login.html';
+                                } catch (error) {
+                                    showModal({ message: `Error: ${error.message}`, confirmClass: 'btn-danger' });
+                                } finally { hideLoader(); }
+                            } else { showModal({ message: "Incorrect confirmation text. Account was not deleted." }); }
+                        }
+                    });
+                }
+            });
+        };
+    }
 }
 
 // ===== Save AI Prediction =====
@@ -794,6 +865,9 @@ async function loadPage(page, userId, addToHistory = true) {
     if (main.classList.contains('page-transitioning')) return;
     main.classList.add('page-transitioning');
 
+    // Show loader at the start of any page load
+    showLoader();
+
     // Animate the current content out
     main.classList.add('page-fade-out');
     await new Promise(resolve => setTimeout(resolve, 200)); // Match animation duration
@@ -1008,6 +1082,9 @@ async function loadPage(page, userId, addToHistory = true) {
             main.classList.remove('page-fade-in');
             main.classList.remove('page-transitioning');
         }, { once: true });
+
+        // Hide loader after everything is done
+        hideLoader();
     }
 }
 

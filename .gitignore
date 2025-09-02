@@ -1,1 +1,11 @@
-.env
+# Firebase
+env.js
+.firebase/
+firebase-debug.log
+
+# Node
+node_modules/
+
+# Build output
+dist/
+build/

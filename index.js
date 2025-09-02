@@ -208,3 +208,41 @@ exports.sendPredictionAlert = functions.https.onCall(async (data, context) => {
     console.log(`Successfully sent message to ${response.successCount} devices.`);
     return { status: 'success', message: `Notification sent to ${response.successCount} users.` };
 });
+
+/**
+ * Deletes a user's account and all associated data.
+ * This is a callable function triggered from the client.
+ */
+exports.deleteUserAccount = functions.https.onCall(async (data, context) => {
+    // 1. Check for authentication
+    if (!context.auth) {
+        throw new functions.https.HttpsError(
+            "unauthenticated",
+            "You must be logged in to delete an account.",
+        );
+    }
+
+    const uid = context.auth.uid;
+    console.log(`Attempting to delete account for user: ${uid}`);
+
+    try {
+        // 2. Delete Firestore documents in a batch
+        const batch = db.batch();
+        const userDocRef = db.collection('users').doc(uid);
+        const subDocRef = db.collection('subscriptions').doc(uid);
+
+        batch.delete(userDocRef);
+        batch.delete(subDocRef);
+
+        await batch.commit();
+
+        // 3. Delete the Firebase Auth user (this is the final step)
+        await admin.auth().deleteUser(uid);
+
+        console.log(`Successfully deleted all data for user: ${uid}`);
+        return { status: 'success', message: 'Account deleted successfully.' };
+    } catch (error) {
+        console.error(`Failed to delete account for user ${uid}:`, error);
+        throw new functions.https.HttpsError('internal', 'Failed to delete account.', error.message);
+    }
+});

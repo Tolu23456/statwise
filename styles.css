@@ -453,6 +453,20 @@ main {
     color: #666;
 }
 
+.username-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit-icon {
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    transition: color 0.2s ease;
+}
+.edit-icon:hover { color: #0e639c; }
+
 /* Profile Card Buttons */
 .profile-card button {
     margin-top: 8px;
@@ -546,6 +560,14 @@ input:checked+.slider::before {
     max-width: 400px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 .modal-actions {

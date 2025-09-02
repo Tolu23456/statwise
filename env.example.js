@@ -1,6 +1,7 @@
-// env.js
+// env.example.js
 // ================================
-// Firebase Config & Initialization
+// This is a template file. Copy it to env.js and fill in your actual configuration.
+// env.js is ignored by Git to keep your keys secure.
 // ================================
 
 // Import Firebase SDK
@@ -11,31 +12,25 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebas
 import { getMessaging } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js";
 import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 
-// Firebase config
+// Firebase config - It's safe for this to be in client-side code.
 const firebaseConfig = {
-  apiKey: "AIzaSyDpPTmDw7RpxTo2AXf8ZDTq4AG46xKB16g",
-  authDomain: "statwise-319a4.firebaseapp.com",
-  databaseURL: "https://statwise-319a4-default-rtdb.firebaseio.com",
-  projectId: "statwise-319a4",
-  storageBucket: "statwise-319a4.firebasestorage.app",
-  messagingSenderId: "416700134653",
-  appId: "1:416700134653:web:f3a6f9766a2fafa8fdba94",
-  measurementId: "G-QB5346HMZC"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
 };
 
 // Initialize Firebase app
 const app = initializeApp(firebaseConfig);
 
-// Export Auth and Firestore
+// Export services
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const functions = getFunctions(app);
 export const messaging = getMessaging(app);
 export const storage = getStorage(app);
 
-// ================================
-// Flutterwave Keys
-// ================================
-export const FLWPUBK = "FLWPUBK_TEST-8336183053a03e565edf2dd9d6ec3ffd-X";      // Public Key (frontend)
-export const FLWSECRET = "FLWSECK_TEST-b52c73bafee89fe8c66996e1a6ec49fb-X";    // Secret Key (backend verification)
-export const FLWENCRYPTION = "FLWSECK_TESTe3932e89fdb0";                      // Optional encryption key
+// Flutterwave Public Key (Safe for frontend)
+export const FLWPUBK = "YOUR_FLUTTERWAVE_PUBLIC_KEY";
