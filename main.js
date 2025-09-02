@@ -954,9 +954,13 @@ async function loadPage(page, userId, addToHistory = true) {
         clearDynamicAssets();
 
         docu.querySelectorAll("link[rel='stylesheet']").forEach(link => {
+            // Vercel/Deployment Fix: Ensure relative paths from the fetched HTML
+            // are resolved correctly from the /Pages/ directory.
+            const href = new URL(link.getAttribute('href'), `${window.location.origin}/Pages/`).href;
+
             const newLink = document.createElement("link");
             newLink.rel = "stylesheet";
-            newLink.href = link.href;
+            newLink.href = href;
             newLink.setAttribute("data-dynamic", "true");
             document.head.appendChild(newLink);
         });
@@ -970,8 +974,13 @@ async function loadPage(page, userId, addToHistory = true) {
 
         docu.querySelectorAll("script").forEach(script => {
             const newScript = document.createElement("script");
-            if (script.src) newScript.src = script.src;
-            else newScript.textContent = script.textContent;
+            if (script.src) {
+                // Vercel/Deployment Fix: Same logic as for stylesheets.
+                const src = new URL(script.getAttribute('src'), `${window.location.origin}/Pages/`).href;
+                newScript.src = src;
+            } else {
+                newScript.textContent = script.textContent;
+            }
             newScript.setAttribute("data-dynamic", "true");
             document.body.appendChild(newScript);
         });

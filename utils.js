@@ -1,5 +1,5 @@
 // utils.js
-import { db } from './env.js';
+import { db } from '/env.js';
 import { collection, addDoc, query, orderBy, serverTimestamp, limit, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 /**
