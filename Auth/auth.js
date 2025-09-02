@@ -52,6 +52,7 @@ const signupForm = document.querySelector("#signup-form");
 const signupUsername = document.querySelector("#signup-username");
 const signupEmail = document.querySelector("#signup-email");
 const signupPassword = document.querySelector("#signup-password");
+const signupReferral = document.querySelector("#signup-referral");
 const signupBtn = document.querySelector("#signup-btn");
 const signupError = document.querySelector("#signup-error");
 
@@ -150,6 +151,7 @@ if (signupForm) {
         const username = signupUsername.value.trim();
         const email = signupEmail.value.trim();
         const password = signupPassword.value.trim();
+        const referralCode = signupReferral.value.trim().toUpperCase();
         if (!username || !email || !password) {
             signupError.textContent = "All fields are required.";
             return;
@@ -158,11 +160,33 @@ if (signupForm) {
         showSpinner(signupBtn);
 
         try {
+            // --- Referral Code Validation ---
+            let referrerId = null;
+            if (referralCode) {
+                const q = query(usersCol, where("referralCode", "==", referralCode));
+                const querySnapshot = await getDocs(q);
+                if (!querySnapshot.empty) {
+                    const referrerDoc = querySnapshot.docs[0];
+                    referrerId = referrerDoc.id;
+                } else {
+                    hideSpinner(signupBtn, "Sign Up");
+                    signupError.textContent = "Invalid referral code.";
+                    return; // Stop signup if code is provided but invalid
+                }
+            }
+
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
             // Update Firebase Auth profile
             await updateProfile(user, { displayName: username });
+
+            // Prepare user document data
+            const newUserDoc = {
+                username, email, tier: "Free Tier", tierExpiry: null, photoURL: null,
+                notifications: true, autoRenew: false, createdAt: new Date().toISOString(),
+                lastLogin: new Date().toISOString(), isNewUser: true
+            };
 
             // Create Firestore profile
             const userRef = doc(usersCol, user.uid);
@@ -176,8 +200,17 @@ if (signupForm) {
                 autoRenew: false,
                 createdAt: new Date().toISOString(),
                 lastLogin: new Date().toISOString(),
-                isNewUser: true // Flag for the welcome tour
+                isNewUser: true, // Flag for the welcome tour
+                ...(referrerId && { referredBy: referrerId }) // Add referrer ID if it exists
             });
+
+            // If referred, update the referrer's document and notify them
+            if (referrerId) {
+                const referrerRef = doc(usersCol, referrerId);
+                // We use a subcollection for history, so we can just add an action.
+                const historyRef = collection(db, "users", referrerId, "history");
+                await addDoc(historyRef, { action: `Your friend '${username}' joined using your referral code!`, createdAt: serverTimestamp() });
+            }
 
             // Create default subscription document
             const subRef = doc(subscriptionsCol, user.uid);

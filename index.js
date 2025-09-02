@@ -69,6 +69,39 @@ exports.verifyFlutterwavePayment = functions.https.onCall(async (data, context) 
                 autoRenew: true,
             });
 
+            // --- Referral Reward Logic ---
+            const paidUserSnap = await userRef.get();
+            const paidUserData = paidUserSnap.data();
+            if (paidUserData.referredBy) {
+                const referrerId = paidUserData.referredBy;
+                const referrerRef = db.collection("users").doc(referrerId);
+                const referrerSnap = await referrerRef.get();
+
+                if (referrerSnap.exists) {
+                    const referrerData = referrerSnap.data();
+                    const now = new Date();
+                    let newExpiry;
+
+                    // If referrer is already on a paid plan, extend it. Otherwise, give them a new one.
+                    if (referrerData.tier !== 'Free Tier' && referrerData.tierExpiry && new Date(referrerData.tierExpiry) > now) {
+                        newExpiry = new Date(referrerData.tierExpiry);
+                    } else {
+                        newExpiry = now;
+                    }
+                    newExpiry.setDate(newExpiry.getDate() + 7); // Add 7 days
+
+                    await referrerRef.update({
+                        tier: 'Premium Tier',
+                        tierExpiry: newExpiry.toISOString(),
+                    });
+
+                    // Notify the referrer via their history log
+                    const historyRef = db.collection('users', referrerId, 'history');
+                    await historyRef.add({ action: `Your referral ${paidUserData.username} subscribed! You've been rewarded with 1 week of Premium.`, createdAt: admin.firestore.FieldValue.serverTimestamp() });
+                }
+            }
+            // --- End Referral Reward Logic ---
+
             // Log the verified transaction
             const transactionData = {
                 amount: verificationData.amount,

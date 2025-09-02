@@ -666,11 +666,29 @@ async function initReferralPage(userId) {
         setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
     });
 
-    // 3. Fetch and display list of referred users (placeholder)
-    // In a real app, you'd query a 'referrals' collection or check users who signed up with this code.
-    // For this example, we'll just show a placeholder.
-    if (userData.referredUsers && userData.referredUsers.length > 0) {
-        // Logic to display referred users would go here.
+    // 3. Fetch and display list of referred users
+    const referralsQuery = query(collection(db, "users"), where("referredBy", "==", userId));
+    const querySnapshot = await getDocs(referralsQuery);
+
+    if (!querySnapshot.empty) {
+        referralListContainer.innerHTML = ''; // Clear the placeholder
+        querySnapshot.forEach(doc => {
+            const referredUser = doc.data();
+            const card = document.createElement('div');
+            card.className = 'history-card';
+
+            const isSubscribed = referredUser.tier !== 'Free Tier';
+            const statusBadge = isSubscribed
+                ? `<span class="status-badge status-successful">Subscribed</span>`
+                : `<span class="status-badge status-pending">Joined</span>`;
+
+            card.innerHTML = `
+                <div class="history-title">${referredUser.username}</div>
+                <p class="history-detail">Status: ${statusBadge}</p>
+                <p class="history-time">Joined on: ${new Date(referredUser.createdAt).toLocaleDateString()}</p>
+            `;
+            referralListContainer.appendChild(card);
+        });
     } else {
         referralListContainer.innerHTML = `<p>No referrals yet. Share your code to get started!</p>`;
     }
