@@ -1,31 +1,31 @@
 <main>
-  <h1 class="page-title">Manage Subscription</h1>
+    <h1 class="page-title">Manage Your Subscription</h1>
 
-  <!-- This card will be dynamically populated with plan info and benefits -->
-  <div id="plan-info-card" class="manage-card">
-    <h2>Loading your plan...</h2>
-    <p>Please wait while we fetch your subscription details.</p>
-  </div>
+    <!-- Plan Information -->
+    <div id="plan-info-card" class="manage-card">
+        <!-- Content will be dynamically loaded here by initManageSubscriptionPage() -->
+        <p>Loading your subscription details...</p>
+    </div>
 
-  <!-- Card for changing/upgrading plan -->
-  <div class="manage-card">
-    <h2>Change Your Plan</h2>
-    <p>Explore other subscription tiers that better fit your needs.</p>
-    <button id="changePlanBtn" class="button">View Plans</button>
-  </div>
+    <!-- Change Plan -->
+    <div class="manage-card">
+        <h2>Change Your Plan</h2>
+        <p>Explore other plans that might better suit your needs.</p>
+        <button id="changePlanBtn" class="button">View Plans</button>
+    </div>
 
-  <!-- Auto-renewal settings -->
-  <div id="auto-renew-container" class="manage-card" style="display: none;">
-      <h2>Billing Settings</h2>
-      <p>Manage automatic renewal for your subscription. If you cancel, your plan will expire at the end of the current period.</p>
-      <button id="toggleAutoRenewBtn" class="button">Loading...</button>
-  </div>
+    <!-- Auto-Renewal Settings -->
+    <div id="auto-renew-container" class="manage-card" style="display: none;">
+        <h2>Auto-Renewal</h2>
+        <p>Manage your automatic payment settings for the next billing cycle.</p>
+        <button id="toggleAutoRenewBtn" class="button">Loading...</button>
+    </div>
 
-  <!-- Danger Zone for cancellation -->
-  <div id="cancel-subscription-container" class="manage-card danger-zone" style="display: none;">
-    <h2>Cancel Subscription</h2>
-    <p>This will immediately revert your account to the Free Tier. This action cannot be undone.</p>
-    <button id="cancelSubscriptionBtn" class="button btn-danger">Cancel Subscription</button>
-  </div>
+    <!-- Cancellation -->
+    <div id="cancel-subscription-container" class="manage-card danger-zone" style="display: none;">
+        <h2>Cancel Subscription</h2>
+        <p>If you cancel, your plan will be downgraded to the Free Tier at the end of your current billing period. This action cannot be undone.</p>
+        <button id="cancelSubscriptionBtn" class="button btn-danger">Cancel Subscription</button>
+    </div>
 
 </main>
