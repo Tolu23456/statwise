@@ -7,7 +7,7 @@ import {
     ref, uploadBytes, getDownloadURL
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 import { httpsCallable } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-functions.js";
-import {
+import { 
     getToken, onMessage
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js";
 import {
@@ -552,6 +552,15 @@ async function initProfilePage(userId) {
         });
     }
 
+    // 4. Referral Program Button
+    const referralBtn = document.getElementById("referralBtn");
+    if (referralBtn) {
+        referralBtn.onclick = (e) => {
+            e.preventDefault();
+            loadPage("referral", userId);
+        };
+    }
+
     // 4. Manage Subscription Button
     const manageBtn = document.getElementById("manageSubscription");
     if (manageBtn) manageBtn.onclick = (e) => {
@@ -624,6 +633,48 @@ async function initProfilePage(userId) {
     }
 }
 
+/**
+ * Initializes the referral page.
+ * @param {string} userId - The current user's ID.
+ */
+async function initReferralPage(userId) {
+    if (!userId) return;
+
+    const codeInput = document.getElementById('referralCodeInput');
+    const copyBtn = document.getElementById('copyReferralCodeBtn');
+    const referralListContainer = document.getElementById('referralListContainer');
+
+    if (!codeInput || !copyBtn || !referralListContainer) return;
+
+    // 1. Get/Generate Referral Code
+    const userRef = doc(db, "users", userId);
+    const userSnap = await getDoc(userRef);
+    let userData = userSnap.data();
+    let referralCode = userData.referralCode;
+
+    if (!referralCode) {
+        referralCode = `REF-${userId.substring(0, 6).toUpperCase()}`;
+        await updateDoc(userRef, { referralCode });
+    }
+    codeInput.value = referralCode;
+
+    // 2. Copy Button Logic
+    copyBtn.addEventListener('click', () => {
+        codeInput.select();
+        document.execCommand('copy');
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+    });
+
+    // 3. Fetch and display list of referred users (placeholder)
+    // In a real app, you'd query a 'referrals' collection or check users who signed up with this code.
+    // For this example, we'll just show a placeholder.
+    if (userData.referredUsers && userData.referredUsers.length > 0) {
+        // Logic to display referred users would go here.
+    } else {
+        referralListContainer.innerHTML = `<p>No referrals yet. Share your code to get started!</p>`;
+    }
+}
 // ===== Save AI Prediction =====
 async function savePredictionToDB(userId, prediction) {
     if (!userId) return;
@@ -922,6 +973,9 @@ async function loadPage(page, userId, addToHistory = true) {
         }
         if (page === "profile") {
             await initProfilePage(userId);
+        }
+        if (page === "referral") {
+            await initReferralPage(userId);
         }
         if (page === "history") {
             await fetchHistory(userId);

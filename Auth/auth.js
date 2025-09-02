@@ -46,8 +46,6 @@ const loginForm = document.querySelector("#login-form");
 const loginEmail = document.querySelector("#login-email");
 const loginPassword = document.querySelector("#login-password");
 const loginBtn = document.querySelector("#login-btn");
-const loginError = document.querySelector("#login-error");
-const forgotPasswordLink = document.querySelector("#forgot-password-link");
 
 // Signup
 const signupForm = document.querySelector("#signup-form");
@@ -57,6 +55,13 @@ const signupPassword = document.querySelector("#signup-password");
 const signupBtn = document.querySelector("#signup-btn");
 const signupError = document.querySelector("#signup-error");
 
+// Forgot Password
+const forgotPasswordForm = document.querySelector("#forgot-password-form");
+const forgotPasswordEmail = document.querySelector("#forgot-password-email");
+const forgotPasswordBtn = document.querySelector("#forgot-password-btn");
+const forgotPasswordMessage = document.querySelector("#forgot-password-message");
+
+
 // ===== Firestore Collections =====
 const usersCol = collection(db, "users");
 const subscriptionsCol = collection(db, "subscriptions");
@@ -65,6 +70,7 @@ const subscriptionsCol = collection(db, "subscriptions");
 if (loginForm) {
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        const loginError = document.querySelector("#login-error");
         loginError.textContent = "";
 
         const email = loginEmail.value.trim();
@@ -133,31 +139,6 @@ if (loginForm) {
             loginError.textContent = error.message;
         }
     });
-
-    // Forgot Password Logic
-    if (forgotPasswordLink) {
-        forgotPasswordLink.addEventListener("click", async (e) => {
-            e.preventDefault();
-            loginError.textContent = "";
-
-            const email = loginEmail.value.trim();
-            if (!email) {
-                loginError.textContent = "Please enter your email address to reset your password.";
-                return;
-            }
-
-            try {
-                await sendPasswordResetEmail(auth, email);
-                // Use the same error div for success message, with a different style
-                loginError.textContent = "Password reset email sent! Please check your inbox.";
-                loginError.style.color = "#28a745"; // Success green color
-            } catch (error) {
-                console.error("Password reset error:", error);
-                loginError.textContent = error.message;
-                loginError.style.color = ""; // Revert to default error color
-            }
-        });
-    }
 }
 
 // ===== Signup Logic =====
@@ -217,6 +198,36 @@ if (signupForm) {
         }
     });
 }
+
+// ===== Forgot Password Logic =====
+if (forgotPasswordForm) {
+    forgotPasswordForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        forgotPasswordMessage.textContent = "";
+        forgotPasswordMessage.style.color = ""; // Reset color
+
+        const email = forgotPasswordEmail.value.trim();
+        if (!email) {
+            forgotPasswordMessage.textContent = "Please enter your email address.";
+            return;
+        }
+
+        showSpinner(forgotPasswordBtn);
+
+        try {
+            await sendPasswordResetEmail(auth, email);
+            forgotPasswordMessage.textContent = "Password reset email sent! Please check your inbox.";
+            forgotPasswordMessage.style.color = "#28a745"; // Success green color
+            hideSpinner(forgotPasswordBtn, "Send Reset Link");
+            forgotPasswordBtn.disabled = true; // Prevent resending
+        } catch (error) {
+            console.error("Password reset error:", error);
+            hideSpinner(forgotPasswordBtn, "Send Reset Link");
+            forgotPasswordMessage.textContent = error.message;
+        }
+    });
+}
+
 
 // ===== Logout Function (can be used in main.js) =====
 export async function logoutUser() {

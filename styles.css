@@ -1160,3 +1160,40 @@ input:checked+.slider::before {
     background-color: #1c3a50;
     color: #a5d8ff;
 }
+
+/* ---------------- Referral Page ---------------- */
+.referral-code-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+#referralCodeInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f1f3f5;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#referralCodeInput:focus {
+    outline: none;
+}
+
+.dark-mode #referralCodeInput {
+    background-color: #252526;
+    border-color: #555;
+    color: #d4d4d4;
+}
+
+.form-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+    text-align: center;
+    line-height: 1.5;
+}
