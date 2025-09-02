@@ -1,20 +1,23 @@
 <main>
   <h1 class="page-title">My Profile</h1>
 
-  <div class="profile-container">
-
-    <!-- User Info -->
-    <div class="profile-card">
-      <h2>Account Info</h2>
-      <p><strong>Username:</strong> <span id="userName">Loading...</span></p>
-      <p><strong>Email:</strong> <span id="userEmail">Loading...</span></p>
+  <!-- Profile Header with Avatar -->
+  <div class="profile-header">
+    <div class="profile-avatar" id="profileAvatarContainer">
+      <!-- Avatar image or initials will be loaded here by JS -->
     </div>
+    <h2 id="userName" class="profile-username">Loading...</h2>
+    <p id="userEmail" class="profile-email">Loading...</p>
+    <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+  </div>
+
+  <div class="profile-container">
 
     <!-- Subscription -->
     <div class="profile-card">
       <h2>Subscription</h2>
       <p>Manage your subscription plan.</p>
-      <button id="manageSubscription">Manage</button>
+      <a href="#" id="manageSubscription" class="button">Manage</a>
     </div>
 
     <!-- Dark Mode Toggle -->
@@ -41,14 +44,14 @@
     <div class="profile-card">
       <h2>Logout</h2>
       <p>Sign out from your account.</p>
-      <button id="logoutBtn">Logout</button>
+      <button id="logoutBtn" type="button" class="button btn-danger">Logout</button>
     </div>
 
     <!-- Reset Storage -->
     <div class="profile-card">
       <h2>Reset App Data</h2>
       <p>Clear all local storage and reset app settings.</p>
-      <button id="reset-storage">Reset Storage</button>
+      <button id="resetStorage" type="button" class="button btn-danger">Reset Storage</button>
     </div>
 
   </div>

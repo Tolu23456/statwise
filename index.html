@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StatWise</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="./Loader/loader.css">
 </head>
 <body>
     <!-- Header -->
@@ -13,57 +12,40 @@
         <h1 class="app-name">StatWise - Predict with AI</h1>
     </header>
 
-    <!-- Loading Overlay -->
-    <div id="loadingOverlay">
-        <div class="spinner"></div>
-    </div>
-
     <!-- Dynamic content -->
     <main></main>
 
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration);
+                    }).catch(err => {
+                        console.error('Service Worker registration failed:', err);
+                    });
+            });
+        }
+    </script>
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
         <button data-page="home">
-            <img src="Assets/Icons/house.svg" alt="Home">Home
+            <div class="icon icon-home"></div>Home
         </button>
         <button data-page="history">
-            <img src="Assets/Icons/bar-chart.svg" alt="History">History
+            <div class="icon icon-history"></div>History
         </button>
         <button data-page="subscriptions">
-            <img src="Assets/Icons/gem.svg" alt="Subscription">Subscription
+            <div class="icon icon-subscriptions"></div>Subscription
         </button>
         <button data-page="profile">
-            <img src="Assets/Icons/user.svg" alt="Settings">Profile
+            <div class="icon icon-profile"></div>Profile
         </button>
     </nav>
 
-    <!-- Global Modal -->
-    <div id="customModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <p id="modalMessage">Message</p>
-            <div class="modal-actions">
-                <button id="modalCancel">Cancel</button>
-                <button id="modalConfirm">OK</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Firebase SDKs -->
     <script type="module" src="main.js"></script>
-    <script type="module" src="Auth/auth.js"></script>
-    <script src="./Loader/loader.js"></script>
-
-    <script type="module">
-        import { auth, onAuthStateChanged } from "./Auth/auth.js";
-
-        // Protect index.html
-        onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                // If not logged in, send to login page
-                window.location.href = "Auth/login.html";
-            }
-        });
-    </script>
     <script src="https://checkout.flutterwave.com/v3.js"></script>
 </body>
 </html>

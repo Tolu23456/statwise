@@ -6,6 +6,7 @@
     <div class="tab-container">
       <button class="tab-btn active" data-tab="predictions-tab">Predictions</button>
       <button class="tab-btn" data-tab="account-tab">Account</button>
+      <button class="tab-btn" data-tab="transactions-tab">Transactions</button>
     </div>
 
     <!-- Tab Contents -->
@@ -20,116 +21,11 @@
         <!-- Account history (login devices, subscriptions, actions) will be dynamically inserted here by main.js -->
       </div>
     </div>
+
+    <div id="transactions-tab" class="tab-content">
+      <div class="history-container">
+        <!-- Transaction history will be dynamically inserted here by main.js -->
+      </div>
+    </div>
   </section>
-
-  <script>
-    // ===== Tab Initialization =====
-    document.addEventListener("DOMContentLoaded", () => {
-      const tabButtons = document.querySelectorAll(".history-section .tab-btn");
-      const tabContents = document.querySelectorAll(".history-section .tab-content");
-
-      tabButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-          tabButtons.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-
-          tabContents.forEach(c => c.classList.remove("active"));
-          const targetId = btn.dataset.tab;
-          const target = document.getElementById(targetId);
-          if (target) target.classList.add("active");
-        });
-      });
-    });
-  </script>
-
-  <style>
-    /* ===== Tabs Styling (match subscription tabs) ===== */
-    .tab-container {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .tab-btn {
-      padding: 8px 20px;
-      border-radius: 8px;
-      border: 2px solid #0e639c;
-      background: #2d2d30;
-      color: #d4d4d4;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .tab-btn.active {
-      background: #0e639c;
-      color: #fff;
-    }
-
-    .tab-btn:hover {
-      background: #0b4f7a;
-      color: #fff;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    /* ===== History Container ===== */
-    .history-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    /* ===== History Cards ===== */
-    .history-card {
-      border: 2px solid #3a3a3a; /* replaces shadow with border */
-      border-radius: 10px;
-      padding: 15px;
-      background-color: #1e1e1e;
-      color: #fff;
-      transition: transform 0.2s ease, border-color 0.3s ease;
-    }
-
-    .history-card:hover {
-      transform: translateY(-2px);
-      border-color: #0e639c;
-    }
-
-    .history-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.4rem;
-      color: #fff;
-    }
-
-    .history-detail {
-      font-size: 1rem;
-      color: #d4d4d4;
-    }
-
-    .history-time {
-      font-size: 0.9rem;
-      color: #aaa;
-      margin-bottom: 0.8rem;
-    }
-
-    .history-result {
-      margin-top: 0.6rem;
-      font-weight: bold;
-      padding: 4px 8px;
-      border-radius: 6px;
-      display: inline-block;
-      border: 2px solid;
-    }
-
-    .history-result.win { color: #4caf50; border-color: #4caf50; }
-    .history-result.loss { color: #f44336; border-color: #f44336; }
-    .history-result.pending { color: #ff9800; border-color: #ff9800; }
-  </style>
 </main>

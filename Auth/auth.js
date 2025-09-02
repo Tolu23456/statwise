@@ -4,6 +4,7 @@
 // =====================================
 
 import { auth, db } from "../env.js";
+import { addHistoryUnique } from "../utils.js";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -20,7 +21,6 @@ import {
     getDocs,
     query,
     where,
-    limit,
     serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
@@ -59,37 +59,6 @@ const signupError = document.querySelector("#signup-error");
 const usersCol = collection(db, "users");
 const subscriptionsCol = collection(db, "subscriptions");
 
-// ===== Helper: Get Public IP =====
-async function getPublicIP() {
-    try {
-        const res = await fetch("https://api.ipify.org?format=json");
-        const data = await res.json();
-        return data.ip || "Unknown";
-    } catch {
-        return "Unknown";
-    }
-}
-
-// ===== Helper: Log User Actions without duplicate per session =====
-async function logUserAction(userId, action) {
-    try {
-        // Prevent duplicate action if same action already exists as latest entry
-        const historyRef = collection(db, "users", userId, "history");
-        const q = query(historyRef, where("action", "==", action), limit(1));
-        const snap = await getDocs(q);
-        if (!snap.empty) return; // already logged, skip
-
-        const ip = await getPublicIP();
-        await addDoc(historyRef, {
-            action,
-            ip,
-            createdAt: serverTimestamp()
-        });
-    } catch (err) {
-        console.error("Failed to log user action:", err);
-    }
-}
-
 // ===== Login Logic =====
 if (loginForm) {
     loginForm.addEventListener("submit", async (e) => {
@@ -118,8 +87,10 @@ if (loginForm) {
                     username: user.displayName || "User",
                     email: user.email,
                     tier: "Free Tier",
-                    darkMode: false,
+                    tierExpiry: null,
+                    photoURL: null,
                     notifications: true,
+                    autoRenew: false,
                     createdAt: new Date().toISOString(),
                     lastLogin: new Date().toISOString()
                 });
@@ -133,14 +104,22 @@ if (loginForm) {
                     transactions: []
                 });
 
-                // Log first login
-                await logUserAction(user.uid, "First login - profile created");
             } else {
                 // Update last login timestamp
                 await setDoc(userRef, { lastLogin: new Date().toISOString() }, { merge: true });
 
-                // Only log login if last action is not already "User logged in"
-                await logUserAction(user.uid, "User logged in");
+                // Ensure subscription doc exists for older users
+                const subRef = doc(subscriptionsCol, user.uid);
+                const subSnap = await getDoc(subRef);
+                if (!subSnap.exists()) {
+                    await setDoc(subRef, {
+                        currentTier: userSnap.data()?.tier || "Free Tier",
+                        startDate: userSnap.data()?.createdAt || new Date().toISOString(),
+                        expiryDate: userSnap.data()?.tierExpiry || null,
+                        transactions: []
+                    });
+                }
+
             }
 
             showSuccess(loginBtn);
@@ -183,8 +162,10 @@ if (signupForm) {
                 username,
                 email,
                 tier: "Free Tier",
-                darkMode: false,
+                tierExpiry: null,
+                photoURL: null,
                 notifications: true,
+                autoRenew: false,
                 createdAt: new Date().toISOString(),
                 lastLogin: new Date().toISOString()
             });
@@ -197,9 +178,6 @@ if (signupForm) {
                 expiryDate: null,
                 transactions: []
             });
-
-            // Log signup (once)
-            await logUserAction(user.uid, "User signed up");
 
             showSuccess(signupBtn);
             setTimeout(() => window.location.href = "../index.html", 1000);
@@ -217,6 +195,6 @@ export async function logoutUser() {
     const user = auth.currentUser;
     if (!user) return;
 
-    await logUserAction(user.uid, "User logged out");
+    await addHistoryUnique(user.uid, "User logged out");
     await signOut(auth);
 }

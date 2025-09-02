@@ -4,9 +4,8 @@
 const loader = document.createElement("div");
 loader.id = "globalLoader";
 loader.innerHTML = `
-  <div class="loader-overlay">
-    <div class="loader-spinner"></div>
-  </div>
+  <div class="loader-overlay"></div>
+  <div class="loader-spinner"></div>
 `;
 document.body.appendChild(loader);
 
@@ -21,8 +20,3 @@ export function hideLoader() {
   const loader = document.getElementById("globalLoader");
   if (loader) loader.style.display = "none";
 }
-
-// Auto-hide loader once page fully loads
-window.addEventListener("load", () => {
-  hideLoader();
-});

@@ -22,10 +22,15 @@
 }
 
 /* ---------------- Body ---------------- */
-body,
 html {
-    background: #1e1e1e;
-    color: #d4d4d4;
+    background: #f4f5f7; /* Light background */
+    color: #1c1c1e;     /* Dark text */
+    font-family: "Optimistic";
+    height: 100%;
+}
+
+body {
+    /* Body will now inherit background and color from html */
     font-family: "Optimistic";
     height: 100%;
 }
@@ -40,8 +45,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #252526;
-    color: #d4d4d4;
+    background-color: #ffffff;
+    color: #1c1c1e;
+    border-bottom: 1px solid #e0e0e0;
     z-index: 1000;
     padding: 8px 0;
 }
@@ -64,12 +70,43 @@ main {
     overflow-y: auto;
 }
 
+/* ---------------- Page Transitions ---------------- */
+.page-fade-out {
+    animation: fadeOut 0.2s ease-out forwards;
+}
+
+.page-fade-in {
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ---------------- Bottom Navigation ---------------- */
 .bottom-nav {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #252526;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -81,7 +118,7 @@ main {
 .bottom-nav button {
     background: none;
     border: none;
-    color: #d4d4d4;
+    color: #555;
     font-size: 10px;
     display: flex;
     flex-direction: column;
@@ -89,17 +126,46 @@ main {
     cursor: pointer;
 }
 
-.bottom-nav img {
+.bottom-nav .icon {
     width: 22px;
     height: 22px;
     margin-bottom: 2px;
+    background-color: #555; /* Default inactive color */
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: background-color 0.3s ease;
+}
+
+.icon-home {
+    -webkit-mask-image: url(./Assets/Icons/house.svg);
+    mask-image: url(./Assets/Icons/house.svg);
+}
+.icon-history {
+    -webkit-mask-image: url(./Assets/Icons/bar-chart.svg);
+    mask-image: url(./Assets/Icons/bar-chart.svg);
+}
+.icon-subscriptions {
+    -webkit-mask-image: url(./Assets/Icons/gem.svg);
+    mask-image: url(./Assets/Icons/gem.svg);
+}
+.icon-profile {
+    -webkit-mask-image: url(./Assets/Icons/user.svg);
+    mask-image: url(./Assets/Icons/user.svg);
 }
 
 .bottom-nav button.active {
     color: #0e639c;
 }
 
-.bottom-nav button:hover img {
+.bottom-nav button.active .icon {
+    background-color: #0e639c; /* Active color */
+}
+
+.bottom-nav button:hover .icon {
     animation: shake 0.3s ease-in-out;
 }
 
@@ -134,13 +200,60 @@ main {
     text-align: center;
 }
 
+/* ---------------- Search Bar ---------------- */
+.search-container {
+    margin-bottom: 16px;
+}
+
+.search-wrapper {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.search-wrapper:focus-within {
+    border-color: #0e639c;
+}
+
+#predictionSearch {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+}
+
+#predictionSearch:focus {
+    outline: none;
+}
+
+#search-ghost-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #ccc;
+    z-index: 1;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 /* ---------------- Cards ---------------- */
 .card {
-    background: #2d2d30;
+    background: #ffffff;
     border-radius: 10px;
     padding: 16px;
     margin-bottom: 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* ---------------- Subscription Cards ---------------- */
@@ -151,7 +264,7 @@ main {
 }
 
 .subscription-card {
-    background: #2d2d30;
+    background: #ffffff;
     border-radius: 12px;
     padding: 20px;
     text-align: center;
@@ -191,7 +304,7 @@ main {
     font-size: 16px;
     font-weight: bold;
     margin: 8px 0;
-    color: #d4d4d4;
+    color: #333;
 }
 
 .subscription-card ul {
@@ -205,7 +318,7 @@ main {
     padding-left: 20px;
     position: relative;
     font-size: 14px;
-    color: #bbb;
+    color: #555;
 }
 
 .subscription-card ul li::before {
@@ -232,7 +345,7 @@ main {
 
 /* Current Subscription Banner */
 .current-tier {
-    background: #2d2d30;
+    background: #ffffff;
     border: 2px solid #0e639c;
     border-radius: 10px;
     padding: 12px 16px;
@@ -240,8 +353,13 @@ main {
     text-align: center;
     font-size: 15px;
     font-weight: bold;
-    color: #d4d4d4;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.subscription-card.is-current-plan {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(14, 99, 156, 0.5);
 }
 
 .current-tier strong {
@@ -257,13 +375,13 @@ main {
 }
 
 .profile-card {
-    background: #2d2d30;
+    background: #ffffff;
     border-radius: 12px;
     padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .profile-card h2 {
@@ -274,7 +392,7 @@ main {
 
 .profile-card p {
     font-size: 14px;
-    color: #bbb;
+    color: #666;
     margin: 0;
 }
 
@@ -299,48 +417,53 @@ main {
     font-weight: bold;
     color: #fff;
     border: 2px solid #0e639c;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.tier-expiry-date {
+    font-size: 13px;
+    color: #555;
+    margin-top: 4px;
+    display: none; /* Hidden by default */
 }
 
 .profile-username {
     font-size: 20px;
     font-weight: bold;
-    color: #fff;
+    color: #111;
 }
 
 .profile-email {
     font-size: 14px;
-    color: #bbb;
+    color: #666;
 }
 
-/* Action Buttons (Logout & Reset) */
-#logoutBtn,
-#reset-storage {
+/* Profile Card Buttons */
+.profile-card button {
     margin-top: 8px;
     padding: 8px 16px;
     border-radius: 8px;
-    background: #d9534f;
     color: #fff;
     font-weight: bold;
     border: none;
     cursor: pointer;
     transition: background 0.3s ease;
+}
+
+#logoutBtn,
+#resetStorage {
+    background: #d9534f;
 }
 
 #logoutBtn:hover,
-#reset-storage:hover {
+#resetStorage:hover {
     background: #c9302c;
-}
-
-#manageSubscription {
-    margin-top: 8px;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background: #0e639c;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
 }
 
 /* Toggle Switch */
@@ -406,14 +529,14 @@ input:checked+.slider::before {
 }
 
 .modal-content {
-    background: #1e1e1e;
-    color: #fff;
+    background: #ffffff;
+    color: #333;
     padding: 20px;
     border-radius: 12px;
     width: 85%;
     max-width: 400px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .modal-actions {
@@ -430,30 +553,32 @@ input:checked+.slider::before {
     cursor: pointer;
     font-size: 14px;
 }
-
-#modalCancel {
-    background: #444;
-    color: #fff;
+ 
+.modal-actions .btn-secondary {
+    background: #6c757d;
+    color: white;
 }
-
-#modalConfirm {
-    background: #e74c3c;
-    color: #fff;
+ 
+.modal-actions .btn-secondary:hover {
+    background: #5a6268;
 }
-
-/* ---------------- Dark Mode ---------------- */
-body.dark-mode {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
+ 
+.modal-actions .btn-primary {
+    background: #0e639c;
+    color: white;
 }
-
-body.dark-mode header,
-body.dark-mode .bottom-nav,
-body.dark-mode .card,
-body.dark-mode .subscription-card,
-body.dark-mode .setting-card {
-    background-color: #2d2d30;
-    color: #d4d4d4;
+ 
+.modal-actions .btn-primary:hover {
+    background: #0b4f7a;
+}
+ 
+.modal-actions .btn-danger {
+    background: #d9534f;
+    color: white;
+}
+ 
+.modal-actions .btn-danger:hover {
+    background: #c9302c;
 }
 
 /* ---------------- History Page ---------------- */
@@ -464,36 +589,32 @@ body.dark-mode .setting-card {
   gap: 1rem;
 }
 
-/* History Card */
-.history-card {
+/* Shared Data Card Styles */
+.history-card,
+.prediction-card {
   border: 2px solid transparent;
+  border-color: #e0e0e0;
   border-radius: 10px;
   padding: 15px;
-  background-color: #1e1e1e; /* VSCode dark theme background */
-  color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  color: #1c1c1e;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, border-color 0.3s ease;
 }
-
-.history-card:hover {
-  transform: translateY(-4px);
-}
-
-/* Match Info */
 .history-title {
   font-size: 1.2rem;
   margin-bottom: 0.4rem;
-  color: #fff;
+  color: #111;
 }
 
 .history-detail {
   font-size: 1rem;
-  color: #ddd;
+  color: #444;
 }
 
 .history-time {
   font-size: 0.9rem;
-  color: #aaa;
+  color: #777;
   margin-bottom: 0.8rem;
 }
 
@@ -522,16 +643,13 @@ body.dark-mode .setting-card {
 }
 
 /* Tab Content */
-.history-tab-content {
+.history-section .tab-content {
   display: none;
-  flex-direction: column;
-  gap: 1rem;
 }
 
-.history-tab-content.active {
-  display: flex;
+.history-section .tab-content.active {
+  display: block;
 }
-
 
 /* ---------------- Tabs ---------------- */
 .tab-container, .history-tabs {
@@ -545,8 +663,8 @@ body.dark-mode .setting-card {
     padding: 8px 20px;
     border-radius: 8px;
     border: 2px solid #0e639c;
-    background: #2d2d30;
-    color: #d4d4d4;
+    background: #f1f3f5;
+    color: #0e639c;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -560,6 +678,7 @@ body.dark-mode .setting-card {
 .tab-btn:hover {
     background: #0b4f7a;
     color: #fff;
+    border-color: #0b4f7a;
 }
 
 /* Show/Hide containers */
@@ -576,46 +695,33 @@ body.dark-mode .setting-card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0 1rem 2rem;
 }
-
-/* Prediction Card */
-.prediction-card {
-  border: 2px solid transparent;
-  border-radius: 10px;
-  padding: 15px;
-  background-color: #1e1e1e; /* VSCode dark theme background */
-  color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease, border-color 0.3s ease;
-}
-
+.history-card:hover,
 .prediction-card:hover {
   transform: translateY(-4px);
 }
-
 /* Match Title */
 .match-title {
   font-size: 1.2rem;
   margin-bottom: 0.4rem;
-  color: #fff;
+  color: #111;
 }
 
 /* Prediction Details */
 .prediction-detail {
   font-size: 1rem;
-  color: #ddd;
+  color: #444;
 }
 
 .odds {
   font-size: 0.95rem;
   margin: 0.2rem 0;
-  color: #ffb300;
+  color: #e8590c; /* Adjusted for light theme contrast */
 }
 
 .match-time {
   font-size: 0.9rem;
-  color: #aaa;
+  color: #777;
   margin-bottom: 0.8rem;
 }
 
@@ -628,13 +734,13 @@ body.dark-mode .setting-card {
   display: block;
   margin-bottom: 0.4rem;
   font-size: 0.9rem;
-  color: #ccc;
+  color: #555;
 }
 
 .confidence-bar {
   width: 100%;
   height: 8px;
-  background: #333;
+  background: #e9ecef;
   border-radius: 5px;
   overflow: hidden;
   margin-top: 5px;
@@ -643,6 +749,8 @@ body.dark-mode .setting-card {
 .confidence-fill {
   height: 100%;
 }
+
+/* High, Medium, Low confidence borders are fine as they are */
 
 /* High Confidence */
 .prediction-card.high-confidence {
@@ -683,3 +791,337 @@ body.dark-mode .setting-card {
   color: var(--tier-color); /* optional: makes text match tier */
 }
 
+.card-animation {
+    animation: card-enter 0.4s ease-out forwards;
+}
+
+@keyframes card-enter {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.no-results-message {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+    display: none; /* Hidden by default */
+}
+
+/* ---------------- Pull to Refresh ---------------- */
+#refresh-indicator {
+    position: fixed;
+    top: calc(var(--header-height) + 15px);
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    font-size: 24px;
+    color: #0e639c;
+    opacity: 0;
+    z-index: 10;
+}
+
+#refresh-indicator.refreshing span {
+    animation: spin 1s linear infinite;
+}
+
+/* ---------------- Dark Mode Overrides ---------------- */
+.dark-mode {
+    background: #1e1e1e;
+    color: #d4d4d4;
+}
+
+.dark-mode header {
+    background-color: #252526;
+    color: #d4d4d4;
+    border-bottom: none;
+}
+
+.dark-mode .bottom-nav {
+    background-color: #252526;
+    border-top: none;
+}
+
+.dark-mode .bottom-nav button {
+    color: #d4d4d4;
+}
+
+.dark-mode .bottom-nav .icon {
+    background-color: #d4d4d4; /* Dark mode inactive color */
+}
+
+.dark-mode .bottom-nav button.active {
+    color: #0e639c; /* Active color is the same */
+}
+
+.dark-mode .bottom-nav button.active .icon {
+    background-color: #0e639c; /* Active color is the same */
+}
+
+.dark-mode .search-wrapper {
+    background-color: #2d2d30;
+    border-color: #555;
+}
+
+.dark-mode .search-wrapper:focus-within {
+    border-color: #0e639c;
+}
+
+.dark-mode #predictionSearch {
+    color: #d4d4d4;
+}
+
+.dark-mode #search-ghost-text {
+    color: #555;
+}
+
+.dark-mode .card,
+.dark-mode .subscription-card,
+.dark-mode .profile-card,
+.dark-mode .current-tier {
+    background: #2d2d30;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .subscription-card .price,
+.dark-mode .current-tier {
+    color: #d4d4d4;
+}
+
+.dark-mode .tier-expiry-date {
+    color: #bbb;
+}
+
+.dark-mode .subscription-card ul li,
+.dark-mode .profile-card p,
+.dark-mode .profile-email {
+    color: #bbb;
+}
+
+.dark-mode .profile-username {
+    color: #fff;
+}
+
+.dark-mode .modal-content {
+    background: #1e1e1e;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .history-card,
+.dark-mode .prediction-card {
+    background-color: #1e1e1e;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.dark-mode .history-card {
+    border-color: #444; /* Add a subtle border for history cards in dark mode */
+}
+
+.dark-mode .history-title,
+.dark-mode .match-title {
+    color: #fff;
+}
+
+.dark-mode .history-detail,
+.dark-mode .prediction-detail {
+    color: #ddd;
+}
+
+.dark-mode .history-time,
+.dark-mode .match-time {
+    color: #aaa;
+}
+
+.dark-mode .tab-btn {
+    background: #2d2d30;
+    color: #d4d4d4;
+    border-color: #555;
+}
+
+.dark-mode .tab-btn.active {
+    background: #0e639c;
+    color: #fff;
+    border-color: #0e639c;
+}
+
+.dark-mode .tab-btn:hover {
+    background: #0b4f7a;
+    color: #fff;
+    border-color: #0b4f7a;
+}
+
+.dark-mode .odds {
+    color: #ffb300;
+}
+
+.dark-mode .confidence span {
+    color: #ccc;
+}
+
+.dark-mode .confidence-bar {
+    background: #333;
+}
+
+.dark-mode .no-results-message {
+    color: #aaa;
+}
+
+.dark-mode #refresh-indicator {
+    background: #2d2d30;
+    color: #d4d4d4;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------- Loader ---------------- */
+#globalLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none; /* Initially hidden by JS */
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(244, 245, 247, 0.7); /* Light theme overlay, matches body bg */
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e0e0e0; /* Light theme spinner track */
+    border-top-color: #0e639c; /* Spinner color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.dark-mode .loader-overlay {
+    background: rgba(30, 30, 30, 0.7); /* Dark theme overlay */
+}
+
+.dark-mode .loader-spinner {
+    border-color: #444; /* Dark theme spinner track */
+    border-top-color: #0e639c; /* Spinner color can stay the same */
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #0e639c;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover {
+    background: #0b4f7a;
+}
+
+.button.btn-danger {
+    background: #d9534f;
+}
+
+.button.btn-danger:hover {
+    background: #c9302c;
+}
+
+/* ---------------- Manage Subscription Page ---------------- */
+.manage-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    transition: border-color 0.3s ease;
+}
+
+.manage-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.manage-card p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.manage-card ul {
+    list-style-type: '✔  ';
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.manage-card ul li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #444;
+}
+
+.manage-card.danger-zone {
+    border-color: #d9534f;
+}
+
+.manage-card.danger-zone h2 {
+    color: #d9534f;
+}
+
+.remaining-days-indicator {
+    background-color: #e7f5ff;
+    color: #0e639c;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dark-mode .manage-card {
+    background: #2d2d30;
+    border-color: #444;
+}
+
+.dark-mode .manage-card h2 {
+    color: #eee;
+}
+
+.dark-mode .manage-card p,
+.dark-mode .manage-card ul li {
+    color: #bbb;
+}
+
+.dark-mode .remaining-days-indicator {
+    background-color: #1c3a50;
+    color: #a5d8ff;
+}
