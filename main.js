@@ -403,17 +403,12 @@ function startTierWatchdog(userId) {
     const userRef = doc(db, "users", userId);
     onSnapshot(userRef, async (snapshot) => {
         if (!snapshot.exists()) return;
-        const dbTier = snapshot.data().tier || "Free Tier";
-        const dbRank = TIER_ORDER.indexOf(dbTier);
-        const memoryRank = TIER_ORDER.indexOf(verifiedTier);
+        const userData = snapshot.data();
+        const dbTier = userData.tier || "Free Tier";
 
-        // If the tier in the DB is higher than what we have in memory, it's a valid upgrade.
-        // If the tier in memory is higher than the DB, it's a client-side manipulation.
-        if (memoryRank > dbRank) {
-            await updateDoc(userRef, { tier: verifiedTier });
-            await addHistoryUnique(userId, `Unauthorized tier correction (watchdog)`);
-        } else {
-            verifiedTier = dbTier; // Trust the database as the source of truth
+        // Always trust the database as the single source of truth.
+        if (verifiedTier !== dbTier) {
+            verifiedTier = dbTier;
         }
         enforceTierRestrictions();
     });
@@ -470,6 +465,7 @@ async function initFirebaseMessaging(userId) {
  */
 async function initProfilePage(userId) {
     if (!userId) return;
+    await updateCurrentTierDisplay(userId); // Ensure tier info is loaded and displayed
 
     const userRef = doc(db, "users", userId);
     const snapshot = await getDoc(userRef);
@@ -685,11 +681,16 @@ async function initReferralPage(userId) {
     codeInput.value = referralCode;
 
     // 2. Copy Button Logic
-    copyBtn.addEventListener('click', () => {
-        codeInput.select();
-        document.execCommand('copy');
-        copyBtn.textContent = 'Copied!';
-        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+    copyBtn.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(codeInput.value);
+            copyBtn.textContent = 'Copied!';
+        } catch (err) {
+            console.error('Failed to copy text: ', err);
+            copyBtn.textContent = 'Failed!';
+        } finally {
+            setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+        }
     });
 
     // 3. Share Button Logic
@@ -1414,14 +1415,6 @@ onAuthStateChanged(auth, async (user) => {
 
         // Global click handler for locked features and dynamic tabs using event delegation
         main.addEventListener('click', (e) => {
-            // 1. Locked features
-            const notificationCard = document.getElementById('notification-settings-card');
-            if (notificationCard) {
-                const requiredTier = notificationCard.dataset.tier;
-                const requiredRank = TIER_ORDER.indexOf(CLASS_TO_TIER[requiredTier]);
-                notificationCard.style.display = TIER_ORDER.indexOf(verifiedTier) >= requiredRank ? 'block' : 'none';
-            }
-
             const lockedEl = e.target.closest('[data-locked="true"]');
             if (lockedEl) {
                 e.preventDefault();

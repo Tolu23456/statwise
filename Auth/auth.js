@@ -20,7 +20,7 @@ import {
     collection,
     addDoc,
     getDocs,
-    query,
+    query, limit,
     where,
     serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -259,15 +259,6 @@ if (signupForm) {
                 const historyRef = collection(db, "users", referrerId, "history");
                 await addDoc(historyRef, { action: `Your friend '${username}' joined using your referral code!`, createdAt: serverTimestamp() });
             }
-
-            // Create default subscription document
-            const subRef = doc(subscriptionsCol, user.uid);
-            await setDoc(subRef, {
-                currentTier: "Free Tier",
-                startDate: new Date().toISOString(),
-                expiryDate: null,
-                transactions: []
-            });
 
             showSuccess(signupBtn);
             setTimeout(() => window.location.href = "/index.html", 1000);

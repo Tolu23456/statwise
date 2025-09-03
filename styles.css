@@ -1158,6 +1158,11 @@ input:checked+.slider::before {
     color: #a5d8ff;
 }
 
+.dark-mode .manage-card.danger-zone {
+    border-color: #d9534f;
+}
+
+
 /* ---------------- Referral Page ---------------- */
 .referral-code-container {
     display: flex;
