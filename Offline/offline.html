@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offline - StatWise</title>
+    <title>You are Offline - StatWise</title>
     <link rel="stylesheet" href="offline.css">
 </head>
 <body>
-   <div class="offline-container">
-    <div class="offline-icon">🔌</div>
-    <h1 class="offline-title">You're Offline</h1>
-    <p class="offline-message">Please check your internet connection and try again.</p>
-   </div>
+    <div class="offline-card">
+        <div class="offline-icon">
+            <!-- SVG for Wi-Fi Slash Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3.293 4.707a1 1 0 0 0-1.414 1.414l18 18a1 1 0 0 0 1.414-1.414L3.293 4.707zM12 18a2 2 0 1 1-2-2 2 2 0 0 1 2 2zm-4.43-5.57a1 1 0 0 0 1.41 1.41 5 5 0 0 1 7.08 0 1 1 0 0 0 1.41-1.41 7 7 0 0 0-9.9 0zM4.15 8.71a1 1 0 0 0 1.41 1.41 9 9 0 0 1 12.88 0 1 1 0 0 0 1.41-1.41 11 11 0 0 0-15.7 0z"/>
+            </svg>
+        </div>
+        <h1 class="offline-title">You're Currently Offline</h1>
+        <p class="offline-message">Please check your internet connection. Some features may be unavailable.</p>
+    </div>
 </body>
 </html>

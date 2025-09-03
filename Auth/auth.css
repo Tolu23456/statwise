@@ -27,7 +27,7 @@ body {
 /* --- Auth Container & Card --- */
 .auth-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
 }
 
 .auth-card {
@@ -109,6 +109,18 @@ body {
 .icon-eye { -webkit-mask-image: url(../Assets/Icons/eye.svg); mask-image: url(../Assets/Icons/eye.svg); }
 .icon-eye-slash { -webkit-mask-image: url(../Assets/Icons/eye-slash.svg); mask-image: url(../Assets/Icons/eye-slash.svg); }
 
+.input-prefix {
+    position: absolute;
+    left: 40px; /* Position it after the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+    pointer-events: none; /* Make it non-interactive */
+}
+
+
 .auth-form input {
     width: 100%;
     padding: 12px 40px; /* Symmetrical padding for icons on both sides */
@@ -124,11 +136,65 @@ body {
     padding-right: 12px;
 }
 
+/* Adjust left padding for the referral input to make space for the prefix */
+#signup-referral {
+    padding-left: 80px; /* 40px for icon + 40px for prefix */
+}
+
 .auth-form input:focus {
     outline: none;
     border-color: #0e639c;
     box-shadow: 0 0 0 2px rgba(14, 99, 156, 0.2);
 }
+
+.auth-form input.input-error {
+    border-color: #d9534f; /* Use the same red as the error message */
+    box-shadow: 0 0 0 2px rgba(217, 83, 79, 0.2);
+}
+
+
+/* --- Password Strength Indicator --- */
+#password-strength-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: -8px; /* Pull it closer to the input */
+}
+
+.strength-bar {
+    flex-grow: 1;
+    height: 5px;
+    background-color: #e0e0e0;
+    border-radius: 2.5px;
+    transition: background-color 0.3s ease;
+}
+
+#password-strength-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+    min-width: 70px; /* Prevent layout shift */
+    text-align: right;
+}
+
+/* Strength levels */
+.strength-bar.weak { background-color: #d9534f; }
+.strength-bar.medium { background-color: #f0ad4e; }
+.strength-bar.strong { background-color: #5bc0de; }
+.strength-bar.very-strong { background-color: #5cb85c; }
+
+.dark-mode #password-strength-text {
+    color: #bbb;
+}
+
+.dark-mode .strength-bar {
+    background-color: #444;
+}
+.dark-mode .strength-bar.weak { background-color: #c9302c; }
+.dark-mode .strength-bar.medium { background-color: #ec971f; }
+.dark-mode .strength-bar.strong { background-color: #31b0d5; }
+.dark-mode .strength-bar.very-strong { background-color: #449d44; }
+
 
 /* --- Referral Display --- */
 .referral-name-display {
@@ -142,6 +208,49 @@ body {
     margin-bottom: 8px;
     text-align: center;
 }
+
+/* --- Form Description (for forgot password) --- */
+.form-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+/* --- Form Options (Remember Me / Forgot Password) --- */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: -8px; /* Pull it closer to the inputs */
+    margin-bottom: 8px;
+}
+
+/* Modifier for when there's only one option (like on signup page) */
+.form-options.single-option {
+    justify-content: flex-start;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #555;
+    white-space: nowrap; /* Prevent the label from wrapping */
+}
+
+.remember-me input {
+    cursor: pointer;
+}
+
+.extra-link a {
+    color: #0e639c;
+    text-decoration: none;
+    font-weight: 500;
+}
+.extra-link a:hover { text-decoration: underline; }
 
 /* --- Error Message --- */
 .error-msg {
@@ -216,43 +325,6 @@ body {
     text-decoration: underline;
 }
 
-/* --- Theme Toggle --- */
-.theme-toggle {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 50px;
-    height: 26px;
-    background: #e9e9e9;
-    border-radius: 13px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.theme-toggle-indicator {
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-}
-
-.theme-toggle .icon {
-    width: 16px;
-    height: 16px;
-    background-color: #888;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-}
-
-.icon-sun { -webkit-mask-image: url(../Assets/Icons/sun.svg); mask-image: url(../Assets/Icons/sun.svg); }
-.icon-moon { -webkit-mask-image: url(../Assets/Icons/moon.svg); mask-image: url(../Assets/Icons/moon.svg); }
-
 /* --- Dark Mode --- */
 .dark-mode body {
     background: #1e1e1e;
@@ -268,24 +340,29 @@ body {
     color: #bbb;
 }
 
+.dark-mode .form-description {
+    color: #bbb;
+}
+
+.dark-mode .remember-me,
+.dark-mode .extra-link a {
+    color: #bbb;
+}
+
+.dark-mode .input-prefix {
+    color: #bbb;
+}
+
 .dark-mode .input-icon {
     background-color: #bbb;
 }
 
 .dark-mode .password-toggle-icon {
-    background-color: #bbb;
+    filter: invert(1);
 }
 
 .dark-mode .password-toggle-icon:hover {
     background-color: #fff;
-}
-
-.dark-mode .theme-toggle {
-    background: #444;
-}
-
-.dark-mode .theme-toggle-indicator {
-    transform: translateX(23px);
 }
 
 .dark-mode .auth-form input {

@@ -10,7 +10,7 @@ const OFFLINE_URL = './Offline/offline.html';
 
 // A list of all the assets needed for the offline page to work correctly.
 const OFFLINE_ASSETS = [
-    OFFLINE_URL,
+    './Offline/offline.html',
     './Offline/offline.css',
     './Assets/Fonts/Optimistic_Text_A_Md.ttf'
 ];

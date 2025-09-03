@@ -25,15 +25,37 @@
         <div class="input-wrapper">
           <i class="input-icon icon-password"></i>
           <input type="password" id="signup-password" placeholder="Password" required>
+          <i class="password-toggle-icon icon-eye" id="password-toggle"></i>
+        </div>
+        <!-- Password Strength Indicator -->
+        <div id="password-strength-container">
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+            <span id="password-strength-text"></span>
         </div>
         <div class="input-wrapper">
+          <i class="input-icon icon-password"></i>
+          <input type="password" id="signup-password-confirm" placeholder="Confirm Password" required>
+        </div>
+
+        <div class="input-wrapper">
           <i class="input-icon icon-referral"></i>
-          <input type="text" id="signup-referral" placeholder="Referral Code (Optional)">
+          <span class="input-prefix">REF-</span>
+          <input type="text" id="signup-referral" placeholder="CODE (Optional)" autocapitalize="characters">
         </div>
         
         <!-- Element to display the referrer's name -->
         <div class="referral-name-display" id="referral-name-display"></div>
 
+        <!-- Remember Me Checkbox -->
+        <div class="form-options single-option">
+            <label class="remember-me">
+                <input type="checkbox" id="signup-remember-me" checked>
+                <span>Remember Me</span>
+            </label>
+        </div>
         <!-- Error messages -->
         <div class="error-msg" id="signup-error"></div>
 

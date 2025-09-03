@@ -8,7 +8,8 @@ import { addHistoryUnique } from "/utils.js";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    updateProfile,
+    setPersistence,
+    browserSessionPersistence, browserLocalPersistence, updateProfile,
     signOut,
     sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
@@ -40,11 +41,36 @@ function showSuccess(btn) {
     btn.querySelector(".btn-text").textContent = "✅ Success!";
 }
 
+// ===== Theme Management =====
+function applyTheme(isDark) {
+    document.body.classList.toggle("dark-mode", isDark);
+}
+
+function initializeTheme() {
+    let isDark = localStorage.getItem('darkMode') === 'true';
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (localStorage.getItem('darkMode') === null) {
+        isDark = prefersDark;
+    }
+
+    applyTheme(isDark);
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        // Only apply if the user hasn't set a manual preference
+        if (localStorage.getItem('darkMode') === null) {
+            applyTheme(e.matches);
+        }
+    });
+}
+
 // ===== Grab DOM Elements =====
 // Login
 const loginForm = document.querySelector("#login-form");
 const loginEmail = document.querySelector("#login-email");
 const loginPassword = document.querySelector("#login-password");
+const rememberMe = document.querySelector("#remember-me");
 const loginBtn = document.querySelector("#login-btn");
 
 // Signup
@@ -52,7 +78,9 @@ const signupForm = document.querySelector("#signup-form");
 const signupUsername = document.querySelector("#signup-username");
 const signupEmail = document.querySelector("#signup-email");
 const signupPassword = document.querySelector("#signup-password");
+const signupPasswordConfirm = document.querySelector("#signup-password-confirm");
 const signupReferral = document.querySelector("#signup-referral");
+const signupRememberMe = document.querySelector("#signup-remember-me");
 const signupBtn = document.querySelector("#signup-btn");
 const referralNameDisplay = document.querySelector("#referral-name-display");
 const signupError = document.querySelector("#signup-error");
@@ -67,6 +95,9 @@ const forgotPasswordMessage = document.querySelector("#forgot-password-message")
 // ===== Firestore Collections =====
 const usersCol = collection(db, "users");
 const subscriptionsCol = collection(db, "subscriptions");
+
+// Initialize theme on page load
+initializeTheme();
 
 // ===== Login Logic =====
 if (loginForm) {
@@ -85,6 +116,11 @@ if (loginForm) {
         showSpinner(loginBtn);
 
         try {
+            // Set persistence based on the "Remember Me" checkbox
+            const persistence = rememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
+            await setPersistence(auth, persistence);
+
+            // Sign in the user
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
@@ -141,46 +177,42 @@ if (loginForm) {
             loginError.textContent = error.message;
         }
     });
+
+    // Password visibility toggle
+    const passwordToggle = document.getElementById('password-toggle');
+    if (passwordToggle && loginPassword) {
+        passwordToggle.addEventListener('click', () => {
+            const isPassword = loginPassword.type === 'password';
+            loginPassword.type = isPassword ? 'text' : 'password';
+            passwordToggle.classList.toggle('icon-eye', !isPassword);
+            passwordToggle.classList.toggle('icon-eye-slash', isPassword);
+        });
+    }
 }
 
 // ===== Referral Code Input Logic =====
 if (signupReferral && referralNameDisplay) {
-    const prefix = "REF-";
-
     signupReferral.addEventListener("input", () => {
-        let value = signupReferral.value.toUpperCase();
-
-        // Ensure the prefix is always there
-        if (!value.startsWith(prefix)) {
-            // User might be trying to delete the prefix, or just started typing
-            const coreCode = value.replace(prefix, "");
-            value = prefix + coreCode;
-        }
-
-        // Prevent the user from deleting the prefix with backspace
-        if (value.length < prefix.length) {
-            value = prefix;
-        }
-
-        // Update the input value if it has changed
-        if (signupReferral.value !== value) {
-            signupReferral.value = value;
-        }
-
         // Clear the name display while typing
         referralNameDisplay.textContent = "";
         referralNameDisplay.style.display = "none";
     });
 
     signupReferral.addEventListener("blur", async () => {
-        const code = signupReferral.value.trim().toUpperCase();
-        if (code.length > prefix.length) {
+        const coreCode = signupReferral.value.trim().toUpperCase();
+        referralNameDisplay.style.display = "none"; // Hide on blur by default
+
+        if (coreCode) {
+            const fullCode = `REF-${coreCode}`;
             try {
-                const q = query(usersCol, where("referralCode", "==", code), limit(1)); // Add limit(1) to match security rules
+                const q = query(usersCol, where("referralCode", "==", fullCode), limit(1));
                 const querySnapshot = await getDocs(q);
                 if (!querySnapshot.empty) {
                     const referrerName = querySnapshot.docs[0].data().username;
                     referralNameDisplay.textContent = `Referred by: ${referrerName}`;
+                    referralNameDisplay.style.display = "block";
+                } else {
+                    referralNameDisplay.textContent = "Invalid Code";
                     referralNameDisplay.style.display = "block";
                 }
             } catch (error) {
@@ -188,6 +220,87 @@ if (signupReferral && referralNameDisplay) {
             }
         }
     });
+}
+
+// ===== Password Strength Checker =====
+function checkPasswordStrength(password) {
+    let score = 0;
+    if (password.length >= 8) score++;
+    if (/[a-z]/.test(password)) score++;
+    if (/[A-Z]/.test(password)) score++;
+    if (/[0-9]/.test(password)) score++;
+    if (/[^A-Za-z0-9]/.test(password)) score++;
+
+    let strength = "";
+    let level = "";
+
+    if (password.length === 0) {
+        strength = "";
+        level = "";
+    } else if (score <= 2) {
+        strength = "Weak";
+        level = "weak";
+    } else if (score === 3) {
+        strength = "Medium";
+        level = "medium";
+    } else if (score === 4) {
+        strength = "Strong";
+        level = "strong";
+    } else {
+        strength = "Very Strong";
+        level = "very-strong";
+    }
+    return { strength, level };
+}
+
+if (signupPassword) {
+    const strengthBars = document.querySelectorAll("#password-strength-container .strength-bar");
+    const strengthText = document.getElementById("password-strength-text");
+
+    signupPassword.addEventListener("input", () => {
+        const password = signupPassword.value;
+        const { strength, level } = checkPasswordStrength(password);
+
+        strengthText.textContent = strength;
+        strengthBars.forEach(bar => bar.className = 'strength-bar'); // Reset classes
+
+        if (level) {
+            if (level === 'weak') {
+                strengthBars[0].classList.add(level);
+            } else if (level === 'medium') {
+                strengthBars[0].classList.add(level);
+                strengthBars[1].classList.add(level);
+            } else if (level === 'strong') {
+                strengthBars[0].classList.add(level);
+                strengthBars[1].classList.add(level);
+                strengthBars[2].classList.add(level);
+            } else if (level === 'very-strong') {
+                strengthBars.forEach(bar => bar.classList.add(level));
+            }
+        }
+    });
+}
+
+// ===== Password Match Validation =====
+function validatePasswords() {
+    if (!signupPassword || !signupPasswordConfirm) return;
+
+    const password = signupPassword.value;
+    const confirmPassword = signupPasswordConfirm.value;
+
+    // Only show error if the confirm password field has been typed in
+    if (confirmPassword && password !== confirmPassword) {
+        signupPassword.classList.add('input-error');
+        signupPasswordConfirm.classList.add('input-error');
+        signupError.textContent = "Passwords do not match.";
+    } else {
+        signupPassword.classList.remove('input-error');
+        signupPasswordConfirm.classList.remove('input-error');
+        // Clear the error only if it's the password mismatch error
+        if (signupError.textContent === "Passwords do not match.") {
+            signupError.textContent = "";
+        }
+    }
 }
 
 // ===== Signup Logic =====
@@ -199,19 +312,30 @@ if (signupForm) {
         const username = signupUsername.value.trim();
         const email = signupEmail.value.trim();
         const password = signupPassword.value.trim();
+        const confirmPassword = signupPasswordConfirm.value.trim();
         const referralCode = signupReferral.value.trim().toUpperCase();
-        if (!username || !email || !password) {
-            signupError.textContent = "All fields are required.";
+        if (!username || !email || !password || !confirmPassword) {
+            signupError.textContent = "Please fill out all required fields.";
             return;
+        }
+
+        if (password !== confirmPassword) {
+            validatePasswords(); // This will show the error text and borders
+            return; 
         }
 
         showSpinner(signupBtn);
 
         try {
+            // Set persistence based on the "Remember Me" checkbox
+            const persistence = signupRememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
+            await setPersistence(auth, persistence);
+
             // --- Referral Code Validation ---
             let referrerId = null;
-            if (referralCode) {
-                const q = query(usersCol, where("referralCode", "==", referralCode), limit(1)); // Add limit(1) to match security rules
+            if (referralCode) { // referralCode is now just the user-typed part
+                const fullCode = `REF-${referralCode}`;
+                const q = query(usersCol, where("referralCode", "==", fullCode), limit(1));
                 const querySnapshot = await getDocs(q);
                 if (!querySnapshot.empty) {
                     const referrerDoc = querySnapshot.docs[0];
@@ -269,6 +393,21 @@ if (signupForm) {
             signupError.textContent = error.message;
         }
     });
+
+    // Password visibility toggle for signup page
+    const passwordToggle = document.getElementById('password-toggle');
+    if (passwordToggle && signupPassword) {
+        passwordToggle.addEventListener('click', () => {
+            const isPassword = signupPassword.type === 'password';
+            signupPassword.type = isPassword ? 'text' : 'password';
+            passwordToggle.classList.toggle('icon-eye', !isPassword);
+            passwordToggle.classList.toggle('icon-eye-slash', isPassword);
+        });
+    }
+
+    // Add real-time validation listeners
+    signupPassword?.addEventListener('input', validatePasswords);
+    signupPasswordConfirm?.addEventListener('input', validatePasswords);
 }
 
 // ===== Forgot Password Logic =====

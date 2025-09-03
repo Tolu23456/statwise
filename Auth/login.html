@@ -11,13 +11,6 @@
 <body>
     <div class="auth-container">
         <div class="auth-card">
-            <!-- Theme Toggle -->
-            <div class="theme-toggle" id="theme-toggle">
-                <div class="icon icon-sun"></div>
-                <div class="theme-toggle-indicator"></div>
-                <div class="icon icon-moon"></div>
-            </div>
-
             <h1 class="auth-title">StatWise</h1>
             <h2 class="auth-subtitle">Login to your account</h2>
 
@@ -33,6 +26,16 @@
                     <i class="password-toggle-icon icon-eye" id="password-toggle"></i>
                 </div>
 
+                <!-- Remember Me & Forgot Password -->
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <span>Remember Me</span>
+                    </label>
+                    <p class="extra-link">
+                        <a href="forgot-password.html" id="forgot-password-link">Forgot Password?</a>
+                    </p>
+                </div>
                 <!-- Error messages from Firebase will appear here -->
                 <div class="error-msg" id="login-error"></div>
 
@@ -41,10 +44,6 @@
                     <span class="btn-text">Login</span>
                     <span class="spinner"></span>
                 </button>
-
-                <p class="extra-link">
-                    <a href="forgot-password.html" id="forgot-password-link">Forgot Password?</a>
-                </p>
             </form>
 
             <p class="switch-auth">
