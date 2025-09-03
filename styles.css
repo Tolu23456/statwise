@@ -498,7 +498,7 @@ main {
 }
 
 .dark-mode .edit-icon {
-    background-color: #bbb;
+    background-color: #d4d4d4; /* Standard dark mode inactive color */
 }
 
 /* Profile Stats */
@@ -1280,7 +1280,7 @@ input:checked+.slider::before {
 }
 
 .dark-mode .edit-icon:hover {
-    background-color: #a5d8ff;
+    background-color: #0e639c; /* Standard active/hover color */
 }
 
 .dark-mode .manage-card.danger-zone {

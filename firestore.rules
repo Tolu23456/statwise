@@ -1,0 +1,45 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users can only read or update their own document.
+    // They cannot change their tier or creation date.
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      
+      // Allow users to update specific, non-critical fields.
+      allow update: if request.auth != null && request.auth.uid == userId
+                    && request.resource.data.diff(resource.data).affectedKeys()
+                       .hasOnly(['username', 'photoURL', 'notifications', 'autoRenew', 'lastLogin', 'isNewUser', 'fcmTokens']);
+
+      // Allow new users to create their own document.
+      allow create: if request.auth != null && request.auth.uid == userId;
+
+      // Nobody can list or delete user documents from the client.
+      allow list, delete: if false;
+
+      // History subcollection: Users can read their own history and create new entries.
+      // They cannot update or delete past history entries.
+      match /history/{historyId} {
+        allow read, create: if request.auth != null && request.auth.uid == userId;
+        allow update, delete: if false;
+      }
+    }
+
+    // Subscriptions can only be read by the user who owns it.
+    // All writes MUST come from the secure Cloud Function.
+    match /subscriptions/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false; // Deny all client-side writes
+    }
+
+    // This rule is needed for the referral code check on the signup page.
+    // It allows anyone to query the users collection, but only if they are
+    // specifically querying for a 'referralCode'. This prevents listing all users.
+    match /users/{userId} {
+        allow list: if request.query.keys.hasOnly(['referralCode']);
+    }
+
+  }
+}

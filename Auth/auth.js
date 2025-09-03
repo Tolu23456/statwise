@@ -43,7 +43,7 @@ function showSuccess(btn) {
 
 // ===== Theme Management =====
 function applyTheme(isDark) {
-    document.body.classList.toggle("dark-mode", isDark);
+    document.documentElement.classList.toggle("dark-mode", isDark);
 }
 
 function initializeTheme() {

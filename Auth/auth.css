@@ -33,8 +33,9 @@ body {
 .auth-card {
     background: #ffffff;
     border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 24px;    
+    border: 2px solid #0e639c;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Standard app shadow */
     position: relative; /* For theme toggle positioning */
     text-align: center;
 }
@@ -70,7 +71,7 @@ body {
     transform: translateY(-50%);
     width: 18px;
     height: 18px;
-    background-color: #1c1c1e; /* Black color for light theme visibility, matching text */
+    background-color: #555; /* Standard inactive icon color */
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-position: center;
@@ -91,7 +92,7 @@ body {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    background-color: #1c1c1e;
+    background-color: #555; /* Standard inactive icon color */
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-position: center;
@@ -103,7 +104,7 @@ body {
 }
 
 .password-toggle-icon:hover {
-    background-color: #000;
+    background-color: #0e639c; /* Standard active/hover color */
 }
 
 .icon-eye { -webkit-mask-image: url(../Assets/Icons/eye.svg); mask-image: url(../Assets/Icons/eye.svg); }
@@ -126,7 +127,7 @@ body {
     padding: 12px 40px; /* Symmetrical padding for icons on both sides */
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     font-size: 14px;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -242,7 +243,43 @@ body {
 }
 
 .remember-me input {
+    /* Hide the default checkbox */
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.remember-me span {
+    position: relative;
+    padding-left: 30px; /* Space for the custom checkbox */
     cursor: pointer;
+}
+
+/* Custom checkbox box */
+.remember-me span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+/* Checkmark */
+.remember-me input:checked + span::after {
+    content: '✔';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #fff;
 }
 
 .extra-link a {
@@ -251,6 +288,12 @@ body {
     font-weight: 500;
 }
 .extra-link a:hover { text-decoration: underline; }
+
+/* Checked state for the box */
+.remember-me input:checked + span::before {
+    background-color: #0e639c;
+    border-color: #0e639c;
+}
 
 /* --- Error Message --- */
 .error-msg {
@@ -262,7 +305,6 @@ body {
 
 /* --- Button & Spinner --- */
 .auth-btn {
-    position: relative;
     padding: 12px 20px;
     border-radius: 8px;
     background: #0e639c;
@@ -271,10 +313,10 @@ body {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    transition: background 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: background-color 0.3s ease;
+    position: relative; /* Needed for spinner positioning */
+    overflow: hidden; /* Hide anything that might spill out */
+    min-height: 48px; /* Set a fixed height to prevent size change */
 }
 
 .auth-btn:hover {
@@ -286,27 +328,34 @@ body {
     cursor: not-allowed;
 }
 
+.auth-btn .btn-text {
+    transition: opacity 0.2s ease-out;
+}
+
 .auth-btn .spinner {
-    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-top-color: #fff;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-}
-
-.auth-btn:disabled .btn-text {
-    margin-right: 10px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.2s ease-in;
 }
 
 .auth-btn:disabled .spinner {
-    display: block;
+    opacity: 1; /* Show spinner when button is disabled */
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.auth-btn:disabled .btn-text {
+    opacity: 0; /* Hide text when button is disabled */
 }
+
+@keyframes spin { to { transform: rotate(360deg); } }
 
 /* --- Switch Auth Link --- */
 .switch-auth {
@@ -333,6 +382,8 @@ body {
 
 .dark-mode .auth-card {
     background: #2d2d30;
+    border-color: #0e639c; /* Ensure border is visible in dark mode */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Standard app shadow for dark mode */
 }
 
 .dark-mode .auth-subtitle,
@@ -349,24 +400,33 @@ body {
     color: #bbb;
 }
 
+.dark-mode .remember-me span::before {
+    background-color: #2d2d30;
+    border-color: #555;
+}
+
+.dark-mode .remember-me input:checked + span::before {
+    border-color: #0e639c;
+}
+
 .dark-mode .input-prefix {
     color: #bbb;
 }
 
 .dark-mode .input-icon {
-    background-color: #bbb;
+    background-color: #d4d4d4; /* Standard dark mode inactive color */
 }
 
 .dark-mode .password-toggle-icon {
-    filter: invert(1);
+    background-color: #d4d4d4; /* Standard dark mode inactive color */
 }
 
 .dark-mode .password-toggle-icon:hover {
-    background-color: #fff;
+    background-color: #0e639c; /* Standard active/hover color */
 }
 
 .dark-mode .auth-form input {
-    background-color: #252526;
+    background-color: #2d2d30;
     border-color: #555;
     color: #d4d4d4;
 }
