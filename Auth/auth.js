@@ -19,7 +19,7 @@ import {
     getDoc,
     collection,
     addDoc,
-    getDocs, where,
+    getDocs,
     query,
     where,
     serverTimestamp
@@ -54,6 +54,7 @@ const signupEmail = document.querySelector("#signup-email");
 const signupPassword = document.querySelector("#signup-password");
 const signupReferral = document.querySelector("#signup-referral");
 const signupBtn = document.querySelector("#signup-btn");
+const referralNameDisplay = document.querySelector("#referral-name-display");
 const signupError = document.querySelector("#signup-error");
 
 // Forgot Password
@@ -138,6 +139,53 @@ if (loginForm) {
             console.error(error);
             hideSpinner(loginBtn, "Login");
             loginError.textContent = error.message;
+        }
+    });
+}
+
+// ===== Referral Code Input Logic =====
+if (signupReferral && referralNameDisplay) {
+    const prefix = "REF-";
+
+    signupReferral.addEventListener("input", () => {
+        let value = signupReferral.value.toUpperCase();
+
+        // Ensure the prefix is always there
+        if (!value.startsWith(prefix)) {
+            // User might be trying to delete the prefix, or just started typing
+            const coreCode = value.replace(prefix, "");
+            value = prefix + coreCode;
+        }
+
+        // Prevent the user from deleting the prefix with backspace
+        if (value.length < prefix.length) {
+            value = prefix;
+        }
+
+        // Update the input value if it has changed
+        if (signupReferral.value !== value) {
+            signupReferral.value = value;
+        }
+
+        // Clear the name display while typing
+        referralNameDisplay.textContent = "";
+        referralNameDisplay.style.display = "none";
+    });
+
+    signupReferral.addEventListener("blur", async () => {
+        const code = signupReferral.value.trim().toUpperCase();
+        if (code.length > prefix.length) {
+            try {
+                const q = query(usersCol, where("referralCode", "==", code));
+                const querySnapshot = await getDocs(q);
+                if (!querySnapshot.empty) {
+                    const referrerName = querySnapshot.docs[0].data().username;
+                    referralNameDisplay.textContent = `Referred by: ${referrerName}`;
+                    referralNameDisplay.style.display = "block";
+                }
+            } catch (error) {
+                console.error("Error fetching referrer:", error);
+            }
         }
     });
 }

@@ -155,26 +155,37 @@ async function handlePayment(userId, tier, amount, period) {
         },
         callback: async function(data) {
             paymentCompleted = true;
+            // IMPORTANT: The verification logic has been moved to the client-side.
+            // This is less secure than server-side verification.
             if (data.status === "successful" || data.status === "completed") {
-                showModal({ message: "Payment received. Verifying transaction..." });
+                showModal({ message: "Payment successful! Updating your subscription..." });
 
-                try {
-                    const verifyPayment = httpsCallable(functions, 'verifyFlutterwavePayment');
-                    const result = await verifyPayment({
-                        transactionId: data.transaction_id,
-                        tx_ref: txRef,
-                        tier: tier,
-                        period: period,
-                        amount: amount
-                    });
-
-                    showModal({ message: result.data.message, confirmClass: 'btn-primary' });
-                    await addHistoryUnique(userId, `Subscribed to ${tier} (${period})`);
-                    await updateCurrentTierDisplay(userId); // Refresh display after successful verification
-                } catch (error) {
-                    console.error("Verification failed:", error);
-                    showModal({ message: `Verification failed: ${error.message}`, confirmClass: 'btn-danger' });
+                // Client-side tier update
+                const expiry = new Date();
+                if (period === 'daily') {
+                    expiry.setDate(expiry.getDate() + 1);
+                } else if (period === 'monthly') {
+                    expiry.setMonth(expiry.getMonth() + 1);
                 }
+
+                await updateUserTier(userId, tier, period, expiry.toISOString());
+
+                // Log the transaction for manual review
+                const subRef = doc(db, "subscriptions", userId);
+                const transactionData = {
+                    amount: data.amount,
+                    currency: data.currency,
+                    description: `${tier} (${period})`,
+                    status: data.status,
+                    transactionId: data.transaction_id,
+                    tx_ref: data.tx_ref,
+                    createdAt: serverTimestamp(),
+                    paymentVerified: false // SECURITY: Mark as unverified for manual review
+                };
+                await setDoc(subRef, { transactions: arrayUnion(transactionData) }, { merge: true });
+
+                await addHistoryUnique(userId, `Subscribed to ${tier} (${period})`);
+                showModal({ message: `You are now subscribed to ${tier}!` });
             } else {
                 showModal({ message: "Payment was not completed.", confirmClass: 'btn-danger' });
             }
@@ -187,15 +198,15 @@ async function handlePayment(userId, tier, amount, period) {
     });
 }
 
-async function updateUserTier(userId, tier, period = null) {
+async function updateUserTier(userId, tier, period = null, expiry = null) {
     const userRef = doc(db, "users", userId);
-    const updateData = { tier };
+    const updateData = {
+        tier: tier,
+        tierExpiry: expiry
+    };
 
-    // Expiry and auto-renew are now handled server-side for paid tiers.
-    // This function is now only for non-payment changes (e.g., cancellation).
-    if (tier === 'Free Tier') {
-    } else {
-        updateData.tierExpiry = null;
+    if (tier === 'Free Tier' || !expiry) {
+        updateData.tierExpiry = null; // Reset expiry for free tier
         updateData.autoRenew = false; // Disable auto-renew for free tier/cancellation
     }
 
@@ -329,7 +340,7 @@ async function initManageSubscriptionPage(userId) {
                 confirmText: 'Yes, Cancel',
                 confirmClass: 'btn-danger',
                 onConfirm: async () => {
-                    await updateUserTier(userId, 'Free Tier');
+                    await updateUserTier(userId, 'Free Tier', null, null);
                     await addHistoryUnique(userId, "Subscription cancelled");
                     showModal({ message: "Your subscription has been successfully cancelled." });
                     await initManageSubscriptionPage(userId); // Refresh the page content
@@ -619,14 +630,21 @@ async function initProfilePage(userId) {
                         onConfirm: async (confirmationText) => {
                             if (confirmationText === "DELETE") {
                                 showLoader();
+                                // Client-side deletion process
                                 try {
-                                    const deleteUser = httpsCallable(functions, 'deleteUserAccount');
-                                    await deleteUser();
-                                    // No need to sign out, auth user is deleted server-side
+                                    // 1. Delete Firestore documents
+                                    await deleteDoc(doc(db, 'users', userId));
+                                    await deleteDoc(doc(db, 'subscriptions', userId));
+
+                                    // 2. Delete Firebase Auth user
+                                    await auth.currentUser.delete();
+
+                                    hideLoader();
                                     window.location.href = '/Auth/login.html';
                                 } catch (error) {
+                                    hideLoader();
                                     showModal({ message: `Error: ${error.message}`, confirmClass: 'btn-danger' });
-                                } finally { hideLoader(); }
+                                }
                             } else { showModal({ message: "Incorrect confirmation text. Account was not deleted." }); }
                         }
                     });
@@ -1368,6 +1386,21 @@ onAuthStateChanged(auth, async (user) => {
         } else {
             await updateDoc(userRef, { lastLogin: new Date().toISOString() });
             await addHistoryUnique(user.uid, "Logged in");
+        }
+
+        // Client-side check for expired subscriptions
+        const userDataOnLoad = snapshot.exists() ? snapshot.data() : {};
+        if (userDataOnLoad.tier !== 'Free Tier' && userDataOnLoad.tierExpiry) {
+            const expiryDate = new Date(userDataOnLoad.tierExpiry);
+            if (new Date() > expiryDate) {
+                console.log(`User ${user.uid}'s subscription has expired. Downgrading.`);
+                await updateDoc(userRef, {
+                    tier: 'Free Tier',
+                    tierExpiry: null,
+                    autoRenew: false
+                });
+                await addHistoryUnique(user.uid, "Subscription expired, reverted to Free Tier.");
+            }
         }
 
         // Initialize client-side security measures

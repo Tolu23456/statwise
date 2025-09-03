@@ -1248,3 +1248,20 @@ input:checked+.slider::before {
 .dark-mode .share-btn.whatsapp:hover { background-color: #1a3c2a; }
 .dark-mode .share-btn.twitter:hover { background-color: #1a3a4a; }
 .dark-mode .share-btn.generic:hover { background-color: #2a2d42; stroke: #a5d8ff; }
+
+/* ---------------- Referral Name Display (Auth Page) ---------------- */
+.referral-name-display {
+    display: none; /* Hidden by default */
+    font-size: 13px;
+    color: #0e639c;
+    background-color: #e7f5ff;
+    padding: 8px;
+    border-radius: 6px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.dark-mode .referral-name-display {
+    background-color: #1c3a50;
+    color: #a5d8ff;
+}
