@@ -33,4 +33,4 @@ export const messaging = getMessaging(app);
 export const storage = getStorage(app);
 
 // Flutterwave Public Key (Safe for frontend)
-export const FLWPUBK = "YOUR_FLUTTERWAVE_PUBLIC_KEY"; // <-- IMPORTANT: Add your key here!
+export const FLWPUBK = "FLWPUBK_TEST-8336183053a03e565edf2dd9d6ec3ffd-X"; // <-- IMPORTANT: Add your key here!

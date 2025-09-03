@@ -12,7 +12,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js"; // This is a client-side library
 import {
     doc, getDoc, setDoc, updateDoc,
-    collection, addDoc, query, orderBy, getDocs, serverTimestamp, limit, deleteDoc, onSnapshot, arrayUnion
+    collection, addDoc, query, where, orderBy, getDocs, serverTimestamp, limit, deleteDoc, onSnapshot, arrayUnion
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // ===== DOM Elements =====
