@@ -70,7 +70,7 @@ body {
     transform: translateY(-50%);
     width: 18px;
     height: 18px;
-    background-color: #888;
+    background-color: #1c1c1e; /* Black color for light theme visibility, matching text */
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-position: center;
@@ -91,7 +91,7 @@ body {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    background-color: #888;
+    background-color: #1c1c1e;
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-position: center;
@@ -103,7 +103,7 @@ body {
 }
 
 .password-toggle-icon:hover {
-    background-color: #333;
+    background-color: #000;
 }
 
 .icon-eye { -webkit-mask-image: url(../Assets/Icons/eye.svg); mask-image: url(../Assets/Icons/eye.svg); }
