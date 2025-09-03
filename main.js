@@ -1363,6 +1363,30 @@ async function startWelcomeTour(userId) {
     }
 }
 
+/**
+ * Handles tab switching for components like the history page.
+ * @param {HTMLElement} tabButton The tab button that was clicked.
+ */
+function handleTabSwitch(tabButton) {
+    // Find the closest common ancestor for the tabs and content
+    const tabParent = tabButton.closest('.history-section, .subscription-section'); // Extendable
+    if (!tabParent) return;
+
+    // Don't do anything if the tab is already active
+    if (tabButton.classList.contains('active')) return;
+
+    const tabButtons = tabParent.querySelectorAll(".tab-btn");
+    const tabContents = tabParent.querySelectorAll(".tab-content");
+
+    tabButtons.forEach(b => b.classList.remove("active"));
+    tabButton.classList.add("active");
+
+    tabContents.forEach(c => c.classList.remove("active"));
+    const targetId = tabButton.dataset.tab;
+    const target = tabParent.querySelector(`#${targetId}`);
+    if (target) target.classList.add("active");
+}
+
 // ===== Initial Auth Check =====
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
@@ -1415,34 +1439,23 @@ onAuthStateChanged(auth, async (user) => {
 
         // Global click handler for locked features and dynamic tabs using event delegation
         main.addEventListener('click', (e) => {
+            // 1. Handle tab switching first, as it's a primary UI interaction.
+            const tabButton = e.target.closest('.tab-btn');
+            if (tabButton) {
+                handleTabSwitch(tabButton);
+                return; // Stop further processing if a tab was clicked.
+            }
+
+            // 2. Handle clicks on locked features.
             const lockedEl = e.target.closest('[data-locked="true"]');
             if (lockedEl) {
                 e.preventDefault();
                 e.stopPropagation();
                 showModal({
                     message: `This feature is locked. Upgrade to access it.`,
-                    confirmText: 'Upgrade',
-                    onConfirm: () => loadPage('subscriptions', auth.currentUser?.uid)
+                    confirmText: 'View Plans',
+                    onConfirm: () => loadPage('subscriptions', user.uid)
                 });
-                return; // Stop further processing
-            }
-
-            // 2. History page tabs
-            const historyTabButton = e.target.closest('.history-section .tab-btn');
-            if (historyTabButton && !historyTabButton.classList.contains('active')) {
-                const historySection = historyTabButton.closest('.history-section');
-                if (!historySection) return;
-
-                const tabButtons = historySection.querySelectorAll(".tab-btn");
-                const tabContents = historySection.querySelectorAll(".tab-content");
-
-                tabButtons.forEach(b => b.classList.remove("active"));
-                historyTabButton.classList.add("active");
-
-                tabContents.forEach(c => c.classList.remove("active"));
-                const targetId = historyTabButton.dataset.tab;
-                const target = historySection.querySelector(`#${targetId}`);
-                if (target) target.classList.add("active");
             }
         });
 

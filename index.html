@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StatWise</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="head">
@@ -36,6 +38,11 @@
         <button data-page="history">
             <div class="icon icon-history"></div>History
         </button>
+        <button data-page="insights" data-tier="vip">
+            <div class="icon icon-insights"></div>
+            <span>Insights</span>
+        </button>
+
         <button data-page="subscriptions">
             <div class="icon icon-subscriptions"></div>Subscription
         </button>
@@ -48,4 +55,5 @@
     <script type="module" src="main.js"></script>
     <script src="https://checkout.flutterwave.com/v3.js"></script>
 </body>
+
 </html>
