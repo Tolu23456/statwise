@@ -1380,7 +1380,8 @@ onAuthStateChanged(auth, async (user) => {
                 notifications: true,
                 autoRenew: false,
                 createdAt: new Date().toISOString(),
-                lastLogin: new Date().toISOString()
+                lastLogin: new Date().toISOString(),
+                isNewUser: true // Add isNewUser flag to satisfy security rules on create
             });
             await addHistoryUnique(user.uid, "Signed up");
         } else {

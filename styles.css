@@ -963,10 +963,6 @@ input:checked+.slider::before {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.dark-mode .history-card {
-    border-color: #444; /* Add a subtle border for history cards in dark mode */
-}
-
 .dark-mode .history-title,
 .dark-mode .match-title {
     color: #fff;

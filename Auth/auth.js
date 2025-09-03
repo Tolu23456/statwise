@@ -176,7 +176,7 @@ if (signupReferral && referralNameDisplay) {
         const code = signupReferral.value.trim().toUpperCase();
         if (code.length > prefix.length) {
             try {
-                const q = query(usersCol, where("referralCode", "==", code));
+                const q = query(usersCol, where("referralCode", "==", code), limit(1)); // Add limit(1) to match security rules
                 const querySnapshot = await getDocs(q);
                 if (!querySnapshot.empty) {
                     const referrerName = querySnapshot.docs[0].data().username;
@@ -211,7 +211,7 @@ if (signupForm) {
             // --- Referral Code Validation ---
             let referrerId = null;
             if (referralCode) {
-                const q = query(usersCol, where("referralCode", "==", referralCode));
+                const q = query(usersCol, where("referralCode", "==", referralCode), limit(1)); // Add limit(1) to match security rules
                 const querySnapshot = await getDocs(q);
                 if (!querySnapshot.empty) {
                     const referrerDoc = querySnapshot.docs[0];
