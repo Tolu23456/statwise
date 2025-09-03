@@ -11,13 +11,27 @@
 <body>
     <div class="auth-container">
         <div class="auth-card">
+            <!-- Theme Toggle -->
+            <div class="theme-toggle" id="theme-toggle">
+                <div class="icon icon-sun"></div>
+                <div class="theme-toggle-indicator"></div>
+                <div class="icon icon-moon"></div>
+            </div>
+
             <h1 class="auth-title">StatWise</h1>
             <h2 class="auth-subtitle">Login to your account</h2>
 
             <!-- Login Form -->
             <form id="login-form" class="auth-form">
-                <input type="email" id="login-email" placeholder="Email" required>
-                <input type="password" id="login-password" placeholder="Password" required>
+                <div class="input-wrapper">
+                    <i class="input-icon icon-email"></i>
+                    <input type="email" id="login-email" placeholder="Email" required>
+                </div>
+                <div class="input-wrapper">
+                    <i class="input-icon icon-password"></i>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <i class="password-toggle-icon icon-eye" id="password-toggle"></i>
+                </div>
 
                 <!-- Error messages from Firebase will appear here -->
                 <div class="error-msg" id="login-error"></div>

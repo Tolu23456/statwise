@@ -14,10 +14,22 @@
 
       <!-- Form -->
       <form id="signup-form" class="auth-form">
-        <input type="text" id="signup-username" placeholder="Username" required>
-        <input type="email" id="signup-email" placeholder="Email" required>
-        <input type="password" id="signup-password" placeholder="Password" required>
-        <input type="text" id="signup-referral" placeholder="Referral Code (Optional)">
+        <div class="input-wrapper">
+          <i class="input-icon icon-user"></i>
+          <input type="text" id="signup-username" placeholder="Username" required>
+        </div>
+        <div class="input-wrapper">
+          <i class="input-icon icon-email"></i>
+          <input type="email" id="signup-email" placeholder="Email" required>
+        </div>
+        <div class="input-wrapper">
+          <i class="input-icon icon-password"></i>
+          <input type="password" id="signup-password" placeholder="Password" required>
+        </div>
+        <div class="input-wrapper">
+          <i class="input-icon icon-referral"></i>
+          <input type="text" id="signup-referral" placeholder="Referral Code (Optional)">
+        </div>
         
         <!-- Element to display the referrer's name -->
         <div class="referral-name-display" id="referral-name-display"></div>
