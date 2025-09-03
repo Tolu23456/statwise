@@ -19,7 +19,7 @@ import {
     getDoc,
     collection,
     addDoc,
-    getDocs,
+    getDocs, where,
     query,
     where,
     serverTimestamp

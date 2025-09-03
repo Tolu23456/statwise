@@ -9,7 +9,7 @@ import {
 import { httpsCallable } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-functions.js";
 import { 
     getToken, onMessage
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js";
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js"; // This is a client-side library
 import {
     doc, getDoc, setDoc, updateDoc,
     collection, addDoc, query, orderBy, getDocs, serverTimestamp, limit, deleteDoc, onSnapshot, arrayUnion
@@ -131,7 +131,7 @@ async function updateCurrentTierDisplay(userId) {
 async function handlePayment(userId, tier, amount, period) {
     let paymentCompleted = false; // Flag to prevent onclose modal after success
 
-    if (amount === 0 || amount === "0") {
+    if (parseFloat(amount) === 0) {
         await updateUserTier(userId, tier, period);
         showModal({ message: `You have selected the ${tier}` });
         return;
@@ -414,7 +414,10 @@ async function initFirebaseMessaging(userId) {
         const permission = await Notification.requestPermission();
         if (permission === 'granted') {
             console.log('Notification permission granted.');
-            const fcmToken = await getToken(messaging, { vapidKey: 'BDSGq_wLG253v1g2sUjC6l9L8b1xQjC_H_r_r_r_r_r_r_r_r_r_r_r_r_r_r_r_r' }); // Replace with your VAPID key from Firebase Console
+            // IMPORTANT: Replace the placeholder below with your actual VAPID key from the Firebase Console.
+            // Go to Project Settings > Cloud Messaging > Web configuration > Key pair.
+            const vapidKey = 'YOUR_VAPID_KEY_HERE'; 
+            const fcmToken = await getToken(messaging, { vapidKey: vapidKey });
 
             if (fcmToken) {
                 // Save the new token to the user's document
@@ -649,7 +652,12 @@ async function initReferralPage(userId) {
     // 1. Get/Generate Referral Code
     const userRef = doc(db, "users", userId);
     const userSnap = await getDoc(userRef);
-    let userData = userSnap.data();
+    if (!userSnap.exists()) {
+        console.error("Referral Page Error: User document not found.");
+        referralListContainer.innerHTML = `<p>Error: Could not load your referral information.</p>`;
+        return;
+    }
+    const userData = userSnap.data();
     let referralCode = userData.referralCode;
 
     if (!referralCode) {
@@ -666,7 +674,48 @@ async function initReferralPage(userId) {
         setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
     });
 
-    // 3. Fetch and display list of referred users
+    // 3. Share Button Logic
+    const shareWhatsAppBtn = document.getElementById('shareWhatsAppBtn');
+    const shareTwitterBtn = document.getElementById('shareTwitterBtn');
+    const shareGenericBtn = document.getElementById('shareGenericBtn');
+
+    const shareText = `Hey! I'm using StatWise for AI-powered sports predictions. Join using my referral code to get rewards: ${referralCode}`;
+    const shareUrl = window.location.origin; // Your site's main URL
+
+    if (shareGenericBtn) {
+        if (navigator.share) {
+            shareGenericBtn.style.display = 'inline-flex'; // Show button if API is supported
+            shareGenericBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Join me on StatWise!',
+                        text: shareText,
+                        url: shareUrl,
+                    });
+                } catch (error) {
+                    console.error('Error using Web Share API:', error);
+                }
+            });
+        } else {
+            shareGenericBtn.style.display = 'none'; // Hide button if not supported
+        }
+    }
+
+    if (shareWhatsAppBtn) {
+        shareWhatsAppBtn.addEventListener('click', () => {
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+
+    if (shareTwitterBtn) {
+        shareTwitterBtn.addEventListener('click', () => {
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            window.open(twitterUrl, '_blank');
+        });
+    }
+
+    // 4. Fetch and display list of referred users
     const referralsQuery = query(collection(db, "users"), where("referredBy", "==", userId));
     const querySnapshot = await getDocs(referralsQuery);
 

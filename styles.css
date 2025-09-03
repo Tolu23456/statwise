@@ -958,6 +958,7 @@ input:checked+.slider::before {
 .dark-mode .history-card,
 .dark-mode .prediction-card {
     background-color: #1e1e1e;
+    border-color: #444; /* Add a subtle border for cards in dark mode */
     color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
@@ -1197,3 +1198,53 @@ input:checked+.slider::before {
     text-align: center;
     line-height: 1.5;
 }
+
+/* ---------------- Referral Page Share Buttons ---------------- */
+.share-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    padding: 0;
+    background-color: #f1f3f5;
+}
+
+.share-btn:hover {
+    transform: scale(1.1);
+}
+
+.share-btn svg {
+    width: 22px;
+    height: 22px;
+    color: #333;
+}
+
+.share-btn.whatsapp:hover { background-color: #e0f8e5; }
+.share-btn.whatsapp:hover svg { color: #25D366; }
+
+.share-btn.twitter:hover { background-color: #e1f5fe; }
+.share-btn.twitter:hover svg { color: #1DA1F2; }
+
+.share-btn.generic:hover { background-color: #e8eaf6; }
+.share-btn.generic:hover svg { stroke: #5c6bc0; color: #5c6bc0; }
+
+.dark-mode .share-buttons-container { border-top-color: #444; }
+.dark-mode .share-btn { background-color: #252526; }
+.dark-mode .share-btn svg { color: #d4d4d4; }
+.dark-mode .share-btn.whatsapp:hover { background-color: #1a3c2a; }
+.dark-mode .share-btn.twitter:hover { background-color: #1a3a4a; }
+.dark-mode .share-btn.generic:hover { background-color: #2a2d42; stroke: #a5d8ff; }
