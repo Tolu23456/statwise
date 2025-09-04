@@ -40,6 +40,14 @@ body {
     text-align: center;
 }
 
+.auth-card {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.auth-card.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
 .auth-title {
     font-size: 32px;
     font-weight: bold;

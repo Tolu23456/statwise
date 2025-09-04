@@ -2,7 +2,7 @@
 import { auth, db, FLWPUBK, storage, functions, messaging } from './env.js';
 import { showLoader, hideLoader } from './Loader/loader.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
     ref, uploadBytes, getDownloadURL
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
@@ -155,37 +155,26 @@ async function handlePayment(userId, tier, amount, period) {
         },
         callback: async function(data) {
             paymentCompleted = true;
-            // IMPORTANT: The verification logic has been moved to the client-side.
-            // This is less secure than server-side verification.
+            this.close(); // Close the modal immediately
+
             if (data.status === "successful" || data.status === "completed") {
-                showModal({ message: "Payment successful! Updating your subscription..." });
-
-                // Client-side tier update
-                const expiry = new Date();
-                if (period === 'daily') {
-                    expiry.setDate(expiry.getDate() + 1);
-                } else if (period === 'monthly') {
-                    expiry.setMonth(expiry.getMonth() + 1);
+                showLoader();
+                try {
+                    // Call a Cloud Function to securely verify the payment and update the user's tier.
+                    const verifyPayment = httpsCallable(functions, 'verifyPaymentAndGrantReward');
+                    const result = await verifyPayment({
+                        transaction_id: data.transaction_id,
+                        tx_ref: data.tx_ref,
+                        tier: tier,
+                        period: period
+                    });
+                    showModal({ message: result.data.message || "Your subscription has been updated!" });
+                } catch (error) {
+                    console.error("Error verifying payment:", error);
+                    showModal({ message: `Payment verification failed: ${error.message}`, confirmClass: 'btn-danger' });
+                } finally {
+                    hideLoader();
                 }
-
-                await updateUserTier(userId, tier, period, expiry.toISOString());
-
-                // Log the transaction for manual review
-                const subRef = doc(db, "subscriptions", userId);
-                const transactionData = {
-                    amount: data.amount,
-                    currency: data.currency,
-                    description: `${tier} (${period})`,
-                    status: data.status,
-                    transactionId: data.transaction_id,
-                    tx_ref: data.tx_ref,
-                    createdAt: serverTimestamp(),
-                    paymentVerified: false // SECURITY: Mark as unverified for manual review
-                };
-                await setDoc(subRef, { transactions: arrayUnion(transactionData) }, { merge: true });
-
-                await addHistoryUnique(userId, `Subscribed to ${tier} (${period})`);
-                showModal({ message: `You are now subscribed to ${tier}!` });
             } else {
                 showModal({ message: "Payment was not completed.", confirmClass: 'btn-danger' });
             }
@@ -268,6 +257,7 @@ async function initManageSubscriptionPage(userId) {
     const cancelContainer = document.getElementById('cancel-subscription-container');
     const cancelBtn = document.getElementById('cancelSubscriptionBtn');
     const autoRenewContainer = document.getElementById('auto-renew-container');
+    const viewPaymentHistoryBtn = document.getElementById('viewPaymentHistoryBtn');
     const toggleAutoRenewBtn = document.getElementById('toggleAutoRenewBtn');
 
     if (!planInfoCard || !changePlanBtn || !cancelContainer || !cancelBtn || !autoRenewContainer || !toggleAutoRenewBtn) return;
@@ -334,8 +324,18 @@ async function initManageSubscriptionPage(userId) {
         };
 
         cancelBtn.onclick = () => {
+            const benefitsLost = TIER_BENEFITS[tier]
+                .filter(b => !TIER_BENEFITS["Free Tier"].includes(b))
+                .map(b => `<li>${b}</li>`)
+                .join('');
+
+            const cancellationMessage = `
+                <p>Are you sure you want to cancel? You will lose access to these benefits:</p>
+                <ul style="text-align: left; padding-left: 20px; margin-top: 10px;">${benefitsLost}</ul>
+            `;
+
             showModal({
-                message: "Are you sure you want to cancel your subscription? This action is immediate and cannot be undone.",
+                message: cancellationMessage,
                 showCancel: true,
                 confirmText: 'Yes, Cancel',
                 confirmClass: 'btn-danger',
@@ -351,24 +351,13 @@ async function initManageSubscriptionPage(userId) {
         console.error("Failed to load subscription management page:", error);
         planInfoCard.innerHTML = `<h2>Error</h2><p>Could not load your subscription details. Please try again later.</p>`;
     }
-}
 
-function initSubscriptionTabs() {
-    const tabButtons = document.querySelectorAll(".tab-btn");
-    const containers = document.querySelectorAll(".pricing-container");
-    if (!tabButtons.length || !containers.length) return;
-
-    tabButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            tabButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            containers.forEach(c => c.classList.remove("active"));
-            const targetId = btn.dataset.tab;
-            const target = document.getElementById(targetId);
-            if (target) target.classList.add("active");
-        });
-    });
+    if (viewPaymentHistoryBtn) {
+        viewPaymentHistoryBtn.onclick = () => {
+            sessionStorage.setItem('targetTab', 'transactions-tab');
+            loadPage('history', userId);
+        };
+    }
 }
 
 // ===== Tier Restrictions & Watchdog =====
@@ -458,6 +447,41 @@ async function initFirebaseMessaging(userId) {
     });
 }
 
+/**
+ * Fetches and displays user statistics on the profile page.
+ * @param {string} userId The current user's ID.
+ * @param {object} userData The user's document data.
+ */
+async function displayUserStats(userId, userData) {
+    const memberSinceEl = document.getElementById('memberSinceStat');
+    const totalPredictionsEl = document.getElementById('totalPredictionsStat');
+    const winRateEl = document.getElementById('winRateStat');
+
+    if (!memberSinceEl || !totalPredictionsEl || !winRateEl) return;
+
+    // 1. Member Since
+    memberSinceEl.textContent = new Date(userData.createdAt).toLocaleDateString();
+
+    // 2. Predictions and Win Rate
+    const historyRef = collection(db, "users", userId, "history");
+    const predictionsQuery = query(historyRef, where("match", "!=", null));
+    const querySnapshot = await getDocs(predictionsQuery);
+
+    let total = 0;
+    let wins = 0;
+    let losses = 0;
+
+    querySnapshot.forEach(doc => {
+        const data = doc.data();
+        total++;
+        if (data.result === 'win') wins++;
+        if (data.result === 'loss') losses++;
+    });
+
+    totalPredictionsEl.textContent = total;
+    const winnableGames = wins + losses;
+    winRateEl.textContent = winnableGames > 0 ? `${Math.round((wins / winnableGames) * 100)}%` : 'N/A';
+}
 // ===== Profile Functions =====
 /**
  * Initializes all interactive elements on the profile page.
@@ -529,7 +553,7 @@ async function initProfilePage(userId) {
                     if (newUsername && newUsername.trim() !== '' && newUsername !== userNameEl.textContent) {
                         showLoader();
                         await updateDoc(userRef, { username: newUsername.trim() });
-                        await auth.currentUser.updateProfile({ displayName: newUsername.trim() });
+                        await currentUser.updateProfile({ displayName: newUsername.trim() });
                         await addHistoryUnique(userId, `Username changed to ${newUsername.trim()}`);
                         userNameEl.textContent = newUsername.trim();
                         hideLoader();
@@ -538,6 +562,9 @@ async function initProfilePage(userId) {
             });
         });
     }
+
+    // Display User Stats
+    await displayUserStats(userId, userData);
 
     // 2. Dark Mode Toggle
     const darkToggle = document.getElementById("darkModeToggle");
@@ -577,6 +604,50 @@ async function initProfilePage(userId) {
         e.preventDefault(); // Prevent default link behavior
         loadPage("manage-subscription", userId);
     };
+
+    // 5. Change Password Button
+    const changePasswordBtn = document.getElementById('changePasswordBtn');
+    if (changePasswordBtn) {
+        changePasswordBtn.onclick = () => {
+            showModal({
+                message: "Enter your current password to continue:",
+                inputType: 'password',
+                inputPlaceholder: 'Current Password',
+                showCancel: true,
+                confirmText: 'Verify',
+                onConfirm: async (currentPassword) => {
+                    if (!currentPassword) return;
+                    showLoader();
+                    try {
+                        const credential = EmailAuthProvider.credential(currentUser.email, currentPassword);
+                        await reauthenticateWithCredential(currentUser, credential);
+                        
+                        // Re-authentication successful, now ask for the new password
+                        hideLoader();
+                        showModal({
+                            message: 'Enter your new password:',
+                            inputType: 'password',
+                            inputPlaceholder: 'New Password',
+                            showCancel: true,
+                            confirmText: 'Save New Password',
+                            onConfirm: async (newPassword) => {
+                                if (newPassword && newPassword.length >= 6) {
+                                    await updatePassword(currentUser, newPassword);
+                                    await addHistoryUnique(userId, 'Password updated');
+                                    showModal({ message: 'Password updated successfully!' });
+                                } else {
+                                    showModal({ message: 'Password must be at least 6 characters long.', confirmClass: 'btn-danger' });
+                                }
+                            }
+                        });
+                    } catch (error) {
+                        hideLoader();
+                        showModal({ message: `Error: ${error.message}`, confirmClass: 'btn-danger' });
+                    }
+                }
+            });
+        };
+    }
 
     // 5. Logout Button
     const logoutBtn = document.getElementById("logoutBtn");
@@ -626,16 +697,17 @@ async function initProfilePage(userId) {
                         onConfirm: async (confirmationText) => {
                             if (confirmationText === "DELETE") {
                                 showLoader();
-                                // Client-side deletion process
+                                const currentUser = auth.currentUser;
                                 try {
                                     // 1. Delete Firestore documents
                                     await deleteDoc(doc(db, 'users', userId));
                                     await deleteDoc(doc(db, 'subscriptions', userId));
 
-                                    // 2. Delete Firebase Auth user
-                                    await auth.currentUser.delete();
+                                    // 2. Delete Firebase Auth user (requires recent login)
+                                    await currentUser.delete();
 
                                     hideLoader();
+                                    localStorage.clear();
                                     window.location.href = '/Auth/login.html';
                                 } catch (error) {
                                     hideLoader();
@@ -660,6 +732,7 @@ async function initReferralPage(userId) {
     const codeInput = document.getElementById('referralCodeInput');
     const copyBtn = document.getElementById('copyReferralCodeBtn');
     const referralListContainer = document.getElementById('referralListContainer');
+    const rewardsContainer = document.getElementById('rewardsContainer');
 
     if (!codeInput || !copyBtn || !referralListContainer) return;
 
@@ -759,6 +832,37 @@ async function initReferralPage(userId) {
         });
     } else {
         referralListContainer.innerHTML = `<p>No referrals yet. Share your code to get started!</p>`;
+    }
+
+    // 5. Fetch and display rewards
+    if (rewardsContainer) {
+        const rewardsQuery = query(collection(db, "rewards"), where("referrerId", "==", userId), orderBy("createdAt", "desc"));
+        const rewardsSnapshot = await getDocs(rewardsQuery);
+
+        if (!rewardsSnapshot.empty) {
+            rewardsContainer.innerHTML = ''; // Clear placeholder
+            rewardsSnapshot.forEach(doc => {
+                const reward = doc.data();
+                const card = document.createElement('div');
+                card.className = 'history-card';
+
+                const statusBadge = reward.claimed
+                    ? `<span class="status-badge status-successful">Claimed</span>`
+                    : `<span class="status-badge status-pending">Pending</span>`;
+
+                card.innerHTML = `
+                    <div class="history-title">
+                        ${reward.rewardDurationDays}-Day ${reward.rewardTier} Reward
+                    </div>
+                    <p class="history-detail">From: ${reward.grantedByUsername}</p>
+                    <p class="history-detail">Status: ${statusBadge}</p>
+                    <p class="history-time">Granted on: ${new Date(reward.createdAt.toDate()).toLocaleDateString()}</p>
+                `;
+                rewardsContainer.appendChild(card);
+            });
+        } else {
+            rewardsContainer.innerHTML = `<p>No rewards earned yet. You'll get a reward when a referred user subscribes!</p>`;
+        }
     }
 }
 // ===== Save AI Prediction =====
@@ -1003,11 +1107,14 @@ async function loadPage(page, userId, addToHistory = true) {
     main.classList.add('page-transitioning');
 
     // Show loader at the start of any page load
-    showLoader();
+    showLoader(); // Use the delayed loader for in-app navigation
 
-    // Animate the current content out
-    main.classList.add('page-fade-out');
-    await new Promise(resolve => setTimeout(resolve, 200)); // Match animation duration
+    // Only run the fade-out animation if there's existing content to transition from.
+    if (main.innerHTML.trim() !== '') {
+        // Animate the current content out
+        main.classList.add('page-fade-out');
+        await new Promise(resolve => setTimeout(resolve, 200)); // Match animation duration
+    }
 
     try {
         const response = await fetch(`/Pages/${page}.html`);
@@ -1019,16 +1126,17 @@ async function loadPage(page, userId, addToHistory = true) {
         main.innerHTML = pageMain.innerHTML;
         main.dataset.pullToRefreshActive = 'false'; // Deactivate for all pages by default
 
+        // Define a single base URL for resolving relative asset paths.
+        // This works for both localhost (e.g., http://127.0.0.1:3000) and deployed environments.
+        const assetsBaseUrl = new URL('/Pages/', window.location.href).href;
+
         clearDynamicAssets();
 
         docu.querySelectorAll("link[rel='stylesheet']").forEach(link => {
-            // Vercel/Deployment Fix: Ensure relative paths from the fetched HTML
-            // are resolved correctly from the /Pages/ directory.
-            const href = new URL(link.getAttribute('href'), `${window.location.origin}/Pages/`).href;
-
             const newLink = document.createElement("link");
             newLink.rel = "stylesheet";
-            newLink.href = href;
+            // Resolve relative URLs against the base path, leave absolute URLs as is.
+            newLink.href = new URL(link.getAttribute('href'), assetsBaseUrl).href;
             newLink.setAttribute("data-dynamic", "true");
             document.head.appendChild(newLink);
         });
@@ -1043,9 +1151,8 @@ async function loadPage(page, userId, addToHistory = true) {
         docu.querySelectorAll("script").forEach(script => {
             const newScript = document.createElement("script");
             if (script.src) {
-                // Vercel/Deployment Fix: Same logic as for stylesheets.
-                const src = new URL(script.getAttribute('src'), `${window.location.origin}/Pages/`).href;
-                newScript.src = src;
+                // Resolve relative URLs against the base path.
+                newScript.src = new URL(script.getAttribute('src'), assetsBaseUrl).href;
             } else {
                 newScript.textContent = script.textContent;
             }
@@ -1061,7 +1168,7 @@ async function loadPage(page, userId, addToHistory = true) {
         if (page === "subscriptions") {
             updateCurrentTierDisplay(userId);
             attachSubscriptionButtons(userId);
-            initSubscriptionTabs();
+            initTabs(); // Use the generic tab handler
         }
         if (page === "manage-subscription") {
             await initManageSubscriptionPage(userId);
@@ -1074,6 +1181,16 @@ async function loadPage(page, userId, addToHistory = true) {
         }
         if (page === "history") {
             await fetchHistory(userId);
+            initTabs(); // Use the generic tab handler
+            // After tabs are initialized, check for a target tab from session storage
+            const targetTabId = sessionStorage.getItem('targetTab');
+            if (targetTabId) {
+                const targetTabButton = document.querySelector(`.tab-btn[data-tab="${targetTabId}"]`);
+                if (targetTabButton) {
+                    handleTabSwitch(targetTabButton);
+                }
+                sessionStorage.removeItem('targetTab'); // Clean up
+            }
         }
         if (page === "insights") {
             // Placeholder for any future JS needed for the insights page
@@ -1226,14 +1343,14 @@ async function loadPage(page, userId, addToHistory = true) {
     } finally {
         // Animate the new content in
         main.classList.remove('page-fade-out');
-        main.classList.add('page-fade-in');
-        main.addEventListener('animationend', () => {
-            main.classList.remove('page-fade-in');
-            main.classList.remove('page-transitioning');
-        }, { once: true });
+        main.classList.add('page-fade-in'); // Start animation
 
-        // Hide loader after everything is done
-        hideLoader();
+        // The loader is hidden after a short, fixed delay. This is more reliable
+        // than waiting for an animation event that might not fire on very fast loads.
+        setTimeout(() => {
+            hideLoader();
+            main.classList.remove('page-fade-in', 'page-transitioning');
+        }, 350); // A value slightly longer than the animation duration.
     }
 }
 
@@ -1387,6 +1504,60 @@ function handleTabSwitch(tabButton) {
     if (target) target.classList.add("active");
 }
 
+/**
+ * Initializes tab functionality for the current page.
+ * This should be called after a page with tabs is loaded.
+ */
+function initTabs() {
+    const tabContainer = document.querySelector('.tab-container');
+    if (!tabContainer) return;
+
+    tabContainer.addEventListener('click', (e) => {
+        const tabButton = e.target.closest('.tab-btn');
+        if (tabButton) {
+            handleTabSwitch(tabButton);
+        }
+    });
+}
+
+/**
+ * Checks for any unclaimed referral rewards and applies them to the user's account.
+ * This function is designed to be run for the currently logged-in user.
+ * @param {string} userId The ID of the user (the referrer) to check rewards for.
+ */
+async function checkForAndClaimRewards(userId) {
+    const rewardsRef = collection(db, "rewards");
+    const q = query(rewardsRef, where("referrerId", "==", userId), where("claimed", "==", false));
+
+    try {
+        const querySnapshot = await getDocs(q);
+        if (querySnapshot.empty) {
+            return; // No rewards to claim
+        }
+
+        for (const rewardDoc of querySnapshot.docs) {
+            const rewardData = rewardDoc.data();
+
+            // 1. Apply the reward to the user's tier
+            const newExpiry = new Date();
+            newExpiry.setDate(newExpiry.getDate() + rewardData.rewardDurationDays);
+
+            await updateUserTier(userId, rewardData.rewardTier, 'reward', newExpiry.toISOString());
+
+            // 2. Mark the reward as claimed to prevent re-application
+            await updateDoc(doc(db, "rewards", rewardDoc.id), { claimed: true });
+
+            // 3. Notify the user
+            const message = `You've received a ${rewardData.rewardDurationDays}-day ${rewardData.rewardTier} reward because ${rewardData.grantedByUsername} subscribed!`;
+            showModal({ message });
+            await addHistoryUnique(userId, `Claimed referral reward from ${rewardData.grantedByUsername}`);
+            console.log(`Claimed and applied reward ${rewardDoc.id}`);
+        }
+    } catch (error) {
+        console.error("Error checking or claiming rewards:", error);
+    }
+}
+
 // ===== Initial Auth Check =====
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
@@ -1436,17 +1607,14 @@ onAuthStateChanged(auth, async (user) => {
         initPullToRefresh(main, async () => {
             await loadPage('home', user.uid, false);
         });
+        // Check for any pending referral rewards on startup
+        checkForAndClaimRewards(user.uid).catch(err => {
+            console.error("Failed to process rewards on startup:", err);
+        });
 
         // Global click handler for locked features and dynamic tabs using event delegation
         main.addEventListener('click', (e) => {
-            // 1. Handle tab switching first, as it's a primary UI interaction.
-            const tabButton = e.target.closest('.tab-btn');
-            if (tabButton) {
-                handleTabSwitch(tabButton);
-                return; // Stop further processing if a tab was clicked.
-            }
-
-            // 2. Handle clicks on locked features.
+            // Handle clicks on locked features.
             const lockedEl = e.target.closest('[data-locked="true"]');
             if (lockedEl) {
                 e.preventDefault();
@@ -1468,6 +1636,7 @@ onAuthStateChanged(auth, async (user) => {
         // Determine the initial page to load with correct priority: URL hash > localStorage > default.
         const initialHash = window.location.hash.substring(1);
         const pageToLoad = initialHash || localStorage.getItem("lastPage") || defaultPage;
+
         // Load the page without adding a new entry to the browser's history,
         // as we are just restoring the state on page reload.
         loadPage(pageToLoad, user.uid, false);

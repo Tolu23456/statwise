@@ -169,7 +169,13 @@ if (loginForm) {
             }
 
             showSuccess(loginBtn);
-            setTimeout(() => window.location.href = "/index.html", 1000);
+
+            // Add fade-out transition before redirecting
+            const authCard = loginForm.closest('.auth-card');
+            if (authCard) {
+                authCard.classList.add('fade-out');
+            }
+            setTimeout(() => window.location.href = "/index.html", 500); // Redirect after animation (500ms)
 
         } catch (error) {
             console.error(error);
@@ -335,30 +341,31 @@ if (signupForm) {
             let referrerId = null;
             if (referralCode) { // referralCode is now just the user-typed part
                 const fullCode = `REF-${referralCode}`;
-                const q = query(usersCol, where("referralCode", "==", fullCode), limit(1));
-                const querySnapshot = await getDocs(q);
-                if (!querySnapshot.empty) {
-                    const referrerDoc = querySnapshot.docs[0];
-                    referrerId = referrerDoc.id;
-                } else {
+                const referrerQuery = query(usersCol, where("referralCode", "==", fullCode), limit(1));
+                const referrerSnapshot = await getDocs(referrerQuery);
+                if (referrerSnapshot.empty) {
                     hideSpinner(signupBtn, "Sign Up");
                     signupError.textContent = "Invalid referral code.";
                     return; // Stop signup if code is provided but invalid
                 }
+                referrerId = referrerSnapshot.docs[0].id;
             }
 
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
+            // Now that the user is created, we can safely check for self-referral.
+            if (referrerId && referrerId === user.uid) {
+                // This is a rare edge case, but good to handle. We proceed with signup but nullify the referral.
+                console.warn("Self-referral attempt detected and ignored.");
+                referrerId = null; 
+            }
+
             // Update Firebase Auth profile
             await updateProfile(user, { displayName: username });
 
-            // Prepare user document data
-            const newUserDoc = {
-                username, email, tier: "Free Tier", tierExpiry: null, photoURL: null,
-                notifications: true, autoRenew: false, createdAt: new Date().toISOString(),
-                lastLogin: new Date().toISOString(), isNewUser: true
-            };
+            // Generate a unique referral code for the new user
+            const newReferralCode = `REF-${user.uid.substring(0, 6).toUpperCase()}`;
 
             // Create Firestore profile
             const userRef = doc(usersCol, user.uid);
@@ -366,6 +373,7 @@ if (signupForm) {
                 username,
                 email,
                 tier: "Free Tier",
+                referralCode: newReferralCode,
                 tierExpiry: null,
                 photoURL: null,
                 notifications: true,
@@ -385,7 +393,13 @@ if (signupForm) {
             }
 
             showSuccess(signupBtn);
-            setTimeout(() => window.location.href = "/index.html", 1000);
+
+            // Add fade-out transition before redirecting
+            const authCard = signupForm.closest('.auth-card');
+            if (authCard) {
+                authCard.classList.add('fade-out');
+            }
+            setTimeout(() => window.location.href = "/index.html", 500); // Redirect after animation (500ms)
 
         } catch (error) {
             console.error(error);

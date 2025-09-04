@@ -131,8 +131,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### ⚠️ Security Warning
 
-The current implementation of payment verification in `main.js` (`handlePayment` function) is done on the **client-side**. This is **not secure** and is only suitable for demonstration or testing. For a production environment, you **must** move payment verification to a secure backend, such as a Firebase Cloud Function, to prevent users from fraudulently claiming subscriptions.
+The payment verification logic in this project is designed to be handled by a **Firebase Cloud Function** (`verifyPaymentAndGrantReward`). The client-side code calls this function but does not perform the verification itself. This is the recommended secure approach for production.
+
+For a production environment, you **must** implement this Cloud Function to securely communicate with the Flutterwave API, verify transactions, and grant subscriptions and referral rewards. Client-side verification is insecure and can be easily bypassed.
 
 ---
-
-This README provides a solid foundation for your project. Feel free to expand it with more details as your application evolves!

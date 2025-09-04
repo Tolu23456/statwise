@@ -3,43 +3,82 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Users can only read or update their own document.
-    // They cannot change their tier or creation date.
+    // ===== Helper Functions =====
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // ===== Users Collection =====
     match /users/{userId} {
-      allow read: if request.auth != null && request.auth.uid == userId;
-      
-      // Allow users to update specific, non-critical fields.
-      allow update: if request.auth != null && request.auth.uid == userId
+      // CREATE: Allow new users to create their own document.
+      // The `isNewUser` flag must be true on creation to prevent re-creation.
+      allow create: if isOwner(userId) && request.resource.data.isNewUser == true;
+
+      // READ:
+      // 1. Authenticated users can read their own document.
+      // 2. Authenticated users can read other users' profiles for features like referral name display.
+      allow get: if isAuthenticated();
+
+      // LIST (QUERY):
+      // Allow querying for users based on referralCode (for signup validation).
+      // Allow querying for users based on referredBy (for the referral page list).
+      allow list: if isAuthenticated() &&
+                    (request.query.keys.hasOnly(['referralCode']) || request.query.keys.hasOnly(['referredBy']));
+
+      // UPDATE:
+      // 1. Users can only update their own document.
+      // 2. This combines the best of both rules: it allows specific fields to be changed,
+      //    while also explicitly preventing tier/reward-related fields from being tampered with.
+      allow update: if isOwner(userId)
                     && request.resource.data.diff(resource.data).affectedKeys()
-                       .hasOnly(['username', 'photoURL', 'notifications', 'autoRenew', 'lastLogin', 'isNewUser', 'fcmTokens']);
+                       .hasOnly(['username', 'photoURL', 'notifications', 'autoRenew', 'lastLogin', 'isNewUser', 'fcmTokens'])
+                    && request.resource.data.tier == resource.data.tier
+                    && request.resource.data.tierExpiry == resource.data.tierExpiry
+                    && request.resource.data.referralCode == resource.data.referralCode;
 
-      // Allow new users to create their own document.
-      allow create: if request.auth != null && request.auth.uid == userId;
+      // DELETE: Users can delete their own account.
+      allow delete: if isOwner(userId);
 
-      // Nobody can list or delete user documents from the client.
-      allow list, delete: if false;
-
-      // History subcollection: Users can read their own history and create new entries.
-      // They cannot update or delete past history entries.
+      // --- History Subcollection ---
       match /history/{historyId} {
-        allow read, create: if request.auth != null && request.auth.uid == userId;
+        // Users can read/write their own history.
+        // A referrer can also add a history item (e.g., "Your friend joined...").
+        allow read, create: if isOwner(userId) || isOwner(request.resource.data.referrerId);
         allow update, delete: if false;
       }
     }
 
-    // Subscriptions can only be read by the user who owns it.
-    // All writes MUST come from the secure Cloud Function.
+    // ===== Subscriptions Collection =====
     match /subscriptions/{userId} {
-      allow read: if request.auth != null && request.auth.uid == userId;
-      allow write: if false; // Deny all client-side writes
+      // Users can read their own subscription document.
+      // Writes are allowed for client-side transaction logging on the free tier.
+      allow read, write: if isOwner(userId);
     }
 
-    // This rule is needed for the referral code check on the signup page.
-    // It allows anyone to query the users collection, but only if they are
-    // specifically querying for a 'referralCode'. This prevents listing all users.
-    match /users/{userId} {
-        allow list: if request.query.keys.hasOnly(['referralCode']);
-    }
+    // ===== Rewards Collection =====
+    match /rewards/{rewardId} {
+      // CREATE: Allow an authenticated user to create a reward document for a referrer.
+      // This is necessary for the free-tier client-side reward granting.
+      // The rule ensures the user creating the reward correctly identifies themselves.
+      allow create: if isAuthenticated()
+                      && request.resource.data.grantedByUserId == request.auth.uid;
 
+      // READ: Users can read rewards intended for them.
+      allow get, list: if isAuthenticated() && resource.data.referrerId == request.auth.uid;
+
+      // UPDATE: Users can claim their own rewards (setting `claimed` to true).
+      // The rule ensures they can only change `claimed` from false to true.
+      allow update: if isAuthenticated()
+                      && resource.data.referrerId == request.auth.uid
+                      && request.resource.data.claimed == true
+                      && resource.data.claimed == false;
+
+      // DELETE: Nobody can delete rewards from the client.
+      allow delete: if false;
+    }
   }
 }
