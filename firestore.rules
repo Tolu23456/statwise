@@ -32,22 +32,22 @@ service cloud.firestore {
       // UPDATE:
       // 1. Users can only update their own document.
       // 2. This combines the best of both rules: it allows specific fields to be changed,
-      //    while also explicitly preventing tier/reward-related fields from being tampered with.
+      //    while explicitly preventing critical, non-editable fields from being tampered with.
       allow update: if isOwner(userId)
                     && request.resource.data.diff(resource.data).affectedKeys()
                        .hasOnly(['username', 'photoURL', 'notifications', 'autoRenew', 'lastLogin', 'isNewUser', 'fcmTokens'])
-                    && request.resource.data.tier == resource.data.tier
-                    && request.resource.data.tierExpiry == resource.data.tierExpiry
-                    && request.resource.data.referralCode == resource.data.referralCode;
+                    && request.resource.data.referredBy == resource.data.referredBy // Prevent changing who referred you
+                    && request.resource.data.tier == resource.data.tier // Prevent client-side tier changes
+                    && request.resource.data.tierExpiry == resource.data.tierExpiry; // Prevent client-side expiry changes
 
       // DELETE: Users can delete their own account.
       allow delete: if isOwner(userId);
 
       // --- History Subcollection ---
       match /history/{historyId} {
-        // Users can read/write their own history.
-        // A referrer can also add a history item (e.g., "Your friend joined...").
-        allow read, create: if isOwner(userId) || isOwner(request.resource.data.referrerId);
+        // Users can read their own history and create new entries. Past entries cannot be changed.
+        // A new user (identified by `creatorId`) can also add a history item to the referrer's log.
+        allow read, create: if isOwner(userId) || isOwner(request.resource.data.creatorId);
         allow update, delete: if false;
       }
     }

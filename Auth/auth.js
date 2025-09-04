@@ -138,7 +138,8 @@ if (loginForm) {
                     notifications: true,
                     autoRenew: false,
                     createdAt: new Date().toISOString(),
-                    lastLogin: new Date().toISOString()
+                    lastLogin: new Date().toISOString(),
+                    isNewUser: true // Add this flag to satisfy security rules on create
                 });
 
                 // Default subscription
@@ -389,7 +390,11 @@ if (signupForm) {
                 const referrerRef = doc(usersCol, referrerId);
                 // We use a subcollection for history, so we can just add an action.
                 const historyRef = collection(db, "users", referrerId, "history");
-                await addDoc(historyRef, { action: `Your friend '${username}' joined using your referral code!`, createdAt: serverTimestamp() });
+                await addDoc(historyRef, {
+                    action: `Your friend '${username}' joined using your referral code!`,
+                    createdAt: serverTimestamp(),
+                    creatorId: user.uid // Add this field to satisfy the security rule
+                });
             }
 
             showSuccess(signupBtn);
