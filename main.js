@@ -1624,7 +1624,4 @@ const unsubscribe = onAuthStateChanged(auth, async (user) => {
             window.location.href = 'Auth/login.html';
         }
     }
-    // The loader is hidden inside loadPage, but we hide it here too
-    // as a fallback for cases where loadPage might not run.
-    hideLoader();
 });
