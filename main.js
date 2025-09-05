@@ -1,6 +1,7 @@
 // main.js
 import { auth, db, FLWPUBK, storage, functions, messaging } from './env.js';
 import { showLoader, hideLoader } from './Loader/loader.js';
+import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
 import { onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
@@ -1369,39 +1370,6 @@ window.addEventListener("popstate", (e) => {
     loadPage(page, auth.currentUser?.uid, false);
 });
 
-// ===== Security Hardening =====
-function initSecurity() {
-    // 1. Disable Right-Click Context Menu
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // 2. Disable DevTools Keyboard Shortcuts
-    document.addEventListener('keydown', function (e) {
-        // Block F12
-        if (e.keyCode === 123) {
-            e.preventDefault();
-        }
-        // Block Ctrl+Shift+I
-        if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
-            e.preventDefault();
-        }
-        // Block Ctrl+Shift+J
-        if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
-            e.preventDefault();
-        }
-        // Block Ctrl+U
-        if (e.ctrlKey && e.keyCode === 85) {
-            e.preventDefault();
-        }
-    });
-
-    // 3. Periodically clear the console to deter inspection
-    // Note: A determined user can bypass this, but it's a strong deterrent.
-    setInterval(() => {
-        console.clear();
-        console.log("%cInspecting this area is not allowed.", "color:red; font-size:16px;");
-    }, 3000);
-}
-
 // ===== Welcome Tour for New Users =====
 let introJsLoaded = false;
 
@@ -1601,7 +1569,7 @@ onAuthStateChanged(auth, async (user) => {
         }
 
         // Initialize client-side security measures
-        initSecurity();
+        initializeAppSecurity();
 
         // Initialize core features that persist across pages
         initPullToRefresh(main, async () => {
@@ -1633,13 +1601,8 @@ onAuthStateChanged(auth, async (user) => {
 
         startTierWatchdog(user.uid);
 
-        // Determine the initial page to load with correct priority: URL hash > localStorage > default.
-        const initialHash = window.location.hash.substring(1);
-        const pageToLoad = initialHash || localStorage.getItem("lastPage") || defaultPage;
-
-        // Load the page without adding a new entry to the browser's history,
-        // as we are just restoring the state on page reload.
-        loadPage(pageToLoad, user.uid, false);
+        // Use the manager to handle the initial page load logic.
+        manageInitialPageLoad(user.uid, loadPage);
 
         // Check if the user is new to start the welcome tour
         if (userData.isNewUser && pageToLoad === 'home') {
