@@ -29,3 +29,22 @@ export function hideLoader() {
         loader.style.display = "none";
     }
 }
+
+/**
+ * Shows a spinner on a button and disables it.
+ * Relies on CSS to hide text and show the spinner.
+ * @param {HTMLElement} btn The button element.
+ */
+export function showSpinner(btn) {
+    btn.disabled = true;
+    // The CSS handles showing the spinner and hiding the text when the button is disabled.
+}
+
+/**
+ * Hides a spinner on a button and enables it.
+ * @param {HTMLElement} btn The button element.
+ */
+export function hideSpinner(btn) {
+    btn.disabled = false;
+    // The CSS will hide the spinner and show the text again.
+}

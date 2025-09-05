@@ -25,18 +25,9 @@ import {
     where,
     serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { showSpinner, hideSpinner } from "../Loader/loader.js";
 
 // ===== Utility UI Helpers =====
-function showSpinner(btn) {
-    btn.disabled = true;
-    btn.querySelector(".btn-text").textContent = "Loading...";
-}
-
-function hideSpinner(btn, text) {
-    btn.disabled = false;
-    btn.querySelector(".btn-text").textContent = text;
-}
-
 function showSuccess(btn) {
     btn.querySelector(".btn-text").textContent = "✅ Success!";
 }
@@ -163,7 +154,7 @@ if (loginForm) {
 
         } catch (error) {
             console.error(error);
-            hideSpinner(loginBtn, "Login");
+            hideSpinner(loginBtn);
             loginError.textContent = error.message;
         }
     });
@@ -412,7 +403,7 @@ if (signupForm) {
 
         } catch (error) {
             console.error(error);
-            hideSpinner(signupBtn, "Sign Up");
+            hideSpinner(signupBtn);
             signupError.textContent = error.message;
         }
     });
@@ -456,11 +447,11 @@ if (forgotPasswordForm) {
             await sendPasswordResetEmail(auth, email);
             forgotPasswordMessage.textContent = "Password reset email sent! Please check your inbox.";
             forgotPasswordMessage.style.color = "#28a745"; // Success green color
-            hideSpinner(forgotPasswordBtn, "Send Reset Link");
+            hideSpinner(forgotPasswordBtn);
             forgotPasswordBtn.disabled = true; // Prevent resending
         } catch (error) {
             console.error("Password reset error:", error);
-            hideSpinner(forgotPasswordBtn, "Send Reset Link");
+            hideSpinner(forgotPasswordBtn);
             forgotPasswordMessage.textContent = error.message;
         }
     });
