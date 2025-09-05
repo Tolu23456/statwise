@@ -3,8 +3,8 @@
 // Firebase Auth + Firestore Setup
 // =====================================
 
-import { auth, db } from "/env.js";
-import { addHistoryUnique } from "/utils.js";
+import { auth, db } from "../env.js";
+import { addHistoryUnique } from "../utils.js";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -159,7 +159,7 @@ if (loginForm) {
             if (authCard) {
                 authCard.classList.add('fade-out');
             }
-            setTimeout(() => window.location.href = "/index.html", 500); // Redirect after animation (500ms)
+            setTimeout(() => window.location.href = "../index.html", 500); // Redirect after animation (500ms)
 
         } catch (error) {
             console.error(error);
@@ -408,7 +408,7 @@ if (signupForm) {
             if (authCard) {
                 authCard.classList.add('fade-out');
             }
-            setTimeout(() => window.location.href = "/index.html", 500); // Redirect after animation (500ms)
+            setTimeout(() => window.location.href = "../index.html", 500); // Redirect after animation (500ms)
 
         } catch (error) {
             console.error(error);

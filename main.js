@@ -661,7 +661,7 @@ async function initProfilePage(userId) {
             await signOut(auth);
             await addHistoryUnique(userId, "Logged out");
             localStorage.clear(); // Clear storage on logout
-            window.location.href = '/Auth/login.html';
+            window.location.href = 'Auth/login.html';
         }
     });
 
@@ -709,7 +709,7 @@ async function initProfilePage(userId) {
 
                                     hideLoader();
                                     localStorage.clear();
-                                    window.location.href = '/Auth/login.html';
+                                    window.location.href = 'Auth/login.html';
                                 } catch (error) {
                                     hideLoader();
                                     showModal({ message: `Error: ${error.message}`, confirmClass: 'btn-danger' });
@@ -1118,7 +1118,7 @@ async function loadPage(page, userId, addToHistory = true) {
     }
 
     try {
-        const response = await fetch(`/Pages/${page}.html`);
+        const response = await fetch(`Pages/${page}.html`);
         if (!response.ok) throw new Error(`Page not found: ${page}`);
         const html = await response.text();
         const parser = new DOMParser();
@@ -1129,7 +1129,7 @@ async function loadPage(page, userId, addToHistory = true) {
 
         // Define a single base URL for resolving relative asset paths.
         // This works for both localhost (e.g., http://127.0.0.1:3000) and deployed environments.
-        const assetsBaseUrl = new URL('/Pages/', window.location.href).href;
+        const assetsBaseUrl = new URL('Pages/', window.location.href).href;
 
         clearDynamicAssets();
 
@@ -1529,7 +1529,7 @@ async function checkForAndClaimRewards(userId) {
 // ===== Initial Auth Check =====
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
-        window.location.href = '/Auth/login.html';
+        window.location.href = 'Auth/login.html';
     } else {
         const userRef = doc(db, "users", user.uid);
         const snapshot = await getDoc(userRef);
