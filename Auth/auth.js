@@ -38,10 +38,10 @@ function applyTheme(isDark) {
 }
 
 function initializeTheme() {
-    let isDark = localStorage.getItem('darkMode') === 'true';
+    let isDark = localStorage.getItem('darkMode') === 'true'; // Get local storage first
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (localStorage.getItem('darkMode') === null) {
+    if (localStorage.getItem('darkMode') === null) { // if local storage is empty, use system preference
         isDark = prefersDark;
     }
 
@@ -49,7 +49,7 @@ function initializeTheme() {
 
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        // Only apply if the user hasn't set a manual preference
+        // Only apply system preference if the user hasn't set a manual preference
         if (localStorage.getItem('darkMode') === null) {
             applyTheme(e.matches);
         }
@@ -199,6 +199,7 @@ if (signupForm) {
     const referralNameDisplay = document.querySelector("#referral-name-display");
 
     let debounceTimeout;
+    let validReferrerId = null; // Store the validated referrer's ID
 
     const checkReferralCode = async (code) => {
         const coreCode = code.trim().toUpperCase();
@@ -206,37 +207,31 @@ if (signupForm) {
 
         if (!coreCode) {
             referralNameDisplay.textContent = "";
+            validReferrerId = null;
             return;
         }
 
-        const fullCode = `REF-${coreCode}`;
         try {
-            // Perform a direct, secure lookup on the dedicated referralCodes collection
-            const referralDocRef = doc(referralCodesCol, fullCode);
-            const referralDocSnap = await getDoc(referralDocRef);
+            // Query the 'users' collection for a matching referral code.
+            const q = query(usersCol, where("referralCode", "==", `REF-${coreCode}`), limit(1));
+            const querySnapshot = await getDocs(q);
 
-            if (referralDocSnap.exists()) {
-                const referrerName = referralDocSnap.data().username;
+            if (!querySnapshot.empty) {
+                const referrerDoc = querySnapshot.docs[0];
+                validReferrerId = referrerDoc.id; // Cache the ID
+                const referrerName = referrerDoc.data().username;
                 referralNameDisplay.textContent = `Referred by: ${referrerName}`;
                 referralNameDisplay.style.display = "block";
             } else {
+                validReferrerId = null; // Invalidate
                 referralNameDisplay.textContent = "Invalid Code";
                 referralNameDisplay.style.display = "block";
             }
         } catch (error) {
+            validReferrerId = null;
             console.error("Error fetching referrer:", error);
         }
     };
-    
-    function checkPasswordStrength(password) {
-        let score = 0;
-        if (password.length >= 8) score++;
-        if (/[a-z]/.test(password)) score++;
-        if (/[A-Z]/.test(password)) score++;
-        if (/[0-9]/.test(password)) score++;
-        if (/[^A-Za-z0-9]/.test(password)) score++;
-        return score;
-    }
     signupReferral.addEventListener("input", (e) => {
         clearTimeout(debounceTimeout);
         debounceTimeout = setTimeout(() => checkReferralCode(e.target.value), 500); // 500ms delay
@@ -378,38 +373,21 @@ if (signupForm) {
             const persistence = signupRememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
             await setPersistence(auth, persistence);
             
-             // --- Referral Code Validation ---
-             let referrerId = null;
-             if (referralCode) {
-                 const fullCode = `REF-${referralCode}`;
-                 const referralDocRef = doc(referralCodesCol, fullCode);
-                 const referralDocSnap = await getDoc(referralDocRef);
- 
-                 if (!referralDocSnap.exists()) {
-                     hideSpinner(signupBtn);
-                     signupError.textContent = "Invalid referral code.";
-                     return;
-                 } else {
-                    referrerId = referralDocSnap.data().userId;
-                     // Now that the user is created, we can safely check for self-referral.
-                    if (referrerId === user.uid) {
-                        referrerId = null; // Nullify the referral if it's a self-referral
-                    }
-                    
-                 }
- 
-             }
+            // If a referral code was entered but found to be invalid by the UI check, block submission.
+            if (referralCode && !validReferrerId) {
+                hideSpinner(signupBtn);
+                signupError.textContent = "Invalid referral code.";
+                return;
+            }
 
-
-            
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-            // --- Referral Code Validation ---
-            let referrerId = null;
-            if (referralCode) { // referralCode is now just the user-typed part
-                const fullCode = `REF-${referralCode}`;
-
+            // --- Final Referral ID Check (Self-Referral) ---
+            let finalReferrerId = validReferrerId;
+            if (finalReferrerId && finalReferrerId === user.uid) {
+                finalReferrerId = null; // Nullify if user is referring themselves.
+            }
 
             // Update Firebase Auth profile
             await updateProfile(user, { displayName: username });
@@ -431,12 +409,12 @@ if (signupForm) {
                 createdAt: new Date().toISOString(),
                 lastLogin: new Date().toISOString(),
                 isNewUser: true, // Flag for the welcome tour
-                ...(referrerId && { referredBy: referrerId }) // Add referrer ID if it exists
+                ...(finalReferrerId && { referredBy: finalReferrerId }) // Add referrer ID if it exists
             });
 
             // If referred, update the referrer's document and notify them
-            if (referrerId) {
-                const referrerRef = doc(usersCol, referrerId);
+            if (finalReferrerId) {
+                const referrerRef = doc(usersCol, finalReferrerId);
                 // We use a subcollection for history, so we can just add an action.
                 const historyRef = collection(db, "users", referrerId, "history");
                 await addDoc(historyRef, {

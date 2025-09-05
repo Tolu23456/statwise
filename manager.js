@@ -60,17 +60,13 @@ export function initializeAppSecurity() {
  * @param {function} loadPageCallback - The function to call to load the page, expecting (page, userId, addToHistory).
  */
 export function manageInitialPageLoad(userId, loadPageCallback) {
-    const mainContent = document.querySelector("main");
     const defaultPage = "home";
 
-    // Check if the main content area is empty. On initial load of index.html, this will be true.
-    if (mainContent && mainContent.innerHTML.trim() === '') {
-        // Determine page load priority: URL hash > localStorage > default.
-        const initialHash = window.location.hash.substring(1);
-        const pageToLoad = initialHash || localStorage.getItem("lastPage") || defaultPage;
+    // Determine page load priority: URL hash > localStorage > default.
+    const initialHash = window.location.hash.substring(1);
+    const pageToLoad = initialHash || localStorage.getItem("lastPage") || defaultPage;
 
-        console.log(`Manager: Main content is empty. Loading initial page: ${pageToLoad}`);
-        // Load the page without adding a new entry to the browser's history.
-        loadPageCallback(pageToLoad, userId, false);
-    }
+    // Load the page without adding a new entry to the browser's history.
+    loadPageCallback(pageToLoad, userId, false);
+    return pageToLoad;
 }

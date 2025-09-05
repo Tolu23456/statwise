@@ -659,7 +659,7 @@ async function initProfilePage(userId) {
         confirmClass: 'btn-danger',
         onConfirm: async () => {
             await signOut(auth);
-            await addHistoryUnique(userId, "Logged oupdateut");
+            await addHistoryUnique(userId, "Logged out");
             localStorage.clear(); // Clear storage on logout
             window.location.href = 'Auth/login.html';
         }
@@ -1527,86 +1527,104 @@ async function checkForAndClaimRewards(userId) {
 }
 
 // ===== Initial Auth Check =====
-onAuthStateChanged(auth, async (user) => {
-    if (!user) {
-        window.location.href = 'Auth/login.html';
+let authInitialized = false;
+
+const handleUserAuthenticated = async (user) => {
+    const userRef = doc(db, "users", user.uid);
+    const snapshot = await getDoc(userRef);
+
+    if (!snapshot.exists()) {
+        await setDoc(userRef, {
+            username: user.displayName || "User",
+            email: user.email,
+            tier: "Free Tier",
+            tierExpiry: null,
+            photoURL: null,
+            notifications: true,
+            autoRenew: false,
+            createdAt: new Date().toISOString(),
+            lastLogin: new Date().toISOString(),
+            isNewUser: true // Add isNewUser flag to satisfy security rules on create
+        });
+        await addHistoryUnique(user.uid, "Signed up");
     } else {
-        const userRef = doc(db, "users", user.uid);
-        const snapshot = await getDoc(userRef);
+        await updateDoc(userRef, { lastLogin: new Date().toISOString() });
+        await addHistoryUnique(user.uid, "Logged in");
+    }
 
-        if (!snapshot.exists()) {
-            await setDoc(userRef, {
-                username: user.displayName || "User",
-                email: user.email,
-                tier: "Free Tier",
+    // Client-side check for expired subscriptions
+    const userDataOnLoad = snapshot.exists() ? snapshot.data() : {};
+    if (userDataOnLoad.tier !== 'Free Tier' && userDataOnLoad.tierExpiry) {
+        const expiryDate = new Date(userDataOnLoad.tierExpiry);
+        if (new Date() > expiryDate) {
+            console.log(`User ${user.uid}'s subscription has expired. Downgrading.`);
+            await updateDoc(userRef, {
+                tier: 'Free Tier',
                 tierExpiry: null,
-                photoURL: null,
-                notifications: true,
-                autoRenew: false,
-                createdAt: new Date().toISOString(),
-                lastLogin: new Date().toISOString(),
-                isNewUser: true // Add isNewUser flag to satisfy security rules on create
+                autoRenew: false
             });
-            await addHistoryUnique(user.uid, "Signed up");
-        } else {
-            await updateDoc(userRef, { lastLogin: new Date().toISOString() });
-            await addHistoryUnique(user.uid, "Logged in");
-        }
-
-        // Client-side check for expired subscriptions
-        const userDataOnLoad = snapshot.exists() ? snapshot.data() : {};
-        if (userDataOnLoad.tier !== 'Free Tier' && userDataOnLoad.tierExpiry) {
-            const expiryDate = new Date(userDataOnLoad.tierExpiry);
-            if (new Date() > expiryDate) {
-                console.log(`User ${user.uid}'s subscription has expired. Downgrading.`);
-                await updateDoc(userRef, {
-                    tier: 'Free Tier',
-                    tierExpiry: null,
-                    autoRenew: false
-                });
-                await addHistoryUnique(user.uid, "Subscription expired, reverted to Free Tier.");
-            }
-        }
-
-        // Initialize client-side security measures
-        initializeAppSecurity();
-
-        // Initialize core features that persist across pages
-        initPullToRefresh(main, async () => {
-            await loadPage('home', user.uid, false);
-        });
-        // Check for any pending referral rewards on startup
-        checkForAndClaimRewards(user.uid).catch(err => {
-            console.error("Failed to process rewards on startup:", err);
-        });
-
-        // Global click handler for locked features and dynamic tabs using event delegation
-        main.addEventListener('click', (e) => {
-            // Handle clicks on locked features.
-            const lockedEl = e.target.closest('[data-locked="true"]');
-            if (lockedEl) {
-                e.preventDefault();
-                e.stopPropagation();
-                showModal({
-                    message: `This feature is locked. Upgrade to access it.`,
-                    confirmText: 'View Plans',
-                    onConfirm: () => loadPage('subscriptions', user.uid)
-                });
-            }
-        });
-
-        // Set the initial verified tier from the database. The scheduled function handles expirations.
-        const userData = snapshot.exists() ? snapshot.data() : {};
-        verifiedTier = userData.tier || "Free Tier";
-
-        startTierWatchdog(user.uid);
-
-        // Use the manager to handle the initial page load logic.
-        manageInitialPageLoad(user.uid, loadPage);
-
-        // Check if the user is new to start the welcome tour
-        if (userData.isNewUser && pageToLoad === 'home') {
-            setTimeout(() => startWelcomeTour(user.uid), 1000); // Delay to ensure page elements are rendered
+            await addHistoryUnique(user.uid, "Subscription expired, reverted to Free Tier.");
         }
     }
+
+    // Initialize client-side security measures
+    initializeAppSecurity();
+
+    // Initialize core features that persist across pages
+    initPullToRefresh(main, async () => {
+        await loadPage('home', user.uid, false);
+    });
+    // Check for any pending referral rewards on startup
+    checkForAndClaimRewards(user.uid).catch(err => {
+        console.error("Failed to process rewards on startup:", err);
+    });
+
+    // Global click handler for locked features
+    main.addEventListener('click', (e) => {
+        const lockedEl = e.target.closest('[data-locked="true"]');
+        if (lockedEl) {
+            e.preventDefault();
+            e.stopPropagation();
+            showModal({
+                message: `This feature is locked. Upgrade to access it.`,
+                confirmText: 'View Plans',
+                onConfirm: () => loadPage('subscriptions', user.uid)
+            });
+        }
+    });
+
+    const userData = snapshot.exists() ? snapshot.data() : {};
+    verifiedTier = userData.tier || "Free Tier";
+
+    startTierWatchdog(user.uid);
+
+    // Use the manager to handle the initial page load logic.
+    const pageToLoad = manageInitialPageLoad(user.uid, loadPage);
+
+    // Check if the user is new to start the welcome tour
+    if (userData.isNewUser && pageToLoad === 'home') {
+        setTimeout(() => startWelcomeTour(user.uid), 1000); // Delay to ensure page elements are rendered
+    }
+};
+
+showLoader(); // Show loader immediately on script load
+
+const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        // User is signed in.
+        if (!authInitialized) {
+            authInitialized = true;
+            await handleUserAuthenticated(user);
+        }
+    } else {
+        // User is signed out.
+        if (!authInitialized) {
+            authInitialized = true;
+            // If after the initial check, there's no user, redirect to login.
+            window.location.href = 'Auth/login.html';
+        }
+    }
+    // The loader is hidden inside loadPage, but we hide it here too
+    // as a fallback for cases where loadPage might not run.
+    hideLoader();
 });
