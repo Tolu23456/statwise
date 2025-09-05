@@ -493,6 +493,11 @@ main {
     mask-image: url(./Assets/Icons/edit.svg);
 }
 
+.icon-referral {
+    -webkit-mask-image: url(./Assets/Icons/referral.svg);
+    mask-image: url(./Assets/Icons/referral.svg);
+}
+
 .edit-icon:hover {
     background-color: #0e639c;
 }

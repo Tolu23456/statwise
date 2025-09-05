@@ -758,7 +758,7 @@ async function initReferralPage(userId) {
     copyBtn.addEventListener('click', async () => {
         try {
             await navigator.clipboard.writeText(codeInput.value);
-            copyBtn.textContent = 'Copied!';
+            await navigator.clipboard.writeText(codeInput.value.substring(4));
         } catch (err) {
             console.error('Failed to copy text: ', err);
             copyBtn.textContent = 'Failed!';

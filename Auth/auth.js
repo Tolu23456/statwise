@@ -351,9 +351,9 @@ if (signupForm) {
                     hideSpinner(signupBtn);
                     signupError.textContent = "Invalid referral code.";
                     await user.delete(); // Clean up the created user if referral is invalid
-                    return; // Stop signup if code is provided but invalid
+                    return;
                 }
-                referrerId = referrerDocSnap.data().userId;
+                referrerId = referrerSnapshot.docs[0].id;
                 // Now that the user is created, we can safely check for self-referral.
                 if (referrerId === user.uid) {
                     referrerId = null; // Nullify the referral if it's a self-referral
@@ -381,13 +381,6 @@ if (signupForm) {
                 lastLogin: new Date().toISOString(),
                 isNewUser: true, // Flag for the welcome tour
                 ...(referrerId && { referredBy: referrerId }) // Add referrer ID if it exists
-            });
-
-            // Create the public-facing referral code document
-            const referralCodeRef = doc(referralCodesCol, newReferralCode);
-            await setDoc(referralCodeRef, {
-                userId: user.uid,
-                username: username
             });
 
             // If referred, update the referrer's document and notify them
