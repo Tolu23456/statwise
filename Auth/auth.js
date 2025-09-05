@@ -153,7 +153,28 @@ if (loginForm) {
             }
             setTimeout(() => window.location.href = "../index.html", 500); // Redirect after animation (500ms)
 
-        } catch (error) {
+        } catch (error) {            
+            let errorMessage = "An unexpected error occurred. Please try again.";
+
+            if (error.code === 'auth/wrong-password') {
+                errorMessage = "Incorrect password. Please try again.";
+            } else if (error.code === 'auth/user-not-found') {
+                errorMessage = "No account found with that email. Please sign up.";
+            } else if (error.code === 'auth/invalid-email') {
+                errorMessage = "Invalid email address format.";
+            } else if (error.code === 'auth/missing-email') {
+                errorMessage = "Please provide an email address.";
+            } else if (error.code === 'auth/network-request-failed') {
+                errorMessage = "Network error. Please check your internet connection and try again.";
+            } else if (error.code === 'auth/too-many-requests') {
+                errorMessage = "Too many failed login attempts. Please try again later.";
+            }
+            // You can add more error code handling here as needed.
+            console.error(error.code);
+            if (error.code === 'auth/email-already-in-use') {
+                errorMessage = "Email is already taken, try another email"
+            }
+
             console.error(error);
             hideSpinner(loginBtn);
             loginError.textContent = error.message;
@@ -206,7 +227,16 @@ if (signupForm) {
             console.error("Error fetching referrer:", error);
         }
     };
-
+    
+    function checkPasswordStrength(password) {
+        let score = 0;
+        if (password.length >= 8) score++;
+        if (/[a-z]/.test(password)) score++;
+        if (/[A-Z]/.test(password)) score++;
+        if (/[0-9]/.test(password)) score++;
+        if (/[^A-Za-z0-9]/.test(password)) score++;
+        return score;
+    }
     signupReferral.addEventListener("input", (e) => {
         clearTimeout(debounceTimeout);
         debounceTimeout = setTimeout(() => checkReferralCode(e.target.value), 500); // 500ms delay
@@ -330,13 +360,48 @@ if (signupForm) {
             return; 
         }
 
+        if (password.length < 6) {
+            signupError.textContent = "Password must be at least 6 characters long.";
+            return;
+        }
+
+        const strengthScore = checkPasswordStrength(password);
+        if (strengthScore < 3) {
+            signupError.textContent = "Password must contain a mix of upper and lowercase letters, numbers, and symbols to be strong";
+            return;
+        }
+
         showSpinner(signupBtn);
 
         try {
             // Set persistence based on the "Remember Me" checkbox
             const persistence = signupRememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
             await setPersistence(auth, persistence);
+            
+             // --- Referral Code Validation ---
+             let referrerId = null;
+             if (referralCode) {
+                 const fullCode = `REF-${referralCode}`;
+                 const referralDocRef = doc(referralCodesCol, fullCode);
+                 const referralDocSnap = await getDoc(referralDocRef);
+ 
+                 if (!referralDocSnap.exists()) {
+                     hideSpinner(signupBtn);
+                     signupError.textContent = "Invalid referral code.";
+                     return;
+                 } else {
+                    referrerId = referralDocSnap.data().userId;
+                     // Now that the user is created, we can safely check for self-referral.
+                    if (referrerId === user.uid) {
+                        referrerId = null; // Nullify the referral if it's a self-referral
+                    }
+                    
+                 }
+ 
+             }
 
+
+            
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
@@ -344,21 +409,7 @@ if (signupForm) {
             let referrerId = null;
             if (referralCode) { // referralCode is now just the user-typed part
                 const fullCode = `REF-${referralCode}`;
-                const referrerDocRef = doc(referralCodesCol, fullCode);
-                const referrerDocSnap = await getDoc(referrerDocRef);
 
-                if (!referrerDocSnap.exists()) {
-                    hideSpinner(signupBtn);
-                    signupError.textContent = "Invalid referral code.";
-                    await user.delete(); // Clean up the created user if referral is invalid
-                    return;
-                }
-                referrerId = referrerSnapshot.docs[0].id;
-                // Now that the user is created, we can safely check for self-referral.
-                if (referrerId === user.uid) {
-                    referrerId = null; // Nullify the referral if it's a self-referral
-                }
-            }
 
             // Update Firebase Auth profile
             await updateProfile(user, { displayName: username });
@@ -407,8 +458,25 @@ if (signupForm) {
             }
             setTimeout(() => window.location.href = "../index.html", 500); // Redirect after animation (500ms)
 
-        } catch (error) {
+        } catch (error) {            
+            let errorMessage = "Signup failed. Please try again.";
+
+            if (error.code === 'auth/email-already-in-use') {
+                errorMessage = "An account already exists with this email. Please login instead.";
+            } else if (error.code === 'auth/invalid-email') {
+                errorMessage = "Invalid email address format.";
+            } else if (error.code === 'auth/weak-password') {
+                errorMessage = "Password is not strong enough. Please use a stronger password.";
+            } else if (error.code === 'auth/network-request-failed') {
+                errorMessage = "Network error. Please check your internet connection and try again.";
+            } else if (error.code === 'auth/too-many-requests') {
+                errorMessage = "Too many failed signup attempts. Please try again later.";
+            }
+             // You can add more error code handling here as needed.
+            
             console.error(error);
+            if (error.code === "auth/invalid-email") errorMessage = "Email is not valid";
+
             hideSpinner(signupBtn);
             signupError.textContent = error.message;
         }
@@ -462,6 +530,7 @@ if (forgotPasswordForm) {
         try {
             await sendPasswordResetEmail(auth, email);
             forgotPasswordMessage.textContent = "Password reset email sent! Please check your inbox.";
+            
             forgotPasswordMessage.style.color = "#28a745"; // Success green color
             hideSpinner(forgotPasswordBtn);
             forgotPasswordBtn.disabled = true; // Prevent resending

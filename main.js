@@ -412,7 +412,7 @@ async function initFirebaseMessaging(userId) {
             console.log('Notification permission granted.');
             // IMPORTANT: Replace the placeholder below with your actual VAPID key from the Firebase Console.
             // Go to Project Settings > Cloud Messaging > Web configuration > Key pair.
-            const vapidKey = 'YOUR_VAPID_KEY_HERE'; 
+            const vapidKey = 'BM1G4B3crWgsfCGig6_i1crB3GAGBO8GAWlDVHP5jwTq1ltxb4S3e_IBJRUThKdHOeVf9VTmBNgFffDjwRNXeqU';
             const fcmToken = await getToken(messaging, { vapidKey: vapidKey });
 
             if (fcmToken) {
@@ -659,7 +659,7 @@ async function initProfilePage(userId) {
         confirmClass: 'btn-danger',
         onConfirm: async () => {
             await signOut(auth);
-            await addHistoryUnique(userId, "Logged out");
+            await addHistoryUnique(userId, "Logged oupdateut");
             localStorage.clear(); // Clear storage on logout
             window.location.href = 'Auth/login.html';
         }
