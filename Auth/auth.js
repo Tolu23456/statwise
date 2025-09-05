@@ -58,6 +58,7 @@ function initializeTheme() {
 
 // ===== Firestore Collections =====
 const usersCol = collection(db, "users");
+const referralCodesCol = collection(db, "referralCodes");
 const subscriptionsCol = collection(db, "subscriptions");
 
 // ===== Grab Page-Specific Forms =====
@@ -189,10 +190,12 @@ if (signupForm) {
 
         const fullCode = `REF-${coreCode}`;
         try {
-            const q = query(usersCol, where("referralCode", "==", fullCode), limit(1));
-            const querySnapshot = await getDocs(q);
-            if (!querySnapshot.empty) {
-                const referrerName = querySnapshot.docs[0].data().username;
+            // Perform a direct, secure lookup on the dedicated referralCodes collection
+            const referralDocRef = doc(referralCodesCol, fullCode);
+            const referralDocSnap = await getDoc(referralDocRef);
+
+            if (referralDocSnap.exists()) {
+                const referrerName = referralDocSnap.data().username;
                 referralNameDisplay.textContent = `Referred by: ${referrerName}`;
                 referralNameDisplay.style.display = "block";
             } else {
@@ -341,16 +344,16 @@ if (signupForm) {
             let referrerId = null;
             if (referralCode) { // referralCode is now just the user-typed part
                 const fullCode = `REF-${referralCode}`;
-                const referrerQuery = query(usersCol, where("referralCode", "==", fullCode), limit(1));
-                const referrerSnapshot = await getDocs(referrerQuery);
+                const referrerDocRef = doc(referralCodesCol, fullCode);
+                const referrerDocSnap = await getDoc(referrerDocRef);
 
-                if (referrerSnapshot.empty) {
-                    hideSpinner(signupBtn, "Sign Up");
+                if (!referrerDocSnap.exists()) {
+                    hideSpinner(signupBtn);
                     signupError.textContent = "Invalid referral code.";
                     await user.delete(); // Clean up the created user if referral is invalid
                     return; // Stop signup if code is provided but invalid
                 }
-                referrerId = referrerSnapshot.docs[0].id;
+                referrerId = referrerDocSnap.data().userId;
                 // Now that the user is created, we can safely check for self-referral.
                 if (referrerId === user.uid) {
                     referrerId = null; // Nullify the referral if it's a self-referral
@@ -378,6 +381,13 @@ if (signupForm) {
                 lastLogin: new Date().toISOString(),
                 isNewUser: true, // Flag for the welcome tour
                 ...(referrerId && { referredBy: referrerId }) // Add referrer ID if it exists
+            });
+
+            // Create the public-facing referral code document
+            const referralCodeRef = doc(referralCodesCol, newReferralCode);
+            await setDoc(referralCodeRef, {
+                userId: user.uid,
+                username: username
             });
 
             // If referred, update the referrer's document and notify them

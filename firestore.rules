@@ -1,45 +1,49 @@
 rules_version = '2';
-
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Helper function to check if a user is authenticated.
-    function isAuthenticated() {
-      return request.auth != null;
-    }
-
-    // Helper function to check if the request is from the owner of the document.
-    function isOwner(userId) {
-      return request.auth.uid == userId;
-    }
-
-    // ===== Users Collection =====
-    // Allow anyone who is logged in to read, write, and query user data.
-    // This is permissive for testing but allows all profile updates, referral lookups, etc.
+    // Secure rule for the main users collection.
+    // Only the authenticated user can access their own document.
     match /users/{userId} {
-      allow read, write, delete: if isAuthenticated();
+      allow read, update, delete: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null;
 
-      // --- History Subcollection ---
-      // Allow any logged-in user to read or write to any history subcollection.
-      // This covers a user writing to their own history and a new user writing
-      // to their referrer's history.
+      // Rules for subcollections like 'history'
       match /history/{historyId} {
-        allow read, write, delete: if isAuthenticated();
+        allow read, write: if request.auth != null && request.auth.uid == userId;
       }
     }
 
-    // ===== Subscriptions Collection =====
-    // Allow a user to read and write to their own subscription document.
-    match /subscriptions/{userId} {
-      allow read, write: if isOwner(userId);
+    // New, secure rules for the dedicated referral code collection.
+    match /referralCodes/{code} {
+      // Anyone can read referral codes to check if they are valid.
+      // This is safe because it only exposes the referrer's username.
+      allow read: if true;
+
+      // A user can only create a referral code document if the userId inside
+      // the document matches their own authenticated UID.
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+
+      // Prevent clients from updating or deleting referral codes.
+      allow update, delete: if false;
     }
 
-    // ===== Rewards Collection =====
-    // Allow any logged-in user to create, read, and update rewards.
-    // This covers a user creating a reward for their referrer and a user
-    // claiming a reward (updating the 'claimed' field).
+    // Rules for other collections
+    match /subscriptions/{userId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
     match /rewards/{rewardId} {
-      allow read, write: if isAuthenticated();
+        // Allow the referrer to read the reward details.
+        allow read: if request.auth != null && request.auth.uid == resource.data.referrerId;
+        
+        // Allow creation by a server-side process (like a Cloud Function)
+        // or a trusted client action where the creator is verified.
+        // For now, we'll allow any authenticated user to create a reward,
+        // assuming a Cloud Function will validate and create it in production.
+        allow create: if request.auth != null;
+        
+        // Only allow updates (like claiming) by the referrer.
+        allow update: if request.auth != null && request.auth.uid == resource.data.referrerId;
     }
   }
 }
