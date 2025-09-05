@@ -70,10 +70,10 @@ initializeTheme();
 
 // ===== Login Logic =====
 if (loginForm) {
+    const loginPassword = document.querySelector("#login-password");
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         const loginEmail = document.querySelector("#login-email");
-        const loginPassword = document.querySelector("#login-password");
         const rememberMe = document.querySelector("#remember-me");
         const loginBtn = document.querySelector("#login-btn");
 
@@ -296,6 +296,9 @@ function validatePasswords() {
 
 // ===== Signup Logic =====
 if (signupForm) {
+    const signupPassword = document.querySelector("#signup-password");
+    const signupPasswordConfirm = document.querySelector("#signup-password-confirm");
+
     signupForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         const signupUsername = document.querySelector("#signup-username");
@@ -410,12 +413,22 @@ if (signupForm) {
 
     // Password visibility toggle for signup page
     const passwordToggle = document.getElementById('password-toggle');
-    if (passwordToggle && signupPassword) {
+    const confirmPasswordToggle = document.getElementById('confirm-password-toggle');
+
+    if (passwordToggle && signupPassword) { // Toggle for the main password field
         passwordToggle.addEventListener('click', () => {
             const isPassword = signupPassword.type === 'password';
             signupPassword.type = isPassword ? 'text' : 'password';
             passwordToggle.classList.toggle('icon-eye', !isPassword);
             passwordToggle.classList.toggle('icon-eye-slash', isPassword);
+        });
+    }
+    if (confirmPasswordToggle && signupPasswordConfirm) { // Toggle for the confirm password field
+        confirmPasswordToggle.addEventListener('click', () => {
+            const isPassword = signupPasswordConfirm.type === 'password';
+            signupPasswordConfirm.type = isPassword ? 'text' : 'password';
+            confirmPasswordToggle.classList.toggle('icon-eye', !isPassword);
+            confirmPasswordToggle.classList.toggle('icon-eye-slash', isPassword);
         });
     }
 
