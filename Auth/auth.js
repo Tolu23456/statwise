@@ -65,36 +65,14 @@ function initializeTheme() {
     });
 }
 
-// ===== Grab DOM Elements =====
-// Login
-const loginForm = document.querySelector("#login-form");
-const loginEmail = document.querySelector("#login-email");
-const loginPassword = document.querySelector("#login-password");
-const rememberMe = document.querySelector("#remember-me");
-const loginBtn = document.querySelector("#login-btn");
-
-// Signup
-const signupForm = document.querySelector("#signup-form");
-const signupUsername = document.querySelector("#signup-username");
-const signupEmail = document.querySelector("#signup-email");
-const signupPassword = document.querySelector("#signup-password");
-const signupPasswordConfirm = document.querySelector("#signup-password-confirm");
-const signupReferral = document.querySelector("#signup-referral");
-const signupRememberMe = document.querySelector("#signup-remember-me");
-const signupBtn = document.querySelector("#signup-btn");
-const referralNameDisplay = document.querySelector("#referral-name-display");
-const signupError = document.querySelector("#signup-error");
-
-// Forgot Password
-const forgotPasswordForm = document.querySelector("#forgot-password-form");
-const forgotPasswordEmail = document.querySelector("#forgot-password-email");
-const forgotPasswordBtn = document.querySelector("#forgot-password-btn");
-const forgotPasswordMessage = document.querySelector("#forgot-password-message");
-
-
 // ===== Firestore Collections =====
 const usersCol = collection(db, "users");
 const subscriptionsCol = collection(db, "subscriptions");
+
+// ===== Grab Page-Specific Forms =====
+const loginForm = document.querySelector("#login-form");
+const signupForm = document.querySelector("#signup-form");
+const forgotPasswordForm = document.querySelector("#forgot-password-form");
 
 // Initialize theme on page load
 initializeTheme();
@@ -103,6 +81,11 @@ initializeTheme();
 if (loginForm) {
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        const loginEmail = document.querySelector("#login-email");
+        const loginPassword = document.querySelector("#login-password");
+        const rememberMe = document.querySelector("#remember-me");
+        const loginBtn = document.querySelector("#login-btn");
+
         const loginError = document.querySelector("#login-error");
         loginError.textContent = "";
 
@@ -152,9 +135,6 @@ if (loginForm) {
                 });
 
             } else {
-                // Update last login timestamp
-                await setDoc(userRef, { lastLogin: new Date().toISOString() }, { merge: true });
-
                 // Ensure subscription doc exists for older users
                 const subRef = doc(subscriptionsCol, user.uid);
                 const subSnap = await getDoc(subRef);
@@ -170,6 +150,9 @@ if (loginForm) {
             }
 
             showSuccess(loginBtn);
+
+            // Clear the last visited page to ensure a fresh start on the home page
+            localStorage.removeItem('lastPage');
 
             // Add fade-out transition before redirecting
             const authCard = loginForm.closest('.auth-card');
@@ -198,34 +181,41 @@ if (loginForm) {
 }
 
 // ===== Referral Code Input Logic =====
-if (signupReferral && referralNameDisplay) {
-    signupReferral.addEventListener("input", () => {
-        // Clear the name display while typing
-        referralNameDisplay.textContent = "";
-        referralNameDisplay.style.display = "none";
-    });
+if (signupForm) {
+    const signupReferral = document.querySelector("#signup-referral");
+    const referralNameDisplay = document.querySelector("#referral-name-display");
 
-    signupReferral.addEventListener("blur", async () => {
-        const coreCode = signupReferral.value.trim().toUpperCase();
-        referralNameDisplay.style.display = "none"; // Hide on blur by default
+    let debounceTimeout;
 
-        if (coreCode) {
-            const fullCode = `REF-${coreCode}`;
-            try {
-                const q = query(usersCol, where("referralCode", "==", fullCode), limit(1));
-                const querySnapshot = await getDocs(q);
-                if (!querySnapshot.empty) {
-                    const referrerName = querySnapshot.docs[0].data().username;
-                    referralNameDisplay.textContent = `Referred by: ${referrerName}`;
-                    referralNameDisplay.style.display = "block";
-                } else {
-                    referralNameDisplay.textContent = "Invalid Code";
-                    referralNameDisplay.style.display = "block";
-                }
-            } catch (error) {
-                console.error("Error fetching referrer:", error);
-            }
+    const checkReferralCode = async (code) => {
+        const coreCode = code.trim().toUpperCase();
+        referralNameDisplay.style.display = "none"; // Hide by default
+
+        if (!coreCode) {
+            referralNameDisplay.textContent = "";
+            return;
         }
+
+        const fullCode = `REF-${coreCode}`;
+        try {
+            const q = query(usersCol, where("referralCode", "==", fullCode), limit(1));
+            const querySnapshot = await getDocs(q);
+            if (!querySnapshot.empty) {
+                const referrerName = querySnapshot.docs[0].data().username;
+                referralNameDisplay.textContent = `Referred by: ${referrerName}`;
+                referralNameDisplay.style.display = "block";
+            } else {
+                referralNameDisplay.textContent = "Invalid Code";
+                referralNameDisplay.style.display = "block";
+            }
+        } catch (error) {
+            console.error("Error fetching referrer:", error);
+        }
+    };
+
+    signupReferral.addEventListener("input", (e) => {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => checkReferralCode(e.target.value), 500); // 500ms delay
     });
 }
 
@@ -260,7 +250,7 @@ function checkPasswordStrength(password) {
     return { strength, level };
 }
 
-if (signupPassword) {
+if (signupForm) {
     const strengthBars = document.querySelectorAll("#password-strength-container .strength-bar");
     const strengthText = document.getElementById("password-strength-text");
 
@@ -290,7 +280,10 @@ if (signupPassword) {
 
 // ===== Password Match Validation =====
 function validatePasswords() {
-    if (!signupPassword || !signupPasswordConfirm) return;
+    if (!signupForm) return;
+    const signupPassword = document.querySelector("#signup-password");
+    const signupPasswordConfirm = document.querySelector("#signup-password-confirm");
+    const signupError = document.querySelector("#signup-error");
 
     const password = signupPassword.value;
     const confirmPassword = signupPasswordConfirm.value;
@@ -314,6 +307,15 @@ function validatePasswords() {
 if (signupForm) {
     signupForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        const signupUsername = document.querySelector("#signup-username");
+        const signupEmail = document.querySelector("#signup-email");
+        const signupPassword = document.querySelector("#signup-password");
+        const signupPasswordConfirm = document.querySelector("#signup-password-confirm");
+        const signupReferral = document.querySelector("#signup-referral");
+        const signupRememberMe = document.querySelector("#signup-remember-me");
+        const signupBtn = document.querySelector("#signup-btn");
+        const signupError = document.querySelector("#signup-error");
+
         signupError.textContent = "";
 
         const username = signupUsername.value.trim();
@@ -338,28 +340,27 @@ if (signupForm) {
             const persistence = signupRememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
             await setPersistence(auth, persistence);
 
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
             // --- Referral Code Validation ---
             let referrerId = null;
             if (referralCode) { // referralCode is now just the user-typed part
                 const fullCode = `REF-${referralCode}`;
                 const referrerQuery = query(usersCol, where("referralCode", "==", fullCode), limit(1));
                 const referrerSnapshot = await getDocs(referrerQuery);
+
                 if (referrerSnapshot.empty) {
                     hideSpinner(signupBtn, "Sign Up");
                     signupError.textContent = "Invalid referral code.";
+                    await user.delete(); // Clean up the created user if referral is invalid
                     return; // Stop signup if code is provided but invalid
                 }
                 referrerId = referrerSnapshot.docs[0].id;
-            }
-
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
-
-            // Now that the user is created, we can safely check for self-referral.
-            if (referrerId && referrerId === user.uid) {
-                // This is a rare edge case, but good to handle. We proceed with signup but nullify the referral.
-                console.warn("Self-referral attempt detected and ignored.");
-                referrerId = null; 
+                // Now that the user is created, we can safely check for self-referral.
+                if (referrerId === user.uid) {
+                    referrerId = null; // Nullify the referral if it's a self-referral
+                }
             }
 
             // Update Firebase Auth profile
@@ -399,6 +400,9 @@ if (signupForm) {
 
             showSuccess(signupBtn);
 
+            // Clear the last visited page to ensure a fresh start on the home page
+            localStorage.removeItem('lastPage');
+
             // Add fade-out transition before redirecting
             const authCard = signupForm.closest('.auth-card');
             if (authCard) {
@@ -433,6 +437,10 @@ if (signupForm) {
 if (forgotPasswordForm) {
     forgotPasswordForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        const forgotPasswordEmail = document.querySelector("#forgot-password-email");
+        const forgotPasswordBtn = document.querySelector("#forgot-password-btn");
+        const forgotPasswordMessage = document.querySelector("#forgot-password-message");
+
         forgotPasswordMessage.textContent = "";
         forgotPasswordMessage.style.color = ""; // Reset color
 
@@ -442,7 +450,7 @@ if (forgotPasswordForm) {
             return;
         }
 
-        showSpinner(forgotPasswordBtn);
+        showSpinner(forgotPasswordBtn, "Sending...");
 
         try {
             await sendPasswordResetEmail(auth, email);

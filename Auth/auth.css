@@ -153,12 +153,10 @@ body {
 .auth-form input:focus {
     outline: none;
     border-color: #0e639c;
-    box-shadow: 0 0 0 2px rgba(14, 99, 156, 0.2);
 }
 
 .auth-form input.input-error {
     border-color: #d9534f; /* Use the same red as the error message */
-    box-shadow: 0 0 0 2px rgba(217, 83, 79, 0.2);
 }
 
 
@@ -250,45 +248,63 @@ body {
     white-space: nowrap; /* Prevent the label from wrapping */
 }
 
+.remember-me span {
+    padding-left: 8px; /* Space between checkbox and text */
+}
+
 .remember-me input {
     /* Hide the default checkbox */
-    opacity: 0;
-    width: 0;
-    height: 0;
-    position: absolute;
+    display: none;
 }
 
-.remember-me span {
-    position: relative;
-    padding-left: 30px; /* Space for the custom checkbox */
-    cursor: pointer;
+/* New SVG Checkbox Style */
+.check {
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
 }
 
-/* Custom checkbox box */
-.remember-me span::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ccc;
-    background-color: #fff;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+.check:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(14, 99, 156, 0.05);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-/* Checkmark */
-.remember-me input:checked + span::after {
-    content: '✔';
-    position: absolute;
-    left: 4px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-    color: #fff;
+.check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #c8ccd4;
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
 }
+
+.check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+.check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+.check:hover:before { opacity: 1; }
+.check:hover svg { stroke: #0e639c; }
 
 .extra-link a {
     color: #0e639c;
@@ -297,10 +313,17 @@ body {
 }
 .extra-link a:hover { text-decoration: underline; }
 
-/* Checked state for the box */
-.remember-me input:checked + span::before {
-    background-color: #0e639c;
-    border-color: #0e639c;
+.remember-me input:checked + .check svg { stroke: #0e639c; }
+
+.remember-me input:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+.remember-me input:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
 }
 
 /* --- Error Message --- */
@@ -408,12 +431,12 @@ body {
     color: #bbb;
 }
 
-.dark-mode .remember-me span::before {
-    background-color: #2d2d30;
-    border-color: #555;
+.dark-mode .check svg {
+    stroke: #6a737d;
 }
 
-.dark-mode .remember-me input:checked + span::before {
+.dark-mode .check:hover svg,
+.dark-mode .remember-me input:checked + .check svg {
     border-color: #0e639c;
 }
 

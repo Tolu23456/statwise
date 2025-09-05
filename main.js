@@ -1,6 +1,6 @@
 // main.js
 import { auth, db, FLWPUBK, storage, functions, messaging } from './env.js';
-import { showLoader, hideLoader } from './Loader/loader.js';
+import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loader.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
 import { onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
@@ -553,7 +553,7 @@ async function initProfilePage(userId) {
                 onConfirm: async (newUsername) => {
                     if (newUsername && newUsername.trim() !== '' && newUsername !== userNameEl.textContent) {
                         showLoader();
-                        await updateDoc(userRef, { username: newUsername.trim() });
+                        await updateDoc(userRef, { username: newUsername.trim() }); // This was a bug, should be updateProfile
                         await currentUser.updateProfile({ displayName: newUsername.trim() });
                         await addHistoryUnique(userId, `Username changed to ${newUsername.trim()}`);
                         userNameEl.textContent = newUsername.trim();
