@@ -257,6 +257,7 @@ if (signupForm) {
 
     const checkReferralCode = async (code) => {
         const coreCode = code.trim().toUpperCase();
+        const wrapper = signupReferral.parentElement;
         referralNameDisplay.classList.remove('show', 'error'); // Hide by default
 
         if (!coreCode) {
@@ -264,6 +265,9 @@ if (signupForm) {
             validReferrerId = null;
             return;
         }
+
+        // Show validating spinner
+        wrapper.classList.add('validating');
 
         try {
             // Query the 'users' collection for a matching referral code.
@@ -285,6 +289,9 @@ if (signupForm) {
         } catch (error) {
             validReferrerId = null;
             console.error("Error fetching referrer:", error);
+        } finally {
+            // Hide validating spinner
+            wrapper.classList.remove('validating');
         }
     };
     signupReferral.addEventListener("input", (e) => {
@@ -416,7 +423,7 @@ if (signupForm) {
         }
 
         const strengthScore = checkPasswordStrength(password);
-        if (strengthScore < 3) {
+        if (strengthScore.score < 3) {
             displayError(signupError, "Password must contain uppercase, lowercase, numbers, and symbols for security.", true);
             return;
         }
@@ -492,7 +499,7 @@ if (signupForm) {
             // Explicitly redirect to home page with hash to ensure homepage loads
             setTimeout(() => {
                 try {
-                    window.location.href = "../index.html#home";
+                    window.location.assign("../index.html#home");
                 } catch (redirectError) {
                     // Fallback if redirect fails
                     console.error('Signup redirect failed:', redirectError);
