@@ -14,14 +14,44 @@
   <div id="active-filters-container"></div>
 
   <!-- League Tabs -->
-  <div class="tab-container">
+  <div class="tab-container" style="flex-wrap: wrap; gap: 8px;">
+    <!-- All Leagues -->
     <button class="tab-btn active" data-tab="all-leagues">All</button>
+    
+    <!-- Europe -->
     <button class="tab-btn" data-tab="premier-league">Premier League</button>
     <button class="tab-btn" data-tab="la-liga">La Liga</button>
-    <button class="tab-btn" data-tab="serie-a">Serie A</button>
     <button class="tab-btn" data-tab="bundesliga">Bundesliga</button>
+    <button class="tab-btn" data-tab="serie-a">Serie A</button>
     <button class="tab-btn" data-tab="ligue1">Ligue 1</button>
+    <button class="tab-btn" data-tab="primeira-liga">Primeira Liga</button>
+    <button class="tab-btn" data-tab="eredivisie">Eredivisie</button>
+    <button class="tab-btn" data-tab="scottish-premiership">Scottish Premiership</button>
+    <button class="tab-btn" data-tab="belgian-pro-league">Belgian Pro League</button>
+    <button class="tab-btn" data-tab="super-lig">Süper Lig</button>
+    
+    <!-- South America -->
+    <button class="tab-btn" data-tab="brasileiro-serie-a">Brasileirão Série A</button>
+    <button class="tab-btn" data-tab="liga-profesional">Liga Profesional</button>
+    
+    <!-- North America -->
+    <button class="tab-btn" data-tab="mls">MLS</button>
+    <button class="tab-btn" data-tab="liga-mx">Liga MX</button>
+    
+    <!-- Asia -->
+    <button class="tab-btn" data-tab="saudi-pro-league">Saudi Pro League</button>
+    <button class="tab-btn" data-tab="j1-league">J1 League</button>
+    <button class="tab-btn" data-tab="k-league">K League 1</button>
+    
+    <!-- Africa -->
+    <button class="tab-btn" data-tab="egyptian-premier">Egyptian Premier</button>
+    <button class="tab-btn" data-tab="south-african-premier">SA Premier Division</button>
+    <button class="tab-btn" data-tab="botola-pro">Botola Pro</button>
+    
+    <!-- International Competitions -->
     <button class="tab-btn" data-tab="champions-league">Champions League</button>
+    <button class="tab-btn" data-tab="copa-libertadores">Copa Libertadores</button>
+    <button class="tab-btn" data-tab="club-world-cup">Club World Cup</button>
   </div>
 
   <!-- All Leagues Tab Content -->
@@ -187,6 +217,312 @@
           <span>Confidence: 82%</span>
           <div class="confidence-bar">
             <div class="confidence-fill" style="width: 82%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primeira Liga Tab Content -->
+  <div id="primeira-liga" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Benfica vs Porto</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Over 2.5 Goals</span></p>
+        <p class="odds">1.80</p>
+        <p class="match-time">Kickoff: 7:15 PM</p>
+        <div class="confidence">
+          <span>Confidence: 70%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 70%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Eredivisie Tab Content -->
+  <div id="eredivisie" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Ajax vs PSV</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Ajax Win</span></p>
+        <p class="odds">2.10</p>
+        <p class="match-time">Kickoff: 6:45 PM</p>
+        <div class="confidence">
+          <span>Confidence: 76%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 76%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scottish Premiership Tab Content -->
+  <div id="scottish-premiership" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Celtic vs Rangers</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Celtic Win</span></p>
+        <p class="odds">1.65</p>
+        <p class="match-time">Kickoff: 5:30 PM</p>
+        <div class="confidence">
+          <span>Confidence: 73%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 73%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Belgian Pro League Tab Content -->
+  <div id="belgian-pro-league" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Club Brugge vs Anderlecht</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Under 2.5 Goals</span></p>
+        <p class="odds">2.30</p>
+        <p class="match-time">Kickoff: 8:30 PM</p>
+        <div class="confidence">
+          <span>Confidence: 65%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 65%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Süper Lig Tab Content -->
+  <div id="super-lig" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Galatasaray vs Fenerbahçe</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Draw</span></p>
+        <p class="odds">3.20</p>
+        <p class="match-time">Kickoff: 7:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 78%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 78%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brasileirão Série A Tab Content -->
+  <div id="brasileiro-serie-a" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Flamengo vs Palmeiras</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Both Teams to Score</span></p>
+        <p class="odds">1.55</p>
+        <p class="match-time">Kickoff: 10:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 84%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 84%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Liga Profesional Tab Content -->
+  <div id="liga-profesional" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Boca Juniors vs River Plate</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Under 2.5 Goals</span></p>
+        <p class="odds">2.05</p>
+        <p class="match-time">Kickoff: 11:15 PM</p>
+        <div class="confidence">
+          <span>Confidence: 71%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 71%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MLS Tab Content -->
+  <div id="mls" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">LA Galaxy vs LAFC</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Over 2.5 Goals</span></p>
+        <p class="odds">1.70</p>
+        <p class="match-time">Kickoff: 3:30 AM</p>
+        <div class="confidence">
+          <span>Confidence: 69%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 69%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Liga MX Tab Content -->
+  <div id="liga-mx" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">América vs Chivas</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">América Win</span></p>
+        <p class="odds">1.90</p>
+        <p class="match-time">Kickoff: 4:00 AM</p>
+        <div class="confidence">
+          <span>Confidence: 77%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 77%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Saudi Pro League Tab Content -->
+  <div id="saudi-pro-league" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Al Hilal vs Al Nassr</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Both Teams to Score</span></p>
+        <p class="odds">1.45</p>
+        <p class="match-time">Kickoff: 6:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 81%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 81%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- J1 League Tab Content -->
+  <div id="j1-league" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Kawasaki Frontale vs Yokohama F. Marinos</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Over 2.5 Goals</span></p>
+        <p class="odds">1.85</p>
+        <p class="match-time">Kickoff: 12:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 66%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 66%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- K League Tab Content -->
+  <div id="k-league" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Jeonbuk Hyundai vs Ulsan Hyundai</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Draw</span></p>
+        <p class="odds">2.80</p>
+        <p class="match-time">Kickoff: 11:00 AM</p>
+        <div class="confidence">
+          <span>Confidence: 63%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 63%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Egyptian Premier Tab Content -->
+  <div id="egyptian-premier" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Al Ahly vs Zamalek</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Al Ahly Win</span></p>
+        <p class="odds">1.75</p>
+        <p class="match-time">Kickoff: 6:30 PM</p>
+        <div class="confidence">
+          <span>Confidence: 79%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 79%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- South African Premier Division Tab Content -->
+  <div id="south-african-premier" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Kaizer Chiefs vs Orlando Pirates</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Under 2.5 Goals</span></p>
+        <p class="odds">2.10</p>
+        <p class="match-time">Kickoff: 4:30 PM</p>
+        <div class="confidence">
+          <span>Confidence: 67%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 67%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botola Pro Tab Content -->
+  <div id="botola-pro" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Raja Casablanca vs Wydad Casablanca</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Draw</span></p>
+        <p class="odds">2.90</p>
+        <p class="match-time">Kickoff: 5:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 64%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 64%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copa Libertadores Tab Content -->
+  <div id="copa-libertadores" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Estudiantes vs Atletico Nacional</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Both Teams to Score</span></p>
+        <p class="odds">1.65</p>
+        <p class="match-time">Kickoff: 1:00 AM</p>
+        <div class="confidence">
+          <span>Confidence: 83%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 83%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Club World Cup Tab Content -->
+  <div id="club-world-cup" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Manchester City vs Flamengo</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Manchester City Win</span></p>
+        <p class="odds">1.40</p>
+        <p class="match-time">Kickoff: 8:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 87%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 87%;"></div>
           </div>
         </div>
       </div>
