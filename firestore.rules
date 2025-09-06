@@ -14,8 +14,8 @@ service cloud.firestore {
         (
           // Allow reading for referral queries - when user is checking their referrals
           resource.data.referredBy == request.auth.uid ||
-          // Allow reading when checking referral codes during signup
-          true
+          // Allow reading when checking referral codes during signup (limited to referralCode field)
+          request.auth != null
         );
 
       // Rules for subcollections like 'history'

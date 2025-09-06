@@ -198,7 +198,15 @@ if (loginForm) {
                 authCard.classList.add('fade-out');
             }
             // Explicitly redirect to home page with hash to ensure homepage loads
-            setTimeout(() => window.location.href = "../index.html#home", 500); // Redirect after animation (500ms)
+            setTimeout(() => {
+                try {
+                    window.location.href = "../index.html#home";
+                } catch (redirectError) {
+                    // Fallback if redirect fails
+                    console.error('Login redirect failed:', redirectError);
+                    window.location.replace("../index.html#home");
+                }
+            }, 500); // Redirect after animation (500ms)
 
         } catch (error) {            
             let errorMessage = "Unable to sign you in right now. Please try again.";
@@ -482,7 +490,15 @@ if (signupForm) {
                 authCard.classList.add('fade-out');
             }
             // Explicitly redirect to home page with hash to ensure homepage loads
-            setTimeout(() => window.location.href = "../index.html#home", 500); // Redirect after animation (500ms)
+            setTimeout(() => {
+                try {
+                    window.location.href = "../index.html#home";
+                } catch (redirectError) {
+                    // Fallback if redirect fails
+                    console.error('Signup redirect failed:', redirectError);
+                    window.location.replace("../index.html#home");
+                }
+            }, 500); // Redirect after animation (500ms)
 
         } catch (error) {            
             let errorMessage = "Unable to create your account right now. Please try again.";
