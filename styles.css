@@ -851,23 +851,28 @@ input:checked+.slider::before {
 .league-tabs-wrapper {
     position: relative;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: #ffffff;
     border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 8px rgba(14, 99, 156, 0.1);
-    border: 1px solid rgba(14, 99, 156, 0.1);
+    padding: 12px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    max-height: 80px;
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
 }
 
 /* Scrollable tabs container */
 .scrollable-tabs {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     overflow-x: auto;
     scroll-behavior: smooth;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
-    padding: 0 56px 0 0; /* Space for expand button */
+    padding: 0;
     margin-bottom: 0;
+    flex-wrap: nowrap;
+    scroll-snap-type: x proximity;
 }
 
 .scrollable-tabs::-webkit-scrollbar {
@@ -883,87 +888,66 @@ input:checked+.slider::before {
     margin-bottom: 16px;
 }
 
-/* Expand tabs button */
-.expand-tabs-btn {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: linear-gradient(135deg, #0e639c 0%, #0b4f7a 100%);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 6px rgba(14, 99, 156, 0.3);
-}
-
-.expand-tabs-btn:hover {
-    background: linear-gradient(135deg, #0b4f7a 0%, #083a5c 100%);
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.4);
-}
-
-.expand-tabs-btn:focus-visible {
-    outline: 3px solid #6ab3e7;
-    outline-offset: 2px;
-}
-
-.expand-tabs-btn:active {
-    transform: translateY(-50%) scale(0.95);
-}
-
-.expand-tabs-btn svg {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-}
-
-/* Expanded state */
-.scrollable-tabs.expanded {
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow: visible;
-    padding-right: 0;
-}
-
-.scrollable-tabs.expanded + .expand-tabs-btn {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-    transform: none;
-}
-
-.scrollable-tabs.expanded + .expand-tabs-btn svg {
-    transform: rotate(180deg);
+/* Collapsed state for tabs wrapper */
+.league-tabs-wrapper.collapsed {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 16px;
+    margin-bottom: 0;
+    transform: translateY(-10px);
 }
 
 .tab-btn {
-    padding: 8px 20px;
-    border-radius: 8px;
-    border: 2px solid #0e639c;
-    background: #f1f3f5;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid #0e639c;
+    background: transparent;
     color: #0e639c;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 .tab-btn.active {
     background: #0e639c;
     color: #fff;
+    border-color: #0e639c;
 }
 
 .tab-btn:hover {
-    background: #0b4f7a;
+    background: #0e639c;
     color: #fff;
-    border-color: #0b4f7a;
+    border-color: #0e639c;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(14, 99, 156, 0.2);
+}
+
+/* Dark mode support for league tabs */
+.dark-mode .league-tabs-wrapper {
+    background: #2d2d30;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .tab-btn {
+    color: #d4d4d4;
+    border-color: #555;
+}
+
+.dark-mode .tab-btn.active {
+    background: #0e639c;
+    color: #fff;
+    border-color: #0e639c;
+}
+
+.dark-mode .tab-btn:hover {
+    background: #0e639c;
+    color: #fff;
+    border-color: #0e639c;
 }
 
 /* Show/Hide containers */

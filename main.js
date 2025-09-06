@@ -1506,7 +1506,7 @@ async function loadPage(page, userId, addToHistory = true) {
             main.dataset.pullToRefreshActive = 'true'; // Activate for home page
             // No animated background on home page - only on auth pages
             initTabs(); // Initialize league tabs for home page
-            initExpandableTabs(); // Initialize expand/collapse functionality
+            initCollapsibleTabs(); // Initialize collapsible tabs functionality
 
             const cards = document.querySelectorAll('.prediction-card');
             cards.forEach((card, index) => {
@@ -1809,38 +1809,55 @@ function initTabs() {
 }
 
 /**
- * Initialize expandable tabs functionality for the homepage league tabs
+ * Initialize collapsible tabs functionality for the homepage league tabs
  */
-function initExpandableTabs() {
-    const expandBtn = document.getElementById('expand-tabs-btn');
+function initCollapsibleTabs() {
+    const tabsWrapper = document.querySelector('.league-tabs-wrapper');
     const tabsContainer = document.getElementById('league-tabs');
     
-    if (!expandBtn || !tabsContainer) return;
+    if (!tabsWrapper || !tabsContainer) return;
     
-    // Constants for icon paths
-    const EXPAND_ICON = '<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>';
-    const COLLAPSE_ICON = '<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>';
+    let isCollapsed = false;
+    let collapseTimeout = null;
     
-    expandBtn.addEventListener('click', () => {
-        const isExpanded = tabsContainer.classList.contains('expanded');
-        const svg = expandBtn.querySelector('svg');
+    // Add click handlers to tab buttons
+    tabsContainer.addEventListener('click', (e) => {
+        const tabButton = e.target.closest('.tab-btn');
+        if (!tabButton) return;
         
-        if (!svg) return; // Safety guard
+        // Handle tab switching first
+        handleTabSwitch(tabButton);
         
-        if (isExpanded) {
-            // Collapse tabs
-            tabsContainer.classList.remove('expanded');
-            svg.innerHTML = EXPAND_ICON;
-            expandBtn.title = 'Show all leagues';
-            expandBtn.setAttribute('aria-label', 'Show all leagues');
-            expandBtn.setAttribute('aria-expanded', 'false');
-        } else {
-            // Expand tabs
-            tabsContainer.classList.add('expanded');
-            svg.innerHTML = COLLAPSE_ICON;
-            expandBtn.title = 'Hide expanded view';
-            expandBtn.setAttribute('aria-label', 'Hide expanded view');
-            expandBtn.setAttribute('aria-expanded', 'true');
+        // If clicking on a non-"All" tab, collapse the tabs wrapper
+        if (tabButton.dataset.tab !== 'all-leagues' && !isCollapsed) {
+            isCollapsed = true;
+            tabsWrapper.classList.add('collapsed');
+            tabsWrapper.setAttribute('aria-hidden', 'true');
+            
+            // Clear any existing timeout and set new one
+            if (collapseTimeout) {
+                clearTimeout(collapseTimeout);
+            }
+            
+            // Auto-expand after 3 seconds for better UX
+            collapseTimeout = setTimeout(() => {
+                if (isCollapsed) {
+                    isCollapsed = false;
+                    tabsWrapper.classList.remove('collapsed');
+                    tabsWrapper.removeAttribute('aria-hidden');
+                }
+            }, 3000);
+        } else if (tabButton.dataset.tab === 'all-leagues' && isCollapsed) {
+            // Clicking "All" always expands
+            isCollapsed = false;
+            tabsWrapper.classList.remove('collapsed');
+            tabsWrapper.removeAttribute('aria-hidden');
+            
+            // Clear timeout since user manually expanded
+            if (collapseTimeout) {
+                clearTimeout(collapseTimeout);
+                collapseTimeout = null;
+            }
         }
     });
 }
