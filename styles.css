@@ -37,6 +37,9 @@ body {
     height: 100%;
     position: relative; /* Needed for animation container */
     overflow-x: hidden; /* Prevent horizontal scroll from animation */
+    /* Prevent browser pull-to-refresh */
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* ---------------- Animated Background ---------------- */
@@ -128,6 +131,8 @@ main {
     padding-bottom: calc(var(--nav-height) + 20px);
     min-height: calc(100vh - var(--header-height) - var(--nav-height));
     overflow-y: auto;
+    /* Additional overscroll prevention for main content */
+    overscroll-behavior-y: contain;
 }
 
 /* ---------------- Page Transitions ---------------- */
@@ -888,14 +893,7 @@ input:checked+.slider::before {
     margin-bottom: 16px;
 }
 
-/* Collapsed state for tabs wrapper */
-.league-tabs-wrapper.collapsed {
-    opacity: 0;
-    max-height: 0;
-    padding: 0 16px;
-    margin-bottom: 0;
-    transform: translateY(-10px);
-}
+/* Remove collapsed state - tabs should always be visible on mobile */
 
 .tab-btn {
     padding: 6px 16px;
