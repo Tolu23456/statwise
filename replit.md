@@ -61,11 +61,19 @@ Firebase Cloud Messaging (FCM) enables push notifications for prediction alerts 
 
 ## Recent Changes
 
-### September 6, 2025 - Project Setup
+### September 6, 2025 - Project Setup and Authentication Fixes
 - Successfully imported from GitHub and configured for Replit environment
 - Set up workflow using http-server on port 5000 with CORS enabled for proper proxy support
 - Configured deployment target as "autoscale" for production deployment
 - Verified all Firebase services and dependencies are properly configured
 - All static assets (CSS, JavaScript, fonts, icons) are loading correctly
 - Progressive Web App features including service worker registration are functioning
-- Authentication flow and subscription management systems are operational
+
+### September 6, 2025 - Authentication and UI Improvements
+- Fixed authentication issues by adding missing referral code generation to login flow
+- Corrected variable naming typo in signup code that was causing authentication failures
+- Updated Firestore rules compliance to ensure proper user document creation
+- Removed background animation from main application pages for cleaner UI
+- Kept background animation only on authentication pages (login, signup, forgot password)
+- Removed background animation toggle from profile settings as requested
+- Authentication flow and subscription management systems are now fully operational
