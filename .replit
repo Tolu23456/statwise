@@ -32,3 +32,7 @@ outputType = "webview"
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["npx", "http-server", ".", "-a", "0.0.0.0", "-p", "5000", "-c-1", "--cors"]
