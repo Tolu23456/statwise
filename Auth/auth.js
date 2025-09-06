@@ -151,33 +151,33 @@ if (loginForm) {
             if (authCard) {
                 authCard.classList.add('fade-out');
             }
-            setTimeout(() => window.location.href = "../index.html", 500); // Redirect after animation (500ms)
+            // Explicitly redirect to home page with hash to ensure homepage loads
+            setTimeout(() => window.location.href = "../index.html#home", 500); // Redirect after animation (500ms)
 
         } catch (error) {            
-            let errorMessage = "An unexpected error occurred. Please try again.";
+            let errorMessage = "Unable to sign you in right now. Please try again.";
 
             if (error.code === 'auth/wrong-password') {
-                errorMessage = "Incorrect password. Please try again.";
+                errorMessage = "The password you entered is incorrect. Please double-check and try again.";
             } else if (error.code === 'auth/user-not-found') {
-                errorMessage = "No account found with that email. Please sign up.";
+                errorMessage = "We couldn't find an account with that email address. Please check the email or create a new account.";
             } else if (error.code === 'auth/invalid-email') {
-                errorMessage = "Invalid email address format.";
+                errorMessage = "Please enter a valid email address.";
             } else if (error.code === 'auth/missing-email') {
-                errorMessage = "Please provide an email address.";
+                errorMessage = "Please enter your email address.";
             } else if (error.code === 'auth/network-request-failed') {
-                errorMessage = "Network error. Please check your internet connection and try again.";
+                errorMessage = "Connection problem. Please check your internet connection and try again.";
             } else if (error.code === 'auth/too-many-requests') {
-                errorMessage = "Too many failed login attempts. Please try again later.";
-            }
-            // You can add more error code handling here as needed.
-            console.error(error.code);
-            if (error.code === 'auth/email-already-in-use') {
-                errorMessage = "Email is already taken, try another email"
+                errorMessage = "Too many login attempts. Please wait a few minutes before trying again.";
+            } else if (error.code === 'auth/user-disabled') {
+                errorMessage = "This account has been disabled. Please contact support for assistance.";
+            } else if (error.code === 'auth/invalid-credential') {
+                errorMessage = "Invalid email or password. Please check your credentials and try again.";
             }
 
-            console.error(error);
+            console.error('Login error:', error.code, error.message);
             hideSpinner(loginBtn);
-            loginError.textContent = error.message;
+            loginError.textContent = errorMessage;
         }
     });
 
@@ -434,29 +434,29 @@ if (signupForm) {
             if (authCard) {
                 authCard.classList.add('fade-out');
             }
-            setTimeout(() => window.location.href = "../index.html", 500); // Redirect after animation (500ms)
+            // Explicitly redirect to home page with hash to ensure homepage loads
+            setTimeout(() => window.location.href = "../index.html#home", 500); // Redirect after animation (500ms)
 
         } catch (error) {            
-            let errorMessage = "Signup failed. Please try again.";
+            let errorMessage = "Unable to create your account right now. Please try again.";
 
             if (error.code === 'auth/email-already-in-use') {
-                errorMessage = "An account already exists with this email. Please login instead.";
+                errorMessage = "An account with this email already exists. Please use the login page instead.";
             } else if (error.code === 'auth/invalid-email') {
-                errorMessage = "Invalid email address format.";
+                errorMessage = "Please enter a valid email address.";
             } else if (error.code === 'auth/weak-password') {
-                errorMessage = "Password is not strong enough. Please use a stronger password.";
+                errorMessage = "Please choose a stronger password with at least 6 characters.";
             } else if (error.code === 'auth/network-request-failed') {
-                errorMessage = "Network error. Please check your internet connection and try again.";
+                errorMessage = "Connection problem. Please check your internet connection and try again.";
             } else if (error.code === 'auth/too-many-requests') {
-                errorMessage = "Too many failed signup attempts. Please try again later.";
+                errorMessage = "Too many signup attempts. Please wait a few minutes before trying again.";
+            } else if (error.code === 'auth/operation-not-allowed') {
+                errorMessage = "Account creation is currently disabled. Please contact support.";
             }
-             // You can add more error code handling here as needed.
             
-            console.error(error);
-            if (error.code === "auth/invalid-email") errorMessage = "Email is not valid";
-
+            console.error('Signup error:', error.code, error.message);
             hideSpinner(signupBtn);
-            signupError.textContent = error.message;
+            signupError.textContent = errorMessage;
         }
     });
 
