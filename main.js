@@ -1521,6 +1521,12 @@ async function loadPage(page, userId, addToHistory = true) {
             initTabs(); // Initialize league tabs for home page
             initCollapsibleTabs(); // Initialize collapsible tabs functionality
 
+            // Initialize pull-to-refresh for homepage
+            initPullToRefresh(main, () => {
+                // Refresh action: reload the home page
+                loadPage('home', userId || '', false);
+            });
+
             const cards = document.querySelectorAll('.prediction-card');
             cards.forEach((card, index) => {
                 card.style.animationDelay = `${index * 100}ms`;
