@@ -1140,13 +1140,13 @@ input:checked+.slider::before {
     transform: translateX(-50%) scale(0);
     width: 60px;
     height: 60px;
-    background: rgba(14, 99, 156, 0.1);
+    background: #0e639c;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 25px rgba(14, 99, 156, 0.4), 0 0 0 0 rgba(14, 99, 156, 0.1);
-    border: 3px solid rgba(14, 99, 156, 0.3);
+    box-shadow: 0 8px 25px rgba(14, 99, 156, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.3);
     opacity: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
@@ -1171,9 +1171,8 @@ input:checked+.slider::before {
 #refresh-indicator.refreshing {
     animation: enhanced-pulse 1.5s ease-in-out infinite, 
                ripple 2s ease-out infinite;
-    background: rgba(76, 175, 80, 0.2);
-    box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5), 
-                0 0 0 0 rgba(76, 175, 80, 0.4);
+    background: #4caf50;
+    box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5);
     border-color: rgba(76, 175, 80, 0.5);
 }
 
@@ -1258,10 +1257,10 @@ body.pulling-to-refresh {
 
 /* Tour tooltip/popup */
 .introjs-tooltip {
-    background: linear-gradient(135deg, rgba(14, 99, 156, 0.95) 0%, rgba(25, 118, 210, 0.95) 100%) !important;
+    background: rgba(14, 99, 156, 0.95) !important;
     border: 2px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 16px !important;
-    box-shadow: 0 12px 40px rgba(14, 99, 156, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 12px 40px rgba(14, 99, 156, 0.4) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     min-width: 280px !important;
@@ -1337,14 +1336,14 @@ body.pulling-to-refresh {
 
 /* Primary button (Next/Done) */
 .introjs-nextbutton, .introjs-donebutton {
-    background: linear-gradient(135deg, #4caf50 0%, #ff9800 100%) !important;
+    background: #4caf50 !important;
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
     color: #ffffff !important;
     font-weight: 600 !important;
 }
 
 .introjs-nextbutton:hover, .introjs-donebutton:hover {
-    background: linear-gradient(135deg, #5cbf60 0%, #ffad33 100%) !important;
+    background: #5cbf60 !important;
     box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4) !important;
 }
 
@@ -1387,7 +1386,7 @@ body.pulling-to-refresh {
 
 /* Step numbers */
 .introjs-helperNumberLayer {
-    background: linear-gradient(135deg, #0e639c 0%, #4caf50 100%) !important;
+    background: #0e639c !important;
     border: 2px solid rgba(255, 255, 255, 0.8) !important;
     color: #ffffff !important;
     font-family: 'Optimistic Text A', 'Segoe UI', 'Roboto', sans-serif !important;
@@ -1402,13 +1401,12 @@ body.pulling-to-refresh {
     right: 20px;
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, #0e639c 0%, #4caf50 100%);
+    background: #0e639c;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 20px rgba(14, 99, 156, 0.4), 
-                0 0 0 0 rgba(14, 99, 156, 0.1);
+    box-shadow: 0 6px 20px rgba(14, 99, 156, 0.4);
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1420,9 +1418,8 @@ body.pulling-to-refresh {
 
 .floating-chat-button:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(14, 99, 156, 0.5), 
-                0 0 0 10px rgba(14, 99, 156, 0.1);
-    background: linear-gradient(135deg, #1976d2 0%, #5cbf60 100%);
+    box-shadow: 0 8px 25px rgba(14, 99, 156, 0.5);
+    background: #1976d2;
 }
 
 .floating-chat-button:active {
@@ -1494,7 +1491,7 @@ body.pulling-to-refresh {
 
 /* AI Chat Modal Styling */
 .ai-chat-content {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 16px;
     width: 90%;
     max-width: 480px;
@@ -1513,7 +1510,7 @@ body.pulling-to-refresh {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, rgba(14, 99, 156, 0.05) 0%, rgba(76, 175, 80, 0.05) 100%);
+    background: rgba(14, 99, 156, 0.05);
     border-radius: 16px 16px 0 0;
 }
 
@@ -1557,13 +1554,13 @@ body.pulling-to-refresh {
 }
 
 .ai-message {
-    background: linear-gradient(135deg, rgba(14, 99, 156, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+    background: rgba(14, 99, 156, 0.1);
     border: 1px solid rgba(14, 99, 156, 0.15);
     color: #2c5282;
 }
 
 .user-message {
-    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
+    background: rgba(76, 175, 80, 0.1);
     border: 1px solid rgba(76, 175, 80, 0.15);
     color: #276749;
     margin-left: 40px;
@@ -1585,7 +1582,7 @@ body.pulling-to-refresh {
     border-top: 1px solid rgba(14, 99, 156, 0.1);
     display: flex;
     gap: 12px;
-    background: linear-gradient(135deg, rgba(14, 99, 156, 0.02) 0%, rgba(76, 175, 80, 0.02) 100%);
+    background: rgba(14, 99, 156, 0.02);
     border-radius: 0 0 16px 16px;
 }
 
@@ -1609,7 +1606,7 @@ body.pulling-to-refresh {
 
 .send-chat {
     padding: 12px 20px;
-    background: linear-gradient(135deg, #0e639c 0%, #4caf50 100%);
+    background: #0e639c;
     color: white;
     border: none;
     border-radius: 25px;
@@ -1622,7 +1619,7 @@ body.pulling-to-refresh {
 }
 
 .send-chat:hover {
-    background: linear-gradient(135deg, #1976d2 0%, #5cbf60 100%);
+    background: #1976d2;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(14, 99, 156, 0.4);
 }
