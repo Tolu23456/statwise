@@ -1475,6 +1475,14 @@ async function loadPage(page, userId, addToHistory = true) {
             attachSubscriptionButtons(userId);
             initTabs(); // Use the generic tab handler
         }
+        
+        // Remove animated background from non-home pages
+        if (page !== "home") {
+            const bgElement = document.querySelector('.animated-background');
+            if (bgElement) {
+                bgElement.remove();
+            }
+        }
         if (page === "manage-subscription") {
             await initManageSubscriptionPage(userId);
         }
@@ -1507,6 +1515,13 @@ async function loadPage(page, userId, addToHistory = true) {
         }
         if (page === "home") {
             main.dataset.pullToRefreshActive = 'true'; // Activate for home page
+            
+            // Add animated background to home page
+            if (!document.querySelector('.animated-background')) {
+                const bgElement = document.createElement('div');
+                bgElement.className = 'animated-background';
+                document.body.appendChild(bgElement);
+            }
 
             const cards = document.querySelectorAll('.prediction-card');
             cards.forEach((card, index) => {
@@ -1774,14 +1789,14 @@ async function startWelcomeTour(userId) {
  */
 function handleTabSwitch(tabButton) {
     // Find the closest common ancestor for the tabs and content
-    const tabParent = tabButton.closest('.history-section, .subscription-section'); // Extendable
+    const tabParent = tabButton.closest('.history-section, .subscription-section, main'); // Extendable
     if (!tabParent) return;
 
     // Don't do anything if the tab is already active
     if (tabButton.classList.contains('active')) return;
 
     const tabButtons = tabParent.querySelectorAll(".tab-btn");
-    const tabContents = tabParent.querySelectorAll(".tab-content");
+    const tabContents = tabParent.querySelectorAll(".tab-content, .pricing-container");
 
     tabButtons.forEach(b => b.classList.remove("active"));
     tabButton.classList.add("active");

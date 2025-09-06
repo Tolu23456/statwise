@@ -39,6 +39,62 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll from animation */
 }
 
+/* ---------------- Animated Background ---------------- */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #f4f5f7 0%, #e8eaf6 100%);
+    overflow: hidden;
+}
+
+.animated-background::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(14, 99, 156, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
+    animation: floatingPattern 20s ease-in-out infinite;
+}
+
+.animated-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 35px,
+            rgba(14, 99, 156, 0.03) 35px,
+            rgba(14, 99, 156, 0.03) 70px
+        );
+    animation: slidePattern 30s linear infinite;
+}
+
+@keyframes floatingPattern {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-5px, -10px) rotate(1deg); }
+    50% { transform: translate(10px, 5px) rotate(-1deg); }
+    75% { transform: translate(-10px, 10px) rotate(0.5deg); }
+}
+
+@keyframes slidePattern {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(70px); }
+}
+
 /* ---------------- Header ---------------- */
 header {
     position: fixed;
@@ -1004,26 +1060,45 @@ input:checked+.slider::before {
     top: calc(var(--header-height) + 15px);
     left: 50%;
     transform: translateX(-50%) scale(0);
-    width: 40px;
-    height: 40px;
-    background: #fff;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0e639c 0%, #4caf50 50%, #ff9800 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 20px rgba(14, 99, 156, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.2);
     font-size: 24px;
-    color: #0e639c;
+    color: white;
     opacity: 0;
     z-index: 10;
 }
 
 #refresh-indicator.transitioning {
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+#refresh-indicator.refreshing {
+    animation: pulse 2s ease-in-out infinite;
+    background: linear-gradient(135deg, #4caf50 0%, #ff9800 50%, #0e639c 100%);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
 }
 
 #refresh-indicator.refreshing span {
     animation: spin 1s linear infinite;
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: translateX(-50%) scale(1); 
+        box-shadow: 0 6px 20px rgba(14, 99, 156, 0.3);
+    }
+    50% { 
+        transform: translateX(-50%) scale(1.05); 
+        box-shadow: 0 8px 30px rgba(76, 175, 80, 0.5);
+    }
 }
 
 /* ---------------- Dark Mode Overrides ---------------- */
