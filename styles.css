@@ -367,7 +367,8 @@ main {
 .pricing-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
+    gap: 24px;
+    margin-bottom: 20px;
 }
 
 .subscription-card {
@@ -957,7 +958,11 @@ input:checked+.slider::before {
 
 .pricing-container.active,
 .tab-content.active {
-    display: block;
+    display: grid; /* Use grid for active pricing container */
+}
+
+.tab-content.active {
+    display: block; /* Keep block for other tab content */
 }
 
 /* HomePage */
