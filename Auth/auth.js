@@ -169,10 +169,12 @@ if (loginForm) {
 
             if (!userSnap.exists()) {
                 // First login → create user profile
+                const newReferralCode = `REF-${user.uid.substring(0, 6).toUpperCase()}`;
                 await setDoc(userRef, {
                     username: user.displayName || "User",
                     email: user.email,
                     tier: "Free Tier",
+                    referralCode: newReferralCode, // Add referral code to satisfy security rules
                     tierExpiry: null,
                     photoURL: null,
                     notifications: true,
@@ -480,7 +482,7 @@ if (signupForm) {
 
             // --- Final Referral ID Check (Self-Referral) ---
             let finalReferrerId = validReferrerId;
-            if (finalReferrerId && finalReferralId === user.uid) {
+            if (finalReferrerId && finalReferrerId === user.uid) {
                 finalReferrerId = null; // Nullify if user is referring themselves.
             }
 
