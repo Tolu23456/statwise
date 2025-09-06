@@ -557,8 +557,6 @@ if (forgotPasswordForm) {
             forgotPasswordMessage.classList.add('show');
             forgotPasswordMessage.style.color = '#28a745';
             forgotPasswordMessage.textContent = "✅ Password reset email sent! Please check your inbox.";
-            
-            forgotPasswordMessage.style.color = "#28a745"; // Success green color
             hideSpinner(forgotPasswordBtn);
             forgotPasswordBtn.disabled = true; // Prevent resending
         } catch (error) {
