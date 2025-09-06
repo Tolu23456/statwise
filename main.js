@@ -172,7 +172,24 @@ async function handlePayment(userId, tier, amount, period) {
                     showModal({ message: result.data.message || "Your subscription has been updated!" });
                 } catch (error) {
                     console.error("Error verifying payment:", error);
-                    showModal({ message: `Payment verification failed: ${error.message}`, confirmClass: 'btn-danger' });
+                    let errorMessage = "Payment verification failed. Please contact support with your transaction details.";
+                    
+                    if (error.code === 'functions/cancelled') {
+                        errorMessage = "Payment verification was cancelled. Please try again.";
+                    } else if (error.code === 'functions/deadline-exceeded') {
+                        errorMessage = "Payment verification timed out. Your payment may still be processing.";
+                    } else if (error.code === 'functions/unavailable') {
+                        errorMessage = "Payment service is temporarily unavailable. Please try again later.";
+                    } else if (error.message && error.message.includes('network')) {
+                        errorMessage = "Network error during payment verification. Please check your connection and try again.";
+                    }
+                    
+                    showModal({ 
+                        message: errorMessage,
+                        confirmClass: 'btn-danger',
+                        confirmText: 'Contact Support',
+                        onConfirm: () => window.open('mailto:support@statwise.com?subject=Payment Issue')
+                    });
                 } finally {
                     hideLoader();
                 }
@@ -189,6 +206,11 @@ async function handlePayment(userId, tier, amount, period) {
 }
 
 async function updateUserTier(userId, tier, period = null, expiry = null) {
+    if (!userId || !tier) {
+        console.error('updateUserTier called with invalid parameters');
+        throw new Error('Invalid user ID or tier specified');
+    }
+
     const userRef = doc(db, "users", userId);
     const updateData = {
         tier: tier,
@@ -200,10 +222,25 @@ async function updateUserTier(userId, tier, period = null, expiry = null) {
         updateData.autoRenew = false; // Disable auto-renew for free tier/cancellation
     }
 
-    await updateDoc(userRef, updateData);
-    verifiedTier = tier;
-    await updateCurrentTierDisplay(userId);
-    enforceTierRestrictions();
+    try {
+        await updateDoc(userRef, updateData);
+        verifiedTier = tier;
+        await updateCurrentTierDisplay(userId);
+        enforceTierRestrictions();
+    } catch (error) {
+        console.error('Failed to update user tier:', error);
+        let errorMessage = 'Failed to update subscription. Please try again.';
+        
+        if (error.code === 'firestore/permission-denied') {
+            errorMessage = 'Permission denied. Please contact support.';
+        } else if (error.code === 'firestore/unavailable') {
+            errorMessage = 'Service temporarily unavailable. Please try again later.';
+        } else if (error.message && error.message.includes('network')) {
+            errorMessage = 'Network error. Please check your connection and try again.';
+        }
+        
+        throw new Error(errorMessage);
+    }
 }
 
 // Attach subscription buttons with upgrade fully visible
@@ -423,19 +460,51 @@ async function initFirebaseMessaging(userId) {
                     notifications: true // Also enable the general flag
                 });
                 console.log('FCM Token saved:', fcmToken);
+                showModal({ message: 'Push notifications enabled successfully!' });
             } else {
                 console.log('No registration token available. Request permission to generate one.');
+                showModal({ 
+                    message: 'Unable to set up push notifications. Please try refreshing the page.', 
+                    confirmClass: 'btn-warning' 
+                });
             }
-        } else {
-            console.log('Unable to get permission to notify.');
+        } else if (permission === 'denied') {
+            console.log('Notification permission denied.');
             // If permission is denied, ensure the toggle is off
             const userRef = doc(db, "users", userId);
             await updateDoc(userRef, { notifications: false });
             const toggle = document.getElementById('predictionAlertsToggle');
             if (toggle) toggle.checked = false;
+            
+            showModal({ 
+                message: 'Push notifications are blocked in your browser. To enable them, click the notification icon in your browser\'s address bar and allow notifications for this site.', 
+                confirmClass: 'btn-warning',
+                confirmText: 'Got it'
+            });
+        } else {
+            console.log('Notification permission default - user dismissed the prompt.');
+            showModal({ 
+                message: 'Push notifications were not enabled. You can enable them later in your profile settings.', 
+                confirmClass: 'btn-warning' 
+            });
         }
     } catch (error) {
-        console.error('An error occurred while retrieving token. ', error);
+        console.error('Error setting up push notifications:', error);
+        let errorMessage = 'Failed to set up push notifications. This feature may not be supported on your device.';
+        
+        if (error.code === 'messaging/failed-service-worker-registration') {
+            errorMessage = 'Failed to register service worker for notifications. Please refresh the page and try again.';
+        } else if (error.code === 'messaging/unsupported-browser') {
+            errorMessage = 'Push notifications are not supported in your browser.';
+        } else if (error.code === 'messaging/permission-blocked') {
+            errorMessage = 'Notification permissions are blocked. Please enable them in your browser settings.';
+        }
+        
+        showModal({ message: errorMessage, confirmClass: 'btn-warning' });
+        
+        // Ensure the toggle is off on error
+        const toggle = document.getElementById('predictionAlertsToggle');
+        if (toggle) toggle.checked = false;
     }
 
     // Handle foreground messages
@@ -524,6 +593,28 @@ async function initProfilePage(userId) {
             const file = e.target.files[0];
             if (!file) return;
 
+            // Validate file type and size
+            const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+            const maxSize = 5 * 1024 * 1024; // 5MB
+
+            if (!allowedTypes.includes(file.type)) {
+                showModal({ 
+                    message: 'Please select a valid image file (JPG, PNG, GIF, or WebP).', 
+                    confirmClass: 'btn-danger' 
+                });
+                e.target.value = ''; // Clear the input
+                return;
+            }
+
+            if (file.size > maxSize) {
+                showModal({ 
+                    message: 'Image file is too large. Please choose a file smaller than 5MB.', 
+                    confirmClass: 'btn-danger' 
+                });
+                e.target.value = ''; // Clear the input
+                return;
+            }
+
             showLoader();
             try {
                 const storageRef = ref(storage, `profile_pictures/${userId}`);
@@ -533,9 +624,23 @@ async function initProfilePage(userId) {
                 await updateDoc(userRef, { photoURL: downloadURL });
                 displayAvatar(downloadURL, userData.username);
                 await addHistoryUnique(userId, 'Updated profile picture');
+                showModal({ message: 'Profile picture updated successfully!' });
             } catch (error) {
                 console.error("Avatar upload failed:", error);
-                showModal({ message: 'Failed to upload image. Please try again.', confirmClass: 'btn-danger' });
+                let errorMessage = 'Failed to upload image. Please try again.';
+                
+                if (error.code === 'storage/unauthorized') {
+                    errorMessage = 'You do not have permission to upload images. Please contact support.';
+                } else if (error.code === 'storage/canceled') {
+                    errorMessage = 'Image upload was cancelled.';
+                } else if (error.code === 'storage/quota-exceeded') {
+                    errorMessage = 'Storage quota exceeded. Please contact support.';
+                } else if (error.message && error.message.includes('network')) {
+                    errorMessage = 'Network error. Please check your connection and try again.';
+                }
+                
+                showModal({ message: errorMessage, confirmClass: 'btn-danger' });
+                e.target.value = ''; // Clear the input on error
             } finally {
                 hideLoader();
             }
@@ -552,12 +657,46 @@ async function initProfilePage(userId) {
                 inputValue: userNameEl.textContent,
                 onConfirm: async (newUsername) => {
                     if (newUsername && newUsername.trim() !== '' && newUsername !== userNameEl.textContent) {
+                        const trimmedUsername = newUsername.trim();
+                        
+                        // Validate username length and characters
+                        if (trimmedUsername.length < 2 || trimmedUsername.length > 30) {
+                            showModal({ 
+                                message: 'Username must be between 2 and 30 characters long.', 
+                                confirmClass: 'btn-danger' 
+                            });
+                            return;
+                        }
+                        
+                        if (!/^[a-zA-Z0-9_\-\s]+$/.test(trimmedUsername)) {
+                            showModal({ 
+                                message: 'Username can only contain letters, numbers, spaces, hyphens, and underscores.', 
+                                confirmClass: 'btn-danger' 
+                            });
+                            return;
+                        }
+
                         showLoader();
-                        await updateDoc(userRef, { username: newUsername.trim() }); // This was a bug, should be updateProfile
-                        await currentUser.updateProfile({ displayName: newUsername.trim() });
-                        await addHistoryUnique(userId, `Username changed to ${newUsername.trim()}`);
-                        userNameEl.textContent = newUsername.trim();
-                        hideLoader();
+                        try {
+                            await updateDoc(userRef, { username: trimmedUsername });
+                            await auth.currentUser.updateProfile({ displayName: trimmedUsername });
+                            await addHistoryUnique(userId, `Username changed to ${trimmedUsername}`);
+                            userNameEl.textContent = trimmedUsername;
+                            showModal({ message: 'Username updated successfully!' });
+                        } catch (error) {
+                            console.error("Username update failed:", error);
+                            let errorMessage = 'Failed to update username. Please try again.';
+                            
+                            if (error.code === 'firestore/permission-denied') {
+                                errorMessage = 'You do not have permission to update your username.';
+                            } else if (error.message && error.message.includes('network')) {
+                                errorMessage = 'Network error. Please check your connection and try again.';
+                            }
+                            
+                            showModal({ message: errorMessage, confirmClass: 'btn-danger' });
+                        } finally {
+                            hideLoader();
+                        }
                     }
                 }
             });
@@ -1339,8 +1478,26 @@ async function loadPage(page, userId, addToHistory = true) {
         main.scrollTop = 0;
 
     } catch (error) {
-        console.error(error);
-        main.innerHTML = `<p>Sorry, failed to load ${page}.</p>`;
+        console.error(`Failed to load page ${page}:`, error);
+        let errorMessage = `Unable to load the ${page} page right now.`;
+        let retryButton = '';
+        
+        if (error.message && error.message.includes('Page not found')) {
+            errorMessage = `The ${page} page is temporarily unavailable.`;
+        } else if (error.name === 'TypeError' || error.message.includes('network')) {
+            errorMessage = `Network error loading the ${page} page. Please check your internet connection.`;
+            retryButton = `<button onclick="loadPage('${page}', '${userId || ''}', false)" class="btn btn-primary" style="margin-top: 10px;">Try Again</button>`;
+        }
+        
+        main.innerHTML = `
+            <div class="error-container" style="text-align: center; padding: 40px 20px; color: var(--text-color);">
+                <div class="error-icon" style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
+                <h3>Oops!</h3>
+                <p>${errorMessage}</p>
+                ${retryButton}
+                <button onclick="loadPage('home', '${userId || ''}', false)" class="btn btn-secondary" style="margin-top: 10px;">Go to Home</button>
+            </div>
+        `;
     } finally {
         // Animate the new content in
         main.classList.remove('page-fade-out');
