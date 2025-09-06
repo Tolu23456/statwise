@@ -1506,6 +1506,7 @@ async function loadPage(page, userId, addToHistory = true) {
             main.dataset.pullToRefreshActive = 'true'; // Activate for home page
             // No animated background on home page - only on auth pages
             initTabs(); // Initialize league tabs for home page
+            initExpandableTabs(); // Initialize expand/collapse functionality
 
             const cards = document.querySelectorAll('.prediction-card');
             cards.forEach((card, index) => {
@@ -1803,6 +1804,32 @@ function initTabs() {
         const tabButton = e.target.closest('.tab-btn');
         if (tabButton) {
             handleTabSwitch(tabButton);
+        }
+    });
+}
+
+/**
+ * Initialize expandable tabs functionality for the homepage league tabs
+ */
+function initExpandableTabs() {
+    const expandBtn = document.getElementById('expand-tabs-btn');
+    const tabsContainer = document.getElementById('league-tabs');
+    
+    if (!expandBtn || !tabsContainer) return;
+    
+    expandBtn.addEventListener('click', () => {
+        const isExpanded = tabsContainer.classList.contains('expanded');
+        
+        if (isExpanded) {
+            // Collapse tabs
+            tabsContainer.classList.remove('expanded');
+            expandBtn.textContent = '⋯';
+            expandBtn.title = 'Show all leagues';
+        } else {
+            // Expand tabs
+            tabsContainer.classList.add('expanded');
+            expandBtn.textContent = '×';
+            expandBtn.title = 'Hide expanded view';
         }
     });
 }

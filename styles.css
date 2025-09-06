@@ -847,12 +847,66 @@ input:checked+.slider::before {
 }
 
 /* ---------------- Tabs ---------------- */
-.tab-container,
+/* League tabs wrapper */
+.league-tabs-wrapper {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+/* Scrollable tabs container */
+.scrollable-tabs {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    padding: 0 40px 0 0; /* Space for expand button */
+}
+
+.scrollable-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Regular tab container for other pages */
+.tab-container:not(.scrollable-tabs),
 .history-tabs {
     display: flex;
     justify-content: center;
     gap: 12px;
     margin-bottom: 16px;
+}
+
+/* Expand tabs button */
+.expand-tabs-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #0e639c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.expand-tabs-btn:hover {
+    background: #0b4f7a;
+}
+
+/* Expanded state */
+.scrollable-tabs.expanded {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+}
+
+.expanded + .expand-tabs-btn {
+    display: none;
 }
 
 .tab-btn {
