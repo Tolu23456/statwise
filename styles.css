@@ -866,7 +866,7 @@ input:checked+.slider::before {
     scroll-behavior: smooth;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
-    padding: 0 50px 0 0; /* Space for expand button */
+    padding: 0 56px 0 0; /* Space for expand button */
     margin-bottom: 0;
 }
 
@@ -893,8 +893,8 @@ input:checked+.slider::before {
     color: white;
     border: none;
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 10;
@@ -908,6 +908,11 @@ input:checked+.slider::before {
     background: linear-gradient(135deg, #0b4f7a 0%, #083a5c 100%);
     transform: translateY(-50%) scale(1.05);
     box-shadow: 0 4px 12px rgba(14, 99, 156, 0.4);
+}
+
+.expand-tabs-btn:focus-visible {
+    outline: 3px solid #6ab3e7;
+    outline-offset: 2px;
 }
 
 .expand-tabs-btn:active {

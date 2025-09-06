@@ -1817,19 +1817,30 @@ function initExpandableTabs() {
     
     if (!expandBtn || !tabsContainer) return;
     
+    // Constants for icon paths
+    const EXPAND_ICON = '<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>';
+    const COLLAPSE_ICON = '<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>';
+    
     expandBtn.addEventListener('click', () => {
         const isExpanded = tabsContainer.classList.contains('expanded');
+        const svg = expandBtn.querySelector('svg');
+        
+        if (!svg) return; // Safety guard
         
         if (isExpanded) {
             // Collapse tabs
             tabsContainer.classList.remove('expanded');
-            expandBtn.textContent = '⋯';
+            svg.innerHTML = EXPAND_ICON;
             expandBtn.title = 'Show all leagues';
+            expandBtn.setAttribute('aria-label', 'Show all leagues');
+            expandBtn.setAttribute('aria-expanded', 'false');
         } else {
             // Expand tabs
             tabsContainer.classList.add('expanded');
-            expandBtn.textContent = '×';
+            svg.innerHTML = COLLAPSE_ICON;
             expandBtn.title = 'Hide expanded view';
+            expandBtn.setAttribute('aria-label', 'Hide expanded view');
+            expandBtn.setAttribute('aria-expanded', 'true');
         }
     });
 }
