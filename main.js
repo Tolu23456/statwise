@@ -1343,8 +1343,21 @@ function initPullToRefresh(container, onRefresh) {
 
     const updateIndicator = () => {
         const pullRatio = Math.min(pullDistance / pullThreshold, 1);
+        const elasticScale = pullRatio + (pullRatio * 0.2 * Math.sin(pullDistance * 0.1));
+        const rotationAngle = pullDistance * 3;
+        const shadowIntensity = 0.2 + (pullRatio * 0.3);
+        
         refreshIndicator.style.opacity = pullRatio;
-        refreshIndicator.style.transform = `translateX(-50%) scale(${pullRatio}) rotate(${pullDistance * 2.5}deg)`;
+        refreshIndicator.style.transform = `translateX(-50%) scale(${Math.max(0.1, elasticScale)}) rotate(${rotationAngle}deg)`;
+        refreshIndicator.style.boxShadow = `0 ${8 + pullRatio * 10}px ${25 + pullRatio * 15}px rgba(14, 99, 156, ${shadowIntensity})`;
+        
+        // Add color transition based on pull progress
+        if (pullRatio >= 0.8) {
+            refreshIndicator.style.background = 'linear-gradient(135deg, #4caf50 0%, #ff9800 50%, #0e639c 100%)';
+        } else {
+            refreshIndicator.style.background = 'linear-gradient(135deg, #0e639c 0%, #4caf50 50%, #ff9800 100%)';
+        }
+        
         animationFrameId = null; // Allow next frame to be requested
     };
 
