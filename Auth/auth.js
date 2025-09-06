@@ -269,12 +269,14 @@ if (loginForm) {
 }
 
 // ===== Referral Code Input Logic =====
+// Global variable to store validated referrer ID - accessible to both referral and signup logic
+let validReferrerId = null;
+
 if (signupForm) {
     const signupReferral = document.querySelector("#signup-referral");
     const referralNameDisplay = document.querySelector("#referral-name-display");
 
     let debounceTimeout;
-    let validReferrerId = null; // Store the validated referrer's ID
 
     const checkReferralCode = async (code) => {
         const coreCode = code.trim().toUpperCase();
@@ -466,25 +468,19 @@ if (signupForm) {
         showSpinner(signupBtn);
 
         try {
-            console.log('Starting signup process...');
-            
             // Set persistence based on the "Remember Me" checkbox
             const persistence = signupRememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
             await setPersistence(auth, persistence);
-            console.log('Auth persistence set successfully');
             
             // If a referral code was entered but found to be invalid by the UI check, block submission.
             if (referralCode && !validReferrerId) {
-                console.log('Invalid referral code detected:', referralCode);
                 hideSpinner(signupBtn);
                 displayError(signupError, "Please enter a valid referral code or leave it blank.", true);
                 return;
             }
 
-            console.log('Creating user with Firebase Auth...');
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
-            console.log('Firebase Auth user created successfully:', user.uid);
 
             // --- Final Referral ID Check (Self-Referral) ---
             let finalReferrerId = validReferrerId;
@@ -493,18 +489,14 @@ if (signupForm) {
             }
 
             // Update Firebase Auth profile
-            console.log('Updating Firebase Auth profile...');
             await updateProfile(user, { displayName: username });
-            console.log('Firebase Auth profile updated successfully');
 
             // Generate a unique referral code for the new user
             const newReferralCode = `REF-${user.uid.substring(0, 6).toUpperCase()}`;
-            console.log('Generated referral code:', newReferralCode);
 
             // Create Firestore profile
-            console.log('Creating Firestore user document...');
             const userRef = doc(usersCol, user.uid);
-            const userDocData = {
+            await setDoc(userRef, {
                 username,
                 email,
                 tier: "Free Tier",
@@ -517,14 +509,10 @@ if (signupForm) {
                 lastLogin: new Date().toISOString(),
                 isNewUser: true, // Flag for the welcome tour
                 ...(finalReferrerId && { referredBy: finalReferrerId }) // Add referrer ID if it exists
-            };
-            console.log('User document data:', userDocData);
-            await setDoc(userRef, userDocData);
-            console.log('Firestore user document created successfully');
+            });
 
             // If referred, update the referrer's document and notify them
             if (finalReferrerId) {
-                console.log('Processing referral for referrer:', finalReferrerId);
                 const referrerRef = doc(usersCol, finalReferrerId);
                 // We use a subcollection for history, so we can just add an action.
                 const historyRef = collection(db, "users", finalReferrerId, "history");
@@ -533,7 +521,6 @@ if (signupForm) {
                     createdAt: serverTimestamp(),
                     creatorId: user.uid // Add this field to satisfy the security rule
                 });
-                console.log('Referral history added successfully');
             }
 
             showSuccess(signupBtn);
