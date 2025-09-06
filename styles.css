@@ -1107,6 +1107,11 @@ input:checked+.slider::before {
     color: #d4d4d4;
 }
 
+.dark-mode html {
+    background: #1e1e1e;
+    color: #d4d4d4;
+}
+
 .dark-mode header {
     background-color: #252526;
     color: #d4d4d4;
@@ -1631,6 +1636,29 @@ input:checked+.slider::before {
 }
 .dark-mode .circles li:nth-child(10) {
     background: rgba(165, 216, 255, 0.05);
+}
+
+/* Dark mode animated background */
+.dark-mode .animated-background {
+    background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%);
+}
+
+.dark-mode .animated-background::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(165, 216, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.15) 0%, transparent 50%);
+}
+
+.dark-mode .animated-background::after {
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 35px,
+            rgba(165, 216, 255, 0.08) 35px,
+            rgba(165, 216, 255, 0.08) 70px
+        );
 }
 
 /* ---------------- Error Container (from 404.css) ---------------- */
