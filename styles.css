@@ -850,7 +850,12 @@ input:checked+.slider::before {
 /* League tabs wrapper */
 .league-tabs-wrapper {
     position: relative;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(14, 99, 156, 0.1);
+    border: 1px solid rgba(14, 99, 156, 0.1);
 }
 
 /* Scrollable tabs container */
@@ -861,7 +866,8 @@ input:checked+.slider::before {
     scroll-behavior: smooth;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
-    padding: 0 40px 0 0; /* Space for expand button */
+    padding: 0 50px 0 0; /* Space for expand button */
+    margin-bottom: 0;
 }
 
 .scrollable-tabs::-webkit-scrollbar {
@@ -880,22 +886,38 @@ input:checked+.slider::before {
 /* Expand tabs button */
 .expand-tabs-btn {
     position: absolute;
-    right: 0;
-    top: 0;
-    background: #0e639c;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #0e639c 0%, #0b4f7a 100%);
     color: white;
     border: none;
-    border-radius: 8px;
-    padding: 8px 12px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
     transition: all 0.3s ease;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(14, 99, 156, 0.3);
 }
 
 .expand-tabs-btn:hover {
-    background: #0b4f7a;
+    background: linear-gradient(135deg, #0b4f7a 0%, #083a5c 100%);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.4);
+}
+
+.expand-tabs-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.expand-tabs-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
 }
 
 /* Expanded state */
@@ -903,10 +925,18 @@ input:checked+.slider::before {
     flex-wrap: wrap;
     justify-content: center;
     overflow: visible;
+    padding-right: 0;
 }
 
-.expanded + .expand-tabs-btn {
-    display: none;
+.scrollable-tabs.expanded + .expand-tabs-btn {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    transform: none;
+}
+
+.scrollable-tabs.expanded + .expand-tabs-btn svg {
+    transform: rotate(180deg);
 }
 
 .tab-btn {
