@@ -1855,56 +1855,20 @@ function initTabs() {
 }
 
 /**
- * Initialize collapsible tabs functionality for the homepage league tabs
+ * Initialize tabs functionality for the homepage league tabs (no collapsing for better mobile UX)
  */
 function initCollapsibleTabs() {
-    const tabsWrapper = document.querySelector('.league-tabs-wrapper');
     const tabsContainer = document.getElementById('league-tabs');
     
-    if (!tabsWrapper || !tabsContainer) return;
+    if (!tabsContainer) return;
     
-    let isCollapsed = false;
-    let collapseTimeout = null;
-    
-    // Add click handlers to tab buttons
+    // Add click handlers to tab buttons for switching only
     tabsContainer.addEventListener('click', (e) => {
         const tabButton = e.target.closest('.tab-btn');
         if (!tabButton) return;
         
-        // Handle tab switching first
+        // Handle tab switching - tabs stay visible for better mobile experience
         handleTabSwitch(tabButton);
-        
-        // If clicking on a non-"All" tab, collapse the tabs wrapper
-        if (tabButton.dataset.tab !== 'all-leagues' && !isCollapsed) {
-            isCollapsed = true;
-            tabsWrapper.classList.add('collapsed');
-            tabsWrapper.setAttribute('aria-hidden', 'true');
-            
-            // Clear any existing timeout and set new one
-            if (collapseTimeout) {
-                clearTimeout(collapseTimeout);
-            }
-            
-            // Auto-expand after 3 seconds for better UX
-            collapseTimeout = setTimeout(() => {
-                if (isCollapsed) {
-                    isCollapsed = false;
-                    tabsWrapper.classList.remove('collapsed');
-                    tabsWrapper.removeAttribute('aria-hidden');
-                }
-            }, 3000);
-        } else if (tabButton.dataset.tab === 'all-leagues' && isCollapsed) {
-            // Clicking "All" always expands
-            isCollapsed = false;
-            tabsWrapper.classList.remove('collapsed');
-            tabsWrapper.removeAttribute('aria-hidden');
-            
-            // Clear timeout since user manually expanded
-            if (collapseTimeout) {
-                clearTimeout(collapseTimeout);
-                collapseTimeout = null;
-            }
-        }
     });
 }
 
