@@ -878,13 +878,15 @@ input:checked+.slider::before {
 }
 
 /* Show/Hide containers */
-.pricing-container {
+.pricing-container,
+.tab-content {
     display: none;
     /* hidden by default */
 }
 
-.pricing-container.active {
-    display: grid;
+.pricing-container.active,
+.tab-content.active {
+    display: block;
 }
 
 /* HomePage */

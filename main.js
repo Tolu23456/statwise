@@ -1505,6 +1505,7 @@ async function loadPage(page, userId, addToHistory = true) {
         if (page === "home") {
             main.dataset.pullToRefreshActive = 'true'; // Activate for home page
             // No animated background on home page - only on auth pages
+            initTabs(); // Initialize league tabs for home page
 
             const cards = document.querySelectorAll('.prediction-card');
             cards.forEach((card, index) => {

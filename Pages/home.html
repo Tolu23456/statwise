@@ -13,8 +13,20 @@
   <!-- Active Filters Display -->
   <div id="active-filters-container"></div>
 
-  <!-- Predictions Container -->
-  <div class="predictions-container">
+  <!-- League Tabs -->
+  <div class="tab-container">
+    <button class="tab-btn active" data-tab="all-leagues">All</button>
+    <button class="tab-btn" data-tab="premier-league">Premier League</button>
+    <button class="tab-btn" data-tab="la-liga">La Liga</button>
+    <button class="tab-btn" data-tab="serie-a">Serie A</button>
+    <button class="tab-btn" data-tab="bundesliga">Bundesliga</button>
+    <button class="tab-btn" data-tab="ligue1">Ligue 1</button>
+    <button class="tab-btn" data-tab="champions-league">Champions League</button>
+  </div>
+
+  <!-- All Leagues Tab Content -->
+  <div id="all-leagues" class="tab-content active">
+    <div class="predictions-container">
 
     <!-- High Confidence -->
     <div class="prediction-card high-confidence">
@@ -70,5 +82,115 @@
       </div>
     </div>
 
+    </div>
   </div>
+
+  <!-- Premier League Tab Content -->
+  <div id="premier-league" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Arsenal vs Chelsea</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Arsenal Win</span></p>
+        <p class="odds">Odds: 1.85</p>
+        <p class="match-time">Kickoff: 7:30 PM</p>
+        <div class="confidence">
+          <span>Confidence: 80%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- La Liga Tab Content -->
+  <div id="la-liga" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Real Madrid vs Barcelona</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Over 2.5 Goals</span></p>
+        <p class="odds">1.95</p>
+        <p class="match-time">Kickoff: 9:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 72%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 72%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bundesliga Tab Content -->
+  <div id="bundesliga" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">Bayern vs Dortmund</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Draw</span></p>
+        <p class="odds">3.10</p>
+        <p class="match-time">Kickoff: 8:45 PM</p>
+        <div class="confidence">
+          <span>Confidence: 60%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 60%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Serie A Tab Content -->
+  <div id="serie-a" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Juventus vs AC Milan</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Under 2.5 Goals</span></p>
+        <p class="odds">2.20</p>
+        <p class="match-time">Kickoff: 6:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 75%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ligue 1 Tab Content -->
+  <div id="ligue1" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card medium-confidence">
+        <h2 class="match-title">PSG vs Lyon</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">PSG Win</span></p>
+        <p class="odds">1.60</p>
+        <p class="match-time">Kickoff: 8:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 68%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 68%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Champions League Tab Content -->
+  <div id="champions-league" class="tab-content">
+    <div class="predictions-container">
+      <div class="prediction-card high-confidence">
+        <h2 class="match-title">Manchester City vs Inter Milan</h2>
+        <p class="prediction-detail">Prediction: <span class="ai-pick">Both Teams to Score</span></p>
+        <p class="odds">1.75</p>
+        <p class="match-time">Kickoff: 9:00 PM</p>
+        <div class="confidence">
+          <span>Confidence: 82%</span>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: 82%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
