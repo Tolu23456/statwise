@@ -904,31 +904,49 @@ async function initProfilePage(userId) {
  * @param {string} userId - The current user's ID.
  */
 async function initReferralPage(userId) {
-    if (!userId) return;
+    console.log("InitReferralPage called with userId:", userId);
+    if (!userId) {
+        console.error("No userId provided to initReferralPage");
+        return;
+    }
 
     const codeInput = document.getElementById('referralCodeInput');
     const copyBtn = document.getElementById('copyReferralCodeBtn');
     const referralListContainer = document.getElementById('referralListContainer');
     const rewardsContainer = document.getElementById('rewardsContainer');
 
-    if (!codeInput || !copyBtn || !referralListContainer) return;
+    console.log("DOM elements found:", { codeInput, copyBtn, referralListContainer, rewardsContainer });
 
-    // 1. Get/Generate Referral Code
-    const userRef = doc(db, "users", userId);
-    const userSnap = await getDoc(userRef);
-    if (!userSnap.exists()) {
-        console.error("Referral Page Error: User document not found.");
-        referralListContainer.innerHTML = `<p>Error: Could not load your referral information.</p>`;
+    if (!codeInput || !copyBtn || !referralListContainer) {
+        console.error("Required DOM elements not found");
         return;
     }
-    const userData = userSnap.data();
-    let referralCode = userData.referralCode;
 
-    if (!referralCode) {
-        referralCode = `REF-${userId.substring(0, 6).toUpperCase()}`;
-        await updateDoc(userRef, { referralCode });
-    }
-    codeInput.value = referralCode;
+    try {
+        // 1. Get/Generate Referral Code
+        console.log("Fetching user document for userId:", userId);
+        const userRef = doc(db, "users", userId);
+        const userSnap = await getDoc(userRef);
+        
+        if (!userSnap.exists()) {
+            console.error("Referral Page Error: User document not found.");
+            referralListContainer.innerHTML = `<p>Error: Could not load your referral information.</p>`;
+            return;
+        }
+        
+        const userData = userSnap.data();
+        console.log("User data retrieved:", userData);
+        let referralCode = userData.referralCode;
+
+        if (!referralCode) {
+            console.log("No referral code found, generating new one");
+            referralCode = `REF-${userId.substring(0, 6).toUpperCase()}`;
+            await updateDoc(userRef, { referralCode });
+            console.log("Generated and saved referral code:", referralCode);
+        }
+        
+        console.log("Setting referral code input:", referralCode);
+        codeInput.value = referralCode;
 
     // 2. Copy Button Logic
     copyBtn.addEventListener('click', async () => {
@@ -987,9 +1005,11 @@ async function initReferralPage(userId) {
         });
     }
 
-    // 4. Fetch and display list of referred users
-    const referralsQuery = query(collection(db, "users"), where("referredBy", "==", userId));
-    const querySnapshot = await getDocs(referralsQuery);
+        // 4. Fetch and display list of referred users
+        console.log("Fetching referred users for userId:", userId);
+        const referralsQuery = query(collection(db, "users"), where("referredBy", "==", userId));
+        const querySnapshot = await getDocs(referralsQuery);
+        console.log("Referred users query result:", querySnapshot.size, "users found");
 
     if (!querySnapshot.empty) {
         referralListContainer.innerHTML = ''; // Clear the placeholder
@@ -1014,14 +1034,16 @@ async function initReferralPage(userId) {
         referralListContainer.innerHTML = `<p>No referrals yet. Share your code to get started!</p>`;
     }
 
-    // 5. Fetch and display rewards
-    if (rewardsContainer) {
-        const rewardsQuery = query(collection(db, "rewards"), where("referrerId", "==", userId), orderBy("createdAt", "desc"));
-        const rewardsCountEl = document.getElementById('rewardsCount');
+        // 5. Fetch and display rewards
+        if (rewardsContainer) {
+            console.log("Fetching rewards for userId:", userId);
+            const rewardsQuery = query(collection(db, "rewards"), where("referrerId", "==", userId), orderBy("createdAt", "desc"));
+            const rewardsCountEl = document.getElementById('rewardsCount');
 
-        // Reset rewards display
-        if (rewardsCountEl) rewardsCountEl.textContent = '0';
-        const rewardsSnapshot = await getDocs(rewardsQuery);
+            // Reset rewards display
+            if (rewardsCountEl) rewardsCountEl.textContent = '0';
+            const rewardsSnapshot = await getDocs(rewardsQuery);
+            console.log("Rewards query result:", rewardsSnapshot.size, "rewards found");
 
         if (!rewardsSnapshot.empty) {
             rewardsContainer.innerHTML = ''; // Clear placeholder
@@ -1049,6 +1071,15 @@ async function initReferralPage(userId) {
             }
         } else {
             rewardsContainer.innerHTML = `<p>No rewards earned yet. You'll get a reward when a referred user subscribes!</p>`;
+        }
+    } else {
+        console.log("rewardsContainer not found");
+    }
+        
+    } catch (error) {
+        console.error("Error in initReferralPage:", error);
+        if (referralListContainer) {
+            referralListContainer.innerHTML = `<p>Error loading referral page: ${error.message}</p>`;
         }
     }
 }
