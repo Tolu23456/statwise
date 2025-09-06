@@ -743,16 +743,7 @@ async function initProfilePage(userId) {
         });
     }
 
-    // Background Animation Toggle
-    const bgAnimationToggle = document.getElementById("bgAnimationToggle");
-    if (bgAnimationToggle) {
-        // Set initial state from localStorage, default to true if not set
-        bgAnimationToggle.checked = localStorage.getItem('bgAnimationEnabled') !== 'false';
-        bgAnimationToggle.addEventListener("change", () => {
-            localStorage.setItem('bgAnimationEnabled', bgAnimationToggle.checked);
-            toggleBackgroundAnimation(bgAnimationToggle.checked);
-        });
-    }
+    // Background animation toggle removed - animation is now only on auth pages
 
     // 3. Notification Toggle
     const predictionAlertsToggle = document.getElementById("predictionAlertsToggle");
@@ -1874,8 +1865,7 @@ const handleUserAuthenticated = async (user) => {
             await loadPage('home', user.uid, false);
         });
 
-        // Apply background animation based on user preference
-        toggleBackgroundAnimation(localStorage.getItem('bgAnimationEnabled') !== 'false');
+        // Don't apply background animation on main page - it's now only for auth pages
 
         // PRIORITY 1: Load the UI immediately to prevent blank screen
         const pageToLoad = manageInitialPageLoad(user.uid, loadPage);
