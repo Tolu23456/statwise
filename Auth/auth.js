@@ -195,7 +195,7 @@ if (loginForm) {
             // Add fade-out transition before redirecting
             const authCard = loginForm.closest('.auth-card');
             if (authCard) {
-                authCard.classList.add('fade-out');
+                authCard.classList.add('fade-out'); // Ensure this class is defined in auth.css
             }
             // Explicitly redirect to home page with hash to ensure homepage loads
             setTimeout(() => {
@@ -203,7 +203,7 @@ if (loginForm) {
                     window.location.href = "../index.html#home";
                 } catch (redirectError) {
                     // Fallback if redirect fails
-                    console.error('Login redirect failed:', redirectError);
+                    console.error('Login redirect failed, using fallback:', redirectError);
                     window.location.replace("../index.html#home");
                 }
             }, 500); // Redirect after animation (500ms)
@@ -328,7 +328,7 @@ function checkPasswordStrength(password) {
         strength = "Very Strong";
         level = "very-strong";
     }
-    return { strength, level };
+    return { strength, level, score };
 }
 
 if (signupForm) {
@@ -391,16 +391,17 @@ if (signupForm) {
 
     signupForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const signupUsername = document.querySelector("#signup-username");
-        const signupEmail = document.querySelector("#signup-email");
-        const signupPassword = document.querySelector("#signup-password");
-        const signupPasswordConfirm = document.querySelector("#signup-password-confirm");
         const signupReferral = document.querySelector("#signup-referral");
         const signupRememberMe = document.querySelector("#signup-remember-me");
         const signupBtn = document.querySelector("#signup-btn");
         const signupError = document.querySelector("#signup-error");
 
         clearError(signupError);
+
+        // Use existing variables from the outer scope
+        const signupUsername = document.querySelector("#signup-username");
+        const signupEmail = document.querySelector("#signup-email");
+        // signupPassword and signupPasswordConfirm are already defined outside
 
         const username = signupUsername.value.trim();
         const email = signupEmail.value.trim();
@@ -478,7 +479,7 @@ if (signupForm) {
             if (finalReferrerId) {
                 const referrerRef = doc(usersCol, finalReferrerId);
                 // We use a subcollection for history, so we can just add an action.
-                const historyRef = collection(db, "users", referrerId, "history");
+                const historyRef = collection(db, "users", finalReferrerId, "history");
                 await addDoc(historyRef, {
                     action: `Your friend '${username}' joined using your referral code!`,
                     createdAt: serverTimestamp(),
