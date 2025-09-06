@@ -1037,7 +1037,8 @@ async function initReferralPage(userId) {
         // 5. Fetch and display rewards
         if (rewardsContainer) {
             console.log("Fetching rewards for userId:", userId);
-            const rewardsQuery = query(collection(db, "rewards"), where("referrerId", "==", userId), orderBy("createdAt", "desc"));
+            // Remove orderBy to avoid index requirement - we'll sort client-side instead
+            const rewardsQuery = query(collection(db, "rewards"), where("referrerId", "==", userId));
             const rewardsCountEl = document.getElementById('rewardsCount');
 
             // Reset rewards display
@@ -1047,8 +1048,23 @@ async function initReferralPage(userId) {
 
         if (!rewardsSnapshot.empty) {
             rewardsContainer.innerHTML = ''; // Clear placeholder
+            
+            // Convert to array and sort client-side by createdAt (newest first)
+            const rewardsArray = [];
             rewardsSnapshot.forEach(doc => {
                 const reward = doc.data();
+                reward.id = doc.id;
+                rewardsArray.push(reward);
+            });
+            
+            // Sort by createdAt (newest first)
+            rewardsArray.sort((a, b) => {
+                const aTime = a.createdAt?.toDate?.() || new Date(0);
+                const bTime = b.createdAt?.toDate?.() || new Date(0);
+                return bTime - aTime;
+            });
+            
+            rewardsArray.forEach(reward => {
                 const card = document.createElement('div');
                 card.className = 'history-card';
 
@@ -1058,11 +1074,11 @@ async function initReferralPage(userId) {
 
                 card.innerHTML = `
                     <div class="history-title">
-                        ${reward.rewardDurationDays}-Day ${reward.rewardTier} Reward
+                        ${reward.rewardDurationDays || 30}-Day ${reward.rewardTier || 'Premium'} Reward
                     </div>
-                    <p class="history-detail">From: ${reward.grantedByUsername}</p>
+                    <p class="history-detail">From: ${reward.grantedByUsername || 'System'}</p>
                     <p class="history-detail">Status: ${statusBadge}</p>
-                    <p class="history-time">Granted on: ${new Date(reward.createdAt.toDate()).toLocaleDateString()}</p>
+                    <p class="history-time">Granted on: ${reward.createdAt ? new Date(reward.createdAt.toDate()).toLocaleDateString() : 'Unknown'}</p>
                 `;
                 rewardsContainer.appendChild(card);
             });
@@ -1083,6 +1099,77 @@ async function initReferralPage(userId) {
         }
     }
 }
+
+// ===== Admin Function: Create Reward =====
+window.createRewardForUser = async function(referrerId, referredUsername, rewardTier = "Premium", rewardDurationDays = 30) {
+    try {
+        const rewardData = {
+            referrerId: referrerId,
+            grantedByUsername: referredUsername,
+            rewardTier: rewardTier,
+            rewardDurationDays: rewardDurationDays,
+            claimed: false,
+            createdAt: serverTimestamp(),
+            type: "referral_bonus"
+        };
+
+        const rewardRef = await addDoc(collection(db, "rewards"), rewardData);
+        console.log("Reward created with ID:", rewardRef.id);
+        
+        // Also log this action
+        if (referrerId) {
+            const activityRef = collection(db, "users", referrerId, "history");
+            await addDoc(activityRef, {
+                action: `Referral reward granted: ${rewardDurationDays}-day ${rewardTier}`,
+                createdAt: serverTimestamp(),
+                creatorId: "admin"
+            });
+        }
+        
+        return rewardRef.id;
+    } catch (error) {
+        console.error("Error creating reward:", error);
+        throw error;
+    }
+};
+
+// ===== Admin Function: Grant Subscription =====
+window.grantSubscription = async function(userId, tier, durationDays = 30) {
+    try {
+        const endDate = new Date();
+        endDate.setDate(endDate.getDate() + durationDays);
+        
+        // Update user tier
+        const userRef = doc(db, "users", userId);
+        await updateDoc(userRef, {
+            tier: tier,
+            subscriptionEnd: endDate
+        });
+        
+        // Update subscription document
+        const subscriptionRef = doc(db, "subscriptions", userId);
+        await updateDoc(subscriptionRef, {
+            currentTier: tier,
+            endDate: endDate,
+            lastUpdated: serverTimestamp()
+        });
+        
+        // Log the activity
+        const activityRef = collection(db, "users", userId, "history");
+        await addDoc(activityRef, {
+            action: `Subscription granted: ${tier} for ${durationDays} days`,
+            createdAt: serverTimestamp(),
+            creatorId: "admin"
+        });
+        
+        console.log(`Granted ${tier} subscription to user ${userId} for ${durationDays} days`);
+        return true;
+    } catch (error) {
+        console.error("Error granting subscription:", error);
+        throw error;
+    }
+};
+
 // ===== Save AI Prediction =====
 async function savePredictionToDB(userId, prediction) {
     if (!userId) return;
