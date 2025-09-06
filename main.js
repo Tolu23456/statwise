@@ -1558,7 +1558,40 @@ async function loadPage(page, userId, addToHistory = true) {
                     const cards = Array.from(predictionsContainer.querySelectorAll(".prediction-card"));
                     let visibleCount = 0;
 
-                    // 2. FILTER CARDS
+                    // 2. FILTER FOOTBALL COVERAGE TABS
+                    const tabsContainer = document.getElementById('league-tabs');
+                    if (tabsContainer && textQuery) {
+                        const tabs = tabsContainer.querySelectorAll('.tab-btn');
+                        let hasVisibleTabs = false;
+                        
+                        tabs.forEach(tab => {
+                            const tabText = tab.textContent.toLowerCase();
+                            const tabData = tab.dataset.tab || '';
+                            
+                            // Check if search term matches tab text or data attribute
+                            const isMatch = tabText.includes(textQuery) || 
+                                          tabData.includes(textQuery.replace(/\s+/g, '-'));
+                            
+                            if (isMatch || tab.dataset.tab === 'all-leagues') {
+                                tab.style.display = 'flex';
+                                hasVisibleTabs = true;
+                            } else {
+                                tab.style.display = 'none';
+                            }
+                        });
+                        
+                        // If no matches found, show "All" tab
+                        if (!hasVisibleTabs) {
+                            const allTab = tabsContainer.querySelector('[data-tab="all-leagues"]');
+                            if (allTab) allTab.style.display = 'flex';
+                        }
+                    } else if (tabsContainer) {
+                        // Reset tabs when search is empty
+                        const tabs = tabsContainer.querySelectorAll('.tab-btn');
+                        tabs.forEach(tab => tab.style.display = 'flex');
+                    }
+
+                    // 3. FILTER CARDS
                     cards.forEach(card => {
                         const title = card.querySelector(".match-title")?.textContent.toLowerCase() || '';
                         const confidence = parseInt(card.querySelector('.confidence span')?.textContent.match(/\d+/)?.[0] || '0', 10);
@@ -1571,7 +1604,7 @@ async function loadPage(page, userId, addToHistory = true) {
                         if (shouldShow) visibleCount++;
                     });
 
-                    // 3. SORT VISIBLE CARDS
+                    // 4. SORT VISIBLE CARDS
                     if (sortCommands.length > 0) {
                         const visibleCards = cards.filter(card => card.style.display === 'block');
                         visibleCards.sort((a, b) => {
@@ -1592,11 +1625,11 @@ async function loadPage(page, userId, addToHistory = true) {
                         });
                         visibleCards.forEach(card => predictionsContainer.appendChild(card));
                     } else if (value.trim() === '') {
-                        // 4. RESTORE ORIGINAL ORDER IF SEARCH IS EMPTY
+                        // 5. RESTORE ORIGINAL ORDER IF SEARCH IS EMPTY
                         originalCardElements.forEach(card => predictionsContainer.appendChild(card));
                     }
 
-                    // 5. UPDATE UI (No Results Message & Autocomplete)
+                    // 6. UPDATE UI (No Results Message & Autocomplete)
                     noResultsEl.style.display = visibleCount === 0 && value.trim() !== '' ? 'block' : 'none';
 
                     const ghostEl = document.getElementById('search-ghost-text');
