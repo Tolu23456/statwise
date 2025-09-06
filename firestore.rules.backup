@@ -1,0 +1,168 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===== USERS COLLECTION =====
+    match /users/{userId} {
+      // Users can create their own document during signup
+      allow create: if request.auth != null 
+        && request.auth.uid == userId 
+        && request.resource.data.keys().hasAll(['username', 'email', 'tier', 'referralCode'])
+        && request.resource.data.tier == "Free Tier"
+        && request.resource.data.isNewUser == true;
+      
+      // Users can read and update their own document
+      allow read, update: if request.auth != null && request.auth.uid == userId;
+      
+      // Users can delete their own document (for account deletion)
+      allow delete: if request.auth != null && request.auth.uid == userId;
+      
+      // Allow querying users by referral code (for referral validation) or referred users
+      allow list: if 
+        // Referral code validation (signup page)
+        (request.query.where.size() == 1 && 
+         request.query.where[0][0] == "referralCode" &&
+         request.query.where[0][1] == "==" &&
+         request.query.limit <= 1) ||
+        // Authenticated users can query users they referred (referral page)
+        (request.auth != null &&
+         request.query.where.size() == 1 &&
+         request.query.where[0][0] == "referredBy" &&
+         request.query.where[0][1] == "==" &&
+         request.query.where[0][2] == request.auth.uid);
+
+      // ===== USER HISTORY SUBCOLLECTION =====
+      match /history/{historyId} {
+        // Users can read their own history
+        allow read: if request.auth != null && request.auth.uid == userId;
+        
+        // Users and system can write to history (for activity logging)
+        allow create: if request.auth != null && 
+          (request.auth.uid == userId || 
+           request.resource.data.keys().hasAll(['action', 'createdAt']) ||
+           request.resource.data.keys().hasAll(['action', 'createdAt', 'creatorId']));
+        
+        // Prevent updates and deletes of history entries
+        allow update, delete: if false;
+      }
+    }
+
+    // ===== SUBSCRIPTIONS COLLECTION =====
+    match /subscriptions/{userId} {
+      // Users can create their own subscription document
+      allow create: if request.auth != null 
+        && request.auth.uid == userId
+        && request.resource.data.keys().hasAll(['currentTier', 'startDate'])
+        && request.resource.data.currentTier == "Free Tier";
+      
+      // Users can read and update their own subscription
+      allow read, update: if request.auth != null && request.auth.uid == userId;
+      
+      // Users can delete their own subscription (for account deletion)
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ===== REFERRAL CODES COLLECTION (if used) =====
+    match /referralCodes/{code} {
+      // Anyone can read referral codes to validate them
+      allow read: if true;
+      
+      // Only authenticated users can create referral codes for themselves
+      allow create: if request.auth != null 
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.keys().hasAll(['userId', 'username']);
+      
+      // Prevent updates and deletes of referral codes
+      allow update, delete: if false;
+    }
+
+    // ===== PREDICTIONS COLLECTION =====
+    match /predictions/{predictionId} {
+      // Allow reading predictions (public data)
+      allow read: if true;
+      
+      // Only admin/system can create predictions
+      allow create: if false; // In production, use Cloud Functions
+      
+      // Prevent client updates and deletes
+      allow update, delete: if false;
+    }
+
+    // ===== USER SAVED PREDICTIONS SUBCOLLECTION =====
+    match /users/{userId}/savedPredictions/{predictionId} {
+      // Users can manage their own saved predictions
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ===== REWARDS COLLECTION =====
+    match /rewards/{rewardId} {
+      // Users can read rewards that belong to them
+      allow read: if request.auth != null 
+        && request.auth.uid == resource.data.referrerId;
+      
+      // Allow authenticated users to query their own rewards
+      // This is needed for the referral page to show user rewards
+      allow list: if request.auth != null &&
+        request.query.where.size() >= 1 &&
+        request.query.where[0][0] == "referrerId" &&
+        request.query.where[0][1] == "==" &&
+        request.query.where[0][2] == request.auth.uid;
+      
+      // System can create rewards (should be Cloud Function in production)
+      allow create: if request.auth != null 
+        && request.resource.data.keys().hasAll(['referrerId', 'type', 'amount', 'status'])
+        && request.resource.data.status == "pending";
+      
+      // Users can update rewards to claim them
+      allow update: if request.auth != null 
+        && request.auth.uid == resource.data.referrerId
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['claimed', 'claimedAt'])
+        && request.resource.data.claimed == true;
+      
+      // Prevent deletion of rewards
+      allow delete: if false;
+    }
+
+    // ===== TRANSACTIONS COLLECTION =====
+    match /transactions/{transactionId} {
+      // Users can read their own transactions
+      allow read: if request.auth != null 
+        && request.auth.uid == resource.data.userId;
+      
+      // System can create transactions (payment processing)
+      allow create: if request.auth != null 
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.keys().hasAll(['userId', 'amount', 'type', 'status', 'createdAt']);
+      
+      // Prevent client updates and deletes (should be handled by Cloud Functions)
+      allow update, delete: if false;
+    }
+
+    // ===== FEEDBACK/SUPPORT COLLECTION =====
+    match /feedback/{feedbackId} {
+      // Users can create feedback
+      allow create: if request.auth != null 
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.keys().hasAll(['userId', 'type', 'message', 'createdAt']);
+      
+      // Users can read their own feedback
+      allow read: if request.auth != null 
+        && request.auth.uid == resource.data.userId;
+      
+      // Prevent updates and deletes
+      allow update, delete: if false;
+    }
+
+    // ===== ADMIN COLLECTION (if needed) =====
+    match /admin/{document=**} {
+      // Only allow access from server-side (Cloud Functions)
+      allow read, write: if false;
+    }
+
+    // ===== DENY ALL OTHER COLLECTIONS =====
+    // This ensures no unauthorized access to unexpected collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
