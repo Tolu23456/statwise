@@ -29,7 +29,53 @@ import { showSpinner, hideSpinner } from "../Loader/loader.js";
 
 // ===== Utility UI Helpers =====
 function showSuccess(btn) {
-    btn.querySelector(".btn-text").textContent = "✅ Success!";
+    const btnText = btn.querySelector(".btn-text");
+    const btnIcon = btn.querySelector(".btn-icon") || document.createElement("span");
+    
+    if (!btn.querySelector(".btn-icon")) {
+        btnIcon.className = "btn-icon";
+        btnText.appendChild(btnIcon);
+    }
+    
+    btnIcon.textContent = "✅";
+    btnText.firstChild.textContent = "Success! ";
+    btn.classList.add("success");
+    
+    // Reset after animation
+    setTimeout(() => {
+        btn.classList.remove("success");
+    }, 2000);
+}
+
+function displayError(errorElement, message, shake = true) {
+    if (!errorElement) return;
+    
+    errorElement.textContent = message;
+    errorElement.classList.remove('show', 'shake');
+    
+    // Force reflow
+    errorElement.offsetHeight;
+    
+    // Add show class for animation
+    errorElement.classList.add('show');
+    
+    // Add shake animation if requested
+    if (shake) {
+        setTimeout(() => errorElement.classList.add('shake'), 50);
+    }
+    
+    // Auto-hide after 10 seconds
+    setTimeout(() => {
+        if (errorElement.textContent === message) {
+            errorElement.classList.remove('show');
+        }
+    }, 10000);
+}
+
+function clearError(errorElement) {
+    if (!errorElement) return;
+    errorElement.classList.remove('show', 'shake');
+    setTimeout(() => errorElement.textContent = "", 300);
 }
 
 // ===== Theme Management =====
@@ -79,12 +125,12 @@ if (loginForm) {
         const loginBtn = document.querySelector("#login-btn");
 
         const loginError = document.querySelector("#login-error");
-        loginError.textContent = "";
+        clearError(loginError);
 
         const email = loginEmail.value.trim();
         const password = loginPassword.value.trim();
         if (!email || !password) {
-            loginError.textContent = "Please enter email and password.";
+            displayError(loginError, "Please enter both email and password to continue.", true);
             return;
         }
 
@@ -177,7 +223,7 @@ if (loginForm) {
 
             console.error('Login error:', error.code, error.message);
             hideSpinner(loginBtn);
-            loginError.textContent = errorMessage;
+            displayError(loginError, errorMessage, true);
         }
     });
 
@@ -203,7 +249,7 @@ if (signupForm) {
 
     const checkReferralCode = async (code) => {
         const coreCode = code.trim().toUpperCase();
-        referralNameDisplay.style.display = "none"; // Hide by default
+        referralNameDisplay.classList.remove('show', 'error'); // Hide by default
 
         if (!coreCode) {
             referralNameDisplay.textContent = "";
@@ -221,11 +267,12 @@ if (signupForm) {
                 validReferrerId = referrerDoc.id; // Cache the ID
                 const referrerName = referrerDoc.data().username;
                 referralNameDisplay.textContent = `Referred by: ${referrerName}`;
-                referralNameDisplay.style.display = "block";
+                referralNameDisplay.classList.remove('error');
+                referralNameDisplay.classList.add('show');
             } else {
                 validReferrerId = null; // Invalidate
-                referralNameDisplay.textContent = "Invalid Code";
-                referralNameDisplay.style.display = "block";
+                referralNameDisplay.textContent = "Invalid referral code";
+                referralNameDisplay.classList.add('error', 'show');
             }
         } catch (error) {
             validReferrerId = null;
@@ -311,13 +358,13 @@ function validatePasswords() {
     if (confirmPassword && password !== confirmPassword) {
         signupPassword.classList.add('input-error');
         signupPasswordConfirm.classList.add('input-error');
-        signupError.textContent = "Passwords do not match.";
+        displayError(signupError, "Passwords do not match - please check both fields.", true);
     } else {
         signupPassword.classList.remove('input-error');
         signupPasswordConfirm.classList.remove('input-error');
         // Clear the error only if it's the password mismatch error
-        if (signupError.textContent === "Passwords do not match.") {
-            signupError.textContent = "";
+        if (signupError.textContent.includes("Passwords do not match")) {
+            clearError(signupError);
         }
     }
 }
@@ -338,7 +385,7 @@ if (signupForm) {
         const signupBtn = document.querySelector("#signup-btn");
         const signupError = document.querySelector("#signup-error");
 
-        signupError.textContent = "";
+        clearError(signupError);
 
         const username = signupUsername.value.trim();
         const email = signupEmail.value.trim();
@@ -346,7 +393,7 @@ if (signupForm) {
         const confirmPassword = signupPasswordConfirm.value.trim();
         const referralCode = signupReferral.value.trim().toUpperCase();
         if (!username || !email || !password || !confirmPassword) {
-            signupError.textContent = "Please fill out all required fields.";
+            displayError(signupError, "Please fill out all required fields to continue.", true);
             return;
         }
 
@@ -356,13 +403,13 @@ if (signupForm) {
         }
 
         if (password.length < 6) {
-            signupError.textContent = "Password must be at least 6 characters long.";
+            displayError(signupError, "Password must be at least 6 characters long for security.", true);
             return;
         }
 
         const strengthScore = checkPasswordStrength(password);
         if (strengthScore < 3) {
-            signupError.textContent = "Password must contain a mix of upper and lowercase letters, numbers, and symbols to be strong";
+            displayError(signupError, "Password must contain uppercase, lowercase, numbers, and symbols for security.", true);
             return;
         }
 
@@ -376,7 +423,7 @@ if (signupForm) {
             // If a referral code was entered but found to be invalid by the UI check, block submission.
             if (referralCode && !validReferrerId) {
                 hideSpinner(signupBtn);
-                signupError.textContent = "Invalid referral code.";
+                displayError(signupError, "Please enter a valid referral code or leave it blank.", true);
                 return;
             }
 
@@ -456,7 +503,7 @@ if (signupForm) {
             
             console.error('Signup error:', error.code, error.message);
             hideSpinner(signupBtn);
-            signupError.textContent = errorMessage;
+            displayError(signupError, errorMessage, true);
         }
     });
 
@@ -494,12 +541,12 @@ if (forgotPasswordForm) {
         const forgotPasswordBtn = document.querySelector("#forgot-password-btn");
         const forgotPasswordMessage = document.querySelector("#forgot-password-message");
 
-        forgotPasswordMessage.textContent = "";
+        clearError(forgotPasswordMessage);
         forgotPasswordMessage.style.color = ""; // Reset color
 
         const email = forgotPasswordEmail.value.trim();
         if (!email) {
-            forgotPasswordMessage.textContent = "Please enter your email address.";
+            displayError(forgotPasswordMessage, "Please enter your email address to reset your password.", true);
             return;
         }
 
@@ -507,7 +554,9 @@ if (forgotPasswordForm) {
 
         try {
             await sendPasswordResetEmail(auth, email);
-            forgotPasswordMessage.textContent = "Password reset email sent! Please check your inbox.";
+            forgotPasswordMessage.classList.add('show');
+            forgotPasswordMessage.style.color = '#28a745';
+            forgotPasswordMessage.textContent = "✅ Password reset email sent! Please check your inbox.";
             
             forgotPasswordMessage.style.color = "#28a745"; // Success green color
             hideSpinner(forgotPasswordBtn);
@@ -515,7 +564,7 @@ if (forgotPasswordForm) {
         } catch (error) {
             console.error("Password reset error:", error);
             hideSpinner(forgotPasswordBtn);
-            forgotPasswordMessage.textContent = error.message;
+            displayError(forgotPasswordMessage, "Unable to send reset email. Please try again or contact support.", true);
         }
     });
 }
