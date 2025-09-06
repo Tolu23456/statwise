@@ -1467,12 +1467,10 @@ async function loadPage(page, userId, addToHistory = true) {
             initTabs(); // Use the generic tab handler
         }
         
-        // Remove animated background from non-home pages
-        if (page !== "home") {
-            const bgElement = document.querySelector('.animated-background');
-            if (bgElement) {
-                bgElement.remove();
-            }
+        // Remove any animated background elements from main app pages
+        const bgElement = document.querySelector('.animated-background');
+        if (bgElement) {
+            bgElement.remove();
         }
         if (page === "manage-subscription") {
             await initManageSubscriptionPage(userId);
@@ -1506,13 +1504,7 @@ async function loadPage(page, userId, addToHistory = true) {
         }
         if (page === "home") {
             main.dataset.pullToRefreshActive = 'true'; // Activate for home page
-            
-            // Add animated background to home page
-            if (!document.querySelector('.animated-background')) {
-                const bgElement = document.createElement('div');
-                bgElement.className = 'animated-background';
-                document.body.appendChild(bgElement);
-            }
+            // No animated background on home page - only on auth pages
 
             const cards = document.querySelectorAll('.prediction-card');
             cards.forEach((card, index) => {
