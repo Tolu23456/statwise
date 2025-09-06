@@ -127,9 +127,10 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 14px;
-    font-weight: 500;
-    color: #888;
+    font-weight: 600; /* Make it bolder */
+    color: #0e639c; /* Use brand color for better visibility */
     pointer-events: none; /* Make it non-interactive */
+    z-index: 10; /* Ensure it's above the input field */
 }
 
 
@@ -578,7 +579,7 @@ body {
 }
 
 .dark-mode .input-prefix {
-    color: #bbb;
+    color: #a5d8ff; /* Use light blue for dark mode visibility */
 }
 
 .dark-mode .input-icon {
