@@ -17,13 +17,19 @@ service cloud.firestore {
       // Users can delete their own document (for account deletion)
       allow delete: if request.auth != null && request.auth.uid == userId;
       
-      // Allow querying users by referral code (for referral validation)
-      // This is needed for the signup page to validate referral codes
-      allow list: if request.auth != null || 
+      // Allow querying users by referral code (for referral validation) or referred users
+      allow list: if 
+        // Referral code validation (signup page)
         (request.query.where.size() == 1 && 
          request.query.where[0][0] == "referralCode" &&
          request.query.where[0][1] == "==" &&
-         request.query.limit <= 1);
+         request.query.limit <= 1) ||
+        // Authenticated users can query users they referred (referral page)
+        (request.auth != null &&
+         request.query.where.size() == 1 &&
+         request.query.where[0][0] == "referredBy" &&
+         request.query.where[0][1] == "==" &&
+         request.query.where[0][2] == request.auth.uid);
 
       // ===== USER HISTORY SUBCOLLECTION =====
       match /history/{historyId} {
@@ -33,7 +39,8 @@ service cloud.firestore {
         // Users and system can write to history (for activity logging)
         allow create: if request.auth != null && 
           (request.auth.uid == userId || 
-           request.resource.data.keys().hasAll(['action', 'createdAt']));
+           request.resource.data.keys().hasAll(['action', 'createdAt']) ||
+           request.resource.data.keys().hasAll(['action', 'createdAt', 'creatorId']));
         
         // Prevent updates and deletes of history entries
         allow update, delete: if false;
@@ -93,6 +100,14 @@ service cloud.firestore {
       allow read: if request.auth != null 
         && request.auth.uid == resource.data.referrerId;
       
+      // Allow authenticated users to query their own rewards
+      // This is needed for the referral page to show user rewards
+      allow list: if request.auth != null &&
+        request.query.where.size() >= 1 &&
+        request.query.where[0][0] == "referrerId" &&
+        request.query.where[0][1] == "==" &&
+        request.query.where[0][2] == request.auth.uid;
+      
       // System can create rewards (should be Cloud Function in production)
       allow create: if request.auth != null 
         && request.resource.data.keys().hasAll(['referrerId', 'type', 'amount', 'status'])
@@ -101,8 +116,8 @@ service cloud.firestore {
       // Users can update rewards to claim them
       allow update: if request.auth != null 
         && request.auth.uid == resource.data.referrerId
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'claimedAt'])
-        && request.resource.data.status == "claimed";
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['claimed', 'claimedAt'])
+        && request.resource.data.claimed == true;
       
       // Prevent deletion of rewards
       allow delete: if false;
