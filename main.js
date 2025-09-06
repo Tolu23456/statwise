@@ -1308,16 +1308,30 @@ function initPullToRefresh(container, onRefresh) {
     let isDragging = false;
     let pullDistance = 0;
     let animationFrameId = null;
+    let startTime = 0;
+    let hasTriggeredHaptic = false;
     const pullThreshold = 85; // Pixels to pull before refresh triggers
+    const maxPullDistance = 150; // Maximum pull distance for elastic effect
 
     // Create or find the refresh indicator in the BODY
-    const refreshIndicator = document.getElementById('refresh-indicator');
+    let refreshIndicator = document.getElementById('refresh-indicator');
     if (!refreshIndicator) {
         refreshIndicator = document.createElement('div');
         refreshIndicator.id = 'refresh-indicator';
         refreshIndicator.innerHTML = `<span>&#x21bb;</span>`; // Refresh icon
         document.body.appendChild(refreshIndicator);
     }
+
+    // Add haptic feedback support
+    const triggerHaptic = () => {
+        try {
+            if ('vibrate' in navigator) {
+                navigator.vibrate(20); // Light haptic feedback
+            }
+        } catch (e) {
+            // Ignore haptic errors on unsupported devices
+        }
+    };
 
     const resetIndicator = () => {
         refreshIndicator.classList.add('transitioning');
@@ -1335,56 +1349,110 @@ function initPullToRefresh(container, onRefresh) {
             isDragging = false;
             return;
         }
-        isDragging = true;
-        startY = e.touches[0].pageY;
-        pullDistance = 0;
-        refreshIndicator.classList.remove('transitioning');
+        
+        // Only start if the touch is near the top and moving down
+        if (e.touches && e.touches.length > 0) {
+            isDragging = true;
+            startY = e.touches[0].pageY;
+            startTime = Date.now();
+            pullDistance = 0;
+            hasTriggeredHaptic = false;
+            refreshIndicator.classList.remove('transitioning');
+            
+            // Prevent default scrolling behavior for better control
+            document.body.style.overflow = 'hidden';
+        }
     }, { passive: true });
 
     const updateIndicator = () => {
-        const pullRatio = Math.min(pullDistance / pullThreshold, 1);
-        const elasticScale = pullRatio + (pullRatio * 0.2 * Math.sin(pullDistance * 0.1));
-        const rotationAngle = pullDistance * 3;
+        // Apply elastic effect - slow down the pull as it gets longer
+        const elasticPullDistance = Math.min(pullDistance, maxPullDistance);
+        const elasticFactor = elasticPullDistance > pullThreshold ? 
+            pullThreshold + (elasticPullDistance - pullThreshold) * 0.5 : 
+            elasticPullDistance;
+        
+        const pullRatio = Math.min(elasticFactor / pullThreshold, 1.2);
+        const elasticScale = pullRatio + (pullRatio * 0.2 * Math.sin(elasticFactor * 0.1));
+        const rotationAngle = elasticFactor * 3;
         const shadowIntensity = 0.2 + (pullRatio * 0.3);
         
-        refreshIndicator.style.opacity = pullRatio;
+        refreshIndicator.style.opacity = Math.min(pullRatio, 1);
         refreshIndicator.style.transform = `translateX(-50%) scale(${Math.max(0.1, elasticScale)}) rotate(${rotationAngle}deg)`;
         refreshIndicator.style.boxShadow = `0 ${8 + pullRatio * 10}px ${25 + pullRatio * 15}px rgba(14, 99, 156, ${shadowIntensity})`;
         
-        // Add color transition based on pull progress
-        if (pullRatio >= 0.8) {
+        // Add color transition and haptic feedback based on pull progress
+        if (pullRatio >= 1.0) {
             refreshIndicator.style.background = 'linear-gradient(135deg, #4caf50 0%, #ff9800 50%, #0e639c 100%)';
+            // Trigger haptic feedback when threshold is reached
+            if (!hasTriggeredHaptic) {
+                triggerHaptic();
+                hasTriggeredHaptic = true;
+            }
         } else {
             refreshIndicator.style.background = 'linear-gradient(135deg, #0e639c 0%, #4caf50 50%, #ff9800 100%)';
+        }
+        
+        // Add subtle elastic effect to the container
+        if (pullDistance > 0) {
+            const containerOffset = Math.min(pullDistance * 0.3, 30);
+            container.style.transform = `translateY(${containerOffset}px)`;
         }
         
         animationFrameId = null; // Allow next frame to be requested
     };
 
     container.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
+        if (!isDragging || !e.touches || e.touches.length === 0) return;
 
         const currentY = e.touches[0].pageY;
         const newPullDistance = currentY - startY;
+        const currentTime = Date.now();
+        const touchDuration = currentTime - startTime;
 
-        if (newPullDistance > 0) {
+        // Only allow pull-to-refresh if the movement is primarily vertical and downward
+        if (newPullDistance > 5 && touchDuration > 50) {
             // Prevent the browser's overscroll-bounce effect on mobile
             e.preventDefault();
+            e.stopPropagation();
+            
             pullDistance = newPullDistance;
 
             // Schedule a single update for the next animation frame
             if (!animationFrameId) {
                 animationFrameId = requestAnimationFrame(updateIndicator);
             }
-        } else {
+        } else if (newPullDistance <= 0) {
             // If user starts scrolling up, stop the pull-to-refresh gesture
             isDragging = false;
+            document.body.style.overflow = '';
+            container.style.transform = '';
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
         }
     }, { passive: false }); // passive:false is needed for preventDefault()
+
+    // Handle touch cancel events (when user's finger leaves the screen unexpectedly)
+    container.addEventListener('touchcancel', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        document.body.style.overflow = '';
+        container.style.transform = '';
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+        resetIndicator();
+    });
 
     container.addEventListener('touchend', async (e) => {
         if (!isDragging) return;
         isDragging = false;
+        
+        // Restore body scrolling
+        document.body.style.overflow = '';
+        
         if (animationFrameId) {
             cancelAnimationFrame(animationFrameId);
             animationFrameId = null;
@@ -1392,18 +1460,36 @@ function initPullToRefresh(container, onRefresh) {
 
         if (pullDistance >= pullThreshold) {
             // User pulled enough, trigger refresh
+            triggerHaptic(); // Success haptic feedback
+            
             refreshIndicator.classList.add('transitioning');
             refreshIndicator.style.transform = 'translateX(-50%) scale(1)';
             refreshIndicator.classList.add('refreshing');
             
+            // Smooth transition back to normal position
+            container.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            container.style.transform = 'translateY(0)';
+            
             try {
                 await onRefresh();
             } finally {
-                // Once refresh is done, hide the indicator
+                // Once refresh is done, hide the indicator and reset container
+                setTimeout(() => {
+                    container.style.transition = '';
+                    container.style.transform = '';
+                }, 300);
                 resetIndicator();
             }
         } else {
-            // Didn't pull enough, just hide the indicator
+            // Didn't pull enough, just hide the indicator with bounce-back effect
+            container.style.transition = 'transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            container.style.transform = 'translateY(0)';
+            
+            setTimeout(() => {
+                container.style.transition = '';
+                container.style.transform = '';
+            }, 200);
+            
             resetIndicator();
         }
     });

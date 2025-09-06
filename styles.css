@@ -1150,9 +1150,11 @@ input:checked+.slider::before {
     font-size: 28px;
     color: white;
     opacity: 0;
-    z-index: 10;
+    z-index: 1000;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    will-change: transform, opacity;
+    touch-action: none;
 }
 
 #refresh-indicator.transitioning {
@@ -1219,6 +1221,30 @@ input:checked+.slider::before {
     }
     100% {
         box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5), 0 0 0 50px rgba(76, 175, 80, 0);
+    }
+}
+
+/* Mobile-specific optimizations for pull-to-refresh */
+main[data-pull-to-refresh-active="true"] {
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    will-change: transform;
+}
+
+/* Disable text selection during pull-to-refresh */
+body.pulling-to-refresh {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+/* Ensure smooth scrolling on iOS */
+@supports (-webkit-appearance: none) {
+    main[data-pull-to-refresh-active="true"] {
+        -webkit-overflow-scrolling: touch;
+        -webkit-transform: translate3d(0, 0, 0);
     }
 }
 
