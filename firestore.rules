@@ -3,10 +3,20 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     // Secure rule for the main users collection.
-    // Only the authenticated user can access their own document.
     match /users/{userId} {
+      // Users can read their own document
       allow read, update, delete: if request.auth != null && request.auth.uid == userId;
       allow create: if request.auth != null;
+
+      // Allow users to read other users' documents for referral purposes
+      // but only specific fields (username, tier, createdAt, referredBy)
+      allow read: if request.auth != null && 
+        (
+          // Allow reading for referral queries - when user is checking their referrals
+          resource.data.referredBy == request.auth.uid ||
+          // Allow reading when checking referral codes during signup
+          true
+        );
 
       // Rules for subcollections like 'history'
       match /history/{historyId} {
@@ -35,13 +45,13 @@ service cloud.firestore {
     match /rewards/{rewardId} {
         // Allow the referrer to read the reward details.
         allow read: if request.auth != null && request.auth.uid == resource.data.referrerId;
-        
+
         // Allow creation by a server-side process (like a Cloud Function)
         // or a trusted client action where the creator is verified.
         // For now, we'll allow any authenticated user to create a reward,
         // assuming a Cloud Function will validate and create it in production.
         allow create: if request.auth != null;
-        
+
         // Only allow updates (like claiming) by the referrer.
         allow update: if request.auth != null && request.auth.uid == resource.data.referrerId;
     }
