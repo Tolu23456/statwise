@@ -1253,6 +1253,148 @@ body.pulling-to-refresh {
     }
 }
 
+/* ---------------- App Tour (Intro.js) Styling ---------------- */
+/* Override intro.js default styles to match app theme */
+
+/* Tour tooltip/popup */
+.introjs-tooltip {
+    background: linear-gradient(135deg, rgba(14, 99, 156, 0.95) 0%, rgba(25, 118, 210, 0.95) 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 40px rgba(14, 99, 156, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    min-width: 280px !important;
+    max-width: 350px !important;
+}
+
+/* Tour tooltip arrow */
+.introjs-arrow {
+    border-top-color: rgba(14, 99, 156, 0.95) !important;
+}
+
+.introjs-arrow.bottom {
+    border-bottom-color: rgba(14, 99, 156, 0.95) !important;
+}
+
+.introjs-arrow.left {
+    border-left-color: rgba(14, 99, 156, 0.95) !important;
+}
+
+.introjs-arrow.right {
+    border-right-color: rgba(14, 99, 156, 0.95) !important;
+}
+
+/* Tour title styling */
+.introjs-tooltip-title {
+    color: #ffffff !important;
+    font-family: 'Optimistic Text A', 'Segoe UI', 'Roboto', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Tour content text */
+.introjs-tooltiptext {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-family: 'Optimistic Text A', 'Segoe UI', 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+}
+
+/* Tour buttons container */
+.introjs-tooltipbuttons {
+    text-align: right !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding-top: 12px !important;
+    margin-top: 16px !important;
+}
+
+/* Tour navigation buttons */
+.introjs-button {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+    padding: 8px 16px !important;
+    border-radius: 8px !important;
+    font-family: 'Optimistic Text A', 'Segoe UI', 'Roboto', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    margin: 0 4px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+.introjs-button:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Primary button (Next/Done) */
+.introjs-nextbutton, .introjs-donebutton {
+    background: linear-gradient(135deg, #4caf50 0%, #ff9800 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.introjs-nextbutton:hover, .introjs-donebutton:hover {
+    background: linear-gradient(135deg, #5cbf60 0%, #ffad33 100%) !important;
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4) !important;
+}
+
+/* Skip button */
+.introjs-skipbutton {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.introjs-skipbutton:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* Tour progress dots */
+.introjs-bullets ul li a {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.introjs-bullets ul li a.active {
+    background: #4caf50 !important;
+    border-color: #4caf50 !important;
+}
+
+/* Overlay/backdrop */
+.introjs-overlay {
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(2px) !important;
+}
+
+/* Highlighted element styling */
+.introjs-helperLayer {
+    border: 3px solid rgba(14, 99, 156, 0.8) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6), 
+                0 0 20px rgba(14, 99, 156, 0.6) !important;
+}
+
+/* Step numbers */
+.introjs-helperNumberLayer {
+    background: linear-gradient(135deg, #0e639c 0%, #4caf50 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    color: #ffffff !important;
+    font-family: 'Optimistic Text A', 'Segoe UI', 'Roboto', sans-serif !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.4) !important;
+}
+
 /* ---------------- Dark Mode Overrides ---------------- */
 .dark-mode {
     background: #1e1e1e;
