@@ -128,7 +128,7 @@ body {
     transform: translateY(-50%);
     font-size: 14px;
     font-weight: 600; /* Make it bolder */
-    color: #0e639c; /* Use brand color for better visibility */
+    color: #1c1c1e; /* Match input text color */
     pointer-events: none; /* Make it non-interactive */
     z-index: 10; /* Ensure it's above the input field */
 }
@@ -579,7 +579,7 @@ body {
 }
 
 .dark-mode .input-prefix {
-    color: #a5d8ff; /* Use light blue for dark mode visibility */
+    color: #d4d4d4; /* Match dark mode input text color */
 }
 
 .dark-mode .input-icon {
