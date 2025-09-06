@@ -405,8 +405,9 @@ function validatePasswords() {
 
     // Only show error if the confirm password field has been typed in
     if (confirmPassword && password !== confirmPassword) {
-        signupPassword.classList.add('input-error');
+        // Only highlight the confirm password field with red border
         signupPasswordConfirm.classList.add('input-error');
+        signupPassword.classList.remove('input-error'); // Remove error from main password field
         displayError(signupError, "Passwords do not match - please check both fields.", true);
     } else {
         signupPassword.classList.remove('input-error');
