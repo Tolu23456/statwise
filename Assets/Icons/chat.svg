@@ -1,14 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
   <defs>
-    <linearGradient id="chatGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0e639c;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#1976d2;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4caf50;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="accentChatGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff9800;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4caf50;stop-opacity:1" />
-    </linearGradient>
     <filter id="chatGlow">
       <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
       <feMerge> 
@@ -20,7 +11,7 @@
   
   <!-- Chat bubble main body -->
   <path d="M 20 30 Q 20 20 30 20 L 70 20 Q 80 20 80 30 L 80 50 Q 80 60 70 60 L 40 60 L 25 70 Q 20 75 20 65 Z" 
-        fill="url(#chatGradient)" 
+        fill="#0e639c" 
         stroke="rgba(255, 255, 255, 0.3)" 
         stroke-width="1.5" 
         filter="url(#chatGlow)"/>
@@ -38,7 +29,7 @@
   
   <!-- AI sparkle effect -->
   <path d="M 70 25 L 72 30 L 77 28 L 72 32 L 70 37 L 68 32 L 63 28 L 68 30 Z" 
-        fill="url(#accentChatGradient)" 
+        fill="#4caf50" 
         opacity="0.8">
     <animateTransform attributeName="transform" 
                       type="rotate" 
