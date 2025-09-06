@@ -1,0 +1,76 @@
+/* /404.css */
+
+/* --- Global & Font --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Optimistic';
+    src: url('./Assets/Fonts/Optimistic_Text_A_Md.ttf');
+}
+
+/* --- Body & Theme --- */
+body {
+    font-family: "Optimistic", sans-serif;
+    background: #f4f5f7;
+    color: #1c1c1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- Container --- */
+.error-container {
+    max-width: 450px;
+}
+
+.error-title {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #0e639c;
+    margin: 0;
+}
+
+.error-subtitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* --- Button Style (from styles.css) --- */
+.button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #0e639c;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover {
+    background: #0b4f7a;
+}
+
+/* --- Dark Mode --- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1e1e1e;
+        color: #d4d4d4;
+    }
+}

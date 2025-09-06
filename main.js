@@ -1,6 +1,7 @@
 // main.js
 import { auth, db, FLWPUBK, storage, functions, messaging } from './env.js';
 import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loader.js';
+import { initInteractiveBackground } from './ui.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
 import { onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
@@ -100,7 +101,32 @@ function initializeTheme() {
     applyTheme(isDark);
 }
 
-// ===== Subscription & Trial Functions =====
+let cleanupAnimation = () => {}; // A function to stop the animation
+
+function toggleBackgroundAnimation(show) {
+    let animationArea = document.querySelector('.area');
+    cleanupAnimation(); // Always cleanup previous state
+
+    if (show) {
+        if (!animationArea) {
+            animationArea = document.createElement('div');
+            animationArea.className = 'area';
+            const list = document.createElement('ul');
+            list.className = 'circles';
+            for (let i = 0; i < 10; i++) {
+                const li = document.createElement('li');
+                list.appendChild(li);
+            }
+            animationArea.appendChild(list);
+            document.body.prepend(animationArea);
+        }
+        cleanupAnimation = initInteractiveBackground(animationArea); // Start new animation
+    } else {
+        if (animationArea) {
+            animationArea.remove();
+        }
+    }
+}
 const CLASS_TO_TIER = { free: "Free Tier", premium: "Premium Tier", vip: "VIP / Elite Tier", vvip: "VVIP / Pro Elite Tier" };
 const TIER_ORDER = ["Free Tier", "Premium Tier", "VIP / Elite Tier", "VVIP / Pro Elite Tier"];
 
@@ -717,6 +743,17 @@ async function initProfilePage(userId) {
         });
     }
 
+    // Background Animation Toggle
+    const bgAnimationToggle = document.getElementById("bgAnimationToggle");
+    if (bgAnimationToggle) {
+        // Set initial state from localStorage, default to true if not set
+        bgAnimationToggle.checked = localStorage.getItem('bgAnimationEnabled') !== 'false';
+        bgAnimationToggle.addEventListener("change", () => {
+            localStorage.setItem('bgAnimationEnabled', bgAnimationToggle.checked);
+            toggleBackgroundAnimation(bgAnimationToggle.checked);
+        });
+    }
+
     // 3. Notification Toggle
     const predictionAlertsToggle = document.getElementById("predictionAlertsToggle");
     if (predictionAlertsToggle) {
@@ -895,14 +932,17 @@ async function initReferralPage(userId) {
 
     // 2. Copy Button Logic
     copyBtn.addEventListener('click', async () => {
+        const codeToCopy = codeInput.value.startsWith('REF-') ? codeInput.value.substring(4) : codeInput.value;
         try {
-            await navigator.clipboard.writeText(codeInput.value);
-            await navigator.clipboard.writeText(codeInput.value.substring(4));
+            await navigator.clipboard.writeText(codeToCopy);
+            copyBtn.textContent = 'Copied!';
+            copyBtn.classList.add('success'); // Optional: for styling
         } catch (err) {
             console.error('Failed to copy text: ', err);
             copyBtn.textContent = 'Failed!';
         } finally {
-            setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+            // Reset button text and style after 2 seconds
+            setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('success'); }, 2000);
         }
     });
 
@@ -977,6 +1017,10 @@ async function initReferralPage(userId) {
     // 5. Fetch and display rewards
     if (rewardsContainer) {
         const rewardsQuery = query(collection(db, "rewards"), where("referrerId", "==", userId), orderBy("createdAt", "desc"));
+        const rewardsCountEl = document.getElementById('rewardsCount');
+
+        // Reset rewards display
+        if (rewardsCountEl) rewardsCountEl.textContent = '0';
         const rewardsSnapshot = await getDocs(rewardsQuery);
 
         if (!rewardsSnapshot.empty) {
@@ -1000,6 +1044,9 @@ async function initReferralPage(userId) {
                 `;
                 rewardsContainer.appendChild(card);
             });
+            if (rewardsCountEl) {
+                rewardsCountEl.textContent = rewardsSnapshot.size.toString();
+            }
         } else {
             rewardsContainer.innerHTML = `<p>No rewards earned yet. You'll get a reward when a referred user subscribes!</p>`;
         }
@@ -1482,20 +1529,18 @@ async function loadPage(page, userId, addToHistory = true) {
         let errorMessage = `Unable to load the ${page} page right now.`;
         let retryButton = '';
         
-        if (error.message && error.message.includes('Page not found')) {
-            errorMessage = `The ${page} page is temporarily unavailable.`;
-        } else if (error.name === 'TypeError' || error.message.includes('network')) {
-            errorMessage = `Network error loading the ${page} page. Please check your internet connection.`;
-            retryButton = `<button onclick="loadPage('${page}', '${userId || ''}', false)" class="btn btn-primary" style="margin-top: 10px;">Try Again</button>`;
+        if (error.name === 'TypeError' || error.message.includes('network')) {
+            errorMessage = `There was a network issue. Please check your connection and try again.`;
+            retryButton = `<button onclick="loadPage('${page}', '${userId || ''}', false)" class="button" style="margin-top: 10px;">Try Again</button>`;
         }
         
         main.innerHTML = `
-            <div class="error-container" style="text-align: center; padding: 40px 20px; color: var(--text-color);">
-                <div class="error-icon" style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
-                <h3>Oops!</h3>
-                <p>${errorMessage}</p>
+            <div class="error-container">
+                <h1 class="error-title">Oops!</h1>
+                <h2 class="error-subtitle">Something went wrong</h2>
+                <p class="error-message">${errorMessage}</p>
                 ${retryButton}
-                <button onclick="loadPage('home', '${userId || ''}', false)" class="btn btn-secondary" style="margin-top: 10px;">Go to Home</button>
+                <a href="#" onclick="loadPage('home', '${userId || ''}', false); return false;" class="button">Go to Homepage</a>
             </div>
         `;
     } finally {
@@ -1695,6 +1740,9 @@ const handleUserAuthenticated = async (user) => {
         initPullToRefresh(main, async () => {
             await loadPage('home', user.uid, false);
         });
+
+        // Apply background animation based on user preference
+        toggleBackgroundAnimation(localStorage.getItem('bgAnimationEnabled') !== 'false');
 
         // PRIORITY 1: Load the UI immediately to prevent blank screen
         const pageToLoad = manageInitialPageLoad(user.uid, loadPage);

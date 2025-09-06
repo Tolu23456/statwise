@@ -3,8 +3,15 @@
 
   <!-- Search Bar -->
   <div class="search-container">
-    <input type="text" id="predictionSearch" placeholder="Search for a match...">
+    <div class="search-wrapper">
+      <input type="text" id="predictionSearch" placeholder="Search or use commands like /odds, /c75">
+      <div id="search-ghost-text"></div>
+      <button id="search-clear-btn" style="display: none;">&times;</button>
+    </div>
   </div>
+
+  <!-- Active Filters Display -->
+  <div id="active-filters-container"></div>
 
   <!-- Predictions Container -->
   <div class="predictions-container">

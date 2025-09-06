@@ -4,6 +4,7 @@
 // =====================================
 
 import { auth, db } from "../env.js";
+import { initInteractiveBackground } from "../ui.js";
 import { addHistoryUnique } from "../utils.js";
 import {
     createUserWithEmailAndPassword,
@@ -102,6 +103,23 @@ function initializeTheme() {
     });
 }
 
+function createBackgroundAnimation() {
+    // Only create animation if it's enabled or not set (default to on)
+    if (localStorage.getItem('bgAnimationEnabled') !== 'false') {
+        const container = document.createElement('div');
+        container.className = 'area';
+        const list = document.createElement('ul');
+        list.className = 'circles';
+        for (let i = 0; i < 10; i++) {
+            const li = document.createElement('li');
+            list.appendChild(li);
+        }
+        container.appendChild(list);
+        document.body.prepend(container); // Prepend to ensure it's in the background
+        initInteractiveBackground(container);
+    }
+}
+
 // ===== Firestore Collections =====
 const usersCol = collection(db, "users");
 const referralCodesCol = collection(db, "referralCodes");
@@ -114,6 +132,7 @@ const forgotPasswordForm = document.querySelector("#forgot-password-form");
 
 // Initialize theme on page load
 initializeTheme();
+createBackgroundAnimation();
 
 // ===== Login Logic =====
 if (loginForm) {
@@ -258,9 +277,10 @@ if (signupForm) {
     const checkReferralCode = async (code) => {
         const coreCode = code.trim().toUpperCase();
         const wrapper = signupReferral.parentElement;
-        referralNameDisplay.classList.remove('show', 'error'); // Hide by default
-
-        if (!coreCode) {
+        
+        // Clear previous state if input is not 6 chars
+        if (coreCode.length !== 6) {
+            referralNameDisplay.classList.remove('show', 'error');
             referralNameDisplay.textContent = "";
             validReferrerId = null;
             return;
@@ -271,7 +291,7 @@ if (signupForm) {
 
         try {
             // Query the 'users' collection for a matching referral code.
-            const q = query(usersCol, where("referralCode", "==", `REF-${coreCode}`), limit(1));
+            const q = query(usersCol, where("referralCode", "==", coreCode), limit(1));
             const querySnapshot = await getDocs(q);
 
             if (!querySnapshot.empty) {
@@ -334,6 +354,8 @@ function checkPasswordStrength(password) {
 if (signupForm) {
     const strengthBars = document.querySelectorAll("#password-strength-container .strength-bar");
     const strengthText = document.getElementById("password-strength-text");
+    // Define signupPassword here so it's accessible to both listeners below
+    const signupPassword = document.querySelector("#signup-password");
 
     signupPassword.addEventListener("input", () => {
         const password = signupPassword.value;
@@ -391,17 +413,14 @@ if (signupForm) {
 
     signupForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        const signupUsername = document.querySelector("#signup-username");
+        const signupEmail = document.querySelector("#signup-email");
         const signupReferral = document.querySelector("#signup-referral");
         const signupRememberMe = document.querySelector("#signup-remember-me");
         const signupBtn = document.querySelector("#signup-btn");
         const signupError = document.querySelector("#signup-error");
 
         clearError(signupError);
-
-        // Use existing variables from the outer scope
-        const signupUsername = document.querySelector("#signup-username");
-        const signupEmail = document.querySelector("#signup-email");
-        // signupPassword and signupPasswordConfirm are already defined outside
 
         const username = signupUsername.value.trim();
         const email = signupEmail.value.trim();
@@ -423,8 +442,8 @@ if (signupForm) {
             return;
         }
 
-        const strengthScore = checkPasswordStrength(password);
-        if (strengthScore.score < 3) {
+        const { score } = checkPasswordStrength(password);
+        if (score < 3) {
             displayError(signupError, "Password must contain uppercase, lowercase, numbers, and symbols for security.", true);
             return;
         }
@@ -448,7 +467,7 @@ if (signupForm) {
 
             // --- Final Referral ID Check (Self-Referral) ---
             let finalReferrerId = validReferrerId;
-            if (finalReferrerId && finalReferrerId === user.uid) {
+            if (finalReferrerId && finalReferralId === user.uid) {
                 finalReferrerId = null; // Nullify if user is referring themselves.
             }
 
@@ -498,15 +517,7 @@ if (signupForm) {
                 authCard.classList.add('fade-out');
             }
             // Explicitly redirect to home page with hash to ensure homepage loads
-            setTimeout(() => {
-                try {
-                    window.location.assign("../index.html#home");
-                } catch (redirectError) {
-                    // Fallback if redirect fails
-                    console.error('Signup redirect failed:', redirectError);
-                    window.location.replace("../index.html#home");
-                }
-            }, 500); // Redirect after animation (500ms)
+            setTimeout(() => window.location.href = "../index.html#home", 500); // Redirect after animation (500ms)
 
         } catch (error) {            
             let errorMessage = "Unable to create your account right now. Please try again.";
