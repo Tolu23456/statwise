@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="primaryBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0e639c;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1976d2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4caf50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff9800;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer circle with gradient -->
+  <circle cx="50" cy="50" r="45" fill="url(#primaryBlueGradient)" opacity="0.1" stroke="url(#primaryBlueGradient)" stroke-width="2"/>
+  
+  <!-- Main refresh arrow -->
+  <path d="M 30 35 A 15 15 0 1 1 70 35" fill="none" stroke="url(#primaryBlueGradient)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  
+  <!-- Arrow head -->
+  <path d="M 65 30 L 75 35 L 65 40 Z" fill="url(#primaryBlueGradient)" filter="url(#glow)"/>
+  
+  <!-- Secondary accent arrow for dynamic effect -->
+  <path d="M 35 65 A 15 15 0 1 0 65 65" fill="none" stroke="url(#accentGradient)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  
+  <!-- Secondary arrow head -->
+  <path d="M 35 70 L 25 65 L 35 60 Z" fill="url(#accentGradient)" opacity="0.6"/>
+  
+  <!-- Central highlight dot -->
+  <circle cx="50" cy="50" r="3" fill="#ffffff" opacity="0.8"/>
+</svg>

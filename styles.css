@@ -1140,21 +1140,25 @@ input:checked+.slider::before {
     transform: translateX(-50%) scale(0);
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #0e639c 0%, #4caf50 50%, #ff9800 100%);
+    background: rgba(14, 99, 156, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 8px 25px rgba(14, 99, 156, 0.4), 0 0 0 0 rgba(14, 99, 156, 0.1);
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    font-size: 28px;
-    color: white;
+    border: 3px solid rgba(14, 99, 156, 0.3);
     opacity: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     will-change: transform, opacity;
     touch-action: none;
+}
+
+#refresh-indicator .refresh-icon {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 #refresh-indicator.transitioning {
@@ -1167,15 +1171,16 @@ input:checked+.slider::before {
 #refresh-indicator.refreshing {
     animation: enhanced-pulse 1.5s ease-in-out infinite, 
                ripple 2s ease-out infinite;
-    background: linear-gradient(135deg, #4caf50 0%, #ff9800 50%, #0e639c 100%);
+    background: rgba(76, 175, 80, 0.2);
     box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5), 
                 0 0 0 0 rgba(76, 175, 80, 0.4);
+    border-color: rgba(76, 175, 80, 0.5);
 }
 
-#refresh-indicator.refreshing span {
+#refresh-indicator.refreshing .refresh-icon {
     animation: enhanced-spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
     transform: scale(1.2);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 2px 8px rgba(76, 175, 80, 0.6)) brightness(1.1);
 }
 
 @keyframes enhanced-pulse {

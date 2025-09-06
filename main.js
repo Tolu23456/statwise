@@ -1318,7 +1318,7 @@ function initPullToRefresh(container, onRefresh) {
     if (!refreshIndicator) {
         refreshIndicator = document.createElement('div');
         refreshIndicator.id = 'refresh-indicator';
-        refreshIndicator.innerHTML = `<span>&#x21bb;</span>`; // Refresh icon
+        refreshIndicator.innerHTML = `<img src="Assets/Icons/refresh-custom.svg" alt="Refresh" class="refresh-icon">`;
         document.body.appendChild(refreshIndicator);
     }
 
