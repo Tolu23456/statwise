@@ -285,6 +285,12 @@ body {
     border-color: rgba(217, 83, 79, 0.2);
 }
 
+.referral-name-display.success {
+    color: #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+    border-color: rgba(40, 167, 69, 0.2);
+}
+
 /* --- Form Description (for forgot password) --- */
 .form-description {
     font-size: 14px;

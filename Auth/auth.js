@@ -278,10 +278,18 @@ if (signupForm) {
         const coreCode = code.trim().toUpperCase();
         const wrapper = signupReferral.parentElement;
         
-        // Clear previous state if input is not 6 chars
-        if (coreCode.length !== 6) {
+        // Clear previous state if input is empty or not 6 chars
+        if (coreCode.length === 0) {
             referralNameDisplay.classList.remove('show', 'error');
             referralNameDisplay.textContent = "";
+            validReferrerId = null;
+            return;
+        }
+        
+        if (coreCode.length !== 6) {
+            referralNameDisplay.textContent = "Referral code must be 6 characters";
+            referralNameDisplay.classList.add('error', 'show');
+            referralNameDisplay.classList.remove('success');
             validReferrerId = null;
             return;
         }
@@ -300,14 +308,18 @@ if (signupForm) {
                 const referrerName = referrerDoc.data().username;
                 referralNameDisplay.textContent = `Referred by: ${referrerName}`;
                 referralNameDisplay.classList.remove('error');
-                referralNameDisplay.classList.add('show');
+                referralNameDisplay.classList.add('show', 'success');
             } else {
                 validReferrerId = null; // Invalidate
                 referralNameDisplay.textContent = "Invalid referral code";
                 referralNameDisplay.classList.add('error', 'show');
+                referralNameDisplay.classList.remove('success');
             }
         } catch (error) {
             validReferrerId = null;
+            referralNameDisplay.textContent = "Error checking referral code";
+            referralNameDisplay.classList.add('error', 'show');
+            referralNameDisplay.classList.remove('success');
             console.error("Error fetching referrer:", error);
         } finally {
             // Hide validating spinner
