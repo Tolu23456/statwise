@@ -38,9 +38,8 @@ export const FLWPUBK = "FLWPUBK_TEST-8336183053a03e565edf2dd9d6ec3ffd-X";
 // Supabase configuration
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.4";
 
-// Supabase credentials - These should be your actual values from Replit Secrets
-// Note: In Replit, you would normally access these via environment variables,
-// but for client-side code, we need to pass them directly
+// Supabase credentials - Updated to use your new Supabase project
+// Note: These are public keys safe for client-side code (anon key has Row Level Security)
 const supabaseUrl = 'https://fwpriiugfjhtoymcbmso.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3cHJpaXVnZmpodG95bWNibXNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5MDc3MTgsImV4cCI6MjA3MjQ4MzcxOH0.Sy3iehhGx2UNi28UBEjfNd81TjMxOVXJjY9HJS3xVjs';
 
