@@ -1705,6 +1705,8 @@ async function loadPage(page, userId, addToHistory = true) {
             // No animated background on home page - only on auth pages
             initTabs(); // Initialize league tabs for home page
             initCollapsibleTabs(); // Initialize collapsible tabs functionality
+            // Ensure AI chat button is initialized for home page
+            initAIChatButton();
 
             // Initialize pull-to-refresh for homepage
             initPullToRefresh(main, () => {
