@@ -13,6 +13,8 @@ CREATE TABLE IF NOT EXISTS user_profiles (
     subscription_status VARCHAR(20) DEFAULT 'active',
     referral_code VARCHAR(20),
     total_referrals INTEGER DEFAULT 0,
+    profile_picture_url TEXT, -- Supabase Storage URL for profile picture
+    total_referral_rewards DECIMAL(10, 2) DEFAULT 0.00,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     last_login TIMESTAMP WITH TIME ZONE DEFAULT NOW()
@@ -41,6 +43,35 @@ CREATE TABLE IF NOT EXISTS payment_transactions (
     period VARCHAR(20),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+
+-- Referral system tables
+CREATE TABLE IF NOT EXISTS referrals (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    referrer_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    referred_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE,
+    referral_code VARCHAR(20) NOT NULL,
+    reward_claimed BOOLEAN DEFAULT FALSE,
+    reward_amount DECIMAL(10, 2) DEFAULT 0.00,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    claimed_at TIMESTAMP WITH TIME ZONE,
+    UNIQUE(referrer_id, referred_id)
+);
+
+-- Referral codes table for unique code management
+CREATE TABLE IF NOT EXISTS referral_codes (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES user_profiles(id) ON DELETE CASCADE UNIQUE,
+    code VARCHAR(20) UNIQUE NOT NULL,
+    total_uses INTEGER DEFAULT 0,
+    total_rewards DECIMAL(10, 2) DEFAULT 0.00,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Storage bucket policy for profile pictures
+-- Note: This needs to be set up in Supabase Storage UI as well
+-- CREATE POLICY "Users can upload their own profile pictures" ON storage.objects
+-- FOR INSERT WITH CHECK (bucket_id = 'profile-pictures' AND auth.uid()::text = (storage.foldername(name))[1]);
 
 -- Create indexes for better performance
 CREATE INDEX IF NOT EXISTS idx_user_profiles_email ON user_profiles(email);
