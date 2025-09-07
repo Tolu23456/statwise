@@ -826,68 +826,90 @@ async function handlePayment(userId, tier, amount, period) {
                 try {
                     // Sync payment data to Supabase (non-blocking)
                     const userId = auth.currentUser?.uid;
-                    if (userId) {
-                        // Log payment transaction to Supabase with better error handling
-                        const paymentLogResult = await SupabaseService.logPaymentTransaction(userId, {
-                            transaction_id: data.transaction_id,
-                            tx_ref: data.tx_ref,
-                            amount: amount,
-                            currency: "NGN",
-                            status: data.status,
-                            tier: tier,
-                            period: period
-                        });
-                        
-                        if (paymentLogResult) {
-                            console.log('Payment successfully logged to Supabase');
-                        } else {
-                            console.warn('Failed to log payment to Supabase, but continuing...');
-                        }
-                        
-                        // Log subscription event to Supabase
-                        SupabaseService.logSubscriptionEvent(userId, 'subscription_purchase', {
-                            tier: tier,
-                            period: period,
-                            transaction_id: data.transaction_id,
-                            amount: amount
-                        });
-                        
-                        // Calculate subscription dates
-                        const startDate = new Date().toISOString();
-                        const endDate = new Date();
-                        if (period === "monthly") {
-                            endDate.setMonth(endDate.getMonth() + 1);
-                        } else if (period === "annual") {
-                            endDate.setFullYear(endDate.getFullYear() + 1);
-                        }
-                        
-                        // Update subscription status in Supabase (PRIMARY SOURCE)
-                        const supabaseUpdate = await SupabaseService.updateUserSubscription(userId, {
-                            tier: tier,
-                            period: period,
-                            start_date: startDate,
-                            end_date: endDate.toISOString(),
-                            status: 'active'
-                        });
-                        
-                        if (supabaseUpdate) {
-                            console.log('Subscription successfully updated in Supabase');
-                            // Sync to Firebase for backward compatibility
-                            await updateUserTier(userId, tier, period, endDate.toISOString());
-                        } else {
-                            console.warn('Failed to update subscription in Supabase, using Firebase only');
-                            await updateUserTier(userId, tier, period, endDate.toISOString());
-                        }
+                    console.log('🔄 PAYMENT SUCCESS: Processing for user:', userId);
+                    console.log('🔄 Payment data:', { transaction_id: data.transaction_id, tier, period, amount });
+                    
+                    if (!userId) {
+                        throw new Error('No authenticated user found during payment processing');
                     }
-
-                    // Verify payment using Supabase - all payment data is already logged
-                    console.log('Payment verification completed via Supabase logging');
-                    console.log('Transaction details:', {
+                    
+                    // STEP 1: Ensure user profile exists in Supabase first
+                    console.log('📝 STEP 1: Ensuring user profile exists in Supabase...');
+                    const userSyncResult = await SupabaseService.syncUserProfile(auth.currentUser, {
+                        current_tier: 'Free Tier', // Default tier before upgrade
+                        subscription_status: 'inactive'
+                    });
+                    console.log('📝 User profile sync result:', userSyncResult);
+                    
+                    // STEP 2: Log payment transaction to Supabase
+                    console.log('💳 STEP 2: Logging payment transaction...');
+                    const paymentLogResult = await SupabaseService.logPaymentTransaction(userId, {
                         transaction_id: data.transaction_id,
                         tx_ref: data.tx_ref,
+                        amount: amount,
+                        currency: "NGN",
+                        status: data.status,
                         tier: tier,
                         period: period
                     });
+                    
+                    if (paymentLogResult) {
+                        console.log('✅ Payment successfully logged to Supabase');
+                    } else {
+                        console.warn('⚠️ Failed to log payment to Supabase, but continuing...');
+                    }
+                    
+                    // STEP 3: Log subscription event to Supabase
+                    console.log('📊 STEP 3: Logging subscription event...');
+                    const eventResult = await SupabaseService.logSubscriptionEvent(userId, 'subscription_purchase', {
+                        tier: tier,
+                        period: period,
+                        transaction_id: data.transaction_id,
+                        amount: amount
+                    });
+                    console.log('📊 Subscription event logged:', eventResult);
+                        
+                    // STEP 4: Calculate subscription dates
+                    console.log('📅 STEP 4: Calculating subscription dates...');
+                    const startDate = new Date().toISOString();
+                    const endDate = new Date();
+                    if (period === "monthly") {
+                        endDate.setMonth(endDate.getMonth() + 1);
+                    } else if (period === "annual") {
+                        endDate.setFullYear(endDate.getFullYear() + 1);
+                    }
+                    console.log('📅 Dates calculated:', { startDate, endDate: endDate.toISOString() });
+                    
+                    // STEP 5: Update subscription status in Supabase (PRIMARY SOURCE)
+                    console.log('🔄 STEP 5: Updating subscription in Supabase...');
+                    const supabaseUpdate = await SupabaseService.updateUserSubscription(userId, {
+                        tier: tier,
+                        period: period,
+                        start_date: startDate,
+                        end_date: endDate.toISOString(),
+                        status: 'active'
+                    });
+                    
+                    if (supabaseUpdate) {
+                        console.log('✅ Subscription successfully updated in Supabase:', supabaseUpdate);
+                        
+                        // STEP 6: Sync to Firebase for backward compatibility
+                        console.log('🔄 STEP 6: Syncing to Firebase...');
+                        try {
+                            await updateUserTier(userId, tier, period, endDate.toISOString());
+                            console.log('✅ Firebase sync completed');
+                        } catch (firebaseError) {
+                            console.warn('⚠️ Firebase sync failed but Supabase succeeded:', firebaseError);
+                        }
+                    } else {
+                        console.error('❌ Failed to update subscription in Supabase');
+                        console.log('🔄 Attempting Firebase-only update as fallback...');
+                        await updateUserTier(userId, tier, period, endDate.toISOString());
+                    }
+
+                    // STEP 7: Payment verification completed via Supabase logging
+                    console.log('✅ STEP 7: Payment verification completed via Supabase logging');
+                    console.log('🎉 SUCCESS: All payment processing completed successfully!');
                     // Enhanced success notification with payment details
                     const successMessage = `🎉 Payment Successful!\n\nTransaction ID: ${data.transaction_id}\nTier: ${tier}\nAmount: ₦${amount.toLocaleString()}\n\nYour ${tier} subscription is now active!`;
                     showModal({ 
