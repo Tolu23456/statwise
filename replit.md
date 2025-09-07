@@ -85,3 +85,13 @@ Firebase Cloud Messaging (FCM) enables push notifications for prediction alerts 
 - **AI Chat Feature**: Added floating chat button in bottom right corner with animated SVG icon featuring typing indicators and sparkle effects
 - **Interactive AI Modal**: Implemented chat interface with app-themed styling, allowing users to ask about sports predictions and app features
 - All new features use the app's signature blue gradient (#0e639c to #4caf50) and maintain visual consistency across the platform
+
+### September 7, 2025 - Supabase Integration for Enhanced Data Management
+- **Supabase Database Integration**: Added Supabase as a secondary database alongside Firebase for enhanced subscription and payment tracking
+- **Hybrid Architecture**: Configured the app to use Firebase for authentication and general app data, while Supabase handles subscription analytics and payment logging
+- **Payment Data Syncing**: Modified Flutterwave payment flow to automatically sync all transaction data to Supabase for better analytics and reporting
+- **User Profile Synchronization**: Added automatic user profile syncing between Firebase and Supabase on authentication
+- **Database Schema**: Created comprehensive Supabase database schema with tables for user profiles, subscription events, and payment transactions
+- **Non-blocking Integration**: All Supabase operations are designed to be non-blocking, ensuring the main app functionality continues to work even if Supabase is unavailable
+- **Enhanced Analytics**: Supabase integration provides better subscription analytics, payment tracking, and user behavior insights
+- The integration maintains backward compatibility with existing Firebase functionality while adding powerful new data management capabilities
