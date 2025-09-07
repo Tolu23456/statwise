@@ -897,6 +897,11 @@ function enforceTierRestrictions() {
         // Handle navigation buttons separately: show/hide them completely.
         if (el.matches('.bottom-nav button')) {
             el.style.display = hasAccess ? 'flex' : 'none';
+        } else if (el.matches('.subscription-card') || el.closest('.subscription-card')) {
+            // Never lock subscription cards - they should always show upgrade options
+            el.style.opacity = "1";
+            el.dataset.locked = "false";
+            el.removeAttribute("title");
         } else {
             // For other elements (like cards), lock them with an overlay effect.
             if (!hasAccess) {
@@ -2546,7 +2551,8 @@ const handleUserAuthenticated = async (user) => {
         // Global click handler for locked features
         main.addEventListener('click', (e) => {
             const lockedEl = e.target.closest('[data-locked="true"]');
-            if (lockedEl) {
+            // Don't intercept clicks on subscription cards or buttons - they have their own upgrade flow
+            if (lockedEl && !lockedEl.closest('.subscription-card') && !lockedEl.matches('.subscribe-btn')) {
                 e.preventDefault();
                 e.stopPropagation();
                 showModal({
