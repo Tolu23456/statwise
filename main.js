@@ -25,6 +25,46 @@ let verifiedTier = "Free Tier"; // In-memory tier
 
 initializeTheme(); // Apply theme on initial load
 
+// Check for payment redirect on page load
+checkPaymentRedirect();
+
+// ===== Payment Redirect Handler =====
+function checkPaymentRedirect() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paymentStatus = urlParams.get('payment');
+    const transactionId = urlParams.get('transaction_id');
+    const txRef = urlParams.get('tx_ref');
+    
+    if (paymentStatus === 'success' && transactionId) {
+        // Show success message for returning payment
+        setTimeout(() => {
+            showModal({ 
+                message: `🎉 Welcome back!\n\nYour payment has been processed successfully.\nTransaction ID: ${transactionId}\n\nPlease wait while we verify your subscription...`,
+                confirmClass: 'btn-success',
+                confirmText: 'Continue',
+                onConfirm: () => {
+                    // Navigate to subscriptions to show updated status
+                    loadPage('subscriptions');
+                }
+            });
+        }, 1000);
+        
+        // Clear the URL parameters
+        window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (paymentStatus === 'cancelled') {
+        setTimeout(() => {
+            showModal({ 
+                message: '❌ Payment was cancelled.\n\nYour subscription has not been updated. You can try again anytime.',
+                confirmClass: 'btn-warning',
+                confirmText: 'OK'
+            });
+        }, 1000);
+        
+        // Clear the URL parameters
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+}
+
 // ===== Supabase Helper Functions =====
 const SupabaseService = {
     // Sync user profile data to Supabase
@@ -166,7 +206,7 @@ const SupabaseService = {
 
     // === SUPABASE STORAGE METHODS ===
 
-    // Upload profile picture to Supabase Storage
+    // Upload profile picture to Supabase Storage with improved error handling
     async uploadProfilePicture(userId, file) {
         if (!supabase) {
             console.log('Supabase not available');
@@ -177,6 +217,25 @@ const SupabaseService = {
             const fileExt = file.name.split('.').pop();
             const fileName = `${userId}/profile.${fileExt}`;
 
+            // First, try to create/check if the bucket exists
+            const { data: buckets, error: bucketsError } = await supabase.storage.listBuckets();
+            const profilePicturesBucket = buckets?.find(bucket => bucket.name === 'profile-pictures');
+            
+            if (!profilePicturesBucket) {
+                console.warn('Profile pictures bucket does not exist. Creating it now...');
+                const { data: createBucket, error: createError } = await supabase.storage.createBucket('profile-pictures', {
+                    public: true,
+                    allowedMimeTypes: ['image/*'],
+                    fileSizeLimit: 5242880 // 5MB
+                });
+                
+                if (createError) {
+                    console.warn('Could not create bucket automatically:', createError.message);
+                    return null;
+                }
+                console.log('Profile pictures bucket created successfully');
+            }
+
             const { data, error } = await supabase.storage
                 .from('profile-pictures')
                 .upload(fileName, file, {
@@ -186,6 +245,11 @@ const SupabaseService = {
 
             if (error) {
                 console.warn('Supabase storage upload warning:', error.message);
+                
+                // If it's a bucket not found error, return null to trigger Firebase fallback
+                if (error.message.includes('Bucket not found') || error.message.includes('bucket does not exist')) {
+                    console.warn('Bucket issue detected - will use Firebase fallback');
+                }
                 return null;
             }
 
@@ -1149,6 +1213,15 @@ async function initProfilePage(userId) {
             }
 
             showLoader();
+            
+            // Show upload progress to user
+            showModal({
+                message: '⏳ Uploading your profile picture...\nThis may take a moment.',
+                showCancel: false,
+                confirmText: 'Please Wait',
+                confirmDisabled: true
+            });
+            
             try {
                 // Try Supabase Storage first, fallback to Firebase if needed
                 let downloadURL = await SupabaseService.uploadProfilePicture(userId, file);
@@ -1156,6 +1229,13 @@ async function initProfilePage(userId) {
                 if (!downloadURL) {
                     // Fallback to Firebase Storage if Supabase fails
                     console.log('Supabase upload failed, falling back to Firebase Storage');
+                    showModal({
+                        message: '⏳ Using backup storage...\nAlmost done!',
+                        showCancel: false,
+                        confirmText: 'Please Wait',
+                        confirmDisabled: true
+                    });
+                    
                     const storageRef = ref(storage, `profile_pictures/${userId}`);
                     const uploadResult = await uploadBytes(storageRef, file);
                     downloadURL = await getDownloadURL(uploadResult.ref);
@@ -1172,7 +1252,11 @@ async function initProfilePage(userId) {
                 
                 displayAvatar(downloadURL, userData.username);
                 await addHistoryUnique(userId, 'Updated profile picture');
-                showModal({ message: 'Profile picture updated successfully!' });
+                showModal({ 
+                    message: '✅ Profile picture updated successfully!\nYour new picture is now visible.',
+                    confirmClass: 'btn-success',
+                    confirmText: 'Great!'
+                });
             } catch (error) {
                 console.error("Avatar upload failed:", error);
                 let errorMessage = 'Failed to upload image. Please try again.';
