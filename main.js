@@ -178,27 +178,31 @@ const SupabaseService = {
         }
 
         try {
-            // Update user profile with new subscription data
+            // First ensure user profile exists, then update subscription data
+            const userData = {
+                id: userId,
+                current_tier: subscriptionData.tier,
+                subscription_period: subscriptionData.period,
+                subscription_start: subscriptionData.start_date,
+                subscription_end: subscriptionData.end_date,
+                subscription_status: subscriptionData.status || 'active',
+                updated_at: new Date().toISOString()
+            };
+
+            // Use upsert to handle cases where user profile doesn't exist yet
             const { data, error } = await supabase
                 .from('user_profiles')
-                .update({
-                    current_tier: subscriptionData.tier,
-                    subscription_period: subscriptionData.period,
-                    subscription_start: subscriptionData.start_date,
-                    subscription_end: subscriptionData.end_date,
-                    subscription_status: subscriptionData.status || 'active',
-                    updated_at: new Date().toISOString()
-                })
-                .eq('id', userId)
+                .upsert(userData, { onConflict: 'id' })
                 .select()
                 .single();
 
             if (error) {
                 console.warn('Supabase subscription update warning:', error.message);
+                console.warn('Error details:', error);
                 return null;
             }
             
-            console.log('User subscription updated in Supabase:', data);
+            console.log('User subscription updated/created in Supabase:', data);
             
             // Also update the in-memory tier for immediate UI updates
             verifiedTier = subscriptionData.tier;
