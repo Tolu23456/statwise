@@ -162,6 +162,286 @@ const SupabaseService = {
             console.warn('Error updating user subscription in Supabase:', error);
             return null;
         }
+    },
+
+    // === SUPABASE STORAGE METHODS ===
+
+    // Upload profile picture to Supabase Storage
+    async uploadProfilePicture(userId, file) {
+        if (!supabase) {
+            console.log('Supabase not available');
+            return null;
+        }
+
+        try {
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${userId}/profile.${fileExt}`;
+
+            const { data, error } = await supabase.storage
+                .from('profile-pictures')
+                .upload(fileName, file, {
+                    cacheControl: '3600',
+                    upsert: true // This will overwrite existing files
+                });
+
+            if (error) {
+                console.warn('Supabase storage upload warning:', error.message);
+                return null;
+            }
+
+            // Get the public URL for the uploaded file
+            const { data: publicUrlData } = supabase.storage
+                .from('profile-pictures')
+                .getPublicUrl(fileName);
+
+            console.log('Profile picture uploaded to Supabase:', publicUrlData.publicUrl);
+            
+            // Update user profile with new picture URL
+            await this.updateUserProfilePicture(userId, publicUrlData.publicUrl);
+            
+            return publicUrlData.publicUrl;
+        } catch (error) {
+            console.warn('Error uploading profile picture to Supabase:', error);
+            return null;
+        }
+    },
+
+    // Update user profile picture URL in Supabase
+    async updateUserProfilePicture(userId, pictureUrl) {
+        if (!supabase) return null;
+
+        try {
+            const { data, error } = await supabase
+                .from('user_profiles')
+                .update({
+                    profile_picture_url: pictureUrl,
+                    updated_at: new Date().toISOString()
+                })
+                .eq('id', userId)
+                .select()
+                .single();
+
+            if (error) {
+                console.warn('Supabase profile picture update warning:', error.message);
+                return null;
+            }
+            console.log('Profile picture URL updated in Supabase:', data);
+            return data;
+        } catch (error) {
+            console.warn('Error updating profile picture URL in Supabase:', error);
+            return null;
+        }
+    },
+
+    // === SUPABASE REFERRAL METHODS ===
+
+    // Generate and store referral code in Supabase
+    async generateReferralCode(userId, displayName) {
+        if (!supabase) return null;
+
+        try {
+            const code = userId.substring(0, 6).toUpperCase();
+
+            const { data, error } = await supabase
+                .from('referral_codes')
+                .upsert({
+                    user_id: userId,
+                    code: code,
+                    created_at: new Date().toISOString(),
+                    updated_at: new Date().toISOString()
+                }, { onConflict: 'user_id' })
+                .select()
+                .single();
+
+            if (error) {
+                console.warn('Supabase referral code generation warning:', error.message);
+                return null;
+            }
+            console.log('Referral code generated in Supabase:', data);
+            return data.code;
+        } catch (error) {
+            console.warn('Error generating referral code in Supabase:', error);
+            return null;
+        }
+    },
+
+    // Get user's referral code from Supabase
+    async getUserReferralCode(userId) {
+        if (!supabase) return null;
+
+        try {
+            const { data, error } = await supabase
+                .from('referral_codes')
+                .select('code')
+                .eq('user_id', userId)
+                .single();
+
+            if (error) {
+                console.warn('Supabase referral code fetch warning:', error.message);
+                return null;
+            }
+            return data?.code;
+        } catch (error) {
+            console.warn('Error fetching referral code from Supabase:', error);
+            return null;
+        }
+    },
+
+    // Validate referral code and get referrer info
+    async validateReferralCode(code) {
+        if (!supabase) return null;
+
+        try {
+            const { data, error } = await supabase
+                .from('referral_codes')
+                .select(`
+                    user_id,
+                    user_profiles!inner(display_name, email)
+                `)
+                .eq('code', code.toUpperCase())
+                .single();
+
+            if (error) {
+                console.warn('Supabase referral validation warning:', error.message);
+                return null;
+            }
+            return {
+                referrerId: data.user_id,
+                referrerName: data.user_profiles.display_name
+            };
+        } catch (error) {
+            console.warn('Error validating referral code in Supabase:', error);
+            return null;
+        }
+    },
+
+    // Create referral relationship
+    async createReferralRelationship(referrerId, referredId, referralCode) {
+        if (!supabase) return null;
+
+        try {
+            const { data, error } = await supabase
+                .from('referrals')
+                .insert({
+                    referrer_id: referrerId,
+                    referred_id: referredId,
+                    referral_code: referralCode,
+                    created_at: new Date().toISOString()
+                })
+                .select()
+                .single();
+
+            if (error) {
+                console.warn('Supabase referral relationship creation warning:', error.message);
+                return null;
+            }
+            
+            // Update referral stats
+            await this.updateReferralStats(referrerId);
+            
+            console.log('Referral relationship created in Supabase:', data);
+            return data;
+        } catch (error) {
+            console.warn('Error creating referral relationship in Supabase:', error);
+            return null;
+        }
+    },
+
+    // Update referral statistics
+    async updateReferralStats(userId) {
+        if (!supabase) return null;
+
+        try {
+            // Count total referrals
+            const { count } = await supabase
+                .from('referrals')
+                .select('*', { count: 'exact', head: true })
+                .eq('referrer_id', userId);
+
+            // Update referral code stats
+            await supabase
+                .from('referral_codes')
+                .update({
+                    total_uses: count || 0,
+                    updated_at: new Date().toISOString()
+                })
+                .eq('user_id', userId);
+
+            // Update user profile stats
+            await supabase
+                .from('user_profiles')
+                .update({
+                    total_referrals: count || 0,
+                    updated_at: new Date().toISOString()
+                })
+                .eq('id', userId);
+
+            console.log(`Updated referral stats for user ${userId}: ${count} referrals`);
+            return count;
+        } catch (error) {
+            console.warn('Error updating referral stats in Supabase:', error);
+            return null;
+        }
+    },
+
+    // Get user's referrals
+    async getUserReferrals(userId) {
+        if (!supabase) return [];
+
+        try {
+            const { data, error } = await supabase
+                .from('referrals')
+                .select(`
+                    *,
+                    user_profiles!referred_id(display_name, email, current_tier, created_at)
+                `)
+                .eq('referrer_id', userId)
+                .order('created_at', { ascending: false });
+
+            if (error) {
+                console.warn('Supabase referrals fetch warning:', error.message);
+                return [];
+            }
+            return data || [];
+        } catch (error) {
+            console.warn('Error fetching referrals from Supabase:', error);
+            return [];
+        }
+    },
+
+    // === CROSS-PLATFORM SYNC METHODS ===
+
+    // Sync referral data from Firebase to Supabase
+    async syncReferralDataToSupabase(userId) {
+        if (!supabase) return false;
+
+        try {
+            // Get Firebase referral data
+            const userRef = doc(db, "users", userId);
+            const userSnap = await getDoc(userRef);
+            
+            if (!userSnap.exists()) return false;
+            
+            const userData = userSnap.data();
+            
+            // Sync referral code if exists
+            if (userData.referralCode) {
+                await this.generateReferralCode(userId, userData.username);
+            }
+            
+            // Sync referred users
+            if (userData.referredBy) {
+                // This user was referred, create the relationship
+                const referralCode = userData.referralCode?.substring(4) || ''; // Remove REF- prefix
+                await this.createReferralRelationship(userData.referredBy, userId, referralCode);
+            }
+            
+            console.log('Referral data synced from Firebase to Supabase for user:', userId);
+            return true;
+        } catch (error) {
+            console.warn('Error syncing referral data to Supabase:', error);
+            return false;
+        }
     }
 };
 
