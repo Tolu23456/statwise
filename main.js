@@ -1104,11 +1104,26 @@ async function initProfilePage(userId) {
 
             showLoader();
             try {
-                const storageRef = ref(storage, `profile_pictures/${userId}`);
-                const uploadResult = await uploadBytes(storageRef, file);
-                const downloadURL = await getDownloadURL(uploadResult.ref);
+                // Try Supabase Storage first, fallback to Firebase if needed
+                let downloadURL = await SupabaseService.uploadProfilePicture(userId, file);
+                
+                if (!downloadURL) {
+                    // Fallback to Firebase Storage if Supabase fails
+                    console.log('Supabase upload failed, falling back to Firebase Storage');
+                    const storageRef = ref(storage, `profile_pictures/${userId}`);
+                    const uploadResult = await uploadBytes(storageRef, file);
+                    downloadURL = await getDownloadURL(uploadResult.ref);
+                }
 
+                // Update Firebase user document (maintain compatibility)
                 await updateDoc(userRef, { photoURL: downloadURL });
+                
+                // Sync to Supabase as well (non-blocking)
+                if (downloadURL && supabase) {
+                    SupabaseService.updateUserProfilePicture(userId, downloadURL)
+                        .catch(err => console.warn('Failed to sync profile picture to Supabase:', err));
+                }
+                
                 displayAvatar(downloadURL, userData.username);
                 await addHistoryUnique(userId, 'Updated profile picture');
                 showModal({ message: 'Profile picture updated successfully!' });
@@ -1377,28 +1392,41 @@ async function initReferralPage(userId) {
     try {
         // 1. Get/Generate Referral Code
         console.log("Fetching user document for userId:", userId);
-        const userRef = doc(db, "users", userId);
-        const userSnap = await getDoc(userRef);
         
-        if (!userSnap.exists()) {
-            console.error("Referral Page Error: User document not found.");
-            referralListContainer.innerHTML = `<p>Error: Could not load your referral information.</p>`;
-            return;
-        }
+        // Try Supabase first, fallback to Firebase
+        let referralCode = await SupabaseService.getUserReferralCode(userId);
         
-        const userData = userSnap.data();
-        console.log("User data retrieved:", userData);
-        let referralCode = userData.referralCode;
-
         if (!referralCode) {
-            console.log("No referral code found, generating new one");
-            referralCode = `REF-${userId.substring(0, 6).toUpperCase()}`;
-            await updateDoc(userRef, { referralCode });
-            console.log("Generated and saved referral code:", referralCode);
+            console.log("No Supabase referral code found, checking Firebase...");
+            const userRef = doc(db, "users", userId);
+            const userSnap = await getDoc(userRef);
+            
+            if (userSnap.exists()) {
+                const userData = userSnap.data();
+                referralCode = userData.referralCode;
+                
+                if (!referralCode) {
+                    console.log("No referral code found anywhere, generating new one");
+                    referralCode = userId.substring(0, 6).toUpperCase();
+                    
+                    // Generate in both systems
+                    await SupabaseService.generateReferralCode(userId, userData.username || '');
+                    await updateDoc(userRef, { referralCode: `REF-${referralCode}` });
+                } else {
+                    // Sync existing Firebase code to Supabase
+                    const codeOnly = referralCode.startsWith('REF-') ? referralCode.substring(4) : referralCode;
+                    await SupabaseService.generateReferralCode(userId, userData.username || '');
+                    referralCode = codeOnly;
+                }
+            } else {
+                console.error("Referral Page Error: User document not found in both systems.");
+                referralListContainer.innerHTML = `<p>Error: Could not load your referral information.</p>`;
+                return;
+            }
         }
         
         console.log("Setting referral code input:", referralCode);
-        codeInput.value = referralCode;
+        codeInput.value = `REF-${referralCode}`;
 
     // 2. Copy Button Logic
     copyBtn.addEventListener('click', async () => {
@@ -1459,32 +1487,61 @@ async function initReferralPage(userId) {
 
         // 4. Fetch and display list of referred users
         console.log("Fetching referred users for userId:", userId);
-        const referralsQuery = query(collection(db, "users"), where("referredBy", "==", userId));
-        const querySnapshot = await getDocs(referralsQuery);
-        console.log("Referred users query result:", querySnapshot.size, "users found");
+        
+        // Try Supabase first, fallback to Firebase
+        let referrals = await SupabaseService.getUserReferrals(userId);
+        
+        if (!referrals || referrals.length === 0) {
+            console.log("No Supabase referrals found, checking Firebase...");
+            const referralsQuery = query(collection(db, "users"), where("referredBy", "==", userId));
+            const querySnapshot = await getDocs(referralsQuery);
+            console.log("Firebase referrals query result:", querySnapshot.size, "users found");
+            
+            if (!querySnapshot.empty) {
+                referralListContainer.innerHTML = ''; // Clear the placeholder
+                querySnapshot.forEach(doc => {
+                    const referredUser = doc.data();
+                    const card = document.createElement('div');
+                    card.className = 'history-card';
 
-    if (!querySnapshot.empty) {
-        referralListContainer.innerHTML = ''; // Clear the placeholder
-        querySnapshot.forEach(doc => {
-            const referredUser = doc.data();
-            const card = document.createElement('div');
-            card.className = 'history-card';
+                    const isSubscribed = referredUser.tier !== 'Free Tier';
+                    const statusBadge = isSubscribed
+                        ? `<span class="status-badge status-successful">Subscribed</span>`
+                        : `<span class="status-badge status-pending">Joined</span>`;
 
-            const isSubscribed = referredUser.tier !== 'Free Tier';
-            const statusBadge = isSubscribed
-                ? `<span class="status-badge status-successful">Subscribed</span>`
-                : `<span class="status-badge status-pending">Joined</span>`;
+                    card.innerHTML = `
+                        <div class="history-title">${referredUser.username}</div>
+                        <p class="history-detail">Status: ${statusBadge}</p>
+                        <p class="history-time">Joined on: ${new Date(referredUser.createdAt).toLocaleDateString()}</p>
+                    `;
+                    referralListContainer.appendChild(card);
+                });
+            } else {
+                referralListContainer.innerHTML = `<p>No referrals yet. Share your code to get started!</p>`;
+            }
+        } else {
+            // Display Supabase referrals
+            console.log("Supabase referrals found:", referrals.length);
+            referralListContainer.innerHTML = ''; // Clear the placeholder
+            
+            referrals.forEach(referral => {
+                const referredUser = referral.user_profiles;
+                const card = document.createElement('div');
+                card.className = 'history-card';
 
-            card.innerHTML = `
-                <div class="history-title">${referredUser.username}</div>
-                <p class="history-detail">Status: ${statusBadge}</p>
-                <p class="history-time">Joined on: ${new Date(referredUser.createdAt).toLocaleDateString()}</p>
-            `;
-            referralListContainer.appendChild(card);
-        });
-    } else {
-        referralListContainer.innerHTML = `<p>No referrals yet. Share your code to get started!</p>`;
-    }
+                const isSubscribed = referredUser.current_tier !== 'Free Tier';
+                const statusBadge = isSubscribed
+                    ? `<span class="status-badge status-successful">Subscribed</span>`
+                    : `<span class="status-badge status-pending">Joined</span>`;
+
+                card.innerHTML = `
+                    <div class="history-title">${referredUser.display_name}</div>
+                    <p class="history-detail">Status: ${statusBadge}</p>
+                    <p class="history-time">Joined on: ${new Date(referral.created_at).toLocaleDateString()}</p>
+                `;
+                referralListContainer.appendChild(card);
+            });
+        }
 
         // 5. Fetch and display rewards
         if (rewardsContainer) {
@@ -2654,8 +2711,13 @@ const setupUserDataBackground = async (user, pageToLoad) => {
             current_tier: userData.tier || "Free Tier",
             subscription_period: userData.tierExpiry ? "monthly" : null, // This could be improved based on your data structure
             referral_code: userData.referralCode,
-            total_referrals: userData.referredUsers ? userData.referredUsers.length : 0
+            total_referrals: userData.referredUsers ? userData.referredUsers.length : 0,
+            profile_picture_url: userData.photoURL
         }).catch(err => console.warn("Failed to sync user to Supabase:", err));
+        
+        // Sync referral data to Supabase (non-blocking)
+        SupabaseService.syncReferralDataToSupabase(user.uid)
+            .catch(err => console.warn("Failed to sync referral data to Supabase:", err));
 
         // Non-blocking subscription check
         checkExpiredSubscription(user.uid, userData);
