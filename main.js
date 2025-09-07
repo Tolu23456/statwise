@@ -28,19 +28,6 @@ initializeTheme(); // Apply theme on initial load
 // Check for payment redirect on page load
 checkPaymentRedirect();
 
-// Initialize Supabase buckets on app start
-if (supabase) {
-    SupabaseService.ensureBucketsExist().then(success => {
-        if (success) {
-            console.log('All required Supabase buckets are ready');
-        } else {
-            console.warn('Some Supabase buckets may not be available');
-        }
-    }).catch(error => {
-        console.warn('Error initializing Supabase buckets:', error);
-    });
-}
-
 // ===== Payment Redirect Handler =====
 function checkPaymentRedirect() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -2806,14 +2793,26 @@ const handleUserAuthenticated = async (user) => {
             await loadPage('home', user.uid, false);
         });
         
-
-        // Don't apply background animation on main page - it's now only for auth pages
-
         // PRIORITY 1: Load the UI immediately to prevent blank screen
         const pageToLoad = manageInitialPageLoad(user.uid, loadPage);
 
         // PRIORITY 2: Handle user data setup in background (non-blocking)
         setupUserDataBackground(user, pageToLoad);
+        
+        // PRIORITY 3: Initialize Supabase buckets after user is authenticated (background)
+        if (supabase) {
+            setTimeout(() => {
+                SupabaseService.ensureBucketsExist().then(success => {
+                    if (success) {
+                        console.log('All required Supabase buckets are ready');
+                    } else {
+                        console.warn('Some Supabase buckets may not be available');
+                    }
+                }).catch(error => {
+                    console.warn('Error initializing Supabase buckets:', error);
+                });
+            }, 100); // Small delay to ensure app loads first
+        }
 
         // Global click handler for locked features
         main.addEventListener('click', (e) => {
@@ -2945,7 +2944,7 @@ setTimeout(() => {
         console.warn('Auth initialization timeout, redirecting to login');
         window.location.href = 'Auth/login.html';
     }
-}, 10000); // 10 second timeout
+}, 3000); // 3 second timeout - faster response
 
 const unsubscribe = onAuthStateChanged(auth, async (user) => {
     try {
