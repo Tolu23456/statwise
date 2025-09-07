@@ -2013,104 +2013,6 @@ function initPullToRefresh(container, onRefresh) {
     });
 }
 
-// ===== AI Chat Functionality =====
-function initAIChatButton() {
-    const chatFab = document.getElementById('ai-chat-fab');
-    if (chatFab) {
-        chatFab.addEventListener('click', () => {
-            // Show a simple modal or toast for now - can be expanded to full chat interface
-            showAIChatModal();
-        });
-    }
-}
-
-function showAIChatModal() {
-    // Create a simple modal for AI chat functionality
-    const modal = document.createElement('div');
-    modal.className = 'ai-chat-modal';
-    modal.innerHTML = `
-        <div class="ai-chat-content">
-            <div class="chat-header">
-                <h3>StatWise AI Assistant</h3>
-                <button class="close-chat" onclick="this.closest('.ai-chat-modal').remove()">&times;</button>
-            </div>
-            <div class="chat-body">
-                <div class="ai-message">
-                    <p>Hi! I'm your StatWise AI assistant. I can help you with:</p>
-                    <ul>
-                        <li>🏈 Sports predictions and analysis</li>
-                        <li>📊 Understanding odds and statistics</li>
-                        <li>💡 App features and navigation</li>
-                        <li>🎯 Betting strategies and tips</li>
-                    </ul>
-                    <p>What would you like to know about?</p>
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" placeholder="Ask me anything about sports or the app..." class="chat-input">
-                <button class="send-chat">Send</button>
-            </div>
-        </div>
-    `;
-    
-    // Add styling for the modal
-    modal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        backdrop-filter: blur(4px);
-        animation: fadeIn 0.3s ease;
-    `;
-    
-    document.body.appendChild(modal);
-    
-    // Close modal when clicking outside
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.remove();
-        }
-    });
-    
-    // Handle send button (placeholder functionality)
-    const sendBtn = modal.querySelector('.send-chat');
-    const chatInput = modal.querySelector('.chat-input');
-    
-    const handleSend = () => {
-        const message = chatInput.value.trim();
-        if (message) {
-            // Placeholder response - in a real implementation, this would connect to an AI service
-            const chatBody = modal.querySelector('.chat-body');
-            chatBody.innerHTML += `
-                <div class="user-message">
-                    <p>${message}</p>
-                </div>
-                <div class="ai-message">
-                    <p>Thanks for your question! This is a demo response. In the full version, I would provide detailed insights about: "${message}"</p>
-                    <p>For now, you can explore the app's features or check out the subscription plans for premium AI analysis.</p>
-                </div>
-            `;
-            chatInput.value = '';
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }
-    };
-    
-    sendBtn.addEventListener('click', handleSend);
-    chatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            handleSend();
-        }
-    });
-    
-    // Focus the input
-    setTimeout(() => chatInput.focus(), 100);
-}
 
 // ===== Dynamic Page Loader =====
 async function loadPage(page, userId, addToHistory = true) {
@@ -2223,8 +2125,6 @@ async function loadPage(page, userId, addToHistory = true) {
             // No animated background on home page - only on auth pages
             initTabs(); // Initialize league tabs for home page
             initCollapsibleTabs(); // Initialize collapsible tabs functionality
-            // Ensure AI chat button is initialized for home page
-            initAIChatButton();
 
             // Initialize pull-to-refresh for homepage
             initPullToRefresh(main, () => {
@@ -2634,8 +2534,6 @@ const handleUserAuthenticated = async (user) => {
             await loadPage('home', user.uid, false);
         });
         
-        // Initialize AI Chat button
-        initAIChatButton();
 
         // Don't apply background animation on main page - it's now only for auth pages
 

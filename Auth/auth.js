@@ -302,19 +302,50 @@ if (signupForm) {
         wrapper.classList.add('validating');
 
         try {
-            // Query the 'users' collection for a matching referral code.
-            const q = query(usersCol, where("referralCode", "==", coreCode), limit(1));
-            const querySnapshot = await getDocs(q);
+            let referrerFound = false;
+            let referrerName = '';
+            
+            // First try Supabase validation if available
+            if (typeof window !== 'undefined' && window.SupabaseService && window.SupabaseService.validateReferralCode) {
+                const supabaseResult = await window.SupabaseService.validateReferralCode(coreCode);
+                if (supabaseResult && supabaseResult.referrerId) {
+                    validReferrerId = supabaseResult.referrerId;
+                    referrerName = supabaseResult.referrerName;
+                    referrerFound = true;
+                }
+            }
+            
+            // If not found in Supabase, try Firebase with different formats
+            if (!referrerFound) {
+                // Try with REF- prefix first
+                let q = query(usersCol, where("referralCode", "==", `REF-${coreCode}`), limit(1));
+                let querySnapshot = await getDocs(q);
 
-            if (!querySnapshot.empty) {
-                const referrerDoc = querySnapshot.docs[0];
-                validReferrerId = referrerDoc.id; // Cache the ID
-                const referrerName = referrerDoc.data().username;
+                if (!querySnapshot.empty) {
+                    const referrerDoc = querySnapshot.docs[0];
+                    validReferrerId = referrerDoc.id;
+                    referrerName = referrerDoc.data().username;
+                    referrerFound = true;
+                } else {
+                    // Try without REF- prefix for legacy codes
+                    q = query(usersCol, where("referralCode", "==", coreCode), limit(1));
+                    querySnapshot = await getDocs(q);
+                    
+                    if (!querySnapshot.empty) {
+                        const referrerDoc = querySnapshot.docs[0];
+                        validReferrerId = referrerDoc.id;
+                        referrerName = referrerDoc.data().username;
+                        referrerFound = true;
+                    }
+                }
+            }
+
+            if (referrerFound) {
                 referralNameDisplay.textContent = `Referred by: ${referrerName}`;
                 referralNameDisplay.classList.remove('error');
                 referralNameDisplay.classList.add('show', 'success');
             } else {
-                validReferrerId = null; // Invalidate
+                validReferrerId = null;
                 referralNameDisplay.textContent = "Invalid referral code";
                 referralNameDisplay.classList.add('error', 'show');
                 referralNameDisplay.classList.remove('success');
