@@ -734,10 +734,37 @@ async function updateCurrentTierDisplay(userId) {
     const tierDisplay = document.getElementById("user-tier");
     if (!tierDisplay || !userId) return;
  
-    const snapshot = await getDoc(doc(db, "users", userId));
-    const userData = snapshot.exists() ? snapshot.data() : {};
-    const tier = userData.tier || "Free Tier";
-    const expiry = userData.tierExpiry;
+    let tier = "Free Tier";
+    let expiry = null;
+    
+    // Try Supabase first
+    try {
+        const supabaseUser = await SupabaseService.getUserSubscription(userId);
+        if (supabaseUser) {
+            tier = supabaseUser.current_tier || "Free Tier";
+            expiry = supabaseUser.subscription_end;
+            console.log('Tier data loaded from Supabase:', { tier, expiry });
+        } else {
+            console.log('No Supabase data found, falling back to Firebase');
+        }
+    } catch (error) {
+        console.warn('Supabase tier fetch failed, using Firebase fallback:', error);
+    }
+    
+    // Fallback to Firebase if Supabase failed
+    if (tier === "Free Tier" && !expiry) {
+        try {
+            const snapshot = await getDoc(doc(db, "users", userId));
+            if (snapshot.exists()) {
+                const userData = snapshot.data();
+                tier = userData.tier || "Free Tier";
+                expiry = userData.tierExpiry;
+                console.log('Tier data loaded from Firebase fallback:', { tier, expiry });
+            }
+        } catch (error) {
+            console.warn('Firebase fallback also failed:', error);
+        }
+    }
  
     tierDisplay.textContent = tier;
  
@@ -1059,13 +1086,28 @@ async function initManageSubscriptionPage(userId) {
     };
 
     try {
-        const userRef = doc(db, "users", userId);
-        const snapshot = await getDoc(userRef);
-        const userData = snapshot.exists() ? snapshot.data() : {};
+        let tier = "Free Tier";
+        let expiry = null;
+        let autoRenew = false;
+        
+        // Try Supabase first
+        const supabaseUser = await SupabaseService.getUserSubscription(userId);
+        if (supabaseUser) {
+            tier = supabaseUser.current_tier || "Free Tier";
+            expiry = supabaseUser.subscription_end;
+            autoRenew = supabaseUser.auto_renew ?? false;
+            console.log('Subscription data loaded from Supabase:', { tier, expiry, autoRenew });
+        } else {
+            // Fallback to Firebase
+            const userRef = doc(db, "users", userId);
+            const snapshot = await getDoc(userRef);
+            const userData = snapshot.exists() ? snapshot.data() : {};
+            tier = userData.tier || "Free Tier";
+            expiry = userData.tierExpiry;
+            autoRenew = userData.autoRenew ?? false;
+            console.log('Subscription data loaded from Firebase fallback:', { tier, expiry, autoRenew });
+        }
 
-        const tier = userData.tier || "Free Tier";
-        const expiry = userData.tierExpiry;
-        const autoRenew = userData.autoRenew ?? false; // Default to false if undefined
         const benefits = TIER_BENEFITS[tier] || [];
 
         if (tier === 'Free Tier') {
@@ -2907,12 +2949,28 @@ const setupUserDataBackground = async (user, pageToLoad) => {
             );
         }
 
+        // Get tier from Supabase first, fallback to Firebase
+        let currentTier = "Free Tier";
+        try {
+            const supabaseSubscription = await SupabaseService.getUserSubscription(user.uid);
+            if (supabaseSubscription) {
+                currentTier = supabaseSubscription.current_tier || "Free Tier";
+                console.log('Current tier loaded from Supabase:', currentTier);
+            } else {
+                currentTier = userData.tier || "Free Tier";
+                console.log('Current tier loaded from Firebase fallback:', currentTier);
+            }
+        } catch (error) {
+            console.warn('Failed to get tier from Supabase, using Firebase:', error);
+            currentTier = userData.tier || "Free Tier";
+        }
+
         // Set verified tier for UI
-        verifiedTier = userData.tier || "Free Tier";
+        verifiedTier = currentTier;
 
         // Sync user profile to Supabase (non-blocking)
         SupabaseService.syncUserProfile(user, {
-            current_tier: userData.tier || "Free Tier",
+            current_tier: currentTier,
             subscription_period: userData.tierExpiry ? "monthly" : null, // This could be improved based on your data structure
             referral_code: userData.referralCode,
             total_referrals: userData.referredUsers ? userData.referredUsers.length : 0,
@@ -2946,19 +3004,45 @@ const setupUserDataBackground = async (user, pageToLoad) => {
     }
 };
 
-// Non-blocking subscription expiry check
+// Non-blocking subscription expiry check - uses Supabase as primary source
 const checkExpiredSubscription = async (userId, userData) => {
     try {
-        if (userData.tier !== 'Free Tier' && userData.tierExpiry) {
-            const expiryDate = new Date(userData.tierExpiry);
+        let tier = "Free Tier";
+        let expiry = null;
+        
+        // Check Supabase first
+        const supabaseSubscription = await SupabaseService.getUserSubscription(userId);
+        if (supabaseSubscription) {
+            tier = supabaseSubscription.current_tier || "Free Tier";
+            expiry = supabaseSubscription.subscription_end;
+        } else {
+            // Fallback to Firebase data
+            tier = userData.tier || "Free Tier";
+            expiry = userData.tierExpiry;
+        }
+        
+        if (tier !== 'Free Tier' && expiry) {
+            const expiryDate = new Date(expiry);
             if (new Date() > expiryDate) {
                 console.log(`User ${userId}'s subscription has expired. Downgrading.`);
+                
+                // Update in Supabase first
+                await SupabaseService.updateUserSubscription(userId, {
+                    tier: 'Free Tier',
+                    period: null,
+                    start_date: new Date().toISOString(),
+                    end_date: null,
+                    status: 'inactive'
+                });
+                
+                // Update Firebase for compatibility
                 const userRef = doc(db, "users", userId);
                 await updateDoc(userRef, {
                     tier: 'Free Tier',
                     tierExpiry: null,
                     autoRenew: false
                 });
+                
                 verifiedTier = "Free Tier";
                 addHistoryUnique(userId, "Subscription expired, reverted to Free Tier.").catch(err => 
                     console.error("Failed to log subscription expiry:", err)
