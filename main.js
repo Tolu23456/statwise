@@ -1,5 +1,5 @@
 // main.js
-import { auth, db, FLWPUBK, storage, functions, messaging } from './env.js';
+import { auth, db, FLWPUBK, storage, functions, messaging, supabase } from './env.js';
 import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loader.js';
 import { initInteractiveBackground } from './ui.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
@@ -24,6 +24,146 @@ const defaultPage = "home";
 let verifiedTier = "Free Tier"; // In-memory tier
 
 initializeTheme(); // Apply theme on initial load
+
+// ===== Supabase Helper Functions =====
+const SupabaseService = {
+    // Sync user profile data to Supabase
+    async syncUserProfile(firebaseUser, additionalData = {}) {
+        if (!supabase || !firebaseUser) {
+            console.log('Supabase not available or user not found');
+            return null;
+        }
+
+        try {
+            const userData = {
+                id: firebaseUser.uid,
+                email: firebaseUser.email,
+                display_name: firebaseUser.displayName || '',
+                created_at: new Date().toISOString(),
+                last_login: new Date().toISOString(),
+                ...additionalData
+            };
+
+            const { data, error } = await supabase
+                .from('user_profiles')
+                .upsert(userData, { onConflict: 'id' })
+                .select()
+                .single();
+
+            if (error) {
+                console.warn('Supabase sync warning:', error.message);
+                return null;
+            }
+            console.log('User profile synced to Supabase:', data);
+            return data;
+        } catch (error) {
+            console.warn('Error syncing user profile to Supabase:', error);
+            return null;
+        }
+    },
+
+    // Log payment transaction to Supabase
+    async logPaymentTransaction(userId, transactionData) {
+        if (!supabase) {
+            console.log('Supabase not available');
+            return null;
+        }
+
+        try {
+            const { data, error } = await supabase
+                .from('payment_transactions')
+                .insert({
+                    user_id: userId,
+                    transaction_id: transactionData.transaction_id,
+                    tx_ref: transactionData.tx_ref,
+                    amount: transactionData.amount,
+                    currency: transactionData.currency || 'NGN',
+                    status: transactionData.status,
+                    payment_type: 'flutterwave',
+                    tier: transactionData.tier,
+                    period: transactionData.period,
+                    created_at: new Date().toISOString()
+                })
+                .select()
+                .single();
+
+            if (error) {
+                console.warn('Supabase payment log warning:', error.message);
+                return null;
+            }
+            console.log('Payment transaction logged to Supabase:', data);
+            return data;
+        } catch (error) {
+            console.warn('Error logging payment transaction to Supabase:', error);
+            return null;
+        }
+    },
+
+    // Log subscription event to Supabase
+    async logSubscriptionEvent(userId, eventType, eventData) {
+        if (!supabase) {
+            console.log('Supabase not available');
+            return null;
+        }
+
+        try {
+            const { data, error } = await supabase
+                .from('subscription_events')
+                .insert({
+                    user_id: userId,
+                    event_type: eventType,
+                    event_data: eventData,
+                    created_at: new Date().toISOString()
+                })
+                .select()
+                .single();
+
+            if (error) {
+                console.warn('Supabase subscription log warning:', error.message);
+                return null;
+            }
+            console.log('Subscription event logged to Supabase:', data);
+            return data;
+        } catch (error) {
+            console.warn('Error logging subscription event to Supabase:', error);
+            return null;
+        }
+    },
+
+    // Update user subscription status in Supabase
+    async updateUserSubscription(userId, subscriptionData) {
+        if (!supabase) {
+            console.log('Supabase not available');
+            return null;
+        }
+
+        try {
+            const { data, error } = await supabase
+                .from('user_profiles')
+                .update({
+                    current_tier: subscriptionData.tier,
+                    subscription_period: subscriptionData.period,
+                    subscription_start: subscriptionData.start_date,
+                    subscription_end: subscriptionData.end_date,
+                    subscription_status: subscriptionData.status || 'active',
+                    updated_at: new Date().toISOString()
+                })
+                .eq('id', userId)
+                .select()
+                .single();
+
+            if (error) {
+                console.warn('Supabase subscription update warning:', error.message);
+                return null;
+            }
+            console.log('User subscription updated in Supabase:', data);
+            return data;
+        } catch (error) {
+            console.warn('Error updating user subscription in Supabase:', error);
+            return null;
+        }
+    }
+};
 
 // ===== Helper: Clear dynamic assets =====
 function clearDynamicAssets() {
@@ -187,6 +327,47 @@ async function handlePayment(userId, tier, amount, period) {
             if (data.status === "successful" || data.status === "completed") {
                 showLoader();
                 try {
+                    // Sync payment data to Supabase (non-blocking)
+                    const userId = auth.currentUser?.uid;
+                    if (userId) {
+                        // Log payment transaction to Supabase
+                        SupabaseService.logPaymentTransaction(userId, {
+                            transaction_id: data.transaction_id,
+                            tx_ref: data.tx_ref,
+                            amount: amount,
+                            currency: "NGN",
+                            status: data.status,
+                            tier: tier,
+                            period: period
+                        });
+                        
+                        // Log subscription event to Supabase
+                        SupabaseService.logSubscriptionEvent(userId, 'subscription_purchase', {
+                            tier: tier,
+                            period: period,
+                            transaction_id: data.transaction_id,
+                            amount: amount
+                        });
+                        
+                        // Calculate subscription dates
+                        const startDate = new Date().toISOString();
+                        const endDate = new Date();
+                        if (period === "monthly") {
+                            endDate.setMonth(endDate.getMonth() + 1);
+                        } else if (period === "annual") {
+                            endDate.setFullYear(endDate.getFullYear() + 1);
+                        }
+                        
+                        // Update subscription status in Supabase
+                        SupabaseService.updateUserSubscription(userId, {
+                            tier: tier,
+                            period: period,
+                            start_date: startDate,
+                            end_date: endDate.toISOString(),
+                            status: 'active'
+                        });
+                    }
+
                     // Call a Cloud Function to securely verify the payment and update the user's tier.
                     const verifyPayment = httpsCallable(functions, 'verifyPaymentAndGrantReward');
                     const result = await verifyPayment({
@@ -2187,6 +2368,14 @@ const setupUserDataBackground = async (user, pageToLoad) => {
 
         // Set verified tier for UI
         verifiedTier = userData.tier || "Free Tier";
+
+        // Sync user profile to Supabase (non-blocking)
+        SupabaseService.syncUserProfile(user, {
+            current_tier: userData.tier || "Free Tier",
+            subscription_period: userData.tierExpiry ? "monthly" : null, // This could be improved based on your data structure
+            referral_code: userData.referralCode,
+            total_referrals: userData.referredUsers ? userData.referredUsers.length : 0
+        }).catch(err => console.warn("Failed to sync user to Supabase:", err));
 
         // Non-blocking subscription check
         checkExpiredSubscription(user.uid, userData);
