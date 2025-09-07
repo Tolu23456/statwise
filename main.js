@@ -1513,7 +1513,7 @@ function showAIChatModal() {
     modal.innerHTML = `
         <div class="ai-chat-content">
             <div class="chat-header">
-                <h3>🤖 StatWise AI Assistant</h3>
+                <h3>StatWise AI Assistant</h3>
                 <button class="close-chat" onclick="this.closest('.ai-chat-modal').remove()">&times;</button>
             </div>
             <div class="chat-body">
