@@ -586,12 +586,17 @@ async function handlePayment(userId, tier, amount, period) {
 
     const txRef = `TX-${Date.now()}`;
 
+    // Get current app URL for redirect
+    const currentUrl = window.location.origin + window.location.pathname;
+    const redirectUrl = currentUrl + '?payment=success';
+    
     FlutterwaveCheckout({
         public_key: FLWPUBK,
         tx_ref: txRef,
         amount: amount,
         currency: "NGN",
         payment_options: "card,ussd,qr,banktransfer",
+        redirect_url: redirectUrl,
         customer: {
             email: auth.currentUser?.email || "user@example.com",
             name: auth.currentUser?.displayName || "User",
@@ -599,6 +604,7 @@ async function handlePayment(userId, tier, amount, period) {
         customizations: {
             title: "Statwise Subscription",
             description: `${tier} (${period}) plan`,
+            logo: window.location.origin + "/Assets/Icons/gem.svg"
         },
         callback: async function(data) {
             paymentCompleted = true;
@@ -610,8 +616,8 @@ async function handlePayment(userId, tier, amount, period) {
                     // Sync payment data to Supabase (non-blocking)
                     const userId = auth.currentUser?.uid;
                     if (userId) {
-                        // Log payment transaction to Supabase
-                        SupabaseService.logPaymentTransaction(userId, {
+                        // Log payment transaction to Supabase with better error handling
+                        const paymentLogResult = await SupabaseService.logPaymentTransaction(userId, {
                             transaction_id: data.transaction_id,
                             tx_ref: data.tx_ref,
                             amount: amount,
@@ -620,6 +626,12 @@ async function handlePayment(userId, tier, amount, period) {
                             tier: tier,
                             period: period
                         });
+                        
+                        if (paymentLogResult) {
+                            console.log('Payment successfully logged to Supabase');
+                        } else {
+                            console.warn('Failed to log payment to Supabase, but continuing...');
+                        }
                         
                         // Log subscription event to Supabase
                         SupabaseService.logSubscriptionEvent(userId, 'subscription_purchase', {
@@ -656,7 +668,18 @@ async function handlePayment(userId, tier, amount, period) {
                         tier: tier,
                         period: period
                     });
-                    showModal({ message: result.data.message || "Your subscription has been updated!" });
+                    // Enhanced success notification with payment details
+                    const successMessage = `🎉 Payment Successful!\n\nTransaction ID: ${data.transaction_id}\nTier: ${tier}\nAmount: ₦${amount.toLocaleString()}\n\nYour ${tier} subscription is now active!`;
+                    showModal({ 
+                        message: successMessage,
+                        confirmClass: 'btn-success',
+                        confirmText: 'Continue'
+                    });
+                    
+                    // Navigate to subscriptions page to show updated status
+                    setTimeout(() => {
+                        loadPage('subscriptions');
+                    }, 2000);
                 } catch (error) {
                     console.error("Error verifying payment:", error);
                     let errorMessage = "Payment verification failed. Please contact support with your transaction details.";
@@ -681,7 +704,25 @@ async function handlePayment(userId, tier, amount, period) {
                     hideLoader();
                 }
             } else {
-                showModal({ message: "Payment was not completed.", confirmClass: 'btn-danger' });
+                // Log failed payment to Supabase for tracking
+                const userId = auth.currentUser?.uid;
+                if (userId) {
+                    SupabaseService.logPaymentTransaction(userId, {
+                        transaction_id: data.transaction_id || 'unknown',
+                        tx_ref: data.tx_ref || txRef,
+                        amount: amount,
+                        currency: "NGN",
+                        status: data.status || 'failed',
+                        tier: tier,
+                        period: period
+                    });
+                }
+                
+                showModal({ 
+                    message: `❌ Payment Failed\n\nStatus: ${data.status}\nTransaction ID: ${data.transaction_id || 'N/A'}\n\nPlease try again or contact support if the issue persists.`, 
+                    confirmClass: 'btn-danger',
+                    confirmText: 'Try Again'
+                });
             }
         },
         onclose: function () {
