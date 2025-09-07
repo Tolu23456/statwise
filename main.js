@@ -2970,3 +2970,134 @@ const unsubscribe = onAuthStateChanged(auth, async (user) => {
         window.location.href = 'Auth/login.html';
     }
 });
+
+
+// ===== ENHANCED FIXES FOR PAYMENT AND SUBSCRIPTION ISSUES =====
+
+// Enhanced subscription tier update with immediate UI refresh
+function forceSubscriptionUpdate(userId, tier, period, endDate) {
+    // Update in-memory tier immediately
+    verifiedTier = tier;
+    
+    // Update UI elements immediately
+    setTimeout(() => {
+        enforceTierRestrictions();
+        updateCurrentTierDisplay(userId);
+        
+        // Update any subscription displays
+        const tierDisplays = document.querySelectorAll("[data-tier-display]");
+        tierDisplays.forEach(el => {
+            el.textContent = tier;
+        });
+        
+        // Refresh current page to show updated tier
+        const currentPage = window.location.hash.substring(1) || "home";
+        if (currentPage === "subscriptions") {
+            setTimeout(() => loadPage("subscriptions", userId, false), 1000);
+        }
+    }, 500);
+}
+
+// Enhanced transaction history fetcher that prioritizes Supabase
+async function fetchEnhancedTransactionHistory(userId, container) {
+    if (!container || !userId) return;
+    
+    let hasTransactions = false;
+    container.innerHTML = "<p>Loading transactions...</p>";
+    
+    // Try Supabase first (primary source)
+    if (supabase) {
+        try {
+            const supabaseTransactions = await SupabaseService.getUserTransactionHistory(userId, 20);
+            
+            if (supabaseTransactions && supabaseTransactions.length > 0) {
+                hasTransactions = true;
+                container.innerHTML = ""; // Clear loading message
+                
+                supabaseTransactions.forEach(transaction => {
+                    const card = document.createElement("div");
+                    card.className = "history-card";
+                    card.innerHTML = `
+                        <h2 class="history-title">💳 Payment Transaction</h2>
+                        <p class="history-detail"><strong>Transaction ID:</strong> ${transaction.transaction_id || "N/A"}</p>
+                        <p class="history-detail"><strong>Amount:</strong> ₦${transaction.amount?.toLocaleString() || "0"}</p>
+                        <p class="history-detail"><strong>Plan:</strong> ${transaction.tier} (${transaction.period || "N/A"})</p>
+                        <p class="history-detail"><strong>Status:</strong> <span style="color: #4caf50; font-weight: bold;">✅ ${transaction.status || "Completed"}</span></p>
+                        <p class="history-time">${formatTimestamp(transaction.created_at)}</p>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+        } catch (error) {
+            console.warn("Failed to fetch Supabase transactions:", error);
+        }
+    }
+    
+    // If no transactions found, show appropriate message
+    if (!hasTransactions) {
+        container.innerHTML = "<p>No payment transactions found. Complete a subscription purchase to see transaction history here.</p>";
+    }
+}
+
+// Subscription countdown timer
+function createSubscriptionCountdown(tierExpiry) {
+    if (!tierExpiry) return "No active subscription";
+    
+    const now = new Date();
+    const expiry = new Date(tierExpiry);
+    const timeDiff = expiry.getTime() - now.getTime();
+    
+    if (timeDiff <= 0) {
+        return "⏰ Expired";
+    }
+    
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    
+    if (days > 0) {
+        return `🕒 ${days} days, ${hours} hours remaining`;
+    } else if (hours > 0) {
+        return `🕒 ${hours} hours, ${minutes} minutes remaining`;
+    } else {
+        return `🕒 ${minutes} minutes remaining`;
+    }
+}
+
+// Override fetchHistory to include Supabase transactions
+const originalFetchHistory = fetchHistory;
+fetchHistory = async function(userId) {
+    // Call original function first
+    await originalFetchHistory(userId);
+    
+    // Then enhance with Supabase transactions
+    const transactionsContainer = document.querySelector("#transactions-tab .history-container");
+    if (transactionsContainer) {
+        await fetchEnhancedTransactionHistory(userId, transactionsContainer);
+    }
+};
+
+// Check for payment redirect and force tier update
+window.addEventListener("load", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paymentStatus = urlParams.get("payment");
+    const transactionId = urlParams.get("transaction_id");
+    
+    if (paymentStatus === "success" && transactionId && auth.currentUser) {
+        setTimeout(() => {
+            // Check users current tier from Firebase and force UI update
+            const userRef = doc(db, "users", auth.currentUser.uid);
+            getDoc(userRef).then(snap => {
+                if (snap.exists()) {
+                    const userData = snap.data();
+                    if (userData.tier && userData.tier !== "Free Tier") {
+                        forceSubscriptionUpdate(auth.currentUser.uid, userData.tier, "monthly", userData.tierExpiry);
+                    }
+                }
+            });
+        }, 3000);
+    }
+});
+
+console.log("✅ Enhanced payment and subscription fixes loaded successfully!");
+
