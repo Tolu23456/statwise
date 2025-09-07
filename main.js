@@ -928,22 +928,56 @@ async function updateUserTier(userId, tier, period = null, expiry = null) {
         throw new Error('Invalid user ID or tier specified');
     }
 
-    const userRef = doc(db, "users", userId);
     const updateData = {
-        tier: tier,
-        tierExpiry: expiry
+        current_tier: tier,
+        subscription_period: period,
+        subscription_end: expiry,
+        subscription_status: tier === 'Free Tier' ? 'inactive' : 'active',
+        updated_at: new Date().toISOString()
     };
 
     if (tier === 'Free Tier' || !expiry) {
-        updateData.tierExpiry = null; // Reset expiry for free tier
-        updateData.autoRenew = false; // Disable auto-renew for free tier/cancellation
+        updateData.subscription_end = null;
+        updateData.subscription_period = null;
+        updateData.subscription_status = 'inactive';
     }
 
     try {
-        await updateDoc(userRef, updateData);
+        // Primary update in Supabase
+        const supabaseResult = await SupabaseService.updateUserSubscription(userId, {
+            tier: tier,
+            period: period,
+            start_date: new Date().toISOString(),
+            end_date: expiry,
+            status: tier === 'Free Tier' ? 'inactive' : 'active'
+        });
+
+        if (supabaseResult) {
+            console.log('Subscription updated successfully in Supabase');
+        } else {
+            console.warn('Supabase update failed, trying Firebase fallback');
+        }
+
+        // Sync to Firebase for backward compatibility
+        const userRef = doc(db, "users", userId);
+        const firebaseUpdateData = {
+            tier: tier,
+            tierExpiry: expiry
+        };
+        
+        if (tier === 'Free Tier' || !expiry) {
+            firebaseUpdateData.tierExpiry = null;
+            firebaseUpdateData.autoRenew = false;
+        }
+        
+        await updateDoc(userRef, firebaseUpdateData);
+        
+        // Update in-memory tier
         verifiedTier = tier;
         await updateCurrentTierDisplay(userId);
         enforceTierRestrictions();
+        
+        console.log(`User tier updated to ${tier} (expires: ${expiry || 'never'})`);
     } catch (error) {
         console.error('Failed to update user tier:', error);
         let errorMessage = 'Failed to update subscription. Please try again.';
