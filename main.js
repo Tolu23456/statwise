@@ -170,8 +170,155 @@ const SupabaseService = {
         }
     },
 
-    // Update user subscription status in Supabase
+    // Update user subscription status in Supabase (PRIMARY SOURCE OF TRUTH)
     async updateUserSubscription(userId, subscriptionData) {
+        if (!supabase) {
+            console.log('Supabase not available');
+            return null;
+        }
+
+        try {
+            // Update user profile with new subscription data
+            const { data, error } = await supabase
+                .from('user_profiles')
+                .update({
+                    current_tier: subscriptionData.tier,
+                    subscription_period: subscriptionData.period,
+                    subscription_start: subscriptionData.start_date,
+                    subscription_end: subscriptionData.end_date,
+                    subscription_status: subscriptionData.status || 'active',
+                    updated_at: new Date().toISOString()
+                })
+                .eq('id', userId)
+                .select()
+                .single();
+
+            if (error) {
+                console.warn('Supabase subscription update warning:', error.message);
+                return null;
+            }
+            
+            console.log('User subscription updated in Supabase:', data);
+            
+            // Also update the in-memory tier for immediate UI updates
+            verifiedTier = subscriptionData.tier;
+            
+            return data;
+        } catch (error) {
+            console.warn('Error updating user subscription in Supabase:', error);
+            return null;
+        }
+    },
+    
+    // Get user subscription status from Supabase (PRIMARY SOURCE)
+    async getUserSubscription(userId) {
+        if (!supabase) {
+            console.log('Supabase not available');
+            return null;
+        }
+
+        try {
+            const { data, error } = await supabase
+                .from('user_profiles')
+                .select('current_tier, subscription_period, subscription_start, subscription_end, subscription_status')
+                .eq('id', userId)
+                .single();
+
+            if (error) {
+                console.warn('Supabase subscription fetch warning:', error.message);
+                return null;
+            }
+            
+            return {
+                tier: data.current_tier || 'Free Tier',
+                period: data.subscription_period,
+                startDate: data.subscription_start,
+                endDate: data.subscription_end,
+                status: data.subscription_status || 'active'
+            };
+        } catch (error) {
+            console.warn('Error fetching user subscription from Supabase:', error);
+            return null;
+        }
+    },
+    
+    // Get user transaction history from Supabase
+    async getUserTransactionHistory(userId, limit = 10) {
+        if (!supabase) {
+            console.log('Supabase not available');
+            return [];
+        }
+
+        try {
+            const { data, error } = await supabase
+                .from('payment_transactions')
+                .select('*')
+                .eq('user_id', userId)
+                .order('created_at', { ascending: false })
+                .limit(limit);
+
+            if (error) {
+                console.warn('Supabase transaction history fetch warning:', error.message);
+                return [];
+            }
+            
+            return data || [];
+        } catch (error) {
+            console.warn('Error fetching transaction history from Supabase:', error);
+            return [];
+        }
+    },
+    
+    // Ensure all required buckets exist
+    async ensureBucketsExist() {
+        if (!supabase) {
+            console.log('Supabase not available');
+            return false;
+        }
+
+        try {
+            const { data: buckets, error: bucketsError } = await supabase.storage.listBuckets();
+            
+            if (bucketsError) {
+                console.warn('Could not list buckets:', bucketsError.message);
+                return false;
+            }
+            
+            const requiredBuckets = [
+                {
+                    name: 'profile-pictures',
+                    options: {
+                        public: true,
+                        allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp'],
+                        fileSizeLimit: 5242880 // 5MB
+                    }
+                }
+            ];
+            
+            for (const bucketConfig of requiredBuckets) {
+                const existingBucket = buckets?.find(bucket => bucket.name === bucketConfig.name);
+                
+                if (!existingBucket) {
+                    console.log(`Creating ${bucketConfig.name} bucket...`);
+                    const { data: createBucket, error: createError } = await supabase.storage.createBucket(
+                        bucketConfig.name, 
+                        bucketConfig.options
+                    );
+                    
+                    if (createError) {
+                        console.warn(`Could not create ${bucketConfig.name} bucket:`, createError.message);
+                    } else {
+                        console.log(`${bucketConfig.name} bucket created successfully`);
+                    }
+                }
+            }
+            
+            return true;
+        } catch (error) {
+            console.warn('Error ensuring buckets exist:', error);
+            return false;
+        }
+    },
         if (!supabase) {
             console.log('Supabase not available');
             return null;
@@ -714,14 +861,23 @@ async function handlePayment(userId, tier, amount, period) {
                             endDate.setFullYear(endDate.getFullYear() + 1);
                         }
                         
-                        // Update subscription status in Supabase
-                        SupabaseService.updateUserSubscription(userId, {
+                        // Update subscription status in Supabase (PRIMARY SOURCE)
+                        const supabaseUpdate = await SupabaseService.updateUserSubscription(userId, {
                             tier: tier,
                             period: period,
                             start_date: startDate,
                             end_date: endDate.toISOString(),
                             status: 'active'
                         });
+                        
+                        if (supabaseUpdate) {
+                            console.log('Subscription successfully updated in Supabase');
+                            // Sync to Firebase for backward compatibility
+                            await updateUserTier(userId, tier, period, endDate.toISOString());
+                        } else {
+                            console.warn('Failed to update subscription in Supabase, using Firebase only');
+                            await updateUserTier(userId, tier, period, endDate.toISOString());
+                        }
                     }
 
                     // Call a Cloud Function to securely verify the payment and update the user's tier.
@@ -2428,6 +2584,10 @@ async function loadPage(page, userId, addToHistory = true) {
 
         // Reset scroll position for the new page
         main.scrollTop = 0;
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant' // Instant scroll, no animation
+        });
 
     } catch (error) {
         console.error(`Failed to load page ${page}:`, error);
