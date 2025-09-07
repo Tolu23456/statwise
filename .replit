@@ -26,7 +26,7 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npx http-server . -a 0.0.0.0 -p 5000 -c-1 --cors"
+args = "http-server . -a 0.0.0.0 -p 5000 -c-1 --cors"
 waitForPort = 5000
 
 [[ports]]
