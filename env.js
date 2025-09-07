@@ -7,7 +7,7 @@
 // Import Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFunctions } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-functions.js";
+// Firebase Functions removed - using Supabase for backend operations
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getMessaging } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js";
 import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
@@ -28,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 // Export services
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-export const functions = getFunctions(app);
+// Functions export removed - using Supabase for backend operations
 export const messaging = getMessaging(app);
 export const storage = getStorage(app);
 

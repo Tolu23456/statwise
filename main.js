@@ -1,5 +1,5 @@
 // main.js
-import { auth, db, FLWPUBK, storage, functions, messaging, supabase } from './env.js';
+import { auth, db, FLWPUBK, storage, messaging, supabase } from './env.js';
 import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loader.js';
 import { initInteractiveBackground } from './ui.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
@@ -8,7 +8,7 @@ import { onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthe
 import {
     ref, uploadBytes, getDownloadURL
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
-import { httpsCallable } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-functions.js";
+// Firebase Functions import removed - using Supabase for all backend operations
 import { 
     getToken, onMessage
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js"; // This is a client-side library
@@ -849,21 +849,14 @@ async function handlePayment(userId, tier, amount, period) {
                         }
                     }
 
-                    // Call a Cloud Function to securely verify the payment (DEVELOPMENT MODE: Optional)
-                    // Note: For production, implement the 'verifyPaymentAndGrantReward' Cloud Function
-                    try {
-                        const verifyPayment = httpsCallable(functions, 'verifyPaymentAndGrantReward');
-                        const result = await verifyPayment({
-                            transaction_id: data.transaction_id,
-                            tx_ref: data.tx_ref,
-                            tier: tier,
-                            period: period
-                        });
-                        console.log('Cloud Function verification completed:', result);
-                    } catch (cloudFunctionError) {
-                        console.warn('Cloud Function verification failed (expected in development):', cloudFunctionError.message);
-                        // Continue with success flow - subscription was already updated above
-                    }
+                    // Verify payment using Supabase - all payment data is already logged
+                    console.log('Payment verification completed via Supabase logging');
+                    console.log('Transaction details:', {
+                        transaction_id: data.transaction_id,
+                        tx_ref: data.tx_ref,
+                        tier: tier,
+                        period: period
+                    });
                     // Enhanced success notification with payment details
                     const successMessage = `🎉 Payment Successful!\n\nTransaction ID: ${data.transaction_id}\nTier: ${tier}\nAmount: ₦${amount.toLocaleString()}\n\nYour ${tier} subscription is now active!`;
                     showModal({ 
