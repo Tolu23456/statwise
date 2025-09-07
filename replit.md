@@ -15,12 +15,14 @@ The application follows a Single Page Application (SPA) pattern built with vanil
 
 The UI is organized into modular pages stored in the `Pages/` directory, including home, history, profile, subscriptions, insights, and referral management. CSS styling is centralized in `styles.css` with component-specific stylesheets for authentication and other specialized views.
 
-### Backend Architecture (Serverless)
-The application leverages Firebase's serverless architecture exclusively:
+### Backend Architecture (Hybrid Serverless)
+The application leverages a hybrid serverless architecture combining Firebase and Supabase:
 
 - **Authentication**: Firebase Authentication handles user registration, login, password reset, and session management
-- **Database**: Firestore (NoSQL) stores user profiles, subscription data, prediction history, referral information, and account activity logs
-- **File Storage**: Firebase Storage manages user profile picture uploads
+- **Primary Database**: Firestore (NoSQL) stores user profiles, subscription data, prediction history, and account activity logs
+- **Secondary Database**: Supabase (PostgreSQL) handles advanced analytics, referral system, and enhanced subscription tracking
+- **File Storage**: Supabase Storage (primary) with Firebase Storage (fallback) for user profile picture uploads
+- **Cross-Platform Sync**: Automatic data synchronization between Firebase and Supabase ensures data consistency and reliability
 - **Cloud Functions**: While `index.js` exists, the application has been refactored to use client-side logic instead of Firebase Cloud Functions to maintain free-tier compatibility
 
 ### Data Storage Design
@@ -43,9 +45,15 @@ Firebase Cloud Messaging (FCM) enables push notifications for prediction alerts 
 ### Firebase Services
 - **Firebase Authentication**: User management and security
 - **Firestore Database**: Primary data storage for all application data
-- **Firebase Storage**: Profile picture and file uploads
+- **Firebase Storage**: Fallback storage for profile pictures and file uploads
 - **Firebase Cloud Messaging**: Push notification delivery
 - **Firebase Hosting**: Static site hosting configuration
+
+### Supabase Services
+- **Supabase Database (PostgreSQL)**: Advanced analytics, referral system, subscription tracking, and payment transaction logs
+- **Supabase Storage**: Primary storage for profile pictures with automatic public URL generation
+- **Row Level Security**: Secure data access with user-based permissions
+- **Real-time Subscriptions**: Future capability for live data updates and notifications
 
 ### Third-Party Libraries
 - **Vercel Analytics**: User behavior tracking and performance monitoring
@@ -95,3 +103,13 @@ Firebase Cloud Messaging (FCM) enables push notifications for prediction alerts 
 - **Non-blocking Integration**: All Supabase operations are designed to be non-blocking, ensuring the main app functionality continues to work even if Supabase is unavailable
 - **Enhanced Analytics**: Supabase integration provides better subscription analytics, payment tracking, and user behavior insights
 - The integration maintains backward compatibility with existing Firebase functionality while adding powerful new data management capabilities
+
+### September 7, 2025 - Supabase Storage and Referral System Migration
+- **Supabase Storage Integration**: Migrated profile picture storage from Firebase Storage to Supabase Storage with automatic fallback to Firebase for reliability
+- **Enhanced Referral System**: Completely migrated referral system from Firebase to Supabase with new dedicated tables for referrals, referral codes, and reward tracking
+- **Cross-Platform Sync**: Implemented automatic data synchronization between Firebase and Supabase for referral codes and user relationships
+- **Improved Database Schema**: Extended Supabase schema with referral_codes and referrals tables, including proper indexing for optimal performance
+- **Hybrid Storage Approach**: Profile picture uploads now use Supabase Storage as primary with Firebase Storage as fallback, ensuring 100% reliability
+- **Smart Referral Management**: Referral page now intelligently fetches data from Supabase first, falling back to Firebase if needed, maintaining seamless user experience
+- **Enhanced Referral Analytics**: New Supabase-based referral system provides better tracking of referral statistics, reward distribution, and user engagement metrics
+- **Backward Compatibility**: All existing Firebase referral data continues to work while new referrals are created in Supabase, ensuring no data loss during migration
