@@ -2939,19 +2939,35 @@ const checkExpiredSubscription = async (userId, userData) => {
 
 showLoader(); // Show loader immediately on script load
 
+// Add a timeout fallback to prevent indefinite loading
+setTimeout(() => {
+    if (!authInitialized) {
+        console.warn('Auth initialization timeout, redirecting to login');
+        window.location.href = 'Auth/login.html';
+    }
+}, 10000); // 10 second timeout
+
 const unsubscribe = onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        // User is signed in.
-        if (!authInitialized) {
-            authInitialized = true;
-            await handleUserAuthenticated(user);
+    try {
+        if (user) {
+            // User is signed in.
+            if (!authInitialized) {
+                authInitialized = true;
+                console.log('User authenticated, loading app...');
+                await handleUserAuthenticated(user);
+            }
+        } else {
+            // User is signed out.
+            if (!authInitialized) {
+                authInitialized = true;
+                console.log('No user found, redirecting to login...');
+                // If after the initial check, there's no user, redirect to login.
+                window.location.href = 'Auth/login.html';
+            }
         }
-    } else {
-        // User is signed out.
-        if (!authInitialized) {
-            authInitialized = true;
-            // If after the initial check, there's no user, redirect to login.
-            window.location.href = 'Auth/login.html';
-        }
+    } catch (error) {
+        console.error('Authentication error:', error);
+        // Fallback: redirect to login on any auth error
+        window.location.href = 'Auth/login.html';
     }
 });
