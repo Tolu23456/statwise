@@ -28,6 +28,19 @@ initializeTheme(); // Apply theme on initial load
 // Check for payment redirect on page load
 checkPaymentRedirect();
 
+// Initialize Supabase buckets on app start
+if (supabase) {
+    SupabaseService.ensureBucketsExist().then(success => {
+        if (success) {
+            console.log('All required Supabase buckets are ready');
+        } else {
+            console.warn('Some Supabase buckets may not be available');
+        }
+    }).catch(error => {
+        console.warn('Error initializing Supabase buckets:', error);
+    });
+}
+
 // ===== Payment Redirect Handler =====
 function checkPaymentRedirect() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -317,37 +330,6 @@ const SupabaseService = {
         } catch (error) {
             console.warn('Error ensuring buckets exist:', error);
             return false;
-        }
-    },
-        if (!supabase) {
-            console.log('Supabase not available');
-            return null;
-        }
-
-        try {
-            const { data, error } = await supabase
-                .from('user_profiles')
-                .update({
-                    current_tier: subscriptionData.tier,
-                    subscription_period: subscriptionData.period,
-                    subscription_start: subscriptionData.start_date,
-                    subscription_end: subscriptionData.end_date,
-                    subscription_status: subscriptionData.status || 'active',
-                    updated_at: new Date().toISOString()
-                })
-                .eq('id', userId)
-                .select()
-                .single();
-
-            if (error) {
-                console.warn('Supabase subscription update warning:', error.message);
-                return null;
-            }
-            console.log('User subscription updated in Supabase:', data);
-            return data;
-        } catch (error) {
-            console.warn('Error updating user subscription in Supabase:', error);
-            return null;
         }
     },
 

@@ -12,7 +12,13 @@ service cloud.firestore {
         && request.resource.data.isNewUser == true;
       
       // Users can read and update their own document
+      // Enhanced to allow Supabase sync operations
       allow read, update: if request.auth != null && request.auth.uid == userId;
+      
+      // Allow system updates for subscription/tier changes (from Supabase sync)
+      allow update: if request.auth != null 
+        && request.auth.uid == userId
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['tier', 'tierExpiry', 'photoURL', 'username']);
       
       // Users can delete their own document (for account deletion)
       allow delete: if request.auth != null && request.auth.uid == userId;
@@ -95,12 +101,13 @@ service cloud.firestore {
     }
 
     // ===== TRANSACTIONS COLLECTION =====
+    // Note: Transaction data now primarily stored in Supabase for enhanced analytics
     match /transactions/{transactionId} {
       // Users can read their own transactions
       allow read: if request.auth != null 
         && request.auth.uid == resource.data.userId;
       
-      // System can create transactions (payment processing)
+      // System can create transactions (payment processing - legacy support)
       allow create: if request.auth != null 
         && request.resource.data.userId == request.auth.uid
         && request.resource.data.keys().hasAll(['userId', 'amount', 'type', 'status', 'createdAt']);
