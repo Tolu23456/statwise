@@ -609,10 +609,10 @@ function displayUserProfile(profile) {
     const avatarContainer = document.getElementById('profileAvatarContainer');
     if (avatarContainer) {
         if (profile.profile_picture_url) {
-            avatarContainer.innerHTML = `<img src="${profile.profile_picture_url}" alt="Profile Picture" class="avatar-img">`;
+            avatarContainer.innerHTML = `<img src="${profile.profile_picture_url}" alt="Profile Picture" class="avatar-img" onclick="triggerAvatarUpload()">`;
         } else {
             const initial = (profile.display_name || profile.username || 'U').charAt(0).toUpperCase();
-            avatarContainer.innerHTML = `<div class="default-avatar">${initial}</div>`;
+            avatarContainer.innerHTML = `<div class="default-avatar" onclick="triggerAvatarUpload()">${initial}</div>`;
         }
     }
     
@@ -677,6 +677,128 @@ function initializeProfileInteractions() {
                 await deleteUserAccount();
             }
         });
+    }
+    
+    // Initialize avatar upload
+    const avatarUpload = document.getElementById('avatarUpload');
+    if (avatarUpload) {
+        avatarUpload.addEventListener('change', handleAvatarUpload);
+    }
+}
+
+// ===== Avatar Upload Functions =====
+function triggerAvatarUpload() {
+    const avatarUpload = document.getElementById('avatarUpload');
+    if (avatarUpload) {
+        avatarUpload.click();
+    }
+}
+
+// Make functions globally available
+window.triggerAvatarUpload = triggerAvatarUpload;
+
+async function handleAvatarUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    // Validate file type
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+    if (!allowedTypes.includes(file.type)) {
+        showModal({
+            message: 'Please select a valid image file (JPEG, PNG, GIF, or WebP).',
+            confirmText: 'OK'
+        });
+        return;
+    }
+    
+    // Validate file size (5MB limit)
+    const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+    if (file.size > maxSize) {
+        showModal({
+            message: 'Image file is too large. Please select an image smaller than 5MB.',
+            confirmText: 'OK'
+        });
+        return;
+    }
+    
+    try {
+        showSpinner();
+        
+        // Generate unique filename
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${currentUser.id}-${Date.now()}.${fileExt}`;
+        
+        // Upload to Supabase Storage
+        const { data: uploadData, error: uploadError } = await supabase.storage
+            .from('profile-pictures')
+            .upload(fileName, file, {
+                cacheControl: '3600',
+                upsert: true
+            });
+            
+        if (uploadError) {
+            console.error('Upload error:', uploadError);
+            showModal({
+                message: 'Failed to upload profile picture. Please try again.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+        
+        // Get public URL
+        const { data: urlData } = supabase.storage
+            .from('profile-pictures')
+            .getPublicUrl(fileName);
+            
+        if (!urlData.publicUrl) {
+            showModal({
+                message: 'Failed to get image URL. Please try again.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+        
+        // Update user profile with new image URL
+        const { error: updateError } = await supabase
+            .from('user_profiles')
+            .update({ 
+                profile_picture_url: urlData.publicUrl,
+                updated_at: new Date().toISOString()
+            })
+            .eq('id', currentUser.id);
+            
+        if (updateError) {
+            console.error('Profile update error:', updateError);
+            showModal({
+                message: 'Failed to update profile. Please try again.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+        
+        // Update the avatar display immediately
+        const avatarContainer = document.getElementById('profileAvatarContainer');
+        if (avatarContainer) {
+            avatarContainer.innerHTML = `<img src="${urlData.publicUrl}" alt="Profile Picture" class="avatar-img" onclick="triggerAvatarUpload()">`;
+        }
+        
+        showModal({
+            message: '✅ Profile picture updated successfully!',
+            confirmText: 'OK'
+        });
+        
+        console.log('Profile picture updated:', urlData.publicUrl);
+        
+    } catch (error) {
+        console.error('Error uploading avatar:', error);
+        showModal({
+            message: 'An error occurred while uploading your profile picture. Please try again.',
+            confirmText: 'OK'
+        });
+    } finally {
+        hideSpinner();
+        // Clear the file input
+        event.target.value = '';
     }
 }
 
