@@ -551,6 +551,112 @@ main {
     }
 }
 
+/* ================== RESPONSIVE COMPONENTS ================== */
+
+/* Responsive Buttons */
+@media (max-width: 480px) {
+    .button,
+    .subscribe-btn,
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .modal-actions button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    .button,
+    .subscribe-btn,
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    .modal-actions button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+}
+
+/* Responsive Inputs and Forms */
+@media (max-width: 480px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* Responsive Tab Navigation */
+@media (max-width: 480px) {
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .tab-container {
+        gap: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    .tab-btn {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+    
+    .tab-container {
+        gap: 12px;
+    }
+}
+
+/* Responsive Modal */
+@media (max-width: 480px) {
+    .modal-content,
+    .inactive-content {
+        width: 95%;
+        padding: 16px;
+        margin: 10px;
+    }
+    
+    .modal-overlay {
+        padding: 20px 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        width: 85%;
+        max-width: 500px;
+        padding: 24px;
+    }
+    
+    .inactive-content {
+        max-width: 450px;
+        padding: 48px 32px;
+    }
+}
+
 .subscription-card {
     background: #ffffff;
     border-radius: 12px;
