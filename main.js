@@ -383,6 +383,7 @@ function displayPredictions(predictions) {
 
 async function initializeHistoryPage() {
     await loadUserPredictionHistory();
+    initializeHistoryTabs();
 }
 
 async function loadUserPredictionHistory() {
@@ -410,40 +411,154 @@ async function loadUserPredictionHistory() {
 }
 
 function displayPredictionHistory(history) {
-    const container = document.getElementById('history-container');
-    if (!container) return;
-    
-    if (history.length === 0) {
-        container.innerHTML = `
-            <div class="no-history">
-                <h3>No saved predictions</h3>
-                <p>Save predictions from the home page to track them here!</p>
-            </div>
-        `;
-        return;
+    // Update predictions tab
+    const predictionsContainer = document.querySelector('#predictions-tab .history-container');
+    if (predictionsContainer) {
+        if (history.length === 0) {
+            predictionsContainer.innerHTML = `
+                <div class="no-history">
+                    <h3>No saved predictions</h3>
+                    <p>Save predictions from the home page to track them here!</p>
+                </div>
+            `;
+        } else {
+            const historyHTML = history.map(item => {
+                const prediction = item.predictions;
+                return `
+                    <div class="history-item">
+                        <div class="match-info">
+                            <h4>${prediction.home_team} vs ${prediction.away_team}</h4>
+                            <span class="league">${prediction.league}</span>
+                        </div>
+                        <div class="prediction-info">
+                            <span class="prediction">${prediction.prediction}</span>
+                            <span class="confidence">${prediction.confidence}% confidence</span>
+                        </div>
+                        <div class="saved-date">
+                            Saved: ${formatTimestamp(item.saved_at)}
+                        </div>
+                        ${item.notes ? `<div class="notes">${item.notes}</div>` : ''}
+                    </div>
+                `;
+            }).join('');
+            predictionsContainer.innerHTML = historyHTML;
+        }
     }
     
-    const historyHTML = history.map(item => {
-        const prediction = item.predictions;
-        return `
-            <div class="history-item">
-                <div class="match-info">
-                    <h4>${prediction.home_team} vs ${prediction.away_team}</h4>
-                    <span class="league">${prediction.league}</span>
+    // Load account history
+    loadAccountHistory();
+    
+    // Load transaction history  
+    loadTransactionHistory();
+}
+
+function initializeHistoryTabs() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            
+            // Update active button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Update active content
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === targetTab) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    });
+}
+
+async function loadAccountHistory() {
+    if (!currentUser) return;
+    
+    const accountContainer = document.querySelector('#account-tab .history-container');
+    if (!accountContainer) return;
+    
+    try {
+        // Get user profile updates, login history, etc.
+        const { data: profile, error } = await supabase
+            .from('user_profiles')
+            .select('created_at, last_login, current_tier, subscription_status')
+            .eq('id', currentUser.id)
+            .single();
+            
+        if (error) {
+            accountContainer.innerHTML = '<p>Error loading account history</p>';
+            return;
+        }
+        
+        accountContainer.innerHTML = `
+            <div class="account-history">
+                <div class="history-item">
+                    <h4>Account Created</h4>
+                    <p>${formatTimestamp(profile.created_at)}</p>
                 </div>
-                <div class="prediction-info">
-                    <span class="prediction">${prediction.prediction}</span>
-                    <span class="confidence">${prediction.confidence}% confidence</span>
+                <div class="history-item">
+                    <h4>Last Login</h4>
+                    <p>${formatTimestamp(profile.last_login)}</p>
                 </div>
-                <div class="saved-date">
-                    Saved: ${formatTimestamp(item.saved_at)}
+                <div class="history-item">
+                    <h4>Current Tier</h4>
+                    <p>${profile.current_tier}</p>
                 </div>
-                ${item.notes ? `<div class="notes">${item.notes}</div>` : ''}
+                <div class="history-item">
+                    <h4>Subscription Status</h4>
+                    <p>${profile.subscription_status || 'active'}</p>
+                </div>
             </div>
         `;
-    }).join('');
+    } catch (error) {
+        console.error('Error loading account history:', error);
+        accountContainer.innerHTML = '<p>Error loading account history</p>';
+    }
+}
+
+async function loadTransactionHistory() {
+    if (!currentUser) return;
     
-    container.innerHTML = historyHTML;
+    const transactionsContainer = document.querySelector('#transactions-tab .history-container');
+    if (!transactionsContainer) return;
+    
+    try {
+        const { data: transactions, error } = await supabase
+            .from('subscription_events')
+            .select('*')
+            .eq('user_id', currentUser.id)
+            .order('created_at', { ascending: false });
+            
+        if (error) {
+            transactionsContainer.innerHTML = '<p>Error loading transaction history</p>';
+            return;
+        }
+        
+        if (transactions.length === 0) {
+            transactionsContainer.innerHTML = '<p>No transactions found</p>';
+            return;
+        }
+        
+        const transactionsHTML = transactions.map(transaction => `
+            <div class="history-item">
+                <div class="transaction-info">
+                    <h4>${transaction.event_type}</h4>
+                    <p>Amount: ₦${transaction.amount?.toLocaleString() || '0'}</p>
+                    <p>Status: ${transaction.status}</p>
+                    <p>Date: ${formatTimestamp(transaction.created_at)}</p>
+                </div>
+            </div>
+        `).join('');
+        
+        transactionsContainer.innerHTML = transactionsHTML;
+    } catch (error) {
+        console.error('Error loading transaction history:', error);
+        transactionsContainer.innerHTML = '<p>Error loading transaction history</p>';
+    }
 }
 
 async function initializeProfilePage() {
@@ -579,6 +694,8 @@ async function deleteUserAccount() {
 
 async function initializeSubscriptionsPage() {
     await loadSubscriptionInfo();
+    initializeSubscriptionTabs();
+    initializeSubscriptionButtons();
 }
 
 async function loadSubscriptionInfo() {
@@ -603,75 +720,83 @@ async function loadSubscriptionInfo() {
 }
 
 function displaySubscriptionInfo(profile) {
-    const container = document.getElementById('subscription-container');
-    if (!container) return;
+    // Update current tier display
+    const userTierElement = document.getElementById('user-tier');
+    if (userTierElement) {
+        userTierElement.textContent = profile.current_tier || 'Free Tier';
+    }
     
-    const isActive = profile.subscription_status === 'active';
-    const hasSubscription = profile.current_tier !== 'Free Tier';
+    // Update tier expiry
+    const tierExpiryElement = document.getElementById('tier-expiry');
+    if (tierExpiryElement && profile.subscription_end) {
+        tierExpiryElement.textContent = `Expires: ${formatTimestamp(profile.subscription_end)}`;
+        tierExpiryElement.style.display = 'block';
+    } else if (tierExpiryElement) {
+        tierExpiryElement.style.display = 'none';
+    }
+}
+
+function initializeSubscriptionTabs() {
+    const tabButtons = document.querySelectorAll('[data-tab]');
+    const tabContents = document.querySelectorAll('.pricing-container');
     
-    container.innerHTML = `
-        <div class="subscription-section">
-            <div class="current-subscription">
-                <h3>Current Subscription</h3>
-                <div class="subscription-card">
-                    <h4>${profile.current_tier}</h4>
-                    ${hasSubscription ? `
-                        <p>Period: ${profile.subscription_period}</p>
-                        <p>Status: ${isActive ? '✅ Active' : '❌ Inactive'}</p>
-                        ${profile.subscription_end ? `
-                            <p>Expires: ${formatTimestamp(profile.subscription_end)}</p>
-                        ` : ''}
-                    ` : `
-                        <p>Free tier with basic features</p>
-                    `}
-                </div>
-            </div>
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
             
-            <div class="upgrade-options">
-                <h3>Upgrade Your Plan</h3>
-                <div class="plans-grid">
-                    <div class="plan-card">
-                        <h4>Premium Tier</h4>
-                        <p class="price">₦2,000/month</p>
-                        <ul>
-                            <li>Premium predictions</li>
-                            <li>Higher accuracy</li>
-                            <li>Email notifications</li>
-                        </ul>
-                        <button onclick="initializePayment('Premium Tier', 'monthly', 2000)" class="btn-upgrade">
-                            Upgrade to Premium
-                        </button>
-                    </div>
-                    
-                    <div class="plan-card featured">
-                        <h4>VIP Tier</h4>
-                        <p class="price">₦5,000/month</p>
-                        <ul>
-                            <li>VIP predictions</li>
-                            <li>Insider insights</li>
-                            <li>Priority support</li>
-                        </ul>
-                        <button onclick="initializePayment('VIP Tier', 'monthly', 5000)" class="btn-upgrade">
-                            Upgrade to VIP
-                        </button>
-                    </div>
-                    
-                    <div class="plan-card">
-                        <h4>VVIP Tier</h4>
-                        <p class="price">₦10,000/month</p>
-                        <ul>
-                            <li>VVIP predictions</li>
-                            <li>Exclusive analysis</li>
-                            <li>Direct AI access</li>
-                        </ul>
-                        <button onclick="initializePayment('VVIP Tier', 'monthly', 10000)" class="btn-upgrade">
-                            Upgrade to VVIP
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
+            // Update active button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Update active content
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === targetTab) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    });
+}
+
+function initializeSubscriptionButtons() {
+    const subscribeButtons = document.querySelectorAll('.subscribe-btn');
+    
+    subscribeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const tier = button.getAttribute('data-tier');
+            const amount = button.getAttribute('data-amount');
+            const period = button.getAttribute('data-period');
+            
+            if (tier === 'free') {
+                alert('You are already on the free tier!');
+                return;
+            }
+            
+            // Handle subscription upgrade
+            handleSubscriptionUpgrade(tier, amount, period);
+        });
+    });
+}
+
+async function handleSubscriptionUpgrade(tier, amount, period) {
+    try {
+        // For now, show a placeholder payment flow
+        const confirmUpgrade = confirm(`Upgrade to ${tier} tier for ₦${amount}/${period}?`);
+        
+        if (confirmUpgrade) {
+            // Here you would integrate with Flutterwave for actual payment
+            alert(`Payment integration would be initiated here for ${tier} tier upgrade.`);
+            
+            // For demo purposes, you could update the user's tier in the database
+            // await upgradeUserTier(tier, period);
+        }
+    } catch (error) {
+        console.error('Error handling subscription upgrade:', error);
+        alert('Error processing subscription upgrade. Please try again.');
+    }
 }
 
 async function initializeReferralPage() {
