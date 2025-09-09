@@ -5,10 +5,35 @@ import { initInteractiveBackground, initializeTheme } from '../ui.js';
 
 // Initialize the auth page
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔐 Initializing auth page...');
+    
+    // Test Supabase connection
+    testSupabaseConnection();
+    
     initializeTheme(); // Initialize theme system
     initInteractiveBackground(); // Add background animation to auth pages
     initializeAuthForms();
+    
+    console.log('✅ Auth page initialized successfully');
 });
+
+// Test Supabase connection
+async function testSupabaseConnection() {
+    try {
+        console.log('🔗 Testing Supabase connection...');
+        const { data, error } = await supabase.auth.getSession();
+        if (error) {
+            console.error('❌ Supabase connection error:', error);
+        } else {
+            console.log('✅ Supabase connected successfully');
+            if (data.session) {
+                console.log('👤 User session found:', data.session.user.email);
+            }
+        }
+    } catch (error) {
+        console.error('❌ Supabase connection test failed:', error);
+    }
+}
 
 function initializeAuthForms() {
     // Login form
@@ -200,24 +225,30 @@ function updatePasswordStrength() {
 
 async function handleLogin(e) {
     e.preventDefault();
+    console.log('🔐 Login attempt started...');
     clearErrorMessages();
     
     const formData = new FormData(e.target);
     const email = formData.get('email')?.trim();
     const password = formData.get('password');
     
+    console.log('Login data:', { email: email, passwordLength: password?.length });
+    
     // Enhanced validation
     if (!email || !password) {
+        console.log('❌ Validation failed: Missing fields');
         showErrorMessage('login-error', 'Please fill in all fields');
         return;
     }
     
     if (!isValidEmail(email)) {
+        console.log('❌ Validation failed: Invalid email format');
         showErrorMessage('login-error', 'Please enter a valid email address');
         return;
     }
     
     try {
+        console.log('🔄 Starting Supabase authentication...');
         showLoader();
         
         const { data, error } = await supabase.auth.signInWithPassword({
@@ -225,23 +256,30 @@ async function handleLogin(e) {
             password: password
         });
         
+        console.log('Supabase auth response:', { data, error });
+        
         if (error) {
-            console.error('Login error:', error);
+            console.error('❌ Login error:', error.message, error.status);
             showErrorMessage('login-error', getErrorMessage(error));
             return;
         }
         
         if (data.user) {
-            console.log('Login successful:', data.user.email);
+            console.log('✅ Login successful for:', data.user.email);
             showSuccessMessage('login-error', 'Login successful! Redirecting...');
             
             // Create or update user profile
+            console.log('📝 Creating/updating user profile...');
             await createOrUpdateUserProfile(data.user);
             
             // Redirect to main app
+            console.log('🔄 Redirecting to main app...');
             setTimeout(() => {
                 window.location.href = '../index.html';
             }, 1500);
+        } else {
+            console.log('❌ No user data returned from Supabase');
+            showErrorMessage('login-error', 'Login failed - no user data received');
         }
         
     } catch (error) {
