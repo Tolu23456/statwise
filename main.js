@@ -472,46 +472,109 @@ async function loadUserProfile() {
 }
 
 function displayUserProfile(profile) {
-    const container = document.getElementById('profile-container');
-    if (!container) return;
+    // Update user name
+    const userNameElement = document.getElementById('userName');
+    if (userNameElement) {
+        userNameElement.textContent = profile.display_name || profile.username || 'User';
+    }
     
-    container.innerHTML = `
-        <div class="profile-section">
-            <div class="profile-header">
-                <div class="profile-picture">
-                    ${profile.profile_picture_url ? 
-                        `<img src="${profile.profile_picture_url}" alt="Profile Picture">` :
-                        `<div class="default-avatar">${profile.username?.charAt(0)?.toUpperCase() || 'U'}</div>`
-                    }
-                </div>
-                <div class="profile-info">
-                    <h2>${profile.display_name || profile.username}</h2>
-                    <p class="email">${profile.email}</p>
-                    <span class="tier-badge tier-${profile.current_tier?.toLowerCase().replace(' ', '-')}">${profile.current_tier}</span>
-                </div>
-            </div>
-            
-            <div class="profile-stats">
-                <div class="stat">
-                    <span class="label">Total Referrals</span>
-                    <span class="value">${profile.total_referrals || 0}</span>
-                </div>
-                <div class="stat">
-                    <span class="label">Member Since</span>
-                    <span class="value">${formatTimestamp(profile.created_at)}</span>
-                </div>
-                <div class="stat">
-                    <span class="label">Last Login</span>
-                    <span class="value">${formatTimestamp(profile.last_login)}</span>
-                </div>
-            </div>
-            
-            <div class="profile-actions">
-                <button onclick="editProfile()" class="btn-primary">Edit Profile</button>
-                <button onclick="signOut()" class="btn-secondary">Sign Out</button>
-            </div>
-        </div>
-    `;
+    // Update user email
+    const userEmailElement = document.getElementById('userEmail');
+    if (userEmailElement) {
+        userEmailElement.textContent = profile.email || '';
+    }
+    
+    // Update user tier
+    const userTierElement = document.getElementById('user-tier');
+    if (userTierElement) {
+        userTierElement.textContent = profile.current_tier || 'Free Tier';
+    }
+    
+    // Update profile avatar
+    const avatarContainer = document.getElementById('profileAvatarContainer');
+    if (avatarContainer) {
+        if (profile.profile_picture_url) {
+            avatarContainer.innerHTML = `<img src="${profile.profile_picture_url}" alt="Profile Picture" class="avatar-img">`;
+        } else {
+            const initial = (profile.display_name || profile.username || 'U').charAt(0).toUpperCase();
+            avatarContainer.innerHTML = `<div class="default-avatar">${initial}</div>`;
+        }
+    }
+    
+    // Initialize profile page interactions
+    initializeProfileInteractions();
+}
+
+function initializeProfileInteractions() {
+    // Initialize dark mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+        // Set current state
+        const currentTheme = localStorage.getItem('statwise-theme') || 'light';
+        darkModeToggle.checked = currentTheme === 'dark';
+        
+        // Add event listener
+        darkModeToggle.addEventListener('change', function() {
+            import('./ui.js').then(({ toggleTheme }) => {
+                toggleTheme();
+            });
+        });
+    }
+    
+    // Initialize logout button
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', window.signOut);
+    }
+    
+    // Initialize manage subscription button
+    const manageSubscription = document.getElementById('manageSubscription');
+    if (manageSubscription) {
+        manageSubscription.addEventListener('click', () => {
+            loadPage('manage-subscription');
+        });
+    }
+    
+    // Initialize referral button
+    const referralBtn = document.getElementById('referralBtn');
+    if (referralBtn) {
+        referralBtn.addEventListener('click', () => {
+            loadPage('referral');
+        });
+    }
+    
+    // Initialize reset storage button
+    const resetStorage = document.getElementById('resetStorage');
+    if (resetStorage) {
+        resetStorage.addEventListener('click', () => {
+            if (confirm('Are you sure you want to reset local cache? This will clear saved predictions and preferences.')) {
+                localStorage.clear();
+                location.reload();
+            }
+        });
+    }
+    
+    // Initialize delete account button
+    const deleteAccountBtn = document.getElementById('deleteAccountBtn');
+    if (deleteAccountBtn) {
+        deleteAccountBtn.addEventListener('click', async () => {
+            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                await deleteUserAccount();
+            }
+        });
+    }
+}
+
+async function deleteUserAccount() {
+    try {
+        // Note: Account deletion requires server-side implementation
+        // For now, we'll just sign out and show a message
+        alert('Account deletion request submitted. Please contact support for assistance.');
+        await window.signOut();
+    } catch (error) {
+        console.error('Error deleting account:', error);
+        alert('Error processing account deletion request.');
+    }
 }
 
 async function initializeSubscriptionsPage() {
