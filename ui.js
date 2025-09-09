@@ -66,7 +66,7 @@ function initInteractiveBackground(container = null) {
                 border-radius: 50%;
                 opacity: ${opacity};
                 left: ${Math.random() * 100}%;
-                bottom: -${size}px;
+                top: 100vh;
                 pointer-events: none;
                 animation: floatUp ${animationDuration}s infinite linear ${animationDelay}s;
                 z-index: -1;
@@ -80,27 +80,36 @@ function initInteractiveBackground(container = null) {
         style.textContent = `
             @keyframes floatUp {
                 0% {
-                    transform: translateY(0);
+                    transform: translateY(0px);
                     opacity: 0;
                 }
-                10% {
+                5% {
                     opacity: 0.5;
                 }
-                90% {
+                95% {
                     opacity: 0.5;
                 }
                 100% {
-                    transform: translateY(-110vh);
+                    transform: translateY(-120vh);
                     opacity: 0;
                 }
             }
             
             .animated-background-interactive {
                 overflow: hidden !important;
+                position: fixed !important;
+                z-index: -10 !important;
+            }
+            
+            .circles {
+                position: absolute !important;
+                width: 100% !important;
+                height: 100% !important;
             }
             
             .circles li {
                 will-change: transform, opacity;
+                position: absolute !important;
             }
         `;
         document.head.appendChild(style);
