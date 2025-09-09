@@ -182,8 +182,8 @@ function checkPaymentRedirect() {
 
 // ===== App Navigation =====
 function initializeApp() {
-    // Load default page
-    loadPage(defaultPage);
+    // Initialize other app features first
+    initializeAppSecurity();
     
     // Set up navigation
     navButtons.forEach(button => {
@@ -200,9 +200,18 @@ function initializeApp() {
         });
     });
     
-    // Initialize other app features
-    initializeAppSecurity();
-    manageInitialPageLoad();
+    // Load the correct initial page (checks localStorage for last page)
+    loadInitialPage();
+}
+
+function loadInitialPage() {
+    // Determine page load priority: URL hash > localStorage > default
+    const initialHash = window.location.hash.substring(1);
+    const lastPage = localStorage.getItem("lastPage");
+    const pageToLoad = initialHash || lastPage || defaultPage;
+    
+    console.log('Loading initial page:', pageToLoad, 'from:', initialHash ? 'hash' : lastPage ? 'localStorage' : 'default');
+    loadPage(pageToLoad);
 }
 
 function hasAccess(requiredTier) {
@@ -233,6 +242,9 @@ function showUpgradeModal(requiredTier) {
 async function loadPage(page) {
     try {
         showLoader();
+        
+        // Save current page to localStorage for reload persistence
+        localStorage.setItem('lastPage', page);
         
         // Update active navigation
         navButtons.forEach(btn => {
