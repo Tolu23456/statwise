@@ -562,19 +562,6 @@ async function updateReferralStats(userId) {
     }
 }
 
-function togglePasswordVisibility(e) {
-    const button = e.target.closest('.toggle-password');
-    const input = button.previousElementSibling;
-    const icon = button.querySelector('use');
-    
-    if (input.type === 'password') {
-        input.type = 'text';
-        icon.setAttribute('href', '#eye-slash');
-    } else {
-        input.type = 'password';
-        icon.setAttribute('href', '#eye');
-    }
-}
 
 function getErrorMessage(error) {
     switch (error.message) {
