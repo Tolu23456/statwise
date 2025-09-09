@@ -323,6 +323,8 @@ async function initializePage(page) {
 async function initializeHomePage() {
     // Load predictions based on user tier
     await loadPredictions();
+    // Initialize league tabs
+    initializeLeagueTabs();
 }
 
 async function loadPredictions() {
@@ -1057,6 +1059,35 @@ function initializeSubscriptionTabs() {
                 content.classList.remove('active');
                 if (content.id === targetTab) {
                     content.classList.add('active');
+                }
+            });
+        });
+    });
+}
+
+function initializeLeagueTabs() {
+    console.log('Initializing league tabs...');
+    const tabButtons = document.querySelectorAll('.tab-btn[data-tab]');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    console.log('Found tab buttons:', tabButtons.length);
+    console.log('Found tab contents:', tabContents.length);
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            console.log('Tab clicked:', targetTab);
+            
+            // Update active button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Update active content
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === targetTab) {
+                    content.classList.add('active');
+                    console.log('Activated tab content:', targetTab);
                 }
             });
         });
