@@ -133,6 +133,7 @@ main {
     padding-bottom: calc(var(--nav-height) + 20px);
     min-height: calc(100vh - var(--header-height) - var(--nav-height));
     overflow-y: auto;
+    margin: 0;
     /* Additional overscroll prevention for main content */
     overscroll-behavior-y: contain;
 }
