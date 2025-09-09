@@ -15,21 +15,21 @@ The application follows a Single Page Application (SPA) pattern built with vanil
 
 The UI is organized into modular pages stored in the `Pages/` directory, including home, history, profile, subscriptions, insights, and referral management. CSS styling is centralized in `styles.css` with component-specific stylesheets for authentication and other specialized views.
 
-### Backend Architecture (Hybrid Serverless)
-The application leverages a hybrid serverless architecture combining Firebase and Supabase:
+### Backend Architecture (Supabase-Only)
+The application now uses a complete Supabase serverless architecture:
 
-- **Authentication**: Firebase Authentication handles user registration, login, password reset, and session management
-- **Primary Database**: Firestore (NoSQL) stores user profiles, subscription data, prediction history, and account activity logs
-- **Secondary Database**: Supabase (PostgreSQL) handles advanced analytics, referral system, and enhanced subscription tracking
-- **File Storage**: Supabase Storage (primary) with Firebase Storage (fallback) for user profile picture uploads
-- **Cross-Platform Sync**: Automatic data synchronization between Firebase and Supabase ensures data consistency and reliability
-- **Cloud Functions**: While `index.js` exists, the application has been refactored to use client-side logic instead of Firebase Cloud Functions to maintain free-tier compatibility
+- **Authentication**: Supabase Auth handles user registration, login, password reset, and session management with Row Level Security
+- **Database**: PostgreSQL database with comprehensive schema including user profiles, subscription data, payment transactions, referral system, AI predictions, and admin features
+- **File Storage**: Supabase Storage for user profile picture uploads with automatic public URL generation
+- **Real-time Features**: Built-in real-time subscriptions for live data updates
+- **Security**: Row Level Security (RLS) policies ensure secure data access based on user authentication
+- **API**: Auto-generated REST and GraphQL APIs with built-in authentication and authorization
 
 ### Data Storage Design
-The Firestore database uses a document-based structure with collections for users, predictions, history, and transactions. User data includes subscription tiers, referral codes, account activity, and saved predictions. The system implements client-side subscription status checks and automatic downgrades on expiry.
+The PostgreSQL database uses a relational structure with comprehensive tables for user profiles, predictions, subscription events, payment transactions, referrals, AI predictions, and admin features. The schema includes proper indexing, foreign key relationships, and JSONB fields for flexible data storage. Row Level Security ensures data access is properly controlled based on user authentication.
 
 ### Authentication and Authorization
-Firebase Authentication provides secure user management with email/password authentication, password reset functionality, and session persistence options. The application includes tier-based access control that restricts features based on subscription levels (Free, Premium, VIP, VVIP). Client-side security measures include basic inspection deterrents and secure account deletion processes.
+Supabase Auth provides secure user management with email/password authentication, password reset functionality, and session persistence. The application includes tier-based access control with Row Level Security policies that restrict features and data access based on subscription levels (Free Tier, Premium Tier, VIP Tier, VVIP Tier). Database-level security ensures data integrity and proper user isolation.
 
 ### Progressive Web App Features
 The application implements PWA standards with a service worker (`sw.js`) that provides offline functionality and caching. Users can install the app on their devices, and the service worker serves an offline page when network connectivity is unavailable. The app includes a Web App Manifest for native-like installation experience.
@@ -42,18 +42,17 @@ Firebase Cloud Messaging (FCM) enables push notifications for prediction alerts 
 ### Payment Processing
 - **Flutterwave**: Integrated for subscription payment processing with public API key configuration for frontend payment flows
 
-### Firebase Services
-- **Firebase Authentication**: User management and security
-- **Firestore Database**: Primary data storage for all application data
-- **Firebase Storage**: Fallback storage for profile pictures and file uploads
-- **Firebase Cloud Messaging**: Push notification delivery
-- **Firebase Hosting**: Static site hosting configuration
+### Supabase Services (Complete Migration)
+- **Supabase Auth**: User authentication and session management with Row Level Security
+- **PostgreSQL Database**: Complete relational database with comprehensive schema for all application data
+- **Supabase Storage**: File storage for profile pictures with automatic public URL generation
+- **Real-time Subscriptions**: Live data updates and notifications
+- **Auto-generated APIs**: REST and GraphQL APIs with built-in authentication
 
-### Supabase Services
-- **Supabase Database (PostgreSQL)**: Advanced analytics, referral system, subscription tracking, and payment transaction logs
-- **Supabase Storage**: Primary storage for profile pictures with automatic public URL generation
-- **Row Level Security**: Secure data access with user-based permissions
-- **Real-time Subscriptions**: Future capability for live data updates and notifications
+### Removed Services (Firebase Migration Complete)
+- All Firebase services have been completely removed and replaced with Supabase equivalents
+- Firebase Authentication, Firestore, Firebase Storage, and Firebase Cloud Messaging are no longer used
+- All configuration files (firebase.json, firestore.rules, etc.) have been removed
 
 ### Third-Party Libraries
 - **Vercel Analytics**: User behavior tracking and performance monitoring
@@ -68,6 +67,16 @@ Firebase Cloud Messaging (FCM) enables push notifications for prediction alerts 
 - **Replit**: Development environment and deployment platform with autoscale deployment target
 
 ## Recent Changes
+
+### September 9, 2025 - Complete Supabase Migration
+- **Complete Firebase Removal**: All Firebase dependencies, configuration files, and code have been removed
+- **Supabase-Only Architecture**: Migrated to 100% Supabase backend with PostgreSQL database, Auth, and Storage
+- **Comprehensive Database Schema**: Implemented complete database schema with user profiles, subscriptions, payments, referrals, AI predictions, and admin features
+- **Enhanced Security**: Added Row Level Security policies for all tables ensuring proper data access control
+- **Authentication Rewrite**: Completely rewrote authentication system to use Supabase Auth with email/password authentication
+- **Modern Architecture**: Streamlined to single backend provider eliminating complexity of hybrid Firebase/Supabase setup
+- **Performance Improvements**: Direct database queries with proper indexing and relationships for better performance
+- **Scalability Ready**: PostgreSQL database with JSONB support and real-time capabilities for future growth
 
 ### September 6, 2025 - Project Setup and Authentication Fixes
 - Successfully imported from GitHub and configured for Replit environment
