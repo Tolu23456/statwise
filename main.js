@@ -245,16 +245,21 @@ async function loadPage(page) {
             const content = await response.text();
             main.innerHTML = content;
             
+            // Reset scroll position to top for each new page
+            main.scrollTop = 0;
+            
             // Initialize page-specific functionality
             await initializePage(page);
         } else {
             main.innerHTML = '<div class="error">Page not found</div>';
+            main.scrollTop = 0;
         }
         
         hideLoader();
     } catch (error) {
         console.error('Error loading page:', error);
         main.innerHTML = '<div class="error">Error loading page</div>';
+        main.scrollTop = 0;
         hideLoader();
     }
 }
