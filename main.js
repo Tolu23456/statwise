@@ -698,15 +698,6 @@ function initializeProfileInteractions() {
         });
     }
     
-    // Initialize delete account button
-    const deleteAccountBtn = document.getElementById('deleteAccountBtn');
-    if (deleteAccountBtn) {
-        deleteAccountBtn.addEventListener('click', async () => {
-            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
-                await deleteUserAccount();
-            }
-        });
-    }
     
     // Initialize avatar upload
     const avatarUpload = document.getElementById('avatarUpload');
@@ -831,17 +822,6 @@ async function handleAvatarUpload(event) {
     }
 }
 
-async function deleteUserAccount() {
-    try {
-        // Note: Account deletion requires server-side implementation
-        // For now, we'll just sign out and show a message
-        alert('Account deletion request submitted. Please contact support for assistance.');
-        await window.signOut();
-    } catch (error) {
-        console.error('Error deleting account:', error);
-        alert('Error processing account deletion request.');
-    }
-}
 
 async function initializeSubscriptionsPage() {
     await loadSubscriptionInfo();
