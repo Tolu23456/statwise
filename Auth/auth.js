@@ -147,6 +147,13 @@ function showErrorMessage(elementId, message) {
     setTimeout(() => {
         errorElement.classList.remove('shake');
     }, 500);
+    
+    // Auto-hide error messages after 5 seconds
+    setTimeout(() => {
+        if (errorElement.classList.contains('show')) {
+            errorElement.classList.remove('show');
+        }
+    }, 5000);
 }
 
 function showSuccessMessage(elementId, message) {
@@ -155,6 +162,13 @@ function showSuccessMessage(elementId, message) {
     
     errorElement.textContent = message;
     errorElement.className = 'error-msg success show';
+    
+    // Auto-hide success messages after 4 seconds
+    setTimeout(() => {
+        if (errorElement.classList.contains('show')) {
+            errorElement.classList.remove('show');
+        }
+    }, 4000);
 }
 
 function showWarningMessage(elementId, message) {
@@ -163,6 +177,13 @@ function showWarningMessage(elementId, message) {
     
     errorElement.textContent = message;
     errorElement.className = 'error-msg warning show';
+    
+    // Auto-hide warning messages after 5 seconds
+    setTimeout(() => {
+        if (errorElement.classList.contains('show')) {
+            errorElement.classList.remove('show');
+        }
+    }, 5000);
 }
 
 function clearErrorMessages() {
