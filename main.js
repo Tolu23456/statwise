@@ -727,6 +727,7 @@ function triggerAvatarUpload() {
 
 // Make functions globally available
 window.triggerAvatarUpload = triggerAvatarUpload;
+window.loadPage = loadPage;
 
 async function handleAvatarUpload(event) {
     const file = event.target.files[0];
@@ -841,12 +842,18 @@ async function initializeSubscriptionsPage() {
 }
 
 async function initializeManageSubscriptionPage() {
+    console.log('Initializing manage subscription page...');
     await loadManageSubscriptionInfo();
     initializeManageSubscriptionButtons();
 }
 
 async function loadManageSubscriptionInfo() {
-    if (!currentUser) return;
+    if (!currentUser) {
+        console.warn('No current user found for manage subscription');
+        return;
+    }
+    
+    console.log('Loading manage subscription info for user:', currentUser.id);
     
     try {
         const { data: profile, error } = await supabase
@@ -860,6 +867,7 @@ async function loadManageSubscriptionInfo() {
             return;
         }
         
+        console.log('Profile data loaded:', profile);
         displayManageSubscriptionInfo(profile);
     } catch (error) {
         console.error('Error loading subscription info:', error);
@@ -868,7 +876,12 @@ async function loadManageSubscriptionInfo() {
 
 function displayManageSubscriptionInfo(profile) {
     const planInfoCard = document.getElementById('plan-info-card');
-    if (!planInfoCard) return;
+    if (!planInfoCard) {
+        console.warn('plan-info-card element not found');
+        return;
+    }
+    
+    console.log('Displaying subscription info for profile:', profile);
     
     const currentTier = profile.current_tier || 'Free Tier';
     const subscriptionEnd = profile.subscription_end;
@@ -886,7 +899,7 @@ function displayManageSubscriptionInfo(profile) {
     if (currentTier === 'Free Tier') {
         planContent += `
             <p>You're currently on the free plan. Upgrade to unlock premium features!</p>
-            <button onclick="loadPage('subscriptions')" class="button">Upgrade Now</button>
+            <button onclick="window.loadPage('subscriptions')" class="button">Upgrade Now</button>
         `;
     } else {
         planContent += `
@@ -902,6 +915,7 @@ function displayManageSubscriptionInfo(profile) {
     }
     
     planInfoCard.innerHTML = planContent;
+    console.log('Subscription info displayed successfully');
 }
 
 function initializeManageSubscriptionButtons() {
