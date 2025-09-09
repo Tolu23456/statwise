@@ -26,7 +26,13 @@ async function initializeSupabaseAuth() {
         currentUser = session.user;
         await handleUserLogin(session.user);
     } else {
-        redirectToLogin();
+        // Allow access to subscription page without authentication
+        const currentPage = localStorage.getItem('lastPage') || 'home';
+        if (currentPage === 'subscriptions') {
+            await loadPage('subscriptions');
+        } else {
+            redirectToLogin();
+        }
     }
 
     // Listen for auth changes
@@ -843,9 +849,11 @@ async function handleAvatarUpload(event) {
 
 
 async function initializeSubscriptionsPage() {
+    console.log('Initializing subscriptions page...');
     await loadSubscriptionInfo();
     initializeSubscriptionTabs();
     initializeSubscriptionButtons();
+    console.log('Subscriptions page initialized successfully');
 }
 
 async function initializeManageSubscriptionPage() {
@@ -1005,7 +1013,10 @@ async function handleSubscriptionCancellation() {
 }
 
 async function loadSubscriptionInfo() {
-    if (!currentUser) return;
+    if (!currentUser) {
+        console.log('No user authenticated, skipping subscription info load');
+        return;
+    }
     
     try {
         const { data: profile, error } = await supabase
@@ -1095,15 +1106,20 @@ function initializeLeagueTabs() {
 }
 
 function initializeSubscriptionButtons() {
+    console.log('Initializing subscription buttons...');
     const subscribeButtons = document.querySelectorAll('.subscribe-btn');
+    console.log('Found subscription buttons:', subscribeButtons.length);
     
     subscribeButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log('Subscription button clicked');
             
             const tier = button.getAttribute('data-tier');
             const amount = button.getAttribute('data-amount');
             const period = button.getAttribute('data-period');
+            
+            console.log('Subscription details:', { tier, amount, period });
             
             if (tier === 'free') {
                 showModal({
@@ -1121,7 +1137,20 @@ function initializeSubscriptionButtons() {
 
 async function handleSubscriptionUpgrade(tier, amount, period) {
     try {
-        // For now, show a placeholder payment flow
+        // Check if user is authenticated before showing upgrade modal
+        if (!currentUser) {
+            showModal({
+                message: 'Please log in to upgrade your subscription.',
+                confirmText: 'Login',
+                cancelText: 'Cancel',
+                onConfirm: () => {
+                    redirectToLogin();
+                }
+            });
+            return;
+        }
+
+        // For authenticated users, show payment flow
         showModal({
             message: `Upgrade to ${tier} tier for ₦${amount}/${period}?`,
             confirmText: 'Upgrade',
