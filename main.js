@@ -251,6 +251,12 @@ async function loadPage(page) {
             btn.classList.toggle("active", btn.getAttribute("data-page") === page);
         });
         
+        // Add fade-out transition to current content
+        main.classList.add('page-fade-out');
+        
+        // Wait for fade-out animation to complete
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
         // Load page content
         const response = await fetch(`./Pages/${page}.html`);
         if (response.ok) {
@@ -260,11 +266,21 @@ async function loadPage(page) {
             // Reset scroll position to top for each new page
             main.scrollTop = 0;
             
+            // Remove fade-out and add fade-in transition
+            main.classList.remove('page-fade-out');
+            main.classList.add('page-fade-in');
+            
             // Initialize page-specific functionality
             await initializePage(page);
+            
+            // Remove fade-in class after animation completes
+            setTimeout(() => {
+                main.classList.remove('page-fade-in');
+            }, 300);
         } else {
             main.innerHTML = '<div class="error">Page not found</div>';
             main.scrollTop = 0;
+            main.classList.remove('page-fade-out');
         }
         
         hideLoader();
@@ -272,6 +288,7 @@ async function loadPage(page) {
         console.error('Error loading page:', error);
         main.innerHTML = '<div class="error">Error loading page</div>';
         main.scrollTop = 0;
+        main.classList.remove('page-fade-out');
         hideLoader();
     }
 }
