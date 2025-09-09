@@ -1,0 +1,84 @@
+<!-- Inactive/Away Page -->
+<div class="inactive-container">
+  <div class="inactive-content">
+    <div class="pulse-animation">
+      <div class="logo-icon">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="url(#gradient)" stroke="url(#gradient)" stroke-width="1"/>
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0e639c"/>
+              <stop offset="100%" style="stop-color:#4caf50"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    
+    <h1 class="inactive-title">StatWise is waiting...</h1>
+    <p class="inactive-message">We're keeping your predictions safe while you're away</p>
+    
+    <div class="activity-indicators">
+      <div class="indicator active"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+    </div>
+    
+    <div class="welcome-back-message" style="display: none;">
+      <h2>Welcome back! 👋</h2>
+      <p>Let's continue with your AI predictions...</p>
+    </div>
+    
+    <div class="inactive-stats">
+      <div class="stat-item">
+        <span class="stat-number" id="activeTime">0</span>
+        <span class="stat-label">seconds away</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="predictionCount">0</span>
+        <span class="stat-label">predictions waiting</span>
+      </div>
+    </div>
+    
+    <button class="return-btn" onclick="returnToApp()">
+      Return to StatWise
+    </button>
+  </div>
+</div>
+
+<script>
+let awayStartTime = Date.now();
+let timerInterval;
+
+function startAwayTimer() {
+  awayStartTime = Date.now();
+  timerInterval = setInterval(() => {
+    const secondsAway = Math.floor((Date.now() - awayStartTime) / 1000);
+    document.getElementById('activeTime').textContent = secondsAway;
+  }, 1000);
+}
+
+function stopAwayTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+}
+
+function returnToApp() {
+  // This will be handled by the main app's activity detection
+  if (window.activityManager) {
+    window.activityManager.returnToApp();
+  }
+}
+
+// Start the timer when page loads
+startAwayTimer();
+
+// Simulate prediction updates
+setInterval(() => {
+  const currentCount = parseInt(document.getElementById('predictionCount').textContent);
+  if (Math.random() > 0.7) { // 30% chance to increment
+    document.getElementById('predictionCount').textContent = currentCount + 1;
+  }
+}, 3000);
+</script>
