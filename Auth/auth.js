@@ -1,661 +1,408 @@
-// auth.js
-// =====================================
-// Firebase Auth + Firestore Setup
-// =====================================
+// auth.js - Supabase Authentication
+import { supabase } from '../env.js';
+import { showLoader, hideLoader, showSpinner, hideSpinner } from '../Loader/loader.js';
+import { initInteractiveBackground } from '../ui.js';
 
-import { auth, db } from "../env.js";
-import { initInteractiveBackground } from "../ui.js";
-import { addHistoryUnique } from "../utils.js";
-import {
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    setPersistence,
-    browserSessionPersistence, browserLocalPersistence, updateProfile,
-    signOut,
-    sendPasswordResetEmail
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+// Initialize the auth page
+document.addEventListener('DOMContentLoaded', function() {
+    initInteractiveBackground(); // Add background animation to auth pages
+    initializeAuthForms();
+});
 
-import {
-    doc,
-    setDoc,
-    getDoc,
-    collection,
-    addDoc,
-    getDocs,
-    query, limit,
-    where,
-    serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { showSpinner, hideSpinner } from "../Loader/loader.js";
-
-// ===== Utility UI Helpers =====
-function showSuccess(btn) {
-    const btnText = btn.querySelector(".btn-text");
-    const btnIcon = btn.querySelector(".btn-icon") || document.createElement("span");
-    
-    if (!btn.querySelector(".btn-icon")) {
-        btnIcon.className = "btn-icon";
-        btnText.appendChild(btnIcon);
+function initializeAuthForms() {
+    // Login form
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
     }
     
-    btnIcon.textContent = "✅";
-    btnText.firstChild.textContent = "Success! ";
-    btn.classList.add("success");
-    
-    // Reset after animation
-    setTimeout(() => {
-        btn.classList.remove("success");
-    }, 2000);
-}
-
-function displayError(errorElement, message, shake = true) {
-    if (!errorElement) return;
-    
-    errorElement.textContent = message;
-    errorElement.classList.remove('show', 'shake');
-    
-    // Force reflow
-    errorElement.offsetHeight;
-    
-    // Add show class for animation
-    errorElement.classList.add('show');
-    
-    // Add shake animation if requested
-    if (shake) {
-        setTimeout(() => errorElement.classList.add('shake'), 50);
+    // Signup form
+    const signupForm = document.getElementById('signupForm');
+    if (signupForm) {
+        signupForm.addEventListener('submit', handleSignup);
     }
     
-    // Auto-hide after 10 seconds
-    setTimeout(() => {
-        if (errorElement.textContent === message) {
-            errorElement.classList.remove('show');
-        }
-    }, 10000);
-}
-
-function clearError(errorElement) {
-    if (!errorElement) return;
-    errorElement.classList.remove('show', 'shake');
-    setTimeout(() => errorElement.textContent = "", 300);
-}
-
-// ===== Theme Management =====
-function applyTheme(isDark) {
-    document.documentElement.classList.toggle("dark-mode", isDark);
-}
-
-function initializeTheme() {
-    let isDark = localStorage.getItem('darkMode') === 'true'; // Get local storage first
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (localStorage.getItem('darkMode') === null) { // if local storage is empty, use system preference
-        isDark = prefersDark;
+    // Forgot password form
+    const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+    if (forgotPasswordForm) {
+        forgotPasswordForm.addEventListener('submit', handleForgotPassword);
     }
-
-    applyTheme(isDark);
-
-    // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        // Only apply system preference if the user hasn't set a manual preference
-        if (localStorage.getItem('darkMode') === null) {
-            applyTheme(e.matches);
-        }
+    
+    // Toggle password visibility
+    const toggleButtons = document.querySelectorAll('.toggle-password');
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', togglePasswordVisibility);
     });
 }
 
-function createBackgroundAnimation() {
-    // Only create animation if it's enabled or not set (default to on)
-    if (localStorage.getItem('bgAnimationEnabled') !== 'false') {
-        const container = document.createElement('div');
-        container.className = 'area';
-        const list = document.createElement('ul');
-        list.className = 'circles';
-        for (let i = 0; i < 10; i++) {
-            const li = document.createElement('li');
-            list.appendChild(li);
-        }
-        container.appendChild(list);
-        document.body.prepend(container); // Prepend to ensure it's in the background
-        initInteractiveBackground(container);
+async function handleLogin(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const email = formData.get('email');
+    const password = formData.get('password');
+    
+    if (!email || !password) {
+        showMessage('Please fill in all fields', 'error');
+        return;
     }
-}
-
-// ===== Firestore Collections =====
-const usersCol = collection(db, "users");
-const referralCodesCol = collection(db, "referralCodes");
-const subscriptionsCol = collection(db, "subscriptions");
-
-// ===== Grab Page-Specific Forms =====
-const loginForm = document.querySelector("#login-form");
-const signupForm = document.querySelector("#signup-form");
-const forgotPasswordForm = document.querySelector("#forgot-password-form");
-
-// Initialize theme on page load
-initializeTheme();
-createBackgroundAnimation();
-
-// ===== Login Logic =====
-if (loginForm) {
-    const loginPassword = document.querySelector("#login-password");
-    loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const loginEmail = document.querySelector("#login-email");
-        const rememberMe = document.querySelector("#remember-me");
-        const loginBtn = document.querySelector("#login-btn");
-
-        const loginError = document.querySelector("#login-error");
-        clearError(loginError);
-
-        const email = loginEmail.value.trim();
-        const password = loginPassword.value.trim();
-        if (!email || !password) {
-            displayError(loginError, "Please enter both email and password to continue.", true);
-            return;
-        }
-
-        showSpinner(loginBtn);
-
-        try {
-            // Set persistence based on the "Remember Me" checkbox
-            const persistence = rememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
-            await setPersistence(auth, persistence);
-
-            // Sign in the user
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
-
-            const userRef = doc(usersCol, user.uid);
-            const userSnap = await getDoc(userRef);
-
-            if (!userSnap.exists()) {
-                // First login → create user profile
-                const newReferralCode = `REF-${user.uid.substring(0, 6).toUpperCase()}`;
-                await setDoc(userRef, {
-                    username: user.displayName || "User",
-                    email: user.email,
-                    tier: "Free Tier",
-                    referralCode: newReferralCode, // Add referral code to satisfy security rules
-                    tierExpiry: null,
-                    photoURL: null,
-                    notifications: true,
-                    autoRenew: false,
-                    createdAt: new Date().toISOString(),
-                    lastLogin: new Date().toISOString(),
-                    isNewUser: true // Add this flag to satisfy security rules on create
-                });
-
-                // Default subscription
-                const subRef = doc(subscriptionsCol, user.uid);
-                await setDoc(subRef, {
-                    currentTier: "Free Tier",
-                    startDate: new Date().toISOString(),
-                    expiryDate: null,
-                    transactions: []
-                });
-
-            } else {
-                // Ensure subscription doc exists for older users
-                const subRef = doc(subscriptionsCol, user.uid);
-                const subSnap = await getDoc(subRef);
-                if (!subSnap.exists()) {
-                    await setDoc(subRef, {
-                        currentTier: userSnap.data()?.tier || "Free Tier",
-                        startDate: userSnap.data()?.createdAt || new Date().toISOString(),
-                        expiryDate: userSnap.data()?.tierExpiry || null,
-                        transactions: []
-                    });
-                }
-
-            }
-
-            showSuccess(loginBtn);
-
-            // Clear the last visited page to ensure a fresh start on the home page
-            localStorage.removeItem('lastPage');
-
-            // Add fade-out transition before redirecting
-            const authCard = loginForm.closest('.auth-card');
-            if (authCard) {
-                authCard.classList.add('fade-out'); // Ensure this class is defined in auth.css
-            }
-            // Explicitly redirect to home page with hash to ensure homepage loads
-            setTimeout(() => {
-                try {
-                    window.location.href = "../index.html#home";
-                } catch (redirectError) {
-                    // Fallback if redirect fails
-                    console.error('Login redirect failed, using fallback:', redirectError);
-                    window.location.replace("../index.html#home");
-                }
-            }, 500); // Redirect after animation (500ms)
-
-        } catch (error) {            
-            let errorMessage = "Unable to sign you in right now. Please try again.";
-
-            if (error.code === 'auth/wrong-password') {
-                errorMessage = "The password you entered is incorrect. Please double-check and try again.";
-            } else if (error.code === 'auth/user-not-found') {
-                errorMessage = "We couldn't find an account with that email address. Please check the email or create a new account.";
-            } else if (error.code === 'auth/invalid-email') {
-                errorMessage = "Please enter a valid email address.";
-            } else if (error.code === 'auth/missing-email') {
-                errorMessage = "Please enter your email address.";
-            } else if (error.code === 'auth/network-request-failed') {
-                errorMessage = "Connection problem. Please check your internet connection and try again.";
-            } else if (error.code === 'auth/too-many-requests') {
-                errorMessage = "Too many login attempts. Please wait a few minutes before trying again.";
-            } else if (error.code === 'auth/user-disabled') {
-                errorMessage = "This account has been disabled. Please contact support for assistance.";
-            } else if (error.code === 'auth/invalid-credential') {
-                errorMessage = "Invalid email or password. Please check your credentials and try again.";
-            }
-
-            console.error('Login error:', error.code, error.message);
-            hideSpinner(loginBtn);
-            displayError(loginError, errorMessage, true);
-        }
-    });
-
-    // Password visibility toggle
-    const passwordToggle = document.getElementById('password-toggle');
-    if (passwordToggle && loginPassword) {
-        passwordToggle.addEventListener('click', () => {
-            const isPassword = loginPassword.type === 'password';
-            loginPassword.type = isPassword ? 'text' : 'password';
-            passwordToggle.classList.toggle('icon-eye', !isPassword);
-            passwordToggle.classList.toggle('icon-eye-slash', isPassword);
+    
+    try {
+        showLoader();
+        
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password
         });
-    }
-}
-
-// ===== Referral Code Input Logic =====
-// Global variable to store validated referrer ID - accessible to both referral and signup logic
-let validReferrerId = null;
-
-if (signupForm) {
-    const signupReferral = document.querySelector("#signup-referral");
-    const referralNameDisplay = document.querySelector("#referral-name-display");
-
-    let debounceTimeout;
-
-    const checkReferralCode = async (code) => {
-        const coreCode = code.trim().toUpperCase();
-        const wrapper = signupReferral.parentElement;
         
-        // Clear previous state if input is empty or not 6 chars
-        if (coreCode.length === 0) {
-            referralNameDisplay.classList.remove('show', 'error');
-            referralNameDisplay.textContent = "";
-            validReferrerId = null;
+        if (error) {
+            console.error('Login error:', error);
+            showMessage(getErrorMessage(error), 'error');
             return;
         }
         
-        if (coreCode.length !== 6) {
-            referralNameDisplay.textContent = "Referral code must be 6 characters";
-            referralNameDisplay.classList.add('error', 'show');
-            referralNameDisplay.classList.remove('success');
-            validReferrerId = null;
-            return;
-        }
-
-        // Show validating spinner
-        wrapper.classList.add('validating');
-
-        try {
-            let referrerFound = false;
-            let referrerName = '';
+        if (data.user) {
+            console.log('Login successful:', data.user.email);
+            showMessage('Login successful! Redirecting...', 'success');
             
-            // First try Supabase validation if available
-            if (typeof window !== 'undefined' && window.SupabaseService && window.SupabaseService.validateReferralCode) {
-                const supabaseResult = await window.SupabaseService.validateReferralCode(coreCode);
-                if (supabaseResult && supabaseResult.referrerId) {
-                    validReferrerId = supabaseResult.referrerId;
-                    referrerName = supabaseResult.referrerName;
-                    referrerFound = true;
-                }
-            }
+            // Create or update user profile
+            await createOrUpdateUserProfile(data.user);
             
-            // If not found in Supabase, try Firebase with different formats
-            if (!referrerFound) {
-                // Try with REF- prefix first
-                let q = query(usersCol, where("referralCode", "==", `REF-${coreCode}`), limit(1));
-                let querySnapshot = await getDocs(q);
-
-                if (!querySnapshot.empty) {
-                    const referrerDoc = querySnapshot.docs[0];
-                    validReferrerId = referrerDoc.id;
-                    referrerName = referrerDoc.data().username;
-                    referrerFound = true;
-                } else {
-                    // Try without REF- prefix for legacy codes
-                    q = query(usersCol, where("referralCode", "==", coreCode), limit(1));
-                    querySnapshot = await getDocs(q);
-                    
-                    if (!querySnapshot.empty) {
-                        const referrerDoc = querySnapshot.docs[0];
-                        validReferrerId = referrerDoc.id;
-                        referrerName = referrerDoc.data().username;
-                        referrerFound = true;
-                    }
-                }
-            }
-
-            if (referrerFound) {
-                referralNameDisplay.textContent = `Referred by: ${referrerName}`;
-                referralNameDisplay.classList.remove('error');
-                referralNameDisplay.classList.add('show', 'success');
-            } else {
-                validReferrerId = null;
-                referralNameDisplay.textContent = "Invalid referral code";
-                referralNameDisplay.classList.add('error', 'show');
-                referralNameDisplay.classList.remove('success');
-            }
-        } catch (error) {
-            validReferrerId = null;
-            referralNameDisplay.textContent = "Error checking referral code";
-            referralNameDisplay.classList.add('error', 'show');
-            referralNameDisplay.classList.remove('success');
-            console.error("Error fetching referrer:", error);
-        } finally {
-            // Hide validating spinner
-            wrapper.classList.remove('validating');
+            // Redirect to main app
+            setTimeout(() => {
+                window.location.href = '../index.html';
+            }, 1500);
         }
-    };
-    signupReferral.addEventListener("input", (e) => {
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(() => checkReferralCode(e.target.value), 500); // 500ms delay
-    });
-}
-
-// ===== Password Strength Checker =====
-function checkPasswordStrength(password) {
-    let score = 0;
-    if (password.length >= 8) score++;
-    if (/[a-z]/.test(password)) score++;
-    if (/[A-Z]/.test(password)) score++;
-    if (/[0-9]/.test(password)) score++;
-    if (/[^A-Za-z0-9]/.test(password)) score++;
-
-    let strength = "";
-    let level = "";
-
-    if (password.length === 0) {
-        strength = "";
-        level = "";
-    } else if (score <= 2) {
-        strength = "Weak";
-        level = "weak";
-    } else if (score === 3) {
-        strength = "Medium";
-        level = "medium";
-    } else if (score === 4) {
-        strength = "Strong";
-        level = "strong";
-    } else {
-        strength = "Very Strong";
-        level = "very-strong";
-    }
-    return { strength, level, score };
-}
-
-if (signupForm) {
-    const strengthBars = document.querySelectorAll("#password-strength-container .strength-bar");
-    const strengthText = document.getElementById("password-strength-text");
-    // Define signupPassword here so it's accessible to both listeners below
-    const signupPassword = document.querySelector("#signup-password");
-
-    signupPassword.addEventListener("input", () => {
-        const password = signupPassword.value;
-        const { strength, level } = checkPasswordStrength(password);
-
-        strengthText.textContent = strength;
-        strengthBars.forEach(bar => bar.className = 'strength-bar'); // Reset classes
-
-        if (level) {
-            if (level === 'weak') {
-                strengthBars[0].classList.add(level);
-            } else if (level === 'medium') {
-                strengthBars[0].classList.add(level);
-                strengthBars[1].classList.add(level);
-            } else if (level === 'strong') {
-                strengthBars[0].classList.add(level);
-                strengthBars[1].classList.add(level);
-                strengthBars[2].classList.add(level);
-            } else if (level === 'very-strong') {
-                strengthBars.forEach(bar => bar.classList.add(level));
-            }
-        }
-    });
-}
-
-// ===== Password Match Validation =====
-function validatePasswords() {
-    if (!signupForm) return;
-    const signupPassword = document.querySelector("#signup-password");
-    const signupPasswordConfirm = document.querySelector("#signup-password-confirm");
-    const signupError = document.querySelector("#signup-error");
-
-    const password = signupPassword.value;
-    const confirmPassword = signupPasswordConfirm.value;
-
-    // Only show error if the confirm password field has been typed in
-    if (confirmPassword && password !== confirmPassword) {
-        // Only highlight the confirm password field with red border
-        signupPasswordConfirm.classList.add('input-error');
-        signupPassword.classList.remove('input-error'); // Remove error from main password field
-        displayError(signupError, "Passwords do not match - please check both fields.", true);
-    } else {
-        signupPassword.classList.remove('input-error');
-        signupPasswordConfirm.classList.remove('input-error');
-        // Clear the error only if it's the password mismatch error
-        if (signupError.textContent.includes("Passwords do not match")) {
-            clearError(signupError);
-        }
+        
+    } catch (error) {
+        console.error('Unexpected login error:', error);
+        showMessage('An unexpected error occurred. Please try again.', 'error');
+    } finally {
+        hideLoader();
     }
 }
 
-// ===== Signup Logic =====
-if (signupForm) {
-    const signupPassword = document.querySelector("#signup-password");
-    const signupPasswordConfirm = document.querySelector("#signup-password-confirm");
-
-    signupForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const signupUsername = document.querySelector("#signup-username");
-        const signupEmail = document.querySelector("#signup-email");
-        const signupReferral = document.querySelector("#signup-referral");
-        const signupRememberMe = document.querySelector("#signup-remember-me");
-        const signupBtn = document.querySelector("#signup-btn");
-        const signupError = document.querySelector("#signup-error");
-
-        clearError(signupError);
-
-        const username = signupUsername.value.trim();
-        const email = signupEmail.value.trim();
-        const password = signupPassword.value.trim();
-        const confirmPassword = signupPasswordConfirm.value.trim();
-        const referralCode = signupReferral.value.trim().toUpperCase();
-        if (!username || !email || !password || !confirmPassword) {
-            displayError(signupError, "Please fill out all required fields to continue.", true);
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            validatePasswords(); // This will show the error text and borders
-            return; 
-        }
-
-        if (password.length < 6) {
-            displayError(signupError, "Password must be at least 6 characters long for security.", true);
-            return;
-        }
-
-        const { score } = checkPasswordStrength(password);
-        if (score < 3) {
-            displayError(signupError, "Password must contain uppercase, lowercase, numbers, and symbols for security.", true);
-            return;
-        }
-
-        showSpinner(signupBtn);
-
-        try {
-            // Set persistence based on the "Remember Me" checkbox
-            const persistence = signupRememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
-            await setPersistence(auth, persistence);
-            
-            // If a referral code was entered but found to be invalid by the UI check, block submission.
-            if (referralCode && !validReferrerId) {
-                hideSpinner(signupBtn);
-                displayError(signupError, "Please enter a valid referral code or leave it blank.", true);
+async function handleSignup(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const email = formData.get('email');
+    const password = formData.get('password');
+    const confirmPassword = formData.get('confirmPassword');
+    const username = formData.get('username');
+    const referralCode = formData.get('referralCode');
+    
+    // Validation
+    if (!email || !password || !confirmPassword || !username) {
+        showMessage('Please fill in all required fields', 'error');
+        return;
+    }
+    
+    if (password !== confirmPassword) {
+        showMessage('Passwords do not match', 'error');
+        return;
+    }
+    
+    if (password.length < 6) {
+        showMessage('Password must be at least 6 characters long', 'error');
+        return;
+    }
+    
+    try {
+        showLoader();
+        
+        // Validate referral code if provided
+        let referrerId = null;
+        if (referralCode) {
+            const { data: referralData, error: referralError } = await supabase
+                .from('referral_codes')
+                .select('user_id')
+                .eq('code', referralCode.toUpperCase())
+                .eq('active', true)
+                .single();
+                
+            if (referralError || !referralData) {
+                showMessage('Invalid referral code', 'error');
                 return;
             }
-
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
-
-            // --- Final Referral ID Check (Self-Referral) ---
-            let finalReferrerId = validReferrerId;
-            if (finalReferrerId && finalReferrerId === user.uid) {
-                finalReferrerId = null; // Nullify if user is referring themselves.
-            }
-
-            // Update Firebase Auth profile
-            await updateProfile(user, { displayName: username });
-
-            // Generate a unique referral code for the new user
-            const newReferralCode = `REF-${user.uid.substring(0, 6).toUpperCase()}`;
-
-            // Create Firestore profile
-            const userRef = doc(usersCol, user.uid);
-            await setDoc(userRef, {
-                username,
-                email,
-                tier: "Free Tier",
-                referralCode: newReferralCode,
-                tierExpiry: null,
-                photoURL: null,
-                notifications: true,
-                autoRenew: false,
-                createdAt: new Date().toISOString(),
-                lastLogin: new Date().toISOString(),
-                isNewUser: true, // Flag for the welcome tour
-                ...(finalReferrerId && { referredBy: finalReferrerId }) // Add referrer ID if it exists
-            });
-
-            // If referred, update the referrer's document and notify them
-            if (finalReferrerId) {
-                const referrerRef = doc(usersCol, finalReferrerId);
-                // We use a subcollection for history, so we can just add an action.
-                const historyRef = collection(db, "users", finalReferrerId, "history");
-                await addDoc(historyRef, {
-                    action: `Your friend '${username}' joined using your referral code!`,
-                    createdAt: serverTimestamp(),
-                    creatorId: user.uid // Add this field to satisfy the security rule
-                });
-            }
-
-            showSuccess(signupBtn);
-
-            // Clear the last visited page to ensure a fresh start on the home page
-            localStorage.removeItem('lastPage');
-
-            // Add fade-out transition before redirecting
-            const authCard = signupForm.closest('.auth-card');
-            if (authCard) {
-                authCard.classList.add('fade-out');
-            }
-            // Explicitly redirect to home page with hash to ensure homepage loads
-            setTimeout(() => window.location.href = "../index.html#home", 500); // Redirect after animation (500ms)
-
-        } catch (error) {            
-            let errorMessage = "Unable to create your account right now. Please try again.";
-
-            if (error.code === 'auth/email-already-in-use') {
-                errorMessage = "An account with this email already exists. Please use the login page instead.";
-            } else if (error.code === 'auth/invalid-email') {
-                errorMessage = "Please enter a valid email address.";
-            } else if (error.code === 'auth/weak-password') {
-                errorMessage = "Please choose a stronger password with at least 6 characters.";
-            } else if (error.code === 'auth/network-request-failed') {
-                errorMessage = "Connection problem. Please check your internet connection and try again.";
-            } else if (error.code === 'auth/too-many-requests') {
-                errorMessage = "Too many signup attempts. Please wait a few minutes before trying again.";
-            } else if (error.code === 'auth/operation-not-allowed') {
-                errorMessage = "Account creation is currently disabled. Please contact support.";
-            }
-            
-            console.error('Signup error:', error.code, error.message);
-            hideSpinner(signupBtn);
-            displayError(signupError, errorMessage, true);
+            referrerId = referralData.user_id;
         }
-    });
-
-    // Password visibility toggle for signup page
-    const passwordToggle = document.getElementById('password-toggle');
-    const confirmPasswordToggle = document.getElementById('confirm-password-toggle');
-
-    if (passwordToggle && signupPassword) { // Toggle for the main password field
-        passwordToggle.addEventListener('click', () => {
-            const isPassword = signupPassword.type === 'password';
-            signupPassword.type = isPassword ? 'text' : 'password';
-            passwordToggle.classList.toggle('icon-eye', !isPassword);
-            passwordToggle.classList.toggle('icon-eye-slash', isPassword);
+        
+        const { data, error } = await supabase.auth.signUp({
+            email: email,
+            password: password,
+            options: {
+                data: {
+                    display_name: username,
+                    username: username
+                }
+            }
         });
-    }
-    if (confirmPasswordToggle && signupPasswordConfirm) { // Toggle for the confirm password field
-        confirmPasswordToggle.addEventListener('click', () => {
-            const isPassword = signupPasswordConfirm.type === 'password';
-            signupPasswordConfirm.type = isPassword ? 'text' : 'password';
-            confirmPasswordToggle.classList.toggle('icon-eye', !isPassword);
-            confirmPasswordToggle.classList.toggle('icon-eye-slash', isPassword);
-        });
-    }
-
-    // Add real-time validation listeners
-    signupPassword?.addEventListener('input', validatePasswords);
-    signupPasswordConfirm?.addEventListener('input', validatePasswords);
-}
-
-// ===== Forgot Password Logic =====
-if (forgotPasswordForm) {
-    forgotPasswordForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const forgotPasswordEmail = document.querySelector("#forgot-password-email");
-        const forgotPasswordBtn = document.querySelector("#forgot-password-btn");
-        const forgotPasswordMessage = document.querySelector("#forgot-password-message");
-
-        clearError(forgotPasswordMessage);
-        forgotPasswordMessage.style.color = ""; // Reset color
-
-        const email = forgotPasswordEmail.value.trim();
-        if (!email) {
-            displayError(forgotPasswordMessage, "Please enter your email address to reset your password.", true);
+        
+        if (error) {
+            console.error('Signup error:', error);
+            showMessage(getErrorMessage(error), 'error');
             return;
         }
-
-        showSpinner(forgotPasswordBtn, "Sending...");
-
-        try {
-            await sendPasswordResetEmail(auth, email);
-            forgotPasswordMessage.classList.add('show');
-            forgotPasswordMessage.style.color = '#28a745';
-            forgotPasswordMessage.textContent = "✅ Password reset email sent! Please check your inbox.";
-            hideSpinner(forgotPasswordBtn);
-            forgotPasswordBtn.disabled = true; // Prevent resending
-        } catch (error) {
-            console.error("Password reset error:", error);
-            hideSpinner(forgotPasswordBtn);
-            displayError(forgotPasswordMessage, "Unable to send reset email. Please try again or contact support.", true);
+        
+        if (data.user) {
+            console.log('Signup successful:', data.user.email);
+            
+            // Create user profile
+            await createOrUpdateUserProfile(data.user, { referred_by: referrerId });
+            
+            // Create referral relationship if applicable
+            if (referrerId && referralCode) {
+                await createReferralRelationship(referrerId, data.user.id, referralCode);
+            }
+            
+            showMessage('Account created successfully! Please check your email to verify your account.', 'success');
+            
+            // Redirect to login after a delay
+            setTimeout(() => {
+                window.location.href = './login.html';
+            }, 3000);
         }
-    });
+        
+    } catch (error) {
+        console.error('Unexpected signup error:', error);
+        showMessage('An unexpected error occurred. Please try again.', 'error');
+    } finally {
+        hideLoader();
+    }
 }
 
-
-// ===== Logout Function (can be used in main.js) =====
-export async function logoutUser() {
-    const user = auth.currentUser;
-    if (!user) return;
-
-    await addHistoryUnique(user.uid, "User logged out");
-    await signOut(auth);
+async function handleForgotPassword(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const email = formData.get('email');
+    
+    if (!email) {
+        showMessage('Please enter your email address', 'error');
+        return;
+    }
+    
+    try {
+        showLoader();
+        
+        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+            redirectTo: window.location.origin + '/Auth/login.html'
+        });
+        
+        if (error) {
+            console.error('Password reset error:', error);
+            showMessage(getErrorMessage(error), 'error');
+            return;
+        }
+        
+        showMessage('Password reset email sent! Please check your inbox.', 'success');
+        
+        // Redirect to login after a delay
+        setTimeout(() => {
+            window.location.href = './login.html';
+        }, 3000);
+        
+    } catch (error) {
+        console.error('Unexpected password reset error:', error);
+        showMessage('An unexpected error occurred. Please try again.', 'error');
+    } finally {
+        hideLoader();
+    }
 }
+
+async function createOrUpdateUserProfile(user, additionalData = {}) {
+    try {
+        const userData = {
+            id: user.id,
+            email: user.email,
+            username: user.user_metadata?.username || user.user_metadata?.display_name || user.email.split('@')[0],
+            display_name: user.user_metadata?.display_name || user.user_metadata?.username || user.email.split('@')[0],
+            current_tier: 'Free Tier',
+            tier: 'Free Tier',
+            subscription_status: 'active',
+            is_new_user: true,
+            notifications: true,
+            created_at: new Date().toISOString(),
+            last_login: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+            ...additionalData
+        };
+
+        const { data, error } = await supabase
+            .from('user_profiles')
+            .upsert(userData, { onConflict: 'id' })
+            .select()
+            .single();
+
+        if (error && error.code !== '23505') {
+            console.warn('Profile creation warning:', error);
+        } else {
+            console.log('User profile created/updated:', data);
+        }
+
+        // Generate referral code
+        await generateReferralCode(user.id, userData.username);
+        
+    } catch (error) {
+        console.warn('Error creating user profile:', error);
+    }
+}
+
+async function generateReferralCode(userId, username) {
+    try {
+        const code = userId.substring(0, 8).toUpperCase();
+        
+        const { data, error } = await supabase
+            .from('referral_codes')
+            .upsert({
+                user_id: userId,
+                code: code,
+                username: username,
+                total_referrals: 0,
+                active: true,
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString()
+            }, { onConflict: 'user_id' })
+            .select()
+            .single();
+
+        if (error && error.code !== '23505') {
+            console.warn('Referral code generation warning:', error);
+        } else {
+            console.log('Referral code generated:', data?.code);
+        }
+    } catch (error) {
+        console.warn('Error generating referral code:', error);
+    }
+}
+
+async function createReferralRelationship(referrerId, referredId, referralCode) {
+    try {
+        const { data, error } = await supabase
+            .from('referrals')
+            .insert({
+                referrer_id: referrerId,
+                referred_id: referredId,
+                referral_code: referralCode,
+                reward_claimed: false,
+                reward_amount: 500.00, // Default reward
+                created_at: new Date().toISOString()
+            })
+            .select()
+            .single();
+
+        if (error && error.code !== '23505') {
+            console.warn('Referral relationship creation warning:', error);
+        } else {
+            console.log('Referral relationship created:', data);
+            
+            // Update referral stats
+            await updateReferralStats(referrerId);
+        }
+    } catch (error) {
+        console.warn('Error creating referral relationship:', error);
+    }
+}
+
+async function updateReferralStats(userId) {
+    try {
+        // Count total referrals
+        const { count } = await supabase
+            .from('referrals')
+            .select('*', { count: 'exact', head: true })
+            .eq('referrer_id', userId);
+
+        // Update referral code stats
+        await supabase
+            .from('referral_codes')
+            .update({
+                total_referrals: count || 0,
+                updated_at: new Date().toISOString()
+            })
+            .eq('user_id', userId);
+
+        // Update user profile stats
+        await supabase
+            .from('user_profiles')
+            .update({
+                total_referrals: count || 0,
+                updated_at: new Date().toISOString()
+            })
+            .eq('id', userId);
+
+        console.log(`Updated referral stats for user ${userId}: ${count} referrals`);
+    } catch (error) {
+        console.warn('Error updating referral stats:', error);
+    }
+}
+
+function togglePasswordVisibility(e) {
+    const button = e.target.closest('.toggle-password');
+    const input = button.previousElementSibling;
+    const icon = button.querySelector('use');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.setAttribute('href', '#eye-slash');
+    } else {
+        input.type = 'password';
+        icon.setAttribute('href', '#eye');
+    }
+}
+
+function getErrorMessage(error) {
+    switch (error.message) {
+        case 'Invalid login credentials':
+            return 'Invalid email or password. Please check your credentials and try again.';
+        case 'Email not confirmed':
+            return 'Please verify your email address before signing in.';
+        case 'User already registered':
+            return 'An account with this email already exists. Please sign in instead.';
+        case 'Password should be at least 6 characters':
+            return 'Password must be at least 6 characters long.';
+        case 'Unable to validate email address: invalid format':
+            return 'Please enter a valid email address.';
+        case 'Too many requests':
+            return 'Too many attempts. Please wait a moment before trying again.';
+        default:
+            return error.message || 'An error occurred. Please try again.';
+    }
+}
+
+function showMessage(message, type = 'info') {
+    // Remove existing messages
+    const existingMessages = document.querySelectorAll('.auth-message');
+    existingMessages.forEach(msg => msg.remove());
+    
+    // Create new message
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `auth-message auth-message-${type}`;
+    messageDiv.textContent = message;
+    
+    // Insert message at the top of the form container
+    const container = document.querySelector('.auth-container');
+    if (container) {
+        container.insertBefore(messageDiv, container.firstChild);
+        
+        // Auto-remove success/error messages after 5 seconds
+        if (type === 'success' || type === 'error') {
+            setTimeout(() => {
+                if (messageDiv.parentNode) {
+                    messageDiv.remove();
+                }
+            }, 5000);
+        }
+    }
+}
+
+// Check if user is already logged in and redirect to main app
+async function checkExistingSession() {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) {
+        console.log('User already logged in, redirecting to main app...');
+        window.location.href = '../index.html';
+    }
+}
+
+// Check for existing session when page loads
+checkExistingSession();
+
+console.log('✅ Supabase authentication system loaded successfully!');

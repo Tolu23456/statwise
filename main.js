@@ -1,55 +1,171 @@
-// main.js
-import { auth, db, FLWPUBK, storage, messaging, supabase } from './env.js';
+// main.js - StatWise PWA with Supabase-only implementation
+import { supabase, FLWPUBK } from './env.js';
 import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loader.js';
 import { initInteractiveBackground } from './ui.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
-import { onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import {
-    ref, uploadBytes, getDownloadURL
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
-// Firebase Functions import removed - using Supabase for all backend operations
-import { 
-    getToken, onMessage
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js"; // This is a client-side library
-import {
-    doc, getDoc, setDoc, updateDoc,
-    collection, addDoc, query, where, orderBy, getDocs, serverTimestamp, limit, deleteDoc, onSnapshot, arrayUnion
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ===== DOM Elements =====
+// ===== Global Variables =====
 const main = document.querySelector("main");
 const navButtons = document.querySelectorAll(".bottom-nav button");
 const defaultPage = "home";
-let verifiedTier = "Free Tier"; // In-memory tier
+let currentUser = null;
+let verifiedTier = "Free Tier";
 
-initializeTheme(); // Apply theme on initial load
-
-// Check for payment redirect on page load
+// Initialize the app
+initializeTheme();
+initializeSupabaseAuth();
 checkPaymentRedirect();
 
-// ===== Payment Redirect Handler =====
+// ===== Authentication Setup =====
+async function initializeSupabaseAuth() {
+    // Get initial session
+    const { data: { session }, error } = await supabase.auth.getSession();
+    
+    if (session) {
+        currentUser = session.user;
+        await handleUserLogin(session.user);
+    } else {
+        redirectToLogin();
+    }
+
+    // Listen for auth changes
+    supabase.auth.onAuthStateChange(async (event, session) => {
+        console.log('Auth state changed:', event);
+        
+        if (event === 'SIGNED_IN' && session) {
+            currentUser = session.user;
+            await handleUserLogin(session.user);
+        } else if (event === 'SIGNED_OUT') {
+            currentUser = null;
+            redirectToLogin();
+        }
+    });
+}
+
+// ===== User Management =====
+async function handleUserLogin(user) {
+    try {
+        showLoader();
+        console.log('User logged in:', user.email);
+        
+        // Create or update user profile
+        await createOrUpdateUserProfile(user);
+        
+        // Load user data and initialize app
+        await loadUserData(user);
+        
+        // Initialize the main application
+        initializeApp();
+        
+        hideLoader();
+    } catch (error) {
+        console.error('Error handling user login:', error);
+        hideLoader();
+    }
+}
+
+async function createOrUpdateUserProfile(user) {
+    try {
+        const userData = {
+            id: user.id,
+            email: user.email,
+            username: user.user_metadata?.display_name || user.email.split('@')[0],
+            display_name: user.user_metadata?.display_name || user.email.split('@')[0],
+            current_tier: 'Free Tier',
+            tier: 'Free Tier',
+            subscription_status: 'active',
+            is_new_user: true,
+            notifications: true,
+            last_login: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+        };
+
+        const { data, error } = await supabase
+            .from('user_profiles')
+            .upsert(userData, { onConflict: 'id' })
+            .select()
+            .single();
+
+        if (error && error.code !== '23505') { // Ignore unique constraint violations
+            console.warn('Profile creation warning:', error);
+        } else {
+            console.log('User profile created/updated:', data);
+        }
+
+        // Generate referral code if not exists
+        await generateReferralCode(user.id);
+        
+    } catch (error) {
+        console.warn('Error creating user profile:', error);
+    }
+}
+
+async function loadUserData(user) {
+    try {
+        // Load user profile
+        const { data: profile, error } = await supabase
+            .from('user_profiles')
+            .select('*')
+            .eq('id', user.id)
+            .single();
+
+        if (profile) {
+            verifiedTier = profile.current_tier || 'Free Tier';
+            console.log('User tier loaded:', verifiedTier);
+        }
+    } catch (error) {
+        console.warn('Error loading user data:', error);
+    }
+}
+
+// ===== Referral System =====
+async function generateReferralCode(userId) {
+    try {
+        const code = userId.substring(0, 8).toUpperCase();
+        
+        const { data, error } = await supabase
+            .from('referral_codes')
+            .upsert({
+                user_id: userId,
+                code: code,
+                username: currentUser?.email?.split('@')[0] || 'User',
+                total_referrals: 0,
+                active: true,
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString()
+            }, { onConflict: 'user_id' })
+            .select()
+            .single();
+
+        if (error && error.code !== '23505') {
+            console.warn('Referral code generation warning:', error);
+        } else {
+            console.log('Referral code generated:', data?.code);
+        }
+    } catch (error) {
+        console.warn('Error generating referral code:', error);
+    }
+}
+
+// ===== Payment System =====
 function checkPaymentRedirect() {
     const urlParams = new URLSearchParams(window.location.search);
     const paymentStatus = urlParams.get('payment');
     const transactionId = urlParams.get('transaction_id');
-    const txRef = urlParams.get('tx_ref');
     
     if (paymentStatus === 'success' && transactionId) {
-        // Show success message for returning payment
         setTimeout(() => {
             showModal({ 
                 message: `🎉 Welcome back!\n\nYour payment has been processed successfully.\nTransaction ID: ${transactionId}\n\nPlease wait while we verify your subscription...`,
                 confirmClass: 'btn-success',
                 confirmText: 'Continue',
                 onConfirm: () => {
-                    // Navigate to subscriptions to show updated status
                     loadPage('subscriptions');
                 }
             });
         }, 1000);
         
-        // Clear the URL parameters
         window.history.replaceState({}, document.title, window.location.pathname);
     } else if (paymentStatus === 'cancelled') {
         setTimeout(() => {
@@ -60,3188 +176,828 @@ function checkPaymentRedirect() {
             });
         }, 1000);
         
-        // Clear the URL parameters
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 }
 
-// ===== Supabase Helper Functions =====
-const SupabaseService = {
-    // Sync user profile data to Supabase
-    async syncUserProfile(firebaseUser, additionalData = {}) {
-        if (!supabase || !firebaseUser) {
-            console.log('Supabase not available or user not found');
-            return null;
-        }
-
-        try {
-            const userData = {
-                id: firebaseUser.uid,
-                email: firebaseUser.email,
-                display_name: firebaseUser.displayName || '',
-                created_at: new Date().toISOString(),
-                last_login: new Date().toISOString(),
-                ...additionalData
-            };
-
-            const { data, error } = await supabase
-                .from('user_profiles')
-                .upsert(userData, { onConflict: 'id' })
-                .select()
-                .single();
-
-            if (error) {
-                console.warn('Supabase sync warning:', error.message);
-                return null;
-            }
-            console.log('User profile synced to Supabase:', data);
-            return data;
-        } catch (error) {
-            console.warn('Error syncing user profile to Supabase:', error);
-            return null;
-        }
-    },
-
-    // Log payment transaction to Supabase
-    async logPaymentTransaction(userId, transactionData) {
-        if (!supabase) {
-            console.log('Supabase not available');
-            return null;
-        }
-
-        try {
-            const { data, error } = await supabase
-                .from('payment_transactions')
-                .insert({
-                    user_id: userId,
-                    transaction_id: transactionData.transaction_id,
-                    tx_ref: transactionData.tx_ref,
-                    amount: transactionData.amount,
-                    currency: transactionData.currency || 'NGN',
-                    status: transactionData.status,
-                    payment_type: 'flutterwave',
-                    tier: transactionData.tier,
-                    period: transactionData.period,
-                    created_at: new Date().toISOString()
-                })
-                .select()
-                .single();
-
-            if (error) {
-                console.warn('Supabase payment log warning:', error.message);
-                return null;
-            }
-            console.log('Payment transaction logged to Supabase:', data);
-            return data;
-        } catch (error) {
-            console.warn('Error logging payment transaction to Supabase:', error);
-            return null;
-        }
-    },
-
-    // Log subscription event to Supabase
-    async logSubscriptionEvent(userId, eventType, eventData) {
-        if (!supabase) {
-            console.log('Supabase not available');
-            return null;
-        }
-
-        try {
-            const { data, error } = await supabase
-                .from('subscription_events')
-                .insert({
-                    user_id: userId,
-                    event_type: eventType,
-                    event_data: eventData,
-                    created_at: new Date().toISOString()
-                })
-                .select()
-                .single();
-
-            if (error) {
-                console.warn('Supabase subscription log warning:', error.message);
-                return null;
-            }
-            console.log('Subscription event logged to Supabase:', data);
-            return data;
-        } catch (error) {
-            console.warn('Error logging subscription event to Supabase:', error);
-            return null;
-        }
-    },
-
-    // Update user subscription status in Supabase (PRIMARY SOURCE OF TRUTH)
-    async updateUserSubscription(userId, subscriptionData) {
-        if (!supabase) {
-            console.log('Supabase not available');
-            return null;
-        }
-
-        try {
-            // First ensure user profile exists, then update subscription data
-            const userData = {
-                id: userId,
-                current_tier: subscriptionData.tier,
-                subscription_period: subscriptionData.period,
-                subscription_start: subscriptionData.start_date,
-                subscription_end: subscriptionData.end_date,
-                subscription_status: subscriptionData.status || 'active',
-                updated_at: new Date().toISOString()
-            };
-
-            // Use upsert to handle cases where user profile doesn't exist yet
-            const { data, error } = await supabase
-                .from('user_profiles')
-                .upsert(userData, { onConflict: 'id' })
-                .select()
-                .single();
-
-            if (error) {
-                console.warn('Supabase subscription update warning:', error.message);
-                console.warn('Error details:', error);
-                return null;
-            }
-            
-            console.log('User subscription updated/created in Supabase:', data);
-            
-            // Also update the in-memory tier for immediate UI updates
-            verifiedTier = subscriptionData.tier;
-            
-            return data;
-        } catch (error) {
-            console.warn('Error updating user subscription in Supabase:', error);
-            return null;
-        }
-    },
+// ===== App Navigation =====
+function initializeApp() {
+    // Load default page
+    loadPage(defaultPage);
     
-    // Get user subscription status from Supabase (PRIMARY SOURCE)
-    async getUserSubscription(userId) {
-        if (!supabase) {
-            console.log('Supabase not available');
-            return null;
-        }
-
-        try {
-            const { data, error } = await supabase
-                .from('user_profiles')
-                .select('current_tier, subscription_period, subscription_start, subscription_end, subscription_status')
-                .eq('id', userId)
-                .single();
-
-            if (error) {
-                console.warn('Supabase subscription fetch warning:', error.message);
-                return null;
+    // Set up navigation
+    navButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const page = button.getAttribute("data-page");
+            const tier = button.getAttribute("data-tier");
+            
+            if (tier && !hasAccess(tier)) {
+                showUpgradeModal(tier);
+                return;
             }
             
-            return {
-                tier: data.current_tier || 'Free Tier',
-                period: data.subscription_period,
-                startDate: data.subscription_start,
-                endDate: data.subscription_end,
-                status: data.subscription_status || 'active'
-            };
-        } catch (error) {
-            console.warn('Error fetching user subscription from Supabase:', error);
-            return null;
-        }
-    },
+            loadPage(page);
+        });
+    });
     
-    // Get user transaction history from Supabase
-    async getUserTransactionHistory(userId, limit = 10) {
-        if (!supabase) {
-            console.log('Supabase not available');
-            return [];
-        }
-
-        try {
-            const { data, error } = await supabase
-                .from('payment_transactions')
-                .select('*')
-                .eq('user_id', userId)
-                .order('created_at', { ascending: false })
-                .limit(limit);
-
-            if (error) {
-                console.warn('Supabase transaction history fetch warning:', error.message);
-                return [];
-            }
-            
-            return data || [];
-        } catch (error) {
-            console.warn('Error fetching transaction history from Supabase:', error);
-            return [];
-        }
-    },
-    
-    // Ensure all required buckets exist
-    async ensureBucketsExist() {
-        if (!supabase) {
-            console.log('Supabase not available');
-            return false;
-        }
-
-        try {
-            const { data: buckets, error: bucketsError } = await supabase.storage.listBuckets();
-            
-            if (bucketsError) {
-                console.warn('Could not list buckets:', bucketsError.message);
-                return false;
-            }
-            
-            const requiredBuckets = [
-                {
-                    name: 'profile-pictures',
-                    options: {
-                        public: true,
-                        allowedMimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp'],
-                        fileSizeLimit: 5242880 // 5MB
-                    }
-                }
-            ];
-            
-            for (const bucketConfig of requiredBuckets) {
-                const existingBucket = buckets?.find(bucket => bucket.name === bucketConfig.name);
-                
-                if (!existingBucket) {
-                    console.log(`Creating ${bucketConfig.name} bucket...`);
-                    const { data: createBucket, error: createError } = await supabase.storage.createBucket(
-                        bucketConfig.name, 
-                        bucketConfig.options
-                    );
-                    
-                    if (createError) {
-                        console.warn(`Could not create ${bucketConfig.name} bucket:`, createError.message);
-                    } else {
-                        console.log(`${bucketConfig.name} bucket created successfully`);
-                    }
-                }
-            }
-            
-            return true;
-        } catch (error) {
-            console.warn('Error ensuring buckets exist:', error);
-            return false;
-        }
-    },
-
-    // === SUPABASE STORAGE METHODS ===
-
-    // Upload profile picture to Supabase Storage with improved error handling
-    async uploadProfilePicture(userId, file) {
-        if (!supabase) {
-            console.log('Supabase not available');
-            return null;
-        }
-
-        try {
-            const fileExt = file.name.split('.').pop();
-            const fileName = `${userId}/profile.${fileExt}`;
-
-            // First, try to create/check if the bucket exists
-            const { data: buckets, error: bucketsError } = await supabase.storage.listBuckets();
-            const profilePicturesBucket = buckets?.find(bucket => bucket.name === 'profile-pictures');
-            
-            if (!profilePicturesBucket) {
-                console.warn('Profile pictures bucket does not exist. Creating it now...');
-                const { data: createBucket, error: createError } = await supabase.storage.createBucket('profile-pictures', {
-                    public: true,
-                    allowedMimeTypes: ['image/*'],
-                    fileSizeLimit: 5242880 // 5MB
-                });
-                
-                if (createError) {
-                    console.warn('Could not create bucket automatically:', createError.message);
-                    return null;
-                }
-                console.log('Profile pictures bucket created successfully');
-            }
-
-            const { data, error } = await supabase.storage
-                .from('profile-pictures')
-                .upload(fileName, file, {
-                    cacheControl: '3600',
-                    upsert: true // This will overwrite existing files
-                });
-
-            if (error) {
-                console.warn('Supabase storage upload warning:', error.message);
-                
-                // If it's a bucket not found error, return null to trigger Firebase fallback
-                if (error.message.includes('Bucket not found') || error.message.includes('bucket does not exist')) {
-                    console.warn('Bucket issue detected - will use Firebase fallback');
-                }
-                return null;
-            }
-
-            // Get the public URL for the uploaded file
-            const { data: publicUrlData } = supabase.storage
-                .from('profile-pictures')
-                .getPublicUrl(fileName);
-
-            console.log('Profile picture uploaded to Supabase:', publicUrlData.publicUrl);
-            
-            // Update user profile with new picture URL
-            await this.updateUserProfilePicture(userId, publicUrlData.publicUrl);
-            
-            return publicUrlData.publicUrl;
-        } catch (error) {
-            console.warn('Error uploading profile picture to Supabase:', error);
-            return null;
-        }
-    },
-
-    // Update user profile picture URL in Supabase
-    async updateUserProfilePicture(userId, pictureUrl) {
-        if (!supabase) return null;
-
-        try {
-            const { data, error } = await supabase
-                .from('user_profiles')
-                .update({
-                    profile_picture_url: pictureUrl,
-                    updated_at: new Date().toISOString()
-                })
-                .eq('id', userId)
-                .select()
-                .single();
-
-            if (error) {
-                console.warn('Supabase profile picture update warning:', error.message);
-                return null;
-            }
-            console.log('Profile picture URL updated in Supabase:', data);
-            return data;
-        } catch (error) {
-            console.warn('Error updating profile picture URL in Supabase:', error);
-            return null;
-        }
-    },
-
-    // === SUPABASE REFERRAL METHODS ===
-
-    // Generate and store referral code in Supabase
-    async generateReferralCode(userId, displayName) {
-        if (!supabase) return null;
-
-        try {
-            const code = userId.substring(0, 6).toUpperCase();
-
-            const { data, error } = await supabase
-                .from('referral_codes')
-                .upsert({
-                    user_id: userId,
-                    code: code,
-                    created_at: new Date().toISOString(),
-                    updated_at: new Date().toISOString()
-                }, { onConflict: 'user_id' })
-                .select()
-                .single();
-
-            if (error) {
-                console.warn('Supabase referral code generation warning:', error.message);
-                return null;
-            }
-            console.log('Referral code generated in Supabase:', data);
-            return data.code;
-        } catch (error) {
-            console.warn('Error generating referral code in Supabase:', error);
-            return null;
-        }
-    },
-
-    // Get user's referral code from Supabase
-    async getUserReferralCode(userId) {
-        if (!supabase) return null;
-
-        try {
-            const { data, error } = await supabase
-                .from('referral_codes')
-                .select('code')
-                .eq('user_id', userId)
-                .single();
-
-            if (error) {
-                console.warn('Supabase referral code fetch warning:', error.message);
-                return null;
-            }
-            return data?.code;
-        } catch (error) {
-            console.warn('Error fetching referral code from Supabase:', error);
-            return null;
-        }
-    },
-
-    // Validate referral code and get referrer info
-    async validateReferralCode(code) {
-        if (!supabase) return null;
-
-        try {
-            const { data, error } = await supabase
-                .from('referral_codes')
-                .select(`
-                    user_id,
-                    user_profiles!inner(display_name, email)
-                `)
-                .eq('code', code.toUpperCase())
-                .single();
-
-            if (error) {
-                console.warn('Supabase referral validation warning:', error.message);
-                return null;
-            }
-            return {
-                referrerId: data.user_id,
-                referrerName: data.user_profiles.display_name
-            };
-        } catch (error) {
-            console.warn('Error validating referral code in Supabase:', error);
-            return null;
-        }
-    },
-
-    // Create referral relationship
-    async createReferralRelationship(referrerId, referredId, referralCode) {
-        if (!supabase) return null;
-
-        try {
-            const { data, error } = await supabase
-                .from('referrals')
-                .insert({
-                    referrer_id: referrerId,
-                    referred_id: referredId,
-                    referral_code: referralCode,
-                    created_at: new Date().toISOString()
-                })
-                .select()
-                .single();
-
-            if (error) {
-                console.warn('Supabase referral relationship creation warning:', error.message);
-                return null;
-            }
-            
-            // Update referral stats
-            await this.updateReferralStats(referrerId);
-            
-            console.log('Referral relationship created in Supabase:', data);
-            return data;
-        } catch (error) {
-            console.warn('Error creating referral relationship in Supabase:', error);
-            return null;
-        }
-    },
-
-    // Update referral statistics
-    async updateReferralStats(userId) {
-        if (!supabase) return null;
-
-        try {
-            // Count total referrals
-            const { count } = await supabase
-                .from('referrals')
-                .select('*', { count: 'exact', head: true })
-                .eq('referrer_id', userId);
-
-            // Update referral code stats
-            await supabase
-                .from('referral_codes')
-                .update({
-                    total_uses: count || 0,
-                    updated_at: new Date().toISOString()
-                })
-                .eq('user_id', userId);
-
-            // Update user profile stats
-            await supabase
-                .from('user_profiles')
-                .update({
-                    total_referrals: count || 0,
-                    updated_at: new Date().toISOString()
-                })
-                .eq('id', userId);
-
-            console.log(`Updated referral stats for user ${userId}: ${count} referrals`);
-            return count;
-        } catch (error) {
-            console.warn('Error updating referral stats in Supabase:', error);
-            return null;
-        }
-    },
-
-    // Get user's referrals
-    async getUserReferrals(userId) {
-        if (!supabase) return [];
-
-        try {
-            const { data, error } = await supabase
-                .from('referrals')
-                .select(`
-                    *,
-                    user_profiles!referred_id(display_name, email, current_tier, created_at)
-                `)
-                .eq('referrer_id', userId)
-                .order('created_at', { ascending: false });
-
-            if (error) {
-                console.warn('Supabase referrals fetch warning:', error.message);
-                return [];
-            }
-            return data || [];
-        } catch (error) {
-            console.warn('Error fetching referrals from Supabase:', error);
-            return [];
-        }
-    },
-
-    // === CROSS-PLATFORM SYNC METHODS ===
-
-    // Sync referral data from Firebase to Supabase
-    async syncReferralDataToSupabase(userId) {
-        if (!supabase) return false;
-
-        try {
-            // Get Firebase referral data
-            const userRef = doc(db, "users", userId);
-            const userSnap = await getDoc(userRef);
-            
-            if (!userSnap.exists()) return false;
-            
-            const userData = userSnap.data();
-            
-            // Sync referral code if exists
-            if (userData.referralCode) {
-                await this.generateReferralCode(userId, userData.username);
-            }
-            
-            // Sync referred users
-            if (userData.referredBy) {
-                // This user was referred, create the relationship
-                const referralCode = userData.referralCode?.substring(4) || ''; // Remove REF- prefix
-                await this.createReferralRelationship(userData.referredBy, userId, referralCode);
-            }
-            
-            console.log('Referral data synced from Firebase to Supabase for user:', userId);
-            return true;
-        } catch (error) {
-            console.warn('Error syncing referral data to Supabase:', error);
-            return false;
-        }
-    }
-};
-
-// ===== Helper: Clear dynamic assets =====
-function clearDynamicAssets() {
-    document.querySelectorAll("script[data-dynamic], link[data-dynamic], style[data-dynamic]").forEach(el => el.remove());
+    // Initialize other app features
+    initializeAppSecurity();
+    manageInitialPageLoad();
 }
 
-// ===== Modal System =====
-function showModal(options) {
-    const defaults = {
-        message: '',
-        confirmText: 'OK',
+function hasAccess(requiredTier) {
+    const tierLevels = {
+        'Free Tier': 0,
+        'Premium Tier': 1,
+        'VIP Tier': 2,
+        'VVIP Tier': 3
+    };
+    
+    const currentLevel = tierLevels[verifiedTier] || 0;
+    const requiredLevel = tierLevels[requiredTier] || 0;
+    
+    return currentLevel >= requiredLevel;
+}
+
+function showUpgradeModal(requiredTier) {
+    showModal({
+        message: `This feature requires ${requiredTier} subscription.\n\nWould you like to upgrade now?`,
+        confirmText: 'Upgrade',
         cancelText: 'Cancel',
-        onConfirm: () => {},
-        onCancel: () => {},
-        confirmClass: 'btn-primary',
-        showCancel: false,
-        inputType: null, // e.g., 'text' or 'password'
-        inputValue: '',
-        inputPlaceholder: ''
-    };
-    const config = { ...defaults, ...options };
-
-    let modal = document.getElementById("customModal");
-    if (!modal) {
-        modal = document.createElement("div");
-        modal.id = "customModal";
-        modal.className = "modal";
-        modal.innerHTML = `
-            <div class="modal-content">
-                <p id="modalMessage"></p>
-                <input type="text" id="modalInput" style="display: none;" />
-                <div class="modal-actions">
-                    <button id="modalCancel"></button>
-                    <button id="modalConfirm"></button>
-                </div>
-            </div>`;
-        document.body.appendChild(modal);
-    }
-
-    const modalMessage = modal.querySelector("#modalMessage");
-    const confirmBtn = modal.querySelector("#modalConfirm");
-    const cancelBtn = modal.querySelector("#modalCancel");
-    const modalInput = modal.querySelector("#modalInput");
-
-    modalMessage.textContent = config.message;
-    confirmBtn.textContent = config.confirmText;
-    confirmBtn.className = config.confirmClass;
-    cancelBtn.textContent = config.cancelText;
-    cancelBtn.className = 'btn-secondary';
-    cancelBtn.style.display = config.showCancel ? 'inline-block' : 'none';
-    modal.style.display = "flex";
-
-    // Handle input field
-    if (config.inputType) {
-        modalInput.style.display = 'block';
-        modalInput.type = config.inputType;
-        modalInput.value = config.inputValue;
-        modalInput.placeholder = config.inputPlaceholder;
-    } else {
-        modalInput.style.display = 'none';
-    }
-
-    const cleanup = () => { modal.style.display = "none"; confirmBtn.onclick = null; cancelBtn.onclick = null; modalInput.style.display = 'none'; };
-    confirmBtn.onclick = () => { cleanup(); config.onConfirm(modalInput.value); };
-    cancelBtn.onclick = () => { cleanup(); config.onCancel(); };
-}
-
-// ===== Theme Functions =====
-function applyTheme(isDark) {
-    document.documentElement.classList.toggle("dark-mode", isDark);
-}
-
-function initializeTheme() {
-    const isDark = localStorage.getItem('darkMode') === 'true';
-    applyTheme(isDark);
-}
-
-let cleanupAnimation = () => {}; // A function to stop the animation
-
-function toggleBackgroundAnimation(show) {
-    let animationArea = document.querySelector('.area');
-    cleanupAnimation(); // Always cleanup previous state
-
-    if (show) {
-        if (!animationArea) {
-            animationArea = document.createElement('div');
-            animationArea.className = 'area';
-            const list = document.createElement('ul');
-            list.className = 'circles';
-            for (let i = 0; i < 10; i++) {
-                const li = document.createElement('li');
-                list.appendChild(li);
-            }
-            animationArea.appendChild(list);
-            document.body.prepend(animationArea);
-        }
-        cleanupAnimation = initInteractiveBackground(animationArea); // Start new animation
-    } else {
-        if (animationArea) {
-            animationArea.remove();
-        }
-    }
-}
-const CLASS_TO_TIER = { free: "Free Tier", premium: "Premium Tier", vip: "VIP / Elite Tier", vvip: "VVIP / Pro Elite Tier" };
-const TIER_ORDER = ["Free Tier", "Premium Tier", "VIP / Elite Tier", "VVIP / Pro Elite Tier"];
-
-async function updateCurrentTierDisplay(userId) {
-    const tierDisplay = document.getElementById("user-tier");
-    if (!tierDisplay || !userId) return;
- 
-    let tier = "Free Tier";
-    let expiry = null;
-    
-    // Try Supabase first
-    try {
-        const supabaseUser = await SupabaseService.getUserSubscription(userId);
-        if (supabaseUser) {
-            tier = supabaseUser.current_tier || "Free Tier";
-            expiry = supabaseUser.subscription_end;
-            console.log('Tier data loaded from Supabase:', { tier, expiry });
-        } else {
-            console.log('No Supabase data found, falling back to Firebase');
-        }
-    } catch (error) {
-        console.warn('Supabase tier fetch failed, using Firebase fallback:', error);
-    }
-    
-    // Fallback to Firebase if Supabase failed
-    if (tier === "Free Tier" && !expiry) {
-        try {
-            const snapshot = await getDoc(doc(db, "users", userId));
-            if (snapshot.exists()) {
-                const userData = snapshot.data();
-                tier = userData.tier || "Free Tier";
-                expiry = userData.tierExpiry;
-                console.log('Tier data loaded from Firebase fallback:', { tier, expiry });
-            }
-        } catch (error) {
-            console.warn('Firebase fallback also failed:', error);
-        }
-    }
- 
-    tierDisplay.textContent = tier;
- 
-    const expiryDisplay = document.getElementById("tier-expiry");
-    if (expiryDisplay) {
-        if (expiry && tier !== 'Free Tier') {
-            expiryDisplay.textContent = `Expires on: ${new Date(expiry).toLocaleDateString()}`;
-            expiryDisplay.style.display = 'block';
-        } else {
-            expiryDisplay.style.display = 'none';
-        }
-    }
-    verifiedTier = tier; // update memory
-    enforceTierRestrictions();
-}
-
-// Flutterwave payment + trial/free handling
-async function handlePayment(userId, tier, amount, period) {
-    let paymentCompleted = false; // Flag to prevent onclose modal after success
-
-    if (parseFloat(amount) === 0) {
-        await updateUserTier(userId, tier, period);
-        showModal({ message: `You have selected the ${tier}` });
-        return;
-    }
-
-    const txRef = `TX-${Date.now()}`;
-
-    // Get current app URL for redirect
-    const currentUrl = window.location.origin + window.location.pathname;
-    const redirectUrl = currentUrl + '?payment=success';
-    
-    FlutterwaveCheckout({
-        public_key: FLWPUBK,
-        tx_ref: txRef,
-        amount: amount,
-        currency: "NGN",
-        payment_options: "card,ussd,qr,banktransfer",
-        redirect_url: redirectUrl,
-        customer: {
-            email: auth.currentUser?.email || "user@example.com",
-            name: auth.currentUser?.displayName || "User",
-        },
-        customizations: {
-            title: "Statwise Subscription",
-            description: `${tier} (${period}) plan`,
-            logo: window.location.origin + "/Assets/Icons/gem.svg"
-        },
-        callback: async function(data) {
-            paymentCompleted = true;
-            this.close(); // Close the modal immediately
-
-            if (data.status === "successful" || data.status === "completed") {
-                showLoader();
-                try {
-                    // Sync payment data to Supabase (non-blocking)
-                    const userId = auth.currentUser?.uid;
-                    console.log('🔄 PAYMENT SUCCESS: Processing for user:', userId);
-                    console.log('🔄 Payment data:', { transaction_id: data.transaction_id, tier, period, amount });
-                    
-                    if (!userId) {
-                        throw new Error('No authenticated user found during payment processing');
-                    }
-                    
-                    // STEP 1: Ensure user profile exists in Supabase first
-                    console.log('📝 STEP 1: Ensuring user profile exists in Supabase...');
-                    const userSyncResult = await SupabaseService.syncUserProfile(auth.currentUser, {
-                        current_tier: 'Free Tier', // Default tier before upgrade
-                        subscription_status: 'inactive'
-                    });
-                    console.log('📝 User profile sync result:', userSyncResult);
-                    
-                    // STEP 2: Log payment transaction to Supabase
-                    console.log('💳 STEP 2: Logging payment transaction...');
-                    const paymentLogResult = await SupabaseService.logPaymentTransaction(userId, {
-                        transaction_id: data.transaction_id,
-                        tx_ref: data.tx_ref,
-                        amount: amount,
-                        currency: "NGN",
-                        status: data.status,
-                        tier: tier,
-                        period: period
-                    });
-                    
-                    if (paymentLogResult) {
-                        console.log('✅ Payment successfully logged to Supabase');
-                    } else {
-                        console.warn('⚠️ Failed to log payment to Supabase, but continuing...');
-                    }
-                    
-                    // STEP 3: Log subscription event to Supabase
-                    console.log('📊 STEP 3: Logging subscription event...');
-                    const eventResult = await SupabaseService.logSubscriptionEvent(userId, 'subscription_purchase', {
-                        tier: tier,
-                        period: period,
-                        transaction_id: data.transaction_id,
-                        amount: amount
-                    });
-                    console.log('📊 Subscription event logged:', eventResult);
-                        
-                    // STEP 4: Calculate subscription dates
-                    console.log('📅 STEP 4: Calculating subscription dates...');
-                    const startDate = new Date().toISOString();
-                    const endDate = new Date();
-                    if (period === "monthly") {
-                        endDate.setMonth(endDate.getMonth() + 1);
-                    } else if (period === "annual") {
-                        endDate.setFullYear(endDate.getFullYear() + 1);
-                    }
-                    console.log('📅 Dates calculated:', { startDate, endDate: endDate.toISOString() });
-                    
-                    // STEP 5: Update subscription status in Supabase (PRIMARY SOURCE)
-                    console.log('🔄 STEP 5: Updating subscription in Supabase...');
-                    const supabaseUpdate = await SupabaseService.updateUserSubscription(userId, {
-                        tier: tier,
-                        period: period,
-                        start_date: startDate,
-                        end_date: endDate.toISOString(),
-                        status: 'active'
-                    });
-                    
-                    if (supabaseUpdate) {
-                        console.log('✅ Subscription successfully updated in Supabase:', supabaseUpdate);
-                        
-                        // STEP 6: Sync to Firebase for backward compatibility
-                        console.log('🔄 STEP 6: Syncing to Firebase...');
-                        try {
-                            await updateUserTier(userId, tier, period, endDate.toISOString());
-                            console.log('✅ Firebase sync completed');
-                        } catch (firebaseError) {
-                            console.warn('⚠️ Firebase sync failed but Supabase succeeded:', firebaseError);
-                        }
-                    } else {
-                        console.error('❌ Failed to update subscription in Supabase');
-                        console.log('🔄 Attempting Firebase-only update as fallback...');
-                        await updateUserTier(userId, tier, period, endDate.toISOString());
-                    }
-
-                    // STEP 7: Payment verification completed via Supabase logging
-                    console.log('✅ STEP 7: Payment verification completed via Supabase logging');
-                    console.log('🎉 SUCCESS: All payment processing completed successfully!');
-                    // Enhanced success notification with payment details
-                    const successMessage = `🎉 Payment Successful!\n\nTransaction ID: ${data.transaction_id}\nTier: ${tier}\nAmount: ₦${amount.toLocaleString()}\n\nYour ${tier} subscription is now active!`;
-                    showModal({ 
-                        message: successMessage,
-                        confirmClass: 'btn-success',
-                        confirmText: 'Continue'
-                    });
-                    
-                    // Navigate to subscriptions page to show updated status
-                    setTimeout(() => {
-                        loadPage('subscriptions');
-                    }, 2000);
-                } catch (error) {
-                    console.error("Error verifying payment:", error);
-                    let errorMessage = "Payment verification failed. Please contact support with your transaction details.";
-                    
-                    if (error.code === 'functions/cancelled') {
-                        errorMessage = "Payment verification was cancelled. Please try again.";
-                    } else if (error.code === 'functions/deadline-exceeded') {
-                        errorMessage = "Payment verification timed out. Your payment may still be processing.";
-                    } else if (error.code === 'functions/unavailable') {
-                        errorMessage = "Payment service is temporarily unavailable. Please try again later.";
-                    } else if (error.message && error.message.includes('network')) {
-                        errorMessage = "Network error during payment verification. Please check your connection and try again.";
-                    }
-                    
-                    showModal({ 
-                        message: errorMessage,
-                        confirmClass: 'btn-danger',
-                        confirmText: 'Contact Support',
-                        onConfirm: () => window.open('mailto:support@statwise.com?subject=Payment Issue')
-                    });
-                } finally {
-                    hideLoader();
-                }
-            } else {
-                // Log failed payment to Supabase for tracking
-                const userId = auth.currentUser?.uid;
-                if (userId) {
-                    SupabaseService.logPaymentTransaction(userId, {
-                        transaction_id: data.transaction_id || 'unknown',
-                        tx_ref: data.tx_ref || txRef,
-                        amount: amount,
-                        currency: "NGN",
-                        status: data.status || 'failed',
-                        tier: tier,
-                        period: period
-                    });
-                }
-                
-                showModal({ 
-                    message: `❌ Payment Failed\n\nStatus: ${data.status}\nTransaction ID: ${data.transaction_id || 'N/A'}\n\nPlease try again or contact support if the issue persists.`, 
-                    confirmClass: 'btn-danger',
-                    confirmText: 'Try Again'
-                });
-            }
-        },
-        onclose: function () {
-            if (!paymentCompleted) {
-                showModal({ message: "Payment window closed. Your transaction was not completed." });
-            }
-        }
-    });
-}
-
-async function updateUserTier(userId, tier, period = null, expiry = null) {
-    if (!userId || !tier) {
-        console.error('updateUserTier called with invalid parameters');
-        throw new Error('Invalid user ID or tier specified');
-    }
-
-    const updateData = {
-        current_tier: tier,
-        subscription_period: period,
-        subscription_end: expiry,
-        subscription_status: tier === 'Free Tier' ? 'inactive' : 'active',
-        updated_at: new Date().toISOString()
-    };
-
-    if (tier === 'Free Tier' || !expiry) {
-        updateData.subscription_end = null;
-        updateData.subscription_period = null;
-        updateData.subscription_status = 'inactive';
-    }
-
-    try {
-        // Primary update in Supabase
-        const supabaseResult = await SupabaseService.updateUserSubscription(userId, {
-            tier: tier,
-            period: period,
-            start_date: new Date().toISOString(),
-            end_date: expiry,
-            status: tier === 'Free Tier' ? 'inactive' : 'active'
-        });
-
-        if (supabaseResult) {
-            console.log('Subscription updated successfully in Supabase');
-        } else {
-            console.warn('Supabase update failed, trying Firebase fallback');
-        }
-
-        // Sync to Firebase for backward compatibility
-        const userRef = doc(db, "users", userId);
-        const firebaseUpdateData = {
-            tier: tier,
-            tierExpiry: expiry
-        };
-        
-        if (tier === 'Free Tier' || !expiry) {
-            firebaseUpdateData.tierExpiry = null;
-            firebaseUpdateData.autoRenew = false;
-        }
-        
-        await updateDoc(userRef, firebaseUpdateData);
-        
-        // Update in-memory tier
-        verifiedTier = tier;
-        await updateCurrentTierDisplay(userId);
-        enforceTierRestrictions();
-        
-        console.log(`User tier updated to ${tier} (expires: ${expiry || 'never'})`);
-    } catch (error) {
-        console.error('Failed to update user tier:', error);
-        let errorMessage = 'Failed to update subscription. Please try again.';
-        
-        if (error.code === 'firestore/permission-denied') {
-            errorMessage = 'Permission denied. Please contact support.';
-        } else if (error.code === 'firestore/unavailable') {
-            errorMessage = 'Service temporarily unavailable. Please try again later.';
-        } else if (error.message && error.message.includes('network')) {
-            errorMessage = 'Network error. Please check your connection and try again.';
-        }
-        
-        throw new Error(errorMessage);
-    }
-}
-
-// Attach subscription buttons with upgrade fully visible
-async function attachSubscriptionButtons(userId) {
-    if (!userId) return;
-
-    const snapshot = await getDoc(doc(db, "users", userId));
-    const currentTier = snapshot.exists() ? snapshot.data().tier : "Free Tier";
-    const currentRank = TIER_ORDER.indexOf(currentTier);
-
-    document.querySelectorAll(".subscription-card").forEach((card) => {
-        const btn = card.querySelector(".subscribe-btn");
-        if (!btn) return;
-
-        const tierClass = Object.keys(CLASS_TO_TIER).find(cls => card.classList.contains(cls));
-        const cardTier = tierClass ? CLASS_TO_TIER[tierClass] : (card.querySelector("h2")?.textContent.trim() || "Free Tier");
-        const cardRank = TIER_ORDER.indexOf(cardTier);
-
-        card.classList.remove('is-current-plan');
-        btn.style.display = 'inline-block';
-
-        if (cardRank < currentRank) {
-            btn.style.display = 'none'; // Hide downgrade options
-        } else if (cardRank === currentRank) {
-            card.classList.add('is-current-plan');
-            btn.textContent = 'Current Plan';
-            btn.disabled = true;
-        } else { // cardRank > currentRank
-            btn.textContent = 'Upgrade';
-            btn.disabled = false;
-            btn.onclick = function(e) { // Use a function to ensure 'this' refers to the button
-                e.preventDefault();
-                const amount = parseFloat(btn.dataset.amount) || 0;
-                const period = btn.dataset.period || "monthly";
-                
-                showModal({
-                    message: `Proceed to upgrade to ${cardTier} for ₦${amount.toLocaleString()} (${period})?`,
-                    showCancel: true,
-                    confirmText: 'Proceed to Payment',
-                    onConfirm: () => handlePayment(userId, cardTier, amount, period)
-                });
-            };
-        }
-    });
-}
-
-async function initManageSubscriptionPage(userId) {
-    if (!userId) return;
-
-    const planInfoCard = document.getElementById('plan-info-card');
-    const changePlanBtn = document.getElementById('changePlanBtn');
-    const cancelContainer = document.getElementById('cancel-subscription-container');
-    const cancelBtn = document.getElementById('cancelSubscriptionBtn');
-    const autoRenewContainer = document.getElementById('auto-renew-container');
-    const viewPaymentHistoryBtn = document.getElementById('viewPaymentHistoryBtn');
-    const toggleAutoRenewBtn = document.getElementById('toggleAutoRenewBtn');
-
-    if (!planInfoCard || !changePlanBtn || !cancelContainer || !cancelBtn || !autoRenewContainer || !toggleAutoRenewBtn) return;
-
-    const TIER_BENEFITS = {
-        "Free Tier": ["Basic Access", "Limited Features", "Ads Supported"],
-        "Premium Tier": ["Full Access", "No Ads", "Priority Support"],
-        "VIP / Elite Tier": ["All Premium Features", "Exclusive Content", "VIP Support"],
-        "VVIP / Pro Elite Tier": ["All VIP Features", "1-on-1 Coaching", "Early Access"]
-    };
-
-    try {
-        let tier = "Free Tier";
-        let expiry = null;
-        let autoRenew = false;
-        
-        // Try Supabase first
-        const supabaseUser = await SupabaseService.getUserSubscription(userId);
-        if (supabaseUser) {
-            tier = supabaseUser.current_tier || "Free Tier";
-            expiry = supabaseUser.subscription_end;
-            autoRenew = supabaseUser.auto_renew ?? false;
-            console.log('Subscription data loaded from Supabase:', { tier, expiry, autoRenew });
-        } else {
-            // Fallback to Firebase
-            const userRef = doc(db, "users", userId);
-            const snapshot = await getDoc(userRef);
-            const userData = snapshot.exists() ? snapshot.data() : {};
-            tier = userData.tier || "Free Tier";
-            expiry = userData.tierExpiry;
-            autoRenew = userData.autoRenew ?? false;
-            console.log('Subscription data loaded from Firebase fallback:', { tier, expiry, autoRenew });
-        }
-
-        const benefits = TIER_BENEFITS[tier] || [];
-
-        if (tier === 'Free Tier') {
-            planInfoCard.innerHTML = `
-                <h2>You are on the Free Tier</h2>
-                <p>Upgrade your plan to unlock exclusive features, remove ads, and get priority support.</p>
-            `;
-            changePlanBtn.textContent = 'View Plans & Upgrade';
-            cancelContainer.style.display = 'none';
-            autoRenewContainer.style.display = 'none';
-        } else {
-            const benefitsList = benefits.map(b => `<li>${b}</li>`).join('');
-            const remainingDays = Math.ceil((new Date(expiry) - new Date()) / (1000 * 60 * 60 * 24));
-            const remainingDaysText = remainingDays > 0 ? `${remainingDays} day(s) remaining` : 'Expires today';
-
-            planInfoCard.innerHTML = `
-                <h2>Your Current Plan: ${tier}</h2>
-                <p><strong>Status:</strong> Active until ${new Date(expiry).toLocaleDateString()}</p>
-                <h3>Plan Benefits:</h3>
-                <ul>${benefitsList}</ul>
-                <div class="remaining-days-indicator">${remainingDaysText}</div>
-            `;
-            changePlanBtn.textContent = 'Change Plan';
-            cancelContainer.style.display = 'block';
-            autoRenewContainer.style.display = 'block';
-
-            // Configure auto-renew button
-            if (autoRenew) {
-                toggleAutoRenewBtn.textContent = 'Cancel Auto-Renewal';
-                toggleAutoRenewBtn.classList.add('btn-danger');
-            } else {
-                toggleAutoRenewBtn.textContent = 'Enable Auto-Renewal';
-                toggleAutoRenewBtn.classList.remove('btn-danger');
-            }
-        }
-
-        changePlanBtn.onclick = () => loadPage('subscriptions', userId);
-
-        toggleAutoRenewBtn.onclick = async () => {
-            const newAutoRenewState = !autoRenew;
-            await updateDoc(doc(db, "users", userId), { autoRenew: newAutoRenewState });
-            const message = newAutoRenewState ? "Auto-renewal has been enabled." : "Auto-renewal has been cancelled.";
-            showModal({ message });
-            await initManageSubscriptionPage(userId); // Refresh content
-        };
-
-        cancelBtn.onclick = () => {
-            const benefitsLost = TIER_BENEFITS[tier]
-                .filter(b => !TIER_BENEFITS["Free Tier"].includes(b))
-                .map(b => `<li>${b}</li>`)
-                .join('');
-
-            const cancellationMessage = `
-                <p>Are you sure you want to cancel? You will lose access to these benefits:</p>
-                <ul style="text-align: left; padding-left: 20px; margin-top: 10px;">${benefitsLost}</ul>
-            `;
-
-            showModal({
-                message: cancellationMessage,
-                showCancel: true,
-                confirmText: 'Yes, Cancel',
-                confirmClass: 'btn-danger',
-                onConfirm: async () => {
-                    await updateUserTier(userId, 'Free Tier', null, null);
-                    await addHistoryUnique(userId, "Subscription cancelled");
-                    showModal({ message: "Your subscription has been successfully cancelled." });
-                    await initManageSubscriptionPage(userId); // Refresh the page content
-                }
-            });
-        };
-    } catch (error) {
-        console.error("Failed to load subscription management page:", error);
-        planInfoCard.innerHTML = `<h2>Error</h2><p>Could not load your subscription details. Please try again later.</p>`;
-    }
-
-    if (viewPaymentHistoryBtn) {
-        viewPaymentHistoryBtn.onclick = () => {
-            sessionStorage.setItem('targetTab', 'transactions-tab');
-            loadPage('history', userId);
-        };
-    }
-}
-
-// ===== Tier Restrictions & Watchdog =====
-function enforceTierRestrictions() {
-    document.querySelectorAll("[data-tier]").forEach(el => {
-        const requiredTier = el.dataset.tier;
-        if (!requiredTier) return;
-
-        const requiredTierName = CLASS_TO_TIER[requiredTier] || requiredTier;
-        const hasAccess = TIER_ORDER.indexOf(verifiedTier) >= TIER_ORDER.indexOf(requiredTierName);
-
-        // Handle navigation buttons separately: show/hide them completely.
-        if (el.matches('.bottom-nav button')) {
-            el.style.display = hasAccess ? 'flex' : 'none';
-        } else if (el.matches('.subscription-card') || el.closest('.subscription-card')) {
-            // Never lock subscription cards - they should always show upgrade options
-            el.style.opacity = "1";
-            el.dataset.locked = "false";
-            el.removeAttribute("title");
-        } else {
-            // For other elements (like cards), lock them with an overlay effect.
-            if (!hasAccess) {
-                el.style.opacity = "0.8";
-                el.dataset.locked = "true";
-                el.setAttribute("title", `Requires ${requiredTierName} subscription`);
-            } else {
-                el.style.opacity = "1";
-                el.dataset.locked = "false";
-                el.removeAttribute("title");
-            }
-        }
-    });
-}
-
-function startTierWatchdog(userId) {
-    if (!userId) return;
-    const userRef = doc(db, "users", userId);
-    onSnapshot(userRef, async (snapshot) => {
-        if (!snapshot.exists()) return;
-        const userData = snapshot.data();
-        const dbTier = userData.tier || "Free Tier";
-
-        // Always trust the database as the single source of truth.
-        if (verifiedTier !== dbTier) {
-            verifiedTier = dbTier;
-        }
-        enforceTierRestrictions();
-    });
-}
-
-// ===== Firebase Cloud Messaging (FCM) Functions =====
-async function initFirebaseMessaging(userId) {
-    try {
-        const permission = await Notification.requestPermission();
-        if (permission === 'granted') {
-            console.log('Notification permission granted.');
-            // IMPORTANT: Replace the placeholder below with your actual VAPID key from the Firebase Console.
-            // Go to Project Settings > Cloud Messaging > Web configuration > Key pair.
-            const vapidKey = 'BM1G4B3crWgsfCGig6_i1crB3GAGBO8GAWlDVHP5jwTq1ltxb4S3e_IBJRUThKdHOeVf9VTmBNgFffDjwRNXeqU';
-            const fcmToken = await getToken(messaging, { vapidKey: vapidKey });
-
-            if (fcmToken) {
-                // Save the new token to the user's document
-                const userRef = doc(db, "users", userId);
-                await updateDoc(userRef, {
-                    fcmTokens: arrayUnion(fcmToken),
-                    notifications: true // Also enable the general flag
-                });
-                console.log('FCM Token saved:', fcmToken);
-                showModal({ message: 'Push notifications enabled successfully!' });
-            } else {
-                console.log('No registration token available. Request permission to generate one.');
-                showModal({ 
-                    message: 'Unable to set up push notifications. Please try refreshing the page.', 
-                    confirmClass: 'btn-warning' 
-                });
-            }
-        } else if (permission === 'denied') {
-            console.log('Notification permission denied.');
-            // If permission is denied, ensure the toggle is off
-            const userRef = doc(db, "users", userId);
-            await updateDoc(userRef, { notifications: false });
-            const toggle = document.getElementById('predictionAlertsToggle');
-            if (toggle) toggle.checked = false;
-            
-            showModal({ 
-                message: 'Push notifications are blocked in your browser. To enable them, click the notification icon in your browser\'s address bar and allow notifications for this site.', 
-                confirmClass: 'btn-warning',
-                confirmText: 'Got it'
-            });
-        } else {
-            console.log('Notification permission default - user dismissed the prompt.');
-            showModal({ 
-                message: 'Push notifications were not enabled. You can enable them later in your profile settings.', 
-                confirmClass: 'btn-warning' 
-            });
-        }
-    } catch (error) {
-        console.error('Error setting up push notifications:', error);
-        let errorMessage = 'Failed to set up push notifications. This feature may not be supported on your device.';
-        
-        if (error.code === 'messaging/failed-service-worker-registration') {
-            errorMessage = 'Failed to register service worker for notifications. Please refresh the page and try again.';
-        } else if (error.code === 'messaging/unsupported-browser') {
-            errorMessage = 'Push notifications are not supported in your browser.';
-        } else if (error.code === 'messaging/permission-blocked') {
-            errorMessage = 'Notification permissions are blocked. Please enable them in your browser settings.';
-        }
-        
-        showModal({ message: errorMessage, confirmClass: 'btn-warning' });
-        
-        // Ensure the toggle is off on error
-        const toggle = document.getElementById('predictionAlertsToggle');
-        if (toggle) toggle.checked = false;
-    }
-
-    // Handle foreground messages
-    onMessage(messaging, (payload) => {
-        console.log('Message received in foreground.', payload);
-        showModal({
-            message: `${payload.notification.title}: ${payload.notification.body}`,
-            confirmText: 'Awesome!',
-        });
-    });
-}
-
-/**
- * Fetches and displays user statistics on the profile page.
- * @param {string} userId The current user's ID.
- * @param {object} userData The user's document data.
- */
-async function displayUserStats(userId, userData) {
-    const memberSinceEl = document.getElementById('memberSinceStat');
-    const totalPredictionsEl = document.getElementById('totalPredictionsStat');
-    const winRateEl = document.getElementById('winRateStat');
-
-    if (!memberSinceEl || !totalPredictionsEl || !winRateEl) return;
-
-    // 1. Member Since
-    memberSinceEl.textContent = new Date(userData.createdAt).toLocaleDateString();
-
-    // 2. Predictions and Win Rate
-    const historyRef = collection(db, "users", userId, "history");
-    const predictionsQuery = query(historyRef, where("match", "!=", null));
-    const querySnapshot = await getDocs(predictionsQuery);
-
-    let total = 0;
-    let wins = 0;
-    let losses = 0;
-
-    querySnapshot.forEach(doc => {
-        const data = doc.data();
-        total++;
-        if (data.result === 'win') wins++;
-        if (data.result === 'loss') losses++;
-    });
-
-    totalPredictionsEl.textContent = total;
-    const winnableGames = wins + losses;
-    winRateEl.textContent = winnableGames > 0 ? `${Math.round((wins / winnableGames) * 100)}%` : 'N/A';
-}
-// ===== Profile Functions =====
-/**
- * Initializes all interactive elements on the profile page.
- * @param {string} userId - The current user's ID.
- */
-async function initProfilePage(userId) {
-    if (!userId) return;
-    await updateCurrentTierDisplay(userId); // Ensure tier info is loaded and displayed
-
-    const userRef = doc(db, "users", userId);
-    const snapshot = await getDoc(userRef);
-    const userData = snapshot.exists() ? snapshot.data() : {};
-
-    // 1. Avatar and User Info
-    const avatarContainer = document.getElementById('profileAvatarContainer');
-    const avatarUploadInput = document.getElementById('avatarUpload');
-    const userNameEl = document.getElementById('userName');
-    const editUsernameBtn = document.getElementById('editUsernameBtn');
-    const userEmailEl = document.getElementById('userEmail');
-
-    const displayAvatar = (url, name) => {
-        if (!avatarContainer) return;
-        if (url) {
-            avatarContainer.innerHTML = `<img src="${url}" alt="Profile Picture" class="profile-avatar-img">`;
-        } else {
-            const initial = name ? name.charAt(0).toUpperCase() : 'U';
-            avatarContainer.innerHTML = `<span>${initial}</span>`;
-        }
-    };
-
-    displayAvatar(userData.photoURL, userData.username);
-    if (userNameEl) userNameEl.textContent = userData.username || 'User';
-    if (userEmailEl) userEmailEl.textContent = userData.email || auth.currentUser?.email || 'N/A';
-
-    if (avatarContainer && avatarUploadInput) {
-        avatarContainer.addEventListener('click', () => avatarUploadInput.click());
-
-        avatarUploadInput.addEventListener('change', async (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-
-            // Validate file type and size
-            const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-            const maxSize = 5 * 1024 * 1024; // 5MB
-
-            if (!allowedTypes.includes(file.type)) {
-                showModal({ 
-                    message: 'Please select a valid image file (JPG, PNG, GIF, or WebP).', 
-                    confirmClass: 'btn-danger' 
-                });
-                e.target.value = ''; // Clear the input
-                return;
-            }
-
-            if (file.size > maxSize) {
-                showModal({ 
-                    message: 'Image file is too large. Please choose a file smaller than 5MB.', 
-                    confirmClass: 'btn-danger' 
-                });
-                e.target.value = ''; // Clear the input
-                return;
-            }
-
-            showLoader();
-            
-            // Show upload progress to user
-            showModal({
-                message: '⏳ Uploading your profile picture...\nThis may take a moment.',
-                showCancel: false,
-                confirmText: 'Please Wait',
-                confirmDisabled: true
-            });
-            
-            try {
-                // Try Supabase Storage first, fallback to Firebase if needed
-                let downloadURL = await SupabaseService.uploadProfilePicture(userId, file);
-                
-                if (!downloadURL) {
-                    // Fallback to Firebase Storage if Supabase fails
-                    console.log('Supabase upload failed, falling back to Firebase Storage');
-                    showModal({
-                        message: '⏳ Using backup storage...\nAlmost done!',
-                        showCancel: false,
-                        confirmText: 'Please Wait',
-                        confirmDisabled: true
-                    });
-                    
-                    const storageRef = ref(storage, `profile_pictures/${userId}`);
-                    const uploadResult = await uploadBytes(storageRef, file);
-                    downloadURL = await getDownloadURL(uploadResult.ref);
-                }
-
-                // Update Firebase user document (maintain compatibility)
-                await updateDoc(userRef, { photoURL: downloadURL });
-                
-                // Sync to Supabase as well (non-blocking)
-                if (downloadURL && supabase) {
-                    SupabaseService.updateUserProfilePicture(userId, downloadURL)
-                        .catch(err => console.warn('Failed to sync profile picture to Supabase:', err));
-                }
-                
-                displayAvatar(downloadURL, userData.username);
-                await addHistoryUnique(userId, 'Updated profile picture');
-                showModal({ 
-                    message: '✅ Profile picture updated successfully!\nYour new picture is now visible.',
-                    confirmClass: 'btn-success',
-                    confirmText: 'Great!'
-                });
-            } catch (error) {
-                console.error("Avatar upload failed:", error);
-                let errorMessage = 'Failed to upload image. Please try again.';
-                
-                if (error.code === 'storage/unauthorized') {
-                    errorMessage = 'You do not have permission to upload images. Please contact support.';
-                } else if (error.code === 'storage/canceled') {
-                    errorMessage = 'Image upload was cancelled.';
-                } else if (error.code === 'storage/quota-exceeded') {
-                    errorMessage = 'Storage quota exceeded. Please contact support.';
-                } else if (error.message && error.message.includes('network')) {
-                    errorMessage = 'Network error. Please check your connection and try again.';
-                }
-                
-                showModal({ message: errorMessage, confirmClass: 'btn-danger' });
-                e.target.value = ''; // Clear the input on error
-            } finally {
-                hideLoader();
-            }
-        });
-    }
-
-    if (editUsernameBtn && userNameEl) {
-        editUsernameBtn.addEventListener('click', () => {
-            showModal({
-                message: 'Enter your new username:',
-                showCancel: true,
-                confirmText: 'Save',
-                inputType: 'text',
-                inputValue: userNameEl.textContent,
-                onConfirm: async (newUsername) => {
-                    if (newUsername && newUsername.trim() !== '' && newUsername !== userNameEl.textContent) {
-                        const trimmedUsername = newUsername.trim();
-                        
-                        // Validate username length and characters
-                        if (trimmedUsername.length < 2 || trimmedUsername.length > 30) {
-                            showModal({ 
-                                message: 'Username must be between 2 and 30 characters long.', 
-                                confirmClass: 'btn-danger' 
-                            });
-                            return;
-                        }
-                        
-                        if (!/^[a-zA-Z0-9_\-\s]+$/.test(trimmedUsername)) {
-                            showModal({ 
-                                message: 'Username can only contain letters, numbers, spaces, hyphens, and underscores.', 
-                                confirmClass: 'btn-danger' 
-                            });
-                            return;
-                        }
-
-                        showLoader();
-                        try {
-                            await updateDoc(userRef, { username: trimmedUsername });
-                            await auth.currentUser.updateProfile({ displayName: trimmedUsername });
-                            await addHistoryUnique(userId, `Username changed to ${trimmedUsername}`);
-                            userNameEl.textContent = trimmedUsername;
-                            showModal({ message: 'Username updated successfully!' });
-                        } catch (error) {
-                            console.error("Username update failed:", error);
-                            let errorMessage = 'Failed to update username. Please try again.';
-                            
-                            if (error.code === 'firestore/permission-denied') {
-                                errorMessage = 'You do not have permission to update your username.';
-                            } else if (error.message && error.message.includes('network')) {
-                                errorMessage = 'Network error. Please check your connection and try again.';
-                            }
-                            
-                            showModal({ message: errorMessage, confirmClass: 'btn-danger' });
-                        } finally {
-                            hideLoader();
-                        }
-                    }
-                }
-            });
-        });
-    }
-
-    // Display User Stats
-    await displayUserStats(userId, userData);
-
-    // 2. Dark Mode Toggle
-    const darkToggle = document.getElementById("darkModeToggle");
-    if (darkToggle) {
-        darkToggle.checked = localStorage.getItem('darkMode') === 'true';
-        darkToggle.addEventListener("change", () => {
-            const isDark = darkToggle.checked;
-            applyTheme(isDark);
-            localStorage.setItem('darkMode', isDark);
-        });
-    }
-
-    // Background animation toggle removed - animation is now only on auth pages
-
-    // 3. Notification Toggle
-    const predictionAlertsToggle = document.getElementById("predictionAlertsToggle");
-    if (predictionAlertsToggle) {
-        // The card is hidden by CSS/JS, but we set the state anyway
-        predictionAlertsToggle.checked = userData.notifications ?? false;
-        predictionAlertsToggle.addEventListener("change", async () => {
-            if (predictionAlertsToggle.checked) {
-                await initFirebaseMessaging(userId); // Request permission and get token
-            }
-        });
-    }
-
-    // 4. Referral Program Button
-    const referralBtn = document.getElementById("referralBtn");
-    if (referralBtn) {
-        referralBtn.onclick = (e) => {
-            e.preventDefault();
-            loadPage("referral", userId);
-        };
-    }
-
-    // 4. Manage Subscription Button
-    const manageBtn = document.getElementById("manageSubscription");
-    if (manageBtn) manageBtn.onclick = (e) => {
-        e.preventDefault(); // Prevent default link behavior
-        loadPage("manage-subscription", userId);
-    };
-
-    // 5. Change Password Button
-    const changePasswordBtn = document.getElementById('changePasswordBtn');
-    if (changePasswordBtn) {
-        changePasswordBtn.onclick = () => {
-            showModal({
-                message: "Enter your current password to continue:",
-                inputType: 'password',
-                inputPlaceholder: 'Current Password',
-                showCancel: true,
-                confirmText: 'Verify',
-                onConfirm: async (currentPassword) => {
-                    if (!currentPassword) return;
-                    showLoader();
-                    try {
-                        const credential = EmailAuthProvider.credential(currentUser.email, currentPassword);
-                        await reauthenticateWithCredential(currentUser, credential);
-                        
-                        // Re-authentication successful, now ask for the new password
-                        hideLoader();
-                        showModal({
-                            message: 'Enter your new password:',
-                            inputType: 'password',
-                            inputPlaceholder: 'New Password',
-                            showCancel: true,
-                            confirmText: 'Save New Password',
-                            onConfirm: async (newPassword) => {
-                                if (newPassword && newPassword.length >= 6) {
-                                    await updatePassword(currentUser, newPassword);
-                                    await addHistoryUnique(userId, 'Password updated');
-                                    showModal({ message: 'Password updated successfully!' });
-                                } else {
-                                    showModal({ message: 'Password must be at least 6 characters long.', confirmClass: 'btn-danger' });
-                                }
-                            }
-                        });
-                    } catch (error) {
-                        hideLoader();
-                        showModal({ message: `Error: ${error.message}`, confirmClass: 'btn-danger' });
-                    }
-                }
-            });
-        };
-    }
-
-    // 5. Logout Button
-    const logoutBtn = document.getElementById("logoutBtn");
-    if (logoutBtn) logoutBtn.onclick = () => showModal({
-        message: "Are you sure you want to logout?",
-        showCancel: true,
-        confirmText: 'Logout',
-        confirmClass: 'btn-danger',
-        onConfirm: async () => {
-            await signOut(auth);
-            await addHistoryUnique(userId, "Logged out");
-            localStorage.clear(); // Clear storage on logout
-            window.location.href = 'Auth/login.html';
-        }
-    });
-
-    // 6. Reset Storage Button
-    const resetBtn = document.getElementById("resetStorage");
-    if (resetBtn) resetBtn.onclick = () => showModal({
-        message: "Are you sure you want to reset this device’s cached data?",
-        showCancel: true,
-        confirmText: 'Reset',
-        confirmClass: 'btn-danger',
         onConfirm: () => {
-            localStorage.clear();
-            location.reload();
-        }
-    });
-
-    // 7. Delete Account Button
-    const deleteAccountBtn = document.getElementById("deleteAccountBtn");
-    if (deleteAccountBtn) {
-        deleteAccountBtn.onclick = () => {
-            showModal({
-                message: "Are you absolutely sure you want to delete your account? This action is irreversible.",
-                showCancel: true,
-                confirmText: "I Understand, Continue",
-                confirmClass: 'btn-danger',
-                onConfirm: () => {
-                    showModal({
-                        message: 'To confirm, please type "DELETE" in the box below.',
-                        showCancel: true,
-                        confirmText: "Delete My Account",
-                        confirmClass: 'btn-danger',
-                        inputType: 'text',
-                        inputPlaceholder: 'DELETE',
-                        onConfirm: async (confirmationText) => {
-                            if (confirmationText === "DELETE") {
-                                showLoader();
-                                const currentUser = auth.currentUser;
-                                try {
-                                    // 1. Delete Firestore documents
-                                    await deleteDoc(doc(db, 'users', userId));
-                                    await deleteDoc(doc(db, 'subscriptions', userId));
-
-                                    // 2. Delete Firebase Auth user (requires recent login)
-                                    await currentUser.delete();
-
-                                    hideLoader();
-                                    localStorage.clear();
-                                    window.location.href = 'Auth/login.html';
-                                } catch (error) {
-                                    hideLoader();
-                                    showModal({ message: `Error: ${error.message}`, confirmClass: 'btn-danger' });
-                                }
-                            } else { showModal({ message: "Incorrect confirmation text. Account was not deleted." }); }
-                        }
-                    });
-                }
-            });
-        };
-    }
-}
-
-/**
- * Initializes the referral page.
- * @param {string} userId - The current user's ID.
- */
-async function initReferralPage(userId) {
-    console.log("InitReferralPage called with userId:", userId);
-    if (!userId) {
-        console.error("No userId provided to initReferralPage");
-        return;
-    }
-
-    const codeInput = document.getElementById('referralCodeInput');
-    const copyBtn = document.getElementById('copyReferralCodeBtn');
-    const referralListContainer = document.getElementById('referralListContainer');
-    const rewardsContainer = document.getElementById('rewardsContainer');
-
-    console.log("DOM elements found:", { codeInput, copyBtn, referralListContainer, rewardsContainer });
-
-    if (!codeInput || !copyBtn || !referralListContainer) {
-        console.error("Required DOM elements not found");
-        return;
-    }
-
-    try {
-        // 1. Get/Generate Referral Code
-        console.log("Fetching user document for userId:", userId);
-        
-        // Try Supabase first, fallback to Firebase
-        let referralCode = await SupabaseService.getUserReferralCode(userId);
-        
-        if (!referralCode) {
-            console.log("No Supabase referral code found, checking Firebase...");
-            const userRef = doc(db, "users", userId);
-            const userSnap = await getDoc(userRef);
-            
-            if (userSnap.exists()) {
-                const userData = userSnap.data();
-                referralCode = userData.referralCode;
-                
-                if (!referralCode) {
-                    console.log("No referral code found anywhere, generating new one");
-                    referralCode = userId.substring(0, 6).toUpperCase();
-                    
-                    // Generate in both systems
-                    await SupabaseService.generateReferralCode(userId, userData.username || '');
-                    await updateDoc(userRef, { referralCode: `REF-${referralCode}` });
-                } else {
-                    // Sync existing Firebase code to Supabase
-                    const codeOnly = referralCode.startsWith('REF-') ? referralCode.substring(4) : referralCode;
-                    await SupabaseService.generateReferralCode(userId, userData.username || '');
-                    referralCode = codeOnly;
-                }
-            } else {
-                console.error("Referral Page Error: User document not found in both systems.");
-                referralListContainer.innerHTML = `<p>Error: Could not load your referral information.</p>`;
-                return;
-            }
-        }
-        
-        console.log("Setting referral code input:", referralCode);
-        codeInput.value = `REF-${referralCode}`;
-
-    // 2. Copy Button Logic
-    copyBtn.addEventListener('click', async () => {
-        const codeToCopy = codeInput.value.startsWith('REF-') ? codeInput.value.substring(4) : codeInput.value;
-        try {
-            await navigator.clipboard.writeText(codeToCopy);
-            copyBtn.textContent = 'Copied!';
-            copyBtn.classList.add('success'); // Optional: for styling
-        } catch (err) {
-            console.error('Failed to copy text: ', err);
-            copyBtn.textContent = 'Failed!';
-        } finally {
-            // Reset button text and style after 2 seconds
-            setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('success'); }, 2000);
-        }
-    });
-
-    // 3. Share Button Logic
-    const shareWhatsAppBtn = document.getElementById('shareWhatsAppBtn');
-    const shareTwitterBtn = document.getElementById('shareTwitterBtn');
-    const shareGenericBtn = document.getElementById('shareGenericBtn');
-
-    const shareText = `Hey! I'm using StatWise for AI-powered sports predictions. Join using my referral code to get rewards: ${referralCode}`;
-    const shareUrl = window.location.origin; // Your site's main URL
-
-    if (shareGenericBtn) {
-        if (navigator.share) {
-            shareGenericBtn.style.display = 'inline-flex'; // Show button if API is supported
-            shareGenericBtn.addEventListener('click', async () => {
-                try {
-                    await navigator.share({
-                        title: 'Join me on StatWise!',
-                        text: shareText,
-                        url: shareUrl,
-                    });
-                } catch (error) {
-                    console.error('Error using Web Share API:', error);
-                }
-            });
-        } else {
-            shareGenericBtn.style.display = 'none'; // Hide button if not supported
-        }
-    }
-
-    if (shareWhatsAppBtn) {
-        shareWhatsAppBtn.addEventListener('click', () => {
-            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
-            window.open(whatsappUrl, '_blank');
-        });
-    }
-
-    if (shareTwitterBtn) {
-        shareTwitterBtn.addEventListener('click', () => {
-            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
-            window.open(twitterUrl, '_blank');
-        });
-    }
-
-        // 4. Fetch and display list of referred users
-        console.log("Fetching referred users for userId:", userId);
-        
-        // Try Supabase first, fallback to Firebase
-        let referrals = await SupabaseService.getUserReferrals(userId);
-        
-        if (!referrals || referrals.length === 0) {
-            console.log("No Supabase referrals found, checking Firebase...");
-            const referralsQuery = query(collection(db, "users"), where("referredBy", "==", userId));
-            const querySnapshot = await getDocs(referralsQuery);
-            console.log("Firebase referrals query result:", querySnapshot.size, "users found");
-            
-            if (!querySnapshot.empty) {
-                referralListContainer.innerHTML = ''; // Clear the placeholder
-                querySnapshot.forEach(doc => {
-                    const referredUser = doc.data();
-                    const card = document.createElement('div');
-                    card.className = 'history-card';
-
-                    const isSubscribed = referredUser.tier !== 'Free Tier';
-                    const statusBadge = isSubscribed
-                        ? `<span class="status-badge status-successful">Subscribed</span>`
-                        : `<span class="status-badge status-pending">Joined</span>`;
-
-                    card.innerHTML = `
-                        <div class="history-title">${referredUser.username}</div>
-                        <p class="history-detail">Status: ${statusBadge}</p>
-                        <p class="history-time">Joined on: ${new Date(referredUser.createdAt).toLocaleDateString()}</p>
-                    `;
-                    referralListContainer.appendChild(card);
-                });
-            } else {
-                referralListContainer.innerHTML = `<p>No referrals yet. Share your code to get started!</p>`;
-            }
-        } else {
-            // Display Supabase referrals
-            console.log("Supabase referrals found:", referrals.length);
-            referralListContainer.innerHTML = ''; // Clear the placeholder
-            
-            referrals.forEach(referral => {
-                const referredUser = referral.user_profiles;
-                const card = document.createElement('div');
-                card.className = 'history-card';
-
-                const isSubscribed = referredUser.current_tier !== 'Free Tier';
-                const statusBadge = isSubscribed
-                    ? `<span class="status-badge status-successful">Subscribed</span>`
-                    : `<span class="status-badge status-pending">Joined</span>`;
-
-                card.innerHTML = `
-                    <div class="history-title">${referredUser.display_name}</div>
-                    <p class="history-detail">Status: ${statusBadge}</p>
-                    <p class="history-time">Joined on: ${new Date(referral.created_at).toLocaleDateString()}</p>
-                `;
-                referralListContainer.appendChild(card);
-            });
-        }
-
-        // 5. Fetch and display rewards
-        if (rewardsContainer) {
-            console.log("Fetching rewards for userId:", userId);
-            // Remove orderBy to avoid index requirement - we'll sort client-side instead
-            const rewardsQuery = query(collection(db, "rewards"), where("referrerId", "==", userId));
-            const rewardsCountEl = document.getElementById('rewardsCount');
-
-            // Reset rewards display
-            if (rewardsCountEl) rewardsCountEl.textContent = '0';
-            const rewardsSnapshot = await getDocs(rewardsQuery);
-            console.log("Rewards query result:", rewardsSnapshot.size, "rewards found");
-
-        if (!rewardsSnapshot.empty) {
-            rewardsContainer.innerHTML = ''; // Clear placeholder
-            
-            // Convert to array and sort client-side by createdAt (newest first)
-            const rewardsArray = [];
-            rewardsSnapshot.forEach(doc => {
-                const reward = doc.data();
-                reward.id = doc.id;
-                rewardsArray.push(reward);
-            });
-            
-            // Sort by createdAt (newest first)
-            rewardsArray.sort((a, b) => {
-                const aTime = a.createdAt?.toDate?.() || new Date(0);
-                const bTime = b.createdAt?.toDate?.() || new Date(0);
-                return bTime - aTime;
-            });
-            
-            rewardsArray.forEach(reward => {
-                const card = document.createElement('div');
-                card.className = 'history-card';
-
-                const statusBadge = reward.claimed
-                    ? `<span class="status-badge status-successful">Claimed</span>`
-                    : `<span class="status-badge status-pending">Pending</span>`;
-
-                card.innerHTML = `
-                    <div class="history-title">
-                        ${reward.rewardDurationDays || 30}-Day ${reward.rewardTier || 'Premium'} Reward
-                    </div>
-                    <p class="history-detail">From: ${reward.grantedByUsername || 'System'}</p>
-                    <p class="history-detail">Status: ${statusBadge}</p>
-                    <p class="history-time">Granted on: ${reward.createdAt ? new Date(reward.createdAt.toDate()).toLocaleDateString() : 'Unknown'}</p>
-                `;
-                rewardsContainer.appendChild(card);
-            });
-            if (rewardsCountEl) {
-                rewardsCountEl.textContent = rewardsSnapshot.size.toString();
-            }
-        } else {
-            rewardsContainer.innerHTML = `<p>No rewards earned yet. You'll get a reward when a referred user subscribes!</p>`;
-        }
-    } else {
-        console.log("rewardsContainer not found");
-    }
-        
-    } catch (error) {
-        console.error("Error in initReferralPage:", error);
-        if (referralListContainer) {
-            referralListContainer.innerHTML = `<p>Error loading referral page: ${error.message}</p>`;
-        }
-    }
-}
-
-// ===== Admin Function: Create Reward =====
-window.createRewardForUser = async function(referrerId, referredUsername, rewardTier = "Premium", rewardDurationDays = 30) {
-    try {
-        const rewardData = {
-            referrerId: referrerId,
-            grantedByUsername: referredUsername,
-            rewardTier: rewardTier,
-            rewardDurationDays: rewardDurationDays,
-            claimed: false,
-            createdAt: serverTimestamp(),
-            type: "referral_bonus"
-        };
-
-        const rewardRef = await addDoc(collection(db, "rewards"), rewardData);
-        console.log("Reward created with ID:", rewardRef.id);
-        
-        // Also log this action
-        if (referrerId) {
-            const activityRef = collection(db, "users", referrerId, "history");
-            await addDoc(activityRef, {
-                action: `Referral reward granted: ${rewardDurationDays}-day ${rewardTier}`,
-                createdAt: serverTimestamp(),
-                creatorId: "admin"
-            });
-        }
-        
-        return rewardRef.id;
-    } catch (error) {
-        console.error("Error creating reward:", error);
-        throw error;
-    }
-};
-
-// ===== Admin Function: Grant Subscription =====
-window.grantSubscription = async function(userId, tier, durationDays = 30) {
-    try {
-        const endDate = new Date();
-        endDate.setDate(endDate.getDate() + durationDays);
-        
-        // Update user tier
-        const userRef = doc(db, "users", userId);
-        await updateDoc(userRef, {
-            tier: tier,
-            subscriptionEnd: endDate
-        });
-        
-        // Update subscription document
-        const subscriptionRef = doc(db, "subscriptions", userId);
-        await updateDoc(subscriptionRef, {
-            currentTier: tier,
-            endDate: endDate,
-            lastUpdated: serverTimestamp()
-        });
-        
-        // Log the activity
-        const activityRef = collection(db, "users", userId, "history");
-        await addDoc(activityRef, {
-            action: `Subscription granted: ${tier} for ${durationDays} days`,
-            createdAt: serverTimestamp(),
-            creatorId: "admin"
-        });
-        
-        console.log(`Granted ${tier} subscription to user ${userId} for ${durationDays} days`);
-        return true;
-    } catch (error) {
-        console.error("Error granting subscription:", error);
-        throw error;
-    }
-};
-
-// ===== Save AI Prediction =====
-async function savePredictionToDB(userId, prediction) {
-    if (!userId) return;
-    try {
-        const historyRef = collection(db, "users", userId, "history");
-        await addDoc(historyRef, {
-            match: prediction.match || "Unknown Match",
-            prediction: prediction.prediction || prediction.pick || "-",
-            odds: prediction.odds || "-",
-            confidence: prediction.confidence || "-",
-            result: prediction.result || "pending",
-            createdAt: serverTimestamp()
-        });
-    } catch (err) {
-        console.error("Failed to save prediction to DB:", err);
-    }
-}
-
-// ===== Clean Predictions Older Than 7 Days =====
-async function cleanupOldPredictions(userId) {
-    if (!userId) return;
-
-    const historyRef = collection(db, "users", userId, "history");
-    const snapshot = await getDocs(historyRef);
-    const now = Date.now();
-    const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
-
-    snapshot.forEach(docu => {
-        const data = docu.data();
-        if (data.match) {
-            const createdAtMs = data.createdAt?.toMillis?.() || 0;
-            if (now - createdAtMs > sevenDaysMs) {
-                deleteDoc(doc(db, "users", userId, "history", docu.id));
-            }
+            loadPage('subscriptions');
         }
     });
 }
 
-// ===== Fetch History =====
-async function fetchHistory(userId) {
-    if (!userId) return;
-    showLoader();
- 
-    const predictionsContainer = document.querySelector("#predictions-tab .history-container");
-    const accountContainer = document.querySelector("#account-tab .history-container");
-    const transactionsContainer = document.querySelector("#transactions-tab .history-container");
- 
-    if (!predictionsContainer || !accountContainer || !transactionsContainer) {
+async function loadPage(page) {
+    try {
+        showLoader();
+        
+        // Update active navigation
+        navButtons.forEach(btn => {
+            btn.classList.toggle("active", btn.getAttribute("data-page") === page);
+        });
+        
+        // Load page content
+        const response = await fetch(`./Pages/${page}.html`);
+        if (response.ok) {
+            const content = await response.text();
+            main.innerHTML = content;
+            
+            // Initialize page-specific functionality
+            await initializePage(page);
+        } else {
+            main.innerHTML = '<div class="error">Page not found</div>';
+        }
+        
         hideLoader();
-        return;
-    }
- 
-    // Clear containers
-    predictionsContainer.innerHTML = "";
-    accountContainer.innerHTML = "";
-    transactionsContainer.innerHTML = "";
- 
-    await cleanupOldPredictions(userId);
- 
-    try {
-        // 1. Fetch Account & Prediction History
-        const historyRef = collection(db, "users", userId, "history");
-        const q = query(historyRef, orderBy("createdAt", "desc"));
-        const historySnapshot = await getDocs(q);
- 
-        let hasPredictions = false;
-        let hasAccountActions = false;
- 
-        if (!historySnapshot.empty) {
-            historySnapshot.forEach(docu => {
-                const data = docu.data();
-                const card = document.createElement("div");
-                card.className = "history-card";
- 
-                if (data.match) {
-                    hasPredictions = true;
-                    const resultClass = (data.result || "pending").toLowerCase();
-                    card.innerHTML = `
-                        <h2 class="history-title">${data.match}</h2>
-                        <p class="history-detail">Pick: ${data.prediction || data.pick || "-"}</p>
-                        <p class="history-detail">Odds: ${data.odds || "-"}</p>
-                        <p class="history-detail">Confidence: ${data.confidence || "-"}</p>
-                        <p class="history-time">${formatTimestamp(data.createdAt)}</p>
-                        <span class="history-result ${resultClass}">${(data.result || "PENDING").toUpperCase()}</span>
-                    `;
-                    predictionsContainer.appendChild(card);
-                } else if (data.action) {
-                    hasAccountActions = true;
-                    card.innerHTML = `
-                        <p><strong>Action:</strong> ${data.action}</p>
-                        <p><strong>IP:</strong> ${data.ip || "Unknown"}</p>
-                        <p><small>${formatTimestamp(data.createdAt)}</small></p>
-                    `;
-                    accountContainer.appendChild(card);
-                }
-            });
-        }
- 
-        if (!hasPredictions) predictionsContainer.innerHTML = "<p>No predictions yet.</p>";
-        if (!hasAccountActions) accountContainer.innerHTML = "<p>No account activity yet.</p>";
- 
-        // 2. Fetch Transaction History
-        const subRef = doc(db, "subscriptions", userId);
-        const subSnap = await getDoc(subRef);
- 
-        if (subSnap.exists() && subSnap.data().transactions?.length > 0) {
-            const transactions = subSnap.data().transactions
-                .sort((a, b) => (b.createdAt?.toMillis() || 0) - (a.createdAt?.toMillis() || 0)); // Sort newest first
- 
-            transactions.forEach(tx => {
-                const card = document.createElement("div");
-                card.className = "history-card";
-                const statusClass = (tx.status || "unknown").toLowerCase();
-                card.innerHTML = `
-                    <h2 class="history-title">${tx.description}</h2>
-                    <p class="history-detail">Amount: ${tx.currency} ${tx.amount.toLocaleString()}</p>
-                    <p class="history-detail">Status: <span class="status-badge status-${statusClass}">${tx.status}</span></p>
-                    <p class="history-detail">ID: ${tx.transactionId}</p>
-                    <p class="history-time">${formatTimestamp(tx.createdAt)}</p>
-                `;
-                transactionsContainer.appendChild(card);
-            });
-        } else {
-            transactionsContainer.innerHTML = "<p>No transactions found.</p>";
-        }
-    } catch (err) {
-        console.error("Failed to fetch history:", err);
-        if (predictionsContainer) predictionsContainer.innerHTML = "<p>Error loading history.</p>";
-        if (accountContainer) accountContainer.innerHTML = "<p>Error loading history.</p>";
-        if (transactionsContainer) transactionsContainer.innerHTML = "<p>Error loading history.</p>";
-    } finally {
+    } catch (error) {
+        console.error('Error loading page:', error);
+        main.innerHTML = '<div class="error">Error loading page</div>';
         hideLoader();
     }
 }
 
-/**
- * Initializes a pull-to-refresh feature on a container.
- * This should be called once. The feature is activated/deactivated
- * by setting `container.dataset.pullToRefreshActive = 'true'/'false'`.
- * @param {HTMLElement} container The scrollable element.
- * @param {Function} onRefresh A function that returns a promise, to be called on refresh.
- */
-function initPullToRefresh(container, onRefresh) {
-    let startY = 0;
-    let isDragging = false;
-    let pullDistance = 0;
-    let animationFrameId = null;
-    let startTime = 0;
-    let hasTriggeredHaptic = false;
-    const pullThreshold = 85; // Pixels to pull before refresh triggers
-    const maxPullDistance = 150; // Maximum pull distance for elastic effect
-
-    // Create or find the refresh indicator in the BODY
-    let refreshIndicator = document.getElementById('refresh-indicator');
-    if (!refreshIndicator) {
-        refreshIndicator = document.createElement('div');
-        refreshIndicator.id = 'refresh-indicator';
-        refreshIndicator.innerHTML = `<img src="Assets/Icons/refresh-custom.svg" alt="Refresh" class="refresh-icon">`;
-        document.body.appendChild(refreshIndicator);
+async function initializePage(page) {
+    switch (page) {
+        case 'home':
+            await initializeHomePage();
+            break;
+        case 'history':
+            await initializeHistoryPage();
+            break;
+        case 'profile':
+            await initializeProfilePage();
+            break;
+        case 'subscriptions':
+            await initializeSubscriptionsPage();
+            break;
+        case 'referral':
+            await initializeReferralPage();
+            break;
+        case 'insights':
+            await initializeInsightsPage();
+            break;
     }
+}
 
-    // Add haptic feedback support
-    const triggerHaptic = () => {
-        try {
-            if ('vibrate' in navigator) {
-                navigator.vibrate(20); // Light haptic feedback
-            }
-        } catch (e) {
-            // Ignore haptic errors on unsupported devices
+// ===== Page Initializers =====
+async function initializeHomePage() {
+    // Load predictions based on user tier
+    await loadPredictions();
+}
+
+async function loadPredictions() {
+    try {
+        // Determine accessible tiers based on user subscription
+        let accessibleTiers = ['free'];
+        
+        if (verifiedTier === 'Premium Tier') {
+            accessibleTiers.push('premium');
+        } else if (verifiedTier === 'VIP Tier') {
+            accessibleTiers.push('premium', 'vip');
+        } else if (verifiedTier === 'VVIP Tier') {
+            accessibleTiers.push('premium', 'vip', 'vvip');
         }
-    };
-
-    const resetIndicator = () => {
-        refreshIndicator.classList.add('transitioning');
-        refreshIndicator.style.transform = 'translateX(-50%) scale(0)';
-        refreshIndicator.style.opacity = '0';
-        refreshIndicator.classList.remove('refreshing');
-        // Remove transition after animation so next pull is instant
-        setTimeout(() => {
-            refreshIndicator.classList.remove('transitioning');
-        }, 300); // Match CSS transition duration
-    };
-
-    container.addEventListener('touchstart', (e) => {
-        if (container.dataset.pullToRefreshActive !== 'true' || container.scrollTop !== 0) {
-            isDragging = false;
+        
+        const { data: predictions, error } = await supabase
+            .from('predictions')
+            .select('*')
+            .in('tier', accessibleTiers)
+            .gte('kickoff_time', new Date().toISOString())
+            .order('kickoff_time', { ascending: true })
+            .limit(10);
+            
+        if (error) {
+            console.warn('Error loading predictions:', error);
             return;
         }
         
-        // Only start if the touch is near the top and moving down
-        if (e.touches && e.touches.length > 0) {
-            isDragging = true;
-            startY = e.touches[0].pageY;
-            startTime = Date.now();
-            pullDistance = 0;
-            hasTriggeredHaptic = false;
-            refreshIndicator.classList.remove('transitioning');
-            
-            // Prevent default scrolling behavior for better control
-            document.body.style.overflow = 'hidden';
-        }
-    }, { passive: true });
-
-    const updateIndicator = () => {
-        // Apply elastic effect - slow down the pull as it gets longer
-        const elasticPullDistance = Math.min(pullDistance, maxPullDistance);
-        const elasticFactor = elasticPullDistance > pullThreshold ? 
-            pullThreshold + (elasticPullDistance - pullThreshold) * 0.5 : 
-            elasticPullDistance;
-        
-        const pullRatio = Math.min(elasticFactor / pullThreshold, 1.2);
-        const elasticScale = pullRatio + (pullRatio * 0.2 * Math.sin(elasticFactor * 0.1));
-        const rotationAngle = elasticFactor * 3;
-        const shadowIntensity = 0.2 + (pullRatio * 0.3);
-        
-        refreshIndicator.style.opacity = Math.min(pullRatio, 1);
-        refreshIndicator.style.transform = `translateX(-50%) scale(${Math.max(0.1, elasticScale)}) rotate(${rotationAngle}deg)`;
-        refreshIndicator.style.boxShadow = `0 ${8 + pullRatio * 10}px ${25 + pullRatio * 15}px rgba(14, 99, 156, ${shadowIntensity})`;
-        
-        // Add color transition and haptic feedback based on pull progress
-        if (pullRatio >= 1.0) {
-            refreshIndicator.style.background = 'linear-gradient(135deg, #4caf50 0%, #ff9800 50%, #0e639c 100%)';
-            // Trigger haptic feedback when threshold is reached
-            if (!hasTriggeredHaptic) {
-                triggerHaptic();
-                hasTriggeredHaptic = true;
-            }
-        } else {
-            refreshIndicator.style.background = 'linear-gradient(135deg, #0e639c 0%, #4caf50 50%, #ff9800 100%)';
-        }
-        
-        // Add subtle elastic effect to the container
-        if (pullDistance > 0) {
-            const containerOffset = Math.min(pullDistance * 0.3, 30);
-            container.style.transform = `translateY(${containerOffset}px)`;
-        }
-        
-        animationFrameId = null; // Allow next frame to be requested
-    };
-
-    container.addEventListener('touchmove', (e) => {
-        if (!isDragging || !e.touches || e.touches.length === 0) return;
-
-        const currentY = e.touches[0].pageY;
-        const newPullDistance = currentY - startY;
-        const currentTime = Date.now();
-        const touchDuration = currentTime - startTime;
-
-        // Only allow pull-to-refresh if the movement is primarily vertical and downward
-        if (newPullDistance > 5 && touchDuration > 50) {
-            // Prevent the browser's overscroll-bounce effect on mobile
-            e.preventDefault();
-            e.stopPropagation();
-            
-            pullDistance = newPullDistance;
-
-            // Schedule a single update for the next animation frame
-            if (!animationFrameId) {
-                animationFrameId = requestAnimationFrame(updateIndicator);
-            }
-        } else if (newPullDistance <= 0) {
-            // If user starts scrolling up, stop the pull-to-refresh gesture
-            isDragging = false;
-            document.body.style.overflow = '';
-            container.style.transform = '';
-            if (animationFrameId) {
-                cancelAnimationFrame(animationFrameId);
-                animationFrameId = null;
-            }
-        }
-    }, { passive: false }); // passive:false is needed for preventDefault()
-
-    // Handle touch cancel events (when user's finger leaves the screen unexpectedly)
-    container.addEventListener('touchcancel', (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        document.body.style.overflow = '';
-        container.style.transform = '';
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-            animationFrameId = null;
-        }
-        resetIndicator();
-    });
-
-    container.addEventListener('touchend', async (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        
-        // Restore body scrolling
-        document.body.style.overflow = '';
-        
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-            animationFrameId = null;
-        }
-
-        if (pullDistance >= pullThreshold) {
-            // User pulled enough, trigger refresh
-            triggerHaptic(); // Success haptic feedback
-            
-            refreshIndicator.classList.add('transitioning');
-            refreshIndicator.style.transform = 'translateX(-50%) scale(1)';
-            refreshIndicator.classList.add('refreshing');
-            
-            // Smooth transition back to normal position
-            container.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            container.style.transform = 'translateY(0)';
-            
-            try {
-                await onRefresh();
-            } finally {
-                // Once refresh is done, hide the indicator and reset container
-                setTimeout(() => {
-                    container.style.transition = '';
-                    container.style.transform = '';
-                }, 300);
-                resetIndicator();
-            }
-        } else {
-            // Didn't pull enough, just hide the indicator with bounce-back effect
-            container.style.transition = 'transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-            container.style.transform = 'translateY(0)';
-            
-            setTimeout(() => {
-                container.style.transition = '';
-                container.style.transform = '';
-            }, 200);
-            
-            resetIndicator();
-        }
-    });
+        displayPredictions(predictions || []);
+    } catch (error) {
+        console.error('Error loading predictions:', error);
+    }
 }
 
-
-// ===== Dynamic Page Loader =====
-async function loadPage(page, userId, addToHistory = true) {
-    // Prevent rapid clicks from breaking the animation
-    if (main.classList.contains('page-transitioning')) return;
-    main.classList.add('page-transitioning');
-
-    // Show loader at the start of any page load
-    showLoader(); // Use the delayed loader for in-app navigation
-
-    // Only run the fade-out animation if there's existing content to transition from.
-    if (main.innerHTML.trim() !== '') {
-        // Animate the current content out
-        main.classList.add('page-fade-out');
-        await new Promise(resolve => setTimeout(resolve, 200)); // Match animation duration
-    }
-
-    try {
-        const response = await fetch(`Pages/${page}.html`);
-        if (!response.ok) throw new Error(`Page not found: ${page}`);
-        const html = await response.text();
-        const parser = new DOMParser();
-        const docu = parser.parseFromString(html, "text/html");
-        const pageMain = docu.querySelector("main") || docu.body || docu;
-        main.innerHTML = pageMain.innerHTML;
-        main.dataset.pullToRefreshActive = 'false'; // Deactivate for all pages by default
-
-        // Define a single base URL for resolving relative asset paths.
-        // This works for both localhost (e.g., http://127.0.0.1:3000) and deployed environments.
-        const assetsBaseUrl = new URL('Pages/', window.location.href).href;
-
-        clearDynamicAssets();
-
-        docu.querySelectorAll("link[rel='stylesheet']").forEach(link => {
-            const newLink = document.createElement("link");
-            newLink.rel = "stylesheet";
-            // Resolve relative URLs against the base path, leave absolute URLs as is.
-            newLink.href = new URL(link.getAttribute('href'), assetsBaseUrl).href;
-            newLink.setAttribute("data-dynamic", "true");
-            document.head.appendChild(newLink);
-        });
-
-        docu.querySelectorAll("style").forEach(style => {
-            const newStyle = document.createElement("style");
-            newStyle.textContent = style.textContent;
-            newStyle.setAttribute("data-dynamic", "true");
-            document.head.appendChild(newStyle);
-        });
-
-        docu.querySelectorAll("script").forEach(script => {
-            const newScript = document.createElement("script");
-            if (script.src) {
-                // Resolve relative URLs against the base path.
-                newScript.src = new URL(script.getAttribute('src'), assetsBaseUrl).href;
-            } else {
-                newScript.textContent = script.textContent;
-            }
-            newScript.setAttribute("data-dynamic", "true");
-            document.body.appendChild(newScript);
-        });
-
-        navButtons.forEach(btn => btn.classList.toggle("active", btn.getAttribute("data-page") === page));
-        localStorage.setItem("lastPage", page);
-        if (addToHistory) history.pushState({ page }, "", `#${page}`);
-
-        // Page-specific init
-        if (page === "subscriptions") {
-            updateCurrentTierDisplay(userId);
-            attachSubscriptionButtons(userId);
-            initTabs(); // Use the generic tab handler
-        }
-        
-        // Remove any animated background elements from main app pages
-        const bgElement = document.querySelector('.animated-background');
-        if (bgElement) {
-            bgElement.remove();
-        }
-        if (page === "manage-subscription") {
-            await initManageSubscriptionPage(userId);
-        }
-        if (page === "profile") {
-            await initProfilePage(userId);
-        }
-        if (page === "referral") {
-            await initReferralPage(userId);
-        }
-        if (page === "history") {
-            await fetchHistory(userId);
-            initTabs(); // Use the generic tab handler
-            // After tabs are initialized, check for a target tab from session storage
-            const targetTabId = sessionStorage.getItem('targetTab');
-            if (targetTabId) {
-                const targetTabButton = document.querySelector(`.tab-btn[data-tab="${targetTabId}"]`);
-                if (targetTabButton) {
-                    handleTabSwitch(targetTabButton);
-                }
-                sessionStorage.removeItem('targetTab'); // Clean up
-            }
-        }
-        if (page === "insights") {
-            // Placeholder for any future JS needed for the insights page
-            const cards = document.querySelectorAll('.insights-container .card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 100}ms`;
-                card.classList.add('card-animation');
-            });
-        }
-        if (page === "home") {
-            main.dataset.pullToRefreshActive = 'true'; // Activate for home page
-            // No animated background on home page - only on auth pages
-            initTabs(); // Initialize league tabs for home page
-            initCollapsibleTabs(); // Initialize collapsible tabs functionality
-
-            // Initialize pull-to-refresh for homepage
-            initPullToRefresh(main, () => {
-                // Refresh action: reload the home page
-                loadPage('home', userId || '', false);
-            });
-
-            const cards = document.querySelectorAll('.prediction-card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 100}ms`;
-                card.classList.add('card-animation');
-            });
-
-            const searchInput = document.getElementById("predictionSearch");
-            const predictionsContainer = document.querySelector(".predictions-container");
-
-            if (searchInput && predictionsContainer) {
-                // Create a wrapper for the search input to enable ghost text
-                if (!searchInput.parentElement.classList.contains('search-wrapper')) {
-                    const parent = searchInput.parentNode;
-                    const wrapper = document.createElement('div');
-                    wrapper.className = 'search-wrapper';
-                    parent.replaceChild(wrapper, searchInput);
-
-                    const ghostEl = document.createElement('div');
-                    ghostEl.id = 'search-ghost-text';
-
-                    wrapper.appendChild(ghostEl); // Ghost text first for z-index stacking
-                    wrapper.appendChild(searchInput);
-                }
-
-                let noResultsEl = predictionsContainer.querySelector('.no-results-message');
-                if (!noResultsEl) {
-                    noResultsEl = document.createElement('p');
-                    noResultsEl.className = 'no-results-message';
-                    noResultsEl.textContent = 'No matches found.';
-                    predictionsContainer.appendChild(noResultsEl);
-                }
-
-                const originalCardElements = Array.from(predictionsContainer.querySelectorAll(".prediction-card"));
-
-                searchInput.addEventListener("input", () => {
-                    const value = searchInput.value;
-                    const lowerCaseValue = value.toLowerCase();
-
-                    // 1. PARSE THE SEARCH QUERY
-                    const commandRegex = /\/c\d*|\/odds|\//g; // Allow /c without number for autocomplete
-                    const allCommands = lowerCaseValue.match(commandRegex) || [];
-                    const textQuery = lowerCaseValue.replace(commandRegex, '').replace(/\s+/g, ' ').trim();
-
-                    const sortCommands = allCommands.filter(c => c === '/' || c === '/odds');
-                    const confidenceFilterCommand = allCommands.find(c => c.startsWith('/c'));
-                    const minConfidence = confidenceFilterCommand && confidenceFilterCommand.length > 2 ? parseInt(confidenceFilterCommand.substring(2), 10) : 0;
-
-                    const cards = Array.from(predictionsContainer.querySelectorAll(".prediction-card"));
-                    let visibleCount = 0;
-
-                    // 2. FILTER FOOTBALL COVERAGE TABS
-                    const tabsContainer = document.getElementById('league-tabs');
-                    if (tabsContainer && textQuery) {
-                        const tabs = tabsContainer.querySelectorAll('.tab-btn');
-                        let hasVisibleTabs = false;
-                        
-                        tabs.forEach(tab => {
-                            const tabText = tab.textContent.toLowerCase();
-                            const tabData = tab.dataset.tab || '';
-                            
-                            // Check if search term matches tab text or data attribute
-                            const isMatch = tabText.includes(textQuery) || 
-                                          tabData.includes(textQuery.replace(/\s+/g, '-'));
-                            
-                            if (isMatch || tab.dataset.tab === 'all-leagues') {
-                                tab.style.display = 'flex';
-                                hasVisibleTabs = true;
-                            } else {
-                                tab.style.display = 'none';
-                            }
-                        });
-                        
-                        // If no matches found, show "All" tab
-                        if (!hasVisibleTabs) {
-                            const allTab = tabsContainer.querySelector('[data-tab="all-leagues"]');
-                            if (allTab) allTab.style.display = 'flex';
-                        }
-                    } else if (tabsContainer) {
-                        // Reset tabs when search is empty
-                        const tabs = tabsContainer.querySelectorAll('.tab-btn');
-                        tabs.forEach(tab => tab.style.display = 'flex');
-                    }
-
-                    // 3. FILTER CARDS
-                    cards.forEach(card => {
-                        const title = card.querySelector(".match-title")?.textContent.toLowerCase() || '';
-                        const confidence = parseInt(card.querySelector('.confidence span')?.textContent.match(/\d+/)?.[0] || '0', 10);
-
-                        const textMatch = !textQuery || title.includes(textQuery);
-                        const confidenceMatch = !confidenceFilterCommand || confidence >= minConfidence;
-
-                        const shouldShow = textMatch && confidenceMatch;
-                        card.style.display = shouldShow ? "block" : "none";
-                        if (shouldShow) visibleCount++;
-                    });
-
-                    // 4. SORT VISIBLE CARDS
-                    if (sortCommands.length > 0) {
-                        const visibleCards = cards.filter(card => card.style.display === 'block');
-                        visibleCards.sort((a, b) => {
-                            let sortResult = 0;
-                            for (const command of sortCommands) {
-                                if (sortResult !== 0) break;
-                                if (command === '/odds') { // Sort by highest odds
-                                    const oddsA = parseFloat(a.querySelector('.odds')?.textContent.match(/[\d.]+/)?.[0] || '0');
-                                    const oddsB = parseFloat(b.querySelector('.odds')?.textContent.match(/[\d.]+/)?.[0] || '0');
-                                    sortResult = oddsB - oddsA;
-                                } else if (command === '/') { // Sort by highest confidence
-                                    const confidenceA = parseInt(a.querySelector('.confidence span')?.textContent.match(/\d+/)?.[0] || '0', 10);
-                                    const confidenceB = parseInt(b.querySelector('.confidence span')?.textContent.match(/\d+/)?.[0] || '0', 10);
-                                    sortResult = confidenceB - confidenceA;
-                                }
-                            }
-                            return sortResult;
-                        });
-                        visibleCards.forEach(card => predictionsContainer.appendChild(card));
-                    } else if (value.trim() === '') {
-                        // 5. RESTORE ORIGINAL ORDER IF SEARCH IS EMPTY
-                        originalCardElements.forEach(card => predictionsContainer.appendChild(card));
-                    }
-
-                    // 6. UPDATE UI (No Results Message & Autocomplete)
-                    noResultsEl.style.display = visibleCount === 0 && value.trim() !== '' ? 'block' : 'none';
-
-                    const ghostEl = document.getElementById('search-ghost-text');
-                    if (ghostEl && value) { // Only show suggestions if there's input
-                        let suggestion = '';
-                        const commandsInValue = value.match(commandRegex) || [];
-                        const textInValue = value.replace(commandRegex, '').trim();
-
-                        // 1. Command Autocomplete
-                        const lastChar = value.slice(-1);
-                        const lastWord = value.split(' ').pop();
-
-                        if (lastChar === '/') {
-                            suggestion = value + 'odds';
-                        } else if (lastWord.startsWith('/') && '/odds'.startsWith(lastWord) && lastWord !== '/odds') {
-                            suggestion = value.substring(0, value.lastIndexOf(lastWord)) + '/odds';
-                        } else if (lastWord === '/c') {
-                            suggestion = value + '75';
-                        }
-
-                        // 2. Text Autocomplete (only if no command is being suggested)
-                        if (textQuery) {
-                            const allTitles = originalCardElements.map(card => card.querySelector('.match-title')?.textContent || '');
-                            // Find a title that starts with the query, otherwise one that includes it.
-                            let matchedTitle = allTitles.find(title => title.toLowerCase().startsWith(textQuery));
-
-                            if (matchedTitle) {
-                                // Reconstruct suggestion, preserving commands
-                                suggestion = commandsInValue.join(' ') + ' ' + matchedTitle;
-                            }
-                        }
-
-                        ghostEl.textContent = suggestion;
-                    } else if (ghostEl) {
-                        ghostEl.textContent = ''; // Clear suggestion on empty input
-                    }
-                });
-            }
-        }
-
-        enforceTierRestrictions();
-
-        // Reset scroll position for the new page
-        main.scrollTop = 0;
-        window.scrollTo({
-            top: 0,
-            behavior: 'instant' // Instant scroll, no animation
-        });
-
-    } catch (error) {
-        console.error(`Failed to load page ${page}:`, error);
-        let errorMessage = `Unable to load the ${page} page right now.`;
-        let retryButton = '';
-        
-        if (error.name === 'TypeError' || error.message.includes('network')) {
-            errorMessage = `There was a network issue. Please check your connection and try again.`;
-            retryButton = `<button onclick="loadPage('${page}', '${userId || ''}', false)" class="button" style="margin-top: 10px;">Try Again</button>`;
-        }
-        
-        main.innerHTML = `
-            <div class="error-container">
-                <h1 class="error-title">Oops!</h1>
-                <h2 class="error-subtitle">Something went wrong</h2>
-                <p class="error-message">${errorMessage}</p>
-                ${retryButton}
-                <a href="#" onclick="loadPage('home', '${userId || ''}', false); return false;" class="button">Go to Homepage</a>
+function displayPredictions(predictions) {
+    const container = document.getElementById('predictions-container');
+    if (!container) return;
+    
+    if (predictions.length === 0) {
+        container.innerHTML = `
+            <div class="no-predictions">
+                <h3>No predictions available</h3>
+                <p>Check back later for new AI predictions!</p>
             </div>
         `;
-    } finally {
-        // Animate the new content in
-        main.classList.remove('page-fade-out');
-        main.classList.add('page-fade-in'); // Start animation
-
-        // The loader is hidden after a short, fixed delay. This is more reliable
-        // than waiting for an animation event that might not fire on very fast loads.
-        setTimeout(() => {
-            hideLoader();
-            main.classList.remove('page-fade-in', 'page-transitioning');
-        }, 350); // A value slightly longer than the animation duration.
+        return;
     }
-}
-
-// ===== Navigation =====
-navButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const page = button.getAttribute("data-page");
-        if (!page) return;
-        loadPage(page, auth.currentUser?.uid);
-    });
-});
-
-// ===== Browser Back/Forward =====
-window.addEventListener("popstate", (e) => {
-    const page = e.state?.page || defaultPage;
-    loadPage(page, auth.currentUser?.uid, false);
-});
-
-// ===== Welcome Tour for New Users =====
-let introJsLoaded = false;
-
-function loadIntroJsAssets() {
-    if (introJsLoaded) return Promise.resolve();
-    return new Promise((resolve, reject) => {
-        // Load CSS
-        const cssLink = document.createElement('link');
-        cssLink.rel = 'stylesheet';
-        cssLink.href = 'https://unpkg.com/intro.js/minified/introjs.min.css';
-        document.head.appendChild(cssLink);
-
-        // Load JS
-        const script = document.createElement('script');
-        script.src = 'https://unpkg.com/intro.js/minified/intro.min.js';
-        script.onload = () => {
-            introJsLoaded = true;
-            resolve();
-        };
-        script.onerror = reject;
-        document.head.appendChild(script);
-    });
-}
-
-async function startWelcomeTour(userId) {
-    try {
-        await loadIntroJsAssets();
-
-        const intro = introJs();
-        intro.setOptions({
-            steps: [
-                {
-                    title: 'Welcome to StatWise!',
-                    intro: 'Let\'s take a quick tour of the main features.'
-                },
-                {
-                    element: document.querySelector('.search-container'),
-                    title: 'Search & Filter',
-                    intro: 'Quickly find matches or use commands like <strong>/odds</strong> to sort by the highest odds.'
-                },
-                {
-                    element: document.querySelector('.prediction-card'),
-                    title: 'Prediction Cards',
-                    intro: 'Each card gives you an AI-powered prediction, confidence level, and odds.'
-                },
-                {
-                    element: document.querySelector('.bottom-nav [data-page="history"]'),
-                    title: 'Your History',
-                    intro: 'Track your past predictions, transactions, and account activity here.'
-                },
-                {
-                    element: document.querySelector('.bottom-nav [data-page="profile"]'),
-                    title: 'Your Profile',
-                    intro: 'Manage your subscription, settings, and logout from your profile.'
-                }
-            ],
-            showStepNumbers: true,
-            exitOnOverlayClick: false,
-            doneLabel: 'Got it!'
-        });
-
-        intro.oncomplete(async () => {
-            await updateDoc(doc(db, "users", userId), { isNewUser: false });
-        });
-
-        intro.onexit(async () => {
-            await updateDoc(doc(db, "users", userId), { isNewUser: false });
-        });
-
-        intro.start();
-
-    } catch (error) {
-        console.error("Failed to start welcome tour:", error);
-        // Ensure the flag is still set to false even if the tour fails to load
-        await updateDoc(doc(db, "users", userId), { isNewUser: false });
-    }
-}
-
-/**
- * Handles tab switching for components like the history page.
- * @param {HTMLElement} tabButton The tab button that was clicked.
- */
-function handleTabSwitch(tabButton) {
-    // Find the closest common ancestor for the tabs and content
-    const tabParent = tabButton.closest('.history-section, .subscription-section, main'); // Extendable
-    if (!tabParent) return;
-
-    // Don't do anything if the tab is already active
-    if (tabButton.classList.contains('active')) return;
-
-    const tabButtons = tabParent.querySelectorAll(".tab-btn");
-    const tabContents = tabParent.querySelectorAll(".tab-content, .pricing-container");
-
-    tabButtons.forEach(b => b.classList.remove("active"));
-    tabButton.classList.add("active");
-
-    tabContents.forEach(c => c.classList.remove("active"));
-    const targetId = tabButton.dataset.tab;
-    const target = tabParent.querySelector(`#${targetId}`);
-    if (target) target.classList.add("active");
-}
-
-/**
- * Initializes tab functionality for the current page.
- * This should be called after a page with tabs is loaded.
- */
-function initTabs() {
-    const tabContainer = document.querySelector('.tab-container');
-    if (!tabContainer) return;
-
-    tabContainer.addEventListener('click', (e) => {
-        const tabButton = e.target.closest('.tab-btn');
-        if (tabButton) {
-            handleTabSwitch(tabButton);
-        }
-    });
-}
-
-/**
- * Initialize tabs functionality for the homepage league tabs (no collapsing for better mobile UX)
- */
-function initCollapsibleTabs() {
-    const tabsContainer = document.getElementById('league-tabs');
     
-    if (!tabsContainer) return;
+    const predictionsHTML = predictions.map(prediction => `
+        <div class="prediction-card tier-${prediction.tier}">
+            <div class="match-header">
+                <h4>${prediction.home_team} vs ${prediction.away_team}</h4>
+                <span class="league">${prediction.league}</span>
+            </div>
+            <div class="prediction-content">
+                <div class="prediction-result">
+                    <span class="label">Prediction:</span>
+                    <span class="result">${prediction.prediction}</span>
+                </div>
+                <div class="confidence">
+                    <span class="label">Confidence:</span>
+                    <span class="value">${prediction.confidence}%</span>
+                </div>
+                ${prediction.odds ? `
+                    <div class="odds">
+                        <span class="label">Odds:</span>
+                        <span class="value">${prediction.odds}</span>
+                    </div>
+                ` : ''}
+                <div class="kickoff">
+                    <span class="label">Kickoff:</span>
+                    <span class="time">${formatTimestamp(prediction.kickoff_time)}</span>
+                </div>
+            </div>
+            ${prediction.reasoning ? `
+                <div class="reasoning">
+                    <p>${prediction.reasoning}</p>
+                </div>
+            ` : ''}
+            <div class="prediction-actions">
+                <button onclick="savePrediction('${prediction.id}')" class="btn-save">
+                    Save to History
+                </button>
+            </div>
+        </div>
+    `).join('');
     
-    // Add click handlers to tab buttons for switching only
-    tabsContainer.addEventListener('click', (e) => {
-        const tabButton = e.target.closest('.tab-btn');
-        if (!tabButton) return;
-        
-        // Handle tab switching - tabs stay visible for better mobile experience
-        handleTabSwitch(tabButton);
-    });
+    container.innerHTML = predictionsHTML;
 }
 
-/**
- * Checks for any unclaimed referral rewards and applies them to the user's account.
- * This function is designed to be run for the currently logged-in user.
- * @param {string} userId The ID of the user (the referrer) to check rewards for.
- */
-async function checkForAndClaimRewards(userId) {
-    const rewardsRef = collection(db, "rewards");
-    const q = query(rewardsRef, where("referrerId", "==", userId), where("claimed", "==", false));
-
-    try {
-        const querySnapshot = await getDocs(q);
-        if (querySnapshot.empty) {
-            return; // No rewards to claim
-        }
-
-        for (const rewardDoc of querySnapshot.docs) {
-            const rewardData = rewardDoc.data();
-
-            // 1. Apply the reward to the user's tier
-            const newExpiry = new Date();
-            newExpiry.setDate(newExpiry.getDate() + rewardData.rewardDurationDays);
-
-            await updateUserTier(userId, rewardData.rewardTier, 'reward', newExpiry.toISOString());
-
-            // 2. Mark the reward as claimed to prevent re-application
-            await updateDoc(doc(db, "rewards", rewardDoc.id), { claimed: true });
-
-            // 3. Notify the user
-            const message = `You've received a ${rewardData.rewardDurationDays}-day ${rewardData.rewardTier} reward because ${rewardData.grantedByUsername} subscribed!`;
-            showModal({ message });
-            await addHistoryUnique(userId, `Claimed referral reward from ${rewardData.grantedByUsername}`);
-            console.log(`Claimed and applied reward ${rewardDoc.id}`);
-        }
-    } catch (error) {
-        console.error("Error checking or claiming rewards:", error);
-    }
+async function initializeHistoryPage() {
+    await loadUserPredictionHistory();
 }
 
-// ===== Initial Auth Check =====
-let authInitialized = false;
-
-const handleUserAuthenticated = async (user) => {
-    try {
-        // Initialize client-side security measures first
-        initializeAppSecurity();
-
-        // Initialize core features that persist across pages
-        initPullToRefresh(main, async () => {
-            await loadPage('home', user.uid, false);
-        });
-        
-        // PRIORITY 1: Load the UI immediately to prevent blank screen
-        const pageToLoad = manageInitialPageLoad(user.uid, loadPage);
-
-        // PRIORITY 2: Handle user data setup in background (non-blocking)
-        setupUserDataBackground(user, pageToLoad);
-        
-        // PRIORITY 3: Initialize Supabase buckets after user is authenticated (background)
-        if (supabase) {
-            setTimeout(() => {
-                SupabaseService.ensureBucketsExist().then(success => {
-                    if (success) {
-                        console.log('All required Supabase buckets are ready');
-                    } else {
-                        console.warn('Some Supabase buckets may not be available');
-                    }
-                }).catch(error => {
-                    console.warn('Error initializing Supabase buckets:', error);
-                });
-            }, 100); // Small delay to ensure app loads first
-        }
-
-        // Global click handler for locked features
-        main.addEventListener('click', (e) => {
-            const lockedEl = e.target.closest('[data-locked="true"]');
-            // Don't intercept clicks on subscription cards or buttons - they have their own upgrade flow
-            if (lockedEl && !lockedEl.closest('.subscription-card') && !lockedEl.matches('.subscribe-btn')) {
-                e.preventDefault();
-                e.stopPropagation();
-                showModal({
-                    message: `This feature is locked. Upgrade to access it.`,
-                    confirmText: 'View Plans',
-                    onConfirm: () => loadPage('subscriptions', user.uid)
-                });
-            }
-        });
-
-    } catch (error) {
-        console.error('Authentication setup error:', error);
-        // Even if setup fails, ensure user gets to homepage
-        manageInitialPageLoad(user.uid, loadPage);
-    }
-};
-
-// Background user data setup (non-blocking)
-const setupUserDataBackground = async (user, pageToLoad) => {
-    try {
-        const userRef = doc(db, "users", user.uid);
-        const snapshot = await getDoc(userRef);
-        let userData = {};
-
-        if (!snapshot.exists()) {
-            const newUserData = {
-                username: user.displayName || "User",
-                email: user.email,
-                tier: "Free Tier",
-                tierExpiry: null,
-                photoURL: null,
-                notifications: true,
-                autoRenew: false,
-                createdAt: new Date().toISOString(),
-                lastLogin: new Date().toISOString(),
-                isNewUser: true
-            };
-            await setDoc(userRef, newUserData);
-            userData = newUserData;
-            // Non-blocking history logging
-            addHistoryUnique(user.uid, "Signed up").catch(err => 
-                console.error("Failed to log signup:", err)
-            );
-        } else {
-            userData = snapshot.data();
-            // Non-blocking updates
-            updateDoc(userRef, { lastLogin: new Date().toISOString() }).catch(err => 
-                console.error("Failed to update login time:", err)
-            );
-            addHistoryUnique(user.uid, "Logged in").catch(err => 
-                console.error("Failed to log login:", err)
-            );
-        }
-
-        // Get tier from Supabase first, fallback to Firebase
-        let currentTier = "Free Tier";
-        try {
-            const supabaseSubscription = await SupabaseService.getUserSubscription(user.uid);
-            if (supabaseSubscription) {
-                currentTier = supabaseSubscription.current_tier || "Free Tier";
-                console.log('Current tier loaded from Supabase:', currentTier);
-            } else {
-                currentTier = userData.tier || "Free Tier";
-                console.log('Current tier loaded from Firebase fallback:', currentTier);
-            }
-        } catch (error) {
-            console.warn('Failed to get tier from Supabase, using Firebase:', error);
-            currentTier = userData.tier || "Free Tier";
-        }
-
-        // Set verified tier for UI
-        verifiedTier = currentTier;
-
-        // Sync user profile to Supabase (non-blocking)
-        SupabaseService.syncUserProfile(user, {
-            current_tier: currentTier,
-            subscription_period: userData.tierExpiry ? "monthly" : null, // This could be improved based on your data structure
-            referral_code: userData.referralCode,
-            total_referrals: userData.referredUsers ? userData.referredUsers.length : 0,
-            profile_picture_url: userData.photoURL
-        }).catch(err => console.warn("Failed to sync user to Supabase:", err));
-        
-        // Sync referral data to Supabase (non-blocking)
-        SupabaseService.syncReferralDataToSupabase(user.uid)
-            .catch(err => console.warn("Failed to sync referral data to Supabase:", err));
-
-        // Non-blocking subscription check
-        checkExpiredSubscription(user.uid, userData);
-
-        // Start tier watchdog
-        startTierWatchdog(user.uid);
-
-        // Non-blocking rewards check
-        checkForAndClaimRewards(user.uid).catch(err => {
-            console.error("Failed to process rewards on startup:", err);
-        });
-
-        // Check if the user is new to start the welcome tour
-        if (userData.isNewUser && pageToLoad === 'home') {
-            setTimeout(() => startWelcomeTour(user.uid), 1000);
-        }
-
-    } catch (error) {
-        console.error('Background user setup error:', error);
-        // Set default tier if database fails
-        verifiedTier = "Free Tier";
-    }
-};
-
-// Non-blocking subscription expiry check - uses Supabase as primary source
-const checkExpiredSubscription = async (userId, userData) => {
-    try {
-        let tier = "Free Tier";
-        let expiry = null;
-        
-        // Check Supabase first
-        const supabaseSubscription = await SupabaseService.getUserSubscription(userId);
-        if (supabaseSubscription) {
-            tier = supabaseSubscription.current_tier || "Free Tier";
-            expiry = supabaseSubscription.subscription_end;
-        } else {
-            // Fallback to Firebase data
-            tier = userData.tier || "Free Tier";
-            expiry = userData.tierExpiry;
-        }
-        
-        if (tier !== 'Free Tier' && expiry) {
-            const expiryDate = new Date(expiry);
-            if (new Date() > expiryDate) {
-                console.log(`User ${userId}'s subscription has expired. Downgrading.`);
-                
-                // Update in Supabase first
-                await SupabaseService.updateUserSubscription(userId, {
-                    tier: 'Free Tier',
-                    period: null,
-                    start_date: new Date().toISOString(),
-                    end_date: null,
-                    status: 'inactive'
-                });
-                
-                // Update Firebase for compatibility
-                const userRef = doc(db, "users", userId);
-                await updateDoc(userRef, {
-                    tier: 'Free Tier',
-                    tierExpiry: null,
-                    autoRenew: false
-                });
-                
-                verifiedTier = "Free Tier";
-                addHistoryUnique(userId, "Subscription expired, reverted to Free Tier.").catch(err => 
-                    console.error("Failed to log subscription expiry:", err)
-                );
-            }
-        }
-    } catch (error) {
-        console.error('Subscription check error:', error);
-    }
-};
-
-showLoader(); // Show loader immediately on script load
-
-// Add a timeout fallback to prevent indefinite loading
-setTimeout(() => {
-    if (!authInitialized) {
-        console.warn('Auth initialization timeout, redirecting to login');
-        window.location.href = 'Auth/login.html';
-    }
-}, 3000); // 3 second timeout - faster response
-
-const unsubscribe = onAuthStateChanged(auth, async (user) => {
-    try {
-        if (user) {
-            // User is signed in.
-            if (!authInitialized) {
-                authInitialized = true;
-                console.log('User authenticated, loading app...');
-                await handleUserAuthenticated(user);
-            }
-        } else {
-            // User is signed out.
-            if (!authInitialized) {
-                authInitialized = true;
-                console.log('No user found, redirecting to login...');
-                // If after the initial check, there's no user, redirect to login.
-                window.location.href = 'Auth/login.html';
-            }
-        }
-    } catch (error) {
-        console.error('Authentication error:', error);
-        // Fallback: redirect to login on any auth error
-        window.location.href = 'Auth/login.html';
-    }
-});
-
-
-// ===== ENHANCED FIXES FOR PAYMENT AND SUBSCRIPTION ISSUES =====
-
-// Enhanced subscription tier update with immediate UI refresh
-function forceSubscriptionUpdate(userId, tier, period, endDate) {
-    // Update in-memory tier immediately
-    verifiedTier = tier;
+async function loadUserPredictionHistory() {
+    if (!currentUser) return;
     
-    // Update UI elements immediately
-    setTimeout(() => {
-        enforceTierRestrictions();
-        updateCurrentTierDisplay(userId);
-        
-        // Update any subscription displays
-        const tierDisplays = document.querySelectorAll("[data-tier-display]");
-        tierDisplays.forEach(el => {
-            el.textContent = tier;
-        });
-        
-        // Refresh current page to show updated tier
-        const currentPage = window.location.hash.substring(1) || "home";
-        if (currentPage === "subscriptions") {
-            setTimeout(() => loadPage("subscriptions", userId, false), 1000);
-        }
-    }, 500);
-}
-
-// Enhanced transaction history fetcher that prioritizes Supabase
-async function fetchEnhancedTransactionHistory(userId, container) {
-    if (!container || !userId) return;
-    
-    let hasTransactions = false;
-    container.innerHTML = "<p>Loading transactions...</p>";
-    
-    // Try Supabase first (primary source)
-    if (supabase) {
-        try {
-            const supabaseTransactions = await SupabaseService.getUserTransactionHistory(userId, 20);
+    try {
+        const { data: history, error } = await supabase
+            .from('user_prediction_history')
+            .select(`
+                *,
+                predictions (*)
+            `)
+            .eq('user_id', currentUser.id)
+            .order('saved_at', { ascending: false });
             
-            if (supabaseTransactions && supabaseTransactions.length > 0) {
-                hasTransactions = true;
-                container.innerHTML = ""; // Clear loading message
-                
-                supabaseTransactions.forEach(transaction => {
-                    const card = document.createElement("div");
-                    card.className = "history-card";
-                    card.innerHTML = `
-                        <h2 class="history-title">💳 Payment Transaction</h2>
-                        <p class="history-detail"><strong>Transaction ID:</strong> ${transaction.transaction_id || "N/A"}</p>
-                        <p class="history-detail"><strong>Amount:</strong> ₦${transaction.amount?.toLocaleString() || "0"}</p>
-                        <p class="history-detail"><strong>Plan:</strong> ${transaction.tier} (${transaction.period || "N/A"})</p>
-                        <p class="history-detail"><strong>Status:</strong> <span style="color: #4caf50; font-weight: bold;">✅ ${transaction.status || "Completed"}</span></p>
-                        <p class="history-time">${formatTimestamp(transaction.created_at)}</p>
-                    `;
-                    container.appendChild(card);
-                });
-            }
-        } catch (error) {
-            console.warn("Failed to fetch Supabase transactions:", error);
+        if (error) {
+            console.warn('Error loading prediction history:', error);
+            return;
         }
-    }
-    
-    // If no transactions found, show appropriate message
-    if (!hasTransactions) {
-        container.innerHTML = "<p>No payment transactions found. Complete a subscription purchase to see transaction history here.</p>";
-    }
-}
-
-// Subscription countdown timer
-function createSubscriptionCountdown(tierExpiry) {
-    if (!tierExpiry) return "No active subscription";
-    
-    const now = new Date();
-    const expiry = new Date(tierExpiry);
-    const timeDiff = expiry.getTime() - now.getTime();
-    
-    if (timeDiff <= 0) {
-        return "⏰ Expired";
-    }
-    
-    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-    
-    if (days > 0) {
-        return `🕒 ${days} days, ${hours} hours remaining`;
-    } else if (hours > 0) {
-        return `🕒 ${hours} hours, ${minutes} minutes remaining`;
-    } else {
-        return `🕒 ${minutes} minutes remaining`;
+        
+        displayPredictionHistory(history || []);
+    } catch (error) {
+        console.error('Error loading prediction history:', error);
     }
 }
 
-// Override fetchHistory to include Supabase transactions
-const originalFetchHistory = fetchHistory;
-fetchHistory = async function(userId) {
-    // Call original function first
-    await originalFetchHistory(userId);
+function displayPredictionHistory(history) {
+    const container = document.getElementById('history-container');
+    if (!container) return;
     
-    // Then enhance with Supabase transactions
-    const transactionsContainer = document.querySelector("#transactions-tab .history-container");
-    if (transactionsContainer) {
-        await fetchEnhancedTransactionHistory(userId, transactionsContainer);
+    if (history.length === 0) {
+        container.innerHTML = `
+            <div class="no-history">
+                <h3>No saved predictions</h3>
+                <p>Save predictions from the home page to track them here!</p>
+            </div>
+        `;
+        return;
+    }
+    
+    const historyHTML = history.map(item => {
+        const prediction = item.predictions;
+        return `
+            <div class="history-item">
+                <div class="match-info">
+                    <h4>${prediction.home_team} vs ${prediction.away_team}</h4>
+                    <span class="league">${prediction.league}</span>
+                </div>
+                <div class="prediction-info">
+                    <span class="prediction">${prediction.prediction}</span>
+                    <span class="confidence">${prediction.confidence}% confidence</span>
+                </div>
+                <div class="saved-date">
+                    Saved: ${formatTimestamp(item.saved_at)}
+                </div>
+                ${item.notes ? `<div class="notes">${item.notes}</div>` : ''}
+            </div>
+        `;
+    }).join('');
+    
+    container.innerHTML = historyHTML;
+}
+
+async function initializeProfilePage() {
+    await loadUserProfile();
+}
+
+async function loadUserProfile() {
+    if (!currentUser) return;
+    
+    try {
+        const { data: profile, error } = await supabase
+            .from('user_profiles')
+            .select('*')
+            .eq('id', currentUser.id)
+            .single();
+            
+        if (error) {
+            console.warn('Error loading user profile:', error);
+            return;
+        }
+        
+        displayUserProfile(profile);
+    } catch (error) {
+        console.error('Error loading user profile:', error);
+    }
+}
+
+function displayUserProfile(profile) {
+    const container = document.getElementById('profile-container');
+    if (!container) return;
+    
+    container.innerHTML = `
+        <div class="profile-section">
+            <div class="profile-header">
+                <div class="profile-picture">
+                    ${profile.profile_picture_url ? 
+                        `<img src="${profile.profile_picture_url}" alt="Profile Picture">` :
+                        `<div class="default-avatar">${profile.username?.charAt(0)?.toUpperCase() || 'U'}</div>`
+                    }
+                </div>
+                <div class="profile-info">
+                    <h2>${profile.display_name || profile.username}</h2>
+                    <p class="email">${profile.email}</p>
+                    <span class="tier-badge tier-${profile.current_tier?.toLowerCase().replace(' ', '-')}">${profile.current_tier}</span>
+                </div>
+            </div>
+            
+            <div class="profile-stats">
+                <div class="stat">
+                    <span class="label">Total Referrals</span>
+                    <span class="value">${profile.total_referrals || 0}</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Member Since</span>
+                    <span class="value">${formatTimestamp(profile.created_at)}</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Last Login</span>
+                    <span class="value">${formatTimestamp(profile.last_login)}</span>
+                </div>
+            </div>
+            
+            <div class="profile-actions">
+                <button onclick="editProfile()" class="btn-primary">Edit Profile</button>
+                <button onclick="signOut()" class="btn-secondary">Sign Out</button>
+            </div>
+        </div>
+    `;
+}
+
+async function initializeSubscriptionsPage() {
+    await loadSubscriptionInfo();
+}
+
+async function loadSubscriptionInfo() {
+    if (!currentUser) return;
+    
+    try {
+        const { data: profile, error } = await supabase
+            .from('user_profiles')
+            .select('current_tier, subscription_period, subscription_start, subscription_end, subscription_status')
+            .eq('id', currentUser.id)
+            .single();
+            
+        if (error) {
+            console.warn('Error loading subscription info:', error);
+            return;
+        }
+        
+        displaySubscriptionInfo(profile);
+    } catch (error) {
+        console.error('Error loading subscription info:', error);
+    }
+}
+
+function displaySubscriptionInfo(profile) {
+    const container = document.getElementById('subscription-container');
+    if (!container) return;
+    
+    const isActive = profile.subscription_status === 'active';
+    const hasSubscription = profile.current_tier !== 'Free Tier';
+    
+    container.innerHTML = `
+        <div class="subscription-section">
+            <div class="current-subscription">
+                <h3>Current Subscription</h3>
+                <div class="subscription-card">
+                    <h4>${profile.current_tier}</h4>
+                    ${hasSubscription ? `
+                        <p>Period: ${profile.subscription_period}</p>
+                        <p>Status: ${isActive ? '✅ Active' : '❌ Inactive'}</p>
+                        ${profile.subscription_end ? `
+                            <p>Expires: ${formatTimestamp(profile.subscription_end)}</p>
+                        ` : ''}
+                    ` : `
+                        <p>Free tier with basic features</p>
+                    `}
+                </div>
+            </div>
+            
+            <div class="upgrade-options">
+                <h3>Upgrade Your Plan</h3>
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <h4>Premium Tier</h4>
+                        <p class="price">₦2,000/month</p>
+                        <ul>
+                            <li>Premium predictions</li>
+                            <li>Higher accuracy</li>
+                            <li>Email notifications</li>
+                        </ul>
+                        <button onclick="initializePayment('Premium Tier', 'monthly', 2000)" class="btn-upgrade">
+                            Upgrade to Premium
+                        </button>
+                    </div>
+                    
+                    <div class="plan-card featured">
+                        <h4>VIP Tier</h4>
+                        <p class="price">₦5,000/month</p>
+                        <ul>
+                            <li>VIP predictions</li>
+                            <li>Insider insights</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <button onclick="initializePayment('VIP Tier', 'monthly', 5000)" class="btn-upgrade">
+                            Upgrade to VIP
+                        </button>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <h4>VVIP Tier</h4>
+                        <p class="price">₦10,000/month</p>
+                        <ul>
+                            <li>VVIP predictions</li>
+                            <li>Exclusive analysis</li>
+                            <li>Direct AI access</li>
+                        </ul>
+                        <button onclick="initializePayment('VVIP Tier', 'monthly', 10000)" class="btn-upgrade">
+                            Upgrade to VVIP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+async function initializeReferralPage() {
+    await loadReferralData();
+}
+
+async function loadReferralData() {
+    if (!currentUser) return;
+    
+    try {
+        // Get user's referral code
+        const { data: referralCode, error: codeError } = await supabase
+            .from('referral_codes')
+            .select('*')
+            .eq('user_id', currentUser.id)
+            .single();
+            
+        // Get user's referrals
+        const { data: referrals, error: referralsError } = await supabase
+            .from('referrals')
+            .select(`
+                *,
+                user_profiles!referred_id (display_name, email, current_tier, created_at)
+            `)
+            .eq('referrer_id', currentUser.id)
+            .order('created_at', { ascending: false });
+            
+        if (codeError && codeError.code !== 'PGRST116') {
+            console.warn('Error loading referral code:', codeError);
+        }
+        
+        if (referralsError) {
+            console.warn('Error loading referrals:', referralsError);
+        }
+        
+        displayReferralData(referralCode, referrals || []);
+    } catch (error) {
+        console.error('Error loading referral data:', error);
+    }
+}
+
+function displayReferralData(referralCode, referrals) {
+    const container = document.getElementById('referral-container');
+    if (!container) return;
+    
+    const code = referralCode?.code || 'Loading...';
+    
+    container.innerHTML = `
+        <div class="referral-section">
+            <div class="referral-code-section">
+                <h3>Your Referral Code</h3>
+                <div class="referral-code-card">
+                    <div class="code-display">
+                        <span id="referral-code">${code}</span>
+                        <button onclick="copyReferralCode()" class="btn-copy">Copy</button>
+                    </div>
+                    <p>Share this code with friends to earn rewards!</p>
+                </div>
+            </div>
+            
+            <div class="referral-stats">
+                <div class="stat">
+                    <span class="label">Total Referrals</span>
+                    <span class="value">${referrals.length}</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Total Rewards</span>
+                    <span class="value">₦${(referrals.length * 500).toLocaleString()}</span>
+                </div>
+            </div>
+            
+            <div class="referrals-list">
+                <h3>Your Referrals</h3>
+                ${referrals.length === 0 ? `
+                    <div class="no-referrals">
+                        <p>No referrals yet. Share your code to start earning!</p>
+                    </div>
+                ` : `
+                    <div class="referrals-grid">
+                        ${referrals.map(referral => `
+                            <div class="referral-item">
+                                <h4>${referral.user_profiles.display_name}</h4>
+                                <p class="email">${referral.user_profiles.email}</p>
+                                <span class="tier">${referral.user_profiles.current_tier}</span>
+                                <div class="referral-date">
+                                    Joined: ${formatTimestamp(referral.created_at)}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `}
+            </div>
+        </div>
+    `;
+}
+
+async function initializeInsightsPage() {
+    // VIP and VVIP tier only
+    if (!hasAccess('VIP Tier')) {
+        showUpgradeModal('VIP Tier');
+        return;
+    }
+    
+    await loadInsights();
+}
+
+async function loadInsights() {
+    try {
+        const { data: accuracy, error } = await supabase
+            .from('prediction_accuracy')
+            .select('*')
+            .order('date', { ascending: false })
+            .limit(30);
+            
+        if (error) {
+            console.warn('Error loading insights:', error);
+            return;
+        }
+        
+        displayInsights(accuracy || []);
+    } catch (error) {
+        console.error('Error loading insights:', error);
+    }
+}
+
+function displayInsights(accuracy) {
+    const container = document.getElementById('insights-container');
+    if (!container) return;
+    
+    const totalPredictions = accuracy.reduce((sum, day) => sum + (day.total_predictions || 0), 0);
+    const correctPredictions = accuracy.reduce((sum, day) => sum + (day.correct_predictions || 0), 0);
+    const overallAccuracy = totalPredictions > 0 ? (correctPredictions / totalPredictions * 100).toFixed(1) : 0;
+    
+    container.innerHTML = `
+        <div class="insights-section">
+            <div class="insights-header">
+                <h3>AI Prediction Performance</h3>
+                <div class="overall-stats">
+                    <div class="stat-card">
+                        <h4>Overall Accuracy</h4>
+                        <span class="stat-value">${overallAccuracy}%</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Total Predictions</h4>
+                        <span class="stat-value">${totalPredictions}</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Correct Predictions</h4>
+                        <span class="stat-value">${correctPredictions}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accuracy-chart">
+                <h4>Recent Performance</h4>
+                ${accuracy.length === 0 ? `
+                    <p>No performance data available yet.</p>
+                ` : `
+                    <div class="chart-data">
+                        ${accuracy.slice(0, 7).map(day => {
+                            const dayAccuracy = day.total_predictions > 0 ? 
+                                (day.correct_predictions / day.total_predictions * 100).toFixed(1) : 0;
+                            return `
+                                <div class="chart-bar">
+                                    <div class="bar" style="height: ${dayAccuracy}%"></div>
+                                    <span class="date">${new Date(day.date).toLocaleDateString()}</span>
+                                    <span class="accuracy">${dayAccuracy}%</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `}
+            </div>
+        </div>
+    `;
+}
+
+// ===== Global Functions =====
+window.savePrediction = async function(predictionId) {
+    if (!currentUser) {
+        showModal({ message: 'Please log in to save predictions.' });
+        return;
+    }
+    
+    try {
+        const { data, error } = await supabase
+            .from('user_prediction_history')
+            .insert({
+                user_id: currentUser.id,
+                prediction_id: predictionId,
+                saved_at: new Date().toISOString()
+            });
+            
+        if (error && error.code !== '23505') { // Ignore duplicate key errors
+            console.warn('Error saving prediction:', error);
+            showModal({ message: 'Error saving prediction. Please try again.' });
+            return;
+        }
+        
+        showModal({ 
+            message: 'Prediction saved to your history!',
+            confirmText: 'View History',
+            cancelText: 'Continue',
+            onConfirm: () => loadPage('history')
+        });
+    } catch (error) {
+        console.error('Error saving prediction:', error);
+        showModal({ message: 'Error saving prediction. Please try again.' });
     }
 };
 
-// Check for payment redirect and force tier update
-window.addEventListener("load", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const paymentStatus = urlParams.get("payment");
-    const transactionId = urlParams.get("transaction_id");
-    
-    if (paymentStatus === "success" && transactionId && auth.currentUser) {
-        setTimeout(() => {
-            // Check users current tier from Firebase and force UI update
-            const userRef = doc(db, "users", auth.currentUser.uid);
-            getDoc(userRef).then(snap => {
-                if (snap.exists()) {
-                    const userData = snap.data();
-                    if (userData.tier && userData.tier !== "Free Tier") {
-                        forceSubscriptionUpdate(auth.currentUser.uid, userData.tier, "monthly", userData.tierExpiry);
-                    }
-                }
-            });
-        }, 3000);
+window.copyReferralCode = function() {
+    const codeElement = document.getElementById('referral-code');
+    if (codeElement) {
+        navigator.clipboard.writeText(codeElement.textContent).then(() => {
+            showModal({ message: 'Referral code copied to clipboard!' });
+        });
     }
-});
+};
 
-console.log("✅ Enhanced payment and subscription fixes loaded successfully!");
+window.signOut = async function() {
+    try {
+        const { error } = await supabase.auth.signOut();
+        if (error) {
+            console.error('Error signing out:', error);
+        }
+    } catch (error) {
+        console.error('Error signing out:', error);
+    }
+};
 
+window.initializePayment = function(tier, period, amount) {
+    if (!currentUser) {
+        showModal({ message: 'Please log in to subscribe.' });
+        return;
+    }
+    
+    // Initialize Flutterwave payment
+    FlutterwaveCheckout({
+        public_key: FLWPUBK,
+        tx_ref: `statwise_${currentUser.id}_${Date.now()}`,
+        amount: amount,
+        currency: "NGN",
+        payment_options: "card,mobilemoney,ussd",
+        customer: {
+            email: currentUser.email,
+            phone_number: "",
+            name: currentUser.user_metadata?.display_name || currentUser.email
+        },
+        customizations: {
+            title: "StatWise Subscription",
+            description: `${tier} - ${period}`,
+            logo: ""
+        },
+        callback: function (data) {
+            console.log('Payment callback:', data);
+            if (data.status === "successful") {
+                handleSuccessfulPayment(data, tier, period, amount);
+            }
+        },
+        onclose: function() {
+            console.log('Payment modal closed');
+        }
+    });
+};
+
+async function handleSuccessfulPayment(paymentData, tier, period, amount) {
+    try {
+        // Calculate subscription dates
+        const startDate = new Date();
+        const endDate = new Date();
+        endDate.setMonth(endDate.getMonth() + 1); // Add 1 month
+        
+        // Update user subscription
+        const { data: updatedProfile, error: updateError } = await supabase
+            .from('user_profiles')
+            .update({
+                current_tier: tier,
+                tier: tier,
+                subscription_period: period,
+                subscription_start: startDate.toISOString(),
+                subscription_end: endDate.toISOString(),
+                subscription_status: 'active',
+                tier_expiry: endDate.toISOString(),
+                updated_at: new Date().toISOString()
+            })
+            .eq('id', currentUser.id)
+            .select()
+            .single();
+            
+        if (updateError) {
+            console.error('Error updating subscription:', updateError);
+        } else {
+            verifiedTier = tier;
+            console.log('Subscription updated successfully');
+        }
+        
+        // Log payment transaction
+        await supabase
+            .from('payment_transactions')
+            .insert({
+                user_id: currentUser.id,
+                transaction_id: paymentData.transaction_id,
+                tx_ref: paymentData.tx_ref,
+                amount: amount,
+                currency: 'NGN',
+                status: 'successful',
+                payment_type: 'flutterwave',
+                tier: tier,
+                period: period,
+                created_at: new Date().toISOString()
+            });
+            
+        // Log subscription event
+        await supabase
+            .from('subscription_events')
+            .insert({
+                user_id: currentUser.id,
+                event_type: 'subscription_purchase',
+                event_data: {
+                    tier: tier,
+                    period: period,
+                    amount: amount,
+                    transaction_id: paymentData.transaction_id
+                },
+                created_at: new Date().toISOString()
+            });
+        
+        showModal({
+            message: `🎉 Congratulations!\n\nYour ${tier} subscription is now active!\n\nTransaction ID: ${paymentData.transaction_id}`,
+            confirmText: 'Continue',
+            onConfirm: () => {
+                loadPage('subscriptions');
+            }
+        });
+        
+    } catch (error) {
+        console.error('Error handling successful payment:', error);
+        showModal({
+            message: 'Payment successful but there was an error updating your subscription. Please contact support.',
+            confirmText: 'OK'
+        });
+    }
+}
+
+function redirectToLogin() {
+    console.log('No user found, redirecting to login...');
+    window.location.href = './Auth/login.html';
+}
+
+function initializeTheme() {
+    // Apply theme settings if any
+    const savedTheme = localStorage.getItem('statwise-theme') || 'default';
+    document.body.className = `theme-${savedTheme}`;
+}
+
+// ===== Modal Helper Function =====
+function showModal(options) {
+    const modal = document.createElement('div');
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-message">${options.message}</div>
+            <div class="modal-actions">
+                ${options.cancelText ? `<button class="btn-cancel">${options.cancelText}</button>` : ''}
+                <button class="btn-confirm ${options.confirmClass || 'btn-primary'}">${options.confirmText || 'OK'}</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    const confirmBtn = modal.querySelector('.btn-confirm');
+    const cancelBtn = modal.querySelector('.btn-cancel');
+    
+    confirmBtn.addEventListener('click', () => {
+        document.body.removeChild(modal);
+        if (options.onConfirm) options.onConfirm();
+    });
+    
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', () => {
+            document.body.removeChild(modal);
+            if (options.onCancel) options.onCancel();
+        });
+    }
+    
+    // Close on overlay click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            document.body.removeChild(modal);
+            if (options.onCancel) options.onCancel();
+        }
+    });
+}
+
+console.log('✅ StatWise main application loaded with Supabase integration!');
