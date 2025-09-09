@@ -166,10 +166,10 @@ function togglePasswordVisibility(inputId) {
     if (input.type === 'password') {
         input.type = 'text';
         toggle.classList.remove('icon-eye');
-        toggle.classList.add('icon-eye-off');
+        toggle.classList.add('icon-eye-slash');
     } else {
         input.type = 'password';
-        toggle.classList.remove('icon-eye-off');
+        toggle.classList.remove('icon-eye-slash');
         toggle.classList.add('icon-eye');
     }
 }
