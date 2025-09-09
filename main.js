@@ -1,7 +1,7 @@
 // main.js - StatWise PWA with Supabase-only implementation
 import { supabase, FLWPUBK } from './env.js';
 import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loader.js';
-import { initInteractiveBackground } from './ui.js';
+import { initInteractiveBackground, initializeTheme } from './ui.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
 
@@ -13,7 +13,7 @@ let currentUser = null;
 let verifiedTier = "Free Tier";
 
 // Initialize the app
-initializeTheme();
+initializeTheme(); // Initialize theme system
 initializeSupabaseAuth();
 checkPaymentRedirect();
 
@@ -954,11 +954,7 @@ function redirectToLogin() {
     window.location.href = './Auth/login.html';
 }
 
-function initializeTheme() {
-    // Apply theme settings if any
-    const savedTheme = localStorage.getItem('statwise-theme') || 'default';
-    document.body.className = `theme-${savedTheme}`;
-}
+// Theme initialization is now handled by ui.js
 
 // ===== Modal Helper Function =====
 function showModal(options) {

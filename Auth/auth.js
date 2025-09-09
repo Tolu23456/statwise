@@ -1,31 +1,39 @@
 // auth.js - Supabase Authentication
 import { supabase } from '../env.js';
 import { showLoader, hideLoader, showSpinner, hideSpinner } from '../Loader/loader.js';
-import { initInteractiveBackground } from '../ui.js';
+import { initInteractiveBackground, initializeTheme } from '../ui.js';
 
 // Initialize the auth page
 document.addEventListener('DOMContentLoaded', function() {
+    initializeTheme(); // Initialize theme system
     initInteractiveBackground(); // Add background animation to auth pages
     initializeAuthForms();
 });
 
 function initializeAuthForms() {
     // Login form
-    const loginForm = document.getElementById('loginForm');
+    const loginForm = document.getElementById('login-form');
     if (loginForm) {
         loginForm.addEventListener('submit', handleLogin);
     }
     
     // Signup form
-    const signupForm = document.getElementById('signupForm');
+    const signupForm = document.getElementById('signup-form');
     if (signupForm) {
         signupForm.addEventListener('submit', handleSignup);
     }
     
     // Forgot password form
-    const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+    const forgotPasswordForm = document.getElementById('forgot-password-form');
     if (forgotPasswordForm) {
         forgotPasswordForm.addEventListener('submit', handleForgotPassword);
+    }
+    
+    // Theme toggle button
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', handleThemeToggle);
+        updateThemeIcon();
     }
     
     // Toggle password visibility
@@ -33,6 +41,22 @@ function initializeAuthForms() {
     toggleButtons.forEach(button => {
         button.addEventListener('click', togglePasswordVisibility);
     });
+}
+
+function handleThemeToggle() {
+    // Import toggleTheme function dynamically
+    import('../ui.js').then(({ toggleTheme }) => {
+        const newTheme = toggleTheme();
+        updateThemeIcon(newTheme);
+    });
+}
+
+function updateThemeIcon(theme = null) {
+    const themeIcon = document.querySelector('.theme-icon');
+    if (!themeIcon) return;
+    
+    const currentTheme = theme || localStorage.getItem('statwise-theme') || 'light';
+    themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
 }
 
 async function handleLogin(e) {

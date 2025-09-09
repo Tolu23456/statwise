@@ -42,6 +42,38 @@ body {
     text-align: center;
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.theme-toggle:hover {
+    border-color: #0e639c;
+    transform: scale(1.1);
+}
+
+.theme-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(180deg);
+}
+
 .auth-card {
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
@@ -559,6 +591,15 @@ body {
     background: #2d2d30;
     border-color: #0e639c; /* Ensure border is visible in dark mode */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Standard app shadow for dark mode */
+}
+
+.dark-mode .theme-toggle {
+    border-color: #555;
+    color: #d4d4d4;
+}
+
+.dark-mode .theme-toggle:hover {
+    border-color: #0e639c;
 }
 
 .dark-mode .auth-subtitle,
