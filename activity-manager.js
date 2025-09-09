@@ -137,9 +137,10 @@ class ActivityManager {
     showInactivePage() {
         if (!this.isActive || !this.isEnabled) return;
         
-        // Hide any visible loader first
-        if (typeof hideLoader === 'function') {
-            hideLoader();
+        // Hide any visible loader first to prevent conflicts
+        const loader = document.querySelector('.loader');
+        if (loader && loader.style.display !== 'none') {
+            loader.style.display = 'none';
         }
         
         this.isActive = false;

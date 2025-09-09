@@ -677,6 +677,23 @@ function initializeProfileInteractions() {
         });
     }
     
+    // Initialize inactive page toggle
+    const inactivePageToggle = document.getElementById('inactivePageToggle');
+    if (inactivePageToggle) {
+        // Set current state from activity manager
+        if (window.activityManager) {
+            const currentSetting = window.activityManager.getToggleSetting();
+            inactivePageToggle.checked = currentSetting;
+        }
+        
+        // Add event listener
+        inactivePageToggle.addEventListener('change', function() {
+            if (window.activityManager) {
+                window.activityManager.enableInactivePage(this.checked);
+            }
+        });
+    }
+    
     // Initialize logout button
     const logoutBtn = document.getElementById('logoutBtn');
     if (logoutBtn) {
