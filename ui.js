@@ -7,11 +7,15 @@
  * @returns {Function} A cleanup function to stop the animation and remove listeners.
  */
 function initInteractiveBackground(container = null) {
+    console.log('🌀 Initializing interactive background...');
+    
     // Create background container and circles if not provided
     let createdElements = false;
     let backgroundContainer = container;
     
     if (!backgroundContainer) {
+        console.log('Creating dynamic background elements...');
+        
         // Create the animated background dynamically
         backgroundContainer = document.createElement('div');
         backgroundContainer.className = 'animated-background-interactive';
@@ -44,11 +48,14 @@ function initInteractiveBackground(container = null) {
         const circleCount = 15;
         const colors = ['#0e639c', '#4caf50', '#ff9800', '#e91e63', '#9c27b0'];
         
+        console.log(`Creating ${circleCount} animated circles...`);
+        
         for (let i = 0; i < circleCount; i++) {
             const li = document.createElement('li');
             const size = Math.random() * 60 + 20; // 20-80px
             const color = colors[Math.floor(Math.random() * colors.length)];
             const opacity = Math.random() * 0.3 + 0.1; // 0.1-0.4
+            const animationDuration = Math.random() * 20 + 10; // 10-30s
             
             li.style.cssText = `
                 position: absolute;
@@ -57,18 +64,42 @@ function initInteractiveBackground(container = null) {
                 background: ${color};
                 border-radius: 50%;
                 opacity: ${opacity};
-                animation: float ${Math.random() * 20 + 10}s infinite linear;
                 left: ${Math.random() * 100}%;
                 top: 100%;
                 pointer-events: none;
+                animation: floatUp ${animationDuration}s infinite linear;
             `;
             
             circlesList.appendChild(li);
         }
         
+        // Add CSS animation for floating circles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                0% {
+                    transform: translateY(100vh) scale(0);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100px) scale(1);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
         backgroundContainer.appendChild(circlesList);
         document.body.insertBefore(backgroundContainer, document.body.firstChild);
         createdElements = true;
+        
+        console.log('✅ Background elements created and added to DOM');
     }
 
     const circlesList = backgroundContainer.querySelector('.circles') || backgroundContainer.querySelector('ul');
@@ -160,14 +191,20 @@ function initInteractiveBackground(container = null) {
  * Initializes the theme system
  */
 function initializeTheme() {
+    console.log('🎨 Initializing theme system...');
+    
     // Check for saved theme preference or default to 'light'
     const savedTheme = localStorage.getItem('statwise-theme') || 'light';
+    console.log('Current saved theme:', savedTheme);
+    
     applyTheme(savedTheme);
     
     // Listen for theme changes
     window.addEventListener('themechange', (e) => {
         applyTheme(e.detail.theme);
     });
+    
+    console.log('✅ Theme system initialized successfully');
 }
 
 /**
@@ -175,6 +212,8 @@ function initializeTheme() {
  * @param {string} theme - 'light' or 'dark'
  */
 function applyTheme(theme) {
+    console.log(`🎨 Applying theme: ${theme}`);
+    
     const body = document.body;
     const html = document.documentElement;
     
@@ -186,15 +225,17 @@ function applyTheme(theme) {
     if (theme === 'dark') {
         body.classList.add('dark-mode');
         html.classList.add('dark-mode');
+        console.log('✅ Dark mode applied to body and html');
     } else {
         body.classList.add('light-mode');
         html.classList.add('light-mode');
+        console.log('✅ Light mode applied to body and html');
     }
     
     // Save theme preference
     localStorage.setItem('statwise-theme', theme);
     
-    console.log(`Theme applied: ${theme}`);
+    console.log(`✅ Theme applied successfully: ${theme}`);
 }
 
 /**
