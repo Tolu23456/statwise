@@ -127,7 +127,7 @@ header {
 main {
     position: relative;
     top: var(--header-height);
-    padding: 16px;
+    padding: 8px 16px 16px 16px;
     padding-bottom: calc(var(--nav-height) + 20px);
     min-height: calc(100vh - var(--header-height) - var(--nav-height));
     overflow-y: auto;
