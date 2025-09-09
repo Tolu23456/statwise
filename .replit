@@ -35,4 +35,4 @@ externalPort = 80
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["http-server", ".", "-a", "0.0.0.0", "-p", "5000"]
+run = ["http-server", ".", "-a", "0.0.0.0", "-p", "5000", "-c-1", "--cors"]
