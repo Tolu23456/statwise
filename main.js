@@ -1692,7 +1692,7 @@ function showModal(options) {
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';
     
-    const inputField = options.inputType ? `
+    const inputFieldHTML = options.inputType ? `
         <div class="modal-input-wrapper">
             <input type="${options.inputType}" class="modal-input" value="${options.inputValue || ''}" placeholder="${options.inputPlaceholder || ''}">
         </div>
@@ -1701,7 +1701,7 @@ function showModal(options) {
     modal.innerHTML = `
         <div class="modal-content">
             <div class="modal-message">${options.message}</div>
-            ${inputField}
+            ${inputFieldHTML}
             <div class="modal-actions">
                 ${options.cancelText ? `<button class="btn-cancel">${options.cancelText}</button>` : ''}
                 <button class="btn-confirm ${options.confirmClass || 'btn-primary'}">${options.confirmText || 'OK'}</button>

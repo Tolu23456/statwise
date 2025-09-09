@@ -136,12 +136,16 @@ main {
     padding-bottom: calc(var(--nav-height) + 20px);
     min-height: calc(100vh - var(--header-height) - var(--nav-height));
     overflow-y: auto;
+    overflow-x: hidden;
     margin-left: auto;
     margin-right: auto;
     max-width: var(--max-width);
     width: 100%;
     /* Additional overscroll prevention for main content */
     overscroll-behavior-y: contain;
+    /* Prevent scroll sync between pages */
+    scroll-behavior: auto;
+    isolation: isolate;
 }
 
 /* ---------------- Page Transitions ---------------- */
@@ -632,6 +636,27 @@ main {
     }
 }
 
+/* Modal Input Field Styling */
+.modal-input-wrapper {
+    margin: 20px 0;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.modal-input:focus {
+    border-color: #0e639c;
+    box-shadow: 0 0 0 2px rgba(14, 99, 156, 0.1);
+}
+
 /* Responsive Modal */
 @media (max-width: 480px) {
     .modal-content,
@@ -643,6 +668,11 @@ main {
     
     .modal-overlay {
         padding: 20px 10px;
+    }
+    
+    .modal-input {
+        padding: 10px;
+        font-size: 14px;
     }
 }
 
