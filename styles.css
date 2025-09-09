@@ -437,6 +437,118 @@ main {
     left: 0;
 }
 
+/* New subscription card elements */
+.tier-badge {
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    background: #4caf50;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.tier-badge.popular {
+    background: #ff9800;
+    animation: pulse 2s infinite;
+}
+
+.tier-badge.elite {
+    background: #9c27b0;
+}
+
+.tier-badge.pro {
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.prediction-limit {
+    background: rgba(14, 99, 156, 0.1);
+    color: #0e639c;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+.savings-badge {
+    background: #4caf50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 4px 0;
+    display: inline-block;
+}
+
+.tier-features {
+    margin: 12px 0;
+    text-align: center;
+}
+
+.feature-highlight {
+    background: #f0f8ff;
+    color: #0e639c;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+.success-rate {
+    background: #e8f5e8;
+    color: #2e7d32;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+.roi-indicator {
+    background: #fff3e0;
+    color: #ef6c00;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+.guarantee {
+    background: #f3e5f5;
+    color: #7b1fa2;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 4px 0;
+    border: 1px solid #7b1fa2;
+}
+
+/* Position the subscription card relative for badge positioning */
+.subscription-card {
+    position: relative;
+}
+
 .subscription-card .subscribe-btn {
     margin-top: auto;
     padding: 8px 16px;
@@ -1485,6 +1597,33 @@ body.pulling-to-refresh {
 .dark-mode .profile-card p,
 .dark-mode .profile-email {
     color: #bbb;
+}
+
+/* Dark mode support for new subscription elements */
+.dark-mode .prediction-limit {
+    background: rgba(14, 99, 156, 0.2);
+    color: #74b9ff;
+}
+
+.dark-mode .feature-highlight {
+    background: #1c3a50;
+    color: #a5d8ff;
+}
+
+.dark-mode .success-rate {
+    background: #1b4332;
+    color: #52c41a;
+}
+
+.dark-mode .roi-indicator {
+    background: #3d2914;
+    color: #ffa940;
+}
+
+.dark-mode .guarantee {
+    background: #2d1b3d;
+    color: #b37feb;
+    border-color: #b37feb;
 }
 
 .dark-mode .profile-username {
