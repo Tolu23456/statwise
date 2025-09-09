@@ -702,7 +702,10 @@ function initializeProfileInteractions() {
     // Initialize avatar upload
     const avatarUpload = document.getElementById('avatarUpload');
     if (avatarUpload) {
+        console.log('Avatar upload input found, adding event listener');
         avatarUpload.addEventListener('change', handleAvatarUpload);
+    } else {
+        console.warn('Avatar upload input not found during initialization');
     }
 }
 
@@ -710,7 +713,12 @@ function initializeProfileInteractions() {
 function triggerAvatarUpload() {
     const avatarUpload = document.getElementById('avatarUpload');
     if (avatarUpload) {
+        console.log('Triggering file upload dialog...');
+        // Reset the input value to ensure change event fires even for same file
+        avatarUpload.value = '';
         avatarUpload.click();
+    } else {
+        console.error('Avatar upload input not found');
     }
 }
 

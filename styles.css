@@ -630,24 +630,22 @@ main {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: #444;
+    background: #f4f5f7;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 28px;
     font-weight: bold;
-    color: #fff;
+    color: #0e639c;
     border: 2px solid #0e639c;
     cursor: pointer;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease;
     position: relative;
 }
 
 .profile-avatar:hover {
     border-color: #4caf50;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.3);
 }
 
 .profile-avatar:hover::after {
@@ -680,8 +678,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #0e639c, #4caf50);
-    color: white;
+    background: #f4f5f7;
+    color: #0e639c;
     font-size: 28px;
     font-weight: bold;
     border-radius: 50%;
