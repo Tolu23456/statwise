@@ -57,7 +57,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 1000;
 }
 
 .theme-toggle:hover {
@@ -72,6 +72,32 @@ body {
 
 .theme-toggle:hover .theme-icon {
     transform: rotate(180deg);
+}
+
+/* Theme Transition Circle */
+.theme-transition-circle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #1e1e1e;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.theme-transition-circle.expanding {
+    width: 200vmax;
+    height: 200vmax;
+    opacity: 1;
+}
+
+.theme-transition-circle.light-mode {
+    background: #f4f5f7;
 }
 
 .auth-card {
