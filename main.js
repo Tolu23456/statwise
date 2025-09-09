@@ -694,10 +694,15 @@ function initializeProfileInteractions() {
     const resetStorage = document.getElementById('resetStorage');
     if (resetStorage) {
         resetStorage.addEventListener('click', () => {
-            if (confirm('Are you sure you want to reset local cache? This will clear saved predictions and preferences.')) {
-                localStorage.clear();
-                location.reload();
-            }
+            showModal({
+                message: 'Are you sure you want to reset local cache? This will clear saved predictions and preferences.',
+                confirmText: 'Reset Cache',
+                cancelText: 'Cancel',
+                onConfirm: () => {
+                    localStorage.clear();
+                    location.reload();
+                }
+            });
         });
     }
     
@@ -1070,7 +1075,10 @@ function initializeSubscriptionButtons() {
             const period = button.getAttribute('data-period');
             
             if (tier === 'free') {
-                alert('You are already on the free tier!');
+                showModal({
+                    message: 'You are already on the free tier!',
+                    confirmText: 'OK'
+                });
                 return;
             }
             
@@ -1083,18 +1091,27 @@ function initializeSubscriptionButtons() {
 async function handleSubscriptionUpgrade(tier, amount, period) {
     try {
         // For now, show a placeholder payment flow
-        const confirmUpgrade = confirm(`Upgrade to ${tier} tier for ₦${amount}/${period}?`);
-        
-        if (confirmUpgrade) {
-            // Here you would integrate with Flutterwave for actual payment
-            alert(`Payment integration would be initiated here for ${tier} tier upgrade.`);
-            
-            // For demo purposes, you could update the user's tier in the database
-            // await upgradeUserTier(tier, period);
-        }
+        showModal({
+            message: `Upgrade to ${tier} tier for ₦${amount}/${period}?`,
+            confirmText: 'Upgrade',
+            cancelText: 'Cancel',
+            onConfirm: () => {
+                // Here you would integrate with Flutterwave for actual payment
+                showModal({
+                    message: `Payment integration would be initiated here for ${tier} tier upgrade.`,
+                    confirmText: 'OK'
+                });
+                
+                // For demo purposes, you could update the user's tier in the database
+                // await upgradeUserTier(tier, period);
+            }
+        });
     } catch (error) {
         console.error('Error handling subscription upgrade:', error);
-        alert('Error processing subscription upgrade. Please try again.');
+        showModal({
+            message: 'Error processing subscription upgrade. Please try again.',
+            confirmText: 'OK'
+        });
     }
 }
 
@@ -1215,7 +1232,10 @@ function initializeReferralInteractions() {
                         copyReferralCodeBtn.style.background = '';
                     }, 2000);
                 }).catch(() => {
-                    alert('Failed to copy referral code');
+                    showModal({
+                        message: 'Failed to copy referral code',
+                        confirmText: 'OK'
+                    });
                 });
             }
         });
@@ -1260,7 +1280,10 @@ function initializeReferralInteractions() {
                 } else {
                     // Fallback to copying to clipboard
                     navigator.clipboard.writeText(message).then(() => {
-                        alert('Referral message copied to clipboard!');
+                        showModal({
+                            message: 'Referral message copied to clipboard!',
+                            confirmText: 'OK'
+                        });
                     });
                 }
             }
