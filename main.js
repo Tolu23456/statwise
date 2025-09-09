@@ -732,6 +732,30 @@ function initializeProfileInteractions() {
         });
     }
     
+    // Initialize edit username button
+    const editUsernameBtn = document.getElementById('editUsernameBtn');
+    if (editUsernameBtn) {
+        editUsernameBtn.addEventListener('click', () => {
+            const userNameElement = document.getElementById('userName');
+            if (userNameElement) {
+                const currentName = userNameElement.textContent;
+                
+                showModal({
+                    message: 'Enter your new username:',
+                    inputType: 'text',
+                    inputValue: currentName,
+                    inputPlaceholder: 'Enter username',
+                    confirmText: 'Save',
+                    cancelText: 'Cancel',
+                    onConfirm: async (newUsername) => {
+                        if (newUsername && newUsername.trim() && newUsername.trim() !== currentName) {
+                            await updateUsername(newUsername.trim());
+                        }
+                    }
+                });
+            }
+        });
+    }
     
     // Initialize avatar upload
     const avatarUpload = document.getElementById('avatarUpload');
@@ -1616,15 +1640,68 @@ function redirectToLogin() {
     window.location.href = './Auth/login.html';
 }
 
+// ===== Username Update Function =====
+async function updateUsername(newUsername) {
+    try {
+        showSpinner();
+        
+        const { error } = await supabase
+            .from('user_profiles')
+            .update({ 
+                display_name: newUsername,
+                username: newUsername,
+                updated_at: new Date().toISOString()
+            })
+            .eq('id', currentUser.id);
+            
+        if (error) {
+            console.error('Error updating username:', error);
+            showModal({
+                message: 'Failed to update username. Please try again.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+        
+        // Update the display immediately
+        const userNameElement = document.getElementById('userName');
+        if (userNameElement) {
+            userNameElement.textContent = newUsername;
+        }
+        
+        showModal({
+            message: 'Username updated successfully!',
+            confirmText: 'OK'
+        });
+        
+    } catch (error) {
+        console.error('Error updating username:', error);
+        showModal({
+            message: 'Failed to update username. Please try again.',
+            confirmText: 'OK'
+        });
+    } finally {
+        hideSpinner();
+    }
+}
+
 // Theme initialization is now handled by ui.js
 
 // ===== Modal Helper Function =====
 function showModal(options) {
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';
+    
+    const inputField = options.inputType ? `
+        <div class="modal-input-wrapper">
+            <input type="${options.inputType}" class="modal-input" value="${options.inputValue || ''}" placeholder="${options.inputPlaceholder || ''}">
+        </div>
+    ` : '';
+    
     modal.innerHTML = `
         <div class="modal-content">
             <div class="modal-message">${options.message}</div>
+            ${inputField}
             <div class="modal-actions">
                 ${options.cancelText ? `<button class="btn-cancel">${options.cancelText}</button>` : ''}
                 <button class="btn-confirm ${options.confirmClass || 'btn-primary'}">${options.confirmText || 'OK'}</button>
@@ -1636,16 +1713,38 @@ function showModal(options) {
     
     const confirmBtn = modal.querySelector('.btn-confirm');
     const cancelBtn = modal.querySelector('.btn-cancel');
+    const inputField = modal.querySelector('.modal-input');
+    
+    // Focus input if it exists
+    if (inputField) {
+        setTimeout(() => inputField.focus(), 100);
+    }
     
     confirmBtn.addEventListener('click', () => {
+        const inputValue = inputField ? inputField.value : null;
         document.body.removeChild(modal);
-        if (options.onConfirm) options.onConfirm();
+        if (options.onConfirm) {
+            if (inputField) {
+                options.onConfirm(inputValue);
+            } else {
+                options.onConfirm();
+            }
+        }
     });
     
     if (cancelBtn) {
         cancelBtn.addEventListener('click', () => {
             document.body.removeChild(modal);
             if (options.onCancel) options.onCancel();
+        });
+    }
+    
+    // Handle Enter key for input
+    if (inputField) {
+        inputField.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                confirmBtn.click();
+            }
         });
     }
     
