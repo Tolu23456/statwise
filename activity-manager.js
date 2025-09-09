@@ -3,9 +3,10 @@ class ActivityManager {
     constructor() {
         this.isActive = true;
         this.inactiveContainer = null;
-        this.inactiveThreshold = 2000; // 2 seconds of inactivity before showing inactive page
+        this.inactiveThreshold = 5000; // 5 seconds of inactivity before showing inactive page
         this.timeoutId = null;
         this.lastActivityTime = Date.now();
+        this.isEnabled = this.getToggleSetting();
         
         this.init();
     }
@@ -100,7 +101,7 @@ class ActivityManager {
     }
     
     scheduleInactive() {
-        if (!this.isActive) return;
+        if (!this.isActive || !this.isEnabled) return;
         
         // Clear any existing timeout
         if (this.timeoutId) {
@@ -134,7 +135,12 @@ class ActivityManager {
     }
     
     showInactivePage() {
-        if (!this.isActive) return;
+        if (!this.isActive || !this.isEnabled) return;
+        
+        // Hide any visible loader first
+        if (typeof hideLoader === 'function') {
+            hideLoader();
+        }
         
         this.isActive = false;
         
@@ -213,8 +219,32 @@ class ActivityManager {
         return {
             isActive: this.isActive,
             lastActivity: this.lastActivityTime,
-            timeSinceActivity: Date.now() - this.lastActivityTime
+            timeSinceActivity: Date.now() - this.lastActivityTime,
+            isEnabled: this.isEnabled
         };
+    }
+    
+    // Toggle setting management
+    getToggleSetting() {
+        const setting = localStorage.getItem('inactivePageEnabled');
+        return setting === null ? true : setting === 'true'; // Default to enabled
+    }
+    
+    setToggleSetting(enabled) {
+        this.isEnabled = enabled;
+        localStorage.setItem('inactivePageEnabled', enabled.toString());
+        
+        // If disabled while inactive, hide the page
+        if (!enabled && !this.isActive) {
+            this.hideInactivePage();
+        }
+        
+        console.log(`🎯 Inactive page feature ${enabled ? 'enabled' : 'disabled'}`);
+    }
+    
+    // Public method to enable/disable the feature
+    enableInactivePage(enabled) {
+        this.setToggleSetting(enabled);
     }
 }
 
