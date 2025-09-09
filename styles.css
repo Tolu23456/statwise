@@ -124,42 +124,6 @@ header {
 }
 
 /* ---------------- Main ---------------- */
-/* Main content styling moved to page transitions section above */
-
-/* ---------------- Page Transitions ---------------- */
-.page-fade-out {
-    animation: fadeOut 0.2s cubic-bezier(0.4, 0, 0.6, 1) forwards;
-}
-
-.page-fade-in {
-    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(15px) scale(0.98);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-15px) scale(1.02);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Ensure smooth transitions for main content */
 main {
     position: relative;
     top: var(--header-height);
@@ -170,8 +134,39 @@ main {
     margin: 16px 0;
     /* Additional overscroll prevention for main content */
     overscroll-behavior-y: contain;
-    /* Add smooth transition base */
-    transition: opacity 0.1s ease;
+}
+
+/* ---------------- Page Transitions ---------------- */
+.page-fade-out {
+    animation: fadeOut 0.2s ease-out forwards;
+}
+
+.page-fade-in {
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ---------------- Bottom Navigation ---------------- */
