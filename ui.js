@@ -52,9 +52,9 @@ function initInteractiveBackground(container = null) {
         
         for (let i = 0; i < circleCount; i++) {
             const li = document.createElement('li');
-            const size = Math.random() * 80 + 30; // 30-110px
+            const size = Math.random() * 60 + 25; // 25-85px fixed sizes
             const color = colors[Math.floor(Math.random() * colors.length)];
-            const opacity = Math.random() * 0.4 + 0.2; // 0.2-0.6
+            const opacity = 0.5; // Fixed 50% opacity
             const animationDuration = Math.random() * 15 + 8; // 8-23s
             const animationDelay = Math.random() * 5; // 0-5s delay
             
@@ -66,10 +66,9 @@ function initInteractiveBackground(container = null) {
                 border-radius: 50%;
                 opacity: ${opacity};
                 left: ${Math.random() * 100}%;
-                top: 100vh;
+                bottom: -${size}px;
                 pointer-events: none;
                 animation: floatUp ${animationDuration}s infinite linear ${animationDelay}s;
-                transform: translateY(0);
                 z-index: -1;
             `;
             
@@ -81,31 +80,17 @@ function initInteractiveBackground(container = null) {
         style.textContent = `
             @keyframes floatUp {
                 0% {
-                    transform: translateY(50px) scale(0.3);
+                    transform: translateY(0);
                     opacity: 0;
                 }
-                5% {
-                    opacity: 0.6;
-                    transform: translateY(0) scale(0.5);
+                10% {
+                    opacity: 0.5;
                 }
-                25% {
-                    opacity: 0.8;
-                    transform: translateY(-25vh) scale(0.8);
-                }
-                50% {
-                    opacity: 1;
-                    transform: translateY(-50vh) scale(1);
-                }
-                75% {
-                    opacity: 0.8;
-                    transform: translateY(-75vh) scale(0.8);
-                }
-                95% {
-                    opacity: 0.4;
-                    transform: translateY(-100vh) scale(0.5);
+                90% {
+                    opacity: 0.5;
                 }
                 100% {
-                    transform: translateY(-110vh) scale(0);
+                    transform: translateY(-110vh);
                     opacity: 0;
                 }
             }
