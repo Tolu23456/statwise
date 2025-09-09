@@ -4,6 +4,7 @@ import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loade
 import { initInteractiveBackground, initializeTheme } from './ui.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
+import { ActivityManager } from './activity-manager.js';
 
 // ===== Global Variables =====
 const main = document.querySelector("main");
