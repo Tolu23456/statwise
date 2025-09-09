@@ -131,12 +131,13 @@ header {
 /* ---------------- Main ---------------- */
 main {
     position: relative;
-    top: var(--header-height);
-    padding: 0px var(--mobile-padding) 16px var(--mobile-padding);
+    margin-top: var(--header-height);
+    padding: 20px var(--mobile-padding) 20px var(--mobile-padding);
     padding-bottom: calc(var(--nav-height) + 20px);
     min-height: calc(100vh - var(--header-height) - var(--nav-height));
     overflow-y: auto;
-    margin: 16px auto;
+    margin-left: auto;
+    margin-right: auto;
     max-width: var(--max-width);
     width: 100%;
     /* Additional overscroll prevention for main content */
@@ -392,8 +393,8 @@ main {
     }
     
     main {
-        padding: 0px var(--mobile-padding) 12px var(--mobile-padding);
-        margin: 12px auto;
+        padding: 15px var(--mobile-padding) 15px var(--mobile-padding);
+        padding-bottom: calc(var(--nav-height) + 15px);
     }
     
     .bottom-nav button {
@@ -430,7 +431,8 @@ main {
     }
     
     main {
-        padding: 0px var(--mobile-padding) 16px var(--mobile-padding);
+        padding: 18px var(--mobile-padding) 18px var(--mobile-padding);
+        padding-bottom: calc(var(--nav-height) + 18px);
     }
     
     .subscription-card,
@@ -448,8 +450,8 @@ main {
     }
     
     main {
-        padding: 0px var(--container-padding) 20px var(--container-padding);
-        margin: 20px auto;
+        padding: 24px var(--container-padding) 24px var(--container-padding);
+        padding-bottom: calc(var(--nav-height) + 24px);
     }
     
     .app-name {
@@ -489,8 +491,8 @@ main {
     }
     
     main {
-        padding: 0px var(--container-padding) 24px var(--container-padding);
-        margin: 24px auto;
+        padding: 32px var(--container-padding) 32px var(--container-padding);
+        padding-bottom: calc(var(--nav-height) + 32px);
     }
     
     .app-name {
