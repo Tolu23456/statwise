@@ -23,11 +23,11 @@
             <form id="login-form" class="auth-form">
                 <div class="input-wrapper">
                     <i class="input-icon icon-email"></i>
-                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="email" id="login-email" name="email" placeholder="Email" required>
                 </div>
                 <div class="input-wrapper">
                     <i class="input-icon icon-password"></i>
-                    <input type="password" id="login-password" placeholder="Password" required>
+                    <input type="password" id="login-password" name="password" placeholder="Password" required>
                     <i class="password-toggle-icon icon-eye" id="password-toggle"></i>
                 </div>
 
@@ -47,7 +47,8 @@
                         <a href="forgot-password.html" id="forgot-password-link">Forgot Password?</a>
                     </p>
                 </div>
-                <!-- Error messages from Firebase will appear here -->
+
+                <!-- Error messages appear right above the button -->
                 <div class="error-msg" id="login-error"></div>
 
                 <!-- Login Button -->

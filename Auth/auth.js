@@ -37,10 +37,21 @@ function initializeAuthForms() {
     }
     
     // Toggle password visibility
-    const toggleButtons = document.querySelectorAll('.toggle-password');
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', togglePasswordVisibility);
-    });
+    const passwordToggle = document.getElementById('password-toggle');
+    if (passwordToggle) {
+        passwordToggle.addEventListener('click', () => togglePasswordVisibility('login-password'));
+    }
+    
+    const confirmPasswordToggle = document.getElementById('confirm-password-toggle');
+    if (confirmPasswordToggle) {
+        confirmPasswordToggle.addEventListener('click', () => togglePasswordVisibility('signup-password-confirm'));
+    }
+    
+    // Password strength indicator for signup
+    const signupPassword = document.getElementById('signup-password');
+    if (signupPassword) {
+        signupPassword.addEventListener('input', updatePasswordStrength);
+    }
 }
 
 function handleThemeToggle() {
@@ -59,14 +70,150 @@ function updateThemeIcon(theme = null) {
     themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
 }
 
+// Enhanced Error Handling Functions
+function showErrorMessage(elementId, message) {
+    const errorElement = document.getElementById(elementId);
+    if (!errorElement) return;
+    
+    errorElement.textContent = message;
+    errorElement.className = 'error-msg show';
+    errorElement.classList.add('shake');
+    
+    setTimeout(() => {
+        errorElement.classList.remove('shake');
+    }, 500);
+}
+
+function showSuccessMessage(elementId, message) {
+    const errorElement = document.getElementById(elementId);
+    if (!errorElement) return;
+    
+    errorElement.textContent = message;
+    errorElement.className = 'error-msg success show';
+}
+
+function showWarningMessage(elementId, message) {
+    const errorElement = document.getElementById(elementId);
+    if (!errorElement) return;
+    
+    errorElement.textContent = message;
+    errorElement.className = 'error-msg warning show';
+}
+
+function clearErrorMessages() {
+    const errorElements = document.querySelectorAll('.error-msg');
+    errorElements.forEach(element => {
+        element.classList.remove('show', 'success', 'warning');
+        element.textContent = '';
+    });
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function isValidPassword(password) {
+    // At least 8 characters, one uppercase, one lowercase, one number
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+}
+
+function getPasswordStrength(password) {
+    let score = 0;
+    if (password.length >= 8) score++;
+    if (/[a-z]/.test(password)) score++;
+    if (/[A-Z]/.test(password)) score++;
+    if (/\d/.test(password)) score++;
+    if (/[^\w\s]/.test(password)) score++;
+    
+    if (score < 2) return { strength: 'weak', text: 'Weak' };
+    if (score < 4) return { strength: 'medium', text: 'Medium' };
+    return { strength: 'strong', text: 'Strong' };
+}
+
+function togglePasswordVisibility(inputId) {
+    const input = document.getElementById(inputId);
+    const toggle = input?.parentElement.querySelector('.password-toggle-icon');
+    
+    if (!input || !toggle) return;
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        toggle.classList.remove('icon-eye');
+        toggle.classList.add('icon-eye-off');
+    } else {
+        input.type = 'password';
+        toggle.classList.remove('icon-eye-off');
+        toggle.classList.add('icon-eye');
+    }
+}
+
+function updatePasswordStrength() {
+    const passwordInput = document.getElementById('signup-password');
+    const strengthContainer = document.getElementById('password-strength-container');
+    const strengthText = document.getElementById('password-strength-text');
+    const strengthBars = strengthContainer?.querySelectorAll('.strength-bar');
+    
+    if (!passwordInput || !strengthContainer || !strengthText || !strengthBars) return;
+    
+    const password = passwordInput.value;
+    const strength = getPasswordStrength(password);
+    
+    // Clear all bars
+    strengthBars.forEach(bar => {
+        bar.className = 'strength-bar';
+    });
+    
+    // Update based on strength
+    let activeCount = 0;
+    let colorClass = '';
+    
+    if (password.length === 0) {
+        strengthText.textContent = '';
+        return;
+    }
+    
+    switch (strength.strength) {
+        case 'weak':
+            activeCount = 1;
+            colorClass = 'weak';
+            break;
+        case 'medium':
+            activeCount = 3;
+            colorClass = 'medium';
+            break;
+        case 'strong':
+            activeCount = 4;
+            colorClass = 'strong';
+            break;
+    }
+    
+    // Activate bars
+    for (let i = 0; i < activeCount; i++) {
+        strengthBars[i].classList.add('active', colorClass);
+    }
+    
+    strengthText.textContent = strength.text;
+    strengthText.className = colorClass;
+}
+
 async function handleLogin(e) {
     e.preventDefault();
+    clearErrorMessages();
+    
     const formData = new FormData(e.target);
-    const email = formData.get('email');
+    const email = formData.get('email')?.trim();
     const password = formData.get('password');
     
+    // Enhanced validation
     if (!email || !password) {
-        showMessage('Please fill in all fields', 'error');
+        showErrorMessage('login-error', 'Please fill in all fields');
+        return;
+    }
+    
+    if (!isValidEmail(email)) {
+        showErrorMessage('login-error', 'Please enter a valid email address');
         return;
     }
     
@@ -80,13 +227,13 @@ async function handleLogin(e) {
         
         if (error) {
             console.error('Login error:', error);
-            showMessage(getErrorMessage(error), 'error');
+            showErrorMessage('login-error', getErrorMessage(error));
             return;
         }
         
         if (data.user) {
             console.log('Login successful:', data.user.email);
-            showMessage('Login successful! Redirecting...', 'success');
+            showSuccessMessage('login-error', 'Login successful! Redirecting...');
             
             // Create or update user profile
             await createOrUpdateUserProfile(data.user);
@@ -99,7 +246,7 @@ async function handleLogin(e) {
         
     } catch (error) {
         console.error('Unexpected login error:', error);
-        showMessage('An unexpected error occurred. Please try again.', 'error');
+        showErrorMessage('login-error', 'An unexpected error occurred. Please try again.');
     } finally {
         hideLoader();
     }
@@ -107,26 +254,38 @@ async function handleLogin(e) {
 
 async function handleSignup(e) {
     e.preventDefault();
+    clearErrorMessages();
+    
     const formData = new FormData(e.target);
-    const email = formData.get('email');
+    const email = formData.get('email')?.trim();
     const password = formData.get('password');
     const confirmPassword = formData.get('confirmPassword');
-    const username = formData.get('username');
-    const referralCode = formData.get('referralCode');
+    const username = formData.get('username')?.trim();
+    const referralCode = formData.get('referralCode')?.trim();
     
-    // Validation
+    // Enhanced validation
     if (!email || !password || !confirmPassword || !username) {
-        showMessage('Please fill in all required fields', 'error');
+        showErrorMessage('signup-error', 'Please fill in all required fields');
+        return;
+    }
+    
+    if (!isValidEmail(email)) {
+        showErrorMessage('signup-error', 'Please enter a valid email address');
+        return;
+    }
+    
+    if (username.length < 3) {
+        showErrorMessage('signup-error', 'Username must be at least 3 characters long');
+        return;
+    }
+    
+    if (!isValidPassword(password)) {
+        showErrorMessage('signup-error', 'Password must be at least 8 characters with uppercase, lowercase, and number');
         return;
     }
     
     if (password !== confirmPassword) {
-        showMessage('Passwords do not match', 'error');
-        return;
-    }
-    
-    if (password.length < 6) {
-        showMessage('Password must be at least 6 characters long', 'error');
+        showErrorMessage('signup-error', 'Passwords do not match');
         return;
     }
     
@@ -144,7 +303,7 @@ async function handleSignup(e) {
                 .single();
                 
             if (referralError || !referralData) {
-                showMessage('Invalid referral code', 'error');
+                showErrorMessage('signup-error', 'Invalid referral code');
                 return;
             }
             referrerId = referralData.user_id;
@@ -163,7 +322,7 @@ async function handleSignup(e) {
         
         if (error) {
             console.error('Signup error:', error);
-            showMessage(getErrorMessage(error), 'error');
+            showErrorMessage('signup-error', getErrorMessage(error));
             return;
         }
         
@@ -178,7 +337,7 @@ async function handleSignup(e) {
                 await createReferralRelationship(referrerId, data.user.id, referralCode);
             }
             
-            showMessage('Account created successfully! Please check your email to verify your account.', 'success');
+            showSuccessMessage('signup-error', 'Account created successfully! Please check your email to verify your account.');
             
             // Redirect to login after a delay
             setTimeout(() => {
@@ -188,7 +347,7 @@ async function handleSignup(e) {
         
     } catch (error) {
         console.error('Unexpected signup error:', error);
-        showMessage('An unexpected error occurred. Please try again.', 'error');
+        showErrorMessage('signup-error', 'An unexpected error occurred. Please try again.');
     } finally {
         hideLoader();
     }
@@ -196,11 +355,18 @@ async function handleSignup(e) {
 
 async function handleForgotPassword(e) {
     e.preventDefault();
+    clearErrorMessages();
+    
     const formData = new FormData(e.target);
-    const email = formData.get('email');
+    const email = formData.get('email')?.trim();
     
     if (!email) {
-        showMessage('Please enter your email address', 'error');
+        showErrorMessage('forgot-password-error', 'Please enter your email address');
+        return;
+    }
+    
+    if (!isValidEmail(email)) {
+        showErrorMessage('forgot-password-error', 'Please enter a valid email address');
         return;
     }
     
@@ -213,11 +379,11 @@ async function handleForgotPassword(e) {
         
         if (error) {
             console.error('Password reset error:', error);
-            showMessage(getErrorMessage(error), 'error');
+            showErrorMessage('forgot-password-error', getErrorMessage(error));
             return;
         }
         
-        showMessage('Password reset email sent! Please check your inbox.', 'success');
+        showSuccessMessage('forgot-password-error', 'Password reset email sent! Please check your inbox.');
         
         // Redirect to login after a delay
         setTimeout(() => {
@@ -226,7 +392,7 @@ async function handleForgotPassword(e) {
         
     } catch (error) {
         console.error('Unexpected password reset error:', error);
-        showMessage('An unexpected error occurred. Please try again.', 'error');
+        showErrorMessage('forgot-password-error', 'An unexpected error occurred. Please try again.');
     } finally {
         hideLoader();
     }

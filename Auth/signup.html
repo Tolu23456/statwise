@@ -21,15 +21,15 @@
       <form id="signup-form" class="auth-form">
         <div class="input-wrapper">
           <i class="input-icon icon-user"></i>
-          <input type="text" id="signup-username" placeholder="Username" required>
+          <input type="text" id="signup-username" name="username" placeholder="Username" required>
         </div>
         <div class="input-wrapper">
           <i class="input-icon icon-email"></i>
-          <input type="email" id="signup-email" placeholder="Email" required>
+          <input type="email" id="signup-email" name="email" placeholder="Email" required>
         </div>
         <div class="input-wrapper">
           <i class="input-icon icon-password"></i>
-          <input type="password" id="signup-password" placeholder="Password" required>
+          <input type="password" id="signup-password" name="password" placeholder="Password" required>
           <i class="password-toggle-icon icon-eye" id="password-toggle"></i>
         </div>
         <!-- Password Strength Indicator -->
@@ -42,14 +42,14 @@
         </div>
         <div class="input-wrapper">
           <i class="input-icon icon-password"></i>
-          <input type="password" id="signup-password-confirm" placeholder="Confirm Password" required>
+          <input type="password" id="signup-password-confirm" name="confirmPassword" placeholder="Confirm Password" required>
           <i class="password-toggle-icon icon-eye" id="confirm-password-toggle"></i>
         </div>
 
         <div class="input-wrapper">
           <i class="input-icon icon-referral"></i>          
           <span class="input-prefix">REF-</span>
-          <input type="text" id="signup-referral" placeholder="CODE (Optional)" autocapitalize="characters" maxlength="6">
+          <input type="text" id="signup-referral" name="referralCode" placeholder="CODE (Optional)" autocapitalize="characters" maxlength="6">
         </div>
         
         <!-- Element to display the referrer's name -->
@@ -68,7 +68,8 @@
                 <span>Remember Me</span> 
             </label>
         </div>
-        <!-- Error messages -->
+
+        <!-- Error messages appear right above the button -->
         <div class="error-msg" id="signup-error"></div>
 
         <!-- Button with spinner -->
