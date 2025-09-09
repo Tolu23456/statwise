@@ -45,17 +45,18 @@ function initInteractiveBackground(container = null) {
         `;
         
         // Create floating circles
-        const circleCount = 15;
-        const colors = ['#0e639c', '#4caf50', '#ff9800', '#e91e63', '#9c27b0'];
+        const circleCount = 20;
+        const colors = ['#0e639c', '#4caf50', '#ff9800', '#e91e63', '#9c27b0', '#2196f3', '#ffc107'];
         
         console.log(`Creating ${circleCount} animated circles...`);
         
         for (let i = 0; i < circleCount; i++) {
             const li = document.createElement('li');
-            const size = Math.random() * 60 + 20; // 20-80px
+            const size = Math.random() * 80 + 30; // 30-110px
             const color = colors[Math.floor(Math.random() * colors.length)];
-            const opacity = Math.random() * 0.3 + 0.1; // 0.1-0.4
-            const animationDuration = Math.random() * 20 + 10; // 10-30s
+            const opacity = Math.random() * 0.4 + 0.2; // 0.2-0.6
+            const animationDuration = Math.random() * 15 + 8; // 8-23s
+            const animationDelay = Math.random() * 5; // 0-5s delay
             
             li.style.cssText = `
                 position: absolute;
@@ -65,9 +66,11 @@ function initInteractiveBackground(container = null) {
                 border-radius: 50%;
                 opacity: ${opacity};
                 left: ${Math.random() * 100}%;
-                top: 100%;
+                top: 100vh;
                 pointer-events: none;
-                animation: floatUp ${animationDuration}s infinite linear;
+                animation: floatUp ${animationDuration}s infinite linear ${animationDelay}s;
+                transform: translateY(0);
+                z-index: -1;
             `;
             
             circlesList.appendChild(li);
@@ -78,19 +81,41 @@ function initInteractiveBackground(container = null) {
         style.textContent = `
             @keyframes floatUp {
                 0% {
-                    transform: translateY(100vh) scale(0);
+                    transform: translateY(50px) scale(0.3);
                     opacity: 0;
                 }
-                10% {
-                    opacity: 1;
+                5% {
+                    opacity: 0.6;
+                    transform: translateY(0) scale(0.5);
                 }
-                90% {
+                25% {
+                    opacity: 0.8;
+                    transform: translateY(-25vh) scale(0.8);
+                }
+                50% {
                     opacity: 1;
+                    transform: translateY(-50vh) scale(1);
+                }
+                75% {
+                    opacity: 0.8;
+                    transform: translateY(-75vh) scale(0.8);
+                }
+                95% {
+                    opacity: 0.4;
+                    transform: translateY(-100vh) scale(0.5);
                 }
                 100% {
-                    transform: translateY(-100px) scale(1);
+                    transform: translateY(-110vh) scale(0);
                     opacity: 0;
                 }
+            }
+            
+            .animated-background-interactive {
+                overflow: hidden !important;
+            }
+            
+            .circles li {
+                will-change: transform, opacity;
             }
         `;
         document.head.appendChild(style);
