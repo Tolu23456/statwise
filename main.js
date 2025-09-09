@@ -307,6 +307,9 @@ async function initializePage(page) {
         case 'subscriptions':
             await initializeSubscriptionsPage();
             break;
+        case 'manage-subscription':
+            await initializeManageSubscriptionPage();
+            break;
         case 'referral':
             await initializeReferralPage();
             break;
@@ -835,6 +838,149 @@ async function initializeSubscriptionsPage() {
     await loadSubscriptionInfo();
     initializeSubscriptionTabs();
     initializeSubscriptionButtons();
+}
+
+async function initializeManageSubscriptionPage() {
+    await loadManageSubscriptionInfo();
+    initializeManageSubscriptionButtons();
+}
+
+async function loadManageSubscriptionInfo() {
+    if (!currentUser) return;
+    
+    try {
+        const { data: profile, error } = await supabase
+            .from('user_profiles')
+            .select('*')
+            .eq('id', currentUser.id)
+            .single();
+            
+        if (error) {
+            console.warn('Error loading subscription info:', error);
+            return;
+        }
+        
+        displayManageSubscriptionInfo(profile);
+    } catch (error) {
+        console.error('Error loading subscription info:', error);
+    }
+}
+
+function displayManageSubscriptionInfo(profile) {
+    const planInfoCard = document.getElementById('plan-info-card');
+    if (!planInfoCard) return;
+    
+    const currentTier = profile.current_tier || 'Free Tier';
+    const subscriptionEnd = profile.subscription_end;
+    const subscriptionStatus = profile.subscription_status || 'active';
+    
+    let planContent = `
+        <h2>Current Plan: ${currentTier}</h2>
+        <p><strong>Status:</strong> ${subscriptionStatus}</p>
+    `;
+    
+    if (subscriptionEnd) {
+        planContent += `<p><strong>Next Billing:</strong> ${formatTimestamp(subscriptionEnd)}</p>`;
+    }
+    
+    if (currentTier === 'Free Tier') {
+        planContent += `
+            <p>You're currently on the free plan. Upgrade to unlock premium features!</p>
+            <button onclick="loadPage('subscriptions')" class="button">Upgrade Now</button>
+        `;
+    } else {
+        planContent += `
+            <p>Thank you for being a ${currentTier} subscriber!</p>
+        `;
+        
+        // Show auto-renewal and cancellation options for paid plans
+        const autoRenewContainer = document.getElementById('auto-renew-container');
+        const cancelContainer = document.getElementById('cancel-subscription-container');
+        
+        if (autoRenewContainer) autoRenewContainer.style.display = 'block';
+        if (cancelContainer) cancelContainer.style.display = 'block';
+    }
+    
+    planInfoCard.innerHTML = planContent;
+}
+
+function initializeManageSubscriptionButtons() {
+    // Change Plan button
+    const changePlanBtn = document.getElementById('changePlanBtn');
+    if (changePlanBtn) {
+        changePlanBtn.addEventListener('click', () => {
+            loadPage('subscriptions');
+        });
+    }
+    
+    // Auto-renewal toggle
+    const toggleAutoRenewBtn = document.getElementById('toggleAutoRenewBtn');
+    if (toggleAutoRenewBtn) {
+        toggleAutoRenewBtn.textContent = 'Manage Auto-Renewal';
+        toggleAutoRenewBtn.addEventListener('click', () => {
+            showModal({
+                message: 'Auto-renewal management is coming soon! Contact support for assistance.',
+                confirmText: 'OK'
+            });
+        });
+    }
+    
+    // Cancel subscription button
+    const cancelSubscriptionBtn = document.getElementById('cancelSubscriptionBtn');
+    if (cancelSubscriptionBtn) {
+        cancelSubscriptionBtn.addEventListener('click', () => {
+            showModal({
+                message: 'Are you sure you want to cancel your subscription? You will lose access to premium features at the end of your billing period.',
+                confirmText: 'Yes, Cancel',
+                cancelText: 'Keep Subscription',
+                onConfirm: () => {
+                    handleSubscriptionCancellation();
+                }
+            });
+        });
+    }
+}
+
+async function handleSubscriptionCancellation() {
+    try {
+        showSpinner();
+        
+        // Update subscription status to cancelled
+        const { error } = await supabase
+            .from('user_profiles')
+            .update({ 
+                subscription_status: 'cancelled',
+                updated_at: new Date().toISOString()
+            })
+            .eq('id', currentUser.id);
+            
+        if (error) {
+            console.error('Error cancelling subscription:', error);
+            showModal({
+                message: 'Error cancelling subscription. Please try again or contact support.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+        
+        showModal({
+            message: 'Your subscription has been cancelled. You will retain access to premium features until the end of your current billing period.',
+            confirmText: 'OK',
+            onConfirm: () => {
+                // Reload the page to show updated status
+                loadManageSubscriptionInfo();
+            }
+        });
+        
+    } catch (error) {
+        console.error('Error handling cancellation:', error);
+        showModal({
+            message: 'An error occurred. Please try again.',
+            confirmText: 'OK'
+        });
+    } finally {
+        hideSpinner();
+    }
 }
 
 async function loadSubscriptionInfo() {
