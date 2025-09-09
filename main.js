@@ -714,58 +714,134 @@ async function loadReferralData() {
 }
 
 function displayReferralData(referralCode, referrals) {
-    const container = document.getElementById('referral-container');
-    if (!container) return;
+    const code = referralCode?.code || 'No Code Found';
     
-    const code = referralCode?.code || 'Loading...';
+    // Update referral code input
+    const referralCodeInput = document.getElementById('referralCodeInput');
+    if (referralCodeInput) {
+        referralCodeInput.value = code;
+    }
     
-    container.innerHTML = `
-        <div class="referral-section">
-            <div class="referral-code-section">
-                <h3>Your Referral Code</h3>
-                <div class="referral-code-card">
-                    <div class="code-display">
-                        <span id="referral-code">${code}</span>
-                        <button onclick="copyReferralCode()" class="btn-copy">Copy</button>
+    // Update referral list
+    const referralListContainer = document.getElementById('referralListContainer');
+    if (referralListContainer) {
+        if (referrals.length === 0) {
+            referralListContainer.innerHTML = '<p>No referrals yet. Share your code to get started!</p>';
+        } else {
+            const referralHTML = referrals.map(referral => `
+                <div class="referral-item">
+                    <div class="referral-info">
+                        <h4>${referral.user_profiles?.display_name || 'User'}</h4>
+                        <p class="email">${referral.user_profiles?.email || ''}</p>
+                        <span class="tier">${referral.user_profiles?.current_tier || 'Free Tier'}</span>
+                        <div class="referral-date">
+                            Joined: ${formatTimestamp(referral.created_at)}
+                        </div>
                     </div>
-                    <p>Share this code with friends to earn rewards!</p>
-                </div>
-            </div>
-            
-            <div class="referral-stats">
-                <div class="stat">
-                    <span class="label">Total Referrals</span>
-                    <span class="value">${referrals.length}</span>
-                </div>
-                <div class="stat">
-                    <span class="label">Total Rewards</span>
-                    <span class="value">₦${(referrals.length * 500).toLocaleString()}</span>
-                </div>
-            </div>
-            
-            <div class="referrals-list">
-                <h3>Your Referrals</h3>
-                ${referrals.length === 0 ? `
-                    <div class="no-referrals">
-                        <p>No referrals yet. Share your code to start earning!</p>
+                    <div class="referral-reward">
+                        ${referral.reward_claimed ? '✅ Rewarded' : '⏳ Pending'}
                     </div>
-                ` : `
-                    <div class="referrals-grid">
-                        ${referrals.map(referral => `
-                            <div class="referral-item">
-                                <h4>${referral.user_profiles.display_name}</h4>
-                                <p class="email">${referral.user_profiles.email}</p>
-                                <span class="tier">${referral.user_profiles.current_tier}</span>
-                                <div class="referral-date">
-                                    Joined: ${formatTimestamp(referral.created_at)}
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                `}
-            </div>
-        </div>
-    `;
+                </div>
+            `).join('');
+            referralListContainer.innerHTML = referralHTML;
+        }
+    }
+    
+    // Update rewards count
+    const rewardsCount = document.getElementById('rewardsCount');
+    if (rewardsCount) {
+        const claimedRewards = referrals.filter(r => r.reward_claimed).length;
+        rewardsCount.textContent = claimedRewards;
+    }
+    
+    // Update rewards container
+    const rewardsContainer = document.getElementById('rewardsContainer');
+    if (rewardsContainer) {
+        const claimedReferrals = referrals.filter(r => r.reward_claimed);
+        if (claimedReferrals.length === 0) {
+            rewardsContainer.innerHTML = '<p>No rewards earned yet. You\'ll get a reward when a referred user subscribes!</p>';
+        } else {
+            const rewardsHTML = claimedReferrals.map(referral => `
+                <div class="reward-item">
+                    <span>Premium Week from ${referral.user_profiles?.display_name || 'User'}</span>
+                    <span class="reward-amount">₦${referral.reward_amount?.toLocaleString() || '500'}</span>
+                </div>
+            `).join('');
+            rewardsContainer.innerHTML = rewardsHTML;
+        }
+    }
+    
+    // Initialize referral page interactions
+    initializeReferralInteractions();
+}
+
+function initializeReferralInteractions() {
+    // Initialize copy referral code button
+    const copyReferralCodeBtn = document.getElementById('copyReferralCodeBtn');
+    if (copyReferralCodeBtn) {
+        copyReferralCodeBtn.addEventListener('click', () => {
+            const referralCodeInput = document.getElementById('referralCodeInput');
+            if (referralCodeInput && referralCodeInput.value !== 'Loading...' && referralCodeInput.value !== 'No Code Found') {
+                navigator.clipboard.writeText(referralCodeInput.value).then(() => {
+                    // Show success feedback
+                    copyReferralCodeBtn.textContent = 'Copied!';
+                    copyReferralCodeBtn.style.background = '#28a745';
+                    setTimeout(() => {
+                        copyReferralCodeBtn.textContent = 'Copy';
+                        copyReferralCodeBtn.style.background = '';
+                    }, 2000);
+                }).catch(() => {
+                    alert('Failed to copy referral code');
+                });
+            }
+        });
+    }
+    
+    // Initialize share buttons
+    const shareWhatsAppBtn = document.getElementById('shareWhatsAppBtn');
+    if (shareWhatsAppBtn) {
+        shareWhatsAppBtn.addEventListener('click', () => {
+            const referralCode = document.getElementById('referralCodeInput')?.value;
+            if (referralCode && referralCode !== 'Loading...' && referralCode !== 'No Code Found') {
+                const message = `Join StatWise using my referral code: ${referralCode} and get exclusive AI sports predictions!`;
+                const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+            }
+        });
+    }
+    
+    const shareTwitterBtn = document.getElementById('shareTwitterBtn');
+    if (shareTwitterBtn) {
+        shareTwitterBtn.addEventListener('click', () => {
+            const referralCode = document.getElementById('referralCodeInput')?.value;
+            if (referralCode && referralCode !== 'Loading...' && referralCode !== 'No Code Found') {
+                const message = `Join StatWise using my referral code: ${referralCode} and get exclusive AI sports predictions!`;
+                const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+            }
+        });
+    }
+    
+    const shareGenericBtn = document.getElementById('shareGenericBtn');
+    if (shareGenericBtn) {
+        shareGenericBtn.addEventListener('click', () => {
+            const referralCode = document.getElementById('referralCodeInput')?.value;
+            if (referralCode && referralCode !== 'Loading...' && referralCode !== 'No Code Found') {
+                const message = `Join StatWise using my referral code: ${referralCode} and get exclusive AI sports predictions!`;
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'StatWise Referral',
+                        text: message
+                    });
+                } else {
+                    // Fallback to copying to clipboard
+                    navigator.clipboard.writeText(message).then(() => {
+                        alert('Referral message copied to clipboard!');
+                    });
+                }
+            }
+        });
+    }
 }
 
 async function initializeInsightsPage() {
@@ -883,14 +959,7 @@ window.savePrediction = async function(predictionId) {
     }
 };
 
-window.copyReferralCode = function() {
-    const codeElement = document.getElementById('referral-code');
-    if (codeElement) {
-        navigator.clipboard.writeText(codeElement.textContent).then(() => {
-            showModal({ message: 'Referral code copied to clipboard!' });
-        });
-    }
-};
+// Referral code copying is now handled in initializeReferralInteractions()
 
 window.signOut = async function() {
     try {
