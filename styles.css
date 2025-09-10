@@ -1142,9 +1142,9 @@ main {
     cursor: pointer;
     position: relative;
     display: inline-flex;
-    height: 20px;
+    height: 17px;
     border-radius: 999px;
-    box-shadow: 0 0 0 6px var(--toggle-ring);
+    box-shadow: 0 0 0 4px var(--toggle-ring);
     aspect-ratio: 212.4992/84.4688;
     background-color: var(--toggle-track);
     color: var(--toggle-stroke-off);
@@ -1168,7 +1168,7 @@ main {
 .toggle-input:checked + .switch {
     color: var(--toggle-stroke-on);
     background-color: #0e639c;
-    box-shadow: 0 0 0 6px #0e639c;
+    box-shadow: 0 0 0 4px #0e639c;
 }
 
 .toggle-input:checked + .switch svg path {
