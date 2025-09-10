@@ -11,12 +11,15 @@ const main = document.querySelector("main");
 const navButtons = document.querySelectorAll(".bottom-nav button");
 const defaultPage = "home";
 let currentUser = null;
-let verifiedTier = "Free Tier";
+let verifiedTier = null; // Start as null until profile loads
+let adsLoaded = false;
+let adblockerDetected = false;
 
 // Initialize the app
 initializeTheme(); // Initialize theme system
 initializeSupabaseAuth();
 checkPaymentRedirect();
+// Ad system will be initialized after user tier is loaded
 
 // ===== Authentication Setup =====
 async function initializeSupabaseAuth() {
@@ -120,6 +123,13 @@ async function loadUserData(user) {
         if (profile) {
             verifiedTier = profile.current_tier || 'Free Tier';
             console.log('User tier loaded:', verifiedTier);
+            
+            // Initialize ad system now that we know the user's tier
+            initializeAdSystemForUser();
+        } else {
+            // Default to free tier if no profile found
+            verifiedTier = 'Free Tier';
+            initializeAdSystemForUser();
         }
     } catch (error) {
         console.warn('Error loading user data:', error);
@@ -1627,6 +1637,120 @@ async function handleSuccessfulPayment(paymentData, tier, period, amount) {
 function redirectToLogin() {
     console.log('No user found, redirecting to login...');
     window.location.href = './Auth/login.html';
+}
+
+// ===== Ad System Management =====
+function initializeAdSystemForUser() {
+    console.log('🔧 Initializing ad system for tier:', verifiedTier);
+    
+    if (verifiedTier === "Free Tier") {
+        loadAdsForFreeUsers();
+    } else {
+        console.log('👑 Premium user - no ads');
+        hideAdBlockerMessage(); // Hide any existing adblocker message
+    }
+}
+
+function loadAdsForFreeUsers() {
+    if (verifiedTier !== "Free Tier" || adsLoaded) {
+        console.log('👑 Premium user - ads disabled');
+        return;
+    }
+
+    console.log('📺 Loading ads for free user...');
+    
+    // Load Google AdSense script dynamically
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9868946535437166';
+    script.crossOrigin = 'anonymous';
+    
+    script.onload = () => {
+        console.log('✅ AdSense loaded successfully');
+        adsLoaded = true;
+        // Check for adblocker after script loads
+        setTimeout(detectAdBlocker, 1000);
+    };
+    
+    script.onerror = () => {
+        console.log('❌ AdSense failed to load - likely blocked');
+        adblockerDetected = true;
+        showAdBlockerMessage();
+    };
+    
+    document.head.appendChild(script);
+}
+
+function detectAdBlocker() {
+    console.log('🕵️ Checking for adblocker...');
+    
+    // Create a test ad element
+    const testAd = document.createElement('div');
+    testAd.innerHTML = '&nbsp;';
+    testAd.className = 'adsbox adsbygoogle';
+    testAd.style.position = 'absolute';
+    testAd.style.left = '-9999px';
+    testAd.style.width = '1px';
+    testAd.style.height = '1px';
+    
+    document.body.appendChild(testAd);
+    
+    setTimeout(() => {
+        const isBlocked = testAd.offsetHeight === 0 || 
+                         testAd.offsetWidth === 0 || 
+                         testAd.style.display === 'none' ||
+                         testAd.style.visibility === 'hidden';
+        
+        document.body.removeChild(testAd);
+        
+        if (isBlocked || !window.adsbygoogle) {
+            console.log('🚫 Adblocker detected');
+            adblockerDetected = true;
+            showAdBlockerMessage();
+        } else {
+            console.log('✅ No adblocker detected');
+            adblockerDetected = false;
+        }
+    }, 100);
+}
+
+function showAdBlockerMessage() {
+    // Only show for free users
+    if (verifiedTier !== "Free Tier") return;
+    
+    console.log('📢 Showing adblocker message');
+    
+    // Create full-page overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'adblocker-overlay';
+    overlay.innerHTML = `
+        <div class="adblocker-container">
+            <div class="adblocker-content">
+                <div class="adblocker-icon">🚫</div>
+                <h2>AdBlocker Detected</h2>
+                <p>We noticed you're using an ad blocker. To continue using StatWise for free, please:</p>
+                <ul>
+                    <li>✅ Disable your ad blocker for this site</li>
+                    <li>🔄 Refresh the page</li>
+                    <li>💎 Or upgrade to Premium for an ad-free experience</li>
+                </ul>
+                <div class="adblocker-buttons">
+                    <button onclick="window.location.reload()" class="btn-refresh">Refresh Page</button>
+                    <button onclick="window.loadPage('subscriptions')" class="btn-upgrade">Upgrade to Premium</button>
+                </div>
+                <p class="adblocker-note">Ads help us keep StatWise free for everyone!</p>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(overlay);
+}
+
+function hideAdBlockerMessage() {
+    const overlay = document.getElementById('adblocker-overlay');
+    if (overlay) {
+        overlay.remove();
+    }
 }
 
 // ===== Username Update Function =====

@@ -3,6 +3,10 @@ import { supabase } from '../env.js';
 import { showLoader, hideLoader, showSpinner, hideSpinner } from '../Loader/loader.js';
 import { initInteractiveBackground, initializeTheme } from '../ui.js';
 
+// Global variables for auth page
+let adsLoaded = false;
+let adblockerDetected = false;
+
 // Initialize the auth page
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🔐 Initializing auth page...');
@@ -13,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTheme(); // Initialize theme system
     initInteractiveBackground(); // Add background animation to auth pages
     initializeAuthForms();
+    initializeAuthAds(); // Initialize ads for auth page
     
     console.log('✅ Auth page initialized successfully');
 });
@@ -680,5 +685,115 @@ async function checkExistingSession() {
 
 // Check for existing session when page loads
 checkExistingSession();
+
+// ===== Auth Page Ad System =====
+function initializeAuthAds() {
+    console.log('📺 Initializing ads for auth page...');
+    
+    // Load ads by default on auth pages (most users will be free tier)
+    loadAuthPageAds();
+}
+
+function loadAuthPageAds() {
+    console.log('📺 Loading ads for auth page...');
+    
+    // Load Google AdSense script dynamically
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9868946535437166';
+    script.crossOrigin = 'anonymous';
+    
+    script.onload = () => {
+        console.log('✅ AdSense loaded successfully on auth page');
+        adsLoaded = true;
+        // Check for adblocker after script loads
+        setTimeout(detectAuthAdBlocker, 1000);
+    };
+    
+    script.onerror = () => {
+        console.log('❌ AdSense failed to load on auth page - likely blocked');
+        adblockerDetected = true;
+        showAuthAdBlockerMessage();
+    };
+    
+    document.head.appendChild(script);
+}
+
+function detectAuthAdBlocker() {
+    console.log('🕵️ Checking for adblocker on auth page...');
+    
+    // Create a test ad element
+    const testAd = document.createElement('div');
+    testAd.innerHTML = '&nbsp;';
+    testAd.className = 'adsbox adsbygoogle';
+    testAd.style.position = 'absolute';
+    testAd.style.left = '-9999px';
+    testAd.style.width = '1px';
+    testAd.style.height = '1px';
+    
+    document.body.appendChild(testAd);
+    
+    setTimeout(() => {
+        const isBlocked = testAd.offsetHeight === 0 || 
+                         testAd.offsetWidth === 0 || 
+                         testAd.style.display === 'none' ||
+                         testAd.style.visibility === 'hidden';
+        
+        document.body.removeChild(testAd);
+        
+        if (isBlocked || !window.adsbygoogle) {
+            console.log('🚫 Adblocker detected on auth page');
+            adblockerDetected = true;
+            showAuthAdBlockerMessage();
+        } else {
+            console.log('✅ No adblocker detected on auth page');
+            adblockerDetected = false;
+        }
+    }, 100);
+}
+
+function showAuthAdBlockerMessage() {
+    console.log('📢 Showing adblocker message on auth page');
+    
+    // Create full-page overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'auth-adblocker-overlay';
+    overlay.innerHTML = `
+        <div class="adblocker-container">
+            <div class="adblocker-content">
+                <div class="adblocker-icon">🚫</div>
+                <h2>AdBlocker Detected</h2>
+                <p>We noticed you're using an ad blocker. To continue using StatWise for free, please:</p>
+                <ul>
+                    <li>✅ Disable your ad blocker for this site</li>
+                    <li>🔄 Refresh the page</li>
+                    <li>💎 Or sign up for Premium for an ad-free experience</li>
+                </ul>
+                <div class="adblocker-buttons">
+                    <button onclick="window.location.reload()" class="btn-refresh">Refresh Page</button>
+                    <button onclick="window.location.href='../index.html'" class="btn-upgrade">Learn About Premium</button>
+                </div>
+                <p class="adblocker-note">Ads help us keep StatWise free for everyone!</p>
+            </div>
+        </div>
+    `;
+    
+    // Apply the same styles as main app
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+    `;
+    
+    document.body.appendChild(overlay);
+}
 
 console.log('✅ Supabase authentication system loaded successfully!');
