@@ -1,20 +1,23 @@
 // ui.js
 
 /**
- * Creates a modern gradient wave background animation.
- * Simple and elegant replacement for the complex circle animation.
+ * Creates interactive circle background animation that responds to cursor movement
  * @param {HTMLElement} container Optional container element, or creates one if null
  * @returns {Function} A cleanup function to stop the animation and remove listeners.
  */
 function initInteractiveBackground(container = null) {
-    console.log('🌀 Initializing modern background...');
+    console.log('🌀 Initializing interactive circles background...');
     
     // Create background container if not provided
     let createdElements = false;
     let backgroundContainer = container;
+    let circles = [];
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let animationId;
     
     if (!backgroundContainer) {
-        console.log('Creating modern background elements...');
+        console.log('Creating interactive circles background...');
         
         // Create the animated background dynamically
         backgroundContainer = document.createElement('div');
@@ -30,10 +33,10 @@ function initInteractiveBackground(container = null) {
             overflow: hidden;
         `;
         
-        // Create geometric shapes
-        const shapesContainer = document.createElement('div');
-        shapesContainer.className = 'geometric-shapes';
-        shapesContainer.style.cssText = `
+        // Create circles container
+        const circlesContainer = document.createElement('div');
+        circlesContainer.className = 'floating-circles-container';
+        circlesContainer.style.cssText = `
             position: absolute;
             top: 0;
             left: 0;
@@ -41,140 +44,159 @@ function initInteractiveBackground(container = null) {
             height: 100%;
         `;
         
-        // Create floating geometric shapes
-        const shapeCount = 8;
-        const shapes = ['diamond', 'triangle', 'hexagon', 'square'];
-        const colors = ['#0e639c', '#4caf50', '#ff9800', '#2196f3'];
+        // Create floating interactive circles
+        const circleCount = 20;
         
-        console.log(`Creating ${shapeCount} animated shapes...`);
+        console.log(`Creating ${circleCount} interactive circles...`);
         
-        for (let i = 0; i < shapeCount; i++) {
-            const shape = document.createElement('div');
-            const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const size = Math.random() * 60 + 30; // 30-90px
-            const opacity = Math.random() * 0.15 + 0.05; // 0.05-0.2 opacity - very subtle
-            const animationDuration = Math.random() * 20 + 15; // 15-35s very slow
-            const animationDelay = Math.random() * 10; // 0-10s delay
+        for (let i = 0; i < circleCount; i++) {
+            const circle = document.createElement('div');
+            circle.className = 'floating-circle';
             
-            shape.className = `floating-shape ${shapeType}`;
-            shape.style.cssText = `
+            // Random properties for each circle
+            const size = Math.random() * 80 + 20; // 20px to 100px
+            const startX = Math.random() * window.innerWidth;
+            const startY = Math.random() * window.innerHeight;
+            const speed = Math.random() * 1.5 + 0.5; // 0.5 to 2 speed multiplier
+            const opacity = 0.1 + Math.random() * 0.5; // 0.1 to 0.6
+            
+            // Circle data object
+            const circleData = {
+                element: circle,
+                x: startX,
+                y: startY,
+                vx: (Math.random() - 0.5) * 2, // Random horizontal velocity
+                vy: (Math.random() - 0.5) * 2, // Random vertical velocity
+                size: size,
+                speed: speed,
+                baseOpacity: opacity,
+                hue: 210 + Math.random() * 60 // Blue to teal range
+            };
+            
+            // Style the circle
+            circle.style.cssText = `
                 position: absolute;
                 width: ${size}px;
                 height: ${size}px;
-                background: ${color};
-                opacity: ${opacity};
-                left: ${Math.random() * 100}%;
-                top: ${Math.random() * 100}%;
+                border-radius: 50%;
+                background: radial-gradient(circle, 
+                    hsla(${circleData.hue}, 60%, 45%, ${opacity}), 
+                    hsla(${circleData.hue}, 60%, 45%, 0)
+                );
+                left: ${startX}px;
+                top: ${startY}px;
                 pointer-events: none;
-                animation: gentleFloat ${animationDuration}s infinite ease-in-out ${animationDelay}s;
+                transition: opacity 0.3s ease;
+                will-change: transform, opacity;
                 z-index: -1;
             `;
             
-            // Apply shape-specific styles
-            switch(shapeType) {
-                case 'diamond':
-                    shape.style.borderRadius = '8px';
-                    // Use a different animation for diamonds to preserve rotation
-                    shape.style.animation = `gentleFloatDiamond ${animationDuration}s infinite ease-in-out ${animationDelay}s`;
-                    break;
-                case 'triangle':
-                    shape.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
-                    break;
-                case 'hexagon':
-                    shape.style.clipPath = 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)';
-                    break;
-                case 'square':
-                    shape.style.borderRadius = '12px';
-                    break;
-            }
-            
-            shapesContainer.appendChild(shape);
+            circles.push(circleData);
+            circlesContainer.appendChild(circle);
         }
         
-        // Add CSS animation for floating shapes
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes gentleFloat {
-                0%, 100% {
-                    transform: translate(0, 0) rotate(0deg);
-                }
-                25% {
-                    transform: translate(20px, -30px) rotate(90deg);
-                }
-                50% {
-                    transform: translate(-15px, -60px) rotate(180deg);
-                }
-                75% {
-                    transform: translate(-25px, -30px) rotate(270deg);
-                }
-            }
-            
-            @keyframes gentleFloatDiamond {
-                0%, 100% {
-                    transform: translate(0, 0) rotate(45deg);
-                }
-                25% {
-                    transform: translate(20px, -30px) rotate(135deg);
-                }
-                50% {
-                    transform: translate(-15px, -60px) rotate(225deg);
-                }
-                75% {
-                    transform: translate(-25px, -30px) rotate(315deg);
-                }
-            }
-            
-            .animated-background-interactive {
-                overflow: hidden !important;
-                position: fixed !important;
-                z-index: -10 !important;
-                background: linear-gradient(135deg, 
-                    rgba(14, 99, 156, 0.02) 0%,
-                    rgba(76, 175, 80, 0.01) 25%,
-                    rgba(33, 150, 243, 0.02) 50%,
-                    rgba(14, 99, 156, 0.01) 100%);
-            }
-            
-            .geometric-shapes {
-                position: absolute !important;
-                width: 100% !important;
-                height: 100% !important;
-            }
-            
-            .floating-shape {
-                will-change: transform;
-                position: absolute !important;
-                filter: blur(0.5px);
-            }
-            
-            .floating-shape.diamond {
-                transform-origin: center center;
-            }
-            
-            /* Responsive adjustments */
-            @media (max-width: 768px) {
-                .floating-shape {
-                    width: 20px !important;
-                    height: 20px !important;
-                    opacity: 0.03 !important;
-                }
-            }
-        `;
-        document.head.appendChild(style);
+        // Mouse tracking for interaction
+        const handleMouseMove = (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        };
         
-        backgroundContainer.appendChild(shapesContainer);
+        // Touch support for mobile
+        const handleTouchMove = (e) => {
+            if (e.touches.length > 0) {
+                mouseX = e.touches[0].clientX;
+                mouseY = e.touches[0].clientY;
+            }
+        };
+        
+        // Animation loop
+        const animateCircles = () => {
+            circles.forEach((circle, index) => {
+                // Update position based on velocity
+                circle.x += circle.vx * circle.speed;
+                circle.y += circle.vy * circle.speed;
+                
+                // Bounce off edges
+                if (circle.x <= 0 || circle.x >= window.innerWidth - circle.size) {
+                    circle.vx *= -1;
+                    circle.x = Math.max(0, Math.min(window.innerWidth - circle.size, circle.x));
+                }
+                if (circle.y <= 0 || circle.y >= window.innerHeight - circle.size) {
+                    circle.vy *= -1;
+                    circle.y = Math.max(0, Math.min(window.innerHeight - circle.size, circle.y));
+                }
+                
+                // Calculate distance to mouse for interaction
+                const dx = mouseX - (circle.x + circle.size / 2);
+                const dy = mouseY - (circle.y + circle.size / 2);
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // Mouse interaction effect
+                const maxInteractionDistance = 200;
+                if (distance < maxInteractionDistance) {
+                    const influence = (maxInteractionDistance - distance) / maxInteractionDistance;
+                    
+                    // Gentle attraction/repulsion based on circle index
+                    const attraction = index % 3 === 0 ? -0.02 : 0.01;
+                    circle.vx += (dx / distance) * influence * attraction;
+                    circle.vy += (dy / distance) * influence * attraction;
+                    
+                    // Increase opacity when near mouse
+                    const interactOpacity = circle.baseOpacity + influence * 0.4;
+                    circle.element.style.opacity = Math.min(interactOpacity, 0.8);
+                } else {
+                    // Return to base opacity when far from mouse
+                    circle.element.style.opacity = circle.baseOpacity;
+                }
+                
+                // Apply friction
+                circle.vx *= 0.999;
+                circle.vy *= 0.999;
+                
+                // Update DOM position
+                circle.element.style.transform = `translate(${circle.x}px, ${circle.y}px)`;
+            });
+            
+            if (createdElements) {
+                animationId = requestAnimationFrame(animateCircles);
+            }
+        };
+        
+        // Handle window resize
+        const handleResize = () => {
+            circles.forEach(circle => {
+                circle.x = Math.min(circle.x, window.innerWidth - circle.size);
+                circle.y = Math.min(circle.y, window.innerHeight - circle.size);
+            });
+        };
+        
+        // Add event listeners
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('touchmove', handleTouchMove);
+        window.addEventListener('resize', handleResize);
+        
+        backgroundContainer.appendChild(circlesContainer);
         document.body.insertBefore(backgroundContainer, document.body.firstChild);
         createdElements = true;
         
-        console.log('✅ Modern background elements created and added to DOM');
+        // Start animation
+        animateCircles();
+        
+        console.log('✅ Interactive circles background created and animated');
     }
 
-    // Simple cleanup function for the new background
+    // Enhanced cleanup function
     return () => {
         if (backgroundContainer && createdElements) {
+            createdElements = false;
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+            }
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('touchmove', handleTouchMove);
+            window.removeEventListener('resize', handleResize);
             backgroundContainer.remove();
-            console.log('🧹 Modern background cleaned up');
+            console.log('🧹 Interactive circles background cleaned up');
         }
     };
 }
@@ -200,11 +222,11 @@ function initializeTheme() {
 }
 
 /**
- * Applies the specified theme
+ * Applies the specified theme while preserving StatWise blue color scheme
  * @param {string} theme - 'light' or 'dark'
  */
 function applyTheme(theme) {
-    console.log(`🎨 Applying theme: ${theme}`);
+    console.log(`🎨 Applying enhanced theme: ${theme}`);
     
     const body = document.body;
     const html = document.documentElement;
@@ -213,21 +235,47 @@ function applyTheme(theme) {
     body.classList.remove('light-mode', 'dark-mode');
     html.classList.remove('light-mode', 'dark-mode');
     
-    // Apply new theme
+    // Apply new theme with enhanced styling
     if (theme === 'dark') {
         body.classList.add('dark-mode');
         html.classList.add('dark-mode');
-        console.log('✅ Dark mode applied to body and html');
+        
+        // Update CSS custom properties for dark theme while preserving blue
+        document.documentElement.style.setProperty('--primary-bg', '#1a1d23');
+        document.documentElement.style.setProperty('--secondary-bg', '#2a2f36');
+        document.documentElement.style.setProperty('--card-bg', '#343a41');
+        document.documentElement.style.setProperty('--text-primary', '#ffffff');
+        document.documentElement.style.setProperty('--text-secondary', '#b8bcc3');
+        document.documentElement.style.setProperty('--border-color', '#4a5159');
+        // Preserve StatWise blue
+        document.documentElement.style.setProperty('--statwise-blue', '#0e639c');
+        document.documentElement.style.setProperty('--statwise-blue-light', '#1976d2');
+        document.documentElement.style.setProperty('--statwise-blue-dark', '#0d5488');
+        
+        console.log('✅ Enhanced dark mode applied with preserved blue theme');
     } else {
         body.classList.add('light-mode');
         html.classList.add('light-mode');
-        console.log('✅ Light mode applied to body and html');
+        
+        // Update CSS custom properties for light theme while preserving blue
+        document.documentElement.style.setProperty('--primary-bg', '#f8f9fc');
+        document.documentElement.style.setProperty('--secondary-bg', '#ffffff');
+        document.documentElement.style.setProperty('--card-bg', '#ffffff');
+        document.documentElement.style.setProperty('--text-primary', '#1a1a1c');
+        document.documentElement.style.setProperty('--text-secondary', '#6b7280');
+        document.documentElement.style.setProperty('--border-color', '#e5e7eb');
+        // Preserve StatWise blue
+        document.documentElement.style.setProperty('--statwise-blue', '#0e639c');
+        document.documentElement.style.setProperty('--statwise-blue-light', '#1976d2');
+        document.documentElement.style.setProperty('--statwise-blue-dark', '#0d5488');
+        
+        console.log('✅ Enhanced light mode applied with preserved blue theme');
     }
     
     // Save theme preference
     localStorage.setItem('statwise-theme', theme);
     
-    console.log(`✅ Theme applied successfully: ${theme}`);
+    console.log(`✅ Enhanced theme applied successfully: ${theme}`);
 }
 
 /**
