@@ -1116,9 +1116,10 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #e0e6ed;
     transition: 0.4s;
     border-radius: 34px;
+    border: 2px solid #d1d9e0;
 }
 
 .slider::before {
@@ -1135,6 +1136,8 @@ main {
 
 input:checked+.slider {
     background-color: #0e639c;
+    border-color: #0e639c;
+    box-shadow: 0 0 8px rgba(14, 99, 156, 0.3);
 }
 
 input:checked+.slider::before {
