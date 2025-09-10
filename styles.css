@@ -1885,24 +1885,26 @@ body.pulling-to-refresh {
 
 /* ---------------- Dark Mode Overrides ---------------- */
 .dark-mode {
-    background: #1e1e1e;
-    color: #d4d4d4;
+    background: #1a1a1c;
+    color: #e2e2e4;
 }
 
 .dark-mode html {
-    background: #1e1e1e;
+    background: #1a1a1c;
 }
 
 
 .dark-mode header {
-    background-color: #252526;
-    color: #d4d4d4;
+    background-color: #262629;
+    color: #e2e2e4;
     border-bottom: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .bottom-nav {
-    background-color: #252526;
+    background-color: #262629;
     border-top: none;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .bottom-nav button {
@@ -1954,8 +1956,9 @@ body.pulling-to-refresh {
 .dark-mode .subscription-card,
 .dark-mode .profile-card,
 .dark-mode .current-tier {
-    background: #2d2d30;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background: #2d2d32;
+    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.08);
+    border: 1px solid rgba(14, 99, 156, 0.15);
 }
 
 .dark-mode .subscription-card .price,

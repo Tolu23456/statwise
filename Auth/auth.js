@@ -15,7 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
     testSupabaseConnection();
     
     initializeTheme(); // Initialize theme system
-    initInteractiveBackground(); // Add background animation to auth pages
+    
+    // Initialize interactive background animation for auth pages
+    console.log('🌀 Starting auth page background animation...');
+    const backgroundCleanup = initInteractiveBackground();
+    
+    // Store cleanup function for potential later use
+    window.authBackgroundCleanup = backgroundCleanup;
     initializeAuthForms();
     initializeAuthAds(); // Initialize ads for auth page
     

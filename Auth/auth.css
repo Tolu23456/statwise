@@ -97,7 +97,7 @@ body {
 }
 
 .theme-transition-circle.light-mode {
-    background: #f4f5f7;
+    background: #f8f9fc;
 }
 
 .auth-card {
@@ -706,120 +706,9 @@ body {
 }
 
 /* --- Animated Background --- */
-.area {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Place it behind all content */
-}
+/* Static circles removed - JavaScript animation in ui.js handles all background animation */
+/* This prevents conflicts between CSS and JS animations */
 
-.circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
+/* All static circle styles removed to prevent conflicts with JavaScript animation */
 
-.circles li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(14, 99, 156, 0.2); /* Base color, JS will override opacity */
-    /* Animation is now handled by JavaScript */
-}
-
-.circles li:nth-child(1) {
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-}
-.circles li:nth-child(2) {
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-}
-.circles li:nth-child(3) {
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-}
-.circles li:nth-child(4) {
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
-.circles li:nth-child(5) {
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-}
-.circles li:nth-child(6) {
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-    background: rgba(14, 99, 156, 0.15);
-}
-.circles li:nth-child(7) {
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-    background: rgba(14, 99, 156, 0.1);
-}
-.circles li:nth-child(8) {
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-}
-.circles li:nth-child(9) {
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-    background: rgba(14, 99, 156, 0.25);
-}
-.circles li:nth-child(10) {
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-    background: rgba(14, 99, 156, 0.1);
-}
-
-/* --- Animated Background Dark Mode Overrides --- */
-.dark-mode .circles li {
-    background: rgba(165, 216, 255, 0.1); /* Light blue accent with low alpha for dark mode */
-}
-
-.dark-mode .circles li:nth-child(6) {
-    background: rgba(165, 216, 255, 0.08);
-}
-.dark-mode .circles li:nth-child(7) {
-    background: rgba(165, 216, 255, 0.05);
-}
-.dark-mode .circles li:nth-child(9) {
-    background: rgba(165, 216, 255, 0.12);
-}
-.dark-mode .circles li:nth-child(10) {
-    background: rgba(165, 216, 255, 0.05);
-}
+/* Dark mode circle overrides removed - JavaScript animation handles all theming */
