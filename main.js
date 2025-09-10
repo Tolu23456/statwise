@@ -1541,89 +1541,84 @@ window.initializePayment = function(tier, period, amount) {
         callback: function (data) {
             console.log('Payment callback:', data);
             if (data.status === "successful") {
+                // Show loader while verifying payment
+                showLoader();
                 handleSuccessfulPayment(data, tier, period, amount);
+            } else if (data.status === "cancelled") {
+                console.log('Payment was cancelled by user');
+                showModal({
+                    message: 'Payment was cancelled. You can try again anytime.',
+                    confirmText: 'OK'
+                });
+            } else {
+                console.log('Payment failed:', data);
+                showModal({
+                    message: 'Payment failed. Please try again or contact support.',
+                    confirmText: 'OK'
+                });
             }
         },
         onclose: function() {
             console.log('Payment modal closed');
+            // Don't show loader if modal is just closed without payment
         }
     });
 };
 
 async function handleSuccessfulPayment(paymentData, tier, period, amount) {
     try {
-        // Calculate subscription dates
-        const startDate = new Date();
-        const endDate = new Date();
-        endDate.setMonth(endDate.getMonth() + 1); // Add 1 month
+        console.log('🔄 Verifying payment with server...');
         
-        // Update user subscription
-        const { data: updatedProfile, error: updateError } = await supabase
-            .from('user_profiles')
-            .update({
-                current_tier: tier,
-                tier: tier,
-                subscription_period: period,
-                subscription_start: startDate.toISOString(),
-                subscription_end: endDate.toISOString(),
-                subscription_status: 'active',
-                tier_expiry: endDate.toISOString(),
-                updated_at: new Date().toISOString()
-            })
-            .eq('id', currentUser.id)
-            .select()
-            .single();
-            
-        if (updateError) {
-            console.error('Error updating subscription:', updateError);
-        } else {
-            verifiedTier = tier;
-            console.log('Subscription updated successfully');
-        }
-        
-        // Log payment transaction
-        await supabase
-            .from('payment_transactions')
-            .insert({
-                user_id: currentUser.id,
+        // Call Supabase Edge Function to verify payment
+        const { data: verificationResult, error: verificationError } = await supabase.functions.invoke('verify-payment', {
+            body: {
                 transaction_id: paymentData.transaction_id,
                 tx_ref: paymentData.tx_ref,
                 amount: amount,
-                currency: 'NGN',
-                status: 'successful',
-                payment_type: 'flutterwave',
                 tier: tier,
                 period: period,
-                created_at: new Date().toISOString()
-            });
-            
-        // Log subscription event
-        await supabase
-            .from('subscription_events')
-            .insert({
                 user_id: currentUser.id,
-                event_type: 'subscription_purchase',
-                event_data: {
-                    tier: tier,
-                    period: period,
-                    amount: amount,
-                    transaction_id: paymentData.transaction_id
-                },
-                created_at: new Date().toISOString()
-            });
-        
-        showModal({
-            message: `🎉 Congratulations!\n\nYour ${tier} subscription is now active!\n\nTransaction ID: ${paymentData.transaction_id}`,
-            confirmText: 'Continue',
-            onConfirm: () => {
-                loadPage('subscriptions');
+                flw_ref: paymentData.flw_ref || paymentData.transaction_id
             }
         });
+
+        hideLoader();
+
+        if (verificationError) {
+            console.error('Payment verification failed:', verificationError);
+            showModal({
+                message: 'Payment verification failed. Please contact support with your transaction ID: ' + paymentData.transaction_id,
+                confirmText: 'OK'
+            });
+            return;
+        }
+
+        if (verificationResult?.success) {
+            // Update local user tier
+            verifiedTier = tier;
+            console.log('✅ Payment verified and subscription updated successfully!');
+            
+            showModal({
+                message: `🎉 Congratulations!\n\nYour ${tier} subscription is now active!\n\nTransaction ID: ${paymentData.transaction_id}`,
+                confirmText: 'Continue',
+                onConfirm: () => {
+                    // Reload the subscriptions page to show updated tier
+                    loadPage('subscriptions');
+                }
+            });
+        } else {
+            console.error('Payment verification failed:', verificationResult);
+            showModal({
+                message: verificationResult?.message || 'Payment could not be verified. Please contact support.',
+                confirmText: 'OK'
+            });
+        }
         
     } catch (error) {
+        hideLoader();
         console.error('Error handling successful payment:', error);
         showModal({
-            message: 'Payment successful but there was an error updating your subscription. Please contact support.',
+            message: 'Payment successful but there was an error verifying it. Please contact support with your transaction ID: ' + paymentData.transaction_id,
             confirmText: 'OK'
         });
     }
