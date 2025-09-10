@@ -10,13 +10,21 @@ loader.innerHTML = `
 document.body.appendChild(loader);
 
 let loaderTimeout;
+let loaderActive = false;
 
 // Function to show loader
 export function showLoader() {
+    // Clear any existing timeout first
+    clearTimeout(loaderTimeout);
+    
     // Only show the loader if the operation takes more than 300ms
     loaderTimeout = setTimeout(() => {
         const loader = document.getElementById("globalLoader");
-        if (loader) loader.style.display = "flex";
+        if (loader && !loaderActive) {
+            loader.style.display = "flex";
+            loaderActive = true;
+            console.log('🔄 Loader shown');
+        }
     }, 300); // 300ms delay
 }
 
@@ -25,8 +33,10 @@ export function hideLoader() {
     // Clear the timeout so the loader doesn't appear if the action was fast
     clearTimeout(loaderTimeout);
     const loader = document.getElementById("globalLoader");
-    if (loader) {
+    if (loader && loader.style.display === "flex") {
         loader.style.display = "none";
+        loaderActive = false;
+        console.log('✅ Loader hidden');
     }
 }
 

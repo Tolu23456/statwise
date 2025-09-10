@@ -1592,6 +1592,7 @@ async function handleSuccessfulPayment(paymentData, tier, period, amount) {
             }
         });
 
+        // Always hide loader after verification attempt (success or error)
         hideLoader();
 
         if (verificationError) {
