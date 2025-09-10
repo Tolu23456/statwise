@@ -1198,14 +1198,8 @@ async function handleSubscriptionUpgrade(tier, amount, period) {
             confirmText: 'Upgrade',
             cancelText: 'Cancel',
             onConfirm: () => {
-                // Here you would integrate with Flutterwave for actual payment
-                showModal({
-                    message: `Payment integration would be initiated here for ${tier} tier upgrade.`,
-                    confirmText: 'OK'
-                });
-                
-                // For demo purposes, you could update the user's tier in the database
-                // await upgradeUserTier(tier, period);
+                // Initialize Flutterwave payment
+                initializePayment(tier, period, amount);
             }
         });
     } catch (error) {
