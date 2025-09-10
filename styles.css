@@ -2020,6 +2020,18 @@ body.pulling-to-refresh {
     border-color: #0b4f7a;
 }
 
+/* Dark mode toggle slider styles */
+.dark-mode .slider {
+    background-color: #444;
+    border-color: #555;
+}
+
+.dark-mode input:checked+.slider {
+    background-color: #0e639c;
+    border-color: #0e639c;
+    box-shadow: 0 0 10px rgba(14, 99, 156, 0.4);
+}
+
 /* Ensure confidence colors override the default dark mode border */
 .dark-mode .prediction-card.high-confidence {
     border-color: #4caf50;
