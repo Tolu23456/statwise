@@ -109,6 +109,9 @@ main {
     /* Prevent scroll sync between pages */
     scroll-behavior: auto;
     isolation: isolate;
+    /* Reset scroll position on page change */
+    scroll-snap-type: none;
+    scroll-padding: 0;
 }
 
 /* ---------------- Page Transitions ---------------- */

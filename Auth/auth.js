@@ -78,6 +78,9 @@ function initializeAuthForms() {
         passwordToggle.addEventListener('click', () => togglePasswordVisibility('login-password'));
     }
     
+    // Add smooth transitions for auth page navigation
+    initializeAuthNavigation();
+    
     const confirmPasswordToggle = document.getElementById('confirm-password-toggle');
     if (confirmPasswordToggle) {
         confirmPasswordToggle.addEventListener('click', () => togglePasswordVisibility('signup-password-confirm'));
@@ -680,12 +683,34 @@ function showMessage(message, type = 'info') {
     }
 }
 
+// Initialize smooth auth page navigation with loaders
+function initializeAuthNavigation() {
+    // Find all auth navigation links
+    const authLinks = document.querySelectorAll('.switch-auth a, a[href*="login.html"], a[href*="signup.html"], a[href*="forgot-password.html"]');
+    
+    authLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetUrl = this.getAttribute('href');
+            
+            // Show loader animation
+            showLoader();
+            
+            // Add small delay for smooth transition
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 300);
+        });
+    });
+}
+
 // Check if user is already logged in and redirect to main app
 async function checkExistingSession() {
     const { data: { session } } = await supabase.auth.getSession();
     if (session) {
         console.log('User already logged in, redirecting to main app...');
-        window.location.href = '../index.html';
+        // Go to homepage after authentication
+        window.location.href = '../index.html#home';
     }
 }
 

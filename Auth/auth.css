@@ -372,20 +372,20 @@ body {
     justify-content: flex-start;
 }
 
-.remember-me {
+.privacy-policy {
     display: flex;
     align-items: center;
     gap: 6px;
     cursor: pointer;
     color: #555;
-    white-space: nowrap; /* Prevent the label from wrapping */
+    line-height: 1.4;
 }
 
-.remember-me span {
+.privacy-policy span {
     padding-left: 8px; /* Space between checkbox and text */
 }
 
-.remember-me input {
+.privacy-policy input {
     /* Hide the default checkbox */
     display: none;
 }
@@ -446,14 +446,14 @@ body {
 }
 .extra-link a:hover { text-decoration: underline; }
 
-.remember-me input:checked + .check svg { stroke: #0e639c; }
+.privacy-policy input:checked + .check svg { stroke: #0e639c; }
 
-.remember-me input:checked + .check svg path {
+.privacy-policy input:checked + .check svg path {
   stroke-dashoffset: 60;
   transition: all 0.3s linear;
 }
 
-.remember-me input:checked + .check svg polyline {
+.privacy-policy input:checked + .check svg polyline {
   stroke-dashoffset: 42;
   transition: all 0.2s linear;
   transition-delay: 0.15s;
@@ -687,7 +687,7 @@ body {
     color: #bbb;
 }
 
-.dark-mode .remember-me,
+.dark-mode .privacy-policy,
 .dark-mode .extra-link a {
     color: #bbb;
 }
@@ -697,7 +697,7 @@ body {
 }
 
 .dark-mode .check:hover svg,
-.dark-mode .remember-me input:checked + .check svg {
+.dark-mode .privacy-policy input:checked + .check svg {
     border-color: #0e639c;
 }
 
