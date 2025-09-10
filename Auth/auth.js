@@ -690,8 +690,37 @@ checkExistingSession();
 function initializeAuthAds() {
     console.log('📺 Initializing ads for auth page...');
     
-    // Load ads by default on auth pages (most users will be free tier)
-    loadAuthPageAds();
+    // Wait for consent manager and check consent
+    checkAuthConsentAndLoadAds();
+}
+
+// Check consent status and load ads accordingly for auth pages
+function checkAuthConsentAndLoadAds() {
+    // Listen for consent updates
+    window.addEventListener('consentUpdated', function(event) {
+        const consent = event.detail;
+        console.log('🍪 Auth page: Consent updated:', consent);
+        
+        if (consent.ad_storage === 'granted') {
+            loadAuthPageAds();
+        } else {
+            console.log('🚫 Auth page: Ads not loaded - consent denied');
+        }
+    });
+    
+    // Check if consent manager is available and get current consent
+    if (window.consentManager) {
+        const currentConsent = window.consentManager.getConsentStatus();
+        if (currentConsent && currentConsent.ad_storage === 'granted') {
+            loadAuthPageAds();
+        } else {
+            console.log('⏳ Auth page: Waiting for user consent to load ads...');
+        }
+    } else {
+        // Fallback: wait for consent manager to load
+        console.log('⏳ Auth page: Consent manager not ready, waiting...');
+        setTimeout(checkAuthConsentAndLoadAds, 1000);
+    }
 }
 
 function loadAuthPageAds() {

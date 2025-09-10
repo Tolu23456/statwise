@@ -1644,10 +1644,40 @@ function initializeAdSystemForUser() {
     console.log('🔧 Initializing ad system for tier:', verifiedTier);
     
     if (verifiedTier === "Free Tier") {
-        loadAdsForFreeUsers();
+        // Check if consent has been granted for advertising
+        checkConsentAndLoadAds();
     } else {
         console.log('👑 Premium user - no ads');
         hideAdBlockerMessage(); // Hide any existing adblocker message
+    }
+}
+
+// Check consent status and load ads accordingly
+function checkConsentAndLoadAds() {
+    // Listen for consent updates
+    window.addEventListener('consentUpdated', function(event) {
+        const consent = event.detail;
+        console.log('🍪 Consent updated:', consent);
+        
+        if (consent.ad_storage === 'granted' && verifiedTier === "Free Tier") {
+            loadAdsForFreeUsers();
+        } else {
+            console.log('🚫 Ads not loaded - consent denied or premium user');
+        }
+    });
+    
+    // Check if consent manager is available and get current consent
+    if (window.consentManager) {
+        const currentConsent = window.consentManager.getConsentStatus();
+        if (currentConsent && currentConsent.ad_storage === 'granted') {
+            loadAdsForFreeUsers();
+        } else {
+            console.log('⏳ Waiting for user consent to load ads...');
+        }
+    } else {
+        // Fallback: load consent manager if not available
+        console.log('⏳ Consent manager not ready, waiting...');
+        setTimeout(checkConsentAndLoadAds, 1000);
     }
 }
 
