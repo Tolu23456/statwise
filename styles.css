@@ -26,10 +26,10 @@
 
 /* ---------------- Body ---------------- */
 html {
-    background: #f4f5f7;
-    /* Light background */
-    color: #1c1c1e;
-    /* Dark text */
+    background: #f8f9fc;
+    /* Enhanced light background - more vibrant than dull #f4f5f7 */
+    color: #1a1a1c;
+    /* Slightly deeper text color for better contrast */
     font-family: "Optimistic";
     height: 100%;
 }
@@ -54,7 +54,8 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(135deg, #f4f5f7 0%, #e8eaf6 100%);
+    background: #f8f9fc;
+    /* Solid enhanced background - no gradient as requested */
     overflow: hidden;
 }
 
