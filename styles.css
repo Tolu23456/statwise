@@ -1112,61 +1112,81 @@ main {
     background: #c9302c;
 }
 
-/* Toggle Switch */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 56px;
-    height: 28px;
+/* Enhanced SVG Toggle Switch */
+:root {
+    --toggle-off: #b8c0c7;
+    --toggle-track: #b8c0c7;
+    --toggle-ring: #b8c0c7;
+    --toggle-stroke-off: #ffffff;
+    --toggle-stroke-on: #ffffff;
 }
 
-.switch input {
+.dark-mode {
+    --toggle-off: #5b6270;
+    --toggle-track: #5b6270;
+    --toggle-ring: #5b6270;
+    --toggle-stroke-off: #e6e6e6;
+    --toggle-stroke-on: #ffffff;
+}
+
+.toggle-input {
+    position: absolute;
     opacity: 0;
-    width: 0;
-    height: 0;
+    height: 1px;
+    width: 1px;
+    pointer-events: none;
 }
 
-.slider {
-    position: absolute;
+.switch {
+    --a: 0.5s ease-out;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #f0f4f8;
-    transition: all 0.3s ease;
-    border-radius: 34px;
-    border: var(--border-width-medium) solid #d1d9e0;
-    box-shadow: var(--shadow-light);
+    position: relative;
+    display: inline-flex;
+    height: 28px;
+    border-radius: 999px;
+    box-shadow: 0 0 0 10px var(--toggle-ring);
+    aspect-ratio: 212.4992/84.4688;
+    background-color: var(--toggle-track);
+    color: var(--toggle-stroke-off);
+    transition: all var(--a);
 }
 
-.slider::before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: all 0.3s ease;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.switch svg {
+    height: 100%;
 }
 
-.slider:hover {
-    box-shadow: var(--shadow-medium);
-    border-color: #0e639c;
+.switch svg path {
+    color: currentColor;
+    stroke-width: 16;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 136 224;
+    transition: all var(--a), 0s transform;
+    transform-origin: center;
 }
 
-input:checked+.slider {
+.toggle-input:checked + .switch {
+    color: var(--toggle-stroke-on);
     background-color: #0e639c;
-    border-color: #0e639c;
-    box-shadow: var(--shadow-strong);
+    box-shadow: 0 0 0 10px #0e639c;
 }
 
-input:checked+.slider::before {
-    transform: translateX(28px);
-    box-shadow: 0 2px 6px rgba(14, 99, 156, 0.3);
+.toggle-input:checked + .switch svg path {
+    stroke-dashoffset: 180;
+    transform: scaleY(-1);
+}
+
+.switch:focus-visible {
+    outline: 3px solid var(--statwise-blue, #0e639c);
+    outline-offset: 3px;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    gap: 12px;
 }
 
 

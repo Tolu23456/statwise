@@ -38,25 +38,31 @@
             <!-- Dark Mode Toggle -->
             <div class="setting-item">
                 <label for="darkModeToggle">Dark Mode</label>
-                <label class="switch">
-                    <input type="checkbox" id="darkModeToggle">
-                    <span class="slider"></span>
+                <input type="checkbox" id="darkModeToggle" class="toggle-input" />
+                <label class="switch" for="darkModeToggle">
+                    <svg viewBox="0 0 212.4992 84.4688" overflow="visible">
+                        <path pathLength="360" fill="none" stroke="currentColor" d="M 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 A 42.24 42.24 90 0 0 84.4992 42.2496 A 42.24 42.24 90 0 0 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 L 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 A 42.24 42.24 90 0 0 128 42.2496 A 42.24 42.24 90 0 0 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 L 42.2496 0"></path>
+                    </svg>
                 </label>
             </div>
             <!-- Inactive Page Toggle -->
             <div class="setting-item">
                 <label for="inactivePageToggle">Inactive Page</label>
-                <label class="switch">
-                    <input type="checkbox" id="inactivePageToggle" checked>
-                    <span class="slider"></span>
+                <input type="checkbox" id="inactivePageToggle" class="toggle-input" checked />
+                <label class="switch" for="inactivePageToggle">
+                    <svg viewBox="0 0 212.4992 84.4688" overflow="visible">
+                        <path pathLength="360" fill="none" stroke="currentColor" d="M 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 A 42.24 42.24 90 0 0 84.4992 42.2496 A 42.24 42.24 90 0 0 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 L 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 A 42.24 42.24 90 0 0 128 42.2496 A 42.24 42.24 90 0 0 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 L 42.2496 0"></path>
+                    </svg>
                 </label>
             </div>
             <!-- Notification Toggle -->
             <div id="notification-settings-card" class="setting-item" data-tier="premium">
                 <label for="predictionAlertsToggle">Prediction Alerts</label>
-                <label class="switch">
-                    <input type="checkbox" id="predictionAlertsToggle">
-                    <span class="slider"></span>
+                <input type="checkbox" id="predictionAlertsToggle" class="toggle-input" />
+                <label class="switch" for="predictionAlertsToggle">
+                    <svg viewBox="0 0 212.4992 84.4688" overflow="visible">
+                        <path pathLength="360" fill="none" stroke="currentColor" d="M 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 A 42.24 42.24 90 0 0 84.4992 42.2496 A 42.24 42.24 90 0 0 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 L 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 A 42.24 42.24 90 0 0 128 42.2496 A 42.24 42.24 90 0 0 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 L 42.2496 0"></path>
+                    </svg>
                 </label>
             </div>
         </div>
@@ -74,7 +80,6 @@
 
 
 <style data-dynamic="true">
-    .setting-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; }
     .danger-zone { border-color: #d9534f; }
     .danger-zone h2 { color: #d9534f; }
     .danger-actions { display: flex; flex-direction: column; gap: 8px; }
