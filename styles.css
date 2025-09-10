@@ -59,49 +59,11 @@ body {
     overflow: hidden;
 }
 
-.animated-background::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(14, 99, 156, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
-    animation: floatingPattern 20s ease-in-out infinite;
-}
+/* Gradient overlays removed to comply with no-gradient requirement */
 
-.animated-background::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 35px,
-            rgba(14, 99, 156, 0.03) 35px,
-            rgba(14, 99, 156, 0.03) 70px
-        );
-    animation: slidePattern 30s linear infinite;
-}
+/* All gradient overlays removed to comply with no-gradient requirement */
 
-@keyframes floatingPattern {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(-5px, -10px) rotate(1deg); }
-    50% { transform: translate(10px, 5px) rotate(-1deg); }
-    75% { transform: translate(-10px, 10px) rotate(0.5deg); }
-}
-
-@keyframes slidePattern {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(70px); }
-}
+/* Animation keyframes removed with gradient overlays */
 
 /* ---------------- Header ---------------- */
 header {
@@ -2452,26 +2414,12 @@ body.pulling-to-refresh {
 
 /* Dark mode animated background */
 .dark-mode .animated-background {
-    background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%);
+    background: #1a1a1c;
 }
 
-.dark-mode .animated-background::before {
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(165, 216, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.15) 0%, transparent 50%);
-}
+/* Dark mode gradient overlays removed to comply with no-gradient requirement */
 
-.dark-mode .animated-background::after {
-    background-image: 
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 35px,
-            rgba(165, 216, 255, 0.08) 35px,
-            rgba(165, 216, 255, 0.08) 70px
-        );
-}
+/* Dark mode background overlay gradients removed to comply with no-gradient requirement */
 
 /* ---------------- Error Container (from 404.css) ---------------- */
 .error-container {
