@@ -31,7 +31,7 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
 });
 
 // Flutterwave Public Key (Safe for frontend)
-export const FLWPUBK = "FLWPUBK_TEST-8336183053a03e565edf2dd9d6ec3ffd-X";
+export const FLWPUBK = "FLWPUBK_TEST-e21b7f5eb963ae5160ae9264a0bdff37-X";
 
 // Export auth for compatibility with existing code
 export const auth = supabase.auth;
