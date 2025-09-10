@@ -138,9 +138,10 @@ class ActivityManager {
         if (!this.isActive || !this.isEnabled) return;
         
         // Hide any visible loader first to prevent conflicts
-        const loader = document.querySelector('.loader');
+        const loader = document.getElementById('globalLoader');
         if (loader && loader.style.display !== 'none') {
             loader.style.display = 'none';
+            console.log('🔄 Loader hidden by activity manager');
         }
         
         this.isActive = false;
@@ -158,15 +159,8 @@ class ActivityManager {
             
             console.log('📱 Inactive page displayed');
             
-            // Start the away timer
-            const inactivePageScript = this.inactiveContainer.querySelector('script');
-            if (inactivePageScript) {
-                try {
-                    eval(inactivePageScript.textContent);
-                } catch (error) {
-                    console.error('Error executing inactive page script:', error);
-                }
-            }
+            // Initialize inactive page interactions safely
+            this.initializeInactivePageEvents();
         }
     }
     
@@ -246,6 +240,35 @@ class ActivityManager {
     // Public method to enable/disable the feature
     enableInactivePage(enabled) {
         this.setToggleSetting(enabled);
+    }
+    
+    // Safe event initialization for inactive page
+    initializeInactivePageEvents() {
+        if (!this.inactiveContainer) return;
+        
+        // Find and bind return button safely
+        const returnBtn = this.inactiveContainer.querySelector('.return-btn');
+        if (returnBtn) {
+            returnBtn.addEventListener('click', () => this.returnToApp());
+        }
+        
+        // Find and bind container click event safely
+        const container = this.inactiveContainer.querySelector('.inactive-container');
+        if (container) {
+            container.addEventListener('click', () => this.returnToApp());
+        }
+        
+        // Start away timer if there's a timer element
+        const timerElement = this.inactiveContainer.querySelector('[data-away-timer]');
+        if (timerElement && typeof window.startAwayTimer === 'function') {
+            try {
+                window.startAwayTimer();
+            } catch (error) {
+                console.warn('Away timer function not available:', error);
+            }
+        }
+        
+        console.log('✅ Inactive page events initialized safely');
     }
 }
 

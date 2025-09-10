@@ -1,20 +1,20 @@
 // ui.js
 
 /**
- * Creates an interactive, floating circle background.
- * If no container is provided, creates the background elements dynamically.
+ * Creates a modern gradient wave background animation.
+ * Simple and elegant replacement for the complex circle animation.
  * @param {HTMLElement} container Optional container element, or creates one if null
  * @returns {Function} A cleanup function to stop the animation and remove listeners.
  */
 function initInteractiveBackground(container = null) {
-    console.log('🌀 Initializing interactive background...');
+    console.log('🌀 Initializing modern background...');
     
-    // Create background container and circles if not provided
+    // Create background container if not provided
     let createdElements = false;
     let backgroundContainer = container;
     
     if (!backgroundContainer) {
-        console.log('Creating dynamic background elements...');
+        console.log('Creating modern background elements...');
         
         // Create the animated background dynamically
         backgroundContainer = document.createElement('div');
@@ -30,82 +30,98 @@ function initInteractiveBackground(container = null) {
             overflow: hidden;
         `;
         
-        // Create circles container
-        const circlesList = document.createElement('ul');
-        circlesList.className = 'circles';
-        circlesList.style.cssText = `
+        // Create geometric shapes
+        const shapesContainer = document.createElement('div');
+        shapesContainer.className = 'geometric-shapes';
+        shapesContainer.style.cssText = `
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            list-style: none;
-            margin: 0;
-            padding: 0;
         `;
         
-        // Create floating circles
-        const circleCount = 20;
-        const colors = ['#0e639c', '#4caf50', '#ff9800', '#e91e63', '#9c27b0', '#2196f3', '#ffc107'];
+        // Create floating geometric shapes
+        const shapeCount = 8;
+        const shapes = ['diamond', 'triangle', 'hexagon', 'square'];
+        const colors = ['#0e639c', '#4caf50', '#ff9800', '#2196f3'];
         
-        console.log(`Creating ${circleCount} animated circles...`);
+        console.log(`Creating ${shapeCount} animated shapes...`);
         
-        for (let i = 0; i < circleCount; i++) {
-            const li = document.createElement('li');
-            const startSize = Math.random() * 20 + 10; // Start small: 10-30px
-            const endSize = Math.random() * 80 + 40; // End large: 40-120px
+        for (let i = 0; i < shapeCount; i++) {
+            const shape = document.createElement('div');
+            const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
             const color = colors[Math.floor(Math.random() * colors.length)];
-            const opacity = Math.random() * 0.4 + 0.2; // 0.2-0.6 opacity for variety
-            const animationDuration = Math.random() * 15 + 10; // 10-25s slower for smoother effect
-            const animationDelay = Math.random() * 8; // 0-8s delay for staggered effect
+            const size = Math.random() * 60 + 30; // 30-90px
+            const opacity = Math.random() * 0.15 + 0.05; // 0.05-0.2 opacity - very subtle
+            const animationDuration = Math.random() * 20 + 15; // 15-35s very slow
+            const animationDelay = Math.random() * 10; // 0-10s delay
             
-            li.style.cssText = `
+            shape.className = `floating-shape ${shapeType}`;
+            shape.style.cssText = `
                 position: absolute;
-                width: ${startSize}px;
-                height: ${startSize}px;
+                width: ${size}px;
+                height: ${size}px;
                 background: ${color};
-                border-radius: 50%;
-                opacity: 0;
+                opacity: ${opacity};
                 left: ${Math.random() * 100}%;
-                bottom: -50px;
+                top: ${Math.random() * 100}%;
                 pointer-events: none;
-                animation: floatUpGrowing ${animationDuration}s infinite linear ${animationDelay}s;
+                animation: gentleFloat ${animationDuration}s infinite ease-in-out ${animationDelay}s;
                 z-index: -1;
-                --start-size: ${startSize}px;
-                --end-size: ${endSize}px;
             `;
             
-            circlesList.appendChild(li);
+            // Apply shape-specific styles
+            switch(shapeType) {
+                case 'diamond':
+                    shape.style.borderRadius = '8px';
+                    // Use a different animation for diamonds to preserve rotation
+                    shape.style.animation = `gentleFloatDiamond ${animationDuration}s infinite ease-in-out ${animationDelay}s`;
+                    break;
+                case 'triangle':
+                    shape.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+                    break;
+                case 'hexagon':
+                    shape.style.clipPath = 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)';
+                    break;
+                case 'square':
+                    shape.style.borderRadius = '12px';
+                    break;
+            }
+            
+            shapesContainer.appendChild(shape);
         }
         
-        // Add CSS animation for floating circles
+        // Add CSS animation for floating shapes
         const style = document.createElement('style');
         style.textContent = `
-            @keyframes floatUpGrowing {
-                0% {
-                    transform: translateY(0px) scale(1);
-                    opacity: 0;
-                    width: var(--start-size);
-                    height: var(--start-size);
+            @keyframes gentleFloat {
+                0%, 100% {
+                    transform: translate(0, 0) rotate(0deg);
                 }
-                5% {
-                    opacity: 0.6;
+                25% {
+                    transform: translate(20px, -30px) rotate(90deg);
                 }
                 50% {
-                    width: calc((var(--start-size) + var(--end-size)) / 2);
-                    height: calc((var(--start-size) + var(--end-size)) / 2);
-                    opacity: 0.8;
+                    transform: translate(-15px, -60px) rotate(180deg);
                 }
-                95% {
-                    opacity: 0.4;
-                    width: var(--end-size);
-                    height: var(--end-size);
+                75% {
+                    transform: translate(-25px, -30px) rotate(270deg);
                 }
-                100% {
-                    transform: translateY(-120vh) scale(1.2);
-                    opacity: 0;
-                    width: var(--end-size);
-                    height: var(--end-size);
+            }
+            
+            @keyframes gentleFloatDiamond {
+                0%, 100% {
+                    transform: translate(0, 0) rotate(45deg);
+                }
+                25% {
+                    transform: translate(20px, -30px) rotate(135deg);
+                }
+                50% {
+                    transform: translate(-15px, -60px) rotate(225deg);
+                }
+                75% {
+                    transform: translate(-25px, -30px) rotate(315deg);
                 }
             }
             
@@ -113,109 +129,52 @@ function initInteractiveBackground(container = null) {
                 overflow: hidden !important;
                 position: fixed !important;
                 z-index: -10 !important;
+                background: linear-gradient(135deg, 
+                    rgba(14, 99, 156, 0.02) 0%,
+                    rgba(76, 175, 80, 0.01) 25%,
+                    rgba(33, 150, 243, 0.02) 50%,
+                    rgba(14, 99, 156, 0.01) 100%);
             }
             
-            .circles {
+            .geometric-shapes {
                 position: absolute !important;
                 width: 100% !important;
                 height: 100% !important;
             }
             
-            .circles li {
-                will-change: transform, opacity;
+            .floating-shape {
+                will-change: transform;
                 position: absolute !important;
+                filter: blur(0.5px);
+            }
+            
+            .floating-shape.diamond {
+                transform-origin: center center;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .floating-shape {
+                    width: 20px !important;
+                    height: 20px !important;
+                    opacity: 0.03 !important;
+                }
             }
         `;
         document.head.appendChild(style);
         
-        backgroundContainer.appendChild(circlesList);
+        backgroundContainer.appendChild(shapesContainer);
         document.body.insertBefore(backgroundContainer, document.body.firstChild);
         createdElements = true;
         
-        console.log('✅ Background elements created and added to DOM');
+        console.log('✅ Modern background elements created and added to DOM');
     }
 
-    const circlesList = backgroundContainer.querySelector('.circles') || backgroundContainer.querySelector('ul');
-    if (!circlesList) return () => {};
-
-    let animationFrameId;
-    const circleElements = Array.from(circlesList.querySelectorAll('li'));
-    
-    const cursor = { x: 9999, y: 9999 };
-    const interactionRadius = 150;
-
-    const mouseMoveHandler = e => { cursor.x = e.clientX; cursor.y = e.clientY; };
-    const touchMoveHandler = e => {
-        if (e.touches.length > 0) { cursor.x = e.touches[0].clientX; cursor.y = e.touches[0].clientY; }
-    };
-    const mouseOutHandler = () => { cursor.x = 9999; cursor.y = 9999; };
-
-    document.addEventListener('mousemove', mouseMoveHandler);
-    document.addEventListener('touchstart', touchMoveHandler, { passive: true });
-    document.addEventListener('touchmove', touchMoveHandler, { passive: true });
-    document.addEventListener('mouseout', mouseOutHandler);
-    document.addEventListener('touchend', mouseOutHandler);
-
-    const circleObjects = circleElements.map(el => {
-        const size = parseFloat(getComputedStyle(el).width) || 40;
-        return {
-            el: el,
-            x: Math.random() * window.innerWidth,
-            y: window.innerHeight + size + Math.random() * 200,
-            radius: size / 2,
-            vy: Math.random() * 1 + 0.5, // Upward speed
-            vx: (Math.random() - 0.5) * 0.5, // Sideways drift
-            pushX: 0, pushY: 0,
-            friction: 0.95 // for smooth return
-        };
-    });
-
-    circleElements.forEach(el => {
-        el.style.position = 'absolute';
-        el.style.left = '0'; 
-        el.style.top = '0';
-        el.style.borderRadius = '50%';
-    });
-
-    function animate() {
-        circleObjects.forEach(p => {
-            const dx = p.x - cursor.x;
-            const dy = p.y - cursor.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-
-            if (dist < interactionRadius) {
-                const angle = Math.atan2(dy, dx);
-                const force = (interactionRadius - dist) / interactionRadius;
-                p.pushX += Math.cos(angle) * force * 0.6;
-                p.pushY += Math.sin(angle) * force * 0.6;
-            }
-
-            p.pushX *= p.friction; 
-            p.pushY *= p.friction;
-            p.x += p.vx + p.pushX; 
-            p.y -= p.vy;
-
-            if (p.y < -p.radius * 2) {
-                p.x = Math.random() * window.innerWidth;
-                p.y = window.innerHeight + p.radius * 2;
-            }
-            p.el.style.transform = `translate(${p.x - p.radius}px, ${p.y - p.radius}px)`;
-        });
-        animationFrameId = requestAnimationFrame(animate);
-    }
-    animate();
-
+    // Simple cleanup function for the new background
     return () => {
-        if (animationFrameId) cancelAnimationFrame(animationFrameId);
-        document.removeEventListener('mousemove', mouseMoveHandler);
-        document.removeEventListener('touchstart', touchMoveHandler);
-        document.removeEventListener('touchmove', touchMoveHandler);
-        document.removeEventListener('mouseout', mouseOutHandler);
-        document.removeEventListener('touchend', mouseOutHandler);
-        
-        // Clean up created elements
-        if (createdElements && backgroundContainer) {
+        if (backgroundContainer && createdElements) {
             backgroundContainer.remove();
+            console.log('🧹 Modern background cleaned up');
         }
     };
 }
