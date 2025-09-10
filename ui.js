@@ -52,24 +52,27 @@ function initInteractiveBackground(container = null) {
         
         for (let i = 0; i < circleCount; i++) {
             const li = document.createElement('li');
-            const size = Math.random() * 60 + 25; // 25-85px fixed sizes
+            const startSize = Math.random() * 20 + 10; // Start small: 10-30px
+            const endSize = Math.random() * 80 + 40; // End large: 40-120px
             const color = colors[Math.floor(Math.random() * colors.length)];
-            const opacity = 0.5; // Fixed 50% opacity
-            const animationDuration = Math.random() * 15 + 8; // 8-23s
-            const animationDelay = Math.random() * 5; // 0-5s delay
+            const opacity = Math.random() * 0.4 + 0.2; // 0.2-0.6 opacity for variety
+            const animationDuration = Math.random() * 15 + 10; // 10-25s slower for smoother effect
+            const animationDelay = Math.random() * 8; // 0-8s delay for staggered effect
             
             li.style.cssText = `
                 position: absolute;
-                width: ${size}px;
-                height: ${size}px;
+                width: ${startSize}px;
+                height: ${startSize}px;
                 background: ${color};
                 border-radius: 50%;
-                opacity: ${opacity};
+                opacity: 0;
                 left: ${Math.random() * 100}%;
-                top: 100vh;
+                bottom: -50px;
                 pointer-events: none;
-                animation: floatUp ${animationDuration}s infinite linear ${animationDelay}s;
+                animation: floatUpGrowing ${animationDuration}s infinite linear ${animationDelay}s;
                 z-index: -1;
+                --start-size: ${startSize}px;
+                --end-size: ${endSize}px;
             `;
             
             circlesList.appendChild(li);
@@ -78,20 +81,31 @@ function initInteractiveBackground(container = null) {
         // Add CSS animation for floating circles
         const style = document.createElement('style');
         style.textContent = `
-            @keyframes floatUp {
+            @keyframes floatUpGrowing {
                 0% {
-                    transform: translateY(0px);
+                    transform: translateY(0px) scale(1);
                     opacity: 0;
+                    width: var(--start-size);
+                    height: var(--start-size);
                 }
                 5% {
-                    opacity: 0.5;
+                    opacity: 0.6;
+                }
+                50% {
+                    width: calc((var(--start-size) + var(--end-size)) / 2);
+                    height: calc((var(--start-size) + var(--end-size)) / 2);
+                    opacity: 0.8;
                 }
                 95% {
-                    opacity: 0.5;
+                    opacity: 0.4;
+                    width: var(--end-size);
+                    height: var(--end-size);
                 }
                 100% {
-                    transform: translateY(-120vh);
+                    transform: translateY(-120vh) scale(1.2);
                     opacity: 0;
+                    width: var(--end-size);
+                    height: var(--end-size);
                 }
             }
             
