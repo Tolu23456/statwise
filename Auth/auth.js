@@ -21,7 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const backgroundCleanup = initInteractiveBackground();
     
     // Store cleanup function for potential later use
-    window.authBackgroundCleanup = backgroundCleanup;
+        // Initialize new interactive background animation for auth pages
+        import('../ui.js').then(({ initAuthBackgroundAnimation }) => {
+            window.authBackgroundCleanup = initAuthBackgroundAnimation();
+        });
     initializeAuthForms();
     initializeAuthAds(); // Initialize ads for auth page
     
@@ -72,19 +75,25 @@ function initializeAuthForms() {
         updateThemeIcon();
     }
     
-    // Toggle password visibility
-    const passwordToggle = document.getElementById('password-toggle');
-    if (passwordToggle) {
-        passwordToggle.addEventListener('click', () => togglePasswordVisibility('login-password'));
+    // Toggle password visibility for login
+    const loginPasswordToggle = document.getElementById('login-password-toggle');
+    if (loginPasswordToggle) {
+        loginPasswordToggle.addEventListener('click', () => togglePasswordVisibility('login-password'));
     }
-    
-    // Add smooth transitions for auth page navigation
-    initializeAuthNavigation();
-    
+
+    // Toggle password visibility for signup
+    const signupPasswordToggle = document.getElementById('signup-password-toggle');
+    if (signupPasswordToggle) {
+        signupPasswordToggle.addEventListener('click', () => togglePasswordVisibility('signup-password'));
+    }
+
+    // Toggle password visibility for signup confirm
     const confirmPasswordToggle = document.getElementById('confirm-password-toggle');
     if (confirmPasswordToggle) {
         confirmPasswordToggle.addEventListener('click', () => togglePasswordVisibility('signup-password-confirm'));
     }
+    // Add smooth transitions for auth page navigation
+    initializeAuthNavigation();
     
     // Password strength indicator for signup
     const signupPassword = document.getElementById('signup-password');

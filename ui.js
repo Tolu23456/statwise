@@ -295,4 +295,116 @@ function toggleTheme() {
     return newTheme;
 }
 
-export { initInteractiveBackground, initializeTheme, applyTheme, toggleTheme };
+/**
+ * Creates a new interactive background animation for auth pages
+ * Animated floating geometric shapes (circles and squares) that move and react to mouse movement
+ * Colors match app theme, no gradients
+ * Returns a cleanup function
+ */
+function initAuthBackgroundAnimation() {
+    // Remove any previous background
+    const oldBg = document.getElementById('auth-bg-animation');
+    if (oldBg) oldBg.remove();
+
+    // Create canvas for animation
+    const canvas = document.createElement('canvas');
+    canvas.id = 'auth-bg-animation';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.zIndex = '-1';
+    canvas.style.pointerEvents = 'none';
+    document.body.appendChild(canvas);
+
+    // Set canvas size
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Theme colors
+    let bgColor = '#ffffff';
+    let accentColor = getComputedStyle(document.documentElement).getPropertyValue('--statwise-accent') || '#0e639c';
+    let shapeColor = getComputedStyle(document.documentElement).getPropertyValue('--statwise-shape') || '#0e639c';
+    // Detect dark mode
+    if (document.body.classList.contains('dark-mode')) {
+        bgColor = '#2d2d30';
+        accentColor = '#0e639c';
+        shapeColor = '#ffffff';
+    }
+
+    // Generate shapes
+    const shapes = [];
+    const numShapes = 24;
+    for (let i = 0; i < numShapes; i++) {
+        shapes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: 20 + Math.random() * 30,
+            dx: (Math.random() - 0.5) * 1.5,
+            dy: (Math.random() - 0.5) * 1.5,
+            type: Math.random() > 0.5 ? 'circle' : 'square',
+            color: Math.random() > 0.5 ? accentColor : shapeColor
+        });
+    }
+
+    // Mouse interaction
+    let mouseX = canvas.width / 2;
+    let mouseY = canvas.height / 2;
+    window.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Animation loop
+    let running = true;
+    function animate() {
+        if (!running) return;
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        for (const s of shapes) {
+            // Move shapes
+            s.x += s.dx;
+            s.y += s.dy;
+            // Bounce off edges
+            if (s.x < 0 || s.x > canvas.width) s.dx *= -1;
+            if (s.y < 0 || s.y > canvas.height) s.dy *= -1;
+            // Mouse repulsion
+            const dist = Math.hypot(mouseX - s.x, mouseY - s.y);
+            if (dist < 100) {
+                const angle = Math.atan2(s.y - mouseY, s.x - mouseX);
+                s.x += Math.cos(angle) * 2;
+                s.y += Math.sin(angle) * 2;
+            }
+            // Draw shape
+            ctx.save();
+            ctx.globalAlpha = 0.7;
+            ctx.fillStyle = s.color;
+            if (s.type === 'circle') {
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size / 2, 0, Math.PI * 2);
+                ctx.fill();
+            } else {
+                ctx.fillRect(s.x - s.size / 2, s.y - s.size / 2, s.size, s.size);
+            }
+            ctx.restore();
+        }
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Cleanup function
+    return function cleanup() {
+        running = false;
+        window.removeEventListener('resize', resizeCanvas);
+        canvas.remove();
+    };
+}
+
+export { initInteractiveBackground, initializeTheme, applyTheme, toggleTheme, initAuthBackgroundAnimation };
