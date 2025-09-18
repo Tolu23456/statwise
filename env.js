@@ -30,8 +30,29 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
   }
 });
 
-// Flutterwave Public Key (Safe for frontend)
-export const FLWPUBK = "FLWPUBK_TEST-e21b7f5eb963ae5160ae9264a0bdff37-X";
+// Flutterwave configuration from environment variables
+// These will be set in Supabase Dashboard > Project Settings > Environment Variables
+const FLUTTERWAVE_PUBLIC_KEY = globalThis?.process?.env?.FLUTTERWAVE_PUBLIC_KEY || 
+                                globalThis?.Deno?.env?.get?.('FLUTTERWAVE_PUBLIC_KEY') ||
+                                globalThis?.FLUTTERWAVE_PUBLIC_KEY;
+
+const FLUTTERWAVE_SECRET_KEY = globalThis?.process?.env?.FLUTTERWAVE_SECRET_KEY || 
+                               globalThis?.Deno?.env?.get?.('FLUTTERWAVE_SECRET_KEY') ||
+                               globalThis?.FLUTTERWAVE_SECRET_KEY;
+
+const FLUTTERWAVE_WEBHOOK_SECRET = globalThis?.process?.env?.FLUTTERWAVE_WEBHOOK_SECRET || 
+                                   globalThis?.Deno?.env?.get?.('FLUTTERWAVE_WEBHOOK_SECRET') ||
+                                   globalThis?.FLUTTERWAVE_WEBHOOK_SECRET;
+
+// Export Flutterwave keys (public key is safe for frontend)
+export const FLWPUBK = FLUTTERWAVE_PUBLIC_KEY;
+export const FLUTTERWAVE_SECRET = FLUTTERWAVE_SECRET_KEY;
+export const FLUTTERWAVE_WEBHOOK = FLUTTERWAVE_WEBHOOK_SECRET;
+
+// Validation - ensure public key exists for payment functionality
+if (!FLWPUBK) {
+  console.error('⚠️ FLUTTERWAVE_PUBLIC_KEY is not set. Payment functionality will not work.');
+}
 
 // Export auth for compatibility with existing code
 export const auth = supabase.auth;
