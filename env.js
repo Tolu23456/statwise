@@ -36,7 +36,7 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
 
 // You can set your Flutterwave public key here directly (it's safe for frontend)
 // Or implement a secure method to fetch it from your Supabase backend
-const FLUTTERWAVE_PUBLIC_KEY = 'YOUR_FLUTTERWAVE_PUBLIC_KEY_HERE';
+const FLUTTERWAVE_PUBLIC_KEY = 'FLWPUBK-30eeb76b5875f40db71221d0960de0a8-X';
 
 // Export Flutterwave public key (only public key is safe for frontend)
 export const FLWPUBK = FLUTTERWAVE_PUBLIC_KEY;
