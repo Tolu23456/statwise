@@ -660,11 +660,41 @@ function displayUserProfile(profile) {
     const avatarContainer = document.getElementById('profileAvatarContainer');
     if (avatarContainer) {
         if (profile.profile_picture_url) {
-            avatarContainer.innerHTML = `<img src="${profile.profile_picture_url}" alt="Profile Picture" class="avatar-img" onclick="triggerAvatarUpload()">`;
+            avatarContainer.innerHTML = `
+                <img src="${profile.profile_picture_url}" alt="Profile Picture" class="avatar-img" style="cursor: pointer;">
+                <div class="avatar-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
+                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 13L11 9V7L9 9L11 11L9 13H11L15 9L21 15V17L15 11L21 9ZM5 7V9L7 11L5 13H7L11 9L7 5L5 7Z"/>
+                    </svg>
+                </div>
+            `;
         } else {
             const initial = (profile.display_name || profile.username || 'U').charAt(0).toUpperCase();
-            avatarContainer.innerHTML = `<div class="default-avatar" onclick="triggerAvatarUpload()">${initial}</div>`;
+            avatarContainer.innerHTML = `
+                <div class="default-avatar" style="cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center;">
+                    ${initial}
+                    <div class="avatar-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
+                        <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 13L11 9V7L9 9L11 11L9 13H11L15 9L21 15V17L15 11L21 9ZM5 7V9L7 11L5 13H7L11 9L7 5L5 7Z"/>
+                        </svg>
+                    </div>
+                </div>
+            `;
         }
+        
+        // Add hover effect and click handler
+        avatarContainer.onmouseenter = () => {
+            const overlay = avatarContainer.querySelector('.avatar-overlay');
+            if (overlay) overlay.style.opacity = '1';
+        };
+        avatarContainer.onmouseleave = () => {
+            const overlay = avatarContainer.querySelector('.avatar-overlay');
+            if (overlay) overlay.style.opacity = '0';
+        };
+        avatarContainer.onclick = () => {
+            console.log('Avatar clicked - triggering upload');
+            triggerAvatarUpload();
+        };
     }
     
     // Initialize profile page interactions
@@ -767,26 +797,54 @@ function initializeProfileInteractions() {
         });
     }
     
-    // Initialize avatar upload
-    const avatarUpload = document.getElementById('avatarUpload');
-    if (avatarUpload) {
-        console.log('Avatar upload input found, adding event listener');
-        avatarUpload.addEventListener('change', handleAvatarUpload);
-    } else {
-        console.warn('Avatar upload input not found during initialization');
-    }
+    // Initialize avatar upload with retry logic
+    setTimeout(() => {
+        const avatarUpload = document.getElementById('avatarUpload');
+        if (avatarUpload) {
+            console.log('✅ Avatar upload input found, adding event listener');
+            // Remove any existing listeners first
+            avatarUpload.removeEventListener('change', handleAvatarUpload);
+            // Add the event listener
+            avatarUpload.addEventListener('change', handleAvatarUpload);
+            
+            // Test the functionality
+            console.log('Avatar upload functionality initialized successfully');
+        } else {
+            console.warn('⚠️ Avatar upload input not found during initialization');
+            console.log('Available elements with IDs:', Array.from(document.querySelectorAll('[id]')).map(el => el.id));
+            
+            // Create fallback input if missing
+            const fallbackInput = document.createElement('input');
+            fallbackInput.type = 'file';
+            fallbackInput.id = 'avatarUpload';
+            fallbackInput.accept = 'image/jpeg,image/jpg,image/png,image/gif,image/webp';
+            fallbackInput.style.display = 'none';
+            document.body.appendChild(fallbackInput);
+            fallbackInput.addEventListener('change', handleAvatarUpload);
+            console.log('✅ Created fallback avatar upload input');
+        }
+    }, 100);  // Small delay to ensure DOM is ready
 }
 
 // ===== Avatar Upload Functions =====
 function triggerAvatarUpload() {
+    console.log('🔄 Trigger avatar upload called');
     const avatarUpload = document.getElementById('avatarUpload');
     if (avatarUpload) {
-        console.log('Triggering file upload dialog...');
+        console.log('✅ Avatar upload input found, triggering file dialog...');
         // Reset the input value to ensure change event fires even for same file
         avatarUpload.value = '';
         avatarUpload.click();
     } else {
-        console.error('Avatar upload input not found');
+        console.error('❌ Avatar upload input not found');
+        console.log('Available elements:', Array.from(document.querySelectorAll('[id]')).map(el => el.id));
+        // Try to find it in a different way
+        const allInputs = document.querySelectorAll('input[type="file"]');
+        console.log('File inputs found:', allInputs.length);
+        if (allInputs.length > 0) {
+            console.log('Clicking first file input as fallback');
+            allInputs[0].click();
+        }
     }
 }
 
@@ -795,12 +853,23 @@ window.triggerAvatarUpload = triggerAvatarUpload;
 window.loadPage = loadPage;
 
 async function handleAvatarUpload(event) {
+    console.log('📸 Avatar upload triggered, processing file...');
     const file = event.target.files[0];
-    if (!file) return;
+    if (!file) {
+        console.log('No file selected');
+        return;
+    }
+    
+    console.log('File selected:', { 
+        name: file.name, 
+        size: file.size, 
+        type: file.type 
+    });
     
     // Validate file type
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
     if (!allowedTypes.includes(file.type)) {
+        console.error('Invalid file type:', file.type);
         showModal({
             message: 'Please select a valid image file (JPEG, PNG, GIF, or WebP).',
             confirmText: 'OK'
