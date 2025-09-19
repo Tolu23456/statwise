@@ -21,20 +21,20 @@ args = "StatWise PWA Server"
 name = "StatWise PWA Server"
 author = "agent"
 
-[workflows.workflow.metadata]
-outputType = "webview"
-
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "http-server . -a 0.0.0.0 -p 5000 -c-1 --cors"
+args = "npm run dev"
 waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
 
 [[ports]]
 localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 39975
+localPort = 43837
 externalPort = 3000
 
 [deployment]
