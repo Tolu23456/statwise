@@ -1446,6 +1446,223 @@ main {
     border-color: #0e639c;
 }
 
+/* ===== CSS Variables for Forum ===== */
+:root {
+    --card-bg: #ffffff;
+    --primary-bg: #f8f9fc;
+    --secondary-bg: #f1f3f5;
+    --text-primary: #1a1a1c;
+    --text-secondary: #666;
+    --border-color: #e0e0e0;
+    --statwise-blue: #0e639c;
+    --statwise-blue-dark: #0b4f7a;
+    --statwise-blue-light: #74b9ff;
+}
+
+.dark-mode {
+    --card-bg: #2d2d32;
+    --primary-bg: #1a1a1c;
+    --secondary-bg: #252526;
+    --text-primary: #e2e2e4;
+    --text-secondary: #bbb;
+    --border-color: #444;
+}
+
+/* ===== Forum Specific Styles ===== */
+.forum-section {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 140px);
+    padding: 0;
+    gap: 20px;
+}
+
+.forum-header {
+    text-align: center;
+    padding: 20px 0;
+    background: var(--card-bg);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+.forum-header .page-title {
+    margin-bottom: 8px;
+    font-size: 28px;
+    color: var(--statwise-blue);
+}
+
+.forum-description {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin: 0;
+}
+
+.sample-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.coming-soon-banner {
+    background: linear-gradient(135deg, var(--statwise-blue) 0%, var(--statwise-blue-light) 100%);
+    border-radius: 16px;
+    padding: 24px;
+    color: white;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+}
+
+.banner-content h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.upcoming-features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.upcoming-features .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    min-width: 100px;
+    transition: all 0.3s ease;
+}
+
+.upcoming-features .feature-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.upcoming-features .feature-icon {
+    font-size: 24px;
+}
+
+.upcoming-features span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.banner-note {
+    font-size: 14px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.forum-guidelines {
+    margin-top: 20px;
+}
+
+.forum-guidelines h4 {
+    color: var(--statwise-blue);
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.forum-guidelines ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.forum-guidelines li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.forum-guidelines li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design for Forum */
+@media (max-width: 768px) {
+    .forum-section {
+        height: calc(100vh - 160px);
+        gap: 16px;
+    }
+    
+    .forum-header .page-title {
+        font-size: 24px;
+    }
+    
+    .forum-description {
+        font-size: 14px;
+    }
+    
+    .upcoming-features {
+        gap: 12px;
+    }
+    
+    .upcoming-features .feature-item {
+        min-width: 80px;
+        padding: 12px;
+    }
+    
+    .banner-content h3 {
+        font-size: 18px;
+    }
+    
+    .coming-soon-banner {
+        padding: 20px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .forum-section {
+        height: calc(100vh - 180px);
+    }
+    
+    .forum-header {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .forum-header .page-title {
+        font-size: 20px;
+    }
+    
+    .upcoming-features {
+        gap: 8px;
+    }
+    
+    .upcoming-features .feature-item {
+        min-width: 70px;
+        padding: 10px;
+    }
+    
+    .upcoming-features .feature-icon {
+        font-size: 20px;
+    }
+    
+    .upcoming-features span {
+        font-size: 12px;
+    }
+    
+    .coming-soon-banner {
+        padding: 16px 12px;
+        margin: 16px 0;
+    }
+    
+    .banner-content h3 {
+        font-size: 16px;
+    }
+}
+
 /* ===== Coming Soon Styles ===== */
 .coming-soon-section {
     padding: 40px 20px;
