@@ -70,23 +70,39 @@ function initInteractiveBackground(container = null) {
                 size: size,
                 speed: speed,
                 baseOpacity: opacity,
-                hue: 210 + Math.random() * 60 // Blue to teal range
+                colorType: Math.random() > 0.5 ? 'primary' : 'secondary' // Theme-aware color type
             };
             
-            // Style the circle
+            // Get theme-aware colors
+            const getThemeColor = (colorType) => {
+                const isDark = document.body.classList.contains('dark-mode');
+                if (colorType === 'primary') {
+                    return isDark 
+                        ? getComputedStyle(document.documentElement).getPropertyValue('--statwise-blue-light') || '#1976d2'
+                        : getComputedStyle(document.documentElement).getPropertyValue('--statwise-blue') || '#0e639c';
+                } else {
+                    return isDark 
+                        ? getComputedStyle(document.documentElement).getPropertyValue('--text-secondary') || '#b8bcc3'
+                        : getComputedStyle(document.documentElement).getPropertyValue('--text-secondary') || '#6b7280';
+                }
+            };
+            
+            const circleColor = getThemeColor(circleData.colorType);
+            
+            // Style the circle with theme colors
             circle.style.cssText = `
                 position: absolute;
                 width: ${size}px;
                 height: ${size}px;
                 border-radius: 50%;
                 background: radial-gradient(circle, 
-                    hsla(${circleData.hue}, 60%, 45%, ${opacity}), 
-                    hsla(${circleData.hue}, 60%, 45%, 0)
+                    ${circleColor}${Math.floor(opacity * 255).toString(16).padStart(2, '0')}, 
+                    transparent
                 );
                 left: ${startX}px;
                 top: ${startY}px;
                 pointer-events: none;
-                transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease, background 0.3s ease;
                 will-change: transform, opacity;
                 z-index: -1;
             `;
@@ -108,6 +124,39 @@ function initInteractiveBackground(container = null) {
                 mouseY = e.touches[0].clientY;
             }
         };
+        
+        // Function to update circle colors based on current theme
+        const updateCircleColors = () => {
+            circles.forEach((circle) => {
+                const getThemeColor = (colorType) => {
+                    const isDark = document.body.classList.contains('dark-mode');
+                    if (colorType === 'primary') {
+                        return isDark 
+                            ? getComputedStyle(document.documentElement).getPropertyValue('--statwise-blue-light') || '#1976d2'
+                            : getComputedStyle(document.documentElement).getPropertyValue('--statwise-blue') || '#0e639c';
+                    } else {
+                        return isDark 
+                            ? getComputedStyle(document.documentElement).getPropertyValue('--text-secondary') || '#b8bcc3'
+                            : getComputedStyle(document.documentElement).getPropertyValue('--text-secondary') || '#6b7280';
+                    }
+                };
+                
+                const circleColor = getThemeColor(circle.colorType);
+                const opacity = circle.baseOpacity;
+                
+                // Update the background with new theme color
+                circle.element.style.background = `radial-gradient(circle, 
+                    ${circleColor}${Math.floor(opacity * 255).toString(16).padStart(2, '0')}, 
+                    transparent
+                )`;
+            });
+        };
+        
+        // Listen for theme changes
+        const handleThemeChange = () => {
+            updateCircleColors();
+        };
+        window.addEventListener('themechange', handleThemeChange);
         
         // Animation loop
         const animateCircles = () => {
@@ -195,6 +244,7 @@ function initInteractiveBackground(container = null) {
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('touchmove', handleTouchMove);
             window.removeEventListener('resize', handleResize);
+            window.removeEventListener('themechange', handleThemeChange);
             backgroundContainer.remove();
             console.log('🧹 Interactive circles background cleaned up');
         }
