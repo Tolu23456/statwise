@@ -258,54 +258,78 @@ function showUpgradeModal(requiredTier) {
 
 async function loadPage(page) {
     try {
+        // Validate page parameter
+        if (!page || typeof page !== 'string') {
+            console.error('Invalid page parameter:', page);
+            return;
+        }
+        
         showLoader();
         
         // Save current page to localStorage for reload persistence
-        localStorage.setItem('lastPage', page);
+        try {
+            localStorage.setItem('lastPage', page);
+        } catch (storageError) {
+            console.warn('Failed to save page to localStorage:', storageError);
+        }
         
-        // Update active navigation
-        navButtons.forEach(btn => {
-            btn.classList.toggle("active", btn.getAttribute("data-page") === page);
-        });
+        // Update active navigation with null checks
+        if (navButtons && navButtons.length > 0) {
+            navButtons.forEach(btn => {
+                if (btn && btn.getAttribute) {
+                    btn.classList.toggle("active", btn.getAttribute("data-page") === page);
+                }
+            });
+        }
         
         // Add fade-out transition to current content
-        main.classList.add('page-fade-out');
-        
-        // Wait for fade-out animation to complete
-        await new Promise(resolve => setTimeout(resolve, 200));
-        
-        // Load page content
-        const response = await fetch(`./Pages/${page}.html`);
-        if (response.ok) {
-            const content = await response.text();
-            main.innerHTML = content;
+        if (main) {
+            main.classList.add('page-fade-out');
             
-            // Reset scroll position to top for each new page
-            main.scrollTop = 0;
+            // Wait for fade-out animation to complete
+            await new Promise(resolve => setTimeout(resolve, 200));
             
-            // Remove fade-out and add fade-in transition
-            main.classList.remove('page-fade-out');
-            main.classList.add('page-fade-in');
-            
-            // Initialize page-specific functionality
-            await initializePage(page);
-            
-            // Remove fade-in class after animation completes
-            setTimeout(() => {
-                main.classList.remove('page-fade-in');
-            }, 300);
-        } else {
-            main.innerHTML = '<div class="error">Page not found</div>';
-            main.scrollTop = 0;
-            main.classList.remove('page-fade-out');
+            // Load page content
+            const response = await fetch(`./Pages/${page}.html`);
+            if (response.ok) {
+                const content = await response.text();
+                main.innerHTML = content;
+                
+                // Reset scroll position to top for each new page
+                main.scrollTop = 0;
+                
+                // Remove fade-out and add fade-in transition
+                main.classList.remove('page-fade-out');
+                main.classList.add('page-fade-in');
+                
+                // Initialize page-specific functionality
+                try {
+                    await initializePage(page);
+                } catch (initError) {
+                    console.error('Error initializing page:', initError);
+                }
+                
+                // Remove fade-in class after animation completes
+                setTimeout(() => {
+                    if (main) {
+                        main.classList.remove('page-fade-in');
+                    }
+                }, 300);
+            } else {
+                main.innerHTML = '<div class="error">Page not found</div>';
+                main.scrollTop = 0;
+                main.classList.remove('page-fade-out');
+            }
         }
         
         hideLoader();
     } catch (error) {
         console.error('Error loading page:', error);
-        main.innerHTML = '<div class="error">Error loading page</div>';
-        main.scrollTop = 0;
-        main.classList.remove('page-fade-out');
+        if (main) {
+            main.innerHTML = '<div class="error">Error loading page</div>';
+            main.scrollTop = 0;
+            main.classList.remove('page-fade-out');
+        }
         hideLoader();
     }
 }
@@ -953,12 +977,19 @@ window.triggerAvatarUpload = triggerAvatarUpload;
 window.loadPage = loadPage;
 
 async function handleAvatarUpload(event) {
-    console.log('📸 Avatar upload triggered, processing file...');
-    const file = event.target.files[0];
-    if (!file) {
-        console.log('No file selected');
-        return;
-    }
+    try {
+        console.log('📸 Avatar upload triggered, processing file...');
+        
+        if (!event || !event.target || !event.target.files) {
+            console.warn('Invalid upload event');
+            return;
+        }
+        
+        const file = event.target.files[0];
+        if (!file) {
+            console.log('No file selected');
+            return;
+        }
     
     console.log('File selected:', { 
         name: file.name, 
@@ -1063,8 +1094,22 @@ async function handleAvatarUpload(event) {
         });
     } finally {
         hideSpinner();
-        // Clear the file input
-        event.target.value = '';
+        // Clear the file input safely
+        try {
+            if (event && event.target) {
+                event.target.value = '';
+            }
+        } catch (clearError) {
+            console.warn('Could not clear file input:', clearError);
+        }
+    }
+    } catch (uploadError) {
+        console.error('Unexpected error in avatar upload:', uploadError);
+        hideSpinner();
+        showModal({
+            message: 'An unexpected error occurred during upload. Please try again.',
+            confirmText: 'OK'
+        });
     }
 }
 
@@ -1650,7 +1695,12 @@ function displayInsights(accuracy) {
 // ===== Global Functions =====
 window.savePrediction = async function(predictionId) {
     if (!currentUser) {
-        showModal({ message: 'Please log in to save predictions.' });
+        showModal({ message: 'Please log in to save predictions.', confirmText: 'OK' });
+        return;
+    }
+    
+    if (!predictionId) {
+        showModal({ message: 'Invalid prediction ID.', confirmText: 'OK' });
         return;
     }
     
@@ -1665,7 +1715,7 @@ window.savePrediction = async function(predictionId) {
             
         if (error && error.code !== '23505') { // Ignore duplicate key errors
             console.warn('Error saving prediction:', error);
-            showModal({ message: 'Error saving prediction. Please try again.' });
+            showModal({ message: 'Error saving prediction. Please try again.', confirmText: 'OK' });
             return;
         }
         
@@ -1673,11 +1723,17 @@ window.savePrediction = async function(predictionId) {
             message: 'Prediction saved to your history!',
             confirmText: 'View History',
             cancelText: 'Continue',
-            onConfirm: () => loadPage('history')
+            onConfirm: () => {
+                try {
+                    loadPage('history');
+                } catch (error) {
+                    console.error('Error loading history page:', error);
+                }
+            }
         });
     } catch (error) {
         console.error('Error saving prediction:', error);
-        showModal({ message: 'Error saving prediction. Please try again.' });
+        showModal({ message: 'Error saving prediction. Please try again.', confirmText: 'OK' });
     }
 };
 
@@ -2002,72 +2058,117 @@ async function updateUsername(newUsername) {
 
 // ===== Modal Helper Function =====
 function showModal(options) {
-    const modal = document.createElement('div');
-    modal.className = 'modal-overlay';
-    
-    const inputFieldHTML = options.inputType ? `
-        <div class="modal-input-wrapper">
-            <input type="${options.inputType}" class="modal-input" value="${options.inputValue || ''}" placeholder="${options.inputPlaceholder || ''}">
-        </div>
-    ` : '';
-    
-    modal.innerHTML = `
-        <div class="modal-content">
-            <div class="modal-message">${options.message}</div>
-            ${inputFieldHTML}
-            <div class="modal-actions">
-                ${options.cancelText ? `<button class="btn-cancel">${options.cancelText}</button>` : ''}
-                <button class="btn-confirm ${options.confirmClass || 'btn-primary'}">${options.confirmText || 'OK'}</button>
+    try {
+        // Validate options
+        if (!options || typeof options !== 'object') {
+            console.error('Invalid modal options');
+            return;
+        }
+        
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+        
+        const inputFieldHTML = options.inputType ? `
+            <div class="modal-input-wrapper">
+                <input type="${options.inputType}" class="modal-input" value="${options.inputValue || ''}" placeholder="${options.inputPlaceholder || ''}">
             </div>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    
-    const confirmBtn = modal.querySelector('.btn-confirm');
-    const cancelBtn = modal.querySelector('.btn-cancel');
-    const inputField = modal.querySelector('.modal-input');
-    
-    // Focus input if it exists
-    if (inputField) {
-        setTimeout(() => inputField.focus(), 100);
-    }
-    
-    confirmBtn.addEventListener('click', () => {
-        const inputValue = inputField ? inputField.value : null;
-        document.body.removeChild(modal);
-        if (options.onConfirm) {
-            if (inputField) {
-                options.onConfirm(inputValue);
-            } else {
-                options.onConfirm();
-            }
+        ` : '';
+        
+        // Escape HTML to prevent XSS
+        const safeMessage = options.message ? String(options.message).replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
+        
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-message">${safeMessage}</div>
+                ${inputFieldHTML}
+                <div class="modal-actions">
+                    ${options.cancelText ? `<button class="btn-cancel">${options.cancelText}</button>` : ''}
+                    <button class="btn-confirm ${options.confirmClass || 'btn-primary'}">${options.confirmText || 'OK'}</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+        
+        const confirmBtn = modal.querySelector('.btn-confirm');
+        const cancelBtn = modal.querySelector('.btn-cancel');
+        const inputField = modal.querySelector('.modal-input');
+        
+        // Focus input if it exists
+        if (inputField) {
+            setTimeout(() => {
+                try {
+                    inputField.focus();
+                } catch (focusError) {
+                    console.warn('Could not focus input field:', focusError);
+                }
+            }, 100);
         }
-    });
-    
-    if (cancelBtn) {
-        cancelBtn.addEventListener('click', () => {
-            document.body.removeChild(modal);
-            if (options.onCancel) options.onCancel();
-        });
-    }
-    
-    // Handle Enter key for input
-    if (inputField) {
-        inputField.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                confirmBtn.click();
+        
+        const cleanup = () => {
+            try {
+                if (modal && modal.parentNode) {
+                    document.body.removeChild(modal);
+                }
+            } catch (cleanupError) {
+                console.warn('Error cleaning up modal:', cleanupError);
+            }
+        };
+        
+        if (confirmBtn) {
+            confirmBtn.addEventListener('click', () => {
+                try {
+                    const inputValue = inputField ? inputField.value : null;
+                    cleanup();
+                    if (options.onConfirm) {
+                        if (inputField) {
+                            options.onConfirm(inputValue);
+                        } else {
+                            options.onConfirm();
+                        }
+                    }
+                } catch (confirmError) {
+                    console.error('Error in modal confirm:', confirmError);
+                    cleanup();
+                }
+            });
+        }
+        
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                try {
+                    cleanup();
+                    if (options.onCancel) options.onCancel();
+                } catch (cancelError) {
+                    console.error('Error in modal cancel:', cancelError);
+                }
+            });
+        }
+        
+        // Handle Enter key for input
+        if (inputField) {
+            inputField.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && confirmBtn) {
+                    confirmBtn.click();
+                }
+            });
+        }
+        
+        // Close on overlay click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                try {
+                    cleanup();
+                    if (options.onCancel) options.onCancel();
+                } catch (overlayError) {
+                    console.error('Error in modal overlay click:', overlayError);
+                }
             }
         });
+        
+    } catch (error) {
+        console.error('Error creating modal:', error);
     }
-    
-    // Close on overlay click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            document.body.removeChild(modal);
-            if (options.onCancel) options.onCancel();
-        }
-    });
 }
 
 console.log('✅ StatWise main application loaded with Supabase integration!');

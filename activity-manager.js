@@ -244,31 +244,47 @@ class ActivityManager {
     
     // Safe event initialization for inactive page
     initializeInactivePageEvents() {
-        if (!this.inactiveContainer) return;
-        
-        // Find and bind return button safely
-        const returnBtn = this.inactiveContainer.querySelector('.return-btn');
-        if (returnBtn) {
-            returnBtn.addEventListener('click', () => this.returnToApp());
-        }
-        
-        // Find and bind container click event safely
-        const container = this.inactiveContainer.querySelector('.inactive-container');
-        if (container) {
-            container.addEventListener('click', () => this.returnToApp());
-        }
-        
-        // Start away timer if there's a timer element
-        const timerElement = this.inactiveContainer.querySelector('[data-away-timer]');
-        if (timerElement && typeof window.startAwayTimer === 'function') {
-            try {
-                window.startAwayTimer();
-            } catch (error) {
-                console.warn('Away timer function not available:', error);
+        try {
+            if (!this.inactiveContainer) return;
+            
+            // Find and bind return button safely
+            const returnBtn = this.inactiveContainer.querySelector('.return-btn');
+            if (returnBtn) {
+                returnBtn.addEventListener('click', () => {
+                    try {
+                        this.returnToApp();
+                    } catch (error) {
+                        console.error('Error in return button click:', error);
+                    }
+                });
             }
+            
+            // Find and bind container click event safely
+            const container = this.inactiveContainer.querySelector('.inactive-container');
+            if (container) {
+                container.addEventListener('click', () => {
+                    try {
+                        this.returnToApp();
+                    } catch (error) {
+                        console.error('Error in container click:', error);
+                    }
+                });
+            }
+            
+            // Start away timer if there's a timer element
+            const timerElement = this.inactiveContainer.querySelector('[data-away-timer]');
+            if (timerElement && typeof window.startAwayTimer === 'function') {
+                try {
+                    window.startAwayTimer();
+                } catch (error) {
+                    console.warn('Away timer function not available:', error);
+                }
+            }
+            
+            console.log('✅ Inactive page events initialized safely');
+        } catch (error) {
+            console.error('Error initializing inactive page events:', error);
         }
-        
-        console.log('✅ Inactive page events initialized safely');
     }
 }
 

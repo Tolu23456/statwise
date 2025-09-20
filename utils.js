@@ -1,6 +1,6 @@
+
 // utils.js
-import { db } from './env.js';
-import { collection, addDoc, query, orderBy, serverTimestamp, limit, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { supabase } from './env.js';
 
 /**
  * Fetches the user's public IP address.
@@ -18,38 +18,74 @@ export async function getPublicIP() {
 }
 
 /**
- * Formats a Firestore Timestamp into a "DD/MM/YYYY HH:mm" string.
- * @param {object} timestamp - The Firestore Timestamp object.
+ * Formats a timestamp string or Date into a "DD/MM/YYYY HH:mm" string.
+ * @param {string|Date} timestamp - The timestamp to format.
  * @returns {string} The formatted date string or an empty string.
  */
 export function formatTimestamp(timestamp) {
-    if (!timestamp?.toDate) return "";
-    const date = timestamp.toDate();
-    const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const year = date.getFullYear();
-    const hours = String(date.getHours()).padStart(2, "0");
-    const mins = String(date.getMinutes()).padStart(2, "0");
-    return `${day}/${month}/${year} ${hours}:${mins}`;
+    try {
+        if (!timestamp) return "";
+        
+        let date;
+        if (typeof timestamp === 'string') {
+            date = new Date(timestamp);
+        } else if (timestamp instanceof Date) {
+            date = timestamp;
+        } else if (timestamp?.toDate) {
+            // Firestore Timestamp object
+            date = timestamp.toDate();
+        } else {
+            return "";
+        }
+        
+        if (isNaN(date.getTime())) return "";
+        
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const year = date.getFullYear();
+        const hours = String(date.getHours()).padStart(2, "0");
+        const mins = String(date.getMinutes()).padStart(2, "0");
+        return `${day}/${month}/${year} ${hours}:${mins}`;
+    } catch (error) {
+        console.warn('Error formatting timestamp:', error);
+        return "";
+    }
 }
 
 /**
- * Adds a unique action to the user's history log, preventing immediate duplicates.
+ * Adds a unique action to the user's history log via Supabase.
  * @param {string} userId - The user's ID.
  * @param {string} action - The action description to log.
  */
 export async function addHistoryUnique(userId, action) {
-    if (!userId) return;
+    if (!userId || !action) return;
+    
     try {
-        const historyRef = collection(db, "users", userId, "history");
-        const q = query(historyRef, orderBy("createdAt", "desc"), limit(1));
-        const snap = await getDocs(q);
-
+        // Get the user's last history entry to prevent duplicates
+        const { data: lastEntry, error: fetchError } = await supabase
+            .from('user_history')
+            .select('action')
+            .eq('user_id', userId)
+            .order('created_at', { ascending: false })
+            .limit(1)
+            .single();
+        
         // Prevent logging the exact same action back-to-back
-        if (!snap.empty && snap.docs[0].data().action === action) return;
-
+        if (lastEntry && lastEntry.action === action) return;
+        
         const ip = await getPublicIP();
-        await addDoc(historyRef, { action, ip, createdAt: serverTimestamp() });
+        const { error } = await supabase
+            .from('user_history')
+            .insert({
+                user_id: userId,
+                action: action,
+                ip_address: ip,
+                created_at: new Date().toISOString()
+            });
+            
+        if (error) {
+            console.warn('Failed to add history:', error);
+        }
     } catch (err) {
         console.error("Failed to add history:", err);
     }
