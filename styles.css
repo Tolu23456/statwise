@@ -371,33 +371,33 @@ main {
     :root {
         --mobile-padding: 12px;
     }
-    
+
     .app-name {
         font-size: 20px;
     }
-    
+
     main {
         padding: 15px var(--mobile-padding) 15px var(--mobile-padding);
         padding-bottom: calc(var(--nav-height) + 15px);
     }
-    
+
     .bottom-nav button {
         font-size: 9px;
         padding: 4px 2px;
     }
-    
+
     .bottom-nav .icon {
         width: 18px;
         height: 18px;
     }
-    
+
     .subscription-card,
     .profile-card,
     .card {
         padding: 15px;
         margin-bottom: 15px;
     }
-    
+
     .page-title {
         font-size: 1.5rem;
         margin-bottom: 15px;
@@ -409,16 +409,16 @@ main {
     :root {
         --mobile-padding: 16px;
     }
-    
+
     .app-name {
         font-size: 22px;
     }
-    
+
     main {
         padding: 18px var(--mobile-padding) 18px var(--mobile-padding);
         padding-bottom: calc(var(--nav-height) + 18px);
     }
-    
+
     .subscription-card,
     .profile-card,
     .card {
@@ -432,36 +432,36 @@ main {
     :root {
         --container-padding: 24px;
     }
-    
+
     main {
         padding: 24px var(--container-padding) 24px var(--container-padding);
         padding-bottom: calc(var(--nav-height) + 24px);
     }
-    
+
     .app-name {
         font-size: 26px;
     }
-    
+
     .pricing-container {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .subscription-card,
     .profile-card,
     .card {
         padding: 24px;
         margin-bottom: 24px;
     }
-    
+
     .page-title {
         font-size: 2rem;
     }
-    
+
     .bottom-nav button {
         font-size: 11px;
         padding: 6px 8px;
     }
-    
+
     .bottom-nav .icon {
         width: 24px;
         height: 24px;
@@ -473,43 +473,43 @@ main {
     :root {
         --container-padding: 32px;
     }
-    
+
     main {
         padding: 32px var(--container-padding) 32px var(--container-padding);
         padding-bottom: calc(var(--nav-height) + 32px);
     }
-    
+
     .app-name {
         font-size: 28px;
     }
-    
+
     .pricing-container {
         grid-template-columns: 1fr 1fr;
         gap: 32px;
     }
-    
+
     .subscription-card,
     .profile-card,
     .card {
         padding: 28px;
         margin-bottom: 28px;
     }
-    
+
     .page-title {
         font-size: 2.2rem;
         margin-bottom: 24px;
     }
-    
+
     .bottom-nav button {
         font-size: 12px;
         padding: 8px 12px;
     }
-    
+
     .bottom-nav .icon {
         width: 26px;
         height: 26px;
     }
-    
+
     /* Better spacing for large screens */
     .profile-container,
     .predictions-container {
@@ -523,14 +523,14 @@ main {
     main {
         max-width: 1100px;
     }
-    
+
     .pricing-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
         max-width: 800px;
         margin: 0 auto;
     }
-    
+
     .profile-container,
     .predictions-container {
         max-width: 1000px;
@@ -548,7 +548,7 @@ main {
         padding: 10px 16px;
         font-size: 14px;
     }
-    
+
     .modal-actions button {
         padding: 8px 12px;
         font-size: 13px;
@@ -563,7 +563,7 @@ main {
         padding: 12px 24px;
         font-size: 16px;
     }
-    
+
     .modal-actions button {
         padding: 10px 20px;
         font-size: 15px;
@@ -599,7 +599,7 @@ main {
         padding: 8px 12px;
         font-size: 13px;
     }
-    
+
     .tab-container {
         gap: 8px;
     }
@@ -610,7 +610,7 @@ main {
         padding: 12px 24px;
         font-size: 15px;
     }
-    
+
     .tab-container {
         gap: 12px;
     }
@@ -645,11 +645,11 @@ main {
         padding: 16px;
         margin: 10px;
     }
-    
+
     .modal-overlay {
         padding: 20px 10px;
     }
-    
+
     .modal-input {
         padding: 10px;
         font-size: 14px;
@@ -662,7 +662,7 @@ main {
         max-width: 500px;
         padding: 24px;
     }
-    
+
     .inactive-content {
         max-width: 450px;
         padding: 48px 32px;
@@ -873,11 +873,6 @@ main {
     font-weight: bold;
     color: #333;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-.subscription-card.is-current-plan {
-    transform: scale(1.02);
-    box-shadow: 0 0 15px rgba(14, 99, 156, 0.5);
 }
 
 .current-tier strong {
@@ -1595,28 +1590,28 @@ main {
         height: calc(100vh - 160px);
         gap: 16px;
     }
-    
+
     .forum-header .page-title {
         font-size: 24px;
     }
-    
+
     .forum-description {
         font-size: 14px;
     }
-    
+
     .upcoming-features {
         gap: 12px;
     }
-    
+
     .upcoming-features .feature-item {
         min-width: 80px;
         padding: 12px;
     }
-    
+
     .banner-content h3 {
         font-size: 18px;
     }
-    
+
     .coming-soon-banner {
         padding: 20px 16px;
     }
@@ -1626,38 +1621,38 @@ main {
     .forum-section {
         height: calc(100vh - 180px);
     }
-    
+
     .forum-header {
         padding: 16px;
         margin-bottom: 16px;
     }
-    
+
     .forum-header .page-title {
         font-size: 20px;
     }
-    
+
     .upcoming-features {
         gap: 8px;
     }
-    
+
     .upcoming-features .feature-item {
         min-width: 70px;
         padding: 10px;
     }
-    
+
     .upcoming-features .feature-icon {
         font-size: 20px;
     }
-    
+
     .upcoming-features span {
         font-size: 12px;
     }
-    
+
     .coming-soon-banner {
         padding: 16px 12px;
         margin: 16px 0;
     }
-    
+
     .banner-content h3 {
         font-size: 16px;
     }
@@ -1785,23 +1780,23 @@ main {
     .coming-soon-section {
         padding: 30px 16px;
     }
-    
+
     .coming-soon-icon {
         font-size: 60px;
     }
-    
+
     .coming-soon-title {
         font-size: 24px;
     }
-    
+
     .coming-soon-subtitle {
         font-size: 20px;
     }
-    
+
     .coming-soon-features {
         gap: 16px;
     }
-    
+
     .feature-item {
         min-width: 100px;
         padding: 12px;
@@ -2181,20 +2176,20 @@ main {
         padding: 16px;
         height: calc(100vh - 160px);
     }
-    
+
     .message {
         max-width: 90%;
     }
-    
+
     .message-input-container {
         padding: 12px;
     }
-    
+
     .send-btn {
         padding: 8px 12px;
         font-size: 13px;
     }
-    
+
     .send-icon {
         font-size: 14px;
     }
@@ -3457,20 +3452,20 @@ body.pulling-to-refresh {
     .inactive-content {
         padding: 20px 15px;
     }
-    
+
     .inactive-title {
         font-size: 1.5rem;
     }
-    
+
     .inactive-message {
         font-size: 1rem;
     }
-    
+
     .inactive-stats {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .stat-item {
         flex-direction: row;
         justify-content: space-between;
@@ -3589,11 +3584,11 @@ body.pulling-to-refresh {
         padding: 30px 20px;
         margin: 20px;
     }
-    
+
     .adblocker-buttons {
         flex-direction: column;
     }
-    
+
     .btn-refresh, .btn-upgrade {
         width: 100%;
     }

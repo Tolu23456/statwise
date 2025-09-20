@@ -9,7 +9,8 @@ const OFFLINE_URL = './Offline/offline.html';
 const OFFLINE_ASSETS = [
     './Offline/offline.html',
     './Offline/offline.css',
-    './Assets/Fonts/Optimistic_Text_A_Md.ttf'
+    './Assets/Fonts/Optimistic_Text_A_Md.ttf',
+    './manifest.json'
 ];
 
 /**
@@ -56,3 +57,15 @@ self.addEventListener('fetch', (event) => {
 });
 
 console.log('[Service Worker] StatWise PWA Service Worker loaded - Offline support enabled');
+
+/**
+ * 4. Handle PWA installation
+ */
+self.addEventListener('beforeinstallprompt', (event) => {
+    console.log('[Service Worker] PWA install prompt triggered');
+    // Optionally prevent the default prompt and show custom install UI
+});
+
+self.addEventListener('appinstalled', (event) => {
+    console.log('[Service Worker] PWA was installed successfully');
+});
