@@ -25,7 +25,7 @@ checkPaymentRedirect();
 async function initializeSupabaseAuth() {
     // Get initial session
     const { data: { session }, error } = await supabase.auth.getSession();
-    
+
     if (session) {
         currentUser = session.user;
         await handleUserLogin(session.user);
@@ -42,7 +42,7 @@ async function initializeSupabaseAuth() {
     // Listen for auth changes
     supabase.auth.onAuthStateChange(async (event, session) => {
         console.log('Auth state changed:', event);
-        
+
         if (event === 'SIGNED_IN' && session) {
             currentUser = session.user;
             await handleUserLogin(session.user);
@@ -58,16 +58,16 @@ async function handleUserLogin(user) {
     try {
         showLoader();
         console.log('User logged in:', user.email);
-        
+
         // Create or update user profile
         await createOrUpdateUserProfile(user);
-        
+
         // Load user data and initialize app
         await loadUserData(user);
-        
+
         // Initialize the main application
         initializeApp();
-        
+
         hideLoader();
     } catch (error) {
         console.error('Error handling user login:', error);
@@ -105,7 +105,7 @@ async function createOrUpdateUserProfile(user) {
 
         // Generate referral code if not exists
         await generateReferralCode(user.id);
-        
+
     } catch (error) {
         console.warn('Error creating user profile:', error);
     }
@@ -123,7 +123,7 @@ async function loadUserData(user) {
         if (profile) {
             verifiedTier = profile.current_tier || 'Free Tier';
             console.log('User tier loaded:', verifiedTier);
-            
+
             // Initialize ad system now that we know the user's tier
             initializeAdSystemForUser();
         } else {
@@ -140,7 +140,7 @@ async function loadUserData(user) {
 async function generateReferralCode(userId) {
     try {
         const code = userId.substring(0, 8).toUpperCase();
-        
+
         const { data, error } = await supabase
             .from('referral_codes')
             .upsert({
@@ -170,10 +170,10 @@ function checkPaymentRedirect() {
     const urlParams = new URLSearchParams(window.location.search);
     const paymentStatus = urlParams.get('payment');
     const transactionId = urlParams.get('transaction_id');
-    
+
     if (paymentStatus === 'success' && transactionId) {
         setTimeout(() => {
-            showModal({ 
+            showModal({
                 message: `🎉 Welcome back!\n\nYour payment has been processed successfully.\nTransaction ID: ${transactionId}\n\nPlease wait while we verify your subscription...`,
                 confirmClass: 'btn-success',
                 confirmText: 'Continue',
@@ -182,17 +182,17 @@ function checkPaymentRedirect() {
                 }
             });
         }, 1000);
-        
+
         window.history.replaceState({}, document.title, window.location.pathname);
     } else if (paymentStatus === 'cancelled') {
         setTimeout(() => {
-            showModal({ 
+            showModal({
                 message: '❌ Payment was cancelled.\n\nYour subscription has not been updated. You can try again anytime.',
                 confirmClass: 'btn-warning',
                 confirmText: 'OK'
             });
         }, 1000);
-        
+
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 }
@@ -201,22 +201,22 @@ function checkPaymentRedirect() {
 function initializeApp() {
     // Initialize other app features first
     initializeAppSecurity();
-    
+
     // Set up navigation
     navButtons.forEach(button => {
         button.addEventListener("click", () => {
             const page = button.getAttribute("data-page");
             const tier = button.getAttribute("data-tier");
-            
+
             if (tier && !hasAccess(tier)) {
                 showUpgradeModal(tier);
                 return;
             }
-            
+
             loadPage(page);
         });
     });
-    
+
     // Load the correct initial page (checks localStorage for last page)
     loadInitialPage();
 }
@@ -226,7 +226,7 @@ function loadInitialPage() {
     const initialHash = window.location.hash.substring(1);
     const lastPage = localStorage.getItem("lastPage");
     const pageToLoad = initialHash || lastPage || defaultPage;
-    
+
     console.log('Loading initial page:', pageToLoad, 'from:', initialHash ? 'hash' : lastPage ? 'localStorage' : 'default');
     loadPage(pageToLoad);
 }
@@ -238,10 +238,10 @@ function hasAccess(requiredTier) {
         'VIP Tier': 2,
         'VVIP Tier': 3
     };
-    
+
     const currentLevel = tierLevels[verifiedTier] || 0;
     const requiredLevel = tierLevels[requiredTier] || 0;
-    
+
     return currentLevel >= requiredLevel;
 }
 
@@ -263,16 +263,16 @@ async function loadPage(page) {
             console.error('Invalid page parameter:', page);
             return;
         }
-        
+
         showLoader();
-        
+
         // Save current page to localStorage for reload persistence
         try {
             localStorage.setItem('lastPage', page);
         } catch (storageError) {
             console.warn('Failed to save page to localStorage:', storageError);
         }
-        
+
         // Update active navigation with null checks
         if (navButtons && navButtons.length > 0) {
             navButtons.forEach(btn => {
@@ -281,34 +281,39 @@ async function loadPage(page) {
                 }
             });
         }
-        
+
         // Add fade-out transition to current content
         if (main) {
             main.classList.add('page-fade-out');
-            
+
             // Wait for fade-out animation to complete
             await new Promise(resolve => setTimeout(resolve, 200));
-            
+
             // Load page content
             const response = await fetch(`./Pages/${page}.html`);
             if (response.ok) {
                 const content = await response.text();
                 main.innerHTML = content;
-                
-                // Reset scroll position to top for each new page
+
+                // Reset scroll position to top for each new page - force immediate reset
                 main.scrollTop = 0;
-                
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+
+                // Force a layout recalculation to ensure scroll reset
+                main.offsetHeight;
+
                 // Remove fade-out and add fade-in transition
                 main.classList.remove('page-fade-out');
                 main.classList.add('page-fade-in');
-                
+
                 // Initialize page-specific functionality
                 try {
                     await initializePage(page);
                 } catch (initError) {
                     console.error('Error initializing page:', initError);
                 }
-                
+
                 // Remove fade-in class after animation completes
                 setTimeout(() => {
                     if (main) {
@@ -318,16 +323,22 @@ async function loadPage(page) {
             } else {
                 main.innerHTML = '<div class="error">Page not found</div>';
                 main.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+                main.offsetHeight;
                 main.classList.remove('page-fade-out');
             }
         }
-        
+
         hideLoader();
     } catch (error) {
         console.error('Error loading page:', error);
         if (main) {
             main.innerHTML = '<div class="error">Error loading page</div>';
             main.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            main.offsetHeight;
             main.classList.remove('page-fade-out');
         }
         hideLoader();
@@ -372,7 +383,7 @@ async function loadPredictions() {
     try {
         // Determine accessible tiers based on user subscription
         let accessibleTiers = ['free'];
-        
+
         if (verifiedTier === 'Premium Tier') {
             accessibleTiers.push('premium');
         } else if (verifiedTier === 'VIP Tier') {
@@ -380,7 +391,7 @@ async function loadPredictions() {
         } else if (verifiedTier === 'VVIP Tier') {
             accessibleTiers.push('premium', 'vip', 'vvip');
         }
-        
+
         const { data: predictions, error } = await supabase
             .from('predictions')
             .select('*')
@@ -388,12 +399,12 @@ async function loadPredictions() {
             .gte('kickoff_time', new Date().toISOString())
             .order('kickoff_time', { ascending: true })
             .limit(10);
-            
+
         if (error) {
             console.warn('Error loading predictions:', error);
             return;
         }
-        
+
         displayPredictions(predictions || []);
     } catch (error) {
         console.error('Error loading predictions:', error);
@@ -403,7 +414,7 @@ async function loadPredictions() {
 function displayPredictions(predictions) {
     const container = document.getElementById('predictions-container');
     if (!container) return;
-    
+
     if (predictions.length === 0) {
         container.innerHTML = `
             <div class="no-predictions">
@@ -413,7 +424,7 @@ function displayPredictions(predictions) {
         `;
         return;
     }
-    
+
     const predictionsHTML = predictions.map(prediction => `
         <div class="prediction-card tier-${prediction.tier}">
             <div class="match-header">
@@ -452,7 +463,7 @@ function displayPredictions(predictions) {
             </div>
         </div>
     `).join('');
-    
+
     container.innerHTML = predictionsHTML;
 }
 
@@ -468,19 +479,19 @@ async function initializeProfilePage() {
 
 async function loadUserProfile() {
     if (!currentUser) return;
-    
+
     try {
         const { data: profile, error } = await supabase
             .from('user_profiles')
             .select('*')
             .eq('id', currentUser.id)
             .single();
-            
+
         if (error) {
             console.warn('Error loading user profile:', error);
             return;
         }
-        
+
         displayUserProfile(profile);
     } catch (error) {
         console.error('Error loading user profile:', error);
@@ -493,19 +504,19 @@ function displayUserProfile(profile) {
     if (userNameElement) {
         userNameElement.textContent = profile.display_name || profile.username || 'User';
     }
-    
+
     // Update user email
     const userEmailElement = document.getElementById('userEmail');
     if (userEmailElement) {
         userEmailElement.textContent = profile.email || '';
     }
-    
+
     // Update user tier
     const userTierElement = document.getElementById('user-tier');
     if (userTierElement) {
         userTierElement.textContent = profile.current_tier || 'Free Tier';
     }
-    
+
     // Update profile avatar
     const avatarContainer = document.getElementById('profileAvatarContainer');
     if (avatarContainer) {
@@ -531,7 +542,7 @@ function displayUserProfile(profile) {
                 </div>
             `;
         }
-        
+
         // Add hover effect and click handler
         avatarContainer.onmouseenter = () => {
             const overlay = avatarContainer.querySelector('.avatar-overlay');
@@ -546,7 +557,7 @@ function displayUserProfile(profile) {
             triggerAvatarUpload();
         };
     }
-    
+
     // Initialize profile page interactions
     initializeProfileInteractions();
 }
@@ -558,7 +569,7 @@ function initializeProfileInteractions() {
         // Set current state
         const currentTheme = localStorage.getItem('statwise-theme') || 'light';
         darkModeToggle.checked = currentTheme === 'dark';
-        
+
         // Add event listener
         darkModeToggle.addEventListener('change', function() {
             import('./ui.js').then(({ toggleTheme }) => {
@@ -566,7 +577,7 @@ function initializeProfileInteractions() {
             });
         });
     }
-    
+
     // Initialize inactive page toggle
     const inactivePageToggle = document.getElementById('inactivePageToggle');
     if (inactivePageToggle) {
@@ -575,7 +586,7 @@ function initializeProfileInteractions() {
             const currentSetting = window.activityManager.getToggleSetting();
             inactivePageToggle.checked = currentSetting;
         }
-        
+
         // Add event listener
         inactivePageToggle.addEventListener('change', function() {
             if (window.activityManager) {
@@ -583,13 +594,13 @@ function initializeProfileInteractions() {
             }
         });
     }
-    
+
     // Initialize logout button
     const logoutBtn = document.getElementById('logoutBtn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', window.signOut);
     }
-    
+
     // Initialize manage subscription button
     const manageSubscription = document.getElementById('manageSubscription');
     if (manageSubscription) {
@@ -597,7 +608,7 @@ function initializeProfileInteractions() {
             loadPage('manage-subscription');
         });
     }
-    
+
     // Initialize referral button
     const referralBtn = document.getElementById('referralBtn');
     if (referralBtn) {
@@ -605,7 +616,7 @@ function initializeProfileInteractions() {
             loadPage('referral');
         });
     }
-    
+
     // Initialize reset storage button
     const resetStorage = document.getElementById('resetStorage');
     if (resetStorage) {
@@ -621,7 +632,7 @@ function initializeProfileInteractions() {
             });
         });
     }
-    
+
     // Initialize edit username button
     const editUsernameBtn = document.getElementById('editUsernameBtn');
     if (editUsernameBtn) {
@@ -629,7 +640,7 @@ function initializeProfileInteractions() {
             const userNameElement = document.getElementById('userName');
             if (userNameElement) {
                 const currentName = userNameElement.textContent;
-                
+
                 showModal({
                     message: 'Enter your new username:',
                     inputType: 'text',
@@ -646,7 +657,7 @@ function initializeProfileInteractions() {
             }
         });
     }
-    
+
     // Initialize avatar upload with retry logic
     setTimeout(() => {
         const avatarUpload = document.getElementById('avatarUpload');
@@ -656,13 +667,13 @@ function initializeProfileInteractions() {
             avatarUpload.removeEventListener('change', handleAvatarUpload);
             // Add the event listener
             avatarUpload.addEventListener('change', handleAvatarUpload);
-            
+
             // Test the functionality
             console.log('Avatar upload functionality initialized successfully');
         } else {
             console.warn('⚠️ Avatar upload input not found during initialization');
             console.log('Available elements with IDs:', Array.from(document.querySelectorAll('[id]')).map(el => el.id));
-            
+
             // Create fallback input if missing
             const fallbackInput = document.createElement('input');
             fallbackInput.type = 'file';
@@ -705,24 +716,24 @@ window.loadPage = loadPage;
 async function handleAvatarUpload(event) {
     try {
         console.log('📸 Avatar upload triggered, processing file...');
-        
+
         if (!event || !event.target || !event.target.files) {
             console.warn('Invalid upload event');
             return;
         }
-        
+
         const file = event.target.files[0];
         if (!file) {
             console.log('No file selected');
             return;
         }
-    
-    console.log('File selected:', { 
-        name: file.name, 
-        size: file.size, 
-        type: file.type 
+
+    console.log('File selected:', {
+        name: file.name,
+        size: file.size,
+        type: file.type
     });
-    
+
     // Validate file type
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
     if (!allowedTypes.includes(file.type)) {
@@ -733,7 +744,7 @@ async function handleAvatarUpload(event) {
         });
         return;
     }
-    
+
     // Validate file size (5MB limit)
     const maxSize = 5 * 1024 * 1024; // 5MB in bytes
     if (file.size > maxSize) {
@@ -743,14 +754,14 @@ async function handleAvatarUpload(event) {
         });
         return;
     }
-    
+
     try {
         showSpinner();
-        
+
         // Generate unique filename
         const fileExt = file.name.split('.').pop();
         const fileName = `${currentUser.id}-${Date.now()}.${fileExt}`;
-        
+
         // Upload to Supabase Storage
         const { data: uploadData, error: uploadError } = await supabase.storage
             .from('profile-pictures')
@@ -758,7 +769,7 @@ async function handleAvatarUpload(event) {
                 cacheControl: '3600',
                 upsert: true
             });
-            
+
         if (uploadError) {
             console.error('Upload error:', uploadError);
             showModal({
@@ -767,12 +778,12 @@ async function handleAvatarUpload(event) {
             });
             return;
         }
-        
+
         // Get public URL
         const { data: urlData } = supabase.storage
             .from('profile-pictures')
             .getPublicUrl(fileName);
-            
+
         if (!urlData.publicUrl) {
             showModal({
                 message: 'Failed to get image URL. Please try again.',
@@ -780,16 +791,16 @@ async function handleAvatarUpload(event) {
             });
             return;
         }
-        
+
         // Update user profile with new image URL
         const { error: updateError } = await supabase
             .from('user_profiles')
-            .update({ 
+            .update({
                 profile_picture_url: urlData.publicUrl,
                 updated_at: new Date().toISOString()
             })
             .eq('id', currentUser.id);
-            
+
         if (updateError) {
             console.error('Profile update error:', updateError);
             showModal({
@@ -798,20 +809,20 @@ async function handleAvatarUpload(event) {
             });
             return;
         }
-        
+
         // Update the avatar display immediately
         const avatarContainer = document.getElementById('profileAvatarContainer');
         if (avatarContainer) {
             avatarContainer.innerHTML = `<img src="${urlData.publicUrl}" alt="Profile Picture" class="avatar-img" onclick="triggerAvatarUpload()">`;
         }
-        
+
         showModal({
             message: '✅ Profile picture updated successfully!',
             confirmText: 'OK'
         });
-        
+
         console.log('Profile picture updated:', urlData.publicUrl);
-        
+
     } catch (error) {
         console.error('Error uploading avatar:', error);
         showModal({
@@ -859,21 +870,21 @@ async function loadManageSubscriptionInfo() {
         console.warn('No current user found for manage subscription');
         return;
     }
-    
+
     console.log('Loading manage subscription info for user:', currentUser.id);
-    
+
     try {
         const { data: profile, error } = await supabase
             .from('user_profiles')
             .select('*')
             .eq('id', currentUser.id)
             .single();
-            
+
         if (error) {
             console.warn('Error loading subscription info:', error);
             return;
         }
-        
+
         console.log('Profile data loaded:', profile);
         displayManageSubscriptionInfo(profile);
     } catch (error) {
@@ -887,22 +898,22 @@ function displayManageSubscriptionInfo(profile) {
         console.warn('plan-info-card element not found');
         return;
     }
-    
+
     console.log('Displaying subscription info for profile:', profile);
-    
+
     const currentTier = profile.current_tier || 'Free Tier';
     const subscriptionEnd = profile.subscription_end;
     const subscriptionStatus = profile.subscription_status || 'active';
-    
+
     let planContent = `
         <h2>Current Plan: ${currentTier}</h2>
         <p><strong>Status:</strong> ${subscriptionStatus}</p>
     `;
-    
+
     if (subscriptionEnd) {
         planContent += `<p><strong>Next Billing:</strong> ${formatTimestamp(subscriptionEnd)}</p>`;
     }
-    
+
     if (currentTier === 'Free Tier') {
         planContent += `
             <p>You're currently on the free plan. Upgrade to unlock premium features!</p>
@@ -912,15 +923,15 @@ function displayManageSubscriptionInfo(profile) {
         planContent += `
             <p>Thank you for being a ${currentTier} subscriber!</p>
         `;
-        
+
         // Show auto-renewal and cancellation options for paid plans
         const autoRenewContainer = document.getElementById('auto-renew-container');
         const cancelContainer = document.getElementById('cancel-subscription-container');
-        
+
         if (autoRenewContainer) autoRenewContainer.style.display = 'block';
         if (cancelContainer) cancelContainer.style.display = 'block';
     }
-    
+
     planInfoCard.innerHTML = planContent;
     console.log('Subscription info displayed successfully');
 }
@@ -933,7 +944,7 @@ function initializeManageSubscriptionButtons() {
             loadPage('subscriptions');
         });
     }
-    
+
     // Auto-renewal toggle
     const toggleAutoRenewBtn = document.getElementById('toggleAutoRenewBtn');
     if (toggleAutoRenewBtn) {
@@ -945,7 +956,7 @@ function initializeManageSubscriptionButtons() {
             });
         });
     }
-    
+
     // Cancel subscription button
     const cancelSubscriptionBtn = document.getElementById('cancelSubscriptionBtn');
     if (cancelSubscriptionBtn) {
@@ -965,16 +976,16 @@ function initializeManageSubscriptionButtons() {
 async function handleSubscriptionCancellation() {
     try {
         showSpinner();
-        
+
         // Update subscription status to cancelled
         const { error } = await supabase
             .from('user_profiles')
-            .update({ 
+            .update({
                 subscription_status: 'cancelled',
                 updated_at: new Date().toISOString()
             })
             .eq('id', currentUser.id);
-            
+
         if (error) {
             console.error('Error cancelling subscription:', error);
             showModal({
@@ -983,7 +994,7 @@ async function handleSubscriptionCancellation() {
             });
             return;
         }
-        
+
         showModal({
             message: 'Your subscription has been cancelled. You will retain access to premium features until the end of your current billing period.',
             confirmText: 'OK',
@@ -992,7 +1003,7 @@ async function handleSubscriptionCancellation() {
                 loadManageSubscriptionInfo();
             }
         });
-        
+
     } catch (error) {
         console.error('Error handling cancellation:', error);
         showModal({
@@ -1009,19 +1020,19 @@ async function loadSubscriptionInfo() {
         console.log('No user authenticated, skipping subscription info load');
         return;
     }
-    
+
     try {
         const { data: profile, error } = await supabase
             .from('user_profiles')
             .select('current_tier, subscription_period, subscription_start, subscription_end, subscription_status')
             .eq('id', currentUser.id)
             .single();
-            
+
         if (error) {
             console.warn('Error loading subscription info:', error);
             return;
         }
-        
+
         displaySubscriptionInfo(profile);
     } catch (error) {
         console.error('Error loading subscription info:', error);
@@ -1034,7 +1045,7 @@ function displaySubscriptionInfo(profile) {
     if (userTierElement) {
         userTierElement.textContent = profile.current_tier || 'Free Tier';
     }
-    
+
     // Update tier expiry
     const tierExpiryElement = document.getElementById('tier-expiry');
     if (tierExpiryElement && profile.subscription_end) {
@@ -1048,15 +1059,15 @@ function displaySubscriptionInfo(profile) {
 function initializeSubscriptionTabs() {
     const tabButtons = document.querySelectorAll('[data-tab]');
     const tabContents = document.querySelectorAll('.pricing-container');
-    
+
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetTab = button.getAttribute('data-tab');
-            
+
             // Update active button
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            
+
             // Update active content
             tabContents.forEach(content => {
                 content.classList.remove('active');
@@ -1072,19 +1083,19 @@ function initializeLeagueTabs() {
     console.log('Initializing league tabs...');
     const tabButtons = document.querySelectorAll('.tab-btn[data-tab]');
     const tabContents = document.querySelectorAll('.tab-content');
-    
+
     console.log('Found tab buttons:', tabButtons.length);
     console.log('Found tab contents:', tabContents.length);
-    
+
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetTab = button.getAttribute('data-tab');
             console.log('Tab clicked:', targetTab);
-            
+
             // Update active button
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            
+
             // Update active content
             tabContents.forEach(content => {
                 content.classList.remove('active');
@@ -1101,18 +1112,18 @@ function initializeSubscriptionButtons() {
     console.log('Initializing subscription buttons...');
     const subscribeButtons = document.querySelectorAll('.subscribe-btn');
     console.log('Found subscription buttons:', subscribeButtons.length);
-    
+
     subscribeButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             console.log('Subscription button clicked');
-            
+
             const tier = button.getAttribute('data-tier');
             const amount = button.getAttribute('data-amount');
             const period = button.getAttribute('data-period');
-            
+
             console.log('Subscription details:', { tier, amount, period });
-            
+
             if (tier === 'free') {
                 showModal({
                     message: 'You are already on the free tier!',
@@ -1120,7 +1131,7 @@ function initializeSubscriptionButtons() {
                 });
                 return;
             }
-            
+
             // Handle subscription upgrade
             handleSubscriptionUpgrade(tier, amount, period);
         });
@@ -1167,7 +1178,7 @@ async function initializeReferralPage() {
 
 async function loadReferralData() {
     if (!currentUser) return;
-    
+
     try {
         // Get user's referral code
         const { data: referralCode, error: codeError } = await supabase
@@ -1175,7 +1186,7 @@ async function loadReferralData() {
             .select('*')
             .eq('user_id', currentUser.id)
             .single();
-            
+
         // Get user's referrals
         const { data: referrals, error: referralsError } = await supabase
             .from('referrals')
@@ -1185,15 +1196,15 @@ async function loadReferralData() {
             `)
             .eq('referrer_id', currentUser.id)
             .order('created_at', { ascending: false });
-            
+
         if (codeError && codeError.code !== 'PGRST116') {
             console.warn('Error loading referral code:', codeError);
         }
-        
+
         if (referralsError) {
             console.warn('Error loading referrals:', referralsError);
         }
-        
+
         displayReferralData(referralCode, referrals || []);
     } catch (error) {
         console.error('Error loading referral data:', error);
@@ -1202,13 +1213,13 @@ async function loadReferralData() {
 
 function displayReferralData(referralCode, referrals) {
     const code = referralCode?.code || 'No Code Found';
-    
+
     // Update referral code input
     const referralCodeInput = document.getElementById('referralCodeInput');
     if (referralCodeInput) {
         referralCodeInput.value = code;
     }
-    
+
     // Update referral list
     const referralListContainer = document.getElementById('referralListContainer');
     if (referralListContainer) {
@@ -1233,14 +1244,14 @@ function displayReferralData(referralCode, referrals) {
             referralListContainer.innerHTML = referralHTML;
         }
     }
-    
+
     // Update rewards count
     const rewardsCount = document.getElementById('rewardsCount');
     if (rewardsCount) {
         const claimedRewards = referrals.filter(r => r.reward_claimed).length;
         rewardsCount.textContent = claimedRewards;
     }
-    
+
     // Update rewards container
     const rewardsContainer = document.getElementById('rewardsContainer');
     if (rewardsContainer) {
@@ -1257,7 +1268,7 @@ function displayReferralData(referralCode, referrals) {
             rewardsContainer.innerHTML = rewardsHTML;
         }
     }
-    
+
     // Initialize referral page interactions
     initializeReferralInteractions();
 }
@@ -1286,7 +1297,7 @@ function initializeReferralInteractions() {
             }
         });
     }
-    
+
     // Initialize share buttons
     const shareWhatsAppBtn = document.getElementById('shareWhatsAppBtn');
     if (shareWhatsAppBtn) {
@@ -1299,7 +1310,7 @@ function initializeReferralInteractions() {
             }
         });
     }
-    
+
     const shareTwitterBtn = document.getElementById('shareTwitterBtn');
     if (shareTwitterBtn) {
         shareTwitterBtn.addEventListener('click', () => {
@@ -1311,7 +1322,7 @@ function initializeReferralInteractions() {
             }
         });
     }
-    
+
     const shareGenericBtn = document.getElementById('shareGenericBtn');
     if (shareGenericBtn) {
         shareGenericBtn.addEventListener('click', () => {
@@ -1343,7 +1354,7 @@ async function initializeInsightsPage() {
         showUpgradeModal('VIP Tier');
         return;
     }
-    
+
     await loadInsights();
 }
 
@@ -1354,12 +1365,12 @@ async function loadInsights() {
             .select('*')
             .order('date', { ascending: false })
             .limit(30);
-            
+
         if (error) {
             console.warn('Error loading insights:', error);
             return;
         }
-        
+
         displayInsights(accuracy || []);
     } catch (error) {
         console.error('Error loading insights:', error);
@@ -1369,11 +1380,11 @@ async function loadInsights() {
 function displayInsights(accuracy) {
     const container = document.getElementById('insights-container');
     if (!container) return;
-    
+
     const totalPredictions = accuracy.reduce((sum, day) => sum + (day.total_predictions || 0), 0);
     const correctPredictions = accuracy.reduce((sum, day) => sum + (day.correct_predictions || 0), 0);
     const overallAccuracy = totalPredictions > 0 ? (correctPredictions / totalPredictions * 100).toFixed(1) : 0;
-    
+
     container.innerHTML = `
         <div class="insights-section">
             <div class="insights-header">
@@ -1393,7 +1404,7 @@ function displayInsights(accuracy) {
                     </div>
                 </div>
             </div>
-            
+
             <div class="accuracy-chart">
                 <h4>Recent Performance</h4>
                 ${accuracy.length === 0 ? `
@@ -1401,7 +1412,7 @@ function displayInsights(accuracy) {
                 ` : `
                     <div class="chart-data">
                         ${accuracy.slice(0, 7).map(day => {
-                            const dayAccuracy = day.total_predictions > 0 ? 
+                            const dayAccuracy = day.total_predictions > 0 ?
                                 (day.correct_predictions / day.total_predictions * 100).toFixed(1) : 0;
                             return `
                                 <div class="chart-bar">
@@ -1424,12 +1435,12 @@ window.savePrediction = async function(predictionId) {
         showModal({ message: 'Please log in to save predictions.', confirmText: 'OK' });
         return;
     }
-    
+
     if (!predictionId) {
         showModal({ message: 'Invalid prediction ID.', confirmText: 'OK' });
         return;
     }
-    
+
     try {
         const { data, error } = await supabase
             .from('user_prediction_history')
@@ -1438,14 +1449,14 @@ window.savePrediction = async function(predictionId) {
                 prediction_id: predictionId,
                 saved_at: new Date().toISOString()
             });
-            
+
         if (error && error.code !== '23505') { // Ignore duplicate key errors
             console.warn('Error saving prediction:', error);
             showModal({ message: 'Error saving prediction. Please try again.', confirmText: 'OK' });
             return;
         }
-        
-        showModal({ 
+
+        showModal({
             message: 'Prediction saved to your history!',
             confirmText: 'View History',
             cancelText: 'Continue',
@@ -1481,7 +1492,7 @@ window.initializePayment = function(tier, period, amount) {
         showModal({ message: 'Please log in to subscribe.' });
         return;
     }
-    
+
     // Initialize Flutterwave payment
     FlutterwaveCheckout({
         public_key: FLWPUBK,
@@ -1529,7 +1540,7 @@ window.initializePayment = function(tier, period, amount) {
 async function handleSuccessfulPayment(paymentData, tier, period, amount) {
     try {
         console.log('🔄 Verifying payment with server...');
-        
+
         // Call Supabase Edge Function to verify payment
         const { data: verificationResult, error: verificationError } = await supabase.functions.invoke('verify-payment', {
             body: {
@@ -1559,7 +1570,7 @@ async function handleSuccessfulPayment(paymentData, tier, period, amount) {
             // Update local user tier
             verifiedTier = tier;
             console.log('✅ Payment verified and subscription updated successfully!');
-            
+
             showModal({
                 message: `🎉 Congratulations!\n\nYour ${tier} subscription is now active!\n\nTransaction ID: ${paymentData.transaction_id}`,
                 confirmText: 'Continue',
@@ -1575,7 +1586,7 @@ async function handleSuccessfulPayment(paymentData, tier, period, amount) {
                 confirmText: 'OK'
             });
         }
-        
+
     } catch (error) {
         hideLoader();
         console.error('Error handling successful payment:', error);
@@ -1594,7 +1605,7 @@ function redirectToLogin() {
 // ===== Ad System Management =====
 function initializeAdSystemForUser() {
     console.log('🔧 Initializing ad system for tier:', verifiedTier);
-    
+
     if (verifiedTier === "Free Tier") {
         // Check if consent has been granted for advertising
         checkConsentAndLoadAds();
@@ -1610,14 +1621,14 @@ function checkConsentAndLoadAds() {
     window.addEventListener('consentUpdated', function(event) {
         const consent = event.detail;
         console.log('🍪 Consent updated:', consent);
-        
+
         if (consent.ad_storage === 'granted' && verifiedTier === "Free Tier") {
             loadAdsForFreeUsers();
         } else {
             console.log('🚫 Ads not loaded - consent denied or premium user');
         }
     });
-    
+
     // Check if consent manager is available and get current consent
     if (window.consentManager) {
         const currentConsent = window.consentManager.getConsentStatus();
@@ -1640,32 +1651,32 @@ function loadAdsForFreeUsers() {
     }
 
     console.log('📺 Loading ads for free user...');
-    
+
     // Load Google AdSense script dynamically
     const script = document.createElement('script');
     script.async = true;
     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9868946535437166';
     script.crossOrigin = 'anonymous';
-    
+
     script.onload = () => {
         console.log('✅ AdSense loaded successfully');
         adsLoaded = true;
         // Check for adblocker after script loads
         setTimeout(detectAdBlocker, 1000);
     };
-    
+
     script.onerror = () => {
         console.log('❌ AdSense failed to load - likely blocked');
         adblockerDetected = true;
         showAdBlockerMessage();
     };
-    
+
     document.head.appendChild(script);
 }
 
 function detectAdBlocker() {
     console.log('🕵️ Checking for adblocker...');
-    
+
     // Create a test ad element
     const testAd = document.createElement('div');
     testAd.innerHTML = '&nbsp;';
@@ -1674,17 +1685,17 @@ function detectAdBlocker() {
     testAd.style.left = '-9999px';
     testAd.style.width = '1px';
     testAd.style.height = '1px';
-    
+
     document.body.appendChild(testAd);
-    
+
     setTimeout(() => {
-        const isBlocked = testAd.offsetHeight === 0 || 
-                         testAd.offsetWidth === 0 || 
+        const isBlocked = testAd.offsetHeight === 0 ||
+                         testAd.offsetWidth === 0 ||
                          testAd.style.display === 'none' ||
                          testAd.style.visibility === 'hidden';
-        
+
         document.body.removeChild(testAd);
-        
+
         if (isBlocked || !window.adsbygoogle) {
             console.log('🚫 Adblocker detected');
             adblockerDetected = true;
@@ -1699,9 +1710,9 @@ function detectAdBlocker() {
 function showAdBlockerMessage() {
     // Only show for free users
     if (verifiedTier !== "Free Tier") return;
-    
+
     console.log('📢 Showing adblocker message');
-    
+
     // Create full-page overlay
     const overlay = document.createElement('div');
     overlay.id = 'adblocker-overlay';
@@ -1724,7 +1735,7 @@ function showAdBlockerMessage() {
             </div>
         </div>
     `;
-    
+
     document.body.appendChild(overlay);
 }
 
@@ -1739,16 +1750,16 @@ function hideAdBlockerMessage() {
 async function updateUsername(newUsername) {
     try {
         showSpinner();
-        
+
         const { error } = await supabase
             .from('user_profiles')
-            .update({ 
+            .update({
                 display_name: newUsername,
                 username: newUsername,
                 updated_at: new Date().toISOString()
             })
             .eq('id', currentUser.id);
-            
+
         if (error) {
             console.error('Error updating username:', error);
             showModal({
@@ -1757,18 +1768,18 @@ async function updateUsername(newUsername) {
             });
             return;
         }
-        
+
         // Update the display immediately
         const userNameElement = document.getElementById('userName');
         if (userNameElement) {
             userNameElement.textContent = newUsername;
         }
-        
+
         showModal({
             message: 'Username updated successfully!',
             confirmText: 'OK'
         });
-        
+
     } catch (error) {
         console.error('Error updating username:', error);
         showModal({
@@ -1790,19 +1801,19 @@ function showModal(options) {
             console.error('Invalid modal options');
             return;
         }
-        
+
         const modal = document.createElement('div');
         modal.className = 'modal-overlay';
-        
+
         const inputFieldHTML = options.inputType ? `
             <div class="modal-input-wrapper">
                 <input type="${options.inputType}" class="modal-input" value="${options.inputValue || ''}" placeholder="${options.inputPlaceholder || ''}">
             </div>
         ` : '';
-        
+
         // Escape HTML to prevent XSS
         const safeMessage = options.message ? String(options.message).replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
-        
+
         modal.innerHTML = `
             <div class="modal-content">
                 <div class="modal-message">${safeMessage}</div>
@@ -1813,13 +1824,13 @@ function showModal(options) {
                 </div>
             </div>
         `;
-        
+
         document.body.appendChild(modal);
-        
+
         const confirmBtn = modal.querySelector('.btn-confirm');
         const cancelBtn = modal.querySelector('.btn-cancel');
         const inputField = modal.querySelector('.modal-input');
-        
+
         // Focus input if it exists
         if (inputField) {
             setTimeout(() => {
@@ -1830,7 +1841,7 @@ function showModal(options) {
                 }
             }, 100);
         }
-        
+
         const cleanup = () => {
             try {
                 if (modal && modal.parentNode) {
@@ -1840,7 +1851,7 @@ function showModal(options) {
                 console.warn('Error cleaning up modal:', cleanupError);
             }
         };
-        
+
         if (confirmBtn) {
             confirmBtn.addEventListener('click', () => {
                 try {
@@ -1859,7 +1870,7 @@ function showModal(options) {
                 }
             });
         }
-        
+
         if (cancelBtn) {
             cancelBtn.addEventListener('click', () => {
                 try {
@@ -1870,7 +1881,7 @@ function showModal(options) {
                 }
             });
         }
-        
+
         // Handle Enter key for input
         if (inputField) {
             inputField.addEventListener('keypress', (e) => {
@@ -1879,7 +1890,7 @@ function showModal(options) {
                 }
             });
         }
-        
+
         // Close on overlay click
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
@@ -1891,7 +1902,7 @@ function showModal(options) {
                 }
             }
         });
-        
+
     } catch (error) {
         console.error('Error creating modal:', error);
     }

@@ -126,6 +126,10 @@ main {
     /* Reset scroll position on page change */
     scroll-snap-type: none;
     scroll-padding: 0;
+    /* Force scroll container isolation */
+    contain: layout style;
+    /* Ensure each page load starts fresh */
+    scroll-restoration: manual;
 }
 
 /* ---------------- Page Transitions ---------------- */
