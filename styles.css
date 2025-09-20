@@ -1676,15 +1676,6 @@ main {
     text-align: center;
 }
 
-.coming-soon-container {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 60px 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-}
-
 .coming-soon-icon {
     font-size: 80px;
     margin-bottom: 24px;
@@ -1775,8 +1766,8 @@ main {
 
 /* Responsive design for coming soon page */
 @media (max-width: 768px) {
-    .coming-soon-container {
-        padding: 40px 24px;
+    .coming-soon-section {
+        padding: 30px 16px;
     }
     
     .coming-soon-icon {
