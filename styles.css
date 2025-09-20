@@ -1764,6 +1764,22 @@ main {
     }
 }
 
+/* Coming Soon Center Styles */
+.coming-soon-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 120px);
+    text-align: center;
+}
+
+.coming-soon-center h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0e639c;
+    margin: 0;
+}
+
 /* Responsive design for coming soon page */
 @media (max-width: 768px) {
     .coming-soon-section {
