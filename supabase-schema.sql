@@ -3,10 +3,12 @@
 -- Includes user management, payments, referrals, AI predictions, and admin features
 -- Run this SQL in your Supabase SQL Editor to create the required tables
 
--- Enable UUID extension if not already enabled
+-- Enable UUID extensions if not already enabled
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 -- Drop existing tables to ensure clean setup
+DROP TABLE IF EXISTS forum_messages CASCADE;
 DROP TABLE IF EXISTS prediction_accuracy CASCADE;
 DROP TABLE IF EXISTS team_stats CASCADE;
 DROP TABLE IF EXISTS matches CASCADE;
@@ -241,6 +243,18 @@ CREATE TABLE user_prediction_history (
     UNIQUE(user_id, prediction_id)
 );
 
+-- ===== FORUM SYSTEM TABLES =====
+
+-- Forum messages table for community discussions
+CREATE TABLE forum_messages (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID NOT NULL REFERENCES user_profiles(id) ON DELETE CASCADE,
+    username TEXT NOT NULL,
+    message TEXT NOT NULL CHECK (length(message) <= 500),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
 -- Create indexes for better performance
 CREATE INDEX idx_user_profiles_email ON user_profiles(email);
 CREATE INDEX idx_user_profiles_referral_code ON user_profiles(referral_code);
@@ -287,6 +301,11 @@ CREATE INDEX idx_prediction_accuracy_tier ON prediction_accuracy(tier);
 CREATE INDEX idx_user_prediction_history_user_id ON user_prediction_history(user_id);
 CREATE INDEX idx_user_prediction_history_saved_at ON user_prediction_history(saved_at);
 
+-- Forum Message Indexes
+CREATE INDEX idx_forum_messages_user_id ON forum_messages(user_id);
+CREATE INDEX idx_forum_messages_created_at ON forum_messages(created_at);
+CREATE INDEX idx_forum_messages_username ON forum_messages(username);
+
 -- Enable Row Level Security (RLS) for all tables
 ALTER TABLE user_profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE subscription_events ENABLE ROW LEVEL SECURITY;
@@ -304,6 +323,7 @@ ALTER TABLE matches ENABLE ROW LEVEL SECURITY;
 ALTER TABLE team_stats ENABLE ROW LEVEL SECURITY;
 ALTER TABLE prediction_accuracy ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_prediction_history ENABLE ROW LEVEL SECURITY;
+ALTER TABLE forum_messages ENABLE ROW LEVEL SECURITY;
 
 -- Comprehensive Security Policies for User and Admin Operations
 -- Drop existing policies first to avoid conflicts
@@ -527,6 +547,43 @@ CREATE POLICY "Users can update their own prediction notes" ON user_prediction_h
 
 CREATE POLICY "Users can delete from their prediction history" ON user_prediction_history
     FOR DELETE USING (user_id = auth.uid());
+
+-- ===== FORUM MESSAGE POLICIES =====
+
+-- Forum Messages Policies (public read, authenticated write)
+DROP POLICY IF EXISTS "Users can view all forum messages" ON forum_messages;
+DROP POLICY IF EXISTS "Authenticated users can send forum messages" ON forum_messages;
+DROP POLICY IF EXISTS "Users can update their own forum messages" ON forum_messages;
+DROP POLICY IF EXISTS "Users can delete their own forum messages" ON forum_messages;
+
+CREATE POLICY "Users can view all forum messages" ON forum_messages
+    FOR SELECT USING (true);
+
+CREATE POLICY "Authenticated users can send forum messages" ON forum_messages
+    FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update their own forum messages" ON forum_messages
+    FOR UPDATE USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can delete their own forum messages" ON forum_messages
+    FOR DELETE USING (auth.uid() = user_id);
+
+-- ===== FUNCTIONS AND TRIGGERS =====
+
+-- Function to update updated_at timestamp
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Add trigger for forum_messages
+CREATE TRIGGER update_forum_messages_updated_at
+    BEFORE UPDATE ON forum_messages
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
 
 -- Storage bucket policies for profile pictures
 -- Note: Create bucket named 'profile-pictures' in Supabase Storage UI and make it public

@@ -1,6 +1,10 @@
 -- StatWise PWA Database Schema for Supabase
 -- This file contains the complete database schema for the StatWise sports prediction application
 
+-- Enable UUID extensions if not already enabled
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
 -- Enable Row Level Security (RLS)
 ALTER DATABASE postgres SET "app.jwt_secret" TO 'your-jwt-secret';
 
@@ -59,6 +63,18 @@ CREATE TABLE IF NOT EXISTS public.user_prediction_history (
     saved_at TIMESTAMPTZ DEFAULT now(),
     notes TEXT,
     UNIQUE(user_id, prediction_id)
+);
+
+-- ===== FORUM SYSTEM =====
+
+-- Forum Messages Table
+CREATE TABLE IF NOT EXISTS public.forum_messages (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    user_id UUID NOT NULL REFERENCES public.user_profiles(id) ON DELETE CASCADE,
+    username TEXT NOT NULL,
+    message TEXT NOT NULL CHECK (length(message) <= 500),
+    created_at TIMESTAMPTZ DEFAULT now(),
+    updated_at TIMESTAMPTZ DEFAULT now()
 );
 
 -- ===== SUBSCRIPTION AND PAYMENTS =====
@@ -137,6 +153,11 @@ CREATE INDEX IF NOT EXISTS idx_predictions_status ON public.predictions(status);
 CREATE INDEX IF NOT EXISTS idx_user_history_user_id ON public.user_prediction_history(user_id);
 CREATE INDEX IF NOT EXISTS idx_user_history_saved_at ON public.user_prediction_history(saved_at);
 
+-- Forum messages indexes
+CREATE INDEX IF NOT EXISTS idx_forum_messages_user_id ON public.forum_messages(user_id);
+CREATE INDEX IF NOT EXISTS idx_forum_messages_created_at ON public.forum_messages(created_at);
+CREATE INDEX IF NOT EXISTS idx_forum_messages_username ON public.forum_messages(username);
+
 -- Payment transactions indexes
 CREATE INDEX IF NOT EXISTS idx_transactions_user_id ON public.payment_transactions(user_id);
 CREATE INDEX IF NOT EXISTS idx_transactions_status ON public.payment_transactions(status);
@@ -154,6 +175,7 @@ CREATE INDEX IF NOT EXISTS idx_referrals_referred_id ON public.referrals(referre
 ALTER TABLE public.user_profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.predictions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.user_prediction_history ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.forum_messages ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.subscription_events ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.payment_transactions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.referral_codes ENABLE ROW LEVEL SECURITY;
@@ -186,6 +208,19 @@ CREATE POLICY "Users can insert their own prediction history" ON public.user_pre
     FOR INSERT WITH CHECK (auth.uid() = user_id);
 
 CREATE POLICY "Users can delete their own prediction history" ON public.user_prediction_history
+    FOR DELETE USING (auth.uid() = user_id);
+
+-- Forum messages policies
+CREATE POLICY "Users can view all forum messages" ON public.forum_messages
+    FOR SELECT USING (true);
+
+CREATE POLICY "Authenticated users can send forum messages" ON public.forum_messages
+    FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update their own forum messages" ON public.forum_messages
+    FOR UPDATE USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can delete their own forum messages" ON public.forum_messages
     FOR DELETE USING (auth.uid() = user_id);
 
 -- Subscription events policies
@@ -235,6 +270,9 @@ CREATE TRIGGER update_payment_transactions_updated_at BEFORE UPDATE ON public.pa
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 CREATE TRIGGER update_referral_codes_updated_at BEFORE UPDATE ON public.referral_codes
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_forum_messages_updated_at BEFORE UPDATE ON public.forum_messages
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 -- ===== SAMPLE DATA (Optional) =====
