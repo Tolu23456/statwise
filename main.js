@@ -5,7 +5,6 @@ import { initInteractiveBackground, initializeTheme } from './ui.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
 import { ActivityManager } from './activity-manager.js';
-import { LogoUtils, LEAGUE_LOGOS, TEAM_LOGOS } from './logo.js';
 
 // ===== Global Variables =====
 const main = document.querySelector("main");
@@ -426,69 +425,44 @@ function displayPredictions(predictions) {
         return;
     }
 
-    const predictionsHTML = predictions.map(prediction => {
-        // Get team logos
-        const homeTeamLogo = LogoUtils.getTeamLogo(prediction.home_team);
-        const awayTeamLogo = LogoUtils.getTeamLogo(prediction.away_team);
-        
-        // Get league logo - convert league name to key format
-        const leagueKey = prediction.league.toLowerCase()
-            .replace(/\s+/g, '-')
-            .replace(/[^a-z0-9-]/g, '');
-        const leagueLogo = LogoUtils.getLeagueLogo(leagueKey);
-
-        return `
-            <div class="prediction-card tier-${prediction.tier}">
-                <div class="match-header">
-                    <div class="league-info">
-                        <img src="${leagueLogo}" alt="${prediction.league}" class="league-logo" onerror="this.src='${LogoUtils.getDefaultLeagueLogo()}'">
-                        <span class="league">${prediction.league}</span>
-                    </div>
-                    <div class="teams-container">
-                        <div class="team">
-                            <img src="${homeTeamLogo}" alt="${prediction.home_team}" class="team-logo" onerror="this.src='${LogoUtils.getDefaultTeamLogo()}'">
-                            <span class="team-name">${prediction.home_team}</span>
-                        </div>
-                        <div class="vs-separator">VS</div>
-                        <div class="team">
-                            <img src="${awayTeamLogo}" alt="${prediction.away_team}" class="team-logo" onerror="this.src='${LogoUtils.getDefaultTeamLogo()}'">
-                            <span class="team-name">${prediction.away_team}</span>
-                        </div>
-                    </div>
+    const predictionsHTML = predictions.map(prediction => `
+        <div class="prediction-card tier-${prediction.tier}">
+            <div class="match-header">
+                <h4>${prediction.home_team} vs ${prediction.away_team}</h4>
+                <span class="league">${prediction.league}</span>
+            </div>
+            <div class="prediction-content">
+                <div class="prediction-result">
+                    <span class="label">Prediction:</span>
+                    <span class="result">${prediction.prediction}</span>
                 </div>
-                <div class="prediction-content">
-                    <div class="prediction-result">
-                        <span class="label">Prediction:</span>
-                        <span class="result">${prediction.prediction}</span>
-                    </div>
-                    <div class="confidence">
-                        <span class="label">Confidence:</span>
-                        <span class="value">${prediction.confidence}%</span>
-                    </div>
-                    ${prediction.odds ? `
-                        <div class="odds">
-                            <span class="label">Odds:</span>
-                            <span class="value">${prediction.odds}</span>
-                        </div>
-                    ` : ''}
-                    <div class="kickoff">
-                        <span class="label">Kickoff:</span>
-                        <span class="time">${formatTimestamp(prediction.kickoff_time)}</span>
-                    </div>
+                <div class="confidence">
+                    <span class="label">Confidence:</span>
+                    <span class="value">${prediction.confidence}%</span>
                 </div>
-                ${prediction.reasoning ? `
-                    <div class="reasoning">
-                        <p>${prediction.reasoning}</p>
+                ${prediction.odds ? `
+                    <div class="odds">
+                        <span class="label">Odds:</span>
+                        <span class="value">${prediction.odds}</span>
                     </div>
                 ` : ''}
-                <div class="prediction-actions">
-                    <button onclick="savePrediction('${prediction.id}')" class="btn-save">
-                        Save to History
-                    </button>
+                <div class="kickoff">
+                    <span class="label">Kickoff:</span>
+                    <span class="time">${formatTimestamp(prediction.kickoff_time)}</span>
                 </div>
             </div>
-        `;
-    }).join('');
+            ${prediction.reasoning ? `
+                <div class="reasoning">
+                    <p>${prediction.reasoning}</p>
+                </div>
+            ` : ''}
+            <div class="prediction-actions">
+                <button onclick="savePrediction('${prediction.id}')" class="btn-save">
+                    Save to History
+                </button>
+            </div>
+        </div>
+    `).join('');
 
     container.innerHTML = predictionsHTML;
 }

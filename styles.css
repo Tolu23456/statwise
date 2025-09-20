@@ -2215,7 +2215,7 @@ main {
     display: block; /* Keep block for other tab content */
 }
 
-/*HomePage */
+/* HomePage */
 .predictions-container {
     display: flex;
     flex-direction: column;
@@ -3435,7 +3435,7 @@ body.pulling-to-refresh {
 
 /* Dark mode support */
 .dark-mode .inactive-container {
-    background: linear-gradient(135deg, #1e1e1e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%);
 }
 
 .dark-mode .logo-icon {
