@@ -19,9 +19,18 @@ function initInteractiveBackground(container = null) {
     if (!backgroundContainer) {
         console.log('Creating interactive circles background...');
         
-        // Create the animated background dynamically
+        // Create the animated background dynamically with theme-aware background
         backgroundContainer = document.createElement('div');
         backgroundContainer.className = 'animated-background-interactive';
+        
+        // Function to get theme-aware background color
+        const getBackgroundColor = () => {
+            const isDark = document.body.classList.contains('dark-mode');
+            return isDark 
+                ? getComputedStyle(document.documentElement).getPropertyValue('--primary-bg') || '#1a1d23'
+                : getComputedStyle(document.documentElement).getPropertyValue('--primary-bg') || '#f8f9fc';
+        };
+        
         backgroundContainer.style.cssText = `
             position: fixed;
             top: 0;
@@ -31,6 +40,8 @@ function initInteractiveBackground(container = null) {
             z-index: -1;
             pointer-events: none;
             overflow: hidden;
+            background-color: ${getBackgroundColor()};
+            transition: background-color 0.3s ease;
         `;
         
         // Create circles container
@@ -127,8 +138,18 @@ function initInteractiveBackground(container = null) {
             }
         };
         
-        // Function to update circle colors based on current theme
+        // Function to update circle colors and background based on current theme
         const updateCircleColors = () => {
+            // Update background container color
+            const getBackgroundColor = () => {
+                const isDark = document.body.classList.contains('dark-mode');
+                return isDark 
+                    ? getComputedStyle(document.documentElement).getPropertyValue('--primary-bg') || '#1a1d23'
+                    : getComputedStyle(document.documentElement).getPropertyValue('--primary-bg') || '#f8f9fc';
+            };
+            backgroundContainer.style.backgroundColor = getBackgroundColor();
+            
+            // Update circle colors
             circles.forEach((circle) => {
                 const getThemeColor = (colorType) => {
                     const isDark = document.body.classList.contains('dark-mode');
