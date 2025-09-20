@@ -58,7 +58,8 @@ function initInteractiveBackground(container = null) {
             const startX = Math.random() * window.innerWidth;
             const startY = Math.random() * window.innerHeight;
             const speed = Math.random() * 1.5 + 0.5; // 0.5 to 2 speed multiplier
-            const opacity = 0.1 + Math.random() * 0.5; // 0.1 to 0.6
+            // Increase base opacity for better visibility, especially in light mode
+            const opacity = 0.2 + Math.random() * 0.4; // 0.2 to 0.6
             
             // Circle data object
             const circleData = {
@@ -73,7 +74,7 @@ function initInteractiveBackground(container = null) {
                 colorType: Math.random() > 0.5 ? 'primary' : 'secondary' // Theme-aware color type
             };
             
-            // Get theme-aware colors
+            // Get theme-aware colors with better contrast for light mode
             const getThemeColor = (colorType) => {
                 const isDark = document.body.classList.contains('dark-mode');
                 if (colorType === 'primary') {
@@ -81,9 +82,10 @@ function initInteractiveBackground(container = null) {
                         ? getComputedStyle(document.documentElement).getPropertyValue('--statwise-blue-light') || '#1976d2'
                         : getComputedStyle(document.documentElement).getPropertyValue('--statwise-blue') || '#0e639c';
                 } else {
+                    // For light mode secondary, use a darker color for better contrast
                     return isDark 
                         ? getComputedStyle(document.documentElement).getPropertyValue('--text-secondary') || '#b8bcc3'
-                        : getComputedStyle(document.documentElement).getPropertyValue('--text-secondary') || '#6b7280';
+                        : '#4a5568'; // Darker gray for better contrast in light mode
                 }
             };
             
@@ -135,9 +137,10 @@ function initInteractiveBackground(container = null) {
                             ? getComputedStyle(document.documentElement).getPropertyValue('--statwise-blue-light') || '#1976d2'
                             : getComputedStyle(document.documentElement).getPropertyValue('--statwise-blue') || '#0e639c';
                     } else {
+                        // For light mode secondary, use a darker color for better contrast
                         return isDark 
                             ? getComputedStyle(document.documentElement).getPropertyValue('--text-secondary') || '#b8bcc3'
-                            : getComputedStyle(document.documentElement).getPropertyValue('--text-secondary') || '#6b7280';
+                            : '#4a5568'; // Darker gray for better contrast in light mode
                     }
                 };
                 
