@@ -436,9 +436,8 @@ function displayPredictions(predictions) {
 let forumSubscription = null;
 
 async function initializeForumPage() {
-    await loadForumMessages();
-    initializeForumInput();
-    setupRealtimeSubscription();
+    // Forum is coming soon - no functionality needed
+    console.log('Forum page loaded - Coming Soon');
 }
 
 async function loadForumMessages() {
