@@ -315,8 +315,8 @@ async function initializePage(page) {
         case 'home':
             await initializeHomePage();
             break;
-        case 'history':
-            await initializeHistoryPage();
+        case 'forum':
+            await initializeForumPage();
             break;
         case 'profile':
             await initializeProfilePage();
@@ -432,184 +432,219 @@ function displayPredictions(predictions) {
     container.innerHTML = predictionsHTML;
 }
 
-async function initializeHistoryPage() {
-    await loadUserPredictionHistory();
-    initializeHistoryTabs();
+// ===== Forum Functionality =====
+let forumSubscription = null;
+
+async function initializeForumPage() {
+    await loadForumMessages();
+    initializeForumInput();
+    setupRealtimeSubscription();
 }
 
-async function loadUserPredictionHistory() {
+async function loadForumMessages() {
     if (!currentUser) return;
     
+    const messagesContainer = document.getElementById('messagesContainer');
+    const emptyForum = document.getElementById('emptyForum');
+    
+    if (!messagesContainer) return;
+    
     try {
-        const { data: history, error } = await supabase
-            .from('user_prediction_history')
-            .select(`
-                *,
-                predictions (*)
-            `)
-            .eq('user_id', currentUser.id)
-            .order('saved_at', { ascending: false });
+        const { data: messages, error } = await supabase
+            .from('forum_messages')
+            .select('*')
+            .order('created_at', { ascending: false })
+            .limit(50);
             
         if (error) {
-            console.warn('Error loading prediction history:', error);
+            console.warn('Error loading forum messages:', error);
+            messagesContainer.innerHTML = '<div class="error-message">Error loading messages. Please refresh the page.</div>';
             return;
         }
         
-        displayPredictionHistory(history || []);
-    } catch (error) {
-        console.error('Error loading prediction history:', error);
-    }
-}
-
-function displayPredictionHistory(history) {
-    // Update predictions tab
-    const predictionsContainer = document.querySelector('#predictions-tab .history-container');
-    if (predictionsContainer) {
-        if (history.length === 0) {
-            predictionsContainer.innerHTML = `
-                <div class="no-history">
-                    <h3>No saved predictions</h3>
-                    <p>Save predictions from the home page to track them here!</p>
-                </div>
-            `;
+        if (messages.length === 0) {
+            messagesContainer.style.display = 'none';
+            emptyForum.style.display = 'block';
         } else {
-            const historyHTML = history.map(item => {
-                const prediction = item.predictions;
-                return `
-                    <div class="history-item">
-                        <div class="match-info">
-                            <h4>${prediction.home_team} vs ${prediction.away_team}</h4>
-                            <span class="league">${prediction.league}</span>
-                        </div>
-                        <div class="prediction-info">
-                            <span class="prediction">${prediction.prediction}</span>
-                            <span class="confidence">${prediction.confidence}% confidence</span>
-                        </div>
-                        <div class="saved-date">
-                            Saved: ${formatTimestamp(item.saved_at)}
-                        </div>
-                        ${item.notes ? `<div class="notes">${item.notes}</div>` : ''}
-                    </div>
-                `;
-            }).join('');
-            predictionsContainer.innerHTML = historyHTML;
+            messagesContainer.style.display = 'block';
+            emptyForum.style.display = 'none';
+            displayForumMessages(messages);
         }
+    } catch (error) {
+        console.error('Error loading forum messages:', error);
+        messagesContainer.innerHTML = '<div class="error-message">Error loading messages. Please refresh the page.</div>';
     }
-    
-    // Load account history
-    loadAccountHistory();
-    
-    // Load transaction history  
-    loadTransactionHistory();
 }
 
-function initializeHistoryTabs() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+function displayForumMessages(messages) {
+    const messagesContainer = document.getElementById('messagesContainer');
+    if (!messagesContainer) return;
     
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = button.getAttribute('data-tab');
-            
-            // Update active button
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            // Update active content
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-                if (content.id === targetTab) {
-                    content.classList.add('active');
-                }
-            });
-        });
-    });
-}
-
-async function loadAccountHistory() {
-    if (!currentUser) return;
+    // Reverse messages to show oldest first (since we fetched newest first for efficiency)
+    const sortedMessages = messages.reverse();
     
-    const accountContainer = document.querySelector('#account-tab .history-container');
-    if (!accountContainer) return;
-    
-    try {
-        // Get user profile updates, login history, etc.
-        const { data: profile, error } = await supabase
-            .from('user_profiles')
-            .select('created_at, last_login, current_tier, subscription_status')
-            .eq('id', currentUser.id)
-            .single();
-            
-        if (error) {
-            accountContainer.innerHTML = '<p>Error loading account history</p>';
-            return;
-        }
-        
-        accountContainer.innerHTML = `
-            <div class="account-history">
-                <div class="history-item">
-                    <h4>Account Created</h4>
-                    <p>${formatTimestamp(profile.created_at)}</p>
+    const messagesHTML = sortedMessages.map(message => {
+        const isCurrentUser = message.user_id === currentUser?.id;
+        return `
+            <div class="message ${isCurrentUser ? 'own-message' : ''}">
+                <div class="message-header">
+                    <span class="username">${message.username}</span>
+                    <span class="timestamp">${formatTimestamp(message.created_at)}</span>
                 </div>
-                <div class="history-item">
-                    <h4>Last Login</h4>
-                    <p>${formatTimestamp(profile.last_login)}</p>
-                </div>
-                <div class="history-item">
-                    <h4>Current Tier</h4>
-                    <p>${profile.current_tier}</p>
-                </div>
-                <div class="history-item">
-                    <h4>Subscription Status</h4>
-                    <p>${profile.subscription_status || 'active'}</p>
+                <div class="message-content">
+                    ${message.message}
                 </div>
             </div>
         `;
+    }).join('');
+    
+    messagesContainer.innerHTML = messagesHTML;
+    
+    // Scroll to bottom to show latest messages
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function initializeForumInput() {
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendMessageBtn');
+    const charCounter = document.querySelector('.char-counter');
+    
+    if (!messageInput || !sendButton) return;
+    
+    // Character counter
+    messageInput.addEventListener('input', () => {
+        const length = messageInput.value.length;
+        charCounter.textContent = `${length}/500`;
+        sendButton.disabled = length === 0 || length > 500;
+        
+        // Auto-resize textarea
+        messageInput.style.height = 'auto';
+        messageInput.style.height = messageInput.scrollHeight + 'px';
+    });
+    
+    // Send message on button click
+    sendButton.addEventListener('click', sendMessage);
+    
+    // Send message on Ctrl+Enter or Cmd+Enter
+    messageInput.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+}
+
+async function sendMessage() {
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendMessageBtn');
+    
+    if (!messageInput || !sendButton || !currentUser) return;
+    
+    const message = messageInput.value.trim();
+    if (!message || message.length > 500) return;
+    
+    try {
+        // Disable input while sending
+        sendButton.disabled = true;
+        sendButton.innerHTML = '<div class="loader-small"></div>Sending...';
+        
+        const { data, error } = await supabase
+            .from('forum_messages')
+            .insert([{
+                user_id: currentUser.id,
+                username: currentUser.user_metadata?.display_name || currentUser.email.split('@')[0],
+                message: message
+            }])
+            .select()
+            .single();
+            
+        if (error) {
+            console.error('Error sending message:', error);
+            alert('Failed to send message. Please try again.');
+        } else {
+            // Clear input
+            messageInput.value = '';
+            messageInput.style.height = 'auto';
+            document.querySelector('.char-counter').textContent = '0/500';
+            
+            // Hide empty state if it was showing
+            const emptyForum = document.getElementById('emptyForum');
+            const messagesContainer = document.getElementById('messagesContainer');
+            if (emptyForum.style.display !== 'none') {
+                emptyForum.style.display = 'none';
+                messagesContainer.style.display = 'block';
+            }
+        }
     } catch (error) {
-        console.error('Error loading account history:', error);
-        accountContainer.innerHTML = '<p>Error loading account history</p>';
+        console.error('Error sending message:', error);
+        alert('Failed to send message. Please try again.');
+    } finally {
+        // Re-enable input
+        sendButton.disabled = false;
+        sendButton.innerHTML = '<div class="send-icon">➤</div>Send';
     }
 }
 
-async function loadTransactionHistory() {
-    if (!currentUser) return;
-    
-    const transactionsContainer = document.querySelector('#transactions-tab .history-container');
-    if (!transactionsContainer) return;
-    
-    try {
-        const { data: transactions, error } = await supabase
-            .from('subscription_events')
-            .select('*')
-            .eq('user_id', currentUser.id)
-            .order('created_at', { ascending: false });
-            
-        if (error) {
-            transactionsContainer.innerHTML = '<p>Error loading transaction history</p>';
-            return;
-        }
-        
-        if (transactions.length === 0) {
-            transactionsContainer.innerHTML = '<p>No transactions found</p>';
-            return;
-        }
-        
-        const transactionsHTML = transactions.map(transaction => `
-            <div class="history-item">
-                <div class="transaction-info">
-                    <h4>${transaction.event_type}</h4>
-                    <p>Amount: ₦${transaction.amount?.toLocaleString() || '0'}</p>
-                    <p>Status: ${transaction.status}</p>
-                    <p>Date: ${formatTimestamp(transaction.created_at)}</p>
-                </div>
-            </div>
-        `).join('');
-        
-        transactionsContainer.innerHTML = transactionsHTML;
-    } catch (error) {
-        console.error('Error loading transaction history:', error);
-        transactionsContainer.innerHTML = '<p>Error loading transaction history</p>';
+function setupRealtimeSubscription() {
+    // Clean up existing subscription
+    if (forumSubscription) {
+        forumSubscription.unsubscribe();
     }
+    
+    // Subscribe to new messages
+    forumSubscription = supabase
+        .channel('forum_messages')
+        .on('postgres_changes', {
+            event: 'INSERT',
+            schema: 'public',
+            table: 'forum_messages'
+        }, (payload) => {
+            console.log('New message received:', payload);
+            handleNewMessage(payload.new);
+        })
+        .subscribe();
+}
+
+function handleNewMessage(newMessage) {
+    const messagesContainer = document.getElementById('messagesContainer');
+    const emptyForum = document.getElementById('emptyForum');
+    
+    if (!messagesContainer) return;
+    
+    // Hide empty state if showing
+    if (emptyForum && emptyForum.style.display !== 'none') {
+        emptyForum.style.display = 'none';
+        messagesContainer.style.display = 'block';
+    }
+    
+    // Create message element
+    const isCurrentUser = newMessage.user_id === currentUser?.id;
+    const messageElement = document.createElement('div');
+    messageElement.className = `message ${isCurrentUser ? 'own-message' : ''}`;
+    messageElement.innerHTML = `
+        <div class="message-header">
+            <span class="username">${newMessage.username}</span>
+            <span class="timestamp">${formatTimestamp(newMessage.created_at)}</span>
+        </div>
+        <div class="message-content">
+            ${newMessage.message}
+        </div>
+    `;
+    
+    // Add to container
+    messagesContainer.appendChild(messageElement);
+    
+    // Scroll to bottom
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    // Add animation for new message
+    messageElement.style.opacity = '0';
+    messageElement.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+        messageElement.style.transition = 'all 0.3s ease';
+        messageElement.style.opacity = '1';
+        messageElement.style.transform = 'translateY(0)';
+    }, 100);
 }
 
 async function initializeProfilePage() {

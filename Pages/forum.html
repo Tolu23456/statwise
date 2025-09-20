@@ -1,0 +1,32 @@
+<section class="forum-section">
+  <h1 class="page-title">Community Forum</h1>
+
+  <!-- Message input area -->
+  <div class="message-input-container">
+    <div class="message-input-wrapper">
+      <textarea id="messageInput" placeholder="Share your thoughts with the community..." rows="3" maxlength="500"></textarea>
+      <div class="input-actions">
+        <span class="char-counter">0/500</span>
+        <button id="sendMessageBtn" class="send-btn" disabled>
+          <div class="send-icon">➤</div>
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Messages container -->
+  <div id="messagesContainer" class="messages-container">
+    <div class="loading-messages">
+      <div class="loader-small"></div>
+      <p>Loading messages...</p>
+    </div>
+  </div>
+
+  <!-- Empty state -->
+  <div id="emptyForum" class="empty-forum" style="display: none;">
+    <div class="empty-icon">💬</div>
+    <h3>Start the conversation!</h3>
+    <p>Be the first to share something with the community.</p>
+  </div>
+</section>
