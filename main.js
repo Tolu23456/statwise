@@ -1490,8 +1490,8 @@ window.signOut = async function() {
         
         console.log('Sign out successful, redirecting to login...');
         
-        // Redirect to login page
-        window.location.href = './Auth/login.html';
+        // Redirect to login page using absolute path from root
+        window.location.href = '/Auth/login.html';
         
     } catch (error) {
         console.error('Unexpected error during sign out:', error);
@@ -1506,7 +1506,7 @@ window.signOut = async function() {
         }
         
         alert('Sign out completed with errors. Redirecting to login...');
-        window.location.href = './Auth/login.html';
+        window.location.href = '/Auth/login.html';
     }
 };
 
