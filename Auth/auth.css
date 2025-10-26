@@ -561,31 +561,25 @@ body {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative; /* Needed for spinner positioning */
-    overflow: hidden; /* Hide anything that might spill out */
-    min-height: 48px; /* Set a fixed height to prevent size change */
-    transform: translateY(0);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 48px;
     box-shadow: 0 2px 8px rgba(14, 99, 156, 0.3);
-    filter: none; /* Remove any blur effects */
-    backdrop-filter: none; /* Remove any backdrop blur */
 }
 
 .auth-btn:hover:not(:disabled) {
     background: #0b4f7a;
-    transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(14, 99, 156, 0.4);
 }
 
 .auth-btn:active:not(:disabled) {
-    transform: translateY(0);
-    transition: transform 0.1s ease;
+    box-shadow: 0 2px 6px rgba(14, 99, 156, 0.3);
 }
 
 .auth-btn:disabled {
     background: #6c757d;
     cursor: not-allowed;
-    transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -606,31 +600,15 @@ body {
 .auth-btn.green-loading .spinner {
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-top: 2px solid #fff;
-    animation: greenSpinGlow 0.8s linear infinite;
-}
-
-@keyframes greenSpinGlow {
-    0% { 
-        transform: translate(-50%, -50%) rotate(0deg);
-        box-shadow: 0 0 5px rgba(40, 167, 69, 0.6);
-    }
-    50% {
-        box-shadow: 0 0 15px rgba(40, 167, 69, 0.8);
-    }
-    100% { 
-        transform: translate(-50%, -50%) rotate(360deg);
-        box-shadow: 0 0 5px rgba(40, 167, 69, 0.6);
-    }
 }
 
 @keyframes successPulse {
-    0% { transform: scale(1); }
+    0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
 }
 
 .auth-btn .btn-text {
-    transition: all 0.3s ease;
+    transition: opacity 0.2s ease;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -639,13 +617,11 @@ body {
 .auth-btn .btn-icon {
     font-size: 18px;
     opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .auth-btn.success .btn-icon {
     opacity: 1;
-    transform: translateX(0);
 }
 
 .auth-btn .spinner {
@@ -659,18 +635,18 @@ body {
     border-top: 2px solid #fff;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 .auth-btn.loading .spinner,
-.auth-btn:disabled .spinner  {
-    opacity: 1; /* Show spinner when button is disabled */
+.auth-btn:disabled .spinner {
+    opacity: 1;
 }
 
 .auth-btn.loading .btn-text,
-.auth-btn:disabled .btn-text  {
-    opacity: 0; /* Hide text when button is disabled */
+.auth-btn:disabled .btn-text {
+    opacity: 0;
 }
 
 @keyframes spin { 
