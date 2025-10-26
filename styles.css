@@ -53,8 +53,8 @@ body {
     height: 100%;
     position: relative; /* Needed for animation container */
     overflow-x: hidden; /* Prevent horizontal scroll from animation */
-    /* Prevent browser pull-to-refresh */
-    overscroll-behavior-y: contain;
+    overflow-y: auto; /* Ensure vertical scrolling works */
+    /* Better scroll behavior for all devices */
     -webkit-overflow-scrolling: touch;
     max-width: 100vw;
 }
@@ -118,18 +118,10 @@ main {
     margin-right: auto;
     max-width: var(--max-width);
     width: 100%;
-    /* Additional overscroll prevention for main content */
-    overscroll-behavior-y: contain;
-    /* Prevent scroll sync between pages */
-    scroll-behavior: auto;
-    isolation: isolate;
-    /* Reset scroll position on page change */
-    scroll-snap-type: none;
-    scroll-padding: 0;
-    /* Force scroll container isolation */
-    contain: layout style;
-    /* Ensure each page load starts fresh */
-    scroll-restoration: manual;
+    /* Better scroll behavior for desktop */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: auto;
+    scroll-behavior: smooth;
 }
 
 /* ---------------- Page Transitions ---------------- */
