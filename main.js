@@ -1460,22 +1460,27 @@ window.savePrediction = async function(predictionId) {
 
 window.signOut = async function() {
     try {
+        console.log('Starting sign out process...');
         showLoader();
         
+        // Sign out from Supabase
         const { error } = await supabase.auth.signOut();
         
         if (error) {
-            console.error('Error signing out:', error);
+            console.error('Supabase sign out error:', error);
             hideLoader();
-            showModal({
-                message: 'Failed to sign out. Please try again.',
-                confirmText: 'OK'
-            });
-            return;
+            
+            // Show error and still proceed with local cleanup
+            alert('Sign out encountered an issue, but local data will be cleared.');
         }
         
-        // Clear local data
-        localStorage.clear();
+        // Clear local data regardless of Supabase error
+        try {
+            localStorage.clear();
+            sessionStorage.clear();
+        } catch (storageError) {
+            console.warn('Error clearing storage:', storageError);
+        }
         
         // Reset global variables
         currentUser = null;
@@ -1483,27 +1488,25 @@ window.signOut = async function() {
         
         hideLoader();
         
-        // Show success message and redirect
-        showModal({
-            message: 'Successfully logged out!',
-            confirmText: 'OK',
-            onConfirm: () => {
-                window.location.href = './Auth/login.html';
-            }
-        });
+        console.log('Sign out successful, redirecting to login...');
         
-        // Fallback redirect if modal doesn't work
-        setTimeout(() => {
-            window.location.href = './Auth/login.html';
-        }, 1500);
+        // Redirect to login page
+        window.location.href = './Auth/login.html';
         
     } catch (error) {
-        console.error('Error signing out:', error);
+        console.error('Unexpected error during sign out:', error);
         hideLoader();
-        showModal({
-            message: 'An error occurred while signing out. Please try again.',
-            confirmText: 'OK'
-        });
+        
+        // Force cleanup and redirect even on error
+        try {
+            localStorage.clear();
+            sessionStorage.clear();
+        } catch (e) {
+            console.warn('Error clearing storage:', e);
+        }
+        
+        alert('Sign out completed with errors. Redirecting to login...');
+        window.location.href = './Auth/login.html';
     }
 };
 
