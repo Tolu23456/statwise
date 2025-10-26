@@ -4,7 +4,6 @@ import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loade
 import { initInteractiveBackground, initializeTheme } from './ui.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
 import { formatTimestamp, addHistoryUnique } from './utils.js';
-import { ActivityManager } from './activity-manager.js';
 
 // ===== Global Variables =====
 const main = document.querySelector("main");
@@ -575,23 +574,6 @@ function initializeProfileInteractions() {
             import('./ui.js').then(({ toggleTheme }) => {
                 toggleTheme();
             });
-        });
-    }
-
-    // Initialize inactive page toggle
-    const inactivePageToggle = document.getElementById('inactivePageToggle');
-    if (inactivePageToggle) {
-        // Set current state from activity manager
-        if (window.activityManager) {
-            const currentSetting = window.activityManager.getToggleSetting();
-            inactivePageToggle.checked = currentSetting;
-        }
-
-        // Add event listener
-        inactivePageToggle.addEventListener('change', function() {
-            if (window.activityManager) {
-                window.activityManager.enableInactivePage(this.checked);
-            }
         });
     }
 
