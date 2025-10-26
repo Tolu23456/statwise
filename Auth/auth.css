@@ -211,7 +211,8 @@ body {
 
 /* Adjust left padding for the referral input to make space for the prefix */
 #signup-referral {
-    padding-left: 80px; /* 40px for icon + 40px for prefix */
+    padding-left: 95px; /* 40px for icon + 55px for prefix and spacing */
+    letter-spacing: 0.5px; /* Better readability for codes */
 }
 
 .auth-form input:focus {
