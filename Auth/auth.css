@@ -23,7 +23,8 @@ body {
     min-height: 100vh;
     padding: 20px;
     position: relative; /* For background animation positioning */
-    overflow: hidden; /* Hide animation overflow */
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal overflow from animation */
 }
 
 /* --- Auth Container & Card --- */
