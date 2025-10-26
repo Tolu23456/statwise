@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize interactive background animation for auth pages
     console.log('🌀 Starting auth page background animation...');
-    const backgroundCleanup = initInteractiveBackground();
+    import('../ui.js').then(({ initAuthBackgroundAnimation }) => {
+        if (window.authBackgroundCleanup) {
+            window.authBackgroundCleanup(); // Clean up any existing animation
+        }
+        window.authBackgroundCleanup = initAuthBackgroundAnimation();
+    });
     
-    // Store cleanup function for potential later use
-        // Initialize new interactive background animation for auth pages
-        import('../ui.js').then(({ initAuthBackgroundAnimation }) => {
-            window.authBackgroundCleanup = initAuthBackgroundAnimation();
-        });
     initializeAuthForms();
     initializeAuthAds(); // Initialize ads for auth page
     
@@ -136,9 +136,15 @@ function handleThemeToggle(e) {
     
     // Apply theme change during expansion
     setTimeout(() => {
-        import('../ui.js').then(({ toggleTheme }) => {
+        import('../ui.js').then(({ toggleTheme, initAuthBackgroundAnimation }) => {
             toggleTheme();
             updateThemeIcon(newTheme);
+            
+            // Reinitialize background animation with new theme
+            if (window.authBackgroundCleanup) {
+                window.authBackgroundCleanup();
+            }
+            window.authBackgroundCleanup = initAuthBackgroundAnimation();
         });
     }, 300);
     
