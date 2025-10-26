@@ -7,6 +7,15 @@ StatWise is a Progressive Web App (PWA) that provides AI-powered sports predicti
 Preferred communication style: Simple, everyday language.
 
 ## Recent Updates
+- Removed inactive page feature completely from the application (October 26, 2025)
+  - Deleted activity-manager.js and Pages/inactive.html
+  - Removed all inactive page UI controls and CSS styling
+  - Cleaned up all references from codebase
+- Fixed multiple UX issues:
+  - Removed annoying console spam from manager.js
+  - Fixed signup form validation for privacy policy checkbox
+  - Fixed loader hiding on all signup error paths
+  - Fixed authentication page scrolling functionality
 - Completely converted History feature to Forum with real-time messaging capabilities using Supabase real-time subscriptions
 - Created forum_messages database table with proper user relationships and message threading
 - Implemented comprehensive forum UI with message composition, real-time message display, and responsive design
