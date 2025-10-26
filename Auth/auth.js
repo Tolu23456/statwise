@@ -11,6 +11,12 @@ let adblockerDetected = false;
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🔐 Initializing auth page...');
     
+    // Add loading animation to auth card
+    const authCard = document.querySelector('.auth-card');
+    if (authCard) {
+        authCard.classList.add('loading');
+    }
+    
     // Test Supabase connection
     testSupabaseConnection();
     
@@ -106,54 +112,30 @@ function handleThemeToggle(e) {
     const button = e.target.closest('.theme-toggle');
     if (!button) return;
     
-    // Get button position for circle origin
-    const rect = button.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    
-    // Create transition circle
-    const circle = document.createElement('div');
-    circle.className = 'theme-transition-circle';
-    circle.style.left = centerX + 'px';
-    circle.style.top = centerY + 'px';
-    circle.style.transform = 'translate(-50%, -50%)';
-    
     // Determine target theme
     const currentTheme = localStorage.getItem('statwise-theme') || 'light';
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
-    // Set circle color based on target theme
-    if (newTheme === 'light') {
-        circle.classList.add('light-mode');
-    }
-    
-    document.body.appendChild(circle);
-    
-    // Trigger expansion
-    setTimeout(() => {
-        circle.classList.add('expanding');
-    }, 10);
-    
-    // Apply theme change during expansion
-    setTimeout(() => {
-        import('../ui.js').then(({ toggleTheme, initAuthBackgroundAnimation }) => {
-            toggleTheme();
-            updateThemeIcon(newTheme);
-            
-            // Reinitialize background animation with new theme
-            if (window.authBackgroundCleanup) {
-                window.authBackgroundCleanup();
-            }
-            window.authBackgroundCleanup = initAuthBackgroundAnimation();
-        });
-    }, 300);
-    
-    // Remove circle after animation
-    setTimeout(() => {
-        if (circle.parentNode) {
-            circle.parentNode.removeChild(circle);
+    // Apply theme change with loading animation
+    import('../ui.js').then(({ toggleTheme, initAuthBackgroundAnimation }) => {
+        toggleTheme();
+        updateThemeIcon(newTheme);
+        
+        // Reinitialize background animation with new theme
+        if (window.authBackgroundCleanup) {
+            window.authBackgroundCleanup();
         }
-    }, 700);
+        window.authBackgroundCleanup = initAuthBackgroundAnimation();
+        
+        // Add loading animation to auth card
+        const authCard = document.querySelector('.auth-card');
+        if (authCard) {
+            authCard.classList.remove('loading');
+            setTimeout(() => {
+                authCard.classList.add('loading');
+            }, 10);
+        }
+    });
 }
 
 function updateThemeIcon(theme = null) {
@@ -789,10 +771,8 @@ function initializeAuthNavigation() {
             // Show loader animation
             showLoader();
             
-            // Add small delay for smooth transition
-            setTimeout(() => {
-                window.location.href = targetUrl;
-            }, 300);
+            // Navigate immediately
+            window.location.href = targetUrl;
         });
     });
 }
