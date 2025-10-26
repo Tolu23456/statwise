@@ -228,17 +228,66 @@ function isValidPassword(password) {
     return passwordRegex.test(password);
 }
 
+function getPasswordValidationErrors(password) {
+    const errors = [];
+    
+    if (password.length < 8) {
+        errors.push('Must be at least 8 characters');
+    }
+    if (!/[a-z]/.test(password)) {
+        errors.push('Include a lowercase letter');
+    }
+    if (!/[A-Z]/.test(password)) {
+        errors.push('Include an uppercase letter');
+    }
+    if (!/\d/.test(password)) {
+        errors.push('Include a number');
+    }
+    
+    return errors;
+}
+
 function getPasswordStrength(password) {
     let score = 0;
-    if (password.length >= 8) score++;
+    const length = password.length;
+    
+    // Length scoring
+    if (length >= 8) score++;
+    if (length >= 12) score++;
+    if (length >= 16) score++;
+    
+    // Character type scoring
     if (/[a-z]/.test(password)) score++;
     if (/[A-Z]/.test(password)) score++;
     if (/\d/.test(password)) score++;
     if (/[^\w\s]/.test(password)) score++;
     
-    if (score < 2) return { strength: 'weak', text: 'Weak' };
-    if (score < 4) return { strength: 'medium', text: 'Medium' };
-    return { strength: 'strong', text: 'Strong' };
+    // Bonus for variety
+    const hasVariety = (/[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password));
+    if (hasVariety) score++;
+    
+    // Penalty for common patterns
+    const commonPatterns = [
+        /^[a-zA-Z]+$/,  // Only letters
+        /^[0-9]+$/,     // Only numbers
+        /(.)\1{2,}/,    // Repeated characters (aaa, 111)
+        /12345|password|qwerty|abc123/i  // Common sequences
+    ];
+    
+    if (commonPatterns.some(pattern => pattern.test(password))) {
+        score = Math.max(0, score - 1);
+    }
+    
+    // Calculate strength
+    if (length < 8 || score < 3) {
+        return { strength: 'weak', text: 'Weak', color: '#d9534f' };
+    } else if (score < 5) {
+        return { strength: 'medium', text: 'Medium', color: '#f0ad4e' };
+    } else if (score < 7) {
+        return { strength: 'strong', text: 'Strong', color: '#5bc0de' };
+    } else {
+        return { strength: 'very-strong', text: 'Very Strong', color: '#5cb85c' };
+    }
 }
 
 function togglePasswordVisibility(inputId) {
@@ -267,6 +316,16 @@ function updatePasswordStrength() {
     if (!passwordInput || !strengthContainer || !strengthText || !strengthBars) return;
     
     const password = passwordInput.value;
+    
+    // Clear if empty
+    if (password.length === 0) {
+        strengthBars.forEach(bar => bar.className = 'strength-bar');
+        strengthText.textContent = '';
+        strengthText.className = '';
+        passwordInput.classList.remove('input-error', 'input-success');
+        return;
+    }
+    
     const strength = getPasswordStrength(password);
     
     // Clear all bars
@@ -274,37 +333,47 @@ function updatePasswordStrength() {
         bar.className = 'strength-bar';
     });
     
-    // Update based on strength
+    // Determine active bars and color
     let activeCount = 0;
     let colorClass = '';
-    
-    if (password.length === 0) {
-        strengthText.textContent = '';
-        return;
-    }
     
     switch (strength.strength) {
         case 'weak':
             activeCount = 1;
             colorClass = 'weak';
+            passwordInput.classList.add('input-error');
+            passwordInput.classList.remove('input-success');
             break;
         case 'medium':
-            activeCount = 3;
+            activeCount = 2;
             colorClass = 'medium';
+            passwordInput.classList.remove('input-error', 'input-success');
             break;
         case 'strong':
-            activeCount = 4;
+            activeCount = 3;
             colorClass = 'strong';
+            passwordInput.classList.remove('input-error');
+            passwordInput.classList.add('input-success');
+            break;
+        case 'very-strong':
+            activeCount = 4;
+            colorClass = 'very-strong';
+            passwordInput.classList.remove('input-error');
+            passwordInput.classList.add('input-success');
             break;
     }
     
-    // Activate bars
+    // Activate bars with animation
     for (let i = 0; i < activeCount; i++) {
-        strengthBars[i].classList.add('active', colorClass);
+        setTimeout(() => {
+            strengthBars[i].classList.add('active', colorClass);
+        }, i * 50);
     }
     
+    // Update text with color
     strengthText.textContent = strength.text;
     strengthText.className = colorClass;
+    strengthText.style.color = strength.color;
 }
 
 async function handleLogin(e) {
@@ -408,7 +477,8 @@ async function handleSignup(e) {
     }
     
     if (!isValidPassword(password)) {
-        showErrorMessage('signup-error', 'Password must be at least 8 characters with uppercase, lowercase, and number');
+        const errors = getPasswordValidationErrors(password);
+        showErrorMessage('signup-error', 'Password requirements: ' + errors.join(', '));
         return;
     }
     

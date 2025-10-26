@@ -278,31 +278,66 @@ body {
     display: flex;
     align-items: center;
     gap: 4px;
-    margin-top: -8px; /* Pull it closer to the input */
+    margin-top: -8px;
+    padding: 8px 0;
 }
 
 .strength-bar {
     flex-grow: 1;
-    height: 5px;
+    height: 6px;
     background-color: #e0e0e0;
-    border-radius: 2.5px;
-    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scaleY(0.8);
+    opacity: 0.5;
+}
+
+.strength-bar.active {
+    transform: scaleY(1);
+    opacity: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #password-strength-text {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     color: #555;
-    min-width: 70px; /* Prevent layout shift */
+    min-width: 90px;
     text-align: right;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
 }
 
-/* Strength levels */
-.strength-bar.weak { background-color: #d9534f; }
-.strength-bar.medium { background-color: #f0ad4e; }
-.strength-bar.strong { background-color: #5bc0de; }
-.strength-bar.very-strong { background-color: #5cb85c; }
+/* Strength levels with enhanced colors */
+.strength-bar.active.weak { 
+    background: linear-gradient(135deg, #d9534f 0%, #c9302c 100%);
+    animation: pulseWeak 2s ease-in-out infinite;
+}
 
+.strength-bar.active.medium { 
+    background: linear-gradient(135deg, #f0ad4e 0%, #ec971f 100%);
+}
+
+.strength-bar.active.strong { 
+    background: linear-gradient(135deg, #5bc0de 0%, #31b0d5 100%);
+}
+
+.strength-bar.active.very-strong { 
+    background: linear-gradient(135deg, #5cb85c 0%, #449d44 100%);
+    animation: pulseStrong 2s ease-in-out infinite;
+}
+
+@keyframes pulseWeak {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes pulseStrong {
+    0%, 100% { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+    50% { box-shadow: 0 2px 8px rgba(92, 184, 92, 0.4); }
+}
+
+/* Dark mode enhancements */
 .dark-mode #password-strength-text {
     color: #bbb;
 }
@@ -310,10 +345,22 @@ body {
 .dark-mode .strength-bar {
     background-color: #444;
 }
-.dark-mode .strength-bar.weak { background-color: #c9302c; }
-.dark-mode .strength-bar.medium { background-color: #ec971f; }
-.dark-mode .strength-bar.strong { background-color: #31b0d5; }
-.dark-mode .strength-bar.very-strong { background-color: #449d44; }
+
+.dark-mode .strength-bar.active.weak { 
+    background: linear-gradient(135deg, #c9302c 0%, #a02622 100%);
+}
+
+.dark-mode .strength-bar.active.medium { 
+    background: linear-gradient(135deg, #ec971f 0%, #d58512 100%);
+}
+
+.dark-mode .strength-bar.active.strong { 
+    background: linear-gradient(135deg, #31b0d5 0%, #2390b0 100%);
+}
+
+.dark-mode .strength-bar.active.very-strong { 
+    background: linear-gradient(135deg, #449d44 0%, #357a38 100%);
+}
 
 
 /* --- Referral Display --- */
