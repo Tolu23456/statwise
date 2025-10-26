@@ -384,10 +384,16 @@ async function handleSignup(e) {
     const confirmPassword = formData.get('confirmPassword');
     const username = formData.get('username')?.trim();
     const referralCode = formData.get('referralCode')?.trim();
+    const privacyPolicyAccepted = document.getElementById('signup-privacy-policy')?.checked;
     
     // Enhanced validation
     if (!email || !password || !confirmPassword || !username) {
         showErrorMessage('signup-error', 'Please fill in all required fields');
+        return;
+    }
+    
+    if (!privacyPolicyAccepted) {
+        showErrorMessage('signup-error', 'Please accept the Privacy Policy and Terms of Service');
         return;
     }
     
@@ -425,6 +431,7 @@ async function handleSignup(e) {
                 .single();
                 
             if (referralError || !referralData) {
+                hideLoader();
                 showErrorMessage('signup-error', 'Invalid referral code');
                 return;
             }
@@ -444,6 +451,7 @@ async function handleSignup(e) {
         
         if (error) {
             console.error('Signup error:', error);
+            hideLoader();
             showErrorMessage('signup-error', getErrorMessage(error));
             return;
         }

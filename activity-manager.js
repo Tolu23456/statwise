@@ -3,7 +3,7 @@ class ActivityManager {
     constructor() {
         this.isActive = true;
         this.inactiveContainer = null;
-        this.inactiveThreshold = 5000; // 5 seconds of inactivity before showing inactive page
+        this.inactiveThreshold = 60000; // 60 seconds of inactivity before showing inactive page
         this.timeoutId = null;
         this.lastActivityTime = Date.now();
         this.isEnabled = this.getToggleSetting();
@@ -58,21 +58,16 @@ class ActivityManager {
     
     setupEventListeners() {
         // Page Visibility API - detects tab switching
+        // Only mark active when returning, don't schedule inactive on tab switch
         document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                this.scheduleInactive();
-            } else {
+            if (!document.hidden) {
                 this.markActive();
             }
         });
         
-        // Window focus/blur events
+        // Window focus events - only mark active on focus
         window.addEventListener('focus', () => {
             this.markActive();
-        });
-        
-        window.addEventListener('blur', () => {
-            this.scheduleInactive();
         });
         
         // Mouse and keyboard activity
@@ -93,11 +88,12 @@ class ActivityManager {
         setInterval(() => {
             const timeSinceActivity = Date.now() - this.lastActivityTime;
             
-            // If inactive for more than 30 seconds and not already showing inactive page
-            if (timeSinceActivity > 30000 && this.isActive && !document.hidden) {
+            // If inactive for more than 5 minutes and not already showing inactive page
+            // Only trigger if page is visible (not in background tab)
+            if (timeSinceActivity > 300000 && this.isActive && !document.hidden) {
                 this.scheduleInactive();
             }
-        }, 5000); // Check every 5 seconds
+        }, 30000); // Check every 30 seconds
     }
     
     scheduleInactive() {

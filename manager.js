@@ -32,23 +32,11 @@ function disableDevToolsShortcuts() {
 }
 
 /**
- * Periodically clears the console and displays a warning message.
- * Note: This is a deterrent and can be bypassed by a determined user.
- */
-function runConsoleDeterrent() {
-    setInterval(() => {
-        console.clear();
-        console.log("%cInspecting this area is not allowed.", "color:red; font-size:16px;");
-    }, 3000); // Runs every 3 seconds
-}
-
-/**
  * Initializes all client-side security measures.
  */
 export function initializeAppSecurity() {
     disableContextMenu();
     disableDevToolsShortcuts();
-    runConsoleDeterrent();
     console.log("Client-side security manager initialized.");
 }
 
