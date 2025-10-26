@@ -561,26 +561,23 @@ body {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    transition: background 0.2s ease, box-shadow 0.2s ease;
+    transition: background 0.2s ease;
     position: relative;
     overflow: hidden;
     min-height: 48px;
-    box-shadow: 0 2px 8px rgba(14, 99, 156, 0.3);
 }
 
 .auth-btn:hover:not(:disabled) {
     background: #0b4f7a;
-    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.4);
 }
 
 .auth-btn:active:not(:disabled) {
-    box-shadow: 0 2px 6px rgba(14, 99, 156, 0.3);
+    background: #094261;
 }
 
 .auth-btn:disabled {
     background: #6c757d;
     cursor: not-allowed;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .auth-btn.loading {
