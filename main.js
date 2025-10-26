@@ -1460,12 +1460,50 @@ window.savePrediction = async function(predictionId) {
 
 window.signOut = async function() {
     try {
+        showLoader();
+        
         const { error } = await supabase.auth.signOut();
+        
         if (error) {
             console.error('Error signing out:', error);
+            hideLoader();
+            showModal({
+                message: 'Failed to sign out. Please try again.',
+                confirmText: 'OK'
+            });
+            return;
         }
+        
+        // Clear local data
+        localStorage.clear();
+        
+        // Reset global variables
+        currentUser = null;
+        verifiedTier = null;
+        
+        hideLoader();
+        
+        // Show success message and redirect
+        showModal({
+            message: 'Successfully logged out!',
+            confirmText: 'OK',
+            onConfirm: () => {
+                window.location.href = './Auth/login.html';
+            }
+        });
+        
+        // Fallback redirect if modal doesn't work
+        setTimeout(() => {
+            window.location.href = './Auth/login.html';
+        }, 1500);
+        
     } catch (error) {
         console.error('Error signing out:', error);
+        hideLoader();
+        showModal({
+            message: 'An error occurred while signing out. Please try again.',
+            confirmText: 'OK'
+        });
     }
 };
 
