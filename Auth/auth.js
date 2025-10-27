@@ -106,6 +106,62 @@ function initializeAuthForms() {
     if (signupPassword) {
         signupPassword.addEventListener('input', updatePasswordStrength);
     }
+    
+    // Real-time referral code validation
+    const signupReferralCode = document.getElementById('signup-referralCode');
+    if (signupReferralCode) {
+        signupReferralCode.addEventListener('input', debounce(validateReferralCodeInput, 500));
+    }
+}
+
+// Debounce function for input validation
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Validate referral code input in real-time
+async function validateReferralCodeInput() {
+    const referralCodeInput = document.getElementById('signup-referralCode');
+    const statusElement = document.getElementById('referral-code-status');
+    
+    if (!referralCodeInput || !statusElement) return;
+    
+    const code = referralCodeInput.value.trim().toUpperCase();
+    
+    if (!code) {
+        statusElement.style.display = 'none';
+        return;
+    }
+    
+    try {
+        const { data, error } = await supabase
+            .from('referral_codes')
+            .select('user_id, username')
+            .eq('code', code)
+            .eq('active', true)
+            .single();
+        
+        if (error || !data) {
+            statusElement.textContent = '❌ Invalid referral code';
+            statusElement.style.color = '#d9534f';
+            statusElement.style.display = 'block';
+        } else {
+            statusElement.textContent = `✓ Using ${data.username}'s referral code`;
+            statusElement.style.color = '#5cb85c';
+            statusElement.style.display = 'block';
+        }
+    } catch (error) {
+        console.warn('Error validating referral code:', error);
+        statusElement.style.display = 'none';
+    }
 }
 
 function handleThemeToggle(e) {
@@ -568,10 +624,20 @@ async function handleSignup(e) {
             }
             
             // Create referral relationship if applicable
+            let referrerUsername = null;
             if (referrerId && referralCode) {
                 try {
                     await createReferralRelationship(referrerId, data.user.id, referralCode);
                     console.log('✅ Referral relationship created');
+                    
+                    // Get referrer's username for display
+                    const { data: referrerData } = await supabase
+                        .from('user_profiles')
+                        .select('username, display_name')
+                        .eq('id', referrerId)
+                        .single();
+                    
+                    referrerUsername = referrerData?.display_name || referrerData?.username || 'a friend';
                 } catch (refError) {
                     console.warn('⚠️ Referral relationship warning:', refError);
                 }
@@ -579,7 +645,13 @@ async function handleSignup(e) {
             
             signupBtn.classList.remove('loading');
             signupBtn.classList.add('success');
-            showSuccessMessage('signup-error', '✓ Account created! Please check your email to verify your account before logging in.');
+            
+            // Show different success messages based on referral status
+            if (referrerUsername) {
+                showSuccessMessage('signup-error', `✓ Account created using ${referrerUsername}'s referral code! Please check your email to verify your account before logging in.`);
+            } else {
+                showSuccessMessage('signup-error', '✓ Account created! Please check your email to verify your account before logging in.');
+            }
             
             // Redirect to login after a delay
             setTimeout(() => {
@@ -734,6 +806,26 @@ async function createReferralRelationship(referrerId, referredId, referralCode) 
             
             // Update referral stats
             await updateReferralStats(referrerId);
+            
+            // Log account history for referrer notification
+            try {
+                const { data: referredUser } = await supabase
+                    .from('user_profiles')
+                    .select('email, username, display_name')
+                    .eq('id', referredId)
+                    .single();
+                
+                await supabase
+                    .from('account_history')
+                    .insert({
+                        user_id: referrerId,
+                        action: `New referral: ${referredUser?.display_name || referredUser?.username || referredUser?.email || 'Someone'} signed up using your referral code ${referralCode}`,
+                        action_type: 'referral_signup',
+                        created_at: new Date().toISOString()
+                    });
+            } catch (historyError) {
+                console.warn('Error logging referral history:', historyError);
+            }
         }
     } catch (error) {
         console.warn('Error creating referral relationship:', error);
