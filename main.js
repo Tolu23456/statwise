@@ -1462,10 +1462,12 @@ function displayReferralData(referralCode, referrals) {
         referralCodeInput.value = code;
     }
 
+    console.log('Displaying referral data:', { code, referralCount: referrals.length, referrals });
+
     // Update referral list
     const referralListContainer = document.getElementById('referralListContainer');
     if (referralListContainer) {
-        if (referrals.length === 0) {
+        if (!referrals || referrals.length === 0) {
             referralListContainer.innerHTML = '<p>No referrals yet. Share your code to get started!</p>';
         } else {
             const referralHTML = `
@@ -1482,11 +1484,12 @@ function displayReferralData(referralCode, referrals) {
                         </thead>
                         <tbody>
                             ${referrals.map(referral => {
+                                console.log('Processing referral:', referral);
                                 // Handle the joined data structure with better null safety
-                                const referredUser = referral.user_profiles || referral.referred || {};
-                                const userName = referredUser?.display_name || referredUser?.username || 'Unknown User';
-                                const userEmail = referredUser?.email || 'N/A';
-                                const userTier = referredUser?.current_tier || 'Free Tier';
+                                const referredUser = referral.user_profiles || {};
+                                const userName = referredUser.display_name || referredUser.username || 'Unknown User';
+                                const userEmail = referredUser.email || 'N/A';
+                                const userTier = referredUser.current_tier || 'Free Tier';
                                 
                                 return `
                                     <tr>
@@ -1510,25 +1513,29 @@ function displayReferralData(referralCode, referrals) {
         }
     }
 
+    // Update referral count display
+    const totalReferrals = referrals ? referrals.length : 0;
+    console.log('Total referrals:', totalReferrals);
+
     // Update rewards count
     const rewardsCount = document.getElementById('rewardsCount');
     if (rewardsCount) {
-        const claimedRewards = referrals.filter(r => r.reward_claimed).length;
+        const claimedRewards = referrals ? referrals.filter(r => r.reward_claimed).length : 0;
         rewardsCount.textContent = claimedRewards;
     }
 
     // Update rewards container
     const rewardsContainer = document.getElementById('rewardsContainer');
     if (rewardsContainer) {
-        const claimedReferrals = referrals.filter(r => r.reward_claimed);
+        const claimedReferrals = referrals ? referrals.filter(r => r.reward_claimed) : [];
         if (claimedReferrals.length === 0) {
             rewardsContainer.innerHTML = '<p>No rewards earned yet. You\'ll get a reward when a referred user subscribes!</p>';
         } else {
             const rewardsHTML = claimedReferrals.map(referral => {
-                const referredUser = referral.user_profiles || referral.referred || {};
+                const referredUser = referral.user_profiles || {};
                 return `
                     <div class="reward-item">
-                        <span>Premium Week from ${referredUser.display_name || 'User'}</span>
+                        <span>Premium Week from ${referredUser.display_name || referredUser.username || 'User'}</span>
                         <span class="reward-amount">₦${referral.reward_amount?.toLocaleString() || '500'}</span>
                     </div>
                 `;
