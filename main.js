@@ -412,14 +412,6 @@ async function initializePage(page) {
 
 // ===== Page Initializers =====
 async function initializeHomePage() {
-    // Display user tier on home page
-    const homeTierDisplay = document.getElementById('home-tier-display');
-    const homeUserTier = document.getElementById('home-user-tier');
-    if (homeTierDisplay && homeUserTier && verifiedTier) {
-        homeUserTier.textContent = verifiedTier;
-        homeTierDisplay.style.display = 'block';
-    }
-    
     // Load predictions based on user tier
     await loadPredictions();
     // Initialize league tabs
@@ -460,77 +452,58 @@ async function loadPredictions() {
 
 function displayPredictions(predictions) {
     const container = document.getElementById('predictions-container');
-    if (!container) {
-        console.warn('Predictions container not found');
-        return;
-    }
+    if (!container) return;
 
     if (predictions.length === 0) {
         container.innerHTML = `
-            <div style="text-align: center; padding: 60px 20px;">
-                <div style="font-size: 64px; margin-bottom: 20px;">🎯</div>
-                <h3 style="color: var(--text-primary, #333); margin-bottom: 12px; font-size: 24px;">No Predictions Available Yet</h3>
-                <p style="color: var(--text-secondary, #666); line-height: 1.6; max-width: 400px; margin: 0 auto;">
-                    AI predictions will appear here once matches are scheduled. Check back soon!
-                </p>
-                <div style="margin-top: 24px; padding: 16px; background: rgba(14, 99, 156, 0.1); border-radius: 12px; max-width: 400px; margin: 24px auto 0;">
-                    <p style="color: var(--statwise-blue, #0e639c); font-weight: 500; margin: 0;">
-                        💡 Tip: Upgrade your tier to access more exclusive predictions when available!
-                    </p>
-                </div>
+            <div class="no-predictions">
+                <h3>No predictions available</h3>
+                <p>Check back later for new AI predictions!</p>
             </div>
         `;
         return;
     }
 
-    const predictionsHTML = predictions.map(prediction => {
-        const confidenceClass = prediction.confidence >= 75 ? 'high-confidence' : 
-                               prediction.confidence >= 50 ? 'medium-confidence' : 'low-confidence';
-        
-        return `
-            <div class="prediction-card ${confidenceClass} tier-${prediction.tier}">
-                <div class="match-header">
-                    <h4 class="match-title">${prediction.home_team} vs ${prediction.away_team}</h4>
-                    <span class="league" style="background: rgba(14, 99, 156, 0.1); color: var(--statwise-blue, #0e639c); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">${prediction.league}</span>
+    const predictionsHTML = predictions.map(prediction => `
+        <div class="prediction-card tier-${prediction.tier}">
+            <div class="match-header">
+                <h4>${prediction.home_team} vs ${prediction.away_team}</h4>
+                <span class="league">${prediction.league}</span>
+            </div>
+            <div class="prediction-content">
+                <div class="prediction-result">
+                    <span class="label">Prediction:</span>
+                    <span class="result">${prediction.prediction}</span>
                 </div>
-                <div class="prediction-content">
-                    <div class="prediction-result" style="margin: 12px 0;">
-                        <span class="label" style="color: var(--text-secondary, #666); font-size: 14px;">AI Prediction:</span>
-                        <span class="result ai-pick" style="display: block; font-size: 20px; font-weight: 700; margin-top: 4px;">${prediction.prediction}</span>
-                    </div>
-                    <div class="confidence" style="margin: 16px 0;">
-                        <span style="color: var(--text-secondary, #666); font-size: 14px;">Confidence: <strong style="color: var(--tier-color);">${prediction.confidence}%</strong></span>
-                        <div class="confidence-bar">
-                            <div class="confidence-fill" style="width: ${prediction.confidence}%;"></div>
-                        </div>
-                    </div>
-                    ${prediction.odds ? `
-                        <div class="odds" style="margin: 8px 0;">
-                            <span class="label" style="color: var(--text-secondary, #666); font-size: 14px;">Odds:</span>
-                            <span class="value" style="color: #ff9800; font-weight: 600;">${prediction.odds}</span>
-                        </div>
-                    ` : ''}
-                    <div class="kickoff" style="margin: 8px 0;">
-                        <span class="label" style="color: var(--text-secondary, #666); font-size: 14px;">⏰ Kickoff:</span>
-                        <span class="time" style="color: var(--text-primary, #333); font-weight: 500;">${formatTimestamp(prediction.kickoff_time)}</span>
-                    </div>
+                <div class="confidence">
+                    <span class="label">Confidence:</span>
+                    <span class="value">${prediction.confidence}%</span>
                 </div>
-                ${prediction.reasoning ? `
-                    <div class="reasoning" style="margin-top: 12px; padding: 12px; background: rgba(14, 99, 156, 0.05); border-radius: 8px; border-left: 3px solid var(--tier-color);">
-                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-primary, #333); margin: 0;">${prediction.reasoning}</p>
+                ${prediction.odds ? `
+                    <div class="odds">
+                        <span class="label">Odds:</span>
+                        <span class="value">${prediction.odds}</span>
                     </div>
                 ` : ''}
-                <div class="prediction-actions" style="margin-top: 16px;">
-                    <button onclick="savePrediction('${prediction.id}')" class="button" style="width: 100%; padding: 12px; font-size: 14px;">
-                        💾 Save to History
-                    </button>
+                <div class="kickoff">
+                    <span class="label">Kickoff:</span>
+                    <span class="time">${formatTimestamp(prediction.kickoff_time)}</span>
                 </div>
             </div>
-        `;
-    }).join('');
+            ${prediction.reasoning ? `
+                <div class="reasoning">
+                    <p>${prediction.reasoning}</p>
+                </div>
+            ` : ''}
+            <div class="prediction-actions">
+                <button onclick="savePrediction('${prediction.id}')" class="btn-save">
+                    Save to History
+                </button>
+            </div>
+        </div>
+    `).join('');
 
     container.innerHTML = predictionsHTML;
-    console.log(`✅ Displayed ${predictions.length} predictions`);
 }
 
 // ===== Forum Functionality =====
@@ -721,18 +694,16 @@ function initializeProfileInteractions() {
     }
 
     // Initialize avatar upload - wait for DOM to be ready
-    setTimeout(() => {
-        const avatarUpload = document.getElementById('avatarUpload');
-        if (avatarUpload) {
-            console.log('✅ Avatar upload input found, adding event listener');
-            // Remove any existing listeners first
-            avatarUpload.removeEventListener('change', handleAvatarUpload);
-            // Add the event listener
-            avatarUpload.addEventListener('change', handleAvatarUpload);
-        } else {
-            console.warn('⚠️ Avatar upload input not found in profile page');
-        }
-    }, 100);
+    const avatarUpload = document.getElementById('avatarUpload');
+    if (avatarUpload) {
+        console.log('✅ Avatar upload input found, adding event listener');
+        // Remove any existing listeners first
+        avatarUpload.removeEventListener('change', handleAvatarUpload);
+        // Add the event listener
+        avatarUpload.addEventListener('change', handleAvatarUpload);
+    } else {
+        console.warn('⚠️ Avatar upload input not found in profile page');
+    }
 }
 
 // Make functions globally available
@@ -848,12 +819,6 @@ async function handleAvatarUpload(event) {
         console.error('Error uploading avatar:', error);
         showModal({
             message: 'An error occurred while uploading your profile picture. Please try again.',
-            confirmText: 'OK'
-        });
-    } catch (error) {
-        console.error('Unexpected error in avatar upload:', error);
-        showModal({
-            message: 'An unexpected error occurred. Please try again.',
             confirmText: 'OK'
         });
     } finally {
@@ -1189,7 +1154,6 @@ async function handleSubscriptionUpgrade(tier, amount, period) {
 
 async function initializeReferralPage() {
     await loadReferralData();
-    await displayReferredBy();
 }
 
 async function loadReferralData() {

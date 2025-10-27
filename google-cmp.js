@@ -44,15 +44,6 @@
     
     // Catch unhandled promise rejections
     window.addEventListener('unhandledrejection', function(event) {
-        // Suppress errors from Google scripts
-        if (event.reason) {
-            const reasonStr = typeof event.reason === 'string' ? event.reason : 
-                             (event.reason.message || JSON.stringify(event.reason));
-            if (reasonStr.includes('uncaught exception') || reasonStr.includes('fundingchoices')) {
-                event.preventDefault();
-                return;
-            }
-        }
         if (!event.reason || typeof event.reason !== 'object' || !event.reason.stack) {
             event.preventDefault();
         }
