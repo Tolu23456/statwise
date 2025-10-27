@@ -117,10 +117,38 @@ main {
     margin-right: auto;
     max-width: var(--max-width);
     width: 100%;
+    background: transparent;
     /* Better scroll behavior for desktop */
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: auto;
     scroll-behavior: smooth;
+}
+
+/* Ensure dynamically loaded content inherits proper styling */
+main * {
+    font-family: "Optimistic", sans-serif;
+}
+
+main .card,
+main .profile-card,
+main .subscription-card,
+main .manage-card,
+main .referral-table-wrapper,
+main .history-card,
+main .prediction-card {
+    background: #ffffff;
+    color: #1a1a1c;
+}
+
+.dark-mode main .card,
+.dark-mode main .profile-card,
+.dark-mode main .subscription-card,
+.dark-mode main .manage-card,
+.dark-mode main .referral-table-wrapper,
+.dark-mode main .history-card,
+.dark-mode main .prediction-card {
+    background: #2d2d32;
+    color: #e2e2e4;
 }
 
 /* ---------------- Page Transitions ---------------- */

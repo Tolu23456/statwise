@@ -359,6 +359,12 @@ async function loadPage(page) {
                         main.classList.remove('page-fade-in');
                     }
                 }, 300);
+
+                // Force style recalculation to ensure CSS is applied
+                if (main) {
+                    main.offsetHeight; // Trigger reflow
+                    window.getComputedStyle(main).opacity; // Force style recalculation
+                }
             } else {
                 main.innerHTML = '<div class="error">Page not found</div>';
                 main.scrollTop = 0;
