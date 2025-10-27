@@ -1689,77 +1689,101 @@ function loadAdsForFreeUsers() {
     };
 
     script.onerror = () => {
-        console.log('❌ AdSense failed to load - likely blocked');
-        adblockerDetected = true;
-        showAdBlockerMessage();
+        try {
+            console.log('❌ AdSense failed to load - likely blocked');
+            adblockerDetected = true;
+            showAdBlockerMessage();
+        } catch (err) {
+            console.error('Error handling AdSense load failure:', err);
+        }
     };
 
     document.head.appendChild(script);
 }
 
 function detectAdBlocker() {
-    console.log('🕵️ Checking for adblocker...');
+    try {
+        console.log('🕵️ Checking for adblocker...');
 
-    // Create a test ad element
-    const testAd = document.createElement('div');
-    testAd.innerHTML = '&nbsp;';
-    testAd.className = 'adsbox adsbygoogle';
-    testAd.style.position = 'absolute';
-    testAd.style.left = '-9999px';
-    testAd.style.width = '1px';
-    testAd.style.height = '1px';
+        // Create a test ad element
+        const testAd = document.createElement('div');
+        testAd.innerHTML = '&nbsp;';
+        testAd.className = 'adsbox adsbygoogle';
+        testAd.style.position = 'absolute';
+        testAd.style.left = '-9999px';
+        testAd.style.width = '1px';
+        testAd.style.height = '1px';
 
-    document.body.appendChild(testAd);
+        document.body.appendChild(testAd);
 
-    setTimeout(() => {
-        const isBlocked = testAd.offsetHeight === 0 ||
-                         testAd.offsetWidth === 0 ||
-                         testAd.style.display === 'none' ||
-                         testAd.style.visibility === 'hidden';
+        setTimeout(() => {
+            try {
+                const isBlocked = testAd.offsetHeight === 0 ||
+                                 testAd.offsetWidth === 0 ||
+                                 testAd.style.display === 'none' ||
+                                 testAd.style.visibility === 'hidden';
 
-        document.body.removeChild(testAd);
+                if (document.body.contains(testAd)) {
+                    document.body.removeChild(testAd);
+                }
 
-        if (isBlocked || !window.adsbygoogle) {
-            console.log('🚫 Adblocker detected');
-            adblockerDetected = true;
-            showAdBlockerMessage();
-        } else {
-            console.log('✅ No adblocker detected');
-            adblockerDetected = false;
-        }
-    }, 100);
+                if (isBlocked || !window.adsbygoogle) {
+                    console.log('🚫 Adblocker detected');
+                    adblockerDetected = true;
+                    showAdBlockerMessage();
+                } else {
+                    console.log('✅ No adblocker detected');
+                    adblockerDetected = false;
+                }
+            } catch (err) {
+                console.error('Error during adblocker detection:', err);
+            }
+        }, 100);
+    } catch (err) {
+        console.error('Error in detectAdBlocker:', err);
+    }
 }
 
 function showAdBlockerMessage() {
-    // Only show for free users
-    if (verifiedTier !== "Free Tier") return;
+    try {
+        // Only show for free users
+        if (verifiedTier !== "Free Tier") return;
 
-    console.log('📢 Showing adblocker message');
+        console.log('📢 Showing adblocker message');
 
-    // Create full-page overlay
-    const overlay = document.createElement('div');
-    overlay.id = 'adblocker-overlay';
-    overlay.innerHTML = `
-        <div class="adblocker-container">
-            <div class="adblocker-content">
-                <div class="adblocker-icon">🚫</div>
-                <h2>AdBlocker Detected</h2>
-                <p>We noticed you're using an ad blocker. To continue using StatWise for free, please:</p>
-                <ul>
-                    <li>✅ Disable your ad blocker for this site</li>
-                    <li>🔄 Refresh the page</li>
-                    <li>💎 Or upgrade to Premium for an ad-free experience</li>
-                </ul>
-                <div class="adblocker-buttons">
-                    <button onclick="window.location.reload()" class="btn-refresh">Refresh Page</button>
-                    <button onclick="window.loadPage('subscriptions')" class="btn-upgrade">Upgrade to Premium</button>
+        // Don't show if already displayed
+        if (document.getElementById('adblocker-overlay')) {
+            console.log('Adblocker overlay already displayed');
+            return;
+        }
+
+        // Create full-page overlay
+        const overlay = document.createElement('div');
+        overlay.id = 'adblocker-overlay';
+        overlay.innerHTML = `
+            <div class="adblocker-container">
+                <div class="adblocker-content">
+                    <div class="adblocker-icon">🚫</div>
+                    <h2>AdBlocker Detected</h2>
+                    <p>We noticed you're using an ad blocker. To continue using StatWise for free, please:</p>
+                    <ul>
+                        <li>✅ Disable your ad blocker for this site</li>
+                        <li>🔄 Refresh the page</li>
+                        <li>💎 Or upgrade to Premium for an ad-free experience</li>
+                    </ul>
+                    <div class="adblocker-buttons">
+                        <button onclick="window.location.reload()" class="btn-refresh">Refresh Page</button>
+                        <button onclick="window.loadPage('subscriptions')" class="btn-upgrade">Upgrade to Premium</button>
+                    </div>
+                    <p class="adblocker-note">Ads help us keep StatWise free for everyone!</p>
                 </div>
-                <p class="adblocker-note">Ads help us keep StatWise free for everyone!</p>
             </div>
-        </div>
-    `;
+        `;
 
-    document.body.appendChild(overlay);
+        document.body.appendChild(overlay);
+    } catch (err) {
+        console.error('Error showing adblocker message:', err);
+    }
 }
 
 function hideAdBlockerMessage() {

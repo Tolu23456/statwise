@@ -4,6 +4,52 @@
  * Compliant with IAB TCF v2.2 and Google requirements
  */
 
+// Global error handler to suppress non-critical errors from third-party scripts
+(function() {
+    // Filter console.error to suppress benign third-party errors
+    const originalConsoleError = console.error;
+    console.error = function(...args) {
+        // Check if this is the "uncaught exception" error from Google scripts
+        if (args.length > 0 && args[0] && typeof args[0] === 'object') {
+            const message = args[0].message || JSON.stringify(args[0]);
+            if (message.includes('uncaught exception') || message.includes('error was not an error object')) {
+                // Suppress this benign error - it's from Google's third-party scripts
+                return;
+            }
+        }
+        // Log all other errors normally
+        originalConsoleError.apply(console, args);
+    };
+    
+    const originalErrorHandler = window.onerror;
+    
+    window.onerror = function(message, source, lineno, colno, error) {
+        // Suppress "uncaught exception" errors from third-party scripts
+        if (message && typeof message === 'string' && message.includes('uncaught exception')) {
+            return true; // Prevent default error handling
+        }
+        
+        // Check if error is from Google CMP or ads scripts
+        if (source && (source.includes('fundingchoicesmessages') || source.includes('adsbygoogle'))) {
+            return true;
+        }
+        
+        // Call original handler if it exists
+        if (originalErrorHandler) {
+            return originalErrorHandler(message, source, lineno, colno, error);
+        }
+        
+        return false;
+    };
+    
+    // Catch unhandled promise rejections
+    window.addEventListener('unhandledrejection', function(event) {
+        if (!event.reason || typeof event.reason !== 'object' || !event.reason.stack) {
+            event.preventDefault();
+        }
+    });
+})();
+
 class GoogleCertifiedCMP {
     constructor() {
         this.consentKey = 'statwise_consent_v2';

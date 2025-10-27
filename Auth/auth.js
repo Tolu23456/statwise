@@ -844,89 +844,98 @@ function loadAuthPageAds() {
     };
     
     script.onerror = () => {
-        console.log('❌ AdSense failed to load on auth page - likely blocked');
-        adblockerDetected = true;
-        showAuthAdBlockerMessage();
+        try {
+            console.log('❌ AdSense failed to load on auth page - likely blocked');
+            adblockerDetected = true;
+            showAuthAdBlockerMessage();
+        } catch (err) {
+            console.error('Error handling AdSense load failure:', err);
+        }
     };
     
     document.head.appendChild(script);
 }
 
 function detectAuthAdBlocker() {
-    console.log('🕵️ Checking for adblocker on auth page...');
-    
-    // Create a test ad element
-    const testAd = document.createElement('div');
-    testAd.innerHTML = '&nbsp;';
-    testAd.className = 'adsbox adsbygoogle';
-    testAd.style.position = 'absolute';
-    testAd.style.left = '-9999px';
-    testAd.style.width = '1px';
-    testAd.style.height = '1px';
-    
-    document.body.appendChild(testAd);
-    
-    setTimeout(() => {
-        const isBlocked = testAd.offsetHeight === 0 || 
-                         testAd.offsetWidth === 0 || 
-                         testAd.style.display === 'none' ||
-                         testAd.style.visibility === 'hidden';
+    try {
+        console.log('🕵️ Checking for adblocker on auth page...');
         
-        document.body.removeChild(testAd);
+        // Create a test ad element
+        const testAd = document.createElement('div');
+        testAd.innerHTML = '&nbsp;';
+        testAd.className = 'adsbox adsbygoogle';
+        testAd.style.position = 'absolute';
+        testAd.style.left = '-9999px';
+        testAd.style.width = '1px';
+        testAd.style.height = '1px';
         
-        if (isBlocked || !window.adsbygoogle) {
-            console.log('🚫 Adblocker detected on auth page');
-            adblockerDetected = true;
-            showAuthAdBlockerMessage();
-        } else {
-            console.log('✅ No adblocker detected on auth page');
-            adblockerDetected = false;
-        }
-    }, 100);
+        document.body.appendChild(testAd);
+        
+        setTimeout(() => {
+            try {
+                const isBlocked = testAd.offsetHeight === 0 || 
+                                 testAd.offsetWidth === 0 || 
+                                 testAd.style.display === 'none' ||
+                                 testAd.style.visibility === 'hidden';
+                
+                if (document.body.contains(testAd)) {
+                    document.body.removeChild(testAd);
+                }
+                
+                if (isBlocked || !window.adsbygoogle) {
+                    console.log('🚫 Adblocker detected on auth page');
+                    adblockerDetected = true;
+                    showAuthAdBlockerMessage();
+                } else {
+                    console.log('✅ No adblocker detected on auth page');
+                    adblockerDetected = false;
+                }
+            } catch (err) {
+                console.error('Error during adblocker detection:', err);
+            }
+        }, 100);
+    } catch (err) {
+        console.error('Error in detectAuthAdBlocker:', err);
+    }
 }
 
 function showAuthAdBlockerMessage() {
-    console.log('📢 Showing adblocker message on auth page');
-    
-    // Create full-page overlay
-    const overlay = document.createElement('div');
-    overlay.id = 'auth-adblocker-overlay';
-    overlay.innerHTML = `
-        <div class="adblocker-container">
-            <div class="adblocker-content">
-                <div class="adblocker-icon">🚫</div>
-                <h2>AdBlocker Detected</h2>
-                <p>We noticed you're using an ad blocker. To continue using StatWise for free, please:</p>
-                <ul>
-                    <li>✅ Disable your ad blocker for this site</li>
-                    <li>🔄 Refresh the page</li>
-                    <li>💎 Or sign up for Premium for an ad-free experience</li>
-                </ul>
-                <div class="adblocker-buttons">
-                    <button onclick="window.location.reload()" class="btn-refresh">Refresh Page</button>
-                    <button onclick="window.location.href='../index.html'" class="btn-upgrade">Learn About Premium</button>
+    try {
+        console.log('📢 Showing adblocker message on auth page');
+        
+        // Don't show if already displayed
+        if (document.getElementById('adblocker-overlay')) {
+            console.log('Adblocker overlay already displayed');
+            return;
+        }
+        
+        // Create full-page overlay - uses CSS from styles.css
+        const overlay = document.createElement('div');
+        overlay.id = 'adblocker-overlay';
+        overlay.innerHTML = `
+            <div class="adblocker-container">
+                <div class="adblocker-content">
+                    <div class="adblocker-icon">🚫</div>
+                    <h2>AdBlocker Detected</h2>
+                    <p>We noticed you're using an ad blocker. To continue using StatWise for free, please:</p>
+                    <ul>
+                        <li>✅ Disable your ad blocker for this site</li>
+                        <li>🔄 Refresh the page</li>
+                        <li>💎 Or sign up for Premium for an ad-free experience</li>
+                    </ul>
+                    <div class="adblocker-buttons">
+                        <button onclick="window.location.reload()" class="btn-refresh">Refresh Page</button>
+                        <button onclick="window.location.href='../index.html'" class="btn-upgrade">Learn About Premium</button>
+                    </div>
+                    <p class="adblocker-note">Ads help us keep StatWise free for everyone!</p>
                 </div>
-                <p class="adblocker-note">Ads help us keep StatWise free for everyone!</p>
             </div>
-        </div>
-    `;
-    
-    // Apply the same styles as main app
-    overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(10px);
-    `;
-    
-    document.body.appendChild(overlay);
+        `;
+        
+        document.body.appendChild(overlay);
+    } catch (err) {
+        console.error('Error showing adblocker message:', err);
+    }
 }
 
 console.log('✅ Supabase authentication system loaded successfully!');
