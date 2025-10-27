@@ -615,6 +615,25 @@ function displayUserProfile(profile) {
 }
 
 function initializeProfileInteractions() {
+    // Initialize FAQ accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+
     // Initialize dark mode toggle
     const darkModeToggle = document.getElementById('darkModeToggle');
     if (darkModeToggle) {
