@@ -38,7 +38,6 @@ body {
     border-radius: 16px;
     padding: 32px;    
     border: 2px solid #0e639c;
-    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.12); /* Enhanced shadow with blue tint */
     position: relative; /* For theme toggle positioning */
     text-align: center;
 }
@@ -210,13 +209,11 @@ body {
 
 .auth-form input.input-error {
     border-color: #d9534f;
-    box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.1);
     animation: inputShake 0.4s ease;
 }
 
 .auth-form input.input-success {
     border-color: #28a745;
-    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
 }
 
 @keyframes inputShake {
@@ -283,7 +280,6 @@ body {
 .strength-bar.active {
     transform: scaleY(1);
     opacity: 1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #password-strength-text {
@@ -299,7 +295,6 @@ body {
 /* Strength levels with enhanced colors */
 .strength-bar.active.weak { 
     background: linear-gradient(135deg, #d9534f 0%, #c9302c 100%);
-    animation: pulseWeak 2s ease-in-out infinite;
 }
 
 .strength-bar.active.medium { 
@@ -312,17 +307,6 @@ body {
 
 .strength-bar.active.very-strong { 
     background: linear-gradient(135deg, #5cb85c 0%, #449d44 100%);
-    animation: pulseStrong 2s ease-in-out infinite;
-}
-
-@keyframes pulseWeak {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}
-
-@keyframes pulseStrong {
-    0%, 100% { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
-    50% { box-shadow: 0 2px 8px rgba(92, 184, 92, 0.4); }
 }
 
 /* Dark mode enhancements */
@@ -689,7 +673,6 @@ body {
 .dark-mode .auth-card {
     background: #2d2d30;
     border-color: #0e639c; /* Ensure border is visible in dark mode */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Standard app shadow for dark mode */
 }
 
 .dark-mode .theme-toggle {

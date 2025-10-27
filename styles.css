@@ -91,7 +91,6 @@ header {
     background-color: #ffffff;
     color: #1c1c1e;
     border-bottom: 3px solid #0e639c;
-    box-shadow: 0 2px 8px rgba(14, 99, 156, 0.1);
     z-index: 1000;
     padding: 0 var(--mobile-padding);
 }
@@ -3450,7 +3449,7 @@ body.pulling-to-refresh {
 }
 
 .dark-mode .share-btn {
-    background-color: #252526;
+    background-color: #252626;
 }
 
 .dark-mode .share-btn svg {

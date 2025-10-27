@@ -11,7 +11,6 @@
     color: white;
     z-index: 10000;
     padding: 20px;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     animation: slideUp 0.5s ease-out;
@@ -78,7 +77,6 @@
 .consent-btn-primary:hover {
     background: #00b894;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
 }
 
 .consent-btn-secondary {
@@ -100,7 +98,6 @@
 .consent-btn-reject:hover {
     background: #ff5252;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
 }
 
 .consent-links {
@@ -150,7 +147,6 @@
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     animation: slideIn 0.3s ease;
 }
 
@@ -285,7 +281,6 @@
     background-color: white;
     transition: .4s;
     border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 input:checked + .slider {
