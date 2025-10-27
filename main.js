@@ -1406,25 +1406,48 @@ async function loadReferralData() {
             .eq('user_id', currentUser.id)
             .single();
 
-        // Get user's referrals
-        const { data: referrals, error: referralsError } = await supabase
-            .from('referrals')
-            .select(`
-                *,
-                referred:user_profiles!referrals_referred_id_fkey (display_name, email, current_tier, created_at)
-            `)
-            .eq('referrer_id', currentUser.id)
-            .order('created_at', { ascending: false });
-
         if (codeError && codeError.code !== 'PGRST116') {
             console.warn('Error loading referral code:', codeError);
         }
 
+        // Get user's referrals
+        const { data: referrals, error: referralsError } = await supabase
+            .from('referrals')
+            .select('*')
+            .eq('referrer_id', currentUser.id)
+            .order('created_at', { ascending: false });
+
         if (referralsError) {
             console.warn('Error loading referrals:', referralsError);
+            displayReferralData(referralCode, []);
+            return;
         }
 
-        displayReferralData(referralCode, referrals || []);
+        // Fetch referred user details for each referral
+        const referralsWithDetails = await Promise.all(
+            (referrals || []).map(async (referral) => {
+                const { data: referredUser, error: userError } = await supabase
+                    .from('user_profiles')
+                    .select('display_name, username, email, current_tier, created_at')
+                    .eq('id', referral.referred_id)
+                    .single();
+
+                if (userError) {
+                    console.warn('Error loading referred user:', userError);
+                    return {
+                        ...referral,
+                        referred: null
+                    };
+                }
+
+                return {
+                    ...referral,
+                    referred: referredUser
+                };
+            })
+        );
+
+        displayReferralData(referralCode, referralsWithDetails);
     } catch (error) {
         console.error('Error loading referral data:', error);
     }
@@ -1458,19 +1481,25 @@ function displayReferralData(referralCode, referrals) {
                             </tr>
                         </thead>
                         <tbody>
-                            ${referrals.map(referral => `
-                                <tr>
-                                    <td data-label="Name">${referral.referred?.display_name || 'User'}</td>
-                                    <td data-label="Email">${referral.referred?.email || ''}</td>
-                                    <td data-label="Tier"><span class="tier-badge-small">${referral.referred?.current_tier || 'Free Tier'}</span></td>
-                                    <td data-label="Joined">${formatTimestamp(referral.created_at)}</td>
-                                    <td data-label="Status">
-                                        <span class="reward-status ${referral.reward_claimed ? 'claimed' : 'pending'}">
-                                            ${referral.reward_claimed ? '✅ Rewarded' : '⏳ Pending'}
-                                        </span>
-                                    </td>
-                                </tr>
-                            `).join('')}
+                            ${referrals.map(referral => {
+                                const userName = referral.referred?.display_name || referral.referred?.username || 'User';
+                                const userEmail = referral.referred?.email || 'N/A';
+                                const userTier = referral.referred?.current_tier || 'Free Tier';
+                                
+                                return `
+                                    <tr>
+                                        <td data-label="Name">${userName}</td>
+                                        <td data-label="Email">${userEmail}</td>
+                                        <td data-label="Tier"><span class="tier-badge-small">${userTier}</span></td>
+                                        <td data-label="Joined">${formatTimestamp(referral.created_at)}</td>
+                                        <td data-label="Status">
+                                            <span class="reward-status ${referral.reward_claimed ? 'claimed' : 'pending'}">
+                                                ${referral.reward_claimed ? '✅ Rewarded' : '⏳ Pending'}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                `;
+                            }).join('')}
                         </tbody>
                     </table>
                 </div>
