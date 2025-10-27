@@ -1,77 +1,118 @@
-
-    <div class="profile-container">
-        <!-- User Info -->
-        <div class="profile-card">
-            <div class="profile-header">
-                <div id="profileAvatarContainer" class="profile-avatar">
-                    <!-- Avatar or Initial will be loaded here -->
-                </div>
-                <input type="file" id="avatarUpload" accept="image/jpeg,image/jpg,image/png,image/gif,image/webp" style="display: none;">
-
-                <div class="username-container">
-                    <h2 id="userName" class="profile-username">Loading...</h2>
-                    <span id="editUsernameBtn" class="edit-icon"></span>
-                </div>
-                <p id="userEmail" class="profile-email">Loading...</p>
-                <p id="user-tier" class="current-tier">Loading Tier...</p>
-                <p id="tier-expiry" class="tier-expiry-date" style="display: none;"></p>
+<div class="profile-container">
+    <!-- User Info -->
+    <div class="profile-card">
+        <div class="profile-header">
+            <div id="profileAvatarContainer" class="profile-avatar">
+                <!-- Avatar or Initial will be loaded here -->
             </div>
-        </div>
+            <input
+                type="file"
+                id="avatarUpload"
+                accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
+                style="display: none"
+            />
 
-        <!-- Subscription Management -->
-        <div class="profile-card">
-            <h2>Subscription</h2>
-            <p>Manage your current plan, view benefits, or cancel your subscription.</p>
-            <button id="manageSubscription" class="button">Manage Subscription</button>
-        </div>
-
-        <!-- Referral Program -->
-        <div class="profile-card">
-            <h2>Refer a Friend</h2>
-            <p>Invite friends and earn rewards when they subscribe.</p>
-            <button id="referralBtn" class="button">View Referrals</button>
-        </div>
-
-        <!-- Settings -->
-        <div class="profile-card">
-            <h2>Settings</h2>
-            <!-- Dark Mode Toggle -->
-            <div class="setting-item">
-                <label for="darkModeToggle">Dark Mode</label>
-                <input type="checkbox" id="darkModeToggle" class="toggle-input" />
-                <label class="switch" for="darkModeToggle">
-                    <svg viewBox="0 0 212.4992 84.4688" overflow="visible">
-                        <path pathLength="360" fill="none" stroke="currentColor" d="M 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 A 42.24 42.24 90 0 0 84.4992 42.2496 A 42.24 42.24 90 0 0 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 L 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 A 42.24 42.24 90 0 0 128 42.2496 A 42.24 42.24 90 0 0 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 L 42.2496 0"></path>
-                    </svg>
-                </label>
+            <div class="username-container">
+                <h2 id="userName" class="profile-username">Loading...</h2>
+                <span id="editUsernameBtn" class="edit-icon"></span>
             </div>
-            <!-- Notification Toggle -->
-            <div id="notification-settings-card" class="setting-item" data-tier="premium">
-                <label for="predictionAlertsToggle">Prediction Alerts</label>
-                <input type="checkbox" id="predictionAlertsToggle" class="toggle-input" />
-                <label class="switch" for="predictionAlertsToggle">
-                    <svg viewBox="0 0 212.4992 84.4688" overflow="visible">
-                        <path pathLength="360" fill="none" stroke="currentColor" d="M 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 A 42.24 42.24 90 0 0 84.4992 42.2496 A 42.24 42.24 90 0 0 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 L 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 A 42.24 42.24 90 0 0 128 42.2496 A 42.24 42.24 90 0 0 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 L 42.2496 0"></path>
-                    </svg>
-                </label>
-            </div>
+            <p id="userEmail" class="profile-email">Loading...</p>
+            <p id="user-tier" class="current-tier">Loading Tier...</p>
+            <p
+                id="tier-expiry"
+                class="tier-expiry-date"
+                style="display: none"
+            ></p>
         </div>
-
-        <!-- Danger Zone -->
-        <div class="profile-card danger-zone">
-            <h2>Danger Zone</h2>
-            <div class="danger-actions">
-                <button id="resetStorage" class="button btn-danger">Reset Local Cache</button>
-                <button id="logoutBtn" class="button btn-danger">Logout</button>
-            </div>
-        </div>
-
     </div>
 
+    <!-- Subscription Management -->
+    <div class="profile-card">
+        <h2>Subscription</h2>
+        <p>
+            Manage your current plan, view benefits, or cancel your
+            subscription.
+        </p>
+        <button id="manageSubscription" class="button">
+            Manage Subscription
+        </button>
+    </div>
+
+    <!-- Referral Program -->
+    <div class="profile-card">
+        <h2>Refer a Friend</h2>
+        <p>Invite friends and earn rewards when they subscribe.</p>
+        <button id="referralBtn" class="button">View Referrals</button>
+    </div>
+
+    <!-- Settings -->
+    <div class="profile-card">
+        <h2>Settings</h2>
+        <!-- Dark Mode Toggle -->
+        <div class="setting-item">
+            <label for="darkModeToggle">Dark Mode</label>
+            <input type="checkbox" id="darkModeToggle" class="toggle-input" />
+            <label class="switch" for="darkModeToggle">
+                <svg viewBox="0 0 212.4992 84.4688" overflow="visible">
+                    <path
+                        pathLength="360"
+                        fill="none"
+                        stroke="currentColor"
+                        d="M 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 A 42.24 42.24 90 0 0 84.4992 42.2496 A 42.24 42.24 90 0 0 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 L 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 A 42.24 42.24 90 0 0 128 42.2496 A 42.24 42.24 90 0 0 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 L 42.2496 0"
+                    ></path>
+                </svg>
+            </label>
+        </div>
+        <!-- Notification Toggle -->
+        <div
+            id="notification-settings-card"
+            class="setting-item"
+            data-tier="premium"
+        >
+            <label for="predictionAlertsToggle">Prediction Alerts</label>
+            <input
+                type="checkbox"
+                id="predictionAlertsToggle"
+                class="toggle-input"
+            />
+            <label class="switch" for="predictionAlertsToggle">
+                <svg viewBox="0 0 212.4992 84.4688" overflow="visible">
+                    <path
+                        pathLength="360"
+                        fill="none"
+                        stroke="currentColor"
+                        d="M 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 A 42.24 42.24 90 0 0 84.4992 42.2496 A 42.24 42.24 90 0 0 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 L 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 A 42.24 42.24 90 0 0 128 42.2496 A 42.24 42.24 90 0 0 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 L 42.2496 0"
+                    ></path>
+                </svg>
+            </label>
+        </div>
+    </div>
+
+    <!-- Danger Zone -->
+    <div class="profile-card danger-zone">
+        <h2>Danger Zone</h2>
+        <div class="danger-actions">
+            <button id="resetStorage" class="button btn-danger">
+                Reset Local Cache
+            </button>
+            <button id="logoutBtn" class="button btn-danger">Logout</button>
+        </div>
+    </div>
+</div>
 
 <style data-dynamic="true">
-    .danger-zone { border-color: #d9534f; }
-    .danger-zone h2 { color: #d9534f; }
-    .danger-actions { display: flex; flex-direction: column; gap: 8px; }
-    #notification-settings-card[data-locked="true"] { display: none; }
+    .danger-zone {
+        border-color: #d9534f;
+    }
+    .danger-zone h2 {
+        color: #d9534f;
+    }
+    .danger-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    #notification-settings-card[data-locked="true"] {
+        display: none;
+    }
 </style>
