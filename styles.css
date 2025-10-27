@@ -343,6 +343,39 @@ main {
     display: none; /* JS will toggle this */
 }
 
+#search-clear-btn:hover {
+    color: #666;
+}
+
+/* Active Filters Display */
+#active-filters-container {
+    margin-bottom: 12px;
+    display: none;
+}
+
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.active-filter-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #0e639c 0%, #1a7bb9 100%);
+    color: white;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(14, 99, 156, 0.2);
+}
+
+.dark-mode .active-filter-tag {
+    background: linear-gradient(135deg, #1a7bb9 0%, #0e639c 100%);
+}
+
 /* ---------------- Cards ---------------- */
 .card {
     background: #ffffff;

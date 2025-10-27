@@ -13,6 +13,7 @@ let currentUser = null;
 let verifiedTier = null; // Start as null until profile loads
 let adsLoaded = false;
 let adblockerDetected = false;
+let allPredictions = []; // Store all loaded predictions for search filtering
 
 // Initialize the app
 initializeTheme(); // Initialize theme system
@@ -416,6 +417,8 @@ async function initializeHomePage() {
     await loadPredictions();
     // Initialize league tabs
     initializeLeagueTabs();
+    // Initialize prediction search
+    initializePredictionSearch();
 }
 
 async function loadPredictions() {
@@ -444,7 +447,9 @@ async function loadPredictions() {
             return;
         }
 
-        displayPredictions(predictions || []);
+        // Store predictions globally for search filtering
+        allPredictions = predictions || [];
+        displayPredictions(allPredictions);
     } catch (error) {
         console.error('Error loading predictions:', error);
     }
@@ -465,7 +470,7 @@ function displayPredictions(predictions) {
     }
 
     const predictionsHTML = predictions.map(prediction => `
-        <div class="prediction-card tier-${prediction.tier}">
+        <div class="prediction-card tier-${prediction.tier}" data-prediction-id="${prediction.id}" data-home-team="${prediction.home_team.toLowerCase()}" data-away-team="${prediction.away_team.toLowerCase()}" data-league="${prediction.league.toLowerCase()}" data-confidence="${prediction.confidence}" data-odds="${prediction.odds || ''}">
             <div class="match-header">
                 <h4>${prediction.home_team} vs ${prediction.away_team}</h4>
                 <span class="league">${prediction.league}</span>
@@ -506,11 +511,515 @@ function displayPredictions(predictions) {
     container.innerHTML = predictionsHTML;
 }
 
-// ===== Forum Functionality =====
-async function initializeForumPage() {
-    // Forum is coming soon - no functionality needed
-    console.log('Forum page loaded - Coming Soon');
+// ===== Prediction Search Functionality =====
+function initializePredictionSearch() {
+    const searchInput = document.getElementById('predictionSearch');
+    const clearBtn = document.getElementById('search-clear-btn');
+    const ghostText = document.getElementById('search-ghost-text');
+
+    if (!searchInput) return;
+
+    // Set initial ghost text
+    if (ghostText) {
+        ghostText.textContent = 'Try: Arsenal, /c75, /odds, La Liga';
+    }
+
+    // Handle search input
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value;
+        
+        // Show/hide clear button
+        if (clearBtn) {
+            clearBtn.style.display = query ? 'block' : 'none';
+        }
+
+        // Hide ghost text when typing
+        if (ghostText) {
+            ghostText.style.display = query ? 'none' : 'block';
+        }
+
+        // Filter predictions
+        handlePredictionSearch(query);
+    });
+
+    // Handle clear button
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            if (ghostText) {
+                ghostText.style.display = 'block';
+            }
+            handlePredictionSearch('');
+        });
+    }
+
+    console.log('Prediction search initialized');
 }
+
+function handlePredictionSearch(query) {
+    const container = document.getElementById('predictions-container');
+    if (!container) return;
+
+    const allCards = container.querySelectorAll('.prediction-card');
+    const normalizedQuery = query.toLowerCase().trim();
+
+    // Parse special commands
+    let confidenceMin = null;
+    let oddsFilter = false;
+    let searchTerm = normalizedQuery;
+
+    // Check for confidence command (/c followed by number)
+    const confidenceMatch = normalizedQuery.match(/\/c(\d+)/);
+    if (confidenceMatch) {
+        confidenceMin = parseInt(confidenceMatch[1]);
+        searchTerm = normalizedQuery.replace(/\/c\d+/g, '').trim();
+    }
+
+    // Check for odds command
+    if (normalizedQuery.includes('/odds')) {
+        oddsFilter = true;
+        searchTerm = normalizedQuery.replace(/\/odds/g, '').trim();
+    }
+
+    let visibleCount = 0;
+    let activeFilters = [];
+
+    allCards.forEach(card => {
+        let shouldShow = true;
+
+        // Apply search term filter (team names, league)
+        if (searchTerm) {
+            const homeTeam = card.getAttribute('data-home-team') || '';
+            const awayTeam = card.getAttribute('data-away-team') || '';
+            const league = card.getAttribute('data-league') || '';
+            
+            const matchesSearch = homeTeam.includes(searchTerm) || 
+                                awayTeam.includes(searchTerm) || 
+                                league.includes(searchTerm);
+            
+            if (!matchesSearch) {
+                shouldShow = false;
+            }
+        }
+
+        // Apply confidence filter
+        if (confidenceMin !== null) {
+            const confidence = parseInt(card.getAttribute('data-confidence') || '0');
+            if (confidence < confidenceMin) {
+                shouldShow = false;
+            }
+        }
+
+        // Apply odds filter
+        if (oddsFilter) {
+            const odds = card.getAttribute('data-odds') || '';
+            if (!odds) {
+                shouldShow = false;
+            }
+        }
+
+        // Show/hide card
+        if (shouldShow) {
+            card.style.display = 'block';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    // Build active filters array
+    if (searchTerm) {
+        activeFilters.push(`Search: "${searchTerm}"`);
+    }
+    if (confidenceMin !== null) {
+        activeFilters.push(`Confidence: ≥${confidenceMin}%`);
+    }
+    if (oddsFilter) {
+        activeFilters.push('Has Odds');
+    }
+
+    // Update active filters display
+    updateActiveFilters(activeFilters);
+
+    // Show no results message if needed
+    if (visibleCount === 0 && query) {
+        const noResults = document.createElement('div');
+        noResults.className = 'no-predictions';
+        noResults.innerHTML = `
+            <h3>No predictions found</h3>
+            <p>Try adjusting your search or filters</p>
+        `;
+        container.appendChild(noResults);
+    } else {
+        // Remove no results message if it exists
+        const noResults = container.querySelector('.no-predictions');
+        if (noResults) {
+            noResults.remove();
+        }
+    }
+
+    console.log(`Search applied: ${visibleCount} predictions visible`);
+}
+
+function updateActiveFilters(filters) {
+    const filterContainer = document.getElementById('active-filters-container');
+    if (!filterContainer) return;
+
+    if (filters.length === 0) {
+        filterContainer.innerHTML = '';
+        filterContainer.style.display = 'none';
+        return;
+    }
+
+    const filtersHTML = filters.map(filter => `
+        <span class="active-filter-tag">${filter}</span>
+    `).join('');
+
+    filterContainer.innerHTML = `
+        <div class="active-filters">
+            ${filtersHTML}
+        </div>
+    `;
+    filterContainer.style.display = 'block';
+}
+
+// ===== Forum Functionality =====
+let forumMessages = [];
+let forumRealtimeSubscription = null;
+
+async function initializeForumPage() {
+    console.log('Initializing forum page...');
+    
+    // Load all forum messages
+    await loadForumMessages();
+    
+    // Initialize post creation
+    initializeForumPostCreation();
+    
+    // Initialize forum search
+    initializeForumSearch();
+    
+    // Subscribe to real-time updates
+    subscribeToForumMessages();
+    
+    console.log('Forum page initialized successfully');
+}
+
+async function loadForumMessages() {
+    try {
+        const { data: messages, error } = await supabase
+            .from('forum_messages')
+            .select('*')
+            .order('created_at', { ascending: false })
+            .limit(50);
+
+        if (error) {
+            console.error('Error loading forum messages:', error);
+            displayForumError('Failed to load messages');
+            return;
+        }
+
+        forumMessages = messages || [];
+        displayForumMessages(forumMessages);
+    } catch (error) {
+        console.error('Error loading forum messages:', error);
+        displayForumError('An error occurred while loading messages');
+    }
+}
+
+function displayForumMessages(messages) {
+    const container = document.getElementById('forumMessagesContainer');
+    if (!container) return;
+
+    if (messages.length === 0) {
+        container.innerHTML = `
+            <div class="no-predictions">
+                <h3>No messages yet</h3>
+                <p>Be the first to share your thoughts with the community!</p>
+            </div>
+        `;
+        return;
+    }
+
+    const messagesHTML = messages.map(msg => {
+        const isOwnPost = currentUser && msg.user_id === currentUser.id;
+        const initials = msg.username ? msg.username.substring(0, 2).toUpperCase() : 'U';
+        const timeAgo = getTimeAgo(msg.created_at);
+
+        return `
+            <div class="post-card ${isOwnPost ? 'own-post' : ''}" data-message-id="${msg.id}" data-username="${msg.username.toLowerCase()}" data-message="${msg.message.toLowerCase()}">
+                <div class="post-header">
+                    <div class="profile-avatar">
+                        <div class="avatar-placeholder">${initials}</div>
+                    </div>
+                    <div class="post-info">
+                        <p class="username">${msg.username}</p>
+                        <p class="timestamp">${timeAgo}</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    ${msg.message}
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    container.innerHTML = messagesHTML;
+}
+
+function displayForumError(message) {
+    const container = document.getElementById('forumMessagesContainer');
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="no-predictions">
+            <h3>❌ Error</h3>
+            <p>${message}</p>
+            <button onclick="window.loadForumMessages()" class="button" style="margin-top: 12px;">Retry</button>
+        </div>
+    `;
+}
+
+function getTimeAgo(timestamp) {
+    const now = new Date();
+    const messageTime = new Date(timestamp);
+    const diffMs = now - messageTime;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+
+    if (diffMins < 1) return 'Just now';
+    if (diffMins < 60) return `${diffMins}m ago`;
+    if (diffHours < 24) return `${diffHours}h ago`;
+    if (diffDays < 7) return `${diffDays}d ago`;
+    return messageTime.toLocaleDateString();
+}
+
+function initializeForumPostCreation() {
+    const messageInput = document.getElementById('messageInput');
+    const postBtn = document.getElementById('postMessageBtn');
+    const charCount = document.getElementById('charCount');
+
+    if (!messageInput || !postBtn) return;
+
+    // Character counter
+    messageInput.addEventListener('input', () => {
+        const length = messageInput.value.length;
+        if (charCount) {
+            charCount.textContent = `${length} / 500`;
+            charCount.style.color = length > 450 ? '#d9534f' : '#666';
+        }
+    });
+
+    // Post message
+    postBtn.addEventListener('click', async () => {
+        const message = messageInput.value.trim();
+
+        if (!message) {
+            showModal({
+                message: 'Please enter a message before posting.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+
+        if (!currentUser) {
+            showModal({
+                message: 'You must be logged in to post messages.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+
+        try {
+            showSpinner();
+
+            // Get user's username
+            const { data: profile } = await supabase
+                .from('user_profiles')
+                .select('username, display_name')
+                .eq('id', currentUser.id)
+                .single();
+
+            const username = profile?.display_name || profile?.username || currentUser.email?.split('@')[0] || 'User';
+
+            // Insert message
+            const { error } = await supabase
+                .from('forum_messages')
+                .insert({
+                    user_id: currentUser.id,
+                    username: username,
+                    message: message
+                });
+
+            if (error) {
+                console.error('Error posting message:', error);
+                showModal({
+                    message: 'Failed to post message. Please try again.',
+                    confirmText: 'OK'
+                });
+                return;
+            }
+
+            // Clear input and reset counter
+            messageInput.value = '';
+            if (charCount) {
+                charCount.textContent = '0 / 500';
+                charCount.style.color = '#666';
+            }
+
+            // Reload messages
+            await loadForumMessages();
+
+        } catch (error) {
+            console.error('Error posting message:', error);
+            showModal({
+                message: 'An error occurred. Please try again.',
+                confirmText: 'OK'
+            });
+        } finally {
+            hideSpinner();
+        }
+    });
+}
+
+function subscribeToForumMessages() {
+    // Clean up existing subscription
+    if (forumRealtimeSubscription) {
+        forumRealtimeSubscription.unsubscribe();
+    }
+
+    // Subscribe to new messages
+    forumRealtimeSubscription = supabase
+        .channel('forum_messages')
+        .on('postgres_changes', {
+            event: 'INSERT',
+            schema: 'public',
+            table: 'forum_messages'
+        }, (payload) => {
+            console.log('New forum message received:', payload);
+            // Add new message to the beginning of the array
+            forumMessages.unshift(payload.new);
+            displayForumMessages(forumMessages);
+        })
+        .subscribe();
+
+    console.log('Subscribed to forum real-time updates');
+}
+
+function initializeForumSearch() {
+    const searchInput = document.getElementById('forumSearch');
+    const clearBtn = document.getElementById('forum-search-clear-btn');
+    const ghostText = document.getElementById('forum-search-ghost-text');
+
+    if (!searchInput) return;
+
+    // Set initial ghost text
+    if (ghostText) {
+        ghostText.textContent = 'Search by content or author';
+    }
+
+    // Handle search input
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value;
+        
+        // Show/hide clear button
+        if (clearBtn) {
+            clearBtn.style.display = query ? 'block' : 'none';
+        }
+
+        // Hide ghost text when typing
+        if (ghostText) {
+            ghostText.style.display = query ? 'none' : 'block';
+        }
+
+        // Filter messages
+        handleForumSearch(query);
+    });
+
+    // Handle clear button
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            if (ghostText) {
+                ghostText.style.display = 'block';
+            }
+            handleForumSearch('');
+        });
+    }
+
+    console.log('Forum search initialized');
+}
+
+function handleForumSearch(query) {
+    const container = document.getElementById('forumMessagesContainer');
+    if (!container) return;
+
+    const allPosts = container.querySelectorAll('.post-card');
+    const normalizedQuery = query.toLowerCase().trim();
+
+    let visibleCount = 0;
+
+    allPosts.forEach(post => {
+        if (!normalizedQuery) {
+            post.style.display = 'block';
+            visibleCount++;
+            return;
+        }
+
+        const username = post.getAttribute('data-username') || '';
+        const message = post.getAttribute('data-message') || '';
+
+        const matchesSearch = username.includes(normalizedQuery) || 
+                            message.includes(normalizedQuery);
+
+        if (matchesSearch) {
+            post.style.display = 'block';
+            visibleCount++;
+        } else {
+            post.style.display = 'none';
+        }
+    });
+
+    // Update active filters
+    const filterContainer = document.getElementById('forum-active-filters-container');
+    if (filterContainer) {
+        if (normalizedQuery) {
+            filterContainer.innerHTML = `
+                <div class="active-filters">
+                    <span class="active-filter-tag">Search: "${query}"</span>
+                </div>
+            `;
+            filterContainer.style.display = 'block';
+        } else {
+            filterContainer.innerHTML = '';
+            filterContainer.style.display = 'none';
+        }
+    }
+
+    // Show no results message if needed
+    if (visibleCount === 0 && query) {
+        const noResults = document.createElement('div');
+        noResults.className = 'no-predictions';
+        noResults.innerHTML = `
+            <h3>No messages found</h3>
+            <p>Try adjusting your search term</p>
+        `;
+        container.appendChild(noResults);
+    } else {
+        const noResults = container.querySelector('.no-predictions');
+        if (noResults) {
+            noResults.remove();
+        }
+    }
+
+    console.log(`Forum search applied: ${visibleCount} messages visible`);
+}
+
+// Make loadForumMessages available globally for retry button
+window.loadForumMessages = loadForumMessages;
 
 async function initializeProfilePage() {
     await loadUserProfile();
@@ -1230,6 +1739,7 @@ async function handleSubscriptionUpgrade(tier, amount, period) {
 
 async function initializeReferralPage() {
     await loadReferralData();
+    initializeReferralSearch();
 }
 
 async function loadReferralData() {
@@ -1279,6 +1789,12 @@ function displayReferralData(referralCode, referrals) {
     // Display "Referred By" information
     displayReferredBy();
 
+    // Show/hide search container based on referrals
+    const referralSearchContainer = document.getElementById('referralSearchContainer');
+    if (referralSearchContainer) {
+        referralSearchContainer.style.display = referrals.length > 0 ? 'block' : 'none';
+    }
+
     // Update referral list
     const referralListContainer = document.getElementById('referralListContainer');
     if (referralListContainer) {
@@ -1299,7 +1815,7 @@ function displayReferralData(referralCode, referrals) {
                         </thead>
                         <tbody>
                             ${referrals.map(referral => `
-                                <tr>
+                                <tr data-name="${(referral.user_profiles?.display_name || 'User').toLowerCase()}" data-email="${(referral.user_profiles?.email || '').toLowerCase()}" data-tier="${(referral.user_profiles?.current_tier || 'Free Tier').toLowerCase()}" data-status="${referral.reward_claimed ? 'rewarded' : 'pending'}">
                                     <td data-label="Name">${referral.user_profiles?.display_name || 'User'}</td>
                                     <td data-label="Email">${referral.user_profiles?.email || ''}</td>
                                     <td data-label="Tier"><span class="tier-badge-small">${referral.user_profiles?.current_tier || 'Free Tier'}</span></td>
