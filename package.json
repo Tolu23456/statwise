@@ -12,7 +12,13 @@
     "@vercel/analytics": "^1.5.0",
     "http-server": "^14.1.1"
   },
-  "keywords": ["sports", "prediction", "ai", "pwa", "supabase"],
+  "keywords": [
+    "sports",
+    "prediction",
+    "ai",
+    "pwa",
+    "supabase"
+  ],
   "author": "StatWise Team",
   "license": "MIT"
 }
