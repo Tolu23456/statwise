@@ -1410,10 +1410,19 @@ async function loadReferralData() {
             console.warn('Error loading referral code:', codeError);
         }
 
-        // Get user's referrals
+        // Get user's referrals with referred user details using a join
         const { data: referrals, error: referralsError } = await supabase
             .from('referrals')
-            .select('*')
+            .select(`
+                *,
+                referred:user_profiles!referrals_referred_id_fkey(
+                    display_name,
+                    username,
+                    email,
+                    current_tier,
+                    created_at
+                )
+            `)
             .eq('referrer_id', currentUser.id)
             .order('created_at', { ascending: false });
 
@@ -1423,33 +1432,10 @@ async function loadReferralData() {
             return;
         }
 
-        // Fetch referred user details for each referral
-        const referralsWithDetails = await Promise.all(
-            (referrals || []).map(async (referral) => {
-                const { data: referredUser, error: userError } = await supabase
-                    .from('user_profiles')
-                    .select('display_name, username, email, current_tier, created_at')
-                    .eq('id', referral.referred_id)
-                    .single();
-
-                if (userError) {
-                    console.warn('Error loading referred user:', userError);
-                    return {
-                        ...referral,
-                        referred: null
-                    };
-                }
-
-                return {
-                    ...referral,
-                    referred: referredUser
-                };
-            })
-        );
-
-        displayReferralData(referralCode, referralsWithDetails);
+        displayReferralData(referralCode, referrals || []);
     } catch (error) {
         console.error('Error loading referral data:', error);
+        displayReferralData(referralCode, []);
     }
 }
 
