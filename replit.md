@@ -7,6 +7,14 @@ StatWise is a Progressive Web App (PWA) that provides AI-powered sports predicti
 Preferred communication style: Simple, everyday language.
 
 ## Recent Updates
+- **Added Advanced Prediction Filtering System** (October 27, 2025)
+  - Implemented comprehensive filtering UI with collapsible filter panel
+  - Added date range filters (Today, Tomorrow, This Weekend, This Week, All Dates)
+  - Added prediction type filters (Win, Draw, Over 2.5 Goals, Under 2.5 Goals, Both Teams to Score)
+  - Added confidence level filters (High 75%+, Medium 60-74%, Low <60%)
+  - Active filters displayed as removable chips
+  - Fully responsive design for mobile and desktop
+  - Integrated with existing search and league tab functionality
 - Removed inactive page feature completely from the application (October 26, 2025)
   - Deleted activity-manager.js and Pages/inactive.html
   - Removed all inactive page UI controls and CSS styling
