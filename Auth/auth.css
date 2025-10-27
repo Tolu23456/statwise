@@ -355,17 +355,14 @@ body {
 .referral-name-display {
     display: none; /* Hidden by default */
     font-size: 13px;
-    color: #0e639c;
-    background-color: #e7f5ff;
-    padding: 8px;
+    font-weight: 500;
+    padding: 8px 12px;
     border-radius: 6px;
-    margin-top: -8px; /* Pull it closer to the input */
-    margin-bottom: 8px;
+    margin-top: 8px;
     text-align: center;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    border: 1px solid rgba(14, 99, 156, 0.2);
 }
 
 .referral-name-display.show {
@@ -377,13 +374,26 @@ body {
 .referral-name-display.error {
     color: #d9534f;
     background-color: rgba(217, 83, 79, 0.1);
-    border-color: rgba(217, 83, 79, 0.2);
+    border: 1px solid rgba(217, 83, 79, 0.3);
 }
 
 .referral-name-display.success {
     color: #28a745;
     background-color: rgba(40, 167, 69, 0.1);
-    border-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+/* Dark mode referral display */
+.dark-mode .referral-name-display.error {
+    color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.15);
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.dark-mode .referral-name-display.success {
+    color: #51cf66;
+    background-color: rgba(81, 207, 102, 0.15);
+    border-color: rgba(81, 207, 102, 0.3);
 }
 
 /* --- Form Description (for forgot password) --- */

@@ -136,8 +136,12 @@ async function validateReferralCodeInput() {
     
     const code = referralCodeInput.value.trim().toUpperCase();
     
+    // Clear validation if input is empty
     if (!code) {
         statusElement.style.display = 'none';
+        statusElement.classList.remove('show', 'success', 'error');
+        referralCodeInput.style.borderColor = '';
+        referralCodeInput.style.borderWidth = '';
         return;
     }
     
@@ -150,17 +154,24 @@ async function validateReferralCodeInput() {
             .single();
         
         if (error || !data) {
+            // Invalid code - show error
             statusElement.textContent = '❌ Invalid referral code';
-            statusElement.style.color = '#d9534f';
-            statusElement.style.display = 'block';
+            statusElement.className = 'referral-name-display show error';
+            referralCodeInput.style.borderColor = '#d9534f';
+            referralCodeInput.style.borderWidth = '2px';
         } else {
+            // Valid code - show success
             statusElement.textContent = `✓ Using ${data.username}'s referral code`;
-            statusElement.style.color = '#5cb85c';
-            statusElement.style.display = 'block';
+            statusElement.className = 'referral-name-display show success';
+            referralCodeInput.style.borderColor = '#28a745';
+            referralCodeInput.style.borderWidth = '2px';
         }
     } catch (error) {
         console.warn('Error validating referral code:', error);
         statusElement.style.display = 'none';
+        statusElement.classList.remove('show', 'success', 'error');
+        referralCodeInput.style.borderColor = '';
+        referralCodeInput.style.borderWidth = '';
     }
 }
 
