@@ -94,6 +94,84 @@
         </div>
     </div>
 
+    <!-- FAQ Section -->
+    <div class="profile-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I change my username?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Click the edit icon next to your username at the top of your profile to change it.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I upgrade my subscription?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Click the "Manage Subscription" button in the Subscription section to view available plans and upgrade your account.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What are Prediction Alerts?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Prediction Alerts are notifications that inform you about new AI predictions and insights. This feature is available for Premium subscribers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How does the referral program work?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Share your unique referral link with friends. When they sign up and subscribe, you'll earn rewards. Click "View Referrals" to get your link and track your earnings.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I cancel my subscription anytime?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, you can cancel your subscription at any time through the Manage Subscription page. You'll continue to have access until the end of your billing period.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What does "Reset Local Cache" do?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>This clears your locally stored app data and preferences. It can help resolve issues but will log you out and reset your settings.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Danger Zone -->
     <div class="profile-card danger-zone">
         <h2>Danger Zone</h2>
@@ -120,5 +198,114 @@
     }
     #notification-settings-card[data-locked="true"] {
         display: none;
+    }
+
+    /* FAQ Section Styles */
+    .faq-section {
+        margin-bottom: 20px;
+    }
+
+    .faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    .faq-item {
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+        border-color: #0e639c;
+        box-shadow: 0 2px 8px rgba(14, 99, 156, 0.1);
+    }
+
+    .faq-question {
+        width: 100%;
+        padding: 16px;
+        background: #ffffff;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1c1c1e;
+        text-align: left;
+        transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+        background-color: #f8f9fc;
+    }
+
+    .faq-question span {
+        flex: 1;
+        padding-right: 12px;
+    }
+
+    .faq-icon {
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+        color: #0e639c;
+    }
+
+    .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        background: #f8f9fc;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 200px;
+        padding: 16px;
+        border-top: 2px solid #e0e0e0;
+    }
+
+    .faq-answer p {
+        margin: 0;
+        color: #4a4a4a;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    /* Dark mode support for FAQ */
+    body.dark-mode .faq-item {
+        border-color: #2c2c2e;
+    }
+
+    body.dark-mode .faq-item:hover {
+        border-color: #0e639c;
+    }
+
+    body.dark-mode .faq-question {
+        background: #1c1c1e;
+        color: #f8f9fc;
+    }
+
+    body.dark-mode .faq-question:hover {
+        background-color: #2c2c2e;
+    }
+
+    body.dark-mode .faq-answer {
+        background: #2c2c2e;
+    }
+
+    body.dark-mode .faq-item.active .faq-answer {
+        border-top-color: #3a3a3c;
+    }
+
+    body.dark-mode .faq-answer p {
+        color: #d1d1d6;
     }
 </style>

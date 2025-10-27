@@ -922,6 +922,27 @@ function initializeProfileInteractions() {
     } else {
         console.warn('⚠️ Avatar upload input not found in profile page');
     }
+
+    // Initialize FAQ toggle functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    if (faqQuestions.length > 0) {
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.closest('.faq-item');
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    }
 }
 
 // Make functions globally available
