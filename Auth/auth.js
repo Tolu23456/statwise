@@ -212,8 +212,11 @@ function isValidEmail(email) {
 
 function isValidPassword(password) {
     // At least 8 characters, one uppercase, one lowercase, one number
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/;
-    return passwordRegex.test(password);
+    if (!password || password.length < 8) return false;
+    if (!/[a-z]/.test(password)) return false;
+    if (!/[A-Z]/.test(password)) return false;
+    if (!/\d/.test(password)) return false;
+    return true;
 }
 
 function getPasswordValidationErrors(password) {
@@ -473,7 +476,10 @@ async function handleSignup(e) {
     if (!isValidPassword(password)) {
         const errors = getPasswordValidationErrors(password);
         console.log('❌ Validation failed: Weak password', errors);
-        showErrorMessage('signup-error', 'Password requirements: ' + errors.join(', '));
+        const errorMsg = errors.length > 0 
+            ? 'Password requirements: ' + errors.join(', ')
+            : 'Password must be at least 8 characters with uppercase, lowercase, and number';
+        showErrorMessage('signup-error', errorMsg);
         return;
     }
     
