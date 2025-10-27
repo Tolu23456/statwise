@@ -58,6 +58,14 @@ async function handleUserLogin(user) {
         showLoader();
         console.log('User logged in:', user.email);
 
+        // Check if email is verified
+        if (!user.email_confirmed_at) {
+            console.log('Email not verified, showing verification notice');
+            hideLoader();
+            showEmailVerificationNotice(user.email);
+            return;
+        }
+
         // Create or update user profile
         await createOrUpdateUserProfile(user);
 
@@ -72,6 +80,38 @@ async function handleUserLogin(user) {
         console.error('Error handling user login:', error);
         hideLoader();
     }
+}
+
+function showEmailVerificationNotice(email) {
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    main.innerHTML = `
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; padding: 20px; text-align: center;">
+            <div style="background: var(--card-bg, #fff); padding: 40px; border-radius: 16px; max-width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                <div style="font-size: 64px; margin-bottom: 20px;">📧</div>
+                <h2 style="color: var(--text-primary, #333); margin-bottom: 16px;">Verify Your Email</h2>
+                <p style="color: var(--text-secondary, #666); margin-bottom: 24px; line-height: 1.6;">
+                    We sent a verification link to<br>
+                    <strong style="color: var(--primary-color, #0e639c);">${email}</strong>
+                </p>
+                <p style="color: var(--text-secondary, #666); margin-bottom: 32px; line-height: 1.6;">
+                    Please check your inbox and click the verification link to continue.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <button onclick="window.location.reload()" style="background: var(--primary-color, #0e639c); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 500;">
+                        I've Verified My Email
+                    </button>
+                    <button onclick="window.signOut()" style="background: transparent; color: var(--text-secondary, #666); border: 1px solid var(--border-color, #ddd); padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px;">
+                        Sign Out
+                    </button>
+                </div>
+                <p style="color: var(--text-tertiary, #999); margin-top: 24px; font-size: 14px;">
+                    Didn't receive the email? Check your spam folder or contact support.
+                </p>
+            </div>
+        </div>
+    `;
 }
 
 async function createOrUpdateUserProfile(user) {
@@ -519,42 +559,55 @@ function displayUserProfile(profile) {
     // Update profile avatar
     const avatarContainer = document.getElementById('profileAvatarContainer');
     if (avatarContainer) {
+        // Set proper styling for container
+        avatarContainer.style.position = 'relative';
+        avatarContainer.style.cursor = 'pointer';
+        
         if (profile.profile_picture_url) {
             avatarContainer.innerHTML = `
-                <img src="${profile.profile_picture_url}" alt="Profile Picture" class="avatar-img" style="cursor: pointer;">
-                <div class="avatar-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
+                <img src="${profile.profile_picture_url}" alt="Profile Picture" class="avatar-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <div class="avatar-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; pointer-events: none;">
                     <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
-                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 13L11 9V7L9 9L11 11L9 13H11L15 9L21 15V17L15 11L21 9ZM5 7V9L7 11L5 13H7L11 9L7 5L5 7Z"/>
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        <path d="M19 13h-2v2h-2v2h2v2h2v-2h2v-2h-2z"/>
                     </svg>
                 </div>
             `;
         } else {
             const initial = (profile.display_name || profile.username || 'U').charAt(0).toUpperCase();
             avatarContainer.innerHTML = `
-                <div class="default-avatar" style="cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center;">
+                <div class="default-avatar" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: bold; background: linear-gradient(135deg, var(--primary-color, #0e639c), #1e88e5); color: white; border-radius: 50%;">
                     ${initial}
-                    <div class="avatar-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
-                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 13L11 9V7L9 9L11 11L9 13H11L15 9L21 15V17L15 11L21 9ZM5 7V9L7 11L5 13H7L11 9L7 5L5 7Z"/>
-                        </svg>
-                    </div>
+                </div>
+                <div class="avatar-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; pointer-events: none;">
+                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        <path d="M19 13h-2v2h-2v2h2v2h2v-2h2v-2h-2z"/>
+                    </svg>
                 </div>
             `;
         }
 
         // Add hover effect and click handler
-        avatarContainer.onmouseenter = () => {
+        avatarContainer.addEventListener('mouseenter', () => {
             const overlay = avatarContainer.querySelector('.avatar-overlay');
             if (overlay) overlay.style.opacity = '1';
-        };
-        avatarContainer.onmouseleave = () => {
+        });
+        
+        avatarContainer.addEventListener('mouseleave', () => {
             const overlay = avatarContainer.querySelector('.avatar-overlay');
             if (overlay) overlay.style.opacity = '0';
-        };
-        avatarContainer.onclick = () => {
+        });
+        
+        avatarContainer.addEventListener('click', () => {
             console.log('Avatar clicked - triggering upload');
-            triggerAvatarUpload();
-        };
+            const avatarUpload = document.getElementById('avatarUpload');
+            if (avatarUpload) {
+                avatarUpload.click();
+            } else {
+                console.error('Avatar upload input not found');
+            }
+        });
     }
 
     // Initialize profile page interactions
@@ -640,75 +693,35 @@ function initializeProfileInteractions() {
         });
     }
 
-    // Initialize avatar upload with retry logic
-    setTimeout(() => {
-        const avatarUpload = document.getElementById('avatarUpload');
-        if (avatarUpload) {
-            console.log('✅ Avatar upload input found, adding event listener');
-            // Remove any existing listeners first
-            avatarUpload.removeEventListener('change', handleAvatarUpload);
-            // Add the event listener
-            avatarUpload.addEventListener('change', handleAvatarUpload);
-
-            // Test the functionality
-            console.log('Avatar upload functionality initialized successfully');
-        } else {
-            console.warn('⚠️ Avatar upload input not found during initialization');
-            console.log('Available elements with IDs:', Array.from(document.querySelectorAll('[id]')).map(el => el.id));
-
-            // Create fallback input if missing
-            const fallbackInput = document.createElement('input');
-            fallbackInput.type = 'file';
-            fallbackInput.id = 'avatarUpload';
-            fallbackInput.accept = 'image/jpeg,image/jpg,image/png,image/gif,image/webp';
-            fallbackInput.style.display = 'none';
-            document.body.appendChild(fallbackInput);
-            fallbackInput.addEventListener('change', handleAvatarUpload);
-            console.log('✅ Created fallback avatar upload input');
-        }
-    }, 100);  // Small delay to ensure DOM is ready
-}
-
-// ===== Avatar Upload Functions =====
-function triggerAvatarUpload() {
-    console.log('🔄 Trigger avatar upload called');
+    // Initialize avatar upload - wait for DOM to be ready
     const avatarUpload = document.getElementById('avatarUpload');
     if (avatarUpload) {
-        console.log('✅ Avatar upload input found, triggering file dialog...');
-        // Reset the input value to ensure change event fires even for same file
-        avatarUpload.value = '';
-        avatarUpload.click();
+        console.log('✅ Avatar upload input found, adding event listener');
+        // Remove any existing listeners first
+        avatarUpload.removeEventListener('change', handleAvatarUpload);
+        // Add the event listener
+        avatarUpload.addEventListener('change', handleAvatarUpload);
     } else {
-        console.error('❌ Avatar upload input not found');
-        console.log('Available elements:', Array.from(document.querySelectorAll('[id]')).map(el => el.id));
-        // Try to find it in a different way
-        const allInputs = document.querySelectorAll('input[type="file"]');
-        console.log('File inputs found:', allInputs.length);
-        if (allInputs.length > 0) {
-            console.log('Clicking first file input as fallback');
-            allInputs[0].click();
-        }
+        console.warn('⚠️ Avatar upload input not found in profile page');
     }
 }
 
 // Make functions globally available
-window.triggerAvatarUpload = triggerAvatarUpload;
 window.loadPage = loadPage;
 
 async function handleAvatarUpload(event) {
-    try {
-        console.log('📸 Avatar upload triggered, processing file...');
+    console.log('📸 Avatar upload triggered, processing file...');
 
-        if (!event || !event.target || !event.target.files) {
-            console.warn('Invalid upload event');
-            return;
-        }
+    if (!event || !event.target || !event.target.files) {
+        console.warn('Invalid upload event');
+        return;
+    }
 
-        const file = event.target.files[0];
-        if (!file) {
-            console.log('No file selected');
-            return;
-        }
+    const file = event.target.files[0];
+    if (!file) {
+        console.log('No file selected');
+        return;
+    }
 
     console.log('File selected:', {
         name: file.name,
@@ -792,11 +805,8 @@ async function handleAvatarUpload(event) {
             return;
         }
 
-        // Update the avatar display immediately
-        const avatarContainer = document.getElementById('profileAvatarContainer');
-        if (avatarContainer) {
-            avatarContainer.innerHTML = `<img src="${urlData.publicUrl}" alt="Profile Picture" class="avatar-img" onclick="triggerAvatarUpload()">`;
-        }
+        // Reload profile to show updated avatar
+        await loadUserProfile();
 
         showModal({
             message: '✅ Profile picture updated successfully!',
@@ -813,22 +823,10 @@ async function handleAvatarUpload(event) {
         });
     } finally {
         hideSpinner();
-        // Clear the file input safely
-        try {
-            if (event && event.target) {
-                event.target.value = '';
-            }
-        } catch (clearError) {
-            console.warn('Could not clear file input:', clearError);
+        // Clear the file input
+        if (event && event.target) {
+            event.target.value = '';
         }
-    }
-    } catch (uploadError) {
-        console.error('Unexpected error in avatar upload:', uploadError);
-        hideSpinner();
-        showModal({
-            message: 'An unexpected error occurred during upload. Please try again.',
-            confirmText: 'OK'
-        });
     }
 }
 
