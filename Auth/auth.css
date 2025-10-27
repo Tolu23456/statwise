@@ -423,9 +423,11 @@ body {
     padding-left: 8px; /* Space between checkbox and text */
 }
 
-.privacy-policy input {
-    /* Hide the default checkbox */
-    display: none;
+.privacy-policy input[type="checkbox"] {
+    /* Visually hide but keep accessible */
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* New SVG Checkbox Style */

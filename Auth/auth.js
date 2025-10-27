@@ -443,34 +443,42 @@ async function handleSignup(e) {
     const referralCode = formData.get('referralCode')?.trim();
     const privacyPolicyAccepted = document.getElementById('signup-privacy-policy')?.checked;
     
+    console.log('🔐 Signup attempt:', { email, username, hasPassword: !!password, privacyAccepted: privacyPolicyAccepted });
+    
     // Enhanced validation
     if (!email || !password || !confirmPassword || !username) {
+        console.log('❌ Validation failed: Missing required fields');
         showErrorMessage('signup-error', 'Please fill in all required fields');
         return;
     }
     
     if (!privacyPolicyAccepted) {
+        console.log('❌ Validation failed: Privacy policy not accepted');
         showErrorMessage('signup-error', 'Please accept the Privacy Policy and Terms of Service');
         return;
     }
     
     if (!isValidEmail(email)) {
+        console.log('❌ Validation failed: Invalid email');
         showErrorMessage('signup-error', 'Please enter a valid email address');
         return;
     }
     
     if (username.length < 3) {
+        console.log('❌ Validation failed: Username too short');
         showErrorMessage('signup-error', 'Username must be at least 3 characters long');
         return;
     }
     
     if (!isValidPassword(password)) {
         const errors = getPasswordValidationErrors(password);
+        console.log('❌ Validation failed: Weak password', errors);
         showErrorMessage('signup-error', 'Password requirements: ' + errors.join(', '));
         return;
     }
     
     if (password !== confirmPassword) {
+        console.log('❌ Validation failed: Passwords do not match');
         showErrorMessage('signup-error', 'Passwords do not match');
         return;
     }
@@ -478,24 +486,33 @@ async function handleSignup(e) {
     try {
         showLoader();
         
-        // Validate referral code if provided
+        // Validate referral code if provided (optional, so don't block signup)
         let referrerId = null;
-        if (referralCode) {
-            const { data: referralData, error: referralError } = await supabase
-                .from('referral_codes')
-                .select('user_id')
-                .eq('code', referralCode.toUpperCase())
-                .eq('active', true)
-                .single();
-                
-            if (referralError || !referralData) {
-                hideLoader();
-                showErrorMessage('signup-error', 'Invalid referral code');
-                return;
+        if (referralCode && referralCode.length > 0) {
+            console.log('🔍 Validating referral code:', referralCode);
+            try {
+                const { data: referralData, error: referralError } = await supabase
+                    .from('referral_codes')
+                    .select('user_id')
+                    .eq('code', referralCode.toUpperCase())
+                    .eq('active', true)
+                    .single();
+                    
+                if (referralError || !referralData) {
+                    console.log('⚠️ Invalid referral code, proceeding without it');
+                    showWarningMessage('signup-error', 'Invalid referral code - proceeding without it');
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                } else {
+                    referrerId = referralData.user_id;
+                    console.log('✅ Valid referral code');
+                }
+            } catch (refError) {
+                console.log('⚠️ Referral validation error:', refError);
+                // Continue without referral
             }
-            referrerId = referralData.user_id;
         }
         
+        console.log('📝 Creating account...');
         const { data, error } = await supabase.auth.signUp({
             email: email,
             password: password,
@@ -508,21 +525,31 @@ async function handleSignup(e) {
         });
         
         if (error) {
-            console.error('Signup error:', error);
+            console.error('❌ Signup error:', error);
             hideLoader();
             showErrorMessage('signup-error', getErrorMessage(error));
             return;
         }
         
         if (data.user) {
-            console.log('Signup successful:', data.user.email);
+            console.log('✅ Signup successful:', data.user.email);
             
             // Create user profile
-            await createOrUpdateUserProfile(data.user, { referred_by: referrerId });
+            try {
+                await createOrUpdateUserProfile(data.user, { referred_by: referrerId });
+                console.log('✅ User profile created');
+            } catch (profileError) {
+                console.warn('⚠️ Profile creation warning:', profileError);
+            }
             
             // Create referral relationship if applicable
             if (referrerId && referralCode) {
-                await createReferralRelationship(referrerId, data.user.id, referralCode);
+                try {
+                    await createReferralRelationship(referrerId, data.user.id, referralCode);
+                    console.log('✅ Referral relationship created');
+                } catch (refError) {
+                    console.warn('⚠️ Referral relationship warning:', refError);
+                }
             }
             
             showSuccessMessage('signup-error', 'Account created successfully! Please check your email to verify your account.');
@@ -534,7 +561,7 @@ async function handleSignup(e) {
         }
         
     } catch (error) {
-        console.error('Unexpected signup error:', error);
+        console.error('❌ Unexpected signup error:', error);
         showErrorMessage('signup-error', 'An unexpected error occurred. Please try again.');
     } finally {
         hideLoader();
