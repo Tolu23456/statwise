@@ -745,3 +745,23 @@ body {
 /* All static circle styles removed to prevent conflicts with JavaScript animation */
 
 /* Dark mode circle overrides removed - JavaScript animation handles all theming */
+
+/* Refresh indicator style - backdrop-filter removed */
+#refresh-indicator {
+    position: fixed;
+    top: calc(var(--header-height) + 15px);
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 60px;
+    height: 60px;
+    background: #0e639c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    z-index: 1000;
+    will-change: transform, opacity;
+    touch-action: none;
+}

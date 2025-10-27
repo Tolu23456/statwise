@@ -1480,7 +1480,7 @@ main {
     border-radius: 10px;
     padding: 15px;
     background-color: #ffffff;
-    color: #1c1c1e;
+    color: #1c1e;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
@@ -1647,7 +1647,7 @@ main {
 .dark-mode {
     --card-bg: #2d2d32;
     --primary-bg: #1a1a1c;
-    --secondary-bg: #252526;
+    --secondary-bg: #252626;
     --text-primary: #e2e2e4;
     --text-secondary: #bbb;
     --border-color: #444;
@@ -2401,7 +2401,7 @@ main {
     display: block; /* Keep block for other tab content */
 }
 
-/* HomePage */
+/*HomePage */
 .predictions-container {
     display: flex;
     flex-direction: column;
@@ -3372,7 +3372,7 @@ body.pulling-to-refresh {
 }
 
 .dark-mode #referralCodeInput {
-    background-color: #252526;
+    background-color: #252626;
     border-color: #555;
     color: #d4d4d4;
 }
@@ -3711,4 +3711,167 @@ body.pulling-to-refresh {
     .btn-refresh, .btn-upgrade {
         width: 100%;
     }
+}
+
+/* StatWise Consent Management Platform Styles */
+
+/* Consent Banner */
+.consent-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #667eea;
+    color: white;
+    z-index: 10000;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideUp 0.5s ease-out;
+}
+
+/* Consent Modal */
+.consent-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.consent-modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.consent-modal-content h2 {
+    color: #0e639c;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.consent-modal-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-size: 15px;
+}
+
+.consent-modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.consent-modal-content li {
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    color: #333;
+}
+
+.consent-modal-content li::before {
+    content: '✔';
+    color: #4caf50;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.consent-modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.consent-modal-buttons button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.consent-modal-buttons .btn-primary {
+    background: #0e639c;
+    color: white;
+    border: none;
+}
+
+.consent-modal-buttons .btn-primary:hover {
+    background: #0b4f7a;
+    transform: translateY(-1px);
+}
+
+.consent-modal-buttons .btn-secondary {
+    background: #6c757d;
+    color: white;
+    border: none;
+}
+
+.consent-modal-buttons .btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+}
+
+/* Dark Mode for Consent Banner and Modal */
+.dark-mode .consent-banner {
+    background: #667eea; /* Keep base color or adjust if needed */
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .consent-modal-content {
+    background: #2d2d30;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid #444;
+}
+
+.dark-mode .consent-modal-content h2 {
+    color: #74b9ff;
+}
+
+.dark-mode .consent-modal-content p,
+.dark-mode .consent-modal-content li {
+    color: #ddd;
+}
+
+.dark-mode .consent-modal-content li::before {
+    color: #4caf50;
+}
+
+.dark-mode .consent-modal-buttons .btn-primary {
+    background: #74b9ff;
+    border-color: #74b9ff;
+}
+
+.dark-mode .consent-modal-buttons .btn-primary:hover {
+    background: #56a7f2;
+    border-color: #56a7f2;
+}
+
+.dark-mode .consent-modal-buttons .btn-secondary {
+    background: #868e96;
+    border-color: #868e96;
+}
+
+.dark-mode .consent-modal-buttons .btn-secondary:hover {
+    background: #6c757d;
+    border-color: #6c757d;
 }
