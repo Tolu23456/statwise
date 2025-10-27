@@ -32,9 +32,9 @@
     --border-radius-small: 8px;
     --border-radius-medium: 12px;
     --border-radius-large: 16px;
-    --shadow-light: 0 2px 8px rgba(14, 99, 156, 0.08);
-    --shadow-medium: 0 4px 12px rgba(14, 99, 156, 0.12);
-    --shadow-strong: 0 6px 20px rgba(14, 99, 156, 0.16);
+    --shadow-light: none;
+    --shadow-medium: none;
+    --shadow-strong: none;
 }
 
 /* ---------------- Body ---------------- */

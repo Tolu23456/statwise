@@ -258,18 +258,31 @@ function initInteractiveBackground(container = null) {
         console.log('✅ Interactive circles background created and animated');
     }
 
-    // Enhanced cleanup function
+    // Enhanced cleanup function with proper variable checks
     return () => {
         if (backgroundContainer && createdElements) {
             createdElements = false;
             if (animationId) {
                 cancelAnimationFrame(animationId);
+                animationId = null;
             }
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('touchmove', handleTouchMove);
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('themechange', handleThemeChange);
-            backgroundContainer.remove();
+            // Remove event listeners with proper function references
+            if (typeof handleMouseMove !== 'undefined') {
+                document.removeEventListener('mousemove', handleMouseMove);
+            }
+            if (typeof handleTouchMove !== 'undefined') {
+                document.removeEventListener('touchmove', handleTouchMove);
+            }
+            if (typeof handleResize !== 'undefined') {
+                window.removeEventListener('resize', handleResize);
+            }
+            if (typeof handleThemeChange !== 'undefined') {
+                window.removeEventListener('themechange', handleThemeChange);
+            }
+            if (backgroundContainer.parentNode) {
+                backgroundContainer.remove();
+            }
+            circles = [];
             console.log('🧹 Interactive circles background cleaned up');
         }
     };

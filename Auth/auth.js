@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initializeAuthForms();
     initializeAuthAds(); // Initialize ads for auth page
+    
+    // Update theme icon after DOM is ready
+    updateThemeIcon();
 
     console.log('✅ Auth page initialized successfully');
 });

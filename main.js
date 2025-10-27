@@ -968,10 +968,13 @@ async function handleAvatarUpload(event) {
         type: file.type
     });
 
-    // Validate file type
+    // Validate file type with both MIME type and file extension
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
-    if (!allowedTypes.includes(file.type)) {
-        console.error('Invalid file type:', file.type);
+    const fileExtension = file.name.split('.').pop().toLowerCase();
+    const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+    
+    if (!allowedTypes.includes(file.type) || !allowedExtensions.includes(fileExtension)) {
+        console.error('Invalid file type:', file.type, 'or extension:', fileExtension);
         showModal({
             message: 'Please select a valid image file (JPEG, PNG, GIF, or WebP).',
             confirmText: 'OK'
@@ -1479,11 +1482,11 @@ function displayReferralData(referralCode, referrals) {
                         </thead>
                         <tbody>
                             ${referrals.map(referral => {
-                                // Handle the joined data structure
+                                // Handle the joined data structure with better null safety
                                 const referredUser = referral.user_profiles || referral.referred || {};
-                                const userName = referredUser.display_name || referredUser.username || 'User';
-                                const userEmail = referredUser.email || 'N/A';
-                                const userTier = referredUser.current_tier || 'Free Tier';
+                                const userName = referredUser?.display_name || referredUser?.username || 'Unknown User';
+                                const userEmail = referredUser?.email || 'N/A';
+                                const userTier = referredUser?.current_tier || 'Free Tier';
                                 
                                 return `
                                     <tr>
@@ -1746,28 +1749,30 @@ window.signOut = async function() {
         console.log('Starting sign out process...');
         showLoader();
         
-        // Sign out from Supabase
-        const { error } = await supabase.auth.signOut();
+        // Reset global variables first
+        currentUser = null;
+        verifiedTier = null;
+        
+        // Sign out from Supabase with timeout
+        const signOutPromise = supabase.auth.signOut();
+        const timeoutPromise = new Promise((_, reject) => 
+            setTimeout(() => reject(new Error('Sign out timeout')), 5000)
+        );
+        
+        const { error } = await Promise.race([signOutPromise, timeoutPromise])
+            .catch(err => ({ error: err }));
         
         if (error) {
             console.error('Supabase sign out error:', error);
-            hideLoader();
-            
-            // Show error and still proceed with local cleanup
-            alert('Sign out encountered an issue, but local data will be cleared.');
         }
         
-        // Clear local data regardless of Supabase error
+        // Clear local data after Supabase attempt
         try {
             localStorage.clear();
             sessionStorage.clear();
         } catch (storageError) {
             console.warn('Error clearing storage:', storageError);
         }
-        
-        // Reset global variables
-        currentUser = null;
-        verifiedTier = null;
         
         hideLoader();
         
