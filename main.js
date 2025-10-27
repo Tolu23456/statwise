@@ -1411,7 +1411,7 @@ async function loadReferralData() {
             .from('referrals')
             .select(`
                 *,
-                user_profiles!referred_id (display_name, email, current_tier, created_at)
+                referred:user_profiles!referrals_referred_id_fkey (display_name, email, current_tier, created_at)
             `)
             .eq('referrer_id', currentUser.id)
             .order('created_at', { ascending: false });
@@ -1460,9 +1460,9 @@ function displayReferralData(referralCode, referrals) {
                         <tbody>
                             ${referrals.map(referral => `
                                 <tr>
-                                    <td data-label="Name">${referral.user_profiles?.display_name || 'User'}</td>
-                                    <td data-label="Email">${referral.user_profiles?.email || ''}</td>
-                                    <td data-label="Tier"><span class="tier-badge-small">${referral.user_profiles?.current_tier || 'Free Tier'}</span></td>
+                                    <td data-label="Name">${referral.referred?.display_name || 'User'}</td>
+                                    <td data-label="Email">${referral.referred?.email || ''}</td>
+                                    <td data-label="Tier"><span class="tier-badge-small">${referral.referred?.current_tier || 'Free Tier'}</span></td>
                                     <td data-label="Joined">${formatTimestamp(referral.created_at)}</td>
                                     <td data-label="Status">
                                         <span class="reward-status ${referral.reward_claimed ? 'claimed' : 'pending'}">
@@ -1495,7 +1495,7 @@ function displayReferralData(referralCode, referrals) {
         } else {
             const rewardsHTML = claimedReferrals.map(referral => `
                 <div class="reward-item">
-                    <span>Premium Week from ${referral.user_profiles?.display_name || 'User'}</span>
+                    <span>Premium Week from ${referral.referred?.display_name || 'User'}</span>
                     <span class="reward-amount">₦${referral.reward_amount?.toLocaleString() || '500'}</span>
                 </div>
             `).join('');
