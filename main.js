@@ -1200,6 +1200,9 @@ function displayReferralData(referralCode, referrals) {
         referralCodeInput.value = code;
     }
 
+    // Display "Referred By" information
+    displayReferredBy();
+
     // Update referral list
     const referralListContainer = document.getElementById('referralListContainer');
     if (referralListContainer) {
@@ -1966,3 +1969,61 @@ function showModal(options) {
 }
 
 console.log('✅ StatWise main application loaded with Supabase integration!');
+
+
+async function displayReferredBy() {
+    const referredByCard = document.getElementById('referredByCard');
+    const referredByText = document.getElementById('referredByText');
+    
+    if (!referredByCard || !referredByText) return;
+
+    try {
+        // Get current user's profile to check if they were referred
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return;
+
+        const { data: currentProfile, error: profileError } = await supabase
+            .from('user_profiles')
+            .select('referred_by')
+            .eq('id', user.id)
+            .single();
+
+        if (profileError) {
+            console.warn('Error fetching user profile:', profileError);
+            return;
+        }
+
+        // If user was referred, get the referrer's information
+        if (currentProfile?.referred_by) {
+            const { data: referrerProfile, error: referrerError } = await supabase
+                .from('user_profiles')
+                .select('display_name, username, email')
+                .eq('id', currentProfile.referred_by)
+                .single();
+
+            if (referrerError) {
+                console.warn('Error fetching referrer profile:', referrerError);
+                return;
+            }
+
+            // Get the referral code used
+            const { data: referralData, error: referralError } = await supabase
+                .from('referrals')
+                .select('referral_code')
+                .eq('referred_id', user.id)
+                .single();
+
+            const referrerName = referrerProfile?.display_name || referrerProfile?.username || 'Unknown User';
+            const usedCode = referralData?.referral_code || 'N/A';
+
+            referredByText.innerHTML = `
+                <strong>${referrerName}</strong> referred you using code <strong>${usedCode}</strong>
+                <br>
+                <span style="font-size: 13px; color: #666;">Thank you for joining through their referral!</span>
+            `;
+            referredByCard.style.display = 'block';
+        }
+    } catch (error) {
+        console.error('Error displaying referred by information:', error);
+    }
+}
