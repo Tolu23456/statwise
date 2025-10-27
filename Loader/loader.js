@@ -20,7 +20,8 @@ export function showLoader() {
     // Only show the loader if the operation takes more than 300ms
     loaderTimeout = setTimeout(() => {
         const loader = document.getElementById("globalLoader");
-        if (loader && !loaderActive) {
+        // Only show if document is visible (not in background)
+        if (loader && !loaderActive && document.visibilityState === 'visible') {
             loader.style.display = "flex";
             loaderActive = true;
             console.log('🔄 Loader shown');
@@ -39,6 +40,13 @@ export function hideLoader() {
         console.log('✅ Loader hidden');
     }
 }
+
+// Hide loader when page becomes inactive
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden' && loaderActive) {
+        hideLoader();
+    }
+});
 
 /**
  * Shows a spinner on a button and disables it.

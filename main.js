@@ -1206,21 +1206,36 @@ function displayReferralData(referralCode, referrals) {
         if (referrals.length === 0) {
             referralListContainer.innerHTML = '<p>No referrals yet. Share your code to get started!</p>';
         } else {
-            const referralHTML = referrals.map(referral => `
-                <div class="referral-item">
-                    <div class="referral-info">
-                        <h4>${referral.user_profiles?.display_name || 'User'}</h4>
-                        <p class="email">${referral.user_profiles?.email || ''}</p>
-                        <span class="tier">${referral.user_profiles?.current_tier || 'Free Tier'}</span>
-                        <div class="referral-date">
-                            Joined: ${formatTimestamp(referral.created_at)}
-                        </div>
-                    </div>
-                    <div class="referral-reward">
-                        ${referral.reward_claimed ? '✅ Rewarded' : '⏳ Pending'}
-                    </div>
+            const referralHTML = `
+                <div class="table-responsive">
+                    <table class="referral-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Tier</th>
+                                <th>Joined</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${referrals.map(referral => `
+                                <tr>
+                                    <td data-label="Name">${referral.user_profiles?.display_name || 'User'}</td>
+                                    <td data-label="Email">${referral.user_profiles?.email || ''}</td>
+                                    <td data-label="Tier"><span class="tier-badge-small">${referral.user_profiles?.current_tier || 'Free Tier'}</span></td>
+                                    <td data-label="Joined">${formatTimestamp(referral.created_at)}</td>
+                                    <td data-label="Status">
+                                        <span class="reward-status ${referral.reward_claimed ? 'claimed' : 'pending'}">
+                                            ${referral.reward_claimed ? '✅ Rewarded' : '⏳ Pending'}
+                                        </span>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
                 </div>
-            `).join('');
+            `;
             referralListContainer.innerHTML = referralHTML;
         }
     }
