@@ -1414,8 +1414,15 @@ async function loadReferralData() {
         const { data: referrals, error: referralsError } = await supabase
             .from('referrals')
             .select(`
-                *,
-                referred:user_profiles!referrals_referred_id_fkey(
+                id,
+                referrer_id,
+                referred_id,
+                referral_code,
+                reward_claimed,
+                reward_amount,
+                created_at,
+                claimed_at,
+                user_profiles!referrals_referred_id_fkey (
                     display_name,
                     username,
                     email,
@@ -1468,9 +1475,11 @@ function displayReferralData(referralCode, referrals) {
                         </thead>
                         <tbody>
                             ${referrals.map(referral => {
-                                const userName = referral.referred?.display_name || referral.referred?.username || 'User';
-                                const userEmail = referral.referred?.email || 'N/A';
-                                const userTier = referral.referred?.current_tier || 'Free Tier';
+                                // Handle the joined data structure
+                                const referredUser = referral.user_profiles || referral.referred || {};
+                                const userName = referredUser.display_name || referredUser.username || 'User';
+                                const userEmail = referredUser.email || 'N/A';
+                                const userTier = referredUser.current_tier || 'Free Tier';
                                 
                                 return `
                                     <tr>
@@ -1508,12 +1517,15 @@ function displayReferralData(referralCode, referrals) {
         if (claimedReferrals.length === 0) {
             rewardsContainer.innerHTML = '<p>No rewards earned yet. You\'ll get a reward when a referred user subscribes!</p>';
         } else {
-            const rewardsHTML = claimedReferrals.map(referral => `
-                <div class="reward-item">
-                    <span>Premium Week from ${referral.referred?.display_name || 'User'}</span>
-                    <span class="reward-amount">₦${referral.reward_amount?.toLocaleString() || '500'}</span>
-                </div>
-            `).join('');
+            const rewardsHTML = claimedReferrals.map(referral => {
+                const referredUser = referral.user_profiles || referral.referred || {};
+                return `
+                    <div class="reward-item">
+                        <span>Premium Week from ${referredUser.display_name || 'User'}</span>
+                        <span class="reward-amount">₦${referral.reward_amount?.toLocaleString() || '500'}</span>
+                    </div>
+                `;
+            }).join('');
             rewardsContainer.innerHTML = rewardsHTML;
         }
     }
