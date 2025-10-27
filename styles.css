@@ -3260,7 +3260,7 @@ body.pulling-to-refresh {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(14, 99, 156, 0.15);
     z-index: 10000;
     display: flex;
     align-items: center;
@@ -3269,18 +3269,18 @@ body.pulling-to-refresh {
 }
 
 .adblocker-container {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border-radius: 20px;
+    background: #ffffff;
+    border-radius: 16px;
     padding: 40px;
     max-width: 500px;
     width: 90%;
     text-align: center;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(76, 175, 80, 0.2);
+    box-shadow: 0 8px 32px rgba(14, 99, 156, 0.2);
+    border: 3px solid #0e639c;
 }
 
 .adblocker-content h2 {
-    color: #ffffff;
+    color: #0e639c;
     margin-bottom: 20px;
     font-size: 28px;
     font-weight: 600;
@@ -3289,17 +3289,18 @@ body.pulling-to-refresh {
 .adblocker-icon {
     font-size: 64px;
     margin-bottom: 20px;
+    filter: grayscale(0%) hue-rotate(200deg) saturate(1.2);
 }
 
 .adblocker-content p {
-    color: #b0b0b0;
+    color: #555;
     margin-bottom: 20px;
     line-height: 1.6;
 }
 
 .adblocker-content ul {
     text-align: left;
-    color: #ffffff;
+    color: #333;
     margin: 20px 0;
     padding-left: 0;
     list-style: none;
@@ -3308,9 +3309,9 @@ body.pulling-to-refresh {
 .adblocker-content li {
     margin: 10px 0;
     padding: 12px 20px;
-    background: rgba(76, 175, 80, 0.1);
+    background: rgba(14, 99, 156, 0.08);
     border-radius: 10px;
-    border-left: 4px solid #4caf50;
+    border-left: 4px solid #0e639c;
 }
 
 .adblocker-buttons {
@@ -3333,27 +3334,29 @@ body.pulling-to-refresh {
 }
 
 .btn-refresh {
-    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    background: #0e639c;
     color: white;
 }
 
 .btn-refresh:hover {
-    background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+    background: #0b4f7a;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.3);
 }
 
 .btn-upgrade {
-    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    background: #ff9800;
     color: white;
 }
 
 .btn-upgrade:hover {
-    background: linear-gradient(135deg, #f57c00 0%, #ef6c00 100%);
+    background: #f57c00;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
 }
 
 .adblocker-note {
-    color: #888;
+    color: #666;
     font-size: 14px;
     font-style: italic;
     margin-top: 20px;
