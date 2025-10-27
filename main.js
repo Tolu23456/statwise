@@ -1811,6 +1811,27 @@ async function updateUsername(newUsername) {
     try {
         showSpinner();
 
+        // First check if username is already taken
+        const { data: existingUser, error: checkError } = await supabase
+            .from('user_profiles')
+            .select('id')
+            .eq('username', newUsername)
+            .neq('id', currentUser.id)
+            .maybeSingle();
+
+        if (checkError) {
+            console.warn('Error checking username availability:', checkError);
+        }
+
+        if (existingUser) {
+            hideSpinner();
+            showModal({
+                message: 'This username is already taken. Please choose a different one.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+
         const { error } = await supabase
             .from('user_profiles')
             .update({
@@ -1822,8 +1843,17 @@ async function updateUsername(newUsername) {
 
         if (error) {
             console.error('Error updating username:', error);
+            
+            // Handle specific error cases
+            let errorMessage = 'Failed to update username. Please try again.';
+            if (error.code === '23505') {
+                errorMessage = 'This username is already taken. Please choose a different one.';
+            } else if (error.message) {
+                errorMessage = error.message;
+            }
+            
             showModal({
-                message: 'Failed to update username. Please try again.',
+                message: errorMessage,
                 confirmText: 'OK'
             });
             return;

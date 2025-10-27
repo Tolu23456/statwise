@@ -340,7 +340,8 @@ CREATE POLICY "Users can insert their own profile" ON user_profiles
     FOR INSERT WITH CHECK (id = auth.uid());
 
 CREATE POLICY "Users can update their own profile" ON user_profiles
-    FOR UPDATE USING (id = auth.uid());
+    FOR UPDATE USING (id = auth.uid())
+    WITH CHECK (id = auth.uid());
 
 CREATE POLICY "Allow public read for referral validation" ON user_profiles
     FOR SELECT USING (true);
