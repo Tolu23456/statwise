@@ -384,7 +384,6 @@ main {
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #e0e0e0;
     animation: slideDown 0.3s ease;
 }
@@ -549,7 +548,6 @@ main {
     border-radius: 10px;
     padding: 16px;
     margin-bottom: 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* ---------------- Subscription Cards ---------------- */
@@ -1062,7 +1060,6 @@ main {
     font-size: 15px;
     font-weight: bold;
     color: #333;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .current-tier strong {
@@ -1084,7 +1081,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .profile-card h2 {
@@ -1411,7 +1407,6 @@ main {
     width: 85%;
     max-width: 400px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .modal-content input {
@@ -1481,7 +1476,6 @@ main {
     padding: 15px;
     background-color: #ffffff;
     color: #1c1e;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .history-title {
@@ -1542,7 +1536,6 @@ main {
     background: #ffffff;
     border-radius: 12px;
     padding: 12px 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.1);
     max-height: 80px;
     transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
@@ -1604,14 +1597,12 @@ main {
     color: #fff;
     border-color: #0e639c;
     transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(14, 99, 156, 0.2);
 }
 
 /* Dark mode support for league tabs */
 .dark-mode .league-tabs-wrapper {
     background: #2d2d30;
     border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .tab-btn {
@@ -1668,7 +1659,6 @@ main {
     background: var(--card-bg);
     border-radius: 16px;
     margin-bottom: 20px;
-    box-shadow: var(--shadow-light);
     border: 1px solid var(--border-color);
 }
 
@@ -1697,7 +1687,6 @@ main {
     color: white;
     margin: 20px 0;
     text-align: center;
-    box-shadow: var(--shadow-medium);
 }
 
 .banner-content h3 {
@@ -1914,7 +1903,6 @@ main {
 
 .feature-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     border-color: var(--statwise-blue);
 }
 
@@ -1999,7 +1987,6 @@ main {
     border-radius: 12px;
     padding: 16px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .message-input-wrapper {
@@ -2058,7 +2045,6 @@ main {
 .send-btn:hover:not(:disabled) {
     background: var(--statwise-blue-dark);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.3);
 }
 
 .send-btn:disabled {
@@ -2111,20 +2097,17 @@ main {
     border-radius: 16px;
     padding: 0;
     margin-bottom: 20px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     animation: postSlideIn 0.4s ease-out;
     overflow: hidden;
 }
 
 .post-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
     transform: translateY(-1px);
 }
 
 .post-card.own-post {
     border: 2px solid var(--statwise-blue);
-    box-shadow: 0 2px 16px rgba(14, 99, 156, 0.15);
 }
 
 .post-header {
@@ -2347,7 +2330,6 @@ main {
 .dark-mode .message-input-container {
     background: var(--secondary-bg);
     border-color: var(--border-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .messages-container {
@@ -2581,7 +2563,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 25px rgba(14, 99, 156, 0.4);
     border: 3px solid rgba(255, 255, 255, 0.3);
     opacity: 0;
     z-index: 1000;
@@ -2608,7 +2589,6 @@ main {
     animation: enhanced-pulse 1.5s ease-in-out infinite, 
                ripple 2s ease-out infinite;
     background: #4caf50;
-    box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5);
     border-color: rgba(76, 175, 80, 0.5);
 }
 
@@ -2620,12 +2600,10 @@ main {
 
 @keyframes enhanced-pulse {
     0%, 100% { 
-        transform: translateX(-50%) scale(1); 
-        box-shadow: 0 8px 25px rgba(14, 99, 156, 0.4), 0 0 0 0 rgba(14, 99, 156, 0.1);
+        transform: translateX(-50%) scale(1);
     }
     50% { 
-        transform: translateX(-50%) scale(1.08); 
-        box-shadow: 0 15px 40px rgba(76, 175, 80, 0.6), 0 0 0 20px rgba(14, 99, 156, 0.05);
+        transform: translateX(-50%) scale(1.08);
     }
 }
 
@@ -2654,13 +2632,13 @@ main {
 
 @keyframes ripple {
     0% {
-        box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5), 0 0 0 0 rgba(76, 175, 80, 0.4);
+        transform: scale(1);
     }
     50% {
-        box-shadow: 0 15px 40px rgba(76, 175, 80, 0.6), 0 0 0 30px rgba(76, 175, 80, 0.1);
+        transform: scale(1.05);
     }
     100% {
-        box-shadow: 0 12px 35px rgba(76, 175, 80, 0.5), 0 0 0 50px rgba(76, 175, 80, 0);
+        transform: scale(1);
     }
 }
 
@@ -2906,7 +2884,6 @@ body.pulling-to-refresh {
 .dark-mode .profile-card,
 .dark-mode .current-tier {
     background: #2d2d32;
-    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.08);
     border: 1px solid rgba(14, 99, 156, 0.15);
 }
 
@@ -2959,7 +2936,6 @@ body.pulling-to-refresh {
 .dark-mode .modal-content {
     background: #1e1e1e;
     color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .history-card,
@@ -2968,7 +2944,6 @@ body.pulling-to-refresh {
     border-color: #444;
     /* Default border color for cards in dark mode */
     color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .history-title,
@@ -3136,7 +3111,6 @@ body.pulling-to-refresh {
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     border: 1px solid #e0e0e0;
     transition: border-color 0.3s ease;
 }
@@ -3611,7 +3585,6 @@ body.pulling-to-refresh {
     max-width: 500px;
     width: 90%;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(14, 99, 156, 0.2);
     border: 3px solid #0e639c;
 }
 
@@ -3677,7 +3650,6 @@ body.pulling-to-refresh {
 .btn-refresh:hover {
     background: #0b4f7a;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.3);
 }
 
 .btn-upgrade {
@@ -3688,7 +3660,6 @@ body.pulling-to-refresh {
 .btn-upgrade:hover {
     background: #f57c00;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
 }
 
 .adblocker-note {
@@ -3753,7 +3724,6 @@ body.pulling-to-refresh {
     max-width: 500px;
     width: 90%;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .consent-modal-content h2 {
@@ -3839,7 +3809,6 @@ body.pulling-to-refresh {
 
 .dark-mode .consent-modal-content {
     background: #2d2d30;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     border: 1px solid #444;
 }
 
