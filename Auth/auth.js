@@ -10,18 +10,18 @@ let adblockerDetected = false;
 // Initialize the auth page
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🔐 Initializing auth page...');
-    
+
     // Add loading animation to auth card
     const authCard = document.querySelector('.auth-card');
     if (authCard) {
         authCard.classList.add('loading');
     }
-    
+
     // Test Supabase connection
     testSupabaseConnection();
-    
+
     initializeTheme(); // Initialize theme system
-    
+
     // Initialize interactive background animation for auth pages
     console.log('🌀 Starting auth page background animation...');
     import('../ui.js').then(({ initAuthBackgroundAnimation }) => {
@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         window.authBackgroundCleanup = initAuthBackgroundAnimation();
     });
-    
+
     initializeAuthForms();
     initializeAuthAds(); // Initialize ads for auth page
-    
+
     console.log('✅ Auth page initialized successfully');
 });
 
@@ -61,26 +61,26 @@ function initializeAuthForms() {
     if (loginForm) {
         loginForm.addEventListener('submit', handleLogin);
     }
-    
+
     // Signup form
     const signupForm = document.getElementById('signup-form');
     if (signupForm) {
         signupForm.addEventListener('submit', handleSignup);
     }
-    
+
     // Forgot password form
     const forgotPasswordForm = document.getElementById('forgot-password-form');
     if (forgotPasswordForm) {
         forgotPasswordForm.addEventListener('submit', handleForgotPassword);
     }
-    
+
     // Theme toggle button
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', handleThemeToggle);
         updateThemeIcon();
     }
-    
+
     // Toggle password visibility for login
     const loginPasswordToggle = document.getElementById('login-password-toggle');
     if (loginPasswordToggle) {
@@ -100,15 +100,15 @@ function initializeAuthForms() {
     }
     // Add smooth transitions for auth page navigation
     initializeAuthNavigation();
-    
+
     // Password strength indicator for signup
     const signupPassword = document.getElementById('signup-password');
     if (signupPassword) {
         signupPassword.addEventListener('input', updatePasswordStrength);
     }
-    
+
     // Real-time referral code validation
-    const signupReferralCode = document.getElementById('signup-referralCode');
+    const signupReferralCode = document.getElementById('signup-referral');
     if (signupReferralCode) {
         signupReferralCode.addEventListener('input', debounce(validateReferralCodeInput, 500));
     }
@@ -129,22 +129,29 @@ function debounce(func, wait) {
 
 // Validate referral code input in real-time
 async function validateReferralCodeInput() {
-    const referralCodeInput = document.getElementById('signup-referralCode');
+    const referralCodeInput = document.getElementById('signup-referral');
     const statusElement = document.getElementById('referral-code-status');
-    
+
     if (!referralCodeInput || !statusElement) return;
-    
+
     const code = referralCodeInput.value.trim().toUpperCase();
-    
+
     // Clear validation if input is empty
     if (!code) {
-        statusElement.style.display = 'none';
         statusElement.classList.remove('show', 'success', 'error');
         referralCodeInput.style.borderColor = '';
         referralCodeInput.style.borderWidth = '';
         return;
     }
-    
+
+    // Only validate if code is exactly 8 characters (standard referral code length)
+    if (code.length !== 8) {
+        statusElement.classList.remove('show', 'success', 'error');
+        referralCodeInput.style.borderColor = '';
+        referralCodeInput.style.borderWidth = '';
+        return;
+    }
+
     try {
         const { data, error } = await supabase
             .from('referral_codes')
@@ -152,7 +159,7 @@ async function validateReferralCodeInput() {
             .eq('code', code)
             .eq('active', true)
             .single();
-        
+
         if (error || !data) {
             // Invalid code - show error
             statusElement.textContent = '❌ Invalid referral code';
@@ -168,7 +175,6 @@ async function validateReferralCodeInput() {
         }
     } catch (error) {
         console.warn('Error validating referral code:', error);
-        statusElement.style.display = 'none';
         statusElement.classList.remove('show', 'success', 'error');
         referralCodeInput.style.borderColor = '';
         referralCodeInput.style.borderWidth = '';
@@ -178,22 +184,22 @@ async function validateReferralCodeInput() {
 function handleThemeToggle(e) {
     const button = e.target.closest('.theme-toggle');
     if (!button) return;
-    
+
     // Determine target theme
     const currentTheme = localStorage.getItem('statwise-theme') || 'light';
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
+
     // Apply theme change with loading animation
     import('../ui.js').then(({ toggleTheme, initAuthBackgroundAnimation }) => {
         toggleTheme();
         updateThemeIcon(newTheme);
-        
+
         // Reinitialize background animation with new theme
         if (window.authBackgroundCleanup) {
             window.authBackgroundCleanup();
         }
         window.authBackgroundCleanup = initAuthBackgroundAnimation();
-        
+
         // Add loading animation to auth card
         const authCard = document.querySelector('.auth-card');
         if (authCard) {
@@ -208,7 +214,7 @@ function handleThemeToggle(e) {
 function updateThemeIcon(theme = null) {
     const themeIcon = document.querySelector('.theme-icon');
     if (!themeIcon) return;
-    
+
     const currentTheme = theme || localStorage.getItem('statwise-theme') || 'light';
     themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
 }
@@ -217,15 +223,15 @@ function updateThemeIcon(theme = null) {
 function showErrorMessage(elementId, message) {
     const errorElement = document.getElementById(elementId);
     if (!errorElement) return;
-    
+
     errorElement.textContent = message;
     errorElement.className = 'error-msg show';
     errorElement.classList.add('shake');
-    
+
     setTimeout(() => {
         errorElement.classList.remove('shake');
     }, 500);
-    
+
     // Auto-hide error messages after 5 seconds
     setTimeout(() => {
         if (errorElement.classList.contains('show')) {
@@ -237,10 +243,10 @@ function showErrorMessage(elementId, message) {
 function showSuccessMessage(elementId, message) {
     const errorElement = document.getElementById(elementId);
     if (!errorElement) return;
-    
+
     errorElement.textContent = message;
     errorElement.className = 'error-msg success show';
-    
+
     // Auto-hide success messages after 4 seconds
     setTimeout(() => {
         if (errorElement.classList.contains('show')) {
@@ -252,10 +258,10 @@ function showSuccessMessage(elementId, message) {
 function showWarningMessage(elementId, message) {
     const errorElement = document.getElementById(elementId);
     if (!errorElement) return;
-    
+
     errorElement.textContent = message;
     errorElement.className = 'error-msg warning show';
-    
+
     // Auto-hide warning messages after 5 seconds
     setTimeout(() => {
         if (errorElement.classList.contains('show')) {
@@ -288,7 +294,7 @@ function isValidPassword(password) {
 
 function getPasswordValidationErrors(password) {
     const errors = [];
-    
+
     if (password.length < 8) {
         errors.push('Must be at least 8 characters');
     }
@@ -301,29 +307,29 @@ function getPasswordValidationErrors(password) {
     if (!/\d/.test(password)) {
         errors.push('Include a number');
     }
-    
+
     return errors;
 }
 
 function getPasswordStrength(password) {
     let score = 0;
     const length = password.length;
-    
+
     // Length scoring
     if (length >= 8) score++;
     if (length >= 12) score++;
     if (length >= 16) score++;
-    
+
     // Character type scoring
     if (/[a-z]/.test(password)) score++;
     if (/[A-Z]/.test(password)) score++;
     if (/\d/.test(password)) score++;
     if (/[^\w\s]/.test(password)) score++;
-    
+
     // Bonus for variety
     const hasVariety = (/[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password));
     if (hasVariety) score++;
-    
+
     // Penalty for common patterns
     const commonPatterns = [
         /^[a-zA-Z]+$/,  // Only letters
@@ -331,11 +337,11 @@ function getPasswordStrength(password) {
         /(.)\1{2,}/,    // Repeated characters (aaa, 111)
         /12345|password|qwerty|abc123/i  // Common sequences
     ];
-    
+
     if (commonPatterns.some(pattern => pattern.test(password))) {
         score = Math.max(0, score - 1);
     }
-    
+
     // Calculate strength
     if (length < 8 || score < 3) {
         return { strength: 'weak', text: 'Weak', color: '#d9534f' };
@@ -351,9 +357,9 @@ function getPasswordStrength(password) {
 function togglePasswordVisibility(inputId) {
     const input = document.getElementById(inputId);
     const toggle = input?.parentElement.querySelector('.password-toggle-icon');
-    
+
     if (!input || !toggle) return;
-    
+
     if (input.type === 'password') {
         input.type = 'text';
         toggle.classList.remove('icon-eye');
@@ -370,11 +376,11 @@ function updatePasswordStrength() {
     const strengthContainer = document.getElementById('password-strength-container');
     const strengthText = document.getElementById('password-strength-text');
     const strengthBars = strengthContainer?.querySelectorAll('.strength-bar');
-    
+
     if (!passwordInput || !strengthContainer || !strengthText || !strengthBars) return;
-    
+
     const password = passwordInput.value;
-    
+
     // Clear if empty
     if (password.length === 0) {
         strengthBars.forEach(bar => bar.className = 'strength-bar');
@@ -383,18 +389,18 @@ function updatePasswordStrength() {
         passwordInput.classList.remove('input-error', 'input-success');
         return;
     }
-    
+
     const strength = getPasswordStrength(password);
-    
+
     // Clear all bars
     strengthBars.forEach(bar => {
         bar.className = 'strength-bar';
     });
-    
+
     // Determine active bars and color
     let activeCount = 0;
     let colorClass = '';
-    
+
     switch (strength.strength) {
         case 'weak':
             activeCount = 1;
@@ -420,14 +426,14 @@ function updatePasswordStrength() {
             passwordInput.classList.add('input-success');
             break;
     }
-    
+
     // Activate bars with animation
     for (let i = 0; i < activeCount; i++) {
         setTimeout(() => {
             strengthBars[i].classList.add('active', colorClass);
         }, i * 50);
     }
-    
+
     // Update text with color
     strengthText.textContent = strength.text;
     strengthText.className = colorClass;
@@ -438,65 +444,65 @@ async function handleLogin(e) {
     e.preventDefault();
     console.log('🔐 Login attempt started...');
     clearErrorMessages();
-    
+
     const formData = new FormData(e.target);
     const email = formData.get('email')?.trim();
     const password = formData.get('password');
     const loginBtn = document.getElementById('login-btn');
-    
+
     console.log('Login data:', { email: email, passwordLength: password?.length });
-    
+
     // Enhanced validation
     if (!email || !password) {
         console.log('❌ Validation failed: Missing fields');
         showErrorMessage('login-error', 'Please fill in all fields');
         return;
     }
-    
+
     if (!isValidEmail(email)) {
         console.log('❌ Validation failed: Invalid email format');
         showErrorMessage('login-error', 'Please enter a valid email address');
         return;
     }
-    
+
     try {
         console.log('🔄 Starting Supabase authentication...');
         showLoader();
         loginBtn.classList.add('loading');
-        
+
         const { data, error } = await supabase.auth.signInWithPassword({
             email: email,
             password: password
         });
-        
+
         console.log('Supabase auth response:', { data, error });
-        
+
         if (error) {
             console.error('❌ Login error:', error.message, error.status);
             showErrorMessage('login-error', getErrorMessage(error));
             return;
         }
-        
+
         if (data.user) {
             // Check if email is verified
             if (!data.user.email_confirmed_at) {
                 console.log('❌ Email not verified');
                 showErrorMessage('login-error', 'Please verify your email address before logging in. Check your inbox for the verification link.');
-                
+
                 // Sign out the user
                 await supabase.auth.signOut();
                 return;
             }
-            
+
             console.log('✅ Login successful for:', data.user.email);
             loginBtn.classList.remove('loading');
             loginBtn.classList.add('success');
             showSuccessMessage('login-error', 'Login successful! Redirecting...');
-            
+
             // Create or update user profile
             console.log('📝 Creating/updating user profile...');
             await createOrUpdateUserProfile(data.user);
-            
+
             // Redirect to main app
             console.log('🔄 Redirecting to main app...');
             setTimeout(() => {
@@ -506,7 +512,7 @@ async function handleLogin(e) {
             console.log('❌ No user data returned from Supabase');
             showErrorMessage('login-error', 'Login failed - no user data received');
         }
-        
+
     } catch (error) {
         console.error('Unexpected login error:', error);
         showErrorMessage('login-error', 'An unexpected error occurred. Please try again.');
@@ -519,7 +525,7 @@ async function handleLogin(e) {
 async function handleSignup(e) {
     e.preventDefault();
     clearErrorMessages();
-    
+
     const formData = new FormData(e.target);
     const email = formData.get('email')?.trim();
     const password = formData.get('password');
@@ -528,34 +534,34 @@ async function handleSignup(e) {
     const referralCode = formData.get('referralCode')?.trim();
     const privacyPolicyAccepted = document.getElementById('signup-privacy-policy')?.checked;
     const signupBtn = document.getElementById('signup-btn');
-    
+
     console.log('🔐 Signup attempt:', { email, username, hasPassword: !!password, privacyAccepted: privacyPolicyAccepted });
-    
+
     // Enhanced validation
     if (!email || !password || !confirmPassword || !username) {
         console.log('❌ Validation failed: Missing required fields');
         showErrorMessage('signup-error', 'Please fill in all required fields');
         return;
     }
-    
+
     if (!privacyPolicyAccepted) {
         console.log('❌ Validation failed: Privacy policy not accepted');
         showErrorMessage('signup-error', 'Please accept the Privacy Policy and Terms of Service');
         return;
     }
-    
+
     if (!isValidEmail(email)) {
         console.log('❌ Validation failed: Invalid email');
         showErrorMessage('signup-error', 'Please enter a valid email address');
         return;
     }
-    
+
     if (username.length < 3) {
         console.log('❌ Validation failed: Username too short');
         showErrorMessage('signup-error', 'Username must be at least 3 characters long');
         return;
     }
-    
+
     if (!isValidPassword(password)) {
         const errors = getPasswordValidationErrors(password);
         console.log('❌ Validation failed: Weak password', errors);
@@ -565,17 +571,17 @@ async function handleSignup(e) {
         showErrorMessage('signup-error', errorMsg);
         return;
     }
-    
+
     if (password !== confirmPassword) {
         console.log('❌ Validation failed: Passwords do not match');
         showErrorMessage('signup-error', 'Passwords do not match');
         return;
     }
-    
+
     try {
         showLoader();
         signupBtn.classList.add('loading');
-        
+
         // Validate referral code if provided (optional, so don't block signup)
         let referrerId = null;
         if (referralCode && referralCode.length > 0) {
@@ -587,7 +593,7 @@ async function handleSignup(e) {
                     .eq('code', referralCode.toUpperCase())
                     .eq('active', true)
                     .single();
-                    
+
                 if (referralError || !referralData) {
                     console.log('⚠️ Invalid referral code, proceeding without it');
                     showWarningMessage('signup-error', 'Invalid referral code - proceeding without it');
@@ -601,7 +607,7 @@ async function handleSignup(e) {
                 // Continue without referral
             }
         }
-        
+
         console.log('📝 Creating account...');
         const { data, error } = await supabase.auth.signUp({
             email: email,
@@ -614,7 +620,7 @@ async function handleSignup(e) {
                 emailRedirectTo: window.location.origin + '/Auth/login.html'
             }
         });
-        
+
         if (error) {
             console.error('❌ Signup error:', error);
             hideLoader();
@@ -622,10 +628,10 @@ async function handleSignup(e) {
             showErrorMessage('signup-error', getErrorMessage(error));
             return;
         }
-        
+
         if (data.user) {
             console.log('✅ Signup successful:', data.user.email);
-            
+
             // Create user profile (but user can't login until email verified)
             try {
                 await createOrUpdateUserProfile(data.user, { referred_by: referrerId });
@@ -633,43 +639,43 @@ async function handleSignup(e) {
             } catch (profileError) {
                 console.warn('⚠️ Profile creation warning:', profileError);
             }
-            
+
             // Create referral relationship if applicable
             let referrerUsername = null;
             if (referrerId && referralCode) {
                 try {
                     await createReferralRelationship(referrerId, data.user.id, referralCode);
                     console.log('✅ Referral relationship created');
-                    
+
                     // Get referrer's username for display
                     const { data: referrerData } = await supabase
                         .from('user_profiles')
                         .select('username, display_name')
                         .eq('id', referrerId)
                         .single();
-                    
+
                     referrerUsername = referrerData?.display_name || referrerData?.username || 'a friend';
                 } catch (refError) {
                     console.warn('⚠️ Referral relationship warning:', refError);
                 }
             }
-            
+
             signupBtn.classList.remove('loading');
             signupBtn.classList.add('success');
-            
+
             // Show different success messages based on referral status
             if (referrerUsername) {
                 showSuccessMessage('signup-error', `✓ Account created using ${referrerUsername}'s referral code! Please check your email to verify your account before logging in.`);
             } else {
                 showSuccessMessage('signup-error', '✓ Account created! Please check your email to verify your account before logging in.');
             }
-            
+
             // Redirect to login after a delay
             setTimeout(() => {
                 window.location.href = './login.html';
             }, 4000);
         }
-        
+
     } catch (error) {
         console.error('❌ Unexpected signup error:', error);
         showErrorMessage('signup-error', 'An unexpected error occurred. Please try again.');
@@ -682,44 +688,44 @@ async function handleSignup(e) {
 async function handleForgotPassword(e) {
     e.preventDefault();
     clearErrorMessages();
-    
+
     const formData = new FormData(e.target);
     const email = formData.get('email')?.trim();
     const forgotBtn = document.getElementById('forgot-password-btn');
-    
+
     if (!email) {
         showErrorMessage('forgot-password-error', 'Please enter your email address');
         return;
     }
-    
+
     if (!isValidEmail(email)) {
         showErrorMessage('forgot-password-error', 'Please enter a valid email address');
         return;
     }
-    
+
     try {
         showLoader();
         forgotBtn.classList.add('loading');
-        
+
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
             redirectTo: window.location.origin + '/Auth/login.html'
         });
-        
+
         if (error) {
             console.error('Password reset error:', error);
             showErrorMessage('forgot-password-error', getErrorMessage(error));
             return;
         }
-        
+
         forgotBtn.classList.remove('loading');
         forgotBtn.classList.add('success');
         showSuccessMessage('forgot-password-error', '✓ Password reset email sent! Please check your inbox.');
-        
+
         // Redirect to login after a delay
         setTimeout(() => {
             window.location.href = './login.html';
         }, 3000);
-        
+
     } catch (error) {
         console.error('Unexpected password reset error:', error);
         showErrorMessage('forgot-password-error', 'An unexpected error occurred. Please try again.');
@@ -761,7 +767,7 @@ async function createOrUpdateUserProfile(user, additionalData = {}) {
 
         // Generate referral code
         await generateReferralCode(user.id, userData.username);
-        
+
     } catch (error) {
         console.warn('Error creating user profile:', error);
     }
@@ -770,7 +776,7 @@ async function createOrUpdateUserProfile(user, additionalData = {}) {
 async function generateReferralCode(userId, username) {
     try {
         const code = userId.substring(0, 8).toUpperCase();
-        
+
         const { data, error } = await supabase
             .from('referral_codes')
             .upsert({
@@ -814,10 +820,10 @@ async function createReferralRelationship(referrerId, referredId, referralCode) 
             console.warn('Referral relationship creation warning:', error);
         } else {
             console.log('Referral relationship created:', data);
-            
+
             // Update referral stats
             await updateReferralStats(referrerId);
-            
+
             // Log account history for referrer notification
             try {
                 const { data: referredUser } = await supabase
@@ -825,7 +831,7 @@ async function createReferralRelationship(referrerId, referredId, referralCode) 
                     .select('email, username, display_name')
                     .eq('id', referredId)
                     .single();
-                
+
                 await supabase
                     .from('account_history')
                     .insert({
@@ -899,17 +905,17 @@ function showMessage(message, type = 'info') {
     // Remove existing messages
     const existingMessages = document.querySelectorAll('.auth-message');
     existingMessages.forEach(msg => msg.remove());
-    
+
     // Create new message
     const messageDiv = document.createElement('div');
     messageDiv.className = `auth-message auth-message-${type}`;
     messageDiv.textContent = message;
-    
+
     // Insert message at the top of the form container
     const container = document.querySelector('.auth-container');
     if (container) {
         container.insertBefore(messageDiv, container.firstChild);
-        
+
         // Auto-remove success/error messages after 5 seconds
         if (type === 'success' || type === 'error') {
             setTimeout(() => {
@@ -925,15 +931,15 @@ function showMessage(message, type = 'info') {
 function initializeAuthNavigation() {
     // Find all auth navigation links
     const authLinks = document.querySelectorAll('.switch-auth a, a[href*="login.html"], a[href*="signup.html"], a[href*="forgot-password.html"]');
-    
+
     authLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetUrl = this.getAttribute('href');
-            
+
             // Show loader animation
             showLoader();
-            
+
             // Navigate immediately
             window.location.href = targetUrl;
         });
@@ -956,7 +962,7 @@ checkExistingSession();
 // ===== Auth Page Ad System =====
 function initializeAuthAds() {
     console.log('📺 Initializing ads for auth page...');
-    
+
     // Wait for consent manager and check consent
     checkAuthConsentAndLoadAds();
 }
@@ -967,14 +973,14 @@ function checkAuthConsentAndLoadAds() {
     window.addEventListener('consentUpdated', function(event) {
         const consent = event.detail;
         console.log('🍪 Auth page: Consent updated:', consent);
-        
+
         if (consent.ad_storage === 'granted') {
             loadAuthPageAds();
         } else {
             console.log('🚫 Auth page: Ads not loaded - consent denied');
         }
     });
-    
+
     // Check if consent manager is available and get current consent
     if (window.consentManager) {
         const currentConsent = window.consentManager.getConsentStatus();
@@ -992,34 +998,34 @@ function checkAuthConsentAndLoadAds() {
 
 function loadAuthPageAds() {
     console.log('📺 Loading ads for auth page...');
-    
+
     // Load Google AdSense script dynamically
     const script = document.createElement('script');
     script.async = true;
     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9868946535437166';
     script.crossOrigin = 'anonymous';
-    
+
     script.onload = () => {
         console.log('✅ AdSense loaded successfully on auth page');
         adsLoaded = true;
         // Adblocker detection disabled
         // setTimeout(detectAuthAdBlocker, 1000);
     };
-    
+
     script.onerror = () => {
         console.log('❌ AdSense failed to load on auth page');
         // Adblocker detection disabled
         // adblockerDetected = true;
         // showAuthAdBlockerMessage();
     };
-    
+
     document.head.appendChild(script);
 }
 
 function detectAuthAdBlocker() {
     try {
         console.log('🕵️ Checking for adblocker on auth page...');
-        
+
         // Create a test ad element
         const testAd = document.createElement('div');
         testAd.innerHTML = '&nbsp;';
@@ -1028,20 +1034,20 @@ function detectAuthAdBlocker() {
         testAd.style.left = '-9999px';
         testAd.style.width = '1px';
         testAd.style.height = '1px';
-        
+
         document.body.appendChild(testAd);
-        
+
         setTimeout(() => {
             try {
                 const isBlocked = testAd.offsetHeight === 0 || 
                                  testAd.offsetWidth === 0 || 
                                  testAd.style.display === 'none' ||
                                  testAd.style.visibility === 'hidden';
-                
+
                 if (document.body.contains(testAd)) {
                     document.body.removeChild(testAd);
                 }
-                
+
                 if (isBlocked || !window.adsbygoogle) {
                     console.log('🚫 Adblocker detected on auth page');
                     adblockerDetected = true;
@@ -1062,13 +1068,13 @@ function detectAuthAdBlocker() {
 function showAuthAdBlockerMessage() {
     try {
         console.log('📢 Showing adblocker message on auth page');
-        
+
         // Don't show if already displayed
         if (document.getElementById('adblocker-overlay')) {
             console.log('Adblocker overlay already displayed');
             return;
         }
-        
+
         // Create full-page overlay - uses CSS from styles.css
         const overlay = document.createElement('div');
         overlay.id = 'adblocker-overlay';
@@ -1091,7 +1097,7 @@ function showAuthAdBlockerMessage() {
                 </div>
             </div>
         `;
-        
+
         document.body.appendChild(overlay);
     } catch (err) {
         console.error('Error showing adblocker message:', err);
