@@ -13,7 +13,6 @@ let currentUser = null;
 let verifiedTier = null; // Start as null until profile loads
 let adsLoaded = false;
 let adblockerDetected = false;
-let allPredictions = []; // Store all loaded predictions for search filtering
 
 // Initialize the app
 initializeTheme(); // Initialize theme system
@@ -417,8 +416,6 @@ async function initializeHomePage() {
     await loadPredictions();
     // Initialize league tabs
     initializeLeagueTabs();
-    // Initialize prediction search
-    initializePredictionSearch();
 }
 
 async function loadPredictions() {
@@ -447,9 +444,7 @@ async function loadPredictions() {
             return;
         }
 
-        // Store predictions globally for search filtering
-        allPredictions = predictions || [];
-        displayPredictions(allPredictions);
+        displayPredictions(predictions || []);
     } catch (error) {
         console.error('Error loading predictions:', error);
     }
@@ -470,7 +465,7 @@ function displayPredictions(predictions) {
     }
 
     const predictionsHTML = predictions.map(prediction => `
-        <div class="prediction-card tier-${prediction.tier}" data-prediction-id="${prediction.id}" data-home-team="${prediction.home_team.toLowerCase()}" data-away-team="${prediction.away_team.toLowerCase()}" data-league="${prediction.league.toLowerCase()}" data-confidence="${prediction.confidence}" data-odds="${prediction.odds || ''}">
+        <div class="prediction-card tier-${prediction.tier}">
             <div class="match-header">
                 <h4>${prediction.home_team} vs ${prediction.away_team}</h4>
                 <span class="league">${prediction.league}</span>
@@ -511,515 +506,11 @@ function displayPredictions(predictions) {
     container.innerHTML = predictionsHTML;
 }
 
-// ===== Prediction Search Functionality =====
-function initializePredictionSearch() {
-    const searchInput = document.getElementById('predictionSearch');
-    const clearBtn = document.getElementById('search-clear-btn');
-    const ghostText = document.getElementById('search-ghost-text');
-
-    if (!searchInput) return;
-
-    // Set initial ghost text
-    if (ghostText) {
-        ghostText.textContent = 'Try: Arsenal, /c75, /odds, La Liga';
-    }
-
-    // Handle search input
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value;
-        
-        // Show/hide clear button
-        if (clearBtn) {
-            clearBtn.style.display = query ? 'block' : 'none';
-        }
-
-        // Hide ghost text when typing
-        if (ghostText) {
-            ghostText.style.display = query ? 'none' : 'block';
-        }
-
-        // Filter predictions
-        handlePredictionSearch(query);
-    });
-
-    // Handle clear button
-    if (clearBtn) {
-        clearBtn.addEventListener('click', () => {
-            searchInput.value = '';
-            clearBtn.style.display = 'none';
-            if (ghostText) {
-                ghostText.style.display = 'block';
-            }
-            handlePredictionSearch('');
-        });
-    }
-
-    console.log('Prediction search initialized');
-}
-
-function handlePredictionSearch(query) {
-    const container = document.getElementById('predictions-container');
-    if (!container) return;
-
-    const allCards = container.querySelectorAll('.prediction-card');
-    const normalizedQuery = query.toLowerCase().trim();
-
-    // Parse special commands
-    let confidenceMin = null;
-    let oddsFilter = false;
-    let searchTerm = normalizedQuery;
-
-    // Check for confidence command (/c followed by number)
-    const confidenceMatch = normalizedQuery.match(/\/c(\d+)/);
-    if (confidenceMatch) {
-        confidenceMin = parseInt(confidenceMatch[1]);
-        searchTerm = normalizedQuery.replace(/\/c\d+/g, '').trim();
-    }
-
-    // Check for odds command
-    if (normalizedQuery.includes('/odds')) {
-        oddsFilter = true;
-        searchTerm = normalizedQuery.replace(/\/odds/g, '').trim();
-    }
-
-    let visibleCount = 0;
-    let activeFilters = [];
-
-    allCards.forEach(card => {
-        let shouldShow = true;
-
-        // Apply search term filter (team names, league)
-        if (searchTerm) {
-            const homeTeam = card.getAttribute('data-home-team') || '';
-            const awayTeam = card.getAttribute('data-away-team') || '';
-            const league = card.getAttribute('data-league') || '';
-            
-            const matchesSearch = homeTeam.includes(searchTerm) || 
-                                awayTeam.includes(searchTerm) || 
-                                league.includes(searchTerm);
-            
-            if (!matchesSearch) {
-                shouldShow = false;
-            }
-        }
-
-        // Apply confidence filter
-        if (confidenceMin !== null) {
-            const confidence = parseInt(card.getAttribute('data-confidence') || '0');
-            if (confidence < confidenceMin) {
-                shouldShow = false;
-            }
-        }
-
-        // Apply odds filter
-        if (oddsFilter) {
-            const odds = card.getAttribute('data-odds') || '';
-            if (!odds) {
-                shouldShow = false;
-            }
-        }
-
-        // Show/hide card
-        if (shouldShow) {
-            card.style.display = 'block';
-            visibleCount++;
-        } else {
-            card.style.display = 'none';
-        }
-    });
-
-    // Build active filters array
-    if (searchTerm) {
-        activeFilters.push(`Search: "${searchTerm}"`);
-    }
-    if (confidenceMin !== null) {
-        activeFilters.push(`Confidence: ≥${confidenceMin}%`);
-    }
-    if (oddsFilter) {
-        activeFilters.push('Has Odds');
-    }
-
-    // Update active filters display
-    updateActiveFilters(activeFilters);
-
-    // Show no results message if needed
-    if (visibleCount === 0 && query) {
-        const noResults = document.createElement('div');
-        noResults.className = 'no-predictions';
-        noResults.innerHTML = `
-            <h3>No predictions found</h3>
-            <p>Try adjusting your search or filters</p>
-        `;
-        container.appendChild(noResults);
-    } else {
-        // Remove no results message if it exists
-        const noResults = container.querySelector('.no-predictions');
-        if (noResults) {
-            noResults.remove();
-        }
-    }
-
-    console.log(`Search applied: ${visibleCount} predictions visible`);
-}
-
-function updateActiveFilters(filters) {
-    const filterContainer = document.getElementById('active-filters-container');
-    if (!filterContainer) return;
-
-    if (filters.length === 0) {
-        filterContainer.innerHTML = '';
-        filterContainer.style.display = 'none';
-        return;
-    }
-
-    const filtersHTML = filters.map(filter => `
-        <span class="active-filter-tag">${filter}</span>
-    `).join('');
-
-    filterContainer.innerHTML = `
-        <div class="active-filters">
-            ${filtersHTML}
-        </div>
-    `;
-    filterContainer.style.display = 'block';
-}
-
 // ===== Forum Functionality =====
-let forumMessages = [];
-let forumRealtimeSubscription = null;
-
 async function initializeForumPage() {
-    console.log('Initializing forum page...');
-    
-    // Load all forum messages
-    await loadForumMessages();
-    
-    // Initialize post creation
-    initializeForumPostCreation();
-    
-    // Initialize forum search
-    initializeForumSearch();
-    
-    // Subscribe to real-time updates
-    subscribeToForumMessages();
-    
-    console.log('Forum page initialized successfully');
+    // Forum is coming soon - no functionality needed
+    console.log('Forum page loaded - Coming Soon');
 }
-
-async function loadForumMessages() {
-    try {
-        const { data: messages, error } = await supabase
-            .from('forum_messages')
-            .select('*')
-            .order('created_at', { ascending: false })
-            .limit(50);
-
-        if (error) {
-            console.error('Error loading forum messages:', error);
-            displayForumError('Failed to load messages');
-            return;
-        }
-
-        forumMessages = messages || [];
-        displayForumMessages(forumMessages);
-    } catch (error) {
-        console.error('Error loading forum messages:', error);
-        displayForumError('An error occurred while loading messages');
-    }
-}
-
-function displayForumMessages(messages) {
-    const container = document.getElementById('forumMessagesContainer');
-    if (!container) return;
-
-    if (messages.length === 0) {
-        container.innerHTML = `
-            <div class="no-predictions">
-                <h3>No messages yet</h3>
-                <p>Be the first to share your thoughts with the community!</p>
-            </div>
-        `;
-        return;
-    }
-
-    const messagesHTML = messages.map(msg => {
-        const isOwnPost = currentUser && msg.user_id === currentUser.id;
-        const initials = msg.username ? msg.username.substring(0, 2).toUpperCase() : 'U';
-        const timeAgo = getTimeAgo(msg.created_at);
-
-        return `
-            <div class="post-card ${isOwnPost ? 'own-post' : ''}" data-message-id="${msg.id}" data-username="${msg.username.toLowerCase()}" data-message="${msg.message.toLowerCase()}">
-                <div class="post-header">
-                    <div class="profile-avatar">
-                        <div class="avatar-placeholder">${initials}</div>
-                    </div>
-                    <div class="post-info">
-                        <p class="username">${msg.username}</p>
-                        <p class="timestamp">${timeAgo}</p>
-                    </div>
-                </div>
-                <div class="post-content">
-                    ${msg.message}
-                </div>
-            </div>
-        `;
-    }).join('');
-
-    container.innerHTML = messagesHTML;
-}
-
-function displayForumError(message) {
-    const container = document.getElementById('forumMessagesContainer');
-    if (!container) return;
-
-    container.innerHTML = `
-        <div class="no-predictions">
-            <h3>❌ Error</h3>
-            <p>${message}</p>
-            <button onclick="window.loadForumMessages()" class="button" style="margin-top: 12px;">Retry</button>
-        </div>
-    `;
-}
-
-function getTimeAgo(timestamp) {
-    const now = new Date();
-    const messageTime = new Date(timestamp);
-    const diffMs = now - messageTime;
-    const diffMins = Math.floor(diffMs / 60000);
-    const diffHours = Math.floor(diffMs / 3600000);
-    const diffDays = Math.floor(diffMs / 86400000);
-
-    if (diffMins < 1) return 'Just now';
-    if (diffMins < 60) return `${diffMins}m ago`;
-    if (diffHours < 24) return `${diffHours}h ago`;
-    if (diffDays < 7) return `${diffDays}d ago`;
-    return messageTime.toLocaleDateString();
-}
-
-function initializeForumPostCreation() {
-    const messageInput = document.getElementById('messageInput');
-    const postBtn = document.getElementById('postMessageBtn');
-    const charCount = document.getElementById('charCount');
-
-    if (!messageInput || !postBtn) return;
-
-    // Character counter
-    messageInput.addEventListener('input', () => {
-        const length = messageInput.value.length;
-        if (charCount) {
-            charCount.textContent = `${length} / 500`;
-            charCount.style.color = length > 450 ? '#d9534f' : '#666';
-        }
-    });
-
-    // Post message
-    postBtn.addEventListener('click', async () => {
-        const message = messageInput.value.trim();
-
-        if (!message) {
-            showModal({
-                message: 'Please enter a message before posting.',
-                confirmText: 'OK'
-            });
-            return;
-        }
-
-        if (!currentUser) {
-            showModal({
-                message: 'You must be logged in to post messages.',
-                confirmText: 'OK'
-            });
-            return;
-        }
-
-        try {
-            showSpinner();
-
-            // Get user's username
-            const { data: profile } = await supabase
-                .from('user_profiles')
-                .select('username, display_name')
-                .eq('id', currentUser.id)
-                .single();
-
-            const username = profile?.display_name || profile?.username || currentUser.email?.split('@')[0] || 'User';
-
-            // Insert message
-            const { error } = await supabase
-                .from('forum_messages')
-                .insert({
-                    user_id: currentUser.id,
-                    username: username,
-                    message: message
-                });
-
-            if (error) {
-                console.error('Error posting message:', error);
-                showModal({
-                    message: 'Failed to post message. Please try again.',
-                    confirmText: 'OK'
-                });
-                return;
-            }
-
-            // Clear input and reset counter
-            messageInput.value = '';
-            if (charCount) {
-                charCount.textContent = '0 / 500';
-                charCount.style.color = '#666';
-            }
-
-            // Reload messages
-            await loadForumMessages();
-
-        } catch (error) {
-            console.error('Error posting message:', error);
-            showModal({
-                message: 'An error occurred. Please try again.',
-                confirmText: 'OK'
-            });
-        } finally {
-            hideSpinner();
-        }
-    });
-}
-
-function subscribeToForumMessages() {
-    // Clean up existing subscription
-    if (forumRealtimeSubscription) {
-        forumRealtimeSubscription.unsubscribe();
-    }
-
-    // Subscribe to new messages
-    forumRealtimeSubscription = supabase
-        .channel('forum_messages')
-        .on('postgres_changes', {
-            event: 'INSERT',
-            schema: 'public',
-            table: 'forum_messages'
-        }, (payload) => {
-            console.log('New forum message received:', payload);
-            // Add new message to the beginning of the array
-            forumMessages.unshift(payload.new);
-            displayForumMessages(forumMessages);
-        })
-        .subscribe();
-
-    console.log('Subscribed to forum real-time updates');
-}
-
-function initializeForumSearch() {
-    const searchInput = document.getElementById('forumSearch');
-    const clearBtn = document.getElementById('forum-search-clear-btn');
-    const ghostText = document.getElementById('forum-search-ghost-text');
-
-    if (!searchInput) return;
-
-    // Set initial ghost text
-    if (ghostText) {
-        ghostText.textContent = 'Search by content or author';
-    }
-
-    // Handle search input
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value;
-        
-        // Show/hide clear button
-        if (clearBtn) {
-            clearBtn.style.display = query ? 'block' : 'none';
-        }
-
-        // Hide ghost text when typing
-        if (ghostText) {
-            ghostText.style.display = query ? 'none' : 'block';
-        }
-
-        // Filter messages
-        handleForumSearch(query);
-    });
-
-    // Handle clear button
-    if (clearBtn) {
-        clearBtn.addEventListener('click', () => {
-            searchInput.value = '';
-            clearBtn.style.display = 'none';
-            if (ghostText) {
-                ghostText.style.display = 'block';
-            }
-            handleForumSearch('');
-        });
-    }
-
-    console.log('Forum search initialized');
-}
-
-function handleForumSearch(query) {
-    const container = document.getElementById('forumMessagesContainer');
-    if (!container) return;
-
-    const allPosts = container.querySelectorAll('.post-card');
-    const normalizedQuery = query.toLowerCase().trim();
-
-    let visibleCount = 0;
-
-    allPosts.forEach(post => {
-        if (!normalizedQuery) {
-            post.style.display = 'block';
-            visibleCount++;
-            return;
-        }
-
-        const username = post.getAttribute('data-username') || '';
-        const message = post.getAttribute('data-message') || '';
-
-        const matchesSearch = username.includes(normalizedQuery) || 
-                            message.includes(normalizedQuery);
-
-        if (matchesSearch) {
-            post.style.display = 'block';
-            visibleCount++;
-        } else {
-            post.style.display = 'none';
-        }
-    });
-
-    // Update active filters
-    const filterContainer = document.getElementById('forum-active-filters-container');
-    if (filterContainer) {
-        if (normalizedQuery) {
-            filterContainer.innerHTML = `
-                <div class="active-filters">
-                    <span class="active-filter-tag">Search: "${query}"</span>
-                </div>
-            `;
-            filterContainer.style.display = 'block';
-        } else {
-            filterContainer.innerHTML = '';
-            filterContainer.style.display = 'none';
-        }
-    }
-
-    // Show no results message if needed
-    if (visibleCount === 0 && query) {
-        const noResults = document.createElement('div');
-        noResults.className = 'no-predictions';
-        noResults.innerHTML = `
-            <h3>No messages found</h3>
-            <p>Try adjusting your search term</p>
-        `;
-        container.appendChild(noResults);
-    } else {
-        const noResults = container.querySelector('.no-predictions');
-        if (noResults) {
-            noResults.remove();
-        }
-    }
-
-    console.log(`Forum search applied: ${visibleCount} messages visible`);
-}
-
-// Make loadForumMessages available globally for retry button
-window.loadForumMessages = loadForumMessages;
 
 async function initializeProfilePage() {
     await loadUserProfile();
@@ -1124,25 +615,6 @@ function displayUserProfile(profile) {
 }
 
 function initializeProfileInteractions() {
-    // Initialize FAQ accordion
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const faqItem = question.parentElement;
-            const isActive = faqItem.classList.contains('active');
-            
-            // Close all other FAQ items
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Toggle current item
-            if (!isActive) {
-                faqItem.classList.add('active');
-            }
-        });
-    });
-
     // Initialize dark mode toggle
     const darkModeToggle = document.getElementById('darkModeToggle');
     if (darkModeToggle) {
@@ -1361,33 +833,10 @@ async function handleAvatarUpload(event) {
 
 async function initializeSubscriptionsPage() {
     console.log('Initializing subscriptions page...');
-    
-    try {
-        // Load subscription info only if user is authenticated
-        if (currentUser) {
-            await loadSubscriptionInfo();
-        } else {
-            // Show default Free Tier for non-authenticated users
-            const userTierElement = document.getElementById('user-tier');
-            if (userTierElement) {
-                userTierElement.textContent = 'Free Tier';
-            }
-            const tierExpiryElement = document.getElementById('tier-expiry');
-            if (tierExpiryElement) {
-                tierExpiryElement.style.display = 'none';
-            }
-        }
-        
-        initializeSubscriptionTabs();
-        initializeSubscriptionButtons();
-        console.log('Subscriptions page initialized successfully');
-    } catch (error) {
-        console.error('Error initializing subscriptions page:', error);
-        showModal({
-            message: 'Error loading subscription information. Please refresh the page.',
-            confirmText: 'OK'
-        });
-    }
+    await loadSubscriptionInfo();
+    initializeSubscriptionTabs();
+    initializeSubscriptionButtons();
+    console.log('Subscriptions page initialized successfully');
 }
 
 async function initializeManageSubscriptionPage() {
@@ -1399,15 +848,6 @@ async function initializeManageSubscriptionPage() {
 async function loadManageSubscriptionInfo() {
     if (!currentUser) {
         console.warn('No current user found for manage subscription');
-        const planInfoCard = document.getElementById('plan-info-card');
-        if (planInfoCard) {
-            planInfoCard.innerHTML = `
-                <div style="text-align: center; padding: 20px;">
-                    <p style="color: #d9534f;">❌ Please log in to view your subscription details.</p>
-                    <button onclick="window.location.href='./Auth/login.html'" class="button" style="margin-top: 12px;">Login</button>
-                </div>
-            `;
-        }
         return;
     }
 
@@ -1421,16 +861,7 @@ async function loadManageSubscriptionInfo() {
             .single();
 
         if (error) {
-            console.error('Error loading subscription info:', error);
-            const planInfoCard = document.getElementById('plan-info-card');
-            if (planInfoCard) {
-                planInfoCard.innerHTML = `
-                    <div style="text-align: center; padding: 20px;">
-                        <p style="color: #d9534f;">❌ Failed to load subscription information.</p>
-                        <button onclick="window.location.reload()" class="button" style="margin-top: 12px;">Retry</button>
-                    </div>
-                `;
-            }
+            console.warn('Error loading subscription info:', error);
             return;
         }
 
@@ -1438,15 +869,6 @@ async function loadManageSubscriptionInfo() {
         displayManageSubscriptionInfo(profile);
     } catch (error) {
         console.error('Error loading subscription info:', error);
-        const planInfoCard = document.getElementById('plan-info-card');
-        if (planInfoCard) {
-            planInfoCard.innerHTML = `
-                <div style="text-align: center; padding: 20px;">
-                    <p style="color: #d9534f;">❌ An unexpected error occurred.</p>
-                    <button onclick="window.location.reload()" class="button" style="margin-top: 12px;">Retry</button>
-                </div>
-            `;
-        }
     }
 }
 
@@ -1598,11 +1020,6 @@ async function loadSubscriptionInfo() {
 }
 
 function displaySubscriptionInfo(profile) {
-    if (!profile) {
-        console.warn('No profile data to display');
-        return;
-    }
-
     // Update current tier display
     const userTierElement = document.getElementById('user-tier');
     if (userTierElement) {
@@ -1611,13 +1028,11 @@ function displaySubscriptionInfo(profile) {
 
     // Update tier expiry
     const tierExpiryElement = document.getElementById('tier-expiry');
-    if (tierExpiryElement) {
-        if (profile.subscription_end && profile.current_tier !== 'Free Tier') {
-            tierExpiryElement.textContent = `Expires: ${formatTimestamp(profile.subscription_end)}`;
-            tierExpiryElement.style.display = 'block';
-        } else {
-            tierExpiryElement.style.display = 'none';
-        }
+    if (tierExpiryElement && profile.subscription_end) {
+        tierExpiryElement.textContent = `Expires: ${formatTimestamp(profile.subscription_end)}`;
+        tierExpiryElement.style.display = 'block';
+    } else if (tierExpiryElement) {
+        tierExpiryElement.style.display = 'none';
     }
 }
 
@@ -1739,7 +1154,6 @@ async function handleSubscriptionUpgrade(tier, amount, period) {
 
 async function initializeReferralPage() {
     await loadReferralData();
-    initializeReferralSearch();
 }
 
 async function loadReferralData() {
@@ -1786,15 +1200,6 @@ function displayReferralData(referralCode, referrals) {
         referralCodeInput.value = code;
     }
 
-    // Display "Referred By" information
-    displayReferredBy();
-
-    // Show/hide search container based on referrals
-    const referralSearchContainer = document.getElementById('referralSearchContainer');
-    if (referralSearchContainer) {
-        referralSearchContainer.style.display = referrals.length > 0 ? 'block' : 'none';
-    }
-
     // Update referral list
     const referralListContainer = document.getElementById('referralListContainer');
     if (referralListContainer) {
@@ -1815,7 +1220,7 @@ function displayReferralData(referralCode, referrals) {
                         </thead>
                         <tbody>
                             ${referrals.map(referral => `
-                                <tr data-name="${(referral.user_profiles?.display_name || 'User').toLowerCase()}" data-email="${(referral.user_profiles?.email || '').toLowerCase()}" data-tier="${(referral.user_profiles?.current_tier || 'Free Tier').toLowerCase()}" data-status="${referral.reward_claimed ? 'rewarded' : 'pending'}">
+                                <tr>
                                     <td data-label="Name">${referral.user_profiles?.display_name || 'User'}</td>
                                     <td data-label="Email">${referral.user_profiles?.email || ''}</td>
                                     <td data-label="Tier"><span class="tier-badge-small">${referral.user_profiles?.current_tier || 'Free Tier'}</span></td>
@@ -2172,106 +1577,48 @@ async function handleSuccessfulPayment(paymentData, tier, period, amount) {
     try {
         console.log('🔄 Verifying payment with server...');
 
-        // Calculate subscription dates
-        const subscriptionStart = new Date();
-        let subscriptionEnd = new Date();
-        
-        if (period === 'daily') {
-            subscriptionEnd.setDate(subscriptionEnd.getDate() + 1);
-        } else if (period === 'monthly') {
-            subscriptionEnd.setMonth(subscriptionEnd.getMonth() + 1);
-        }
-
-        // Try to call Edge Function, but fallback to direct database update if it fails
-        let verificationSuccess = false;
-        
-        try {
-            const { data: verificationResult, error: verificationError } = await supabase.functions.invoke('verify-payment', {
-                body: {
-                    transaction_id: paymentData.transaction_id,
-                    tx_ref: paymentData.tx_ref,
-                    amount: amount,
-                    tier: tier,
-                    period: period,
-                    user_id: currentUser.id,
-                    flw_ref: paymentData.flw_ref || paymentData.transaction_id
-                }
-            });
-
-            if (!verificationError && verificationResult?.success) {
-                verificationSuccess = true;
+        // Call Supabase Edge Function to verify payment
+        const { data: verificationResult, error: verificationError } = await supabase.functions.invoke('verify-payment', {
+            body: {
+                transaction_id: paymentData.transaction_id,
+                tx_ref: paymentData.tx_ref,
+                amount: amount,
+                tier: tier,
+                period: period,
+                user_id: currentUser.id,
+                flw_ref: paymentData.flw_ref || paymentData.transaction_id
             }
-        } catch (edgeFunctionError) {
-            console.warn('Edge Function not available, using direct update:', edgeFunctionError);
-        }
+        });
 
-        // Fallback: Direct database update if Edge Function fails
-        if (!verificationSuccess) {
-            console.log('📝 Using fallback payment processing...');
-            
-            // Update user profile with new subscription
-            const { error: profileError } = await supabase
-                .from('user_profiles')
-                .update({
-                    current_tier: `${tier.charAt(0).toUpperCase() + tier.slice(1)} Tier`,
-                    tier: `${tier.charAt(0).toUpperCase() + tier.slice(1)} Tier`,
-                    subscription_period: period,
-                    subscription_start: subscriptionStart.toISOString(),
-                    subscription_end: subscriptionEnd.toISOString(),
-                    subscription_status: 'active',
-                    updated_at: new Date().toISOString()
-                })
-                .eq('id', currentUser.id);
-
-            if (profileError) {
-                console.error('Profile update failed:', profileError);
-                hideLoader();
-                showModal({
-                    message: 'Payment received but subscription update failed. Please contact support with your transaction ID: ' + paymentData.transaction_id,
-                    confirmText: 'OK'
-                });
-                return;
-            }
-
-            // Log the transaction
-            await supabase
-                .from('payment_transactions')
-                .insert({
-                    user_id: currentUser.id,
-                    transaction_id: paymentData.transaction_id,
-                    tx_ref: paymentData.tx_ref,
-                    amount: amount,
-                    currency: 'NGN',
-                    status: 'successful',
-                    payment_type: 'flutterwave',
-                    tier: tier,
-                    period: period,
-                    created_at: new Date().toISOString()
-                });
-
-            verificationSuccess = true;
-        }
-
-        // Always hide loader after verification attempt
+        // Always hide loader after verification attempt (success or error)
         hideLoader();
 
-        if (verificationSuccess) {
+        if (verificationError) {
+            console.error('Payment verification failed:', verificationError);
+            showModal({
+                message: 'Payment verification failed. Please contact support with your transaction ID: ' + paymentData.transaction_id,
+                confirmText: 'OK'
+            });
+            return;
+        }
+
+        if (verificationResult?.success) {
             // Update local user tier
-            verifiedTier = `${tier.charAt(0).toUpperCase() + tier.slice(1)} Tier`;
+            verifiedTier = tier;
             console.log('✅ Payment verified and subscription updated successfully!');
 
             showModal({
-                message: `🎉 Congratulations!\n\nYour ${tier.charAt(0).toUpperCase() + tier.slice(1)} Tier subscription is now active!\n\nTransaction ID: ${paymentData.transaction_id}`,
+                message: `🎉 Congratulations!\n\nYour ${tier} subscription is now active!\n\nTransaction ID: ${paymentData.transaction_id}`,
                 confirmText: 'Continue',
                 onConfirm: () => {
                     // Reload the subscriptions page to show updated tier
-                    window.location.reload();
+                    loadPage('subscriptions');
                 }
             });
         } else {
-            console.error('Payment verification failed');
+            console.error('Payment verification failed:', verificationResult);
             showModal({
-                message: 'Payment could not be verified. Please contact support with your transaction ID: ' + paymentData.transaction_id,
+                message: verificationResult?.message || 'Payment could not be verified. Please contact support.',
                 confirmText: 'OK'
             });
         }
@@ -2461,55 +1808,6 @@ async function updateUsername(newUsername) {
     try {
         showSpinner();
 
-        // Get current user profile to check current username
-        const { data: currentProfile, error: profileError } = await supabase
-            .from('user_profiles')
-            .select('username')
-            .eq('id', currentUser.id)
-            .single();
-
-        if (profileError) {
-            console.error('Error fetching current profile:', profileError);
-            hideSpinner();
-            showModal({
-                message: 'Failed to fetch your current profile. Please try again.',
-                confirmText: 'OK'
-            });
-            return;
-        }
-
-        // If username hasn't changed, just return success
-        if (currentProfile.username === newUsername) {
-            hideSpinner();
-            showModal({
-                message: 'Username is already set to this value.',
-                confirmText: 'OK'
-            });
-            return;
-        }
-
-        // Check if new username is already taken by another user
-        const { data: existingUser, error: checkError } = await supabase
-            .from('user_profiles')
-            .select('id')
-            .eq('username', newUsername)
-            .neq('id', currentUser.id)
-            .maybeSingle();
-
-        if (checkError) {
-            console.warn('Error checking username availability:', checkError);
-        }
-
-        if (existingUser) {
-            hideSpinner();
-            showModal({
-                message: 'This username is already taken. Please choose a different one.',
-                confirmText: 'OK'
-            });
-            return;
-        }
-
-        // Update username
         const { error } = await supabase
             .from('user_profiles')
             .update({
@@ -2521,18 +1819,8 @@ async function updateUsername(newUsername) {
 
         if (error) {
             console.error('Error updating username:', error);
-            
-            // Handle specific error cases
-            let errorMessage = 'Failed to update username. Please try again.';
-            if (error.code === '23505') {
-                errorMessage = 'This username is already taken. Please choose a different one.';
-            } else if (error.message) {
-                errorMessage = error.message;
-            }
-            
-            hideSpinner();
             showModal({
-                message: errorMessage,
+                message: 'Failed to update username. Please try again.',
                 confirmText: 'OK'
             });
             return;
@@ -2544,7 +1832,6 @@ async function updateUsername(newUsername) {
             userNameElement.textContent = newUsername;
         }
 
-        hideSpinner();
         showModal({
             message: 'Username updated successfully!',
             confirmText: 'OK'
@@ -2552,11 +1839,12 @@ async function updateUsername(newUsername) {
 
     } catch (error) {
         console.error('Error updating username:', error);
-        hideSpinner();
         showModal({
             message: 'Failed to update username. Please try again.',
             confirmText: 'OK'
         });
+    } finally {
+        hideSpinner();
     }
 }
 
@@ -2678,61 +1966,3 @@ function showModal(options) {
 }
 
 console.log('✅ StatWise main application loaded with Supabase integration!');
-
-
-async function displayReferredBy() {
-    const referredByCard = document.getElementById('referredByCard');
-    const referredByText = document.getElementById('referredByText');
-    
-    if (!referredByCard || !referredByText) return;
-
-    try {
-        // Get current user's profile to check if they were referred
-        const { data: { user } } = await supabase.auth.getUser();
-        if (!user) return;
-
-        const { data: currentProfile, error: profileError } = await supabase
-            .from('user_profiles')
-            .select('referred_by')
-            .eq('id', user.id)
-            .single();
-
-        if (profileError) {
-            console.warn('Error fetching user profile:', profileError);
-            return;
-        }
-
-        // If user was referred, get the referrer's information
-        if (currentProfile?.referred_by) {
-            const { data: referrerProfile, error: referrerError } = await supabase
-                .from('user_profiles')
-                .select('display_name, username, email')
-                .eq('id', currentProfile.referred_by)
-                .single();
-
-            if (referrerError) {
-                console.warn('Error fetching referrer profile:', referrerError);
-                return;
-            }
-
-            // Get the referral code used
-            const { data: referralData, error: referralError } = await supabase
-                .from('referrals')
-                .select('referral_code')
-                .eq('referred_id', user.id)
-                .single();
-
-            const referrerName = referrerProfile?.display_name || referrerProfile?.username || 'Unknown User';
-            const usedCode = referralData?.referral_code || 'N/A';
-
-            referredByText.innerHTML = `
-                <strong>${referrerName}</strong> referred you using code <strong>${usedCode}</strong>
-                <br>
-                <span style="font-size: 13px; color: #666;">Thank you for joining through their referral!</span>
-            `;
-            referredByCard.style.display = 'block';
-        }
-    } catch (error) {
-        console.error('Error displaying referred by information:', error);
-    }
-}

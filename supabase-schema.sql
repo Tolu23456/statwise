@@ -30,7 +30,7 @@ DROP TABLE IF EXISTS user_profiles CASCADE;
 CREATE TABLE user_profiles (
     id UUID PRIMARY KEY,
     email VARCHAR(255) UNIQUE NOT NULL,
-    username VARCHAR(100) UNIQUE, -- User display name/username
+    username VARCHAR(100), -- User display name/username
     display_name VARCHAR(100), -- Alternative display name field
     current_tier VARCHAR(20) DEFAULT 'Free Tier',
     tier VARCHAR(20) DEFAULT 'Free Tier', -- Alternative tier field for compatibility
@@ -340,8 +340,7 @@ CREATE POLICY "Users can insert their own profile" ON user_profiles
     FOR INSERT WITH CHECK (id = auth.uid());
 
 CREATE POLICY "Users can update their own profile" ON user_profiles
-    FOR UPDATE USING (id = auth.uid())
-    WITH CHECK (id = auth.uid());
+    FOR UPDATE USING (id = auth.uid());
 
 CREATE POLICY "Allow public read for referral validation" ON user_profiles
     FOR SELECT USING (true);

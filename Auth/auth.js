@@ -478,25 +478,15 @@ async function handleLogin(e) {
         console.log('Supabase auth response:', { data, error });
 
         if (error) {
-            console.error('❌ Login error:', error.message, error.status, error);
-            hideLoader();
-            loginBtn.classList.remove('loading');
+            console.error('❌ Login error:', error.message, error.status);
             showErrorMessage('login-error', getErrorMessage(error));
             return;
         }
 
         if (data.user) {
-            console.log('User data:', {
-                email: data.user.email,
-                emailConfirmed: data.user.email_confirmed_at,
-                userMetadata: data.user.user_metadata
-            });
-
             // Check if email is verified
             if (!data.user.email_confirmed_at) {
-                console.log('❌ Email not verified for:', data.user.email);
-                hideLoader();
-                loginBtn.classList.remove('loading');
+                console.log('❌ Email not verified');
                 showErrorMessage('login-error', 'Please verify your email address before logging in. Check your inbox for the verification link.');
 
                 // Sign out the user

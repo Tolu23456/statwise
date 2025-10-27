@@ -343,39 +343,6 @@ main {
     display: none; /* JS will toggle this */
 }
 
-#search-clear-btn:hover {
-    color: #666;
-}
-
-/* Active Filters Display */
-#active-filters-container {
-    margin-bottom: 12px;
-    display: none;
-}
-
-.active-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
-}
-
-.active-filter-tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 12px;
-    background: linear-gradient(135deg, #0e639c 0%, #1a7bb9 100%);
-    color: white;
-    border-radius: 16px;
-    font-size: 13px;
-    font-weight: 500;
-    box-shadow: 0 2px 4px rgba(14, 99, 156, 0.2);
-}
-
-.dark-mode .active-filter-tag {
-    background: linear-gradient(135deg, #1a7bb9 0%, #0e639c 100%);
-}
-
 /* ---------------- Cards ---------------- */
 .card {
     background: #ffffff;
@@ -701,7 +668,6 @@ main {
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.2s ease, border 0.2s ease;
-    box-shadow: none;
 }
 
 .subscription-card:hover {
@@ -896,6 +862,7 @@ main {
     font-size: 15px;
     font-weight: bold;
     color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .current-tier strong {
@@ -917,6 +884,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .profile-card h2 {
@@ -2738,6 +2706,7 @@ body.pulling-to-refresh {
 .dark-mode .profile-card,
 .dark-mode .current-tier {
     background: #2d2d32;
+    box-shadow: 0 4px 12px rgba(14, 99, 156, 0.08);
     border: 1px solid rgba(14, 99, 156, 0.15);
 }
 
@@ -3180,21 +3149,6 @@ body.pulling-to-refresh {
     }
 }
 
-.referral-info-text {
-    background-color: #f1f3f5;
-    padding: 16px;
-    border-radius: 8px;
-    border-left: 4px solid var(--statwise-blue, #0e639c);
-    color: var(--text-primary, #333);
-    line-height: 1.6;
-    font-size: 15px;
-}
-
-.dark-mode .referral-info-text {
-    background-color: #252526;
-    color: var(--text-primary, #e2e2e4);
-}
-
 .referral-code-container {
     display: flex;
     gap: 8px;
@@ -3396,84 +3350,6 @@ body.pulling-to-refresh {
 /* Dark mode animated background */
 .dark-mode .animated-background {
     background: #1a1a1c;
-}
-
-/* ===== FAQ Section Styles ===== */
-.faq-container {
-    margin-top: 16px;
-}
-
-.faq-item {
-    border-bottom: 1px solid var(--border-color, #e0e0e0);
-    margin-bottom: 0;
-}
-
-.faq-item:last-child {
-    border-bottom: none;
-}
-
-.faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 16px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    text-align: left;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text-primary, #333);
-    transition: color 0.3s ease;
-}
-
-.faq-question:hover {
-    color: var(--statwise-blue, #0e639c);
-}
-
-.faq-icon {
-    font-size: 20px;
-    font-weight: 300;
-    color: var(--statwise-blue, #0e639c);
-    transition: transform 0.3s ease;
-    min-width: 24px;
-    text-align: center;
-}
-
-.faq-item.active .faq-icon {
-    transform: rotate(45deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    padding: 0;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 500px;
-    padding: 0 0 16px 0;
-}
-
-.faq-answer p {
-    margin: 0;
-    color: var(--text-secondary, #666);
-    line-height: 1.6;
-    font-size: 14px;
-}
-
-.dark-mode .faq-item {
-    border-bottom-color: var(--border-color, #444);
-}
-
-.dark-mode .faq-question {
-    color: var(--text-primary, #e2e2e4);
-}
-
-.dark-mode .faq-answer p {
-    color: var(--text-secondary, #bbb);
 }
 
 /* Dark mode gradient overlays removed to comply with no-gradient requirement */
