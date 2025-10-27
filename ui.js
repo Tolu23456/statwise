@@ -182,6 +182,9 @@ function initInteractiveBackground(container = null) {
         };
         window.addEventListener('themechange', handleThemeChange);
         
+        // Set initial colors based on current theme
+        updateCircleColors();
+        
         // Animation loop
         const animateCircles = () => {
             circles.forEach((circle, index) => {

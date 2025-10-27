@@ -694,16 +694,18 @@ function initializeProfileInteractions() {
     }
 
     // Initialize avatar upload - wait for DOM to be ready
-    const avatarUpload = document.getElementById('avatarUpload');
-    if (avatarUpload) {
-        console.log('✅ Avatar upload input found, adding event listener');
-        // Remove any existing listeners first
-        avatarUpload.removeEventListener('change', handleAvatarUpload);
-        // Add the event listener
-        avatarUpload.addEventListener('change', handleAvatarUpload);
-    } else {
-        console.warn('⚠️ Avatar upload input not found in profile page');
-    }
+    setTimeout(() => {
+        const avatarUpload = document.getElementById('avatarUpload');
+        if (avatarUpload) {
+            console.log('✅ Avatar upload input found, adding event listener');
+            // Remove any existing listeners first
+            avatarUpload.removeEventListener('change', handleAvatarUpload);
+            // Add the event listener
+            avatarUpload.addEventListener('change', handleAvatarUpload);
+        } else {
+            console.warn('⚠️ Avatar upload input not found in profile page');
+        }
+    }, 100);
 }
 
 // Make functions globally available
@@ -819,6 +821,12 @@ async function handleAvatarUpload(event) {
         console.error('Error uploading avatar:', error);
         showModal({
             message: 'An error occurred while uploading your profile picture. Please try again.',
+            confirmText: 'OK'
+        });
+    } catch (error) {
+        console.error('Unexpected error in avatar upload:', error);
+        showModal({
+            message: 'An unexpected error occurred. Please try again.',
             confirmText: 'OK'
         });
     } finally {
@@ -1154,6 +1162,7 @@ async function handleSubscriptionUpgrade(tier, amount, period) {
 
 async function initializeReferralPage() {
     await loadReferralData();
+    await displayReferredBy();
 }
 
 async function loadReferralData() {
