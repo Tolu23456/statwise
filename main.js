@@ -1811,7 +1811,34 @@ async function updateUsername(newUsername) {
     try {
         showSpinner();
 
-        // First check if username is already taken
+        // Get current user profile to check current username
+        const { data: currentProfile, error: profileError } = await supabase
+            .from('user_profiles')
+            .select('username')
+            .eq('id', currentUser.id)
+            .single();
+
+        if (profileError) {
+            console.error('Error fetching current profile:', profileError);
+            hideSpinner();
+            showModal({
+                message: 'Failed to fetch your current profile. Please try again.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+
+        // If username hasn't changed, just return success
+        if (currentProfile.username === newUsername) {
+            hideSpinner();
+            showModal({
+                message: 'Username is already set to this value.',
+                confirmText: 'OK'
+            });
+            return;
+        }
+
+        // Check if new username is already taken by another user
         const { data: existingUser, error: checkError } = await supabase
             .from('user_profiles')
             .select('id')
@@ -1832,6 +1859,7 @@ async function updateUsername(newUsername) {
             return;
         }
 
+        // Update username
         const { error } = await supabase
             .from('user_profiles')
             .update({
@@ -1852,6 +1880,7 @@ async function updateUsername(newUsername) {
                 errorMessage = error.message;
             }
             
+            hideSpinner();
             showModal({
                 message: errorMessage,
                 confirmText: 'OK'
@@ -1865,6 +1894,7 @@ async function updateUsername(newUsername) {
             userNameElement.textContent = newUsername;
         }
 
+        hideSpinner();
         showModal({
             message: 'Username updated successfully!',
             confirmText: 'OK'
@@ -1872,12 +1902,11 @@ async function updateUsername(newUsername) {
 
     } catch (error) {
         console.error('Error updating username:', error);
+        hideSpinner();
         showModal({
             message: 'Failed to update username. Please try again.',
             confirmText: 'OK'
         });
-    } finally {
-        hideSpinner();
     }
 }
 
