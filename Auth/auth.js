@@ -375,6 +375,7 @@ async function handleLogin(e) {
     const formData = new FormData(e.target);
     const email = formData.get('email')?.trim();
     const password = formData.get('password');
+    const loginBtn = document.getElementById('login-btn');
     
     console.log('Login data:', { email: email, passwordLength: password?.length });
     
@@ -394,6 +395,7 @@ async function handleLogin(e) {
     try {
         console.log('🔄 Starting Supabase authentication...');
         showLoader();
+        loginBtn.classList.add('loading');
         
         const { data, error } = await supabase.auth.signInWithPassword({
             email: email,
@@ -409,7 +411,19 @@ async function handleLogin(e) {
         }
         
         if (data.user) {
+            // Check if email is verified
+            if (!data.user.email_confirmed_at) {
+                console.log('❌ Email not verified');
+                showErrorMessage('login-error', 'Please verify your email address before logging in. Check your inbox for the verification link.');
+                
+                // Sign out the user
+                await supabase.auth.signOut();
+                return;
+            }
+            
             console.log('✅ Login successful for:', data.user.email);
+            loginBtn.classList.remove('loading');
+            loginBtn.classList.add('success');
             showSuccessMessage('login-error', 'Login successful! Redirecting...');
             
             // Create or update user profile
@@ -431,6 +445,7 @@ async function handleLogin(e) {
         showErrorMessage('login-error', 'An unexpected error occurred. Please try again.');
     } finally {
         hideLoader();
+        loginBtn.classList.remove('loading');
     }
 }
 
@@ -445,6 +460,7 @@ async function handleSignup(e) {
     const username = formData.get('username')?.trim();
     const referralCode = formData.get('referralCode')?.trim();
     const privacyPolicyAccepted = document.getElementById('signup-privacy-policy')?.checked;
+    const signupBtn = document.getElementById('signup-btn');
     
     console.log('🔐 Signup attempt:', { email, username, hasPassword: !!password, privacyAccepted: privacyPolicyAccepted });
     
@@ -491,6 +507,7 @@ async function handleSignup(e) {
     
     try {
         showLoader();
+        signupBtn.classList.add('loading');
         
         // Validate referral code if provided (optional, so don't block signup)
         let referrerId = null;
@@ -526,13 +543,15 @@ async function handleSignup(e) {
                 data: {
                     display_name: username,
                     username: username
-                }
+                },
+                emailRedirectTo: window.location.origin + '/Auth/login.html'
             }
         });
         
         if (error) {
             console.error('❌ Signup error:', error);
             hideLoader();
+            signupBtn.classList.remove('loading');
             showErrorMessage('signup-error', getErrorMessage(error));
             return;
         }
@@ -540,7 +559,7 @@ async function handleSignup(e) {
         if (data.user) {
             console.log('✅ Signup successful:', data.user.email);
             
-            // Create user profile
+            // Create user profile (but user can't login until email verified)
             try {
                 await createOrUpdateUserProfile(data.user, { referred_by: referrerId });
                 console.log('✅ User profile created');
@@ -558,12 +577,14 @@ async function handleSignup(e) {
                 }
             }
             
-            showSuccessMessage('signup-error', 'Account created successfully! Please check your email to verify your account.');
+            signupBtn.classList.remove('loading');
+            signupBtn.classList.add('success');
+            showSuccessMessage('signup-error', '✓ Account created! Please check your email to verify your account before logging in.');
             
             // Redirect to login after a delay
             setTimeout(() => {
                 window.location.href = './login.html';
-            }, 3000);
+            }, 4000);
         }
         
     } catch (error) {
@@ -571,6 +592,7 @@ async function handleSignup(e) {
         showErrorMessage('signup-error', 'An unexpected error occurred. Please try again.');
     } finally {
         hideLoader();
+        signupBtn.classList.remove('loading');
     }
 }
 
@@ -580,6 +602,7 @@ async function handleForgotPassword(e) {
     
     const formData = new FormData(e.target);
     const email = formData.get('email')?.trim();
+    const forgotBtn = document.getElementById('forgot-password-btn');
     
     if (!email) {
         showErrorMessage('forgot-password-error', 'Please enter your email address');
@@ -593,6 +616,7 @@ async function handleForgotPassword(e) {
     
     try {
         showLoader();
+        forgotBtn.classList.add('loading');
         
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
             redirectTo: window.location.origin + '/Auth/login.html'
@@ -604,7 +628,9 @@ async function handleForgotPassword(e) {
             return;
         }
         
-        showSuccessMessage('forgot-password-error', 'Password reset email sent! Please check your inbox.');
+        forgotBtn.classList.remove('loading');
+        forgotBtn.classList.add('success');
+        showSuccessMessage('forgot-password-error', '✓ Password reset email sent! Please check your inbox.');
         
         // Redirect to login after a delay
         setTimeout(() => {
@@ -616,6 +642,7 @@ async function handleForgotPassword(e) {
         showErrorMessage('forgot-password-error', 'An unexpected error occurred. Please try again.');
     } finally {
         hideLoader();
+        forgotBtn.classList.remove('loading');
     }
 }
 
@@ -751,7 +778,7 @@ function getErrorMessage(error) {
         case 'Invalid login credentials':
             return 'Invalid email or password. Please check your credentials and try again.';
         case 'Email not confirmed':
-            return 'Please verify your email address before signing in.';
+            return 'Please verify your email address before signing in. Check your inbox for the verification link.';
         case 'User already registered':
             return 'An account with this email already exists. Please sign in instead.';
         case 'Password should be at least 6 characters':
