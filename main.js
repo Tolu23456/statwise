@@ -416,6 +416,8 @@ async function initializeHomePage() {
     await loadPredictions();
     // Initialize league tabs
     initializeLeagueTabs();
+    // Initialize advanced filters
+    initializeAdvancedFilters();
 }
 
 async function loadPredictions() {
@@ -444,7 +446,8 @@ async function loadPredictions() {
             return;
         }
 
-        displayPredictions(predictions || []);
+        allPredictions = predictions || [];
+        displayPredictions(allPredictions);
     } catch (error) {
         console.error('Error loading predictions:', error);
     }
@@ -504,6 +507,221 @@ function displayPredictions(predictions) {
     `).join('');
 
     container.innerHTML = predictionsHTML;
+}
+
+// ===== Advanced Filtering =====
+let activeFilters = {
+    date: null,
+    prediction: null,
+    confidence: null
+};
+
+let allPredictions = [];
+
+function initializeAdvancedFilters() {
+    const filterToggleBtn = document.getElementById('filter-toggle-btn');
+    const filterPanel = document.getElementById('advanced-filters-panel');
+    const applyFiltersBtn = document.getElementById('apply-filters');
+    const clearFiltersBtn = document.getElementById('clear-all-filters');
+    const filterOptions = document.querySelectorAll('.filter-option-btn');
+
+    if (!filterToggleBtn || !filterPanel) return;
+
+    filterToggleBtn.addEventListener('click', () => {
+        const isVisible = filterPanel.style.display !== 'none';
+        filterPanel.style.display = isVisible ? 'none' : 'block';
+    });
+
+    filterOptions.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterType = button.getAttribute('data-filter-type');
+            const filterValue = button.getAttribute('data-value');
+            
+            document.querySelectorAll(`[data-filter-type="${filterType}"]`).forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            button.classList.add('active');
+            activeFilters[filterType] = filterValue === 'all' ? null : filterValue;
+        });
+    });
+
+    if (applyFiltersBtn) {
+        applyFiltersBtn.addEventListener('click', () => {
+            applyFilters();
+            filterPanel.style.display = 'none';
+        });
+    }
+
+    if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', () => {
+            clearAllFilters();
+        });
+    }
+}
+
+function applyFilters() {
+    let filteredPredictions = [...allPredictions];
+
+    if (activeFilters.date) {
+        filteredPredictions = filterByDate(filteredPredictions, activeFilters.date);
+    }
+
+    if (activeFilters.prediction) {
+        filteredPredictions = filterByPredictionType(filteredPredictions, activeFilters.prediction);
+    }
+
+    if (activeFilters.confidence) {
+        filteredPredictions = filterByConfidence(filteredPredictions, activeFilters.confidence);
+    }
+
+    displayPredictions(filteredPredictions);
+    updateActiveFiltersDisplay();
+}
+
+function filterByDate(predictions, dateFilter) {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const weekEnd = new Date(today);
+    weekEnd.setDate(weekEnd.getDate() + 7);
+
+    return predictions.filter(prediction => {
+        const kickoffDate = new Date(prediction.kickoff_time);
+        
+        switch(dateFilter) {
+            case 'today':
+                return kickoffDate >= today && kickoffDate < tomorrow;
+            case 'tomorrow':
+                const dayAfterTomorrow = new Date(tomorrow);
+                dayAfterTomorrow.setDate(dayAfterTomorrow.getDate() + 1);
+                return kickoffDate >= tomorrow && kickoffDate < dayAfterTomorrow;
+            case 'weekend':
+                const dayOfWeek = now.getDay();
+                const daysUntilSaturday = (6 - dayOfWeek + 7) % 7;
+                const saturday = new Date(today);
+                saturday.setDate(saturday.getDate() + daysUntilSaturday);
+                const monday = new Date(saturday);
+                monday.setDate(monday.getDate() + 2);
+                return kickoffDate >= saturday && kickoffDate < monday;
+            case 'week':
+                return kickoffDate >= today && kickoffDate < weekEnd;
+            default:
+                return true;
+        }
+    });
+}
+
+function filterByPredictionType(predictions, predictionType) {
+    return predictions.filter(prediction => {
+        const pred = prediction.prediction.toLowerCase();
+        
+        switch(predictionType) {
+            case 'win':
+                return pred.includes('win');
+            case 'draw':
+                return pred === 'draw';
+            case 'over':
+                return pred.includes('over');
+            case 'under':
+                return pred.includes('under');
+            case 'btts':
+                return pred.includes('both teams to score') || pred.includes('btts');
+            default:
+                return true;
+        }
+    });
+}
+
+function filterByConfidence(predictions, confidenceLevel) {
+    return predictions.filter(prediction => {
+        const confidence = prediction.confidence;
+        
+        switch(confidenceLevel) {
+            case 'high':
+                return confidence >= 75;
+            case 'medium':
+                return confidence >= 60 && confidence < 75;
+            case 'low':
+                return confidence < 60;
+            default:
+                return true;
+        }
+    });
+}
+
+function updateActiveFiltersDisplay() {
+    const container = document.getElementById('active-filters-container');
+    if (!container) return;
+
+    const filterLabels = {
+        date: {
+            today: 'Today',
+            tomorrow: 'Tomorrow',
+            weekend: 'This Weekend',
+            week: 'This Week'
+        },
+        prediction: {
+            win: 'Win',
+            draw: 'Draw',
+            over: 'Over 2.5',
+            under: 'Under 2.5',
+            btts: 'Both Teams Score'
+        },
+        confidence: {
+            high: 'High Confidence',
+            medium: 'Medium Confidence',
+            low: 'Low Confidence'
+        }
+    };
+
+    const chips = [];
+    
+    Object.keys(activeFilters).forEach(filterType => {
+        if (activeFilters[filterType]) {
+            const label = filterLabels[filterType][activeFilters[filterType]];
+            chips.push(`
+                <div class="filter-chip">
+                    <span>${label}</span>
+                    <button class="filter-chip-remove" onclick="removeFilter('${filterType}')">×</button>
+                </div>
+            `);
+        }
+    });
+
+    container.innerHTML = chips.join('');
+}
+
+window.removeFilter = function(filterType) {
+    activeFilters[filterType] = null;
+    
+    const filterButtons = document.querySelectorAll(`[data-filter-type="${filterType}"]`);
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    
+    const allButton = document.querySelector(`[data-filter-type="${filterType}"][data-value="all"]`);
+    if (allButton) allButton.classList.add('active');
+    
+    applyFilters();
+};
+
+function clearAllFilters() {
+    activeFilters = {
+        date: null,
+        prediction: null,
+        confidence: null
+    };
+    
+    document.querySelectorAll('.filter-option-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    document.querySelectorAll('.filter-option-btn[data-value="all"]').forEach(btn => {
+        btn.classList.add('active');
+    });
+    
+    displayPredictions(allPredictions);
+    updateActiveFiltersDisplay();
 }
 
 // ===== Forum Functionality =====

@@ -1,16 +1,63 @@
   <h1 class="page-title">Today’s Predictions</h1>
 
-  <!-- Search Bar -->
+  <!-- Search Bar with Filter Button -->
   <div class="search-container">
     <div class="search-wrapper">
       <input type="text" id="predictionSearch" placeholder="Search or use commands like /odds, /c75">
       <div id="search-ghost-text"></div>
       <button id="search-clear-btn" style="display: none;">&times;</button>
     </div>
+    <button id="filter-toggle-btn" class="filter-toggle-btn" title="Advanced Filters">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M3 5h14M3 10h10M3 15h6"/>
+      </svg>
+      Filters
+    </button>
+  </div>
+
+  <!-- Advanced Filters Panel -->
+  <div id="advanced-filters-panel" class="advanced-filters-panel" style="display: none;">
+    <div class="filter-section">
+      <h4 class="filter-section-title">Date Range</h4>
+      <div class="filter-options">
+        <button class="filter-option-btn" data-filter-type="date" data-value="today">Today</button>
+        <button class="filter-option-btn" data-filter-type="date" data-value="tomorrow">Tomorrow</button>
+        <button class="filter-option-btn" data-filter-type="date" data-value="weekend">This Weekend</button>
+        <button class="filter-option-btn" data-filter-type="date" data-value="week">This Week</button>
+        <button class="filter-option-btn" data-filter-type="date" data-value="all">All Dates</button>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <h4 class="filter-section-title">Prediction Type</h4>
+      <div class="filter-options">
+        <button class="filter-option-btn" data-filter-type="prediction" data-value="win">Win</button>
+        <button class="filter-option-btn" data-filter-type="prediction" data-value="draw">Draw</button>
+        <button class="filter-option-btn" data-filter-type="prediction" data-value="over">Over 2.5 Goals</button>
+        <button class="filter-option-btn" data-filter-type="prediction" data-value="under">Under 2.5 Goals</button>
+        <button class="filter-option-btn" data-filter-type="prediction" data-value="btts">Both Teams to Score</button>
+        <button class="filter-option-btn" data-filter-type="prediction" data-value="all">All Types</button>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <h4 class="filter-section-title">Confidence Level</h4>
+      <div class="filter-options">
+        <button class="filter-option-btn" data-filter-type="confidence" data-value="high">High (75%+)</button>
+        <button class="filter-option-btn" data-filter-type="confidence" data-value="medium">Medium (60-74%)</button>
+        <button class="filter-option-btn" data-filter-type="confidence" data-value="low">Low (<60%)</button>
+        <button class="filter-option-btn" data-filter-type="confidence" data-value="all">All Levels</button>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button id="clear-all-filters" class="btn-secondary">Clear All</button>
+      <button id="apply-filters" class="btn-primary">Apply Filters</button>
+    </div>
   </div>
 
   <!-- Active Filters Display -->
-  <div id="active-filters-container"></div>
+  <div id="active-filters-container" class="active-filters-container"></div>
 
   <!-- League Tabs -->
   <div class="league-tabs-wrapper">
