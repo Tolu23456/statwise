@@ -1410,26 +1410,10 @@ async function loadReferralData() {
             console.warn('Error loading referral code:', codeError);
         }
 
-        // Get user's referrals with referred user details using a join
+        // Get user's referrals
         const { data: referrals, error: referralsError } = await supabase
             .from('referrals')
-            .select(`
-                id,
-                referrer_id,
-                referred_id,
-                referral_code,
-                reward_claimed,
-                reward_amount,
-                created_at,
-                claimed_at,
-                user_profiles!referrals_referred_id_fkey (
-                    display_name,
-                    username,
-                    email,
-                    current_tier,
-                    created_at
-                )
-            `)
+            .select('*')
             .eq('referrer_id', currentUser.id)
             .order('created_at', { ascending: false });
 
@@ -1439,7 +1423,27 @@ async function loadReferralData() {
             return;
         }
 
-        displayReferralData(referralCode, referrals || []);
+        // Fetch referred user details for each referral
+        const referralsWithDetails = await Promise.all(
+            (referrals || []).map(async (referral) => {
+                const { data: referredUser, error: userError } = await supabase
+                    .from('user_profiles')
+                    .select('display_name, username, email, current_tier, created_at')
+                    .eq('id', referral.referred_id)
+                    .single();
+
+                if (userError) {
+                    console.warn('Error loading referred user:', userError);
+                }
+
+                return {
+                    ...referral,
+                    user_profiles: referredUser || null
+                };
+            })
+        );
+
+        displayReferralData(referralCode, referralsWithDetails);
     } catch (error) {
         console.error('Error loading referral data:', error);
         displayReferralData(referralCode, []);
