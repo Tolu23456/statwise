@@ -839,18 +839,15 @@ function loadAuthPageAds() {
     script.onload = () => {
         console.log('✅ AdSense loaded successfully on auth page');
         adsLoaded = true;
-        // Check for adblocker after script loads
-        setTimeout(detectAuthAdBlocker, 1000);
+        // Adblocker detection disabled
+        // setTimeout(detectAuthAdBlocker, 1000);
     };
     
     script.onerror = () => {
-        try {
-            console.log('❌ AdSense failed to load on auth page - likely blocked');
-            adblockerDetected = true;
-            showAuthAdBlockerMessage();
-        } catch (err) {
-            console.error('Error handling AdSense load failure:', err);
-        }
+        console.log('❌ AdSense failed to load on auth page');
+        // Adblocker detection disabled
+        // adblockerDetected = true;
+        // showAuthAdBlockerMessage();
     };
     
     document.head.appendChild(script);

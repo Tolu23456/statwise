@@ -1684,18 +1684,15 @@ function loadAdsForFreeUsers() {
     script.onload = () => {
         console.log('✅ AdSense loaded successfully');
         adsLoaded = true;
-        // Check for adblocker after script loads
-        setTimeout(detectAdBlocker, 1000);
+        // Adblocker detection disabled
+        // setTimeout(detectAdBlocker, 1000);
     };
 
     script.onerror = () => {
-        try {
-            console.log('❌ AdSense failed to load - likely blocked');
-            adblockerDetected = true;
-            showAdBlockerMessage();
-        } catch (err) {
-            console.error('Error handling AdSense load failure:', err);
-        }
+        console.log('❌ AdSense failed to load');
+        // Adblocker detection disabled
+        // adblockerDetected = true;
+        // showAdBlockerMessage();
     };
 
     document.head.appendChild(script);
