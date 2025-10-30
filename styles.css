@@ -490,13 +490,39 @@ main .prediction-card {
 
 .filter-actions button {
     flex: 1;
-    padding: 10px 20px;
-    border: none;
+    padding: 12px 20px;
+    border: 2px solid;
     border-radius: 8px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
+}
+
+.filter-actions .btn-secondary,
+.filter-actions #clear-all-filters {
+    background: #f8f9fc;
+    color: #1a1a1c;
+    border-color: #e0e0e0;
+}
+
+.filter-actions .btn-secondary:hover,
+.filter-actions #clear-all-filters:hover {
+    background: #e0e0e0;
+    border-color: #1a1a1c;
+}
+
+.filter-actions .btn-primary,
+.filter-actions #apply-filters {
+    background: #0e639c;
+    color: #ffffff;
+    border-color: #0e639c;
+}
+
+.filter-actions .btn-primary:hover,
+.filter-actions #apply-filters:hover {
+    background: #0b4f7a;
+    border-color: #0b4f7a;
 }
 
 .active-filters-container {
