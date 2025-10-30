@@ -88,6 +88,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 12px;
     background-color: #ffffff;
     color: #1c1c1e;
     border-bottom: 3px solid #0e639c;
@@ -95,12 +96,17 @@ header {
     padding: 0 var(--mobile-padding);
 }
 
+.app-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
 .app-name {
     font-size: 25px;
     font-weight: bold;
     color: #0e639c;
     text-align: center;
-    width: 100%;
     margin: 0;
 }
 

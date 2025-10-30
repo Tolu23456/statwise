@@ -11,15 +11,15 @@
   "scope": "/",
   "icons": [
     {
-      "src": "Assets/Icons/house.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "Assets/statwise-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "Assets/Icons/gem.svg", 
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "Assets/statwise-logo.png", 
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "maskable"
     }
   ],

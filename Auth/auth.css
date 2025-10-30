@@ -96,6 +96,14 @@ body {
     animation: authCardLoad 0.4s ease-out forwards;
 }
 
+.auth-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto 16px;
+    display: block;
+}
+
 .auth-title {
     font-size: 32px;
     font-weight: bold;
