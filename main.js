@@ -1405,7 +1405,24 @@ async function initializeReferralPage() {
 }
 
 async function loadReferralData() {
-    if (!currentUser) return;
+    // If currentUser is not set, try to get the active session from Supabase
+    if (!currentUser) {
+        try {
+            const { data: { session } } = await supabase.auth.getSession();
+                if (session && session.user) {
+                    currentUser = session.user;
+                } else {
+                    console.warn('loadReferralData: no logged-in user found - redirecting to login');
+                    // Redirect unauthenticated users to login when trying to access referral page
+                    redirectToLogin();
+                    return;
+                }
+        } catch (sessErr) {
+            console.warn('Error obtaining auth session in loadReferralData:', sessErr);
+            displayReferralData(null, []);
+            return;
+        }
+    }
 
     try {
         // Get user's referral code
