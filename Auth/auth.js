@@ -673,6 +673,9 @@ async function handleSignup(e) {
                 showSuccessMessage('signup-error', '✓ Account created! Please check your email to verify your account before logging in.');
             }
 
+            // Helpful hint for admins if email delivery is not configured
+            console.info('If users do not receive verification emails, see SUPABASE_EMAIL.md for troubleshooting and SMTP/webhook options.');
+
             // Redirect to login after a delay
             setTimeout(() => {
                 window.location.href = './login.html';
