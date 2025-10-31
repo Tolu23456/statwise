@@ -1,3 +1,11 @@
+Asset update: 2025-10-31
+
+- Updated site and auth pages to use the new favicon `statwise_transparent_black-and-white_light_logo(512x512).ico` located in `statwise_logos/`.
+
+Email/signup troubleshooting: 2025-10-31
+
+- Added `SUPABASE_EMAIL.md` with steps to configure SMTP in Supabase and an example webhook/Edge Function using SendGrid for custom email delivery.
+- Signup flow now logs a console hint pointing to the new doc if verification emails are not received.
 Push performed: 2025-10-31
 
 Actions taken:
