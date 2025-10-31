@@ -740,6 +740,13 @@ function initializeSearchBar() {
 
     if (!input) return;
 
+    // Improve clear button accessibility and behavior
+    if (clearBtn) {
+        clearBtn.setAttribute('aria-label', 'Clear search');
+        clearBtn.classList.add('search-clear');
+        clearBtn.title = 'Clear search (Esc)';
+    }
+
     // Toggle clear button & ghost text visibility on input
     input.addEventListener('input', (e) => {
         const v = e.target.value || '';
@@ -747,11 +754,22 @@ function initializeSearchBar() {
         if (ghost) ghost.style.display = v.trim() ? 'none' : 'block';
     });
 
-    // Handle Enter key to run search/commands
+    // Handle Enter key to run search/commands and Escape to clear
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
             handleSearchCommand(input.value);
+            return;
+        }
+
+        if (e.key === 'Escape') {
+            input.value = '';
+            if (clearBtn) clearBtn.style.display = 'none';
+            if (ghost) ghost.style.display = 'block';
+            input.blur();
+            displayPredictions(allPredictions);
+            updateActiveFiltersDisplay();
+            return;
         }
     });
 
@@ -760,6 +778,7 @@ function initializeSearchBar() {
             input.value = '';
             clearBtn.style.display = 'none';
             if (ghost) ghost.style.display = 'block';
+            input.focus();
             displayPredictions(allPredictions);
             updateActiveFiltersDisplay();
         });
@@ -795,7 +814,45 @@ function handleSearchCommand(query) {
             return;
         }
 
-        // Unknown command: show all (could show a hint instead)
+        // /league:<name> -> filter by league (partial match)
+        const leagueMatch = cmd.match(/^league:(.+)$/);
+        if (leagueMatch) {
+            const name = leagueMatch[1].trim().toLowerCase();
+            const filtered = allPredictions.filter(p => (p.league || '').toLowerCase().includes(name));
+            displayPredictions(filtered);
+            updateActiveFiltersDisplay();
+            return;
+        }
+
+        // /type:<win|draw|over|under|btts>
+        const typeMatch = cmd.match(/^type:(win|draw|over|under|btts)$/);
+        if (typeMatch) {
+            const t = typeMatch[1];
+            const filtered = filterByPredictionType(allPredictions, t);
+            displayPredictions(filtered);
+            updateActiveFiltersDisplay();
+            return;
+        }
+
+        // /top:<n> -> top n predictions by confidence
+        const topMatch = cmd.match(/^top:(\d{1,3})$/);
+        if (topMatch) {
+            const n = Math.max(1, Math.min(100, parseInt(topMatch[1], 10)));
+            const sorted = [...allPredictions].sort((a, b) => (Number(b.confidence) || 0) - (Number(a.confidence) || 0)).slice(0, n);
+            displayPredictions(sorted);
+            updateActiveFiltersDisplay();
+            return;
+        }
+
+        // /clear -> reset search and filters
+        if (cmd === 'clear') {
+            displayPredictions(allPredictions);
+            updateActiveFiltersDisplay();
+            return;
+        }
+
+        // Unknown command: show all and log hint
+        console.info('Unknown command:', cmd);
         displayPredictions(allPredictions);
         updateActiveFiltersDisplay();
         return;
