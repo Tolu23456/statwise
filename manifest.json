@@ -11,13 +11,13 @@
   "scope": "/",
   "icons": [
     {
-      "src": "statwise_logos/statwise_transparent_black-and-white_light_logo(512x512)_test_2.png",
+  "src": "statwise_logos/statwise_transparent_black-and-white_light_logo(512x512).ico",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "statwise_logos/statwise_transparent_black-and-white_light_logo(512x512)_test_2.png", 
+  "src": "statwise_logos/statwise_transparent_black-and-white_light_logo(512x512).ico", 
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
