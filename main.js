@@ -424,6 +424,8 @@ async function initializeHomePage() {
     initializeLeagueTabs();
     // Initialize advanced filters
     initializeAdvancedFilters();
+    // Initialize search/command input on the home page
+    initializeSearchBar();
 }
 
 async function loadPredictions() {
@@ -727,6 +729,88 @@ function clearAllFilters() {
     });
     
     displayPredictions(allPredictions);
+    updateActiveFiltersDisplay();
+}
+
+// ===== Search / Command Input for Home Page =====
+function initializeSearchBar() {
+    const input = document.getElementById('predictionSearch');
+    const clearBtn = document.getElementById('search-clear-btn');
+    const ghost = document.getElementById('search-ghost-text');
+
+    if (!input) return;
+
+    // Toggle clear button & ghost text visibility on input
+    input.addEventListener('input', (e) => {
+        const v = e.target.value || '';
+        if (clearBtn) clearBtn.style.display = v.trim() ? 'block' : 'none';
+        if (ghost) ghost.style.display = v.trim() ? 'none' : 'block';
+    });
+
+    // Handle Enter key to run search/commands
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSearchCommand(input.value);
+        }
+    });
+
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            input.value = '';
+            clearBtn.style.display = 'none';
+            if (ghost) ghost.style.display = 'block';
+            displayPredictions(allPredictions);
+            updateActiveFiltersDisplay();
+        });
+    }
+}
+
+function handleSearchCommand(query) {
+    const q = (query || '').trim();
+    if (!q) {
+        displayPredictions(allPredictions);
+        return;
+    }
+
+    // Commands start with '/'
+    if (q.startsWith('/')) {
+        const cmd = q.slice(1).toLowerCase();
+
+        // /c75 -> filter by confidence >= 75
+        const confidenceMatch = cmd.match(/^c(\d{1,3})$/);
+        if (confidenceMatch) {
+            const threshold = parseInt(confidenceMatch[1], 10);
+            const filtered = allPredictions.filter(p => Number(p.confidence) >= threshold);
+            displayPredictions(filtered);
+            updateActiveFiltersDisplay();
+            return;
+        }
+
+        // /odds -> sort by odds desc
+        if (cmd === 'odds') {
+            const sorted = [...allPredictions].sort((a, b) => (Number(b.odds) || 0) - (Number(a.odds) || 0));
+            displayPredictions(sorted);
+            updateActiveFiltersDisplay();
+            return;
+        }
+
+        // Unknown command: show all (could show a hint instead)
+        displayPredictions(allPredictions);
+        updateActiveFiltersDisplay();
+        return;
+    }
+
+    // Normal search: match home/away team, league, or prediction text
+    const term = q.toLowerCase();
+    const filtered = allPredictions.filter(p => {
+        return (p.home_team && p.home_team.toLowerCase().includes(term)) ||
+               (p.away_team && p.away_team.toLowerCase().includes(term)) ||
+               (p.league && p.league.toLowerCase().includes(term)) ||
+               (p.prediction && p.prediction.toLowerCase().includes(term));
+    });
+
+    displayPredictions(filtered);
     updateActiveFiltersDisplay();
 }
 
