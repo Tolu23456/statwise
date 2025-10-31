@@ -1095,8 +1095,40 @@ function initializeProfileInteractions() {
 // Make functions globally available
 window.loadPage = loadPage;
 
+// Ensure a storage bucket exists (best-effort check). Returns true if accessible.
+async function ensureBucketExists(bucketName) {
+    try {
+        // Try listing root of the bucket. If bucket doesn't exist, Supabase returns an error.
+        const { data, error } = await supabase.storage.from(bucketName).list('', { limit: 1 });
+        if (error) {
+            console.warn('Bucket check error for', bucketName, error);
+            return false;
+        }
+        return true;
+    } catch (err) {
+        console.warn('Unexpected error checking bucket:', err);
+        return false;
+    }
+}
+
 async function handleAvatarUpload(event) {
     console.log('📸 Avatar upload triggered, processing file...');
+
+    // Ensure user is signed in
+    if (!currentUser) {
+        showModal({ message: 'Please log in before uploading a profile picture.', confirmText: 'Login' });
+        return;
+    }
+
+    // Quick sanity check for bucket availability
+    const bucketOk = await ensureBucketExists('profile-pictures');
+    if (!bucketOk) {
+        showModal({
+            message: 'Profile pictures storage is not available. Please create the "profile-pictures" bucket in your Supabase project or contact support.',
+            confirmText: 'OK'
+        });
+        return;
+    }
 
     if (!event || !event.target || !event.target.files) {
         console.warn('Invalid upload event');
@@ -2308,9 +2340,11 @@ function showModal(options) {
         const modal = document.createElement('div');
         modal.className = 'modal-overlay';
 
+        // Support both 'inputValue' (preferred) and legacy 'inputVal'
+        const modalInputValue = options.inputValue ?? options.inputVal ?? '';
         const inputFieldHTML = options.inputType ? `
             <div class="modal-input-wrapper">
-                <input type="${options.inputType}" class="modal-input" value="${options.inputValue || ''}" placeholder="${options.inputPlaceholder || ''}">
+                <input type="${options.inputType}" class="modal-input" value="${modalInputValue}" placeholder="${options.inputPlaceholder || ''}">
             </div>
         ` : '';
 

@@ -333,14 +333,15 @@ DROP POLICY IF EXISTS "Users can update their own profile" ON user_profiles;
 DROP POLICY IF EXISTS "Allow public read for referral validation" ON user_profiles;
 
 -- User Profiles Policies
+-- Use id::text = auth.uid() to avoid UUID vs text mismatch when auth.uid() returns text
 CREATE POLICY "Users can view their own profile" ON user_profiles
-    FOR SELECT USING (id = auth.uid());
+    FOR SELECT USING (id::text = auth.uid());
 
 CREATE POLICY "Users can insert their own profile" ON user_profiles
-    FOR INSERT WITH CHECK (id = auth.uid());
+    FOR INSERT WITH CHECK (id::text = auth.uid());
 
 CREATE POLICY "Users can update their own profile" ON user_profiles
-    FOR UPDATE USING (id = auth.uid());
+    FOR UPDATE USING (id::text = auth.uid());
 
 CREATE POLICY "Allow public read for referral validation" ON user_profiles
     FOR SELECT USING (true);

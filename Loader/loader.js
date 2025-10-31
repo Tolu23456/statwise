@@ -54,6 +54,12 @@ document.addEventListener('visibilitychange', () => {
  * @param {HTMLElement} btn The button element.
  */
 export function showSpinner(btn) {
+    // Be defensive: allow calling showSpinner() without a button
+    if (!btn) {
+        // no-op when no button provided to avoid runtime errors
+        return;
+    }
+
     btn.disabled = true;
     // The CSS handles showing the spinner and hiding the text when the button is disabled.
 }
@@ -63,6 +69,11 @@ export function showSpinner(btn) {
  * @param {HTMLElement} btn The button element.
  */
 export function hideSpinner(btn) {
+    // Be defensive: allow calling hideSpinner() without a button
+    if (!btn) {
+        return;
+    }
+
     btn.disabled = false;
     // The CSS will hide the spinner and show the text again.
 }
