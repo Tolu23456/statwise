@@ -74,8 +74,8 @@ def fetch_upcoming_matches(league_code):
             "away_score": None,
             "statistics": {},
             "odds": {},
-            "created_at": datetime.utcnow().isoformat(),
-            "updated_at": datetime.utcnow().isoformat()
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "updated_at": datetime.now(timezone.utc).isoformat()
         })
     print(f"✅ Fetched {len(upcoming_matches)} upcoming matches from {league_code}")
     return upcoming_matches

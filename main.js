@@ -462,7 +462,8 @@ async function loadPredictions() {
 }
 
 function displayPredictions(predictions) {
-    const container = document.getElementById('predictions-container');
+    // Prefer the predictions container inside the currently active tab; fall back to the global id.
+    const container = document.querySelector('.tab-content.active .predictions-container') || document.getElementById('predictions-container');
     if (!container) return;
 
     if (predictions.length === 0) {
