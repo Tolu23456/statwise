@@ -3,6 +3,17 @@ import requests
 from supabase import create_client, Client
 from datetime import datetime, timezone
 
+# Optionally load a local .env file for development if python-dotenv is installed.
+# This makes local testing easier without changing production GitHub Actions secrets.
+try:
+    from dotenv import load_dotenv
+except Exception:
+    load_dotenv = None
+
+if load_dotenv:
+    # load environment variables from .env (if present); do not override existing env vars
+    load_dotenv()
+
 # Environment variables from GitHub Secrets
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_API_KEY")  # Service role key

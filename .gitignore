@@ -8,3 +8,9 @@ node_modules/
 # Build output
 dist/
 build/
+ 
+# Local Python virtualenv
+.venv/
+
+# Local env file for development (do NOT commit secrets)
+.env
