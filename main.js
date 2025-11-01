@@ -468,15 +468,15 @@ function displayPredictions(predictions) {
     const container = document.querySelector('.tab-content.active .predictions-container') || document.getElementById('predictions-container');
     if (!container) return;
 
-    if (predictions.length === 0) {
-        container.innerHTML = `
-            <div class="no-predictions">
-                <h3>No predictions available</h3>
-                <p>Check back later for new AI predictions!</p>
-            </div>
-        `;
-        return;
-    }
+    // if (predictions.length === 0) {
+    //     container.innerHTML = `
+    //         <div class="no-predictions">
+    //             <h3>No predictions available</h3>
+    //             <p>Check back later for new AI predictions!</p>
+    //         </div>
+    //     `;
+    //     return;
+    // }
 
     const predictionsHTML = predictions.map(prediction => `
         <div class="prediction-card tier-${prediction.tier}">
