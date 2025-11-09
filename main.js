@@ -14,6 +14,123 @@ let verifiedTier = null; // Start as null until profile loads
 let adsLoaded = false;
 let adblockerDetected = false;
 
+// ===== Modal Helper Function =====
+function showModal(options) {
+    try {
+        // Validate options
+        if (!options || typeof options !== 'object') {
+            console.error('Invalid modal options');
+            return;
+        }
+
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+
+        // Support both 'inputValue' (preferred) and legacy 'inputVal'
+        const modalInputValue = options.inputValue ?? options.inputVal ?? '';
+        const inputFieldHTML = options.inputType ? `
+            <div class="modal-input-wrapper">
+                <input type="${options.inputType}" class="modal-input" value="${modalInputValue}" placeholder="${options.inputPlaceholder || ''}">
+            </div>
+        ` : '';
+
+        // Escape HTML to prevent XSS
+        const safeMessage = options.message ? String(options.message).replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
+
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-message">${safeMessage}</div>
+                ${inputFieldHTML}
+                <div class="modal-actions">
+                    ${options.cancelText ? `<button class="btn-cancel">${options.cancelText}</button>` : ''}
+                    <button class="btn-confirm ${options.confirmClass || 'btn-primary'}">${options.confirmText || 'OK'}</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        const confirmBtn = modal.querySelector('.btn-confirm');
+        const cancelBtn = modal.querySelector('.btn-cancel');
+        const inputField = modal.querySelector('.modal-input');
+
+        // Focus input if it exists
+        if (inputField) {
+            setTimeout(() => {
+                try {
+                    inputField.focus();
+                } catch (focusError) {
+                    console.warn('Could not focus input field:', focusError);
+                }
+            }, 100);
+        }
+
+        const cleanup = () => {
+            try {
+                if (modal && modal.parentNode) {
+                    document.body.removeChild(modal);
+                }
+            } catch (cleanupError) {
+                console.warn('Error cleaning up modal:', cleanupError);
+            }
+        };
+
+        if (confirmBtn) {
+            confirmBtn.addEventListener('click', () => {
+                try {
+                    const inputValue = inputField ? inputField.value : null;
+                    cleanup();
+                    if (options.onConfirm) {
+                        if (inputField) {
+                            options.onConfirm(inputValue);
+                        } else {
+                            options.onConfirm();
+                        }
+                    }
+                } catch (confirmError) {
+                    console.error('Error in modal confirm:', confirmError);
+                    cleanup();
+                }
+            });
+        }
+
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                try {
+                    cleanup();
+                    if (options.onCancel) options.onCancel();
+                } catch (cancelError) {
+                    console.error('Error in modal cancel:', cancelError);
+                }
+            });
+        }
+
+        // Handle Enter key for input
+        if (inputField) {
+            inputField.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && confirmBtn) {
+                    confirmBtn.click();
+                }
+            });
+        }
+
+        // Close on overlay click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                try {
+                    cleanup();
+                    if (options.onCancel) options.onCancel();
+                } catch (overlayError) {
+                    console.error('Error in modal overlay click:', overlayError);
+                }
+            }
+        });
+
+    } catch (error) {
+        console.error('Error creating modal:', error);
+    }
+}
+
 // Initialize the app
 initializeTheme(); // Initialize theme system
 initializeSupabaseAuth();
@@ -102,7 +219,7 @@ function showEmailVerificationNotice(email) {
                     <button onclick="window.location.reload()" style="background: var(--primary-color, #0e639c); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 500;">
                         I've Verified My Email
                     </button>
-                    <button onclick="window.signOut()" style="background: transparent; color: var(--text-secondary, #666); border: 1px solid var(--border-color, #ddd); padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px;">
+                    <button onclick="signOut()" style="background: transparent; color: var(--text-secondary, #666); border: 1px solid var(--border-color, #ddd); padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px;">
                         Sign Out
                     </button>
                 </div>
@@ -1199,7 +1316,7 @@ function initializeProfileInteractions() {
     // Initialize logout button
     const logoutBtn = document.getElementById('logoutBtn');
     if (logoutBtn) {
-        logoutBtn.addEventListener('click', window.signOut);
+        logoutBtn.addEventListener('click', signOut);
     }
 
     // Initialize manage subscription button
@@ -1251,7 +1368,7 @@ function initializeProfileInteractions() {
                     cancelText: 'Cancel',
                     onConfirm: async (newUsername) => {
                         if (newUsername && newUsername.trim() && newUsername.trim() !== currentName) {
-                            await updateUsername(newUsername.trim());
+                            await updateUsername(newUsername.trim(), editUsernameBtn);
                         }
                     }
                 });
@@ -1373,7 +1490,7 @@ async function handleAvatarUpload(event) {
     }
 
     try {
-        showSpinner();
+        showSpinner(event.target);
 
         // Generate unique filename
         const fileExt = file.name.split('.').pop();
@@ -1444,7 +1561,7 @@ async function handleAvatarUpload(event) {
             confirmText: 'OK'
         });
     } finally {
-        hideSpinner();
+        hideSpinner(event.target);
         // Clear the file input
         if (event && event.target) {
             event.target.value = '';
@@ -2148,7 +2265,7 @@ window.savePrediction = async function(predictionId) {
 
 // Referral code copying is now handled in initializeReferralInteractions()
 
-window.signOut = async function() {
+async function signOut() {
     try {
         console.log('Starting sign out process...');
         showLoader();
@@ -2483,9 +2600,9 @@ function hideAdBlockerMessage() {
 }
 
 // ===== Username Update Function =====
-async function updateUsername(newUsername) {
+async function updateUsername(newUsername, btn) {
     try {
-        showSpinner();
+        showSpinner(btn);
 
         const { error } = await supabase
             .from('user_profiles')
@@ -2523,127 +2640,10 @@ async function updateUsername(newUsername) {
             confirmText: 'OK'
         });
     } finally {
-        hideSpinner();
+        hideSpinner(btn);
     }
 }
 
 // Theme initialization is now handled by ui.js
-
-// ===== Modal Helper Function =====
-function showModal(options) {
-    try {
-        // Validate options
-        if (!options || typeof options !== 'object') {
-            console.error('Invalid modal options');
-            return;
-        }
-
-        const modal = document.createElement('div');
-        modal.className = 'modal-overlay';
-
-        // Support both 'inputValue' (preferred) and legacy 'inputVal'
-        const modalInputValue = options.inputValue ?? options.inputVal ?? '';
-        const inputFieldHTML = options.inputType ? `
-            <div class="modal-input-wrapper">
-                <input type="${options.inputType}" class="modal-input" value="${modalInputValue}" placeholder="${options.inputPlaceholder || ''}">
-            </div>
-        ` : '';
-
-        // Escape HTML to prevent XSS
-        const safeMessage = options.message ? String(options.message).replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
-
-        modal.innerHTML = `
-            <div class="modal-content">
-                <div class="modal-message">${safeMessage}</div>
-                ${inputFieldHTML}
-                <div class="modal-actions">
-                    ${options.cancelText ? `<button class="btn-cancel">${options.cancelText}</button>` : ''}
-                    <button class="btn-confirm ${options.confirmClass || 'btn-primary'}">${options.confirmText || 'OK'}</button>
-                </div>
-            </div>
-        `;
-
-        document.body.appendChild(modal);
-
-        const confirmBtn = modal.querySelector('.btn-confirm');
-        const cancelBtn = modal.querySelector('.btn-cancel');
-        const inputField = modal.querySelector('.modal-input');
-
-        // Focus input if it exists
-        if (inputField) {
-            setTimeout(() => {
-                try {
-                    inputField.focus();
-                } catch (focusError) {
-                    console.warn('Could not focus input field:', focusError);
-                }
-            }, 100);
-        }
-
-        const cleanup = () => {
-            try {
-                if (modal && modal.parentNode) {
-                    document.body.removeChild(modal);
-                }
-            } catch (cleanupError) {
-                console.warn('Error cleaning up modal:', cleanupError);
-            }
-        };
-
-        if (confirmBtn) {
-            confirmBtn.addEventListener('click', () => {
-                try {
-                    const inputValue = inputField ? inputField.value : null;
-                    cleanup();
-                    if (options.onConfirm) {
-                        if (inputField) {
-                            options.onConfirm(inputValue);
-                        } else {
-                            options.onConfirm();
-                        }
-                    }
-                } catch (confirmError) {
-                    console.error('Error in modal confirm:', confirmError);
-                    cleanup();
-                }
-            });
-        }
-
-        if (cancelBtn) {
-            cancelBtn.addEventListener('click', () => {
-                try {
-                    cleanup();
-                    if (options.onCancel) options.onCancel();
-                } catch (cancelError) {
-                    console.error('Error in modal cancel:', cancelError);
-                }
-            });
-        }
-
-        // Handle Enter key for input
-        if (inputField) {
-            inputField.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && confirmBtn) {
-                    confirmBtn.click();
-                }
-            });
-        }
-
-        // Close on overlay click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                try {
-                    cleanup();
-                    if (options.onCancel) options.onCancel();
-                } catch (overlayError) {
-                    console.error('Error in modal overlay click:', overlayError);
-                }
-            }
-        });
-
-    } catch (error) {
-        console.error('Error creating modal:', error);
-    }
-}
 
 console.log('✅ StatWise main application loaded with Supabase integration!');
