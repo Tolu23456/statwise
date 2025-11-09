@@ -446,7 +446,10 @@ async function loadPage(page) {
             await new Promise(resolve => setTimeout(resolve, 200));
 
             // Load page content
-            const response = await fetch(`./Pages/${page}.html`);
+            const pageUrl = `./Pages/${page}.html`;
+            console.log('[loadPage] fetching page URL:', pageUrl);
+            const response = await fetch(pageUrl);
+            console.log('[loadPage] fetch response status:', response.status, response.statusText);
             if (response.ok) {
                 const content = await response.text();
                 main.innerHTML = content;
