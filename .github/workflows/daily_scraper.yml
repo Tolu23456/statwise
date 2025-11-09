@@ -29,4 +29,7 @@ jobs:
           SUPABASE_API_KEY: ${{ secrets.SUPABASE_API_KEY }}
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
         run: |
+          echo "[workflow] SUPABASE_URL present: ${SUPABASE_URL:+yes}${SUPABASE_URL:+' (masked)'}"
+          echo "[workflow] SUPABASE_API_KEY present: ${SUPABASE_API_KEY:+yes}${SUPABASE_API_KEY:+' (masked)'}"
+          echo "[workflow] FOOTBALL_DATA_TOKEN present: ${FOOTBALL_DATA_TOKEN:+yes}${FOOTBALL_DATA_TOKEN:+' (masked)'}"
           python scraper.py

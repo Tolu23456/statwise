@@ -19,11 +19,23 @@ SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_API_KEY")  # Service role key
 FOOTBALL_DATA_TOKEN = os.environ.get("FOOTBALL_DATA_TOKEN")
 
+print('[scraper] environment variables presence:', {
+    'SUPABASE_URL': bool(SUPABASE_URL),
+    'SUPABASE_KEY': bool(SUPABASE_KEY),
+    'FOOTBALL_DATA_TOKEN': bool(FOOTBALL_DATA_TOKEN)
+})
+
 if not SUPABASE_URL or not SUPABASE_KEY or not FOOTBALL_DATA_TOKEN:
     raise Exception("Missing environment variables. Check GitHub Secrets or .env file.")
 
 # Initialize Supabase client
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+try:
+    # quick connectivity test (non-destructive): request zero rows from matches
+    test_res = supabase.table('matches').select('id').limit(1).execute()
+    print('[scraper] supabase test response status:', getattr(test_res, 'status_code', 'n/a'), 'data_present:', bool(getattr(test_res, 'data', None)))
+except Exception as e:
+    print('[scraper] supabase connectivity test failed:', e)
 
 # 12 Competitions
 LEAGUES = {

@@ -742,7 +742,9 @@ const LEAGUE_MAPPINGS = {
 // Populate per-league tab containers using the `matches` table from Supabase.
 async function populateLeagueTabsFromMatches() {
     try {
+        console.log('[populateLeagueTabsFromMatches] start');
         const nowIso = new Date().toISOString();
+        console.log('[populateLeagueTabsFromMatches] querying matches with kickoff >=', nowIso);
         const { data: matches, error } = await supabase
             .from('matches')
             .select('*')
@@ -751,11 +753,16 @@ async function populateLeagueTabsFromMatches() {
             .limit(200);
 
         if (error) {
-            console.warn('Error loading matches for tabs:', error);
+            console.warn('[populateLeagueTabsFromMatches] Error loading matches for tabs:', error);
             return;
         }
 
-        if (!matches || matches.length === 0) return;
+        if (!matches || matches.length === 0) {
+            console.log('[populateLeagueTabsFromMatches] no upcoming matches returned');
+            return;
+        }
+
+        console.log('[populateLeagueTabsFromMatches] matches fetched:', matches.length);
 
         // Clear existing tab containers
         const containers = document.querySelectorAll('.tab-content .predictions-container');
@@ -779,7 +786,7 @@ async function populateLeagueTabsFromMatches() {
                                   document.querySelector(`.predictions-container[data-league="${tabId}"]`);
             
             if (!leagueContainer && !allLeaguesContainer) {
-                console.debug(`No container found for league: ${leagueName} (tab id: ${tabId})`);
+                console.debug('[populateLeagueTabsFromMatches] No container found for league:', leagueName, 'tabId:', tabId);
                 continue;
             }
 
@@ -809,9 +816,16 @@ async function populateLeagueTabsFromMatches() {
                 </div>
             `;
             
+            // Debug mapping for a small sample of matches
+            if (Math.random() < 0.05) {
+                console.debug('[populateLeagueTabsFromMatches] sample mapping', { leagueName, tabId, home: match.home_team || match.home, away: match.away_team || match.away });
+            }
+            
             // Add to specific league container
             if (leagueContainer) {
                 leagueContainer.appendChild(matchCard.cloneNode(true));
+            } else {
+                console.debug('[populateLeagueTabsFromMatches] leagueContainer missing for tabId:', tabId);
             }
             
             // Add to all-leagues container
@@ -820,7 +834,7 @@ async function populateLeagueTabsFromMatches() {
             }
         }
     } catch (err) {
-        console.error('Error populating league tabs:', err);
+        console.error('[populateLeagueTabsFromMatches] Error populating league tabs:', err);
     }
 }
 
