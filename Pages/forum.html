@@ -1,3 +1,23 @@
-<div class="coming-soon-center">
-  <h1>Coming Soon!</h1>
+<div class="forum-section">
+    <div class="forum-header">
+        <h1 class="page-title">Community Forum</h1>
+        <p class="forum-description">Discuss predictions, share insights, and connect with other sports enthusiasts.</p>
+    </div>
+
+    <div class="message-input-container">
+        <div class="message-input-wrapper">
+            <textarea id="messageInput" placeholder="Share your thoughts..." maxlength="500"></textarea>
+            <div class="input-actions">
+                <span id="charCounter" class="char-counter">500</span>
+                <button id="sendMessageBtn" class="send-btn" disabled>
+                    Send
+                    <span class="send-icon">➤</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="messagesContainer" class="messages-container">
+        <!-- Messages will be dynamically loaded here -->
+    </div>
 </div>

@@ -9,6 +9,7 @@ import { initializeProfilePage } from './js/pages/profile.js';
 import { initializeSubscriptionsPage, initializeManageSubscriptionPage } from './js/pages/subscriptions.js';
 import { initializeReferralPage } from './js/pages/referral.js';
 import { initializeInsightsPage } from './js/pages/insights.js';
+import { initializeForumPage } from './js/pages/forum.js';
 
 // ===== Global Variables =====
 const main = document.querySelector("main");
@@ -534,6 +535,9 @@ async function initializePage(page) {
             break;
         case 'insights':
             await initializeInsightsPage(verifiedTier);
+            break;
+        case 'forum':
+            await initializeForumPage(currentUser);
             break;
     }
 }
