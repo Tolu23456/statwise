@@ -15,3 +15,6 @@ build/
 # Local env file for development (do NOT commit secrets)
 .env
 env.js
+
+# Log files
+server.log
