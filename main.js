@@ -1,4 +1,5 @@
 // main.js - StatWise PWA with Supabase-only implementation
+console.log('main.js loaded');
 import { supabase, FLWPUBK } from './env.js';
 import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loader.js';
 import { initInteractiveBackground, initializeTheme } from './ui.js';
@@ -139,9 +140,21 @@ function showModal(options) {
 
 // Initialize the app
 initializeTheme(); // Initialize theme system
-initializeSupabaseAuth();
-checkPaymentRedirect();
-// Ad system will be initialized after user tier is loaded
+
+// Guard clause to prevent app from running with placeholder credentials
+if (typeof supabase === 'undefined' || supabase.supabaseUrl.includes('YOUR_SUPABASE_URL') || supabase.supabaseKey.includes('YOUR_SUPABASE_ANON_KEY')) {
+    document.querySelector('main').innerHTML = `
+        <div class="error-container">
+            <h1>Configuration Error</h1>
+            <p>The application is not configured correctly. Please copy <code>env.example.js</code> to <code>env.js</code> and fill in your Supabase credentials.</p>
+        </div>
+    `;
+    console.error('Supabase client not initialized. Halting app execution.');
+} else {
+    initializeSupabaseAuth();
+    checkPaymentRedirect();
+    // Ad system will be initialized after user tier is loaded
+}
 
 // ===== Authentication Setup =====
 async function initializeSupabaseAuth() {

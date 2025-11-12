@@ -26,6 +26,10 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
   }
 });
 
+// Expose the URL and Key for the guard clause in main.js
+supabase.supabaseUrl = supabaseUrl;
+supabase.supabaseKey = supabaseKey;
+
 // Export Flutterwave public key
 export const FLWPUBK = FLUTTERWAVE_PUBLIC_KEY;
 
