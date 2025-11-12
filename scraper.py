@@ -16,7 +16,7 @@ if load_dotenv:
 
 # Environment variables from GitHub Secrets
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
-SUPABASE_KEY = os.environ.get("SUPABASE_API_KEY")  # Service role key
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")  # Corrected variable name
 FOOTBALL_DATA_TOKEN = os.environ.get("FOOTBALL_DATA_TOKEN")
 
 print('[scraper] environment variables presence:', {
@@ -24,6 +24,10 @@ print('[scraper] environment variables presence:', {
     'SUPABASE_KEY': bool(SUPABASE_KEY),
     'FOOTBALL_DATA_TOKEN': bool(FOOTBALL_DATA_TOKEN)
 })
+
+# Add a check to ensure the key is a service role key
+if SUPABASE_KEY and not SUPABASE_KEY.startswith('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9'):
+    print("Warning: SUPABASE_KEY does not appear to be a service role key.")
 
 if not SUPABASE_URL or not SUPABASE_KEY or not FOOTBALL_DATA_TOKEN:
     raise Exception("Missing environment variables. Check GitHub Secrets or .env file.")
