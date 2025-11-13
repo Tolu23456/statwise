@@ -61,11 +61,11 @@ console.log('[Service Worker] StatWise PWA Service Worker loaded - Offline suppo
 /**
  * 4. Handle PWA installation
  */
-self.addEventListener('beforeinstallprompt', (event) => {
+self.addEventListener('beforeinstallprompt', () => {
     console.log('[Service Worker] PWA install prompt triggered');
     // Optionally prevent the default prompt and show custom install UI
 });
 
-self.addEventListener('appinstalled', (event) => {
+self.addEventListener('appinstalled', () => {
     console.log('[Service Worker] PWA was installed successfully');
 });

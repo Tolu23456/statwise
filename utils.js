@@ -62,7 +62,7 @@ export async function addHistoryUnique(userId, action) {
     
     try {
         // Get the user's last history entry to prevent duplicates
-        const { data: lastEntry, error: fetchError } = await supabase
+        const { data: lastEntry } = await supabase
             .from('user_history')
             .select('action')
             .eq('user_id', userId)

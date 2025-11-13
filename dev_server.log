@@ -1,0 +1,27 @@
+
+> statwise-pwa@1.0.0 dev
+> nodemon --watch . --ext "html,css,js" --exec "http-server . -a 0.0.0.0 -p ${PORT:-8088} -c-1 --cors"
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: html,css,js[39m
+[32m[nodemon] starting `http-server . -a 0.0.0.0 -p 8088 -c-1 --cors`[39m
+Starting up http-server, serving .
+
+http-server version: 14.1.1
+
+http-server settings:
+CORS: true
+Cache: -1 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:8088
+  http://192.168.0.2:8088
+Hit CTRL-C to stop the server

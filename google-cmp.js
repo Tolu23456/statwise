@@ -240,7 +240,7 @@ class GoogleCertifiedCMP {
         try {
             localStorage.setItem(this.consentKey, JSON.stringify(consentData));
         } catch (e) {
-            console.warn('Could not store consent data:', e);
+            console.warn('Could not store consent data:');
         }
     }
 

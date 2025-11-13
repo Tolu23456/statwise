@@ -224,7 +224,7 @@ function initializeProfileInteractions() {
 async function ensureBucketExists(bucketName) {
     try {
         // Try listing root of the bucket. If bucket doesn't exist, Supabase returns an error.
-        const { data, error } = await supabase.storage.from(bucketName).list('', { limit: 1 });
+        const { error } = await supabase.storage.from(bucketName).list('', { limit: 1 });
         if (error) {
             console.warn('Bucket check error for', bucketName, error);
             return false;
@@ -304,7 +304,7 @@ async function handleAvatarUpload(event) {
         const fileName = `${currentUser.id}-${Date.now()}.${fileExt}`;
 
         // Upload to Supabase Storage
-        const { data: uploadData, error: uploadError } = await supabase.storage
+        const { error: uploadError } = await supabase.storage
             .from('profile-pictures')
             .upload(fileName, file, {
                 cacheControl: '3600',

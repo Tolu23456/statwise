@@ -1,0 +1,42 @@
+
+/app/Auth/auth.js
+     3:34  warning  'showSpinner' is defined but never used                 no-unused-vars
+     3:47  warning  'hideSpinner' is defined but never used                 no-unused-vars
+     4:10  warning  'initInteractiveBackground' is defined but never used   no-unused-vars
+     7:5   warning  'adsLoaded' is assigned a value but never used          no-unused-vars
+     8:5   warning  'adblockerDetected' is assigned a value but never used  no-unused-vars
+   910:10  warning  'showMessage' is defined but never used                 no-unused-vars
+  1031:10  warning  'detectAuthAdBlocker' is defined but never used         no-unused-vars
+
+/app/google-cmp.js
+  251:18  warning  'e' is defined but never used  no-unused-vars
+
+/app/js/pages/forum.js
+  43:13  warning  'data' is assigned a value but never used  no-unused-vars
+
+/app/js/pages/profile.js
+  227:17  warning  'data' is assigned a value but never used        no-unused-vars
+  307:23  warning  'uploadData' is assigned a value but never used  no-unused-vars
+
+/app/main.js
+    4:34  warning  'showSpinner' is defined but never used                 no-unused-vars
+    4:47  warning  'hideSpinner' is defined but never used                 no-unused-vars
+    5:10  warning  'initInteractiveBackground' is defined but never used   no-unused-vars
+    6:33  warning  'manageInitialPageLoad' is defined but never used       no-unused-vars
+    7:10  warning  'formatTimestamp' is defined but never used             no-unused-vars
+    7:27  warning  'addHistoryUnique' is defined but never used            no-unused-vars
+   16:5   warning  'adblockerDetected' is assigned a value but never used  no-unused-vars
+   40:32  warning  'error' is assigned a value but never used              no-unused-vars
+  170:32  warning  'error' is assigned a value but never used              no-unused-vars
+  456:17  warning  'data' is assigned a value but never used               no-unused-vars
+  488:16  warning  'signOut' is defined but never used                     no-unused-vars
+  730:10  warning  'detectAdBlocker' is defined but never used             no-unused-vars
+
+/app/sw.js
+  64:47  warning  'event' is defined but never used  no-unused-vars
+  69:40  warning  'event' is defined but never used  no-unused-vars
+
+/app/utils.js
+  65:41  warning  'fetchError' is assigned a value but never used  no-unused-vars
+
+✖ 26 problems (0 errors, 26 warnings)

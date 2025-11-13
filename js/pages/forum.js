@@ -40,7 +40,7 @@ async function sendMessage(message) {
         return;
     }
 
-    const { data, error } = await supabase
+    const { error } = await supabase
         .from('forum_messages')
         .insert([{
             user_id: currentUser.id,

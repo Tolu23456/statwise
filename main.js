@@ -1,16 +1,10 @@
 // main.js - StatWise PWA with Supabase-only implementation
 console.log('main.js loaded');
 import { supabase, FLWPUBK } from './env.js';
-import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loader.js';
-import { initInteractiveBackground, initializeTheme } from './ui.js';
-import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
-import { formatTimestamp, addHistoryUnique, showModal } from './utils.js';
-import { initializeHomePage } from './js/pages/home.js';
-import { initializeProfilePage } from './js/pages/profile.js';
-import { initializeSubscriptionsPage, initializeManageSubscriptionPage } from './js/pages/subscriptions.js';
-import { initializeReferralPage } from './js/pages/referral.js';
-import { initializeInsightsPage } from './js/pages/insights.js';
-import { initializeForumPage } from './js/pages/forum.js';
+import { showLoader, hideLoader } from './Loader/loader.js';
+import { initializeTheme } from './ui.js';
+import { initializeAppSecurity } from './manager.js';
+import { showModal } from './utils.js';
 
 // ===== Global Variables =====
 const main = document.querySelector("main");
@@ -19,7 +13,6 @@ const defaultPage = "home";
 let currentUser = null;
 let verifiedTier = null; // Start as null until profile loads
 let adsLoaded = false;
-let adblockerDetected = false;
 
 
 // Initialize the app
@@ -43,7 +36,7 @@ if (typeof supabase === 'undefined' || supabase.supabaseUrl.includes('YOUR_SUPAB
 // ===== Authentication Setup =====
 async function initializeSupabaseAuth() {
     // Get initial session
-    const { data: { session }, error } = await supabase.auth.getSession();
+    const { data: { session } } = await supabase.auth.getSession();
 
     if (session) {
         currentUser = session.user;
@@ -416,24 +409,31 @@ async function loadPage(page) {
 async function initializePage(page) {
     switch (page) {
         case 'home':
+            const { initializeHomePage } = await import('./js/pages/home.js');
             await initializeHomePage(verifiedTier);
             break;
         case 'profile':
+            const { initializeProfilePage } = await import('./js/pages/profile.js');
             await initializeProfilePage(currentUser);
             break;
         case 'subscriptions':
+            const { initializeSubscriptionsPage } = await import('./js/pages/subscriptions.js');
             await initializeSubscriptionsPage(currentUser);
             break;
         case 'manage-subscription':
+            const { initializeManageSubscriptionPage } = await import('./js/pages/subscriptions.js');
             await initializeManageSubscriptionPage(currentUser);
             break;
         case 'referral':
+            const { initializeReferralPage } = await import('./js/pages/referral.js');
             await initializeReferralPage(currentUser);
             break;
         case 'insights':
-            await initializeInsightsPage(verifiedTier);
+            const { initializeInsightsPage } = await import('./js/pages/insights.js');
+            await initializeInsightsPage(verifiedTier, showUpgradeModal);
             break;
         case 'forum':
+            const { initializeForumPage } = await import('./js/pages/forum.js');
             await initializeForumPage(currentUser);
             break;
     }
@@ -452,7 +452,7 @@ window.savePrediction = async function(predictionId) {
     }
 
     try {
-        const { data, error } = await supabase
+        const { error } = await supabase
             .from('user_prediction_history')
             .insert({
                 user_id: currentUser.id,
@@ -481,60 +481,6 @@ window.savePrediction = async function(predictionId) {
     } catch (error) {
         console.error('Error saving prediction:', error);
         showModal({ message: 'Error saving prediction. Please try again.', confirmText: 'OK' });
-    }
-};
-
-async function signOut() {
-    try {
-        console.log('Starting sign out process...');
-        showLoader();
-        
-        // Reset global variables first
-        currentUser = null;
-        verifiedTier = null;
-        
-        // Sign out from Supabase with timeout
-        const signOutPromise = supabase.auth.signOut();
-        const timeoutPromise = new Promise((_, reject) => 
-            setTimeout(() => reject(new Error('Sign out timeout')), 5000)
-        );
-        
-        const { error } = await Promise.race([signOutPromise, timeoutPromise])
-            .catch(err => ({ error: err }));
-        
-        if (error) {
-            console.error('Supabase sign out error:', error);
-        }
-        
-        // Clear local data after Supabase attempt
-        try {
-            localStorage.clear();
-            sessionStorage.clear();
-        } catch (storageError) {
-            console.warn('Error clearing storage:', storageError);
-        }
-        
-        hideLoader();
-        
-        console.log('Sign out successful, redirecting to login...');
-        
-        // Redirect to login page using absolute path from root
-        window.location.href = '/Auth/login.html';
-        
-    } catch (error) {
-        console.error('Unexpected error during sign out:', error);
-        hideLoader();
-        
-        // Force cleanup and redirect even on error
-        try {
-            localStorage.clear();
-            sessionStorage.clear();
-        } catch (e) {
-            console.warn('Error clearing storage:', e);
-        }
-        
-        alert('Sign out completed with errors. Redirecting to login...');
-        window.location.href = '/Auth/login.html';
     }
 };
 
@@ -724,49 +670,6 @@ function loadAdsForFreeUsers() {
     };
 
     document.head.appendChild(script);
-}
-
-function detectAdBlocker() {
-    try {
-        console.log('🕵️ Checking for adblocker...');
-
-        // Create a test ad element
-        const testAd = document.createElement('div');
-        testAd.innerHTML = '&nbsp;';
-        testAd.className = 'adsbox adsbygoogle';
-        testAd.style.position = 'absolute';
-        testAd.style.left = '-9999px';
-        testAd.style.width = '1px';
-        testAd.style.height = '1px';
-
-        document.body.appendChild(testAd);
-
-        setTimeout(() => {
-            try {
-                const isBlocked = testAd.offsetHeight === 0 ||
-                                 testAd.offsetWidth === 0 ||
-                                 testAd.style.display === 'none' ||
-                                 testAd.style.visibility === 'hidden';
-
-                if (document.body.contains(testAd)) {
-                    document.body.removeChild(testAd);
-                }
-
-                if (isBlocked || !window.adsbygoogle) {
-                    console.log('🚫 Adblocker detected');
-                    adblockerDetected = true;
-                    showAdBlockerMessage();
-                } else {
-                    console.log('✅ No adblocker detected');
-                    adblockerDetected = false;
-                }
-            } catch (err) {
-                console.error('Error during adblocker detection:', err);
-            }
-        }, 100);
-    } catch (err) {
-        console.error('Error in detectAdBlocker:', err);
-    }
 }
 
 function showAdBlockerMessage() {

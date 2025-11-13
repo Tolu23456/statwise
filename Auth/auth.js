@@ -1,11 +1,9 @@
 // auth.js - Supabase Authentication
 import { supabase } from '../env.js';
-import { showLoader, hideLoader, showSpinner, hideSpinner } from '../Loader/loader.js';
-import { initInteractiveBackground, initializeTheme } from '../ui.js';
+import { showLoader, hideLoader } from '../Loader/loader.js';
+import { initializeTheme } from '../ui.js';
 
 // Global variables for auth page
-let adsLoaded = false;
-let adblockerDetected = false;
 
 // Initialize the auth page
 document.addEventListener('DOMContentLoaded', function() {
@@ -907,32 +905,6 @@ function getErrorMessage(error) {
     }
 }
 
-function showMessage(message, type = 'info') {
-    // Remove existing messages
-    const existingMessages = document.querySelectorAll('.auth-message');
-    existingMessages.forEach(msg => msg.remove());
-
-    // Create new message
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `auth-message auth-message-${type}`;
-    messageDiv.textContent = message;
-
-    // Insert message at the top of the form container
-    const container = document.querySelector('.auth-container');
-    if (container) {
-        container.insertBefore(messageDiv, container.firstChild);
-
-        // Auto-remove success/error messages after 5 seconds
-        if (type === 'success' || type === 'error') {
-            setTimeout(() => {
-                if (messageDiv.parentNode) {
-                    messageDiv.remove();
-                }
-            }, 5000);
-        }
-    }
-}
-
 // Initialize smooth auth page navigation with loaders
 function initializeAuthNavigation() {
     // Find all auth navigation links
@@ -1013,101 +985,13 @@ function loadAuthPageAds() {
 
     script.onload = () => {
         console.log('✅ AdSense loaded successfully on auth page');
-        adsLoaded = true;
-        // Adblocker detection disabled
-        // setTimeout(detectAuthAdBlocker, 1000);
     };
 
     script.onerror = () => {
         console.log('❌ AdSense failed to load on auth page');
-        // Adblocker detection disabled
-        // adblockerDetected = true;
-        // showAuthAdBlockerMessage();
     };
 
     document.head.appendChild(script);
-}
-
-function detectAuthAdBlocker() {
-    try {
-        console.log('🕵️ Checking for adblocker on auth page...');
-
-        // Create a test ad element
-        const testAd = document.createElement('div');
-        testAd.innerHTML = '&nbsp;';
-        testAd.className = 'adsbox adsbygoogle';
-        testAd.style.position = 'absolute';
-        testAd.style.left = '-9999px';
-        testAd.style.width = '1px';
-        testAd.style.height = '1px';
-
-        document.body.appendChild(testAd);
-
-        setTimeout(() => {
-            try {
-                const isBlocked = testAd.offsetHeight === 0 || 
-                                 testAd.offsetWidth === 0 || 
-                                 testAd.style.display === 'none' ||
-                                 testAd.style.visibility === 'hidden';
-
-                if (document.body.contains(testAd)) {
-                    document.body.removeChild(testAd);
-                }
-
-                if (isBlocked || !window.adsbygoogle) {
-                    console.log('🚫 Adblocker detected on auth page');
-                    adblockerDetected = true;
-                    showAuthAdBlockerMessage();
-                } else {
-                    console.log('✅ No adblocker detected on auth page');
-                    adblockerDetected = false;
-                }
-            } catch (err) {
-                console.error('Error during adblocker detection:', err);
-            }
-        }, 100);
-    } catch (err) {
-        console.error('Error in detectAuthAdBlocker:', err);
-    }
-}
-
-function showAuthAdBlockerMessage() {
-    try {
-        console.log('📢 Showing adblocker message on auth page');
-
-        // Don't show if already displayed
-        if (document.getElementById('adblocker-overlay')) {
-            console.log('Adblocker overlay already displayed');
-            return;
-        }
-
-        // Create full-page overlay - uses CSS from styles.css
-        const overlay = document.createElement('div');
-        overlay.id = 'adblocker-overlay';
-        overlay.innerHTML = `
-            <div class="adblocker-container">
-                <div class="adblocker-content">
-                    <div class="adblocker-icon">🚫</div>
-                    <h2>AdBlocker Detected</h2>
-                    <p>We noticed you're using an ad blocker. To continue using StatWise for free, please:</p>
-                    <ul>
-                        <li>✅ Disable your ad blocker for this site</li>
-                        <li>🔄 Refresh the page</li>
-                        <li>💎 Or sign up for Premium for an ad-free experience</li>
-                    </ul>
-                    <div class="adblocker-buttons">
-                        <button onclick="window.location.reload()" class="btn-refresh">Refresh Page</button>
-                        <button onclick="window.location.href='../index.html'" class="btn-upgrade">Learn About Premium</button>
-                    </div>
-                    <p class="adblocker-note">Ads help us keep StatWise free for everyone!</p>
-                </div>
-            </div>
-        `;
-
-        document.body.appendChild(overlay);
-    } catch (err) {
-        console.error('Error showing adblocker message:', err);
-    }
 }
 
 console.log('✅ Supabase authentication system loaded successfully!');
