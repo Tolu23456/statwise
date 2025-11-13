@@ -1,9 +1,8 @@
 import { supabase } from '../../env.js';
-import { showUpgradeModal } from '../../utils.js';
 
 let verifiedTier;
 
-export async function initializeInsightsPage(userTier) {
+export async function initializeInsightsPage(userTier, showUpgradeModal) {
     verifiedTier = userTier;
     // VIP and VVIP tier only
     if (!hasAccess('VIP Tier')) {

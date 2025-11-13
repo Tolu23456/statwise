@@ -5,12 +5,6 @@ import { showLoader, hideLoader, showSpinner, hideSpinner } from './Loader/loade
 import { initInteractiveBackground, initializeTheme } from './ui.js';
 import { initializeAppSecurity, manageInitialPageLoad } from './manager.js';
 import { formatTimestamp, addHistoryUnique, showModal } from './utils.js';
-import { initializeHomePage } from './js/pages/home.js';
-import { initializeProfilePage } from './js/pages/profile.js';
-import { initializeSubscriptionsPage, initializeManageSubscriptionPage } from './js/pages/subscriptions.js';
-import { initializeReferralPage } from './js/pages/referral.js';
-import { initializeInsightsPage } from './js/pages/insights.js';
-import { initializeForumPage } from './js/pages/forum.js';
 
 // ===== Global Variables =====
 const main = document.querySelector("main");
@@ -416,24 +410,31 @@ async function loadPage(page) {
 async function initializePage(page) {
     switch (page) {
         case 'home':
+            const { initializeHomePage } = await import('./js/pages/home.js');
             await initializeHomePage(verifiedTier);
             break;
         case 'profile':
+            const { initializeProfilePage } = await import('./js/pages/profile.js');
             await initializeProfilePage(currentUser);
             break;
         case 'subscriptions':
+            const { initializeSubscriptionsPage } = await import('./js/pages/subscriptions.js');
             await initializeSubscriptionsPage(currentUser);
             break;
         case 'manage-subscription':
+            const { initializeManageSubscriptionPage } = await import('./js/pages/subscriptions.js');
             await initializeManageSubscriptionPage(currentUser);
             break;
         case 'referral':
+            const { initializeReferralPage } = await import('./js/pages/referral.js');
             await initializeReferralPage(currentUser);
             break;
         case 'insights':
-            await initializeInsightsPage(verifiedTier);
+            const { initializeInsightsPage } = await import('./js/pages/insights.js');
+            await initializeInsightsPage(verifiedTier, showUpgradeModal);
             break;
         case 'forum':
+            const { initializeForumPage } = await import('./js/pages/forum.js');
             await initializeForumPage(currentUser);
             break;
     }
