@@ -90,3 +90,119 @@ export async function addHistoryUnique(userId, action) {
         console.error("Failed to add history:", err);
     }
 }
+
+export function showModal(options) {
+    try {
+        // Validate options
+        if (!options || typeof options !== 'object') {
+            console.error('Invalid modal options');
+            return;
+        }
+
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+
+        // Support both 'inputValue' (preferred) and legacy 'inputVal'
+        const modalInputValue = options.inputValue ?? options.inputVal ?? '';
+        const inputFieldHTML = options.inputType ? `
+            <div class="modal-input-wrapper">
+                <input type="${options.inputType}" class="modal-input" value="${modalInputValue}" placeholder="${options.inputPlaceholder || ''}">
+            </div>
+        ` : '';
+
+        // Escape HTML to prevent XSS
+        const safeMessage = options.message ? String(options.message).replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
+
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-message">${safeMessage}</div>
+                ${inputFieldHTML}
+                <div class="modal-actions">
+                    ${options.cancelText ? `<button class="btn-cancel">${options.cancelText}</button>` : ''}
+                    <button class="btn-confirm ${options.confirmClass || 'btn-primary'}">${options.confirmText || 'OK'}</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        const confirmBtn = modal.querySelector('.btn-confirm');
+        const cancelBtn = modal.querySelector('.btn-cancel');
+        const inputField = modal.querySelector('.modal-input');
+
+        // Focus input if it exists
+        if (inputField) {
+            setTimeout(() => {
+                try {
+                    inputField.focus();
+                } catch (focusError) {
+                    console.warn('Could not focus input field:', focusError);
+                }
+            }, 100);
+        }
+
+        const cleanup = () => {
+            try {
+                if (modal && modal.parentNode) {
+                    document.body.removeChild(modal);
+                }
+            } catch (cleanupError) {
+                console.warn('Error cleaning up modal:', cleanupError);
+            }
+        };
+
+        if (confirmBtn) {
+            confirmBtn.addEventListener('click', () => {
+                try {
+                    const inputValue = inputField ? inputField.value : null;
+                    cleanup();
+                    if (options.onConfirm) {
+                        if (inputField) {
+                            options.onConfirm(inputValue);
+                        } else {
+                            options.onConfirm();
+                        }
+                    }
+                } catch (confirmError) {
+                    console.error('Error in modal confirm:', confirmError);
+                    cleanup();
+                }
+            });
+        }
+
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                try {
+                    cleanup();
+                    if (options.onCancel) options.onCancel();
+                } catch (cancelError) {
+                    console.error('Error in modal cancel:', cancelError);
+                }
+            });
+        }
+
+        // Handle Enter key for input
+        if (inputField) {
+            inputField.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && confirmBtn) {
+                    confirmBtn.click();
+                }
+            });
+        }
+
+        // Close on overlay click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                try {
+                    cleanup();
+                    if (options.onCancel) options.onCancel();
+                } catch (overlayError) {
+                    console.error('Error in modal overlay click:', overlayError);
+                }
+            }
+        });
+
+    } catch (error) {
+        console.error('Error creating modal:', error);
+    }
+}
