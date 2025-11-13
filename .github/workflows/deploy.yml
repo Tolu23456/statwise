@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_PAT }}
 
       - name: Generate env.js file
         run: |
@@ -55,3 +57,4 @@ jobs:
           commit_user_name: StatWise Bot
           commit_user_email: bot@statwise.com
           commit_author: StatWise Bot <bot@statwise.com>
+          push_options: '--force'
