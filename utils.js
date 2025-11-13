@@ -91,7 +91,6 @@ export async function addHistoryUnique(userId, action) {
     }
 }
 
-
 export function showModal(options) {
     try {
         // Validate options
