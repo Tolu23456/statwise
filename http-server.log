@@ -1,0 +1,22 @@
+
+> statwise-pwa@1.0.0 dev
+> http-server . -a 0.0.0.0 -p 5000 -c-1 --cors
+
+Starting up http-server, serving .
+
+http-server version: 14.1.1
+
+http-server settings:
+CORS: true
+Cache: -1 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:5000
+  http://192.168.0.2:5000
+Hit CTRL-C to stop the server
