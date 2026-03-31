@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd statwise && npm install && npm run build",
-  "outputDirectory": "statwise/.expo",
-  "devCommand": "cd statwise && npm run dev"
+  "buildCommand": "cd statwise && npm install",
+  "devCommand": "cd statwise && npm run dev",
+  "rootDirectory": "statwise"
 }
