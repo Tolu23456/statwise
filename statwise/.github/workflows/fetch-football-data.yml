@@ -1,0 +1,35 @@
+name: Fetch Football Data
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/scripts/fetch_football_data.js'
+      - '.github/workflows/fetch-football-data.yml'
+
+jobs:
+  fetch-and-store:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install script dependencies
+        run: npm install
+        working-directory: .github/scripts
+
+      - name: Fetch football data and store in Supabase
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ vars.FOOTBALL_DATA_TOKEN }}
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node .github/scripts/fetch_football_data.js

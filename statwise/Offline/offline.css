@@ -1,0 +1,71 @@
+@font-face {
+    /* Ensure the app's font is available offline */
+    font-family: 'Optimistic';
+    src: url('../Assets/Fonts/Optimistic_Text_A_Md.ttf');
+}
+
+body {
+    margin: 0;
+    font-family: 'Optimistic', sans-serif;
+    background-color: #f4f5f7;
+    color: #1c1c1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.offline-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px 24px;
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.offline-icon {
+    color: #0e639c;
+    margin-bottom: 20px;
+}
+
+.offline-icon svg {
+    width: 60px;
+    height: 60px;
+}
+
+.offline-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1c1c1e;
+    margin-bottom: 8px;
+}
+
+.offline-message {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Dark Mode styles for when the user has it enabled */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1e1e1e;
+    }
+
+    .offline-card {
+        background: #2d2d30;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .offline-icon {
+        color: #a5d8ff;
+    }
+
+    .offline-message {
+        color: #aaa;
+    }
+}

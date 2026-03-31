@@ -1,0 +1,245 @@
+import React, { useState, useCallback, useMemo } from 'react';
+import {
+  View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput,
+  useColorScheme, ActivityIndicator, RefreshControl, ScrollView, Platform,
+} from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useQuery } from '@tanstack/react-query';
+import { Ionicons } from '@expo/vector-icons';
+import { Colors } from '@/constants/colors';
+import { supabase, Prediction } from '@/lib/supabase';
+import { useAuth } from '@/context/AuthContext';
+import { PredictionCard } from '@/components/PredictionCard';
+
+const LEAGUES = [
+  { slug: 'all', name: 'All' },
+  { slug: 'premier-league', name: 'Premier League' },
+  { slug: 'la-liga', name: 'La Liga' },
+  { slug: 'bundesliga', name: 'Bundesliga' },
+  { slug: 'serie-a', name: 'Serie A' },
+  { slug: 'ligue1', name: 'Ligue 1' },
+  { slug: 'champions-league', name: 'Champions League' },
+  { slug: 'mls', name: 'MLS' },
+  { slug: 'copa-libertadores', name: 'Copa Libertadores' },
+  { slug: 'saudi-pro-league', name: 'Saudi Pro League' },
+];
+
+const TIER_LIMITS: Record<string, number> = {
+  'Free Tier': 5,
+  'Premium Tier': 25,
+  'VIP Tier': 75,
+  'VVIP Tier': Infinity,
+};
+
+const TIER_NEXT: Record<string, string> = {
+  'Free Tier': 'Premium Tier',
+  'Premium Tier': 'VIP Tier',
+  'VIP Tier': 'VVIP Tier',
+  'VVIP Tier': 'VVIP Tier',
+};
+
+export default function HomeScreen() {
+  const scheme = useColorScheme() ?? 'dark';
+  const C = Colors[scheme];
+  const insets = useSafeAreaInsets();
+  const { profile } = useAuth();
+
+  const [selectedLeague, setSelectedLeague] = useState('all');
+  const [search, setSearch] = useState('');
+  const [refreshing, setRefreshing] = useState(false);
+
+  const userTier = profile?.current_tier ?? 'Free Tier';
+  const userLimit = TIER_LIMITS[userTier] ?? 5;
+  const nextTier = TIER_NEXT[userTier] ?? 'Premium Tier';
+
+  const { data: predictions = [], isLoading, refetch } = useQuery<Prediction[]>({
+    queryKey: ['predictions'],
+    queryFn: async () => {
+      const today = new Date().toISOString().split('T')[0];
+      const { data, error } = await supabase
+        .from('predictions')
+        .select('*')
+        .gte('match_date', today)
+        .order('confidence', { ascending: false });
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
+
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    await refetch();
+    setRefreshing(false);
+  }, [refetch]);
+
+  const filtered = useMemo(() => {
+    let list = predictions;
+    if (selectedLeague !== 'all') {
+      list = list.filter(p => p.league_slug === selectedLeague);
+    }
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      list = list.filter(
+        p =>
+          p.match_title?.toLowerCase().includes(q) ||
+          p.league?.toLowerCase().includes(q) ||
+          p.prediction?.toLowerCase().includes(q),
+      );
+    }
+    return list;
+  }, [predictions, selectedLeague, search]);
+
+  const unlockedCount = Math.min(userLimit, filtered.length);
+  const lockedCount = filtered.length - unlockedCount;
+
+  const topInset = Platform.OS === 'web' ? 67 : insets.top;
+
+  return (
+    <View style={[styles.container, { backgroundColor: C.background }]}>
+      <View style={[styles.headerArea, { paddingTop: topInset + 8, backgroundColor: C.background }]}>
+        <View style={styles.titleRow}>
+          <Text style={[styles.title, { color: C.text }]}>Today's Predictions</Text>
+          <View style={[styles.tierBadge, { backgroundColor: C.primaryLight }]}>
+            <Text style={[styles.tierText, { color: C.primary }]}>{userTier}</Text>
+          </View>
+        </View>
+
+        {filtered.length > 0 && (
+          <View style={[styles.limitBanner, { backgroundColor: C.card, borderColor: C.border }]}>
+            <Ionicons name="eye-outline" size={14} color={C.primary} />
+            <Text style={[styles.limitText, { color: C.textSecondary }]}>
+              Showing{' '}
+              <Text style={{ color: C.text, fontFamily: 'Inter_600SemiBold' }}>
+                {unlockedCount === Infinity ? filtered.length : unlockedCount}
+              </Text>
+              {' '}of{' '}
+              <Text style={{ color: C.text, fontFamily: 'Inter_600SemiBold' }}>{filtered.length}</Text>
+              {' '}predictions
+            </Text>
+            {lockedCount > 0 && (
+              <Text style={[styles.upgradeHint, { color: C.primary }]}>
+                Upgrade for {lockedCount} more
+              </Text>
+            )}
+          </View>
+        )}
+
+        <View style={[styles.searchBar, { backgroundColor: C.inputBg, borderColor: C.border }]}>
+          <Ionicons name="search-outline" size={18} color={C.placeholder} />
+          <TextInput
+            style={[styles.searchInput, { color: C.text }]}
+            placeholder="Search predictions..."
+            placeholderTextColor={C.placeholder}
+            value={search}
+            onChangeText={setSearch}
+          />
+          {search.length > 0 && (
+            <TouchableOpacity onPress={() => setSearch('')}>
+              <Ionicons name="close-circle" size={18} color={C.placeholder} />
+            </TouchableOpacity>
+          )}
+        </View>
+
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.leagueTabs}
+        >
+          {LEAGUES.map(l => (
+            <TouchableOpacity
+              key={l.slug}
+              style={[
+                styles.leagueTab,
+                {
+                  backgroundColor: selectedLeague === l.slug ? C.primary : C.card,
+                  borderColor: selectedLeague === l.slug ? C.primary : C.border,
+                },
+              ]}
+              onPress={() => setSelectedLeague(l.slug)}
+            >
+              <Text
+                style={[
+                  styles.leagueTabText,
+                  { color: selectedLeague === l.slug ? '#fff' : C.textSecondary },
+                ]}
+              >
+                {l.name}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </View>
+
+      {isLoading ? (
+        <View style={styles.centered}>
+          <ActivityIndicator size="large" color={C.primary} />
+        </View>
+      ) : (
+        <FlatList
+          data={filtered}
+          keyExtractor={item => item.id}
+          contentContainerStyle={[
+            styles.listContent,
+            { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 84 : 80) },
+          ]}
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+              tintColor={C.primary}
+            />
+          }
+          ListEmptyComponent={
+            <View style={styles.empty}>
+              <Ionicons name="football-outline" size={48} color={C.textMuted} />
+              <Text style={[styles.emptyTitle, { color: C.text }]}>No Predictions</Text>
+              <Text style={[styles.emptyDesc, { color: C.textSecondary }]}>
+                {search ? 'No results for your search' : 'No predictions available yet'}
+              </Text>
+            </View>
+          }
+          renderItem={({ item, index }) => {
+            const locked = index >= userLimit;
+            return (
+              <PredictionCard
+                prediction={item}
+                locked={locked}
+                nextTier={nextTier}
+              />
+            );
+          }}
+          scrollEnabled={!!filtered.length}
+        />
+      )}
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+  headerArea: { paddingHorizontal: 16, paddingBottom: 8 },
+  titleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
+  title: { fontSize: 22, fontFamily: 'Inter_700Bold' },
+  tierBadge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20 },
+  tierText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  limitBanner: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    borderRadius: 10, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 7,
+    marginBottom: 10,
+  },
+  limitText: { fontSize: 13, fontFamily: 'Inter_400Regular', flex: 1 },
+  upgradeHint: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  searchBar: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    borderRadius: 12, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 10, marginBottom: 12,
+  },
+  searchInput: { flex: 1, fontSize: 15, fontFamily: 'Inter_400Regular' },
+  leagueTabs: { gap: 8, paddingBottom: 4 },
+  leagueTab: { paddingHorizontal: 14, paddingVertical: 7, borderRadius: 20, borderWidth: 1 },
+  leagueTabText: { fontSize: 13, fontFamily: 'Inter_500Medium' },
+  listContent: { paddingHorizontal: 16, paddingTop: 12 },
+  centered: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  empty: { alignItems: 'center', paddingTop: 60, gap: 12 },
+  emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
+  emptyDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
+});

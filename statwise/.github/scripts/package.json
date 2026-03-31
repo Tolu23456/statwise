@@ -1,0 +1,9 @@
+{
+  "name": "statwise-football-fetcher",
+  "version": "1.0.0",
+  "description": "Fetches football data from football-data.org and stores in Supabase",
+  "main": "fetch_football_data.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.2"
+  }
+}

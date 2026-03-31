@@ -1,0 +1,29 @@
+
+{
+  "name": "StatWise - AI Sports Prediction",
+  "short_name": "StatWise",
+  "description": "AI-powered sports predictions with tiered subscriptions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0e639c",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "Assets/Icons/house.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "Assets/Icons/gem.svg", 
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["sports", "entertainment", "productivity"],
+  "lang": "en",
+  "screenshots": []
+}
