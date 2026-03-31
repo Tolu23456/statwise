@@ -1,15 +1,18 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput,
   useColorScheme, ActivityIndicator, RefreshControl, ScrollView, Platform,
+  Animated,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/colors';
 import { supabase, Prediction } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { PredictionCard } from '@/components/PredictionCard';
+
+const POLL_INTERVAL_MS = 20 * 60 * 1000; // re-fetch every 20 minutes (matches scheduler)
 
 const LEAGUES = [
   { slug: 'all', name: 'All' },
@@ -43,16 +46,19 @@ export default function HomeScreen() {
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const { profile } = useAuth();
+  const queryClient = useQueryClient();
 
   const [selectedLeague, setSelectedLeague] = useState('all');
   const [search, setSearch] = useState('');
   const [refreshing, setRefreshing] = useState(false);
+  const [newPredictionsBadge, setNewPredictionsBadge] = useState(0);
+  const badgeFade = useRef(new Animated.Value(0)).current;
 
   const userTier = profile?.current_tier ?? 'Free Tier';
   const userLimit = TIER_LIMITS[userTier] ?? 5;
   const nextTier = TIER_NEXT[userTier] ?? 'Premium Tier';
 
-  const { data: predictions = [], isLoading, refetch } = useQuery<Prediction[]>({
+  const { data: predictions = [], isLoading, isError, refetch } = useQuery<Prediction[]>({
     queryKey: ['predictions'],
     queryFn: async () => {
       const today = new Date().toISOString().split('T')[0];
@@ -64,11 +70,43 @@ export default function HomeScreen() {
       if (error) throw error;
       return data ?? [];
     },
+    refetchInterval: POLL_INTERVAL_MS,
+    refetchIntervalInBackground: false,
+    staleTime: 5 * 60 * 1000,
   });
+
+  // Supabase realtime: invalidate query whenever predictions are inserted/updated
+  useEffect(() => {
+    const channel = supabase
+      .channel('predictions_realtime')
+      .on('postgres_changes', {
+        event: '*',
+        schema: 'public',
+        table: 'predictions',
+      }, () => {
+        // Show a "new predictions" badge then auto-refresh
+        setNewPredictionsBadge(prev => prev + 1);
+        Animated.sequence([
+          Animated.timing(badgeFade, { toValue: 1, duration: 300, useNativeDriver: true }),
+          Animated.delay(4000),
+          Animated.timing(badgeFade, { toValue: 0, duration: 600, useNativeDriver: true }),
+        ]).start();
+        queryClient.invalidateQueries({ queryKey: ['predictions'] });
+      })
+      .subscribe();
+
+    return () => { supabase.removeChannel(channel); };
+  }, [queryClient]);
+
+  const dismissBadge = useCallback(() => {
+    setNewPredictionsBadge(0);
+    Animated.timing(badgeFade, { toValue: 0, duration: 300, useNativeDriver: true }).start();
+  }, [badgeFade]);
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     await refetch();
+    setNewPredictionsBadge(0);
     setRefreshing(false);
   }, [refetch]);
 
@@ -96,13 +134,48 @@ export default function HomeScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: C.background }]}>
+      {/* Live update notification banner */}
+      <Animated.View
+        style={[
+          styles.liveBanner,
+          { backgroundColor: C.success, opacity: badgeFade },
+          Platform.OS === 'web' && { top: 67 },
+        ]}
+        pointerEvents="box-none"
+      >
+        <TouchableOpacity
+          style={styles.liveBannerInner}
+          onPress={() => { dismissBadge(); onRefresh(); }}
+        >
+          <Ionicons name="flash" size={14} color="#fff" />
+          <Text style={styles.liveBannerText}>
+            {newPredictionsBadge} new prediction{newPredictionsBadge !== 1 ? 's' : ''} — tap to refresh
+          </Text>
+        </TouchableOpacity>
+      </Animated.View>
+
       <View style={[styles.headerArea, { paddingTop: topInset + 8, backgroundColor: C.background }]}>
         <View style={styles.titleRow}>
           <Text style={[styles.title, { color: C.text }]}>Today's Predictions</Text>
-          <View style={[styles.tierBadge, { backgroundColor: C.primaryLight }]}>
-            <Text style={[styles.tierText, { color: C.primary }]}>{userTier}</Text>
+          <View style={styles.titleRight}>
+            <View style={[styles.aiBadge, { backgroundColor: C.primaryLight }]}>
+              <Ionicons name="hardware-chip-outline" size={11} color={C.primary} />
+              <Text style={[styles.aiText, { color: C.primary }]}>AI</Text>
+            </View>
+            <View style={[styles.tierBadge, { backgroundColor: C.primaryLight }]}>
+              <Text style={[styles.tierText, { color: C.primary }]}>{userTier}</Text>
+            </View>
           </View>
         </View>
+
+        {isError && (
+          <View style={[styles.errorBanner, { backgroundColor: '#FFF3F3', borderColor: C.danger }]}>
+            <Ionicons name="wifi-outline" size={14} color={C.danger} />
+            <Text style={[styles.errorText, { color: C.danger }]}>
+              Couldn't load predictions — pull down to retry
+            </Text>
+          </View>
+        )}
 
         {filtered.length > 0 && (
           <View style={[styles.limitBanner, { backgroundColor: C.card, borderColor: C.border }]}>
@@ -217,9 +290,27 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
+  liveBanner: {
+    position: 'absolute', top: 0, left: 0, right: 0, zIndex: 999,
+    paddingTop: Platform.OS === 'ios' ? 44 : 0,
+  },
+  liveBannerInner: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    paddingHorizontal: 16, paddingVertical: 10,
+  },
+  liveBannerText: { color: '#fff', fontSize: 13, fontFamily: 'Inter_600SemiBold', flex: 1 },
+  errorBanner: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    borderRadius: 10, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 8,
+    marginBottom: 10,
+  },
+  errorText: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular' },
   headerArea: { paddingHorizontal: 16, paddingBottom: 8 },
   titleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
+  titleRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   title: { fontSize: 22, fontFamily: 'Inter_700Bold' },
+  aiBadge: { flexDirection: 'row', alignItems: 'center', gap: 3, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 20 },
+  aiText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
   tierBadge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20 },
   tierText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   limitBanner: {
