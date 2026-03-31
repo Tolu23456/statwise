@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, useColorScheme, Platform } from 'react-native';
+import { View, Text, StyleSheet, useColorScheme, Platform, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/colors';
 import { Prediction } from '@/lib/supabase';
 
@@ -40,6 +41,7 @@ function RedactedBlock({ width, height = 14, C }: { width: number | string; heig
 export function PredictionCard({ prediction, locked = false, nextTier = 'Premium Tier' }: Props) {
   const scheme = useColorScheme() ?? 'dark';
   const C = Colors[scheme];
+  const router = useRouter();
   const confColor = getConfidenceColor(prediction.confidence, C);
 
   const blurStyle = Platform.OS === 'web'
@@ -92,9 +94,13 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
               Upgrade to {nextTier} to unlock
             </Text>
           </View>
-          <View style={[styles.upgradePill, { backgroundColor: C.primary }]}>
+          <TouchableOpacity
+            style={[styles.upgradePill, { backgroundColor: C.primary }]}
+            onPress={() => router.push('/(tabs)/subscriptions')}
+            activeOpacity={0.8}
+          >
             <Text style={styles.upgradePillText}>Upgrade</Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     );

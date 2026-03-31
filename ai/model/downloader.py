@@ -87,22 +87,30 @@ def download_all(seasons=None, leagues=None) -> pd.DataFrame:
 
 def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
     """Standardise column names across different CSV formats."""
-    col_map = {
-        'HomeTeam': 'home_team', 'AwayTeam': 'away_team',
-        'FTHG': 'home_goals',  'FTAG': 'away_goals',
-        'FTR':  'result',
-        'Date': 'date',
-        'B365H': 'odds_home', 'B365D': 'odds_draw', 'B365A': 'odds_away',
-        'BWH':   'odds_home', 'BWD':   'odds_draw', 'BWA':   'odds_away',
-        'HS': 'shots_home', 'AS': 'shots_away',
-        'HST': 'shots_on_target_home', 'AST': 'shots_on_target_away',
-        'HC':  'corners_home', 'AC': 'corners_away',
-        'HF':  'fouls_home',   'AF': 'fouls_away',
-        'HY':  'yellows_home', 'AY': 'yellows_away',
-        'HR':  'reds_home',    'AR': 'reds_away',
-        'Div': 'division',
-    }
-    df = df.rename(columns={k: v for k, v in col_map.items() if k in df.columns})
+    # Build rename map with priority (B365 beats BW, apply only unmapped columns)
+    rename: dict[str, str] = {}
+    priority = [
+        ('HomeTeam', 'home_team'), ('AwayTeam', 'away_team'),
+        ('FTHG', 'home_goals'),    ('FTAG', 'away_goals'),
+        ('FTR',  'result'),        ('Date', 'date'),
+        ('Div',  'division'),
+        ('HS',   'shots_home'),    ('AS', 'shots_away'),
+        ('HST',  'shots_on_target_home'), ('AST', 'shots_on_target_away'),
+        ('HC',   'corners_home'),  ('AC', 'corners_away'),
+        ('HF',   'fouls_home'),    ('AF', 'fouls_away'),
+        ('HY',   'yellows_home'),  ('AY', 'yellows_away'),
+        ('HR',   'reds_home'),     ('AR', 'reds_away'),
+        # Odds – B365 first, BW fallback
+        ('B365H', 'odds_home'),    ('B365D', 'odds_draw'),  ('B365A', 'odds_away'),
+        ('BWH',   'odds_home'),    ('BWD',   'odds_draw'),  ('BWA',   'odds_away'),
+    ]
+    mapped_targets: set[str] = set()
+    for src, tgt in priority:
+        if src in df.columns and tgt not in mapped_targets:
+            rename[src] = tgt
+            mapped_targets.add(tgt)
+
+    df = df.rename(columns=rename)
 
     required = ['home_team', 'away_team', 'home_goals', 'away_goals']
     for col in required:
@@ -115,9 +123,12 @@ def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
 
     for col in ['odds_home', 'odds_draw', 'odds_away']:
         if col not in df.columns:
-            df[col] = None
+            df[col] = float('nan')
         else:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
+            try:
+                df[col] = pd.to_numeric(df[col].astype(str), errors='coerce')
+            except Exception:
+                df[col] = float('nan')
 
     if 'date' in df.columns:
         df['date'] = pd.to_datetime(df['date'], errors='coerce', dayfirst=True)
