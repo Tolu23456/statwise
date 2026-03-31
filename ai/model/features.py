@@ -155,25 +155,36 @@ class FeaturePipeline:
 
         return X
 
-    def build_training_set(self, df: pd.DataFrame):
-        """Build (X, y_1x2, y_goals) for training from historical DataFrame."""
-        logger.info(f"Building training set from {len(df)} historical matches…")
+    def build_training_set(self, df: pd.DataFrame, sample_every: int = 6):
+        """
+        Build (X, y_1x2, y_goals) for training from historical DataFrame.
+        sample_every: only process every Nth match to keep O(n) manageable.
+        """
+        total_matches = len(df)
+        logger.info(
+            f"Building training set from {total_matches} historical matches "
+            f"(sampling every {sample_every}th → ~{total_matches // sample_every} samples)…"
+        )
         records = df.to_dict('records')
 
         X_list, y_1x2, y_goals = [], [], []
 
-        # Use a rolling window: for each match, use all preceding matches as history
-        for idx in range(20, len(records)):
+        indices = list(range(20, total_matches, sample_every))
+        n = len(indices)
+
+        for count, idx in enumerate(indices):
             match = records[idx]
-            history_df = df.iloc[:idx]
+            # Use a fixed-size lookback window (last 300 matches) instead of
+            # the full growing history — same informational value, much faster.
+            history_df = df.iloc[max(0, idx - 300): idx]
 
             feat = self.build_features([{
-                'home_team':  match['home_team'],
-                'away_team':  match['away_team'],
+                'home_team':   match['home_team'],
+                'away_team':   match['away_team'],
                 'league_slug': match.get('league_slug', 'all'),
-                'odds_home':  match.get('odds_home'),
-                'odds_draw':  match.get('odds_draw'),
-                'odds_away':  match.get('odds_away'),
+                'odds_home':   match.get('odds_home'),
+                'odds_draw':   match.get('odds_draw'),
+                'odds_away':   match.get('odds_away'),
             }], history_df)[0]
 
             hg, ag = int(match['home_goals']), int(match['away_goals'])
@@ -183,5 +194,13 @@ class FeaturePipeline:
             y_goals.append(1 if total > 2.5 else 0)
             X_list.append(feat)
 
+            if (count + 1) % 200 == 0 or (count + 1) == n:
+                pct = (count + 1) / n * 100
+                logger.info(
+                    f"  Feature engineering: {count + 1}/{n} samples "
+                    f"({pct:.0f}%) — {len(X_list)} rows built"
+                )
+
         X = np.array(X_list)
+        logger.info(f"Feature matrix ready: {X.shape}")
         return X, np.array(y_1x2), np.array(y_goals)

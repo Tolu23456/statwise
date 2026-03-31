@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-31T08:28:58.677908Z",
-  "status": "init_error",
-  "n_predictions": 0,
-  "error": "arg must be a list, tuple, 1-d array, or Series",
+  "timestamp": "2026-03-31T14:27:09.944903Z",
+  "status": "ok",
+  "n_predictions": 15,
+  "error": "",
   "next_run_in_seconds": 1200
 }

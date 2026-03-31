@@ -9,15 +9,8 @@ import pandas as pd
 from typing import Optional
 
 from xgboost import XGBClassifier
-from sklearn.ensemble import (
-    GradientBoostingClassifier,
-    RandomForestClassifier,
-    VotingClassifier,
-)
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import cross_val_score
-from sklearn.pipeline import Pipeline
 
 from .features import FeaturePipeline, N_FEATURES
 
@@ -48,89 +41,64 @@ class FootballPredictor:
     @staticmethod
     def _make_outcome_model() -> CalibratedClassifierCV:
         xgb = XGBClassifier(
-            n_estimators=400,
-            max_depth=6,
-            learning_rate=0.05,
+            n_estimators=150,
+            max_depth=5,
+            learning_rate=0.1,
             subsample=0.8,
             colsample_bytree=0.8,
-            use_label_encoder=False,
             eval_metric='mlogloss',
             random_state=42,
             n_jobs=-1,
         )
-        rf = RandomForestClassifier(
-            n_estimators=300,
-            max_depth=8,
-            random_state=42,
-            n_jobs=-1,
-        )
-        gb = GradientBoostingClassifier(
-            n_estimators=200,
-            max_depth=4,
-            learning_rate=0.08,
-            subsample=0.8,
-            random_state=42,
-        )
-        ensemble = VotingClassifier(
-            estimators=[('xgb', xgb), ('rf', rf), ('gb', gb)],
-            voting='soft',
-            weights=[3, 2, 2],
-        )
-        return CalibratedClassifierCV(ensemble, method='isotonic', cv=3)
+        return CalibratedClassifierCV(xgb, method='sigmoid', cv=3)
 
     @staticmethod
     def _make_goals_model() -> CalibratedClassifierCV:
         xgb = XGBClassifier(
-            n_estimators=300,
-            max_depth=5,
-            learning_rate=0.07,
+            n_estimators=100,
+            max_depth=4,
+            learning_rate=0.1,
             subsample=0.8,
             colsample_bytree=0.7,
-            use_label_encoder=False,
             eval_metric='logloss',
             random_state=99,
             n_jobs=-1,
         )
-        return CalibratedClassifierCV(xgb, method='isotonic', cv=3)
+        return CalibratedClassifierCV(xgb, method='sigmoid', cv=3)
 
     # ─────────────────────── training ─────────────────────────────── #
 
     def train(self, df: pd.DataFrame, min_samples: int = 500) -> "FootballPredictor":
         logger.info(f"Starting training on {len(df)} raw match records…")
+
+        # ── Step 1: Fit Elo ratings & league stats ──────────────────────
+        logger.info("Step 1/4  Computing Elo ratings and league stats…")
         self.feature_pipe.fit(df)
+
+        # ── Step 2: Build feature matrix ────────────────────────────────
+        logger.info("Step 2/4  Building feature matrix (sampled)…")
         X, y_1x2, y_goals = self.feature_pipe.build_training_set(df)
 
         if len(X) < min_samples:
             raise ValueError(
-                f"Not enough training samples: {len(X)} < {min_samples}. "
-                "Download more historical data first."
+                f"Not enough training samples: {len(X)} < {min_samples}."
             )
+        logger.info(f"Step 2/4  Done — {len(X)} samples, {N_FEATURES} features each.")
 
-        logger.info(f"Training on {len(X)} samples, {N_FEATURES} features")
-
+        # ── Step 3: Scale features ──────────────────────────────────────
+        logger.info("Step 3/4  Scaling features…")
         X_scaled = self._scaler.fit_transform(X)
 
-        # Cross-validated accuracy estimate
-        xgb_quick = XGBClassifier(
-            n_estimators=100, max_depth=5,
-            use_label_encoder=False, eval_metric='mlogloss',
-            random_state=42, n_jobs=-1,
-        )
-        cv_scores = cross_val_score(xgb_quick, X_scaled, y_1x2, cv=5, scoring='accuracy')
-        logger.info(f"CV accuracy (quick XGBoost, 5-fold): {cv_scores.mean():.3f} ± {cv_scores.std():.3f}")
-
-        # Train full outcome model
-        logger.info("Fitting outcome model (ensemble)…")
+        # ── Step 4: Fit models ──────────────────────────────────────────
+        logger.info("Step 4/4  Fitting outcome model (XGBoost + calibration)…")
         self._outcome_model = self._make_outcome_model()
         self._outcome_model.fit(X_scaled, y_1x2)
-
-        # Train goals model
-        logger.info("Fitting goals model…")
+        logger.info("Step 4/4  Outcome model fitted. Fitting goals model…")
         self._goals_model = self._make_goals_model()
         self._goals_model.fit(X_scaled, y_goals)
 
         self._trained = True
-        logger.info("Training complete.")
+        logger.info("Training complete ✓")
         return self
 
     def save(self, path: Optional[str] = None) -> str:
