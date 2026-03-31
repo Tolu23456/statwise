@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-31T07:42:51.969621Z",
+  "timestamp": "2026-03-31T08:01:35.278024Z",
   "status": "init_error",
   "n_predictions": 0,
-  "error": "arg must be a list, tuple, 1-d array, or Series",
+  "error": "No module named 'joblib'",
   "next_run_in_seconds": 1200
 }
