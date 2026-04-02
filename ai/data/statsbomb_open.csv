@@ -1,0 +1,837 @@
+home_team,away_team,home_goals,away_goals,date,league_slug
+Bayer Leverkusen,Werder Bremen,5,0,2024-04-14,statsbomb-1.-bundesliga
+Union Berlin,Bayer Leverkusen,0,1,2024-04-06,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Bayer Leverkusen,1,5,2024-05-05,statsbomb-1.-bundesliga
+Bochum,Bayer Leverkusen,0,5,2024-05-12,statsbomb-1.-bundesliga
+Bayer Leverkusen,Augsburg,2,1,2024-05-18,statsbomb-1.-bundesliga
+Bayer Leverkusen,Hoffenheim,2,1,2024-03-30,statsbomb-1.-bundesliga
+Darmstadt 98,Bayer Leverkusen,0,2,2024-02-03,statsbomb-1.-bundesliga
+Bayer Leverkusen,FSV Mainz 05,2,1,2024-02-23,statsbomb-1.-bundesliga
+Bayer Leverkusen,Wolfsburg,2,0,2024-03-10,statsbomb-1.-bundesliga
+Freiburg,Bayer Leverkusen,2,3,2024-03-17,statsbomb-1.-bundesliga
+Bayer Leverkusen,Eintracht Frankfurt,3,0,2023-12-17,statsbomb-1.-bundesliga
+Hoffenheim,Bayer Leverkusen,2,3,2023-11-04,statsbomb-1.-bundesliga
+Bayer Leverkusen,Freiburg,2,1,2023-10-29,statsbomb-1.-bundesliga
+Bayer Leverkusen,FC Köln,3,0,2023-10-08,statsbomb-1.-bundesliga
+Bayern Munich,Bayer Leverkusen,2,2,2023-09-15,statsbomb-1.-bundesliga
+Bayer Leverkusen,Union Berlin,4,0,2023-11-12,statsbomb-1.-bundesliga
+Bayer Leverkusen,FC Heidenheim,4,1,2023-09-24,statsbomb-1.-bundesliga
+Bayer Leverkusen,VfB Stuttgart,2,2,2024-04-27,statsbomb-1.-bundesliga
+Borussia Dortmund,Bayer Leverkusen,1,1,2024-04-21,statsbomb-1.-bundesliga
+FC Köln,Bayer Leverkusen,0,2,2024-03-03,statsbomb-1.-bundesliga
+FC Heidenheim,Bayer Leverkusen,1,2,2024-02-17,statsbomb-1.-bundesliga
+Bayer Leverkusen,Bayern Munich,3,0,2024-02-10,statsbomb-1.-bundesliga
+Bayer Leverkusen,Borussia Mönchengladbach,0,0,2024-01-27,statsbomb-1.-bundesliga
+RB Leipzig,Bayer Leverkusen,2,3,2024-01-20,statsbomb-1.-bundesliga
+Augsburg,Bayer Leverkusen,0,1,2024-01-13,statsbomb-1.-bundesliga
+Bayer Leverkusen,Bochum,4,0,2023-12-20,statsbomb-1.-bundesliga
+VfB Stuttgart,Bayer Leverkusen,1,1,2023-12-10,statsbomb-1.-bundesliga
+Bayer Leverkusen,Borussia Dortmund,1,1,2023-12-03,statsbomb-1.-bundesliga
+Werder Bremen,Bayer Leverkusen,0,3,2023-11-25,statsbomb-1.-bundesliga
+Wolfsburg,Bayer Leverkusen,1,2,2023-10-21,statsbomb-1.-bundesliga
+FSV Mainz 05,Bayer Leverkusen,0,3,2023-09-30,statsbomb-1.-bundesliga
+Bayer Leverkusen,Darmstadt 98,5,1,2023-09-02,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Bayer Leverkusen,0,3,2023-08-26,statsbomb-1.-bundesliga
+Bayer Leverkusen,RB Leipzig,3,2,2023-08-19,statsbomb-1.-bundesliga
+Hoffenheim,Schalke 04,1,4,2016-05-14,statsbomb-1.-bundesliga
+Bayern Munich,Eintracht Frankfurt,1,0,2016-04-02,statsbomb-1.-bundesliga
+Hertha Berlin,Hannover 96,2,2,2016-04-08,statsbomb-1.-bundesliga
+Hamburger SV,Darmstadt 98,1,2,2016-04-09,statsbomb-1.-bundesliga
+Hertha Berlin,FSV Mainz 05,2,0,2015-12-20,statsbomb-1.-bundesliga
+Hoffenheim,Hannover 96,1,0,2015-12-12,statsbomb-1.-bundesliga
+Borussia Dortmund,Eintracht Frankfurt,4,1,2015-12-13,statsbomb-1.-bundesliga
+Wolfsburg,Hamburger SV,1,1,2015-12-12,statsbomb-1.-bundesliga
+Borussia Dortmund,VfB Stuttgart,4,1,2015-11-29,statsbomb-1.-bundesliga
+Schalke 04,Hannover 96,3,1,2015-12-04,statsbomb-1.-bundesliga
+FSV Mainz 05,Hannover 96,3,0,2015-08-29,statsbomb-1.-bundesliga
+Bayern Munich,Augsburg,2,1,2015-09-12,statsbomb-1.-bundesliga
+Hamburger SV,VfB Stuttgart,3,2,2015-08-22,statsbomb-1.-bundesliga
+Hertha Berlin,Werder Bremen,1,1,2015-08-21,statsbomb-1.-bundesliga
+Augsburg,Schalke 04,2,1,2015-12-13,statsbomb-1.-bundesliga
+Augsburg,Hamburger SV,1,3,2016-05-14,statsbomb-1.-bundesliga
+Bayer Leverkusen,Ingolstadt,3,2,2016-05-14,statsbomb-1.-bundesliga
+Borussia Dortmund,FC Köln,2,2,2016-05-14,statsbomb-1.-bundesliga
+Darmstadt 98,Borussia Mönchengladbach,0,2,2016-05-14,statsbomb-1.-bundesliga
+Bayern Munich,Hannover 96,3,1,2016-05-14,statsbomb-1.-bundesliga
+FSV Mainz 05,Hertha Berlin,0,0,2016-05-14,statsbomb-1.-bundesliga
+Werder Bremen,Eintracht Frankfurt,1,0,2016-05-14,statsbomb-1.-bundesliga
+Wolfsburg,VfB Stuttgart,3,1,2016-05-14,statsbomb-1.-bundesliga
+Hertha Berlin,Darmstadt 98,1,2,2016-05-07,statsbomb-1.-bundesliga
+FC Köln,Werder Bremen,0,0,2016-05-07,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Borussia Dortmund,1,0,2016-05-07,statsbomb-1.-bundesliga
+VfB Stuttgart,FSV Mainz 05,1,3,2016-05-07,statsbomb-1.-bundesliga
+Hamburger SV,Wolfsburg,0,1,2016-05-07,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Bayer Leverkusen,2,1,2016-05-07,statsbomb-1.-bundesliga
+Schalke 04,Augsburg,1,1,2016-05-07,statsbomb-1.-bundesliga
+Ingolstadt,Bayern Munich,1,2,2016-05-07,statsbomb-1.-bundesliga
+Hannover 96,Hoffenheim,1,0,2016-05-07,statsbomb-1.-bundesliga
+Werder Bremen,VfB Stuttgart,6,2,2016-05-02,statsbomb-1.-bundesliga
+FSV Mainz 05,Hamburger SV,0,0,2016-04-30,statsbomb-1.-bundesliga
+Hoffenheim,Ingolstadt,2,1,2016-04-30,statsbomb-1.-bundesliga
+Hannover 96,Schalke 04,1,3,2016-04-30,statsbomb-1.-bundesliga
+Borussia Dortmund,Wolfsburg,5,1,2016-04-30,statsbomb-1.-bundesliga
+Bayern Munich,Borussia Mönchengladbach,1,1,2016-04-30,statsbomb-1.-bundesliga
+Bayer Leverkusen,Hertha Berlin,2,1,2016-04-30,statsbomb-1.-bundesliga
+Darmstadt 98,Eintracht Frankfurt,1,2,2016-04-30,statsbomb-1.-bundesliga
+Augsburg,FC Köln,0,0,2016-04-29,statsbomb-1.-bundesliga
+Eintracht Frankfurt,FSV Mainz 05,2,1,2016-04-24,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Hoffenheim,3,1,2016-04-24,statsbomb-1.-bundesliga
+Wolfsburg,Augsburg,0,2,2016-04-23,statsbomb-1.-bundesliga
+Schalke 04,Bayer Leverkusen,2,3,2016-04-23,statsbomb-1.-bundesliga
+Hertha Berlin,Bayern Munich,0,2,2016-04-23,statsbomb-1.-bundesliga
+Ingolstadt,Hannover 96,2,2,2016-04-23,statsbomb-1.-bundesliga
+FC Köln,Darmstadt 98,4,1,2016-04-23,statsbomb-1.-bundesliga
+VfB Stuttgart,Borussia Dortmund,0,3,2016-04-23,statsbomb-1.-bundesliga
+Hamburger SV,Werder Bremen,2,1,2016-04-22,statsbomb-1.-bundesliga
+Borussia Dortmund,Hamburger SV,3,0,2016-04-17,statsbomb-1.-bundesliga
+FSV Mainz 05,FC Köln,2,3,2016-04-17,statsbomb-1.-bundesliga
+Bayern Munich,Schalke 04,3,0,2016-04-16,statsbomb-1.-bundesliga
+Darmstadt 98,Ingolstadt,2,0,2016-04-16,statsbomb-1.-bundesliga
+Hoffenheim,Hertha Berlin,2,1,2016-04-16,statsbomb-1.-bundesliga
+Werder Bremen,Wolfsburg,3,2,2016-04-16,statsbomb-1.-bundesliga
+Augsburg,VfB Stuttgart,1,0,2016-04-16,statsbomb-1.-bundesliga
+Bayer Leverkusen,Eintracht Frankfurt,3,0,2016-04-16,statsbomb-1.-bundesliga
+Hannover 96,Borussia Mönchengladbach,2,0,2016-04-15,statsbomb-1.-bundesliga
+FC Köln,Bayer Leverkusen,0,2,2016-04-10,statsbomb-1.-bundesliga
+Schalke 04,Borussia Dortmund,2,2,2016-04-10,statsbomb-1.-bundesliga
+Ingolstadt,Borussia Mönchengladbach,1,0,2016-04-09,statsbomb-1.-bundesliga
+VfB Stuttgart,Bayern Munich,1,3,2016-04-09,statsbomb-1.-bundesliga
+Werder Bremen,Augsburg,1,2,2016-04-09,statsbomb-1.-bundesliga
+Wolfsburg,FSV Mainz 05,1,1,2016-04-09,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Hoffenheim,0,2,2016-04-09,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Hertha Berlin,5,0,2016-04-03,statsbomb-1.-bundesliga
+Hoffenheim,FC Köln,1,1,2016-04-03,statsbomb-1.-bundesliga
+Ingolstadt,Schalke 04,3,0,2016-04-02,statsbomb-1.-bundesliga
+Borussia Dortmund,Werder Bremen,3,2,2016-04-02,statsbomb-1.-bundesliga
+Darmstadt 98,VfB Stuttgart,2,2,2016-04-02,statsbomb-1.-bundesliga
+Hannover 96,Hamburger SV,0,3,2016-04-02,statsbomb-1.-bundesliga
+FSV Mainz 05,Augsburg,4,2,2016-04-02,statsbomb-1.-bundesliga
+Bayer Leverkusen,Wolfsburg,3,0,2016-04-01,statsbomb-1.-bundesliga
+Augsburg,Borussia Dortmund,1,3,2016-03-20,statsbomb-1.-bundesliga
+VfB Stuttgart,Bayer Leverkusen,0,2,2016-03-20,statsbomb-1.-bundesliga
+Hamburger SV,Hoffenheim,1,3,2016-03-19,statsbomb-1.-bundesliga
+Wolfsburg,Darmstadt 98,1,1,2016-03-19,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Hannover 96,1,0,2016-03-19,statsbomb-1.-bundesliga
+Hertha Berlin,Ingolstadt,2,1,2016-03-19,statsbomb-1.-bundesliga
+FC Köln,Bayern Munich,0,1,2016-03-19,statsbomb-1.-bundesliga
+Werder Bremen,FSV Mainz 05,1,1,2016-03-19,statsbomb-1.-bundesliga
+Schalke 04,Borussia Mönchengladbach,2,1,2016-03-18,statsbomb-1.-bundesliga
+Bayer Leverkusen,Hamburger SV,1,0,2016-03-13,statsbomb-1.-bundesliga
+Borussia Dortmund,FSV Mainz 05,2,0,2016-03-13,statsbomb-1.-bundesliga
+Hannover 96,FC Köln,0,2,2016-03-12,statsbomb-1.-bundesliga
+Bayern Munich,Werder Bremen,5,0,2016-03-12,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Eintracht Frankfurt,3,0,2016-03-12,statsbomb-1.-bundesliga
+Darmstadt 98,Augsburg,2,2,2016-03-12,statsbomb-1.-bundesliga
+Hoffenheim,Wolfsburg,1,0,2016-03-12,statsbomb-1.-bundesliga
+Ingolstadt,VfB Stuttgart,3,3,2016-03-12,statsbomb-1.-bundesliga
+Hertha Berlin,Schalke 04,2,0,2016-03-11,statsbomb-1.-bundesliga
+Hamburger SV,Hertha Berlin,2,0,2016-03-06,statsbomb-1.-bundesliga
+FSV Mainz 05,Darmstadt 98,0,0,2016-03-06,statsbomb-1.-bundesliga
+Borussia Dortmund,Bayern Munich,0,0,2016-03-05,statsbomb-1.-bundesliga
+FC Köln,Schalke 04,1,3,2016-03-05,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Ingolstadt,1,1,2016-03-05,statsbomb-1.-bundesliga
+Werder Bremen,Hannover 96,4,1,2016-03-05,statsbomb-1.-bundesliga
+Augsburg,Bayer Leverkusen,3,3,2016-03-05,statsbomb-1.-bundesliga
+VfB Stuttgart,Hoffenheim,5,1,2016-03-05,statsbomb-1.-bundesliga
+Wolfsburg,Borussia Mönchengladbach,2,1,2016-03-05,statsbomb-1.-bundesliga
+Bayern Munich,FSV Mainz 05,1,2,2016-03-02,statsbomb-1.-bundesliga
+Schalke 04,Hamburger SV,3,2,2016-03-02,statsbomb-1.-bundesliga
+Bayer Leverkusen,Werder Bremen,1,4,2016-03-02,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,VfB Stuttgart,4,0,2016-03-02,statsbomb-1.-bundesliga
+Hertha Berlin,Eintracht Frankfurt,2,0,2016-03-02,statsbomb-1.-bundesliga
+Hoffenheim,Augsburg,2,1,2016-03-02,statsbomb-1.-bundesliga
+Darmstadt 98,Borussia Dortmund,0,2,2016-03-02,statsbomb-1.-bundesliga
+Ingolstadt,FC Köln,1,1,2016-03-01,statsbomb-1.-bundesliga
+Hannover 96,Wolfsburg,0,4,2016-03-01,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Schalke 04,0,0,2016-02-28,statsbomb-1.-bundesliga
+Borussia Dortmund,Hoffenheim,3,1,2016-02-28,statsbomb-1.-bundesliga
+FSV Mainz 05,Bayer Leverkusen,3,1,2016-02-28,statsbomb-1.-bundesliga
+Augsburg,Borussia Mönchengladbach,2,2,2016-02-28,statsbomb-1.-bundesliga
+Hamburger SV,Ingolstadt,1,1,2016-02-27,statsbomb-1.-bundesliga
+VfB Stuttgart,Hannover 96,1,2,2016-02-27,statsbomb-1.-bundesliga
+Werder Bremen,Darmstadt 98,2,2,2016-02-27,statsbomb-1.-bundesliga
+Wolfsburg,Bayern Munich,0,2,2016-02-27,statsbomb-1.-bundesliga
+FC Köln,Hertha Berlin,0,1,2016-02-26,statsbomb-1.-bundesliga
+Bayer Leverkusen,Borussia Dortmund,0,1,2016-02-21,statsbomb-1.-bundesliga
+Schalke 04,VfB Stuttgart,1,1,2016-02-21,statsbomb-1.-bundesliga
+Hannover 96,Augsburg,0,1,2016-02-21,statsbomb-1.-bundesliga
+Bayern Munich,Darmstadt 98,3,1,2016-02-20,statsbomb-1.-bundesliga
+Hoffenheim,FSV Mainz 05,3,2,2016-02-20,statsbomb-1.-bundesliga
+Hertha Berlin,Wolfsburg,1,1,2016-02-20,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,FC Köln,1,0,2016-02-20,statsbomb-1.-bundesliga
+Ingolstadt,Werder Bremen,2,0,2016-02-20,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Hamburger SV,0,0,2016-02-19,statsbomb-1.-bundesliga
+Hamburger SV,Borussia Mönchengladbach,3,2,2016-02-14,statsbomb-1.-bundesliga
+Augsburg,Bayern Munich,1,3,2016-02-14,statsbomb-1.-bundesliga
+Wolfsburg,Ingolstadt,2,0,2016-02-13,statsbomb-1.-bundesliga
+Darmstadt 98,Bayer Leverkusen,1,2,2016-02-13,statsbomb-1.-bundesliga
+Werder Bremen,Hoffenheim,1,1,2016-02-13,statsbomb-1.-bundesliga
+Borussia Dortmund,Hannover 96,1,0,2016-02-13,statsbomb-1.-bundesliga
+VfB Stuttgart,Hertha Berlin,2,0,2016-02-13,statsbomb-1.-bundesliga
+FC Köln,Eintracht Frankfurt,3,1,2016-02-13,statsbomb-1.-bundesliga
+FSV Mainz 05,Schalke 04,2,1,2016-02-12,statsbomb-1.-bundesliga
+Hamburger SV,FC Köln,1,1,2016-02-07,statsbomb-1.-bundesliga
+Hoffenheim,Darmstadt 98,0,2,2016-02-07,statsbomb-1.-bundesliga
+Ingolstadt,Augsburg,2,1,2016-02-06,statsbomb-1.-bundesliga
+Hertha Berlin,Borussia Dortmund,0,0,2016-02-06,statsbomb-1.-bundesliga
+Hannover 96,FSV Mainz 05,0,1,2016-02-06,statsbomb-1.-bundesliga
+Eintracht Frankfurt,VfB Stuttgart,2,4,2016-02-06,statsbomb-1.-bundesliga
+Schalke 04,Wolfsburg,3,0,2016-02-06,statsbomb-1.-bundesliga
+Bayer Leverkusen,Bayern Munich,0,0,2016-02-06,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Werder Bremen,5,1,2016-02-05,statsbomb-1.-bundesliga
+Wolfsburg,FC Köln,1,1,2016-01-31,statsbomb-1.-bundesliga
+Bayern Munich,Hoffenheim,2,0,2016-01-31,statsbomb-1.-bundesliga
+Bayer Leverkusen,Hannover 96,3,0,2016-01-30,statsbomb-1.-bundesliga
+Augsburg,Eintracht Frankfurt,0,0,2016-01-30,statsbomb-1.-bundesliga
+Werder Bremen,Hertha Berlin,3,3,2016-01-30,statsbomb-1.-bundesliga
+Darmstadt 98,Schalke 04,0,2,2016-01-30,statsbomb-1.-bundesliga
+VfB Stuttgart,Hamburger SV,2,1,2016-01-30,statsbomb-1.-bundesliga
+Borussia Dortmund,Ingolstadt,2,0,2016-01-30,statsbomb-1.-bundesliga
+FSV Mainz 05,Borussia Mönchengladbach,1,0,2016-01-29,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Wolfsburg,3,2,2016-01-24,statsbomb-1.-bundesliga
+Schalke 04,Werder Bremen,1,3,2016-01-24,statsbomb-1.-bundesliga
+Hannover 96,Darmstadt 98,1,2,2016-01-23,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Borussia Dortmund,1,3,2016-01-23,statsbomb-1.-bundesliga
+Ingolstadt,FSV Mainz 05,1,0,2016-01-23,statsbomb-1.-bundesliga
+Hoffenheim,Bayer Leverkusen,1,1,2016-01-23,statsbomb-1.-bundesliga
+Hertha Berlin,Augsburg,0,0,2016-01-23,statsbomb-1.-bundesliga
+FC Köln,VfB Stuttgart,1,3,2016-01-23,statsbomb-1.-bundesliga
+Hamburger SV,Bayern Munich,1,2,2016-01-22,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Darmstadt 98,3,2,2015-12-20,statsbomb-1.-bundesliga
+Ingolstadt,Bayer Leverkusen,0,1,2015-12-19,statsbomb-1.-bundesliga
+VfB Stuttgart,Wolfsburg,3,1,2015-12-19,statsbomb-1.-bundesliga
+Hannover 96,Bayern Munich,0,1,2015-12-19,statsbomb-1.-bundesliga
+FC Köln,Borussia Dortmund,2,1,2015-12-19,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Werder Bremen,2,1,2015-12-19,statsbomb-1.-bundesliga
+Hamburger SV,Augsburg,0,1,2015-12-19,statsbomb-1.-bundesliga
+Schalke 04,Hoffenheim,1,0,2015-12-18,statsbomb-1.-bundesliga
+Werder Bremen,FC Köln,1,1,2015-12-12,statsbomb-1.-bundesliga
+Bayern Munich,Ingolstadt,2,0,2015-12-12,statsbomb-1.-bundesliga
+Darmstadt 98,Hertha Berlin,0,4,2015-12-12,statsbomb-1.-bundesliga
+Bayer Leverkusen,Borussia Mönchengladbach,5,0,2015-12-12,statsbomb-1.-bundesliga
+FSV Mainz 05,VfB Stuttgart,0,0,2015-12-11,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Darmstadt 98,0,1,2015-12-06,statsbomb-1.-bundesliga
+VfB Stuttgart,Werder Bremen,1,1,2015-12-06,statsbomb-1.-bundesliga
+FC Köln,Augsburg,0,1,2015-12-05,statsbomb-1.-bundesliga
+Hertha Berlin,Bayer Leverkusen,2,1,2015-12-05,statsbomb-1.-bundesliga
+Ingolstadt,Hoffenheim,1,1,2015-12-05,statsbomb-1.-bundesliga
+Wolfsburg,Borussia Dortmund,1,2,2015-12-05,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Bayern Munich,3,1,2015-12-05,statsbomb-1.-bundesliga
+Hamburger SV,FSV Mainz 05,1,3,2015-12-05,statsbomb-1.-bundesliga
+Augsburg,Wolfsburg,0,0,2015-11-29,statsbomb-1.-bundesliga
+Bayer Leverkusen,Schalke 04,1,1,2015-11-29,statsbomb-1.-bundesliga
+FSV Mainz 05,Eintracht Frankfurt,2,1,2015-11-28,statsbomb-1.-bundesliga
+Hannover 96,Ingolstadt,4,0,2015-11-28,statsbomb-1.-bundesliga
+Werder Bremen,Hamburger SV,1,3,2015-11-28,statsbomb-1.-bundesliga
+Bayern Munich,Hertha Berlin,2,0,2015-11-28,statsbomb-1.-bundesliga
+Hoffenheim,Borussia Mönchengladbach,3,3,2015-11-28,statsbomb-1.-bundesliga
+Darmstadt 98,FC Köln,0,0,2015-11-27,statsbomb-1.-bundesliga
+Hertha Berlin,Hoffenheim,1,0,2015-11-22,statsbomb-1.-bundesliga
+Ingolstadt,Darmstadt 98,3,1,2015-11-22,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Hannover 96,2,1,2015-11-21,statsbomb-1.-bundesliga
+VfB Stuttgart,Augsburg,0,4,2015-11-21,statsbomb-1.-bundesliga
+FC Köln,FSV Mainz 05,0,0,2015-11-21,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Bayer Leverkusen,1,3,2015-11-21,statsbomb-1.-bundesliga
+Schalke 04,Bayern Munich,1,3,2015-11-21,statsbomb-1.-bundesliga
+Wolfsburg,Werder Bremen,6,0,2015-11-21,statsbomb-1.-bundesliga
+Hamburger SV,Borussia Dortmund,3,1,2015-11-20,statsbomb-1.-bundesliga
+Augsburg,Werder Bremen,1,2,2015-11-08,statsbomb-1.-bundesliga
+Borussia Dortmund,Schalke 04,3,2,2015-11-08,statsbomb-1.-bundesliga
+Bayern Munich,VfB Stuttgart,4,0,2015-11-07,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Ingolstadt,0,0,2015-11-07,statsbomb-1.-bundesliga
+Hoffenheim,Eintracht Frankfurt,0,0,2015-11-07,statsbomb-1.-bundesliga
+FSV Mainz 05,Wolfsburg,2,0,2015-11-07,statsbomb-1.-bundesliga
+Darmstadt 98,Hamburger SV,1,1,2015-11-07,statsbomb-1.-bundesliga
+Bayer Leverkusen,FC Köln,1,2,2015-11-07,statsbomb-1.-bundesliga
+Hannover 96,Hertha Berlin,1,3,2015-11-06,statsbomb-1.-bundesliga
+VfB Stuttgart,Darmstadt 98,2,0,2015-11-01,statsbomb-1.-bundesliga
+Hamburger SV,Hannover 96,1,2,2015-11-01,statsbomb-1.-bundesliga
+Schalke 04,Ingolstadt,1,1,2015-10-31,statsbomb-1.-bundesliga
+Augsburg,FSV Mainz 05,3,3,2015-10-31,statsbomb-1.-bundesliga
+Werder Bremen,Borussia Dortmund,1,3,2015-10-31,statsbomb-1.-bundesliga
+FC Köln,Hoffenheim,0,0,2015-10-31,statsbomb-1.-bundesliga
+Hertha Berlin,Borussia Mönchengladbach,1,4,2015-10-31,statsbomb-1.-bundesliga
+Wolfsburg,Bayer Leverkusen,2,1,2015-10-31,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Bayern Munich,0,0,2015-10-30,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Schalke 04,3,1,2015-10-25,statsbomb-1.-bundesliga
+Borussia Dortmund,Augsburg,5,1,2015-10-25,statsbomb-1.-bundesliga
+Bayer Leverkusen,VfB Stuttgart,4,3,2015-10-24,statsbomb-1.-bundesliga
+Hannover 96,Eintracht Frankfurt,1,2,2015-10-24,statsbomb-1.-bundesliga
+FSV Mainz 05,Werder Bremen,1,3,2015-10-24,statsbomb-1.-bundesliga
+Ingolstadt,Hertha Berlin,0,1,2015-10-24,statsbomb-1.-bundesliga
+Darmstadt 98,Wolfsburg,0,1,2015-10-24,statsbomb-1.-bundesliga
+Bayern Munich,FC Köln,4,0,2015-10-24,statsbomb-1.-bundesliga
+Hoffenheim,Hamburger SV,0,1,2015-10-23,statsbomb-1.-bundesliga
+FC Köln,Hannover 96,0,1,2015-10-18,statsbomb-1.-bundesliga
+VfB Stuttgart,Ingolstadt,1,0,2015-10-18,statsbomb-1.-bundesliga
+Hamburger SV,Bayer Leverkusen,0,0,2015-10-17,statsbomb-1.-bundesliga
+Schalke 04,Hertha Berlin,2,1,2015-10-17,statsbomb-1.-bundesliga
+Wolfsburg,Hoffenheim,4,2,2015-10-17,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Borussia Mönchengladbach,1,5,2015-10-17,statsbomb-1.-bundesliga
+Augsburg,Darmstadt 98,0,2,2015-10-17,statsbomb-1.-bundesliga
+Werder Bremen,Bayern Munich,0,1,2015-10-17,statsbomb-1.-bundesliga
+FSV Mainz 05,Borussia Dortmund,0,2,2015-10-16,statsbomb-1.-bundesliga
+Bayer Leverkusen,Augsburg,1,1,2015-10-04,statsbomb-1.-bundesliga
+Bayern Munich,Borussia Dortmund,5,1,2015-10-04,statsbomb-1.-bundesliga
+Schalke 04,FC Köln,0,3,2015-10-04,statsbomb-1.-bundesliga
+Hoffenheim,VfB Stuttgart,2,2,2015-10-03,statsbomb-1.-bundesliga
+Ingolstadt,Eintracht Frankfurt,2,0,2015-10-03,statsbomb-1.-bundesliga
+Hannover 96,Werder Bremen,1,0,2015-10-03,statsbomb-1.-bundesliga
+Hertha Berlin,Hamburger SV,3,0,2015-10-03,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Wolfsburg,2,0,2015-10-03,statsbomb-1.-bundesliga
+Darmstadt 98,FSV Mainz 05,2,3,2015-10-02,statsbomb-1.-bundesliga
+Borussia Dortmund,Darmstadt 98,2,2,2015-09-27,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Hertha Berlin,1,1,2015-09-27,statsbomb-1.-bundesliga
+Wolfsburg,Hannover 96,1,1,2015-09-26,statsbomb-1.-bundesliga
+VfB Stuttgart,Borussia Mönchengladbach,1,3,2015-09-26,statsbomb-1.-bundesliga
+Hamburger SV,Schalke 04,0,1,2015-09-26,statsbomb-1.-bundesliga
+FSV Mainz 05,Bayern Munich,0,3,2015-09-26,statsbomb-1.-bundesliga
+Werder Bremen,Bayer Leverkusen,0,3,2015-09-26,statsbomb-1.-bundesliga
+Augsburg,Hoffenheim,1,3,2015-09-26,statsbomb-1.-bundesliga
+FC Köln,Ingolstadt,1,1,2015-09-25,statsbomb-1.-bundesliga
+Bayer Leverkusen,FSV Mainz 05,1,0,2015-09-23,statsbomb-1.-bundesliga
+Schalke 04,Eintracht Frankfurt,2,0,2015-09-23,statsbomb-1.-bundesliga
+Hoffenheim,Borussia Dortmund,1,1,2015-09-23,statsbomb-1.-bundesliga
+Hannover 96,VfB Stuttgart,1,3,2015-09-23,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Augsburg,4,2,2015-09-23,statsbomb-1.-bundesliga
+Darmstadt 98,Werder Bremen,2,1,2015-09-22,statsbomb-1.-bundesliga
+Hertha Berlin,FC Köln,2,0,2015-09-22,statsbomb-1.-bundesliga
+Bayern Munich,Wolfsburg,5,1,2015-09-22,statsbomb-1.-bundesliga
+Ingolstadt,Hamburger SV,0,1,2015-09-22,statsbomb-1.-bundesliga
+VfB Stuttgart,Schalke 04,0,1,2015-09-20,statsbomb-1.-bundesliga
+Augsburg,Hannover 96,2,0,2015-09-20,statsbomb-1.-bundesliga
+Borussia Dortmund,Bayer Leverkusen,3,0,2015-09-20,statsbomb-1.-bundesliga
+Werder Bremen,Ingolstadt,0,1,2015-09-19,statsbomb-1.-bundesliga
+FC Köln,Borussia Mönchengladbach,1,0,2015-09-19,statsbomb-1.-bundesliga
+Wolfsburg,Hertha Berlin,2,0,2015-09-19,statsbomb-1.-bundesliga
+Hamburger SV,Eintracht Frankfurt,0,0,2015-09-19,statsbomb-1.-bundesliga
+Darmstadt 98,Bayern Munich,0,3,2015-09-19,statsbomb-1.-bundesliga
+FSV Mainz 05,Hoffenheim,3,1,2015-09-18,statsbomb-1.-bundesliga
+Hoffenheim,Werder Bremen,1,3,2015-09-13,statsbomb-1.-bundesliga
+Schalke 04,FSV Mainz 05,2,1,2015-09-13,statsbomb-1.-bundesliga
+Hannover 96,Borussia Dortmund,2,4,2015-09-12,statsbomb-1.-bundesliga
+Ingolstadt,Wolfsburg,0,0,2015-09-12,statsbomb-1.-bundesliga
+Hertha Berlin,VfB Stuttgart,2,1,2015-09-12,statsbomb-1.-bundesliga
+Eintracht Frankfurt,FC Köln,6,2,2015-09-12,statsbomb-1.-bundesliga
+Bayer Leverkusen,Darmstadt 98,0,1,2015-09-12,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,Hamburger SV,0,3,2015-09-11,statsbomb-1.-bundesliga
+Werder Bremen,Borussia Mönchengladbach,2,1,2015-08-30,statsbomb-1.-bundesliga
+Borussia Dortmund,Hertha Berlin,3,1,2015-08-30,statsbomb-1.-bundesliga
+Darmstadt 98,Hoffenheim,0,0,2015-08-29,statsbomb-1.-bundesliga
+Augsburg,Ingolstadt,0,1,2015-08-29,statsbomb-1.-bundesliga
+FC Köln,Hamburger SV,2,1,2015-08-29,statsbomb-1.-bundesliga
+VfB Stuttgart,Eintracht Frankfurt,1,4,2015-08-29,statsbomb-1.-bundesliga
+Bayern Munich,Bayer Leverkusen,3,0,2015-08-29,statsbomb-1.-bundesliga
+Wolfsburg,Schalke 04,3,0,2015-08-28,statsbomb-1.-bundesliga
+Borussia Mönchengladbach,FSV Mainz 05,1,2,2015-08-23,statsbomb-1.-bundesliga
+Ingolstadt,Borussia Dortmund,0,4,2015-08-23,statsbomb-1.-bundesliga
+FC Köln,Wolfsburg,1,1,2015-08-22,statsbomb-1.-bundesliga
+Hannover 96,Bayer Leverkusen,0,1,2015-08-22,statsbomb-1.-bundesliga
+Eintracht Frankfurt,Augsburg,1,1,2015-08-22,statsbomb-1.-bundesliga
+Schalke 04,Darmstadt 98,1,1,2015-08-22,statsbomb-1.-bundesliga
+Hoffenheim,Bayern Munich,1,2,2015-08-22,statsbomb-1.-bundesliga
+Wolfsburg,Eintracht Frankfurt,2,1,2015-08-16,statsbomb-1.-bundesliga
+VfB Stuttgart,FC Köln,1,3,2015-08-16,statsbomb-1.-bundesliga
+Augsburg,Hertha Berlin,0,1,2015-08-15,statsbomb-1.-bundesliga
+Werder Bremen,Schalke 04,0,3,2015-08-15,statsbomb-1.-bundesliga
+FSV Mainz 05,Ingolstadt,0,1,2015-08-15,statsbomb-1.-bundesliga
+Darmstadt 98,Hannover 96,2,2,2015-08-15,statsbomb-1.-bundesliga
+Borussia Dortmund,Borussia Mönchengladbach,4,0,2015-08-15,statsbomb-1.-bundesliga
+Bayer Leverkusen,Hoffenheim,2,1,2015-08-15,statsbomb-1.-bundesliga
+Bayern Munich,Hamburger SV,5,0,2015-08-14,statsbomb-1.-bundesliga
+Nigeria,Côte d'Ivoire,1,2,2024-02-11,statsbomb-african-cup-of-nations
+South Africa,Congo DR,0,0,2024-02-10,statsbomb-african-cup-of-nations
+Côte d'Ivoire,Congo DR,1,0,2024-02-07,statsbomb-african-cup-of-nations
+Nigeria,South Africa,1,1,2024-02-07,statsbomb-african-cup-of-nations
+Senegal,Côte d'Ivoire,1,1,2024-01-29,statsbomb-african-cup-of-nations
+Equatorial Guinea,Guinea,0,1,2024-01-28,statsbomb-african-cup-of-nations
+Mali,Côte d'Ivoire,1,2,2024-02-03,statsbomb-african-cup-of-nations
+Cape Verde Islands,South Africa,0,0,2024-02-03,statsbomb-african-cup-of-nations
+Mali,Burkina Faso,2,1,2024-01-30,statsbomb-african-cup-of-nations
+Congo DR,Guinea,3,1,2024-02-02,statsbomb-african-cup-of-nations
+Nigeria,Angola,1,0,2024-02-02,statsbomb-african-cup-of-nations
+Angola,Namibia,3,0,2024-01-27,statsbomb-african-cup-of-nations
+Morocco,South Africa,0,2,2024-01-30,statsbomb-african-cup-of-nations
+Cape Verde Islands,Mauritania,1,0,2024-01-29,statsbomb-african-cup-of-nations
+Egypt,Congo DR,1,1,2024-01-28,statsbomb-african-cup-of-nations
+Nigeria,Cameroon,2,0,2024-01-27,statsbomb-african-cup-of-nations
+Egypt,Ghana,2,2,2024-01-18,statsbomb-african-cup-of-nations
+Nigeria,Equatorial Guinea,1,1,2024-01-14,statsbomb-african-cup-of-nations
+Egypt,Mozambique,2,2,2024-01-14,statsbomb-african-cup-of-nations
+Ghana,Cape Verde Islands,1,2,2024-01-14,statsbomb-african-cup-of-nations
+Zambia,Morocco,0,1,2024-01-24,statsbomb-african-cup-of-nations
+Tanzania,Congo DR,0,0,2024-01-24,statsbomb-african-cup-of-nations
+Namibia,Mali,0,0,2024-01-24,statsbomb-african-cup-of-nations
+South Africa,Tunisia,0,0,2024-01-24,statsbomb-african-cup-of-nations
+Mauritania,Algeria,1,0,2024-01-23,statsbomb-african-cup-of-nations
+Angola,Burkina Faso,2,0,2024-01-23,statsbomb-african-cup-of-nations
+Gambia,Cameroon,2,3,2024-01-23,statsbomb-african-cup-of-nations
+Guinea,Senegal,0,2,2024-01-23,statsbomb-african-cup-of-nations
+Cape Verde Islands,Egypt,2,2,2024-01-22,statsbomb-african-cup-of-nations
+Mozambique,Ghana,2,2,2024-01-22,statsbomb-african-cup-of-nations
+Guinea-Bissau,Nigeria,0,1,2024-01-22,statsbomb-african-cup-of-nations
+Equatorial Guinea,Côte d'Ivoire,4,0,2024-01-22,statsbomb-african-cup-of-nations
+South Africa,Namibia,4,0,2024-01-21,statsbomb-african-cup-of-nations
+Zambia,Tanzania,1,1,2024-01-21,statsbomb-african-cup-of-nations
+Morocco,Congo DR,1,1,2024-01-21,statsbomb-african-cup-of-nations
+Tunisia,Mali,1,1,2024-01-20,statsbomb-african-cup-of-nations
+Mauritania,Angola,2,3,2024-01-20,statsbomb-african-cup-of-nations
+Algeria,Burkina Faso,2,2,2024-01-20,statsbomb-african-cup-of-nations
+Guinea,Gambia,1,0,2024-01-19,statsbomb-african-cup-of-nations
+Senegal,Cameroon,3,1,2024-01-19,statsbomb-african-cup-of-nations
+Cape Verde Islands,Mozambique,3,0,2024-01-19,statsbomb-african-cup-of-nations
+Côte d'Ivoire,Nigeria,0,1,2024-01-18,statsbomb-african-cup-of-nations
+Equatorial Guinea,Guinea-Bissau,4,2,2024-01-18,statsbomb-african-cup-of-nations
+Congo DR,Zambia,1,1,2024-01-17,statsbomb-african-cup-of-nations
+Morocco,Tanzania,3,0,2024-01-17,statsbomb-african-cup-of-nations
+Tunisia,Namibia,0,1,2024-01-16,statsbomb-african-cup-of-nations
+Burkina Faso,Mauritania,1,0,2024-01-16,statsbomb-african-cup-of-nations
+Mali,South Africa,2,0,2024-01-16,statsbomb-african-cup-of-nations
+Algeria,Angola,1,1,2024-01-15,statsbomb-african-cup-of-nations
+Cameroon,Guinea,1,1,2024-01-15,statsbomb-african-cup-of-nations
+Senegal,Gambia,3,0,2024-01-15,statsbomb-african-cup-of-nations
+Côte d'Ivoire,Guinea-Bissau,2,0,2024-01-13,statsbomb-african-cup-of-nations
+Tottenham Hotspur,Liverpool,0,2,2019-06-01,statsbomb-champions-league
+Real Madrid,Liverpool,3,1,2018-05-26,statsbomb-champions-league
+Juventus,Real Madrid,1,4,2017-06-03,statsbomb-champions-league
+Real Madrid,Atlético Madrid,1,1,2016-05-28,statsbomb-champions-league
+Juventus,Barcelona,1,3,2015-06-06,statsbomb-champions-league
+Real Madrid,Atlético Madrid,4,1,2014-05-24,statsbomb-champions-league
+Borussia Dortmund,Bayern Munich,1,2,2013-05-25,statsbomb-champions-league
+Bayern Munich,Chelsea,1,1,2012-05-19,statsbomb-champions-league
+Barcelona,Manchester United,3,1,2011-05-28,statsbomb-champions-league
+Bayern Munich,Inter Milan,0,2,2010-05-22,statsbomb-champions-league
+Barcelona,Manchester United,2,0,2009-05-27,statsbomb-champions-league
+AC Milan,Liverpool,2,1,2007-05-23,statsbomb-champions-league
+AC Milan,Liverpool,3,3,2005-05-25,statsbomb-champions-league
+AS Monaco,FC Porto,0,3,2004-05-26,statsbomb-champions-league
+Fiorentina,Manchester United,2,0,1999-11-23,statsbomb-champions-league
+Ajax,Juventus,1,0,1973-05-30,statsbomb-champions-league
+Ajax,Inter Milan,2,0,1972-05-31,statsbomb-champions-league
+Ajax,Panathinaikos,2,0,1971-06-02,statsbomb-champions-league
+Argentina,Colombia,1,0,2024-07-15,statsbomb-copa-america
+Canada,Uruguay,2,2,2024-07-14,statsbomb-copa-america
+Uruguay,Colombia,0,1,2024-07-11,statsbomb-copa-america
+Argentina,Canada,2,0,2024-07-10,statsbomb-copa-america
+Colombia,Panama,5,0,2024-07-07,statsbomb-copa-america
+Uruguay,Brazil,0,0,2024-07-07,statsbomb-copa-america
+Argentina,Peru,2,0,2024-06-30,statsbomb-copa-america
+Uruguay,Panama,3,1,2024-06-24,statsbomb-copa-america
+Venezuela,Canada,1,1,2024-07-06,statsbomb-copa-america
+Argentina,Ecuador,1,1,2024-07-05,statsbomb-copa-america
+Canada,Chile,0,0,2024-06-30,statsbomb-copa-america
+Colombia,Costa Rica,3,0,2024-06-29,statsbomb-copa-america
+Panama,United States,2,1,2024-06-28,statsbomb-copa-america
+Costa Rica,Paraguay,2,1,2024-07-03,statsbomb-copa-america
+Brazil,Colombia,1,1,2024-07-03,statsbomb-copa-america
+United States,Uruguay,0,1,2024-07-02,statsbomb-copa-america
+Bolivia,Panama,1,3,2024-07-02,statsbomb-copa-america
+Mexico,Ecuador,0,0,2024-07-01,statsbomb-copa-america
+Jamaica,Venezuela,0,3,2024-07-01,statsbomb-copa-america
+Paraguay,Brazil,1,4,2024-06-29,statsbomb-copa-america
+Uruguay,Bolivia,5,0,2024-06-28,statsbomb-copa-america
+Ecuador,Jamaica,3,1,2024-06-27,statsbomb-copa-america
+Venezuela,Mexico,1,0,2024-06-27,statsbomb-copa-america
+Peru,Canada,0,1,2024-06-26,statsbomb-copa-america
+Chile,Argentina,0,1,2024-06-26,statsbomb-copa-america
+Brazil,Costa Rica,0,0,2024-06-25,statsbomb-copa-america
+Colombia,Paraguay,2,1,2024-06-25,statsbomb-copa-america
+United States,Bolivia,2,0,2024-06-24,statsbomb-copa-america
+Ecuador,Venezuela,1,2,2024-06-23,statsbomb-copa-america
+Mexico,Jamaica,1,0,2024-06-23,statsbomb-copa-america
+Peru,Chile,0,0,2024-06-22,statsbomb-copa-america
+Argentina,Canada,2,0,2024-06-21,statsbomb-copa-america
+Athletic Club,Barcelona,1,0,1984-05-05,statsbomb-copa-del-rey
+Barcelona,Real Madrid,2,1,1983-06-04,statsbomb-copa-del-rey
+Barcelona,Las Palmas,3,1,1978-04-19,statsbomb-copa-del-rey
+Aston Villa,Arsenal WFC,0,4,2021-02-28,statsbomb-fa-women's-super-league
+Arsenal WFC,West Ham United LFC,2,0,2021-04-28,statsbomb-fa-women's-super-league
+Aston Villa,Tottenham Hotspur Women,1,0,2021-02-06,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Everton LFC,0,5,2021-03-28,statsbomb-fa-women's-super-league
+Chelsea FCW,Aston Villa,2,0,2021-03-28,statsbomb-fa-women's-super-league
+Reading WFC,Brighton & Hove Albion WFC,3,2,2021-05-02,statsbomb-fa-women's-super-league
+Aston Villa,West Ham United LFC,0,0,2021-05-02,statsbomb-fa-women's-super-league
+Manchester United,Tottenham Hotspur Women,4,1,2021-04-25,statsbomb-fa-women's-super-league
+Birmingham City WFC,West Ham United LFC,1,2,2020-11-08,statsbomb-fa-women's-super-league
+Arsenal WFC,Birmingham City WFC,3,0,2020-12-06,statsbomb-fa-women's-super-league
+Reading WFC,Birmingham City WFC,0,1,2020-10-11,statsbomb-fa-women's-super-league
+Aston Villa,Birmingham City WFC,0,1,2020-11-14,statsbomb-fa-women's-super-league
+Bristol City WFC,Birmingham City WFC,0,4,2020-10-18,statsbomb-fa-women's-super-league
+Birmingham City WFC,Everton LFC,0,4,2021-03-11,statsbomb-fa-women's-super-league
+Birmingham City WFC,Bristol City WFC,1,1,2021-03-28,statsbomb-fa-women's-super-league
+West Ham United LFC,Birmingham City WFC,2,2,2021-03-17,statsbomb-fa-women's-super-league
+Birmingham City WFC,Manchester United,2,5,2020-09-13,statsbomb-fa-women's-super-league
+Manchester United,Birmingham City WFC,2,0,2021-01-24,statsbomb-fa-women's-super-league
+Arsenal WFC,Aston Villa,0,0,2021-05-09,statsbomb-fa-women's-super-league
+Manchester United,Manchester City WFC,2,2,2020-11-14,statsbomb-fa-women's-super-league
+Bristol City WFC,Everton LFC,0,4,2020-09-06,statsbomb-fa-women's-super-league
+Arsenal WFC,Reading WFC,6,1,2020-09-06,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Bristol City WFC,3,1,2021-05-09,statsbomb-fa-women's-super-league
+Chelsea FCW,Reading WFC,5,0,2021-05-09,statsbomb-fa-women's-super-league
+West Ham United LFC,Reading WFC,0,1,2020-10-04,statsbomb-fa-women's-super-league
+Everton LFC,West Ham United LFC,3,1,2020-10-11,statsbomb-fa-women's-super-league
+Manchester United,Chelsea FCW,1,1,2020-09-06,statsbomb-fa-women's-super-league
+Arsenal WFC,Everton LFC,4,0,2020-12-20,statsbomb-fa-women's-super-league
+Reading WFC,Chelsea FCW,0,5,2021-01-10,statsbomb-fa-women's-super-league
+Chelsea FCW,Manchester United,2,1,2021-01-17,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Tottenham Hotspur Women,2,0,2021-03-07,statsbomb-fa-women's-super-league
+Bristol City WFC,Reading WFC,3,2,2021-03-08,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,West Ham United LFC,1,1,2020-09-06,statsbomb-fa-women's-super-league
+Manchester City WFC,Brighton & Hove Albion WFC,0,0,2020-09-13,statsbomb-fa-women's-super-league
+Chelsea FCW,Bristol City WFC,9,0,2020-09-13,statsbomb-fa-women's-super-league
+Everton LFC,Tottenham Hotspur Women,1,0,2020-09-13,statsbomb-fa-women's-super-league
+Reading WFC,Aston Villa,3,1,2020-09-13,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Birmingham City WFC,2,0,2020-09-06,statsbomb-fa-women's-super-league
+Aston Villa,Manchester City WFC,0,2,2020-09-05,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Arsenal WFC,0,5,2020-10-11,statsbomb-fa-women's-super-league
+Manchester United,Arsenal WFC,1,0,2020-11-08,statsbomb-fa-women's-super-league
+Aston Villa,Bristol City WFC,2,2,2021-04-24,statsbomb-fa-women's-super-league
+Everton LFC,Chelsea FCW,0,3,2021-03-17,statsbomb-fa-women's-super-league
+Manchester City WFC,Tottenham Hotspur Women,4,1,2020-10-04,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Aston Villa,0,2,2020-11-08,statsbomb-fa-women's-super-league
+Aston Villa,Everton LFC,0,6,2020-10-03,statsbomb-fa-women's-super-league
+Manchester United,Brighton & Hove Albion WFC,3,0,2020-10-04,statsbomb-fa-women's-super-league
+West Ham United LFC,Manchester United,2,4,2020-10-18,statsbomb-fa-women's-super-league
+Everton LFC,Brighton & Hove Albion WFC,2,2,2020-10-18,statsbomb-fa-women's-super-league
+Reading WFC,Manchester United,1,2,2020-12-13,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Everton LFC,2,3,2021-02-28,statsbomb-fa-women's-super-league
+Arsenal WFC,Brighton & Hove Albion WFC,2,0,2021-04-25,statsbomb-fa-women's-super-league
+Manchester City WFC,Reading WFC,1,0,2021-03-27,statsbomb-fa-women's-super-league
+Bristol City WFC,Arsenal WFC,0,4,2021-04-04,statsbomb-fa-women's-super-league
+Chelsea FCW,Arsenal WFC,3,0,2021-02-10,statsbomb-fa-women's-super-league
+Birmingham City WFC,Aston Villa,1,1,2021-04-28,statsbomb-fa-women's-super-league
+Manchester United,Everton LFC,2,0,2021-05-09,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Chelsea FCW,0,2,2021-05-05,statsbomb-fa-women's-super-league
+Birmingham City WFC,Tottenham Hotspur Women,0,1,2021-05-09,statsbomb-fa-women's-super-league
+Birmingham City WFC,Chelsea FCW,0,1,2020-10-04,statsbomb-fa-women's-super-league
+Everton LFC,Arsenal WFC,1,2,2021-05-02,statsbomb-fa-women's-super-league
+Manchester United,Aston Villa,3,0,2021-03-07,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Brighton & Hove Albion WFC,3,1,2020-12-06,statsbomb-fa-women's-super-league
+Arsenal WFC,Tottenham Hotspur Women,6,1,2020-10-18,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Reading WFC,1,1,2020-11-07,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Chelsea FCW,0,1,2020-12-13,statsbomb-fa-women's-super-league
+West Ham United LFC,Chelsea FCW,0,2,2021-03-07,statsbomb-fa-women's-super-league
+Everton LFC,Birmingham City WFC,1,1,2021-02-07,statsbomb-fa-women's-super-league
+Aston Villa,Reading WFC,2,2,2021-01-23,statsbomb-fa-women's-super-league
+Reading WFC,Arsenal WFC,1,1,2021-01-17,statsbomb-fa-women's-super-league
+Reading WFC,Everton LFC,1,1,2021-02-14,statsbomb-fa-women's-super-league
+Bristol City WFC,Manchester City WFC,0,3,2021-03-17,statsbomb-fa-women's-super-league
+Manchester City WFC,Chelsea FCW,2,2,2021-04-21,statsbomb-fa-women's-super-league
+Manchester City WFC,Birmingham City WFC,4,0,2021-05-02,statsbomb-fa-women's-super-league
+West Ham United LFC,Manchester City WFC,0,1,2021-05-09,statsbomb-fa-women's-super-league
+Arsenal WFC,Manchester United,2,0,2021-03-19,statsbomb-fa-women's-super-league
+Chelsea FCW,Manchester City WFC,3,1,2020-10-11,statsbomb-fa-women's-super-league
+Manchester United,West Ham United LFC,2,0,2021-03-27,statsbomb-fa-women's-super-league
+Birmingham City WFC,Reading WFC,1,1,2021-04-25,statsbomb-fa-women's-super-league
+Arsenal WFC,Chelsea FCW,1,1,2020-11-15,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Manchester United,0,1,2020-10-10,statsbomb-fa-women's-super-league
+Bristol City WFC,Aston Villa,0,4,2020-12-09,statsbomb-fa-women's-super-league
+Bristol City WFC,Tottenham Hotspur Women,2,2,2020-11-14,statsbomb-fa-women's-super-league
+Reading WFC,Bristol City WFC,1,1,2020-12-06,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Aston Villa,3,1,2020-12-13,statsbomb-fa-women's-super-league
+Manchester United,Bristol City WFC,6,1,2020-12-20,statsbomb-fa-women's-super-league
+Bristol City WFC,West Ham United LFC,0,4,2020-12-13,statsbomb-fa-women's-super-league
+Everton LFC,Manchester City WFC,0,3,2020-12-06,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Manchester City WFC,1,7,2021-01-24,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Reading WFC,1,3,2020-12-20,statsbomb-fa-women's-super-league
+Arsenal WFC,Manchester City WFC,1,2,2021-02-07,statsbomb-fa-women's-super-league
+Chelsea FCW,Tottenham Hotspur Women,4,0,2021-01-31,statsbomb-fa-women's-super-league
+Manchester City WFC,Aston Villa,7,0,2021-01-17,statsbomb-fa-women's-super-league
+Bristol City WFC,Chelsea FCW,0,5,2021-02-14,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,West Ham United LFC,1,0,2021-02-10,statsbomb-fa-women's-super-league
+Manchester City WFC,Bristol City WFC,8,1,2020-11-07,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Arsenal WFC,0,3,2021-03-27,statsbomb-fa-women's-super-league
+Reading WFC,Tottenham Hotspur Women,0,0,2021-03-14,statsbomb-fa-women's-super-league
+Bristol City WFC,Manchester United,0,1,2021-05-02,statsbomb-fa-women's-super-league
+Birmingham City WFC,Arsenal WFC,0,4,2021-03-07,statsbomb-fa-women's-super-league
+Manchester City WFC,West Ham United LFC,4,0,2021-01-31,statsbomb-fa-women's-super-league
+West Ham United LFC,Everton LFC,0,0,2021-04-25,statsbomb-fa-women's-super-league
+Chelsea FCW,West Ham United LFC,3,2,2020-12-06,statsbomb-fa-women's-super-league
+Birmingham City WFC,Brighton & Hove Albion WFC,0,0,2021-01-17,statsbomb-fa-women's-super-league
+Reading WFC,Manchester City WFC,1,1,2020-10-18,statsbomb-fa-women's-super-league
+Arsenal WFC,Bristol City WFC,3,1,2020-10-04,statsbomb-fa-women's-super-league
+Reading WFC,West Ham United LFC,0,5,2021-04-03,statsbomb-fa-women's-super-league
+Chelsea FCW,Everton LFC,4,0,2020-11-08,statsbomb-fa-women's-super-league
+Manchester City WFC,Everton LFC,1,0,2021-03-07,statsbomb-fa-women's-super-league
+Aston Villa,Brighton & Hove Albion WFC,0,2,2021-03-17,statsbomb-fa-women's-super-league
+Aston Villa,Chelsea FCW,0,4,2021-01-27,statsbomb-fa-women's-super-league
+West Ham United LFC,Bristol City WFC,1,1,2021-02-07,statsbomb-fa-women's-super-league
+Manchester United,Reading WFC,0,2,2021-02-07,statsbomb-fa-women's-super-league
+Manchester City WFC,Manchester United,3,0,2021-02-12,statsbomb-fa-women's-super-league
+West Ham United LFC,Brighton & Hove Albion WFC,0,1,2020-11-15,statsbomb-fa-women's-super-league
+Aston Villa,Manchester United,0,2,2020-12-05,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Bristol City WFC,1,1,2021-03-21,statsbomb-fa-women's-super-league
+Birmingham City WFC,Manchester City WFC,0,4,2021-02-28,statsbomb-fa-women's-super-league
+Everton LFC,Manchester United,0,2,2021-01-31,statsbomb-fa-women's-super-league
+Bristol City WFC,Brighton & Hove Albion WFC,3,0,2021-01-30,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Manchester City WFC,0,3,2021-04-04,statsbomb-fa-women's-super-league
+Everton LFC,Aston Villa,3,1,2021-04-04,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Manchester United,1,0,2021-04-04,statsbomb-fa-women's-super-league
+Chelsea FCW,Birmingham City WFC,6,0,2021-04-04,statsbomb-fa-women's-super-league
+Manchester City WFC,Arsenal WFC,2,1,2020-12-13,statsbomb-fa-women's-super-league
+Everton LFC,Bristol City WFC,4,0,2021-01-17,statsbomb-fa-women's-super-league
+West Ham United LFC,Tottenham Hotspur Women,0,1,2021-01-17,statsbomb-fa-women's-super-league
+West Ham United LFC,Aston Villa,0,0,2021-04-20,statsbomb-fa-women's-super-league
+Everton LFC,Reading WFC,1,1,2020-11-14,statsbomb-fa-women's-super-league
+Chelsea FCW,Brighton & Hove Albion WFC,1,2,2021-02-07,statsbomb-fa-women's-super-league
+West Ham United LFC,Arsenal WFC,1,9,2020-09-12,statsbomb-fa-women's-super-league
+Reading WFC,Everton LFC,3,2,2019-10-13,statsbomb-fa-women's-super-league
+Manchester City WFC,Manchester United,1,0,2019-09-07,statsbomb-fa-women's-super-league
+Chelsea FCW,Manchester United,1,0,2019-11-17,statsbomb-fa-women's-super-league
+West Ham United LFC,Manchester United,3,2,2019-12-01,statsbomb-fa-women's-super-league
+Manchester United,Everton LFC,3,1,2019-12-08,statsbomb-fa-women's-super-league
+Manchester United,Bristol City WFC,0,1,2020-01-05,statsbomb-fa-women's-super-league
+Manchester United,Tottenham Hotspur Women,3,0,2020-01-19,statsbomb-fa-women's-super-league
+Reading WFC,Manchester United,1,1,2020-02-02,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Manchester United,1,1,2020-02-12,statsbomb-fa-women's-super-league
+Everton LFC,Manchester United,2,3,2020-02-23,statsbomb-fa-women's-super-league
+Bristol City WFC,Birmingham City WFC,0,2,2019-12-08,statsbomb-fa-women's-super-league
+Birmingham City WFC,Liverpool WFC,2,0,2019-10-27,statsbomb-fa-women's-super-league
+Arsenal WFC,Manchester City WFC,1,0,2019-10-27,statsbomb-fa-women's-super-league
+Manchester City WFC,Chelsea FCW,3,3,2020-02-23,statsbomb-fa-women's-super-league
+Chelsea FCW,Arsenal WFC,2,1,2019-10-13,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Liverpool WFC,1,0,2020-01-05,statsbomb-fa-women's-super-league
+Chelsea FCW,Reading WFC,3,1,2020-01-05,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Manchester City WFC,1,4,2020-01-05,statsbomb-fa-women's-super-league
+West Ham United LFC,Brighton & Hove Albion WFC,2,1,2020-01-19,statsbomb-fa-women's-super-league
+Liverpool WFC,Reading WFC,0,1,2019-09-08,statsbomb-fa-women's-super-league
+Chelsea FCW,West Ham United LFC,8,0,2020-02-02,statsbomb-fa-women's-super-league
+Reading WFC,Tottenham Hotspur Women,3,1,2019-12-15,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,West Ham United LFC,2,1,2020-01-12,statsbomb-fa-women's-super-league
+Everton LFC,Reading WFC,3,1,2020-01-19,statsbomb-fa-women's-super-league
+Everton LFC,Arsenal WFC,1,3,2019-12-15,statsbomb-fa-women's-super-league
+Birmingham City WFC,Manchester City WFC,0,2,2020-01-19,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,West Ham United LFC,1,3,2019-10-13,statsbomb-fa-women's-super-league
+Reading WFC,Bristol City WFC,3,3,2019-11-17,statsbomb-fa-women's-super-league
+Liverpool WFC,Chelsea FCW,1,1,2019-12-15,statsbomb-fa-women's-super-league
+Birmingham City WFC,Chelsea FCW,0,6,2019-11-24,statsbomb-fa-women's-super-league
+Manchester City WFC,Brighton & Hove Albion WFC,5,0,2019-12-15,statsbomb-fa-women's-super-league
+West Ham United LFC,Chelsea FCW,1,3,2019-10-27,statsbomb-fa-women's-super-league
+Arsenal WFC,Birmingham City WFC,2,0,2020-01-05,statsbomb-fa-women's-super-league
+Manchester City WFC,Liverpool WFC,1,0,2019-12-01,statsbomb-fa-women's-super-league
+Arsenal WFC,Bristol City WFC,11,1,2019-12-01,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Chelsea FCW,1,1,2019-09-15,statsbomb-fa-women's-super-league
+Manchester City WFC,Arsenal WFC,2,1,2020-02-02,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Everton LFC,1,0,2020-02-02,statsbomb-fa-women's-super-league
+Manchester City WFC,Everton LFC,3,1,2020-01-11,statsbomb-fa-women's-super-league
+Chelsea FCW,Bristol City WFC,6,1,2020-01-12,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Arsenal WFC,0,4,2020-01-12,statsbomb-fa-women's-super-league
+Manchester United,Arsenal WFC,0,1,2019-09-16,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Manchester United,0,3,2019-10-13,statsbomb-fa-women's-super-league
+Liverpool WFC,Bristol City WFC,1,1,2019-10-13,statsbomb-fa-women's-super-league
+Everton LFC,Brighton & Hove Albion WFC,2,0,2019-10-27,statsbomb-fa-women's-super-league
+Reading WFC,Birmingham City WFC,1,0,2020-01-12,statsbomb-fa-women's-super-league
+Bristol City WFC,Liverpool WFC,0,1,2020-01-19,statsbomb-fa-women's-super-league
+Arsenal WFC,Chelsea FCW,1,4,2020-01-19,statsbomb-fa-women's-super-league
+Manchester City WFC,West Ham United LFC,5,0,2019-11-17,statsbomb-fa-women's-super-league
+Manchester United,Reading WFC,2,0,2019-10-27,statsbomb-fa-women's-super-league
+Bristol City WFC,Chelsea FCW,0,4,2019-09-29,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Arsenal WFC,0,2,2019-11-17,statsbomb-fa-women's-super-league
+Manchester United,Liverpool WFC,2,0,2019-09-28,statsbomb-fa-women's-super-league
+West Ham United LFC,Reading WFC,2,3,2019-11-24,statsbomb-fa-women's-super-league
+Chelsea FCW,Tottenham Hotspur Women,1,0,2019-09-08,statsbomb-fa-women's-super-league
+Bristol City WFC,Brighton & Hove Albion WFC,0,0,2019-09-07,statsbomb-fa-women's-super-league
+Arsenal WFC,West Ham United LFC,2,1,2019-09-08,statsbomb-fa-women's-super-league
+Bristol City WFC,Tottenham Hotspur Women,1,2,2019-10-27,statsbomb-fa-women's-super-league
+Reading WFC,Manchester City WFC,0,2,2019-09-15,statsbomb-fa-women's-super-league
+Chelsea FCW,Manchester City WFC,2,1,2019-12-08,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Liverpool WFC,1,0,2019-09-15,statsbomb-fa-women's-super-league
+Bristol City WFC,Manchester City WFC,0,5,2019-11-24,statsbomb-fa-women's-super-league
+Everton LFC,Bristol City WFC,2,0,2019-09-15,statsbomb-fa-women's-super-league
+West Ham United LFC,Birmingham City WFC,1,0,2019-09-15,statsbomb-fa-women's-super-league
+Manchester City WFC,Bristol City WFC,1,0,2020-02-12,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Everton LFC,2,2,2020-02-12,statsbomb-fa-women's-super-league
+Reading WFC,West Ham United LFC,2,0,2020-02-12,statsbomb-fa-women's-super-league
+Everton LFC,Manchester City WFC,0,1,2019-09-29,statsbomb-fa-women's-super-league
+Liverpool WFC,Arsenal WFC,2,3,2020-02-13,statsbomb-fa-women's-super-league
+West Ham United LFC,Tottenham Hotspur Women,0,2,2019-09-29,statsbomb-fa-women's-super-league
+Arsenal WFC,Brighton & Hove Albion WFC,4,0,2019-09-29,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Birmingham City WFC,3,0,2019-11-17,statsbomb-fa-women's-super-league
+Arsenal WFC,Liverpool WFC,1,0,2019-11-24,statsbomb-fa-women's-super-league
+Liverpool WFC,West Ham United LFC,1,1,2019-12-08,statsbomb-fa-women's-super-league
+Manchester United,Brighton & Hove Albion WFC,4,0,2019-11-24,statsbomb-fa-women's-super-league
+Everton LFC,Tottenham Hotspur Women,3,1,2019-11-24,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Reading WFC,2,2,2019-11-29,statsbomb-fa-women's-super-league
+Birmingham City WFC,Tottenham Hotspur Women,1,1,2019-12-04,statsbomb-fa-women's-super-league
+Tottenham Hotspur Women,Brighton & Hove Albion WFC,1,0,2019-12-08,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Tottenham Hotspur Women,0,1,2020-02-23,statsbomb-fa-women's-super-league
+West Ham United LFC,Liverpool WFC,4,2,2020-02-23,statsbomb-fa-women's-super-league
+Birmingham City WFC,Bristol City WFC,0,1,2020-02-23,statsbomb-fa-women's-super-league
+Birmingham City WFC,Everton LFC,0,1,2019-09-08,statsbomb-fa-women's-super-league
+Manchester City WFC,Birmingham City WFC,3,0,2019-10-12,statsbomb-fa-women's-super-league
+Reading WFC,Arsenal WFC,0,3,2019-12-08,statsbomb-fa-women's-super-league
+Liverpool WFC,Everton LFC,0,1,2019-11-17,statsbomb-fa-women's-super-league
+Chelsea FCW,Birmingham City WFC,2,0,2020-02-12,statsbomb-fa-women's-super-league
+Manchester City WFC,Arsenal WFC,2,0,2018-12-02,statsbomb-fa-women's-super-league
+Reading WFC,Chelsea FCW,2,3,2019-05-11,statsbomb-fa-women's-super-league
+Chelsea FCW,Reading WFC,1,0,2018-12-02,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,West Ham United LFC,0,1,2018-12-02,statsbomb-fa-women's-super-league
+Everton LFC,West Ham United LFC,1,2,2018-10-28,statsbomb-fa-women's-super-league
+Manchester City WFC,Chelsea FCW,2,2,2018-02-24,statsbomb-fa-women's-super-league
+Manchester City WFC,Birmingham City WFC,1,0,2018-12-09,statsbomb-fa-women's-super-league
+Birmingham City WFC,Yeovil Town LFC,2,1,2018-12-02,statsbomb-fa-women's-super-league
+Chelsea FCW,Arsenal WFC,0,5,2018-10-14,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Yeovil Town LFC,2,1,2018-10-28,statsbomb-fa-women's-super-league
+Chelsea FCW,Brighton & Hove Albion WFC,2,0,2018-09-30,statsbomb-fa-women's-super-league
+Chelsea FCW,Bristol City WFC,6,0,2019-02-20,statsbomb-fa-women's-super-league
+Arsenal WFC,Brighton & Hove Albion WFC,4,1,2018-11-25,statsbomb-fa-women's-super-league
+Everton LFC,Brighton & Hove Albion WFC,3,3,2018-10-14,statsbomb-fa-women's-super-league
+Arsenal WFC,Liverpool WFC,5,0,2018-09-09,statsbomb-fa-women's-super-league
+Birmingham City WFC,Everton LFC,1,0,2018-09-09,statsbomb-fa-women's-super-league
+Liverpool WFC,Bristol City WFC,5,2,2019-04-21,statsbomb-fa-women's-super-league
+Birmingham City WFC,Chelsea FCW,0,0,2018-10-21,statsbomb-fa-women's-super-league
+West Ham United LFC,Liverpool WFC,0,1,2018-10-21,statsbomb-fa-women's-super-league
+Reading WFC,Yeovil Town LFC,4,0,2018-09-09,statsbomb-fa-women's-super-league
+Arsenal WFC,Bristol City WFC,4,0,2019-03-14,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Manchester City WFC,0,6,2018-10-21,statsbomb-fa-women's-super-league
+Chelsea FCW,Liverpool WFC,1,0,2018-10-28,statsbomb-fa-women's-super-league
+Yeovil Town LFC,Birmingham City WFC,0,2,2019-05-11,statsbomb-fa-women's-super-league
+Arsenal WFC,Chelsea FCW,1,2,2019-01-13,statsbomb-fa-women's-super-league
+Arsenal WFC,Birmingham City WFC,3,1,2018-11-04,statsbomb-fa-women's-super-league
+West Ham United LFC,Chelsea FCW,0,2,2018-11-04,statsbomb-fa-women's-super-league
+Yeovil Town LFC,Manchester City WFC,0,4,2018-11-25,statsbomb-fa-women's-super-league
+Everton LFC,Liverpool WFC,2,1,2018-12-02,statsbomb-fa-women's-super-league
+Chelsea FCW,Everton LFC,3,0,2019-01-06,statsbomb-fa-women's-super-league
+Manchester City WFC,Reading WFC,1,1,2018-10-26,statsbomb-fa-women's-super-league
+Bristol City WFC,Brighton & Hove Albion WFC,0,0,2019-02-10,statsbomb-fa-women's-super-league
+Yeovil Town LFC,Bristol City WFC,1,2,2018-10-21,statsbomb-fa-women's-super-league
+Yeovil Town LFC,West Ham United LFC,0,5,2018-12-09,statsbomb-fa-women's-super-league
+Yeovil Town LFC,Reading WFC,0,5,2019-04-17,statsbomb-fa-women's-super-league
+Yeovil Town LFC,Brighton & Hove Albion WFC,1,1,2019-03-13,statsbomb-fa-women's-super-league
+West Ham United LFC,Everton LFC,0,1,2019-03-13,statsbomb-fa-women's-super-league
+Arsenal WFC,Everton LFC,2,1,2019-04-21,statsbomb-fa-women's-super-league
+Chelsea FCW,West Ham United LFC,1,1,2019-03-31,statsbomb-fa-women's-super-league
+Liverpool WFC,Manchester City WFC,0,3,2018-11-04,statsbomb-fa-women's-super-league
+Reading WFC,Liverpool WFC,2,2,2018-12-09,statsbomb-fa-women's-super-league
+Chelsea FCW,Yeovil Town LFC,5,0,2018-11-18,statsbomb-fa-women's-super-league
+Birmingham City WFC,Bristol City WFC,0,1,2019-01-13,statsbomb-fa-women's-super-league
+Birmingham City WFC,Manchester City WFC,2,3,2018-09-30,statsbomb-fa-women's-super-league
+Liverpool WFC,Birmingham City WFC,0,2,2018-11-25,statsbomb-fa-women's-super-league
+Bristol City WFC,Yeovil Town LFC,2,1,2019-01-27,statsbomb-fa-women's-super-league
+Liverpool WFC,Reading WFC,0,1,2018-09-30,statsbomb-fa-women's-super-league
+Bristol City WFC,Arsenal WFC,0,4,2018-10-28,statsbomb-fa-women's-super-league
+Liverpool WFC,Chelsea FCW,0,4,2019-03-13,statsbomb-fa-women's-super-league
+Reading WFC,Bristol City WFC,3,0,2018-11-04,statsbomb-fa-women's-super-league
+Manchester City WFC,West Ham United LFC,7,1,2018-10-14,statsbomb-fa-women's-super-league
+Bristol City WFC,Chelsea FCW,0,0,2018-09-19,statsbomb-fa-women's-super-league
+West Ham United LFC,Reading WFC,0,0,2018-09-19,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Bristol City WFC,0,1,2018-09-09,statsbomb-fa-women's-super-league
+Everton LFC,Manchester City WFC,0,4,2018-09-20,statsbomb-fa-women's-super-league
+Yeovil Town LFC,Arsenal WFC,0,7,2018-09-19,statsbomb-fa-women's-super-league
+Reading WFC,Birmingham City WFC,0,1,2018-09-23,statsbomb-fa-women's-super-league
+West Ham United LFC,Yeovil Town LFC,2,1,2018-09-30,statsbomb-fa-women's-super-league
+Chelsea FCW,Manchester City WFC,0,0,2018-09-09,statsbomb-fa-women's-super-league
+Manchester City WFC,Bristol City WFC,2,2,2018-09-23,statsbomb-fa-women's-super-league
+Everton LFC,Chelsea FCW,0,0,2018-09-23,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Liverpool WFC,0,1,2018-09-23,statsbomb-fa-women's-super-league
+Bristol City WFC,Birmingham City WFC,0,1,2018-10-14,statsbomb-fa-women's-super-league
+Everton LFC,Arsenal WFC,0,4,2018-11-18,statsbomb-fa-women's-super-league
+Yeovil Town LFC,Everton LFC,1,0,2018-11-04,statsbomb-fa-women's-super-league
+Bristol City WFC,Liverpool WFC,2,1,2018-11-17,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Reading WFC,1,4,2018-11-18,statsbomb-fa-women's-super-league
+Birmingham City WFC,West Ham United LFC,3,0,2018-11-18,statsbomb-fa-women's-super-league
+West Ham United LFC,Bristol City WFC,2,0,2018-11-25,statsbomb-fa-women's-super-league
+Reading WFC,Everton LFC,2,1,2018-11-25,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Chelsea FCW,0,4,2018-12-09,statsbomb-fa-women's-super-league
+Liverpool WFC,Yeovil Town LFC,2,1,2018-10-14,statsbomb-fa-women's-super-league
+Manchester City WFC,Brighton & Hove Albion WFC,3,0,2019-01-27,statsbomb-fa-women's-super-league
+Liverpool WFC,West Ham United LFC,1,0,2019-01-28,statsbomb-fa-women's-super-league
+Chelsea FCW,Birmingham City WFC,2,3,2019-01-27,statsbomb-fa-women's-super-league
+Reading WFC,Arsenal WFC,0,3,2019-01-27,statsbomb-fa-women's-super-league
+Reading WFC,West Ham United LFC,1,2,2019-02-20,statsbomb-fa-women's-super-league
+Arsenal WFC,Yeovil Town LFC,3,0,2019-02-20,statsbomb-fa-women's-super-league
+Liverpool WFC,Brighton & Hove Albion WFC,0,2,2019-01-06,statsbomb-fa-women's-super-league
+West Ham United LFC,Arsenal WFC,2,4,2019-01-06,statsbomb-fa-women's-super-league
+Bristol City WFC,Manchester City WFC,1,1,2019-01-06,statsbomb-fa-women's-super-league
+Manchester City WFC,Everton LFC,3,1,2019-02-20,statsbomb-fa-women's-super-league
+Birmingham City WFC,Reading WFC,2,1,2019-01-06,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Everton LFC,0,0,2019-01-13,statsbomb-fa-women's-super-league
+West Ham United LFC,Manchester City WFC,1,3,2019-01-13,statsbomb-fa-women's-super-league
+Everton LFC,Bristol City WFC,0,2,2018-12-09,statsbomb-fa-women's-super-league
+Manchester City WFC,Chelsea FCW,2,2,2019-02-10,statsbomb-fa-women's-super-league
+Bristol City WFC,Reading WFC,0,1,2019-03-31,statsbomb-fa-women's-super-league
+Manchester City WFC,Liverpool WFC,2,1,2019-03-31,statsbomb-fa-women's-super-league
+Yeovil Town LFC,Liverpool WFC,1,2,2019-01-13,statsbomb-fa-women's-super-league
+Everton LFC,Yeovil Town LFC,0,1,2019-03-31,statsbomb-fa-women's-super-league
+Birmingham City WFC,Arsenal WFC,0,1,2019-03-31,statsbomb-fa-women's-super-league
+West Ham United LFC,Birmingham City WFC,1,2,2019-04-21,statsbomb-fa-women's-super-league
+Birmingham City WFC,Liverpool WFC,2,0,2019-04-28,statsbomb-fa-women's-super-league
+Reading WFC,Brighton & Hove Albion WFC,1,0,2019-04-20,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Arsenal WFC,0,4,2019-04-28,statsbomb-fa-women's-super-league
+Everton LFC,Reading WFC,3,2,2019-04-28,statsbomb-fa-women's-super-league
+Manchester City WFC,Yeovil Town LFC,2,1,2019-04-28,statsbomb-fa-women's-super-league
+West Ham United LFC,Brighton & Hove Albion WFC,0,4,2019-05-11,statsbomb-fa-women's-super-league
+Arsenal WFC,Manchester City WFC,1,0,2019-05-11,statsbomb-fa-women's-super-league
+Reading WFC,Manchester City WFC,3,4,2019-03-13,statsbomb-fa-women's-super-league
+Arsenal WFC,Reading WFC,6,0,2018-10-21,statsbomb-fa-women's-super-league
+Everton LFC,Birmingham City WFC,1,3,2019-04-17,statsbomb-fa-women's-super-league
+Liverpool WFC,Arsenal WFC,1,5,2019-03-24,statsbomb-fa-women's-super-league
+Arsenal WFC,West Ham United LFC,4,3,2018-09-23,statsbomb-fa-women's-super-league
+Bristol City WFC,West Ham United LFC,1,2,2019-04-28,statsbomb-fa-women's-super-league
+Bristol City WFC,Everton LFC,1,0,2019-03-24,statsbomb-fa-women's-super-league
+Brighton & Hove Albion WFC,Birmingham City WFC,2,1,2019-02-20,statsbomb-fa-women's-super-league
+Argentina U20,Soviet Union U20,3,1,1979-09-07,statsbomb-fifa-u20-world-cup
+Serbia,Switzerland,2,3,2022-12-02,statsbomb-fifa-world-cup
+Argentina,Australia,2,1,2022-12-03,statsbomb-fifa-world-cup
+Australia,Denmark,1,0,2022-11-30,statsbomb-fifa-world-cup
+Brazil,Serbia,2,0,2022-11-24,statsbomb-fifa-world-cup
+Tunisia,Australia,0,1,2022-11-26,statsbomb-fifa-world-cup
+Ecuador,Senegal,1,2,2022-11-29,statsbomb-fifa-world-cup
+Netherlands,Argentina,2,2,2022-12-09,statsbomb-fifa-world-cup
+Uruguay,South Korea,0,0,2022-11-24,statsbomb-fifa-world-cup
+Morocco,Portugal,1,0,2022-12-10,statsbomb-fifa-world-cup
+Argentina,France,3,3,2022-12-18,statsbomb-fifa-world-cup
+Saudi Arabia,Mexico,1,2,2022-11-30,statsbomb-fifa-world-cup
+Poland,Argentina,0,2,2022-11-30,statsbomb-fifa-world-cup
+France,Denmark,2,1,2022-11-26,statsbomb-fifa-world-cup
+Argentina,Mexico,2,0,2022-11-26,statsbomb-fifa-world-cup
+Brazil,Switzerland,1,0,2022-11-28,statsbomb-fifa-world-cup
+Netherlands,Qatar,2,0,2022-11-29,statsbomb-fifa-world-cup
+Portugal,Switzerland,6,1,2022-12-06,statsbomb-fifa-world-cup
+England,Senegal,3,0,2022-12-04,statsbomb-fifa-world-cup
+Croatia,Morocco,2,1,2022-12-17,statsbomb-fifa-world-cup
+Argentina,Croatia,3,0,2022-12-13,statsbomb-fifa-world-cup
+England,France,1,2,2022-12-10,statsbomb-fifa-world-cup
+France,Morocco,2,0,2022-12-14,statsbomb-fifa-world-cup
+Croatia,Brazil,1,1,2022-12-09,statsbomb-fifa-world-cup
+Morocco,Spain,0,0,2022-12-06,statsbomb-fifa-world-cup
+Japan,Croatia,1,1,2022-12-05,statsbomb-fifa-world-cup
+Brazil,South Korea,4,1,2022-12-05,statsbomb-fifa-world-cup
+France,Poland,3,1,2022-12-04,statsbomb-fifa-world-cup
+Netherlands,United States,3,1,2022-12-03,statsbomb-fifa-world-cup
+Portugal,Uruguay,2,0,2022-11-28,statsbomb-fifa-world-cup
+Spain,Germany,1,1,2022-11-27,statsbomb-fifa-world-cup
+Cameroon,Serbia,3,3,2022-11-28,statsbomb-fifa-world-cup
+Japan,Costa Rica,0,1,2022-11-27,statsbomb-fifa-world-cup
+Belgium,Morocco,0,2,2022-11-27,statsbomb-fifa-world-cup
+Germany,Japan,1,2,2022-11-23,statsbomb-fifa-world-cup
+United States,Wales,1,1,2022-11-21,statsbomb-fifa-world-cup
+Qatar,Ecuador,0,2,2022-11-20,statsbomb-fifa-world-cup
+Qatar,Senegal,1,3,2022-11-25,statsbomb-fifa-world-cup
+Argentina,Saudi Arabia,1,2,2022-11-22,statsbomb-fifa-world-cup
+South Korea,Ghana,2,3,2022-11-28,statsbomb-fifa-world-cup
+Portugal,Ghana,3,2,2022-11-24,statsbomb-fifa-world-cup
+Poland,Saudi Arabia,2,0,2022-11-26,statsbomb-fifa-world-cup
+Croatia,Belgium,0,0,2022-12-01,statsbomb-fifa-world-cup
+Ghana,Uruguay,0,2,2022-12-02,statsbomb-fifa-world-cup
+Costa Rica,Germany,2,4,2022-12-01,statsbomb-fifa-world-cup
+Spain,Costa Rica,7,0,2022-11-23,statsbomb-fifa-world-cup
+Switzerland,Cameroon,1,0,2022-11-24,statsbomb-fifa-world-cup
+Senegal,Netherlands,0,2,2022-11-21,statsbomb-fifa-world-cup
+Croatia,Canada,4,1,2022-11-27,statsbomb-fifa-world-cup
+Cameroon,Brazil,1,0,2022-12-02,statsbomb-fifa-world-cup
+France,Australia,4,1,2022-11-22,statsbomb-fifa-world-cup
+Iran,United States,0,1,2022-11-29,statsbomb-fifa-world-cup
+Morocco,Croatia,0,0,2022-11-23,statsbomb-fifa-world-cup
+Canada,Morocco,1,2,2022-12-01,statsbomb-fifa-world-cup
+Tunisia,France,1,0,2022-11-30,statsbomb-fifa-world-cup
+Netherlands,Ecuador,1,1,2022-11-25,statsbomb-fifa-world-cup
+Wales,Iran,0,2,2022-11-25,statsbomb-fifa-world-cup
+England,United States,0,0,2022-11-25,statsbomb-fifa-world-cup
+England,Iran,6,2,2022-11-21,statsbomb-fifa-world-cup
+Belgium,Canada,1,0,2022-11-23,statsbomb-fifa-world-cup
+Mexico,Poland,0,0,2022-11-22,statsbomb-fifa-world-cup
+South Korea,Portugal,2,1,2022-12-02,statsbomb-fifa-world-cup
+Wales,England,0,3,2022-11-29,statsbomb-fifa-world-cup
+Japan,Spain,2,1,2022-12-01,statsbomb-fifa-world-cup
+Denmark,Tunisia,0,0,2022-11-22,statsbomb-fifa-world-cup

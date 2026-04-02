@@ -1,14 +1,15 @@
 """
-FootballPredictor – trains an XGBoost + HistGradientBoosting ensemble on historical
-match data and exposes predict() for individual match predictions.
+FootballPredictor – trains an XGBoost + HistGradientBoosting + TabTransformer
+ensemble on historical match data.
 
-Model architecture:
-  - Outcome (1X2): CalibratedXGBClassifier + CalibratedHistGBClassifier blended 50/50
-  - Goals (O/U 2.5): same ensemble
+Model architecture (enhanced):
+  - Outcome (1X2):   XGBoost (35%) + HistGradientBoosting (35%) + TabTransformer (30%)
+  - Goals (O/U 2.5): XGBoost (40%) + HistGradientBoosting (40%) + TabTransformer (20%)
   - Features scaled with StandardScaler (60 features)
+  - TabTransformer: multi-head self-attention over feature tokens (PyTorch)
 
-HistGradientBoostingClassifier is scikit-learn's native histogram-based gradient
-boosting (same algorithm as LightGBM) — no extra system libraries required.
+Set USE_NEURAL_NET=False to fall back to the original 2-model ensemble
+if PyTorch is unavailable.
 """
 from __future__ import annotations
 import os, logging, joblib
@@ -22,6 +23,13 @@ from sklearn.calibration import CalibratedClassifierCV
 from sklearn.preprocessing import StandardScaler
 
 from .features import FeaturePipeline, N_FEATURES
+
+try:
+    from .neural_net import TabTransformerClassifier
+    USE_NEURAL_NET = True
+except Exception as _nn_err:
+    USE_NEURAL_NET = False
+    logging.getLogger(__name__).warning(f"TabTransformer unavailable: {_nn_err}")
 
 logger = logging.getLogger(__name__)
 
@@ -37,13 +45,16 @@ class FootballPredictor:
     Wraps a C++-accelerated feature pipeline + XGBoost / HistGradientBoosting ensemble.
     """
 
-    def __init__(self, home_advantage: float = 100.0):
+    def __init__(self, home_advantage: float = 100.0, use_neural_net: bool = True):
         self.home_advantage     = home_advantage
+        self.use_neural_net     = use_neural_net and USE_NEURAL_NET
         self.feature_pipe       = FeaturePipeline(home_advantage)
         self._xgb_outcome:  Optional[CalibratedClassifierCV] = None
         self._hgb_outcome:  Optional[CalibratedClassifierCV] = None
         self._xgb_goals:    Optional[CalibratedClassifierCV] = None
         self._hgb_goals:    Optional[CalibratedClassifierCV] = None
+        self._nn_outcome:   Optional[CalibratedClassifierCV] = None
+        self._nn_goals:     Optional[CalibratedClassifierCV] = None
         self._scaler        = StandardScaler()
         self._trained       = False
 
@@ -108,6 +119,38 @@ class FootballPredictor:
         )
         return CalibratedClassifierCV(hgb, method='sigmoid', cv=3)
 
+    @staticmethod
+    def _make_nn_outcome() -> CalibratedClassifierCV:
+        nn = TabTransformerClassifier(
+            n_classes=3,
+            d_model=64,
+            n_heads=4,
+            n_layers=3,
+            mlp_hidden=128,
+            dropout=0.2,
+            epochs=60,
+            batch_size=256,
+            lr=3e-4,
+            patience=10,
+        )
+        return CalibratedClassifierCV(nn, method='isotonic', cv=3)
+
+    @staticmethod
+    def _make_nn_goals() -> CalibratedClassifierCV:
+        nn = TabTransformerClassifier(
+            n_classes=2,
+            d_model=48,
+            n_heads=4,
+            n_layers=2,
+            mlp_hidden=96,
+            dropout=0.2,
+            epochs=40,
+            batch_size=256,
+            lr=3e-4,
+            patience=8,
+        )
+        return CalibratedClassifierCV(nn, method='isotonic', cv=3)
+
     # ─────────────────────── training ─────────────────────────────── #
 
     def train(self, df: pd.DataFrame, min_samples: int = 500) -> "FootballPredictor":
@@ -148,8 +191,19 @@ class FootballPredictor:
         self._hgb_goals = self._make_hgb_goals()
         self._hgb_goals.fit(X_scaled, y_goals)
 
+        if self.use_neural_net:
+            logger.info("Step 4/4  Fitting TabTransformer outcome model (neural net)…")
+            self._nn_outcome = self._make_nn_outcome()
+            self._nn_outcome.fit(X_scaled, y_1x2)
+
+            logger.info("Step 4/4  Fitting TabTransformer goals model (neural net)…")
+            self._nn_goals = self._make_nn_goals()
+            self._nn_goals.fit(X_scaled, y_goals)
+            logger.info("Neural net training complete ✓")
+
+        arch = "XGBoost + HistGB + TabTransformer" if self.use_neural_net else "XGBoost + HistGB"
         self._trained = True
-        logger.info(f"Training complete ✓  ({N_FEATURES} features, XGBoost+HGB ensemble)")
+        logger.info(f"Training complete ✓  ({N_FEATURES} features, {arch})")
         return self
 
     def save(self, path: Optional[str] = None) -> str:
@@ -160,8 +214,11 @@ class FootballPredictor:
             'hgb_outcome':    self._hgb_outcome,
             'xgb_goals':      self._xgb_goals,
             'hgb_goals':      self._hgb_goals,
+            'nn_outcome':     self._nn_outcome,
+            'nn_goals':       self._nn_goals,
             'scaler':         self._scaler,
             'home_advantage': self.home_advantage,
+            'use_neural_net': self.use_neural_net,
             'n_features':     N_FEATURES,
         }, path, compress=3)
         logger.info(f"Model saved to {path}")
@@ -173,7 +230,6 @@ class FootballPredictor:
         if not os.path.exists(path):
             raise FileNotFoundError(f"No saved model at {path}")
         data = joblib.load(path)
-        # Version check – require the current feature count
         saved_n = data.get('n_features', 0)
         if saved_n != N_FEATURES:
             raise ValueError(
@@ -181,30 +237,43 @@ class FootballPredictor:
                 "Retraining required."
             )
         obj = cls.__new__(cls)
-        obj.feature_pipe   = data['feature_pipe']
-        obj._xgb_outcome   = data.get('xgb_outcome')
-        obj._hgb_outcome   = data.get('hgb_outcome')
-        obj._xgb_goals     = data.get('xgb_goals')
-        obj._hgb_goals     = data.get('hgb_goals')
-        obj._scaler        = data['scaler']
-        obj.home_advantage = data.get('home_advantage', 100.0)
-        obj._trained       = True
-        logger.info(f"Model loaded from {path}")
+        obj.feature_pipe    = data['feature_pipe']
+        obj._xgb_outcome    = data.get('xgb_outcome')
+        obj._hgb_outcome    = data.get('hgb_outcome')
+        obj._xgb_goals      = data.get('xgb_goals')
+        obj._hgb_goals      = data.get('hgb_goals')
+        obj._nn_outcome     = data.get('nn_outcome')
+        obj._nn_goals       = data.get('nn_goals')
+        obj._scaler         = data['scaler']
+        obj.home_advantage  = data.get('home_advantage', 100.0)
+        obj.use_neural_net  = data.get('use_neural_net', False)
+        obj._trained        = True
+        arch = "XGBoost + HistGB + TabTransformer" if obj.use_neural_net else "XGBoost + HistGB"
+        logger.info(f"Model loaded from {path}  [{arch}]")
         return obj
 
     # ─────────────────────── prediction ──────────────────────────── #
 
-    def _blend_proba(self, X_scaled: np.ndarray,
-                     model_a: CalibratedClassifierCV,
-                     model_b: Optional[CalibratedClassifierCV],
-                     weight_a: float = 0.5) -> np.ndarray:
-        """Blend predictions from two calibrated classifiers."""
+    def _blend_proba(
+        self,
+        X_scaled: np.ndarray,
+        model_a: CalibratedClassifierCV,
+        model_b: Optional[CalibratedClassifierCV],
+        model_c: Optional[CalibratedClassifierCV] = None,
+        wa: float = 0.35, wb: float = 0.35, wc: float = 0.30,
+    ) -> np.ndarray:
+        """Blend predictions from up to three calibrated classifiers."""
         pa = model_a.predict_proba(X_scaled)[0]
-        if model_b is not None:
-            pb = model_b.predict_proba(X_scaled)[0]
-            # Align class order (should be same but be safe)
-            return weight_a * pa + (1 - weight_a) * pb
-        return pa
+        if model_b is None:
+            return pa
+        pb = model_b.predict_proba(X_scaled)[0]
+        if model_c is None:
+            # 2-model blend (fall back to equal weights)
+            return 0.5 * pa + 0.5 * pb
+        pc = model_c.predict_proba(X_scaled)[0]
+        # Normalise weights
+        total = wa + wb + wc
+        return (wa * pa + wb * pb + wc * pc) / total
 
     def predict_match(
         self, home_team: str, away_team: str,
@@ -232,9 +301,17 @@ class FootballPredictor:
         X = self.feature_pipe.build_features([match], history)
         X_scaled = self._scaler.transform(X)
 
-        # Blended ensemble predictions (XGBoost 50% + HistGradientBoosting 50%)
-        outcome_probs = self._blend_proba(X_scaled, self._xgb_outcome, self._hgb_outcome)
-        goals_probs   = self._blend_proba(X_scaled, self._xgb_goals,   self._hgb_goals)
+        # Blended ensemble: XGBoost 35% + HistGB 35% + TabTransformer 30%
+        # (falls back to 50/50 when neural net not present)
+        outcome_probs = self._blend_proba(
+            X_scaled, self._xgb_outcome, self._hgb_outcome,
+            self._nn_outcome if self.use_neural_net else None,
+        )
+        goals_probs = self._blend_proba(
+            X_scaled, self._xgb_goals, self._hgb_goals,
+            self._nn_goals if self.use_neural_net else None,
+            wa=0.40, wb=0.40, wc=0.20,
+        )
 
         p_home   = float(outcome_probs[0])
         p_draw   = float(outcome_probs[1])
@@ -369,7 +446,7 @@ def _build_reasoning(
 
     # Model summary
     parts.append(
-        f"Ensemble (XGBoost + HistGradientBoosting) probabilities: "
+        f"Ensemble (XGBoost + HistGradientBoosting + TabTransformer) probabilities: "
         f"{home} Win {ph*100:.0f}%, Draw {pd_*100:.0f}%, {away} Win {pa*100:.0f}%. "
         f"Confidence: {confidence}%."
     )

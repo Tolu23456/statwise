@@ -66,9 +66,9 @@ def run(force: bool = False) -> bool:
     logger.info(f"Combined dataset: {len(df):,} unique matches")
 
     # ── Train ──────────────────────────────────────────────────────
-    logger.info("Training model …")
+    logger.info("Training model (XGBoost + HistGB + TabTransformer neural net) …")
     t1 = time.time()
-    predictor = FootballPredictor()
+    predictor = FootballPredictor(use_neural_net=True)
     try:
         predictor.train(df)
     except Exception as e:
