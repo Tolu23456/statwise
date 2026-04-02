@@ -5,7 +5,7 @@ Source strategy – ALL available sources are queried in parallel and merged
 (instead of the old cascade approach that stopped at the first success).
 
 Sources:
-  1. football-data.org  (best quality – needs FOOTBALL_API_TOKEN env var)
+  1. football-data.org  (best quality – needs FOOTBALL_DATA_TOKEN env var)
   2. API-Football        (needs X_RAPIDAPI_KEY env var)
   3. TheSportsDB         (free, no key – 14 leagues covered)
   4. Mock fixtures       (50+ plausible fixtures – last-resort fallback only)
@@ -20,7 +20,7 @@ import requests
 
 logger = logging.getLogger(__name__)
 
-FOOTBALL_API_KEY = os.environ.get("FOOTBALL_API_TOKEN") or os.environ.get("FOOTBALL_API_KEY", "")
+FOOTBALL_DATA_TOKEN = os.environ.get("FOOTBALL_DATA_TOKEN", "")
 RAPIDAPI_KEY     = os.environ.get("X_RAPIDAPI_KEY", "")
 
 FDORG_BASE  = "https://api.football-data.org/v4"
@@ -83,11 +83,11 @@ ALL_LEAGUES = list({
 # ─────────────────────── per-source fetchers ─────────────────────── #
 
 def _headers_fdorg():
-    return {"X-Auth-Token": FOOTBALL_API_KEY}
+    return {"X-Auth-Token": FOOTBALL_DATA_TOKEN}
 
 
 def _fetch_fdorg(league_slugs: list[str], days_ahead: int = 14) -> list[dict]:
-    if not FOOTBALL_API_KEY:
+    if not FOOTBALL_DATA_TOKEN:
         return []
     matches = []
     today   = datetime.date.today()
@@ -136,6 +136,8 @@ def _fetch_tsdb_single(slug: str, lid: str) -> list[dict]:
             time_s  = e.get("strTime") or "15:00:00"
             kickoff = f"{date_s}T{time_s}Z" if date_s else ""
             eid     = e.get("idEvent", "")
+            if not eid:
+                eid = f"{home.lower().replace(' ', '_')}_{away.lower().replace(' ', '_')}_{date_s}"
             out.append({
                 "home_team":    home,
                 "away_team":    away,
@@ -342,7 +344,7 @@ def fetch_upcoming_matches(leagues: list[str] | None = None,
 
     with ThreadPoolExecutor(max_workers=3) as pool:
         futs = []
-        if FOOTBALL_API_KEY:
+        if FOOTBALL_DATA_TOKEN:
             futs.append(pool.submit(_fetch_fdorg, leagues, days_ahead))
         if RAPIDAPI_KEY:
             futs.append(pool.submit(_fetch_rapid, leagues, days_ahead))
