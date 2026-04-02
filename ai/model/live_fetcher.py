@@ -5,7 +5,7 @@ Source strategy – ALL available sources are queried in parallel and merged
 (instead of the old cascade approach that stopped at the first success).
 
 Sources:
-  1. football-data.org  (best quality – needs FOOTBALL_API_KEY env var)
+  1. football-data.org  (best quality – needs FOOTBALL_API_TOKEN env var)
   2. API-Football        (needs X_RAPIDAPI_KEY env var)
   3. TheSportsDB         (free, no key – 14 leagues covered)
   4. Mock fixtures       (50+ plausible fixtures – last-resort fallback only)
@@ -20,7 +20,7 @@ import requests
 
 logger = logging.getLogger(__name__)
 
-FOOTBALL_API_KEY = os.environ.get("FOOTBALL_API_KEY", "")
+FOOTBALL_API_KEY = os.environ.get("FOOTBALL_API_TOKEN") or os.environ.get("FOOTBALL_API_KEY", "")
 RAPIDAPI_KEY     = os.environ.get("X_RAPIDAPI_KEY", "")
 
 FDORG_BASE  = "https://api.football-data.org/v4"
