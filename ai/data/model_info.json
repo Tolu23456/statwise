@@ -1,0 +1,13 @@
+{
+  "version": "1.0-baseline",
+  "trained_at": "2026-04-02T00:00:00Z",
+  "training_rows": 0,
+  "statsbomb_rows": 0,
+  "features": [
+    "Elo ratings", "Win/draw/loss rates", "Goals scored/conceded",
+    "Form (last 5 & 10)", "Head-to-head history", "Market odds",
+    "Venue-specific form", "Scoring consistency", "League averages"
+  ],
+  "leagues_covered": [],
+  "algorithms": ["XGBoost", "HistGradientBoosting", "Platt Scaling (calibration)"]
+}
