@@ -1,0 +1,20 @@
+FROM node:20-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY statwise/package.json statwise/package-lock.json ./
+
+RUN npm ci --legacy-peer-deps
+
+COPY statwise/ ./
+
+ENV EXPO_NO_DEVTOOLS=1
+ENV NODE_ENV=production
+
+EXPOSE 5000
+
+CMD ["node", "node_modules/.bin/expo", "start", "--web", "--port", "5000", "--clear"]

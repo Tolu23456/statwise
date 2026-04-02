@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "5000:5000"
+    environment:
+      - EXPO_NO_DEVTOOLS=1
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:5000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  ai-scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile.ai
+    environment:
+      - FOOTBALL_API_TOKEN=${FOOTBALL_API_TOKEN}
+      - X_RAPIDAPI_KEY=${X_RAPIDAPI_KEY:-}
+      - SUPABASE_URL=${SUPABASE_URL:-https://pdrcyuzfdqjnsltqqxvr.supabase.co}
+      - SUPABASE_SERVICE_KEY=${SUPABASE_SERVICE_KEY:-}
+    volumes:
+      - ai_models:/app/ai/models
+      - ai_data:/app/ai/data
+    restart: unless-stopped
+
+volumes:
+  ai_models:
+  ai_data:
