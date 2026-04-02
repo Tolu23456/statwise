@@ -94,14 +94,25 @@ def run_prediction_cycle(engine) -> int:
 
 
 def retrain_engine() -> object:
-    """Force-retrain the model on fresh data and return the new engine."""
+    """
+    Retrain model from all 5 open-source data sources in the background,
+    then reload the prediction engine from the updated .pkl.
+    """
     from model.predictor import PredictionEngine
+    import retrain as _retrain_mod
+
     logger.info("═" * 60)
-    logger.info(" Starting scheduled model retrain…")
+    logger.info(" Starting multi-source retrain (5 open datasets)…")
     logger.info("═" * 60)
+
+    success = _retrain_mod.run(force=True)
+    if not success:
+        logger.warning("Multi-source retrain failed — keeping existing model.")
+    else:
+        logger.info("Multi-source retrain complete ✓  Reloading engine…")
+
     engine = PredictionEngine()
-    engine.load_or_train(force_retrain=True)
-    logger.info("Retrain complete ✓")
+    engine.load_or_train(force_retrain=False)  # loads the freshly saved .pkl
     return engine
 
 
