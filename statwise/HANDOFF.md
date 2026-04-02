@@ -80,7 +80,7 @@ Sources are now queried **simultaneously** (not cascade) and merged/deduped:
 
 | Priority | Source | Key | Leagues |
 |---|---|---|---|
-| 1 | football-data.org | `FOOTBALL_API_KEY` env var | 8 |
+| 1 | football-data.org | `FOOTBALL_API_TOKEN` env var | 8 |
 | 2 | API-Football (RapidAPI) | `X_RAPIDAPI_KEY` env var | 12 |
 | 3 | TheSportsDB | free, no key | 14 |
 | 4 | Mock fixtures | none needed | 50+ fixtures across 10 leagues |
@@ -91,6 +91,16 @@ Sources are now queried **simultaneously** (not cascade) and merged/deduped:
 - **Auto-retrain**: every 24 hours, retrains the model on fresh data
 - **Heartbeat**: writes `ai/data/heartbeat.json` with status, prediction count, and league count
 - **Graceful shutdown**: handles SIGTERM/SIGINT
+- **One-shot mode**: `python ai/scheduler.py --once` — runs one cycle then exits (used by GitHub Actions)
+
+### GitHub Actions (`.github/workflows/predict.yml`)
+
+- Runs automatically **every 4 hours** via cron
+- Can also be triggered manually from the GitHub Actions tab
+- Uses `FOOTBALL_API_TOKEN` GitHub secret for football-data.org live data
+- Optionally uses `SUPABASE_SERVICE_KEY` GitHub secret to bypass Supabase RLS
+- Caches the trained model between runs (skips retraining when model is fresh)
+- Falls back to pure-Python feature engine (no C++ lib needed in CI)
 
 ### Tier System
 
@@ -167,8 +177,9 @@ components/
    - Use the media-generation skill
 
 3. **API Keys for Live Data**
-   - Add `FOOTBALL_API_KEY` (football-data.org free tier) to environment secrets
-   - Add `X_RAPIDAPI_KEY` for API-Football if more coverage is needed
+   - `FOOTBALL_API_TOKEN` is already a GitHub secret and is used by `.github/workflows/predict.yml`
+   - Optionally add `SUPABASE_SERVICE_KEY` as a GitHub secret to bypass Supabase RLS in CI
+   - Add `X_RAPIDAPI_KEY` as a GitHub secret for API-Football if more league coverage is needed
    - Without keys, the system falls back to TheSportsDB (14 leagues, no key needed)
 
 ### MEDIUM PRIORITY

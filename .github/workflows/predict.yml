@@ -1,0 +1,45 @@
+name: StatWise AI Predictions
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"   # every 4 hours
+  workflow_dispatch:         # manual trigger from GitHub UI
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('ai/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Cache trained model
+        uses: actions/cache@v4
+        with:
+          path: ai/models/football_predictor.pkl
+          key: statwise-model-v1-${{ hashFiles('ai/model/trainer.py', 'ai/model/features.py') }}
+          restore-keys: |
+            statwise-model-v1-
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Run prediction cycle
+        env:
+          FOOTBALL_API_TOKEN: ${{ secrets.FOOTBALL_API_TOKEN }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python ai/scheduler.py --once

@@ -11,10 +11,13 @@ Usage:
     python ai/scheduler.py
 
 Environment variables (optional but recommended for live data):
-    FOOTBALL_API_KEY   – football-data.org free API key
-    X_RAPIDAPI_KEY     – API-Football via RapidAPI key
+    FOOTBALL_API_TOKEN   – football-data.org API key (GitHub secret name)
+    X_RAPIDAPI_KEY       – API-Football via RapidAPI key
     SUPABASE_SERVICE_KEY – Supabase service role key (bypasses RLS)
-    SUPABASE_URL       – override Supabase URL (defaults to hardcoded)
+    SUPABASE_URL         – override Supabase URL (defaults to hardcoded)
+
+One-shot mode (for GitHub Actions):
+    python ai/scheduler.py --once
 
 The scheduler also writes a heartbeat to ai/data/heartbeat.json so the
 frontend can detect staleness.
@@ -159,5 +162,26 @@ def main() -> None:
     logger.info("Scheduler stopped.")
 
 
+def main_once() -> None:
+    """Run a single prediction cycle then exit (used by GitHub Actions)."""
+    logging.basicConfig(
+        level  = logging.INFO,
+        format = "%(asctime)s [%(levelname)-5s] %(name)s: %(message)s",
+        datefmt = "%Y-%m-%d %H:%M:%S",
+    )
+    logger.info("=== StatWise AI – one-shot prediction run ===")
+    try:
+        engine = build_engine()
+    except Exception as e:
+        logger.error(f"Failed to initialise engine: {e}", exc_info=True)
+        sys.exit(1)
+    n = run_prediction_cycle(engine)
+    logger.info(f"Done. {n} predictions saved to Supabase.")
+    sys.exit(0 if n >= 0 else 1)
+
+
 if __name__ == "__main__":
-    main()
+    if "--once" in sys.argv:
+        main_once()
+    else:
+        main()
