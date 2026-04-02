@@ -40,6 +40,6 @@ jobs:
 
       - name: Run prediction cycle
         env:
-          FOOTBALL_API_TOKEN: ${{ secrets.FOOTBALL_API_TOKEN }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+          SUPABASE_SERVICE_ROLE: ${{ secrets.SUPABASE_SERVICE_ROLE }}
         run: python ai/scheduler.py --once
