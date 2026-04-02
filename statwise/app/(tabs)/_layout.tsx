@@ -1,10 +1,11 @@
 import { Tabs } from 'expo-router';
-import { useColorScheme, Platform, View } from 'react-native';
+import { Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/colors';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function TabLayout() {
-  const scheme = useColorScheme() ?? 'dark';
+  const { scheme } = useTheme();
   const C = Colors[scheme];
 
   const tabBarStyle = {
@@ -17,13 +18,13 @@ export default function TabLayout() {
 
   return (
     <Tabs
-      screenOptions={({ route }) => ({
+      screenOptions={{
         headerShown: false,
         tabBarStyle,
         tabBarActiveTintColor: C.primary,
         tabBarInactiveTintColor: C.textMuted,
         tabBarLabelStyle: { fontSize: 11, fontFamily: 'Inter_500Medium', marginBottom: 2 },
-      })}
+      }}
     >
       <Tabs.Screen
         name="index"

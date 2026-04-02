@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "mx2icgF-JUnUc4cYdjM09"
+uri = "file://statwise/assets/images/icon.png"
+type = "image"
+title = "statwise app icon"
+
+[[generated]]
+id = "UbsXL3K7mjrnkfArb1_y9"
+uri = "file://statwise/assets/images/adaptive-icon.png"
+type = "image"
+title = "statwise adaptive icon"
+
+[[generated]]
+id = "WF3eyqeZjVEs6oKbHYFyN"
+uri = "file://statwise/assets/images/splash-icon.png"
+type = "image"
+title = "statwise splash icon"

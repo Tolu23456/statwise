@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput,
-  useColorScheme, ActivityIndicator, RefreshControl, ScrollView, Platform,
+  ActivityIndicator, RefreshControl, ScrollView, Platform,
   Animated,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -10,9 +10,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/colors';
 import { supabase, Prediction } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { useTheme } from '@/context/ThemeContext';
 import { PredictionCard } from '@/components/PredictionCard';
 
-const POLL_INTERVAL_MS = 20 * 60 * 1000; // re-fetch every 20 minutes (matches scheduler)
+const POLL_INTERVAL_MS = 20 * 60 * 1000;
 
 const LEAGUES = [
   { slug: 'all', name: 'All' },
@@ -21,10 +22,16 @@ const LEAGUES = [
   { slug: 'bundesliga', name: 'Bundesliga' },
   { slug: 'serie-a', name: 'Serie A' },
   { slug: 'ligue1', name: 'Ligue 1' },
-  { slug: 'champions-league', name: 'Champions League' },
+  { slug: 'champions-league', name: 'UCL' },
   { slug: 'mls', name: 'MLS' },
-  { slug: 'copa-libertadores', name: 'Copa Libertadores' },
-  { slug: 'saudi-pro-league', name: 'Saudi Pro League' },
+  { slug: 'saudi-pro-league', name: 'Saudi Pro' },
+  { slug: 'copa-libertadores', name: 'Libertadores' },
+  { slug: 'brazilian-serie-a', name: 'Brasileirao' },
+  { slug: 'argentina-primera', name: 'Argentina' },
+  { slug: 'turkish-super-lig', name: 'Süper Lig' },
+  { slug: 'j-league', name: 'J-League' },
+  { slug: 'liga-mx', name: 'Liga MX' },
+  { slug: 'efl-championship', name: 'Championship' },
 ];
 
 const TIER_LIMITS: Record<string, number> = {
@@ -34,6 +41,13 @@ const TIER_LIMITS: Record<string, number> = {
   'VVIP Tier': Infinity,
 };
 
+const TIER_DB_ALLOWED: Record<string, string[]> = {
+  'Free Tier':    ['free'],
+  'Premium Tier': ['free', 'premium'],
+  'VIP Tier':     ['free', 'premium', 'vip'],
+  'VVIP Tier':    ['free', 'premium', 'vip', 'vvip'],
+};
+
 const TIER_NEXT: Record<string, string> = {
   'Free Tier': 'Premium Tier',
   'Premium Tier': 'VIP Tier',
@@ -41,8 +55,14 @@ const TIER_NEXT: Record<string, string> = {
   'VVIP Tier': 'VVIP Tier',
 };
 
+function sendBrowserNotification(title: string, body: string) {
+  if (Platform.OS === 'web' && 'Notification' in window && Notification.permission === 'granted') {
+    new Notification(title, { body, icon: '/favicon.ico' });
+  }
+}
+
 export default function HomeScreen() {
-  const scheme = useColorScheme() ?? 'dark';
+  const { scheme } = useTheme();
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const { profile } = useAuth();
@@ -57,16 +77,19 @@ export default function HomeScreen() {
   const userTier = profile?.current_tier ?? 'Free Tier';
   const userLimit = TIER_LIMITS[userTier] ?? 5;
   const nextTier = TIER_NEXT[userTier] ?? 'Premium Tier';
+  const allowedTiers = TIER_DB_ALLOWED[userTier] ?? ['free'];
 
   const { data: predictions = [], isLoading, isError, refetch } = useQuery<Prediction[]>({
-    queryKey: ['predictions'],
+    queryKey: ['predictions', userTier],
     queryFn: async () => {
       const today = new Date().toISOString().split('T')[0];
       const { data, error } = await supabase
         .from('predictions')
         .select('*')
         .gte('match_date', today)
-        .order('confidence', { ascending: false });
+        .in('tier', allowedTiers)
+        .order('confidence', { ascending: false })
+        .limit(userLimit === Infinity ? 500 : userLimit);
       if (error) throw error;
       return data ?? [];
     },
@@ -75,7 +98,6 @@ export default function HomeScreen() {
     staleTime: 5 * 60 * 1000,
   });
 
-  // Supabase realtime: invalidate query whenever predictions are inserted/updated
   useEffect(() => {
     const channel = supabase
       .channel('predictions_realtime')
@@ -84,19 +106,19 @@ export default function HomeScreen() {
         schema: 'public',
         table: 'predictions',
       }, () => {
-        // Show a "new predictions" badge then auto-refresh
         setNewPredictionsBadge(prev => prev + 1);
         Animated.sequence([
           Animated.timing(badgeFade, { toValue: 1, duration: 300, useNativeDriver: true }),
           Animated.delay(4000),
           Animated.timing(badgeFade, { toValue: 0, duration: 600, useNativeDriver: true }),
         ]).start();
-        queryClient.invalidateQueries({ queryKey: ['predictions'] });
+        queryClient.invalidateQueries({ queryKey: ['predictions', userTier] });
+        sendBrowserNotification('StatWise', 'New predictions are available!');
       })
       .subscribe();
 
     return () => { supabase.removeChannel(channel); };
-  }, [queryClient]);
+  }, [queryClient, userTier]);
 
   const dismissBadge = useCallback(() => {
     setNewPredictionsBadge(0);
@@ -127,14 +149,10 @@ export default function HomeScreen() {
     return list;
   }, [predictions, selectedLeague, search]);
 
-  const unlockedCount = Math.min(userLimit, filtered.length);
-  const lockedCount = filtered.length - unlockedCount;
-
   const topInset = Platform.OS === 'web' ? 67 : insets.top;
 
   return (
     <View style={[styles.container, { backgroundColor: C.background }]}>
-      {/* Live update notification banner */}
       <Animated.View
         style={[
           styles.liveBanner,
@@ -174,26 +192,6 @@ export default function HomeScreen() {
             <Text style={[styles.errorText, { color: C.danger }]}>
               Couldn't load predictions — pull down to retry
             </Text>
-          </View>
-        )}
-
-        {filtered.length > 0 && (
-          <View style={[styles.limitBanner, { backgroundColor: C.card, borderColor: C.border }]}>
-            <Ionicons name="eye-outline" size={14} color={C.primary} />
-            <Text style={[styles.limitText, { color: C.textSecondary }]}>
-              Showing{' '}
-              <Text style={{ color: C.text, fontFamily: 'Inter_600SemiBold' }}>
-                {unlockedCount === Infinity ? filtered.length : unlockedCount}
-              </Text>
-              {' '}of{' '}
-              <Text style={{ color: C.text, fontFamily: 'Inter_600SemiBold' }}>{filtered.length}</Text>
-              {' '}predictions
-            </Text>
-            {lockedCount > 0 && (
-              <Text style={[styles.upgradeHint, { color: C.primary }]}>
-                Upgrade for {lockedCount} more
-              </Text>
-            )}
           </View>
         )}
 
@@ -260,6 +258,7 @@ export default function HomeScreen() {
               refreshing={refreshing}
               onRefresh={onRefresh}
               tintColor={C.primary}
+              colors={[C.primary]}
             />
           }
           ListEmptyComponent={
@@ -267,21 +266,13 @@ export default function HomeScreen() {
               <Ionicons name="football-outline" size={48} color={C.textMuted} />
               <Text style={[styles.emptyTitle, { color: C.text }]}>No Predictions</Text>
               <Text style={[styles.emptyDesc, { color: C.textSecondary }]}>
-                {search ? 'No results for your search' : 'No predictions available yet'}
+                {search ? 'No results for your search' : 'No predictions available yet — pull down to refresh'}
               </Text>
             </View>
           }
-          renderItem={({ item, index }) => {
-            const locked = index >= userLimit;
-            return (
-              <PredictionCard
-                prediction={item}
-                locked={locked}
-                nextTier={nextTier}
-              />
-            );
-          }}
-          scrollEnabled={!!filtered.length}
+          renderItem={({ item }) => (
+            <PredictionCard prediction={item} locked={false} nextTier={nextTier} />
+          )}
         />
       )}
     </View>
@@ -313,13 +304,6 @@ const styles = StyleSheet.create({
   aiText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
   tierBadge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20 },
   tierText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  limitBanner: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    borderRadius: 10, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 7,
-    marginBottom: 10,
-  },
-  limitText: { fontSize: 13, fontFamily: 'Inter_400Regular', flex: 1 },
-  upgradeHint: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   searchBar: {
     flexDirection: 'row', alignItems: 'center', gap: 8,
     borderRadius: 12, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 10, marginBottom: 12,
@@ -332,5 +316,5 @@ const styles = StyleSheet.create({
   centered: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   empty: { alignItems: 'center', paddingTop: 60, gap: 12 },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
-  emptyDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center' },
+  emptyDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', paddingHorizontal: 32 },
 });

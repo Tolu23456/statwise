@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, useColorScheme, Platform, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Platform, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/colors';
 import { Prediction } from '@/lib/supabase';
+import { useTheme } from '@/context/ThemeContext';
 
 type Props = {
   prediction: Prediction;
@@ -39,7 +40,7 @@ function RedactedBlock({ width, height = 14, C }: { width: number | string; heig
 }
 
 export function PredictionCard({ prediction, locked = false, nextTier = 'Premium Tier' }: Props) {
-  const scheme = useColorScheme() ?? 'dark';
+  const { scheme } = useTheme();
   const C = Colors[scheme];
   const router = useRouter();
   const confColor = getConfidenceColor(prediction.confidence, C);

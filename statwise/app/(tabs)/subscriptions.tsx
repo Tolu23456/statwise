@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  useColorScheme, Alert, ActivityIndicator, Platform,
+  Alert, ActivityIndicator, Platform,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,6 +10,7 @@ import * as Haptics from 'expo-haptics';
 import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, FLUTTERWAVE_PUBLIC_KEY } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { useTheme } from '@/context/ThemeContext';
 
 type Plan = {
   id: string;
@@ -58,11 +59,23 @@ const PLANS: Plan[] = [
   },
 ];
 
+function loadFlutterwaveScript(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (typeof window === 'undefined') return reject(new Error('Not web'));
+    if ((window as any).FlutterwaveCheckout) return resolve();
+    const script = document.createElement('script');
+    script.src = 'https://checkout.flutterwave.com/v3.js';
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Failed to load Flutterwave'));
+    document.head.appendChild(script);
+  });
+}
+
 export default function SubscriptionsScreen() {
-  const scheme = useColorScheme() ?? 'dark';
+  const { scheme } = useTheme();
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
-  const { profile, refreshProfile } = useAuth();
+  const { profile, user, refreshProfile } = useAuth();
 
   const [period, setPeriod] = useState<'daily' | 'monthly'>('daily');
   const [loading, setLoading] = useState<string | null>(null);
@@ -71,10 +84,40 @@ export default function SubscriptionsScreen() {
   const currentTier = profile?.current_tier ?? 'Free Tier';
   const tierColors = TierBadgeColors[currentTier] ?? TierBadgeColors['Free Tier'];
 
-  const plans = PLANS.filter(p => p.period === period || p.tier === 'Free Tier' && period === 'daily');
-  const displayPlans = period === 'monthly' ? plans.filter(p => p.period === 'monthly') : plans.filter(p => p.period === 'daily');
+  const displayPlans = period === 'monthly'
+    ? PLANS.filter(p => p.period === 'monthly')
+    : PLANS.filter(p => p.period === 'daily');
 
-  function handleSubscribe(plan: Plan) {
+  async function processPaymentSuccess(plan: Plan, txRef: string) {
+    if (!user) return;
+    try {
+      await supabase.from('user_profiles').update({
+        current_tier: plan.tier,
+        tier: plan.tier,
+        subscription_status: 'active',
+        updated_at: new Date().toISOString(),
+      }).eq('id', user.id);
+
+      await supabase.from('payment_transactions').insert({
+        user_id: user.id,
+        tx_ref: txRef,
+        amount: plan.price,
+        currency: 'NGN',
+        plan_id: plan.id,
+        tier: plan.tier,
+        status: 'successful',
+        created_at: new Date().toISOString(),
+      }).select();
+
+      await refreshProfile();
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      Alert.alert('Payment Successful', `You are now on the ${plan.name} plan!`);
+    } catch (e) {
+      console.warn('Failed to update tier after payment:', e);
+    }
+  }
+
+  async function handleSubscribe(plan: Plan) {
     if (plan.price === 0) {
       Alert.alert('Free Tier', 'You are already on the free plan.');
       return;
@@ -83,23 +126,52 @@ export default function SubscriptionsScreen() {
       Alert.alert('Current Plan', 'You are already on this plan.');
       return;
     }
+    if (!user?.email) {
+      Alert.alert('Error', 'Please log in to subscribe.');
+      return;
+    }
+
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    Alert.alert(
-      `Upgrade to ${plan.name}`,
-      `₦${plan.price.toLocaleString()}/${plan.period}\n\nThis will initiate a Flutterwave payment. Proceed?`,
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Pay Now',
-          onPress: () => {
-            Alert.alert(
-              'Payment Integration',
-              'Flutterwave payment is configured with your public key. To fully integrate payments, implement the Flutterwave SDK or WebView payment flow in app/(tabs)/subscriptions.tsx.\n\nPublic Key: ' + FLUTTERWAVE_PUBLIC_KEY.substring(0, 20) + '...',
-            );
+
+    if (Platform.OS === 'web') {
+      setLoading(plan.id);
+      try {
+        await loadFlutterwaveScript();
+        const txRef = `statwise_${user.id}_${Date.now()}`;
+        (window as any).FlutterwaveCheckout({
+          public_key: FLUTTERWAVE_PUBLIC_KEY,
+          tx_ref: txRef,
+          amount: plan.price,
+          currency: 'NGN',
+          payment_options: 'card,ussd,bank_transfer',
+          customer: {
+            email: user.email,
+            name: profile?.display_name ?? user.email,
           },
-        },
-      ],
-    );
+          customizations: {
+            title: 'StatWise Subscription',
+            description: `${plan.name} - ₦${plan.price.toLocaleString()}/${plan.period}`,
+            logo: 'https://pdrcyuzfdqjnsltqqxvr.supabase.co/storage/v1/object/public/app-assets/logo.png',
+          },
+          callback: async (response: any) => {
+            if (response.status === 'successful' || response.status === 'completed') {
+              await processPaymentSuccess(plan, txRef);
+            }
+          },
+          onclose: () => {
+            setLoading(null);
+          },
+        });
+      } catch (e) {
+        setLoading(null);
+        Alert.alert('Payment Error', 'Could not initialize payment. Please try again.');
+      }
+    } else {
+      Alert.alert(
+        `Upgrade to ${plan.name}`,
+        `₦${plan.price.toLocaleString()}/${plan.period}\n\nPayment is available on web. Please visit our website to subscribe.`,
+      );
+    }
   }
 
   return (
@@ -216,13 +288,13 @@ export default function SubscriptionsScreen() {
                   },
                 ]}
                 onPress={() => handleSubscribe(plan)}
-                disabled={loading === plan.id}
+                disabled={loading === plan.id || isActive}
               >
                 {loading === plan.id ? (
                   <ActivityIndicator color="#fff" size="small" />
                 ) : (
                   <Text style={[styles.subBtnText, { color: isActive ? C.success : '#fff' }]}>
-                    {isActive ? 'Current Plan' : plan.price === 0 ? 'Free' : 'Upgrade'}
+                    {isActive ? 'Current Plan' : plan.price === 0 ? 'Free' : 'Pay Now'}
                   </Text>
                 )}
               </TouchableOpacity>

@@ -1,23 +1,39 @@
 import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput,
-  useColorScheme, Switch, Alert, ActivityIndicator, Platform,
+  Switch, Alert, ActivityIndicator, Platform,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import * as Haptics from 'expo-haptics';
 import { Image } from 'expo-image';
-import { useQuery } from '@tanstack/react-query';
+import { useRouter } from 'expo-router';
 import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, ReferralCode } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { useTheme, ThemeMode } from '@/context/ThemeContext';
+import { useQuery } from '@tanstack/react-query';
+
+const THEME_OPTIONS: { value: ThemeMode; label: string; icon: string }[] = [
+  { value: 'system', label: 'System', icon: 'phone-portrait-outline' },
+  { value: 'light', label: 'Light', icon: 'sunny-outline' },
+  { value: 'dark', label: 'Dark', icon: 'moon-outline' },
+];
+
+const TIER_REWARD_POINTS: Record<string, number> = {
+  'Free Tier': 100,
+  'Premium Tier': 500,
+  'VIP Tier': 2000,
+  'VVIP Tier': 5000,
+};
 
 export default function ProfileScreen() {
-  const scheme = useColorScheme() ?? 'dark';
+  const { scheme, themeMode, setThemeMode } = useTheme();
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const { user, profile, signOut, refreshProfile } = useAuth();
+  const router = useRouter();
 
   const [editingName, setEditingName] = useState(false);
   const [displayName, setDisplayName] = useState(profile?.display_name ?? '');
@@ -41,6 +57,10 @@ export default function ProfileScreen() {
     },
     enabled: !!user,
   });
+
+  const rewardPoints = referral
+    ? referral.total_referrals * (TIER_REWARD_POINTS[profile?.current_tier ?? 'Free Tier'])
+    : 0;
 
   async function saveDisplayName() {
     if (!displayName.trim() || !user) return;
@@ -69,34 +89,41 @@ export default function ProfileScreen() {
     if (!user) return;
 
     setUploadingPhoto(true);
-    try {
-      const asset = result.assets[0];
-      const ext = asset.uri.split('.').pop() ?? 'jpg';
-      const fileName = `${user.id}.${ext}`;
-      const response = await fetch(asset.uri);
-      const blob = await response.blob();
+    let retries = 0;
+    while (retries < 3) {
+      try {
+        const asset = result.assets[0];
+        const ext = asset.uri.split('.').pop() ?? 'jpg';
+        const fileName = `${user.id}.${ext}`;
+        const response = await fetch(asset.uri);
+        const blob = await response.blob();
 
-      const { error: uploadError } = await supabase.storage
-        .from('profile-pictures')
-        .upload(fileName, blob, { upsert: true, contentType: `image/${ext}` });
-
-      if (!uploadError) {
-        const { data: urlData } = supabase.storage
+        const { error: uploadError } = await supabase.storage
           .from('profile-pictures')
-          .getPublicUrl(fileName);
-        await supabase
-          .from('user_profiles')
-          .update({ avatar_url: urlData.publicUrl })
-          .eq('id', user.id);
-        await refreshProfile();
-        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+          .upload(fileName, blob, { upsert: true, contentType: `image/${ext}` });
+
+        if (!uploadError) {
+          const { data: urlData } = supabase.storage
+            .from('profile-pictures')
+            .getPublicUrl(fileName);
+          await supabase
+            .from('user_profiles')
+            .update({ avatar_url: urlData.publicUrl })
+            .eq('id', user.id);
+          await refreshProfile();
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+          break;
+        } else {
+          throw uploadError;
+        }
+      } catch (e) {
+        retries++;
+        if (retries >= 3) {
+          Alert.alert('Upload Failed', 'Could not upload profile picture after 3 attempts.');
+        }
       }
-    } catch (e) {
-      console.warn('Photo upload error:', e);
-      Alert.alert('Upload Failed', 'Could not upload profile picture.');
-    } finally {
-      setUploadingPhoto(false);
     }
+    setUploadingPhoto(false);
   }
 
   async function handleSignOut() {
@@ -121,7 +148,12 @@ export default function ProfileScreen() {
   function copyReferralCode() {
     if (!referral?.code) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    Alert.alert('Referral Code Copied', `Your code: ${referral.code}\n\nShare this with friends to earn rewards!`);
+    if (Platform.OS === 'web' && navigator.clipboard) {
+      navigator.clipboard.writeText(referral.code);
+      Alert.alert('Copied!', `Code "${referral.code}" copied to clipboard.`);
+    } else {
+      Alert.alert('Referral Code', `Your code: ${referral.code}\n\nShare this with friends to earn rewards!`);
+    }
   }
 
   return (
@@ -203,7 +235,7 @@ export default function ProfileScreen() {
           <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
             <Text style={[styles.sectionTitle, { color: C.text }]}>Referral Program</Text>
             <Text style={[styles.sectionDesc, { color: C.textSecondary }]}>
-              Invite friends and earn rewards when they subscribe.
+              Invite friends and earn reward points when they subscribe.
             </Text>
             <TouchableOpacity
               style={[styles.codeRow, { backgroundColor: C.inputBg, borderColor: C.border }]}
@@ -212,11 +244,49 @@ export default function ProfileScreen() {
               <Text style={[styles.codeText, { color: C.primary }]}>{referral.code}</Text>
               <Ionicons name="copy-outline" size={18} color={C.textSecondary} />
             </TouchableOpacity>
-            <Text style={[styles.referralCount, { color: C.textSecondary }]}>
-              {referral.total_referrals} friends referred
+            <View style={styles.referralStatsRow}>
+              <View style={[styles.referralStat, { backgroundColor: C.primaryLight }]}>
+                <Text style={[styles.referralStatNum, { color: C.primary }]}>{referral.total_referrals}</Text>
+                <Text style={[styles.referralStatLabel, { color: C.textSecondary }]}>Friends Referred</Text>
+              </View>
+              <View style={[styles.referralStat, { backgroundColor: C.goldLight }]}>
+                <Text style={[styles.referralStatNum, { color: C.gold }]}>{rewardPoints.toLocaleString()}</Text>
+                <Text style={[styles.referralStatLabel, { color: C.textSecondary }]}>Reward Points</Text>
+              </View>
+            </View>
+            <Text style={[styles.referralHint, { color: C.textMuted }]}>
+              Earn {TIER_REWARD_POINTS[profile?.current_tier ?? 'Free Tier'].toLocaleString()} points per successful referral at your current tier.
             </Text>
           </View>
         )}
+
+        <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
+          <Text style={[styles.sectionTitle, { color: C.text }]}>Appearance</Text>
+          <View style={styles.themeRow}>
+            {THEME_OPTIONS.map(opt => (
+              <TouchableOpacity
+                key={opt.value}
+                style={[
+                  styles.themeBtn,
+                  {
+                    backgroundColor: themeMode === opt.value ? C.primary : C.inputBg,
+                    borderColor: themeMode === opt.value ? C.primary : C.border,
+                  },
+                ]}
+                onPress={() => setThemeMode(opt.value)}
+              >
+                <Ionicons
+                  name={opt.icon as any}
+                  size={18}
+                  color={themeMode === opt.value ? '#fff' : C.textSecondary}
+                />
+                <Text style={[styles.themeBtnText, { color: themeMode === opt.value ? '#fff' : C.textSecondary }]}>
+                  {opt.label}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
 
         <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
           <Text style={[styles.sectionTitle, { color: C.text }]}>Settings</Text>
@@ -227,6 +297,9 @@ export default function ProfileScreen() {
               value={profile?.notifications ?? true}
               onValueChange={async (val) => {
                 if (!user) return;
+                if (val && Platform.OS === 'web' && 'Notification' in window) {
+                  await Notification.requestPermission();
+                }
                 await supabase.from('user_profiles').update({ notifications: val }).eq('id', user.id);
                 await refreshProfile();
               }}
@@ -234,7 +307,7 @@ export default function ProfileScreen() {
               thumbColor="#fff"
             />
           </View>
-          <View style={styles.settingRow}>
+          <View style={[styles.settingRow, { borderBottomColor: C.border }]}>
             <Ionicons name="shield-checkmark-outline" size={20} color={C.textSecondary} />
             <Text style={[styles.settingLabel, { color: C.text }]}>Account Verified</Text>
             <Ionicons
@@ -243,6 +316,30 @@ export default function ProfileScreen() {
               color={user?.email_confirmed_at ? C.success : C.warning}
             />
           </View>
+          <TouchableOpacity
+            style={[styles.settingRow, { borderBottomColor: C.border }]}
+            onPress={() => router.push('/backtesting')}
+          >
+            <Ionicons name="stats-chart-outline" size={20} color={C.textSecondary} />
+            <Text style={[styles.settingLabel, { color: C.text }]}>Prediction Accuracy</Text>
+            <Ionicons name="chevron-forward" size={18} color={C.textMuted} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.settingRow, { borderBottomColor: C.border }]}
+            onPress={() => router.push('/privacy-policy')}
+          >
+            <Ionicons name="document-text-outline" size={20} color={C.textSecondary} />
+            <Text style={[styles.settingLabel, { color: C.text }]}>Privacy Policy</Text>
+            <Ionicons name="chevron-forward" size={18} color={C.textMuted} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.settingRow}
+            onPress={() => router.push('/terms-of-service')}
+          >
+            <Ionicons name="reader-outline" size={20} color={C.textSecondary} />
+            <Text style={[styles.settingLabel, { color: C.text }]}>Terms of Service</Text>
+            <Ionicons name="chevron-forward" size={18} color={C.textMuted} />
+          </TouchableOpacity>
         </View>
 
         <TouchableOpacity
@@ -301,10 +398,20 @@ const styles = StyleSheet.create({
   sectionDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', marginBottom: 14 },
   codeRow: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-    borderRadius: 12, borderWidth: 1, paddingHorizontal: 14, paddingVertical: 12, marginBottom: 8,
+    borderRadius: 12, borderWidth: 1, paddingHorizontal: 14, paddingVertical: 12, marginBottom: 12,
   },
   codeText: { fontSize: 20, fontFamily: 'Inter_700Bold', letterSpacing: 3 },
-  referralCount: { fontSize: 13, fontFamily: 'Inter_400Regular' },
+  referralStatsRow: { flexDirection: 'row', gap: 10, marginBottom: 10 },
+  referralStat: { flex: 1, borderRadius: 12, padding: 12, alignItems: 'center', gap: 4 },
+  referralStatNum: { fontSize: 22, fontFamily: 'Inter_700Bold' },
+  referralStatLabel: { fontSize: 12, fontFamily: 'Inter_400Regular', textAlign: 'center' },
+  referralHint: { fontSize: 12, fontFamily: 'Inter_400Regular', fontStyle: 'italic' },
+  themeRow: { flexDirection: 'row', gap: 8, marginTop: 4 },
+  themeBtn: {
+    flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+    gap: 6, paddingVertical: 10, borderRadius: 10, borderWidth: 1,
+  },
+  themeBtnText: { fontSize: 13, fontFamily: 'Inter_500Medium' },
   settingRow: {
     flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 12,
     borderBottomWidth: 1,

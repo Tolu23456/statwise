@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TextInput, TouchableOpacity,
-  useColorScheme, ActivityIndicator, KeyboardAvoidingView, Platform,
+  ActivityIndicator, KeyboardAvoidingView, Platform, RefreshControl,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,9 +9,10 @@ import * as Haptics from 'expo-haptics';
 import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, ForumMessage } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function ForumScreen() {
-  const scheme = useColorScheme() ?? 'dark';
+  const { scheme } = useTheme();
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const { user, profile } = useAuth();

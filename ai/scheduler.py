@@ -69,7 +69,7 @@ def write_heartbeat(status: str, n_predictions: int = 0, error: str = "",
 
 def run_prediction_cycle(engine) -> int:
     """
-    One full fetch → predict → push cycle.
+    One full fetch → predict → push → settle cycle.
     Returns number of predictions saved.
     """
     logger.info("── Starting prediction cycle ──────────────────────────────")
@@ -78,6 +78,13 @@ def run_prediction_cycle(engine) -> int:
         n_leagues = len({p.get('league_slug', '') for p in preds})
         n = engine.push_to_supabase(preds)
         logger.info(f"── Cycle complete: {n} predictions across {n_leagues} leagues ────")
+        # Settle past predictions for backtesting accuracy
+        try:
+            settled = engine.settle_past_predictions()
+            if settled:
+                logger.info(f"── Backtesting: settled {settled} past predictions ────")
+        except Exception as se:
+            logger.warning(f"Settling past predictions failed: {se}")
         write_heartbeat("ok", n, n_leagues=n_leagues)
         return n
     except Exception as e:

@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity,
-  useColorScheme, ActivityIndicator, Platform,
+  ActivityIndicator, Platform, RefreshControl,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useQuery } from '@tanstack/react-query';
@@ -10,6 +10,7 @@ import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { useTheme } from '@/context/ThemeContext';
 
 type Insight = {
   id: string;
@@ -23,8 +24,29 @@ type Insight = {
 
 const ALLOWED_TIERS = ['VIP Tier', 'VVIP Tier'];
 
+const MOCK_INSIGHTS: Insight[] = [
+  {
+    id: '1', title: 'The Underdog Advantage', category: 'Strategy',
+    summary: 'We explore the statistical patterns of underdog victories and how to spot high-value opportunities in modern football.',
+    content: `## The Underdog Advantage\n\nIn football betting, the concept of "value" is everything. When a team is underestimated by the market, you get an edge.\n\n### Key Findings\n\n- Underdogs with a 30–40% win probability are mispriced 28% of the time in our model\n- Home underdogs outperform expectations by +4.2% ROI on average\n- Teams with 3+ consecutive losses are systematically undervalued\n\n### How to Use This\n\nLook for matches where our model confidence is 10%+ higher than implied odds. That gap is where the value lives.\n\nFocus on mid-table teams playing at home against top-4 sides after an international break — historically the highest edge scenario.`,
+    published_at: new Date(Date.now() - 86400000 * 3).toISOString(), tier_required: 'VIP Tier',
+  },
+  {
+    id: '2', title: 'Market Trends: Q1 Predictions', category: 'Analysis',
+    summary: 'Our models project a significant shift in European league dynamics. Here\'s what to watch out for.',
+    content: `## Market Trends Q1\n\n### What's Changing\n\nThe European market is showing three major trends this quarter:\n\n1. **Under-inflation in La Liga** — goals per game have dropped 0.4 compared to last season. Over/Under lines haven't adjusted yet.\n\n2. **Home advantage erosion** — Post-COVID home advantage data is now fully factored in by our model. Many books still use pre-2020 baselines.\n\n3. **Champions League group stage value** — Heavily favored teams are increasingly being rested mid-competition. Watch for lineup news.\n\n### Recommended Leagues\n\nBest edge currently: Eredivisie (home teams +6.1% ROI) and Brazilian Série A (unders outperforming by 11%).`,
+    published_at: new Date(Date.now() - 86400000 * 5).toISOString(), tier_required: 'VIP Tier',
+  },
+  {
+    id: '3', title: 'Over/Under: The Hidden Edge', category: 'Tactics',
+    summary: 'Why most bettors ignore over/under markets and how you can profit from this systematic blind spot.',
+    content: `## Over/Under: The Hidden Edge\n\n### The Blind Spot\n\nMost casual bettors focus on match winner markets. This concentrates public money and compresses value. The Over/Under (goals) market receives less attention — and is mispriced more often.\n\n### Our Model's Edge\n\nUsing Poisson goal modeling with team-specific attack/defense ratings, our Over/Under accuracy over the last 6 months:\n\n- **Over 2.5 predictions**: 61.4% hit rate (break-even is ~52%)\n- **Under 2.5 predictions**: 58.9% hit rate\n\n### Best Scenarios for Unders\n\n- Both teams in bottom-half defensive form\n- Mid-week cup matches following weekend exertion\n- Rivalry derbies (historically low-scoring due to tactical caution)\n\n### Best Scenarios for Overs\n\n- Both teams' last 5 home/away averages above 2.8 goals\n- Teams with nothing to play for (end of season)\n- Matches with odds_home below 1.60 (dominant team plays open)`,
+    published_at: new Date(Date.now() - 86400000 * 7).toISOString(), tier_required: 'VIP Tier',
+  },
+];
+
 export default function InsightsScreen() {
-  const scheme = useColorScheme() ?? 'dark';
+  const { scheme } = useTheme();
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const { profile } = useAuth();
@@ -33,20 +55,25 @@ export default function InsightsScreen() {
   const hasAccess = ALLOWED_TIERS.includes(profile?.current_tier ?? '');
   const topInset = Platform.OS === 'web' ? 67 : insets.top;
 
-  const { data: insights = [], isLoading } = useQuery<Insight[]>({
+  const { data: insights = [], isLoading, refetch, isFetching } = useQuery<Insight[]>({
     queryKey: ['insights'],
     queryFn: async () => {
       const { data, error } = await supabase
         .from('insights')
         .select('*')
         .order('published_at', { ascending: false });
-      if (error) {
-        return MOCK_INSIGHTS;
-      }
+      if (error) return MOCK_INSIGHTS;
       return data?.length ? data : MOCK_INSIGHTS;
     },
     enabled: hasAccess,
   });
+
+  function handleReadMore(item: Insight) {
+    router.push({
+      pathname: '/insight-detail',
+      params: { insight: JSON.stringify(item) },
+    });
+  }
 
   if (!hasAccess) {
     return (
@@ -102,6 +129,9 @@ export default function InsightsScreen() {
             styles.list,
             { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 84 : 80) },
           ]}
+          refreshControl={
+            <RefreshControl refreshing={isFetching} onRefresh={refetch} tintColor={C.primary} colors={[C.primary]} />
+          }
           renderItem={({ item }) => (
             <View style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}>
               {item.category && (
@@ -119,8 +149,12 @@ export default function InsightsScreen() {
                     month: 'long', day: 'numeric', year: 'numeric',
                   })}
                 </Text>
-                <TouchableOpacity style={[styles.readBtn, { backgroundColor: C.primaryLight }]}>
+                <TouchableOpacity
+                  style={[styles.readBtn, { backgroundColor: C.primaryLight }]}
+                  onPress={() => handleReadMore(item)}
+                >
                   <Text style={[styles.readBtnText, { color: C.primary }]}>Read More</Text>
+                  <Ionicons name="arrow-forward" size={13} color={C.primary} />
                 </TouchableOpacity>
               </View>
             </View>
@@ -136,24 +170,6 @@ export default function InsightsScreen() {
     </View>
   );
 }
-
-const MOCK_INSIGHTS: Insight[] = [
-  {
-    id: '1', title: 'The Underdog Advantage', category: 'Strategy',
-    summary: 'We explore the statistical patterns of underdog victories and how to spot high-value opportunities in modern football...',
-    published_at: new Date(Date.now() - 86400000 * 3).toISOString(), tier_required: 'VIP Tier',
-  },
-  {
-    id: '2', title: 'Market Trends: Q1 Predictions', category: 'Analysis',
-    summary: 'Our models project a significant shift in European league dynamics. Here\'s what to watch out for...',
-    published_at: new Date(Date.now() - 86400000 * 5).toISOString(), tier_required: 'VIP Tier',
-  },
-  {
-    id: '3', title: 'Over/Under: The Hidden Edge', category: 'Tactics',
-    summary: 'Why most bettors ignore over/under markets and how you can profit from this systematic blind spot...',
-    published_at: new Date(Date.now() - 86400000 * 7).toISOString(), tier_required: 'VIP Tier',
-  },
-];
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
@@ -175,7 +191,7 @@ const styles = StyleSheet.create({
   cardSummary: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20, marginBottom: 14 },
   cardFooter: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   cardDate: { fontSize: 12, fontFamily: 'Inter_400Regular' },
-  readBtn: { paddingHorizontal: 14, paddingVertical: 6, borderRadius: 8 },
+  readBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 14, paddingVertical: 6, borderRadius: 8 },
   readBtnText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   centered: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   empty: { alignItems: 'center', paddingTop: 60, gap: 12 },

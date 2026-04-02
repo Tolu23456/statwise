@@ -68,12 +68,19 @@ export type Prediction = {
   league_slug: string;
   prediction: string;
   odds: number;
+  odds_home?: number | null;
+  odds_draw?: number | null;
+  odds_away?: number | null;
   confidence: number;
   kickoff_time: string;
   match_date: string;
+  tier: string;
   tier_required: string;
   reasoning?: string;
   status?: string;
+  actual_result?: string | null;
+  home_score?: number | null;
+  away_score?: number | null;
   created_at: string;
 };
 
