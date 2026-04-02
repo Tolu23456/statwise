@@ -91,8 +91,8 @@ class PredictionEngine:
                 self.predictor = FootballPredictor.load(model_path)
                 logger.info("Loaded existing trained model.")
                 return self
-            except Exception as e:
-                logger.warning(f"Could not load model: {e} – retraining…")
+            except (ValueError, Exception) as e:
+                logger.warning(f"Could not load model ({e}) – retraining with new architecture…")
 
         logger.info("Downloading training data…")
         df = load_training_data()
@@ -180,6 +180,6 @@ class PredictionEngine:
         return saved
 
     def run_and_push(self, leagues: list[str] | None = None,
-                     days_ahead: int = 7) -> int:
+                     days_ahead: int = 14) -> int:
         preds = self.run(leagues=leagues, days_ahead=days_ahead)
         return self.push_to_supabase(preds)
