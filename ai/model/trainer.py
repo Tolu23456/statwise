@@ -124,6 +124,10 @@ class FootballPredictor:
             raise ValueError(f"Not enough samples: {len(X)} < {min_samples}")
         logger.info(f"Step 2/4  Done — {len(X):,} samples × {N_FEATURES} features.")
 
+        # Sanitize: replace inf/nan with 0 and clip extreme values
+        X = np.where(np.isfinite(X), X, 0.0)
+        X = np.clip(X, -1e6, 1e6)
+
         logger.info("Step 3/4  Fitting outcome stack (XGB+HGB+ET+RF → LR meta)…")
         self._outcome_pipe = _make_stack(n_classes=3, seed=42)
         self._outcome_pipe.fit(X, y_1x2)

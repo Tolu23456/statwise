@@ -284,10 +284,11 @@ class FeaturePipeline:
             h2h   = h2h_stats(history_list, home, away)
 
             # ── Poisson attack/defense strengths ───────────────────────
-            ha_strength = hform[3] / max(ls['avg_goals'] / 2, 0.1)
-            hd_strength = max(ls['avg_goals'] / 2 - hform[4], 0.1) / (ls['avg_goals'] / 2)
-            aa_strength = aform[3] / max(ls['avg_goals'] / 2, 0.1)
-            ad_strength = max(ls['avg_goals'] / 2 - aform[4], 0.1) / (ls['avg_goals'] / 2)
+            _half_avg = max(ls['avg_goals'] / 2, 0.1)
+            ha_strength = hform[3] / _half_avg
+            hd_strength = max(_half_avg - hform[4], 0.1) / _half_avg
+            aa_strength = aform[3] / _half_avg
+            ad_strength = max(_half_avg - aform[4], 0.1) / _half_avg
 
             p25, pbtts = goal_probability(
                 ha_strength, ad_strength,
@@ -303,7 +304,7 @@ class FeaturePipeline:
             imp_d = (1 / odds_d) if odds_d and odds_d > 1 else pd_
             imp_a = (1 / odds_a) if odds_a and odds_a > 1 else pa
             overround = imp_h + imp_d + imp_a  # before normalising
-            s = overround
+            s = overround if overround > 1e-9 else 1.0
             imp_h /= s; imp_d /= s; imp_a /= s
 
             # ── NEW: Venue-specific form ───────────────────────────────
