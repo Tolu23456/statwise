@@ -38,6 +38,17 @@ def load_csv(name):
     df["away_goals"] = df["away_goals"].astype(int)
     return df
 
+# ✅ NEW: normalization function
+def normalize(x):
+    x = str(x).lower().strip()
+    if "home" in x:
+        return "home"
+    elif "away" in x:
+        return "away"
+    elif "draw" in x:
+        return "draw"
+    return x
+
 def main():
     log.info("Loading model…")
     from model.trainer import FootballPredictor
@@ -66,6 +77,7 @@ def main():
         for _, row in test.iterrows():
             try:
                 home, away = row["home_team"], row["away_team"]
+
                 # limit history to recent team matches to save memory
                 team_hist = history[
                     (history["home_team"].isin([home, away])) |
@@ -75,18 +87,23 @@ def main():
                 pred = model.predict_match(home, away, league, team_hist)
 
                 hg, ag = int(row["home_goals"]), int(row["away_goals"])
-                actual = "home" if hg > ag else ("draw" if hg == ag else "away")
-                predicted = pred["prediction"]
+                actual_raw = "home" if hg > ag else ("draw" if hg == ag else "away")
+
+                # ✅ Normalize both sides
+                predicted_raw = pred["prediction"]
+                predicted = normalize(predicted_raw)
+                actual = normalize(actual_raw)
 
                 all_results.append({
                     "league":     league,
                     "home":       home,
                     "away":       away,
-                    "predicted":  predicted,
+                    "predicted":  predicted_raw,  # keep original label
                     "actual":     actual,
                     "confidence": pred.get("confidence", 0),
                     "correct":    predicted == actual,
                 })
+
             except Exception as ex:
                 log.warning(f"  Error on {row.get('home_team')} vs {row.get('away_team')}: {ex}")
 
@@ -101,11 +118,13 @@ def main():
 
     by_actual = {"home": [0,0], "draw": [0,0], "away": [0,0]}
     hc_hits = hc_total = 0
+
     for r in all_results:
         a = r["actual"]
         by_actual[a][1] += 1
         if r["correct"]:
             by_actual[a][0] += 1
+
         if r["confidence"] >= 70:
             hc_total += 1
             if r["correct"]:
@@ -133,6 +152,7 @@ def main():
 
     with open(OUT, "w") as f:
         json.dump({"summary": summary, "sample": all_results[:30]}, f, indent=2)
+
     log.info(f"Saved to {OUT}")
 
 if __name__ == "__main__":

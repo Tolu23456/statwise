@@ -1,0 +1,284 @@
+{
+  "summary": {
+    "tested": 150,
+    "overall_accuracy": 54.7,
+    "home_accuracy": 77.4,
+    "draw_accuracy": 5.0,
+    "away_accuracy": 66.7,
+    "high_conf_accuracy": 72.1,
+    "high_conf_sample": 43,
+    "timestamp": "2026-04-03T08:32:23.296494Z"
+  },
+  "sample": [
+    {
+      "league": "premier-league",
+      "home": "Arsenal",
+      "away": "Chelsea",
+      "predicted": "Draw",
+      "actual": "home",
+      "confidence": 52,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Wolves",
+      "away": "Bournemouth",
+      "predicted": "Away Win",
+      "actual": "away",
+      "confidence": 52,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Crystal Palace",
+      "away": "Newcastle",
+      "predicted": "Draw",
+      "actual": "home",
+      "confidence": 52,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Everton",
+      "away": "Liverpool",
+      "predicted": "Away Win",
+      "actual": "home",
+      "confidence": 59,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Man United",
+      "away": "Sheffield United",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 88,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Brighton",
+      "away": "Man City",
+      "predicted": "Away Win",
+      "actual": "away",
+      "confidence": 77,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "West Ham",
+      "away": "Liverpool",
+      "predicted": "Away Win",
+      "actual": "draw",
+      "confidence": 70,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Fulham",
+      "away": "Crystal Palace",
+      "predicted": "Away Win",
+      "actual": "draw",
+      "confidence": 52,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Man United",
+      "away": "Burnley",
+      "predicted": "Home Win",
+      "actual": "draw",
+      "confidence": 52,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Newcastle",
+      "away": "Sheffield United",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 94,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Wolves",
+      "away": "Luton",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 69,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Everton",
+      "away": "Brentford",
+      "predicted": "Away Win",
+      "actual": "home",
+      "confidence": 52,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Aston Villa",
+      "away": "Chelsea",
+      "predicted": "Away Win",
+      "actual": "draw",
+      "confidence": 52,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Bournemouth",
+      "away": "Brighton",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 52,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Tottenham",
+      "away": "Arsenal",
+      "predicted": "Away Win",
+      "actual": "away",
+      "confidence": 63,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Nott'm Forest",
+      "away": "Man City",
+      "predicted": "Away Win",
+      "actual": "away",
+      "confidence": 79,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Chelsea",
+      "away": "Tottenham",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 67,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Luton",
+      "away": "Everton",
+      "predicted": "Away Win",
+      "actual": "draw",
+      "confidence": 57,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Arsenal",
+      "away": "Bournemouth",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 82,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Brentford",
+      "away": "Fulham",
+      "predicted": "Home Win",
+      "actual": "draw",
+      "confidence": 60,
+      "correct": false
+    },
+    {
+      "league": "premier-league",
+      "home": "Burnley",
+      "away": "Newcastle",
+      "predicted": "Away Win",
+      "actual": "away",
+      "confidence": 52,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Sheffield United",
+      "away": "Nott'm Forest",
+      "predicted": "Away Win",
+      "actual": "away",
+      "confidence": 52,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Man City",
+      "away": "Wolves",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 92,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Brighton",
+      "away": "Aston Villa",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 58,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Chelsea",
+      "away": "West Ham",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 81,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Liverpool",
+      "away": "Tottenham",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 63,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Crystal Palace",
+      "away": "Man United",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 53,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Fulham",
+      "away": "Man City",
+      "predicted": "Away Win",
+      "actual": "away",
+      "confidence": 81,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Bournemouth",
+      "away": "Brentford",
+      "predicted": "Away Win",
+      "actual": "away",
+      "confidence": 52,
+      "correct": true
+    },
+    {
+      "league": "premier-league",
+      "home": "Everton",
+      "away": "Sheffield United",
+      "predicted": "Home Win",
+      "actual": "home",
+      "confidence": 85,
+      "correct": true
+    }
+  ]
+}
