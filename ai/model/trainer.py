@@ -89,7 +89,6 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     ]
     meta = LogisticRegressionCV(
         Cs=10, cv=5, max_iter=1000,
-        multi_class='multinomial' if n_classes > 2 else 'ovr',
         solver='lbfgs', n_jobs=-1, random_state=seed,
     )
     stack = StackingClassifier(
