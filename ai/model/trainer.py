@@ -19,7 +19,6 @@ import os, logging, joblib
 import numpy as np
 import pandas as pd
 from typing import Optional
-from sklearn.utils.class_weight import compute_sample_weight
 
 from xgboost import XGBClassifier
 from sklearn.ensemble import (
@@ -130,18 +129,8 @@ class FootballPredictor:
         X = np.where(np.isfinite(X), X, 0.0)
         X = np.clip(X, -1e6, 1e6)
 
-        # Oversample draws (label=1) by 30% — enough to stop ignoring them
-        # without collapsing home/away accuracy (2× was too aggressive)
-        draw_mask = y_1x2 == 1
-        n_extra = max(1, int(draw_mask.sum() * 0.3))
-        extra_idx = np.random.default_rng(42).choice(np.where(draw_mask)[0], n_extra, replace=True)
-        X = np.vstack([X, X[extra_idx]])
-        y_1x2 = np.concatenate([y_1x2, y_1x2[extra_idx]])
-        y_goals = np.concatenate([y_goals, y_goals[extra_idx]])
-        logger.info(f"After draw oversampling (+30%): {len(X):,} samples "
-                    f"({int(draw_mask.sum())} → {int((y_1x2==1).sum())} draws)")
-
-        sw = compute_sample_weight('balanced', y_1x2)
+        # No oversampling — class_weight='balanced' on all base models handles draw imbalance
+        # without distorting home/away decision boundaries.
 
         logger.info("Step 3/4  Fitting outcome stack (XGB+HGB+ET+RF → LR meta)…")
         self._outcome_pipe = _make_stack(n_classes=3, seed=42)
