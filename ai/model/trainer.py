@@ -130,13 +130,16 @@ class FootballPredictor:
         X = np.where(np.isfinite(X), X, 0.0)
         X = np.clip(X, -1e6, 1e6)
 
-        # Oversample draws (label=1) 2× to combat class imbalance (draw acc was 5%)
+        # Oversample draws (label=1) by 30% — enough to stop ignoring them
+        # without collapsing home/away accuracy (2× was too aggressive)
         draw_mask = y_1x2 == 1
-        X = np.vstack([X, X[draw_mask], X[draw_mask]])
-        y_1x2 = np.concatenate([y_1x2, y_1x2[draw_mask], y_1x2[draw_mask]])
-        y_goals = np.concatenate([y_goals, y_goals[draw_mask], y_goals[draw_mask]])
-        logger.info(f"After draw oversampling: {len(X):,} samples "
-                    f"({int(draw_mask.sum())} draws → {int((y_1x2==1).sum())})")
+        n_extra = max(1, int(draw_mask.sum() * 0.3))
+        extra_idx = np.random.default_rng(42).choice(np.where(draw_mask)[0], n_extra, replace=True)
+        X = np.vstack([X, X[extra_idx]])
+        y_1x2 = np.concatenate([y_1x2, y_1x2[extra_idx]])
+        y_goals = np.concatenate([y_goals, y_goals[extra_idx]])
+        logger.info(f"After draw oversampling (+30%): {len(X):,} samples "
+                    f"({int(draw_mask.sum())} → {int((y_1x2==1).sum())} draws)")
 
         sw = compute_sample_weight('balanced', y_1x2)
 
@@ -206,10 +209,18 @@ class FootballPredictor:
         p_home, p_draw, p_away = float(outcome_probs[0]), float(outcome_probs[1]), float(outcome_probs[2])
         p_over25 = float(goals_probs[1]) if len(goals_probs) > 1 else 0.5
 
-        idx = int(np.argmax([p_home, p_draw, p_away]))
+        probs = [p_home, p_draw, p_away]
+        idx = int(np.argmax(probs))
+
+        # Draw guard: only call a draw if it beats both alternatives by ≥4pp.
+        # Prevents a marginal draw probability from overriding a clearer H/A call.
+        if idx == 1:
+            sorted_p = sorted(probs, reverse=True)
+            if sorted_p[0] - sorted_p[1] < 0.04:   # draw not clear enough → fall back
+                idx = 0 if p_home >= p_away else 2
+
         prediction_label = OUTCOME_LABELS[idx]
-        raw_conf = int(round(max(p_home, p_draw, p_away) * 100))
-        # Draws are inherently harder — floor them lower and only label high-conf draws
+        raw_conf = int(round(probs[idx] * 100))
         floor = 50 if idx == 1 else 52
         confidence = max(floor, min(95, raw_conf))
 
