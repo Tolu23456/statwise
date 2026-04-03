@@ -141,4 +141,23 @@ def load_training_data(seasons=None, leagues=None) -> pd.DataFrame:
     raw = download_all(seasons=seasons, leagues=leagues)
     if raw.empty:
         return pd.DataFrame()
-    return normalize_columns(raw)
+    df = normalize_columns(raw)
+
+    # Append StatsBomb open data (836 rows with xG-derived labels)
+    sb_path = os.path.join(DATA_DIR, 'statsbomb_open.csv')
+    if os.path.exists(sb_path):
+        try:
+            sb = pd.read_csv(sb_path)
+            # statsbomb_open.csv already has: home_team, away_team, home_goals, away_goals, date, league_slug
+            for col in ['odds_home', 'odds_draw', 'odds_away']:
+                sb[col] = float('nan')
+            sb['date'] = pd.to_datetime(sb['date'], errors='coerce')
+            needed = ['home_team', 'away_team', 'home_goals', 'away_goals', 'date', 'league_slug',
+                      'odds_home', 'odds_draw', 'odds_away']
+            sb = sb[[c for c in needed if c in sb.columns]].dropna(subset=['home_team', 'away_team'])
+            df = pd.concat([df, sb], ignore_index=True)
+            logger.info(f"StatsBomb open data merged: +{len(sb)} rows  (total {len(df)})")
+        except Exception as e:
+            logger.warning(f"Could not load statsbomb_open.csv: {e}")
+
+    return df

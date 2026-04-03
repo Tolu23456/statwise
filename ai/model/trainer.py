@@ -19,6 +19,7 @@ import os, logging, joblib
 import numpy as np
 import pandas as pd
 from typing import Optional
+from sklearn.utils.class_weight import compute_sample_weight
 
 from xgboost import XGBClassifier
 from sklearn.ensemble import (
@@ -52,11 +53,12 @@ def _xgb(n_classes: int, seed: int = 42) -> XGBClassifier:
     )
 
 
-def _hgb(seed: int = 42) -> HistGradientBoostingClassifier:
+def _hgb(seed: int = 42, class_weight: str | None = 'balanced') -> HistGradientBoostingClassifier:
     return HistGradientBoostingClassifier(
         max_iter=500, max_depth=8, max_leaf_nodes=127,
         learning_rate=0.05, min_samples_leaf=20,
         l2_regularization=2.0, random_state=seed,
+        class_weight=class_weight,
     )
 
 
@@ -128,6 +130,16 @@ class FootballPredictor:
         X = np.where(np.isfinite(X), X, 0.0)
         X = np.clip(X, -1e6, 1e6)
 
+        # Oversample draws (label=1) 2× to combat class imbalance (draw acc was 5%)
+        draw_mask = y_1x2 == 1
+        X = np.vstack([X, X[draw_mask], X[draw_mask]])
+        y_1x2 = np.concatenate([y_1x2, y_1x2[draw_mask], y_1x2[draw_mask]])
+        y_goals = np.concatenate([y_goals, y_goals[draw_mask], y_goals[draw_mask]])
+        logger.info(f"After draw oversampling: {len(X):,} samples "
+                    f"({int(draw_mask.sum())} draws → {int((y_1x2==1).sum())})")
+
+        sw = compute_sample_weight('balanced', y_1x2)
+
         logger.info("Step 3/4  Fitting outcome stack (XGB+HGB+ET+RF → LR meta)…")
         self._outcome_pipe = _make_stack(n_classes=3, seed=42)
         self._outcome_pipe.fit(X, y_1x2)
@@ -196,7 +208,10 @@ class FootballPredictor:
 
         idx = int(np.argmax([p_home, p_draw, p_away]))
         prediction_label = OUTCOME_LABELS[idx]
-        confidence = max(52, min(95, int(round(max(p_home, p_draw, p_away) * 100))))
+        raw_conf = int(round(max(p_home, p_draw, p_away) * 100))
+        # Draws are inherently harder — floor them lower and only label high-conf draws
+        floor = 50 if idx == 1 else 52
+        confidence = max(floor, min(95, raw_conf))
 
         def edge(prob, odds):
             return round((prob * odds) - 1.0, 3) if odds and odds > 1 else 0.0
@@ -268,7 +283,13 @@ def _build_reasoning(
         if h2h_avg_goals > 3.0:
             parts.append(f"H2H history ({int(h2h_n)} matches) tends to produce goals ({h2h_avg_goals:.1f} avg).")
         elif h2h_avg_goals < 2.0:
-            parts.append(f"H2H history ({int(h2h_n)} matches) has been low-scoring ({h2h_avg_goals:.1f} avg).")
+            parts.append(f"H2H history ({int(h2h_n)} matches) has been low-scoring ({h2h_avg_goals:.1f} avg) — draw-friendly.")
+
+    if pred == 'Draw':
+        top2_gap = sorted([ph, pd_, pa], reverse=True)
+        gap = top2_gap[0] - top2_gap[1]
+        if gap < 0.05:
+            parts.append("All three outcomes are within 5% probability — high uncertainty, classic draw scenario.")
 
     if p_over25 > 65:
         parts.append(f"Goals expected — {p_over25:.0f}% Over 2.5.")
