@@ -2,6 +2,9 @@
 .firebase/
 firebase-debug.log
 
+# Model
+./ai/models/football_predictor.pkl
+
 # Node
 node_modules/
 
