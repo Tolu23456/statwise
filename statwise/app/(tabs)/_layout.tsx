@@ -71,6 +71,10 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen name="insight-detail" options={{ href: null }} />
+      <Tabs.Screen name="backtesting" options={{ href: null }} />
+      <Tabs.Screen name="privacy-policy" options={{ href: null }} />
+      <Tabs.Screen name="terms-of-service" options={{ href: null }} />
     </Tabs>
   );
 }
