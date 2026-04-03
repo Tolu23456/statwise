@@ -77,13 +77,15 @@ def fetch_statsbomb() -> pd.DataFrame:
 
 
 # ─── 3. OpenFootball (openfootball/football.json) ────────────────────────────
+# URL format: /{season}/{code}.json  e.g. /2023-24/en.1.json
 
-OF_COMPETITIONS = {
-    "eng-england/2023-24": "openfootball-premier-league",
-    "de-bundesliga/2023-24": "openfootball-bundesliga",
-    "es-liga/2023-24": "openfootball-la-liga",
-    "it-seriea/2023-24": "openfootball-serie-a",
-    "fr-ligue1/2023-24": "openfootball-ligue1",
+OF_SEASONS = ["2023-24", "2022-23", "2021-22", "2020-21"]
+OF_LEAGUES = {
+    "en.1": "openfootball-premier-league",
+    "de.1": "openfootball-bundesliga",
+    "es.1": "openfootball-la-liga",
+    "it.1": "openfootball-serie-a",
+    "fr.1": "openfootball-ligue1",
 }
 OF_BASE = "https://raw.githubusercontent.com/openfootball/football.json/master"
 OF_CACHE = os.path.join(DATA_DIR, "openfootball.csv")
@@ -97,26 +99,19 @@ def fetch_openfootball() -> pd.DataFrame:
             pass
 
     rows = []
-    for path, slug in OF_COMPETITIONS.items():
-        r = _get(f"{OF_BASE}/{path}/teams.json")  # check if season exists
-        # Try the matches file
-        r2 = _get(f"{OF_BASE}/{path}/matches.json")
-        if r2 is None:
-            continue
-        data = r2.json()
-        for rd in data.get("rounds", []):
-            for m in rd.get("matches", []):
-                score = m.get("score", {})
-                ft = score.get("ft")
+    for season in OF_SEASONS:
+        for code, slug in OF_LEAGUES.items():
+            r = _get(f"{OF_BASE}/{season}/{code}.json")
+            if r is None:
+                continue
+            for m in r.json().get("matches", []):
+                ft = (m.get("score") or {}).get("ft")
                 if not ft or len(ft) < 2:
                     continue
                 rows.append({
-                    "home_team": m["team1"],
-                    "away_team": m["team2"],
-                    "home_goals": int(ft[0]),
-                    "away_goals": int(ft[1]),
-                    "date": m.get("date"),
-                    "league_slug": slug,
+                    "home_team": m["team1"], "away_team": m["team2"],
+                    "home_goals": int(ft[0]), "away_goals": int(ft[1]),
+                    "date": m.get("date"), "league_slug": slug,
                 })
 
     df = pd.DataFrame(rows)
@@ -126,9 +121,9 @@ def fetch_openfootball() -> pd.DataFrame:
     return df
 
 
-# ─── 4. FiveThirtyEight SPI (soccer-spi) ────────────────────────────────────
+# ─── 4. FiveThirtyEight SPI (GitHub raw CSV) ─────────────────────────────────
 
-FTE_URL = "https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv"
+FTE_URL = "https://raw.githubusercontent.com/fivethirtyeight/data/master/soccer-spi/spi_matches.csv"
 FTE_CACHE = os.path.join(DATA_DIR, "fte_spi.csv")
 
 
@@ -144,18 +139,49 @@ def fetch_fivethirtyeight() -> pd.DataFrame:
         return pd.DataFrame()
 
     raw = pd.read_csv(io.StringIO(r.text), low_memory=False)
-    # Only completed matches
     raw = raw.dropna(subset=["score1", "score2"])
     df = pd.DataFrame({
         "home_team": raw["team1"],
         "away_team": raw["team2"],
-        "home_goals": raw["score1"].astype(int),
-        "away_goals": raw["score2"].astype(int),
+        "home_goals": pd.to_numeric(raw["score1"], errors="coerce").fillna(0).astype(int),
+        "away_goals": pd.to_numeric(raw["score2"], errors="coerce").fillna(0).astype(int),
         "date": raw.get("date"),
         "league_slug": "fte-" + raw["league"].str.lower().str.replace(" ", "-", regex=False),
     })
     df.to_csv(FTE_CACHE, index=False)
     logger.info(f"FiveThirtyEight: {len(df)} matches fetched")
+    return df
+
+
+# ─── Bonus: International results (martj42/international_results, GitHub) ────
+
+INTL_URL = "https://raw.githubusercontent.com/martj42/international_results/master/results.csv"
+INTL_CACHE = os.path.join(DATA_DIR, "international_results.csv")
+
+
+def fetch_international_results() -> pd.DataFrame:
+    if os.path.exists(INTL_CACHE) and (time.time() - os.path.getmtime(INTL_CACHE)) < 86400:
+        try:
+            return pd.read_csv(INTL_CACHE, low_memory=False)
+        except Exception:
+            pass
+
+    r = _get(INTL_URL, timeout=30)
+    if r is None:
+        return pd.DataFrame()
+
+    raw = pd.read_csv(io.StringIO(r.text), low_memory=False)
+    raw = raw.dropna(subset=["home_score", "away_score"])
+    df = pd.DataFrame({
+        "home_team": raw["home_team"],
+        "away_team": raw["away_team"],
+        "home_goals": pd.to_numeric(raw["home_score"], errors="coerce").fillna(0).astype(int),
+        "away_goals": pd.to_numeric(raw["away_score"], errors="coerce").fillna(0).astype(int),
+        "date": raw.get("date"),
+        "league_slug": "international-" + raw["tournament"].str.lower().str.replace(r"\s+", "-", regex=True),
+    })
+    df.to_csv(INTL_CACHE, index=False)
+    logger.info(f"International results: {len(df)} matches fetched")
     return df
 
 
@@ -229,10 +255,11 @@ def load_all_open_sources() -> pd.DataFrame:
     Source 1 (football-data.co.uk) is handled separately by downloader.py.
     """
     sources = [
-        ("StatsBomb",        fetch_statsbomb),
-        ("OpenFootball",     fetch_openfootball),
-        ("FiveThirtyEight",  fetch_fivethirtyeight),
-        ("ClubElo",          fetch_clubelo),
+        ("StatsBomb",            fetch_statsbomb),
+        ("OpenFootball",         fetch_openfootball),
+        ("FiveThirtyEight",      fetch_fivethirtyeight),
+        ("InternationalResults", fetch_international_results),
+        ("ClubElo",              fetch_clubelo),
     ]
     frames = []
     for name, fn in sources:

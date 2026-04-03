@@ -155,6 +155,16 @@ class PredictionEngine:
         logger.info(f"Generated {len(results)} predictions.")
         return results
 
+    # Columns that exist in the Supabase predictions table.
+    # odds_home / odds_draw / odds_away are NOT in the schema — strip them.
+    _DB_COLUMNS = {
+        "match_id", "match_title", "home_team", "away_team",
+        "league", "league_slug", "prediction", "confidence",
+        "odds", "reasoning", "kickoff_time", "match_date",
+        "tier", "tier_required", "status",
+        "actual_result", "settled_at",
+    }
+
     def push_to_supabase(self, predictions: list[dict]) -> int:
         if not predictions:
             return 0
@@ -166,7 +176,9 @@ class PredictionEngine:
         saved = 0
         for p in predictions:
             try:
-                sb.table("predictions").upsert(p, on_conflict="match_id").execute()
+                # Strip any keys not in the schema to avoid PGRST204 errors
+                row = {k: v for k, v in p.items() if k in self._DB_COLUMNS}
+                sb.table("predictions").upsert(row, on_conflict="match_id").execute()
                 saved += 1
             except Exception as e:
                 logger.warning(f"Failed to save prediction {p.get('match_id')}: {e}")

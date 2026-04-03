@@ -67,11 +67,28 @@ def write_heartbeat(status: str, n_predictions: int = 0, error: str = "",
         logger.warning(f"Could not write heartbeat: {e}")
 
 
+def _try_reload_model(engine) -> None:
+    """If no model is loaded yet, check if one has become available."""
+    if engine.predictor is not None:
+        return
+    from model.trainer import FootballPredictor
+    model_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "models", "football_predictor.pkl"
+    )
+    if os.path.exists(model_path):
+        try:
+            engine.predictor = FootballPredictor.load(model_path)
+            logger.info("Model became available — loaded into scheduler.")
+        except Exception as e:
+            logger.warning(f"Model exists but could not load: {e}")
+
+
 def run_prediction_cycle(engine) -> int:
     """
     One full fetch → predict → push → settle cycle.
     Returns number of predictions saved.
     """
+    _try_reload_model(engine)
     logger.info("── Starting prediction cycle ──────────────────────────────")
     try:
         preds = engine.run()
@@ -119,9 +136,25 @@ def retrain_engine() -> object:
 def build_engine():
     """Build and warm up the prediction engine (load or train model)."""
     from model.predictor import PredictionEngine
+    from model.trainer import FootballPredictor
     logger.info("Initialising PredictionEngine…")
     engine = PredictionEngine()
-    engine.load_or_train(force_retrain=False)
+
+    model_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "models", "football_predictor.pkl"
+    )
+
+    if os.path.exists(model_path):
+        try:
+            engine.predictor = FootballPredictor.load(model_path)
+            logger.info("Loaded existing trained model.")
+        except Exception as e:
+            logger.warning(f"Could not load model ({e}) – will retrain on next schedule.")
+    else:
+        logger.info(
+            "No trained model found yet. "
+            "Scheduler will wait for Train Model workflow to complete and retry."
+        )
     return engine
 
 
