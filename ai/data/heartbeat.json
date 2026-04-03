@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-04-03T01:13:00.974193Z",
+  "timestamp": "2026-04-03T06:50:41.018249Z",
   "status": "ok",
-  "n_predictions": 0,
-  "n_leagues": 0,
+  "n_predictions": 15,
+  "n_leagues": 1,
   "error": "",
   "next_run_in_seconds": 1200
 }
