@@ -10,6 +10,7 @@ type Props = {
   prediction: Prediction;
   locked?: boolean;
   nextTier?: string;
+  onPress?: () => void;
 };
 
 function formatKickoff(raw: string): string {
@@ -28,18 +29,7 @@ function getConfidenceColor(confidence: number, C: typeof Colors.dark) {
   return C.danger;
 }
 
-function RedactedBlock({ width, height = 14, C }: { width: number | string; height?: number; C: typeof Colors.dark }) {
-  return (
-    <View
-      style={[
-        styles.redactedBlock,
-        { width: width as any, height, backgroundColor: C.border, opacity: 0.6 },
-      ]}
-    />
-  );
-}
-
-export function PredictionCard({ prediction, locked = false, nextTier = 'Premium Tier' }: Props) {
+export function PredictionCard({ prediction, locked = false, nextTier = 'Premium Tier', onPress }: Props) {
   const { scheme } = useTheme();
   const C = Colors[scheme];
   const router = useRouter();
@@ -108,20 +98,32 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
   }
 
   return (
-    <View style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}>
+    <TouchableOpacity
+      activeOpacity={0.75}
+      onPress={onPress}
+      style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}
+    >
       <View style={styles.header}>
         <Text style={[styles.league, { color: C.primary, backgroundColor: C.primaryLight }]}>
           {prediction.league}
         </Text>
-        <Text style={[styles.time, { color: C.textSecondary }]}>{formatKickoff(prediction.kickoff_time)}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+          <Text style={[styles.time, { color: C.textSecondary }]}>{formatKickoff(prediction.kickoff_time)}</Text>
+          <Ionicons name="chevron-forward" size={14} color={C.textMuted} />
+        </View>
       </View>
+
       <Text style={[styles.matchTitle, { color: C.text }]}>{prediction.match_title}</Text>
+
       <View style={styles.row}>
         <View style={[styles.predBadge, { backgroundColor: C.primaryLight }]}>
           <Text style={[styles.predText, { color: C.primary }]}>{prediction.prediction}</Text>
         </View>
-        <Text style={[styles.odds, { color: C.textSecondary }]}>Odds: {prediction.odds}</Text>
+        <Text style={[styles.odds, { color: C.textSecondary }]}>
+          {prediction.odds ? `Odds: ${prediction.odds}` : ''}
+        </Text>
       </View>
+
       <View style={styles.confidenceRow}>
         <Text style={[styles.confidenceLabel, { color: C.textSecondary }]}>
           Confidence:{' '}
@@ -133,12 +135,18 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
           style={[styles.fill, { width: `${prediction.confidence}%` as any, backgroundColor: confColor }]}
         />
       </View>
+
       {prediction.reasoning && (
         <Text style={[styles.reasoning, { color: C.textSecondary }]} numberOfLines={2}>
           {prediction.reasoning}
         </Text>
       )}
-    </View>
+
+      <View style={[styles.tapHint, { borderTopColor: C.border }]}>
+        <Ionicons name="analytics-outline" size={13} color={C.textMuted} />
+        <Text style={[styles.tapHintText, { color: C.textMuted }]}>Tap for full analysis</Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 
@@ -150,24 +158,15 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     overflow: 'hidden',
   },
-  lockedCard: {
-    opacity: 0.92,
-  },
+  lockedCard: { opacity: 0.92 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
   league: {
-    fontSize: 11,
-    fontWeight: '700',
-    paddingHorizontal: 10,
-    paddingVertical: 3,
-    borderRadius: 20,
-    overflow: 'hidden',
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    fontSize: 11, fontWeight: '700', paddingHorizontal: 10, paddingVertical: 3,
+    borderRadius: 20, overflow: 'hidden', textTransform: 'uppercase', letterSpacing: 0.5,
   },
   time: { fontSize: 13 },
   matchTitle: { fontSize: 16, fontWeight: '700', marginBottom: 10, lineHeight: 22 },
   blurredSection: { marginBottom: 4 },
-  redactedBlock: { borderRadius: 4, marginVertical: 2 },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
   predBadge: { paddingHorizontal: 12, paddingVertical: 5, borderRadius: 8 },
   predText: { fontWeight: '700', fontSize: 14 },
@@ -176,28 +175,22 @@ const styles = StyleSheet.create({
   confidenceLabel: { fontSize: 13 },
   bar: { height: 6, borderRadius: 3, overflow: 'hidden', marginBottom: 10 },
   fill: { height: '100%', borderRadius: 3 },
-  reasoning: { fontSize: 13, lineHeight: 18, marginTop: 4 },
+  reasoning: { fontSize: 13, lineHeight: 18, marginTop: 2, marginBottom: 8 },
+  tapHint: {
+    flexDirection: 'row', alignItems: 'center', gap: 5,
+    borderTopWidth: 1, paddingTop: 10, marginTop: 2,
+  },
+  tapHintText: { fontSize: 12 },
   lockCta: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-    borderTopWidth: 1,
-    paddingTop: 12,
-    marginTop: 8,
+    flexDirection: 'row', alignItems: 'center', gap: 10,
+    borderTopWidth: 1, paddingTop: 12, marginTop: 8,
   },
   lockIconWrap: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: 32, height: 32, borderRadius: 16,
+    alignItems: 'center', justifyContent: 'center',
   },
   lockLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   lockSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 1 },
-  upgradePill: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
-  },
+  upgradePill: { paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20 },
   upgradePillText: { color: '#fff', fontSize: 12, fontWeight: '700' },
 });

@@ -12,6 +12,7 @@ import { supabase, Prediction } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { PredictionCard } from '@/components/PredictionCard';
+import { PredictionDetailModal } from '@/components/PredictionDetailModal';
 
 const POLL_INTERVAL_MS = 20 * 60 * 1000;
 
@@ -72,6 +73,7 @@ export default function HomeScreen() {
   const [search, setSearch] = useState('');
   const [refreshing, setRefreshing] = useState(false);
   const [newPredictionsBadge, setNewPredictionsBadge] = useState(0);
+  const [selectedPrediction, setSelectedPrediction] = useState<Prediction | null>(null);
   const badgeFade = useRef(new Animated.Value(0)).current;
 
   const userTier = profile?.current_tier ?? 'Free Tier';
@@ -271,10 +273,21 @@ export default function HomeScreen() {
             </View>
           }
           renderItem={({ item }) => (
-            <PredictionCard prediction={item} locked={false} nextTier={nextTier} />
+            <PredictionCard
+              prediction={item}
+              locked={false}
+              nextTier={nextTier}
+              onPress={() => setSelectedPrediction(item)}
+            />
           )}
         />
       )}
+
+      <PredictionDetailModal
+        prediction={selectedPrediction}
+        visible={selectedPrediction !== null}
+        onClose={() => setSelectedPrediction(null)}
+      />
     </View>
   );
 }
