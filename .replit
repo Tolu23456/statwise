@@ -67,3 +67,8 @@ externalPort = 3000
 [nix]
 channel = "stable-25_05"
 packages = ["glibcLocales", "libjpeg_turbo", "libpng", "libxcrypt", "ocl-icd", "opencl-headers", "pkg-config", "which", "xsimd"]
+
+[userenv]
+
+[userenv.shared]
+FOOTBALL_API_TOKEN = "32bde0ee8c4146b783b331e4c677cbfd"
