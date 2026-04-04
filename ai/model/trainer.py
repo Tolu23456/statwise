@@ -107,9 +107,8 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
         ('hgb', _cal(_hgb(seed))),
         ('et',  _cal(_et(n_classes, seed))),
         ('rf',  _cal(_rf(seed))),
-        # Neural net: softmax already provides calibrated probabilities;
-        # wrap in sigmoid calibration for consistent API inside StackingClassifier
-        ('nn',  _cal(_nn(seed))),
+        # Neural net outputs calibrated softmax probabilities — no calibration wrapper needed
+        ('nn',  _nn(seed)),
     ]
     meta = LogisticRegressionCV(
         Cs=10, cv=5, max_iter=1000,

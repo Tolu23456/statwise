@@ -106,6 +106,8 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
     weight_decay : AdamW weight decay (default 1e-4)
     random_state : seed for reproducibility
     """
+    # Explicit classifier tag — required by sklearn 1.6+ strict validation
+    _estimator_type = "classifier"
 
     def __init__(
         self,
