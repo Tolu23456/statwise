@@ -199,6 +199,98 @@ class FootballPredictor:
         logger.info(f"Model loaded from {path}  [5-model stacking ensemble with neural network]")
         return obj
 
+    def predict_batch(
+        self,
+        matches: list[dict],
+        history: Optional[pd.DataFrame] = None,
+    ) -> list[dict]:
+        """
+        Predict a list of matches in a single batched model call.
+        Dramatically faster than calling predict_match() in a loop because
+        sklearn stacking classifiers are vectorized for batch inference.
+
+        Each match dict: home_team, away_team, league_slug,
+                         odds_home, odds_draw, odds_away (all optional).
+        Returns a list of prediction dicts in the same order as `matches`.
+        """
+        if not self._trained:
+            raise RuntimeError("Model not trained. Call train() or load() first.")
+
+        hist_df = history if isinstance(history, pd.DataFrame) else pd.DataFrame()
+
+        # Build full feature matrix for all matches at once
+        X = self.feature_pipe.build_features(matches, hist_df)
+        X = np.where(np.isfinite(X), X, 0.0)
+        X = np.clip(X, -1e6, 1e6)
+
+        # Single model call for all matches
+        outcome_probs_all = self._outcome_pipe.predict_proba(X)   # (N, 3)
+        goals_probs_all   = self._goals_pipe.predict_proba(X)     # (N, 2)
+
+        DRAW_THRESHOLD  = 0.30
+        CLEAR_FAVOURITE = 0.52
+
+        results = []
+        for i, match in enumerate(matches):
+            p_home = float(outcome_probs_all[i][0])
+            p_draw = float(outcome_probs_all[i][1])
+            p_away = float(outcome_probs_all[i][2])
+            p_over25 = float(goals_probs_all[i][1]) if goals_probs_all.shape[1] > 1 else 0.5
+
+            probs = [p_home, p_draw, p_away]
+            raw_idx = int(np.argmax(probs))
+
+            best_non_draw = max(p_home, p_away)
+            if p_draw >= DRAW_THRESHOLD and best_non_draw < CLEAR_FAVOURITE:
+                idx = 1
+            elif raw_idx == 1 and best_non_draw >= CLEAR_FAVOURITE:
+                idx = 0 if p_home >= p_away else 2
+            else:
+                idx = raw_idx
+
+            prediction_label = OUTCOME_LABELS[idx]
+            raw_conf = int(round(probs[idx] * 100))
+            floor = 48 if idx == 1 else 52
+            confidence = max(floor, min(95, raw_conf))
+
+            def edge(prob, odds):
+                return round((prob * odds) - 1.0, 3) if odds and odds > 1 else 0.0
+
+            odds_home = match.get('odds_home')
+            odds_draw = match.get('odds_draw')
+            odds_away_val = match.get('odds_away')
+            feat_vec = X[i]
+
+            reasoning = _build_reasoning(
+                match.get('home_team', ''), match.get('away_team', ''),
+                prediction_label,
+                p_home, p_draw, p_away,
+                feat_vec[0], feat_vec[1], feat_vec[2],
+                feat_vec[13], feat_vec[23],
+                p_over25, confidence,
+                feat_vec[46], feat_vec[47], feat_vec[48], feat_vec[49],
+                feat_vec[37], feat_vec[56],
+            )
+
+            results.append({
+                'prediction':        prediction_label,
+                'confidence':        confidence,
+                'prob_home':         round(p_home  * 100, 1),
+                'prob_draw':         round(p_draw  * 100, 1),
+                'prob_away':         round(p_away  * 100, 1),
+                'prob_over25':       round(p_over25 * 100, 1),
+                'odds_implied_home': round(1 / max(p_home, 0.01), 2),
+                'odds_implied_draw': round(1 / max(p_draw, 0.01), 2),
+                'odds_implied_away': round(1 / max(p_away, 0.01), 2),
+                'suggested_odds':    [odds_home, odds_draw, odds_away_val][idx],
+                'value_home':        edge(p_home, odds_home),
+                'value_draw':        edge(p_draw, odds_draw),
+                'value_away':        edge(p_away, odds_away_val),
+                'reasoning':         reasoning,
+            })
+
+        return results
+
     def predict_match(
         self, home_team: str, away_team: str,
         league_slug: str = 'all',

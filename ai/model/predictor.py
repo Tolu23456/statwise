@@ -109,26 +109,34 @@ class PredictionEngine:
             logger.warning("No upcoming fixtures found.")
             return []
 
+        # Batch predict all fixtures in a single model call (much faster than a loop)
+        match_inputs = [
+            {
+                'home_team':   fix['home_team'],
+                'away_team':   fix['away_team'],
+                'league_slug': fix.get('league_slug', 'all'),
+                'odds_home':   fix.get('odds_home'),
+                'odds_draw':   fix.get('odds_draw'),
+                'odds_away':   fix.get('odds_away'),
+            }
+            for fix in fixtures
+        ]
+
+        try:
+            preds = self.predictor.predict_batch(match_inputs, self.history)
+        except Exception as e:
+            logger.error(f"Batch prediction failed: {e}", exc_info=True)
+            return []
+
         results = []
-        for fix in fixtures:
+        for fix, pred in zip(fixtures, preds):
             try:
-                pred = self.predictor.predict_match(
-                    home_team  = fix['home_team'],
-                    away_team  = fix['away_team'],
-                    league_slug= fix.get('league_slug', 'all'),
-                    history    = self.history,
-                    odds_home  = fix.get('odds_home'),
-                    odds_draw  = fix.get('odds_draw'),
-                    odds_away  = fix.get('odds_away'),
-                )
                 tier_name, tier_db = _tier_for_confidence(pred['confidence'])
                 kickoff    = fix.get('kickoff_time', '')
                 match_date = kickoff[:10] if kickoff else str(datetime.date.today())
+                odds_val   = (fix.get('odds_home') or pred.get('suggested_odds') or 1.90)
 
-                # Use real odds from API if available, fall back to model suggestion
-                odds_val = (fix.get('odds_home') or pred.get('suggested_odds') or 1.90)
-
-                row = {
+                results.append({
                     "match_id":      fix['match_id'],
                     "match_title":   fix['match_title'],
                     "home_team":     fix['home_team'],
@@ -147,10 +155,9 @@ class PredictionEngine:
                     "tier":          tier_db,
                     "tier_required": tier_name,
                     "status":        "upcoming",
-                }
-                results.append(row)
+                })
             except Exception as e:
-                logger.warning(f"Prediction failed for {fix.get('match_title', '?')}: {e}")
+                logger.warning(f"Failed to build row for {fix.get('match_title', '?')}: {e}")
 
         logger.info(f"Generated {len(results)} predictions.")
         return results
