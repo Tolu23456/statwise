@@ -81,12 +81,14 @@ def _rf(seed: int = 42) -> RandomForestClassifier:
 
 def _mlp(seed: int = 42) -> MLPClassifier:
     """
-    3-hidden-layer neural network: 256 → 128 → 64 neurons.
+    2-hidden-layer neural network: 128 → 64 neurons.
     ReLU activation, Adam optimiser, L2 regularisation (alpha=0.01).
     Early stopping on 10% validation split prevents overfitting.
+    MLPClassifier outputs softmax probabilities natively — no
+    CalibratedClassifierCV wrapper needed, keeping inference fast.
     """
     return MLPClassifier(
-        hidden_layer_sizes=(256, 128, 64),
+        hidden_layer_sizes=(128, 64),
         activation='relu',
         solver='adam',
         alpha=0.01,
@@ -113,7 +115,7 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
         ('hgb', CalibratedClassifierCV(_hgb(seed),            method='isotonic', cv=3)),
         ('et',  CalibratedClassifierCV(_et(n_classes, seed),  method='isotonic', cv=3)),
         ('rf',  CalibratedClassifierCV(_rf(seed),             method='isotonic', cv=3)),
-        ('mlp', CalibratedClassifierCV(_mlp(seed),            method='isotonic', cv=3)),
+        ('mlp', _mlp(seed)),  # softmax output is inherently calibrated; no wrapper needed
     ]
     meta = LogisticRegressionCV(
         Cs=10, cv=5, max_iter=1000,
@@ -223,13 +225,26 @@ class FootballPredictor:
         p_over25 = float(goals_probs[1]) if len(goals_probs) > 1 else 0.5
 
         probs = [p_home, p_draw, p_away]
-        idx = int(np.argmax(probs))
+        raw_idx = int(np.argmax(probs))
 
-        # Draw guard: only suppress a draw call if one team is a clear favourite (>50%).
-        # This is far less aggressive than before (was: drop draw if margin < 4pp).
-        # The neural network + LightGBM ensemble is trusted to find genuine draw signals.
-        if idx == 1 and max(p_home, p_away) > 0.50:
-            idx = 0 if p_home >= p_away else 2
+        # ── Draw detection (threshold-based, not pure argmax) ──────────────────
+        # Football draws rarely win a straight argmax because home/away probs
+        # split the "non-draw" mass. Diagnostic shows the model assigns draw
+        # probabilities of 30-37% on genuine draw matches yet gets overruled.
+        # Strategy:
+        #   • If p_draw ≥ 30% AND no team is a clear favourite (< 52%) → Draw
+        #   • If argmax=Draw but a clear favourite exists (≥ 52%) → fall back H/A
+        #   • Otherwise → trust raw argmax
+        DRAW_THRESHOLD   = 0.30   # above the ~26% base rate
+        CLEAR_FAVOURITE  = 0.52   # strong enough to override draw signal
+
+        best_non_draw = max(p_home, p_away)
+        if p_draw >= DRAW_THRESHOLD and best_non_draw < CLEAR_FAVOURITE:
+            idx = 1  # promote to Draw
+        elif raw_idx == 1 and best_non_draw >= CLEAR_FAVOURITE:
+            idx = 0 if p_home >= p_away else 2  # clear favourite overrides draw
+        else:
+            idx = raw_idx
 
         prediction_label = OUTCOME_LABELS[idx]
         raw_conf = int(round(probs[idx] * 100))
