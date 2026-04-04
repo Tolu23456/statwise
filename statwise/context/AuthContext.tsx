@@ -86,6 +86,35 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
       }, { onConflict: 'user_id' });
+
+      const referredBy = user.user_metadata?.referred_by as string | undefined;
+      if (referredBy) {
+        const { data: referrerCode } = await supabase
+          .from('referral_codes')
+          .select('user_id, code, total_referrals')
+          .eq('code', referredBy.toUpperCase())
+          .eq('active', true)
+          .single();
+
+        if (referrerCode && referrerCode.user_id !== user.id) {
+          await supabase.from('referrals').upsert({
+            referrer_id: referrerCode.user_id,
+            referred_id: user.id,
+            referral_code: referrerCode.code,
+            reward_claimed: false,
+            reward_amount: 500,
+            created_at: new Date().toISOString(),
+          }, { onConflict: 'referrer_id,referred_id' });
+
+          await supabase
+            .from('referral_codes')
+            .update({
+              total_referrals: (referrerCode.total_referrals ?? 0) + 1,
+              updated_at: new Date().toISOString(),
+            })
+            .eq('code', referrerCode.code);
+        }
+      }
     }
   }
 

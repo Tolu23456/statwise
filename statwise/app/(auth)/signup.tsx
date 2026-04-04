@@ -16,6 +16,7 @@ type FieldErrors = {
   email?: string;
   password?: string;
   confirmPassword?: string;
+  referralCode?: string;
   general?: string;
 };
 
@@ -70,11 +71,14 @@ export default function SignupScreen() {
   const emailRef = useRef<TextInputType>(null);
   const passwordRef = useRef<TextInputType>(null);
   const confirmRef = useRef<TextInputType>(null);
+  const referralRef = useRef<TextInputType>(null);
 
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [referralCode, setReferralCode] = useState('');
+  const [referralValid, setReferralValid] = useState<boolean | null>(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -82,6 +86,23 @@ export default function SignupScreen() {
 
   function clearFieldError(field: keyof FieldErrors) {
     if (errors[field]) setErrors(prev => ({ ...prev, [field]: undefined }));
+  }
+
+  async function validateReferralCode(code: string) {
+    const trimmed = code.trim().toUpperCase();
+    if (!trimmed) { setReferralValid(null); return; }
+    const { data } = await supabase
+      .from('referral_codes')
+      .select('code')
+      .eq('code', trimmed)
+      .eq('active', true)
+      .single();
+    setReferralValid(!!data);
+    if (!data) {
+      setErrors(prev => ({ ...prev, referralCode: 'Referral code not found.' }));
+    } else {
+      setErrors(prev => ({ ...prev, referralCode: undefined }));
+    }
   }
 
   function validateLocally(): boolean {
@@ -121,7 +142,12 @@ export default function SignupScreen() {
     const { error } = await supabase.auth.signUp({
       email: email.trim(),
       password,
-      options: { data: { display_name: displayName.trim() } },
+      options: {
+        data: {
+          display_name: displayName.trim(),
+          ...(referralCode.trim() ? { referred_by: referralCode.trim().toUpperCase() } : {}),
+        },
+      },
     });
     setLoading(false);
     if (error) {
@@ -316,6 +342,69 @@ export default function SignupScreen() {
               </View>
             )}
 
+            <Text style={[styles.label, { color: C.textSecondary, marginTop: 8 }]}>
+              Referral Code{' '}
+              <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12 }}>(optional)</Text>
+            </Text>
+            <View style={styles.referralWrapper}>
+              <TextInput
+                ref={referralRef}
+                style={[
+                  styles.referralInput,
+                  {
+                    backgroundColor: errors.referralCode
+                      ? C.dangerLight
+                      : referralValid === true
+                      ? (C as any).successLight ?? '#f0fdf4'
+                      : C.inputBg,
+                    borderColor: errors.referralCode
+                      ? C.danger
+                      : referralValid === true
+                      ? C.success
+                      : C.border,
+                    color: C.text,
+                  },
+                ]}
+                placeholder="Enter a friend's code"
+                placeholderTextColor={C.placeholder}
+                value={referralCode}
+                onChangeText={v => {
+                  const upper = v.toUpperCase();
+                  setReferralCode(upper);
+                  setReferralValid(null);
+                  clearFieldError('referralCode');
+                }}
+                onBlur={() => validateReferralCode(referralCode)}
+                autoCapitalize="characters"
+                autoCorrect={false}
+                returnKeyType="done"
+                onSubmitEditing={handleSignup}
+              />
+              {referralValid === true && (
+                <Ionicons
+                  name="checkmark-circle"
+                  size={20}
+                  color={C.success}
+                  style={styles.referralIcon}
+                />
+              )}
+              {errors.referralCode && (
+                <Ionicons
+                  name="close-circle"
+                  size={20}
+                  color={C.danger}
+                  style={styles.referralIcon}
+                />
+              )}
+            </View>
+            {errors.referralCode && <FieldErrorMsg text={errors.referralCode} color={C.danger} />}
+            {referralValid === true && (
+              <View style={styles.matchRow}>
+                <Ionicons name="checkmark-circle" size={13} color={C.success} />
+                <Text style={[styles.matchText, { color: C.success }]}>Valid referral code</Text>
+              </View>
+            )}
+
             <TouchableOpacity
               style={[styles.button, { backgroundColor: C.primary, opacity: loading ? 0.7 : 1 }]}
               onPress={handleSignup}
@@ -396,6 +485,12 @@ const styles = StyleSheet.create({
   matchRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginBottom: 12, marginTop: 2 },
   matchText: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   signInLink: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  referralWrapper: { position: 'relative', marginBottom: 4 },
+  referralInput: {
+    borderRadius: 12, borderWidth: 1, paddingLeft: 14, paddingRight: 46,
+    paddingVertical: 14, fontSize: 15, fontFamily: 'Inter_400Regular',
+  },
+  referralIcon: { position: 'absolute', right: 14, top: 0, bottom: 0, textAlignVertical: 'center', alignSelf: 'center' },
   button: { borderRadius: 14, padding: 16, alignItems: 'center', marginTop: 8 },
   buttonText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_600SemiBold' },
   footer: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center' },
