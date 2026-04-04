@@ -52,18 +52,18 @@ OUTCOME_LABELS = ['Home Win', 'Draw', 'Away Win']
 
 def _xgb(n_classes: int, seed: int = 42) -> XGBClassifier:
     return XGBClassifier(
-        n_estimators=300, max_depth=7, learning_rate=0.05,
+        n_estimators=200, max_depth=6, learning_rate=0.05,
         subsample=0.8, colsample_bytree=0.75, colsample_bylevel=0.75,
         min_child_weight=5, gamma=0.1, reg_alpha=0.2, reg_lambda=2.0,
         tree_method='hist',
         eval_metric='mlogloss' if n_classes > 2 else 'logloss',
-        random_state=seed, n_jobs=-1, verbosity=0,
+        random_state=seed, n_jobs=2, verbosity=0,
     )
 
 
 def _hgb(seed: int = 42) -> HistGradientBoostingClassifier:
     return HistGradientBoostingClassifier(
-        max_iter=200, max_depth=7, max_leaf_nodes=63,
+        max_iter=150, max_depth=6, max_leaf_nodes=47,
         learning_rate=0.05, min_samples_leaf=20,
         l2_regularization=2.0, random_state=seed,
         class_weight='balanced',
@@ -72,23 +72,23 @@ def _hgb(seed: int = 42) -> HistGradientBoostingClassifier:
 
 def _et(n_classes: int, seed: int = 42) -> ExtraTreesClassifier:
     return ExtraTreesClassifier(
-        n_estimators=200, max_depth=None, min_samples_leaf=5,
-        max_features='sqrt', random_state=seed, n_jobs=-1,
+        n_estimators=150, max_depth=20, min_samples_leaf=5,
+        max_features='sqrt', random_state=seed, n_jobs=2,
         class_weight='balanced',
     )
 
 
 def _rf(seed: int = 42) -> RandomForestClassifier:
     return RandomForestClassifier(
-        n_estimators=200, max_depth=18, min_samples_leaf=5,
-        max_features='sqrt', random_state=seed, n_jobs=-1,
+        n_estimators=150, max_depth=16, min_samples_leaf=5,
+        max_features='sqrt', random_state=seed, n_jobs=2,
         class_weight='balanced',
     )
 
 
 def _nn(seed: int = 0) -> NeuralNetClassifier:
     return NeuralNetClassifier(
-        epochs=80, batch_size=512,
+        epochs=50, batch_size=512,
         lr=3e-3, weight_decay=1e-4,
         random_state=seed,
     )
@@ -97,9 +97,15 @@ def _nn(seed: int = 0) -> NeuralNetClassifier:
 def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     """
     Build a 5-model stacking classifier wrapped in a StandardScaler pipeline.
-    Uses 3-fold CV to generate OOF meta-features (fast, still robust).
+
+    Memory-safe design:
+      - StackingClassifier n_jobs=1: folds run sequentially so we never have
+        5 × 3 model copies alive at the same time; each model still uses its
+        own limited thread pool.
+      - passthrough=False: meta-learner sees only the 15 OOF probability
+        columns, not 98 raw features concatenated (saves ~150 MB peak RAM).
+      - cv=3: three-fold OOF (good balance of bias/variance).
     """
-    # Tree/forest models — sigmoid calibration is 3× faster than isotonic
     _cal = lambda est: CalibratedClassifierCV(est, method='sigmoid', cv=2)
 
     base = [
@@ -107,7 +113,6 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
         ('hgb', _cal(_hgb(seed))),
         ('et',  _cal(_et(n_classes, seed))),
         ('rf',  _cal(_rf(seed))),
-        # Neural net outputs calibrated softmax probabilities — no calibration wrapper needed
         ('nn',  _nn(seed)),
     ]
     meta = LogisticRegressionCV(
@@ -117,10 +122,10 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     stack = StackingClassifier(
         estimators=base,
         final_estimator=meta,
-        cv=3,                       # 3-fold OOF (was 5)
+        cv=3,
         stack_method='predict_proba',
-        passthrough=True,           # raw features also reach meta-learner
-        n_jobs=-1,                  # parallel fold fitting
+        passthrough=False,          # meta-learner sees OOF probs only → less RAM
+        n_jobs=1,                   # sequential folds → peak memory stays bounded
     )
     return Pipeline([('scaler', StandardScaler()), ('stack', stack)])
 
@@ -141,7 +146,7 @@ class FootballPredictor:
         logger.info("Step 1/4  Computing Elo ratings and league stats…")
         self.feature_pipe.fit(df)
 
-        logger.info(f"Step 2/4  Building feature matrix ({N_FEATURES} features, ≤100 K samples)…")
+        logger.info(f"Step 2/4  Building feature matrix ({N_FEATURES} features, ≤60 K samples)…")
         X, y_1x2, y_goals = self.feature_pipe.build_training_set(df)
         if len(X) < min_samples:
             raise ValueError(f"Not enough samples: {len(X)} < {min_samples}")
