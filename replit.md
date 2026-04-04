@@ -19,7 +19,9 @@ Preferred communication style: Simple, everyday language.
 
 ### AI Backend (ai/)
 - **Language:** Python 3.11
-- **Model:** XGBoost + HistGBClassifier ensemble (60 features)
+- **Model:** 5-model deep stacking ensemble: XGBoost + HistGB + ExtraTrees + RandomForest + PyTorch NeuralNet → LogisticRegressionCV meta-learner
+- **Features:** 98 features across 22 groups (Elo, Attack/Defence Elo, Dixon-Coles score matrix, Poisson goal probs, H2H, venue-split form, consecutive runs, goals variance, etc.)
+- **C++ kernel:** ai/libstatwise.so — 11 exported functions including Dixon-Coles, attack/defence Elo, goals variance, venue-split form, consecutive run counters
 - **Schedule:** Predictions every 20 minutes, model retrain every 24 hours
 - **Entry point:** ai/scheduler.py
 
