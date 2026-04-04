@@ -1,13 +1,13 @@
 {
   "summary": {
     "tested": 150,
-    "overall_accuracy": 55.3,
+    "overall_accuracy": 60.0,
     "home_accuracy": 82.3,
-    "draw_accuracy": 0.0,
-    "away_accuracy": 66.7,
-    "high_conf_accuracy": 68.9,
-    "high_conf_sample": 45,
-    "timestamp": "2026-04-04T03:27:01.589723Z"
+    "draw_accuracy": 20.0,
+    "away_accuracy": 64.6,
+    "high_conf_accuracy": 71.7,
+    "high_conf_sample": 46,
+    "timestamp": "2026-04-04T04:00:24.750681Z"
   },
   "sample": [
     {
@@ -16,7 +16,7 @@
       "away": "Chelsea",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 67,
+      "confidence": 64,
       "correct": true
     },
     {
@@ -32,9 +32,9 @@
       "league": "premier-league",
       "home": "Crystal Palace",
       "away": "Newcastle",
-      "predicted": "Away Win",
+      "predicted": "Draw",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 48,
       "correct": false
     },
     {
@@ -52,7 +52,7 @@
       "away": "Sheffield United",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 83,
+      "confidence": 86,
       "correct": true
     },
     {
@@ -70,17 +70,17 @@
       "away": "Liverpool",
       "predicted": "Away Win",
       "actual": "draw",
-      "confidence": 62,
+      "confidence": 61,
       "correct": false
     },
     {
       "league": "premier-league",
       "home": "Fulham",
       "away": "Crystal Palace",
-      "predicted": "Away Win",
+      "predicted": "Draw",
       "actual": "draw",
-      "confidence": 52,
-      "correct": false
+      "confidence": 48,
+      "correct": true
     },
     {
       "league": "premier-league",
@@ -88,7 +88,7 @@
       "away": "Burnley",
       "predicted": "Home Win",
       "actual": "draw",
-      "confidence": 57,
+      "confidence": 59,
       "correct": false
     },
     {
@@ -97,7 +97,7 @@
       "away": "Sheffield United",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 93,
+      "confidence": 95,
       "correct": true
     },
     {
@@ -106,7 +106,7 @@
       "away": "Luton",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 64,
+      "confidence": 65,
       "correct": true
     },
     {
@@ -124,7 +124,7 @@
       "away": "Chelsea",
       "predicted": "Away Win",
       "actual": "draw",
-      "confidence": 60,
+      "confidence": 59,
       "correct": false
     },
     {
@@ -133,7 +133,7 @@
       "away": "Brighton",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 54,
       "correct": true
     },
     {
@@ -142,7 +142,7 @@
       "away": "Arsenal",
       "predicted": "Away Win",
       "actual": "away",
-      "confidence": 54,
+      "confidence": 53,
       "correct": true
     },
     {
@@ -151,7 +151,7 @@
       "away": "Man City",
       "predicted": "Away Win",
       "actual": "away",
-      "confidence": 72,
+      "confidence": 71,
       "correct": true
     },
     {
@@ -160,7 +160,7 @@
       "away": "Tottenham",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 54,
       "correct": true
     },
     {
@@ -169,7 +169,7 @@
       "away": "Everton",
       "predicted": "Away Win",
       "actual": "draw",
-      "confidence": 58,
+      "confidence": 53,
       "correct": false
     },
     {
@@ -178,17 +178,17 @@
       "away": "Bournemouth",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 84,
+      "confidence": 86,
       "correct": true
     },
     {
       "league": "premier-league",
       "home": "Brentford",
       "away": "Fulham",
-      "predicted": "Home Win",
+      "predicted": "Draw",
       "actual": "draw",
-      "confidence": 52,
-      "correct": false
+      "confidence": 48,
+      "correct": true
     },
     {
       "league": "premier-league",
@@ -223,7 +223,7 @@
       "away": "Aston Villa",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 63,
+      "confidence": 61,
       "correct": true
     },
     {
@@ -232,7 +232,7 @@
       "away": "West Ham",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 80,
+      "confidence": 77,
       "correct": true
     },
     {
@@ -241,7 +241,7 @@
       "away": "Tottenham",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 68,
+      "confidence": 70,
       "correct": true
     },
     {
@@ -250,7 +250,7 @@
       "away": "Man United",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 54,
+      "confidence": 56,
       "correct": true
     },
     {
@@ -259,7 +259,7 @@
       "away": "Man City",
       "predicted": "Away Win",
       "actual": "away",
-      "confidence": 73,
+      "confidence": 72,
       "correct": true
     },
     {
@@ -277,7 +277,7 @@
       "away": "Sheffield United",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 92,
+      "confidence": 89,
       "correct": true
     }
   ]
