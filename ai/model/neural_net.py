@@ -155,8 +155,8 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         )
 
         dataset = tud.TensorDataset(
-            torch.FloatTensor(X),
-            torch.LongTensor(y_idx),
+            torch.FloatTensor(np.ascontiguousarray(X, dtype=np.float32)),
+            torch.LongTensor(np.ascontiguousarray(y_idx, dtype=np.int64)),
         )
         loader = tud.DataLoader(
             dataset, batch_size=self.batch_size,
@@ -186,7 +186,7 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
 
         self._model.eval()
         with torch.no_grad():
-            logits = self._model(torch.FloatTensor(X))
+            logits = self._model(torch.FloatTensor(np.ascontiguousarray(X, dtype=np.float32)))
             return torch.softmax(logits, dim=1).numpy()
 
     def predict(self, X: np.ndarray) -> np.ndarray:
