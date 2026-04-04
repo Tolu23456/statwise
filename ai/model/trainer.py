@@ -7,10 +7,11 @@ Architecture (Layer 1 → Layer 2):
     2. HistGradientBoosting – sklearn native, native NaN support
     3. ExtraTreesClassifier – high-variance random splits for diversity
     4. RandomForestClassifier – bagged decision trees
+    5. MLP Neural Network   – 3-hidden-layer deep network (256→128→64), ReLU + Adam
 
   Meta-learner (Layer 2):
     LogisticRegressionCV trained on out-of-fold (OOF) predictions from
-    all 4 base models → final calibrated probability output.
+    all 5 base models → final calibrated probability output.
 
   Separate stacks for: Outcome (Home/Draw/Away) and Goals (O/U 2.5).
 """
@@ -29,6 +30,7 @@ from sklearn.ensemble import (
 )
 from sklearn.linear_model import LogisticRegressionCV
 from sklearn.calibration import CalibratedClassifierCV
+from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
@@ -77,16 +79,41 @@ def _rf(seed: int = 42) -> RandomForestClassifier:
     )
 
 
+def _mlp(seed: int = 42) -> MLPClassifier:
+    """
+    3-hidden-layer neural network: 256 → 128 → 64 neurons.
+    ReLU activation, Adam optimiser, L2 regularisation (alpha=0.01).
+    Early stopping on 10% validation split prevents overfitting.
+    """
+    return MLPClassifier(
+        hidden_layer_sizes=(256, 128, 64),
+        activation='relu',
+        solver='adam',
+        alpha=0.01,
+        batch_size=256,
+        learning_rate='adaptive',
+        learning_rate_init=0.001,
+        max_iter=500,
+        random_state=seed,
+        early_stopping=True,
+        validation_fraction=0.1,
+        n_iter_no_change=25,
+        tol=1e-4,
+    )
+
+
 def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     """
-    Build a 4-model stacking classifier wrapped in a StandardScaler pipeline.
+    Build a 5-model stacking classifier wrapped in a StandardScaler pipeline.
     Uses 5-fold cross-validation to generate OOF meta-features.
+    Models: XGBoost, HistGB, ExtraTrees, RandomForest, MLP Neural Network.
     """
     base = [
         ('xgb', CalibratedClassifierCV(_xgb(n_classes, seed), method='isotonic', cv=3)),
         ('hgb', CalibratedClassifierCV(_hgb(seed),            method='isotonic', cv=3)),
         ('et',  CalibratedClassifierCV(_et(n_classes, seed),  method='isotonic', cv=3)),
         ('rf',  CalibratedClassifierCV(_rf(seed),             method='isotonic', cv=3)),
+        ('mlp', CalibratedClassifierCV(_mlp(seed),            method='isotonic', cv=3)),
     ]
     meta = LogisticRegressionCV(
         Cs=10, cv=5, max_iter=1000,
@@ -129,19 +156,16 @@ class FootballPredictor:
         X = np.where(np.isfinite(X), X, 0.0)
         X = np.clip(X, -1e6, 1e6)
 
-        # No oversampling — class_weight='balanced' on all base models handles draw imbalance
-        # without distorting home/away decision boundaries.
-
-        logger.info("Step 3/4  Fitting outcome stack (XGB+HGB+ET+RF → LR meta)…")
+        logger.info("Step 3/4  Fitting outcome stack (XGB+HGB+ET+RF+MLP Neural Net → LR meta)…")
         self._outcome_pipe = _make_stack(n_classes=3, seed=42)
         self._outcome_pipe.fit(X, y_1x2)
 
-        logger.info("Step 4/4  Fitting goals stack (XGB+HGB+ET+RF → LR meta)…")
+        logger.info("Step 4/4  Fitting goals stack (XGB+HGB+ET+RF+MLP Neural Net → LR meta)…")
         self._goals_pipe = _make_stack(n_classes=2, seed=99)
         self._goals_pipe.fit(X, y_goals)
 
         self._trained = True
-        logger.info("Training complete ✓  [4-model stacking ensemble]")
+        logger.info("Training complete ✓  [5-model stacking ensemble with neural network]")
         return self
 
     def save(self, path: Optional[str] = None) -> str:
@@ -170,7 +194,7 @@ class FootballPredictor:
         obj._goals_pipe    = data.get('goals_pipe')
         obj.home_advantage = data.get('home_advantage', 100.0)
         obj._trained       = True
-        logger.info(f"Model loaded from {path}  [4-model stacking ensemble]")
+        logger.info(f"Model loaded from {path}  [5-model stacking ensemble with neural network]")
         return obj
 
     def predict_match(
@@ -201,16 +225,15 @@ class FootballPredictor:
         probs = [p_home, p_draw, p_away]
         idx = int(np.argmax(probs))
 
-        # Draw guard: only call a draw if it beats both alternatives by ≥4pp.
-        # Prevents a marginal draw probability from overriding a clearer H/A call.
-        if idx == 1:
-            sorted_p = sorted(probs, reverse=True)
-            if sorted_p[0] - sorted_p[1] < 0.04:   # draw not clear enough → fall back
-                idx = 0 if p_home >= p_away else 2
+        # Draw guard: only suppress a draw call if one team is a clear favourite (>50%).
+        # This is far less aggressive than before (was: drop draw if margin < 4pp).
+        # The neural network + LightGBM ensemble is trusted to find genuine draw signals.
+        if idx == 1 and max(p_home, p_away) > 0.50:
+            idx = 0 if p_home >= p_away else 2
 
         prediction_label = OUTCOME_LABELS[idx]
         raw_conf = int(round(probs[idx] * 100))
-        floor = 50 if idx == 1 else 52
+        floor = 48 if idx == 1 else 52
         confidence = max(floor, min(95, raw_conf))
 
         def edge(prob, odds):
@@ -297,7 +320,7 @@ def _build_reasoning(
         parts.append(f"Tight match — only {p_over25:.0f}% Over 2.5.")
 
     parts.append(
-        f"4-model stacking ensemble (XGBoost+HistGB+ExtraTrees+RandomForest→LR): "
+        f"5-model neural stacking ensemble (XGBoost+HistGB+ExtraTrees+RandomForest+MLP Neural Network→LR): "
         f"{home} Win {ph*100:.0f}%, Draw {pd_*100:.0f}%, {away} Win {pa*100:.0f}%. "
         f"Confidence: {confidence}%."
     )
