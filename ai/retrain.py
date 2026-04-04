@@ -61,9 +61,20 @@ def run(force: bool = False) -> bool:
         return False
 
     df = pd.concat(frames, ignore_index=True)
+
+    # ── Strip synthetic / biased rows before dedup ─────────────────
+    # ClubElo contributes 78 K fake 1-0 rows (all "home_team vs Reference").
+    # Keeping them makes the model predict Home Win 100 % of the time.
+    before = len(df)
+    if "league_slug" in df.columns:
+        df = df[df["league_slug"] != "clubelo-reference"]
+    if "away_team" in df.columns:
+        df = df[df["away_team"] != "Reference"]
+    logger.info(f"Dropped {before - len(df):,} synthetic ClubElo rows")
+
     # Remove exact duplicates
     df = df.drop_duplicates(subset=["home_team", "away_team", "date", "home_goals", "away_goals"])
-    logger.info(f"Combined dataset: {len(df):,} unique matches")
+    logger.info(f"Combined dataset: {len(df):,} unique real matches")
 
     # ── Train ──────────────────────────────────────────────────────
     logger.info("Training model (5-model deep stacking ensemble: XGB+HGB+ET+RF+NeuralNet→LR) …")
