@@ -7,6 +7,8 @@ Architecture:
 Each ResBlock: Linear → BN → ReLU → Dropout → Linear → BN → residual add → ReLU → Dropout
 Training: AdamW + OneCycleLR scheduler + gradient clipping.
 sklearn API: fit / predict_proba / predict (compatible with StackingClassifier).
+
+Falls back to LogisticRegression when PyTorch is unavailable.
 """
 from __future__ import annotations
 import logging, math
@@ -25,73 +27,72 @@ except ImportError:
     logger.warning("PyTorch not available — NeuralNetClassifier uses LR fallback.")
 
 
-# ── Network Modules ────────────────────────────────────────────────────────────
+# ── Network Modules (only defined when PyTorch is available) ──────────────────
 
-class _ResBlock(nn.Module):
-    """Pre-activation residual block: same input / output dimension."""
-    def __init__(self, dim: int, dropout: float = 0.3):
-        super().__init__()
-        self.block = nn.Sequential(
-            nn.Linear(dim, dim),
-            nn.BatchNorm1d(dim),
-            nn.ReLU(inplace=True),
-            nn.Dropout(dropout),
-            nn.Linear(dim, dim),
-            nn.BatchNorm1d(dim),
-        )
-        self.act  = nn.ReLU(inplace=True)
-        self.drop = nn.Dropout(dropout)
+if _TORCH:
+    class _ResBlock(nn.Module):
+        """Pre-activation residual block: same input / output dimension."""
+        def __init__(self, dim: int, dropout: float = 0.3):
+            super().__init__()
+            self.block = nn.Sequential(
+                nn.Linear(dim, dim),
+                nn.BatchNorm1d(dim),
+                nn.ReLU(inplace=True),
+                nn.Dropout(dropout),
+                nn.Linear(dim, dim),
+                nn.BatchNorm1d(dim),
+            )
+            self.act  = nn.ReLU(inplace=True)
+            self.drop = nn.Dropout(dropout)
 
-    def forward(self, x: "torch.Tensor") -> "torch.Tensor":
-        return self.drop(self.act(x + self.block(x)))
+        def forward(self, x: "torch.Tensor") -> "torch.Tensor":
+            return self.drop(self.act(x + self.block(x)))
+
+    class _FootballResNet(nn.Module):
+        """
+        Deep residual MLP for football match prediction.
+        Stem + 2 residual stages + 2 downsampling transitions + linear head.
+        """
+        def __init__(self, n_in: int, n_out: int):
+            super().__init__()
+            self.stem = nn.Sequential(
+                nn.Linear(n_in, 256),
+                nn.BatchNorm1d(256),
+                nn.ReLU(inplace=True),
+                nn.Dropout(0.3),
+            )
+            self.res1  = _ResBlock(256, dropout=0.3)
+            self.down1 = nn.Sequential(
+                nn.Linear(256, 128),
+                nn.BatchNorm1d(128),
+                nn.ReLU(inplace=True),
+                nn.Dropout(0.25),
+            )
+            self.res2  = _ResBlock(128, dropout=0.25)
+            self.down2 = nn.Sequential(
+                nn.Linear(128, 64),
+                nn.BatchNorm1d(64),
+                nn.ReLU(inplace=True),
+                nn.Dropout(0.2),
+            )
+            self.head = nn.Linear(64, n_out)
+
+            for m in self.modules():
+                if isinstance(m, nn.Linear):
+                    nn.init.kaiming_normal_(m.weight, nonlinearity='relu')
+                    if m.bias is not None:
+                        nn.init.zeros_(m.bias)
+
+        def forward(self, x: "torch.Tensor") -> "torch.Tensor":
+            x = self.stem(x)
+            x = self.res1(x)
+            x = self.down1(x)
+            x = self.res2(x)
+            x = self.down2(x)
+            return self.head(x)
 
 
-class _FootballResNet(nn.Module):
-    """
-    Deep residual MLP for football match prediction.
-    Stem + 2 residual stages + 2 downsampling transitions + linear head.
-    """
-    def __init__(self, n_in: int, n_out: int):
-        super().__init__()
-        self.stem = nn.Sequential(
-            nn.Linear(n_in, 256),
-            nn.BatchNorm1d(256),
-            nn.ReLU(inplace=True),
-            nn.Dropout(0.3),
-        )
-        self.res1  = _ResBlock(256, dropout=0.3)
-        self.down1 = nn.Sequential(
-            nn.Linear(256, 128),
-            nn.BatchNorm1d(128),
-            nn.ReLU(inplace=True),
-            nn.Dropout(0.25),
-        )
-        self.res2  = _ResBlock(128, dropout=0.25)
-        self.down2 = nn.Sequential(
-            nn.Linear(128, 64),
-            nn.BatchNorm1d(64),
-            nn.ReLU(inplace=True),
-            nn.Dropout(0.2),
-        )
-        self.head = nn.Linear(64, n_out)
-
-        # Weight initialisation
-        for m in self.modules():
-            if isinstance(m, nn.Linear):
-                nn.init.kaiming_normal_(m.weight, nonlinearity='relu')
-                if m.bias is not None:
-                    nn.init.zeros_(m.bias)
-
-    def forward(self, x: "torch.Tensor") -> "torch.Tensor":
-        x = self.stem(x)
-        x = self.res1(x)
-        x = self.down1(x)
-        x = self.res2(x)
-        x = self.down2(x)
-        return self.head(x)
-
-
-# ── sklearn Wrapper ────────────────────────────────────────────────────────────
+# ── sklearn Wrapper ───────────────────────────────────────────────────────────
 
 class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
     """
@@ -106,7 +107,6 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
     weight_decay : AdamW weight decay (default 1e-4)
     random_state : seed for reproducibility
     """
-    # Explicit classifier tag — required by sklearn 1.6+ strict validation
     _estimator_type = "classifier"
 
     def __init__(
@@ -122,8 +122,6 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         self.lr           = lr
         self.weight_decay = weight_decay
         self.random_state = random_state
-
-    # ── fit ───────────────────────────────────────────────────────────────────
 
     def fit(self, X: np.ndarray, y: np.ndarray) -> "NeuralNetClassifier":
         if not _TORCH:
@@ -141,9 +139,8 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
 
         self._model = _FootballResNet(n_features, n_classes)
 
-        # Class-balanced loss weights
-        counts  = np.bincount(y_idx, minlength=n_classes).astype(np.float32)
-        weights = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1))))
+        counts    = np.bincount(y_idx, minlength=n_classes).astype(np.float32)
+        weights   = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1))))
         criterion = nn.CrossEntropyLoss(weight=weights)
 
         opt = torch.optim.AdamW(
@@ -181,8 +178,6 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         self._model.eval()
         return self
 
-    # ── predict ───────────────────────────────────────────────────────────────
-
     def predict_proba(self, X: np.ndarray) -> np.ndarray:
         if not _TORCH or not hasattr(self, '_model'):
             if hasattr(self, '_fallback'):
@@ -196,8 +191,6 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         return self.classes_[np.argmax(self.predict_proba(X), axis=1)]
-
-    # ── fallback ──────────────────────────────────────────────────────────────
 
     def _fit_fallback(self, X: np.ndarray, y: np.ndarray) -> "NeuralNetClassifier":
         from sklearn.linear_model import LogisticRegression
