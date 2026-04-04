@@ -1,18 +1,25 @@
 """
-FootballPredictor – Deep stacking ensemble for match prediction.
+FootballPredictor – 5-model deep stacking ensemble.
 
 Architecture (Layer 1 → Layer 2):
-  Base models (each independently calibrated):
-    1. XGBoost              – deep trees, colsample/subsample noise
-    2. HistGradientBoosting – sklearn native, native NaN support
+  Base models (5), each probability-calibrated:
+    1. XGBoost              – histogram trees, colsample/subsample noise
+    2. HistGradientBoosting – sklearn native, NaN support, class-balanced
     3. ExtraTreesClassifier – high-variance random splits for diversity
-    4. RandomForestClassifier – bagged decision trees
+    4. RandomForestClassifier – bagged decision trees, class-balanced
+    5. NeuralNetClassifier  – PyTorch Residual MLP (256→128→64, BN+Dropout)
 
   Meta-learner (Layer 2):
-    LogisticRegressionCV trained on out-of-fold (OOF) predictions from
-    all 4 base models → final calibrated probability output.
+    LogisticRegressionCV trained on out-of-fold predictions from all 5 base
+    models + raw features (passthrough=True) → calibrated probability output.
 
   Separate stacks for: Outcome (Home/Draw/Away) and Goals (O/U 2.5).
+
+Speed optimisations vs previous version:
+  - XGB/HGB/ET/RF estimator counts reduced (~40% less compute)
+  - Calibration: sigmoid (fast) instead of isotonic
+  - Stacking cv=3 (was 5)
+  - XGB: tree_method='hist' (explicit, avoids auto-detection overhead)
 """
 from __future__ import annotations
 import os, logging, joblib
@@ -33,9 +40,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
 from .features import FeaturePipeline, N_FEATURES
+from .neural_net import NeuralNetClassifier
 
 logger = logging.getLogger(__name__)
-MODEL_DIR = os.path.join(os.path.dirname(__file__), '..', 'models')
+MODEL_DIR     = os.path.join(os.path.dirname(__file__), '..', 'models')
 os.makedirs(MODEL_DIR, exist_ok=True)
 OUTCOME_LABELS = ['Home Win', 'Draw', 'Away Win']
 
@@ -44,26 +52,27 @@ OUTCOME_LABELS = ['Home Win', 'Draw', 'Away Win']
 
 def _xgb(n_classes: int, seed: int = 42) -> XGBClassifier:
     return XGBClassifier(
-        n_estimators=500, max_depth=8, learning_rate=0.05,
+        n_estimators=300, max_depth=7, learning_rate=0.05,
         subsample=0.8, colsample_bytree=0.75, colsample_bylevel=0.75,
         min_child_weight=5, gamma=0.1, reg_alpha=0.2, reg_lambda=2.0,
+        tree_method='hist',
         eval_metric='mlogloss' if n_classes > 2 else 'logloss',
         random_state=seed, n_jobs=-1, verbosity=0,
     )
 
 
-def _hgb(seed: int = 42, class_weight: str | None = 'balanced') -> HistGradientBoostingClassifier:
+def _hgb(seed: int = 42) -> HistGradientBoostingClassifier:
     return HistGradientBoostingClassifier(
-        max_iter=500, max_depth=8, max_leaf_nodes=127,
+        max_iter=200, max_depth=7, max_leaf_nodes=63,
         learning_rate=0.05, min_samples_leaf=20,
         l2_regularization=2.0, random_state=seed,
-        class_weight=class_weight,
+        class_weight='balanced',
     )
 
 
 def _et(n_classes: int, seed: int = 42) -> ExtraTreesClassifier:
     return ExtraTreesClassifier(
-        n_estimators=400, max_depth=None, min_samples_leaf=5,
+        n_estimators=200, max_depth=None, min_samples_leaf=5,
         max_features='sqrt', random_state=seed, n_jobs=-1,
         class_weight='balanced',
     )
@@ -71,22 +80,36 @@ def _et(n_classes: int, seed: int = 42) -> ExtraTreesClassifier:
 
 def _rf(seed: int = 42) -> RandomForestClassifier:
     return RandomForestClassifier(
-        n_estimators=400, max_depth=20, min_samples_leaf=5,
+        n_estimators=200, max_depth=18, min_samples_leaf=5,
         max_features='sqrt', random_state=seed, n_jobs=-1,
         class_weight='balanced',
     )
 
 
+def _nn(seed: int = 0) -> NeuralNetClassifier:
+    return NeuralNetClassifier(
+        epochs=80, batch_size=512,
+        lr=3e-3, weight_decay=1e-4,
+        random_state=seed,
+    )
+
+
 def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     """
-    Build a 4-model stacking classifier wrapped in a StandardScaler pipeline.
-    Uses 5-fold cross-validation to generate OOF meta-features.
+    Build a 5-model stacking classifier wrapped in a StandardScaler pipeline.
+    Uses 3-fold CV to generate OOF meta-features (fast, still robust).
     """
+    # Tree/forest models — sigmoid calibration is 3× faster than isotonic
+    _cal = lambda est: CalibratedClassifierCV(est, method='sigmoid', cv=2)
+
     base = [
-        ('xgb', CalibratedClassifierCV(_xgb(n_classes, seed), method='isotonic', cv=3)),
-        ('hgb', CalibratedClassifierCV(_hgb(seed),            method='isotonic', cv=3)),
-        ('et',  CalibratedClassifierCV(_et(n_classes, seed),  method='isotonic', cv=3)),
-        ('rf',  CalibratedClassifierCV(_rf(seed),             method='isotonic', cv=3)),
+        ('xgb', _cal(_xgb(n_classes, seed))),
+        ('hgb', _cal(_hgb(seed))),
+        ('et',  _cal(_et(n_classes, seed))),
+        ('rf',  _cal(_rf(seed))),
+        # Neural net: softmax already provides calibrated probabilities;
+        # wrap in sigmoid calibration for consistent API inside StackingClassifier
+        ('nn',  _cal(_nn(seed))),
     ]
     meta = LogisticRegressionCV(
         Cs=10, cv=5, max_iter=1000,
@@ -95,10 +118,10 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     stack = StackingClassifier(
         estimators=base,
         final_estimator=meta,
-        cv=5,
+        cv=3,                       # 3-fold OOF (was 5)
         stack_method='predict_proba',
-        passthrough=True,   # also feed raw features to meta-learner
-        n_jobs=1,
+        passthrough=True,           # raw features also reach meta-learner
+        n_jobs=-1,                  # parallel fold fitting
     )
     return Pipeline([('scaler', StandardScaler()), ('stack', stack)])
 
@@ -107,11 +130,11 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
 
 class FootballPredictor:
     def __init__(self, home_advantage: float = 100.0):
-        self.home_advantage = home_advantage
-        self.feature_pipe   = FeaturePipeline(home_advantage)
+        self.home_advantage  = home_advantage
+        self.feature_pipe    = FeaturePipeline(home_advantage)
         self._outcome_pipe: Optional[Pipeline] = None
         self._goals_pipe:   Optional[Pipeline] = None
-        self._trained = False
+        self._trained        = False
 
     def train(self, df: pd.DataFrame, min_samples: int = 500) -> "FootballPredictor":
         logger.info(f"Starting training on {len(df):,} raw match records…")
@@ -119,29 +142,26 @@ class FootballPredictor:
         logger.info("Step 1/4  Computing Elo ratings and league stats…")
         self.feature_pipe.fit(df)
 
-        logger.info("Step 2/4  Building feature matrix (60 features)…")
+        logger.info(f"Step 2/4  Building feature matrix ({N_FEATURES} features, ≤100 K samples)…")
         X, y_1x2, y_goals = self.feature_pipe.build_training_set(df)
         if len(X) < min_samples:
             raise ValueError(f"Not enough samples: {len(X)} < {min_samples}")
         logger.info(f"Step 2/4  Done — {len(X):,} samples × {N_FEATURES} features.")
 
-        # Sanitize: replace inf/nan with 0 and clip extreme values
+        # Sanitize
         X = np.where(np.isfinite(X), X, 0.0)
         X = np.clip(X, -1e6, 1e6)
 
-        # No oversampling — class_weight='balanced' on all base models handles draw imbalance
-        # without distorting home/away decision boundaries.
-
-        logger.info("Step 3/4  Fitting outcome stack (XGB+HGB+ET+RF → LR meta)…")
+        logger.info("Step 3/4  Fitting outcome stack (XGB+HGB+ET+RF+NeuralNet → LR)…")
         self._outcome_pipe = _make_stack(n_classes=3, seed=42)
         self._outcome_pipe.fit(X, y_1x2)
 
-        logger.info("Step 4/4  Fitting goals stack (XGB+HGB+ET+RF → LR meta)…")
+        logger.info("Step 4/4  Fitting goals stack (XGB+HGB+ET+RF+NeuralNet → LR)…")
         self._goals_pipe = _make_stack(n_classes=2, seed=99)
         self._goals_pipe.fit(X, y_goals)
 
         self._trained = True
-        logger.info("Training complete ✓  [4-model stacking ensemble]")
+        logger.info("Training complete ✓  [5-model deep stacking ensemble]")
         return self
 
     def save(self, path: Optional[str] = None) -> str:
@@ -163,14 +183,17 @@ class FootballPredictor:
             raise FileNotFoundError(f"No saved model at {path}")
         data = joblib.load(path)
         if data.get('n_features', 0) != N_FEATURES:
-            raise ValueError("Feature count mismatch — retrain required.")
+            raise ValueError(
+                f"Feature count mismatch ({data.get('n_features')} ≠ {N_FEATURES}) "
+                "— retrain required."
+            )
         obj = cls.__new__(cls)
         obj.feature_pipe   = data['feature_pipe']
         obj._outcome_pipe  = data.get('outcome_pipe')
         obj._goals_pipe    = data.get('goals_pipe')
         obj.home_advantage = data.get('home_advantage', 100.0)
         obj._trained       = True
-        logger.info(f"Model loaded from {path}  [4-model stacking ensemble]")
+        logger.info(f"Model loaded from {path}  [5-model deep stacking ensemble]")
         return obj
 
     def predict_match(
@@ -199,18 +222,17 @@ class FootballPredictor:
         p_over25 = float(goals_probs[1]) if len(goals_probs) > 1 else 0.5
 
         probs = [p_home, p_draw, p_away]
-        idx = int(np.argmax(probs))
+        idx   = int(np.argmax(probs))
 
-        # Draw guard: only call a draw if it beats both alternatives by ≥4pp.
-        # Prevents a marginal draw probability from overriding a clearer H/A call.
+        # Draw guard: only call a draw if it beats both alternatives by ≥4pp
         if idx == 1:
             sorted_p = sorted(probs, reverse=True)
-            if sorted_p[0] - sorted_p[1] < 0.04:   # draw not clear enough → fall back
+            if sorted_p[0] - sorted_p[1] < 0.04:
                 idx = 0 if p_home >= p_away else 2
 
         prediction_label = OUTCOME_LABELS[idx]
         raw_conf = int(round(probs[idx] * 100))
-        floor = 50 if idx == 1 else 52
+        floor    = 50 if idx == 1 else 52
         confidence = max(floor, min(95, raw_conf))
 
         def edge(prob, odds):
@@ -220,11 +242,13 @@ class FootballPredictor:
         reasoning = _build_reasoning(
             home_team, away_team, prediction_label,
             p_home, p_draw, p_away,
-            feat_vec[0], feat_vec[1], feat_vec[2],
-            feat_vec[13], feat_vec[23],
+            feat_vec[0], feat_vec[1], feat_vec[2],   # elo_h, elo_a, elo_diff
+            feat_vec[13], feat_vec[23],               # home_ppg, away_ppg
             p_over25, confidence,
-            feat_vec[46], feat_vec[47], feat_vec[48], feat_vec[49],
-            feat_vec[37], feat_vec[56],
+            feat_vec[50], feat_vec[51],               # home_streak, away_streak (FIXED)
+            feat_vec[52], feat_vec[53],               # home_trend, away_trend (FIXED)
+            feat_vec[31], feat_vec[56],               # h2h_n_matches, h2h_avg_goals (FIXED)
+            feat_vec[60], feat_vec[61],               # [NEW] recent-3 goals scored
         )
 
         return {
@@ -247,19 +271,28 @@ class FootballPredictor:
 
 def _build_reasoning(
     home, away, pred, ph, pd_, pa,
-    elo_h, elo_a, elo_diff, form_h, form_a,
+    elo_h, elo_a, elo_diff,
+    form_h, form_a,
     p_over25, confidence,
-    home_streak, away_streak, home_trend, away_trend,
+    home_streak, away_streak,
+    home_trend, away_trend,
     h2h_n, h2h_avg_goals,
+    home_last3, away_last3,
 ) -> str:
     parts = []
+
+    # Elo narrative
     if abs(elo_diff) > 150:
-        parts.append(f"{home if elo_diff > 0 else away} holds a commanding Elo advantage ({abs(elo_diff):.0f} pts).")
+        parts.append(
+            f"{home if elo_diff > 0 else away} holds a commanding Elo advantage "
+            f"({abs(elo_diff):.0f} pts)."
+        )
     elif abs(elo_diff) > 60:
         parts.append(f"{home if elo_diff > 0 else away} has an Elo edge ({abs(elo_diff):.0f} pts).")
     else:
         parts.append(f"Teams are closely matched on Elo ({elo_h:.0f} vs {elo_a:.0f}).")
 
+    # Form narrative
     if form_h > form_a + 0.4:
         parts.append(f"{home} is in superior form ({form_h:.2f} PPG vs {form_a:.2f}).")
     elif form_a > form_h + 0.4:
@@ -267,37 +300,58 @@ def _build_reasoning(
     else:
         parts.append("Both teams are in comparable form.")
 
-    streaks = []
-    if home_streak > 0.4:  streaks.append(f"{home} is on a winning run")
-    elif home_streak < -0.4: streaks.append(f"{home} has been struggling")
-    if away_streak > 0.4:  streaks.append(f"{away} is on a winning streak")
-    elif away_streak < -0.4: streaks.append(f"{away} has lost momentum")
-    if streaks: parts.append("; ".join(streaks) + ".")
+    # Recent 3-match goals
+    if home_last3 > 2.0:
+        parts.append(f"{home} is in hot scoring form ({home_last3:.1f} goals/game last 3).")
+    if away_last3 > 2.0:
+        parts.append(f"{away} has been prolific lately ({away_last3:.1f} goals/game last 3).")
 
+    # Streaks
+    streaks = []
+    if home_streak > 0.4:   streaks.append(f"{home} is on a winning run")
+    elif home_streak < -0.4: streaks.append(f"{home} has been struggling")
+    if away_streak > 0.4:   streaks.append(f"{away} is on a winning streak")
+    elif away_streak < -0.4: streaks.append(f"{away} has lost momentum")
+    if streaks:
+        parts.append("; ".join(streaks) + ".")
+
+    # Trends
     if home_trend > 0.5 and away_trend < -0.2:
         parts.append(f"{home} is improving while {away} is declining.")
     elif away_trend > 0.5 and home_trend < -0.2:
         parts.append(f"{away} has been on a strong upward trend.")
 
+    # H2H
     if h2h_n >= 3:
         if h2h_avg_goals > 3.0:
-            parts.append(f"H2H history ({int(h2h_n)} matches) tends to produce goals ({h2h_avg_goals:.1f} avg).")
+            parts.append(
+                f"H2H history ({int(h2h_n)} matches) tends to produce goals "
+                f"({h2h_avg_goals:.1f} avg)."
+            )
         elif h2h_avg_goals < 2.0:
-            parts.append(f"H2H history ({int(h2h_n)} matches) has been low-scoring ({h2h_avg_goals:.1f} avg) — draw-friendly.")
+            parts.append(
+                f"H2H history ({int(h2h_n)} matches) has been low-scoring "
+                f"({h2h_avg_goals:.1f} avg) — draw-friendly."
+            )
 
+    # Draw uncertainty
     if pred == 'Draw':
-        top2_gap = sorted([ph, pd_, pa], reverse=True)
-        gap = top2_gap[0] - top2_gap[1]
-        if gap < 0.05:
-            parts.append("All three outcomes are within 5% probability — high uncertainty, classic draw scenario.")
+        gap = sorted([ph, pd_, pa], reverse=True)
+        if gap[0] - gap[1] < 0.05:
+            parts.append(
+                "All three outcomes are within 5% probability — "
+                "high uncertainty, classic draw scenario."
+            )
 
+    # Goals
     if p_over25 > 65:
         parts.append(f"Goals expected — {p_over25:.0f}% Over 2.5.")
     elif p_over25 < 38:
         parts.append(f"Tight match — only {p_over25:.0f}% Over 2.5.")
 
+    # Model signature
     parts.append(
-        f"4-model stacking ensemble (XGBoost+HistGB+ExtraTrees+RandomForest→LR): "
+        f"5-model deep ensemble (XGBoost+HistGB+ExtraTrees+RandomForest+NeuralNet→LR): "
         f"{home} Win {ph*100:.0f}%, Draw {pd_*100:.0f}%, {away} Win {pa*100:.0f}%. "
         f"Confidence: {confidence}%."
     )

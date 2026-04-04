@@ -45,8 +45,8 @@ def run(force: bool = False) -> bool:
     logger.info("=" * 60)
 
     # ── Source 1: football-data.co.uk (primary) ───────────────────
-    logger.info("[1/5] football-data.co.uk …")
-    df1 = load_training_data(seasons=SEASONS[:6], leagues=list(LEAGUE_CODES.keys()))
+    logger.info(f"[1/5] football-data.co.uk ({len(SEASONS)} seasons, {len(LEAGUE_CODES)} leagues)…")
+    df1 = load_training_data(seasons=SEASONS, leagues=list(LEAGUE_CODES.keys()))
     logger.info(f"      {len(df1):,} rows")
 
     # ── Sources 2-5: supplementary open datasets ───────────────────
@@ -66,7 +66,7 @@ def run(force: bool = False) -> bool:
     logger.info(f"Combined dataset: {len(df):,} unique matches")
 
     # ── Train ──────────────────────────────────────────────────────
-    logger.info("Training model (5-model stacking ensemble) …")
+    logger.info("Training model (5-model deep stacking ensemble: XGB+HGB+ET+RF+NeuralNet→LR) …")
     t1 = time.time()
     predictor = FootballPredictor()
     try:

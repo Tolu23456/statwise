@@ -1,13 +1,13 @@
 {
   "summary": {
     "tested": 150,
-    "overall_accuracy": 55.3,
-    "home_accuracy": 83.9,
+    "overall_accuracy": 56.7,
+    "home_accuracy": 82.3,
     "draw_accuracy": 0.0,
-    "away_accuracy": 64.6,
-    "high_conf_accuracy": 73.7,
-    "high_conf_sample": 38,
-    "timestamp": "2026-04-03T21:47:23.584208Z"
+    "away_accuracy": 70.8,
+    "high_conf_accuracy": 73.2,
+    "high_conf_sample": 41,
+    "timestamp": "2026-04-04T10:02:12.543981Z"
   },
   "sample": [
     {
@@ -16,7 +16,7 @@
       "away": "Chelsea",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 68,
+      "confidence": 66,
       "correct": true
     },
     {
@@ -61,7 +61,7 @@
       "away": "Man City",
       "predicted": "Away Win",
       "actual": "away",
-      "confidence": 65,
+      "confidence": 68,
       "correct": true
     },
     {
@@ -70,7 +70,7 @@
       "away": "Liverpool",
       "predicted": "Away Win",
       "actual": "draw",
-      "confidence": 61,
+      "confidence": 62,
       "correct": false
     },
     {
@@ -88,7 +88,7 @@
       "away": "Burnley",
       "predicted": "Home Win",
       "actual": "draw",
-      "confidence": 56,
+      "confidence": 58,
       "correct": false
     },
     {
@@ -106,17 +106,17 @@
       "away": "Luton",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 63,
+      "confidence": 67,
       "correct": true
     },
     {
       "league": "premier-league",
       "home": "Everton",
       "away": "Brentford",
-      "predicted": "Home Win",
+      "predicted": "Away Win",
       "actual": "home",
       "confidence": 52,
-      "correct": true
+      "correct": false
     },
     {
       "league": "premier-league",
@@ -124,7 +124,7 @@
       "away": "Chelsea",
       "predicted": "Away Win",
       "actual": "draw",
-      "confidence": 59,
+      "confidence": 60,
       "correct": false
     },
     {
@@ -142,7 +142,7 @@
       "away": "Arsenal",
       "predicted": "Away Win",
       "actual": "away",
-      "confidence": 52,
+      "confidence": 55,
       "correct": true
     },
     {
@@ -151,7 +151,7 @@
       "away": "Man City",
       "predicted": "Away Win",
       "actual": "away",
-      "confidence": 70,
+      "confidence": 72,
       "correct": true
     },
     {
@@ -169,7 +169,7 @@
       "away": "Everton",
       "predicted": "Away Win",
       "actual": "draw",
-      "confidence": 56,
+      "confidence": 55,
       "correct": false
     },
     {
@@ -178,7 +178,7 @@
       "away": "Bournemouth",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 88,
+      "confidence": 87,
       "correct": true
     },
     {
@@ -214,7 +214,7 @@
       "away": "Wolves",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 93,
+      "confidence": 92,
       "correct": true
     },
     {
@@ -241,7 +241,7 @@
       "away": "Tottenham",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 71,
+      "confidence": 69,
       "correct": true
     },
     {
@@ -259,17 +259,17 @@
       "away": "Man City",
       "predicted": "Away Win",
       "actual": "away",
-      "confidence": 72,
+      "confidence": 73,
       "correct": true
     },
     {
       "league": "premier-league",
       "home": "Bournemouth",
       "away": "Brentford",
-      "predicted": "Home Win",
+      "predicted": "Away Win",
       "actual": "away",
       "confidence": 52,
-      "correct": false
+      "correct": true
     },
     {
       "league": "premier-league",
@@ -277,7 +277,7 @@
       "away": "Sheffield United",
       "predicted": "Home Win",
       "actual": "home",
-      "confidence": 88,
+      "confidence": 87,
       "correct": true
     }
   ]
