@@ -1,9 +1,9 @@
 {
-  "trained_at": "2026-04-05T15:26:03.232559Z",
+  "trained_at": "2026-04-05T16:34:42.295693Z",
   "total_matches": 106497,
   "sources": {
     "football_data_co_uk": 50992,
     "supplementary_open_sources": 141495
   },
-  "duration_seconds": 1101.3
+  "duration_seconds": 895.4
 }

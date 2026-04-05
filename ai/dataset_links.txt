@@ -1,0 +1,13 @@
+https://github.com/statsbomb/open-data.git
+https://github.com/jfjelstul/worldcup.git
+https://github.com/JaseZiv/worldfootballR.git
+https://github.com/dcaribou/transfermarkt-datasets.git
+https://github.com/somdeep/Statball.git
+https://github.com/probberechts/soccerdata.git
+https://github.com/xgabora/Club-Football-Match-Data-2000-2025
+https://github.com/eddwebster/football_analytics
+https://github.com/statsbomb/statsbombpy
+https://github.com/douglasbc/scraping-understat-dataset.git
+https://github.com/Torvaney/understat-db.git
+https://github.com/probberechts/soccerdata
+https://www.football-data.co.uk/
