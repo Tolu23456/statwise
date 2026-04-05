@@ -1,18 +1,52 @@
-https://github.com/statsbomb/open-data.git
-https://github.com/jfjelstul/worldcup.git
-https://github.com/JaseZiv/worldfootballR.git
-https://github.com/dcaribou/transfermarkt-datasets.git
-https://github.com/somdeep/Statball.git
-https://github.com/probberechts/soccerdata.git
-https://github.com/xgabora/Club-Football-Match-Data-2000-2025
-https://github.com/eddwebster/football_analytics
-https://github.com/statsbomb/statsbombpy
-https://github.com/douglasbc/scraping-understat-dataset.git
-https://github.com/Torvaney/understat-db.git
-https://github.com/probberechts/soccerdata
+# ═══════════════════════════════════════════════════════════════════════
+#  StatWise Dataset Sources — direct download links used by the pipeline
+#  All sources are freely available without authentication.
+# ═══════════════════════════════════════════════════════════════════════
+
+# ── 1. football-data.co.uk ─────────────────────────────────────────────
+#  Primary + extended European leagues and overseas leagues
+#  Seasons: 1993/94 → 2024/25   |  35 leagues  |  ~200K rows
+#  URL pattern: https://www.football-data.co.uk/mmz4281/{SSSS}/{CODE}.csv
+#  Leagues: E0 E1 E2 E3 (England), D1 D2 (Germany), SP1 SP2 (Spain),
+#           I1 I2 (Italy), F1 F2 (France), N1 (Netherlands), P1 (Portugal),
+#           SC0 SC1 SC2 SC3 (Scotland), B1 (Belgium), T1 (Turkey),
+#           G1 (Greece), ARG BRA CHN DEN AUT FIN IRL NOR SWE SWI USA JPN
 https://www.football-data.co.uk/
 
+# ── 2. xgabora/Club-Football-Match-Data-2000-2025 ──────────────────────
+#  Single unified CSV — 475K+ rows, 42 leagues, 2000-2025
+#  Columns: date, home_team, away_team, home_score, away_score, league, country
+https://raw.githubusercontent.com/xgabora/Club-Football-Match-Data-2000-2025/main/data/Matches.csv
+https://raw.githubusercontent.com/xgabora/Club-Football-Match-Data-2000-2025/main/data/EloRatings.csv
+https://raw.githubusercontent.com/xgabora/Club-Football-Match-Data-2000-2025/main/data/Teams.csv
 
-SoccerSTATS.com - downloadable data
-footystats.org - some free data
-football-lineups.com - historical
+# ── 3. douglasbc/scraping-understat-dataset ────────────────────────────
+#  Shot-level xG data for EPL, Bundesliga, La Liga, Serie A, Ligue 1
+#  Seasons: 2014/15 → 2021/22   |  ~5 million shot records
+https://raw.githubusercontent.com/douglasbc/scraping-understat-dataset/main/datasets/{league}/{kind}_{league}_{season}.csv
+
+# ── 4. martj42/international_results ──────────────────────────────────
+#  Complete international football results since 1872 (~47K matches)
+#  Columns: date, home_team, away_team, home_score, away_score, tournament, city, country, neutral
+https://raw.githubusercontent.com/martj42/international_results/master/results.csv
+https://raw.githubusercontent.com/martj42/international_results/master/goalscorers.csv
+https://raw.githubusercontent.com/martj42/international_results/master/shootouts.csv
+
+# ── 5. jfjelstul/worldcup ─────────────────────────────────────────────
+#  FIFA World Cup data 1930-2022 — all group stage and knockout matches
+#  Includes: extra time, penalty shootouts, venue, stage, team codes
+https://raw.githubusercontent.com/jfjelstul/worldcup/master/data-csv/matches.csv
+https://raw.githubusercontent.com/jfjelstul/worldcup/master/data-csv/goals.csv
+https://raw.githubusercontent.com/jfjelstul/worldcup/master/data-csv/teams.csv
+
+# ── 6. openfootball/football.json ──────────────────────────────────────
+#  JSON match fixtures for top European leagues, seasons 2011-12 → 2024-25
+#  Includes: halftime scores, matchday/round info
+#  URL pattern: https://raw.githubusercontent.com/openfootball/football.json/master/{season}/{comp}.json
+#  Competitions: en.1 en.2 en.3 de.1 de.2 es.1 es.2 it.1 it.2 fr.1 fr.2
+#                pt.1 nl.1 be.1 sc.1 tr.1 gr.1 at.1 ch.1 ru.1
+https://github.com/openfootball/football.json
+
+# ── 7. statsbomb/open-data ────────────────────────────────────────────
+#  StatsBomb open competition and match metadata (JSON)
+https://raw.githubusercontent.com/statsbomb/open-data/master/data/competitions.json

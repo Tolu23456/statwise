@@ -13,12 +13,12 @@ dirs:
 	@mkdir -p $(BINDIR)
 
 downloader: dataset_downloader.cpp
-	@echo "[BUILD] Compiling dataset_downloader…"
+	@echo "[BUILD] Compiling dataset_downloader v3.0…"
 	$(CXX) $(CXXFLAGS) -o $(BINDIR)/dataset_downloader dataset_downloader.cpp $(LDFLAGS)
 	@echo "[BUILD] dataset_downloader → $(BINDIR)/dataset_downloader"
 
 cleaner: dataset_cleaner.cpp
-	@echo "[BUILD] Compiling dataset_cleaner…"
+	@echo "[BUILD] Compiling dataset_cleaner v3.0…"
 	$(CXX) $(CXXFLAGS) -o $(BINDIR)/dataset_cleaner dataset_cleaner.cpp $(LDFLAGS)
 	@echo "[BUILD] dataset_cleaner → $(BINDIR)/dataset_cleaner"
 

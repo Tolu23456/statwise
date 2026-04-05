@@ -70,7 +70,28 @@ ai/                    - Python AI prediction engine
     trainer.py         - FootballPredictor ML model
     downloader.py      - Training data download
   models/              - Saved model binaries (.pkl)
-  data/                - Historical CSVs, logs, heartbeat.json
+  data/
+    raw/               - Downloaded source data (xgabora/, football_data/, understat/,
+                         international/, worldcup/, openfootball/, statsbomb/)
+    clean/             - Unified cleaned CSVs per year (YYYY_matches.csv)
+  tools/               - C++17 data pipeline tools
+    dataset_downloader.cpp  v3.0 — Downloads 7 sources: football-data.co.uk (1993-2025,
+                         35 leagues), xgabora (475K rows), understat (shot-level xG),
+                         martj42 international results (47K+ matches), jfjelstul worldcup
+                         (1930-2022), openfootball JSON (2011-2025, 20 competitions),
+                         StatsBomb metadata. Total: 1,198 download tasks, all idempotent.
+    dataset_cleaner.cpp     v3.0 — 10-phase pipeline: xgabora → football-data.co.uk →
+                         understat xG injection → martj42 international → jfjelstul WC →
+                         openfootball JSON → cross-source conflict scan → Jaro-Winkler
+                         fuzzy dedup → quality scoring (0-100) → year-bucketed output.
+                         Output schema: 48 columns including quality_score, league_tier,
+                         is_international, score_conflict, tournament, is_neutral.
+    Makefile            - Builds both tools to build/dataset_downloader, build/dataset_cleaner
+  dataset_links.txt    - Authoritative list of all 7 download sources with notes
+
+build/                 - Compiled C++ binaries
+  dataset_downloader   - Run: ./build/dataset_downloader ai/data/raw [--force]
+  dataset_cleaner      - Run: ./build/dataset_cleaner ai/data/raw ai/data/clean [--verbose]
 ```
 
 ## Workflows
