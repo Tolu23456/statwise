@@ -118,6 +118,8 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     meta = LogisticRegressionCV(
         Cs=10, cv=5, max_iter=1000,
         solver='lbfgs', n_jobs=-1, random_state=seed,
+        l1_ratios=(0,),           # silence FutureWarning in sklearn ≥1.10
+        use_legacy_attributes=False,
     )
     stack = StackingClassifier(
         estimators=base,
@@ -156,13 +158,29 @@ class FootballPredictor:
         X = np.where(np.isfinite(X), X, 0.0)
         X = np.clip(X, -1e6, 1e6)
 
+        # Compute balanced sample weights to counteract home-win class imbalance.
+        # StackingClassifier passes these to every base estimator that supports it.
+        def _balanced_weights(y: np.ndarray) -> np.ndarray:
+            classes, counts = np.unique(y, return_counts=True)
+            freq = dict(zip(classes, counts / len(y)))
+            w = np.array([1.0 / freq[c] for c in y], dtype=np.float64)
+            return w / w.mean()   # normalise so mean weight == 1
+
+        sw_1x2   = _balanced_weights(y_1x2)
+        sw_goals = _balanced_weights(y_goals)
+
+        dist = {int(c): int(n) for c, n in zip(*np.unique(y_1x2, return_counts=True))}
+        logger.info(f"Outcome class distribution (0=home,1=draw,2=away): {dist}")
+
         logger.info("Step 3/4  Fitting outcome stack (XGB+HGB+ET+RF+NeuralNet → LR)…")
         self._outcome_pipe = _make_stack(n_classes=3, seed=42)
-        self._outcome_pipe.fit(X, y_1x2)
+        self._outcome_pipe.fit(X, y_1x2,
+                               stack__sample_weight=sw_1x2)
 
         logger.info("Step 4/4  Fitting goals stack (XGB+HGB+ET+RF+NeuralNet → LR)…")
         self._goals_pipe = _make_stack(n_classes=2, seed=99)
-        self._goals_pipe.fit(X, y_goals)
+        self._goals_pipe.fit(X, y_goals,
+                             stack__sample_weight=sw_goals)
 
         self._trained = True
         logger.info("Training complete ✓  [5-model deep stacking ensemble]")
@@ -227,26 +245,35 @@ class FootballPredictor:
 
         probs = [p_home, p_draw, p_away]
 
-        # ── Draw detection ──────────────────────────────────────────────
-        # The ensemble's draw probability rarely tops the other two, so a
-        # naive argmax never predicts draws.  Instead: predict draw when
-        #   (a) draw probability is meaningfully high (≥ 0.245, close to
-        #       the historical base rate of ~26 %) AND
-        #   (b) home and away are close (gap ≤ 14 pp) — genuinely open match.
-        # Otherwise predict whichever of home/away is more likely.
-        DRAW_PROB_FLOOR  = 0.245   # minimum draw probability to consider
+        # ── Prediction decision logic ────────────────────────────────────
+        #
+        # The ensemble's draw probability rarely tops home/away, so a naive
+        # argmax never predicts draws.  We use two separate corrections:
+        #
+        # 1. Draw detection: predict draw when
+        #      p_draw ≥ 0.255  (just above the historical base-rate of ~26%)
+        #      AND |p_home - p_away| ≤ 0.14  (genuinely open match)
+        #
+        # 2. Away-team bias correction: the model systematically under-rates
+        #    away wins (home advantage bleeds into training).  Give away a
+        #    3pp bonus — predict away whenever p_away ≥ p_home − 0.03.
+        #
+        DRAW_PROB_FLOOR  = 0.255   # raised slightly from 0.245 to reduce noise
         HA_GAP_CEIL      = 0.14    # max |p_home - p_away| to allow draw call
+        AWAY_BOOST       = 0.03    # away corrects for model home-bias
 
         if p_draw >= DRAW_PROB_FLOOR and abs(p_home - p_away) <= HA_GAP_CEIL:
             idx = 1
+        elif p_away >= p_home - AWAY_BOOST:   # away-team bias correction
+            idx = 2
         else:
-            idx = 0 if p_home >= p_away else 2
+            idx = 0
 
         prediction_label = OUTCOME_LABELS[idx]
         raw_conf = int(round(probs[idx] * 100))
-        # Draws are inherently uncertain — cap confidence lower
+        # Draws are inherently uncertain — softer confidence ceiling
         if idx == 1:
-            confidence = max(50, min(65, raw_conf))
+            confidence = max(50, min(62, raw_conf))
         else:
             confidence = max(52, min(95, raw_conf))
 

@@ -58,11 +58,11 @@ export default function ForumScreen() {
     if (!input.trim() || !user) return;
     setSending(true);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    const content = input.trim();
+    const message = input.trim();
     setInput('');
     const { error } = await supabase.from('forum_messages').insert({
       user_id: user.id,
-      content,
+      message,
       created_at: new Date().toISOString(),
     });
     if (error) {
@@ -113,7 +113,7 @@ export default function ForumScreen() {
               )}
             </View>
           )}
-          <Text style={[styles.msgText, { color: isMe ? '#fff' : C.text }]}>{item.content}</Text>
+          <Text style={[styles.msgText, { color: isMe ? '#fff' : C.text }]}>{item.message}</Text>
           <Text style={[styles.msgTime, { color: isMe ? 'rgba(255,255,255,0.6)' : C.textMuted }]}>
             {formatTime(item.created_at)}
           </Text>

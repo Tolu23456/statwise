@@ -87,7 +87,7 @@ export type Prediction = {
 export type ForumMessage = {
   id: string;
   user_id: string;
-  content: string;
+  message: string;
   created_at: string;
   user_profiles?: {
     username: string;

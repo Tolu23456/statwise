@@ -24,6 +24,13 @@ Preferred communication style: Simple, everyday language.
 - **C++ kernel:** ai/libstatwise.so — 11 exported functions including Dixon-Coles, attack/defence Elo, goals variance, venue-split form, consecutive run counters
 - **Schedule:** Predictions every 20 minutes, model retrain every 24 hours
 - **Entry point:** ai/scheduler.py
+- **Anti-bias measures:**
+  - Balanced sample weights at training time (inverse-frequency per class: home 0.74×, draw 1.33×, away 1.12×)
+  - PyTorch NeuralNet: class-frequency CrossEntropyLoss weights merged with per-class sample weights
+  - Draw detection floor: draw predicted when P(draw)≥0.255 AND home/away gap ≤0.14
+  - Away boost: predict away when P(away) ≥ P(home) - 0.03
+  - ET + RF base estimators use `class_weight='balanced'`
+  - Draw confidence capped at 62% to avoid overconfidence
 
 ### Backend (Supabase - Serverless)
 - **URL:** https://pdrcyuzfdqjnsltqqxvr.supabase.co

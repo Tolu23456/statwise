@@ -50,7 +50,7 @@ def run(force: bool = False) -> bool:
     logger.info(f"      {len(df1):,} rows")
 
     # ── Sources 2-5: supplementary open datasets ───────────────────
-    logger.info("[2-5] StatsBomb / OpenFootball / FiveThirtyEight / ClubElo …")
+    logger.info("[2-4] StatsBomb / OpenFootball / InternationalResults / ClubElo …")
     df2 = load_all_open_sources()
     logger.info(f"      {len(df2):,} rows")
 

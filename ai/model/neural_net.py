@@ -123,9 +123,10 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         self.weight_decay = weight_decay
         self.random_state = random_state
 
-    def fit(self, X: np.ndarray, y: np.ndarray) -> "NeuralNetClassifier":
+    def fit(self, X: np.ndarray, y: np.ndarray,
+            sample_weight: np.ndarray | None = None) -> "NeuralNetClassifier":
         if not _TORCH:
-            return self._fit_fallback(X, y)
+            return self._fit_fallback(X, y, sample_weight)
 
         torch.manual_seed(self.random_state)
         np.random.seed(self.random_state)
@@ -140,8 +141,15 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         self._model = _FootballResNet(n_features, n_classes)
 
         counts    = np.bincount(y_idx, minlength=n_classes).astype(np.float32)
-        weights   = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1))))
-        criterion = nn.CrossEntropyLoss(weight=weights)
+        cls_w     = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1))))
+        # sample_weight: if provided, compute per-class mean weight and merge
+        if sample_weight is not None:
+            sw = np.asarray(sample_weight, dtype=np.float32)
+            for c in range(n_classes):
+                mask = (y_idx == c)
+                if mask.any():
+                    cls_w[c] *= float(sw[mask].mean())
+        criterion = nn.CrossEntropyLoss(weight=cls_w)
 
         opt = torch.optim.AdamW(
             self._model.parameters(),
@@ -192,12 +200,13 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
     def predict(self, X: np.ndarray) -> np.ndarray:
         return self.classes_[np.argmax(self.predict_proba(X), axis=1)]
 
-    def _fit_fallback(self, X: np.ndarray, y: np.ndarray) -> "NeuralNetClassifier":
+    def _fit_fallback(self, X: np.ndarray, y: np.ndarray,
+                      sample_weight=None) -> "NeuralNetClassifier":
         from sklearn.linear_model import LogisticRegression
         self._fallback = LogisticRegression(
             max_iter=500, class_weight='balanced',
             random_state=self.random_state,
         )
-        self._fallback.fit(X, y)
+        self._fallback.fit(X, y, sample_weight=sample_weight)
         self.classes_ = self._fallback.classes_
         return self

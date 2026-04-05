@@ -257,7 +257,8 @@ def load_all_open_sources() -> pd.DataFrame:
     sources = [
         ("StatsBomb",            fetch_statsbomb),
         ("OpenFootball",         fetch_openfootball),
-        ("FiveThirtyEight",      fetch_fivethirtyeight),
+        # FiveThirtyEight SPI CSV was removed from GitHub (returns 404)
+        # ("FiveThirtyEight",      fetch_fivethirtyeight),
         ("InternationalResults", fetch_international_results),
         ("ClubElo",              fetch_clubelo),
     ]

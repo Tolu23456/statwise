@@ -2,106 +2,106 @@
   "summary": {
     "tested": 3376,
     "leagues_tested": 16,
-    "overall_accuracy": 49.0,
-    "home_accuracy": 84.4,
-    "draw_accuracy": 0.0,
-    "away_accuracy": 42.1,
-    "high_conf_accuracy": 76.2,
-    "high_conf_sample": 172,
-    "roi_pct": -6.9,
+    "overall_accuracy": 47.6,
+    "home_accuracy": 72.3,
+    "draw_accuracy": 28.8,
+    "away_accuracy": 29.1,
+    "high_conf_accuracy": 75.5,
+    "high_conf_sample": 253,
+    "roi_pct": -1.4,
     "roi_bets": 3376,
-    "timestamp": "2026-04-04T12:52:05.458785Z"
+    "timestamp": "2026-04-05T15:03:03.986192Z"
   },
   "by_actual_outcome": {
     "home": {
-      "hits": 1224,
+      "hits": 1049,
       "total": 1450,
-      "accuracy": 84.4
+      "accuracy": 72.3
     },
     "draw": {
-      "hits": 0,
+      "hits": 261,
       "total": 905,
-      "accuracy": 0.0
+      "accuracy": 28.8
     },
     "away": {
-      "hits": 430,
+      "hits": 297,
       "total": 1021,
-      "accuracy": 42.1
+      "accuracy": 29.1
     }
   },
   "prediction_distribution": {
     "home": {
-      "count": 2478,
-      "pct": 73.4
+      "count": 1994,
+      "pct": 59.1
     },
     "draw": {
-      "count": 0,
-      "pct": 0.0
+      "count": 854,
+      "pct": 25.3
     },
     "away": {
-      "count": 898,
-      "pct": 26.6
+      "count": 528,
+      "pct": 15.6
     }
   },
   "confusion_matrix": {
     "home": {
-      "home": 1224,
-      "draw": 0,
-      "away": 226
+      "home": 1049,
+      "draw": 291,
+      "away": 110
     },
     "draw": {
-      "home": 663,
-      "draw": 0,
-      "away": 242
+      "home": 523,
+      "draw": 261,
+      "away": 121
     },
     "away": {
-      "home": 591,
-      "draw": 0,
-      "away": 430
+      "home": 422,
+      "draw": 302,
+      "away": 297
     }
   },
   "calibration": {
     "60-69%": {
-      "hits": 438,
+      "hits": 429,
       "total": 689,
-      "accuracy": 63.6
+      "accuracy": 62.3
     },
     "50-59%": {
-      "hits": 1085,
-      "total": 2515,
-      "accuracy": 43.1
+      "hits": 987,
+      "total": 2434,
+      "accuracy": 40.6
     },
     "70-79%": {
-      "hits": 131,
-      "total": 172,
-      "accuracy": 76.2
+      "hits": 191,
+      "total": 253,
+      "accuracy": 75.5
     }
   },
   "per_league": {
     "premier-league": {
       "name": "Premier League",
       "tested": 228,
-      "accuracy": 55.3
+      "accuracy": 54.4
     },
     "la-liga": {
       "name": "La Liga",
       "tested": 228,
-      "accuracy": 52.2
+      "accuracy": 53.1
     },
     "serie-a": {
       "name": "Serie A",
       "tested": 228,
-      "accuracy": 46.5
+      "accuracy": 43.9
     },
     "bundesliga": {
       "name": "Bundesliga",
       "tested": 183,
-      "accuracy": 47.5
+      "accuracy": 49.7
     },
     "ligue1": {
       "name": "Ligue 1",
       "tested": 213,
-      "accuracy": 46.0
+      "accuracy": 40.4
     },
     "eredivisie": {
       "name": "Eredivisie",
@@ -111,52 +111,52 @@
     "primeira-liga": {
       "name": "Primeira Liga",
       "tested": 183,
-      "accuracy": 56.8
+      "accuracy": 56.3
     },
     "super-lig": {
       "name": "Super Lig",
       "tested": 220,
-      "accuracy": 54.5
+      "accuracy": 50.5
     },
     "championship": {
       "name": "Championship",
       "tested": 331,
-      "accuracy": 46.2
+      "accuracy": 41.4
     },
     "serie-b": {
       "name": "Serie B",
       "tested": 228,
-      "accuracy": 39.9
+      "accuracy": 41.7
     },
     "bundesliga-2": {
       "name": "2. Bundesliga",
       "tested": 183,
-      "accuracy": 48.1
+      "accuracy": 42.1
     },
     "ligue2": {
       "name": "Ligue 2",
       "tested": 227,
-      "accuracy": 44.5
+      "accuracy": 40.1
     },
     "la-liga-2": {
       "name": "La Liga 2",
       "tested": 277,
-      "accuracy": 44.0
+      "accuracy": 48.4
     },
     "scottish-prem": {
       "name": "Scottish Prem",
       "tested": 136,
-      "accuracy": 49.3
+      "accuracy": 52.9
     },
     "belgian-pro": {
       "name": "Belgian Pro",
       "tested": 184,
-      "accuracy": 52.7
+      "accuracy": 50.5
     },
     "greek-super": {
       "name": "Greek Super",
       "tested": 144,
-      "accuracy": 52.1
+      "accuracy": 50.0
     }
   },
   "sample": [
@@ -166,35 +166,35 @@
       "away": "Bournemouth",
       "predicted": "home",
       "actual": "away",
-      "confidence": 65,
+      "confidence": 66,
       "correct": false,
-      "prob_home": 65.0,
-      "prob_draw": 20.3,
-      "prob_away": 14.7
+      "prob_home": 66.4,
+      "prob_draw": 18.8,
+      "prob_away": 14.9
     },
     {
       "league": "premier-league",
       "home": "Sheffield United",
       "away": "Brentford",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 50,
       "correct": false,
-      "prob_home": 32.8,
-      "prob_draw": 26.4,
-      "prob_away": 40.8
+      "prob_home": 32.2,
+      "prob_draw": 26.0,
+      "prob_away": 41.8
     },
     {
       "league": "premier-league",
       "home": "Wolves",
       "away": "Nott'm Forest",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 52,
-      "correct": false,
-      "prob_home": 47.8,
-      "prob_draw": 25.3,
-      "prob_away": 26.8
+      "confidence": 50,
+      "correct": true,
+      "prob_home": 44.2,
+      "prob_draw": 25.7,
+      "prob_away": 30.2
     },
     {
       "league": "premier-league",
@@ -202,35 +202,35 @@
       "away": "Arsenal",
       "predicted": "away",
       "actual": "home",
-      "confidence": 54,
+      "confidence": 53,
       "correct": false,
-      "prob_home": 21.3,
-      "prob_draw": 24.3,
-      "prob_away": 54.4
+      "prob_home": 24.5,
+      "prob_draw": 22.2,
+      "prob_away": 53.3
     },
     {
       "league": "premier-league",
       "home": "Everton",
       "away": "Chelsea",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 50,
       "correct": false,
-      "prob_home": 33.1,
-      "prob_draw": 26.4,
-      "prob_away": 40.5
+      "prob_home": 39.7,
+      "prob_draw": 26.2,
+      "prob_away": 34.1
     },
     {
       "league": "premier-league",
       "home": "Fulham",
       "away": "West Ham",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 50,
       "correct": false,
-      "prob_home": 32.4,
-      "prob_draw": 26.2,
-      "prob_away": 41.4
+      "prob_home": 32.5,
+      "prob_draw": 26.4,
+      "prob_away": 41.1
     },
     {
       "league": "premier-league",
@@ -238,11 +238,11 @@
       "away": "Man City",
       "predicted": "away",
       "actual": "away",
-      "confidence": 66,
+      "confidence": 69,
       "correct": true,
-      "prob_home": 12.7,
-      "prob_draw": 20.8,
-      "prob_away": 66.5
+      "prob_home": 12.6,
+      "prob_draw": 18.8,
+      "prob_away": 68.6
     },
     {
       "league": "premier-league",
@@ -250,11 +250,11 @@
       "away": "Newcastle",
       "predicted": "home",
       "actual": "home",
-      "confidence": 59,
+      "confidence": 64,
       "correct": true,
-      "prob_home": 58.6,
-      "prob_draw": 22.6,
-      "prob_away": 18.8
+      "prob_home": 63.6,
+      "prob_draw": 20.4,
+      "prob_away": 16.0
     },
     {
       "league": "premier-league",
@@ -262,11 +262,11 @@
       "away": "Tottenham",
       "predicted": "away",
       "actual": "away",
-      "confidence": 65,
+      "confidence": 67,
       "correct": true,
-      "prob_home": 13.4,
-      "prob_draw": 21.2,
-      "prob_away": 65.3
+      "prob_home": 13.3,
+      "prob_draw": 19.3,
+      "prob_away": 67.4
     },
     {
       "league": "premier-league",
@@ -274,11 +274,11 @@
       "away": "Sheffield United",
       "predicted": "home",
       "actual": "home",
-      "confidence": 73,
+      "confidence": 74,
       "correct": true,
-      "prob_home": 72.6,
-      "prob_draw": 18.3,
-      "prob_away": 9.1
+      "prob_home": 74.3,
+      "prob_draw": 17.1,
+      "prob_away": 8.6
     },
     {
       "league": "premier-league",
@@ -286,11 +286,11 @@
       "away": "Crystal Palace",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 70,
+      "confidence": 73,
       "correct": false,
-      "prob_home": 69.6,
-      "prob_draw": 18.8,
-      "prob_away": 11.6
+      "prob_home": 72.8,
+      "prob_draw": 17.0,
+      "prob_away": 10.2
     },
     {
       "league": "premier-league",
@@ -298,23 +298,23 @@
       "away": "Fulham",
       "predicted": "home",
       "actual": "home",
-      "confidence": 69,
+      "confidence": 72,
       "correct": true,
-      "prob_home": 68.6,
-      "prob_draw": 19.5,
-      "prob_away": 11.9
+      "prob_home": 71.8,
+      "prob_draw": 17.6,
+      "prob_away": 10.6
     },
     {
       "league": "premier-league",
       "home": "Burnley",
       "away": "Everton",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 52,
+      "confidence": 50,
       "correct": false,
-      "prob_home": 37.6,
+      "prob_home": 38.7,
       "prob_draw": 27.2,
-      "prob_away": 35.2
+      "prob_away": 34.2
     },
     {
       "league": "premier-league",
@@ -324,9 +324,9 @@
       "actual": "home",
       "confidence": 69,
       "correct": true,
-      "prob_home": 68.9,
-      "prob_draw": 19.6,
-      "prob_away": 11.5
+      "prob_home": 68.7,
+      "prob_draw": 19.5,
+      "prob_away": 11.8
     },
     {
       "league": "premier-league",
@@ -334,11 +334,11 @@
       "away": "Aston Villa",
       "predicted": "home",
       "actual": "away",
-      "confidence": 54,
+      "confidence": 53,
       "correct": false,
-      "prob_home": 53.8,
-      "prob_draw": 24.3,
-      "prob_away": 21.9
+      "prob_home": 53.4,
+      "prob_draw": 24.5,
+      "prob_away": 22.1
     },
     {
       "league": "premier-league",
@@ -346,11 +346,11 @@
       "away": "Wolves",
       "predicted": "home",
       "actual": "home",
-      "confidence": 60,
+      "confidence": 62,
       "correct": true,
-      "prob_home": 60.3,
-      "prob_draw": 22.2,
-      "prob_away": 17.5
+      "prob_home": 62.2,
+      "prob_draw": 20.7,
+      "prob_away": 17.1
     },
     {
       "league": "premier-league",
@@ -358,23 +358,23 @@
       "away": "Man United",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 58,
+      "confidence": 57,
       "correct": false,
-      "prob_home": 58.0,
-      "prob_draw": 23.9,
-      "prob_away": 18.0
+      "prob_home": 57.1,
+      "prob_draw": 24.6,
+      "prob_away": 18.3
     },
     {
       "league": "premier-league",
       "home": "Crystal Palace",
       "away": "Brighton",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 52,
-      "correct": false,
-      "prob_home": 41.7,
-      "prob_draw": 27.0,
-      "prob_away": 31.3
+      "confidence": 50,
+      "correct": true,
+      "prob_home": 42.5,
+      "prob_draw": 26.8,
+      "prob_away": 30.7
     },
     {
       "league": "premier-league",
@@ -382,23 +382,23 @@
       "away": "Sheffield United",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 52,
+      "confidence": 55,
       "correct": false,
-      "prob_home": 52.0,
-      "prob_draw": 25.2,
-      "prob_away": 22.8
+      "prob_home": 55.1,
+      "prob_draw": 24.6,
+      "prob_away": 20.4
     },
     {
       "league": "premier-league",
       "home": "West Ham",
       "away": "Man United",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 50,
       "correct": false,
-      "prob_home": 31.7,
-      "prob_draw": 26.5,
-      "prob_away": 41.8
+      "prob_home": 32.6,
+      "prob_draw": 25.9,
+      "prob_away": 41.5
     },
     {
       "league": "premier-league",
@@ -408,9 +408,9 @@
       "actual": "away",
       "confidence": 52,
       "correct": true,
-      "prob_home": 34.3,
-      "prob_draw": 26.2,
-      "prob_away": 39.5
+      "prob_home": 36.0,
+      "prob_draw": 23.7,
+      "prob_away": 40.3
     },
     {
       "league": "premier-league",
@@ -420,9 +420,9 @@
       "actual": "home",
       "confidence": 52,
       "correct": false,
-      "prob_home": 27.0,
-      "prob_draw": 25.9,
-      "prob_away": 47.1
+      "prob_home": 25.8,
+      "prob_draw": 25.5,
+      "prob_away": 48.7
     },
     {
       "league": "premier-league",
@@ -432,9 +432,9 @@
       "actual": "away",
       "confidence": 52,
       "correct": true,
-      "prob_home": 27.7,
-      "prob_draw": 27.1,
-      "prob_away": 45.3
+      "prob_home": 26.7,
+      "prob_draw": 26.6,
+      "prob_away": 46.7
     },
     {
       "league": "premier-league",
@@ -442,11 +442,11 @@
       "away": "Everton",
       "predicted": "home",
       "actual": "home",
-      "confidence": 61,
+      "confidence": 62,
       "correct": true,
-      "prob_home": 60.6,
-      "prob_draw": 22.1,
-      "prob_away": 17.2
+      "prob_home": 61.6,
+      "prob_draw": 21.6,
+      "prob_away": 16.8
     },
     {
       "league": "premier-league",
@@ -456,9 +456,9 @@
       "actual": "draw",
       "confidence": 52,
       "correct": false,
-      "prob_home": 48.7,
-      "prob_draw": 26.1,
-      "prob_away": 25.2
+      "prob_home": 51.7,
+      "prob_draw": 25.8,
+      "prob_away": 22.5
     },
     {
       "league": "premier-league",
@@ -466,11 +466,11 @@
       "away": "Chelsea",
       "predicted": "away",
       "actual": "home",
-      "confidence": 59,
+      "confidence": 56,
       "correct": false,
-      "prob_home": 18.2,
-      "prob_draw": 22.9,
-      "prob_away": 58.9
+      "prob_home": 22.8,
+      "prob_draw": 21.3,
+      "prob_away": 55.9
     },
     {
       "league": "premier-league",
@@ -478,11 +478,11 @@
       "away": "Nott'm Forest",
       "predicted": "home",
       "actual": "away",
-      "confidence": 68,
+      "confidence": 69,
       "correct": false,
-      "prob_home": 68.0,
-      "prob_draw": 19.9,
-      "prob_away": 12.1
+      "prob_home": 68.9,
+      "prob_draw": 19.2,
+      "prob_away": 11.9
     },
     {
       "league": "premier-league",
@@ -490,23 +490,23 @@
       "away": "Fulham",
       "predicted": "home",
       "actual": "home",
-      "confidence": 56,
+      "confidence": 54,
       "correct": true,
-      "prob_home": 56.5,
-      "prob_draw": 23.6,
-      "prob_away": 19.9
+      "prob_home": 54.1,
+      "prob_draw": 23.9,
+      "prob_away": 21.9
     },
     {
       "league": "premier-league",
       "home": "Sheffield United",
       "away": "Luton",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 52,
+      "confidence": 50,
       "correct": false,
-      "prob_home": 39.0,
-      "prob_draw": 27.0,
-      "prob_away": 34.0
+      "prob_home": 35.4,
+      "prob_draw": 27.4,
+      "prob_away": 37.2
     },
     {
       "league": "premier-league",
@@ -516,9 +516,9 @@
       "actual": "away",
       "confidence": 52,
       "correct": true,
-      "prob_home": 25.0,
-      "prob_draw": 26.0,
-      "prob_away": 48.9
+      "prob_home": 20.9,
+      "prob_draw": 26.6,
+      "prob_away": 52.5
     },
     {
       "league": "premier-league",
@@ -526,11 +526,11 @@
       "away": "Aston Villa",
       "predicted": "home",
       "actual": "home",
-      "confidence": 66,
+      "confidence": 67,
       "correct": true,
-      "prob_home": 66.4,
-      "prob_draw": 20.1,
-      "prob_away": 13.5
+      "prob_home": 67.1,
+      "prob_draw": 19.1,
+      "prob_away": 13.8
     },
     {
       "league": "premier-league",
@@ -538,11 +538,11 @@
       "away": "Wolves",
       "predicted": "home",
       "actual": "away",
-      "confidence": 55,
+      "confidence": 57,
       "correct": false,
-      "prob_home": 55.0,
-      "prob_draw": 24.1,
-      "prob_away": 21.0
+      "prob_home": 56.9,
+      "prob_draw": 23.3,
+      "prob_away": 19.8
     },
     {
       "league": "premier-league",
@@ -550,23 +550,23 @@
       "away": "Crystal Palace",
       "predicted": "home",
       "actual": "home",
-      "confidence": 68,
+      "confidence": 72,
       "correct": true,
-      "prob_home": 67.9,
-      "prob_draw": 19.5,
-      "prob_away": 12.6
+      "prob_home": 72.2,
+      "prob_draw": 17.3,
+      "prob_away": 10.5
     },
     {
       "league": "premier-league",
       "home": "Everton",
       "away": "Man City",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 52,
-      "correct": true,
-      "prob_home": 31.1,
-      "prob_draw": 26.2,
-      "prob_away": 42.7
+      "confidence": 50,
+      "correct": false,
+      "prob_home": 38.0,
+      "prob_draw": 24.8,
+      "prob_away": 37.2
     },
     {
       "league": "premier-league",
@@ -576,9 +576,9 @@
       "actual": "home",
       "confidence": 52,
       "correct": false,
-      "prob_home": 25.8,
-      "prob_draw": 25.6,
-      "prob_away": 48.6
+      "prob_home": 29.5,
+      "prob_draw": 24.7,
+      "prob_away": 45.8
     },
     {
       "league": "premier-league",
@@ -586,11 +586,11 @@
       "away": "West Ham",
       "predicted": "home",
       "actual": "away",
-      "confidence": 69,
+      "confidence": 71,
       "correct": false,
-      "prob_home": 69.3,
-      "prob_draw": 19.7,
-      "prob_away": 11.0
+      "prob_home": 70.6,
+      "prob_draw": 18.8,
+      "prob_away": 10.6
     },
     {
       "league": "premier-league",
@@ -598,11 +598,11 @@
       "away": "Chelsea",
       "predicted": "away",
       "actual": "away",
-      "confidence": 66,
+      "confidence": 68,
       "correct": true,
-      "prob_home": 13.0,
-      "prob_draw": 21.1,
-      "prob_away": 65.8
+      "prob_home": 12.9,
+      "prob_draw": 19.4,
+      "prob_away": 67.7
     },
     {
       "league": "premier-league",
@@ -612,9 +612,9 @@
       "actual": "home",
       "confidence": 52,
       "correct": true,
-      "prob_home": 44.2,
-      "prob_draw": 25.7,
-      "prob_away": 30.1
+      "prob_home": 50.1,
+      "prob_draw": 23.7,
+      "prob_away": 26.2
     },
     {
       "league": "premier-league",
@@ -624,9 +624,9 @@
       "actual": "home",
       "confidence": 52,
       "correct": true,
-      "prob_home": 50.9,
-      "prob_draw": 24.9,
-      "prob_away": 24.2
+      "prob_home": 52.3,
+      "prob_draw": 24.2,
+      "prob_away": 23.5
     },
     {
       "league": "premier-league",
@@ -634,11 +634,11 @@
       "away": "Sheffield United",
       "predicted": "home",
       "actual": "home",
-      "confidence": 73,
+      "confidence": 75,
       "correct": true,
-      "prob_home": 73.1,
-      "prob_draw": 17.7,
-      "prob_away": 9.2
+      "prob_home": 75.1,
+      "prob_draw": 16.5,
+      "prob_away": 8.5
     },
     {
       "league": "premier-league",
@@ -648,9 +648,9 @@
       "actual": "home",
       "confidence": 52,
       "correct": false,
-      "prob_home": 25.5,
-      "prob_draw": 25.5,
-      "prob_away": 49.0
+      "prob_home": 29.6,
+      "prob_draw": 24.5,
+      "prob_away": 45.9
     },
     {
       "league": "premier-league",
@@ -658,11 +658,11 @@
       "away": "Man United",
       "predicted": "away",
       "actual": "home",
-      "confidence": 62,
+      "confidence": 63,
       "correct": false,
-      "prob_home": 15.2,
-      "prob_draw": 22.4,
-      "prob_away": 62.5
+      "prob_home": 15.8,
+      "prob_draw": 21.2,
+      "prob_away": 63.0
     },
     {
       "league": "premier-league",
@@ -670,11 +670,11 @@
       "away": "Arsenal",
       "predicted": "away",
       "actual": "home",
-      "confidence": 62,
+      "confidence": 64,
       "correct": false,
-      "prob_home": 15.3,
-      "prob_draw": 22.2,
-      "prob_away": 62.5
+      "prob_home": 15.5,
+      "prob_draw": 20.4,
+      "prob_away": 64.1
     },
     {
       "league": "premier-league",
@@ -684,9 +684,9 @@
       "actual": "home",
       "confidence": 67,
       "correct": true,
-      "prob_home": 66.9,
-      "prob_draw": 20.1,
-      "prob_away": 12.9
+      "prob_home": 67.1,
+      "prob_draw": 19.5,
+      "prob_away": 13.4
     },
     {
       "league": "premier-league",
@@ -694,23 +694,23 @@
       "away": "Newcastle",
       "predicted": "home",
       "actual": "home",
-      "confidence": 66,
+      "confidence": 68,
       "correct": true,
-      "prob_home": 65.8,
-      "prob_draw": 20.5,
-      "prob_away": 13.7
+      "prob_home": 68.3,
+      "prob_draw": 18.7,
+      "prob_away": 13.0
     },
     {
       "league": "premier-league",
       "home": "West Ham",
       "away": "Brighton",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 52,
-      "correct": false,
-      "prob_home": 40.5,
-      "prob_draw": 26.7,
-      "prob_away": 32.8
+      "confidence": 50,
+      "correct": true,
+      "prob_home": 41.9,
+      "prob_draw": 26.8,
+      "prob_away": 31.3
     },
     {
       "league": "premier-league",
@@ -718,11 +718,11 @@
       "away": "Luton",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 63,
+      "confidence": 64,
       "correct": false,
-      "prob_home": 63.0,
-      "prob_draw": 21.9,
-      "prob_away": 15.2
+      "prob_home": 63.9,
+      "prob_draw": 21.6,
+      "prob_away": 14.5
     },
     {
       "league": "premier-league",
@@ -734,7 +734,7 @@
       "correct": true,
       "prob_home": 66.6,
       "prob_draw": 20.2,
-      "prob_away": 13.1
+      "prob_away": 13.2
     },
     {
       "league": "premier-league",
@@ -744,9 +744,9 @@
       "actual": "away",
       "confidence": 52,
       "correct": true,
-      "prob_home": 27.5,
-      "prob_draw": 25.5,
-      "prob_away": 47.0
+      "prob_home": 30.0,
+      "prob_draw": 24.8,
+      "prob_away": 45.2
     },
     {
       "league": "premier-league",
@@ -754,11 +754,11 @@
       "away": "Aston Villa",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 64,
+      "confidence": 66,
       "correct": false,
-      "prob_home": 64.0,
-      "prob_draw": 20.9,
-      "prob_away": 15.1
+      "prob_home": 65.6,
+      "prob_draw": 19.7,
+      "prob_away": 14.7
     }
   ]
 }
