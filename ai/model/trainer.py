@@ -226,18 +226,29 @@ class FootballPredictor:
         p_over25 = float(goals_probs[1]) if len(goals_probs) > 1 else 0.5
 
         probs = [p_home, p_draw, p_away]
-        idx   = int(np.argmax(probs))
 
-        # Draw guard: only call a draw if it beats both alternatives by ≥4pp
-        if idx == 1:
-            sorted_p = sorted(probs, reverse=True)
-            if sorted_p[0] - sorted_p[1] < 0.04:
-                idx = 0 if p_home >= p_away else 2
+        # ── Draw detection ──────────────────────────────────────────────
+        # The ensemble's draw probability rarely tops the other two, so a
+        # naive argmax never predicts draws.  Instead: predict draw when
+        #   (a) draw probability is meaningfully high (≥ 0.245, close to
+        #       the historical base rate of ~26 %) AND
+        #   (b) home and away are close (gap ≤ 14 pp) — genuinely open match.
+        # Otherwise predict whichever of home/away is more likely.
+        DRAW_PROB_FLOOR  = 0.245   # minimum draw probability to consider
+        HA_GAP_CEIL      = 0.14    # max |p_home - p_away| to allow draw call
+
+        if p_draw >= DRAW_PROB_FLOOR and abs(p_home - p_away) <= HA_GAP_CEIL:
+            idx = 1
+        else:
+            idx = 0 if p_home >= p_away else 2
 
         prediction_label = OUTCOME_LABELS[idx]
         raw_conf = int(round(probs[idx] * 100))
-        floor    = 50 if idx == 1 else 52
-        confidence = max(floor, min(95, raw_conf))
+        # Draws are inherently uncertain — cap confidence lower
+        if idx == 1:
+            confidence = max(50, min(65, raw_conf))
+        else:
+            confidence = max(52, min(95, raw_conf))
 
         def edge(prob, odds):
             return round((prob * odds) - 1.0, 3) if odds and odds > 1 else 0.0
