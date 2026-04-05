@@ -1,13 +1,58 @@
-https://github.com/statsbomb/open-data.git
-https://github.com/jfjelstul/worldcup.git
-https://github.com/JaseZiv/worldfootballR.git
-https://github.com/dcaribou/transfermarkt-datasets.git
-https://github.com/somdeep/Statball.git
-https://github.com/probberechts/soccerdata.git
+# ═══════════════════════════════════════════════════════════════
+# StatWise Dataset Registry
+# Sources are classified as: USE / SKIP / LIBRARY
+# Lines starting with # are comments
+# ═══════════════════════════════════════════════════════════════
+
+# ── TIER 1: PRIMARY MATCH DATA (clean, club football only) ────
+# 475K+ matches, 2000-2025, 42 leagues, halftime, shots, odds, Elo, handicap
 https://github.com/xgabora/Club-Football-Match-Data-2000-2025
-https://github.com/eddwebster/football_analytics
-https://github.com/statsbomb/statsbombpy
-https://github.com/douglasbc/scraping-understat-dataset.git
-https://github.com/Torvaney/understat-db.git
-https://github.com/probberechts/soccerdata
+
+# Direct HTTP download (16 leagues, 9 seasons, richest odds columns)
+# Downloaded by dataset_downloader.cpp automatically
 https://www.football-data.co.uk/
+
+# ── TIER 2: xG (EXPECTED GOALS) DATA ─────────────────────────
+# Understat shot-level data for EPL, La Liga, Bundesliga, Serie A, Ligue 1
+# 2014/15 → 2021/22 - player + shot coordinates with xG values
+https://github.com/douglasbc/scraping-understat-dataset.git
+
+# ── TIER 3: SUPPLEMENTARY OPEN DATA ──────────────────────────
+# StatsBomb open event-level data (free tier, 836 match sample)
+https://github.com/statsbomb/open-data.git
+
+# Squad market values - long-term team strength signal
+# Useful for newly promoted clubs / clubs with big transfers
+https://github.com/dcaribou/transfermarkt-datasets.git
+
+# ── EXTENDED FOOTBALL-DATA.CO.UK LEAGUES ─────────────────────
+# These are additional league codes available on football-data.co.uk
+# Added to the downloader's league list beyond the current 16
+# ARG=Argentine Primera, BRA=Brazilian Seria A, MLS=MLS
+# AUT=Austrian Bundesliga, GRE=Greek, DEN=Danish, NOR=Norwegian
+# Handled automatically by dataset_downloader.cpp
+
+# ═══════════════════════════════════════════════════════════════
+# REMOVED / DO NOT USE
+# ═══════════════════════════════════════════════════════════════
+
+# SKIP: International results — neutral venue, no home advantage signal
+# https://github.com/martj42/international_results
+
+# SKIP: World Cup — neutral venue tournaments, distort club model
+# https://github.com/jfjelstul/worldcup.git
+
+# SKIP: R library, not a dataset
+# https://github.com/JaseZiv/worldfootballR.git
+
+# SKIP: Python scraping library (needs cookies + rate limiting)
+# https://github.com/probberechts/soccerdata.git
+
+# SKIP: Analysis notebooks, no raw data
+# https://github.com/eddwebster/football_analytics
+
+# SKIP: Python client library (not a data source)
+# https://github.com/statsbombpy
+
+# SKIP: Limited data, unclear quality
+# https://github.com/somdeep/Statball.git
