@@ -1,0 +1,542 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1988-01-03,Gambia,Ghana,0,2,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-05,Algeria,Congo,4,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-05,Gambia,Ghana,0,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-06,Guatemala,Costa Rica,1,2,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-06,South Korea,Egypt,1,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-01-10,Guatemala,United States,1,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-12,Czech Republic,Finland,0,2,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-01-12,German DR,Sweden,1,4,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-01-13,Guatemala,United States,0,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-13,Honduras,Mexico,0,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-14,Thailand,Indonesia,3,3,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1988-01-15,Czech Republic,German DR,1,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-01-15,Finland,Sweden,0,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-01-15,Jordan,United Arab Emirates,0,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-01-18,Indonesia,Oman,3,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1988-01-18,Jordan,United Arab Emirates,2,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-01-19,Israel,Belgium,2,3,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-20,Thailand,Oman,3,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1988-01-21,Malaysia,South Korea,0,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1988-01-21,Qatar,Bulgaria,2,3,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-23,United Arab Emirates,Bulgaria,0,3,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-01-27,Israel,France,1,1,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-27,Spain,German DR,0,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-27,United Arab Emirates,Japan,1,1,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-01-30,United Arab Emirates,Japan,2,0,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-02,Austria,Morocco,1,3,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Tournoi de France,1
+1988-02-02,France,Switzerland,2,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Tournoi de France,0
+1988-02-02,Oman,Japan,1,1,international,Oman,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-03,Egypt,Bulgaria,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-03,Israel,Romania,0,2,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-04,United Arab Emirates,Thailand,3,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-02-05,Austria,Switzerland,1,2,international,Monaco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Tournoi de France,1
+1988-02-05,China,Yemen,0,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-05,France,Morocco,2,1,international,Monaco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Tournoi de France,1
+1988-02-06,Bangladesh,India,0,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-06,Poland,Romania,2,2,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-02-07,Malta,Finland,2,0,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Malta International Tournament,0
+1988-02-07,United Arab Emirates,Yemen,2,1,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-02-08,China,Bangladesh,4,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-09,Thailand,India,1,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-10,Israel,Poland,1,3,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-10,Malta,Tunisia,2,1,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Malta International Tournament,0
+1988-02-10,United Arab Emirates,China,0,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-02-11,Yemen,India,1,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-12,Thailand,Bangladesh,1,1,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-13,Finland,Tunisia,3,0,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Malta International Tournament,1
+1988-02-13,United Arab Emirates,India,3,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-02-14,Benin,Mali,1,2,international,Benin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-14,China,Thailand,5,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-14,Yemen,Bangladesh,0,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-16,China,India,1,1,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-16,Yemen,Thailand,3,3,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-02-17,Greece,Northern Ireland,3,2,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-17,Israel,England,0,0,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-17,Saudi Arabia,Scotland,2,2,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-17,United Arab Emirates,Bangladesh,4,0,asian-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-02-18,Bermuda,Canada,0,0,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-20,Italy,Russia,4,1,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-23,United Arab Emirates,Egypt,1,2,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-24,Spain,Czech Republic,1,2,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-25,Djibouti,Yemen DPR,4,1,international,Djibouti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-25,Iraq,Tunisia,2,0,international,Iraq,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-02-26,United Arab Emirates,Egypt,1,1,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-02,Costa Rica,Guatemala,2,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-02,Saudi Arabia,Oman,2,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1988-03-03,Morocco,German DR,2,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-03,Qatar,Kuwait,1,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-03,United Arab Emirates,Bahrain,2,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-04,Iraq,Oman,1,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-05,Kuwait,United Arab Emirates,0,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-05,Saudi Arabia,Qatar,0,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1988-03-06,Dominica,Antigua and Barbuda,0,0,international,Dominica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1988-03-07,Oman,Bahrain,0,2,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-08,Iraq,Kuwait,1,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-08,Qatar,United Arab Emirates,2,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-09,Saudi Arabia,Bahrain,1,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1988-03-10,Libya,Malta,1,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-10,Oman,Qatar,2,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-10,United Arab Emirates,Iraq,0,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-11,Guadeloupe,Suriname,0,2,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1988-03-12,Kuwait,Bahrain,0,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-13,Algeria,Ivory Coast,1,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-13,Gambia,Mali,2,1,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-13,Morocco,DR Congo,1,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1988-03-13,Qatar,Iraq,0,3,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-13,Saudi Arabia,United Arab Emirates,2,2,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1988-03-14,Cameroon,Egypt,1,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-14,Kenya,Nigeria,0,3,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-14,Oman,Kuwait,0,2,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-16,Bahrain,Qatar,1,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-16,Guatemala,Uruguay,1,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-16,Hungary,Turkey,1,0,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-16,Ivory Coast,DR Congo,1,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-16,Morocco,Algeria,1,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1988-03-16,Saudi Arabia,Iraq,0,2,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1988-03-17,Cameroon,Nigeria,1,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-17,Egypt,Kenya,3,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-17,United Arab Emirates,Oman,1,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-18,Bahrain,Iraq,0,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1988-03-18,El Salvador,Honduras,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-03-18,Saudi Arabia,Kuwait,0,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1988-03-19,Algeria,DR Congo,1,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-19,Morocco,Ivory Coast,0,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1988-03-20,Antigua and Barbuda,Dominica,2,1,international,Antigua and Barbuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1988-03-20,Cameroon,Kenya,0,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-20,Egypt,Nigeria,0,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-22,Malta,Scotland,1,1,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-23,Algeria,Nigeria,1,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-23,Bulgaria,Czech Republic,2,0,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-23,England,Netherlands,2,2,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-23,France,Spain,2,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-23,Greece,Russia,0,4,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-23,Morocco,Cameroon,0,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1988-03-23,Northern Ireland,Poland,1,1,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-23,Republic of Ireland,Romania,2,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-23,Wales,Yugoslavia,1,2,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-26,Alderney,Guernsey,1,5,international,Alderney,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1988-03-26,Belgium,Hungary,3,0,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-26,Morocco,Algeria,1,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1988-03-26,Peru,Canada,1,3,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-27,Cameroon,Nigeria,1,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1988-03-29,Mexico,El Salvador,8,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-30,Colombia,Canada,3,0,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-30,German DR,Romania,3,3,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-03-31,Argentina,Russia,2,4,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Four Nations Tournament,1
+1988-03-31,Germany,Sweden,1,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Four Nations Tournament,0
+1988-03-31,Yugoslavia,Italy,1,1,international,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-02,Germany,Argentina,1,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Four Nations Tournament,0
+1988-04-02,Sweden,Russia,2,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Four Nations Tournament,1
+1988-04-05,Jamaica,Canada,0,4,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-06,Greece,Austria,2,2,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-07,Jamaica,Canada,0,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-07,Malaysia,Pakistan,4,0,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-04-08,Kuwait,Japan,1,0,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-04-10,El Salvador,Guatemala,0,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-10,Jordan,Pakistan,1,0,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-04-11,Malaysia,Japan,0,1,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-04-12,Kuwait,Jordan,0,0,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-04-13,Bulgaria,German DR,1,1,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-14,Malaysia,Jordan,0,0,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-04-15,Kuwait,Pakistan,3,0,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-04-16,Japan,Jordan,1,1,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-04-17,Guyana,Trinidad and Tobago,0,4,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-04-18,Japan,Pakistan,4,1,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-04-18,Malaysia,Kuwait,0,5,asian-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-04-19,Guadeloupe,Suriname,1,1,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1988-04-21,El Salvador,Guatemala,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-04-26,Mexico,Honduras,4,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-27,Austria,Denmark,1,0,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-27,Czech Republic,Russia,1,1,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-27,Germany,Switzerland,1,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-27,Hungary,England,0,0,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-27,Luxembourg,Italy,0,3,international,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-27,Northern Ireland,France,0,0,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-27,Republic of Ireland,Yugoslavia,2,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-27,Spain,Scotland,0,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-27,Sweden,Wales,4,1,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-04-28,Gambia,Senegal,0,4,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-04-28,Guinea-Bissau,Sierra Leone,0,0,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1988-04-29,Cape Verde,Mali,1,3,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-04-29,Guinea,Mauritania,1,1,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-04-30,Cuba,Guatemala,0,1,international,Cuba,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-04-30,Gambia,Sierra Leone,1,3,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-04-30,Guinea-Bissau,Senegal,1,1,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1988-05-01,Cape Verde,Mauritania,3,2,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-05-01,Guinea,Mali,1,0,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-05-02,Guinea-Bissau,Gambia,3,1,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1988-05-02,Jersey,Guernsey,0,1,international,Jersey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1988-05-02,Senegal,Sierra Leone,2,2,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-05-03,Cape Verde,Guinea,1,1,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-05-03,Mali,Mauritania,2,2,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-05-04,Hungary,Iceland,3,0,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-05,Guinea,Sierra Leone,3,0,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-05-05,Mali,Senegal,1,1,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-05-07,Senegal,Sierra Leone,2,1,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-05-08,China,North Korea,0,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-08,Guinea,Mali,0,0,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1988-05-08,Trinidad and Tobago,Guyana,1,0,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-05-10,Hungary,Denmark,2,2,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-11,Guadeloupe,Togo,2,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-05-12,Jamaica,Puerto Rico,1,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-05-13,Réunion,Togo,1,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-05-15,Guatemala,Cuba,1,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-05-15,Macau,Hong Kong,0,2,international,Macau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-17,Hungary,Austria,0,4,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-17,Scotland,Colombia,0,0,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Rous Cup,0
+1988-05-19,Canada,Greece,0,1,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-19,Finland,Colombia,1,3,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-21,Canada,Greece,0,3,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Matthews Cup,0
+1988-05-21,England,Scotland,1,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Rous Cup,0
+1988-05-21,Northern Ireland,Malta,3,0,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-05-22,Republic of Ireland,Poland,3,1,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-23,Chile,Greece,0,1,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Matthews Cup,1
+1988-05-24,England,Colombia,1,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Rous Cup,0
+1988-05-24,Netherlands,Bulgaria,1,2,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-25,Burkina Faso,Ghana,3,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-25,Canada,Chile,1,0,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Matthews Cup,0
+1988-05-25,Nepal,Hong Kong,0,0,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-05-26,Syria,North Korea,2,1,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-05-27,Iran,Hong Kong,2,0,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-05-28,Canada,Greece,0,0,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Matthews Cup,0
+1988-05-28,Nepal,North Korea,0,1,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-05-28,Switzerland,England,0,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-05-29,Puerto Rico,Jamaica,1,2,international,Puerto Rico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-05-29,Syria,Iran,1,1,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-05-31,North Korea,Hong Kong,1,0,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-06-01,Denmark,Czech Republic,0,1,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-01,Malta,Wales,2,3,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-01,Nepal,Syria,0,3,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-06-01,Netherlands,Romania,2,0,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-01,Norway,Republic of Ireland,0,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-01,Russia,Poland,2,1,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-01,Spain,Sweden,1,3,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-01,United States,Chile,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-02,Iran,North Korea,0,0,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-06-02,Japan,China,0,3,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Kirin Cup,0
+1988-06-03,Libya,Burkina Faso,3,0,world-cup,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-06-03,Syria,Hong Kong,2,0,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-06-03,United States,Chile,1,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-04,Germany,Yugoslavia,1,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-04,Italy,Wales,0,1,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-04,Nepal,Iran,0,3,asian-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-06-04,Zambia,Zimbabwe,3,2,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-05,Denmark,Belgium,3,1,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-05,Switzerland,Spain,1,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-05,United States,Chile,0,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-07,United States,Ecuador,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-09,Seychelles,Tanzania,1,1,international,Seychelles,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-10,Germany,Italy,1,1,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro,0
+1988-06-10,Mozambique,Malawi,1,2,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-10,United States,Ecuador,0,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-11,Denmark,Spain,2,3,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-12,England,Republic of Ireland,0,1,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-12,Netherlands,Russia,0,1,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-12,United States,Ecuador,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-14,Germany,Denmark,2,0,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro,0
+1988-06-14,Italy,Spain,1,0,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-14,Mozambique,Malawi,1,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-14,United States,Costa Rica,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-15,England,Netherlands,1,3,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-15,Honduras,Ecuador,1,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-15,Republic of Ireland,Russia,1,1,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-17,Bahrain,South Korea,2,0,asian-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-06-17,Canada,Costa Rica,0,1,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-17,Germany,Spain,2,0,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro,0
+1988-06-17,Honduras,Ecuador,0,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-06-17,Indonesia,Yemen DPR,1,0,asian-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-06-17,Italy,Denmark,2,0,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-18,England,Russia,1,3,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-18,Republic of Ireland,Netherlands,0,1,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-19,Antigua and Barbuda,Curaçao,0,1,international,Antigua and Barbuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-06-19,Indonesia,Bahrain,0,0,asian-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-06-19,South Korea,Zambia,4,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1988-06-19,South Korea,Yemen DPR,1,1,asian-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-06-21,Germany,Netherlands,1,2,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro,0
+1988-06-21,Saudi Arabia,New Zealand,0,2,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-06-22,Bahrain,Yemen DPR,2,0,asian-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1988-06-22,Indonesia,South Korea,0,4,asian-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1988-06-22,Russia,Italy,2,0,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-23,Saudi Arabia,New Zealand,2,3,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-06-25,Russia,Netherlands,0,2,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1988-06-29,Hong Kong,Saudi Arabia,0,3,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-07-01,Curaçao,Costa Rica,1,1,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-01,Hong Kong,Saudi Arabia,0,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-07-03,Burkina Faso,Libya,2,0,world-cup,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-07-03,Curaçao,Costa Rica,1,0,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-05,Guadeloupe,Trinidad and Tobago,0,3,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1988-07-05,Martinique,Antigua and Barbuda,2,2,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1988-07-06,Argentina,Saudi Arabia,2,2,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-07-06,Malawi,Zambia,1,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-07,Antigua and Barbuda,Trinidad and Tobago,1,1,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1988-07-07,Australia,Brazil,0,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-07,Martinique,Guadeloupe,2,1,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1988-07-08,Jordan,Bahrain,0,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1988-07-08,Malawi,Zambia,0,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-09,Antigua and Barbuda,Guadeloupe,0,0,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1988-07-09,Australia,Saudi Arabia,3,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-09,Iraq,Tunisia,1,1,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1988-07-09,Martinique,Trinidad and Tobago,0,3,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1988-07-10,Argentina,Brazil,0,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-07-10,Malawi,Zambia,1,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-11,Iraq,Lebanon,0,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1988-07-12,Bahrain,Syria,1,2,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1988-07-13,Brazil,Saudi Arabia,4,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-07-13,Egypt,Tunisia,1,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1988-07-13,United States,Poland,0,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-14,Australia,Argentina,4,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-15,Canada,Poland,1,2,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-15,Egypt,Lebanon,3,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1988-07-16,Argentina,Saudi Arabia,2,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-07-16,Jordan,Syria,2,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1988-07-16,Uganda,Malawi,1,0,world-cup,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-07-17,Australia,Brazil,0,2,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-17,Costa Rica,Panama,1,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-07-17,Egypt,Iraq,0,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1988-07-17,Lebanon,Tunisia,1,1,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1988-07-19,Egypt,Syria,0,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1988-07-19,Jordan,Iraq,0,3,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1988-07-21,Iraq,Syria,1,1,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1988-07-21,Jordan,Egypt,0,2,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1988-07-24,Burkina Faso,Niger,1,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Tournament Burkina Faso,0
+1988-07-24,Jamaica,United States,0,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-07-25,Benin,Ghana,1,1,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Tournament Burkina Faso,1
+1988-07-27,Burkina Faso,Ghana,3,1,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Tournament Burkina Faso,0
+1988-07-27,Mali,Niger,1,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Tournament Burkina Faso,1
+1988-07-28,Norway,Brazil,1,1,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-07-29,Benin,Mali,0,1,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Tournament Burkina Faso,1
+1988-07-29,Curaçao,Antigua and Barbuda,3,1,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-07-29,Ghana,Niger,0,3,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Tournament Burkina Faso,1
+1988-07-30,Malawi,Uganda,3,1,world-cup,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-07-31,Burkina Faso,Benin,1,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Tournament Burkina Faso,0
+1988-07-31,Ghana,Mali,1,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Tournament Burkina Faso,1
+1988-07-31,Panama,Costa Rica,0,2,international,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-08-01,Angola,Gabon,4,1,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-02,Benin,Niger,0,5,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Tournament Burkina Faso,1
+1988-08-02,Burkina Faso,Mali,2,1,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Tournament Burkina Faso,0
+1988-08-03,Austria,Brazil,0,2,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-03,Zambia,Malawi,4,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-04,Burkina Faso,Niger,1,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Tournament Burkina Faso,0
+1988-08-04,Finland,Bulgaria,1,1,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-04,Zambia,Malawi,7,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-05,El Salvador,Guatemala,1,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Marlboro Cup,1
+1988-08-05,Indonesia,Thailand,1,0,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indonesia Tournament,0
+1988-08-05,Tunisia,Guinea,5,0,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-08-06,Albania,Cuba,0,0,international,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-07,Angola,Sudan,0,0,world-cup,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-08-07,Colombia,Uruguay,2,1,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-07,Ghana,Liberia,0,0,world-cup,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-08-07,Iceland,Bulgaria,2,3,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-09,Norway,Bulgaria,1,1,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-13,United States,Jamaica,5,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-08-17,Finland,Russia,0,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-21,Guinea,Tunisia,3,0,world-cup,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-08-21,Liberia,Ghana,2,0,world-cup,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-08-24,France,Czech Republic,1,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-24,Iceland,Faroe Islands,1,0,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-24,Poland,Bulgaria,3,2,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-24,Switzerland,Yugoslavia,0,2,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-31,Austria,Hungary,0,0,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-31,Finland,Germany,0,4,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-08-31,German DR,Greece,1,0,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-08-31,Iceland,Russia,1,1,world-cup,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-08-31,Sweden,Denmark,1,2,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-07,Ecuador,Paraguay,1,5,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-12,Honduras,Paraguay,0,0,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-13,Chile,Ecuador,3,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-14,England,Denmark,1,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-14,Netherlands,Wales,1,0,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-09-14,Northern Ireland,Republic of Ireland,0,0,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-09-14,Norway,Scotland,1,2,world-cup,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-09-14,Spain,Yugoslavia,1,2,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-15,Honduras,Paraguay,0,2,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-20,Czech Republic,Austria,4,2,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-20,Romania,Albania,3,0,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-21,German DR,Poland,1,2,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-21,Germany,Russia,1,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-21,Iceland,Hungary,0,3,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-21,Luxembourg,Switzerland,1,4,world-cup,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-09-21,Peru,Paraguay,0,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-21,Turkey,Greece,3,1,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-25,El Salvador,Honduras,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-09-26,Curaçao,Venezuela,0,0,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-26,Malawi,Mozambique,1,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-27,Ecuador,Uruguay,1,2,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-09-27,Paraguay,Chile,2,0,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-28,Denmark,Iceland,1,0,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-28,France,Norway,1,0,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-09-28,Malawi,Mozambique,1,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-09-29,Chile,Ecuador,0,0,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-09-29,Paraguay,Uruguay,3,1,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-01,Curaçao,El Salvador,0,1,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-10-01,Tanzania,Eswatini,1,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-02,Angola,Equatorial Guinea,0,1,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-02,Indonesia,Qatar,0,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-02,Liberia,Mali,0,1,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-02,Mauritius,Seychelles,3,0,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-02,Trinidad and Tobago,Canada,1,2,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-04,Indonesia,Qatar,1,4,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-09,Gabon,Burkina Faso,3,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-09,Guatemala,Canada,1,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-10-09,Singapore,Qatar,0,1,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-12,Belgium,Brazil,1,2,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-12,Cyprus,Malta,0,1,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-12,New Zealand,Australia,1,2,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Trans-Tasman Cup,0
+1988-10-12,Spain,Argentina,1,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-12,Sweden,Portugal,0,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-12,Turkey,Iceland,1,1,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-12,Uruguay,Paraguay,2,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-15,Canada,Guatemala,3,2,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-10-16,Australia,New Zealand,2,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Trans-Tasman Cup,0
+1988-10-16,El Salvador,Curaçao,5,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-10-16,Equatorial Guinea,Angola,0,0,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-16,Eswatini,Tanzania,1,1,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-16,Mali,Liberia,3,0,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-16,Seychelles,Mauritius,1,0,international,Seychelles,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-18,Israel,Malta,2,0,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-18,Luxembourg,Czech Republic,0,2,world-cup,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,Belgium,Switzerland,1,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,Bulgaria,Romania,1,3,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,England,Sweden,0,0,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,German DR,Iceland,2,0,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,Germany,Netherlands,0,0,world-cup,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,Greece,Denmark,1,1,world-cup,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,Hungary,Northern Ireland,1,0,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,Italy,Norway,2,1,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-19,Poland,Albania,1,0,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,Republic of Ireland,Tunisia,4,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-19,Russia,Austria,2,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1988-10-19,Scotland,Yugoslavia,1,1,world-cup,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-19,Wales,Finland,2,2,world-cup,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-21,Solomon Islands,Fiji,1,1,international,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1988-10-22,Cyprus,France,1,1,world-cup,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-10-23,Burkina Faso,Gabon,1,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1988-10-23,New Caledonia,Vanuatu,6,1,international,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1988-10-24,Fiji,Vanuatu,8,0,international,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1988-10-24,Solomon Islands,New Caledonia,1,0,international,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1988-10-25,Chile,Peru,2,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa del Pacífico,0
+1988-10-25,Fiji,New Caledonia,2,0,international,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1988-10-25,Solomon Islands,Vanuatu,5,0,international,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1988-10-26,Japan,South Korea,0,1,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-26,New Caledonia,Vanuatu,0,1,international,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1988-10-26,Solomon Islands,Fiji,1,3,international,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1988-10-29,Algeria,Angola,1,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-10-30,Trinidad and Tobago,Honduras,0,0,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-11-01,Chile,Uruguay,1,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Juan Pinto Durán,0
+1988-11-02,Austria,Turkey,3,2,world-cup,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-02,Cyprus,Norway,0,3,world-cup,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-02,Denmark,Bulgaria,1,1,world-cup,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-02,Romania,Greece,3,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-03,Kuwait,Finland,0,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-04,Czech Republic,Norway,3,2,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-05,Albania,Sweden,1,2,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-06,Ethiopia,Zambia,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-06,Kuwait,Finland,0,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-06,Malawi,Tanzania,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1988-11-08,Kenya,Zanzibar,2,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-08,Tunisia,Angola,5,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-08,Uganda,Zimbabwe,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-09,El Salvador,Guatemala,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-11-09,Indonesia,Qatar,0,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-09,Uruguay,Chile,3,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Juan Pinto Durán,0
+1988-11-10,Kenya,Tanzania,2,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-10,Malawi,Zanzibar,1,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1988-11-11,Ethiopia,Uganda,2,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-11,Sudan,Angola,1,2,world-cup,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-11,Zambia,Zimbabwe,1,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-12,Malawi,Kenya,3,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1988-11-12,Tanzania,Zanzibar,0,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-13,Algeria,Mali,7,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-13,DR Congo,Congo,1,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-13,Ethiopia,Zimbabwe,1,2,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-13,Honduras,Trinidad and Tobago,1,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1988-11-13,Uganda,Zambia,0,3,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-14,Fiji,New Zealand,1,1,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-14,Saudi Arabia,Egypt,0,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-15,Greece,Hungary,3,0,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-16,Czech Republic,Belgium,0,0,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-16,Italy,Netherlands,1,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-16,Kuwait,Egypt,2,2,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-16,Portugal,Luxembourg,1,0,world-cup,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-16,Saudi Arabia,England,1,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-16,Spain,Republic of Ireland,2,0,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-17,Cape Verde,Senegal,0,1,international,Cape Verde,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-17,Fiji,New Zealand,2,0,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-17,Kenya,Zambia,0,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-17,United Arab Emirates,Jordan,2,1,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-18,Angola,Senegal,1,2,international,Cape Verde,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-11-19,Cape Verde,Angola,2,3,international,Cape Verde,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-19,Fiji,New Zealand,1,0,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-19,Kenya,Zimbabwe,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1988-11-19,Malawi,Zambia,3,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1988-11-19,Yugoslavia,France,3,2,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-20,United Arab Emirates,Jordan,3,2,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-21,Syria,Russia,0,2,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-23,Kuwait,Russia,0,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-23,Malta,Cyprus,1,1,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-23,Peru,Chile,1,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa del Pacífico,0
+1988-11-23,Romania,Israel,3,0,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-24,United Arab Emirates,Algeria,1,1,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-25,Guinea,Sierra Leone,1,0,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1988-11-26,Fiji,Australia,1,0,world-cup,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-11-26,Liberia,Sierra Leone,0,0,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-27,Kuwait,Russia,0,2,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-27,Liberia,Guinea,0,1,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-29,Saudi Arabia,Tunisia,1,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-11-30,Cameroon,Gabon,0,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1988-11-30,Congo,Chad,2,1,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1988-11-30,Turkey,German DR,3,1,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-12-02,Cameroon,Equatorial Guinea,2,1,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1988-12-02,Central African Republic,Chad,2,1,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1988-12-02,Qatar,Iran,0,2,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup,0
+1988-12-02,Syria,Saudi Arabia,0,2,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-03,Australia,Fiji,5,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-12-03,Kuwait,Bahrain,0,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-03,United Arab Emirates,South Korea,0,1,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-04,Central African Republic,Congo,0,1,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1988-12-04,China,Syria,3,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-04,Equatorial Guinea,Gabon,0,3,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1988-12-04,Japan,Iran,0,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-05,Qatar,United Arab Emirates,2,1,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup,0
+1988-12-05,Saudi Arabia,Kuwait,0,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-06,Bahrain,China,0,1,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-06,Cameroon,Congo,2,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1988-12-06,Central African Republic,Gabon,0,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1988-12-06,Morocco,Egypt,0,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-06,South Korea,Japan,2,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-08,Cameroon,Gabon,0,1,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1988-12-08,Central African Republic,Congo,0,3,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1988-12-08,Iran,United Arab Emirates,1,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-08,Malaysia,Indonesia,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1988-12-08,Syria,Kuwait,1,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-09,Oman,Singapore,1,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1988-12-09,Qatar,South Korea,2,3,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup,0
+1988-12-09,Saudi Arabia,Bahrain,1,1,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-10,Ivory Coast,Tunisia,1,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-10,Kuwait,China,2,2,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-10,Malaysia,Thailand,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1988-12-10,United Arab Emirates,Japan,1,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-11,Bahrain,Syria,0,1,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-11,Malta,Hungary,2,2,world-cup,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-12-11,New Zealand,Taiwan,4,0,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-12-11,South Korea,Iran,3,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-11,Yugoslavia,Cyprus,4,0,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-12-12,China,Saudi Arabia,0,1,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-12,Indonesia,Thailand,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1988-12-12,Qatar,Japan,3,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup,0
+1988-12-14,Egypt,Switzerland,1,3,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-14,South Korea,China,2,1,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-14,Uruguay,Peru,3,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-15,Morocco,Gabon,5,2,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-15,New Zealand,Taiwan,4,1,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-12-15,Saudi Arabia,Iran,1,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-17,China,Iran,0,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-18,Ivory Coast,Tunisia,1,1,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-18,South Korea,Saudi Arabia,0,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1988-12-20,Liberia,Tunisia,1,1,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-20,Zambia,Egypt,1,2,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-21,Spain,Northern Ireland,4,0,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1988-12-22,Italy,Scotland,2,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-22,Morocco,Guinea,1,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1988-12-30,DR Congo,Angola,0,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0

@@ -1,0 +1,5555 @@
+{
+  "name": "Belgium First Division A 2020/21",
+  "matches": [
+    {
+      "round": "Matchday 1",
+      "date": "2020-08-08",
+      "time": "16:30",
+      "team1": "Club Brugge KV",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2020-08-08",
+      "time": "19:00",
+      "team1": "Royal Antwerp FC",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2020-08-08",
+      "time": "19:00",
+      "team1": "Standard Liège",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2020-08-09",
+      "time": "13:30",
+      "team1": "Sint-Truidense VV",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2020-08-09",
+      "time": "16:00",
+      "team1": "SV Zulte Waregem",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2020-08-09",
+      "time": "18:15",
+      "team1": "KV Mechelen",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2020-08-09",
+      "time": "20:45",
+      "team1": "KV Kortrijk",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2020-08-10",
+      "time": "19:00",
+      "team1": "KV Oostende",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2020-08-10",
+      "time": "19:00",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2020-08-14",
+      "time": "19:00",
+      "team1": "Royal Excel Mouscron",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2020-08-15",
+      "time": "16:30",
+      "team1": "KRC Genk",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2020-08-15",
+      "time": "19:00",
+      "team1": "KAA Gent",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2020-08-15",
+      "time": "19:00",
+      "team1": "Sporting Charleroi",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2020-08-16",
+      "time": "13:30",
+      "team1": "Cercle Brugge",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2020-08-16",
+      "time": "16:00",
+      "team1": "K Beerschot VA",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2020-08-16",
+      "time": "16:00",
+      "team1": "KAS Eupen",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2020-08-16",
+      "time": "18:15",
+      "team1": "RSC Anderlecht",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2020-08-17",
+      "time": "19:00",
+      "team1": "Waasland-Beveren",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2020-08-21",
+      "time": "19:00",
+      "team1": "KV Kortrijk",
+      "team2": "KAS Eupen",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2020-08-22",
+      "time": "16:15",
+      "team1": "SV Zulte Waregem",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2020-08-22",
+      "time": "18:30",
+      "team1": "KV Mechelen",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2020-08-22",
+      "time": "18:30",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2020-08-22",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2020-08-23",
+      "time": "13:30",
+      "team1": "Standard Liège",
+      "team2": "KRC Genk",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2020-08-23",
+      "time": "16:00",
+      "team1": "Club Brugge KV",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2020-08-23",
+      "time": "18:15",
+      "team1": "RSC Anderlecht",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2020-08-24",
+      "time": "20:45",
+      "team1": "Sint-Truidense VV",
+      "team2": "KV Oostende",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2020-08-28",
+      "time": "20:45",
+      "team1": "KV Oostende",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2020-08-29",
+      "time": "16:15",
+      "team1": "KAS Eupen",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2020-08-29",
+      "time": "18:30",
+      "team1": "Cercle Brugge",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2020-08-29",
+      "time": "18:30",
+      "team1": "Waasland-Beveren",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2020-08-29",
+      "time": "20:45",
+      "team1": "Royal Excel Mouscron",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2020-08-30",
+      "time": "13:30",
+      "team1": "KRC Genk",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2020-08-30",
+      "time": "16:00",
+      "team1": "K Beerschot VA",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2020-08-30",
+      "time": "18:15",
+      "team1": "Sporting Charleroi",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2020-08-30",
+      "time": "20:45",
+      "team1": "KAA Gent",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2020-09-11",
+      "time": "20:45",
+      "team1": "KAS Eupen",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2020-09-12",
+      "time": "16:15",
+      "team1": "KV Mechelen",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2020-09-12",
+      "time": "18:30",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2020-09-12",
+      "time": "20:45",
+      "team1": "Club Brugge KV",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2020-09-13",
+      "time": "13:30",
+      "team1": "RSC Anderlecht",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2020-09-13",
+      "time": "16:00",
+      "team1": "Sint-Truidense VV",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2020-09-13",
+      "time": "18:15",
+      "team1": "SV Zulte Waregem",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2020-09-13",
+      "time": "20:45",
+      "team1": "KV Kortrijk",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2020-09-14",
+      "time": "20:45",
+      "team1": "K Beerschot VA",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          5,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2020-09-18",
+      "time": "20:45",
+      "team1": "Sporting Charleroi",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2020-09-19",
+      "time": "16:15",
+      "team1": "KV Oostende",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2020-09-19",
+      "time": "18:30",
+      "team1": "Royal Excel Mouscron",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2020-09-19",
+      "time": "20:45",
+      "team1": "Waasland-Beveren",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2020-09-20",
+      "time": "13:30",
+      "team1": "SV Zulte Waregem",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          4
+        ],
+        "ft": [
+          0,
+          6
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2020-09-20",
+      "time": "16:00",
+      "team1": "Standard Liège",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2020-09-20",
+      "time": "18:15",
+      "team1": "KRC Genk",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2020-09-20",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2020-09-21",
+      "time": "20:45",
+      "team1": "Cercle Brugge",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2020-09-25",
+      "time": "20:45",
+      "team1": "KV Kortrijk",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2020-09-26",
+      "time": "16:15",
+      "team1": "K Beerschot VA",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2020-09-26",
+      "time": "18:30",
+      "team1": "KV Mechelen",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2020-09-26",
+      "time": "20:45",
+      "team1": "KAA Gent",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2020-09-27",
+      "time": "13:30",
+      "team1": "Standard Liège",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2020-09-27",
+      "time": "16:00",
+      "team1": "RSC Anderlecht",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2020-09-27",
+      "time": "18:15",
+      "team1": "Club Brugge KV",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2020-09-27",
+      "time": "20:45",
+      "team1": "Royal Excel Mouscron",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2020-09-28",
+      "time": "20:45",
+      "team1": "KRC Genk",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2020-10-02",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2020-10-03",
+      "time": "16:15",
+      "team1": "Waasland-Beveren",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2020-10-03",
+      "time": "18:30",
+      "team1": "KAS Eupen",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2020-10-03",
+      "time": "18:30",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2020-10-03",
+      "time": "20:45",
+      "team1": "Sint-Truidense VV",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2020-10-04",
+      "time": "13:30",
+      "team1": "Club Brugge KV",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2020-10-04",
+      "time": "16:00",
+      "team1": "KAA Gent",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2020-10-04",
+      "time": "18:15",
+      "team1": "Sporting Charleroi",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2020-10-04",
+      "time": "20:45",
+      "team1": "KV Oostende",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2020-10-17",
+      "time": "16:15",
+      "team1": "Cercle Brugge",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          5,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2020-10-17",
+      "time": "18:30",
+      "team1": "K Beerschot VA",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          5,
+          1
+        ],
+        "ft": [
+          6,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2020-10-17",
+      "time": "18:30",
+      "team1": "KV Mechelen",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2020-10-17",
+      "time": "20:45",
+      "team1": "Standard Liège",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2020-10-18",
+      "time": "13:30",
+      "team1": "SV Zulte Waregem",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2020-10-18",
+      "time": "16:00",
+      "team1": "Royal Excel Mouscron",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2020-10-18",
+      "time": "18:15",
+      "team1": "KRC Genk",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2020-10-18",
+      "time": "20:30",
+      "team1": "RSC Anderlecht",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2020-11-24",
+      "time": "17:00",
+      "team1": "Waasland-Beveren",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2020-10-23",
+      "time": "20:45",
+      "team1": "KV Kortrijk",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2020-10-24",
+      "time": "20:45",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2020-10-25",
+      "time": "13:30",
+      "team1": "Royal Antwerp FC",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2020-10-25",
+      "time": "16:00",
+      "team1": "KV Oostende",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2020-10-25",
+      "time": "18:15",
+      "team1": "Sint-Truidense VV",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2020-10-26",
+      "time": "20:45",
+      "team1": "KAA Gent",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2020-11-25",
+      "time": "17:00",
+      "team1": "Cercle Brugge",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2020-12-02",
+      "time": "17:00",
+      "team1": "Sporting Charleroi",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2020-12-03",
+      "time": "17:00",
+      "team1": "KAS Eupen",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2020-10-30",
+      "time": "20:45",
+      "team1": "KRC Genk",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2020-10-31",
+      "time": "16:15",
+      "team1": "K Beerschot VA",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2020-10-31",
+      "time": "18:30",
+      "team1": "Sporting Charleroi",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2020-10-31",
+      "time": "20:45",
+      "team1": "Club Brugge KV",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2020-11-01",
+      "time": "13:30",
+      "team1": "RSC Anderlecht",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2020-11-01",
+      "time": "18:15",
+      "team1": "Standard Liège",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2020-11-01",
+      "time": "20:45",
+      "team1": "Waasland-Beveren",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          4
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2020-11-02",
+      "time": "20:45",
+      "team1": "SV Zulte Waregem",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2020-12-01",
+      "time": "17:00",
+      "team1": "Royal Excel Mouscron",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2020-11-06",
+      "time": "20:45",
+      "team1": "KV Mechelen",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2020-11-07",
+      "time": "16:15",
+      "team1": "KV Kortrijk",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          5,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2020-11-07",
+      "time": "18:30",
+      "team1": "KAS Eupen",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2020-11-07",
+      "time": "20:45",
+      "team1": "Sint-Truidense VV",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2020-11-08",
+      "time": "13:30",
+      "team1": "Royal Antwerp FC",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2020-11-08",
+      "time": "16:00",
+      "team1": "KV Oostende",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2020-11-08",
+      "time": "18:15",
+      "team1": "KAA Gent",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2020-11-08",
+      "time": "20:45",
+      "team1": "Cercle Brugge",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2020-12-08",
+      "time": "17:00",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2020-11-21",
+      "time": "16:15",
+      "team1": "Standard Liège",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2020-11-21",
+      "time": "18:30",
+      "team1": "KV Oostende",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2020-11-21",
+      "time": "18:30",
+      "team1": "Waasland-Beveren",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2020-11-21",
+      "time": "20:45",
+      "team1": "Club Brugge KV",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2020-11-22",
+      "time": "13:30",
+      "team1": "K Beerschot VA",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2020-11-22",
+      "time": "16:00",
+      "team1": "SV Zulte Waregem",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2020-11-22",
+      "time": "18:15",
+      "team1": "Sporting Charleroi",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2020-11-22",
+      "time": "20:45",
+      "team1": "KRC Genk",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2020-11-23",
+      "time": "20:45",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-11-27",
+      "time": "20:45",
+      "team1": "KAS Eupen",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-11-28",
+      "time": "16:15",
+      "team1": "Sint-Truidense VV",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-11-28",
+      "time": "18:30",
+      "team1": "Cercle Brugge",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          0,
+          4
+        ],
+        "ft": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-11-28",
+      "time": "20:45",
+      "team1": "Royal Excel Mouscron",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-11-29",
+      "time": "13:30",
+      "team1": "KV Mechelen",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-11-29",
+      "time": "16:00",
+      "team1": "KAA Gent",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-11-29",
+      "time": "18:15",
+      "team1": "RSC Anderlecht",
+      "team2": "Standard Liège",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-11-29",
+      "time": "20:45",
+      "team1": "KV Kortrijk",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-11-30",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2020-12-04",
+      "time": "20:45",
+      "team1": "SV Zulte Waregem",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2020-12-05",
+      "time": "16:15",
+      "team1": "Waasland-Beveren",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2020-12-05",
+      "time": "18:30",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2020-12-05",
+      "time": "20:45",
+      "team1": "Club Brugge KV",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2020-12-06",
+      "time": "13:30",
+      "team1": "KRC Genk",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2020-12-06",
+      "time": "16:00",
+      "team1": "K Beerschot VA",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2020-12-06",
+      "time": "18:15",
+      "team1": "Standard Liège",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2020-12-06",
+      "time": "20:45",
+      "team1": "KV Oostende",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2020-12-07",
+      "time": "20:45",
+      "team1": "Sporting Charleroi",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2020-12-11",
+      "time": "20:45",
+      "team1": "RSC Anderlecht",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2020-12-12",
+      "time": "16:15",
+      "team1": "Royal Excel Mouscron",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2020-12-12",
+      "time": "18:30",
+      "team1": "Cercle Brugge",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2020-12-12",
+      "time": "18:30",
+      "team1": "KV Kortrijk",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2020-12-12",
+      "time": "20:45",
+      "team1": "Sint-Truidense VV",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2020-12-13",
+      "time": "13:30",
+      "team1": "Royal Antwerp FC",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2020-12-13",
+      "time": "18:15",
+      "team1": "KAA Gent",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2020-12-13",
+      "time": "20:45",
+      "team1": "KV Mechelen",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2020-12-29",
+      "time": "20:45",
+      "team1": "KAS Eupen",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2020-12-18",
+      "time": "20:45",
+      "team1": "Sporting Charleroi",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2020-12-19",
+      "time": "18:30",
+      "team1": "SV Zulte Waregem",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2020-12-19",
+      "time": "20:45",
+      "team1": "KRC Genk",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2020-12-20",
+      "time": "13:30",
+      "team1": "Club Brugge KV",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2020-12-20",
+      "time": "16:00",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2020-12-20",
+      "time": "18:15",
+      "team1": "Standard Liège",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2020-12-20",
+      "time": "20:45",
+      "team1": "Waasland-Beveren",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2021-01-12",
+      "time": "20:45",
+      "team1": "KV Oostende",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2021-01-13",
+      "time": "18:30",
+      "team1": "K Beerschot VA",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2020-12-15",
+      "time": "18:45",
+      "team1": "Cercle Brugge",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2020-12-15",
+      "time": "18:45",
+      "team1": "Royal Excel Mouscron",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2020-12-15",
+      "time": "21:00",
+      "team1": "RSC Anderlecht",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2020-12-16",
+      "time": "18:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2020-12-16",
+      "time": "21:00",
+      "team1": "KAA Gent",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2020-12-16",
+      "time": "21:00",
+      "team1": "KV Kortrijk",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2020-12-17",
+      "time": "20:45",
+      "team1": "KV Mechelen",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2020-12-30",
+      "time": "20:45",
+      "team1": "Sint-Truidense VV",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2021-01-06",
+      "time": "20:45",
+      "team1": "KAS Eupen",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2020-12-26",
+      "time": "14:00",
+      "team1": "Club Brugge KV",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2020-12-26",
+      "time": "16:15",
+      "team1": "SV Zulte Waregem",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2020-12-26",
+      "time": "18:30",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2020-12-26",
+      "time": "18:30",
+      "team1": "KV Kortrijk",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2020-12-26",
+      "time": "20:45",
+      "team1": "Standard Liège",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2020-12-27",
+      "time": "13:30",
+      "team1": "Royal Antwerp FC",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2020-12-27",
+      "time": "16:00",
+      "team1": "KRC Genk",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2020-12-27",
+      "time": "18:15",
+      "team1": "RSC Anderlecht",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2020-12-27",
+      "time": "20:45",
+      "team1": "KV Mechelen",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2021-01-15",
+      "time": "20:45",
+      "team1": "KAS Eupen",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2021-01-16",
+      "time": "16:15",
+      "team1": "KV Oostende",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2021-01-16",
+      "time": "18:30",
+      "team1": "Royal Excel Mouscron",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2021-01-16",
+      "time": "18:30",
+      "team1": "Waasland-Beveren",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2021-01-16",
+      "time": "20:45",
+      "team1": "Sporting Charleroi",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2021-01-17",
+      "time": "13:30",
+      "team1": "KAA Gent",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2021-01-17",
+      "time": "16:00",
+      "team1": "Cercle Brugge",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2021-01-17",
+      "time": "18:15",
+      "team1": "K Beerschot VA",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2021-01-17",
+      "time": "20:45",
+      "team1": "Sint-Truidense VV",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2021-01-22",
+      "time": "20:45",
+      "team1": "RSC Anderlecht",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2021-01-23",
+      "time": "16:15",
+      "team1": "KV Mechelen",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2021-01-23",
+      "time": "18:30",
+      "team1": "KV Kortrijk",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2021-01-23",
+      "time": "18:30",
+      "team1": "Sint-Truidense VV",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2021-01-23",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2021-01-24",
+      "time": "13:30",
+      "team1": "Club Brugge KV",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2021-01-24",
+      "time": "16:00",
+      "team1": "SV Zulte Waregem",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2021-01-24",
+      "time": "18:15",
+      "team1": "Standard Liège",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2021-01-24",
+      "time": "20:45",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2021-01-26",
+      "time": "18:45",
+      "team1": "KAS Eupen",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2021-01-26",
+      "time": "18:45",
+      "team1": "Waasland-Beveren",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2021-01-26",
+      "time": "21:00",
+      "team1": "Royal Excel Mouscron",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2021-01-27",
+      "time": "18:45",
+      "team1": "K Beerschot VA",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2021-01-27",
+      "time": "18:45",
+      "team1": "KRC Genk",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2021-01-27",
+      "time": "21:00",
+      "team1": "KAA Gent",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2021-01-27",
+      "time": "21:00",
+      "team1": "Sporting Charleroi",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2021-01-28",
+      "time": "18:45",
+      "team1": "Cercle Brugge",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2021-01-28",
+      "time": "21:00",
+      "team1": "KV Oostende",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2021-01-29",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2021-01-30",
+      "time": "16:15",
+      "team1": "KV Mechelen",
+      "team2": "KRC Genk",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2021-01-30",
+      "time": "18:30",
+      "team1": "KAS Eupen",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2021-01-30",
+      "time": "18:30",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2021-01-30",
+      "time": "20:45",
+      "team1": "KV Kortrijk",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2021-01-31",
+      "time": "13:30",
+      "team1": "Club Brugge KV",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2021-01-31",
+      "time": "16:00",
+      "team1": "SV Zulte Waregem",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2021-01-31",
+      "time": "18:15",
+      "team1": "RSC Anderlecht",
+      "team2": "KAA Gent",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2021-01-31",
+      "time": "20:45",
+      "team1": "Sint-Truidense VV",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2021-02-05",
+      "time": "20:45",
+      "team1": "Royal Excel Mouscron",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2021-02-06",
+      "time": "16:15",
+      "team1": "KV Oostende",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2021-02-06",
+      "time": "18:30",
+      "team1": "Cercle Brugge",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2021-02-06",
+      "time": "18:30",
+      "team1": "Waasland-Beveren",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2021-02-06",
+      "time": "20:45",
+      "team1": "Standard Liège",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2021-02-07",
+      "time": "13:30",
+      "team1": "K Beerschot VA",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2021-02-07",
+      "time": "16:00",
+      "team1": "Sporting Charleroi",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2021-02-07",
+      "time": "18:15",
+      "team1": "KRC Genk",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2021-02-07",
+      "time": "20:45",
+      "team1": "KAA Gent",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2021-01-19",
+      "time": "18:45",
+      "team1": "Royal Excel Mouscron",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2021-01-19",
+      "time": "21:00",
+      "team1": "RSC Anderlecht",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2021-01-20",
+      "time": "16:30",
+      "team1": "KV Kortrijk",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2021-01-20",
+      "time": "18:45",
+      "team1": "KAS Eupen",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2021-01-20",
+      "time": "18:45",
+      "team1": "KV Mechelen",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2021-01-20",
+      "time": "21:00",
+      "team1": "Royal Antwerp FC",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2021-01-20",
+      "time": "21:00",
+      "team1": "Club Brugge KV",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2021-01-21",
+      "time": "18:45",
+      "team1": "SV Zulte Waregem",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2021-01-21",
+      "time": "21:00",
+      "team1": "KRC Genk",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2021-02-12",
+      "time": "20:45",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2021-02-13",
+      "time": "18:30",
+      "team1": "Sint-Truidense VV",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2021-02-14",
+      "time": "13:30",
+      "team1": "Standard Liège",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2021-02-14",
+      "time": "16:00",
+      "team1": "K Beerschot VA",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2021-02-14",
+      "time": "20:45",
+      "team1": "Cercle Brugge",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2021-02-15",
+      "time": "20:45",
+      "team1": "KAA Gent",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2021-02-17",
+      "time": "17:00",
+      "team1": "Waasland-Beveren",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2021-02-17",
+      "time": "19:00",
+      "team1": "KV Oostende",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2021-03-12",
+      "time": "20:45",
+      "team1": "Sporting Charleroi",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2021-02-19",
+      "time": "20:45",
+      "team1": "KV Mechelen",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2021-02-20",
+      "time": "16:15",
+      "team1": "KAS Eupen",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2021-02-20",
+      "time": "18:30",
+      "team1": "Royal Excel Mouscron",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2021-02-20",
+      "time": "20:45",
+      "team1": "Waasland-Beveren",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2021-02-21",
+      "time": "13:30",
+      "team1": "RSC Anderlecht",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2021-02-21",
+      "time": "16:00",
+      "team1": "SV Zulte Waregem",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2021-02-21",
+      "time": "18:15",
+      "team1": "KRC Genk",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2021-02-21",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2021-02-22",
+      "time": "20:45",
+      "team1": "Club Brugge KV",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2021-02-26",
+      "time": "20:45",
+      "team1": "Sporting Charleroi",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2021-02-27",
+      "time": "16:15",
+      "team1": "Cercle Brugge",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2021-02-27",
+      "time": "18:30",
+      "team1": "KV Oostende",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2021-02-27",
+      "time": "20:45",
+      "team1": "KV Kortrijk",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2021-02-28",
+      "time": "13:30",
+      "team1": "Standard Liège",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2021-02-28",
+      "time": "16:00",
+      "team1": "K Beerschot VA",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2021-02-28",
+      "time": "20:45",
+      "team1": "Sint-Truidense VV",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2021-03-01",
+      "time": "20:45",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2021-03-15",
+      "time": "20:45",
+      "team1": "KAA Gent",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2021-03-05",
+      "time": "20:45",
+      "team1": "Sporting Charleroi",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2021-03-06",
+      "time": "16:15",
+      "team1": "KAS Eupen",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2021-03-06",
+      "time": "18:30",
+      "team1": "Waasland-Beveren",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2021-03-06",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2021-03-07",
+      "time": "13:30",
+      "team1": "Royal Excel Mouscron",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2021-03-07",
+      "time": "16:00",
+      "team1": "Club Brugge KV",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2021-03-07",
+      "time": "18:15",
+      "team1": "RSC Anderlecht",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2021-03-07",
+      "time": "20:45",
+      "team1": "KRC Genk",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2021-03-08",
+      "time": "20:45",
+      "team1": "KAA Gent",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2021-01-09",
+      "time": "16:15",
+      "team1": "SV Zulte Waregem",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2021-01-09",
+      "time": "18:30",
+      "team1": "Cercle Brugge",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2021-01-09",
+      "time": "18:30",
+      "team1": "KV Kortrijk",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2021-01-09",
+      "time": "20:45",
+      "team1": "KV Oostende",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2021-01-10",
+      "time": "13:30",
+      "team1": "KV Mechelen",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2021-01-10",
+      "time": "16:00",
+      "team1": "K Beerschot VA",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2021-01-10",
+      "time": "18:15",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2021-01-10",
+      "time": "20:45",
+      "team1": "Sint-Truidense VV",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2021-01-11",
+      "time": "20:45",
+      "team1": "Standard Liège",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2021-03-19",
+      "time": "20:45",
+      "team1": "KRC Genk",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2021-03-20",
+      "time": "18:30",
+      "team1": "Royal Excel Mouscron",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2021-03-20",
+      "time": "20:45",
+      "team1": "KAS Eupen",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2021-03-21",
+      "time": "13:30",
+      "team1": "Club Brugge KV",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2021-03-21",
+      "time": "16:00",
+      "team1": "KV Mechelen",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2021-03-21",
+      "time": "18:15",
+      "team1": "RSC Anderlecht",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2021-03-21",
+      "time": "20:45",
+      "team1": "KAA Gent",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2021-04-06",
+      "time": "19:00",
+      "team1": "Waasland-Beveren",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2021-04-07",
+      "time": "19:00",
+      "team1": "K Beerschot VA",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2021-04-03",
+      "time": "16:15",
+      "team1": "KV Oostende",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2021-04-03",
+      "time": "18:30",
+      "team1": "Sint-Truidense VV",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2021-04-03",
+      "time": "20:45",
+      "team1": "KV Kortrijk",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2021-04-04",
+      "time": "13:30",
+      "team1": "Cercle Brugge",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2021-04-04",
+      "time": "18:15",
+      "team1": "Standard Liège",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2021-04-04",
+      "time": "20:45",
+      "team1": "Sporting Charleroi",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2021-04-05",
+      "time": "13:30",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2021-04-05",
+      "time": "16:00",
+      "team1": "SV Zulte Waregem",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2021-04-05",
+      "time": "18:15",
+      "team1": "Royal Antwerp FC",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2021-04-09",
+      "time": "20:45",
+      "team1": "KAS Eupen",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2021-04-10",
+      "time": "16:15",
+      "team1": "Cercle Brugge",
+      "team2": "Oud-Heverlee Leuven",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2021-04-10",
+      "time": "18:30",
+      "team1": "KV Mechelen",
+      "team2": "SV Zulte Waregem",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2021-04-10",
+      "time": "20:45",
+      "team1": "KAA Gent",
+      "team2": "Sporting Charleroi",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2021-04-11",
+      "time": "13:30",
+      "team1": "KRC Genk",
+      "team2": "Sint-Truidense VV",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2021-04-11",
+      "time": "16:00",
+      "team1": "Waasland-Beveren",
+      "team2": "KV Kortrijk",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2021-04-11",
+      "time": "18:15",
+      "team1": "RSC Anderlecht",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2021-04-11",
+      "time": "20:45",
+      "team1": "K Beerschot VA",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2021-04-12",
+      "time": "20:45",
+      "team1": "Royal Excel Mouscron",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2021-04-17",
+      "time": "19:00",
+      "team1": "Sporting Charleroi",
+      "team2": "KAS Eupen",
+      "score": {
+        "ht": [
+          1,
+          3
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2021-04-17",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2021-04-18",
+      "time": "18:00",
+      "team1": "Club Brugge KV",
+      "team2": "Royal Excel Mouscron",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2021-04-18",
+      "time": "18:00",
+      "team1": "KV Kortrijk",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2021-04-18",
+      "time": "18:00",
+      "team1": "KV Oostende",
+      "team2": "Cercle Brugge",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2021-04-18",
+      "time": "18:00",
+      "team1": "Oud-Heverlee Leuven",
+      "team2": "Waasland-Beveren",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2021-04-18",
+      "time": "18:00",
+      "team1": "Standard Liège",
+      "team2": "K Beerschot VA",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2021-04-18",
+      "time": "18:00",
+      "team1": "SV Zulte Waregem",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          2,
+          7
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2021-04-18",
+      "time": "18:00",
+      "team1": "Sint-Truidense VV",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 1",
+      "date": "2021-04-30",
+      "time": "20:45",
+      "team1": "Royal Antwerp FC",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 1",
+      "date": "2021-05-02",
+      "time": "18:30",
+      "team1": "Club Brugge KV",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 2",
+      "date": "2021-05-07",
+      "time": "20:45",
+      "team1": "KRC Genk",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 2",
+      "date": "2021-05-08",
+      "time": "20:45",
+      "team1": "RSC Anderlecht",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 3",
+      "date": "2021-05-12",
+      "time": "20:45",
+      "team1": "KRC Genk",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 3",
+      "date": "2021-05-13",
+      "time": "18:30",
+      "team1": "Royal Antwerp FC",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 4",
+      "date": "2021-05-15",
+      "time": "20:45",
+      "team1": "RSC Anderlecht",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 4",
+      "date": "2021-05-16",
+      "time": "18:30",
+      "team1": "Club Brugge KV",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 5",
+      "date": "2021-05-20",
+      "time": "18:30",
+      "team1": "KRC Genk",
+      "team2": "Royal Antwerp FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 5",
+      "date": "2021-05-20",
+      "time": "21:00",
+      "team1": "RSC Anderlecht",
+      "team2": "Club Brugge KV",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 6",
+      "date": "2021-05-23",
+      "time": "18:30",
+      "team1": "Royal Antwerp FC",
+      "team2": "RSC Anderlecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Championship, Matchday 6",
+      "date": "2021-05-23",
+      "time": "18:30",
+      "team1": "Club Brugge KV",
+      "team2": "KRC Genk",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 1",
+      "date": "2021-05-01",
+      "time": "20:45",
+      "team1": "KV Oostende",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          3,
+          2
+        ],
+        "ft": [
+          6,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 1",
+      "date": "2021-05-02",
+      "time": "16:00",
+      "team1": "KAA Gent",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 2",
+      "date": "2021-05-08",
+      "time": "18:30",
+      "team1": "Standard Liège",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 2",
+      "date": "2021-05-09",
+      "time": "16:00",
+      "team1": "KV Mechelen",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          5,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 3",
+      "date": "2021-05-13",
+      "time": "13:30",
+      "team1": "KAA Gent",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 3",
+      "date": "2021-05-13",
+      "time": "16:00",
+      "team1": "Standard Liège",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 4",
+      "date": "2021-05-16",
+      "time": "13:30",
+      "team1": "KV Oostende",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 4",
+      "date": "2021-05-16",
+      "time": "16:00",
+      "team1": "KV Mechelen",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 5",
+      "date": "2021-05-19",
+      "time": "18:30",
+      "team1": "KV Oostende",
+      "team2": "KV Mechelen",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 5",
+      "date": "2021-05-19",
+      "time": "21:00",
+      "team1": "KAA Gent",
+      "team2": "Standard Liège",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 6",
+      "date": "2021-05-22",
+      "time": "20:00",
+      "team1": "KV Mechelen",
+      "team2": "KAA Gent",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Europe, Matchday 6",
+      "date": "2021-05-22",
+      "time": "20:00",
+      "team1": "Standard Liège",
+      "team2": "KV Oostende",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    }
+  ]
+}

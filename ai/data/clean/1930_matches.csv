@@ -1,0 +1,19 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1930-07-13,France,Mexico,4,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-13,United States,Belgium,3,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-14,Romania,Peru,3,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-14,Yugoslavia,Brazil,2,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-15,Argentina,France,1,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-16,Chile,Mexico,3,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-17,United States,Paraguay,3,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-17,Yugoslavia,Bolivia,4,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-18,Uruguay,Peru,1,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-19,Argentina,Mexico,6,3,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-19,Chile,France,1,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-20,Brazil,Bolivia,4,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-20,Paraguay,Belgium,1,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-21,Uruguay,Romania,4,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-22,Argentina,Chile,3,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-26,Argentina,United States,6,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-27,Uruguay,Yugoslavia,6,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1
+1930-07-30,Uruguay,Argentina,4,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1930 FIFA Men's World Cup,1

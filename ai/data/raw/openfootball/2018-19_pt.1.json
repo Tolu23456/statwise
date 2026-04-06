@@ -1,0 +1,5127 @@
+{
+  "name": "Portuguese Primeira Liga 2018/19",
+  "matches": [
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-10",
+      "time": "20:30",
+      "team1": "SL Benfica",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-11",
+      "time": "16:30",
+      "team1": "Vitória Setúbal",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-11",
+      "time": "19:00",
+      "team1": "CD Tondela",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-11",
+      "time": "21:00",
+      "team1": "FC Porto",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-12",
+      "time": "16:00",
+      "team1": "CS Marítimo",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-12",
+      "time": "16:00",
+      "team1": "CD Feirense",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-12",
+      "time": "18:30",
+      "team1": "Moreirense FC",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-12",
+      "time": "20:30",
+      "team1": "Sporting Braga",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-13",
+      "time": "20:15",
+      "team1": "Portimonense SC",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-17",
+      "time": "20:30",
+      "team1": "CD Aves",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-18",
+      "time": "16:30",
+      "team1": "GD Chaves",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-18",
+      "time": "19:00",
+      "team1": "Boavista",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-18",
+      "time": "21:00",
+      "team1": "Sporting CP",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-19",
+      "time": "16:00",
+      "team1": "Rio Ave FC",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-19",
+      "time": "16:00",
+      "team1": "CD Nacional",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-19",
+      "time": "18:30",
+      "team1": "Belenenses SAD",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-19",
+      "time": "20:30",
+      "team1": "CD Santa Clara",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-20",
+      "time": "20:15",
+      "team1": "Vitória Guimarães",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-24",
+      "time": "20:30",
+      "team1": "CS Marítimo",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-25",
+      "time": "16:30",
+      "team1": "Portimonense SC",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-25",
+      "time": "19:00",
+      "team1": "SL Benfica",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-25",
+      "time": "21:00",
+      "team1": "FC Porto",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-26",
+      "time": "16:00",
+      "team1": "Vitória Setúbal",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-26",
+      "time": "16:00",
+      "team1": "CD Feirense",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-26",
+      "time": "18:30",
+      "team1": "CD Tondela",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-26",
+      "time": "20:30",
+      "team1": "Sporting Braga",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-27",
+      "time": "20:15",
+      "team1": "Moreirense FC",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-08-31",
+      "time": "19:00",
+      "team1": "GD Chaves",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-08-31",
+      "time": "21:15",
+      "team1": "Vitória Guimarães",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-01",
+      "time": "16:30",
+      "team1": "Belenenses SAD",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-01",
+      "time": "19:00",
+      "team1": "CD Santa Clara",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-01",
+      "time": "21:00",
+      "team1": "Sporting CP",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-02",
+      "time": "16:00",
+      "team1": "Rio Ave FC",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-02",
+      "time": "16:00",
+      "team1": "CD Aves",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-02",
+      "time": "18:30",
+      "team1": "CD Nacional",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-02",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-21",
+      "time": "20:30",
+      "team1": "Boavista",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-22",
+      "time": "16:30",
+      "team1": "CD Santa Clara",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-22",
+      "time": "19:00",
+      "team1": "CS Marítimo",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-22",
+      "time": "21:00",
+      "team1": "Vitória Setúbal",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-23",
+      "time": "16:00",
+      "team1": "CD Tondela",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-23",
+      "time": "16:00",
+      "team1": "CD Feirense",
+      "team2": "CD Nacional",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-23",
+      "time": "18:30",
+      "team1": "SL Benfica",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-23",
+      "time": "20:30",
+      "team1": "Portimonense SC",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-24",
+      "time": "20:15",
+      "team1": "Sporting Braga",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-27",
+      "time": "21:15",
+      "team1": "GD Chaves",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-28",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-29",
+      "time": "16:30",
+      "team1": "Moreirense FC",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-29",
+      "time": "19:00",
+      "team1": "Rio Ave FC",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-29",
+      "time": "21:00",
+      "team1": "Sporting CP",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-30",
+      "time": "16:00",
+      "team1": "CD Nacional",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-30",
+      "time": "18:30",
+      "team1": "Vitória Guimarães",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-30",
+      "time": "20:30",
+      "team1": "Belenenses SAD",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-10-01",
+      "time": "20:15",
+      "team1": "CD Aves",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-10-05",
+      "time": "15:30",
+      "team1": "CD Tondela",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-10-05",
+      "time": "18:00",
+      "team1": "CD Santa Clara",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-10-05",
+      "time": "20:30",
+      "team1": "CD Feirense",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-10-06",
+      "time": "15:30",
+      "team1": "Vitória Setúbal",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-10-06",
+      "time": "18:00",
+      "team1": "CS Marítimo",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-10-06",
+      "time": "20:30",
+      "team1": "Sporting Braga",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-10-07",
+      "time": "15:00",
+      "team1": "Boavista",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-10-07",
+      "time": "17:30",
+      "team1": "SL Benfica",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-10-07",
+      "time": "20:00",
+      "team1": "Portimonense SC",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-26",
+      "time": "19:00",
+      "team1": "CD Nacional",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-26",
+      "time": "21:15",
+      "team1": "Vitória Guimarães",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-27",
+      "time": "15:30",
+      "team1": "CD Aves",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-27",
+      "time": "18:00",
+      "team1": "Rio Ave FC",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-27",
+      "time": "20:30",
+      "team1": "Belenenses SAD",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-28",
+      "time": "15:00",
+      "team1": "Moreirense FC",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-28",
+      "time": "15:00",
+      "team1": "CD Tondela",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-28",
+      "time": "17:30",
+      "team1": "FC Porto",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-28",
+      "time": "20:00",
+      "team1": "Sporting CP",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-11-02",
+      "time": "20:30",
+      "team1": "SL Benfica",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          1,
+          3
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-11-03",
+      "time": "15:30",
+      "team1": "Portimonense SC",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-11-03",
+      "time": "18:00",
+      "team1": "CS Marítimo",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-11-03",
+      "time": "20:30",
+      "team1": "Boavista",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-11-04",
+      "time": "15:00",
+      "team1": "CD Feirense",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-11-04",
+      "time": "17:30",
+      "team1": "CD Santa Clara",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-11-04",
+      "time": "20:00",
+      "team1": "Sporting Braga",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-11-05",
+      "time": "19:00",
+      "team1": "Rio Ave FC",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-11-05",
+      "time": "21:15",
+      "team1": "GD Chaves",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-11-09",
+      "time": "19:00",
+      "team1": "Moreirense FC",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-11-09",
+      "time": "21:15",
+      "team1": "Vitória Setúbal",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-11-10",
+      "time": "15:30",
+      "team1": "Belenenses SAD",
+      "team2": "Boavista",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-11-10",
+      "time": "15:30",
+      "team1": "CD Aves",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-11-10",
+      "time": "18:00",
+      "team1": "CD Nacional",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-11-10",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-11-11",
+      "time": "15:00",
+      "team1": "Vitória Guimarães",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-11-11",
+      "time": "17:30",
+      "team1": "CD Tondela",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-11-11",
+      "time": "20:00",
+      "team1": "Sporting CP",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-11-30",
+      "time": "20:30",
+      "team1": "CD Santa Clara",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-12-01",
+      "time": "15:30",
+      "team1": "CS Marítimo",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-12-01",
+      "time": "18:00",
+      "team1": "SL Benfica",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-12-01",
+      "time": "20:30",
+      "team1": "Sporting Braga",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-12-02",
+      "time": "15:00",
+      "team1": "Portimonense SC",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          3,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-12-02",
+      "time": "15:00",
+      "team1": "CD Aves",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-12-02",
+      "time": "17:30",
+      "team1": "GD Chaves",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-12-02",
+      "time": "20:00",
+      "team1": "Boavista",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-12-03",
+      "time": "20:15",
+      "team1": "Rio Ave FC",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-12-07",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-12-08",
+      "time": "15:30",
+      "team1": "Belenenses SAD",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-12-08",
+      "time": "18:00",
+      "team1": "CD Tondela",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-12-08",
+      "time": "20:30",
+      "team1": "Vitória Setúbal",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-12-09",
+      "time": "15:00",
+      "team1": "CD Nacional",
+      "team2": "Boavista",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-12-09",
+      "time": "15:00",
+      "team1": "Moreirense FC",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-12-09",
+      "time": "17:30",
+      "team1": "Vitória Guimarães",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-12-09",
+      "time": "20:00",
+      "team1": "Sporting CP",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-12-10",
+      "time": "20:15",
+      "team1": "CD Feirense",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-12-14",
+      "time": "19:00",
+      "team1": "Portimonense SC",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-12-14",
+      "time": "21:15",
+      "team1": "Sporting Braga",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-12-15",
+      "time": "15:30",
+      "team1": "GD Chaves",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-12-15",
+      "time": "15:30",
+      "team1": "Boavista",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-12-15",
+      "time": "18:00",
+      "team1": "CD Aves",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-12-15",
+      "time": "20:30",
+      "team1": "CD Santa Clara",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-12-16",
+      "time": "15:00",
+      "team1": "Rio Ave FC",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-12-16",
+      "time": "17:30",
+      "team1": "CS Marítimo",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-12-16",
+      "time": "20:00",
+      "team1": "Sporting CP",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          5,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-22",
+      "time": "15:30",
+      "team1": "Vitória Setúbal",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-22",
+      "time": "15:30",
+      "team1": "CD Tondela",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-22",
+      "time": "15:30",
+      "team1": "CD Feirense",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-22",
+      "time": "18:00",
+      "team1": "Belenenses SAD",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          5,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-22",
+      "time": "20:30",
+      "team1": "Moreirense FC",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-23",
+      "time": "15:00",
+      "team1": "CD Nacional",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-23",
+      "time": "15:00",
+      "team1": "FC Porto",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-23",
+      "time": "17:30",
+      "team1": "SL Benfica",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          6,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-23",
+      "time": "20:00",
+      "team1": "Vitória Guimarães",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-01-02",
+      "time": "16:00",
+      "team1": "CD Santa Clara",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-01-02",
+      "time": "18:00",
+      "team1": "CD Nacional",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-01-02",
+      "time": "18:00",
+      "team1": "Boavista",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-01-02",
+      "time": "18:00",
+      "team1": "Sporting Braga",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-01-02",
+      "time": "20:15",
+      "team1": "Portimonense SC",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-01-02",
+      "time": "20:15",
+      "team1": "Rio Ave FC",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-01-03",
+      "time": "16:00",
+      "team1": "GD Chaves",
+      "team2": "CD Feirense",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-01-03",
+      "time": "18:00",
+      "team1": "Sporting CP",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-01-03",
+      "time": "20:15",
+      "team1": "CD Aves",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-01-05",
+      "time": "20:30",
+      "team1": "CS Marítimo",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-01-06",
+      "time": "15:00",
+      "team1": "Vitória Setúbal",
+      "team2": "GD Chaves",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-01-06",
+      "time": "15:00",
+      "team1": "CD Feirense",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-01-06",
+      "time": "15:00",
+      "team1": "Belenenses SAD",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-01-06",
+      "time": "17:30",
+      "team1": "SL Benfica",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-01-06",
+      "time": "20:00",
+      "team1": "Sporting Braga",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-01-07",
+      "time": "17:00",
+      "team1": "Moreirense FC",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-01-07",
+      "time": "19:00",
+      "team1": "CD Tondela",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-01-07",
+      "time": "21:15",
+      "team1": "FC Porto",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-01-10",
+      "time": "20:15",
+      "team1": "Portimonense SC",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-01-11",
+      "time": "19:00",
+      "team1": "CD Santa Clara",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-01-11",
+      "time": "19:00",
+      "team1": "CD Aves",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-01-11",
+      "time": "21:15",
+      "team1": "Vitória Guimarães",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-01-12",
+      "time": "15:30",
+      "team1": "Sporting CP",
+      "team2": "FC Porto",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-01-12",
+      "time": "20:30",
+      "team1": "Boavista",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-01-13",
+      "time": "15:00",
+      "team1": "CD Nacional",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-01-13",
+      "time": "17:30",
+      "team1": "GD Chaves",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-01-13",
+      "time": "20:00",
+      "team1": "Rio Ave FC",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-18",
+      "time": "18:45",
+      "team1": "CD Nacional",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-18",
+      "time": "19:00",
+      "team1": "GD Chaves",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-18",
+      "time": "21:15",
+      "team1": "Vitória Guimarães",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-19",
+      "time": "15:30",
+      "team1": "Belenenses SAD",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-19",
+      "time": "18:00",
+      "team1": "Sporting CP",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-19",
+      "time": "20:30",
+      "team1": "CD Santa Clara",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-20",
+      "time": "15:00",
+      "team1": "CD Aves",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-20",
+      "time": "17:30",
+      "team1": "Boavista",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-20",
+      "time": "20:00",
+      "team1": "Rio Ave FC",
+      "team2": "CD Feirense",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-28",
+      "time": "17:00",
+      "team1": "CS Marítimo",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-28",
+      "time": "19:00",
+      "team1": "Moreirense FC",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-28",
+      "time": "19:00",
+      "team1": "CD Tondela",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-28",
+      "time": "21:15",
+      "team1": "CD Feirense",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-29",
+      "time": "19:00",
+      "team1": "Portimonense SC",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-29",
+      "time": "19:00",
+      "team1": "SL Benfica",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-29",
+      "time": "21:15",
+      "team1": "Sporting Braga",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-30",
+      "time": "19:00",
+      "team1": "Vitória Setúbal",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-30",
+      "time": "21:15",
+      "team1": "FC Porto",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-01",
+      "time": "20:30",
+      "team1": "Rio Ave FC",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-02",
+      "time": "15:30",
+      "team1": "GD Chaves",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-02",
+      "time": "18:00",
+      "team1": "Boavista",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-02",
+      "time": "20:30",
+      "team1": "CD Aves",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-03",
+      "time": "15:00",
+      "team1": "CD Santa Clara",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-03",
+      "time": "15:00",
+      "team1": "CD Nacional",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-03",
+      "time": "17:30",
+      "team1": "Sporting CP",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-03",
+      "time": "20:00",
+      "team1": "Vitória Guimarães",
+      "team2": "FC Porto",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-04",
+      "time": "20:15",
+      "team1": "Belenenses SAD",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-08",
+      "time": "20:30",
+      "team1": "Moreirense FC",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-09",
+      "time": "15:30",
+      "team1": "CS Marítimo",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-09",
+      "time": "18:00",
+      "team1": "Portimonense SC",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-09",
+      "time": "20:30",
+      "team1": "CD Tondela",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-10",
+      "time": "15:00",
+      "team1": "Sporting Braga",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-10",
+      "time": "15:00",
+      "team1": "Boavista",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-10",
+      "time": "17:30",
+      "team1": "SL Benfica",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          10,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-10",
+      "time": "20:00",
+      "team1": "CD Feirense",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-11",
+      "time": "20:15",
+      "team1": "Vitória Setúbal",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-15",
+      "time": "20:30",
+      "team1": "Rio Ave FC",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-16",
+      "time": "15:30",
+      "team1": "CD Nacional",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-16",
+      "time": "18:00",
+      "team1": "Vitória Guimarães",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-16",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-17",
+      "time": "15:00",
+      "team1": "Moreirense FC",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-17",
+      "time": "15:00",
+      "team1": "Belenenses SAD",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-17",
+      "time": "17:30",
+      "team1": "GD Chaves",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-17",
+      "time": "20:00",
+      "team1": "Sporting CP",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-18",
+      "time": "20:15",
+      "team1": "CD Aves",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-22",
+      "time": "19:00",
+      "team1": "Sporting Braga",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-22",
+      "time": "21:15",
+      "team1": "CD Tondela",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-23",
+      "time": "15:30",
+      "team1": "CD Feirense",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-23",
+      "time": "18:00",
+      "team1": "Portimonense SC",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-23",
+      "time": "20:30",
+      "team1": "Vitória Setúbal",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-24",
+      "time": "15:30",
+      "team1": "CD Santa Clara",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-24",
+      "time": "17:30",
+      "team1": "Boavista",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-25",
+      "time": "19:00",
+      "team1": "CS Marítimo",
+      "team2": "Sporting CP",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-25",
+      "time": "21:15",
+      "team1": "SL Benfica",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-01",
+      "time": "20:30",
+      "team1": "CD Aves",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-02",
+      "time": "15:30",
+      "team1": "CD Nacional",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-02",
+      "time": "18:00",
+      "team1": "Moreirense FC",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-02",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-03",
+      "time": "15:00",
+      "team1": "GD Chaves",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-03",
+      "time": "15:00",
+      "team1": "Belenenses SAD",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-03",
+      "time": "17:30",
+      "team1": "Rio Ave FC",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-03",
+      "time": "20:00",
+      "team1": "Sporting CP",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-04",
+      "time": "20:15",
+      "team1": "Vitória Guimarães",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-08",
+      "time": "20:30",
+      "team1": "GD Chaves",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-09",
+      "time": "15:30",
+      "team1": "CS Marítimo",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-09",
+      "time": "18:00",
+      "team1": "Sporting Braga",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-09",
+      "time": "20:30",
+      "team1": "Boavista",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-10",
+      "time": "15:00",
+      "team1": "CD Santa Clara",
+      "team2": "CD Aves",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-10",
+      "time": "15:00",
+      "team1": "Portimonense SC",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-10",
+      "time": "17:30",
+      "team1": "Vitória Setúbal",
+      "team2": "CD Tondela",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-10",
+      "time": "20:00",
+      "team1": "CD Feirense",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-11",
+      "time": "20:15",
+      "team1": "SL Benfica",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-15",
+      "time": "20:30",
+      "team1": "Sporting CP",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-16",
+      "time": "15:30",
+      "team1": "Belenenses SAD",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-16",
+      "time": "15:30",
+      "team1": "Vitória Setúbal",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-16",
+      "time": "18:00",
+      "team1": "Vitória Guimarães",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-16",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-17",
+      "time": "15:00",
+      "team1": "CD Aves",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-17",
+      "time": "15:00",
+      "team1": "CD Nacional",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-17",
+      "time": "17:30",
+      "team1": "Moreirense FC",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-17",
+      "time": "20:00",
+      "team1": "CD Tondela",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-29",
+      "time": "20:30",
+      "team1": "Portimonense SC",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-30",
+      "time": "15:30",
+      "team1": "Sporting Braga",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-30",
+      "time": "18:00",
+      "team1": "GD Chaves",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-30",
+      "time": "20:30",
+      "team1": "CD Santa Clara",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-30",
+      "time": "20:30",
+      "team1": "SL Benfica",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-31",
+      "time": "15:00",
+      "team1": "CS Marítimo",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          3,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-31",
+      "time": "17:30",
+      "team1": "Rio Ave FC",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-31",
+      "time": "20:00",
+      "team1": "Boavista",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-04-01",
+      "time": "20:15",
+      "team1": "CD Feirense",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-05",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-06",
+      "time": "15:30",
+      "team1": "Belenenses SAD",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-06",
+      "time": "15:30",
+      "team1": "CD Nacional",
+      "team2": "CD Aves",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-06",
+      "time": "18:00",
+      "team1": "Vitória Guimarães",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-06",
+      "time": "20:30",
+      "team1": "Moreirense FC",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-07",
+      "time": "15:00",
+      "team1": "Vitória Setúbal",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-07",
+      "time": "17:30",
+      "team1": "CD Feirense",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-07",
+      "time": "20:00",
+      "team1": "Sporting CP",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-08",
+      "time": "20:15",
+      "team1": "CD Tondela",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-12",
+      "time": "20:30",
+      "team1": "GD Chaves",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-13",
+      "time": "15:30",
+      "team1": "CD Santa Clara",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-13",
+      "time": "18:00",
+      "team1": "Portimonense SC",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-13",
+      "time": "20:30",
+      "team1": "CD Aves",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-14",
+      "time": "15:00",
+      "team1": "Rio Ave FC",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-14",
+      "time": "15:00",
+      "team1": "CS Marítimo",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-14",
+      "time": "17:30",
+      "team1": "Boavista",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-14",
+      "time": "17:30",
+      "team1": "Sporting Braga",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-14",
+      "time": "20:00",
+      "team1": "SL Benfica",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-19",
+      "time": "15:30",
+      "team1": "Vitória Setúbal",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-19",
+      "time": "15:30",
+      "team1": "CD Tondela",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-19",
+      "time": "18:00",
+      "team1": "CD Nacional",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-19",
+      "time": "20:30",
+      "team1": "Vitória Guimarães",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-20",
+      "time": "15:30",
+      "team1": "Belenenses SAD",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-20",
+      "time": "15:30",
+      "team1": "Moreirense FC",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-20",
+      "time": "18:00",
+      "team1": "CD Feirense",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-20",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-22",
+      "time": "20:15",
+      "team1": "SL Benfica",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          6,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-26",
+      "time": "20:30",
+      "team1": "Rio Ave FC",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-27",
+      "time": "15:30",
+      "team1": "CD Santa Clara",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-27",
+      "time": "15:30",
+      "team1": "Portimonense SC",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-27",
+      "time": "18:00",
+      "team1": "Sporting CP",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-27",
+      "time": "20:30",
+      "team1": "CD Aves",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-28",
+      "time": "15:00",
+      "team1": "GD Chaves",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-28",
+      "time": "15:00",
+      "team1": "CS Marítimo",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-28",
+      "time": "17:30",
+      "team1": "Sporting Braga",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-28",
+      "time": "20:00",
+      "team1": "Boavista",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-05-03",
+      "time": "20:30",
+      "team1": "Moreirense FC",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-05-04",
+      "time": "15:30",
+      "team1": "CD Feirense",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-05-04",
+      "time": "15:30",
+      "team1": "CS Marítimo",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-05-04",
+      "time": "18:00",
+      "team1": "SL Benfica",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-05-04",
+      "time": "20:30",
+      "team1": "FC Porto",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-05-05",
+      "time": "15:00",
+      "team1": "CD Tondela",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-05-05",
+      "time": "17:30",
+      "team1": "Belenenses SAD",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          8
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-05-05",
+      "time": "20:00",
+      "team1": "Vitória Guimarães",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-05-06",
+      "time": "20:15",
+      "team1": "Vitória Setúbal",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-10",
+      "time": "20:30",
+      "team1": "CD Aves",
+      "team2": "Moreirense FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-11",
+      "time": "15:30",
+      "team1": "CD Santa Clara",
+      "team2": "CD Feirense",
+      "score": {
+        "ht": [
+          2,
+          3
+        ],
+        "ft": [
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-11",
+      "time": "15:30",
+      "team1": "Portimonense SC",
+      "team2": "CS Marítimo",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-11",
+      "time": "18:00",
+      "team1": "Boavista",
+      "team2": "Sporting Braga",
+      "score": {
+        "ht": [
+          3,
+          2
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-11",
+      "time": "20:30",
+      "team1": "Sporting CP",
+      "team2": "CD Tondela",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-12",
+      "time": "15:00",
+      "team1": "GD Chaves",
+      "team2": "Vitória Setúbal",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-12",
+      "time": "15:00",
+      "team1": "Vitória Guimarães",
+      "team2": "Belenenses SAD",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-12",
+      "time": "17:30",
+      "team1": "CD Nacional",
+      "team2": "FC Porto",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-12",
+      "time": "20:00",
+      "team1": "Rio Ave FC",
+      "team2": "SL Benfica",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-16",
+      "time": "18:30",
+      "team1": "Belenenses SAD",
+      "team2": "CD Nacional",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-17",
+      "time": "20:30",
+      "team1": "Sporting Braga",
+      "team2": "Portimonense SC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-18",
+      "time": "15:30",
+      "team1": "CD Feirense",
+      "team2": "CD Aves",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-18",
+      "time": "15:30",
+      "team1": "CS Marítimo",
+      "team2": "Boavista",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-18",
+      "time": "15:30",
+      "team1": "Vitória Setúbal",
+      "team2": "Rio Ave FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-18",
+      "time": "18:30",
+      "team1": "SL Benfica",
+      "team2": "CD Santa Clara",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-18",
+      "time": "18:30",
+      "team1": "FC Porto",
+      "team2": "Sporting CP",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-19",
+      "time": "17:30",
+      "team1": "CD Tondela",
+      "team2": "GD Chaves",
+      "score": {
+        "ht": [
+          4,
+          2
+        ],
+        "ft": [
+          5,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-19",
+      "time": "20:00",
+      "team1": "Moreirense FC",
+      "team2": "Vitória Guimarães",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    }
+  ]
+}

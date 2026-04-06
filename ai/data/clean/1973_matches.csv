@@ -1,0 +1,488 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1973-01-01,Gambia,Senegal,2,1,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-01-08,Algeria,Tanzania,4,2,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-08,Congo,Burkina Faso,3,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-08,Guinea,Egypt,4,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-08,Nigeria,Ghana,4,2,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1973-01-10,Egypt,Congo,3,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-10,Ghana,Tanzania,1,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-10,Guinea,Burkina Faso,3,2,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-10,Nigeria,Algeria,2,2,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1973-01-12,Egypt,Burkina Faso,4,2,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-12,Ghana,Algeria,2,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-12,Guinea,Congo,5,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-12,Nigeria,Tanzania,2,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1973-01-13,Italy,Turkey,0,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-01-14,Guinea,Ghana,2,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-14,Nigeria,Egypt,4,2,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1973-01-16,Egypt,Ghana,2,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1973-01-16,Nigeria,Guinea,2,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1973-01-17,Greece,Spain,2,3,world-cup,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-01-24,England,Wales,1,1,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-01-26,Uganda,Congo,3,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-01-28,Cyprus,Bulgaria,0,3,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-01-30,Guyana,Haiti,1,3,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-01-31,Greece,Bulgaria,2,2,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-01,Guyana,Haiti,1,0,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-04,Cameroon,DR Congo,0,1,world-cup,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-04,Haiti,Trinidad and Tobago,0,0,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-04,Indonesia,Bulgaria,0,4,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-04,Tunisia,Yugoslavia,0,5,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-06,Haiti,Trinidad and Tobago,4,2,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-06,Mexico,Argentina,2,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-08,Barbados,Haiti,3,2,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-08,New Caledonia,Bulgaria,3,5,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-10,Nigeria,Ghana,2,3,world-cup,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-11,Guinea,Morocco,1,1,world-cup,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-11,Tunisia,Ivory Coast,1,1,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-14,Australia,Bulgaria,2,2,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-14,Chile,Tahiti,10,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-14,Cyprus,Northern Ireland,1,0,world-cup,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-14,Germany,Argentina,2,3,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-14,Scotland,England,0,5,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-14,Turkey,Algeria,4,0,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-15,Colombia,German DR,0,2,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-16,Australia,Bulgaria,1,3,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-17,Morocco,Senegal,3,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-17,New Caledonia,Tahiti,1,2,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Oceania Nations Cup,1
+1973-02-17,New Zealand,Fiji,5,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Oceania Nations Cup,0
+1973-02-18,Australia,Bulgaria,0,2,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-18,Ecuador,German DR,1,1,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-18,New Caledonia,Vanuatu,4,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Oceania Nations Cup,1
+1973-02-18,New Zealand,Tahiti,1,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Oceania Nations Cup,0
+1973-02-20,Fiji,New Caledonia,0,2,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Oceania Nations Cup,1
+1973-02-20,Israel,Argentina,1,1,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-02-20,Vanuatu,Tahiti,0,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Oceania Nations Cup,1
+1973-02-21,Fiji,Vanuatu,1,2,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Oceania Nations Cup,1
+1973-02-21,New Zealand,New Caledonia,2,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Oceania Nations Cup,0
+1973-02-21,Spain,Greece,3,1,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-23,Fiji,Tahiti,0,4,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Oceania Nations Cup,1
+1973-02-23,New Zealand,Vanuatu,3,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Oceania Nations Cup,0
+1973-02-24,New Caledonia,Vanuatu,2,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Oceania Nations Cup,1
+1973-02-24,New Zealand,Tahiti,2,0,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Oceania Nations Cup,0
+1973-02-25,DR Congo,Cameroon,0,1,world-cup,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-25,Ghana,Nigeria,0,0,world-cup,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-25,Ivory Coast,Tunisia,2,1,world-cup,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-25,Morocco,Guinea,2,0,world-cup,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-25,Turkey,Italy,0,1,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-02-27,DR Congo,Cameroon,2,0,world-cup,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-03-03,France,Portugal,1,2,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-04,New Zealand,Australia,1,1,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-03-04,Peru,Guatemala,5,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-10,Sudan,Ethiopia,1,0,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-11,Australia,Iraq,3,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-03-11,Indonesia,New Zealand,1,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-03-13,Australia,Indonesia,2,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-03-13,Iraq,New Zealand,2,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-03-16,Australia,New Zealand,3,3,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-03-16,Iraq,Indonesia,1,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-03-17,Bermuda,United States,4,0,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-18,Australia,Iraq,0,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-03-18,Indonesia,New Zealand,1,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-03-20,Poland,United States,4,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-21,Iraq,Indonesia,3,2,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-03-24,Australia,Indonesia,6,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-03-24,Iraq,New Zealand,4,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-03-24,Peru,Bolivia,2,0,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-28,Austria,Netherlands,1,0,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-28,Bulgaria,Russia,1,0,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-28,Germany,Czech Republic,3,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-28,Northern Ireland,Portugal,1,1,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-03-28,Peru,Paraguay,1,0,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-28,Wales,Poland,2,0,world-cup,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-03-29,Jersey,Alderney,6,1,international,Jersey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1973-03-31,Bolivia,Paraguay,1,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-03-31,Italy,Luxembourg,5,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-03-31,Sierra Leone,Mali,1,1,international,Sierra Leone,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-01,Ethiopia,Zambia,0,0,world-cup,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-04-08,Central African Republic,Ivory Coast,4,2,international,Central African Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-08,Ethiopia,Tanzania,2,1,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-08,German DR,Albania,2,0,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-04-08,Ghana,Senegal,3,2,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-08,Lesotho,Mauritius,0,0,international,Lesotho,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-08,Luxembourg,Switzerland,0,1,world-cup,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-04-08,Paraguay,Peru,1,1,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-08,Tanzania,Ethiopia,3,0,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-12,Kuwait,Qatar,9,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-13,Sudan,Nigeria,1,1,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-14,Haiti,Chile,1,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-15,Burkina Faso,DR Congo,0,5,international,Upper Volta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-15,Uganda,Kenya,1,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-15,Zambia,Ethiopia,4,2,world-cup,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-04-17,Kuwait,Qatar,4,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-18,Belgium,German DR,3,0,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-18,Russia,Romania,2,0,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-18,Turkey,Bulgaria,5,2,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Balkan Cup,0
+1973-04-21,Nigeria,Sudan,2,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-21,Senegal,Ghana,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-22,DR Congo,Burkina Faso,4,1,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-22,Mauritius,Lesotho,5,1,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-23,Peru,Panama,4,0,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-24,Ecuador,Chile,1,1,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-26,Denmark,Sweden,1,2,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-28,Kenya,Uganda,1,2,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-28,Mali,Sierra Leone,4,2,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-04-29,Bolivia,Ecuador,3,3,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-04-29,Hungary,Austria,2,2,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-04-29,Peru,Chile,2,0,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-02,Bulgaria,Portugal,2,1,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-02,Denmark,Czech Republic,1,1,world-cup,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-02,Netherlands,Spain,3,2,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-04,Iran,North Korea,0,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-04,Syria,Kuwait,2,1,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-06,Albania,Romania,1,4,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-06,Ecuador,Bolivia,0,0,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-06,Iran,Kuwait,2,1,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-06,North Korea,Syria,1,1,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-08,Iran,Syria,1,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-08,North Korea,Kuwait,0,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-08,Northern Ireland,Cyprus,3,0,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-09,Germany,Yugoslavia,0,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-09,Guernsey,Jersey,1,4,international,Guernsey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1973-05-09,Switzerland,Turkey,0,0,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-11,Iran,North Korea,2,1,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-11,Syria,Kuwait,2,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-12,England,Northern Ireland,2,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1973-05-12,Germany,Bulgaria,3,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-12,Haiti,Ecuador,1,2,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-12,Wales,Scotland,0,2,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1973-05-13,Chile,Peru,2,0,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-13,Iran,Kuwait,2,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-13,North Korea,Syria,3,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-13,Poland,Yugoslavia,2,2,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-13,Russia,Republic of Ireland,1,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-15,England,Wales,3,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1973-05-15,Haiti,Ecuador,1,0,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-15,Iran,Syria,0,1,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-15,North Korea,Kuwait,0,2,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-16,German DR,Hungary,2,1,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-16,Israel,Japan,2,1,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-16,Poland,Republic of Ireland,2,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-16,Scotland,Northern Ireland,1,2,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1973-05-16,Thailand,Vietnam Republic,0,1,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-17,Argentina,Uruguay,1,1,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Lipton,0
+1973-05-17,Hong Kong,Malaysia,1,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-19,England,Scotland,1,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1973-05-19,France,Republic of Ireland,1,1,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-19,Israel,Malaysia,3,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-19,Northern Ireland,Wales,1,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,British Home Championship,1
+1973-05-19,South Korea,Thailand,4,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-20,Ivory Coast,Morocco,1,1,world-cup,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-20,Vietnam Republic,Japan,0,4,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-21,Israel,Thailand,6,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-21,South Korea,Malaysia,0,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-22,Japan,Hong Kong,0,1,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-23,South Korea,Israel,0,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-23,Sweden,Austria,3,2,world-cup,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-23,Thailand,Malaysia,0,2,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-23,Uruguay,Argentina,1,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Newton,0
+1973-05-24,Hong Kong,Vietnam Republic,1,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-26,Israel,Japan,1,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-26,Russia,France,2,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-05-26,South Korea,Hong Kong,3,1,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-27,Brazil,Bolivia,5,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-27,Cameroon,DR Congo,2,1,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-05-27,Czech Republic,England,1,1,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-27,Haiti,Colombia,1,2,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-05-27,Mali,Guinea,2,2,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-05-27,Romania,German DR,1,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-27,Tanzania,Mauritius,1,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-05-27,Uganda,Algeria,2,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-05-28,South Korea,Israel,1,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-05-29,Haiti,Colombia,2,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-02,Czech Republic,Denmark,6,0,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-06-03,Algeria,Brazil,0,2,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-03,Morocco,Ivory Coast,4,1,world-cup,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-06-05,Madagascar,Zambia,2,1,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-06-05,Zambia,Madagascar,3,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-06-06,Finland,German DR,1,5,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-06-06,Haiti,Uruguay,0,0,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-06,Norway,Republic of Ireland,1,1,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-06,Poland,England,2,0,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-06-06,Tunisia,Brazil,1,4,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-08,Faroe Islands,Iceland,0,4,international,Faroe Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-09,Italy,Brazil,2,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-10,China,Pakistan,7,4,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-10,Russia,England,1,2,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-12,Myanmar,Malaysia,2,2,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Indonesia Tournament,1
+1973-06-13,Austria,Brazil,1,1,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-13,Hungary,Sweden,3,3,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-06-14,Algeria,Uganda,1,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-06-14,DR Congo,Cameroon,2,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-06-14,Guinea,Mali,1,1,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-06-14,Indonesia,Malaysia,2,0,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indonesia Tournament,0
+1973-06-14,Italy,England,2,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-14,Mauritius,Tanzania,1,1,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-06-16,Germany,Brazil,0,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-17,China,Somalia,7,4,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-18,Indonesia,Myanmar,0,0,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indonesia Tournament,0
+1973-06-21,Colombia,Ecuador,1,1,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-06-21,Denmark,Norway,1,0,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1973-06-21,Russia,Brazil,0,1,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-22,Switzerland,Scotland,1,0,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-23,South Korea,Japan,2,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-24,Colombia,Uruguay,0,0,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-06-25,Sweden,Brazil,1,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-06-28,Ecuador,Colombia,1,1,world-cup,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-06-30,Scotland,Brazil,0,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-01,Ecuador,Uruguay,1,2,world-cup,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-07-01,Peru,Colombia,3,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-03,Republic of Ireland,Brazil,3,4,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-05,Tanzania,Congo,2,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-05,Uruguay,Colombia,0,1,world-cup,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-07-06,Malawi,Mauritius,4,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-08,Malawi,Mauritius,1,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-08,Sweden,Finland,1,1,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1973-07-08,Uruguay,Ecuador,4,0,world-cup,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-07-11,Sweden,Iceland,1,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-13,Argentina,Chile,5,4,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Carlos Dittborn,0
+1973-07-15,Bolivia,Peru,2,0,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-15,Ghana,Ivory Coast,0,3,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-07-15,Mauritius,Réunion,1,1,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-15,Nigeria,Zambia,3,2,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-07-15,Zambia,Nigeria,5,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-07-16,Egypt,Tanzania,10,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1973-07-17,Iceland,German DR,1,2,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-18,Chile,Argentina,3,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Carlos Dittborn,0
+1973-07-19,Iceland,German DR,0,2,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-19,Israel,Uruguay,1,2,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-21,Syria,Palestine,1,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-07-24,Chile,Bolivia,3,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-25,Norway,North Korea,3,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-07-26,Cambodia,Singapore,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-07-26,Malaysia,Kuwait,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1973-07-27,Argentina,Peru,3,1,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Ramón Castilla,0
+1973-07-27,Bangladesh,Thailand,2,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-07-27,India,Vietnam Republic,2,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-07-28,Kuwait,Singapore,2,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-07-28,Myanmar,South Korea,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-07-29,Bangladesh,Vietnam Republic,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-07-29,India,Thailand,2,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-07-29,Ivory Coast,Ghana,1,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1973-07-29,Ivory Coast,Central African Republic,5,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations qualification,1
+1973-07-30,Malaysia,South Korea,1,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1973-07-30,Myanmar,Singapore,1,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-07-31,Bangladesh,Kuwait,1,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-01,Canada,Poland,1,3,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-01,South Korea,Thailand,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-02,Bangladesh,Singapore,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-02,Iceland,Norway,0,4,world-cup,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-08-02,Myanmar,Vietnam Republic,2,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-03,Cambodia,South Korea,0,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-03,China,Guinea,5,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-03,Malaysia,Thailand,2,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1973-08-03,Malaysia,Cambodia,1,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1973-08-03,Malaysia,India,4,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1973-08-03,United States,Poland,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-05,Canada,United States,0,2,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-05,Chile,Peru,2,1,world-cup,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-08-05,Ghana,DR Congo,1,0,world-cup,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-08-05,India,South Korea,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-05,India,Cambodia,3,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-05,Mexico,Poland,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1973-08-05,Myanmar,Kuwait,2,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-05,Russia,Sweden,0,0,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-05,Singapore,Vietnam Republic,0,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-06,Cambodia,Thailand,1,4,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-06,Eswatini,Malawi,0,1,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-08,Bangladesh,Myanmar,0,6,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-08,Kuwait,Vietnam Republic,2,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-08,Mexico,Poland,1,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-09,India,Vietnam Republic,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-10,Cambodia,Singapore,0,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-10,Malaysia,Myanmar,2,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1973-08-10,United States,Poland,0,4,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-11,Libya,United Arab Emirates,2,2,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Palestine Cup,0
+1973-08-11,South Korea,Kuwait,0,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-11,South Korea,Myanmar,1,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-12,Bangladesh,Thailand,0,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1973-08-12,Egypt,Yemen DPR,6,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-12,Malaysia,Kuwait,3,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1973-08-12,New Zealand,Iran,0,0,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-12,United States,Poland,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-12,Zambia,Kenya,2,0,world-cup,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-08-13,Algeria,United Arab Emirates,2,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-13,Iraq,Yemen,2,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-13,Palestine,Yemen DPR,1,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-13,Singapore,Bangladesh,0,1,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-13,Syria,Tunisia,1,4,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-14,Libya,Yemen,10,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Palestine Cup,0
+1973-08-15,Algeria,Iraq,0,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-15,Congo,Uganda,3,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-15,Egypt,Tunisia,0,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-15,Singapore,India,4,5,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-16,Egypt,Palestine,2,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-16,Syria,Yemen DPR,7,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-16,Yemen,United Arab Emirates,1,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-18,Australia,Iran,3,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-08-18,Libya,Iraq,0,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Palestine Cup,0
+1973-08-19,Bulgaria,Poland,0,2,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-08-19,DR Congo,Ghana,4,1,world-cup,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-08-19,Kenya,Zambia,2,2,world-cup,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-08-19,Tunisia,Yemen DPR,2,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-20,Egypt,Syria,0,2,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-20,Iraq,United Arab Emirates,3,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-21,Libya,Algeria,0,2,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Palestine Cup,0
+1973-08-21,Palestine,Tunisia,2,6,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-22,Netherlands,Iceland,5,0,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-08-23,Algeria,Syria,0,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-23,Iraq,Tunisia,0,2,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-24,Iran,Australia,2,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-08-25,Algeria,Iraq,0,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-26,Syria,Tunisia,0,4,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Palestine Cup,1
+1973-08-29,Finland,Sweden,1,2,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1973-08-29,Netherlands,Iceland,8,1,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-01,Singapore,Thailand,1,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Peninsular Games,0
+1973-09-02,Bolivia,Paraguay,1,2,world-cup,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-02,Malaysia,Thailand,1,1,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1973-09-02,Myanmar,Laos,8,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1973-09-03,Myanmar,Vietnam Republic,3,2,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1973-09-04,Singapore,Malaysia,0,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Peninsular Games,0
+1973-09-04,Vietnam Republic,Laos,5,1,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1973-09-05,Russia,Germany,0,1,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-09-06,Myanmar,Malaysia,1,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1973-09-06,Singapore,Vietnam Republic,1,1,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Peninsular Games,0
+1973-09-07,Singapore,Malaysia,0,3,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Peninsular Games,0
+1973-09-08,France,Greece,3,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-09-08,Myanmar,Vietnam Republic,3,2,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1973-09-09,Argentina,Bolivia,4,0,world-cup,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-09,United States,Bermuda,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-09-12,Norway,Netherlands,1,2,world-cup,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-16,Paraguay,Argentina,1,1,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-20,Mexico,Chile,1,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-09-22,Myanmar,Thailand,2,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1973-09-22,South Korea,Cambodia,6,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1973-09-22,Uganda,Somalia,6,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1973-09-23,Bolivia,Argentina,0,1,world-cup,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-23,Kenya,Zanzibar,2,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1973-09-23,Norway,Denmark,0,1,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1973-09-24,Malaysia,Thailand,5,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1973-09-24,Somalia,Zambia,1,6,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1973-09-24,South Korea,Indonesia,3,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1973-09-25,Tanzania,Zanzibar,1,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1973-09-26,England,Austria,7,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-09-26,German DR,Romania,2,0,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-26,Indonesia,Cambodia,2,3,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1973-09-26,Myanmar,Malaysia,1,3,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1973-09-26,Northern Ireland,Bulgaria,0,0,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-09-26,Poland,Wales,3,0,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-26,Russia,Chile,0,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-09-26,Scotland,Czech Republic,2,1,world-cup,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-26,Switzerland,Luxembourg,1,0,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-26,Uganda,Zambia,1,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1973-09-26,Yugoslavia,Hungary,1,1,international,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-09-27,Kenya,Tanzania,1,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1973-09-28,Cambodia,Malaysia,2,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1973-09-28,Malta,Canada,2,0,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-09-28,South Korea,Myanmar,0,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1973-09-28,Uganda,Zambia,2,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1973-09-29,Italy,Sweden,2,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-09-29,Uganda,Tanzania,2,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1973-09-30,Malta,Canada,0,0,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-09-30,Myanmar,Cambodia,0,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1973-09-30,Paraguay,Bolivia,4,0,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-09-30,South Korea,Malaysia,2,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1973-10-07,Argentina,Paraguay,3,1,world-cup,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-07,Luxembourg,Canada,0,2,international,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-10,Albania,Finland,1,0,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-10,Germany,Austria,4,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-10,Netherlands,Poland,1,1,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-11,Trinidad and Tobago,Martinique,2,0,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-13,Denmark,Hungary,2,2,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-13,Germany,France,2,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-13,Portugal,Bulgaria,2,2,world-cup,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-14,Romania,Finland,9,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-16,Mexico,United States,2,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-17,Czech Republic,Scotland,1,0,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-17,England,Poland,1,1,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-17,German DR,Russia,1,0,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-17,Turkey,Spain,0,0,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-20,Italy,Switzerland,2,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-21,Republic of Ireland,Poland,1,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-21,Yugoslavia,Spain,0,0,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-21,Zambia,Morocco,4,0,world-cup,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-27,Curaçao,Suriname,1,1,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-28,Australia,South Korea,0,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-10-29,Curaçao,Suriname,2,2,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-31,Algeria,Morocco,2,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-10-31,Belgium,Norway,2,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-01,Vietnam Republic,Malaysia,1,5,international,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Vietnam Independence Cup,0
+1973-11-03,Haiti,United States,1,0,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-03,Malaysia,Singapore,2,1,international,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Vietnam Independence Cup,1
+1973-11-04,Guyana,Jamaica,2,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-04,Vietnam Republic,Singapore,4,2,international,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Vietnam Independence Cup,0
+1973-11-04,Zambia,DR Congo,0,2,world-cup,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-05,Haiti,United States,1,0,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-06,Barbados,Suriname,0,2,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1973-11-06,Guadeloupe,Martinique,0,2,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-07,Albania,China,1,1,international,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-07,Dominica,Grenada,4,2,international,Dominica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-09,Guyana,Suriname,0,2,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-10,Haiti,Canada,5,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-10,South Korea,Australia,2,2,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-11,Dominica,Saint Lucia,1,0,international,Dominica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-11,Malta,Sweden,1,2,world-cup,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-11,Saint Vincent and the Grenadines,Grenada,4,1,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-12,Haiti,Canada,0,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-13,Albania,German DR,1,4,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-13,Australia,South Korea,1,0,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-11-13,Israel,United States,3,1,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-14,England,Italy,0,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-14,Portugal,Northern Ireland,1,1,world-cup,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-14,Scotland,Germany,1,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-15,Israel,United States,2,0,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-15,Saint Lucia,Grenada,1,3,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-16,Saint Lucia,Dominica,2,1,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-18,Bulgaria,Cyprus,2,0,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-18,DR Congo,Zambia,2,1,world-cup,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-18,Netherlands,Belgium,0,0,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-18,Turkey,Switzerland,2,0,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-19,Saint Vincent and the Grenadines,Dominica,2,2,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-21,Chile,Russia,2,0,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-21,France,Denmark,3,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-21,Grenada,Dominica,1,1,international,Grenada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-21,Hungary,German DR,0,1,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-23,Saint Vincent and the Grenadines,Saint Lucia,2,0,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-24,Germany,Spain,2,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-11-25,Morocco,Zambia,2,0,world-cup,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-11-27,Austria,Sweden,1,2,world-cup,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1973-11-27,Saint Lucia,Saint Vincent and the Grenadines,0,1,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-29,Grenada,Saint Lucia,2,0,international,Grenada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-29,Honduras,Trinidad and Tobago,2,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-11-30,Dominica,Saint Vincent and the Grenadines,0,0,international,Dominica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1973-11-30,Guatemala,Mexico,0,0,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-12-01,Haiti,Curaçao,3,0,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1973-12-02,Panama,Nicaragua,2,0,international,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-12-03,Honduras,Mexico,1,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-12-03,Myanmar,Vietnam Republic,0,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1973-12-04,Haiti,Trinidad and Tobago,2,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1973-12-05,Guatemala,Curaçao,2,2,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-12-07,Haiti,Honduras,1,0,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1973-12-08,Kenya,Uganda,2,2,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-12-08,Mexico,Curaçao,8,0,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-12-09,DR Congo,Morocco,3,0,world-cup,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-12-10,Guatemala,Trinidad and Tobago,0,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-12-10,Uganda,Zambia,2,0,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1973-12-12,Honduras,Curaçao,2,2,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-12-12,Kenya,Zambia,3,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-12-13,Haiti,Guatemala,2,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1973-12-14,Mexico,Trinidad and Tobago,0,4,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-12-15,Guatemala,Honduras,1,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-12-15,Laos,Singapore,3,2,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1973-12-15,Thailand,Myanmar,2,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1973-12-16,Cambodia,South Korea,0,5,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1973-12-17,Curaçao,Trinidad and Tobago,0,4,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1973-12-17,Myanmar,Singapore,6,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1973-12-17,Thailand,Laos,5,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1973-12-18,Haiti,Mexico,0,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1973-12-18,South Korea,Malaysia,0,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1973-12-19,Greece,Yugoslavia,2,4,world-cup,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1973-12-19,Myanmar,Laos,2,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1973-12-19,Thailand,Singapore,3,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1973-12-20,Cambodia,Malaysia,2,3,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1973-12-21,Congo,Tunisia,0,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1973-12-22,Myanmar,South Korea,0,2,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1973-12-23,Thailand,Malaysia,0,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1973-12-25,South Korea,Malaysia,2,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1973-12-25,Thailand,Myanmar,1,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1973-12-30,Guinea,Tunisia,0,0,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0

@@ -1,0 +1,313 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1963-01-01,Cameroon,Nigeria,1,2,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-06,Algeria,Bulgaria,2,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-06,Kuwait,Jordan,2,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-09,Spain,France,0,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-13,Morocco,Switzerland,1,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-14,Myanmar,China,0,3,international,Burma,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-19,Uganda,Zanzibar,8,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-20,Myanmar,China,2,1,international,Burma,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-23,Bulgaria,Portugal,1,0,euro-championship,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro qualification,1
+1963-01-26,Pakistan,China,0,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-27,Benin,Nigeria,1,1,international,Dahomey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-01-30,Pakistan,China,3,2,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-02-01,Mali,Burkina Faso,1,0,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-02-02,Nigeria,Benin,4,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-02-03,Pakistan,China,1,1,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-02-06,Pakistan,China,0,2,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-02-17,Paraguay,Bolivia,3,0,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Paz del Chaco,0
+1963-02-19,Paraguay,Bolivia,5,1,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Paz del Chaco,0
+1963-02-23,Jamaica,Haiti,3,2,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Phillip Seaga Cup,0
+1963-02-24,Mali,Senegal,3,1,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-02-27,France,England,5,2,euro-championship,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-02-27,Jamaica,Curaçao,1,2,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Phillip Seaga Cup,0
+1963-02-27,Nigeria,Senegal,4,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-03-02,Guatemala,Honduras,1,2,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-02,Haiti,Curaçao,0,1,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Phillip Seaga Cup,1
+1963-03-03,Ghana,Mali,4,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-03,Netherlands,Belgium,0,1,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-03,Paraguay,Brazil,2,2,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-03,Tunisia,Kuwait,2,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-04,Jamaica,Curaçao,1,2,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-06,Jamaica,Haiti,0,3,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-10,Argentina,Colombia,4,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-10,Bolivia,Ecuador,4,4,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1963-03-10,Brazil,Peru,1,0,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-10,Guatemala,Honduras,2,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-10,Ivory Coast,Tunisia,3,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-13,Argentina,Peru,1,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-14,Brazil,Colombia,5,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-14,Ecuador,Paraguay,1,3,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-17,Bolivia,Colombia,2,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1963-03-17,Brazil,Paraguay,0,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-17,Ecuador,Peru,1,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-20,Argentina,Ecuador,4,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-20,Colombia,Paraguay,2,3,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-20,Wales,Hungary,1,1,euro-championship,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-03-21,Bolivia,Peru,3,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1963-03-23,El Salvador,Nicaragua,6,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1963-03-23,Guatemala,Panama,2,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-23,Uruguay,Chile,3,2,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Juan Pinto Durán,0
+1963-03-24,Argentina,Brazil,3,0,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-24,Bolivia,Paraguay,2,0,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1963-03-24,Colombia,Peru,1,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-24,Costa Rica,Jamaica,6,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-24,Mexico,Curaçao,1,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-24,Uganda,Ethiopia,1,7,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-25,El Salvador,Panama,1,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1963-03-25,Honduras,Nicaragua,1,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-27,Brazil,Ecuador,2,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-27,El Salvador,Honduras,2,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1963-03-27,Guatemala,Nicaragua,3,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-27,Paraguay,Peru,4,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-27,Turkey,Italy,0,1,euro-championship,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-03-28,Bolivia,Argentina,3,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1963-03-28,Costa Rica,Curaçao,1,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-28,Jamaica,Mexico,0,8,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-29,Guatemala,Honduras,1,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-29,Nicaragua,Panama,0,5,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-30,Costa Rica,Mexico,0,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-30,Jamaica,Curaçao,1,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-31,Argentina,Paraguay,1,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-31,Belgium,Yugoslavia,0,1,euro-championship,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-03-31,Bolivia,Brazil,5,4,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1963-03-31,Colombia,Ecuador,3,4,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1963-03-31,Czech Republic,German DR,1,1,euro-championship,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-03-31,El Salvador,Guatemala,1,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1963-03-31,Lebanon,Kuwait,6,0,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1963-03-31,Panama,Honduras,0,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-03-31,Suriname,Trinidad and Tobago,3,1,international,Dutch Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-03-31,Switzerland,Netherlands,1,1,euro-championship,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-03-31,Syria,Jordan,4,0,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1963-04-02,Kuwait,Jordan,4,0,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1963-04-02,Suriname,Trinidad and Tobago,1,2,international,Dutch Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-02,Syria,Tunisia,0,1,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1963-04-03,El Salvador,Costa Rica,1,4,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1963-04-03,Honduras,Curaçao,1,4,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-04-03,Northern Ireland,Wales,1,4,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1963-04-04,Jersey,Alderney,6,0,international,Jersey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1963-04-04,Jordan,Tunisia,0,4,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1963-04-04,Lebanon,Syria,2,3,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1963-04-04,Suriname,Trinidad and Tobago,4,3,international,Dutch Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-05,Costa Rica,Curaçao,1,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-04-05,El Salvador,Honduras,3,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1963-04-06,England,Scotland,1,2,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1963-04-06,Kuwait,Tunisia,1,5,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1963-04-06,Lebanon,Jordan,5,0,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1963-04-07,Costa Rica,Honduras,2,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1963-04-07,El Salvador,Curaçao,3,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1963-04-07,Kuwait,Syria,0,4,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1963-04-07,Lebanon,Tunisia,0,1,international,Lebanon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1963-04-12,Congo,Ivory Coast,3,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-12,DR Congo,Mauritania,6,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-12,France,Gambia,5,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-12,Gabon,Burkina Faso,4,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-12,Liberia,Chad,2,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-12,Madagascar,Benin,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-12,Nigeria,Niger,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-12,Senegal,Cameroon,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Friendship Games,0
+1963-04-13,Brazil,Argentina,2,3,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Roca,0
+1963-04-13,Congo,DR Congo,2,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-13,Tunisia,Ivory Coast,3,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-14,Benin,Liberia,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-14,Cameroon,Niger,3,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-14,France,Gabon,3,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-14,Gambia,Burkina Faso,2,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-14,Ivory Coast,Mauritania,2,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-14,Madagascar,Chad,2,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-14,Senegal,Nigeria,5,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Friendship Games,0
+1963-04-14,Tunisia,Congo,2,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-15,Ivory Coast,DR Congo,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-15,Tunisia,Mauritania,4,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-16,Benin,Chad,6,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-16,Brazil,Argentina,5,2,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Roca,0
+1963-04-16,Congo,Mauritania,7,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-16,DR Congo,Tunisia,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-16,France,Burkina Faso,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-16,Gambia,Gabon,2,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-16,Guadeloupe,Martinique,3,0,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-16,Madagascar,Liberia,3,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-16,Senegal,Niger,3,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Friendship Games,0
+1963-04-17,Netherlands,France,1,0,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-18,Senegal,France,2,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Friendship Games,0
+1963-04-18,Tunisia,Madagascar,2,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-20,France,Madagascar,4,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Friendship Games,1
+1963-04-20,Guadeloupe,Puerto Rico,3,0,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-20,Senegal,Tunisia,1,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Friendship Games,0
+1963-04-21,Portugal,Brazil,1,0,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-24,Austria,Czech Republic,3,1,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-24,Belgium,Brazil,5,1,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-25,China,North Vietnam,1,0,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-04-26,Cambodia,North Vietnam,2,3,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-04-26,Indonesia,Egypt,1,3,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-27,Cambodia,China,0,6,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-04-27,Indonesia,Egypt,2,2,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-28,Bulgaria,Czech Republic,1,0,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-28,France,Brazil,2,3,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-04-30,Egypt,China,2,0,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-04-30,Indonesia,North Vietnam,3,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-02,Guernsey,Jersey,1,4,international,Guernsey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1963-05-02,Netherlands,Brazil,1,0,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-02,Tanzania,Ethiopia,0,2,international,Tanganyika,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-05,Germany,Brazil,1,2,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-05,Sweden,Hungary,2,1,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-08,England,Brazil,1,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-08,Scotland,Austria,4,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-12,Italy,Brazil,3,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-12,Romania,German DR,3,2,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-15,Norway,Poland,2,5,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-17,Egypt,Brazil,0,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-19,Hungary,Denmark,6,0,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-19,Indonesia,China,1,2,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-19,Israel,Brazil,0,5,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-22,Poland,Greece,4,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-22,Russia,Sweden,0,1,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-27,Zanzibar,Ethiopia,0,4,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-29,Czech Republic,England,2,4,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-05-30,Spain,Northern Ireland,1,1,euro-championship,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-06-01,Kenya,Sudan,0,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1963-06-02,Czech Republic,Hungary,2,2,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-02,German DR,England,1,2,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-02,Poland,Romania,1,1,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-03,Denmark,Finland,1,1,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1963-06-03,Kenya,Ethiopia,1,2,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-04,Norway,Scotland,4,3,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-05,Switzerland,England,1,8,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-09,Austria,Italy,0,1,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-09,Republic of Ireland,Scotland,1,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-09,Tunisia,Lebanon,2,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-13,Spain,Scotland,2,6,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-16,Ethiopia,Sudan,4,0,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-06-16,Tunisia,Morocco,4,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1963-06-19,Yugoslavia,Sweden,0,0,euro-championship,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-06-27,Finland,Norway,2,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1963-06-29,Denmark,Albania,4,0,euro-championship,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-06-30,Sudan,Kenya,5,0,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1963-07-02,Morocco,Tunisia,4,2,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1963-07-06,Zambia,Malawi,5,1,international,Northern Rhodesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-07-07,Algeria,Egypt,2,2,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-07-24,Chile,Uruguay,0,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Juan Pinto Durán,0
+1963-07-27,Nigeria,Guinea,2,2,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1963-08-05,Jamaica,El Salvador,0,1,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-08-07,Jamaica,El Salvador,0,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-08-08,Malaysia,Japan,3,4,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1963-08-09,Jamaica,El Salvador,1,1,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-08-09,Taiwan,Vietnam Republic,1,1,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-10,Thailand,Japan,1,4,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-11,Malaysia,Vietnam Republic,0,5,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1963-08-11,South Korea,Thailand,5,1,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-12,Malaysia,Taiwan,2,3,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1963-08-12,Vietnam Republic,Japan,1,5,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-13,South Korea,Japan,1,1,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-14,Malaysia,Thailand,2,2,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1963-08-14,South Korea,Vietnam Republic,3,1,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-14,Sweden,Finland,0,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1963-08-14,Sweden,Norway,0,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1963-08-15,Taiwan,Japan,2,0,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-16,Malaysia,South Korea,3,0,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1963-08-16,Taiwan,Thailand,2,2,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-17,Thailand,Vietnam Republic,2,3,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-18,Taiwan,South Korea,1,0,international,Malaya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1963-08-29,Fiji,Papua New Guinea,3,1,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Pacific Games,0
+1963-08-30,Solomon Islands,Vanuatu,6,3,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1963-09-01,Colombia,Costa Rica,4,5,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-01,Fiji,Solomon Islands,5,0,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Pacific Games,0
+1963-09-01,New Caledonia,Tahiti,2,1,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1963-09-04,China,Myanmar,4,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-04,Colombia,Costa Rica,1,0,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-04,German DR,Bulgaria,1,1,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-04,Poland,Norway,9,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-06,Fiji,New Caledonia,2,8,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Pacific Games,0
+1963-09-08,Mauritius,Réunion,0,2,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-09-11,Netherlands,Luxembourg,1,1,euro-championship,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-09-15,Madagascar,Réunion,6,1,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-15,Norway,Denmark,0,4,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1963-09-18,Bulgaria,Sudan,1,1,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-18,Sweden,Yugoslavia,3,2,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-09-22,Poland,Turkey,0,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-22,Russia,Hungary,1,1,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-25,Austria,Republic of Ireland,0,0,euro-championship,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-09-27,Martinique,Puerto Rico,6,0,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-09-28,Germany,Turkey,3,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-28,Kenya,Tanzania,4,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-09-29,Bulgaria,France,1,0,euro-championship,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-09-29,Uganda,Zanzibar,2,0,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-10-01,Kenya,Zanzibar,1,0,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-02,Tanzania,Uganda,1,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-10-04,Tanzania,Zanzibar,2,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-10-05,Kenya,Uganda,1,2,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-06,Denmark,Sweden,2,2,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1963-10-06,Yugoslavia,Hungary,2,0,international,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-08,Liberia,Nigeria,2,2,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-09,Turkey,Romania,0,0,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-12,Japan,Vietnam Republic,2,1,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-12,Northern Ireland,Scotland,2,1,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1963-10-12,Wales,England,0,4,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1963-10-13,Republic of Ireland,Austria,3,2,euro-championship,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-10-13,Russia,Italy,2,0,euro-championship,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-10-15,Paraguay,Argentina,0,4,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Chevallier Boutell,0
+1963-10-15,Suriname,Curaçao,2,3,international,Dutch Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-16,Greece,Poland,3,1,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-19,German DR,Hungary,1,2,euro-championship,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-10-19,Zambia,Kenya,0,1,international,Northern Rhodesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-20,Netherlands,Belgium,1,1,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-26,France,Bulgaria,3,1,euro-championship,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-10-26,Nigeria,Liberia,3,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-27,Hungary,Austria,2,1,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-27,Romania,Yugoslavia,2,1,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-10-29,Argentina,Paraguay,2,3,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Chevallier Boutell,0
+1963-10-30,Albania,Denmark,1,0,euro-championship,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-10-30,Netherlands,Luxembourg,1,2,euro-championship,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-10-30,Northern Ireland,Spain,0,1,euro-championship,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-10-31,Cameroon,Togo,2,1,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-03,Hungary,German DR,3,3,euro-championship,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-11-03,Sweden,Germany,2,1,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-03,Switzerland,Norway,0,2,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-03,Yugoslavia,Czech Republic,2,0,international,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-07,Scotland,Norway,6,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-10,Italy,Russia,1,1,euro-championship,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-11-11,France,Switzerland,2,2,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-12,China,Mali,3,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-11-12,Egypt,North Vietnam,4,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-11-13,Laos,North Vietnam,1,9,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-11-14,Indonesia,Mali,3,2,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-16,Indonesia,China,1,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-18,Egypt,Saudi Arabia,7,0,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-11-18,Indonesia,North Korea,1,5,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-19,North Korea,North Vietnam,2,0,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-11-20,England,Northern Ireland,8,3,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1963-11-20,Hong Kong,Singapore,3,4,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-20,Scotland,Wales,2,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1963-11-21,Senegal,Ethiopia,1,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-22,Egypt,North Korea,1,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-11-24,Egypt,Nigeria,6,3,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1963-11-24,Ghana,Tunisia,1,1,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1963-11-26,Egypt,Sudan,2,2,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1963-11-26,Ghana,Ethiopia,2,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1963-11-27,Cyprus,Greece,3,1,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-11-28,Ethiopia,Tunisia,4,2,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1963-11-28,Nigeria,Sudan,0,4,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1963-11-30,Egypt,Ethiopia,3,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1963-12-01,Ghana,Sudan,3,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1963-12-01,Morocco,Russia,1,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-01,Spain,Belgium,1,2,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-04,Luxembourg,Denmark,3,3,euro-championship,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-12-07,Hong Kong,Thailand,3,3,asian-cup,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1963-12-07,Kenya,Tanzania,6,2,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-07,Vietnam Republic,Malaysia,5,3,asian-cup,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1963-12-10,Denmark,Luxembourg,2,2,euro-championship,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1963-12-11,Kenya,Uganda,1,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-11,Malaysia,Thailand,3,1,asian-cup,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1963-12-11,Vietnam Republic,Hong Kong,1,4,asian-cup,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1963-12-13,Tanzania,Uganda,0,5,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1963-12-14,Hong Kong,Malaysia,4,3,asian-cup,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1963-12-14,Italy,Austria,1,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-14,Vietnam Republic,Thailand,3,0,asian-cup,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1963-12-15,Senegal,Guinea,1,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-15,Tunisia,Algeria,0,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-16,Philippines,Taiwan,0,7,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-17,Myanmar,German DR,1,5,international,Burma,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-18,Denmark,Luxembourg,1,0,euro-championship,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro qualification,1
+1963-12-25,France,Belgium,1,2,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-29,Morocco,Germany,1,4,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1963-12-31,Cameroon,Guinea,1,5,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0

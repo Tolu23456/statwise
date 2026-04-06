@@ -1,0 +1,532 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1991-01-06,Burkina Faso,Mali,2,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-01-09,Burkina Faso,Niger,2,2,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-01-11,Russia,Zambia,4,0,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1991-01-13,Burkina Faso,Nigeria,1,1,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-01-13,Ghana,Benin,4,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-01-13,Morocco,Ivory Coast,3,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-01-14,Hungary,Russia,1,1,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1991-01-16,Spain,Portugal,1,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-01-17,India,Hungary,1,2,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nehru Cup,0
+1991-01-20,India,Zambia,1,0,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nehru Cup,0
+1991-01-21,Cameroon,Algeria,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Dakar Tournament,1
+1991-01-21,Senegal,Ivory Coast,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dakar Tournament,0
+1991-01-22,Senegal,Algeria,2,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dakar Tournament,0
+1991-01-23,Greece,Portugal,3,2,euro-championship,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-01-23,Hungary,Zambia,4,1,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1991-01-23,Ivory Coast,Cameroon,1,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Dakar Tournament,1
+1991-01-24,India,Russia,1,3,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nehru Cup,0
+1991-01-27,Benin,Burkina Faso,1,2,international,Benin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-01-27,Niger,Morocco,1,0,international,Niger,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-01-27,Togo,Nigeria,0,0,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-01-29,Mexico,Colombia,0,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-01-30,Australia,Czech Republic,0,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-01,United States,Switzerland,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Miami Cup,0
+1991-02-03,Colombia,Switzerland,2,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Miami Cup,1
+1991-02-05,Northern Ireland,Poland,3,1,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-06,Australia,Czech Republic,0,2,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-06,England,Cameroon,2,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-06,Guinea-Bissau,Gambia,2,1,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-06,Malaysia,Indonesia,1,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1991-02-06,Scotland,Russia,0,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-06,Wales,Republic of Ireland,0,3,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-07,Guinea-Bissau,Mauritania,2,0,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-09,Malta,Portugal,0,1,euro-championship,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-02-13,Italy,Belgium,0,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-15,Algeria,Cameroon,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-02-15,Senegal,Ivory Coast,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-17,Gambia,Mauritania,0,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-17,Ivory Coast,Cameroon,3,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-02-17,Senegal,Algeria,1,3,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-19,Argentina,Hungary,2,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-20,France,Spain,3,1,euro-championship,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-02-20,Portugal,Malta,5,0,euro-championship,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-02-21,Bermuda,United States,1,0,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-27,Belgium,Luxembourg,3,0,euro-championship,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-02-27,Brazil,Paraguay,1,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-27,Cyprus,Greece,1,1,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-02-27,Turkey,Yugoslavia,1,1,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-02,Suriname,French Guiana,3,0,international,Suriname,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-05,Algeria,Tunisia,2,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-09,Uganda,Sudan,0,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-12,Liechtenstein,Switzerland,0,6,international,Liechtenstein,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-12,United States,Mexico,2,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,NAFU Championship,0
+1991-03-13,Argentina,Mexico,0,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-13,Netherlands,Malta,1,0,euro-championship,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-03-13,Poland,Finland,1,1,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-14,Canada,Mexico,0,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,NAFU Championship,1
+1991-03-16,United States,Canada,2,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,NAFU Championship,0
+1991-03-23,Alderney,Jersey,1,4,international,Alderney,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1991-03-27,Argentina,Brazil,3,3,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-27,Belgium,Wales,1,1,euro-championship,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-03-27,Czech Republic,Poland,4,0,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-27,England,Republic of Ireland,1,1,euro-championship,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-03-27,Germany,Russia,2,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-27,Morocco,Greece,0,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-27,San Marino,Romania,1,3,euro-championship,San Marino,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-03-27,Scotland,Bulgaria,1,1,euro-championship,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-03-27,Spain,Hungary,2,4,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-27,Tunisia,Turkey,0,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-03-27,Yugoslavia,Northern Ireland,4,1,euro-championship,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-03-30,France,Albania,5,0,euro-championship,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-04-03,Algeria,Morocco,2,2,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-03,Cyprus,Hungary,0,2,euro-championship,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-04-03,Switzerland,Romania,0,0,euro-championship,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-04-07,Mali,Burkina Faso,5,1,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-07,Sudan,Uganda,1,1,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-07,Tunisia,Algeria,0,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-09,Denmark,Bulgaria,1,1,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-09,Mexico,Chile,1,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-12,Mauritania,Morocco,0,2,international,Mauritania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-13,Nigeria,Ghana,0,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-14,Angola,Zambia,1,2,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-14,DR Congo,Gabon,2,1,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-14,Eswatini,Madagascar,0,1,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-14,Guinea,Cameroon,0,0,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-14,Mali,Sierra Leone,0,0,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-14,Nicaragua,El Salvador,2,3,international,Nicaragua,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UNCAF Cup,0
+1991-04-14,Sudan,Kenya,1,0,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-14,Tunisia,Egypt,2,2,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-14,Uganda,Tanzania,3,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-14,Zimbabwe,Malawi,4,0,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-17,Austria,Norway,0,0,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-17,Congo,Benin,1,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-17,Costa Rica,Mexico,0,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-17,Greece,Sweden,2,2,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-17,Hungary,Russia,0,1,euro-championship,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-04-17,Netherlands,Finland,2,0,euro-championship,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-04-17,Poland,Turkey,3,0,euro-championship,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-04-17,Spain,Romania,0,2,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-04-21,Togo,Burkina Faso,1,0,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-27,Nigeria,Benin,3,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-27,Tanzania,DR Congo,1,0,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-27,Uganda,Gabon,0,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-28,Chad,Tunisia,0,0,international,Chad,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-28,Congo,Malawi,2,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-28,Eswatini,Zambia,2,1,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-28,Mali,Cameroon,0,2,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-28,Mozambique,Sudan,1,0,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-28,Sierra Leone,Guinea,0,1,international,Sierra Leone,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-29,Ghana,Togo,2,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-04-30,Ivory Coast,Niger,1,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-05-01,Albania,Czech Republic,0,2,euro-championship,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-01,Bulgaria,Switzerland,2,3,euro-championship,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-01,Germany,Belgium,1,0,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-01,Italy,Hungary,3,1,euro-championship,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-01,Northern Ireland,Faroe Islands,1,1,euro-championship,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-01,Norway,Cyprus,3,0,euro-championship,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-01,Republic of Ireland,Poland,0,0,euro-championship,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-01,San Marino,Scotland,0,2,euro-championship,San Marino,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-01,Sweden,Austria,6,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-01,Turkey,England,0,1,euro-championship,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-01,Wales,Iceland,1,0,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-01,Yugoslavia,Denmark,1,2,euro-championship,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-04,Madagascar,Angola,0,0,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-05-05,Jamaica,Haiti,2,1,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-05,Senegal,Ivory Coast,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-05,United States,Uruguay,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-06,Guernsey,Jersey,3,0,international,Guernsey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1991-05-06,Jamaica,Haiti,2,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-07,Malta,Iceland,1,4,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-07,Mexico,Uruguay,0,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-05-08,Aruba,Suriname,0,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1991-05-08,Martinique,DR Congo,0,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-05-10,Cayman Islands,British Virgin Islands,2,1,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1991-05-10,Guyana,Aruba,4,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-10,Puerto Rico,Haiti,2,3,international,Puerto Rico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-10,Saint Lucia,Montserrat,3,0,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-12,Dominican Republic,Haiti,1,1,international,Puerto Rico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1991-05-12,Guyana,Suriname,1,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-12,New Zealand,Australia,0,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Trans-Tasman Cup,0
+1991-05-12,Panama,Honduras,2,0,international,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UNCAF Cup,0
+1991-05-12,Saint Kitts and Nevis,Cayman Islands,1,1,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-14,Anguilla,Montserrat,1,1,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1991-05-14,Hong Kong,Malaysia,2,0,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-14,Puerto Rico,Dominican Republic,1,3,international,Puerto Rico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-14,Saint Kitts and Nevis,British Virgin Islands,0,0,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-15,Australia,New Zealand,2,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Trans-Tasman Cup,0
+1991-05-15,Martinique,French Guiana,1,2,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-16,Finland,Malta,2,0,euro-championship,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-16,Saint Lucia,Anguilla,6,0,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-16,Yugoslavia,Faroe Islands,7,0,euro-championship,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-17,Guadeloupe,French Guiana,1,0,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1991-05-18,Honduras,Panama,3,0,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UNCAF Cup,0
+1991-05-19,Martinique,Guadeloupe,3,1,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1991-05-19,United States,Argentina,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-21,England,Russia,3,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-21,Guyana,Haiti,1,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-22,Austria,Faroe Islands,3,0,euro-championship,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-22,Republic of Ireland,Chile,1,1,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-22,San Marino,Bulgaria,0,3,euro-championship,San Marino,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-23,Argentina,Russia,1,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-05-23,Dominican Republic,Trinidad and Tobago,0,7,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1991-05-23,Norway,Romania,1,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-23,Saint Lucia,Martinique,0,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1991-05-24,Jamaica,Guyana,6,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1991-05-25,Dominican Republic,Saint Lucia,0,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1991-05-25,England,Argentina,2,2,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-25,Martinique,Trinidad and Tobago,0,1,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1991-05-26,Albania,Iceland,1,0,euro-championship,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-26,Costa Rica,Honduras,2,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UNCAF Cup,0
+1991-05-26,Guatemala,El Salvador,0,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UNCAF Cup,1
+1991-05-26,Jamaica,Cayman Islands,3,2,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1991-05-27,Dominican Republic,Martinique,1,4,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1991-05-27,Saint Lucia,Trinidad and Tobago,2,1,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1991-05-28,Brazil,Bulgaria,3,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-28,Cayman Islands,Guyana,1,2,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1991-05-29,Costa Rica,El Salvador,7,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UNCAF Cup,0
+1991-05-29,Guatemala,Honduras,0,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UNCAF Cup,1
+1991-05-29,Poland,Wales,0,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-29,Russia,Cyprus,4,0,euro-championship,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-05-30,Chile,Uruguay,2,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-05-30,Guyana,Trinidad and Tobago,1,3,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1991-05-30,Jamaica,Saint Lucia,2,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1991-06-01,Australia,England,0,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-01,United States,Republic of Ireland,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-02,Costa Rica,Guatemala,1,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UNCAF Cup,0
+1991-06-02,Guyana,Saint Lucia,1,4,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1991-06-02,Honduras,El Salvador,2,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UNCAF Cup,1
+1991-06-02,Jamaica,Trinidad and Tobago,2,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1991-06-02,Japan,Thailand,1,0,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Kirin Cup,0
+1991-06-03,New Zealand,England,0,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-05,Denmark,Austria,2,1,euro-championship,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-06-05,Finland,Netherlands,1,1,euro-championship,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-06-05,Iceland,Czech Republic,0,1,euro-championship,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-06-05,Norway,Italy,2,1,euro-championship,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-06-05,Sweden,Colombia,2,2,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-05,Switzerland,San Marino,7,0,euro-championship,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-06-05,Wales,Germany,1,0,euro-championship,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-06-06,Peru,Ecuador,0,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-07,Indonesia,Malta,0,3,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1991-06-07,South Korea,Egypt,0,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1991-06-08,New Zealand,England,0,2,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-09,Egypt,Malta,5,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1991-06-09,Ivory Coast,Senegal,2,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-09,South Korea,Indonesia,3,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1991-06-11,Egypt,Indonesia,6,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1991-06-11,South Korea,Malta,1,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1991-06-12,Denmark,Italy,0,2,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Scania 100 Tournament,1
+1991-06-12,Malaysia,England,2,4,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-12,Peru,Uruguay,1,0,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-13,Sweden,Russia,2,3,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Scania 100 Tournament,0
+1991-06-14,Bolivia,Paraguay,0,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Paz del Chaco,0
+1991-06-14,South Korea,Australia,0,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1991-06-15,Sweden,Denmark,4,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Scania 100 Tournament,0
+1991-06-16,Italy,Russia,1,1,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Scania 100 Tournament,1
+1991-06-16,Paraguay,Bolivia,0,0,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Paz del Chaco,0
+1991-06-16,South Korea,Egypt,2,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1991-06-19,Ecuador,Chile,2,1,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-19,Slovenia,Croatia,0,1,international,Slovenia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-20,Mozambique,Botswana,2,0,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-20,Uruguay,Peru,0,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-22,Mozambique,Eswatini,2,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-22,Philippines,Brunei,2,1,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-24,Faroe Islands,Shetland,3,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-24,Jersey,Greenland,4,3,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-24,Ynys Môn,Guernsey,1,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-24,Åland Islands,Isle of Wight,1,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Island Games,0
+1991-06-25,Costa Rica,Colombia,0,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-25,Ecuador,Peru,2,2,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-25,Faroe Islands,Greenland,3,2,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-25,Jersey,Shetland,2,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-25,Mozambique,Botswana,1,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-25,Ynys Môn,Isle of Wight,5,1,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-25,Åland Islands,Guernsey,2,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Island Games,0
+1991-06-26,Faroe Islands,Jersey,5,3,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-26,Isle of Wight,Guernsey,1,1,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-26,Shetland,Greenland,5,2,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-26,Uruguay,Chile,2,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-26,Åland Islands,Ynys Môn,0,1,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Island Games,0
+1991-06-27,Brazil,Argentina,1,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-28,Canada,Honduras,2,4,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-06-28,Gambia,Ghana,2,3,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-06-28,Isle of Wight,Greenland,3,1,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-28,Mexico,Jamaica,4,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-06-28,Shetland,Guernsey,2,1,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-28,Åland Islands,Jersey,0,2,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Island Games,0
+1991-06-29,Costa Rica,Guatemala,2,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-06-29,Faroe Islands,Ynys Môn,2,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Island Games,1
+1991-06-29,United States,Trinidad and Tobago,2,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gold Cup,0
+1991-06-30,Canada,Mexico,1,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-06-30,Chile,Ecuador,3,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-06-30,Jamaica,Honduras,0,5,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-07-01,Trinidad and Tobago,Costa Rica,2,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-07-01,United States,Guatemala,3,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gold Cup,0
+1991-07-02,Jamaica,Canada,2,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-07-02,Mexico,Honduras,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-07-02,Moldova,Georgia,2,4,international,Moldova,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-03,Trinidad and Tobago,Guatemala,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-07-03,United States,Costa Rica,3,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gold Cup,0
+1991-07-05,Honduras,Costa Rica,2,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-07-05,United States,Mexico,2,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gold Cup,0
+1991-07-06,Chile,Venezuela,2,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1991-07-06,Malawi,Kenya,0,2,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-06,Paraguay,Peru,1,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-07,Bolivia,Uruguay,1,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-07,Colombia,Ecuador,1,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-07,Gabon,Ghana,0,1,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-07,Mexico,Costa Rica,2,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
+1991-07-07,United States,Honduras,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gold Cup,0
+1991-07-08,Argentina,Venezuela,3,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-08,Chile,Peru,4,2,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1991-07-08,Malawi,Kenya,1,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-09,Bolivia,Brazil,1,2,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-09,Congo,DR Congo,0,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-09,Ecuador,Uruguay,1,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-10,Chile,Argentina,0,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1991-07-10,Malawi,Kenya,1,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-10,Paraguay,Venezuela,5,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-11,Bolivia,Colombia,0,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-11,Brazil,Uruguay,1,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-12,Argentina,Paraguay,4,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-12,Egypt,Chad,5,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-12,Peru,Venezuela,5,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-13,Bolivia,Ecuador,0,4,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-13,Brazil,Colombia,0,2,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-13,Burkina Faso,Ghana,2,1,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-14,Argentina,Peru,3,2,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-14,Cameroon,Sierra Leone,1,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-14,Chile,Paraguay,4,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1991-07-14,DR Congo,Uganda,1,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-14,Gabon,Tanzania,1,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-14,Guinea,Mali,2,1,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-14,Kenya,Mozambique,1,0,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-14,Togo,Benin,2,0,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-14,Zambia,Madagascar,2,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-14,Zimbabwe,Congo,2,2,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-15,Angola,Eswatini,1,1,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-15,Brazil,Ecuador,3,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-15,Colombia,Uruguay,0,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-15,Faroe Islands,Turkey,1,1,international,Faroe Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-17,Argentina,Brazil,3,2,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-17,Chile,Colombia,1,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1991-07-17,Iceland,Turkey,5,1,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-19,Brazil,Colombia,2,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-19,Chile,Argentina,0,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1991-07-21,Argentina,Colombia,2,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+1991-07-21,Chile,Brazil,0,2,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa América,0
+1991-07-24,Ivory Coast,Guinea,0,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-26,Egypt,Tunisia,2,2,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-26,Mauritania,Niger,0,1,international,Mauritania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-27,Japan,South Korea,0,1,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-07-27,Malawi,Zimbabwe,2,2,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-27,Nigeria,Burkina Faso,7,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-28,Benin,Ghana,0,0,international,Benin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-28,Cameroon,Guinea,1,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-28,Gabon,DR Congo,0,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-28,Ivory Coast,Morocco,2,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-28,Kenya,Sudan,2,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-28,Sierra Leone,Mali,2,0,international,Sierra Leone,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-28,Zambia,Angola,1,0,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-07-29,Tanzania,Uganda,1,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1991-08-08,Czech Republic,Yugoslavia,0,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-08-08,Norway,Sweden,1,2,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-08-11,Benin,Ivory Coast,0,3,international,Benin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-08-14,Poland,France,1,5,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-08-19,Malawi,Mozambique,1,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-08-20,Malawi,Mozambique,2,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-08-21,Bulgaria,Turkey,0,0,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-08-21,Czech Republic,Switzerland,1,1,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-08-21,Poland,Sweden,2,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-08-28,Norway,Russia,0,1,euro-championship,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-08-28,Romania,United States,0,2,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-01,Ivory Coast,Benin,1,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-04,Czech Republic,France,1,2,euro-championship,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-09-04,Greece,Albania,0,2,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-04,Iceland,Denmark,0,0,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-04,Portugal,Austria,1,1,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-04,Spain,Uruguay,2,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-04,Sweden,Yugoslavia,4,3,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-04,Turkey,United States,1,1,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-08,Mali,Guinea,0,0,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-09,Papua New Guinea,Solomon Islands,0,0,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Pacific Games,0
+1991-09-10,Fiji,New Caledonia,3,1,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-10,Vanuatu,Wallis Islands and Futuna,4,0,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-11,England,Germany,0,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-11,Faroe Islands,Northern Ireland,0,5,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro qualification,1
+1991-09-11,Hungary,Republic of Ireland,1,2,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-11,Luxembourg,Belgium,0,2,euro-championship,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-09-11,Netherlands,Poland,1,1,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-11,New Caledonia,Tahiti,2,2,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-11,Portugal,Finland,1,0,euro-championship,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-09-11,Solomon Islands,Wallis Islands and Futuna,5,0,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-11,Switzerland,Scotland,2,2,euro-championship,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-09-11,Wales,Brazil,1,0,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-12,Bermuda,Jamaica,1,1,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-12,Papua New Guinea,Vanuatu,0,1,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Pacific Games,0
+1991-09-14,Fiji,Tahiti,3,0,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-14,Solomon Islands,Vanuatu,3,0,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-14,United States,Jamaica,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-15,Papua New Guinea,Wallis Islands and Futuna,5,0,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Pacific Games,0
+1991-09-17,Fiji,Vanuatu,3,1,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-17,New Caledonia,Solomon Islands,1,4,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-17,Wallis Islands and Futuna,Tahiti,0,5,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-18,Wallis Islands and Futuna,Guam,5,0,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-20,Fiji,Solomon Islands,1,1,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-20,New Caledonia,Vanuatu,3,1,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
+1991-09-21,Botswana,Eswatini,2,1,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-21,Egypt,Nigeria,1,2,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-21,Uganda,Zimbabwe,1,2,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-22,Cameroon,Mali,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-22,Mauritius,Tunisia,0,3,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-23,Egypt,Zimbabwe,2,3,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-23,Nigeria,Uganda,8,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-24,Cameroon,Tunisia,0,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-24,Mali,Mauritius,5,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-25,Bulgaria,Italy,2,1,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-25,Egypt,Uganda,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-25,Faroe Islands,Denmark,0,4,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro qualification,1
+1991-09-25,Iceland,Spain,2,0,euro-championship,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-09-25,Nigeria,Zimbabwe,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-25,Norway,Czech Republic,2,3,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-25,Russia,Hungary,2,2,euro-championship,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-09-26,Cameroon,Mauritius,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-26,Mali,Tunisia,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-28,Cameroon,Nigeria,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-28,Egypt,Mali,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-28,Mauritius,Uganda,3,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-28,Tunisia,Zimbabwe,3,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-30,Botswana,Ghana,0,0,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-09-30,Cameroon,Tunisia,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-09-30,Nigeria,Zimbabwe,3,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-10-05,Singapore,Indonesia,2,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-10-09,Austria,Denmark,0,3,euro-championship,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-09,Finland,Greece,1,1,euro-championship,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-09,Hungary,Belgium,0,2,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-10-09,Switzerland,Sweden,3,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-10-12,Luxembourg,Portugal,1,1,international,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-10-12,Russia,Italy,0,0,euro-championship,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-12,Spain,France,1,2,euro-championship,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-13,Algeria,Iran,1,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-10-16,Bulgaria,San Marino,4,0,euro-championship,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-16,Cyprus,Iceland,1,1,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-10-16,Czech Republic,Albania,2,1,euro-championship,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-16,England,Turkey,1,0,euro-championship,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-16,Faroe Islands,Yugoslavia,0,2,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro qualification,1
+1991-10-16,Germany,Wales,4,1,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-16,Netherlands,Portugal,1,0,euro-championship,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-16,Northern Ireland,Austria,2,1,euro-championship,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-16,Poland,Republic of Ireland,3,3,euro-championship,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-16,Romania,Scotland,1,0,euro-championship,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-19,United States,North Korea,1,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-10-30,Brazil,Yugoslavia,3,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-10-30,Greece,Finland,2,0,euro-championship,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-30,Hungary,Norway,0,0,euro-championship,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-10-31,Ghana,Senegal,2,3,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-10-31,Ivory Coast,Nigeria,2,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-11-02,Ghana,Nigeria,1,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-11-02,Ivory Coast,Senegal,1,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-11-09,Tanzania,Kenya,1,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-11-13,Austria,Yugoslavia,0,2,euro-championship,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-13,Cyprus,Russia,0,3,euro-championship,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-13,Denmark,Northern Ireland,2,1,euro-championship,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-13,Italy,Norway,1,1,euro-championship,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-13,Poland,England,1,1,euro-championship,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-13,Romania,Switzerland,1,0,euro-championship,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-13,Scotland,San Marino,4,0,euro-championship,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-13,Spain,Czech Republic,2,1,euro-championship,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-13,Turkey,Republic of Ireland,1,3,euro-championship,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-13,Wales,Luxembourg,1,0,euro-championship,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-15,Lithuania,Estonia,4,1,international,Lithuania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Baltic Cup,0
+1991-11-16,China,Norway,4,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-16,Estonia,Latvia,0,2,international,Lithuania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Baltic Cup,1
+1991-11-16,Tanzania,Kenya,1,2,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-11-17,Denmark,New Zealand,3,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-17,Germany,Nigeria,4,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-17,Japan,Brazil,0,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-17,Lithuania,Latvia,1,1,international,Lithuania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Baltic Cup,0
+1991-11-17,Sweden,United States,2,3,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-17,Taiwan,Italy,0,5,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-19,Brazil,United States,0,5,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-19,China,Denmark,2,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-19,Italy,Nigeria,1,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-19,Japan,Sweden,0,8,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-19,Norway,New Zealand,4,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-19,Taiwan,Germany,0,3,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-20,Belgium,Germany,0,1,euro-championship,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-20,Bulgaria,Romania,1,1,euro-championship,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-20,France,Iceland,3,1,euro-championship,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-20,Mexico,Uruguay,1,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-11-20,Portugal,Greece,1,0,euro-championship,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-11-21,Brazil,Sweden,0,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-21,China,New Zealand,4,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-21,Italy,Germany,0,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-21,Japan,United States,0,3,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-21,Norway,Denmark,2,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-21,Taiwan,Nigeria,2,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-22,Cape Verde,Guinea-Bissau,2,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1991-11-23,Gambia,Mali,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1991-11-23,Ivory Coast,Niger,5,2,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-11-23,Kenya,Zambia,0,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1991-11-24,China,Sweden,0,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-24,Denmark,Germany,1,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-24,Guinea,Sierra Leone,0,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1991-11-24,Norway,Italy,3,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-24,Senegal,Guinea-Bissau,4,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1991-11-24,Sudan,Tanzania,1,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1991-11-24,United States,Costa Rica,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-11-24,United States,Taiwan,7,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-25,Malawi,Zanzibar,1,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1991-11-25,Singapore,Thailand,0,0,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1991-11-26,Gambia,Guinea,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1991-11-26,Indonesia,Malaysia,2,0,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1991-11-26,Mali,Sierra Leone,1,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1991-11-26,Philippines,Vietnam,2,2,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1991-11-27,Costa Rica,Mexico,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1991-11-27,Germany,United States,2,5,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-27,Malta,Libya,2,0,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-11-27,Senegal,Cape Verde,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1991-11-27,Sweden,Norway,1,4,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-27,Thailand,Myanmar,4,0,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1991-11-27,Tunisia,Ivory Coast,5,3,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-11-27,Uganda,Sudan,2,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1991-11-27,Zambia,Zanzibar,3,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1991-11-28,Gambia,Sierra Leone,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1991-11-28,Guinea,Mali,0,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1991-11-28,Indonesia,Vietnam,1,0,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1991-11-28,Kenya,Malawi,1,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1991-11-28,Philippines,Malaysia,1,0,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1991-11-29,Singapore,Myanmar,2,1,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1991-11-29,Sweden,Germany,4,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-30,Cape Verde,Sierra Leone,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1991-11-30,Kenya,Zanzibar,3,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1991-11-30,Malaysia,Vietnam,2,1,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1991-11-30,Norway,United States,1,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1991 FIFA Women's World Cup,1
+1991-11-30,Philippines,Indonesia,1,2,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1991-11-30,Senegal,Gambia,2,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1991-11-30,Uganda,Tanzania,5,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1991-12-01,Malawi,Zambia,0,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1991-12-02,Indonesia,Singapore,0,0,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1991-12-02,Philippines,Thailand,2,6,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1991-12-02,Senegal,Cape Verde,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1991-12-03,Egypt,Poland,4,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-04,Greece,Netherlands,0,2,euro-championship,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-12-04,Indonesia,Thailand,0,0,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1991-12-04,Mexico,Hungary,3,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-04,Morocco,Mali,3,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-04,Philippines,Singapore,0,2,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1991-12-04,Uganda,Kenya,1,3,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1991-12-05,Egypt,Poland,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-05,Sudan,Zambia,2,3,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1991-12-07,Kenya,Zambia,0,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1991-12-07,Uganda,Sudan,3,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1991-12-08,El Salvador,Hungary,1,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-09,Kuwait,Poland,0,2,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-16,Algeria,Senegal,3,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-18,Brazil,Czech Republic,2,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-18,Germany,Luxembourg,4,0,euro-championship,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-12-21,Egypt,Romania,3,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-21,Italy,Cyprus,2,0,euro-championship,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-12-22,Malta,Greece,1,1,euro-championship,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1991-12-22,Pakistan,India,0,0,international,Sri Lanka,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1991-12-22,Sri Lanka,Nepal,2,2,international,Sri Lanka,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Asian Games,0
+1991-12-24,Egypt,Romania,1,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-24,Maldives,Nepal,1,0,international,Sri Lanka,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1991-12-24,Pakistan,Bangladesh,1,0,international,Sri Lanka,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1991-12-25,Tunisia,Cameroon,2,2,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-26,Bangladesh,India,2,1,international,Sri Lanka,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1991-12-26,Morocco,Algeria,1,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1991-12-26,Sri Lanka,Maldives,0,1,international,Sri Lanka,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Asian Games,0
+1991-12-28,Bangladesh,Nepal,2,0,international,Sri Lanka,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1991-12-29,Pakistan,Maldives,2,0,international,Sri Lanka,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1991-12-30,Malawi,Zambia,0,2,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0

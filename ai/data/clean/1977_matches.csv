@@ -1,0 +1,456 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1977-01-04,Uruguay,Ecuador,1,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-05,Northern Cyprus,Turkey,0,1,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-07,Saudi Arabia,Iran,0,3,world-cup,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-01-09,Paraguay,Ecuador,2,0,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-09,Tunisia,Morocco,1,1,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-01-11,Algeria,Bulgaria,1,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-12,Paraguay,Uruguay,1,1,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Artigas,0
+1977-01-16,Colombia,Ecuador,0,1,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-16,Guinea,Ghana,2,0,world-cup,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-01-20,Venezuela,Ecuador,1,0,international,Venezuela,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-23,Brazil,Bulgaria,1,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-23,Congo,Gabon,2,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-23,Uruguay,Paraguay,2,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Artigas,0
+1977-01-25,Uganda,Iraq,1,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-26,Cameroon,Congo,2,2,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-26,Chile,Paraguay,4,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-26,Ecuador,Colombia,4,1,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-26,Israel,Greece,1,1,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-26,Italy,Belgium,2,1,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-28,Mauritius,Malawi,3,2,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-01-28,Syria,Iran,0,1,world-cup,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-01-30,Colombia,Yugoslavia,0,1,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-30,Cyprus,Bulgaria,1,2,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-30,Gambia,Denmark,1,4,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-01-30,Uruguay,Chile,3,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Juan Pinto Durán,0
+1977-02-01,Mexico,Yugoslavia,5,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-01,Tanzania,Mozambique,2,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-02,France,Romania,2,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-02,Paraguay,Chile,2,0,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-02,Senegal,Denmark,2,3,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-05,Gabon,Morocco,0,1,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-06,Bolivia,Paraguay,0,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Paz del Chaco,0
+1977-02-06,Kenya,Egypt,0,0,world-cup,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-06,Tunisia,Algeria,2,0,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-08,Mexico,Yugoslavia,0,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-09,Bolivia,Paraguay,2,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Paz del Chaco,0
+1977-02-09,England,Netherlands,0,2,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-09,Peru,Hungary,3,2,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-09,Republic of Ireland,Spain,0,1,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-09,Thailand,Israel,3,3,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-09,Venezuela,Uruguay,1,1,world-cup,Venezuela,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-12,Australia,Israel,1,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-13,Ecuador,Paraguay,2,1,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-13,Ivory Coast,Congo,3,2,world-cup,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-13,Togo,Guinea,0,2,world-cup,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-13,Uganda,Zambia,1,0,world-cup,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-14,Nigeria,Benin,7,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-14,Singapore,South Korea,0,4,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-16,Australia,Israel,1,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-16,Turkey,Bulgaria,2,0,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Balkan Cup,0
+1977-02-17,Algeria,Kenya,4,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-02-17,Bahrain,South Korea,1,4,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-17,Mauritius,Ethiopia,2,3,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-02-17,Sierra Leone,Nigeria,1,1,international,Sierra Leone,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-02-19,Bahrain,South Korea,1,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-20,Colombia,Brazil,0,0,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-20,Ecuador,Peru,1,1,world-cup,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-20,Panama,Paraguay,0,4,international,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-22,Mexico,Hungary,1,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-23,France,Germany,1,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-24,Colombia,Paraguay,0,1,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-27,Argentina,Hungary,5,1,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-27,Bolivia,Uruguay,1,0,world-cup,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-27,Botswana,China,0,2,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-02-27,Congo,Ivory Coast,1,3,world-cup,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-27,Ecuador,Chile,0,1,world-cup,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-27,Egypt,Kenya,1,0,world-cup,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-27,Guinea,Togo,2,1,world-cup,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-27,Israel,South Korea,0,0,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-27,Singapore,Thailand,2,0,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-27,Zambia,Uganda,4,2,world-cup,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-28,Algeria,Tunisia,1,1,world-cup,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-02-28,Hong Kong,Indonesia,4,1,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-01,Malaysia,Thailand,6,4,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-02,Singapore,Hong Kong,2,2,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-03,Indonesia,Malaysia,0,0,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-05,New Zealand,New Caledonia,3,0,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-05,Senegal,Guinea,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-05,Thailand,Hong Kong,1,2,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-05,Tunisia,Malta,0,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-06,Chile,Peru,1,1,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-06,Israel,Japan,2,0,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-06,Paraguay,Colombia,1,1,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-06,Singapore,Malaysia,1,0,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-06,Venezuela,Bolivia,1,3,world-cup,Venezuela,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-07,Guadeloupe,Martinique,1,3,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-07,Thailand,Indonesia,3,2,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-08,Malaysia,Hong Kong,1,1,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-08,New Zealand,New Caledonia,4,0,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-08,Qatar,Tunisia,1,0,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-09,Austria,Greece,2,0,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-09,Brazil,Colombia,6,0,world-cup,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-09,Singapore,Indonesia,0,4,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-10,Israel,Japan,2,0,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-11,Bahrain,Kuwait,0,2,world-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-12,Peru,Ecuador,4,0,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-12,Singapore,Hong Kong,0,1,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-13,Australia,Taiwan,3,0,world-cup,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-13,Bolivia,Venezuela,2,0,world-cup,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-13,Cameroon,Congo,2,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-13,Egypt,Tunisia,2,2,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-13,Ethiopia,Mauritius,1,0,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-13,Guinea,Libya,3,0,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-13,Kenya,Algeria,2,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-13,Nigeria,Sierra Leone,2,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-13,Paraguay,Brazil,0,1,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-13,Qatar,Bahrain,2,0,world-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-13,Senegal,Togo,2,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-15,Iran,Hungary,0,2,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-15,Qatar,Kuwait,0,2,world-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-16,Taiwan,Australia,1,2,world-cup,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-17,Bahrain,Kuwait,1,2,world-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-03-17,Uruguay,Venezuela,2,0,world-cup,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-19,Fiji,Australia,1,0,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-19,Qatar,Bahrain,0,3,world-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-20,Brazil,Paraguay,1,1,world-cup,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-20,Burkina Faso,Ivory Coast,0,1,international,Upper Volta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-20,Chile,Ecuador,3,0,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-20,New Zealand,Taiwan,6,0,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-20,South Korea,Israel,3,1,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-20,Tunisia,Russia,0,3,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-21,Qatar,Kuwait,1,4,world-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-22,Argentina,Iran,1,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Real Madrid 75th Anniversary Cup,1
+1977-03-23,Czech Republic,Greece,4,0,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-23,New Zealand,Taiwan,6,0,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-23,Romania,Turkey,4,0,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Balkan Cup,0
+1977-03-23,Syria,Morocco,0,2,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-23,Yugoslavia,Russia,2,4,international,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-25,Libya,Guinea,0,2,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-26,Alderney,Jersey,0,3,international,Alderney,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1977-03-26,Belgium,Netherlands,0,2,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-26,Japan,South Korea,0,0,world-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-26,Peru,Chile,2,0,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-26,Togo,Senegal,0,1,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-26,Zambia,Malawi,8,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-27,Australia,New Zealand,3,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-27,Ivory Coast,Burkina Faso,4,1,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-03-27,Spain,Hungary,1,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-27,Uruguay,Bolivia,2,2,world-cup,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-30,England,Luxembourg,5,0,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-30,New Zealand,Australia,1,1,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-30,Portugal,Switzerland,1,0,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-03-30,Republic of Ireland,France,1,0,world-cup,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-03-30,Wales,Czech Republic,3,0,world-cup,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-04-02,Malta,German DR,0,1,world-cup,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-04-03,Morocco,Gabon,5,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-03,South Korea,Japan,1,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-04-06,Turkey,Finland,1,2,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-08,Guinea-Bissau,Mali,1,3,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-09,South Africa,Zimbabwe,7,0,international,South Africa,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-13,Bulgaria,Denmark,3,1,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-13,Hungary,Poland,2,1,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-14,Martinique,Guadeloupe,1,0,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-16,Romania,Spain,1,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-04-17,Austria,Turkey,1,0,world-cup,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-04-20,Hungary,Czech Republic,2,0,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-22,Iran,Saudi Arabia,2,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-04-23,Switzerland,France,0,4,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-24,Republic of Ireland,Poland,0,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-24,Russia,Greece,2,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-04-27,Germany,Northern Ireland,5,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-27,Romania,German DR,1,1,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-27,Scotland,Sweden,3,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-04-27,Tunisia,Egypt,3,2,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-04-30,Austria,Malta,9,0,world-cup,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-04-30,Hungary,Russia,2,1,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-04-30,Yugoslavia,Germany,1,2,international,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-01,Algeria,Senegal,2,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-01,Denmark,Poland,1,2,world-cup,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-05-07,Hong Kong,Macau,2,0,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-08,Yugoslavia,Romania,0,2,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-05-09,Guernsey,Jersey,1,5,international,Guernsey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1977-05-10,Greece,Russia,1,0,world-cup,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-05-15,Cyprus,Poland,1,3,world-cup,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-05-17,Mexico,Peru,1,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-18,Russia,Hungary,2,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-05-24,Mexico,Peru,2,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-24,Switzerland,Czech Republic,1,0,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-26,Haiti,Peru,1,2,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-26,Luxembourg,Finland,0,1,world-cup,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-05-26,Sweden,Norway,1,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1977-05-28,Hungary,Greece,3,0,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-05-28,Northern Ireland,England,1,2,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1977-05-28,Senegal,Morocco,3,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-28,Wales,Scotland,0,0,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1977-05-29,Argentina,Poland,3,1,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-29,Haiti,Peru,2,2,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-29,Togo,Ghana,0,2,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-30,Mozambique,Cuba,0,2,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-05-31,England,Wales,0,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1977-06-01,Bulgaria,Republic of Ireland,2,1,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-06-01,Czech Republic,Austria,0,0,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-01,Norway,Denmark,0,2,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-01,Scotland,Northern Ireland,3,0,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1977-06-03,Libya,Cuba,1,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-03,Northern Ireland,Wales,1,1,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1977-06-04,England,Scotland,1,2,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1977-06-05,Argentina,Germany,1,3,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-05,Congo,Cameroon,4,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-06-05,Guinea,Tunisia,1,0,world-cup,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-06-05,Mauritania,Senegal,1,2,international,Mauritania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-06,Honduras,Panama,1,0,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-08,Brazil,England,0,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-08,Finland,Italy,0,3,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-06-08,Sweden,Switzerland,2,1,world-cup,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-06-08,Uruguay,Germany,0,2,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-09,Algeria,Zambia,2,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-06-10,Ethiopia,Cuba,0,0,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-10,Peru,Poland,1,3,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-11,Iceland,Northern Ireland,1,0,world-cup,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-06-12,Argentina,England,1,1,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-12,Bolivia,Poland,1,2,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-12,Brazil,Germany,1,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-12,Ethiopia,Uganda,0,0,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-06-12,Ghana,Togo,2,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-12,Senegal,Nigeria,3,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-06-12,Zambia,Cuba,2,0,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-14,Mexico,Germany,2,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-15,Chile,Scotland,2,4,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-15,Denmark,Sweden,2,1,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1977-06-15,South Korea,Japan,2,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-15,Uruguay,England,0,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-16,Zambia,Cuba,0,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-18,Argentina,Scotland,1,1,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-19,Brazil,Poland,3,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-19,Hong Kong,Iran,0,2,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-06-19,Tunisia,Guinea,3,1,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-06-22,Finland,Denmark,1,2,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1977-06-23,Brazil,Scotland,2,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-26,Argentina,France,0,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-26,Brazil,Yugoslavia,0,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-26,Hong Kong,South Korea,0,1,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-06-26,Nigeria,Senegal,3,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-06-26,Uganda,Ethiopia,2,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-06-26,Zambia,Algeria,2,0,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-06-30,Brazil,France,2,2,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-06-30,Iceland,Norway,2,1,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-03,Argentina,Yugoslavia,1,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-03,South Korea,Iran,0,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-07-03,Zimbabwe,South Africa,1,1,international,Southern Rhodesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-06,Malawi,Tanzania,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-08,Malawi,Tanzania,1,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-10,Australia,Hong Kong,3,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-07-10,Nigeria,Ivory Coast,4,0,world-cup,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-07-10,Peru,Brazil,0,1,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-07-12,Argentina,German DR,2,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-14,Brazil,Bolivia,8,0,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-07-15,Egypt,Zambia,2,0,world-cup,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-07-16,Malaysia,Myanmar,1,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1977-07-17,China,Hong Kong,2,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-17,Congo,Gabon,3,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-07-17,Peru,Bolivia,5,0,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-07-17,South Korea,Libya,4,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-18,Malaysia,Thailand,3,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1977-07-19,China,DR Congo,3,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Beijing International Friendship Tournament,0
+1977-07-19,Iraq,Libya,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-20,Iceland,Sweden,0,1,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-20,South Korea,Thailand,4,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-21,Malaysia,Libya,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1977-07-21,Myanmar,Iraq,0,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-23,Libya,Thailand,2,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-23,Malaysia,Iraq,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1977-07-24,Afghanistan,India,0,3,international,Afghanistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-24,Hong Kong,Iran,1,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Beijing International Friendship Tournament,1
+1977-07-24,Myanmar,South Korea,0,4,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-25,China,Morocco,3,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Beijing International Friendship Tournament,0
+1977-07-25,Iraq,Thailand,5,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-25,Ivory Coast,Nigeria,2,2,world-cup,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-07-26,Malaysia,South Korea,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1977-07-27,China,Hong Kong,1,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Beijing International Friendship Tournament,0
+1977-07-27,Iran,Morocco,1,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Beijing International Friendship Tournament,1
+1977-07-27,Myanmar,Libya,3,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-28,German DR,Russia,2,1,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-07-28,Iraq,South Korea,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-29,Iran,DR Congo,1,3,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Beijing International Friendship Tournament,1
+1977-07-29,Myanmar,Thailand,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-31,Gabon,Congo,3,3,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-07-31,Iraq,South Korea,0,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1977-07-31,Zambia,Egypt,0,0,world-cup,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-08-05,Iran,Romania,0,0,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-08-14,Australia,Iran,0,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-08-14,Czech Republic,Romania,1,3,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1977-08-17,Sweden,German DR,0,1,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-08-18,Norway,Finland,1,1,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1977-08-24,Argentina,Paraguay,2,1,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Félix Bogado,0
+1977-08-24,Austria,Poland,2,1,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-08-27,Australia,South Korea,2,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-08-31,Netherlands,Iceland,4,1,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-08-31,Paraguay,Argentina,2,0,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Félix Bogado,0
+1977-09-01,India,Thailand,0,4,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1977-09-03,Belgium,Iceland,4,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-09-03,South Korea,Thailand,5,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1977-09-04,Nigeria,Ghana,2,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-05,South Korea,India,3,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1977-09-06,Tunisia,Malta,2,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-06,Wales,Kuwait,0,0,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-07,Czech Republic,Turkey,1,0,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-07,England,Switzerland,0,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-07,Finland,Germany,0,1,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-07,German DR,Scotland,1,0,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-07,Norway,Sweden,2,1,world-cup,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-09-07,Russia,Poland,4,1,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-08,Bahrain,Malaysia,1,3,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1977-09-11,Trinidad and Tobago,Canada,1,1,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-13,South Korea,Malaysia,3,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1977-09-14,China,Thailand,5,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-15,El Salvador,United States,1,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-15,Malaysia,Thailand,1,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1977-09-18,Guatemala,United States,3,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-18,Réunion,Mauritius,0,2,international,Réunion,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-18,Suriname,Trinidad and Tobago,2,1,international,Suriname,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-20,Kuwait,Wales,0,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-21,Bulgaria,Turkey,3,1,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Balkan Cup,0
+1977-09-21,Mauritius,Seychelles,2,1,international,Réunion,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1977-09-21,Northern Ireland,Iceland,2,0,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-09-21,Poland,Denmark,4,1,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-09-21,Romania,Greece,6,1,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-21,Scotland,Czech Republic,3,1,world-cup,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-09-21,Switzerland,Spain,1,2,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-22,Guyana,Trinidad and Tobago,2,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-24,Austria,German DR,1,1,world-cup,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-09-24,Guyana,Trinidad and Tobago,2,2,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-24,Libya,Malta,1,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-25,Guatemala,United States,2,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-25,Réunion,Seychelles,1,0,international,Réunion,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-25,Tunisia,Nigeria,0,0,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-09-26,Guyana,Trinidad and Tobago,0,2,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-27,Mexico,United States,3,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-28,Libya,Cyprus,1,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-30,Botswana,Malawi,0,2,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-09-30,United States,El Salvador,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-01,Botswana,Malawi,1,5,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-02,Hong Kong,Kuwait,1,3,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-02,Tunisia,Guinea,3,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-10-03,Zambia,India,3,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-05,Hungary,Yugoslavia,4,3,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-05,Netherlands,Russia,0,0,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-05,Sweden,Denmark,1,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-05,Switzerland,Finland,2,0,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-06,United States,China,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-08,Canada,El Salvador,1,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-08,France,Russia,0,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-08,Germany,Italy,2,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-08,Guatemala,Suriname,3,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-08,Nigeria,Egypt,4,0,world-cup,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-09,Denmark,Portugal,2,4,world-cup,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-09,Mexico,Haiti,4,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1977-10-09,South Korea,Kuwait,1,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-09,Zambia,India,3,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-10,United States,China,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-12,Canada,Suriname,2,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-12,German DR,Austria,1,1,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-12,Guatemala,Haiti,1,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-12,Hungary,Sweden,3,0,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-12,Luxembourg,England,0,2,world-cup,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-12,Mexico,El Salvador,3,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1977-10-12,Northern Ireland,Netherlands,0,1,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-12,Republic of Ireland,Bulgaria,0,0,world-cup,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-12,Wales,Scotland,0,2,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1977-10-15,Italy,Finland,6,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-15,Mexico,Suriname,8,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1977-10-16,Australia,Kuwait,1,2,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-16,Canada,Guatemala,2,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-16,El Salvador,Haiti,0,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-16,Guinea,Tunisia,3,2,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1977-10-16,United States,China,2,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-19,Mexico,Guatemala,2,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1977-10-20,Canada,Haiti,1,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-20,El Salvador,Suriname,3,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-21,Egypt,Nigeria,3,1,world-cup,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-22,Guyana,Barbados,2,0,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-22,Mexico,Canada,3,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1977-10-23,El Salvador,Guatemala,2,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-23,Haiti,Suriname,1,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1977-10-23,Jamaica,China,0,1,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-23,South Korea,Australia,0,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-24,Guyana,Barbados,0,0,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-26,Bulgaria,Greece,0,0,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-26,Guyana,Barbados,0,0,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-26,Netherlands,Belgium,1,0,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-26,Spain,Romania,2,0,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-28,Iran,Kuwait,1,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-28,Thailand,Singapore,2,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1977-10-29,German DR,Malta,9,0,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-29,Hungary,Bolivia,6,0,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-29,Poland,Portugal,1,1,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-30,Hong Kong,Australia,2,5,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-30,Switzerland,Norway,1,0,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-30,Turkey,Austria,0,1,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-10-31,Jamaica,China,0,3,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-10-31,Thailand,India,1,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1977-11-01,Malaysia,Singapore,4,3,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1977-11-04,India,Singapore,2,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1977-11-05,Kuwait,South Korea,2,2,world-cup,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-06,Thailand,Malaysia,1,2,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1977-11-09,Czech Republic,Hungary,1,1,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-11-10,India,Malaysia,0,3,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1977-11-11,Iran,South Korea,2,2,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-11,Malawi,Lesotho,3,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-11-12,Kuwait,Hong Kong,4,0,world-cup,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-12,Nigeria,Tunisia,0,1,world-cup,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-12,Poland,Sweden,2,1,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-11-13,Malawi,Lesotho,6,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-11-13,Romania,Yugoslavia,4,6,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-13,Singapore,Australia,0,2,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-11-16,Czech Republic,Wales,1,0,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-16,England,Italy,2,0,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-16,France,Bulgaria,3,1,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-16,Germany,Switzerland,4,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-11-16,Greece,Yugoslavia,0,0,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Balkan Cup,0
+1977-11-16,Northern Ireland,Belgium,3,0,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-16,Portugal,Cyprus,4,0,world-cup,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-16,Turkey,German DR,1,2,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-18,Iran,Hong Kong,3,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-19,Kuwait,Australia,1,0,world-cup,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-19,Malaysia,Indonesia,1,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1977-11-20,Philippines,Brunei,4,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1977-11-20,Thailand,Singapore,2,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1977-11-21,Malaysia,Philippines,5,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1977-11-21,Myanmar,Singapore,5,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1977-11-22,Indonesia,Brunei,4,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1977-11-22,Thailand,Myanmar,0,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1977-11-23,Malaysia,Brunei,7,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1977-11-23,Philippines,Indonesia,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1977-11-25,Egypt,Tunisia,3,2,world-cup,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-25,Indonesia,Thailand,0,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1977-11-25,Iran,Australia,1,0,world-cup,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-25,Malaysia,Myanmar,9,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1977-11-26,Malaysia,Thailand,2,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1977-11-26,Myanmar,Indonesia,2,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1977-11-26,Uganda,Zanzibar,1,0,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-11-27,Iraq,Morocco,3,0,international,Iraq,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-11-27,Malta,Turkey,0,3,world-cup,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-27,Tanzania,Zambia,2,4,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-11-28,Kenya,Uganda,1,3,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-11-29,Malawi,Zambia,1,0,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-11-30,Bolivia,Hungary,2,3,world-cup,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-11-30,Somalia,Zanzibar,1,0,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1977-11-30,Yugoslavia,Spain,0,1,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-12-01,Malawi,Tanzania,0,0,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-12-02,Kenya,Zanzibar,3,0,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-12-03,Italy,Luxembourg,3,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-12-03,Kuwait,Iran,1,2,world-cup,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-12-03,Morocco,Iraq,0,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-12-04,South Korea,Hong Kong,5,2,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-12-05,Kenya,Zambia,2,4,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-12-06,Malawi,Uganda,0,1,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-12-08,Kenya,Malawi,1,2,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-12-09,Uganda,Zambia,0,0,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1977-12-11,Tunisia,Egypt,4,1,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1977-12-12,Kenya,Malawi,1,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-12-14,Germany,Wales,1,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-12-17,Puerto Rico,Martinique,0,2,international,Puerto Rico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-12-21,Belgium,Italy,0,1,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1977-12-25,Ghana,Sierra Leone,4,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0

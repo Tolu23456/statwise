@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-04-05T17:43:22.492716Z",
-  "status": "init_error",
-  "n_predictions": 0,
-  "n_leagues": 0,
-  "error": "No module named 'joblib'",
+  "timestamp": "2026-04-06T08:03:09.210624Z",
+  "status": "ok",
+  "n_predictions": 130,
+  "n_leagues": 10,
+  "error": "",
   "next_run_in_seconds": 1200
 }

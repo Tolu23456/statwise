@@ -1,0 +1,600 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1992-01-04,Egypt,Czech Republic,2,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-01-05,DR Congo,Ivory Coast,2,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-01-05,Guyana,Barbados,0,2,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-01-07,Egypt,Norway,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-01-12,Cameroon,Morocco,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-12,Senegal,Nigeria,1,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1992-01-13,Algeria,Ivory Coast,0,3,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-13,Egypt,Zambia,0,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-14,Morocco,DR Congo,1,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-14,Nigeria,Kenya,2,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-15,Ivory Coast,Congo,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-15,Portugal,Spain,0,0,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-01-15,Zambia,Ghana,0,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-16,Cameroon,DR Congo,1,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-16,Senegal,Kenya,3,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1992-01-17,Algeria,Congo,1,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-17,Egypt,Ghana,0,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-19,Nigeria,DR Congo,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-19,Senegal,Cameroon,0,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1992-01-20,Ghana,Congo,2,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-20,Ivory Coast,Zambia,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-23,Cameroon,Ivory Coast,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-23,Nigeria,Ghana,1,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-25,Cameroon,Nigeria,1,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-25,United States,Russia,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-01-26,Australia,Sweden,0,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-01-26,Ghana,Ivory Coast,0,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1992-01-29,Albania,Greece,1,0,international,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-01-29,Australia,Sweden,1,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-01-29,El Salvador,Russia,0,3,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-02,Australia,Sweden,1,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-02,United States,Russia,2,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-04,Bermuda,Norway,1,3,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-10,Malta,Iceland,1,0,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Malta International Tournament,0
+1992-02-12,Costa Rica,United States,0,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-12,Greece,Romania,1,0,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-12,Israel,Russia,1,2,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-12,Portugal,Netherlands,2,0,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-12,Turkey,Finland,1,1,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-18,El Salvador,United States,2,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-19,England,France,2,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-19,Italy,San Marino,4,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-19,Republic of Ireland,Wales,0,1,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-19,Scotland,Northern Ireland,1,0,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-19,Spain,Russia,1,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-22,Tunisia,Nigeria,1,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-26,Brazil,United States,3,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-02-26,Tunisia,Belgium,2,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-02,United Arab Emirates,Iceland,0,1,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-03,Israel,Cyprus,2,1,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-04,Costa Rica,El Salvador,2,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-04,Saint Vincent and the Grenadines,Curaçao,2,2,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1992-03-05,Dominica,Guadeloupe,0,0,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1992-03-06,Barbados,Curaçao,1,0,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1992-03-08,Grenada,Curaçao,0,1,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1992-03-08,Mexico,Russia,4,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-11,Mexico,Russia,1,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-11,Spain,United States,2,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-17,El Salvador,Honduras,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-03-18,Morocco,United States,3,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-21,Dominican Republic,Puerto Rico,1,2,world-cup,Dominican Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-03-21,Guernsey,Alderney,9,1,international,Guernsey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1992-03-22,Saint Lucia,Saint Vincent and the Grenadines,1,0,world-cup,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-03-25,Cyprus,Greece,1,3,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-25,Czech Republic,England,2,2,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-25,France,Belgium,3,3,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-25,Hungary,Austria,2,1,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-25,Italy,Germany,1,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-25,Luxembourg,Turkey,2,3,international,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-25,Netherlands,Yugoslavia,2,0,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-25,Republic of Ireland,Switzerland,2,1,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-25,Scotland,Finland,1,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-03-29,Puerto Rico,Dominican Republic,1,1,world-cup,Puerto Rico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-03-29,Saint Vincent and the Grenadines,Saint Lucia,3,1,world-cup,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-04-01,Cayman Islands,Martinique,0,7,international,Sint Maarten,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1992-04-02,Canada,China,5,2,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-03,Sint Maarten,Cayman Islands,4,2,international,Sint Maarten,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1992-04-04,United States,China,5,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-05,Sint Maarten,Martinique,1,1,international,Sint Maarten,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1992-04-05,Togo,Ghana,1,0,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-08,Israel,Iceland,2,2,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-08,Romania,Latvia,2,0,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-08,Turkey,Denmark,2,1,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-12,Jamaica,Bermuda,0,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-14,Austria,Lithuania,4,0,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-15,Antigua and Barbuda,Montserrat,5,0,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1992-04-15,Brazil,Finland,3,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-15,Saint Kitts and Nevis,British Virgin Islands,4,0,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1992-04-17,Antigua and Barbuda,British Virgin Islands,2,0,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1992-04-17,Saint Kitts and Nevis,Montserrat,10,0,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1992-04-19,Barbados,Trinidad and Tobago,1,2,world-cup,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-04-19,Curaçao,Antigua and Barbuda,1,1,world-cup,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-04-19,Singapore,Malaysia,1,1,asian-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-04-20,China,Indonesia,2,0,asian-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1992-04-22,Belgium,Cyprus,1,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-04-22,Czech Republic,Germany,1,1,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-22,Singapore,Indonesia,1,2,asian-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-04-22,Spain,Albania,3,0,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-04-22,Tunisia,Sweden,0,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-23,China,Malaysia,4,0,asian-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1992-04-24,Guyana,Suriname,1,2,world-cup,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-04-24,Indonesia,Malaysia,1,1,asian-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1992-04-26,Antigua and Barbuda,Curaçao,3,0,world-cup,Antigua and Barbuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-04-26,Bermuda,Haiti,1,0,world-cup,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-04-26,Singapore,China,0,1,asian-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-04-28,Northern Ireland,Lithuania,2,2,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-04-28,Switzerland,Bulgaria,0,2,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-29,Austria,Wales,1,1,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-29,Denmark,Norway,1,0,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-29,El Salvador,Costa Rica,1,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-29,Republic of Ireland,United States,4,1,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-29,Russia,England,2,2,international,Russia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-29,Ukraine,Hungary,1,3,international,Ukraine,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-04-30,Uruguay,Brazil,1,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-02,Anguilla,Cuba,0,3,international,Anguilla,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1992-05-04,Jersey,Guernsey,2,3,international,Jersey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1992-05-06,French Guiana,Guyana,1,1,international,Suriname,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1992-05-06,Romania,Faroe Islands,7,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-05-07,Sweden,Poland,5,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-08,Aruba,French Guiana,0,2,international,Suriname,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1992-05-08,Congo,Haiti,4,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-05-09,Congo,Guadeloupe,1,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-05-09,Cuba,Anguilla,5,0,international,Cuba,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1992-05-09,Suriname,French Guiana,3,2,international,Suriname,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1992-05-11,Iran,Pakistan,7,0,asian-cup,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1992-05-12,Hungary,England,0,1,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-13,Greece,Iceland,1,0,world-cup,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-05-13,Norway,Faroe Islands,2,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-14,Finland,Bulgaria,0,3,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-05-14,Kuwait,Syria,0,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-14,United Arab Emirates,Qatar,1,0,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-15,India,Iran,0,3,asian-cup,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-05-17,England,Brazil,1,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-17,Qatar,Kuwait,0,0,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-17,United Arab Emirates,Syria,2,0,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-17,United States,Scotland,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-19,Austria,Poland,2,4,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-19,Bahrain,Algeria,0,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-20,Canada,Scotland,1,3,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-20,Moldova,Lithuania,1,1,international,Moldova,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-20,Romania,Wales,5,1,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-05-20,United Arab Emirates,Syria,0,0,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-23,Jamaica,Puerto Rico,2,1,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-05-24,Guatemala,Ecuador,1,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-25,Haiti,Bermuda,2,1,world-cup,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-05-25,Suriname,Guyana,1,1,world-cup,Suriname,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-05-26,Ethiopia,Sudan,5,1,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-26,Malta,Latvia,1,0,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-26,Republic of Ireland,Albania,2,0,world-cup,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-05-27,Costa Rica,Ecuador,2,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-27,Netherlands,Austria,3,2,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-27,Poland,Czech Republic,1,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-27,Sweden,Hungary,2,1,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-27,Switzerland,France,2,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-29,Qatar,Syria,4,2,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-05-30,Germany,Turkey,1,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-30,Japan,Argentina,0,1,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Kirin Cup,0
+1992-05-30,Netherlands,Wales,4,0,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-05-30,Puerto Rico,Jamaica,0,1,world-cup,Puerto Rico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-05-30,United States,Republic of Ireland,3,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,USA Cup,0
+1992-05-31,Italy,Portugal,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,USA Cup,1
+1992-05-31,Qatar,Oman,4,0,asian-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-05-31,Trinidad and Tobago,Barbados,3,0,world-cup,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-06-01,Kazakhstan,Turkmenistan,1,0,international,Kazakhstan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-02,Germany,Northern Ireland,1,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-03,Albania,Lithuania,1,0,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-06-03,Argentina,Wales,1,0,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Kirin Cup,1
+1992-06-03,Denmark,Russia,1,1,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-03,Estonia,Slovenia,1,1,international,Estonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-03,Faroe Islands,Belgium,0,3,world-cup,Faroe Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-06-03,Finland,England,1,2,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-03,Hungary,Iceland,1,2,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-06-03,Macau,Hong Kong,2,2,asian-cup,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1992-06-03,North Korea,Taiwan,6,0,asian-cup,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-06-03,Norway,Scotland,0,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-03,United States,Portugal,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,USA Cup,0
+1992-06-04,Republic of Ireland,Italy,0,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,USA Cup,1
+1992-06-05,France,Netherlands,1,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-05,Hong Kong,Taiwan,0,0,asian-cup,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1992-06-05,North Korea,Macau,2,0,asian-cup,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-06-06,United States,Italy,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,USA Cup,0
+1992-06-07,Guatemala,Nicaragua,7,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-07,Japan,Wales,0,1,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Kirin Cup,0
+1992-06-07,Macau,Taiwan,2,0,asian-cup,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1992-06-07,New Zealand,Fiji,3,0,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-06-07,North Korea,Hong Kong,0,0,asian-cup,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-06-07,Republic of Ireland,Portugal,2,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,USA Cup,1
+1992-06-10,Sweden,France,1,1,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro,0
+1992-06-11,Denmark,England,0,0,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-12,Netherlands,Scotland,1,0,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-12,Russia,Germany,1,1,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-13,Canada,Hong Kong,3,1,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-13,United States,Australia,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-14,Antigua and Barbuda,Bermuda,0,3,world-cup,Antigua and Barbuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-06-14,France,England,0,0,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-14,Gabon,Togo,1,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-14,Guinea-Bissau,Cape Verde,3,1,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-06-14,Lesotho,Botswana,0,0,international,Lesotho,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-06-14,Sweden,Denmark,1,0,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro,0
+1992-06-15,Netherlands,Russia,0,0,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-15,Scotland,Germany,0,2,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-16,Faroe Islands,Cyprus,0,2,world-cup,Faroe Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-06-17,France,Denmark,1,2,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-17,Sweden,England,2,1,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro,0
+1992-06-17,Tajikistan,Uzbekistan,2,2,international,Tajikistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-18,Argentina,Australia,2,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-18,Netherlands,Germany,3,1,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-18,Scotland,Russia,3,0,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-19,Antigua and Barbuda,Suriname,1,1,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1992-06-19,South Korea,Bangladesh,6,0,asian-cup,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup qualification,1
+1992-06-20,Guadeloupe,Jamaica,0,1,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1992-06-20,Mozambique,Eswatini,4,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-21,Antigua and Barbuda,Martinique,1,4,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1992-06-21,Gabon,Burundi,0,1,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-21,Sweden,Germany,2,3,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro,0
+1992-06-21,Thailand,South Korea,2,1,asian-cup,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-06-21,Uruguay,Australia,2,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-22,Cuba,Jamaica,0,0,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1992-06-22,Netherlands,Denmark,2,2,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-23,Thailand,Bangladesh,1,0,asian-cup,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
+1992-06-24,Jamaica,Martinique,1,0,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1992-06-24,Trinidad and Tobago,Cuba,1,0,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1992-06-26,Denmark,Germany,2,0,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro,1
+1992-06-26,Sudan,Eritrea,1,1,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-27,Cuba,Martinique,1,1,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1992-06-27,Trinidad and Tobago,Jamaica,3,1,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1992-06-27,United States,Ukraine,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-27,Vanuatu,New Zealand,1,4,world-cup,Vanuatu,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-06-28,Botswana,Lesotho,0,4,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-06-28,Cape Verde,Guinea-Bissau,1,0,international,Cape Verde,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-06-28,Chad,Eritrea,0,1,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-06-28,China,Slovakia,2,3,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-28,Honduras,Panama,4,0,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-28,Uzbekistan,Turkmenistan,2,1,international,Uzbekistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-30,Honduras,Panama,4,0,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-06-30,Sudan,Chad,1,0,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-01,New Zealand,Vanuatu,8,0,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-07-03,Kazakhstan,Libya,1,0,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-07-04,Bermuda,Antigua and Barbuda,2,1,world-cup,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-07-04,Uruguay,Ecuador,3,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-05,Australia,Croatia,1,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-05,Guatemala,Poland,2,2,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-05,Guinea-Bissau,Cape Verde,1,0,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-07-05,Trinidad and Tobago,Jamaica,1,2,world-cup,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-07-06,Malawi,Zimbabwe,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-07,South Africa,Cameroon,1,0,international,South Africa,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-08,Australia,Croatia,3,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-08,Malawi,Zimbabwe,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-09,South Africa,Cameroon,1,2,international,South Africa,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-10,Latvia,Estonia,2,1,international,Latvia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Baltic Cup,0
+1992-07-11,Estonia,Lithuania,1,1,international,Latvia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Baltic Cup,1
+1992-07-11,Solomon Islands,Tahiti,1,1,world-cup,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-07-11,South Africa,Cameroon,2,2,international,South Africa,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-11,Turkmenistan,Tajikistan,3,3,international,Turkmenistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-12,Australia,Croatia,0,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-12,Latvia,Lithuania,2,3,international,Latvia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Baltic Cup,0
+1992-07-12,New Caledonia,Tahiti,0,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-16,Kazakhstan,Uzbekistan,1,0,international,Kazakhstan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-19,Guatemala,Honduras,0,0,world-cup,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-07-19,Nicaragua,El Salvador,0,5,world-cup,Nicaragua,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-07-20,Vanuatu,Tahiti,1,2,international,Vanuatu,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-22,Cameroon,Egypt,0,1,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-22,New Caledonia,Tahiti,1,2,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-23,El Salvador,Nicaragua,5,1,world-cup,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-07-25,Fiji,Solomon Islands,2,1,international,Vanuatu,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1992-07-25,Vanuatu,New Caledonia,0,1,international,Vanuatu,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1992-07-26,El Salvador,Mexico,1,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-26,Honduras,Guatemala,2,0,world-cup,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-07-26,Ivory Coast,Egypt,2,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-27,Vanuatu,Solomon Islands,1,3,international,Vanuatu,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1992-07-28,Fiji,New Caledonia,2,2,international,Vanuatu,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1992-07-28,Ivory Coast,Egypt,2,2,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-07-30,New Caledonia,Solomon Islands,1,0,international,Vanuatu,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1992-07-30,Vanuatu,Fiji,0,2,international,Vanuatu,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1992-07-31,Brazil,Mexico,5,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-07-31,United States,Colombia,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-01,Lesotho,Namibia,2,0,international,Lesotho,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-02,Lesotho,Namibia,2,2,international,Lesotho,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-02,Mexico,Colombia,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-08-02,Suriname,Saint Vincent and the Grenadines,0,0,world-cup,Suriname,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-08-02,United States,Brazil,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-02,Uruguay,Costa Rica,2,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-05,Faroe Islands,Israel,1,1,international,Faroe Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-06,Ecuador,Costa Rica,1,1,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-08,Indonesia,Malaysia,1,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-08,Lesotho,Mauritius,1,0,international,Lesotho,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-09,Iceland,Israel,0,2,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-09,Lesotho,Mauritius,2,2,international,Lesotho,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-09,Libya,Niger,0,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-11,Australia,Malaysia,0,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-08-12,El Salvador,Honduras,0,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-08-12,Latvia,Lithuania,1,2,world-cup,Latvia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-08-12,Libya,Mali,0,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-14,Algeria,Guinea-Bissau,3,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-14,Indonesia,Australia,0,3,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-14,Mali,Libya,2,1,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-15,Malawi,Egypt,1,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-15,Uganda,Ethiopia,3,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-15,Zambia,Mauritius,3,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-16,Benin,Niger,1,2,international,Benin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-16,Burundi,Congo,1,0,international,Burundi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-16,DR Congo,Mozambique,2,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-16,Estonia,Switzerland,0,6,world-cup,Estonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-08-16,Gabon,Cameroon,0,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-16,Jamaica,Trinidad and Tobago,1,1,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-08-16,Lesotho,Kenya,2,2,international,Lesotho,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-16,Panama,Costa Rica,1,0,world-cup,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-08-16,Sudan,Nigeria,0,0,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-16,Zimbabwe,South Africa,4,1,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-18,Jordan,Sudan,3,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Jordan International Tournament,0
+1992-08-18,Moldova,Pakistan,5,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Jordan International Tournament,1
+1992-08-19,Bulgaria,Mexico,1,1,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-19,Czech Republic,Austria,2,2,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-20,Congo,Iraq,0,3,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Jordan International Tournament,1
+1992-08-20,Jordan,Pakistan,2,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Jordan International Tournament,0
+1992-08-20,Moldova,Sudan,2,1,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Jordan International Tournament,1
+1992-08-22,China,North Korea,2,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dynasty Cup,0
+1992-08-22,Congo,Ethiopia,3,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Jordan International Tournament,1
+1992-08-22,Japan,South Korea,0,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Dynasty Cup,1
+1992-08-22,Jordan,Moldova,1,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Jordan International Tournament,0
+1992-08-22,Pakistan,Sudan,0,4,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Jordan International Tournament,1
+1992-08-23,Costa Rica,Panama,5,1,world-cup,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-08-23,Uzbekistan,Kyrgyzstan,3,0,international,Uzbekistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-24,China,Japan,0,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dynasty Cup,0
+1992-08-24,South Korea,North Korea,1,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Dynasty Cup,1
+1992-08-26,China,South Korea,0,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dynasty Cup,0
+1992-08-26,Finland,Poland,0,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-26,France,Brazil,0,2,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-26,Hungary,Ukraine,2,1,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-26,Iraq,Moldova,1,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Jordan International Tournament,1
+1992-08-26,Japan,North Korea,4,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Dynasty Cup,1
+1992-08-26,Jordan,Congo,2,1,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Jordan International Tournament,0
+1992-08-26,Latvia,Denmark,0,0,world-cup,Latvia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-08-26,Norway,Sweden,2,2,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-26,Romania,Mexico,2,0,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-26,Turkey,Bulgaria,3,2,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-08-28,Congo,Moldova,1,3,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Jordan International Tournament,1
+1992-08-28,Jordan,Iraq,2,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Jordan International Tournament,0
+1992-08-29,China,North Korea,0,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dynasty Cup,0
+1992-08-29,Japan,South Korea,2,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Dynasty Cup,1
+1992-08-29,Kenya,DR Congo,1,3,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-29,Malawi,Mali,1,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-29,Nigeria,Uganda,2,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-29,Sierra Leone,Algeria,1,0,international,Sierra Leone,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-30,Cameroon,Benin,2,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-30,Ethiopia,Sudan,3,0,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-30,Guinea,Burundi,2,2,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-30,Mauritius,Zimbabwe,0,1,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-30,Mozambique,Lesotho,3,0,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-30,Niger,Gabon,1,3,international,Niger,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-30,Saint Vincent and the Grenadines,Suriname,2,1,world-cup,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-08-30,Senegal,Guinea-Bissau,3,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-08-30,South Africa,Zambia,0,1,international,South Africa,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-09-02,Austria,Portugal,1,1,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-02,Czech Republic,Belgium,1,2,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-02,Greece,Cyprus,2,3,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-02,Lithuania,Georgia,1,0,international,Lithuania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-03,Canada,United States,0,2,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-04,Solomon Islands,Australia,1,2,world-cup,Solomon Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-08,Egypt,Jordan,1,1,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1992-09-09,Bulgaria,France,2,0,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-09,Denmark,Germany,1,2,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-09,Finland,Sweden,0,1,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-09,Luxembourg,Hungary,0,3,world-cup,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-09,Netherlands,Italy,2,3,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-09,Northern Ireland,Albania,3,0,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-09,Norway,San Marino,10,0,world-cup,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-09,Poland,Israel,1,1,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-09,Republic of Ireland,Latvia,4,0,world-cup,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-09,Spain,England,1,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-09,Switzerland,Scotland,3,1,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-09,Syria,Saudi Arabia,1,1,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1992-09-09,Wales,Faroe Islands,6,0,world-cup,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-10,Kuwait,Jordan,4,1,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1992-09-11,Syria,Palestine,0,0,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1992-09-11,Tahiti,Australia,0,3,world-cup,Tahiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-12,Egypt,Kuwait,1,0,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1992-09-12,Fiji,Vanuatu,3,0,world-cup,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-13,El Salvador,Honduras,3,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-13,Saudi Arabia,Palestine,2,1,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1992-09-14,Turkmenistan,Kazakhstan,1,1,international,Turkmenistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-15,Saudi Arabia,Kuwait,2,0,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1992-09-15,Syria,Egypt,0,0,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1992-09-17,Egypt,Saudi Arabia,3,2,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1992-09-17,Georgia,Azerbaijan,6,3,international,Georgia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-17,Syria,Kuwait,1,2,international,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1992-09-18,Honduras,El Salvador,1,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-20,Australia,Tahiti,2,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-22,Honduras,Jamaica,5,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-23,Brazil,Costa Rica,4,2,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-23,Czech Republic,Faroe Islands,4,0,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-23,Hungary,Israel,0,0,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-23,Latvia,Spain,0,0,world-cup,Latvia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-23,Lithuania,Denmark,0,0,world-cup,Lithuania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-23,Norway,Netherlands,2,1,world-cup,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-23,Poland,Turkey,1,0,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-23,Uruguay,Argentina,0,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Lipton,0
+1992-09-24,Honduras,Jamaica,7,0,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-26,Australia,Solomon Islands,6,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-26,Kyrgyzstan,Kazakhstan,1,1,international,Kyrgyzstan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-26,Vanuatu,Fiji,0,3,world-cup,Vanuatu,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-09-27,Saint Vincent and the Grenadines,Jamaica,0,1,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-09-30,Botswana,Kenya,1,3,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-02,Iran,Cameroon,1,1,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-03,Botswana,Kenya,0,1,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-03,Kyrgyzstan,Uzbekistan,2,6,international,Kyrgyzstan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-04,Gabon,Chad,1,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-04,Guinea-Bissau,Sierra Leone,0,3,international,Guinea-Bissau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-10-04,Iran,Cameroon,0,0,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-04,Jamaica,Saint Vincent and the Grenadines,3,3,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-04,Mali,Morocco,2,1,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-10-06,Saudi Arabia,Cameroon,2,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-07,Cyprus,Malta,3,0,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-07,El Salvador,Mexico,0,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-10-07,Iceland,Greece,0,1,world-cup,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-07,San Marino,Norway,0,2,world-cup,San Marino,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-07,Sweden,Bulgaria,2,0,world-cup,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-09,Algeria,Burundi,3,1,world-cup,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-09,Tahiti,Solomon Islands,4,2,world-cup,Tahiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-09,United States,Canada,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-09,Zimbabwe,Togo,1,0,world-cup,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-10,Ivory Coast,Botswana,6,0,world-cup,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-10,Nigeria,South Africa,4,0,world-cup,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-11,DR Congo,Liberia,4,2,world-cup,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-11,Egypt,Angola,1,0,world-cup,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-11,Gabon,Mozambique,3,1,world-cup,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-11,Madagascar,Namibia,3,0,world-cup,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-11,Morocco,Ethiopia,5,0,world-cup,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-11,Qatar,Hungary,1,4,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-11,Tunisia,Benin,5,1,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-11,Zambia,Tanzania,2,0,world-cup,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-13,Qatar,Hungary,1,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-14,Armenia,Moldova,0,0,international,Armenia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-14,Belgium,Romania,1,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,Cyprus,Wales,0,1,world-cup,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,Denmark,Republic of Ireland,0,0,world-cup,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,England,Norway,1,1,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,France,Austria,2,0,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,Germany,Mexico,1,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-14,Italy,Switzerland,2,2,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,Lithuania,Slovakia,0,1,international,Lithuania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-14,Netherlands,Poland,2,2,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,Northern Ireland,Spain,0,0,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,Russia,Iceland,1,0,world-cup,Russia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,Scotland,Portugal,0,0,world-cup,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-14,Turkmenistan,Kyrgyzstan,4,0,international,Turkmenistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-14,Uzbekistan,Kazakhstan,1,1,international,Uzbekistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-15,Saudi Arabia,United States,3,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Confederations Cup,0
+1992-10-16,Argentina,Ivory Coast,4,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Confederations Cup,1
+1992-10-18,Bermuda,El Salvador,1,0,world-cup,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-18,Cameroon,Eswatini,5,0,world-cup,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-18,Jamaica,Canada,1,1,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-18,Kuwait,Iran,1,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-18,Niger,Mali,0,2,international,Niger,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-19,United States,Ivory Coast,5,2,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Confederations Cup,1
+1992-10-20,Saudi Arabia,Argentina,1,3,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Confederations Cup,0
+1992-10-21,South Korea,United Arab Emirates,0,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-22,Croatia,Mexico,3,0,international,Croatia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-22,Kuwait,Oman,4,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-25,Benin,Morocco,0,1,world-cup,Benin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Bermuda,Jamaica,1,1,world-cup,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Burundi,Ghana,1,0,world-cup,Burundi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,El Salvador,Canada,1,1,world-cup,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Eswatini,DR Congo,1,0,world-cup,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Ethiopia,Tunisia,0,0,world-cup,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Kazakhstan,Kyrgyzstan,2,0,international,Kazakhstan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-25,Malta,Estonia,0,0,world-cup,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Mozambique,Senegal,0,1,world-cup,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Namibia,Zambia,0,4,world-cup,Namibia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Niger,Ivory Coast,0,0,world-cup,Niger,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,South Africa,Congo,1,0,world-cup,South Africa,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Tanzania,Madagascar,0,0,world-cup,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Togo,Egypt,1,4,world-cup,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-25,Turkmenistan,Uzbekistan,1,0,international,Turkmenistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-28,Austria,Israel,5,2,world-cup,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-28,Belarus,Ukraine,1,1,international,Belarus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-10-28,Lithuania,Latvia,1,1,world-cup,Lithuania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-28,Russia,Luxembourg,2,0,world-cup,Russia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-28,Turkey,San Marino,4,1,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-10-29,Qatar,Thailand,1,1,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-10-29,Saudi Arabia,China,1,1,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-10-30,Japan,United Arab Emirates,0,0,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup,0
+1992-10-30,North Korea,Iran,0,2,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-10-31,China,Thailand,0,0,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-10-31,Saudi Arabia,Qatar,1,1,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-11-01,Canada,Jamaica,1,0,world-cup,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-01,El Salvador,Bermuda,4,1,world-cup,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-01,Japan,North Korea,1,1,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup,0
+1992-11-01,United Arab Emirates,Iran,0,0,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-11-02,China,Qatar,2,1,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-11-02,Egypt,Kuwait,1,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-02,Saudi Arabia,Thailand,4,0,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-11-03,Japan,Iran,1,0,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup,0
+1992-11-03,United Arab Emirates,North Korea,2,1,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-11-06,Japan,China,3,2,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup,0
+1992-11-06,Saudi Arabia,United Arab Emirates,2,0,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-11-07,Tunisia,Finland,1,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-07,Zimbabwe,Malawi,0,1,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-08,Canada,El Salvador,2,3,world-cup,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-08,China,United Arab Emirates,1,1,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFC Asian Cup,1
+1992-11-08,Costa Rica,Honduras,2,3,world-cup,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-08,Jamaica,Bermuda,3,2,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-08,Japan,Saudi Arabia,1,0,asian-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup,0
+1992-11-08,Morocco,Egypt,0,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-11-08,Saint Vincent and the Grenadines,Mexico,0,4,world-cup,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-08,Sierra Leone,Senegal,2,0,international,Sierra Leone,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1992-11-09,Zimbabwe,Malawi,4,1,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-11,Albania,Latvia,1,1,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-11,Bulgaria,Portugal,1,2,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-11-11,Greece,Hungary,0,0,world-cup,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-11,Israel,Sweden,1,3,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-14,France,Finland,2,1,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-14,Romania,Czech Republic,1,1,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-15,Canada,Bermuda,4,2,world-cup,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-15,Ethiopia,Zanzibar,3,0,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-15,Kenya,Uganda,1,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-15,Mexico,Honduras,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-15,Niger,Mali,0,1,international,Niger,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-15,Saint Vincent and the Grenadines,Costa Rica,0,1,world-cup,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-16,Tanzania,Malawi,1,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1992-11-17,Ethiopia,Zambia,2,3,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-17,United Arab Emirates,Senegal,1,1,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-18,Belgium,Wales,2,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-18,Cyprus,Slovenia,1,1,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-18,England,Turkey,4,0,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-18,Germany,Austria,0,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-18,Kenya,Seychelles,2,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-18,Northern Ireland,Denmark,0,1,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-18,Poland,Latvia,1,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-18,Scotland,Italy,0,0,world-cup,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-18,Spain,Republic of Ireland,0,0,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-18,Switzerland,Malta,3,0,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-18,Tanzania,Zanzibar,0,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1992-11-19,Malawi,Zambia,1,0,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-19,United Arab Emirates,Senegal,2,2,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-20,Egypt,Kuwait,1,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-20,Tanzania,Ethiopia,2,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1992-11-21,Seychelles,Uganda,2,5,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-21,Zambia,Zanzibar,8,0,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-22,Ethiopia,Malawi,1,2,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-22,Jamaica,El Salvador,0,2,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-22,Mexico,Costa Rica,4,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-22,Saint Vincent and the Grenadines,Honduras,0,4,world-cup,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-23,Tanzania,Zambia,1,2,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1992-11-24,Algeria,United Arab Emirates,0,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-11-24,Malawi,Zanzibar,3,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-24,Peru,Ecuador,1,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-25,Brazil,Uruguay,1,2,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-25,Uganda,Zambia,0,0,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1992-11-26,Argentina,Poland,2,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-27,Qatar,Oman,2,0,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1992-11-28,Honduras,Saint Vincent and the Grenadines,4,0,world-cup,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-28,Malawi,Zambia,0,4,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1992-11-28,Saudi Arabia,Bahrain,1,2,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-11-28,United Arab Emirates,Kuwait,0,2,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-11-29,Costa Rica,Mexico,2,0,world-cup,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-29,Cyprus,Romania,1,4,world-cup,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-11-29,Uruguay,Poland,0,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-11-30,Kuwait,Oman,2,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-12-01,Qatar,Bahrain,1,0,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1992-12-01,Saudi Arabia,United Arab Emirates,0,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-12-02,China,Norway,2,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-12-02,Guatemala,Jamaica,2,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-12-02,Israel,Bulgaria,0,2,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-03,Qatar,Kuwait,4,0,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1992-12-04,Bahrain,United Arab Emirates,0,2,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-12-04,Oman,Saudi Arabia,0,2,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-12-05,Honduras,Costa Rica,2,1,world-cup,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-06,Bermuda,Canada,0,0,world-cup,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-06,El Salvador,Jamaica,2,1,world-cup,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-06,Kuwait,Saudi Arabia,1,2,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-12-06,Mexico,Saint Vincent and the Grenadines,11,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-06,Qatar,United Arab Emirates,1,0,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1992-12-07,Bahrain,Oman,3,0,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-12-08,Singapore,Malaysia,3,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merlion Cup,0
+1992-12-09,Oman,United Arab Emirates,0,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-12-10,Kuwait,Bahrain,0,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1992-12-10,Qatar,Saudi Arabia,0,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1992-12-13,Costa Rica,Saint Vincent and the Grenadines,5,0,world-cup,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-13,Honduras,Mexico,1,1,world-cup,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-13,Niger,Ghana,0,1,international,Niger,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-12-16,Brazil,Germany,3,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-12-16,Guinea,Sierra Leone,0,0,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-12-16,Spain,Latvia,5,0,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-16,Turkey,Netherlands,1,3,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-19,Gabon,Senegal,3,2,world-cup,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-19,Malta,Italy,1,2,world-cup,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-19,Tanzania,Namibia,2,0,world-cup,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-20,Botswana,Niger,0,1,world-cup,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-20,Congo,Nigeria,0,1,world-cup,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-20,Ethiopia,Benin,3,1,world-cup,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-20,Ghana,Algeria,2,0,world-cup,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-20,Guinea,Kenya,4,0,world-cup,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-20,Madagascar,Zambia,2,0,world-cup,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-20,Tunisia,Morocco,1,1,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-20,Uruguay,Germany,1,4,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-12-20,Zimbabwe,Egypt,2,1,world-cup,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1992-12-22,Cyprus,Georgia,1,0,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1992-12-26,Burkina Faso,Mali,3,1,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0

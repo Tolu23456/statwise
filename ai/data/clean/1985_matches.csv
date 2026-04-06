@@ -1,0 +1,602 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1985-01-01,Ghana,Tunisia,0,2,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-01-01,Ivory Coast,Algeria,1,1,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-02,Libya,Morocco,0,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-09,Israel,Greece,0,2,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-13,Barbados,Saint Lucia,4,1,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-19,Singapore,North Korea,1,1,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-01-20,Guyana,Cuba,2,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-20,Iran,Yugoslavia,1,3,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1985-01-21,China,Russia,2,3,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1985-01-23,Spain,Finland,3,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-25,Russia,Yugoslavia,1,2,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1985-01-27,Guyana,Cuba,1,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-27,Honduras,Denmark,1,0,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-28,Iran,Russia,0,2,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1985-01-29,China,Yugoslavia,1,1,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1985-01-29,Germany,Hungary,0,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-29,Uruguay,German DR,3,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-30,Portugal,Romania,2,3,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-01-31,India,Morocco,0,1,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nehru Cup,0
+1985-01-31,Ivory Coast,Egypt,0,1,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-01,Colombia,Switzerland,2,2,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-02,Morocco,Russia,0,1,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1985-02-02,Zimbabwe,Zambia,1,1,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-03,Bolivia,German DR,2,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-03,Cameroon,Egypt,1,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-03,Uruguay,Paraguay,1,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Artigas,0
+1985-02-03,Zimbabwe,Zambia,2,3,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-04,Yugoslavia,Russia,1,2,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1985-02-05,Bulgaria,Switzerland,1,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-02-05,Iran,North Korea,1,0,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-05,Mexico,Poland,5,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-05,Republic of Ireland,Italy,1,2,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-06,Bolivia,Uruguay,0,1,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-06,Bulgaria,Poland,2,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-02-06,Cameroon,Egypt,0,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-06,Chile,Paraguay,1,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-06,Costa Rica,El Salvador,2,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-06,Ecuador,German DR,2,3,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-06,Mexico,Switzerland,1,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-08,Chile,Finland,2,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-08,United States,Switzerland,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-10,Colombia,Poland,1,2,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-10,Ecuador,German DR,3,2,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-10,Guinea,Tunisia,1,0,world-cup,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-10,Malta,Portugal,1,3,world-cup,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-10,Paraguay,Uruguay,1,3,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Artigas,0
+1985-02-11,Gambia,Cape Verde,1,2,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1985-02-11,Guinea-Bissau,Sierra Leone,0,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-12,Guinea,Senegal,0,2,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-12,Mali,Mauritania,3,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-13,Cape Verde,Sierra Leone,2,2,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-13,El Salvador,Costa Rica,1,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-13,Gambia,Guinea-Bissau,1,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1985-02-14,Colombia,Poland,1,0,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-14,Guinea,Mali,1,3,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-14,Mauritania,Senegal,0,2,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-14,Uruguay,Finland,2,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-15,Cape Verde,Guinea-Bissau,2,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-15,Gambia,Sierra Leone,1,1,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1985-02-16,Guinea,Mauritania,1,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-16,Mali,Senegal,2,2,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-17,Ecuador,Finland,3,1,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-17,Guatemala,Costa Rica,1,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-17,Hong Kong,China,0,0,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-17,Macau,Brunei,2,0,world-cup,Macau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-17,Peru,Bolivia,3,0,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-19,Cape Verde,Senegal,0,1,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-19,Gambia,Mali,1,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1985-02-20,Ivory Coast,Congo,2,1,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-20,Macau,China,0,4,world-cup,Macau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-21,Cape Verde,Mali,0,1,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1985-02-21,Chile,Colombia,1,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-21,Ecuador,Bolivia,3,0,international,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-22,Gambia,Senegal,0,1,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1985-02-22,Sudan,Libya,0,0,world-cup,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-23,Hong Kong,Brunei,8,0,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-23,Singapore,Japan,1,3,world-cup,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-24,Antigua and Barbuda,Dominica,2,1,international,Antigua and Barbuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-02-24,Chile,Peru,1,2,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-24,El Salvador,Suriname,3,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-02-24,Portugal,Germany,1,2,world-cup,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-24,Saint Vincent and the Grenadines,Trinidad and Tobago,1,1,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-02-24,Tunisia,Guinea,2,0,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-24,Uruguay,Colombia,3,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-26,China,Brunei,8,0,world-cup,Macau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-02-26,Mexico,Finland,2,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-26,Wales,Norway,1,1,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-27,El Salvador,Suriname,3,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-02-27,Greece,Albania,2,0,world-cup,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-27,Israel,Republic of Ireland,0,0,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-27,Netherlands,Cyprus,7,1,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-27,Northern Ireland,England,0,1,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-27,Spain,Scotland,1,0,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-02-27,Uruguay,Peru,2,2,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-02-28,Paraguay,Colombia,0,3,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-01,Brunei,China,0,4,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-03-02,Nepal,South Korea,0,2,world-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-03,Antigua and Barbuda,Guadeloupe,0,1,international,Antigua and Barbuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-03-03,Dominica,Cayman Islands,2,1,international,Dominica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-03-03,Ecuador,Chile,1,1,world-cup,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-03,Grenada,Trinidad and Tobago,1,5,international,Grenada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-03-03,Honduras,Suriname,1,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-03-03,Madagascar,Zimbabwe,0,1,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-03-05,Ivory Coast,DR Congo,2,1,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-06,Costa Rica,Guatemala,2,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-06,Honduras,Suriname,2,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-03-08,Algeria,Mauritania,4,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-03-08,Libya,Sudan,4,0,world-cup,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-08,Saint Vincent and the Grenadines,Canada,1,2,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-09,Peru,Chile,1,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-10,El Salvador,Honduras,1,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-03-10,French Guiana,Guyana,0,1,international,French Guiana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-03-10,Malaysia,South Korea,1,0,world-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-10,Trinidad and Tobago,Canada,1,2,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-10,Uruguay,Ecuador,2,1,world-cup,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-12,Algeria,German DR,1,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-13,Greece,Italy,0,0,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-13,Jamaica,Canada,1,1,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-14,Honduras,El Salvador,0,0,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-03-15,Indonesia,Thailand,1,0,world-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-15,Jordan,Qatar,1,0,world-cup,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-16,Nepal,Malaysia,0,0,world-cup,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-17,Chile,Ecuador,6,2,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-17,French Guiana,Suriname,0,1,international,French Guiana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-03-17,Jamaica,Canada,0,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-18,Indonesia,Bangladesh,2,0,world-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-21,Costa Rica,Canada,1,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-21,Indonesia,India,2,1,world-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-21,Japan,North Korea,1,0,world-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-21,Peru,Ecuador,1,0,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-22,Mauritania,Algeria,1,1,international,Mauritania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-03-22,Syria,Kuwait,1,0,world-cup,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-23,Alderney,Jersey,0,5,international,Alderney,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1985-03-23,Thailand,Bangladesh,3,0,world-cup,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-23,Zambia,Malawi,1,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-23,Zimbabwe,Madagascar,5,2,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-03-24,Brunei,Philippines,4,1,international,Brunei,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-24,Chile,Uruguay,2,0,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-24,Costa Rica,Canada,0,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-24,Guyana,Suriname,0,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-03-24,Saint Vincent and the Grenadines,Grenada,3,0,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-03-25,Zambia,Malawi,2,2,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-26,England,Republic of Ireland,2,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-26,Thailand,India,0,0,world-cup,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-27,Belgium,Greece,2,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-27,Germany,Malta,6,0,world-cup,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-27,Romania,Poland,0,0,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-27,Russia,Austria,2,0,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-27,Scotland,Wales,0,1,world-cup,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-27,Spain,Northern Ireland,0,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-27,Switzerland,Czech Republic,2,0,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-27,Yugoslavia,Luxembourg,1,0,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-28,Albania,Turkey,0,0,international,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-29,Egypt,Cameroon,2,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-29,Jordan,Iraq,2,3,world-cup,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-29,Libya,Tunisia,2,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-03-29,Panama,Guatemala,0,0,international,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-29,Thailand,Indonesia,0,1,world-cup,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-29,Yemen,Syria,0,1,world-cup,Yemen AR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-03-29,Yemen DPR,Bahrain,1,4,world-cup,Yemen DPR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-30,Bangladesh,India,1,2,world-cup,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-31,Angola,Algeria,0,0,world-cup,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-31,Congo,DR Congo,2,5,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-03-31,Ecuador,Uruguay,0,2,world-cup,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-31,Egypt,Cameroon,2,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-31,Ghana,Guinea,1,1,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-03-31,Ivory Coast,Mali,6,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-03-31,Kuwait,Iceland,1,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-03-31,Malawi,Mozambique,1,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-03-31,Malaysia,Nepal,5,0,world-cup,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-03-31,Togo,Senegal,0,1,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-04-02,Bangladesh,Indonesia,2,1,world-cup,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-02,Canada,United States,2,0,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-02,Syria,United Arab Emirates,2,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-04-03,Guadeloupe,Trinidad and Tobago,1,1,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-04-03,Hungary,Cyprus,2,0,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-03,Italy,Portugal,2,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-03,Malta,Jordan,3,1,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-03,Romania,Turkey,3,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-03,Yugoslavia,France,0,0,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-04,United States,Canada,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-05,Bahrain,United Arab Emirates,3,2,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-05,Bangladesh,Thailand,1,0,world-cup,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-05,Egypt,Madagascar,1,0,world-cup,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-05,Kuwait,Yemen,5,0,world-cup,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-05,Qatar,Iraq,3,0,world-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-06,Brunei,Hong Kong,1,5,world-cup,Brunei,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-06,Bulgaria,German DR,1,0,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-06,India,Indonesia,1,1,world-cup,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-06,Kenya,Nigeria,0,3,world-cup,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-06,South Korea,Nepal,4,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-07,Ivory Coast,Ghana,0,0,world-cup,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-07,Mali,Togo,4,0,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-07,Morocco,Malawi,2,0,world-cup,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-07,Syria,United Arab Emirates,0,4,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-04-07,Uruguay,Chile,2,1,world-cup,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-07,Zambia,Cameroon,4,1,world-cup,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-09,India,Thailand,1,1,world-cup,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-12,Bahrain,Yemen DPR,3,3,world-cup,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-12,India,Bangladesh,2,1,world-cup,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-12,Kuwait,Syria,0,0,world-cup,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-12,Qatar,Jordan,2,0,world-cup,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-12,Saudi Arabia,United Arab Emirates,0,0,world-cup,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-13,Brunei,Macau,1,2,world-cup,Brunei,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-13,Canada,Haiti,2,0,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-04-14,DR Congo,Congo,0,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-04-14,Guinea,Ghana,1,4,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-04-14,Mali,Ivory Coast,1,1,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-04-14,Panama,Trinidad and Tobago,0,0,international,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-14,Senegal,Togo,1,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-04-14,Tunisia,Libya,1,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-04-16,Mozambique,Malawi,1,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-04-17,Austria,Hungary,0,3,world-cup,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-17,Colombia,Paraguay,2,0,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-17,German DR,Norway,1,0,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-17,Germany,Bulgaria,4,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-17,Panama,Trinidad and Tobago,1,1,international,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-17,Poland,Finland,2,1,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-17,Switzerland,Russia,2,2,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-19,Algeria,Angola,3,2,world-cup,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-19,Colombia,Paraguay,2,2,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-19,Iraq,Jordan,2,0,world-cup,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-04-19,Syria,Yemen,3,0,world-cup,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-19,United Arab Emirates,Saudi Arabia,1,0,world-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-20,Barbados,Jamaica,2,2,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-20,Canada,Guatemala,2,1,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-04-20,Nigeria,Kenya,3,1,world-cup,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-21,Bolivia,Venezuela,4,0,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-21,Cameroon,Zambia,1,1,world-cup,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-21,Ghana,Ivory Coast,2,0,world-cup,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-21,Madagascar,Egypt,1,0,world-cup,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-21,Malawi,Morocco,0,0,world-cup,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-21,Malta,Czech Republic,0,0,world-cup,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-21,Togo,Mali,3,0,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-23,Peru,Uruguay,2,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-24,Costa Rica,Trinidad and Tobago,3,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-04-24,Luxembourg,Iceland,0,0,international,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-25,Brazil,Colombia,2,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-26,Haiti,Guatemala,0,1,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-04-26,Yemen,Kuwait,1,3,world-cup,Yemen AR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-04-27,Suriname,Guadeloupe,0,1,international,French Guiana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1985-04-28,Bangladesh,Indonesia,1,1,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-04-28,Brazil,Peru,0,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-28,Colombia,Uruguay,2,1,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-28,Costa Rica,Trinidad and Tobago,1,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-04-28,Macau,Hong Kong,0,2,world-cup,Macau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-28,Pakistan,North Korea,0,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-28,Paraguay,Argentina,1,0,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-29,North Korea,Nepal,8,1,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-04-30,Czech Republic,Germany,1,5,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-30,North Korea,Japan,0,0,world-cup,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-04-30,Pakistan,Nepal,1,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-04-30,Wales,Spain,3,0,world-cup,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-01,Belgium,Poland,2,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-01,Bolivia,Peru,0,0,international,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-01,Israel,Sweden,1,1,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-01,Luxembourg,Yugoslavia,0,1,world-cup,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-01,Netherlands,Austria,1,1,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-01,Northern Ireland,Turkey,2,0,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-01,Republic of Ireland,Norway,0,0,world-cup,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-01,Romania,England,0,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-01,Tunisia,Algeria,1,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-02,Brazil,Uruguay,2,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-02,Bulgaria,France,2,0,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-02,Indonesia,North Korea,0,7,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-05-02,Pakistan,Bangladesh,1,3,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-02,Russia,Switzerland,4,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-05-02,Zimbabwe,Malawi,1,3,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-04,Bangladesh,North Korea,0,1,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-05-04,Hong Kong,Macau,2,0,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-04,Pakistan,Indonesia,1,3,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-05,Brazil,Argentina,2,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-05,Guatemala,Canada,1,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-05-05,Iraq,Qatar,2,1,world-cup,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-05-05,Trinidad and Tobago,Suriname,0,1,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1985-05-06,Guernsey,Jersey,4,3,international,Guernsey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1985-05-07,Austria,Cyprus,4,0,world-cup,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-08,Denmark,German DR,4,1,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-08,Haiti,Canada,0,2,international,Haiti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-05-09,Argentina,Paraguay,1,1,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-10,Mauritania,Senegal,0,0,international,Mauritania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-12,China,Macau,6,0,world-cup,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-14,Argentina,Chile,2,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-14,Hungary,Netherlands,0,1,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-15,Colombia,Brazil,1,0,international,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-15,Guatemala,Haiti,4,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-05-15,United States,Trinidad and Tobago,2,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-05-18,German DR,Luxembourg,3,1,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-18,Japan,Singapore,5,0,world-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-19,China,Hong Kong,1,2,world-cup,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-19,Greece,Poland,1,4,world-cup,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-19,South Korea,Malaysia,2,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-19,United States,Trinidad and Tobago,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-05-21,Chile,Brazil,2,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-22,Finland,England,1,1,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-22,Sweden,Norway,1,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-25,North Korea,Singapore,2,0,world-cup,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-25,Scotland,England,1,0,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Rous Cup,0
+1985-05-26,Bolivia,Paraguay,1,1,world-cup,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-26,Colombia,Peru,1,0,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-26,Costa Rica,United States,1,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-05-26,Japan,Uruguay,1,4,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Kirin Cup,0
+1985-05-26,Republic of Ireland,Spain,0,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-05-26,Venezuela,Argentina,2,3,world-cup,Venezuela,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-28,Iceland,Scotland,0,1,world-cup,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-30,Albania,Poland,0,1,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-05-31,United States,Costa Rica,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-06-01,Bulgaria,Yugoslavia,2,1,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-01,Hong Kong,Macau,2,0,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-02,Bolivia,Brazil,0,2,world-cup,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-02,Canada,Ghana,2,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1985-06-02,Colombia,Argentina,1,3,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-02,Mexico,Italy,1,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-02,Republic of Ireland,Switzerland,3,0,world-cup,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-02,Venezuela,Peru,0,1,world-cup,Venezuela,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-03,Bahrain,Malaysia,3,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1985-06-03,New Zealand,Fiji,5,0,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-05,Denmark,Russia,4,2,world-cup,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-05,New Zealand,Fiji,3,0,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-05,Norway,Wales,4,2,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-05,Sweden,Czech Republic,2,0,world-cup,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-06,England,Italy,1,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-06-06,Finland,Romania,1,1,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-06,South Korea,Thailand,3,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1985-06-07,New Zealand,Fiji,2,0,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-08,Brazil,Chile,3,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-08,South Korea,Bahrain,3,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1985-06-09,Argentina,Venezuela,3,0,world-cup,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-09,Canada,Iraq,1,6,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Korea Cup,1
+1985-06-09,Mexico,England,1,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-09,Paraguay,Bolivia,3,0,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-09,Peru,Colombia,0,0,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-12,England,Germany,3,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-06-12,Iceland,Spain,1,2,world-cup,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-15,Mexico,Germany,2,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-15,Nigeria,Ivory Coast,0,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-15,South Korea,Iraq,2,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Korea Cup,0
+1985-06-16,Argentina,Colombia,1,0,world-cup,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-16,Paraguay,Brazil,0,2,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-16,Peru,Venezuela,4,1,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-16,United States,England,0,5,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-19,Nigeria,Ivory Coast,2,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-23,Brazil,Paraguay,1,1,world-cup,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-23,Ivory Coast,Nigeria,1,1,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-23,Peru,Argentina,1,0,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-23,Venezuela,Colombia,2,2,world-cup,Venezuela,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-24,Guinea,Gambia,1,0,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-25,Barbados,Suriname,0,0,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1985-06-25,Guadeloupe,Martinique,1,2,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1985-06-26,Ivory Coast,Nigeria,1,1,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-06-27,Barbados,Guadeloupe,1,1,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1985-06-27,Martinique,Suriname,2,0,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1985-06-30,Angola,São Tomé and Príncipe,3,2,international,Cape Verde,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-06-30,Argentina,Peru,2,2,world-cup,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-30,Barbados,Martinique,1,1,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1985-06-30,Brazil,Bolivia,1,1,world-cup,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-30,Colombia,Venezuela,2,0,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-06-30,Guadeloupe,Suriname,2,2,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1985-07-01,Réunion,DR Congo,1,2,international,Réunion,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-03,Saudi Arabia,Jordan,4,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1985-07-04,Bahrain,Iraq,1,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1985-07-04,Fiji,Tahiti,0,1,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-04,Malawi,DR Congo,0,1,international,Réunion,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-07-05,Jordan,Qatar,0,2,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1985-07-06,Bahrain,Mauritania,2,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1985-07-06,Malawi,Tanzania,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-06,Nigeria,Tunisia,1,0,world-cup,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-07-07,Réunion,Malawi,2,8,international,Réunion,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-07,Saudi Arabia,Qatar,1,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1985-07-08,Iraq,Mauritania,2,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1985-07-08,Malawi,Tanzania,2,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-09,Cape Verde,Angola,0,0,international,Cape Verde,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-09,Kenya,DR Congo,0,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-10,Angola,Guinea-Bissau,3,1,international,Cape Verde,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-07-10,Bahrain,Qatar,1,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1985-07-10,Iceland,Faroe Islands,9,0,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-10,Malawi,Tanzania,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-10,Saudi Arabia,Iraq,2,3,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1985-07-11,Fiji,Tahiti,0,1,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-12,Bahrain,Iraq,0,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Arab Cup,1
+1985-07-12,Egypt,Morocco,0,0,world-cup,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-07-12,Iceland,Faroe Islands,1,0,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-12,Saudi Arabia,Qatar,0,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Arab Cup,0
+1985-07-13,Algeria,Zambia,2,0,world-cup,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-07-14,Fiji,Tahiti,1,2,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-14,Ghana,Libya,0,0,world-cup,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-07-18,Costa Rica,Trinidad and Tobago,3,1,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-20,Tunisia,Nigeria,2,0,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-07-21,South Korea,Indonesia,2,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-07-26,Libya,Ghana,2,0,world-cup,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-07-28,Kenya,Uganda,0,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-28,Morocco,Egypt,2,0,world-cup,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-07-28,Tunisia,Saudi Arabia,1,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-07-28,Zambia,Algeria,0,1,world-cup,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-07-30,Indonesia,South Korea,1,4,world-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-08-04,Kenya,Algeria,0,0,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-08-06,Thailand,Hong Kong,1,2,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-08-07,Russia,Romania,2,0,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-08-10,Nigeria,Zambia,0,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-08-11,Costa Rica,Honduras,2,2,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-08-11,Guinea,Mali,1,1,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-08-11,Japan,Hong Kong,3,0,world-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-08-12,Indonesia,Thailand,1,2,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indonesia Tournament,0
+1985-08-13,Algeria,Kenya,3,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-08-14,Norway,German DR,0,1,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-08-17,Canada,Costa Rica,1,1,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-08-18,Ivory Coast,Ghana,2,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-08-18,Zambia,Nigeria,1,0,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-08-18,Zimbabwe,Senegal,1,0,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-08-21,France,Uruguay,2,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONMEBOL–UEFA Cup of Champions,0
+1985-08-21,Sweden,Poland,1,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-08-23,Libya,Mozambique,2,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-08-25,Honduras,Canada,0,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-08-25,Mali,Guinea,1,1,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-08-25,Morocco,DR Congo,1,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-08-27,Mauritius,Seychelles,3,1,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indian Ocean Island Games,0
+1985-08-27,Mexico,Bulgaria,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-08-27,Réunion,Comoros,1,0,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Indian Ocean Island Games,1
+1985-08-28,Madagascar,Seychelles,1,0,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Indian Ocean Island Games,1
+1985-08-28,Romania,Finland,2,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-08-28,Russia,Germany,1,0,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-08-28,Switzerland,Turkey,0,0,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-08-29,Comoros,Maldives,2,2,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Indian Ocean Island Games,1
+1985-08-29,Mauritius,Madagascar,3,1,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indian Ocean Island Games,0
+1985-08-30,Réunion,Maldives,9,0,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Indian Ocean Island Games,1
+1985-08-31,Mauritius,Réunion,4,4,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indian Ocean Island Games,0
+1985-09-01,Costa Rica,Canada,0,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-09-01,Ghana,Ivory Coast,0,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-09-01,Senegal,Zimbabwe,3,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-09-03,Israel,Taiwan,6,0,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-04,Czech Republic,Poland,3,1,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-09-04,Netherlands,Bulgaria,1,0,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-09-06,Bahrain,Syria,1,1,world-cup,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-08,DR Congo,Morocco,0,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-09-08,Honduras,Costa Rica,3,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-09-08,Israel,Taiwan,5,0,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-10,Norway,Egypt,3,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-09-10,Wales,Scotland,1,1,world-cup,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-11,Denmark,Sweden,0,3,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-09-11,England,Romania,1,1,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-11,German DR,France,2,0,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-11,Poland,Belgium,0,0,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-11,Switzerland,Republic of Ireland,0,0,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-11,Turkey,Northern Ireland,0,0,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-14,Canada,Honduras,2,1,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1985-09-15,Cameroon,Saudi Arabia,4,1,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-09-15,Mozambique,Libya,2,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1985-09-16,Papua New Guinea,China,1,4,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-09-19,Papua New Guinea,China,1,1,international,Papua New Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-09-20,Mexico,Peru,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-09-20,Syria,Bahrain,1,0,world-cup,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-20,United Arab Emirates,Iraq,2,3,world-cup,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-21,New Zealand,Australia,0,0,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-22,Hong Kong,Japan,1,2,world-cup,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-22,Mexico,Peru,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-09-25,Czech Republic,Portugal,1,0,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-25,Finland,Turkey,1,0,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-25,Italy,Norway,1,2,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-09-25,Luxembourg,Bulgaria,1,3,world-cup,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-25,Russia,Denmark,1,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-09-25,Spain,Iceland,2,1,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-25,Sweden,Germany,2,2,world-cup,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-09-27,Australia,China,3,0,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-09-27,Iraq,United Arab Emirates,1,2,world-cup,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-09-28,Yugoslavia,German DR,1,2,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-04,Malawi,Uganda,1,0,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1985-10-04,Saudi Arabia,Cameroon,2,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-04,Zimbabwe,Tanzania,1,0,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1985-10-05,New Zealand,Taiwan,5,1,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-06,Malawi,Zambia,2,2,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1985-10-06,Morocco,Libya,3,0,world-cup,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-06,Tunisia,Algeria,1,4,world-cup,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-06,Zimbabwe,Kenya,1,1,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1985-10-08,Israel,Australia,1,2,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-08,Kenya,Tanzania,3,2,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1985-10-08,Uganda,Zambia,3,0,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1985-10-09,Denmark,Switzerland,0,0,world-cup,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-09,Paraguay,Chile,0,0,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-11,Kenya,Uganda,0,0,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1985-10-11,Libya,Mexico,3,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-11,Zimbabwe,Malawi,1,0,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1985-10-12,Malawi,Uganda,3,1,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1985-10-12,New Zealand,Taiwan,5,0,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-12,Portugal,Malta,3,2,world-cup,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-13,Brunei,Malaysia,0,4,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merlion Cup,1
+1985-10-13,Zimbabwe,Kenya,2,0,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1985-10-15,Yemen,Mexico,0,2,international,Yemen AR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-10-16,Austria,Yugoslavia,0,3,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-16,Belgium,Netherlands,1,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-16,Czech Republic,Sweden,2,1,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-16,England,Turkey,5,0,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-16,Germany,Portugal,0,1,world-cup,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-16,Greece,Bulgaria,0,2,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-16,Norway,Denmark,1,5,world-cup,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-16,Peru,Paraguay,0,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-16,Romania,Northern Ireland,0,1,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-16,Russia,Republic of Ireland,2,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-10-16,Scotland,German DR,0,0,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-16,Singapore,Brunei,2,1,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merlion Cup,0
+1985-10-16,Wales,Hungary,0,3,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-18,Algeria,Tunisia,3,0,world-cup,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-18,Jordan,Mexico,0,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-18,Libya,Morocco,1,0,world-cup,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-20,Australia,Israel,1,1,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-20,Egypt,Mexico,2,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-20,Singapore,Malaysia,2,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merlion Cup,0
+1985-10-23,Australia,Taiwan,7,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-23,Singapore,Malaysia,4,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merlion Cup,0
+1985-10-25,Kuwait,Mexico,0,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-26,Japan,South Korea,1,2,world-cup,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-26,Myanmar,Indonesia,2,1,international,Burma,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-10-26,New Zealand,Israel,3,1,world-cup,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-27,Australia,Taiwan,8,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-27,Chile,Peru,4,2,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-27,Paraguay,Colombia,3,0,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-30,Albania,Greece,1,1,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-30,France,Luxembourg,6,0,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-10-30,Russia,Norway,1,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-11-03,Australia,New Zealand,2,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-03,Colombia,Paraguay,2,1,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-03,Peru,Chile,0,1,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-03,South Korea,Japan,1,0,world-cup,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-05,Anguilla,British Virgin Islands,0,1,international,Anguilla,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-06,France,Yugoslavia,2,0,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-08,Angola,Mozambique,0,0,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-10,Angola,Zimbabwe,2,3,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-10,Israel,New Zealand,3,0,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-10,Paraguay,Chile,3,0,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-11,Mozambique,Zimbabwe,1,2,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-11-13,England,Northern Ireland,0,0,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-13,Republic of Ireland,Denmark,1,4,world-cup,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-13,Switzerland,Norway,1,1,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-13,Turkey,Romania,1,3,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-14,Mexico,Argentina,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-11-15,Syria,Iraq,0,0,world-cup,Syria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-16,German DR,Bulgaria,2,1,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-16,Poland,Italy,1,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-17,Chile,Paraguay,2,2,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-17,Germany,Czech Republic,2,2,world-cup,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-17,Grenada,Dominica,0,0,international,Grenada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1985-11-17,Malta,Sweden,1,2,world-cup,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-17,Mexico,Argentina,1,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-17,Saint Lucia,Saint Vincent and the Grenadines,0,0,international,Grenada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Windward Islands Tournament,1
+1985-11-18,Dominica,Saint Vincent and the Grenadines,0,0,international,Grenada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Windward Islands Tournament,1
+1985-11-19,DR Congo,Zambia,0,1,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-19,Egypt,Ivory Coast,0,1,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-11-20,Netherlands,Belgium,2,1,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-20,Scotland,Australia,2,0,world-cup,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-11-20,Spain,Austria,0,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-21,DR Congo,Egypt,3,2,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-21,Ivory Coast,Zambia,0,1,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-11-23,Egypt,Zambia,1,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-11-24,DR Congo,Ivory Coast,1,2,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-24,Saint Kitts and Nevis,Dominica,2,1,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-11-27,Congo,Ivory Coast,2,1,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-11-29,Congo,Ivory Coast,0,1,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-11-29,Iraq,Syria,3,1,world-cup,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1985-12-01,Dominica,Saint Kitts and Nevis,0,1,international,Dominica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-12-03,Mexico,South Korea,2,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-12-04,Australia,Scotland,0,0,world-cup,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1985-12-07,Gabon,Congo,1,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1985-12-07,Mexico,Algeria,2,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-12-08,Cameroon,Equatorial Guinea,2,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1985-12-08,Thailand,Malaysia,1,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1985-12-08,Tunisia,Poland,1,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-12-09,Central African Republic,Congo,1,4,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1985-12-09,Hungary,South Korea,1,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-12-09,Indonesia,Singapore,0,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1985-12-10,Chad,Equatorial Guinea,1,1,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1985-12-10,Malaysia,Philippines,6,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1985-12-10,Mexico,South Korea,2,1,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-12-11,Algeria,Hungary,1,3,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-12-11,Brunei,Indonesia,1,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1985-12-11,Gabon,Central African Republic,4,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1985-12-11,Turkey,Poland,1,1,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-12-12,Chad,Cameroon,2,2,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1985-12-12,Thailand,Philippines,7,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1985-12-13,Algeria,South Korea,0,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-12-13,Singapore,Brunei,3,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1985-12-14,Gabon,Chad,3,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1985-12-14,Mexico,Hungary,2,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-12-15,Congo,Cameroon,1,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1985-12-15,Gambia,Guinea,0,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-12-15,Singapore,Malaysia,2,2,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1985-12-15,Thailand,Indonesia,7,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1985-12-16,Malaysia,Indonesia,1,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Games,1
+1985-12-18,Chad,Cameroon,1,2,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1985-12-18,Spain,Bulgaria,2,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-12-18,Thailand,Singapore,2,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Games,0
+1985-12-19,Gabon,Congo,3,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1985-12-21,Bangladesh,Pakistan,2,1,international,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Asian Games,0
+1985-12-21,India,Nepal,2,0,international,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1985-12-22,Nepal,Bhutan,1,0,international,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1985-12-22,Pakistan,Maldives,3,1,international,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1985-12-23,Bangladesh,Maldives,8,0,international,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Asian Games,0
+1985-12-23,India,Bhutan,3,0,international,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1985-12-25,Bangladesh,India,1,1,international,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Asian Games,0
+1985-12-25,Pakistan,Nepal,2,2,international,Bangladesh,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Asian Games,1
+1985-12-25,Senegal,Guinea,3,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1985-12-27,Ivory Coast,Guinea,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1985-12-29,Senegal,Ivory Coast,2,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0

@@ -1,0 +1,359 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1965-01-03,Uruguay,German DR,0,2,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-01-09,Togo,DR Congo,0,3,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-01-16,Jamaica,Cuba,2,0,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-01-17,Ivory Coast,DR Congo,2,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-01-20,Cuba,Curaçao,1,1,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1965-01-23,Jamaica,Curaçao,2,0,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-01-24,Portugal,Turkey,5,1,world-cup,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-01-26,Israel,Netherlands,0,1,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-01-30,Cuba,Curaçao,0,1,world-cup,Cuba,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-02-01,Congo,DR Congo,0,3,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-02-03,Curaçao,Jamaica,0,0,world-cup,Cuba,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1965-02-07,Cuba,Jamaica,2,1,world-cup,Cuba,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-02-07,Trinidad and Tobago,Suriname,4,1,world-cup,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-02-12,Costa Rica,Suriname,1,0,world-cup,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-02-21,Costa Rica,Trinidad and Tobago,4,0,world-cup,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-02-21,Uganda,Ethiopia,1,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-02-22,Costa Rica,Trinidad and Tobago,1,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-02-25,Senegal,Guinea,2,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-02-28,Honduras,Mexico,0,1,world-cup,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-02-28,Suriname,Costa Rica,1,3,world-cup,Dutch Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-02-28,Tunisia,Morocco,0,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-04,Mexico,Honduras,3,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-03-07,El Salvador,Nicaragua,4,0,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1965-03-07,Trinidad and Tobago,Costa Rica,0,1,world-cup,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-03-07,United States,Mexico,2,2,world-cup,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-03-09,Curaçao,Costa Rica,1,2,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-10,Guatemala,Paraguay,1,4,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-11,Honduras,Nicaragua,0,2,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship qualification,1
+1965-03-11,Hong Kong,Japan,1,4,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-12,Kuwait,Morocco,0,2,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-03-12,Mexico,United States,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-03-13,Germany,Italy,1,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-14,El Salvador,Honduras,3,1,international,El Salvador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship qualification,0
+1965-03-14,Guatemala,Paraguay,0,3,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-14,Libya,Kuwait,4,1,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-14,Suriname,Trinidad and Tobago,6,1,world-cup,Dutch Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-03-15,Hong Kong,Japan,1,2,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-17,Costa Rica,Paraguay,1,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-17,Honduras,United States,0,1,world-cup,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-03-17,Israel,Switzerland,0,0,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-17,Northern Ireland,Netherlands,2,1,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-03-17,Wales,Greece,4,1,world-cup,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-03-19,Costa Rica,Paraguay,0,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-19,Libya,Morocco,1,0,international,Libya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-20,Cyprus,Lebanon,2,0,international,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-21,Honduras,United States,1,1,world-cup,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-03-22,Myanmar,Japan,1,1,international,Burma,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-24,France,Austria,1,2,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-24,Republic of Ireland,Belgium,0,2,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-25,Singapore,Japan,1,4,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-27,Malaysia,Japan,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-03-27,Sudan,Ethiopia,2,1,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-03-28,Costa Rica,Curaçao,6,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-03-28,El Salvador,Mexico,0,2,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-03-28,Guatemala,Haiti,3,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1965-03-30,Costa Rica,Haiti,3,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-03-30,El Salvador,Curaçao,1,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-03-31,Guinea,Senegal,3,1,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-03-31,Northern Ireland,Wales,0,5,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1965-04-01,Guatemala,Costa Rica,0,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1965-04-01,Mexico,Curaçao,5,0,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-04-03,Peru,Paraguay,0,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-04-04,Guatemala,El Salvador,4,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1965-04-04,Haiti,Mexico,0,3,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-04-06,Costa Rica,Mexico,1,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-04-06,Guatemala,Curaçao,3,2,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1965-04-07,Belgium,Poland,0,0,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-04-07,Netherlands,Northern Ireland,0,0,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-04-08,Costa Rica,El Salvador,1,2,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-04-08,Haiti,Curaçao,1,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-04-08,Jersey,Alderney,8,0,international,Jersey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1965-04-10,England,Scotland,2,2,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1965-04-11,Albania,Switzerland,0,2,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-04-11,El Salvador,Haiti,3,1,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CONCACAF Championship,1
+1965-04-11,Guatemala,Mexico,1,2,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CONCACAF Championship,0
+1965-04-14,Ghana,DR Congo,4,1,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-04-15,Chile,Peru,4,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa del Pacífico,0
+1965-04-18,Ethiopia,Uganda,2,0,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-04-18,Ethiopia,Sudan,1,0,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-04-18,Mali,Senegal,0,2,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-04-18,Poland,Italy,0,0,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-04-18,Yugoslavia,France,1,0,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-04-19,Turkey,Portugal,0,1,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-04-24,Germany,Cyprus,5,0,world-cup,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-04-25,Austria,German DR,1,1,world-cup,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-04-25,Costa Rica,Mexico,0,0,world-cup,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-04-25,Czech Republic,Portugal,0,1,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-04-25,Paraguay,Uruguay,2,1,international,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Artigas,0
+1965-04-28,Peru,Chile,0,1,international,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa del Pacífico,0
+1965-04-29,Indonesia,Sri Lanka,5,0,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-01,Italy,Wales,4,1,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-01,Uganda,Sudan,1,3,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-05-01,Uruguay,Paraguay,4,0,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Artigas,0
+1965-05-02,Morocco,Tunisia,0,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-02,Romania,Turkey,3,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-02,Switzerland,Albania,1,0,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-03,Jamaica,Mexico,2,3,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-03,Mali,Congo,1,1,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-05,England,Hungary,1,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-05,Republic of Ireland,Spain,1,0,world-cup,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-05,Senegal,Mali,3,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-05-05,Sweden,Cyprus,3,0,world-cup,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-06,Guernsey,Jersey,2,4,international,Guernsey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1965-05-07,Mexico,Jamaica,8,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-07,Northern Ireland,Albania,4,1,world-cup,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-08,Scotland,Spain,0,0,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-09,Belgium,Israel,1,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-09,Bulgaria,Turkey,4,1,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-09,Chile,Uruguay,0,0,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Juan Pinto Durán,0
+1965-05-09,Yugoslavia,England,1,1,international,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-11,Costa Rica,Jamaica,7,0,world-cup,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-12,Germany,England,0,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-16,Mexico,Costa Rica,1,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-16,Peru,Venezuela,1,0,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-16,Poland,Bulgaria,1,1,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-16,Russia,Austria,0,0,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-16,Sweden,England,1,2,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-16,Uruguay,Chile,1,1,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Juan Pinto Durán,0
+1965-05-19,Norway,Thailand,7,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-22,Iran,Turkey,1,2,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-22,Jamaica,Costa Rica,1,1,world-cup,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-23,German DR,Hungary,1,1,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-23,Mali,Guinea,2,1,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-05-23,Poland,Scotland,1,1,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-23,Russia,Greece,3,1,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1965-05-23,Uruguay,Venezuela,5,0,world-cup,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-24,Iran,Turkey,2,1,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-26,Switzerland,Germany,0,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-05-27,Finland,Scotland,1,2,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-27,Norway,Luxembourg,4,2,world-cup,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-29,Liberia,Ivory Coast,0,1,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-05-30,Romania,Czech Republic,1,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-05-30,Russia,Wales,2,1,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1965-05-30,Venezuela,Uruguay,1,3,world-cup,Venezuela,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-06-02,Brazil,Belgium,5,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-06-02,Venezuela,Peru,3,6,world-cup,Venezuela,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-06-03,France,Argentina,0,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-06-06,Brazil,Germany,2,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-06-06,Guinea,Mali,2,1,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-06-06,Peru,Uruguay,0,1,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-06-09,Brazil,Argentina,0,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-06-09,Denmark,Finland,3,1,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1965-06-13,Austria,Hungary,0,1,world-cup,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-06-13,Bulgaria,Israel,4,0,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-06-13,Uruguay,Peru,2,1,world-cup,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-06-14,Portugal,Romania,2,1,world-cup,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-06-16,Norway,Yugoslavia,3,0,world-cup,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-06-16,Sweden,Italy,2,2,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-06-17,Algeria,Brazil,0,3,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-06-20,Denmark,Sweden,2,1,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1965-06-23,Finland,Italy,0,2,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-06-24,Portugal,Brazil,0,0,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-06-27,Congo,Benin,1,6,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-06-27,Hungary,Italy,2,1,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-06-27,Russia,Denmark,6,0,world-cup,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1965-06-30,Sweden,Brazil,1,2,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-07-04,Russia,Brazil,0,3,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-07-05,Iceland,Denmark,1,3,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-07-11,Honduras,Costa Rica,1,1,international,Honduras,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-07-14,Argentina,Chile,1,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Carlos Dittborn,0
+1965-07-19,Congo,Uganda,2,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1965-07-19,Ivory Coast,Algeria,1,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-19,Madagascar,DR Congo,0,7,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-19,Mali,Togo,1,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-20,Algeria,DR Congo,4,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-20,Colombia,Ecuador,0,1,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-07-20,Congo,Togo,7,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1965-07-20,Ivory Coast,Madagascar,5,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-20,Mali,Uganda,5,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-20,Togo,Uganda,1,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-21,Algeria,Madagascar,1,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-21,Chile,Argentina,1,1,international,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Copa Carlos Dittborn,0
+1965-07-21,Congo,Mali,1,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1965-07-21,Ivory Coast,DR Congo,1,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-21,Pakistan,Turkey,1,3,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-07-23,Congo,Ivory Coast,1,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1965-07-23,Iran,Pakistan,4,1,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-07-23,Mali,Algeria,2,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-25,Congo,Mali,0,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,All-African Games,0
+1965-07-25,DR Congo,Togo,5,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-25,Ecuador,Colombia,2,0,world-cup,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-07-25,Iran,Turkey,0,0,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-07-25,Ivory Coast,Algeria,2,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-25,Paraguay,Bolivia,2,0,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-07-25,Suriname,French Guiana,7,0,international,Dutch Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-07-25,Uganda,Madagascar,5,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-26,DR Congo,Uganda,6,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-26,Suriname,French Guiana,5,0,international,Dutch Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-07-26,Togo,Madagascar,1,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,All-African Games,1
+1965-07-30,Jordan,Iraq,0,0,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-08-01,Argentina,Paraguay,3,0,world-cup,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-08-01,Chile,Colombia,7,2,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-08-02,China,Indonesia,3,0,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-08-02,North Korea,North Vietnam,1,0,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-08-03,Cambodia,North Vietnam,1,1,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-08-03,Guinea,Indonesia,3,1,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-08-04,North Korea,China,3,0,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-08-05,Jamaica,Trinidad and Tobago,4,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-08-06,Cambodia,Indonesia,0,0,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-08-06,Guinea,North Vietnam,1,2,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-08-07,Cambodia,China,1,3,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-08-07,Colombia,Chile,2,0,world-cup,Colombia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-08-07,North Korea,Guinea,3,0,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-08-08,Finland,Norway,4,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1965-08-08,North Korea,Indonesia,3,0,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-08-08,Paraguay,Argentina,0,0,world-cup,Paraguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-08-09,China,North Vietnam,3,3,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-08-10,China,Guinea,2,0,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-08-10,North Korea,Cambodia,4,0,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-08-11,Indonesia,North Vietnam,2,1,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-08-14,Liberia,DR Congo,2,1,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-08-14,Malaysia,Japan,2,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1965-08-14,South Korea,Thailand,2,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-15,Ecuador,Chile,2,2,world-cup,Ecuador,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-08-15,India,Japan,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-15,Myanmar,Hong Kong,4,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-15,Vietnam Republic,Taiwan,5,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-17,Argentina,Bolivia,4,1,world-cup,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-08-17,Hong Kong,Vietnam Republic,1,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-17,Malaysia,South Korea,0,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1965-08-18,Japan,Taiwan,0,4,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-19,Hong Kong,India,2,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-19,Malaysia,Vietnam Republic,3,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1965-08-20,Japan,Myanmar,3,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-20,Thailand,Taiwan,2,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-21,Malaysia,India,0,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1965-08-21,South Korea,Vietnam Republic,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-22,Bolivia,Paraguay,2,1,world-cup,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-08-22,Chile,Ecuador,3,1,world-cup,Chile,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-08-22,Myanmar,Thailand,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-22,Sudan,Uganda,4,1,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-08-22,Sweden,Finland,2,2,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1965-08-23,India,South Korea,0,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-23,Malaysia,Hong Kong,1,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1965-08-24,Japan,Thailand,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-24,Myanmar,Taiwan,3,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-25,Hong Kong,South Korea,0,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-25,India,Vietnam Republic,2,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-27,Hong Kong,Thailand,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-27,Myanmar,India,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-28,Gabon,Nigeria,2,2,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-08-28,Japan,Vietnam Republic,2,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-28,South Korea,Taiwan,1,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1965-08-29,Bolivia,Argentina,1,2,world-cup,Bolivia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-08-29,Gabon,Nigeria,1,4,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-08-31,Singapore,India,1,2,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-04,Bulgaria,German DR,3,2,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-04,Russia,Yugoslavia,0,0,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-05,DR Congo,Ivory Coast,4,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations qualification,1
+1965-09-05,Hungary,Austria,3,0,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-09-07,Brazil,Uruguay,3,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-11,New Caledonia,Tahiti,4,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-12,Zambia,Kenya,3,3,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-13,New Caledonia,Tahiti,2,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-14,Zambia,Kenya,2,3,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-15,Norway,France,0,1,world-cup,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-09-18,Uganda,Zambia,2,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-19,Czech Republic,Romania,3,1,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-09-19,Luxembourg,Yugoslavia,2,5,world-cup,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-09-19,Zambia,Kenya,3,2,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-21,DR Congo,Liberia,3,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations qualification,1
+1965-09-21,Ivory Coast,Liberia,4,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1965-09-25,Uganda,Zanzibar,4,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-26,Bulgaria,Belgium,3,0,world-cup,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-09-26,Finland,Poland,2,0,world-cup,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-09-26,Kenya,Tanzania,0,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-09-26,Norway,Denmark,2,2,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1965-09-26,Sweden,Germany,1,2,world-cup,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-09-28,Uganda,Kenya,2,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-09-29,Tanzania,Zanzibar,3,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-10-01,Kenya,Zanzibar,5,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-10-02,Northern Ireland,Scotland,3,2,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1965-10-02,Uganda,Tanzania,1,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-10-02,Wales,England,0,0,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1965-10-03,Greece,Russia,1,4,world-cup,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-09,France,Yugoslavia,1,0,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-09,Germany,Austria,4,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-10-09,Hungary,German DR,3,2,world-cup,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-09,Turkey,Czech Republic,0,6,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-12,Chile,Ecuador,2,1,world-cup,Peru,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1965-10-13,Scotland,Poland,1,2,world-cup,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-14,Ghana,Congo,5,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-10-17,Congo,Ghana,2,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-10-17,Denmark,Russia,1,3,world-cup,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-17,Netherlands,Switzerland,0,0,world-cup,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-20,England,Austria,2,3,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-10-21,Congo,Ghana,1,2,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-10-23,Kenya,Tanzania,4,2,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-10-23,Turkey,Romania,2,1,world-cup,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-24,Poland,Finland,7,0,world-cup,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-27,Belgium,Bulgaria,5,0,world-cup,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-27,Denmark,Greece,1,1,world-cup,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-27,Spain,Republic of Ireland,4,1,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-27,Wales,Russia,2,1,world-cup,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-30,Nigeria,Ghana,0,4,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-10-31,Algeria,Morocco,0,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-10-31,German DR,Austria,1,0,world-cup,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-31,Portugal,Czech Republic,0,0,world-cup,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-10-31,Sweden,Norway,0,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nordic Championship,0
+1965-11-01,Italy,Poland,6,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-06,France,Luxembourg,4,1,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-07,Cyprus,Sweden,0,5,world-cup,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-07,Ghana,Nigeria,3,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-11-07,Yugoslavia,Norway,1,1,world-cup,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-09,Scotland,Italy,1,0,world-cup,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-10,England,Northern Ireland,2,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1965-11-10,Israel,Belgium,0,5,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-10,Republic of Ireland,Spain,0,1,world-cup,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1965-11-12,DR Congo,Ghana,2,5,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1965-11-12,Tunisia,Ethiopia,4,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1965-11-13,Vietnam Republic,Thailand,4,0,international,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Vietnam Independence Cup,0
+1965-11-14,Cyprus,Germany,0,6,world-cup,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-14,DR Congo,Ivory Coast,0,3,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1965-11-14,Switzerland,Netherlands,2,1,world-cup,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-14,Tunisia,Senegal,0,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1965-11-16,Vietnam Republic,Malaysia,2,2,international,Vietnam Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Vietnam Independence Cup,0
+1965-11-19,Ethiopia,Senegal,1,5,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1965-11-19,Ghana,Ivory Coast,4,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1965-11-21,Brazil,Russia,2,2,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-11-21,Brazil,Hungary,5,3,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-11-21,Czech Republic,Turkey,3,1,world-cup,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-21,Dominica,Grenada,2,0,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Windward Islands Tournament,1
+1965-11-21,Israel,Bulgaria,1,2,world-cup,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-21,Ivory Coast,Senegal,1,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1965-11-21,North Korea,Australia,6,1,world-cup,Cambodia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1965-11-21,Romania,Portugal,2,0,world-cup,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-21,Tunisia,Ghana,2,3,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1965-11-22,Saint Vincent and the Grenadines,Saint Lucia,1,2,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1965-11-23,Congo,Ivory Coast,0,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-11-23,Dominica,Saint Lucia,1,0,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Windward Islands Tournament,1
+1965-11-24,Albania,Northern Ireland,1,1,world-cup,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-11-24,Australia,North Korea,1,3,world-cup,Cambodia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1
+1965-11-24,Scotland,Wales,4,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,British Home Championship,0
+1965-11-25,Ivory Coast,Mali,1,3,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-11-26,Cambodia,Australia,0,0,international,Cambodia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-11-26,Saint Vincent and the Grenadines,Dominica,3,1,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1965-11-29,Hong Kong,Australia,1,0,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-01,Argentina,Russia,1,1,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-01,Wales,Denmark,4,2,world-cup,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-12-03,Australia,Taiwan,3,1,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1965-12-04,Uruguay,Russia,1,3,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-05,Hong Kong,Singapore,0,0,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-07,Hong Kong,Singapore,1,2,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-07,Italy,Scotland,3,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
+1965-12-07,Malaysia,Australia,0,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-08,Malaysia,Australia,0,3,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-08,Spain,England,0,2,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-11,Nigeria,Benin,0,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-13,Kenya,Ghana,3,3,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-15,Myanmar,Singapore,1,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1965-12-15,Thailand,Vietnam Republic,2,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1965-12-16,Vietnam Republic,Singapore,5,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1965-12-18,Malaysia,Myanmar,0,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Peninsular Games,0
+1965-12-18,Thailand,Vietnam Republic,2,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1965-12-20,Malaysia,Vietnam Republic,0,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Southeast Asian Peninsular Games,0
+1965-12-22,Myanmar,Thailand,2,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Southeast Asian Peninsular Games,1
+1965-12-28,Bermuda,Jamaica,0,3,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1965-12-29,Belgium,Bulgaria,1,2,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup qualification,1

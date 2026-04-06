@@ -1,0 +1,5537 @@
+{
+  "name": "French Ligue 2 2019/20",
+  "matches": [
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-26",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-26",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "US Orléans",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-26",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-26",
+      "time": "20:00",
+      "team1": "EA Guingamp",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-26",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-26",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-26",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "SM Caen",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-26",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-27",
+      "time": "15:00",
+      "team1": "Le Mans FC",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-07-29",
+      "time": "20:45",
+      "team1": "FC Lorient",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-02",
+      "time": "20:00",
+      "team1": "Havre AC",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-02",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-02",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-02",
+      "time": "20:00",
+      "team1": "Paris FC",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-02",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-02",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-02",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "Rodez AF",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-02",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-03",
+      "time": "16:30",
+      "team1": "RC Lens",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-05",
+      "time": "20:45",
+      "team1": "SM Caen",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-09",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-09",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-09",
+      "time": "20:00",
+      "team1": "EA Guingamp",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-09",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-09",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-09",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-09",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-09",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-09",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Clermont Foot 63",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-16",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-16",
+      "time": "20:00",
+      "team1": "FC Lorient",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-16",
+      "time": "20:00",
+      "team1": "Paris FC",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-16",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-16",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-16",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-16",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "FC Chambly",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-16",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "RC Lens",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-19",
+      "time": "20:45",
+      "team1": "AJ Auxerre",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-23",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-23",
+      "time": "20:00",
+      "team1": "Havre AC",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-23",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-23",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-23",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-23",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-23",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-23",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "ESTAC Troyes",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-26",
+      "time": "20:45",
+      "team1": "EA Guingamp",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-30",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-30",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-30",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-30",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-30",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-30",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-30",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "FC Lorient",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-09-02",
+      "time": "19:00",
+      "team1": "Paris FC",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-09-02",
+      "time": "20:45",
+      "team1": "Grenoble Foot 38",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-13",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "US Orléans",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-13",
+      "time": "20:00",
+      "team1": "Havre AC",
+      "team2": "Paris FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-13",
+      "time": "20:00",
+      "team1": "EA Guingamp",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-13",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-13",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-13",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-13",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-13",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "14:45",
+      "team1": "Clermont Foot 63",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-16",
+      "time": "20:45",
+      "team1": "RC Lens",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-20",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-20",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-20",
+      "time": "20:00",
+      "team1": "Paris FC",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-20",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-20",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-20",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-20",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-20",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "SM Caen",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-23",
+      "time": "20:45",
+      "team1": "FC Lorient",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "20:00",
+      "team1": "Havre AC",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "14:45",
+      "team1": "RC Lens",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-30",
+      "time": "20:45",
+      "team1": "EA Guingamp",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-04",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-04",
+      "time": "20:00",
+      "team1": "EA Guingamp",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-04",
+      "time": "20:00",
+      "team1": "FC Lorient",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-04",
+      "time": "20:00",
+      "team1": "Paris FC",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-04",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-04",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-04",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-04",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-05",
+      "time": "14:45",
+      "team1": "AJ Auxerre",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-07",
+      "time": "20:45",
+      "team1": "US Orléans",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-18",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-18",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-18",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-18",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "FC Sochaux",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-18",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "EA Guingamp",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-18",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "US Orléans",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-18",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-18",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Havre AC",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-21",
+      "time": "20:45",
+      "team1": "RC Lens",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-25",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-25",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "RC Lens",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-25",
+      "time": "20:00",
+      "team1": "EA Guingamp",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-25",
+      "time": "20:00",
+      "team1": "Paris FC",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-25",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-25",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-25",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-25",
+      "time": "20:30",
+      "team1": "Rodez AF",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-26",
+      "time": "15:00",
+      "team1": "FC Lorient",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-28",
+      "time": "20:45",
+      "team1": "Valenciennes FC",
+      "team2": "Havre AC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-01",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-01",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-01",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-01",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-01",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Clermont Foot 63",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Chamois Niortais",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "Paris FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "RC Lens",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-11-04",
+      "time": "20:45",
+      "team1": "Havre AC",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-08",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-08",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-08",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-08",
+      "time": "20:00",
+      "team1": "FC Lorient",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          4,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-08",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-08",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-08",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-08",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-09",
+      "time": "14:45",
+      "team1": "EA Guingamp",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-11-11",
+      "time": "20:45",
+      "team1": "Rodez AF",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-22",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-22",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-22",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-22",
+      "time": "20:00",
+      "team1": "Paris FC",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-22",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-22",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-22",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-22",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "RC Lens",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-25",
+      "time": "20:45",
+      "team1": "Havre AC",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-29",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-29",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-29",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-29",
+      "time": "20:00",
+      "team1": "EA Guingamp",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-29",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-29",
+      "time": "20:00",
+      "team1": "FC Lorient",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-29",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-29",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-29",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-30",
+      "time": "14:30",
+      "team1": "FC Sochaux",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-02",
+      "time": "20:45",
+      "team1": "SM Caen",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-03",
+      "time": "21:05",
+      "team1": "Havre AC",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-03",
+      "time": "21:05",
+      "team1": "AJ Auxerre",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-03",
+      "time": "21:05",
+      "team1": "ESTAC Troyes",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-03",
+      "time": "21:05",
+      "team1": "Chamois Niortais",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-03",
+      "time": "21:05",
+      "team1": "Paris FC",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-03",
+      "time": "21:05",
+      "team1": "Grenoble Foot 38",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-03",
+      "time": "21:05",
+      "team1": "LB Châteauroux",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-03",
+      "time": "21:05",
+      "team1": "RC Lens",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-12-03",
+      "time": "21:05",
+      "team1": "US Orléans",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-13",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-13",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-13",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-13",
+      "time": "20:00",
+      "team1": "FC Lorient",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-13",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-13",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-13",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-13",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-14",
+      "time": "16:00",
+      "team1": "AC Ajaccio",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-12-16",
+      "time": "20:45",
+      "team1": "EA Guingamp",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-20",
+      "time": "20:00",
+      "team1": "Havre AC",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-20",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-20",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-20",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-20",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-20",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-20",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "Paris FC",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "RC Lens",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-21",
+      "time": "16:00",
+      "team1": "ESTAC Troyes",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-10",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-10",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-10",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-10",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-10",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-10",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-10",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-10",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-13",
+      "time": "20:45",
+      "team1": "FC Lorient",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2020-01-18",
+      "time": "18:30",
+      "team1": "EA Guingamp",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-24",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-24",
+      "time": "20:00",
+      "team1": "FC Lorient",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-24",
+      "time": "20:00",
+      "team1": "Paris FC",
+      "team2": "Rodez AF",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-24",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-24",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "FC Chambly",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-24",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-24",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-24",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-25",
+      "time": "15:00",
+      "team1": "RC Lens",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2020-01-27",
+      "time": "20:45",
+      "team1": "Havre AC",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-01-31",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-01-31",
+      "time": "20:00",
+      "team1": "Havre AC",
+      "team2": "RC Lens",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-01-31",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-01-31",
+      "time": "20:00",
+      "team1": "EA Guingamp",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-01-31",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-01-31",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-01-31",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          3,
+          2
+        ],
+        "ft": [
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-01-31",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-01-31",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2020-02-01",
+      "time": "15:30",
+      "team1": "FC Sochaux",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-03",
+      "time": "20:45",
+      "team1": "Grenoble Foot 38",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-04",
+      "time": "21:05",
+      "team1": "AJ Auxerre",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-04",
+      "time": "21:05",
+      "team1": "AS Nancy Lorraine",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-04",
+      "time": "21:05",
+      "team1": "FC Lorient",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-04",
+      "time": "21:05",
+      "team1": "Paris FC",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-04",
+      "time": "21:05",
+      "team1": "Valenciennes FC",
+      "team2": "EA Guingamp",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-04",
+      "time": "21:05",
+      "team1": "LB Châteauroux",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-04",
+      "time": "21:05",
+      "team1": "RC Lens",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-04",
+      "time": "21:05",
+      "team1": "SM Caen",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          4,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2020-02-04",
+      "time": "21:05",
+      "team1": "US Orléans",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-07",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          2,
+          3
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-07",
+      "time": "20:00",
+      "team1": "Havre AC",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-07",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-07",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-07",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-07",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-07",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-07",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-08",
+      "time": "15:00",
+      "team1": "EA Guingamp",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2020-02-10",
+      "time": "20:45",
+      "team1": "RC Lens",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-14",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "FC Chambly",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-14",
+      "time": "20:00",
+      "team1": "Paris FC",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-14",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-14",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-14",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "Rodez AF",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-14",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-14",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "FC Lorient",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2020-02-17",
+      "time": "20:45",
+      "team1": "LB Châteauroux",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-21",
+      "time": "20:00",
+      "team1": "AC Ajaccio",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-21",
+      "time": "20:00",
+      "team1": "Havre AC",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-21",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-21",
+      "time": "20:00",
+      "team1": "EA Guingamp",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-21",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-21",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-21",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "LB Châteauroux",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-21",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "RC Lens",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-02-24",
+      "time": "20:45",
+      "team1": "ESTAC Troyes",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-02-28",
+      "time": "20:00",
+      "team1": "AJ Auxerre",
+      "team2": "Chamois Niortais",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-02-28",
+      "time": "20:00",
+      "team1": "AS Nancy Lorraine",
+      "team2": "Clermont Foot 63",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-02-28",
+      "time": "20:00",
+      "team1": "FC Sochaux",
+      "team2": "Rodez AF",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-02-28",
+      "time": "20:00",
+      "team1": "Valenciennes FC",
+      "team2": "AC Ajaccio",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-02-28",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "Havre AC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-02-28",
+      "time": "20:00",
+      "team1": "Le Mans FC",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-02-28",
+      "time": "20:00",
+      "team1": "SM Caen",
+      "team2": "Grenoble Foot 38",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-02-28",
+      "time": "20:00",
+      "team1": "US Orléans",
+      "team2": "ESTAC Troyes",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "FC Lorient",
+      "team2": "FC Chambly",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-03-02",
+      "time": "20:45",
+      "team1": "Paris FC",
+      "team2": "RC Lens",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-06",
+      "time": "20:00",
+      "team1": "Havre AC",
+      "team2": "AJ Auxerre",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-06",
+      "time": "20:00",
+      "team1": "Clermont Foot 63",
+      "team2": "FC Sochaux",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-06",
+      "time": "20:00",
+      "team1": "ESTAC Troyes",
+      "team2": "Paris FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-06",
+      "time": "20:00",
+      "team1": "FC Chambly",
+      "team2": "Le Mans FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-06",
+      "time": "20:00",
+      "team1": "Chamois Niortais",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-06",
+      "time": "20:00",
+      "team1": "Grenoble Foot 38",
+      "team2": "Valenciennes FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-06",
+      "time": "20:00",
+      "team1": "LB Châteauroux",
+      "team2": "SM Caen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-06",
+      "time": "20:00",
+      "team1": "Rodez AF",
+      "team2": "EA Guingamp",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "AC Ajaccio",
+      "team2": "FC Lorient",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-03-09",
+      "time": "20:45",
+      "team1": "RC Lens",
+      "team2": "US Orléans",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-13",
+      "team1": "AS Nancy Lorraine",
+      "team2": "AC Ajaccio",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-13",
+      "team1": "EA Guingamp",
+      "team2": "Chamois Niortais",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-13",
+      "team1": "Paris FC",
+      "team2": "LB Châteauroux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-13",
+      "team1": "FC Sochaux",
+      "team2": "FC Chambly",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-13",
+      "team1": "Valenciennes FC",
+      "team2": "SM Caen",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-13",
+      "team1": "Le Mans FC",
+      "team2": "ESTAC Troyes",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-13",
+      "team1": "Rodez AF",
+      "team2": "Clermont Foot 63",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-13",
+      "team1": "US Orléans",
+      "team2": "Grenoble Foot 38",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-14",
+      "team1": "AJ Auxerre",
+      "team2": "RC Lens",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-03-16",
+      "team1": "FC Lorient",
+      "team2": "Havre AC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-20",
+      "team1": "AC Ajaccio",
+      "team2": "FC Sochaux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-20",
+      "team1": "Havre AC",
+      "team2": "Valenciennes FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-20",
+      "team1": "Clermont Foot 63",
+      "team2": "EA Guingamp",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-20",
+      "team1": "FC Chambly",
+      "team2": "Rodez AF",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-20",
+      "team1": "Chamois Niortais",
+      "team2": "Le Mans FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-20",
+      "team1": "Grenoble Foot 38",
+      "team2": "AJ Auxerre",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-20",
+      "team1": "LB Châteauroux",
+      "team2": "US Orléans",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-20",
+      "team1": "SM Caen",
+      "team2": "Paris FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-21",
+      "team1": "ESTAC Troyes",
+      "team2": "FC Lorient",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-03-23",
+      "team1": "RC Lens",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "AJ Auxerre",
+      "team2": "LB Châteauroux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "AS Nancy Lorraine",
+      "team2": "Havre AC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "EA Guingamp",
+      "team2": "FC Chambly",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "FC Lorient",
+      "team2": "RC Lens",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "Paris FC",
+      "team2": "Grenoble Foot 38",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "FC Sochaux",
+      "team2": "Chamois Niortais",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "Valenciennes FC",
+      "team2": "ESTAC Troyes",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "Le Mans FC",
+      "team2": "Clermont Foot 63",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "Rodez AF",
+      "team2": "AC Ajaccio",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-04-03",
+      "team1": "US Orléans",
+      "team2": "SM Caen",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "AC Ajaccio",
+      "team2": "EA Guingamp",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "Havre AC",
+      "team2": "FC Sochaux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "Clermont Foot 63",
+      "team2": "FC Chambly",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "ESTAC Troyes",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "Chamois Niortais",
+      "team2": "FC Lorient",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "Paris FC",
+      "team2": "US Orléans",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "Grenoble Foot 38",
+      "team2": "Le Mans FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "LB Châteauroux",
+      "team2": "Valenciennes FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "RC Lens",
+      "team2": "Rodez AF",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-04-10",
+      "team1": "SM Caen",
+      "team2": "AJ Auxerre",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "AJ Auxerre",
+      "team2": "Paris FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "AS Nancy Lorraine",
+      "team2": "Grenoble Foot 38",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "Clermont Foot 63",
+      "team2": "AC Ajaccio",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "EA Guingamp",
+      "team2": "Havre AC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "FC Chambly",
+      "team2": "ESTAC Troyes",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "FC Lorient",
+      "team2": "LB Châteauroux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "FC Sochaux",
+      "team2": "RC Lens",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "Valenciennes FC",
+      "team2": "US Orléans",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "Le Mans FC",
+      "team2": "SM Caen",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-04-17",
+      "team1": "Rodez AF",
+      "team2": "Chamois Niortais",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "AC Ajaccio",
+      "team2": "FC Chambly",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "Havre AC",
+      "team2": "Rodez AF",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "ESTAC Troyes",
+      "team2": "FC Sochaux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "Chamois Niortais",
+      "team2": "Clermont Foot 63",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "Paris FC",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "Grenoble Foot 38",
+      "team2": "FC Lorient",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "LB Châteauroux",
+      "team2": "Le Mans FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "RC Lens",
+      "team2": "Valenciennes FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "SM Caen",
+      "team2": "EA Guingamp",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-04-21",
+      "team1": "US Orléans",
+      "team2": "AJ Auxerre",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "AC Ajaccio",
+      "team2": "Chamois Niortais",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "AS Nancy Lorraine",
+      "team2": "SM Caen",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "Clermont Foot 63",
+      "team2": "Grenoble Foot 38",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "EA Guingamp",
+      "team2": "Paris FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "FC Chambly",
+      "team2": "RC Lens",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "FC Lorient",
+      "team2": "US Orléans",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "FC Sochaux",
+      "team2": "LB Châteauroux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "Valenciennes FC",
+      "team2": "AJ Auxerre",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "Le Mans FC",
+      "team2": "Havre AC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-04-24",
+      "team1": "Rodez AF",
+      "team2": "ESTAC Troyes",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "Havre AC",
+      "team2": "Clermont Foot 63",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "AJ Auxerre",
+      "team2": "FC Lorient",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "ESTAC Troyes",
+      "team2": "EA Guingamp",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "Chamois Niortais",
+      "team2": "FC Chambly",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "Paris FC",
+      "team2": "Valenciennes FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "Grenoble Foot 38",
+      "team2": "FC Sochaux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "LB Châteauroux",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "RC Lens",
+      "team2": "AC Ajaccio",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "SM Caen",
+      "team2": "Rodez AF",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-05-01",
+      "team1": "US Orléans",
+      "team2": "Le Mans FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "AC Ajaccio",
+      "team2": "ESTAC Troyes",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "AS Nancy Lorraine",
+      "team2": "AJ Auxerre",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "Clermont Foot 63",
+      "team2": "SM Caen",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "EA Guingamp",
+      "team2": "LB Châteauroux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "FC Chambly",
+      "team2": "Havre AC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "Chamois Niortais",
+      "team2": "RC Lens",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "FC Lorient",
+      "team2": "Valenciennes FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "FC Sochaux",
+      "team2": "US Orléans",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "Le Mans FC",
+      "team2": "Paris FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-05-08",
+      "team1": "Rodez AF",
+      "team2": "Grenoble Foot 38",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "Havre AC",
+      "team2": "AC Ajaccio",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "AJ Auxerre",
+      "team2": "Rodez AF",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "ESTAC Troyes",
+      "team2": "Chamois Niortais",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "Paris FC",
+      "team2": "FC Lorient",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "Valenciennes FC",
+      "team2": "FC Chambly",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "Grenoble Foot 38",
+      "team2": "EA Guingamp",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "LB Châteauroux",
+      "team2": "Clermont Foot 63",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "RC Lens",
+      "team2": "Le Mans FC",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "SM Caen",
+      "team2": "FC Sochaux",
+      "score": {
+      },
+      "status": "cancelled"
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-05-15",
+      "team1": "US Orléans",
+      "team2": "AS Nancy Lorraine",
+      "score": {
+      },
+      "status": "cancelled"
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1990-01-12,Algeria,Mali,5,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-01-14,Algeria,Cameroon,3,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-01-17,Greece,Belgium,2,0,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-01-17,Mexico,Argentina,2,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-01-20,Eswatini,Botswana,3,1,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-01-20,Malawi,Tanzania,2,2,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-01-21,Botswana,Malawi,2,2,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-01-21,Eswatini,Tanzania,0,1,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-01-21,Kuwait,France,0,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-01-23,Botswana,Tanzania,0,0,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-01-24,France,German DR,3,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-01-24,Liberia,Senegal,0,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-01-25,Nigeria,Ivory Coast,2,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-01-25,United Arab Emirates,Egypt,1,2,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-01-26,Kuwait,German DR,1,2,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-01-27,Ivory Coast,Liberia,1,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-01-27,United Arab Emirates,Egypt,1,0,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-01-28,Nigeria,Senegal,1,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-01-29,Thailand,Kenya,2,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1990-02-02,Colombia,Uruguay,0,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Miami Cup,1
+1990-02-02,Indonesia,Kenya,2,3,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,King's Cup,1
+1990-02-02,Iran,Poland,0,2,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-02,United States,Costa Rica,0,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Miami Cup,0
+1990-02-04,Algeria,Romania,0,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-04,Costa Rica,Uruguay,0,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Miami Cup,1
+1990-02-04,Iran,Poland,0,1,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-04,South Korea,Norway,2,3,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Malta International Tournament,1
+1990-02-04,United States,Colombia,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Miami Cup,0
+1990-02-05,Thailand,Indonesia,1,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1990-02-05,United Arab Emirates,Denmark,1,1,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-07,Malta,Norway,1,1,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Malta International Tournament,0
+1990-02-10,Malta,South Korea,1,2,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Malta International Tournament,0
+1990-02-10,Uganda,Mauritius,4,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-11,Kuwait,Poland,1,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-02-11,Togo,Cameroon,1,1,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-12,United Arab Emirates,Finland,1,1,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-13,Bermuda,United States,0,1,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-14,Egypt,Denmark,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-14,United Arab Emirates,Sweden,2,1,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-15,Iraq,South Korea,0,0,international,Iraq,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-15,Kuwait,Finland,0,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-17,United Arab Emirates,Sweden,0,2,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-18,Egypt,South Korea,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-20,Colombia,Russia,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Marlboro Cup,1
+1990-02-21,Belgium,Sweden,0,0,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-21,Gambia,Guinea-Bissau,0,1,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-21,Kuwait,Bahrain,1,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1990-02-21,Morocco,Ivory Coast,2,1,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-21,Netherlands,Italy,0,0,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-21,Spain,Czech Republic,1,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-22,Costa Rica,Russia,1,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Marlboro Cup,1
+1990-02-22,Oman,United Arab Emirates,1,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1990-02-23,Qatar,Bahrain,0,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1990-02-24,Kuwait,Oman,1,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1990-02-24,United States,Russia,1,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-27,Qatar,United Arab Emirates,0,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1990-02-28,Egypt,Austria,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-02-28,France,Germany,2,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-01,Bahrain,Oman,0,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1990-03-02,Algeria,Nigeria,5,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1990-03-02,Ivory Coast,Egypt,3,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-03,Cameroon,Zambia,0,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-03,Senegal,Kenya,0,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-04,Oman,Qatar,2,4,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1990-03-05,Algeria,Ivory Coast,3,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1990-03-05,Bahrain,United Arab Emirates,1,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1990-03-05,Nigeria,Egypt,1,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-06,Cameroon,Senegal,0,2,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-06,Mozambique,Angola,2,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-06,Zambia,Kenya,1,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-07,Kuwait,Qatar,2,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1990-03-07,Lesotho,Zimbabwe,1,4,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-03-08,Algeria,Egypt,2,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1990-03-08,Angola,Zimbabwe,0,2,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-03-08,Nigeria,Ivory Coast,1,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-09,Cameroon,Kenya,2,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-09,Kuwait,United Arab Emirates,6,1,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1990-03-09,Zambia,Senegal,0,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-10,Angola,Lesotho,3,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-03-10,Mozambique,Zimbabwe,3,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-10,United States,Finland,2,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-11,Mozambique,Lesotho,3,0,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-12,Algeria,Senegal,2,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1990-03-12,Nigeria,Zambia,2,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-15,Senegal,Zambia,0,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1990-03-16,Algeria,Nigeria,1,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1990-03-16,Jamaica,Barbados,0,1,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-18,Jamaica,Barbados,1,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-20,Hungary,United States,2,0,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-20,Mexico,Uruguay,2,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-03-21,Basque Country,Romania,2,2,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-24,Saint Kitts and Nevis,Antigua and Barbuda,3,1,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-24,Saint Martin,British Virgin Islands,3,0,international,Saint Martin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-03-24,Sint Maarten,Cayman Islands,1,1,international,Saint Martin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1990-03-27,Northern Ireland,Norway,2,3,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,Egypt,Romania,1,3,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,England,Brazil,1,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,German DR,United States,3,2,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,Greece,Israel,2,1,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,Hungary,France,1,3,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,Luxembourg,Iceland,1,2,international,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,Poland,Yugoslavia,0,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,Republic of Ireland,Wales,1,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,Russia,Netherlands,2,1,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,Scotland,Argentina,1,0,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-28,Spain,Austria,2,3,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-03-31,Guernsey,Alderney,4,0,international,Guernsey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1990-03-31,Switzerland,Italy,0,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-01,Zambia,Tanzania,2,0,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-03,Bermuda,Iceland,0,4,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-03,Switzerland,Romania,2,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-04,Czech Republic,Egypt,0,1,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-08,United States,Iceland,4,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-11,Algeria,Sweden,1,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-11,Austria,Hungary,3,0,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-11,Denmark,Turkey,1,0,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-11,German DR,Egypt,2,0,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-14,Bermuda,Antigua and Barbuda,2,2,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-04-15,Barbados,Saint Lucia,1,0,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-04-16,Bermuda,Antigua and Barbuda,3,0,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-17,Grenada,Curaçao,1,1,international,Grenada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-04-17,Mexico,Colombia,2,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-04-22,Martinique,French Guiana,4,0,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-04-22,Saint Vincent and the Grenadines,Dominica,2,1,international,Saint Vincent and the Grenadines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-04-22,United States,Colombia,0,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-25,England,Czech Republic,4,2,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-25,Germany,Uruguay,3,3,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-25,Israel,Romania,1,4,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-25,Republic of Ireland,Russia,1,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-25,Scotland,German DR,0,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-25,Sweden,Wales,4,2,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-04-29,Barbados,Antigua and Barbuda,1,0,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-04-29,Gabon,Martinique,0,2,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-04-29,Jamaica,Saint Kitts and Nevis,3,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-04-29,Suriname,Guyana,5,0,international,Suriname,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-01,Guadeloupe,Martinique,1,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-05-03,Austria,Argentina,1,1,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-04,Colombia,Poland,2,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Marlboro Cup,1
+1990-05-05,Brazil,Bulgaria,2,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-05,United States,Malta,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-06,Cayman Islands,Jamaica,1,2,international,Cayman Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-06,Costa Rica,Poland,0,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Marlboro Cup,1
+1990-05-06,Saint Martin,Guadeloupe,2,1,international,Saint Martin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-07,Jersey,Guernsey,2,1,international,Jersey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1990-05-08,Andalusia,Uruguay,1,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-08,Switzerland,Argentina,1,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-09,United States,Poland,3,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-13,Brazil,German DR,3,3,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-13,Canada,Mexico,2,1,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,NAFU Championship,0
+1990-05-13,Dominica,French Guiana,1,1,international,Dominica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-13,Saint Lucia,Bermuda,0,2,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-15,England,Denmark,1,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-15,Grenada,Suriname,3,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
+1990-05-16,Israel,Russia,3,2,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-16,Republic of Ireland,Finland,1,1,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-16,Scotland,Egypt,1,3,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-17,Barbados,Suriname,5,0,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-18,Mauritania,Gambia,2,0,international,Mauritania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-05-18,Northern Ireland,Uruguay,1,0,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-18,Zimbabwe,Eswatini,4,4,international,Zimbabwe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-19,Saint Kitts and Nevis,Guadeloupe,2,0,international,Saint Kitts and Nevis,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-19,Scotland,Poland,1,1,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-20,Guyana,Curaçao,1,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-20,Jamaica,Saint Martin,1,0,international,Jamaica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-20,Wales,Costa Rica,1,0,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-21,Poland,United Arab Emirates,4,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-05-21,Romania,Egypt,1,0,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-22,England,Uruguay,1,2,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-22,Israel,Argentina,1,2,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-26,Belgium,Romania,2,2,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-26,Bermuda,Barbados,1,1,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-26,Egypt,Colombia,1,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-26,Gambia,Burkina Faso,0,0,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-26,Germany,Czech Republic,1,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-26,Turkey,Republic of Ireland,0,0,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-26,Yugoslavia,Spain,0,1,international,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-27,Antigua and Barbuda,Saint Lucia,0,2,international,Antigua and Barbuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-27,Curaçao,Suriname,1,1,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-27,Georgia,Lithuania,2,2,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-27,Guyana,Grenada,0,0,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-27,Sweden,Finland,6,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-28,Hungary,United Arab Emirates,3,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-05-28,Malta,Scotland,1,2,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-29,Bermuda,Barbados,3,0,international,Bermuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-30,Austria,Netherlands,3,2,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-30,Burkina Faso,Ghana,1,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-30,French Guiana,Saint Vincent and the Grenadines,2,2,international,French Guiana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-30,Germany,Denmark,1,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-30,Guadeloupe,Jamaica,0,0,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-30,Iceland,Albania,2,0,euro-championship,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-05-30,Italy,Greece,0,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-30,Liechtenstein,United States,1,4,international,Liechtenstein,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-05-30,Martinique,Dominica,0,0,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
+1990-05-31,Andalusia,Yugoslavia,0,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-01,Jordan,Iraq,0,2,international,Jordan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-02,Belgium,Mexico,3,0,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-02,Hungary,Colombia,3,1,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-02,Malta,Republic of Ireland,0,3,international,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-02,Switzerland,United States,2,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-02,Tunisia,England,1,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-03,Gambia,Mauritania,2,1,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-06-03,Yugoslavia,Netherlands,0,2,international,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-06,Belgium,Poland,1,1,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-06,Norway,Denmark,1,2,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-07,Namibia,Mauritius,1,2,international,Namibia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-08,Argentina,Cameroon,0,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-09,Italy,Austria,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1990-06-09,Russia,Romania,0,2,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-09,Soviet Union,Romania,0,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-06-09,United Arab Emirates,Colombia,0,2,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-10,Botswana,Mauritius,0,1,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-06-10,Brazil,Sweden,2,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-10,Germany,Yugoslavia,4,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-10,United States,Czech Republic,1,5,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-10,West Germany,Yugoslavia,4,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-06-11,Costa Rica,Scotland,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-11,England,Republic of Ireland,1,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-12,Belgium,South Korea,2,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-12,Netherlands,Egypt,1,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-13,Argentina,Russia,2,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-13,Argentina,Soviet Union,2,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-06-13,Uruguay,Spain,0,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-14,Cameroon,Romania,2,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-14,Italy,United States,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1990-06-14,Yugoslavia,Colombia,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-15,Austria,Czech Republic,0,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-15,Germany,United Arab Emirates,5,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-15,West Germany,United Arab Emirates,5,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-06-16,Brazil,Costa Rica,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-16,England,Netherlands,0,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-16,Sweden,Scotland,1,2,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-17,Belgium,Uruguay,3,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-17,Republic of Ireland,Egypt,0,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-17,South Korea,Spain,1,3,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-18,Argentina,Romania,1,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-18,Cameroon,Russia,0,4,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-18,Cameroon,Soviet Union,0,4,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-06-19,Austria,United States,2,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-19,Germany,Colombia,1,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-19,Italy,Czech Republic,2,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1990-06-19,West Germany,Colombia,1,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-06-19,Yugoslavia,United Arab Emirates,4,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-20,Brazil,Scotland,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-20,Sweden,Costa Rica,1,2,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-21,Belgium,Spain,1,2,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-21,England,Egypt,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-21,Republic of Ireland,Netherlands,1,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-21,South Korea,Uruguay,0,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-23,Cameroon,Colombia,2,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-23,Czech Republic,Costa Rica,4,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-24,Brazil,Argentina,0,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-24,Germany,Netherlands,2,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-24,West Germany,Netherlands,2,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-06-25,Italy,Uruguay,2,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1990-06-25,Republic of Ireland,Romania,0,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-26,England,Belgium,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-26,Spain,Yugoslavia,1,2,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-06-30,Argentina,Yugoslavia,0,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-06-30,Italy,Republic of Ireland,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1990-06-30,Republic of Ireland,Italy,0,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-06-30,Yugoslavia,Argentina,0,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-07-01,Cameroon,England,2,3,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-07-01,Czech Republic,West Germany,0,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-07-01,Germany,Czech Republic,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-07-03,Argentina,Italy,1,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-07-03,Italy,Argentina,1,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1990-07-04,Germany,England,1,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-07-04,West Germany,England,1,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-07-06,Malawi,Tanzania,2,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-07-07,Italy,England,2,1,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1990-07-08,Germany,Argentina,1,0,world-cup,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1990-07-08,West Germany,Argentina,1,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1990 FIFA Men's World Cup,1
+1990-07-09,Barbados,Grenada,1,1,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-07-09,Malawi,Tanzania,1,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-07-10,Barbados,Grenada,4,0,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-07-11,Malawi,Tanzania,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-07-23,Barbados,Martinique,2,2,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
+1990-07-27,China,North Korea,2,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dynasty Cup,0
+1990-07-27,Japan,South Korea,0,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Dynasty Cup,1
+1990-07-27,Trinidad and Tobago,Jamaica,0,0,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
+1990-07-29,China,Japan,1,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dynasty Cup,0
+1990-07-29,South Korea,North Korea,1,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Dynasty Cup,1
+1990-07-29,Togo,Mali,0,0,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-07-31,China,South Korea,0,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dynasty Cup,0
+1990-07-31,Japan,North Korea,0,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Dynasty Cup,1
+1990-08-03,China,South Korea,1,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Dynasty Cup,0
+1990-08-04,Malawi,DR Congo,1,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-06,Malawi,DR Congo,1,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-08,Faroe Islands,Iceland,2,3,international,Faroe Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-08,Malawi,DR Congo,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-09,Tunisia,Morocco,0,0,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-11,Réunion,Congo,2,1,international,Réunion,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-12,Eswatini,Mozambique,0,0,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-12,Gabon,Mali,0,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-12,Zambia,DR Congo,0,0,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-13,Mozambique,Zimbabwe,2,3,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-08-15,France,Poland,0,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-16,New Zealand,China,2,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-17,Egypt,Ethiopia,2,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-17,Sudan,Mozambique,1,0,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-18,Indonesia,Singapore,6,0,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-18,Malawi,Congo,0,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Angola,Madagascar,0,1,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Burkina Faso,Benin,2,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Cameroon,Mali,0,0,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,DR Congo,Tanzania,2,0,international,Zaïre,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Gabon,Uganda,1,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Guinea,Sierra Leone,1,2,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Ivory Coast,Mauritania,2,0,international,Ivory Coast,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Morocco,Niger,2,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Nigeria,Togo,3,0,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Tunisia,Chad,2,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-19,Zambia,Eswatini,5,0,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-08-21,Austria,Switzerland,1,3,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-21,Madagascar,Comoros,1,0,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indian Ocean Island Games,0
+1990-08-22,Norway,Sweden,1,2,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-23,Réunion,Comoros,0,1,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Indian Ocean Island Games,1
+1990-08-24,New Zealand,China,1,0,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-25,Botswana,Eswatini,3,2,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-25,Indonesia,Australia,0,3,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-25,Madagascar,Réunion,0,0,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indian Ocean Island Games,0
+1990-08-25,Mauritius,Seychelles,2,0,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Indian Ocean Island Games,1
+1990-08-25,Zambia,Zimbabwe,3,1,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-08-26,Botswana,Zimbabwe,0,7,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-27,Madagascar,Seychelles,6,0,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indian Ocean Island Games,0
+1990-08-27,Mali,Burkina Faso,2,1,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-27,Mauritius,Comoros,4,0,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Indian Ocean Island Games,1
+1990-08-29,Finland,Czech Republic,1,1,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-29,Portugal,Germany,1,1,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-29,Russia,Romania,1,2,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-08-29,Seychelles,Comoros,3,1,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Indian Ocean Island Games,1
+1990-08-30,Madagascar,Mauritius,5,1,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indian Ocean Island Games,0
+1990-08-30,Mozambique,Angola,0,2,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-01,Eswatini,Angola,1,1,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-01,Ghana,Nigeria,1,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-01,Madagascar,Zambia,0,0,international,Madagascar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-01,Sierra Leone,Cameroon,1,1,international,Sierra Leone,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-01,Tanzania,Gabon,0,0,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-01,Uganda,DR Congo,2,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-02,Burkina Faso,Togo,2,0,international,Burkina Faso,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-02,Chad,Egypt,0,0,international,Chad,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-02,Congo,Zimbabwe,2,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-02,Mali,Guinea,1,1,international,Mali,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-02,Morocco,Mauritania,4,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-02,Mozambique,Kenya,2,1,international,Mozambique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-05,Greece,Albania,1,0,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-05,Hungary,Turkey,4,1,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-05,Iceland,France,1,2,euro-championship,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-09-05,Sweden,Denmark,0,1,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-06,South Korea,Australia,1,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-08,Malaysia,Yemen,0,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-09,South Korea,Australia,1,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-11,Denmark,Wales,1,0,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-12,Belgium,German DR,0,2,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-12,England,Hungary,1,0,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-12,Faroe Islands,Austria,1,0,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UEFA Euro qualification,1
+1990-09-12,Finland,Portugal,0,0,euro-championship,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-09-12,Northern Ireland,Yugoslavia,0,2,euro-championship,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-09-12,Republic of Ireland,Morocco,1,0,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-12,Russia,Norway,2,0,euro-championship,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-09-12,Scotland,Romania,2,1,euro-championship,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-09-12,Spain,Brazil,3,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-12,Switzerland,Bulgaria,2,0,euro-championship,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-09-13,Singapore,Malaysia,3,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-15,United States,Trinidad and Tobago,3,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-23,China,Pakistan,3,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1990-09-23,Kuwait,Hong Kong,2,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-23,South Korea,Singapore,7,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-23,Yemen,Thailand,0,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-24,Iran,Malaysia,3,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-24,Saudi Arabia,Bangladesh,4,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-25,China,Singapore,5,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1990-09-25,Hong Kong,Thailand,0,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-25,Pakistan,South Korea,0,7,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-25,Yemen,Kuwait,0,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-26,Bangladesh,Japan,0,3,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-26,Czech Republic,Iceland,1,0,euro-championship,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-09-26,Italy,Netherlands,1,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-26,Malaysia,North Korea,0,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-26,Romania,Poland,2,1,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-26,Sweden,Bulgaria,2,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-27,China,South Korea,0,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1990-09-27,Hong Kong,Yemen,2,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-27,Singapore,Pakistan,6,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-27,Thailand,Kuwait,2,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-28,Japan,Saudi Arabia,0,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-28,North Korea,Iran,1,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-09-30,Aruba,Curaçao,1,3,international,Aruba,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-30,Benin,Nigeria,0,1,international,Benin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-30,Botswana,Cameroon,0,0,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-09-30,Niger,Ivory Coast,0,1,international,Niger,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-09-30,Togo,Ghana,0,1,international,Togo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-10-01,China,Thailand,0,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1990-10-01,Iran,Japan,1,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-10-01,Saudi Arabia,North Korea,0,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-10-01,South Korea,Kuwait,1,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-10-03,South Korea,Iran,0,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-10-03,Thailand,North Korea,0,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-10-05,South Korea,Thailand,1,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-10-06,Iran,North Korea,0,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1990-10-10,Denmark,Faroe Islands,4,1,euro-championship,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-10,Greece,Egypt,6,1,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-10-10,Norway,Hungary,0,0,euro-championship,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-10,Poland,United States,2,3,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-10-10,Spain,Iceland,2,1,euro-championship,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-10,Sweden,Germany,1,3,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-10-11,North Korea,South Korea,2,1,international,North Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-10-13,France,Czech Republic,2,1,euro-championship,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-14,Benin,Togo,1,1,international,Benin,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-10-14,Ghana,Burkina Faso,2,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-10-14,Niger,Mauritania,7,1,international,Niger,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-10-17,Croatia,United States,2,1,international,Croatia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-10-17,England,Poland,2,0,euro-championship,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-17,Hungary,Italy,1,1,euro-championship,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-17,Northern Ireland,Denmark,1,1,euro-championship,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-17,Portugal,Netherlands,1,0,euro-championship,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-17,Republic of Ireland,Turkey,5,0,euro-championship,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-17,Romania,Bulgaria,0,3,euro-championship,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-17,Scotland,Switzerland,2,1,euro-championship,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-17,Wales,Belgium,3,1,euro-championship,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-23,South Korea,North Korea,1,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-10-31,Greece,Malta,4,0,euro-championship,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-31,Hungary,Cyprus,4,2,euro-championship,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-31,Luxembourg,Germany,2,3,euro-championship,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-10-31,Norway,Cameroon,6,1,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-10-31,Yugoslavia,Austria,4,1,euro-championship,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-01,Fiji,Solomon Islands,0,0,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1990-11-01,New Caledonia,Vanuatu,0,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1990-11-03,Italy,Russia,0,0,euro-championship,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-03,New Caledonia,Papua New Guinea,2,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1990-11-03,Solomon Islands,Vanuatu,1,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1990-11-05,New Caledonia,Fiji,0,0,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1990-11-05,Papua New Guinea,Vanuatu,0,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1990-11-06,Solomon Islands,Papua New Guinea,1,0,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1990-11-06,Vanuatu,Fiji,1,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1990-11-07,Tunisia,Norway,1,3,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-11-08,Brazil,Chile,0,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-11-08,New Caledonia,Solomon Islands,3,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Melanesia Cup,0
+1990-11-08,Papua New Guinea,Fiji,0,1,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Melanesia Cup,1
+1990-11-09,Angola,Mozambique,4,2,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-11-10,Congo,Mozambique,1,0,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-11-11,Angola,Congo,1,0,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-11-11,Tunisia,Finland,1,2,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-11-14,Austria,Northern Ireland,0,0,euro-championship,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-14,Bulgaria,Scotland,1,1,euro-championship,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-14,Cyprus,Norway,0,3,euro-championship,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-14,Czech Republic,Spain,3,2,euro-championship,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-14,Denmark,Yugoslavia,0,2,euro-championship,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-14,Luxembourg,Wales,0,1,euro-championship,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-14,Republic of Ireland,England,1,1,euro-championship,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-14,San Marino,Switzerland,0,4,euro-championship,San Marino,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-14,Turkey,Poland,0,1,euro-championship,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-17,Albania,France,0,1,euro-championship,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-18,Ethiopia,Tunisia,0,2,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1990-11-18,Trinidad and Tobago,United States,0,0,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-11-21,Netherlands,Greece,2,0,euro-championship,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-21,United States,Russia,0,0,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-11-24,Trinidad and Tobago,Russia,0,2,international,Trinidad and Tobago,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-11-25,Malta,Finland,1,1,euro-championship,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-11-29,Tanzania,Uganda,1,1,international,Tanzania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-11-30,Guatemala,Russia,0,3,international,Guatemala,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-12-05,Romania,San Marino,6,0,euro-championship,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-12-08,Congo,Chad,3,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1990-12-08,Zanzibar,Tanzania,0,0,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1990-12-09,Cameroon,Gabon,2,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1990-12-09,Kenya,Uganda,2,2,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1990-12-09,Malawi,Zimbabwe,0,0,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1990-12-11,Central African Republic,Gabon,0,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1990-12-11,Malawi,Tanzania,1,0,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1990-12-12,Chad,Equatorial Guinea,1,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1990-12-12,Kenya,Sudan,1,2,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1990-12-12,Mexico,Brazil,0,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-12-12,Zanzibar,Zimbabwe,0,1,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1990-12-13,Central African Republic,Cameroon,0,3,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1990-12-13,Congo,Equatorial Guinea,6,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1990-12-14,Sudan,Uganda,2,2,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1990-12-14,Tanzania,Zimbabwe,2,0,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1990-12-14,Zanzibar,Malawi,2,1,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1990-12-15,Chad,Cameroon,0,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1990-12-15,Congo,Gabon,1,0,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1990-12-17,Central African Republic,Equatorial Guinea,3,3,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1990-12-17,Chad,Gabon,2,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1990-12-17,Tanzania,Uganda,1,1,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1990-12-17,Zanzibar,Sudan,0,1,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1990-12-18,Algeria,Senegal,1,0,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-12-18,Congo,Cameroon,2,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1990-12-19,Germany,Switzerland,4,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-12-19,Greece,Poland,1,2,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-12-19,Malta,Netherlands,0,8,euro-championship,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-12-19,Portugal,United States,1,0,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-12-19,Spain,Albania,9,0,euro-championship,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1990-12-19,Zanzibar,Tanzania,1,2,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
+1990-12-20,Sudan,Uganda,0,2,international,Zanzibar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
+1990-12-22,Croatia,Romania,2,0,international,Croatia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1990-12-22,Cyprus,Italy,0,4,euro-championship,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0

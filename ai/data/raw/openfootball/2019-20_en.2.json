@@ -1,0 +1,9261 @@
+{
+  "name": "English Championship 2019/20",
+  "matches": [
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-02",
+      "time": "19:45",
+      "team1": "Luton Town",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-03",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-03",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-03",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-03",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-03",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-03",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-03",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-03",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-03",
+      "time": "17:30",
+      "team1": "Nottingham Forest",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-04",
+      "time": "16:30",
+      "team1": "Bristol City",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2019-08-05",
+      "time": "19:45",
+      "team1": "Huddersfield Town",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "12:30",
+      "team1": "Leeds United",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Cardiff City",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Swansea City",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2019-08-10",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-16",
+      "time": "19:45",
+      "team1": "Huddersfield Town",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Nottingham Forest",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-17",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2019-08-18",
+      "time": "12:00",
+      "team1": "Reading FC",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-20",
+      "time": "19:45",
+      "team1": "Derby County",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-20",
+      "time": "19:45",
+      "team1": "Hull City",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-20",
+      "time": "19:45",
+      "team1": "Middlesbrough FC",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-20",
+      "time": "19:45",
+      "team1": "Sheffield Wednesday",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-20",
+      "time": "19:45",
+      "team1": "Birmingham City",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-21",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-21",
+      "time": "19:45",
+      "team1": "Charlton Athletic",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-21",
+      "time": "19:45",
+      "team1": "Fulham FC",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-21",
+      "time": "19:45",
+      "team1": "Leeds United",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-21",
+      "time": "19:45",
+      "team1": "Preston North End",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-21",
+      "time": "19:45",
+      "team1": "Queens Park Rangers",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2019-08-21",
+      "time": "20:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "12:30",
+      "team1": "Derby County",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Cardiff City",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-24",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2019-08-25",
+      "time": "12:00",
+      "team1": "Swansea City",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-30",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "12:30",
+      "team1": "Bristol City",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "Nottingham Forest",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          3,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2019-08-31",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Barnsley FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-13",
+      "time": "19:45",
+      "team1": "Derby County",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "12:30",
+      "team1": "Fulham FC",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          3,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-14",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-15",
+      "time": "12:30",
+      "team1": "Barnsley FC",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2019-09-15",
+      "time": "12:00",
+      "team1": "Huddersfield Town",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "12:30",
+      "team1": "Leeds United",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Stoke City",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Swansea City",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Cardiff City",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Nottingham Forest",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-21",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2019-09-22",
+      "time": "12:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "20:00",
+      "team1": "Stoke City",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-27",
+      "time": "19:45",
+      "team1": "Fulham FC",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "12:30",
+      "team1": "Queens Park Rangers",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          1,
+          4
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-28",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2019-09-29",
+      "time": "13:30",
+      "team1": "Barnsley FC",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-01",
+      "time": "19:45",
+      "team1": "Blackburn Rovers",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-01",
+      "time": "19:45",
+      "team1": "Hull City",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-01",
+      "time": "19:45",
+      "team1": "Leeds United",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-01",
+      "time": "19:45",
+      "team1": "Middlesbrough FC",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-01",
+      "time": "19:45",
+      "team1": "Wigan Athletic",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-01",
+      "time": "20:00",
+      "team1": "Reading FC",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-01",
+      "time": "20:00",
+      "team1": "Stoke City",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-02",
+      "time": "19:45",
+      "team1": "Brentford FC",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-02",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-02",
+      "time": "19:45",
+      "team1": "Charlton Athletic",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-02",
+      "time": "19:45",
+      "team1": "Luton Town",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2019-10-02",
+      "time": "19:45",
+      "team1": "Barnsley FC",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-04",
+      "time": "19:45",
+      "team1": "Birmingham City",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "12:30",
+      "team1": "Fulham FC",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "Nottingham Forest",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2019-10-05",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-18",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "12:30",
+      "team1": "Blackburn Rovers",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-19",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2019-10-20",
+      "time": "14:00",
+      "team1": "Wigan Athletic",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-22",
+      "time": "19:45",
+      "team1": "Birmingham City",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-22",
+      "time": "19:45",
+      "team1": "Millwall FC",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-22",
+      "time": "19:45",
+      "team1": "Queens Park Rangers",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-22",
+      "time": "19:45",
+      "team1": "Sheffield Wednesday",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-22",
+      "time": "19:45",
+      "team1": "Swansea City",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-22",
+      "time": "19:45",
+      "team1": "Preston North End",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-22",
+      "time": "20:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-23",
+      "time": "19:45",
+      "team1": "Derby County",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-23",
+      "time": "19:45",
+      "team1": "Fulham FC",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-23",
+      "time": "19:45",
+      "team1": "Huddersfield Town",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-23",
+      "time": "19:45",
+      "team1": "Nottingham Forest",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2019-10-23",
+      "time": "19:45",
+      "team1": "Bristol City",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-26",
+      "time": "12:30",
+      "team1": "Sheffield Wednesday",
+      "team2": "Leeds United",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-26",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-26",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-26",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-26",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Fulham FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-26",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-26",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-26",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-27",
+      "time": "13:30",
+      "team1": "Bristol City",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-27",
+      "time": "12:00",
+      "team1": "Swansea City",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2019-10-28",
+      "time": "19:45",
+      "team1": "Queens Park Rangers",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-01",
+      "time": "19:45",
+      "team1": "Barnsley FC",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-02",
+      "time": "12:30",
+      "team1": "Wigan Athletic",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Cardiff City",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-02",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-03",
+      "time": "12:00",
+      "team1": "Charlton Athletic",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2019-11-04",
+      "time": "20:00",
+      "team1": "Stoke City",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "12:30",
+      "team1": "Nottingham Forest",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-09",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2019-11-10",
+      "time": "12:00",
+      "team1": "Cardiff City",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-22",
+      "time": "19:45",
+      "team1": "Fulham FC",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "12:30",
+      "team1": "Charlton Athletic",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-23",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2019-11-24",
+      "time": "12:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-26",
+      "time": "20:00",
+      "team1": "Reading FC",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-26",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-26",
+      "time": "19:45",
+      "team1": "Fulham FC",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-26",
+      "time": "19:45",
+      "team1": "Huddersfield Town",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-26",
+      "time": "19:45",
+      "team1": "Luton Town",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-26",
+      "time": "19:45",
+      "team1": "Millwall FC",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-27",
+      "time": "19:45",
+      "team1": "Blackburn Rovers",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-27",
+      "time": "19:45",
+      "team1": "Hull City",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-27",
+      "time": "19:45",
+      "team1": "Middlesbrough FC",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-27",
+      "time": "19:45",
+      "team1": "Queens Park Rangers",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-27",
+      "time": "19:45",
+      "team1": "Sheffield Wednesday",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-11-27",
+      "time": "20:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-29",
+      "time": "19:45",
+      "team1": "Swansea City",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "15:00",
+      "team1": "Nottingham Forest",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "12:30",
+      "team1": "Charlton Athletic",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          5,
+          0
+        ],
+        "ft": [
+          7,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          4,
+          1
+        ],
+        "ft": [
+          5,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-11-30",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-12-02",
+      "time": "19:45",
+      "team1": "Preston North End",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-06",
+      "time": "19:45",
+      "team1": "Millwall FC",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "12:30",
+      "team1": "Huddersfield Town",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "15:00",
+      "team1": "Cardiff City",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-07",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-12-08",
+      "time": "12:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          3,
+          1
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-10",
+      "time": "19:45",
+      "team1": "Nottingham Forest",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-10",
+      "time": "19:45",
+      "team1": "Bristol City",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-10",
+      "time": "19:45",
+      "team1": "Leeds United",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-10",
+      "time": "20:00",
+      "team1": "Stoke City",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-10",
+      "time": "19:45",
+      "team1": "Preston North End",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-10",
+      "time": "19:55",
+      "team1": "Charlton Athletic",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-11",
+      "time": "19:45",
+      "team1": "Barnsley FC",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-11",
+      "time": "19:45",
+      "team1": "Birmingham City",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-11",
+      "time": "19:45",
+      "team1": "Brentford FC",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-11",
+      "time": "19:45",
+      "team1": "Derby County",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-11",
+      "time": "19:45",
+      "team1": "Swansea City",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-12-11",
+      "time": "19:45",
+      "team1": "Wigan Athletic",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-13",
+      "time": "19:45",
+      "team1": "Charlton Athletic",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Nottingham Forest",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          4
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "12:30",
+      "team1": "Birmingham City",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          5,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Reading FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-12-14",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-20",
+      "time": "19:45",
+      "team1": "Middlesbrough FC",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-21",
+      "time": "12:30",
+      "team1": "Cardiff City",
+      "team2": "Preston North End",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-21",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-22",
+      "time": "12:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-12-23",
+      "time": "19:45",
+      "team1": "Blackburn Rovers",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "19:30",
+      "team1": "Reading FC",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Cardiff City",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-12-26",
+      "time": "17:15",
+      "team1": "Leeds United",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Nottingham Forest",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-29",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Barnsley FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-12-30",
+      "time": "19:45",
+      "team1": "Derby County",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "12:45",
+      "team1": "Millwall FC",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "17:15",
+      "team1": "West Bromwich Albion",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "15:00",
+      "team1": "Nottingham Forest",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          6,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-01",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-02",
+      "time": "19:45",
+      "team1": "Swansea City",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2020-01-02",
+      "time": "19:45",
+      "team1": "Derby County",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "12:30",
+      "team1": "Brentford FC",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-11",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Millwall FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2020-01-12",
+      "time": "12:00",
+      "team1": "Cardiff City",
+      "team2": "Swansea City",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-17",
+      "time": "19:45",
+      "team1": "Fulham FC",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-18",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-18",
+      "time": "12:30",
+      "team1": "Queens Park Rangers",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-18",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-18",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-18",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-18",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Brentford FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-18",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-18",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-18",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          0,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-19",
+      "time": "12:00",
+      "team1": "Nottingham Forest",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2020-01-20",
+      "time": "20:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-21",
+      "time": "19:45",
+      "team1": "Middlesbrough FC",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-21",
+      "time": "19:45",
+      "team1": "Barnsley FC",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2020-01-22",
+      "time": "19:45",
+      "team1": "Nottingham Forest",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-22",
+      "time": "19:45",
+      "team1": "Charlton Athletic",
+      "team2": "Fulham FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-25",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-28",
+      "time": "19:45",
+      "team1": "Blackburn Rovers",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-28",
+      "time": "19:45",
+      "team1": "Brentford FC",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-28",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-28",
+      "time": "19:45",
+      "team1": "Hull City",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-28",
+      "time": "19:45",
+      "team1": "Leeds United",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-28",
+      "time": "19:45",
+      "team1": "Luton Town",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-28",
+      "time": "19:45",
+      "team1": "Wigan Athletic",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2020-01-28",
+      "time": "20:00",
+      "team1": "Reading FC",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-01-31",
+      "time": "19:45",
+      "team1": "Derby County",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-01-31",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "12:30",
+      "team1": "Hull City",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          3,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Millwall FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2020-02-01",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-07",
+      "time": "19:45",
+      "team1": "Bristol City",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "12:30",
+      "team1": "Wigan Athletic",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "13:30",
+      "team1": "Barnsley FC",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-08",
+      "time": "17:30",
+      "team1": "Nottingham Forest",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2020-02-09",
+      "time": "13:30",
+      "team1": "Millwall FC",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-11",
+      "time": "19:45",
+      "team1": "Barnsley FC",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-11",
+      "time": "19:45",
+      "team1": "Blackburn Rovers",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-11",
+      "time": "19:45",
+      "team1": "Brentford FC",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-11",
+      "time": "19:45",
+      "team1": "Nottingham Forest",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-11",
+      "time": "19:45",
+      "team1": "Swansea City",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-11",
+      "time": "19:45",
+      "team1": "Wigan Athletic",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-12",
+      "time": "19:45",
+      "team1": "Huddersfield Town",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-12",
+      "time": "19:45",
+      "team1": "Luton Town",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-12",
+      "time": "19:45",
+      "team1": "Millwall FC",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-12",
+      "time": "20:00",
+      "team1": "Reading FC",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-12",
+      "time": "20:00",
+      "team1": "Stoke City",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2020-02-12",
+      "time": "19:45",
+      "team1": "Bristol City",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-14",
+      "time": "19:45",
+      "team1": "Hull City",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "12:30",
+      "team1": "West Bromwich Albion",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Cardiff City",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2020-02-15",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-21",
+      "time": "19:45",
+      "team1": "Derby County",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "12:30",
+      "team1": "Brentford FC",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Nottingham Forest",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2020-02-22",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-25",
+      "time": "19:45",
+      "team1": "Huddersfield Town",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-25",
+      "time": "19:45",
+      "team1": "Luton Town",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-25",
+      "time": "19:45",
+      "team1": "Queens Park Rangers",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-25",
+      "time": "20:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-25",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-26",
+      "time": "19:45",
+      "team1": "Fulham FC",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-26",
+      "time": "19:45",
+      "team1": "Blackburn Rovers",
+      "team2": "Stoke City",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-26",
+      "time": "19:45",
+      "team1": "Hull City",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-26",
+      "time": "19:45",
+      "team1": "Middlesbrough FC",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-26",
+      "time": "19:45",
+      "team1": "Millwall FC",
+      "team2": "Birmingham City",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-26",
+      "time": "19:45",
+      "team1": "Sheffield Wednesday",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 35",
+      "date": "2020-02-26",
+      "time": "20:00",
+      "team1": "Reading FC",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "12:30",
+      "team1": "Hull City",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "Cardiff City",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-02-29",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 36",
+      "date": "2020-03-02",
+      "time": "19:45",
+      "team1": "Middlesbrough FC",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-06",
+      "time": "19:45",
+      "team1": "Nottingham Forest",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "12:30",
+      "team1": "Bristol City",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "Charlton Athletic",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-07",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Luton Town",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 37",
+      "date": "2020-03-08",
+      "time": "15:00",
+      "team1": "Derby County",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "12:30",
+      "team1": "Fulham FC",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "12:30",
+      "team1": "Middlesbrough FC",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "13:00",
+      "team1": "Millwall FC",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "15:00",
+      "team1": "Reading FC",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "15:00",
+      "team1": "Sheffield Wednesday",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-20",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Birmingham City",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 38",
+      "date": "2020-06-21",
+      "time": "12:00",
+      "team1": "Cardiff City",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-26",
+      "time": "19:45",
+      "team1": "Brentford FC",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-27",
+      "time": "12:30",
+      "team1": "Charlton Athletic",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-27",
+      "time": "12:30",
+      "team1": "Preston North End",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-27",
+      "time": "12:30",
+      "team1": "Swansea City",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-27",
+      "time": "13:00",
+      "team1": "Barnsley FC",
+      "team2": "Millwall FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-27",
+      "time": "13:00",
+      "team1": "Derby County",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-27",
+      "time": "15:00",
+      "team1": "Birmingham City",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-27",
+      "time": "15:00",
+      "team1": "Leeds United",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-27",
+      "time": "15:00",
+      "team1": "Wigan Athletic",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-27",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-28",
+      "time": "14:15",
+      "team1": "Nottingham Forest",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 39",
+      "date": "2020-06-28",
+      "time": "12:00",
+      "team1": "Bristol City",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2020-06-30",
+      "time": "17:00",
+      "team1": "Millwall FC",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2020-06-30",
+      "time": "18:00",
+      "team1": "Barnsley FC",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2020-06-30",
+      "time": "18:00",
+      "team1": "Cardiff City",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2020-06-30",
+      "time": "18:00",
+      "team1": "Reading FC",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2020-06-30",
+      "time": "18:30",
+      "team1": "Queens Park Rangers",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2020-06-30",
+      "time": "19:45",
+      "team1": "Leeds United",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2020-06-30",
+      "time": "19:45",
+      "team1": "Wigan Athletic",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2019-07-01",
+      "time": "18:00",
+      "team1": "Birmingham City",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2019-07-01",
+      "time": "18:00",
+      "team1": "Nottingham Forest",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2019-07-01",
+      "time": "19:45",
+      "team1": "Sheffield Wednesday",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2019-07-01",
+      "time": "17:00",
+      "team1": "Preston North End",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 40",
+      "date": "2019-07-02",
+      "time": "17:00",
+      "team1": "Hull City",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-03",
+      "time": "20:15",
+      "team1": "Charlton Athletic",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-04",
+      "time": "12:30",
+      "team1": "Derby County",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-04",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-04",
+      "time": "15:00",
+      "team1": "Brentford FC",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-04",
+      "time": "15:00",
+      "team1": "Bristol City",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-04",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-04",
+      "time": "15:00",
+      "team1": "Huddersfield Town",
+      "team2": "Preston North End",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-04",
+      "time": "15:00",
+      "team1": "Luton Town",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          0,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-04",
+      "time": "15:00",
+      "team1": "Stoke City",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-05",
+      "time": "14:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-05",
+      "time": "15:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 41",
+      "date": "2019-07-05",
+      "time": "12:00",
+      "team1": "Swansea City",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-07",
+      "time": "18:00",
+      "team1": "Brentford FC",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-07",
+      "time": "18:00",
+      "team1": "Luton Town",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-07",
+      "time": "18:00",
+      "team1": "Reading FC",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-07",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-07",
+      "time": "17:00",
+      "team1": "Nottingham Forest",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-08",
+      "time": "15:00",
+      "team1": "Millwall FC",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-08",
+      "time": "17:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-08",
+      "time": "18:00",
+      "team1": "Birmingham City",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-08",
+      "time": "18:00",
+      "team1": "Bristol City",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-08",
+      "time": "18:00",
+      "team1": "Wigan Athletic",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-08",
+      "time": "19:45",
+      "team1": "Sheffield Wednesday",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 42",
+      "date": "2019-07-09",
+      "time": "17:00",
+      "team1": "Leeds United",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-10",
+      "time": "20:15",
+      "team1": "Fulham FC",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-10",
+      "time": "18:00",
+      "team1": "Huddersfield Town",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-11",
+      "time": "12:30",
+      "team1": "Charlton Athletic",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-11",
+      "time": "12:30",
+      "team1": "Derby County",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-11",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-11",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-11",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-11",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-11",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-11",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-12",
+      "time": "13:30",
+      "team1": "Swansea City",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 43",
+      "date": "2019-07-12",
+      "time": "13:30",
+      "team1": "Stoke City",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-14",
+      "time": "17:00",
+      "team1": "West Bromwich Albion",
+      "team2": "Fulham FC",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-14",
+      "time": "18:00",
+      "team1": "Reading FC",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-14",
+      "time": "18:00",
+      "team1": "Wigan Athletic",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          7,
+          0
+        ],
+        "ft": [
+          8,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-14",
+      "time": "19:45",
+      "team1": "Cardiff City",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-14",
+      "time": "19:45",
+      "team1": "Luton Town",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-14",
+      "time": "19:45",
+      "team1": "Millwall FC",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-14",
+      "time": "19:45",
+      "team1": "Sheffield Wednesday",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-15",
+      "time": "17:00",
+      "team1": "Bristol City",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-15",
+      "time": "18:00",
+      "team1": "Birmingham City",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-15",
+      "time": "18:00",
+      "team1": "Nottingham Forest",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-15",
+      "time": "17:00",
+      "team1": "Brentford FC",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 44",
+      "date": "2019-07-16",
+      "time": "17:00",
+      "team1": "Leeds United",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-17",
+      "time": "17:30",
+      "team1": "Huddersfield Town",
+      "team2": "West Bromwich Albion",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-18",
+      "time": "12:30",
+      "team1": "Charlton Athletic",
+      "team2": "Wigan Athletic",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-18",
+      "time": "12:30",
+      "team1": "Stoke City",
+      "team2": "Brentford FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-18",
+      "time": "15:00",
+      "team1": "Blackburn Rovers",
+      "team2": "Reading FC",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-18",
+      "time": "15:00",
+      "team1": "Fulham FC",
+      "team2": "Sheffield Wednesday",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-18",
+      "time": "15:00",
+      "team1": "Hull City",
+      "team2": "Luton Town",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-18",
+      "time": "15:00",
+      "team1": "Middlesbrough FC",
+      "team2": "Cardiff City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-18",
+      "time": "15:00",
+      "team1": "Preston North End",
+      "team2": "Birmingham City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-18",
+      "time": "15:00",
+      "team1": "Queens Park Rangers",
+      "team2": "Millwall FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-18",
+      "time": "15:00",
+      "team1": "Swansea City",
+      "team2": "Bristol City",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-19",
+      "time": "15:00",
+      "team1": "Barnsley FC",
+      "team2": "Nottingham Forest",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 45",
+      "date": "2019-07-19",
+      "time": "14:00",
+      "team1": "Derby County",
+      "team2": "Leeds United",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Birmingham City",
+      "team2": "Derby County",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Brentford FC",
+      "team2": "Barnsley FC",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Bristol City",
+      "team2": "Preston North End",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Cardiff City",
+      "team2": "Hull City",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Leeds United",
+      "team2": "Charlton Athletic",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Luton Town",
+      "team2": "Blackburn Rovers",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Millwall FC",
+      "team2": "Huddersfield Town",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Nottingham Forest",
+      "team2": "Stoke City",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Reading FC",
+      "team2": "Swansea City",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Sheffield Wednesday",
+      "team2": "Middlesbrough FC",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "West Bromwich Albion",
+      "team2": "Queens Park Rangers",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 46",
+      "date": "2019-07-22",
+      "time": "19:30",
+      "team1": "Wigan Athletic",
+      "team2": "Fulham FC",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    }
+  ]
+}

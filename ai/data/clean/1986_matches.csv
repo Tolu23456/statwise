@@ -1,0 +1,444 @@
+date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halftime_home,halftime_away,shots_home,shots_away,shots_on_target_home,shots_on_target_away,corners_home,corners_away,fouls_home,fouls_away,yellows_home,yellows_away,reds_home,reds_away,elo_home,elo_away,odds_home,odds_draw,odds_away,max_odds_home,max_odds_draw,max_odds_away,avg_odds_home,avg_odds_draw,avg_odds_away,asian_handicap_line,asian_handicap_home,asian_handicap_away,over25_odds,under25_odds,max_over25,max_under25,xg_home,xg_away,quality_score,league_tier,is_international,score_conflict,tournament,is_neutral
+1986-01-03,Qatar,China,1,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-17,Qatar,Greece,0,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-22,Gabon,Senegal,0,1,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-22,Portugal,Finland,1,1,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-22,Spain,Russia,2,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-24,Qatar,Tunisia,2,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-25,India,China,0,0,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nehru Cup,0
+1986-01-27,Oman,Tunisia,0,0,international,Oman,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-28,China,Peru,3,1,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Nehru Cup,1
+1986-01-28,Israel,Scotland,0,1,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-29,Canada,Paraguay,0,0,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-29,Egypt,England,0,4,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-01-30,India,Peru,0,1,international,India,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Nehru Cup,0
+1986-02-01,Senegal,Guinea,2,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1986-02-02,Canada,Uruguay,1,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Miami Cup,1
+1986-02-02,Gambia,Guinea-Bissau,3,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1986-02-02,Mauritania,Sierra Leone,0,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1986-02-02,Qatar,Hungary,0,3,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-03,Guinea,Mali,1,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1986-02-04,Gambia,Sierra Leone,1,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1986-02-04,Guinea-Bissau,Mauritania,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1986-02-05,Italy,Germany,1,2,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-05,Jamaica,Paraguay,1,4,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Miami Cup,1
+1986-02-05,Portugal,Luxembourg,2,0,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-05,Senegal,Mali,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1986-02-06,Gambia,Mauritania,3,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1986-02-06,Guinea-Bissau,Sierra Leone,2,3,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1986-02-08,Guinea,Sierra Leone,1,2,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Amílcar Cabral Cup,1
+1986-02-08,Senegal,Gambia,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1986-02-09,Bulgaria,German DR,1,2,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-02-10,Senegal,Sierra Leone,3,1,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Amílcar Cabral Cup,0
+1986-02-14,South Korea,Paraguay,1,3,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Lunar New Year Cup,1
+1986-02-15,Mexico,German DR,1,2,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-02-15,Zambia,Botswana,6,0,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-16,Indonesia,Paraguay,2,3,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-16,Iran,Pakistan,2,0,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-16,Uruguay,Poland,2,2,international,Uruguay,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-16,Zambia,Botswana,3,0,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-17,Saudi Arabia,Algeria,0,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-19,Greece,Cyprus,0,0,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-19,Mexico,Russia,1,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-19,Morocco,Bulgaria,0,0,international,Morocco,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-19,Portugal,German DR,1,3,international,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-19,Spain,Belgium,3,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-20,Iran,Ghana,2,0,international,Iran,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-21,Bahrain,Finland,0,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-21,Saudi Arabia,Algeria,1,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-23,Liberia,Burkina Faso,0,1,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,West African Cup,1
+1986-02-24,Bahrain,Finland,0,4,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-24,Burkina Faso,Togo,0,1,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,West African Cup,1
+1986-02-24,Ghana,Niger,2,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,West African Cup,0
+1986-02-25,Algeria,Mozambique,4,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-25,Ghana,Togo,2,2,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,West African Cup,0
+1986-02-25,Liberia,Niger,3,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,West African Cup,1
+1986-02-25,Saudi Arabia,Wales,1,2,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-26,Burkina Faso,Niger,0,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,West African Cup,1
+1986-02-26,France,Northern Ireland,0,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-26,Ghana,Liberia,3,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,West African Cup,0
+1986-02-26,Grenada,Norway,1,2,international,Grenada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-26,Israel,England,1,2,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-26,Qatar,Paraguay,1,1,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-26,Tunisia,Cameroon,1,1,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-27,Ghana,Burkina Faso,2,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,West African Cup,0
+1986-02-27,Togo,Liberia,1,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,West African Cup,1
+1986-02-28,Egypt,Romania,2,2,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-02-28,Niger,Togo,3,1,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,West African Cup,1
+1986-02-28,Saudi Arabia,Finland,0,1,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-01,Ghana,Burkina Faso,2,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,West African Cup,0
+1986-03-01,Qatar,Paraguay,0,3,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-01,Saint Lucia,Norway,0,6,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-01,Togo,Niger,3,1,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,West African Cup,1
+1986-03-02,Burkina Faso,Niger,1,2,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,West African Cup,1
+1986-03-02,Egypt,Romania,0,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-02,Ghana,Togo,1,0,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,West African Cup,0
+1986-03-03,Guadeloupe,Norway,1,2,international,Guadeloupe,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-05,Martinique,Norway,0,1,international,Martinique,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-05,Thailand,Indonesia,1,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,King's Cup,0
+1986-03-06,Mexico,Denmark,1,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-03-07,Egypt,Senegal,0,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1986-03-07,Ivory Coast,Mozambique,3,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-08,Algeria,Morocco,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-08,Bahrain,Paraguay,1,2,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-08,Cameroon,Zambia,3,2,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-10,Egypt,Ivory Coast,2,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1986-03-10,Mozambique,Senegal,0,2,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-11,Algeria,Zambia,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-11,Bahrain,Iceland,2,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-11,Cameroon,Morocco,1,1,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-12,German DR,Netherlands,0,1,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-12,Germany,Brazil,2,0,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-12,Saudi Arabia,Paraguay,0,0,international,Saudi Arabia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-12,Turkey,Switzerland,1,0,international,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-13,Egypt,Mozambique,2,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1986-03-13,Ivory Coast,Senegal,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-14,Algeria,Cameroon,2,3,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-14,Djibouti,Ethiopia,1,5,international,Djibouti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-14,Iraq,Romania,1,1,international,Iraq,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-14,Morocco,Zambia,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-15,Bahrain,Iceland,0,2,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-16,Hungary,Brazil,3,0,international,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-17,Cameroon,Ivory Coast,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-17,Egypt,Morocco,1,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1986-03-18,Djibouti,Ethiopia,1,1,international,Djibouti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-19,Kuwait,Iceland,1,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-20,Ivory Coast,Morocco,3,2,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,African Cup of Nations,1
+1986-03-21,Egypt,Cameroon,0,0,international,Egypt,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations,0
+1986-03-22,Bahrain,Iraq,0,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1986-03-23,Qatar,Oman,2,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-03-23,Saudi Arabia,Kuwait,1,3,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-03-24,United Arab Emirates,Iraq,2,2,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-03-25,Bahrain,Saudi Arabia,2,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1986-03-25,Kuwait,Oman,2,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-03-26,France,Argentina,2,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-26,Greece,German DR,2,0,international,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-26,Italy,Austria,2,1,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-26,Northern Ireland,Denmark,1,1,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-26,Republic of Ireland,Wales,0,1,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-26,Russia,England,0,1,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-26,Scotland,Romania,3,0,international,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-26,Spain,Poland,3,0,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-03-27,Qatar,Iraq,1,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-03-28,Saudi Arabia,Oman,3,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-03-28,United Arab Emirates,Kuwait,0,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-03-29,Bahrain,Qatar,0,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1986-03-30,Iraq,Saudi Arabia,1,2,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-03-30,Oman,United Arab Emirates,0,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-04-01,Brazil,Peru,4,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-01,Kuwait,Qatar,2,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-04-02,Bahrain,Oman,0,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1986-04-02,Saudi Arabia,United Arab Emirates,0,2,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-04-03,Iraq,Kuwait,1,2,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-04-05,Bahrain,United Arab Emirates,1,3,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1986-04-05,Qatar,Saudi Arabia,0,2,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-04-06,Oman,Iraq,2,3,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-04-07,Bahrain,Kuwait,1,1,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
+1986-04-07,Qatar,United Arab Emirates,3,2,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gulf Cup,1
+1986-04-08,Brazil,German DR,3,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-09,Bulgaria,Denmark,3,0,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-09,Guernsey,Alderney,7,0,international,Guernsey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1986-04-09,Switzerland,Germany,0,1,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-13,Mexico,Uruguay,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-04-17,Brazil,Finland,3,0,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-21,Wales,Uruguay,0,0,international,Wales,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-23,Belgium,Bulgaria,2,0,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-23,Czech Republic,German DR,2,0,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-23,England,Scotland,2,1,international,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Rous Cup,0
+1986-04-23,Northern Ireland,Morocco,2,1,international,Northern Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-23,Republic of Ireland,Uruguay,1,1,international,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-23,Romania,Russia,2,1,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-25,China,Nepal,5,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-04-25,Pakistan,Sri Lanka,1,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-26,Eswatini,Botswana,0,1,international,Swaziland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-26,Pakistan,South Korea,1,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-27,Mexico,Canada,3,0,international,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-27,Nepal,Sri Lanka,2,2,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-04-28,Pakistan,China,0,3,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-29,Netherlands,Scotland,0,0,international,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-29,South Korea,Nepal,5,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-04-30,Brazil,Yugoslavia,4,2,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-30,Bulgaria,North Korea,3,0,international,Bulgaria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-30,Norway,Argentina,1,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-04-30,South Korea,Sri Lanka,4,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-05-01,China,Sri Lanka,3,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-05-01,Sweden,Greece,0,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-02,China,South Korea,1,1,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-05-02,Pakistan,Nepal,5,0,international,Pakistan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-06,Switzerland,Algeria,2,0,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-07,Brazil,Chile,1,1,international,Brazil,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-07,Russia,Finland,0,0,international,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-09,French Guiana,Réunion,0,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-05-09,Jersey,Guernsey,3,2,international,Jersey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Muratti Vase,0
+1986-05-10,Canada,Wales,2,0,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-11,Germany,Yugoslavia,1,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-11,Italy,China,2,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-11,Japan,Algeria,2,1,international,Japan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Kirin Cup,0
+1986-05-13,Norway,Denmark,1,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-14,Austria,Sweden,1,0,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-14,Germany,Netherlands,3,1,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-16,Denmark,Poland,1,0,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-17,Mexico,England,0,3,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-05-19,Belgium,Yugoslavia,1,3,international,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-19,Canada,Wales,0,3,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-21,Panama,Dominican Republic,2,1,international,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-24,Canada,England,0,1,international,Canada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-25,Iceland,Republic of Ireland,1,2,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-27,Czech Republic,Republic of Ireland,0,1,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-05-28,China,Iran,2,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-29,Iceland,Czech Republic,1,2,international,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-05-31,Bulgaria,Italy,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-05-31,Macau,Hong Kong,2,3,international,Macau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-01,Canada,France,0,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-01,Spain,Brazil,0,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-02,Argentina,South Korea,3,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-02,Morocco,Poland,0,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-02,Russia,Hungary,6,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-02,Soviet Union,Hungary,6,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-03,Algeria,Northern Ireland,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-03,Belgium,Mexico,1,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-03,Djibouti,Ethiopia,0,2,international,Djibouti,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-03,Mexico,Belgium,2,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1986-06-03,Portugal,England,1,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-04,Nepal,Hong Kong,4,2,international,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-04,Paraguay,Iraq,1,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-04,Romania,Norway,3,1,international,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-04,Scotland,Denmark,0,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-04,Uruguay,West Germany,1,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-04,Uruguay,Germany,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-05,France,Soviet Union,1,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-05,France,Russia,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-05,Italy,Argentina,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-05,South Korea,Bulgaria,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-06,Brazil,Algeria,1,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-06,England,Morocco,0,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-06,Hungary,Canada,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-06,Mauritius,Réunion,0,1,international,Mauritius,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-07,Mexico,Paraguay,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1986-06-07,Nepal,Bhutan,4,0,international,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-07,Northern Ireland,Spain,1,2,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-07,Poland,Portugal,1,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-08,Denmark,Uruguay,6,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-08,Germany,Scotland,2,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-08,Iraq,Belgium,1,2,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-08,West Germany,Scotland,2,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-09,Hungary,France,0,3,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-09,Russia,Canada,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-09,Soviet Union,Canada,2,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-10,Argentina,Bulgaria,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-10,South Korea,Italy,2,3,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-11,England,Poland,3,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-11,Guyana,Barbados,2,1,international,Guyana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-11,Iraq,Mexico,0,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-11,Mexico,Iraq,1,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1986-06-11,Paraguay,Belgium,2,2,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-11,Portugal,Morocco,1,3,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-12,Algeria,Spain,0,3,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-12,Northern Ireland,Brazil,0,3,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-13,Denmark,West Germany,2,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-13,Denmark,Germany,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-13,Réunion,Mauritius,0,0,international,Réunion,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-13,Scotland,Uruguay,0,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-15,Mexico,Bulgaria,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1986-06-15,Russia,Belgium,3,4,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-15,Soviet Union,Belgium,3,4,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-16,Argentina,Uruguay,1,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-16,Brazil,Poland,4,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-17,Italy,France,0,2,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-17,Morocco,Germany,0,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-17,Morocco,West Germany,0,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-18,Denmark,Spain,1,5,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-18,England,Paraguay,3,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-21,Brazil,France,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-21,Malawi,Zambia,0,2,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-21,Mexico,Germany,0,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
+1986-06-21,West Germany,Mexico,0,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-22,Argentina,England,2,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-22,Malawi,Zambia,0,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-06-22,Spain,Belgium,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-25,Argentina,Belgium,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-25,France,Germany,0,2,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-25,France,West Germany,0,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-28,Belgium,France,2,4,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-28,France,Belgium,4,2,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-29,Argentina,West Germany,3,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-29,Argentina,Germany,3,2,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-30,Myanmar,India,3,1,international,Burma,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-07-06,Malawi,Uganda,2,1,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-07-08,Malawi,Uganda,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-07-10,Malawi,Uganda,0,0,international,Malawi,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-07-24,Malaysia,India,3,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1986-07-25,Japan,Syria,2,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1986-07-26,Liberia,Guinea,0,0,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-07-26,Malaysia,Thailand,2,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1986-07-27,Nigeria,Togo,2,2,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-07-28,Guinea,Ivory Coast,0,2,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-07-29,Ghana,Nigeria,2,0,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-07-30,India,Thailand,3,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1986-07-30,Liberia,Ivory Coast,0,2,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-07-31,China,Congo,1,1,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Great Wall Cup,0
+1986-07-31,Ghana,Togo,1,1,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-08-01,Liberia,Guinea,2,1,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-01,Malaysia,Japan,2,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
+1986-08-02,Ghana,Ivory Coast,0,1,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-08-02,Liberia,Togo,1,0,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-03,Australia,Czech Republic,1,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-06,Australia,Czech Republic,0,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-06,Finland,Sweden,1,3,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-10,Australia,Czech Republic,0,3,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-12,Bahrain,Oman,2,3,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-13,Senegal,Gabon,1,0,international,Senegal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-14,Bahrain,Oman,2,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-16,Guinea,Gambia,2,1,international,Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-08-19,Switzerland,France,2,0,international,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-20,Finland,German DR,1,0,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-20,Indonesia,Algeria,0,1,international,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indonesia Tournament,0
+1986-08-20,Norway,Romania,2,2,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-20,Sweden,Russia,0,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-23,Malaysia,Algeria,2,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-24,China,North Korea,0,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merlion Cup,1
+1986-08-24,Oman,Bahrain,1,0,international,Oman,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-24,Singapore,Canada,0,1,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merlion Cup,0
+1986-08-26,Oman,Bahrain,1,2,international,Oman,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-27,Austria,Switzerland,1,1,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-08-27,Canada,North Korea,0,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merlion Cup,1
+1986-08-30,Gambia,Guinea,0,1,international,Gambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-08-30,Singapore,North Korea,0,2,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merlion Cup,0
+1986-08-31,China,Canada,1,0,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merlion Cup,1
+1986-09-01,Singapore,China,0,3,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merlion Cup,0
+1986-09-03,Singapore,China,1,2,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merlion Cup,0
+1986-09-04,Canada,North Korea,0,2,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merlion Cup,1
+1986-09-06,China,North Korea,2,1,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merlion Cup,1
+1986-09-06,Singapore,Canada,0,1,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merlion Cup,0
+1986-09-07,Singapore,Saudi Arabia,0,4,international,Singapore,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-09,Norway,Hungary,0,0,international,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-10,Belgium,Republic of Ireland,2,2,euro-championship,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-09-10,Czech Republic,Netherlands,1,0,international,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-10,Finland,Wales,1,1,euro-championship,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-09-10,German DR,Denmark,0,1,international,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-10,Iceland,France,0,0,euro-championship,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-09-10,Romania,Austria,4,0,euro-championship,Romania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-09-10,Scotland,Bulgaria,0,0,euro-championship,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-09-10,Sweden,England,1,0,international,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-17,Fiji,New Zealand,2,4,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-19,Fiji,New Zealand,1,2,international,Fiji,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-20,China,Bahrain,5,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-20,Iran,Thailand,4,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-09-20,Japan,Nepal,5,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-20,Kuwait,Bangladesh,4,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-20,South Korea,India,3,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1986-09-21,Iraq,Oman,4,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-21,Malaysia,Saudi Arabia,1,3,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-21,Qatar,Indonesia,1,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-21,Uganda,Rwanda,1,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-21,United Arab Emirates,Pakistan,1,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-22,China,India,2,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-22,Japan,Iran,0,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-22,Nepal,Kuwait,0,5,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-23,Pakistan,Iraq,1,5,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-23,Qatar,Malaysia,1,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-23,United Arab Emirates,Thailand,2,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-24,Denmark,Germany,0,2,international,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-24,Iceland,Russia,1,1,euro-championship,Iceland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-09-24,Iran,Bangladesh,4,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-24,Japan,Kuwait,0,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-24,Norway,German DR,0,0,euro-championship,Norway,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-09-24,South Korea,Bahrain,0,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1986-09-24,Spain,Greece,3,1,international,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-24,Sweden,Switzerland,2,0,euro-championship,Sweden,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-09-25,Indonesia,Saudi Arabia,0,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-25,Thailand,Oman,0,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-25,United Arab Emirates,Iraq,2,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-26,Bahrain,India,3,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-26,Iran,Kuwait,0,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-26,Nepal,Bangladesh,0,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-27,Indonesia,Malaysia,1,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-27,Oman,Pakistan,3,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-27,Thailand,Iraq,1,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-27,Zambia,DR Congo,2,2,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-28,Iran,Nepal,6,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-28,Japan,Bangladesh,4,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-28,South Korea,China,4,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1986-09-28,Zambia,DR Congo,0,1,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-09-29,Qatar,Saudi Arabia,0,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-29,Thailand,Pakistan,6,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-29,United Arab Emirates,Oman,0,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-09-30,Botswana,Malawi,2,0,international,Botswana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-10-01,Kuwait,China,1,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-10-01,Saudi Arabia,Iraq,1,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-10-01,South Korea,Iran,1,1,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1986-10-01,United Arab Emirates,Indonesia,2,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-10-03,Saudi Arabia,Kuwait,2,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-10-03,South Korea,Indonesia,4,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1986-10-04,Indonesia,Kuwait,0,5,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
+1986-10-05,Angola,Gabon,1,0,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-10-05,Central African Republic,Congo,1,2,international,Central African Republic,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-10-05,Ethiopia,Tanzania,4,2,international,Ethiopia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-10-05,Sierra Leone,Liberia,2,1,international,Sierra Leone,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-10-05,South Korea,Saudi Arabia,2,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Asian Games,0
+1986-10-05,Uganda,Somalia,5,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-10-07,Kenya,Somalia,2,1,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-10-07,Poland,North Korea,2,2,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-10-08,Israel,Romania,2,4,international,Israel,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-10-08,Italy,Greece,2,0,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-10-11,France,Russia,0,2,euro-championship,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-11,Uganda,Kenya,3,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-10-12,Portugal,Sweden,1,1,euro-championship,Portugal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-14,Luxembourg,Belgium,0,6,euro-championship,Luxembourg,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-15,Austria,Albania,3,0,euro-championship,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-15,Czech Republic,Finland,3,0,euro-championship,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-15,England,Northern Ireland,3,0,euro-championship,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-15,Germany,Spain,2,2,international,Germany,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-10-15,Hungary,Netherlands,0,1,euro-championship,Hungary,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-15,Poland,Greece,2,1,euro-championship,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-15,Republic of Ireland,Scotland,0,0,euro-championship,Republic of Ireland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-19,Congo,Central African Republic,5,1,international,Congo,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-10-19,Gabon,Angola,1,0,international,Gabon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-10-19,Liberia,Sierra Leone,1,1,international,Liberia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-10-19,Somalia,Uganda,0,0,international,Somalia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
+1986-10-25,New Zealand,Australia,1,1,international,New Zealand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Trans-Tasman Cup,0
+1986-10-28,Honduras,Panama,1,0,international,Nicaragua,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-10-29,Austria,Germany,4,1,international,Austria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-10-29,Denmark,Finland,1,0,euro-championship,Denmark,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-29,German DR,Iceland,2,0,euro-championship,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-29,Russia,Norway,4,0,euro-championship,Soviet Union,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-29,Switzerland,Portugal,1,1,euro-championship,Switzerland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-29,Tunisia,Bulgaria,3,3,international,Tunisia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-10-29,Yugoslavia,Turkey,4,0,euro-championship,Yugoslavia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-10-30,Cuba,Panama,1,1,international,Nicaragua,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-11-02,Australia,New Zealand,2,1,international,Australia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Trans-Tasman Cup,0
+1986-11-12,Czech Republic,Denmark,0,0,euro-championship,Czechoslovakia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-12,England,Yugoslavia,2,0,euro-championship,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-12,Greece,Hungary,2,1,euro-championship,Greece,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-12,Poland,Republic of Ireland,1,0,international,Poland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-11-12,Scotland,Luxembourg,3,0,euro-championship,Scotland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-12,Spain,Romania,1,0,euro-championship,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-12,Turkey,Northern Ireland,0,0,euro-championship,Turkey,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-15,Italy,Switzerland,3,2,euro-championship,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-16,Malta,Sweden,0,5,euro-championship,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-19,Belgium,Bulgaria,1,1,euro-championship,Belgium,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-19,German DR,France,0,0,euro-championship,German DR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-19,Netherlands,Poland,0,0,euro-championship,Netherlands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-11-23,China,Australia,0,2,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-11-25,Kenya,Rwanda,2,3,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-12-03,Albania,Spain,1,2,euro-championship,Albania,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-12-03,Cyprus,Greece,2,4,euro-championship,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-12-04,Nepal,Bangladesh,1,0,international,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-12-06,Malta,Italy,0,2,euro-championship,Malta,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0
+1986-12-06,South Korea,Malaysia,2,1,international,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+1986-12-07,Angola,Tanzania,1,0,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-12-09,Equatorial Guinea,Cameroon,0,2,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1986-12-10,Angola,Zambia,0,1,international,Angola,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-12-10,Congo,Gabon,0,1,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1986-12-11,Algeria,Ivory Coast,2,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-12-11,Chad,Cameroon,1,3,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1986-12-11,Nepal,South Korea,1,2,international,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-12-11,Saint Lucia,Saint Vincent and the Grenadines,5,1,international,Saint Lucia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Windward Islands Tournament,0
+1986-12-12,Central African Republic,Congo,1,3,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1986-12-13,Equatorial Guinea,Chad,0,1,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UDEAC Cup,0
+1986-12-14,Algeria,Ivory Coast,2,1,international,Algeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
+1986-12-14,Central African Republic,Gabon,0,1,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1986-12-16,Congo,Cameroon,0,1,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1986-12-17,Chad,Gabon,0,0,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1986-12-19,Chad,Cameroon,1,4,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UDEAC Cup,1
+1986-12-21,Cyprus,Netherlands,0,2,euro-championship,Cyprus,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,UEFA Euro qualification,0

@@ -237,8 +237,8 @@ class FootballPredictor:
         hist_df = history if isinstance(history, pd.DataFrame) else pd.DataFrame()
         X = self.feature_pipe.build_features([match], hist_df)
 
-        outcome_probs = self._outcome_pipe.predict_proba(X)[0]
-        goals_probs   = self._goals_pipe.predict_proba(X)[0]
+        outcome_probs = self._outcome_pipe.predict_proba(X)[0]  # ty:ignore[unresolved-attribute]
+        goals_probs   = self._goals_pipe.predict_proba(X)[0]  # ty:ignore[unresolved-attribute]
 
         p_home, p_draw, p_away = float(outcome_probs[0]), float(outcome_probs[1]), float(outcome_probs[2])
         p_over25 = float(goals_probs[1]) if len(goals_probs) > 1 else 0.5

@@ -1,0 +1,5159 @@
+{
+  "name": "Netherlands Eredivisie 2018/19",
+  "matches": [
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-10",
+      "time": "20:00",
+      "team1": "PEC Zwolle",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          3
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-11",
+      "time": "18:30",
+      "team1": "Willem II",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-11",
+      "time": "18:30",
+      "team1": "AFC Ajax",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-11",
+      "time": "20:45",
+      "team1": "PSV Eindhoven",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-11",
+      "time": "20:45",
+      "team1": "SBV Excelsior",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-12",
+      "time": "12:15",
+      "team1": "ADO Den Haag",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-12",
+      "time": "14:30",
+      "team1": "De Graafschap",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-12",
+      "time": "14:30",
+      "team1": "Vitesse",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 1",
+      "date": "2018-08-12",
+      "time": "16:45",
+      "team1": "AZ Alkmaar",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-17",
+      "time": "20:00",
+      "team1": "FC Groningen",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-18",
+      "time": "18:30",
+      "team1": "NAC Breda",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-18",
+      "time": "18:30",
+      "team1": "VVV-Venlo",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-18",
+      "time": "20:45",
+      "team1": "Fortuna Sittard",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-18",
+      "time": "20:45",
+      "team1": "Heracles Almelo",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          3,
+          2
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-19",
+      "time": "12:15",
+      "team1": "FC Utrecht",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-19",
+      "time": "14:30",
+      "team1": "Feyenoord",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-19",
+      "time": "14:30",
+      "team1": "FC Emmen",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          1,
+          3
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 2",
+      "date": "2018-08-19",
+      "time": "16:45",
+      "team1": "sc Heerenveen",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-24",
+      "time": "20:00",
+      "team1": "ADO Den Haag",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-25",
+      "time": "18:30",
+      "team1": "AFC Ajax",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-25",
+      "time": "18:30",
+      "team1": "De Graafschap",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-25",
+      "time": "20:45",
+      "team1": "NAC Breda",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-25",
+      "time": "20:45",
+      "team1": "PEC Zwolle",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-26",
+      "time": "12:15",
+      "team1": "Willem II",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-26",
+      "time": "14:30",
+      "team1": "sc Heerenveen",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-26",
+      "time": "14:30",
+      "team1": "FC Utrecht",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 3",
+      "date": "2018-08-26",
+      "time": "16:45",
+      "team1": "AZ Alkmaar",
+      "team2": "Vitesse",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-08-31",
+      "time": "20:00",
+      "team1": "FC Emmen",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-01",
+      "time": "18:30",
+      "team1": "VVV-Venlo",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-01",
+      "time": "19:45",
+      "team1": "PSV Eindhoven",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          4,
+          0
+        ],
+        "ft": [
+          6,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-01",
+      "time": "19:45",
+      "team1": "SBV Excelsior",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-01",
+      "time": "20:45",
+      "team1": "Fortuna Sittard",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-02",
+      "time": "12:15",
+      "team1": "FC Groningen",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-02",
+      "time": "14:30",
+      "team1": "Heracles Almelo",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-02",
+      "time": "14:30",
+      "team1": "Vitesse",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 4",
+      "date": "2018-09-02",
+      "time": "16:45",
+      "team1": "Feyenoord",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-15",
+      "time": "18:30",
+      "team1": "De Graafschap",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-15",
+      "time": "18:30",
+      "team1": "ADO Den Haag",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          7
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-15",
+      "time": "20:45",
+      "team1": "Willem II",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-15",
+      "time": "20:45",
+      "team1": "AFC Ajax",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-16",
+      "time": "12:15",
+      "team1": "AZ Alkmaar",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-16",
+      "time": "14:30",
+      "team1": "sc Heerenveen",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-16",
+      "time": "14:30",
+      "team1": "FC Utrecht",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-16",
+      "time": "14:30",
+      "team1": "NAC Breda",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 5",
+      "date": "2018-09-16",
+      "time": "16:45",
+      "team1": "PEC Zwolle",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-21",
+      "time": "20:00",
+      "team1": "Heracles Almelo",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-22",
+      "time": "18:30",
+      "team1": "Fortuna Sittard",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-22",
+      "time": "19:45",
+      "team1": "SBV Excelsior",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-22",
+      "time": "19:45",
+      "team1": "VVV-Venlo",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-22",
+      "time": "20:45",
+      "team1": "Vitesse",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-23",
+      "time": "12:15",
+      "team1": "Feyenoord",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-23",
+      "time": "14:30",
+      "team1": "FC Emmen",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-23",
+      "time": "14:30",
+      "team1": "FC Groningen",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 6",
+      "date": "2018-09-23",
+      "time": "16:45",
+      "team1": "PSV Eindhoven",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-09-29",
+      "time": "18:30",
+      "team1": "sc Heerenveen",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-09-29",
+      "time": "18:30",
+      "team1": "NAC Breda",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-09-29",
+      "time": "20:45",
+      "team1": "Fortuna Sittard",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-09-29",
+      "time": "20:45",
+      "team1": "SBV Excelsior",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-09-30",
+      "time": "12:15",
+      "team1": "Heracles Almelo",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-09-30",
+      "time": "14:30",
+      "team1": "De Graafschap",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-09-30",
+      "time": "14:30",
+      "team1": "AZ Alkmaar",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-09-30",
+      "time": "14:30",
+      "team1": "FC Groningen",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 7",
+      "date": "2018-09-30",
+      "time": "16:45",
+      "team1": "Feyenoord",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-05",
+      "time": "20:00",
+      "team1": "FC Utrecht",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-06",
+      "time": "18:30",
+      "team1": "ADO Den Haag",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-06",
+      "time": "19:45",
+      "team1": "PEC Zwolle",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-06",
+      "time": "19:45",
+      "team1": "PSV Eindhoven",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-06",
+      "time": "20:45",
+      "team1": "De Graafschap",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          0,
+          4
+        ],
+        "ft": [
+          0,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-07",
+      "time": "12:15",
+      "team1": "FC Emmen",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-07",
+      "time": "14:30",
+      "team1": "Willem II",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-07",
+      "time": "14:30",
+      "team1": "Vitesse",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 8",
+      "date": "2018-10-07",
+      "time": "16:45",
+      "team1": "AFC Ajax",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-10-20",
+      "time": "18:30",
+      "team1": "PSV Eindhoven",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          4,
+          0
+        ],
+        "ft": [
+          6,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-10-20",
+      "time": "18:30",
+      "team1": "SBV Excelsior",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-10-20",
+      "time": "20:45",
+      "team1": "sc Heerenveen",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-10-20",
+      "time": "20:45",
+      "team1": "FC Utrecht",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-10-21",
+      "time": "12:15",
+      "team1": "NAC Breda",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-10-21",
+      "time": "14:30",
+      "team1": "Heracles Almelo",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-10-21",
+      "time": "14:30",
+      "team1": "Feyenoord",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-10-21",
+      "time": "14:30",
+      "team1": "VVV-Venlo",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 9",
+      "date": "2018-10-21",
+      "time": "16:45",
+      "team1": "Fortuna Sittard",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-10-26",
+      "time": "20:00",
+      "team1": "FC Emmen",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-10-27",
+      "time": "18:30",
+      "team1": "ADO Den Haag",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-10-27",
+      "time": "19:45",
+      "team1": "De Graafschap",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-10-27",
+      "time": "19:45",
+      "team1": "FC Groningen",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-10-27",
+      "time": "20:45",
+      "team1": "PEC Zwolle",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-10-28",
+      "time": "12:15",
+      "team1": "Vitesse",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-10-28",
+      "time": "14:30",
+      "team1": "Willem II",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-10-28",
+      "time": "14:30",
+      "team1": "AFC Ajax",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 10",
+      "date": "2018-10-28",
+      "time": "16:45",
+      "team1": "AZ Alkmaar",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-11-02",
+      "time": "20:00",
+      "team1": "SBV Excelsior",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-11-03",
+      "time": "18:30",
+      "team1": "NAC Breda",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-11-03",
+      "time": "18:30",
+      "team1": "PSV Eindhoven",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-11-03",
+      "time": "20:45",
+      "team1": "AFC Ajax",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-11-03",
+      "time": "20:45",
+      "team1": "AZ Alkmaar",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-11-04",
+      "time": "12:15",
+      "team1": "sc Heerenveen",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-11-04",
+      "time": "14:30",
+      "team1": "FC Utrecht",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-11-04",
+      "time": "14:30",
+      "team1": "Fortuna Sittard",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 11",
+      "date": "2018-12-06",
+      "time": "20:00",
+      "team1": "Feyenoord",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-11-09",
+      "time": "20:00",
+      "team1": "PEC Zwolle",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-11-10",
+      "time": "18:30",
+      "team1": "FC Emmen",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-11-10",
+      "time": "19:45",
+      "team1": "De Graafschap",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-11-10",
+      "time": "19:45",
+      "team1": "Vitesse",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-11-10",
+      "time": "20:45",
+      "team1": "VVV-Venlo",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-11-11",
+      "time": "12:15",
+      "team1": "FC Groningen",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-11-11",
+      "time": "14:30",
+      "team1": "SBV Excelsior",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          7
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-11-11",
+      "time": "14:30",
+      "team1": "ADO Den Haag",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 12",
+      "date": "2018-11-11",
+      "time": "16:45",
+      "team1": "Heracles Almelo",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-11-24",
+      "time": "18:30",
+      "team1": "PEC Zwolle",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-11-24",
+      "time": "18:30",
+      "team1": "NAC Breda",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-11-24",
+      "time": "20:45",
+      "team1": "PSV Eindhoven",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-11-24",
+      "time": "20:45",
+      "team1": "Fortuna Sittard",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-11-25",
+      "time": "12:15",
+      "team1": "FC Emmen",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-11-25",
+      "time": "14:30",
+      "team1": "FC Utrecht",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-11-25",
+      "time": "14:30",
+      "team1": "Feyenoord",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-11-25",
+      "time": "14:30",
+      "team1": "Willem II",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 13",
+      "date": "2018-11-25",
+      "time": "16:45",
+      "team1": "VVV-Venlo",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-11-30",
+      "time": "20:00",
+      "team1": "SBV Excelsior",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-01",
+      "time": "18:30",
+      "team1": "Vitesse",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-01",
+      "time": "19:45",
+      "team1": "AZ Alkmaar",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-01",
+      "time": "19:45",
+      "team1": "De Graafschap",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-01",
+      "time": "20:45",
+      "team1": "sc Heerenveen",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-02",
+      "time": "12:15",
+      "team1": "AFC Ajax",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          3,
+          1
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-02",
+      "time": "14:30",
+      "team1": "Feyenoord",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-02",
+      "time": "14:30",
+      "team1": "Heracles Almelo",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 14",
+      "date": "2018-12-02",
+      "time": "16:45",
+      "team1": "FC Groningen",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          5,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2018-12-07",
+      "time": "18:30",
+      "team1": "Fortuna Sittard",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2018-12-07",
+      "time": "20:45",
+      "team1": "PSV Eindhoven",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          6,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2018-12-08",
+      "time": "18:30",
+      "team1": "Willem II",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2018-12-08",
+      "time": "19:45",
+      "team1": "PEC Zwolle",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2018-12-08",
+      "time": "20:45",
+      "team1": "ADO Den Haag",
+      "team2": "De Graafschap",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2018-12-09",
+      "time": "12:15",
+      "team1": "FC Utrecht",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2018-12-09",
+      "time": "14:30",
+      "team1": "VVV-Venlo",
+      "team2": "FC Groningen",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2018-12-09",
+      "time": "14:30",
+      "team1": "FC Emmen",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 15",
+      "date": "2018-12-09",
+      "time": "16:45",
+      "team1": "NAC Breda",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2018-12-14",
+      "time": "20:00",
+      "team1": "Willem II",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2018-12-15",
+      "time": "18:30",
+      "team1": "PEC Zwolle",
+      "team2": "NAC Breda",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2018-12-15",
+      "time": "19:45",
+      "team1": "AZ Alkmaar",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2018-12-15",
+      "time": "19:45",
+      "team1": "Heracles Almelo",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2018-12-15",
+      "time": "20:45",
+      "team1": "Vitesse",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2018-12-16",
+      "time": "12:15",
+      "team1": "sc Heerenveen",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          0,
+          3
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2018-12-16",
+      "time": "14:30",
+      "team1": "AFC Ajax",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          8,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2018-12-16",
+      "time": "14:30",
+      "team1": "FC Groningen",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 16",
+      "date": "2018-12-16",
+      "time": "16:45",
+      "team1": "Feyenoord",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2018-12-21",
+      "time": "20:00",
+      "team1": "VVV-Venlo",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2018-12-22",
+      "time": "18:30",
+      "team1": "Fortuna Sittard",
+      "team2": "FC Groningen",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2018-12-22",
+      "time": "19:45",
+      "team1": "NAC Breda",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2018-12-22",
+      "time": "19:45",
+      "team1": "PSV Eindhoven",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2018-12-22",
+      "time": "20:45",
+      "team1": "SBV Excelsior",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2018-12-23",
+      "time": "12:15",
+      "team1": "FC Utrecht",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2018-12-23",
+      "time": "14:30",
+      "team1": "De Graafschap",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2018-12-23",
+      "time": "14:30",
+      "team1": "ADO Den Haag",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 17",
+      "date": "2018-12-23",
+      "time": "16:45",
+      "team1": "FC Emmen",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-18",
+      "time": "20:00",
+      "team1": "Vitesse",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-19",
+      "time": "18:30",
+      "team1": "AZ Alkmaar",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-19",
+      "time": "19:45",
+      "team1": "PEC Zwolle",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-19",
+      "time": "19:45",
+      "team1": "ADO Den Haag",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-19",
+      "time": "20:45",
+      "team1": "FC Groningen",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-20",
+      "time": "12:15",
+      "team1": "Willem II",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-20",
+      "time": "14:30",
+      "team1": "De Graafschap",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-20",
+      "time": "14:30",
+      "team1": "FC Emmen",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 18",
+      "date": "2019-01-20",
+      "time": "16:45",
+      "team1": "AFC Ajax",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          3,
+          1
+        ],
+        "ft": [
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-25",
+      "time": "20:00",
+      "team1": "NAC Breda",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-26",
+      "time": "18:30",
+      "team1": "Heracles Almelo",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-26",
+      "time": "19:45",
+      "team1": "SBV Excelsior",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-26",
+      "time": "19:45",
+      "team1": "PSV Eindhoven",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-26",
+      "time": "20:45",
+      "team1": "VVV-Venlo",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-27",
+      "time": "12:15",
+      "team1": "Fortuna Sittard",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-27",
+      "time": "14:30",
+      "team1": "FC Utrecht",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-27",
+      "time": "14:30",
+      "team1": "Feyenoord",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          3,
+          2
+        ],
+        "ft": [
+          6,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 19",
+      "date": "2019-01-27",
+      "time": "16:45",
+      "team1": "sc Heerenveen",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-01",
+      "time": "20:00",
+      "team1": "De Graafschap",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-02",
+      "time": "18:30",
+      "team1": "Vitesse",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-02",
+      "time": "19:45",
+      "team1": "Willem II",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-02",
+      "time": "19:45",
+      "team1": "AFC Ajax",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          6,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-02",
+      "time": "20:45",
+      "team1": "AZ Alkmaar",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-03",
+      "time": "12:15",
+      "team1": "SBV Excelsior",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-03",
+      "time": "14:30",
+      "team1": "PEC Zwolle",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-03",
+      "time": "14:30",
+      "team1": "PSV Eindhoven",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 20",
+      "date": "2019-02-03",
+      "time": "16:45",
+      "team1": "ADO Den Haag",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-08",
+      "time": "20:00",
+      "team1": "NAC Breda",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-09",
+      "time": "18:30",
+      "team1": "Heracles Almelo",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-09",
+      "time": "18:30",
+      "team1": "sc Heerenveen",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-09",
+      "time": "20:45",
+      "team1": "VVV-Venlo",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-09",
+      "time": "20:45",
+      "team1": "Feyenoord",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-10",
+      "time": "12:15",
+      "team1": "Fortuna Sittard",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-10",
+      "time": "14:30",
+      "team1": "FC Groningen",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-10",
+      "time": "14:30",
+      "team1": "FC Emmen",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 21",
+      "date": "2019-02-10",
+      "time": "16:45",
+      "team1": "FC Utrecht",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-15",
+      "time": "20:00",
+      "team1": "ADO Den Haag",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-16",
+      "time": "18:30",
+      "team1": "AZ Alkmaar",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-16",
+      "time": "19:45",
+      "team1": "sc Heerenveen",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-16",
+      "time": "19:45",
+      "team1": "Heracles Almelo",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          6,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-16",
+      "time": "20:45",
+      "team1": "Vitesse",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-17",
+      "time": "12:15",
+      "team1": "AFC Ajax",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-17",
+      "time": "14:30",
+      "team1": "SBV Excelsior",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-17",
+      "time": "14:30",
+      "team1": "FC Groningen",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 22",
+      "date": "2019-02-17",
+      "time": "16:45",
+      "team1": "De Graafschap",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-22",
+      "time": "20:00",
+      "team1": "VVV-Venlo",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-23",
+      "time": "18:30",
+      "team1": "FC Utrecht",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-23",
+      "time": "19:45",
+      "team1": "PEC Zwolle",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-23",
+      "time": "19:45",
+      "team1": "Fortuna Sittard",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-23",
+      "time": "20:45",
+      "team1": "NAC Breda",
+      "team2": "FC Groningen",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-24",
+      "time": "12:15",
+      "team1": "ADO Den Haag",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-24",
+      "time": "14:30",
+      "team1": "PSV Eindhoven",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-24",
+      "time": "14:30",
+      "team1": "FC Emmen",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 23",
+      "date": "2019-02-24",
+      "time": "16:45",
+      "team1": "Willem II",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-01",
+      "time": "20:00",
+      "team1": "De Graafschap",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-02",
+      "time": "18:30",
+      "team1": "Heracles Almelo",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-02",
+      "time": "19:45",
+      "team1": "SBV Excelsior",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-02",
+      "time": "20:45",
+      "team1": "Vitesse",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-03",
+      "time": "14:30",
+      "team1": "sc Heerenveen",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-03",
+      "time": "14:30",
+      "team1": "FC Groningen",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-03",
+      "time": "16:45",
+      "team1": "AZ Alkmaar",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-03",
+      "time": "16:45",
+      "team1": "Feyenoord",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 24",
+      "date": "2019-03-13",
+      "time": "18:30",
+      "team1": "AFC Ajax",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-08",
+      "time": "20:00",
+      "team1": "FC Utrecht",
+      "team2": "FC Groningen",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-09",
+      "time": "18:30",
+      "team1": "VVV-Venlo",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-09",
+      "time": "19:45",
+      "team1": "PSV Eindhoven",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-09",
+      "time": "19:45",
+      "team1": "ADO Den Haag",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-09",
+      "time": "20:45",
+      "team1": "Willem II",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-10",
+      "time": "12:15",
+      "team1": "PEC Zwolle",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-10",
+      "time": "14:30",
+      "team1": "Vitesse",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-10",
+      "time": "14:30",
+      "team1": "FC Emmen",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 25",
+      "date": "2019-03-10",
+      "time": "16:45",
+      "team1": "AFC Ajax",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-15",
+      "time": "20:00",
+      "team1": "Fortuna Sittard",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-16",
+      "time": "18:30",
+      "team1": "sc Heerenveen",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-16",
+      "time": "19:45",
+      "team1": "Feyenoord",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-16",
+      "time": "19:45",
+      "team1": "NAC Breda",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-16",
+      "time": "20:45",
+      "team1": "Heracles Almelo",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          2,
+          2
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-17",
+      "time": "12:15",
+      "team1": "VVV-Venlo",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-17",
+      "time": "14:30",
+      "team1": "AZ Alkmaar",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-17",
+      "time": "14:30",
+      "team1": "FC Groningen",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 26",
+      "date": "2019-03-17",
+      "time": "16:45",
+      "team1": "SBV Excelsior",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-30",
+      "time": "18:30",
+      "team1": "Willem II",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-30",
+      "time": "18:30",
+      "team1": "ADO Den Haag",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          2,
+          3
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-30",
+      "time": "19:45",
+      "team1": "De Graafschap",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-30",
+      "time": "20:45",
+      "team1": "sc Heerenveen",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-30",
+      "time": "20:45",
+      "team1": "AZ Alkmaar",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-31",
+      "time": "12:15",
+      "team1": "NAC Breda",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-31",
+      "time": "14:30",
+      "team1": "FC Utrecht",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-31",
+      "time": "14:30",
+      "team1": "PEC Zwolle",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 27",
+      "date": "2019-03-31",
+      "time": "16:45",
+      "team1": "AFC Ajax",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-02",
+      "time": "18:30",
+      "team1": "Vitesse",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-02",
+      "time": "19:45",
+      "team1": "Heracles Almelo",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-02",
+      "time": "20:45",
+      "team1": "FC Groningen",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-03",
+      "time": "18:30",
+      "team1": "VVV-Venlo",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          6
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-03",
+      "time": "19:45",
+      "team1": "SBV Excelsior",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-03",
+      "time": "19:45",
+      "team1": "Fortuna Sittard",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-03",
+      "time": "20:45",
+      "team1": "FC Emmen",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          2,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-04",
+      "time": "18:30",
+      "team1": "PSV Eindhoven",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 28",
+      "date": "2019-04-04",
+      "time": "20:45",
+      "team1": "Feyenoord",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-06",
+      "time": "18:30",
+      "team1": "Willem II",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-06",
+      "time": "18:30",
+      "team1": "ADO Den Haag",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          3,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-06",
+      "time": "19:45",
+      "team1": "FC Groningen",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-06",
+      "time": "20:45",
+      "team1": "De Graafschap",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-06",
+      "time": "20:45",
+      "team1": "Heracles Almelo",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-07",
+      "time": "12:15",
+      "team1": "FC Emmen",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-07",
+      "time": "14:30",
+      "team1": "PEC Zwolle",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-07",
+      "time": "14:30",
+      "team1": "VVV-Venlo",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 29",
+      "date": "2019-04-07",
+      "time": "16:45",
+      "team1": "Vitesse",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-12",
+      "time": "20:00",
+      "team1": "NAC Breda",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-13",
+      "time": "18:30",
+      "team1": "AZ Alkmaar",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-13",
+      "time": "18:30",
+      "team1": "AFC Ajax",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          3,
+          1
+        ],
+        "ft": [
+          6,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-13",
+      "time": "20:45",
+      "team1": "Feyenoord",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-13",
+      "time": "20:45",
+      "team1": "Fortuna Sittard",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-14",
+      "time": "12:15",
+      "team1": "PSV Eindhoven",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-14",
+      "time": "14:30",
+      "team1": "Willem II",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-14",
+      "time": "14:30",
+      "team1": "sc Heerenveen",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 30",
+      "date": "2019-04-14",
+      "time": "16:45",
+      "team1": "FC Utrecht",
+      "team2": "Vitesse",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-19",
+      "time": "20:00",
+      "team1": "Heracles Almelo",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-20",
+      "time": "18:30",
+      "team1": "FC Emmen",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-20",
+      "time": "18:30",
+      "team1": "FC Groningen",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-20",
+      "time": "19:45",
+      "team1": "Vitesse",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-20",
+      "time": "20:45",
+      "team1": "Feyenoord",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-20",
+      "time": "20:45",
+      "team1": "VVV-Venlo",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-21",
+      "time": "12:15",
+      "team1": "SBV Excelsior",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-21",
+      "time": "14:30",
+      "team1": "Fortuna Sittard",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 31",
+      "date": "2019-04-21",
+      "time": "16:45",
+      "team1": "PSV Eindhoven",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-04-23",
+      "time": "18:30",
+      "team1": "De Graafschap",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-04-23",
+      "time": "19:45",
+      "team1": "sc Heerenveen",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-04-23",
+      "time": "19:45",
+      "team1": "AZ Alkmaar",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-04-23",
+      "time": "20:45",
+      "team1": "AFC Ajax",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-04-24",
+      "time": "19:45",
+      "team1": "FC Utrecht",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-04-24",
+      "time": "20:45",
+      "team1": "NAC Breda",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-04-25",
+      "time": "18:30",
+      "team1": "ADO Den Haag",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-04-25",
+      "time": "20:45",
+      "team1": "Willem II",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 32",
+      "date": "2019-04-29",
+      "time": "20:00",
+      "team1": "PEC Zwolle",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-15",
+      "time": "19:30",
+      "team1": "FC Utrecht",
+      "team2": "sc Heerenveen",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-15",
+      "time": "19:30",
+      "team1": "NAC Breda",
+      "team2": "PEC Zwolle",
+      "score": {
+        "ft": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-15",
+      "time": "19:30",
+      "team1": "PSV Eindhoven",
+      "team2": "Heracles Almelo",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-15",
+      "time": "19:30",
+      "team1": "Fortuna Sittard",
+      "team2": "Feyenoord",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-15",
+      "time": "19:30",
+      "team1": "SBV Excelsior",
+      "team2": "AZ Alkmaar",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-15",
+      "time": "19:30",
+      "team1": "De Graafschap",
+      "team2": "AFC Ajax",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-15",
+      "time": "19:30",
+      "team1": "VVV-Venlo",
+      "team2": "Vitesse",
+      "score": {
+        "ht": [
+          0,
+          2
+        ],
+        "ft": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-15",
+      "time": "19:30",
+      "team1": "ADO Den Haag",
+      "team2": "Willem II",
+      "score": {
+        "ht": [
+          1,
+          1
+        ],
+        "ft": [
+          6,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 33",
+      "date": "2019-05-15",
+      "time": "19:30",
+      "team1": "FC Emmen",
+      "team2": "FC Groningen",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-12",
+      "time": "14:30",
+      "team1": "sc Heerenveen",
+      "team2": "NAC Breda",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-12",
+      "time": "14:30",
+      "team1": "Feyenoord",
+      "team2": "ADO Den Haag",
+      "score": {
+        "ht": [
+          0,
+          1
+        ],
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-12",
+      "time": "14:30",
+      "team1": "AZ Alkmaar",
+      "team2": "PSV Eindhoven",
+      "score": {
+        "ht": [
+          0,
+          0
+        ],
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-12",
+      "time": "14:30",
+      "team1": "Willem II",
+      "team2": "FC Emmen",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-12",
+      "time": "14:30",
+      "team1": "PEC Zwolle",
+      "team2": "VVV-Venlo",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-12",
+      "time": "14:30",
+      "team1": "AFC Ajax",
+      "team2": "FC Utrecht",
+      "score": {
+        "ht": [
+          2,
+          1
+        ],
+        "ft": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-12",
+      "time": "14:30",
+      "team1": "Heracles Almelo",
+      "team2": "SBV Excelsior",
+      "score": {
+        "ht": [
+          1,
+          2
+        ],
+        "ft": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-12",
+      "time": "14:30",
+      "team1": "Vitesse",
+      "team2": "De Graafschap",
+      "score": {
+        "ht": [
+          2,
+          0
+        ],
+        "ft": [
+          6,
+          1
+        ]
+      }
+    },
+    {
+      "round": "Matchday 34",
+      "date": "2019-05-12",
+      "time": "14:30",
+      "team1": "FC Groningen",
+      "team2": "Fortuna Sittard",
+      "score": {
+        "ht": [
+          1,
+          0
+        ],
+        "ft": [
+          3,
+          0
+        ]
+      }
+    }
+  ]
+}
