@@ -22,6 +22,10 @@ args = "AI Scheduler"
 task = "workflow.run"
 args = "Train Model"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Data Pipeline"
+
 [[workflows.workflow]]
 name = "Start application"
 author = "agent"
@@ -52,6 +56,17 @@ author = "agent"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "cd /home/runner/workspace && python3 -u ai/retrain.py --force"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "Data Pipeline"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash ai/run_pipeline.sh"
 
 [workflows.workflow.metadata]
 outputType = "console"
