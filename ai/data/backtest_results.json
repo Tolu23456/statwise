@@ -1,180 +1,175 @@
 {
   "summary": {
     "tested": 17996,
-    "overall_accuracy": 40.4,
-    "home_accuracy": 58.0,
-    "draw_accuracy": 12.8,
-    "away_accuracy": 38.8,
-    "high_conf_accuracy": 49.1,
-    "high_conf_sample": 5861,
-    "brier_score": 0.7172,
-    "log_loss": 1.1762,
-    "roi_pct": -31.2,
+    "overall_accuracy": 38.0,
+    "home_accuracy": 42.9,
+    "draw_accuracy": 43.2,
+    "away_accuracy": 26.6,
+    "high_conf_accuracy": 81.2,
+    "high_conf_sample": 485,
+    "brier_score": 0.663,
+    "log_loss": 1.0953,
+    "roi_pct": -19.3,
     "roi_bets": 17996,
     "test_cutoff": "2023-08-01",
-    "history_matches": 232638,
-    "timestamp": "2026-04-07T09:19:58.696955Z"
+    "history_matches": 157444,
+    "timestamp": "2026-04-07T11:01:22.774042Z"
   },
   "by_actual_outcome": {
     "home": {
-      "hits": 4550,
+      "hits": 3365,
       "total": 7847,
-      "accuracy": 58.0
+      "accuracy": 42.9
     },
     "draw": {
-      "hits": 603,
+      "hits": 2030,
       "total": 4701,
-      "accuracy": 12.8
+      "accuracy": 43.2
     },
     "away": {
-      "hits": 2115,
+      "hits": 1448,
       "total": 5448,
-      "accuracy": 38.8
+      "accuracy": 26.6
     }
   },
   "prediction_distribution": {
     "home": {
-      "count": 9730,
-      "pct": 54.1
+      "count": 6671,
+      "pct": 37.1
     },
     "draw": {
-      "count": 2183,
-      "pct": 12.1
+      "count": 7450,
+      "pct": 41.4
     },
     "away": {
-      "count": 6083,
-      "pct": 33.8
+      "count": 3875,
+      "pct": 21.5
     }
   },
   "confusion_matrix": {
     "home": {
-      "home": 4550,
-      "draw": 927,
-      "away": 2370
+      "home": 3365,
+      "draw": 3080,
+      "away": 1402
     },
     "draw": {
-      "home": 2500,
-      "draw": 603,
-      "away": 1598
+      "home": 1646,
+      "draw": 2030,
+      "away": 1025
     },
     "away": {
-      "home": 2680,
-      "draw": 653,
-      "away": 2115
+      "home": 1660,
+      "draw": 2340,
+      "away": 1448
     }
   },
   "calibration": {
     "60-69%": {
-      "hits": 1962,
-      "total": 4860,
-      "accuracy": 40.4
-    },
-    "70-79%": {
-      "hits": 2621,
-      "total": 5545,
-      "accuracy": 47.3
+      "hits": 2234,
+      "total": 4307,
+      "accuracy": 51.9
     },
     "50-59%": {
-      "hits": 2426,
-      "total": 7275,
-      "accuracy": 33.3
+      "hits": 4215,
+      "total": 13204,
+      "accuracy": 31.9
     },
-    "80-89%": {
-      "hits": 259,
-      "total": 316,
-      "accuracy": 82.0
+    "70-79%": {
+      "hits": 394,
+      "total": 485,
+      "accuracy": 81.2
     }
   },
   "per_league": {
     "belgian-pro": {
       "name": "Belgian Pro",
-      "hits": 339,
+      "hits": 355,
       "total": 779,
-      "accuracy": 43.5
+      "accuracy": 45.6
     },
     "championship": {
       "name": "Championship",
-      "hits": 426,
+      "hits": 368,
       "total": 1114,
-      "accuracy": 38.2
+      "accuracy": 33.0
     },
     "bundesliga-2": {
       "name": "2. Bundesliga",
-      "hits": 441,
+      "hits": 369,
       "total": 990,
-      "accuracy": 44.5
+      "accuracy": 37.3
     },
     "scottish-prem": {
       "name": "Scottish Prem",
-      "hits": 207,
+      "hits": 197,
       "total": 456,
-      "accuracy": 45.4
+      "accuracy": 43.2
     },
     "la-liga": {
       "name": "La Liga",
-      "hits": 392,
+      "hits": 399,
       "total": 1036,
-      "accuracy": 37.8
+      "accuracy": 38.5
     },
     "super-lig": {
       "name": "Super Lig",
-      "hits": 420,
+      "hits": 411,
       "total": 952,
-      "accuracy": 44.1
+      "accuracy": 43.2
     },
     "primeira-liga": {
       "name": "Primeira Liga",
-      "hits": 484,
+      "hits": 475,
       "total": 1044,
-      "accuracy": 46.4
+      "accuracy": 45.5
     },
     "eredivisie": {
       "name": "Eredivisie",
-      "hits": 380,
+      "hits": 365,
       "total": 910,
-      "accuracy": 41.8
+      "accuracy": 40.1
     },
     "ligue1": {
       "name": "Ligue 1",
-      "hits": 288,
+      "hits": 255,
       "total": 773,
-      "accuracy": 37.3
+      "accuracy": 33.0
     },
     "la-liga-2": {
       "name": "La Liga 2",
-      "hits": 497,
+      "hits": 470,
       "total": 1322,
-      "accuracy": 37.6
+      "accuracy": 35.6
     },
     "premier-league": {
       "name": "Premier League",
-      "hits": 351,
+      "hits": 324,
       "total": 836,
-      "accuracy": 42.0
+      "accuracy": 38.8
     },
     "bundesliga": {
       "name": "Bundesliga",
-      "hits": 313,
+      "hits": 347,
       "total": 804,
-      "accuracy": 38.9
+      "accuracy": 43.2
     },
     "greek-super": {
       "name": "Greek Super",
-      "hits": 250,
+      "hits": 216,
       "total": 615,
-      "accuracy": 40.7
+      "accuracy": 35.1
     },
     "serie-b": {
       "name": "Serie B",
-      "hits": 346,
+      "hits": 339,
       "total": 1015,
-      "accuracy": 34.1
+      "accuracy": 33.4
     },
     "serie-a": {
       "name": "Serie A",
-      "hits": 373,
+      "hits": 372,
       "total": 798,
-      "accuracy": 46.7
+      "accuracy": 46.6
     }
   },
   "sample": [
@@ -184,11 +179,11 @@
       "away": "St. Gilloise",
       "predicted": "away",
       "actual": "away",
-      "confidence": 69,
+      "confidence": 61,
       "correct": true,
-      "prob_home": 12.5,
-      "prob_draw": 18.9,
-      "prob_away": 68.6
+      "prob_home": 14.3,
+      "prob_draw": 24.4,
+      "prob_away": 61.3
     },
     {
       "league": "championship",
@@ -196,23 +191,23 @@
       "away": "Southampton",
       "predicted": "home",
       "actual": "away",
-      "confidence": 75,
+      "confidence": 61,
       "correct": false,
-      "prob_home": 75.1,
-      "prob_draw": 15.2,
-      "prob_away": 9.7
+      "prob_home": 60.5,
+      "prob_draw": 23.0,
+      "prob_away": 16.5
     },
     {
       "league": "bundesliga-2",
       "home": "SC Paderborn 07",
       "away": "Osnabruck",
-      "predicted": "away",
+      "predicted": "home",
       "actual": "draw",
-      "confidence": 52,
+      "confidence": 53,
       "correct": false,
-      "prob_home": 27.7,
-      "prob_draw": 28.9,
-      "prob_away": 43.4
+      "prob_home": 53.5,
+      "prob_draw": 25.2,
+      "prob_away": 21.3
     },
     {
       "league": "bundesliga-2",
@@ -220,11 +215,11 @@
       "away": "Wehen",
       "predicted": "draw",
       "actual": "away",
-      "confidence": 50,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 31.3,
-      "prob_draw": 36.7,
-      "prob_away": 32.0
+      "prob_home": 26.1,
+      "prob_draw": 31.0,
+      "prob_away": 42.9
     },
     {
       "league": "bundesliga-2",
@@ -232,11 +227,11 @@
       "away": "SV Wehen Wiesbaden",
       "predicted": "draw",
       "actual": "away",
-      "confidence": 50,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 31.9,
-      "prob_draw": 36.0,
-      "prob_away": 32.1
+      "prob_home": 27.3,
+      "prob_draw": 29.9,
+      "prob_away": 42.8
     },
     {
       "league": "scottish-div1",
@@ -244,35 +239,35 @@
       "away": "Dundee United",
       "predicted": "home",
       "actual": "away",
-      "confidence": 71,
+      "confidence": 56,
       "correct": false,
-      "prob_home": 71.0,
-      "prob_draw": 16.4,
-      "prob_away": 12.6
+      "prob_home": 55.7,
+      "prob_draw": 24.1,
+      "prob_away": 20.2
     },
     {
       "league": "bundesliga-2",
       "home": "SC Paderborn 07",
       "away": "VfL Osnabr\u00fcck",
-      "predicted": "away",
+      "predicted": "home",
       "actual": "draw",
-      "confidence": 52,
+      "confidence": 57,
       "correct": false,
-      "prob_home": 28.7,
-      "prob_draw": 29.1,
-      "prob_away": 42.2
+      "prob_home": 56.5,
+      "prob_draw": 24.1,
+      "prob_away": 19.4
     },
     {
       "league": "austrian-bl",
       "home": "SK Rapid Wien",
       "away": "SCR Altach",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 72,
-      "correct": true,
-      "prob_home": 72.1,
-      "prob_draw": 16.4,
-      "prob_away": 11.5
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 37.1,
+      "prob_draw": 39.9,
+      "prob_away": 23.0
     },
     {
       "league": "league-one",
@@ -280,11 +275,11 @@
       "away": "Peterboro",
       "predicted": "away",
       "actual": "away",
-      "confidence": 52,
+      "confidence": 64,
       "correct": true,
-      "prob_home": 20.9,
-      "prob_draw": 29.8,
-      "prob_away": 49.3
+      "prob_home": 14.1,
+      "prob_draw": 22.0,
+      "prob_away": 63.9
     },
     {
       "league": "scottish-div2",
@@ -292,23 +287,23 @@
       "away": "Alloa",
       "predicted": "home",
       "actual": "away",
-      "confidence": 75,
+      "confidence": 65,
       "correct": false,
-      "prob_home": 74.9,
-      "prob_draw": 15.3,
-      "prob_away": 9.8
+      "prob_home": 64.7,
+      "prob_draw": 21.2,
+      "prob_away": 14.2
     },
     {
       "league": "league-one",
       "home": "Portsmouth",
       "away": "Bristol Rvs",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 76,
-      "correct": false,
-      "prob_home": 75.9,
-      "prob_draw": 14.8,
-      "prob_away": 9.3
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 43.4,
+      "prob_draw": 39.0,
+      "prob_away": 17.6
     },
     {
       "league": "championship",
@@ -316,11 +311,11 @@
       "away": "Huddersfield Town",
       "predicted": "home",
       "actual": "home",
-      "confidence": 73,
+      "confidence": 58,
       "correct": true,
-      "prob_home": 73.2,
-      "prob_draw": 15.8,
-      "prob_away": 11.0
+      "prob_home": 58.2,
+      "prob_draw": 23.4,
+      "prob_away": 18.4
     },
     {
       "league": "scottish-div1",
@@ -328,11 +323,11 @@
       "away": "Raith Rvs",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 77,
+      "confidence": 62,
       "correct": false,
-      "prob_home": 76.8,
-      "prob_draw": 14.4,
-      "prob_away": 8.8
+      "prob_home": 61.8,
+      "prob_draw": 23.9,
+      "prob_away": 14.4
     },
     {
       "league": "ligue2",
@@ -340,11 +335,11 @@
       "away": "Stade Malherbe Caen",
       "predicted": "home",
       "actual": "away",
-      "confidence": 56,
+      "confidence": 59,
       "correct": false,
-      "prob_home": 56.3,
-      "prob_draw": 25.0,
-      "prob_away": 18.7
+      "prob_home": 59.4,
+      "prob_draw": 24.0,
+      "prob_away": 16.6
     },
     {
       "league": "championship",
@@ -352,11 +347,11 @@
       "away": "Hull City",
       "predicted": "away",
       "actual": "home",
-      "confidence": 64,
+      "confidence": 57,
       "correct": false,
-      "prob_home": 15.1,
-      "prob_draw": 20.6,
-      "prob_away": 64.3
+      "prob_home": 18.4,
+      "prob_draw": 24.7,
+      "prob_away": 56.9
     },
     {
       "league": "league-one",
@@ -364,11 +359,11 @@
       "away": "Stevenage",
       "predicted": "away",
       "actual": "away",
-      "confidence": 52,
+      "confidence": 50,
       "correct": true,
-      "prob_home": 34.8,
-      "prob_draw": 26.5,
-      "prob_away": 38.7
+      "prob_home": 24.3,
+      "prob_draw": 25.8,
+      "prob_away": 50.0
     },
     {
       "league": "scottish-div1",
@@ -376,11 +371,11 @@
       "away": "Ayr",
       "predicted": "home",
       "actual": "home",
-      "confidence": 69,
+      "confidence": 52,
       "correct": true,
-      "prob_home": 69.4,
-      "prob_draw": 17.6,
-      "prob_away": 13.1
+      "prob_home": 51.7,
+      "prob_draw": 25.3,
+      "prob_away": 23.0
     },
     {
       "league": "league-two",
@@ -388,11 +383,11 @@
       "away": "Walsall",
       "predicted": "away",
       "actual": "home",
-      "confidence": 54,
+      "confidence": 56,
       "correct": false,
-      "prob_home": 19.2,
-      "prob_draw": 27.2,
-      "prob_away": 53.6
+      "prob_home": 17.8,
+      "prob_draw": 26.1,
+      "prob_away": 56.1
     },
     {
       "league": "scottish-div2",
@@ -400,11 +395,11 @@
       "away": "Kelty Hearts",
       "predicted": "draw",
       "actual": "away",
-      "confidence": 50,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 29.5,
-      "prob_draw": 29.6,
-      "prob_away": 40.9
+      "prob_home": 32.8,
+      "prob_draw": 30.0,
+      "prob_away": 37.2
     },
     {
       "league": "championship",
@@ -412,11 +407,11 @@
       "away": "Millwall",
       "predicted": "draw",
       "actual": "away",
-      "confidence": 50,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 38.8,
-      "prob_draw": 27.8,
-      "prob_away": 33.4
+      "prob_home": 46.5,
+      "prob_draw": 27.9,
+      "prob_away": 25.6
     },
     {
       "league": "scottish-prem",
@@ -424,11 +419,11 @@
       "away": "Aberdeen FC",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 69,
+      "confidence": 47,
       "correct": false,
-      "prob_home": 69.5,
-      "prob_draw": 17.1,
-      "prob_away": 13.4
+      "prob_home": 46.7,
+      "prob_draw": 26.5,
+      "prob_away": 26.8
     },
     {
       "league": "austrian-bl",
@@ -436,11 +431,11 @@
       "away": "LASK",
       "predicted": "home",
       "actual": "home",
-      "confidence": 78,
+      "confidence": 68,
       "correct": true,
-      "prob_home": 77.7,
-      "prob_draw": 14.0,
-      "prob_away": 8.2
+      "prob_home": 68.3,
+      "prob_draw": 20.0,
+      "prob_away": 11.7
     },
     {
       "league": "belgian-pro",
@@ -448,11 +443,11 @@
       "away": "RWD Molenbeek",
       "predicted": "home",
       "actual": "away",
-      "confidence": 78,
+      "confidence": 65,
       "correct": false,
-      "prob_home": 78.2,
-      "prob_draw": 13.8,
-      "prob_away": 8.1
+      "prob_home": 65.3,
+      "prob_draw": 21.0,
+      "prob_away": 13.7
     },
     {
       "league": "bundesliga-2",
@@ -460,23 +455,23 @@
       "away": "Hansa Rostock",
       "predicted": "away",
       "actual": "away",
-      "confidence": 61,
+      "confidence": 51,
       "correct": true,
-      "prob_home": 17.4,
-      "prob_draw": 21.8,
-      "prob_away": 60.8
+      "prob_home": 22.9,
+      "prob_draw": 26.0,
+      "prob_away": 51.1
     },
     {
       "league": "ligue2",
       "home": "Laval",
       "away": "SCO Angers",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 72,
-      "correct": true,
-      "prob_home": 72.4,
-      "prob_draw": 16.5,
-      "prob_away": 11.0
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 37.2,
+      "prob_draw": 32.8,
+      "prob_away": 30.1
     },
     {
       "league": "bundesliga-2",
@@ -484,11 +479,11 @@
       "away": "Kaiserslautern",
       "predicted": "home",
       "actual": "home",
-      "confidence": 72,
+      "confidence": 58,
       "correct": true,
-      "prob_home": 72.5,
-      "prob_draw": 16.1,
-      "prob_away": 11.4
+      "prob_home": 57.6,
+      "prob_draw": 23.1,
+      "prob_away": 19.3
     },
     {
       "league": "league-two",
@@ -496,35 +491,35 @@
       "away": "Milton Keynes Dons",
       "predicted": "home",
       "actual": "away",
-      "confidence": 77,
+      "confidence": 66,
       "correct": false,
-      "prob_home": 77.4,
-      "prob_draw": 14.2,
-      "prob_away": 8.5
+      "prob_home": 65.6,
+      "prob_draw": 21.4,
+      "prob_away": 13.0
     },
     {
       "league": "championship",
       "home": "Watford",
       "away": "Queens Park Rangers",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 52,
-      "correct": true,
-      "prob_home": 51.9,
-      "prob_draw": 31.6,
-      "prob_away": 16.5
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 48.6,
+      "prob_draw": 34.8,
+      "prob_away": 16.6
     },
     {
       "league": "ligue2",
       "home": "Valenciennes",
       "away": "AJ Auxerre",
-      "predicted": "home",
+      "predicted": "away",
       "actual": "away",
-      "confidence": 70,
-      "correct": false,
-      "prob_home": 69.6,
-      "prob_draw": 17.1,
-      "prob_away": 13.3
+      "confidence": 49,
+      "correct": true,
+      "prob_home": 25.1,
+      "prob_draw": 26.0,
+      "prob_away": 49.0
     },
     {
       "league": "league-two",
@@ -532,11 +527,11 @@
       "away": "Barrow",
       "predicted": "home",
       "actual": "away",
-      "confidence": 72,
+      "confidence": 54,
       "correct": false,
-      "prob_home": 72.0,
-      "prob_draw": 16.2,
-      "prob_away": 11.8
+      "prob_home": 53.7,
+      "prob_draw": 25.6,
+      "prob_away": 20.7
     },
     {
       "league": "championship",
@@ -544,11 +539,11 @@
       "away": "Birmingham City",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 77,
+      "confidence": 60,
       "correct": false,
-      "prob_home": 76.7,
-      "prob_draw": 14.5,
-      "prob_away": 8.8
+      "prob_home": 60.0,
+      "prob_draw": 25.4,
+      "prob_away": 14.6
     },
     {
       "league": "league-two",
@@ -556,59 +551,59 @@
       "away": "Notts County",
       "predicted": "away",
       "actual": "home",
-      "confidence": 66,
+      "confidence": 64,
       "correct": false,
       "prob_home": 14.3,
-      "prob_draw": 20.0,
-      "prob_away": 65.7
+      "prob_draw": 21.8,
+      "prob_away": 63.8
     },
     {
       "league": "championship",
       "home": "Stoke City",
       "away": "Rotherham United",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 60,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 17.7,
-      "prob_draw": 22.6,
-      "prob_away": 59.7
+      "prob_home": 26.3,
+      "prob_draw": 33.7,
+      "prob_away": 40.0
     },
     {
       "league": "league-two",
       "home": "Stockport",
       "away": "Gillingham",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 75,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 75.2,
-      "prob_draw": 15.1,
-      "prob_away": 9.7
+      "prob_home": 38.4,
+      "prob_draw": 27.4,
+      "prob_away": 34.2
     },
     {
       "league": "scottish-div2",
       "home": "Stirling",
       "away": "Edinburgh City",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 57,
-      "correct": true,
-      "prob_home": 56.8,
-      "prob_draw": 22.8,
-      "prob_away": 20.4
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 38.5,
+      "prob_draw": 34.9,
+      "prob_away": 26.6
     },
     {
       "league": "scottish-div3",
       "home": "Stenhousemuir",
       "away": "Forfar",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 71,
-      "correct": false,
-      "prob_home": 71.4,
-      "prob_draw": 16.5,
-      "prob_away": 12.0
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 35.3,
+      "prob_draw": 36.2,
+      "prob_away": 28.6
     },
     {
       "league": "bundesliga-2",
@@ -616,10 +611,10 @@
       "away": "Fortuna Dusseldorf",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 52,
+      "confidence": 54,
       "correct": false,
-      "prob_home": 52.3,
-      "prob_draw": 27.0,
+      "prob_home": 54.4,
+      "prob_draw": 24.9,
       "prob_away": 20.7
     },
     {
@@ -628,47 +623,47 @@
       "away": "Heart of Midlothian",
       "predicted": "home",
       "actual": "away",
-      "confidence": 52,
+      "confidence": 54,
       "correct": false,
-      "prob_home": 40.7,
-      "prob_draw": 27.8,
-      "prob_away": 31.5
+      "prob_home": 53.7,
+      "prob_draw": 24.8,
+      "prob_away": 21.5
     },
     {
       "league": "league-one",
       "home": "Wycombe Wanderers",
       "away": "Exeter City",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 55,
-      "correct": true,
-      "prob_home": 18.6,
-      "prob_draw": 26.0,
-      "prob_away": 55.4
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 27.3,
+      "prob_draw": 32.7,
+      "prob_away": 40.0
     },
     {
       "league": "scottish-div3",
       "home": "Spartans",
       "away": "Clyde",
-      "predicted": "draw",
+      "predicted": "away",
       "actual": "draw",
-      "confidence": 50,
-      "correct": true,
-      "prob_home": 41.6,
-      "prob_draw": 31.9,
-      "prob_away": 26.5
+      "confidence": 49,
+      "correct": false,
+      "prob_home": 23.5,
+      "prob_draw": 27.1,
+      "prob_away": 49.4
     },
     {
       "league": "league-one",
       "home": "Shrewsbury Town",
       "away": "Cheltenham",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 23.3,
-      "prob_draw": 32.2,
-      "prob_away": 44.5
+      "prob_home": 22.3,
+      "prob_draw": 32.8,
+      "prob_away": 44.9
     },
     {
       "league": "bundesliga-2",
@@ -676,47 +671,47 @@
       "away": "1. FC Kaiserslautern",
       "predicted": "home",
       "actual": "home",
-      "confidence": 72,
+      "confidence": 57,
       "correct": true,
-      "prob_home": 71.9,
-      "prob_draw": 16.4,
-      "prob_away": 11.6
+      "prob_home": 56.7,
+      "prob_draw": 23.3,
+      "prob_away": 20.0
     },
     {
       "league": "scottish-prem",
       "home": "Kilmarnock FC",
       "away": "Rangers FC",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 60,
-      "correct": true,
-      "prob_home": 59.6,
-      "prob_draw": 21.2,
-      "prob_away": 19.2
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 41.7,
+      "prob_draw": 25.4,
+      "prob_away": 33.0
     },
     {
       "league": "league-one",
       "home": "Carlisle",
       "away": "Fleetwood Town",
-      "predicted": "draw",
+      "predicted": "away",
       "actual": "draw",
-      "confidence": 50,
-      "correct": true,
-      "prob_home": 32.4,
-      "prob_draw": 31.4,
-      "prob_away": 36.2
+      "confidence": 47,
+      "correct": false,
+      "prob_home": 26.1,
+      "prob_draw": 26.4,
+      "prob_away": 47.5
     },
     {
       "league": "scottish-div1",
       "home": "Inverness C",
       "away": "Queens Park",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 65,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 64.9,
-      "prob_draw": 20.2,
-      "prob_away": 14.9
+      "prob_home": 44.5,
+      "prob_draw": 30.2,
+      "prob_away": 25.4
     },
     {
       "league": "belgian-pro",
@@ -724,11 +719,11 @@
       "away": "Sporting Charleroi",
       "predicted": "home",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 51,
       "correct": true,
-      "prob_home": 50.1,
-      "prob_draw": 26.9,
-      "prob_away": 23.0
+      "prob_home": 50.8,
+      "prob_draw": 27.8,
+      "prob_away": 21.3
     },
     {
       "league": "scottish-prem",
@@ -736,11 +731,11 @@
       "away": "Ross County FC",
       "predicted": "home",
       "actual": "home",
-      "confidence": 74,
+      "confidence": 66,
       "correct": true,
-      "prob_home": 73.8,
-      "prob_draw": 16.3,
-      "prob_away": 9.9
+      "prob_home": 65.5,
+      "prob_draw": 23.4,
+      "prob_away": 11.1
     },
     {
       "league": "league-one",
@@ -748,11 +743,11 @@
       "away": "Oxford United",
       "predicted": "home",
       "actual": "home",
-      "confidence": 65,
+      "confidence": 51,
       "correct": true,
-      "prob_home": 64.6,
-      "prob_draw": 20.3,
-      "prob_away": 15.1
+      "prob_home": 50.6,
+      "prob_draw": 26.4,
+      "prob_away": 23.0
     },
     {
       "league": "championship",
@@ -760,23 +755,23 @@
       "away": "Preston North End",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 75,
+      "confidence": 61,
       "correct": false,
-      "prob_home": 75.1,
-      "prob_draw": 15.2,
-      "prob_away": 9.7
+      "prob_home": 61.3,
+      "prob_draw": 24.3,
+      "prob_away": 14.4
     },
     {
       "league": "scottish-div3",
       "home": "Bonnyrigg Rose",
       "away": "Dumbarton",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 64,
-      "correct": false,
-      "prob_home": 63.5,
-      "prob_draw": 22.6,
-      "prob_away": 13.9
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 41.0,
+      "prob_draw": 33.8,
+      "prob_away": 25.2
     },
     {
       "league": "league-one",
@@ -784,35 +779,35 @@
       "away": "Lincoln",
       "predicted": "home",
       "actual": "home",
-      "confidence": 70,
+      "confidence": 59,
       "correct": true,
-      "prob_home": 70.0,
-      "prob_draw": 17.8,
-      "prob_away": 12.2
+      "prob_home": 58.8,
+      "prob_draw": 23.9,
+      "prob_away": 17.3
     },
     {
       "league": "league-one",
       "home": "Charlton Athletic",
       "away": "Leyton Orient",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 74,
-      "correct": true,
-      "prob_home": 74.1,
-      "prob_draw": 15.7,
-      "prob_away": 10.2
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 45.8,
+      "prob_draw": 31.9,
+      "prob_away": 22.3
     },
     {
       "league": "league-one",
       "home": "Blackpool",
       "away": "Burton",
-      "predicted": "draw",
+      "predicted": "home",
       "actual": "home",
       "confidence": 50,
-      "correct": false,
-      "prob_home": 34.8,
-      "prob_draw": 33.5,
-      "prob_away": 31.7
+      "correct": true,
+      "prob_home": 50.4,
+      "prob_draw": 29.2,
+      "prob_away": 20.5
     },
     {
       "league": "league-one",
@@ -820,11 +815,11 @@
       "away": "Port Vale",
       "predicted": "home",
       "actual": "home",
-      "confidence": 55,
+      "confidence": 56,
       "correct": true,
-      "prob_home": 55.2,
-      "prob_draw": 25.6,
-      "prob_away": 19.2
+      "prob_home": 55.6,
+      "prob_draw": 25.0,
+      "prob_away": 19.4
     },
     {
       "league": "ligue2",
@@ -832,35 +827,35 @@
       "away": "EA Guingamp",
       "predicted": "away",
       "actual": "away",
-      "confidence": 56,
+      "confidence": 64,
       "correct": true,
-      "prob_home": 17.4,
-      "prob_draw": 26.7,
-      "prob_away": 55.8
+      "prob_home": 13.4,
+      "prob_draw": 22.4,
+      "prob_away": 64.2
     },
     {
       "league": "ligue2",
       "home": "Ajaccio",
       "away": "Rodez",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 52,
-      "correct": false,
-      "prob_home": 31.9,
-      "prob_draw": 26.6,
-      "prob_away": 41.5
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 38.2,
+      "prob_draw": 32.0,
+      "prob_away": 29.7
     },
     {
       "league": "league-two",
       "home": "Accrington Stanley",
       "away": "Newport County",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 59,
-      "correct": true,
-      "prob_home": 59.3,
-      "prob_draw": 21.7,
-      "prob_away": 18.9
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 26.3,
+      "prob_draw": 27.7,
+      "prob_away": 46.0
     },
     {
       "league": "ligue2",
@@ -868,11 +863,11 @@
       "away": "Grenoble",
       "predicted": "home",
       "actual": "away",
-      "confidence": 78,
+      "confidence": 56,
       "correct": false,
-      "prob_home": 78.1,
-      "prob_draw": 13.9,
-      "prob_away": 8.0
+      "prob_home": 55.6,
+      "prob_draw": 28.3,
+      "prob_away": 16.1
     },
     {
       "league": "belgian-pro",
@@ -880,35 +875,35 @@
       "away": "Eupen",
       "predicted": "home",
       "actual": "away",
-      "confidence": 74,
+      "confidence": 72,
       "correct": false,
-      "prob_home": 73.9,
-      "prob_draw": 16.6,
-      "prob_away": 9.5
+      "prob_home": 71.7,
+      "prob_draw": 18.3,
+      "prob_away": 10.1
     },
     {
       "league": "championship",
       "home": "Blackburn Rovers",
       "away": "West Bromwich Albion",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 72,
-      "correct": true,
-      "prob_home": 72.3,
-      "prob_draw": 16.4,
-      "prob_away": 11.4
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 47.5,
+      "prob_draw": 31.7,
+      "prob_away": 20.8
     },
     {
       "league": "ligue2",
       "home": "Concarneau",
       "away": "Bastia",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 70,
-      "correct": false,
-      "prob_home": 70.4,
-      "prob_draw": 17.0,
-      "prob_away": 12.6
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 40.8,
+      "prob_draw": 27.6,
+      "prob_away": 31.6
     },
     {
       "league": "ligue2",
@@ -916,35 +911,35 @@
       "away": "Quevilly Rouen",
       "predicted": "draw",
       "actual": "home",
-      "confidence": 50,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 41.9,
-      "prob_draw": 31.7,
-      "prob_away": 26.3
+      "prob_home": 46.5,
+      "prob_draw": 27.3,
+      "prob_away": 26.1
     },
     {
       "league": "league-two",
       "home": "Crewe",
       "away": "Mansfield",
-      "predicted": "home",
+      "predicted": "away",
       "actual": "draw",
-      "confidence": 69,
+      "confidence": 55,
       "correct": false,
-      "prob_home": 69.3,
-      "prob_draw": 17.2,
-      "prob_away": 13.5
+      "prob_home": 21.1,
+      "prob_draw": 24.0,
+      "prob_away": 54.9
     },
     {
       "league": "league-two",
       "home": "Crawley Town",
       "away": "Bradford City",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "home",
-      "confidence": 52,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 26.7,
-      "prob_draw": 27.5,
-      "prob_away": 45.8
+      "prob_home": 35.4,
+      "prob_draw": 31.1,
+      "prob_away": 33.5
     },
     {
       "league": "scottish-div2",
@@ -952,23 +947,23 @@
       "away": "Cove Rangers",
       "predicted": "away",
       "actual": "home",
-      "confidence": 58,
+      "confidence": 47,
       "correct": false,
-      "prob_home": 20.4,
-      "prob_draw": 21.6,
-      "prob_away": 57.9
+      "prob_home": 27.0,
+      "prob_draw": 25.9,
+      "prob_away": 47.1
     },
     {
       "league": "league-two",
       "home": "Grimsby",
       "away": "AFC Wimbledon",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 75,
-      "correct": false,
-      "prob_home": 75.3,
-      "prob_draw": 15.2,
-      "prob_away": 9.6
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 45.3,
+      "prob_draw": 35.9,
+      "prob_away": 18.7
     },
     {
       "league": "league-two",
@@ -976,11 +971,11 @@
       "away": "Salford",
       "predicted": "away",
       "actual": "away",
-      "confidence": 56,
+      "confidence": 53,
       "correct": true,
-      "prob_home": 19.6,
-      "prob_draw": 24.0,
-      "prob_away": 56.4
+      "prob_home": 20.8,
+      "prob_draw": 26.5,
+      "prob_away": 52.7
     },
     {
       "league": "scottish-div2",
@@ -988,11 +983,11 @@
       "away": "Annan Athletic",
       "predicted": "home",
       "actual": "home",
-      "confidence": 79,
+      "confidence": 71,
       "correct": true,
-      "prob_home": 79.4,
-      "prob_draw": 13.3,
-      "prob_away": 7.4
+      "prob_home": 71.4,
+      "prob_draw": 18.3,
+      "prob_away": 10.3
     },
     {
       "league": "bundesliga-2",
@@ -1000,11 +995,11 @@
       "away": "Fortuna D\u00fcsseldorf",
       "predicted": "home",
       "actual": "draw",
-      "confidence": 72,
+      "confidence": 54,
       "correct": false,
-      "prob_home": 71.6,
-      "prob_draw": 17.1,
-      "prob_away": 11.3
+      "prob_home": 54.5,
+      "prob_draw": 24.7,
+      "prob_away": 20.8
     },
     {
       "league": "bundesliga-2",
@@ -1012,23 +1007,23 @@
       "away": "SpVgg Greuther Furth",
       "predicted": "home",
       "actual": "home",
-      "confidence": 69,
+      "confidence": 55,
       "correct": true,
-      "prob_home": 68.7,
-      "prob_draw": 17.7,
-      "prob_away": 13.6
+      "prob_home": 54.8,
+      "prob_draw": 23.9,
+      "prob_away": 21.3
     },
     {
       "league": "scottish-div3",
       "home": "Elgin",
       "away": "Stranraer",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 52,
-      "correct": true,
-      "prob_home": 22.5,
-      "prob_draw": 28.4,
-      "prob_away": 49.1
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 21.4,
+      "prob_draw": 35.8,
+      "prob_away": 42.8
     },
     {
       "league": "scottish-div3",
@@ -1036,23 +1031,23 @@
       "away": "Peterhead",
       "predicted": "home",
       "actual": "away",
-      "confidence": 73,
+      "confidence": 53,
       "correct": false,
-      "prob_home": 73.1,
-      "prob_draw": 15.7,
-      "prob_away": 11.2
+      "prob_home": 52.6,
+      "prob_draw": 26.5,
+      "prob_away": 21.0
     },
     {
       "league": "ligue2",
       "home": "Dunkerque",
       "away": "ESTAC Troyes",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 63,
-      "correct": false,
-      "prob_home": 63.5,
-      "prob_draw": 21.6,
-      "prob_away": 14.9
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 43.1,
+      "prob_draw": 33.6,
+      "prob_away": 23.3
     },
     {
       "league": "scottish-div1",
@@ -1060,23 +1055,23 @@
       "away": "Airdrie Utd",
       "predicted": "home",
       "actual": "home",
-      "confidence": 67,
+      "confidence": 57,
       "correct": true,
-      "prob_home": 66.5,
-      "prob_draw": 18.7,
-      "prob_away": 14.8
+      "prob_home": 57.0,
+      "prob_draw": 23.7,
+      "prob_away": 19.3
     },
     {
       "league": "scottish-prem",
       "home": "Dundee FC",
       "away": "Motherwell FC",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 65,
-      "correct": false,
-      "prob_home": 64.5,
-      "prob_draw": 20.0,
-      "prob_away": 15.5
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 41.1,
+      "prob_draw": 31.3,
+      "prob_away": 27.6
     },
     {
       "league": "league-two",
@@ -1084,11 +1079,11 @@
       "away": "Harrogate",
       "predicted": "away",
       "actual": "away",
-      "confidence": 52,
+      "confidence": 55,
       "correct": true,
-      "prob_home": 20.6,
-      "prob_draw": 29.6,
-      "prob_away": 49.8
+      "prob_home": 17.8,
+      "prob_draw": 26.7,
+      "prob_away": 55.5
     },
     {
       "league": "league-one",
@@ -1096,11 +1091,11 @@
       "away": "Wigan Athletic",
       "predicted": "away",
       "actual": "away",
-      "confidence": 52,
+      "confidence": 54,
       "correct": true,
-      "prob_home": 21.3,
-      "prob_draw": 28.1,
-      "prob_away": 50.6
+      "prob_home": 20.1,
+      "prob_draw": 25.9,
+      "prob_away": 54.0
     },
     {
       "league": "bundesliga-2",
@@ -1108,11 +1103,11 @@
       "away": "Hansa Rostock",
       "predicted": "away",
       "actual": "away",
-      "confidence": 64,
+      "confidence": 57,
       "correct": true,
-      "prob_home": 14.9,
-      "prob_draw": 20.7,
-      "prob_away": 64.5
+      "prob_home": 18.3,
+      "prob_draw": 24.6,
+      "prob_away": 57.2
     },
     {
       "league": "championship",
@@ -1120,11 +1115,11 @@
       "away": "Cardiff City",
       "predicted": "draw",
       "actual": "draw",
-      "confidence": 50,
+      "confidence": 45,
       "correct": true,
-      "prob_home": 39.4,
-      "prob_draw": 32.6,
-      "prob_away": 28.0
+      "prob_home": 43.1,
+      "prob_draw": 31.2,
+      "prob_away": 25.7
     },
     {
       "league": "championship",
@@ -1132,11 +1127,11 @@
       "away": "Ipswich Town",
       "predicted": "away",
       "actual": "away",
-      "confidence": 66,
+      "confidence": 64,
       "correct": true,
-      "prob_home": 14.0,
-      "prob_draw": 19.6,
-      "prob_away": 66.4
+      "prob_home": 13.8,
+      "prob_draw": 22.2,
+      "prob_away": 64.0
     },
     {
       "league": "belgian-pro",
@@ -1144,11 +1139,11 @@
       "away": "Royal Antwerp FC",
       "predicted": "away",
       "actual": "home",
-      "confidence": 68,
+      "confidence": 58,
       "correct": false,
-      "prob_home": 13.2,
-      "prob_draw": 19.1,
-      "prob_away": 67.6
+      "prob_home": 15.5,
+      "prob_draw": 26.3,
+      "prob_away": 58.2
     },
     {
       "league": "bundesliga-2",
@@ -1156,35 +1151,35 @@
       "away": "Braunschweig",
       "predicted": "home",
       "actual": "home",
-      "confidence": 78,
+      "confidence": 54,
       "correct": true,
-      "prob_home": 77.5,
-      "prob_draw": 14.1,
-      "prob_away": 8.4
+      "prob_home": 54.3,
+      "prob_draw": 28.1,
+      "prob_away": 17.6
     },
     {
       "league": "championship",
       "home": "Leicester City",
       "away": "Coventry City",
-      "predicted": "home",
+      "predicted": "away",
       "actual": "home",
-      "confidence": 52,
-      "correct": true,
-      "prob_home": 48.4,
-      "prob_draw": 27.7,
-      "prob_away": 23.9
+      "confidence": 47,
+      "correct": false,
+      "prob_home": 25.9,
+      "prob_draw": 26.8,
+      "prob_away": 47.3
     },
     {
       "league": "belgian-pro",
       "home": "Kortrijk",
       "away": "St Truiden",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 62,
-      "correct": true,
-      "prob_home": 16.4,
-      "prob_draw": 21.5,
-      "prob_away": 62.2
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 23.0,
+      "prob_draw": 34.5,
+      "prob_away": 42.5
     },
     {
       "league": "austrian-bl",
@@ -1192,11 +1187,11 @@
       "away": "WSG Tirol",
       "predicted": "home",
       "actual": "home",
-      "confidence": 62,
+      "confidence": 65,
       "correct": true,
-      "prob_home": 62.1,
-      "prob_draw": 22.8,
-      "prob_away": 15.1
+      "prob_home": 64.8,
+      "prob_draw": 23.7,
+      "prob_away": 11.5
     },
     {
       "league": "belgian-pro",
@@ -1206,21 +1201,21 @@
       "actual": "away",
       "confidence": 57,
       "correct": true,
-      "prob_home": 19.1,
-      "prob_draw": 24.3,
-      "prob_away": 56.6
+      "prob_home": 19.2,
+      "prob_draw": 23.9,
+      "prob_away": 56.8
     },
     {
       "league": "belgian-pro",
       "home": "KV Mechelen",
       "away": "KAA Gent",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 52,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 41.6,
-      "prob_draw": 25.3,
-      "prob_away": 33.2
+      "prob_home": 43.7,
+      "prob_draw": 25.0,
+      "prob_away": 31.3
     },
     {
       "league": "scottish-prem",
@@ -1228,47 +1223,47 @@
       "away": "St Mirren FC",
       "predicted": "home",
       "actual": "away",
-      "confidence": 74,
+      "confidence": 64,
       "correct": false,
-      "prob_home": 74.2,
-      "prob_draw": 15.5,
-      "prob_away": 10.3
+      "prob_home": 63.8,
+      "prob_draw": 22.1,
+      "prob_away": 14.0
     },
     {
       "league": "austrian-bl",
       "home": "FC Blau Wei\u00df Linz",
       "away": "TSV Hartberg",
-      "predicted": "home",
+      "predicted": "away",
       "actual": "draw",
-      "confidence": 52,
+      "confidence": 50,
       "correct": false,
-      "prob_home": 45.6,
-      "prob_draw": 29.3,
-      "prob_away": 25.0
+      "prob_home": 23.9,
+      "prob_draw": 25.7,
+      "prob_away": 50.4
     },
     {
       "league": "austrian-bl",
       "home": "Austria Lustenau",
       "away": "FK Austria Wien",
-      "predicted": "away",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 52,
-      "correct": true,
-      "prob_home": 25.4,
-      "prob_draw": 31.1,
-      "prob_away": 43.5
+      "confidence": 45,
+      "correct": false,
+      "prob_home": 42.9,
+      "prob_draw": 26.0,
+      "prob_away": 31.1
     },
     {
       "league": "bundesliga-2",
       "home": "1. FC Nurnberg",
       "away": "Hannover 96",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 59,
-      "correct": false,
-      "prob_home": 59.1,
-      "prob_draw": 22.9,
-      "prob_away": 18.0
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 38.9,
+      "prob_draw": 31.9,
+      "prob_away": 29.2
     },
     {
       "league": "bundesliga-2",
@@ -1276,11 +1271,11 @@
       "away": "Eintracht Braunschweig",
       "predicted": "home",
       "actual": "home",
-      "confidence": 78,
+      "confidence": 55,
       "correct": true,
-      "prob_home": 77.6,
-      "prob_draw": 14.1,
-      "prob_away": 8.3
+      "prob_home": 54.9,
+      "prob_draw": 27.6,
+      "prob_away": 17.5
     },
     {
       "league": "bundesliga-2",
@@ -1288,11 +1283,11 @@
       "away": "Hamburger SV",
       "predicted": "draw",
       "actual": "draw",
-      "confidence": 50,
+      "confidence": 45,
       "correct": true,
-      "prob_home": 35.4,
-      "prob_draw": 29.7,
-      "prob_away": 34.9
+      "prob_home": 29.5,
+      "prob_draw": 31.8,
+      "prob_away": 38.6
     },
     {
       "league": "ligue2",
@@ -1300,47 +1295,47 @@
       "away": "FC Girondins de Bordeaux",
       "predicted": "home",
       "actual": "home",
-      "confidence": 71,
+      "confidence": 58,
       "correct": true,
-      "prob_home": 71.2,
-      "prob_draw": 16.7,
-      "prob_away": 12.1
+      "prob_home": 57.9,
+      "prob_draw": 23.1,
+      "prob_away": 19.0
     },
     {
       "league": "austrian-bl",
       "home": "SK Austria Klagenfurt",
       "away": "Wolfsberger AC",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "draw",
-      "confidence": 52,
-      "correct": false,
-      "prob_home": 48.6,
-      "prob_draw": 27.5,
-      "prob_away": 23.9
+      "confidence": 45,
+      "correct": true,
+      "prob_home": 24.8,
+      "prob_draw": 32.6,
+      "prob_away": 42.7
     },
     {
       "league": "la-liga",
       "home": "UD Almer\u00eda",
       "away": "Rayo Vallecano de Madrid",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 55,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 55.0,
-      "prob_draw": 24.3,
-      "prob_away": 20.8
+      "prob_home": 32.3,
+      "prob_draw": 32.0,
+      "prob_away": 35.7
     },
     {
       "league": "la-liga",
       "home": "UD Almeria",
       "away": "Vallecano",
-      "predicted": "home",
+      "predicted": "draw",
       "actual": "away",
-      "confidence": 65,
+      "confidence": 45,
       "correct": false,
-      "prob_home": 65.2,
-      "prob_draw": 19.8,
-      "prob_away": 15.1
+      "prob_home": 39.1,
+      "prob_draw": 35.9,
+      "prob_away": 25.0
     },
     {
       "league": "super-lig",
@@ -1350,9 +1345,9 @@
       "actual": "home",
       "confidence": 52,
       "correct": true,
-      "prob_home": 47.4,
-      "prob_draw": 28.5,
-      "prob_away": 24.1
+      "prob_home": 52.2,
+      "prob_draw": 26.2,
+      "prob_away": 21.7
     },
     {
       "league": "primeira-liga",
@@ -1360,11 +1355,11 @@
       "away": "FC Famalicao",
       "predicted": "home",
       "actual": "away",
-      "confidence": 78,
+      "confidence": 67,
       "correct": false,
-      "prob_home": 78.0,
-      "prob_draw": 13.9,
-      "prob_away": 8.1
+      "prob_home": 66.7,
+      "prob_draw": 21.4,
+      "prob_away": 11.9
     },
     {
       "league": "primeira-liga",
@@ -1372,11 +1367,11 @@
       "away": "FC Famalic\u00e3o",
       "predicted": "home",
       "actual": "away",
-      "confidence": 78,
+      "confidence": 70,
       "correct": false,
-      "prob_home": 78.0,
-      "prob_draw": 13.9,
-      "prob_away": 8.0
+      "prob_home": 69.8,
+      "prob_draw": 19.3,
+      "prob_away": 10.9
     }
   ]
 }
