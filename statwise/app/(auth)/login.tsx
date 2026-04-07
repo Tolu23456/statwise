@@ -29,11 +29,7 @@ function parseAuthError(message: string, email: string): FieldErrors {
   if (msg.includes('user not found') || msg.includes('no user found')) {
     return { email: 'No account found with this email address.' };
   }
-  if (
-    msg.includes('email not confirmed') ||
-    msg.includes('email not verified') ||
-    msg.includes('confirm your email')
-  ) {
+  if (msg.includes('email not confirmed') || msg.includes('email not verified') || msg.includes('confirm your email')) {
     return {
       general: `Your email isn't verified yet. Check your inbox at ${email} for the verification link.`,
     };
@@ -57,6 +53,21 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 }
 
+const FormWrapper = ({ children, onSubmit }: { children: React.ReactNode; onSubmit: () => void }) => {
+  if (Platform.OS === 'web') {
+    return (
+      <form
+        onSubmit={(e: any) => { e.preventDefault(); onSubmit(); }}
+        style={{ width: '100%' }}
+        autoComplete="on"
+      >
+        {children}
+      </form>
+    );
+  }
+  return <View style={{ width: '100%' }}>{children}</View>;
+};
+
 export default function LoginScreen() {
   const scheme = useColorScheme() ?? 'dark';
   const C = Colors[scheme];
@@ -67,6 +78,7 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
   const [errors, setErrors] = useState<FieldErrors>({});
 
   function clearFieldError(field: keyof FieldErrors) {
@@ -106,6 +118,28 @@ export default function LoginScreen() {
     }
   }
 
+  async function handleGoogleSignIn() {
+    setGoogleLoading(true);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    try {
+      const redirectTo = Platform.OS === 'web'
+        ? (typeof window !== 'undefined' ? window.location.origin + '/' : undefined)
+        : undefined;
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo },
+      });
+      if (error) {
+        setErrors({ general: error.message });
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+      }
+    } catch (e) {
+      setErrors({ general: 'Google sign-in failed. Please try again.' });
+    } finally {
+      setGoogleLoading(false);
+    }
+  }
+
   const emailHasError = !!errors.email;
   const passwordHasError = !!errors.password;
 
@@ -124,98 +158,129 @@ export default function LoginScreen() {
       >
         <View style={styles.inner}>
           <View style={styles.header}>
-            <Text style={[styles.logo, { color: C.primary }]}>StatWise</Text>
+            <View style={styles.logoRow}>
+              <View style={[styles.logoIcon, { backgroundColor: C.primaryLight }]}>
+                <Ionicons name="stats-chart" size={22} color={C.primary} />
+              </View>
+              <Text style={[styles.logo, { color: C.primary }]}>StatWise</Text>
+            </View>
             <Text style={[styles.tagline, { color: C.textSecondary }]}>
               AI-Powered Sports Predictions
             </Text>
           </View>
 
-          <View style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}>
-            <Text style={[styles.title, { color: C.text }]}>Welcome back</Text>
-            <Text style={[styles.subtitle, { color: C.textSecondary }]}>
-              Sign in to your account
-            </Text>
+          <FormWrapper onSubmit={handleLogin}>
+            <View style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}>
+              <Text style={[styles.title, { color: C.text }]}>Welcome back</Text>
+              <Text style={[styles.subtitle, { color: C.textSecondary }]}>
+                Sign in to your account
+              </Text>
 
-            {errors.general && (
-              <View style={[styles.generalError, { backgroundColor: C.dangerLight, borderColor: C.danger }]}>
-                <Ionicons name="alert-circle-outline" size={16} color={C.danger} />
-                <Text style={[styles.generalErrorText, { color: C.danger }]}>{errors.general}</Text>
-              </View>
-            )}
+              {errors.general && (
+                <View style={[styles.generalError, { backgroundColor: C.dangerLight, borderColor: C.danger }]}>
+                  <Ionicons name="alert-circle-outline" size={16} color={C.danger} />
+                  <Text style={[styles.generalErrorText, { color: C.danger }]}>{errors.general}</Text>
+                </View>
+              )}
 
-            <Text style={[styles.label, { color: C.textSecondary }]}>Email</Text>
-            <TextInput
-              style={[
-                styles.input,
-                {
-                  backgroundColor: emailHasError ? C.dangerLight : C.inputBg,
-                  borderColor: emailHasError ? C.danger : C.border,
-                  color: C.text,
-                },
-              ]}
-              placeholder="you@example.com"
-              placeholderTextColor={C.placeholder}
-              value={email}
-              onChangeText={v => { setEmail(v); clearFieldError('email'); clearFieldError('general'); }}
-              autoCapitalize="none"
-              keyboardType="email-address"
-              returnKeyType="next"
-              onSubmitEditing={() => passwordRef.current?.focus()}
-            />
-            {errors.email && <FieldErrorMsg text={errors.email} color={C.danger} />}
-
-            <Text style={[styles.label, { color: C.textSecondary }]}>Password</Text>
-            <View style={styles.passwordWrapper}>
+              <Text style={[styles.label, { color: C.textSecondary }]}>Email</Text>
               <TextInput
-                ref={passwordRef}
                 style={[
-                  styles.passwordInput,
+                  styles.input,
                   {
-                    backgroundColor: passwordHasError ? C.dangerLight : C.inputBg,
-                    borderColor: passwordHasError ? C.danger : C.border,
+                    backgroundColor: emailHasError ? C.dangerLight : C.inputBg,
+                    borderColor: emailHasError ? C.danger : C.border,
                     color: C.text,
                   },
                 ]}
-                placeholder="Your password"
+                placeholder="you@example.com"
                 placeholderTextColor={C.placeholder}
-                value={password}
-                onChangeText={v => { setPassword(v); clearFieldError('password'); clearFieldError('general'); }}
-                secureTextEntry={!showPassword}
-                returnKeyType="done"
-                onSubmitEditing={handleLogin}
+                value={email}
+                onChangeText={v => { setEmail(v); clearFieldError('email'); clearFieldError('general'); }}
+                autoCapitalize="none"
+                keyboardType="email-address"
+                returnKeyType="next"
+                autoComplete="email"
+                onSubmitEditing={() => passwordRef.current?.focus()}
               />
-              <TouchableOpacity
-                style={styles.eyeBtn}
-                onPress={() => setShowPassword(p => !p)}
-                hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-              >
-                <Ionicons
-                  name={showPassword ? 'eye-off-outline' : 'eye-outline'}
-                  size={20}
-                  color={C.textSecondary}
+              {errors.email && <FieldErrorMsg text={errors.email} color={C.danger} />}
+
+              <Text style={[styles.label, { color: C.textSecondary }]}>Password</Text>
+              <View style={styles.passwordWrapper}>
+                <TextInput
+                  ref={passwordRef}
+                  style={[
+                    styles.passwordInput,
+                    {
+                      backgroundColor: passwordHasError ? C.dangerLight : C.inputBg,
+                      borderColor: passwordHasError ? C.danger : C.border,
+                      color: C.text,
+                    },
+                  ]}
+                  placeholder="Your password"
+                  placeholderTextColor={C.placeholder}
+                  value={password}
+                  onChangeText={v => { setPassword(v); clearFieldError('password'); clearFieldError('general'); }}
+                  secureTextEntry={!showPassword}
+                  returnKeyType="done"
+                  autoComplete="current-password"
+                  onSubmitEditing={handleLogin}
                 />
+                <TouchableOpacity
+                  style={styles.eyeBtn}
+                  onPress={() => setShowPassword(p => !p)}
+                  hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                >
+                  <Ionicons
+                    name={showPassword ? 'eye-off-outline' : 'eye-outline'}
+                    size={20}
+                    color={C.textSecondary}
+                  />
+                </TouchableOpacity>
+              </View>
+              {errors.password && <FieldErrorMsg text={errors.password} color={C.danger} />}
+
+              <Link href="/(auth)/forgot-password" asChild>
+                <TouchableOpacity style={styles.forgotRow}>
+                  <Text style={[styles.forgotText, { color: C.primary }]}>Forgot password?</Text>
+                </TouchableOpacity>
+              </Link>
+
+              <TouchableOpacity
+                style={[styles.button, { backgroundColor: C.primary, opacity: loading ? 0.7 : 1 }]}
+                onPress={handleLogin}
+                disabled={loading}
+              >
+                {loading ? (
+                  <ActivityIndicator color="#fff" />
+                ) : (
+                  <Text style={styles.buttonText}>Sign In</Text>
+                )}
+              </TouchableOpacity>
+
+              <View style={styles.dividerRow}>
+                <View style={[styles.divider, { backgroundColor: C.border }]} />
+                <Text style={[styles.dividerText, { color: C.textMuted }]}>or</Text>
+                <View style={[styles.divider, { backgroundColor: C.border }]} />
+              </View>
+
+              <TouchableOpacity
+                style={[styles.googleBtn, { borderColor: C.border, backgroundColor: C.inputBg, opacity: googleLoading ? 0.7 : 1 }]}
+                onPress={handleGoogleSignIn}
+                disabled={googleLoading}
+                activeOpacity={0.8}
+              >
+                {googleLoading ? (
+                  <ActivityIndicator color={C.text} size="small" />
+                ) : (
+                  <>
+                    <Ionicons name="logo-google" size={20} color="#DB4437" />
+                    <Text style={[styles.googleBtnText, { color: C.text }]}>Continue with Google</Text>
+                  </>
+                )}
               </TouchableOpacity>
             </View>
-            {errors.password && <FieldErrorMsg text={errors.password} color={C.danger} />}
-
-            <Link href="/(auth)/forgot-password" asChild>
-              <TouchableOpacity style={styles.forgotRow}>
-                <Text style={[styles.forgotText, { color: C.primary }]}>Forgot password?</Text>
-              </TouchableOpacity>
-            </Link>
-
-            <TouchableOpacity
-              style={[styles.button, { backgroundColor: C.primary, opacity: loading ? 0.7 : 1 }]}
-              onPress={handleLogin}
-              disabled={loading}
-            >
-              {loading ? (
-                <ActivityIndicator color="#fff" />
-              ) : (
-                <Text style={styles.buttonText}>Sign In</Text>
-              )}
-            </TouchableOpacity>
-          </View>
+          </FormWrapper>
 
           <View style={styles.footer}>
             <Text style={[styles.footerText, { color: C.textSecondary }]}>
@@ -256,9 +321,11 @@ const styles = StyleSheet.create({
   },
   inner: { width: '100%', maxWidth: 440 },
   header: { alignItems: 'center', marginBottom: 36 },
+  logoRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 },
+  logoIcon: { width: 42, height: 42, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
   logo: { fontSize: 36, fontFamily: 'Inter_700Bold', letterSpacing: -1 },
-  tagline: { fontSize: 14, marginTop: 6, fontFamily: 'Inter_400Regular' },
-  card: { borderRadius: 20, borderWidth: 1, padding: 24, marginBottom: 24 },
+  tagline: { fontSize: 14, fontFamily: 'Inter_400Regular' },
+  card: { borderRadius: 20, borderWidth: 1, padding: 24, marginBottom: 24, width: '100%' },
   title: { fontSize: 24, fontFamily: 'Inter_700Bold', marginBottom: 6 },
   subtitle: { fontSize: 15, fontFamily: 'Inter_400Regular', marginBottom: 20 },
   generalError: {
@@ -281,6 +348,14 @@ const styles = StyleSheet.create({
   forgotText: { fontSize: 14, fontFamily: 'Inter_500Medium' },
   button: { borderRadius: 14, padding: 16, alignItems: 'center', marginTop: 4 },
   buttonText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  dividerRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginVertical: 16 },
+  divider: { flex: 1, height: 1 },
+  dividerText: { fontSize: 13, fontFamily: 'Inter_400Regular' },
+  googleBtn: {
+    borderRadius: 14, borderWidth: 1, padding: 14,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10,
+  },
+  googleBtnText: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   footer: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center' },
   footerText: { fontSize: 15, fontFamily: 'Inter_400Regular' },
   footerLink: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },

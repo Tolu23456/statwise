@@ -1,18 +1,22 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput,
-  ActivityIndicator, RefreshControl, ScrollView, Platform,
+  RefreshControl, ScrollView, Platform,
   Animated,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { Ionicons } from '@expo/vector-icons';
+import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase, Prediction } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { PredictionCard } from '@/components/PredictionCard';
 import { PredictionDetailModal } from '@/components/PredictionDetailModal';
+import { SkeletonCard } from '@/components/SkeletonCard';
+import { OnboardingModal, shouldShowOnboarding } from '@/components/OnboardingModal';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const POLL_INTERVAL_MS = 20 * 60 * 1000;
 
@@ -74,12 +78,21 @@ export default function HomeScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [newPredictionsBadge, setNewPredictionsBadge] = useState(0);
   const [selectedPrediction, setSelectedPrediction] = useState<Prediction | null>(null);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+
   const badgeFade = useRef(new Animated.Value(0)).current;
+  const pulseAnim = useRef(new Animated.Value(1)).current;
 
   const userTier = profile?.current_tier ?? 'Free Tier';
   const userLimit = TIER_LIMITS[userTier] ?? 5;
   const nextTier = TIER_NEXT[userTier] ?? 'Premium Tier';
   const allowedTiers = TIER_DB_ALLOWED[userTier] ?? ['free'];
+
+  useEffect(() => {
+    shouldShowOnboarding().then(show => {
+      if (show) setShowOnboarding(true);
+    });
+  }, []);
 
   const { data: predictions = [], isLoading, isError, refetch } = useQuery<Prediction[]>({
     queryKey: ['predictions', userTier],
@@ -111,7 +124,7 @@ export default function HomeScreen() {
         setNewPredictionsBadge(prev => prev + 1);
         Animated.sequence([
           Animated.timing(badgeFade, { toValue: 1, duration: 300, useNativeDriver: true }),
-          Animated.delay(4000),
+          Animated.delay(5000),
           Animated.timing(badgeFade, { toValue: 0, duration: 600, useNativeDriver: true }),
         ]).start();
         queryClient.invalidateQueries({ queryKey: ['predictions', userTier] });
@@ -121,6 +134,22 @@ export default function HomeScreen() {
 
     return () => { supabase.removeChannel(channel); };
   }, [queryClient, userTier]);
+
+  useEffect(() => {
+    const pulse = Animated.loop(
+      Animated.sequence([
+        Animated.timing(pulseAnim, { toValue: 1.04, duration: 600, useNativeDriver: true }),
+        Animated.timing(pulseAnim, { toValue: 1, duration: 600, useNativeDriver: true }),
+      ]),
+    );
+    if (newPredictionsBadge > 0) {
+      pulse.start();
+    } else {
+      pulse.stop();
+      pulseAnim.setValue(1);
+    }
+    return () => pulse.stop();
+  }, [newPredictionsBadge, pulseAnim]);
 
   const dismissBadge = useCallback(() => {
     setNewPredictionsBadge(0);
@@ -153,25 +182,83 @@ export default function HomeScreen() {
 
   const topInset = Platform.OS === 'web' ? 67 : insets.top;
 
+  const EmptyState = () => {
+    if (search) {
+      return (
+        <View style={styles.empty}>
+          <Ionicons name="search-outline" size={52} color={C.textMuted} />
+          <Text style={[styles.emptyTitle, { color: C.text }]}>No results found</Text>
+          <Text style={[styles.emptyDesc, { color: C.textSecondary }]}>
+            No predictions match "{search}" — try a different search
+          </Text>
+          <TouchableOpacity
+            style={[styles.emptyBtn, { backgroundColor: C.primaryLight }]}
+            onPress={() => setSearch('')}
+          >
+            <Text style={[styles.emptyBtnText, { color: C.primary }]}>Clear Search</Text>
+          </TouchableOpacity>
+        </View>
+      );
+    }
+    if (selectedLeague !== 'all') {
+      return (
+        <View style={styles.empty}>
+          <Ionicons name="football-outline" size={52} color={C.textMuted} />
+          <Text style={[styles.emptyTitle, { color: C.text }]}>No Predictions Yet</Text>
+          <Text style={[styles.emptyDesc, { color: C.textSecondary }]}>
+            No predictions available for this league right now. Try another league or check back later.
+          </Text>
+          <TouchableOpacity
+            style={[styles.emptyBtn, { backgroundColor: C.primaryLight }]}
+            onPress={() => setSelectedLeague('all')}
+          >
+            <Text style={[styles.emptyBtnText, { color: C.primary }]}>View All Leagues</Text>
+          </TouchableOpacity>
+        </View>
+      );
+    }
+    return (
+      <View style={styles.empty}>
+        <Ionicons name="time-outline" size={52} color={C.textMuted} />
+        <Text style={[styles.emptyTitle, { color: C.text }]}>No Predictions Yet</Text>
+        <Text style={[styles.emptyDesc, { color: C.textSecondary }]}>
+          Today's predictions haven't been generated yet. Pull down to refresh or check back soon.
+        </Text>
+        <TouchableOpacity
+          style={[styles.emptyBtn, { backgroundColor: C.primaryLight }]}
+          onPress={onRefresh}
+        >
+          <Ionicons name="refresh-outline" size={15} color={C.primary} />
+          <Text style={[styles.emptyBtnText, { color: C.primary }]}>Refresh</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
   return (
     <View style={[styles.container, { backgroundColor: C.background }]}>
       <Animated.View
         style={[
           styles.liveBanner,
-          { backgroundColor: C.success, opacity: badgeFade },
-          Platform.OS === 'web' && { top: 67 },
+          {
+            backgroundColor: C.success,
+            opacity: badgeFade,
+            pointerEvents: newPredictionsBadge > 0 ? 'box-none' : 'none',
+          },
+          Platform.OS === 'web' && { top: 64 },
         ]}
-        pointerEvents="box-none"
       >
-        <TouchableOpacity
-          style={styles.liveBannerInner}
-          onPress={() => { dismissBadge(); onRefresh(); }}
-        >
-          <Ionicons name="flash" size={14} color="#fff" />
-          <Text style={styles.liveBannerText}>
-            {newPredictionsBadge} new prediction{newPredictionsBadge !== 1 ? 's' : ''} — tap to refresh
-          </Text>
-        </TouchableOpacity>
+        <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
+          <TouchableOpacity
+            style={styles.liveBannerInner}
+            onPress={() => { dismissBadge(); onRefresh(); }}
+          >
+            <Ionicons name="flash" size={14} color="#fff" />
+            <Text style={styles.liveBannerText}>
+              {newPredictionsBadge} new prediction{newPredictionsBadge !== 1 ? 's' : ''} — tap to refresh
+            </Text>
+          </TouchableOpacity>
+        </Animated.View>
       </Animated.View>
 
       <View style={[styles.headerArea, { paddingTop: topInset + 8, backgroundColor: C.background }]}>
@@ -189,12 +276,17 @@ export default function HomeScreen() {
         </View>
 
         {isError && (
-          <View style={[styles.errorBanner, { backgroundColor: '#FFF3F3', borderColor: C.danger }]}>
+          <TouchableOpacity
+            style={[styles.errorBanner, { backgroundColor: C.dangerLight, borderColor: C.danger }]}
+            onPress={() => refetch()}
+            activeOpacity={0.8}
+          >
             <Ionicons name="wifi-outline" size={14} color={C.danger} />
             <Text style={[styles.errorText, { color: C.danger }]}>
-              Couldn't load predictions — pull down to retry
+              Couldn't load predictions — tap to retry
             </Text>
-          </View>
+            <Ionicons name="refresh-outline" size={14} color={C.danger} />
+          </TouchableOpacity>
         )}
 
         <View style={[styles.searchBar, { backgroundColor: C.inputBg, borderColor: C.border }]}>
@@ -217,6 +309,7 @@ export default function HomeScreen() {
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.leagueTabs}
+          fadingEdgeLength={Platform.OS === 'android' ? 32 : undefined}
         >
           {LEAGUES.map(l => (
             <TouchableOpacity
@@ -228,7 +321,10 @@ export default function HomeScreen() {
                   borderColor: selectedLeague === l.slug ? C.primary : C.border,
                 },
               ]}
-              onPress={() => setSelectedLeague(l.slug)}
+              onPress={() => {
+                setSelectedLeague(l.slug);
+                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+              }}
             >
               <Text
                 style={[
@@ -244,16 +340,20 @@ export default function HomeScreen() {
       </View>
 
       {isLoading ? (
-        <View style={styles.centered}>
-          <ActivityIndicator size="large" color={C.primary} />
-        </View>
+        <FlatList
+          data={[1, 2, 3, 4, 5]}
+          keyExtractor={item => String(item)}
+          contentContainerStyle={[styles.listContent, { paddingBottom: insets.bottom + 80 }]}
+          renderItem={() => <SkeletonCard />}
+          scrollEnabled={false}
+        />
       ) : (
         <FlatList
           data={filtered}
           keyExtractor={item => item.id}
           contentContainerStyle={[
             styles.listContent,
-            { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 84 : 80) },
+            { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 24 : 80) },
           ]}
           refreshControl={
             <RefreshControl
@@ -263,21 +363,16 @@ export default function HomeScreen() {
               colors={[C.primary]}
             />
           }
-          ListEmptyComponent={
-            <View style={styles.empty}>
-              <Ionicons name="football-outline" size={48} color={C.textMuted} />
-              <Text style={[styles.emptyTitle, { color: C.text }]}>No Predictions</Text>
-              <Text style={[styles.emptyDesc, { color: C.textSecondary }]}>
-                {search ? 'No results for your search' : 'No predictions available yet — pull down to refresh'}
-              </Text>
-            </View>
-          }
+          ListEmptyComponent={<EmptyState />}
           renderItem={({ item }) => (
             <PredictionCard
               prediction={item}
               locked={false}
               nextTier={nextTier}
-              onPress={() => setSelectedPrediction(item)}
+              onPress={() => {
+                setSelectedPrediction(item);
+                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+              }}
             />
           )}
         />
@@ -287,6 +382,11 @@ export default function HomeScreen() {
         prediction={selectedPrediction}
         visible={selectedPrediction !== null}
         onClose={() => setSelectedPrediction(null)}
+      />
+
+      <OnboardingModal
+        visible={showOnboarding}
+        onDone={() => setShowOnboarding(false)}
       />
     </View>
   );
@@ -326,8 +426,12 @@ const styles = StyleSheet.create({
   leagueTab: { paddingHorizontal: 14, paddingVertical: 7, borderRadius: 20, borderWidth: 1 },
   leagueTabText: { fontSize: 13, fontFamily: 'Inter_500Medium' },
   listContent: { paddingHorizontal: 16, paddingTop: 12 },
-  centered: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  empty: { alignItems: 'center', paddingTop: 60, gap: 12 },
+  empty: { alignItems: 'center', paddingTop: 60, gap: 12, paddingHorizontal: 32 },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
-  emptyDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', paddingHorizontal: 32 },
+  emptyDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 21 },
+  emptyBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: 20, paddingVertical: 10, borderRadius: 20, marginTop: 4,
+  },
+  emptyBtnText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
 });

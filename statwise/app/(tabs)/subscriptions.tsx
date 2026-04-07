@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Alert, ActivityIndicator, Platform,
+  Alert, ActivityIndicator, Platform, Animated,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useQuery } from '@tanstack/react-query';
 import * as Haptics from 'expo-haptics';
 import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, FLUTTERWAVE_PUBLIC_KEY } from '@/lib/supabase';
@@ -21,7 +20,7 @@ type Plan = {
   predictions: number;
   features: string[];
   badge?: string;
-  successRate?: string;
+  successRate?: number;
   roi?: string;
   highlight?: string;
 };
@@ -34,27 +33,27 @@ const PLANS: Plan[] = [
   },
   {
     id: 'premium_daily', tier: 'Premium Tier', name: 'Premium', price: 500, period: 'daily',
-    predictions: 25, badge: 'POPULAR', successRate: '78%', highlight: 'Best value for regular users',
+    predictions: 25, badge: 'POPULAR', successRate: 78, highlight: 'Best value for regular users',
     features: ['25 Daily Predictions', 'Advanced Match Analysis', 'All Major Leagues', 'No Ads', 'Priority Support', 'Win Rate Analytics'],
   },
   {
     id: 'vip_daily', tier: 'VIP Tier', name: 'VIP / Elite', price: 2000, period: 'daily',
-    predictions: 75, badge: 'ELITE', successRate: '85%', roi: '150% Avg ROI', highlight: 'For serious bettors',
+    predictions: 75, badge: 'ELITE', successRate: 85, roi: '150% Avg ROI', highlight: 'For serious bettors',
     features: ['75 Daily Predictions', 'All Premium Features', 'Exclusive VIP Insights', 'Live Match Updates', 'Expert Analysis Reports', 'VIP-Only Leagues', 'Advanced Statistics', 'Direct VIP Support'],
   },
   {
     id: 'vvip_daily', tier: 'VVIP Tier', name: 'VVIP', price: 5000, period: 'daily',
-    predictions: 999, badge: 'ULTIMATE', successRate: '91%', roi: '200% Avg ROI', highlight: 'For professional bettors',
+    predictions: 999, badge: 'ULTIMATE', successRate: 91, roi: '200% Avg ROI', highlight: 'For professional bettors',
     features: ['Unlimited Predictions', 'All VIP Features', 'Personal Analyst', 'Real-time Alerts', 'Custom Reports', 'VVIP-Only Tips', 'Dedicated Support', 'Early Access'],
   },
   {
     id: 'premium_monthly', tier: 'Premium Tier', name: 'Premium Monthly', price: 12000, period: 'monthly',
-    predictions: 25, badge: 'POPULAR', successRate: '78%', highlight: 'Save 20% vs daily',
+    predictions: 25, badge: 'POPULAR', successRate: 78, highlight: 'Save 20% vs daily',
     features: ['Everything in Premium Daily', 'Monthly Billing (Save 20%)', 'Priority Support'],
   },
   {
     id: 'vip_monthly', tier: 'VIP Tier', name: 'VIP Monthly', price: 45000, period: 'monthly',
-    predictions: 75, badge: 'ELITE', successRate: '85%', highlight: 'Save 25% vs daily',
+    predictions: 75, badge: 'ELITE', successRate: 85, highlight: 'Save 25% vs daily',
     features: ['Everything in VIP Daily', 'Monthly Billing (Save 25%)', 'Dedicated VIP Manager'],
   },
 ];
@@ -71,6 +70,24 @@ function loadFlutterwaveScript(): Promise<void> {
   });
 }
 
+function WinRateBar({ rate, color, bgColor }: { rate: number; color: string; bgColor: string }) {
+  const anim = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.spring(anim, { toValue: rate / 100, useNativeDriver: false, tension: 60, friction: 12 }).start();
+  }, [rate]);
+  const width = anim.interpolate({ inputRange: [0, 1], outputRange: ['0%', '100%'] });
+  return (
+    <View style={[winBarStyles.track, { backgroundColor: bgColor }]}>
+      <Animated.View style={[winBarStyles.fill, { width: width as any, backgroundColor: color }]} />
+    </View>
+  );
+}
+
+const winBarStyles = StyleSheet.create({
+  track: { height: 5, borderRadius: 3, overflow: 'hidden', marginTop: 5 },
+  fill: { height: '100%', borderRadius: 3 },
+});
+
 export default function SubscriptionsScreen() {
   const { scheme } = useTheme();
   const C = Colors[scheme];
@@ -80,9 +97,20 @@ export default function SubscriptionsScreen() {
   const [period, setPeriod] = useState<'daily' | 'monthly'>('daily');
   const [loading, setLoading] = useState<string | null>(null);
 
-  const topInset = Platform.OS === 'web' ? 67 : insets.top;
+  const toggleAnim = useRef(new Animated.Value(0)).current;
+
+  const topInset = Platform.OS === 'web' ? 0 : insets.top;
   const currentTier = profile?.current_tier ?? 'Free Tier';
   const tierColors = TierBadgeColors[currentTier] ?? TierBadgeColors['Free Tier'];
+
+  useEffect(() => {
+    Animated.spring(toggleAnim, {
+      toValue: period === 'daily' ? 0 : 1,
+      useNativeDriver: true,
+      tension: 300,
+      friction: 30,
+    }).start();
+  }, [period]);
 
   const displayPlans = period === 'monthly'
     ? PLANS.filter(p => p.period === 'monthly')
@@ -158,9 +186,7 @@ export default function SubscriptionsScreen() {
               await processPaymentSuccess(plan, txRef);
             }
           },
-          onclose: () => {
-            setLoading(null);
-          },
+          onclose: () => { setLoading(null); },
         });
       } catch (e) {
         setLoading(null);
@@ -174,6 +200,12 @@ export default function SubscriptionsScreen() {
     }
   }
 
+  const TOGGLE_WIDTH = 260;
+  const pillTranslate = toggleAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [2, TOGGLE_WIDTH / 2],
+  });
+
   return (
     <View style={[styles.container, { backgroundColor: C.background }]}>
       <View style={[styles.header, { paddingTop: topInset + 8 }]}>
@@ -185,31 +217,42 @@ export default function SubscriptionsScreen() {
         </View>
       </View>
 
-      <View style={[styles.toggleRow, { paddingHorizontal: 16 }]}>
-        {(['daily', 'monthly'] as const).map(p => (
-          <TouchableOpacity
-            key={p}
+      <View style={styles.toggleContainer}>
+        <View style={[styles.toggleTrack, { backgroundColor: C.inputBg, borderColor: C.border, width: TOGGLE_WIDTH }]}>
+          <Animated.View
             style={[
-              styles.toggleBtn,
+              styles.togglePill,
               {
-                backgroundColor: period === p ? C.primary : C.card,
-                borderColor: period === p ? C.primary : C.border,
+                backgroundColor: C.primary,
+                width: TOGGLE_WIDTH / 2 - 4,
+                transform: [{ translateX: pillTranslate }],
               },
             ]}
-            onPress={() => setPeriod(p)}
+          />
+          <TouchableOpacity
+            style={[styles.toggleOption, { width: TOGGLE_WIDTH / 2 }]}
+            onPress={() => { setPeriod('daily'); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); }}
           >
-            <Text style={[styles.toggleText, { color: period === p ? '#fff' : C.textSecondary }]}>
-              {p.charAt(0).toUpperCase() + p.slice(1)}
-              {p === 'monthly' && ' (-20%)'}
+            <Text style={[styles.toggleText, { color: period === 'daily' ? '#fff' : C.textSecondary }]}>
+              Daily
             </Text>
           </TouchableOpacity>
-        ))}
+          <TouchableOpacity
+            style={[styles.toggleOption, { width: TOGGLE_WIDTH / 2 }]}
+            onPress={() => { setPeriod('monthly'); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); }}
+          >
+            <Text style={[styles.toggleText, { color: period === 'monthly' ? '#fff' : C.textSecondary }]}>
+              Monthly{' '}
+              <Text style={{ fontSize: 11, opacity: period === 'monthly' ? 1 : 0.7 }}>-20%</Text>
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <ScrollView
         contentContainerStyle={[
           styles.scroll,
-          { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 84 : 80) },
+          { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 24 : 80) },
         ]}
         showsVerticalScrollIndicator={false}
       >
@@ -249,18 +292,25 @@ export default function SubscriptionsScreen() {
                 {plan.predictions === 999 ? 'Unlimited' : plan.predictions} predictions/day
               </Text>
 
-              {(plan.successRate || plan.roi) && (
-                <View style={styles.statsRow}>
-                  {plan.successRate && (
-                    <View style={[styles.stat, { backgroundColor: C.successLight }]}>
-                      <Text style={[styles.statText, { color: C.success }]}>
-                        {plan.successRate} Win Rate
-                      </Text>
+              {(plan.successRate !== undefined || plan.roi) && (
+                <View style={styles.statsBlock}>
+                  {plan.successRate !== undefined && (
+                    <View style={[styles.statCard, { backgroundColor: C.successLight }]}>
+                      <View style={styles.statHeader}>
+                        <Ionicons name="trending-up" size={13} color={C.success} />
+                        <Text style={[styles.statLabel, { color: C.textSecondary }]}>Win Rate</Text>
+                        <Text style={[styles.statValue, { color: C.success }]}>{plan.successRate}%</Text>
+                      </View>
+                      <WinRateBar rate={plan.successRate} color={C.success} bgColor={C.border} />
                     </View>
                   )}
                   {plan.roi && (
-                    <View style={[styles.stat, { backgroundColor: C.primaryLight }]}>
-                      <Text style={[styles.statText, { color: C.primary }]}>{plan.roi}</Text>
+                    <View style={[styles.statCard, { backgroundColor: C.primaryLight }]}>
+                      <View style={styles.statHeader}>
+                        <Ionicons name="stats-chart" size={13} color={C.primary} />
+                        <Text style={[styles.statLabel, { color: C.textSecondary }]}>Avg ROI</Text>
+                        <Text style={[styles.statValue, { color: C.primary }]}>{plan.roi.replace(' Avg ROI', '')}</Text>
+                      </View>
                     </View>
                   )}
                 </View>
@@ -289,13 +339,17 @@ export default function SubscriptionsScreen() {
                 ]}
                 onPress={() => handleSubscribe(plan)}
                 disabled={loading === plan.id || isActive}
+                activeOpacity={0.85}
               >
                 {loading === plan.id ? (
                   <ActivityIndicator color="#fff" size="small" />
                 ) : (
-                  <Text style={[styles.subBtnText, { color: isActive ? C.success : '#fff' }]}>
-                    {isActive ? 'Current Plan' : plan.price === 0 ? 'Free' : 'Pay Now'}
-                  </Text>
+                  <>
+                    {isActive && <Ionicons name="checkmark-circle" size={16} color={C.success} />}
+                    <Text style={[styles.subBtnText, { color: isActive ? C.success : '#fff' }]}>
+                      {isActive ? 'Current Plan' : plan.price === 0 ? 'Get Free' : 'Pay Now'}
+                    </Text>
+                  </>
                 )}
               </TouchableOpacity>
             </View>
@@ -315,8 +369,18 @@ const styles = StyleSheet.create({
   title: { fontSize: 22, fontFamily: 'Inter_700Bold', flex: 1 },
   currentBadge: { paddingHorizontal: 12, paddingVertical: 4, borderRadius: 20 },
   currentBadgeText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  toggleRow: { flexDirection: 'row', gap: 10, marginBottom: 16 },
-  toggleBtn: { flex: 1, paddingVertical: 10, borderRadius: 12, borderWidth: 1, alignItems: 'center' },
+  toggleContainer: { paddingHorizontal: 16, marginBottom: 16 },
+  toggleTrack: {
+    flexDirection: 'row', borderRadius: 12, borderWidth: 1,
+    height: 44, alignItems: 'center', position: 'relative', overflow: 'hidden',
+  },
+  togglePill: {
+    position: 'absolute', height: 38, borderRadius: 10,
+    top: 2, bottom: 2,
+  },
+  toggleOption: {
+    height: '100%', alignItems: 'center', justifyContent: 'center', zIndex: 1,
+  },
   toggleText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   scroll: { paddingHorizontal: 16, paddingTop: 4 },
   planCard: { borderRadius: 20, padding: 20, marginBottom: 16 },
@@ -331,14 +395,19 @@ const styles = StyleSheet.create({
   planName: { fontSize: 20, fontFamily: 'Inter_700Bold', marginBottom: 4 },
   planPrice: { fontSize: 28, fontFamily: 'Inter_700Bold', marginBottom: 4 },
   planPeriod: { fontSize: 16, fontFamily: 'Inter_400Regular' },
-  predLimit: { fontSize: 13, fontFamily: 'Inter_400Regular', marginBottom: 12 },
-  statsRow: { flexDirection: 'row', gap: 8, marginBottom: 14 },
-  stat: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8 },
-  statText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  predLimit: { fontSize: 13, fontFamily: 'Inter_400Regular', marginBottom: 14 },
+  statsBlock: { gap: 8, marginBottom: 14 },
+  statCard: { borderRadius: 10, padding: 10 },
+  statHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  statLabel: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular' },
+  statValue: { fontSize: 14, fontFamily: 'Inter_700Bold' },
   featureList: { gap: 8, marginBottom: 14 },
   featureRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   featureText: { fontSize: 14, fontFamily: 'Inter_400Regular', flex: 1 },
   highlight: { fontSize: 12, fontFamily: 'Inter_400Regular', marginBottom: 16, fontStyle: 'italic' },
-  subBtn: { borderRadius: 14, padding: 14, alignItems: 'center' },
+  subBtn: {
+    borderRadius: 14, padding: 14, alignItems: 'center',
+    flexDirection: 'row', justifyContent: 'center', gap: 8,
+  },
   subBtnText: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
 });

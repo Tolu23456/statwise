@@ -7,6 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useQuery } from '@tanstack/react-query';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
@@ -45,6 +46,21 @@ const MOCK_INSIGHTS: Insight[] = [
   },
 ];
 
+function timeAgo(dateStr: string): string {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const days = Math.floor(diff / 86400000);
+  if (days === 0) return 'Today';
+  if (days === 1) return '1 day ago';
+  return `${days} days ago`;
+}
+
+function estimateReadTime(content?: string): string {
+  if (!content) return '2 min read';
+  const words = content.split(/\s+/).length;
+  const mins = Math.max(1, Math.round(words / 200));
+  return `${mins} min read`;
+}
+
 export default function InsightsScreen() {
   const { scheme } = useTheme();
   const C = Colors[scheme];
@@ -53,7 +69,7 @@ export default function InsightsScreen() {
   const router = useRouter();
 
   const hasAccess = ALLOWED_TIERS.includes(profile?.current_tier ?? '');
-  const topInset = Platform.OS === 'web' ? 67 : insets.top;
+  const topInset = Platform.OS === 'web' ? 0 : insets.top;
 
   const { data: insights = [], isLoading, refetch, isFetching } = useQuery<Insight[]>({
     queryKey: ['insights'],
@@ -69,6 +85,7 @@ export default function InsightsScreen() {
   });
 
   function handleReadMore(item: Insight) {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     router.push({
       pathname: '/insight-detail',
       params: { insight: JSON.stringify(item) },
@@ -79,30 +96,64 @@ export default function InsightsScreen() {
     return (
       <View style={[styles.lockContainer, { backgroundColor: C.background, paddingTop: topInset + 20 }]}>
         <View style={[styles.lockCard, { backgroundColor: C.card, borderColor: C.border }]}>
-          <Ionicons name="lock-closed" size={44} color={C.gold} />
-          <Text style={[styles.lockTitle, { color: C.text }]}>VIP Exclusive</Text>
+          <View style={[styles.lockIconBg, { backgroundColor: C.goldLight }]}>
+            <Ionicons name="lock-closed" size={36} color={C.gold} />
+          </View>
+          <Text style={[styles.lockTitle, { color: C.text }]}>VIP Exclusive Content</Text>
           <Text style={[styles.lockDesc, { color: C.textSecondary }]}>
             Unlock deep-dive analysis, market trends, and expert insights with a VIP or VVIP subscription.
           </Text>
+
+          <View style={styles.lockFeatureList}>
+            {['Expert match analysis reports', 'Market trend breakdowns', 'Betting strategy guides', 'Weekly ROI reviews'].map(f => (
+              <View key={f} style={styles.lockFeatureRow}>
+                <Ionicons name="checkmark-circle" size={16} color={C.gold} />
+                <Text style={[styles.lockFeatureText, { color: C.textSecondary }]}>{f}</Text>
+              </View>
+            ))}
+          </View>
+
           <TouchableOpacity
             style={[styles.upgradeBtn, { backgroundColor: C.gold }]}
-            onPress={() => router.push('/(tabs)/subscriptions')}
+            onPress={() => {
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+              router.push('/(tabs)/subscriptions');
+            }}
+            activeOpacity={0.85}
           >
+            <Ionicons name="diamond" size={16} color="#fff" />
             <Text style={styles.upgradeBtnText}>Upgrade to VIP</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.previewSection}>
-          <Text style={[styles.previewLabel, { color: C.textSecondary }]}>What you'll get:</Text>
-          {MOCK_INSIGHTS.map(insight => (
-            <View key={insight.id} style={[styles.previewCard, { backgroundColor: C.card, borderColor: C.border, opacity: 0.5 }]}>
-              <View style={[styles.blurOverlay, { backgroundColor: C.overlay }]} />
-              <Text style={[styles.previewTitle, { color: C.text }]}>{insight.title}</Text>
-              <Text style={[styles.previewDate, { color: C.textSecondary }]}>
-                {new Date(insight.published_at).toLocaleDateString()}
-              </Text>
+
+        <Text style={[styles.previewLabel, { color: C.textSecondary }]}>Preview — available with VIP:</Text>
+        {MOCK_INSIGHTS.map(insight => (
+          <TouchableOpacity
+            key={insight.id}
+            style={[styles.previewCard, { backgroundColor: C.card, borderColor: C.border }]}
+            onPress={() => router.push('/(tabs)/subscriptions')}
+            activeOpacity={0.8}
+          >
+            <View style={[styles.previewOverlay, { backgroundColor: C.overlay }]}>
+              <View style={[styles.previewUnlockBadge, { backgroundColor: C.gold }]}>
+                <Ionicons name="lock-closed" size={11} color="#fff" />
+                <Text style={styles.previewUnlockText}>Unlock with VIP</Text>
+              </View>
             </View>
-          ))}
-        </View>
+            {insight.category && (
+              <View style={[styles.catBadge, { backgroundColor: C.goldLight }]}>
+                <Text style={[styles.catText, { color: C.gold }]}>{insight.category}</Text>
+              </View>
+            )}
+            <Text style={[styles.previewTitle, { color: C.text }]}>{insight.title}</Text>
+            <Text style={[styles.previewSummary, { color: C.textSecondary }]} numberOfLines={2}>
+              {insight.summary}
+            </Text>
+            <Text style={[styles.previewDate, { color: C.textMuted }]}>
+              {timeAgo(insight.published_at)} · {estimateReadTime(insight.content)}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
     );
   }
@@ -127,27 +178,30 @@ export default function InsightsScreen() {
           keyExtractor={item => item.id}
           contentContainerStyle={[
             styles.list,
-            { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 84 : 80) },
+            { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 24 : 80) },
           ]}
           refreshControl={
             <RefreshControl refreshing={isFetching} onRefresh={refetch} tintColor={C.primary} colors={[C.primary]} />
           }
           renderItem={({ item }) => (
             <View style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}>
-              {item.category && (
-                <View style={[styles.catBadge, { backgroundColor: C.goldLight }]}>
-                  <Text style={[styles.catText, { color: C.gold }]}>{item.category}</Text>
-                </View>
-              )}
+              <View style={styles.cardTopRow}>
+                {item.category && (
+                  <View style={[styles.catBadge, { backgroundColor: C.goldLight }]}>
+                    <Text style={[styles.catText, { color: C.gold }]}>{item.category}</Text>
+                  </View>
+                )}
+                <Text style={[styles.readTime, { color: C.textMuted }]}>
+                  {estimateReadTime(item.content)}
+                </Text>
+              </View>
               <Text style={[styles.cardTitle, { color: C.text }]}>{item.title}</Text>
               <Text style={[styles.cardSummary, { color: C.textSecondary }]} numberOfLines={3}>
                 {item.summary}
               </Text>
               <View style={styles.cardFooter}>
                 <Text style={[styles.cardDate, { color: C.textMuted }]}>
-                  {new Date(item.published_at).toLocaleDateString('en-US', {
-                    month: 'long', day: 'numeric', year: 'numeric',
-                  })}
+                  {timeAgo(item.published_at)}
                 </Text>
                 <TouchableOpacity
                   style={[styles.readBtn, { backgroundColor: C.primaryLight }]}
@@ -185,8 +239,10 @@ const styles = StyleSheet.create({
   vipText: { fontSize: 12, fontFamily: 'Inter_700Bold' },
   list: { paddingHorizontal: 16, paddingTop: 4 },
   card: { borderRadius: 16, borderWidth: 1, padding: 16, marginBottom: 12 },
-  catBadge: { alignSelf: 'flex-start', paddingHorizontal: 10, paddingVertical: 3, borderRadius: 20, marginBottom: 10 },
+  cardTopRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
+  catBadge: { alignSelf: 'flex-start', paddingHorizontal: 10, paddingVertical: 3, borderRadius: 20 },
   catText: { fontSize: 11, fontFamily: 'Inter_600SemiBold', textTransform: 'uppercase', letterSpacing: 0.5 },
+  readTime: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   cardTitle: { fontSize: 17, fontFamily: 'Inter_700Bold', marginBottom: 8, lineHeight: 24 },
   cardSummary: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20, marginBottom: 14 },
   cardFooter: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
@@ -198,17 +254,32 @@ const styles = StyleSheet.create({
   emptyText: { fontSize: 15, fontFamily: 'Inter_400Regular', textAlign: 'center' },
   lockContainer: { flex: 1, paddingHorizontal: 16 },
   lockCard: {
-    borderRadius: 20, borderWidth: 1, padding: 28,
-    alignItems: 'center', marginBottom: 24,
+    borderRadius: 20, borderWidth: 1, padding: 24,
+    alignItems: 'center', marginBottom: 20,
   },
-  lockTitle: { fontSize: 22, fontFamily: 'Inter_700Bold', marginTop: 16, marginBottom: 10 },
-  lockDesc: { fontSize: 15, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 22, marginBottom: 24 },
-  upgradeBtn: { paddingHorizontal: 28, paddingVertical: 14, borderRadius: 14 },
+  lockIconBg: {
+    width: 80, height: 80, borderRadius: 40,
+    alignItems: 'center', justifyContent: 'center', marginBottom: 16,
+  },
+  lockTitle: { fontSize: 22, fontFamily: 'Inter_700Bold', marginBottom: 10, textAlign: 'center' },
+  lockDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 21, marginBottom: 16 },
+  lockFeatureList: { alignSelf: 'stretch', gap: 8, marginBottom: 20 },
+  lockFeatureRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  lockFeatureText: { fontSize: 14, fontFamily: 'Inter_400Regular', flex: 1 },
+  upgradeBtn: { paddingHorizontal: 28, paddingVertical: 14, borderRadius: 14, flexDirection: 'row', alignItems: 'center', gap: 8 },
   upgradeBtnText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_600SemiBold' },
-  previewSection: { gap: 10 },
-  previewLabel: { fontSize: 13, fontFamily: 'Inter_500Medium', marginBottom: 4 },
-  previewCard: { borderRadius: 14, borderWidth: 1, padding: 14, overflow: 'hidden' },
-  blurOverlay: { ...StyleSheet.absoluteFillObject, zIndex: 1 },
-  previewTitle: { fontSize: 16, fontFamily: 'Inter_600SemiBold' },
-  previewDate: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 4 },
+  previewLabel: { fontSize: 13, fontFamily: 'Inter_500Medium', marginBottom: 10 },
+  previewCard: { borderRadius: 14, borderWidth: 1, padding: 14, marginBottom: 10, overflow: 'hidden' },
+  previewOverlay: {
+    ...StyleSheet.absoluteFillObject, zIndex: 1,
+    alignItems: 'center', justifyContent: 'center',
+  },
+  previewUnlockBadge: {
+    flexDirection: 'row', alignItems: 'center', gap: 5,
+    paddingHorizontal: 14, paddingVertical: 8, borderRadius: 20,
+  },
+  previewUnlockText: { color: '#fff', fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  previewTitle: { fontSize: 16, fontFamily: 'Inter_600SemiBold', marginBottom: 4 },
+  previewSummary: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18, marginBottom: 6 },
+  previewDate: { fontSize: 12, fontFamily: 'Inter_400Regular' },
 });

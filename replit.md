@@ -3,6 +3,18 @@
 ## Overview
 StatWise is an AI-powered sports prediction platform. It combines a React Native / Expo mobile-first frontend served as a web app on port 5000, and a Python AI backend with an XGBoost prediction engine that runs as a background scheduler.
 
+## Recent UI/UX Improvements (v2)
+- **Login screen:** `<form>` wrapper for browser autofill, `autoComplete` props on all inputs, Google OAuth via Supabase, stats-chart logo icon, Google logo button with loading state
+- **Web top nav:** Custom `tabBar` in `_layout.tsx` renders a horizontal top navigation bar on web (64px, with brand logo + tab links); bottom tabs hidden on web via `display: none`
+- **Skeleton loading:** `SkeletonCard` component with shimmer animation replaces `ActivityIndicator` on the predictions screen (5 skeletons during load)
+- **Onboarding modal:** `OnboardingModal` component (4 slides, AsyncStorage-persisted via key `statwise_onboarding_v1`) shown on first app load from `index.tsx`
+- **Live banner pulse:** Animated scale pulse on the realtime "new predictions" green banner; fixed `pointerEvents` as style prop
+- **Subscriptions toggle:** Animated sliding pill toggle between Daily / Monthly using `Animated.spring`
+- **Win rate bars:** `WinRateBar` component with spring-animated fill bars (78%, 85%, 91%) shown on each paid plan card
+- **VIP lock screen:** Preview cards in `insights.tsx` now show an "Unlock with VIP" gold badge overlay + upgrade CTA on each card; feature checklist in main lock card
+- **Profile share:** Two icon buttons on referral code row (copy + share); share uses `Share.share` native API / `navigator.share` on web with haptics
+- **Haptic feedback:** Added throughout (league tab selection, sign-in, theme switching, plan selection, referral actions)
+
 ## User Preferences
 Preferred communication style: Simple, everyday language.
 

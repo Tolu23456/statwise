@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput,
-  Switch, Alert, ActivityIndicator, Platform,
+  Switch, Alert, ActivityIndicator, Platform, Share,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -15,10 +15,10 @@ import { useAuth } from '@/context/AuthContext';
 import { useTheme, ThemeMode } from '@/context/ThemeContext';
 import { useQuery } from '@tanstack/react-query';
 
-const THEME_OPTIONS: { value: ThemeMode; label: string; icon: string }[] = [
-  { value: 'system', label: 'System', icon: 'phone-portrait-outline' },
-  { value: 'light', label: 'Light', icon: 'sunny-outline' },
-  { value: 'dark', label: 'Dark', icon: 'moon-outline' },
+const THEME_OPTIONS: { value: ThemeMode; icon: string; label: string }[] = [
+  { value: 'system', icon: 'phone-portrait-outline', label: 'Auto' },
+  { value: 'light', icon: 'sunny', label: 'Light' },
+  { value: 'dark', icon: 'moon', label: 'Dark' },
 ];
 
 const TIER_REWARD_POINTS: Record<string, number> = {
@@ -41,7 +41,7 @@ export default function ProfileScreen() {
   const [uploadingPhoto, setUploadingPhoto] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
 
-  const topInset = Platform.OS === 'web' ? 67 : insets.top;
+  const topInset = Platform.OS === 'web' ? 0 : insets.top;
   const tierColors = TierBadgeColors[profile?.current_tier ?? 'Free Tier'];
 
   const { data: referral } = useQuery<ReferralCode | null>({
@@ -156,6 +156,21 @@ export default function ProfileScreen() {
     }
   }
 
+  async function shareReferralCode() {
+    if (!referral?.code) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    const message = `Join me on StatWise — the AI-powered football prediction app! Use my referral code ${referral.code} to get started.`;
+    try {
+      if (Platform.OS === 'web' && navigator.share) {
+        await navigator.share({ title: 'StatWise Referral', text: message });
+      } else {
+        await Share.share({ message });
+      }
+    } catch {
+      copyReferralCode();
+    }
+  }
+
   return (
     <View style={[styles.container, { backgroundColor: C.background }]}>
       <View style={[styles.header, { paddingTop: topInset + 8 }]}>
@@ -165,7 +180,7 @@ export default function ProfileScreen() {
       <ScrollView
         contentContainerStyle={[
           styles.scroll,
-          { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 84 : 80) },
+          { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 24 : 80) },
         ]}
         showsVerticalScrollIndicator={false}
       >
@@ -237,13 +252,25 @@ export default function ProfileScreen() {
             <Text style={[styles.sectionDesc, { color: C.textSecondary }]}>
               Invite friends and earn reward points when they subscribe.
             </Text>
-            <TouchableOpacity
-              style={[styles.codeRow, { backgroundColor: C.inputBg, borderColor: C.border }]}
-              onPress={copyReferralCode}
-            >
+            <View style={[styles.codeRow, { backgroundColor: C.inputBg, borderColor: C.border }]}>
               <Text style={[styles.codeText, { color: C.primary }]}>{referral.code}</Text>
-              <Ionicons name="copy-outline" size={18} color={C.textSecondary} />
-            </TouchableOpacity>
+              <View style={styles.codeActions}>
+                <TouchableOpacity
+                  style={[styles.codeActionBtn, { backgroundColor: C.primaryLight }]}
+                  onPress={copyReferralCode}
+                  hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                >
+                  <Ionicons name="copy-outline" size={17} color={C.primary} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={[styles.codeActionBtn, { backgroundColor: C.successLight }]}
+                  onPress={shareReferralCode}
+                  hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                >
+                  <Ionicons name="share-social-outline" size={17} color={C.success} />
+                </TouchableOpacity>
+              </View>
+            </View>
             <View style={styles.referralStatsRow}>
               <View style={[styles.referralStat, { backgroundColor: C.primaryLight }]}>
                 <Text style={[styles.referralStatNum, { color: C.primary }]}>{referral.total_referrals}</Text>
@@ -263,28 +290,34 @@ export default function ProfileScreen() {
         <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
           <Text style={[styles.sectionTitle, { color: C.text }]}>Appearance</Text>
           <View style={styles.themeRow}>
-            {THEME_OPTIONS.map(opt => (
-              <TouchableOpacity
-                key={opt.value}
-                style={[
-                  styles.themeBtn,
-                  {
-                    backgroundColor: themeMode === opt.value ? C.primary : C.inputBg,
-                    borderColor: themeMode === opt.value ? C.primary : C.border,
-                  },
-                ]}
-                onPress={() => setThemeMode(opt.value)}
-              >
-                <Ionicons
-                  name={opt.icon as any}
-                  size={18}
-                  color={themeMode === opt.value ? '#fff' : C.textSecondary}
-                />
-                <Text style={[styles.themeBtnText, { color: themeMode === opt.value ? '#fff' : C.textSecondary }]}>
-                  {opt.label}
-                </Text>
-              </TouchableOpacity>
-            ))}
+            {THEME_OPTIONS.map(opt => {
+              const isActive = themeMode === opt.value;
+              return (
+                <TouchableOpacity
+                  key={opt.value}
+                  style={[
+                    styles.themeBtn,
+                    {
+                      backgroundColor: isActive ? C.primary : C.inputBg,
+                      borderColor: isActive ? C.primary : C.border,
+                    },
+                  ]}
+                  onPress={() => {
+                    setThemeMode(opt.value);
+                    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                  }}
+                >
+                  <Ionicons
+                    name={opt.icon as any}
+                    size={20}
+                    color={isActive ? '#fff' : C.textSecondary}
+                  />
+                  <Text style={[styles.themeBtnText, { color: isActive ? '#fff' : C.textSecondary }]}>
+                    {opt.label}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
           </View>
         </View>
 
@@ -401,6 +434,8 @@ const styles = StyleSheet.create({
     borderRadius: 12, borderWidth: 1, paddingHorizontal: 14, paddingVertical: 12, marginBottom: 12,
   },
   codeText: { fontSize: 20, fontFamily: 'Inter_700Bold', letterSpacing: 3 },
+  codeActions: { flexDirection: 'row', gap: 8 },
+  codeActionBtn: { width: 36, height: 36, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
   referralStatsRow: { flexDirection: 'row', gap: 10, marginBottom: 10 },
   referralStat: { flex: 1, borderRadius: 12, padding: 12, alignItems: 'center', gap: 4 },
   referralStatNum: { fontSize: 22, fontFamily: 'Inter_700Bold' },
@@ -408,10 +443,10 @@ const styles = StyleSheet.create({
   referralHint: { fontSize: 12, fontFamily: 'Inter_400Regular', fontStyle: 'italic' },
   themeRow: { flexDirection: 'row', gap: 8, marginTop: 4 },
   themeBtn: {
-    flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: 6, paddingVertical: 10, borderRadius: 10, borderWidth: 1,
+    flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+    gap: 5, paddingVertical: 12, borderRadius: 12, borderWidth: 1,
   },
-  themeBtnText: { fontSize: 13, fontFamily: 'Inter_500Medium' },
+  themeBtnText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
   settingRow: {
     flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 12,
     borderBottomWidth: 1,
