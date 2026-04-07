@@ -249,8 +249,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 1982-06-29,Italy,Argentina,2,1,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1982-06-29,West Germany,England,0,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1982 FIFA Men's World Cup,1
 1982-07-01,Austria,Northern Ireland,2,2,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
-1982-07-01,Belgium,Russia,0,1,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1982-07-01,Belgium,Soviet Union,0,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1982 FIFA Men's World Cup,1
+1982-07-01,Belgium,Russia,0,1,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1982-07-02,Argentina,Brazil,1,3,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1982-07-02,Spain,Germany,1,2,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
 1982-07-02,West Germany,Spain,2,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1982 FIFA Men's World Cup,1
@@ -266,8 +266,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 1982-07-08,West Germany,France,3,3,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1982 FIFA Men's World Cup,1
 1982-07-10,Poland,France,3,2,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1982-07-11,Finland,Iceland,3,2,international,Finland,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
-1982-07-11,Italy,West Germany,3,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1982 FIFA Men's World Cup,1
 1982-07-11,Italy,Germany,3,1,world-cup,Spain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1982-07-11,Italy,West Germany,3,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1982 FIFA Men's World Cup,1
 1982-07-21,China,Hong Kong,2,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Beijing International Friendship Tournament,0
 1982-07-23,China,Morocco,3,3,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Beijing International Friendship Tournament,0
 1982-07-25,Hong Kong,Morocco,0,0,international,China PR,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Beijing International Friendship Tournament,1
