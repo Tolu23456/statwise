@@ -247,27 +247,20 @@ class FootballPredictor:
 
         # ── Prediction decision logic ────────────────────────────────────
         #
-        # The ensemble's draw probability rarely tops home/away, so a naive
-        # argmax never predicts draws.  We use two separate corrections:
+        # Draw detection: predict draw when p_draw is above the historical
+        # base-rate (~26%) AND the leading non-draw outcome doesn't beat it
+        # by more than DRAW_MARGIN (12pp).  Otherwise simple argmax.
         #
-        # 1. Draw detection: predict draw when
-        #      p_draw ≥ 0.255  (just above the historical base-rate of ~26%)
-        #      AND |p_home - p_away| ≤ 0.14  (genuinely open match)
-        #
-        # 2. Away-team bias correction: the model systematically under-rates
-        #    away wins (home advantage bleeds into training).  Give away a
-        #    3pp bonus — predict away whenever p_away ≥ p_home − 0.03.
-        #
-        DRAW_PROB_FLOOR  = 0.255   # raised slightly from 0.245 to reduce noise
-        HA_GAP_CEIL      = 0.14    # max |p_home - p_away| to allow draw call
-        AWAY_BOOST       = 0.03    # away corrects for model home-bias
+        DRAW_PROB_FLOOR = 0.255   # just above historical base-rate
+        DRAW_MARGIN     = 0.12    # draw loses only if winner leads it by >12pp
 
-        if p_draw >= DRAW_PROB_FLOOR and abs(p_home - p_away) <= HA_GAP_CEIL:
+        winner_p = max(p_home, p_away)
+        if p_draw >= DRAW_PROB_FLOOR and (winner_p - p_draw) <= DRAW_MARGIN:
             idx = 1
-        elif p_away >= p_home - AWAY_BOOST:   # away-team bias correction
-            idx = 2
-        else:
+        elif p_home >= p_away:
             idx = 0
+        else:
+            idx = 2
 
         prediction_label = OUTCOME_LABELS[idx]
         raw_conf = int(round(probs[idx] * 100))

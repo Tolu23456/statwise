@@ -11,7 +11,7 @@ Usage:
 Can also be imported and called programmatically by the scheduler.
 """
 from __future__ import annotations
-import os, sys, logging, time, json, datetime, shutil, tempfile
+import os, sys, logging, time, json, datetime, shutil, tempfile, glob
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
@@ -28,6 +28,46 @@ os.makedirs(os.path.join(BASE_DIR, "models"), exist_ok=True)
 os.makedirs(os.path.join(BASE_DIR, "data"),   exist_ok=True)
 
 
+def _load_clean_data() -> "pd.DataFrame":
+    """Load all matched from ai/data/clean/YYYY_matches.csv (unified 48-col schema)."""
+    import pandas as pd
+    clean_dir = os.path.join(BASE_DIR, "data", "clean")
+    paths = sorted(glob.glob(os.path.join(clean_dir, "????_matches.csv")))
+    if not paths:
+        return pd.DataFrame()
+    frames = []
+    for p in paths:
+        try:
+            frames.append(pd.read_csv(p, low_memory=False))
+        except Exception as e:
+            logger.warning(f"Could not read {p}: {e}")
+    if not frames:
+        return pd.DataFrame()
+    df = pd.concat(frames, ignore_index=True)
+    for col in ["home_team", "away_team", "home_goals", "away_goals"]:
+        if col not in df.columns:
+            return pd.DataFrame()
+    df = df.dropna(subset=["home_team", "away_team", "home_goals", "away_goals"])
+    df["home_goals"] = pd.to_numeric(df["home_goals"], errors="coerce").fillna(0).astype(int)
+    df["away_goals"] = pd.to_numeric(df["away_goals"], errors="coerce").fillna(0).astype(int)
+    for col in ["odds_home", "odds_draw", "odds_away"]:
+        if col not in df.columns:
+            df[col] = float("nan")
+        else:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+        df = df.sort_values("date").reset_index(drop=True)
+    # Drop international matches (model is tuned for club football)
+    if "is_international" in df.columns:
+        df = df[pd.to_numeric(df["is_international"], errors="coerce").fillna(0) == 0]
+    # Drop very-low-quality rows
+    if "quality_score" in df.columns:
+        df = df[pd.to_numeric(df["quality_score"], errors="coerce").fillna(0) >= 10]
+    logger.info(f"Clean data: {len(df):,} rows from {len(paths)} year files")
+    return df.reset_index(drop=True)
+
+
 def run(force: bool = False) -> bool:
     """
     Full retrain pipeline. Returns True on success.
@@ -35,45 +75,47 @@ def run(force: bool = False) -> bool:
     then atomically moves it into place so predictions keep working.
     """
     import pandas as pd
-    from model.downloader   import load_training_data, SEASONS, LEAGUE_CODES
-    from model.open_sources import load_all_open_sources
-    from model.trainer      import FootballPredictor
+    from model.trainer import FootballPredictor
 
     t0 = time.time()
     logger.info("=" * 60)
     logger.info(" StatWise multi-source retrain starting")
     logger.info("=" * 60)
 
-    # ── Source 1: football-data.co.uk (primary) ───────────────────
-    logger.info(f"[1/5] football-data.co.uk ({len(SEASONS)} seasons, {len(LEAGUE_CODES)} leagues)…")
-    df1 = load_training_data(seasons=SEASONS, leagues=list(LEAGUE_CODES.keys()))
-    logger.info(f"      {len(df1):,} rows")
+    # ── Primary: clean CSV pipeline (ai/data/clean/*.csv) ─────────
+    logger.info("[1/2] Loading clean match data (ai/data/clean/)…")
+    df = _load_clean_data()
 
-    # ── Sources 2-5: supplementary open datasets ───────────────────
-    logger.info("[2-4] StatsBomb / OpenFootball / InternationalResults / ClubElo …")
-    df2 = load_all_open_sources()
-    logger.info(f"      {len(df2):,} rows")
+    if df.empty:
+        # Fallback: old per-source download approach
+        logger.warning("Clean data not found — falling back to live download…")
+        from model.downloader   import load_training_data, SEASONS, LEAGUE_CODES
+        from model.open_sources import load_all_open_sources
 
-    # ── Merge ──────────────────────────────────────────────────────
-    frames = [f for f in [df1, df2] if not f.empty]
-    if not frames:
-        logger.error("No training data available — aborting retrain.")
-        return False
+        df1 = load_training_data(seasons=SEASONS, leagues=list(LEAGUE_CODES.keys()))
+        logger.info(f"      football-data.co.uk: {len(df1):,} rows")
+        df2 = load_all_open_sources()
+        logger.info(f"      supplementary open sources: {len(df2):,} rows")
 
-    df = pd.concat(frames, ignore_index=True)
+        frames = [f for f in [df1, df2] if not f.empty]
+        if not frames:
+            logger.error("No training data available — aborting retrain.")
+            return False
+        df = pd.concat(frames, ignore_index=True)
 
-    # ── Strip synthetic / biased rows before dedup ─────────────────
-    # ClubElo contributes 78 K fake 1-0 rows (all "home_team vs Reference").
-    # Keeping them makes the model predict Home Win 100 % of the time.
-    before = len(df)
-    if "league_slug" in df.columns:
-        df = df[df["league_slug"] != "clubelo-reference"]
-    if "away_team" in df.columns:
-        df = df[df["away_team"] != "Reference"]
-    logger.info(f"Dropped {before - len(df):,} synthetic ClubElo rows")
+        # Strip ClubElo synthetic rows (fake 1-0 home wins that bias the model)
+        before = len(df)
+        if "league_slug" in df.columns:
+            df = df[df["league_slug"] != "clubelo-reference"]
+        if "away_team" in df.columns:
+            df = df[df["away_team"] != "Reference"]
+        logger.info(f"Dropped {before - len(df):,} synthetic ClubElo rows")
 
-    # Remove exact duplicates
-    df = df.drop_duplicates(subset=["home_team", "away_team", "date", "home_goals", "away_goals"])
+        df = df.drop_duplicates(
+            subset=["home_team", "away_team", "date", "home_goals", "away_goals"])
+    else:
+        logger.info("[2/2] Supplementary live sources skipped (clean data available)")
+
     logger.info(f"Combined dataset: {len(df):,} unique real matches")
 
     # ── Train ──────────────────────────────────────────────────────
@@ -103,12 +145,8 @@ def run(force: bool = False) -> bool:
 
     # ── Write model metadata ───────────────────────────────────────
     info = {
-        "trained_at":   datetime.datetime.utcnow().isoformat() + "Z",
-        "total_matches": int(len(df)),
-        "sources": {
-            "football_data_co_uk": int(len(df1)),
-            "supplementary_open_sources": int(len(df2)),
-        },
+        "trained_at":       datetime.datetime.utcnow().isoformat() + "Z",
+        "total_matches":    int(len(df)),
         "duration_seconds": round(time.time() - t0, 1),
     }
     try:
