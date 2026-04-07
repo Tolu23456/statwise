@@ -173,11 +173,19 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         else:
             sw_tr = None
 
-        self._model = _FootballResNet(n_features, n_classes)
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        if device.type == 'cuda':
+            logger.info(f"  [NeuralNet] Training on GPU: {torch.cuda.get_device_name(0)}")
+
+        self._model = _FootballResNet(n_features, n_classes).to(device)
+
+        if use_early and X_val_t is not None:
+            X_val_t = X_val_t.to(device)
+            y_val_t = y_val_t.to(device)
 
         # Class weights from training fold only
         counts = np.bincount(y_tr, minlength=n_classes).astype(np.float32)
-        cls_w  = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1))))
+        cls_w  = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1)))).to(device)
         if sw_tr is not None:
             sw = np.asarray(sw_tr, dtype=np.float32)
             for c in range(n_classes):
@@ -217,6 +225,7 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         self._model.train()
         for epoch in range(self.epochs):
             for xb, yb in loader:
+                xb, yb = xb.to(device), yb.to(device)
                 opt.zero_grad(set_to_none=True)
                 loss = criterion(self._model(xb), yb)
                 loss.backward()
@@ -252,7 +261,8 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         if best_state is not None:
             self._model.load_state_dict(best_state)
 
-        self._model.eval()
+        # Move back to CPU so pickle/joblib works on any machine
+        self._model.cpu().eval()
         return self
 
     def predict_proba(self, X: np.ndarray) -> np.ndarray:
@@ -263,7 +273,8 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
 
         self._model.eval()
         with torch.no_grad():
-            logits = self._model(torch.FloatTensor(np.ascontiguousarray(X, dtype=np.float32)))
+            t = torch.FloatTensor(np.ascontiguousarray(X, dtype=np.float32))
+            logits = self._model(t)
             return torch.softmax(logits, dim=1).numpy()
 
     def predict(self, X: np.ndarray) -> np.ndarray:

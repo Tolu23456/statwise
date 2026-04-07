@@ -54,11 +54,16 @@ OUTCOME_LABELS = ['Home Win', 'Draw', 'Away Win']
 # ─── base model factories ─────────────────────────────────────────────────────
 
 def _xgb(n_classes: int, seed: int = 42) -> XGBClassifier:
+    try:
+        import torch as _t
+        _xgb_device = 'cuda' if _t.cuda.is_available() else 'cpu'
+    except ImportError:
+        _xgb_device = 'cpu'
     return XGBClassifier(
         n_estimators=300, max_depth=4, learning_rate=0.03,
         subsample=0.8, colsample_bytree=0.75, colsample_bylevel=0.75,
         min_child_weight=12, gamma=0.1, reg_alpha=0.3, reg_lambda=4.0,
-        tree_method='hist',
+        tree_method='hist', device=_xgb_device,
         eval_metric='mlogloss' if n_classes > 2 else 'logloss',
         random_state=seed, n_jobs=2, verbosity=0,
     )
