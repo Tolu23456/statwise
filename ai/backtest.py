@@ -30,8 +30,9 @@ OUT       = os.path.join(BASE_DIR, "data", "backtest_results.json")
 # Use matches from this date onward as the test set
 TEST_CUTOFF = "2023-08-01"
 
-# Minimum quality_score to include a row (0 = include all)
-MIN_QUALITY = 10
+# Match retrain.py filters exactly for fair evaluation
+MIN_QUALITY   = 20
+TRAIN_CUTOFF  = "2005-01-01"   # exclude pre-2005 (same as retrain)
 
 # Leagues to report individually (slug must appear in league_slug column)
 REPORT_LEAGUES = {
@@ -83,11 +84,14 @@ def load_clean_data() -> pd.DataFrame:
     df["date"]       = pd.to_datetime(df.get("date", pd.Series(dtype=str)), errors="coerce")
     df = df.dropna(subset=["date"]).sort_values("date").reset_index(drop=True)
 
-    # Drop international matches (different dynamics, model is club-tuned)
+    # Drop pre-2005 (matches retrain.py filter)
+    df = df[df["date"] >= pd.Timestamp(TRAIN_CUTOFF)]
+
+    # Drop international matches (model is club-tuned)
     if "is_international" in df.columns:
         df = df[pd.to_numeric(df["is_international"], errors="coerce").fillna(0) == 0]
 
-    # Quality filter
+    # Quality filter (matches retrain.py filter)
     if "quality_score" in df.columns and MIN_QUALITY > 0:
         before = len(df)
         df = df[pd.to_numeric(df["quality_score"], errors="coerce").fillna(0) >= MIN_QUALITY]
@@ -172,7 +176,17 @@ def main():
         log.error("Test set too small — check TEST_CUTOFF or run the pipeline first.")
         sys.exit(1)
 
-    history_list = history_df.to_dict("records")
+    # Pre-build team → list-of-row-indices for O(1) history lookup
+    from collections import defaultdict
+    _team_rows: dict[str, list[int]] = defaultdict(list)
+    for _i, _r in enumerate(history_df.itertuples(index=False)):
+        _team_rows[_r.home_team].append(_i)
+        _team_rows[_r.away_team].append(_i)
+
+    def _team_hist(home: str, away: str, n: int = 400) -> pd.DataFrame:
+        idx = sorted(set(_team_rows.get(home, []) + _team_rows.get(away, [])))
+        return history_df.iloc[idx[-n:]] if idx else pd.DataFrame(columns=history_df.columns)
+
     all_results: list[dict] = []
     league_stats: dict[str, dict] = {}
 
@@ -185,11 +199,7 @@ def main():
             away  = row.away_team
             slug  = getattr(row, "league_slug", "all") or "all"
 
-            # Team-filtered history (last 400 matches involving either team)
-            team_hist = history_df[
-                (history_df["home_team"].isin([home, away])) |
-                (history_df["away_team"].isin([home, away]))
-            ].tail(400)
+            team_hist = _team_hist(home, away)
 
             oh = getattr(row, "odds_home", None)
             od = getattr(row, "odds_draw", None)

@@ -41,7 +41,7 @@ from .cpp_bridge import (
 
 logger = logging.getLogger(__name__)
 
-MAX_TRAINING_SAMPLES = 60_000
+MAX_TRAINING_SAMPLES = 100_000
 _LOOKBACK            = 400
 
 FEATURE_NAMES = [

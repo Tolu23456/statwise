@@ -58,12 +58,16 @@ def _load_clean_data() -> "pd.DataFrame":
     if "date" in df.columns:
         df["date"] = pd.to_datetime(df["date"], errors="coerce")
         df = df.sort_values("date").reset_index(drop=True)
+    # Only use matches from 2005 onward — pre-2005 data has poor tracking,
+    # no odds, and represents a different era of football that hurts signal.
+    if "date" in df.columns:
+        df = df[df["date"] >= pd.Timestamp("2005-01-01")]
     # Drop international matches (model is tuned for club football)
     if "is_international" in df.columns:
         df = df[pd.to_numeric(df["is_international"], errors="coerce").fillna(0) == 0]
-    # Drop very-low-quality rows
+    # Quality filter — require at least goals + source confirmed (score ≥ 20)
     if "quality_score" in df.columns:
-        df = df[pd.to_numeric(df["quality_score"], errors="coerce").fillna(0) >= 10]
+        df = df[pd.to_numeric(df["quality_score"], errors="coerce").fillna(0) >= 20]
     logger.info(f"Clean data: {len(df):,} rows from {len(paths)} year files")
     return df.reset_index(drop=True)
 

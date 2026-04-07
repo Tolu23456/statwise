@@ -247,12 +247,13 @@ class FootballPredictor:
 
         # ── Prediction decision logic ────────────────────────────────────
         #
-        # Draw detection: predict draw when p_draw is above the historical
-        # base-rate (~26%) AND the leading non-draw outcome doesn't beat it
-        # by more than DRAW_MARGIN (12pp).  Otherwise simple argmax.
-        #
-        DRAW_PROB_FLOOR = 0.255   # just above historical base-rate
-        DRAW_MARGIN     = 0.12    # draw loses only if winner leads it by >12pp
+        # Draw is predicted when p_draw is above base-rate AND the leading
+        # non-draw outcome doesn't dominate it by more than DRAW_MARGIN.
+        # 0.20 means: even if home leads draw by up to 20pp, still pick draw
+        # when it clears the floor — this corrects the model's structural
+        # under-prediction of draws.
+        DRAW_PROB_FLOOR = 0.245
+        DRAW_MARGIN     = 0.20
 
         winner_p = max(p_home, p_away)
         if p_draw >= DRAW_PROB_FLOOR and (winner_p - p_draw) <= DRAW_MARGIN:
@@ -264,11 +265,11 @@ class FootballPredictor:
 
         prediction_label = OUTCOME_LABELS[idx]
         raw_conf = int(round(probs[idx] * 100))
-        # Draws are inherently uncertain — softer confidence ceiling
+        # Report honest confidence — no artificial floors that lie about certainty
         if idx == 1:
-            confidence = max(50, min(62, raw_conf))
+            confidence = max(45, min(65, raw_conf))
         else:
-            confidence = max(52, min(95, raw_conf))
+            confidence = max(45, min(95, raw_conf))
 
         def edge(prob, odds):
             return round((prob * odds) - 1.0, 3) if odds and odds > 1 else 0.0
