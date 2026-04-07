@@ -4,8 +4,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-01-01,Birmingham City,Cardiff City,0,1,championship,England,football_data,0,1,5,6,2,3,3,4,9,11,2,0,0,0,,,3.4000,3.4000,2.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-01-01,Blackburn Rovers,Nottingham Forest,3,0,championship,England,football_data,0,0,11,13,6,5,3,4,10,12,2,1,0,0,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-01-01,Blackpool,Hull City,0,0,championship,England,football_data,0,0,9,7,5,3,6,3,7,9,1,0,0,0,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-01-01,Brentford,Bournemouth,0,0,league-one,England,football_data,0,0,14,12,4,6,8,4,11,6,1,0,0,0,,,2.3800,3.4000,2.8800,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-01-01,Brentford,AFC Bournemouth,0,0,league-one,England,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2013-01-01,Brentford,Bournemouth,0,0,league-one,England,football_data,0,0,14,12,4,6,8,4,11,6,1,0,0,0,,,2.3800,3.4000,2.8800,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-01-01,Bristol Rvs,Plymouth,2,1,league-two,England,football_data,2,0,7,8,3,4,2,8,11,16,0,2,0,0,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-01-01,Bury,Tranmere,0,1,league-one,England,football_data,0,0,10,13,4,7,10,13,7,8,1,1,0,0,,,3.0000,3.4000,2.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-01-01,Coventry City,Shrewsbury Town,0,1,league-one,England,football_data,0,0,21,16,11,9,7,3,12,8,1,0,0,0,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -134,8 +134,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-01-06,Chievo Verona,Atalanta BC,1,0,serie-a,Italy,football_data,1,0,9,10,2,3,4,7,19,14,1,3,0,0,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-06,Elche,Sabadell,3,2,la-liga-2,Spain,football_data,3,2,,,,,,,,,,,,,,,1.5700,3.6000,6.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-01-06,Elche CF,CE Sabadell,3,2,la-liga-2,Spain,openfootball,3,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-01-06,FC Barcelona,Espanol,4,0,la-liga,Spain,football_data,4,0,19,5,8,1,7,1,3,17,0,4,0,0,,,1.1000,10.0000,21.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-06,FC Barcelona,Espanyol Barcelona,4,0,la-liga,Spain,openfootball,4,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-01-06,FC Barcelona,Espanol,4,0,la-liga,Spain,football_data,4,0,19,5,8,1,7,1,3,17,0,4,0,0,,,1.1000,10.0000,21.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-06,GD Estoril Praia,SL Benfica,1,3,primeira-liga,Portugal,football_data,0,1,,,,,,,,,,,,,,,8.5000,4.7500,1.3600,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-01-06,Genoa CFC,Bologna FC,2,0,serie-a,Italy,football_data,0,0,10,11,4,2,1,3,16,12,3,5,0,1,,,2.3000,3.2000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-06,Girona FC,UD Almeria,0,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.2500,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -178,8 +178,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-01-10,Panama,Guatemala,3,0,international,Panama,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
 2013-01-11,AS Saint-Etienne,Toulouse FC,2,2,ligue1,France,football_data,1,2,12,8,4,4,11,4,16,13,1,1,0,0,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-11,Ajaccio GFCO,Istres,3,2,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,2.3000,3.1000,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-01-11,Athletic Bilbao,Rayo Vallecano,1,2,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-01-11,Athletic Bilbao,Vallecano,1,2,la-liga,Spain,football_data,0,0,18,12,7,6,8,4,15,23,4,4,0,1,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-01-11,Athletic Bilbao,Rayo Vallecano,1,2,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-01-11,Bahrain,Qatar,1,0,international,Bahrain,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gulf Cup,0
 2013-01-11,Chateauroux,Sedan,1,1,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,2.0000,3.0000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-01-11,Dijon FCO,Le Mans,3,0,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,2.0500,3.1000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -392,8 +392,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-01-19,FC Twente,Waalwijk,0,0,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,1.3300,5.0000,9.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-01-19,FSV Mainz 05,SC Freiburg,0,0,bundesliga,Germany,football_data,0,0,7,12,3,1,1,5,16,22,2,2,1,0,,,2.2000,3.2500,3.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-19,Getafe CF,Sevilla FC,1,1,la-liga,Spain,football_data,1,1,8,13,3,3,3,8,9,10,4,2,0,0,,,2.7000,3.2500,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-01-19,Granada CF,Vallecano,2,0,la-liga,Spain,football_data,1,0,12,15,5,4,5,10,15,12,2,4,0,0,,,2.1500,3.3000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-19,Granada CF,Rayo Vallecano,2,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-01-19,Granada CF,Vallecano,2,0,la-liga,Spain,football_data,1,0,12,15,5,4,5,10,15,12,2,4,0,0,,,2.1500,3.3000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-19,Guadalajara,Alcorcon,3,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.7500,3.1000,2.6300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-01-19,Hibernian FC,Dundee FC,1,1,scottish-prem,Scotland,football_data,0,1,14,9,7,5,8,0,14,15,1,1,0,0,,,1.5700,4.0000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-19,Inverness C,Aberdeen FC,3,0,scottish-prem,Scotland,football_data,0,0,11,9,6,4,4,3,11,12,1,4,0,0,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -439,8 +439,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-01-19,Swindon Town,Shrewsbury Town,2,0,league-one,England,football_data,0,0,12,3,5,0,12,3,7,12,1,2,0,0,,,1.5000,4.5000,7.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-01-19,TSG Hoffenheim,Borussia Monchengladbach,0,0,bundesliga,Germany,football_data,0,0,17,12,3,1,8,4,11,18,3,2,0,0,,,2.3800,3.4000,2.9000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-19,Toulouse FC,Nancy,2,1,ligue1,France,football_data,0,0,17,5,8,2,10,1,18,19,0,2,0,0,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-01-19,UD Las Palmas,Racing Santander,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-01-19,UD Las Palmas,Santander,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.6200,3.7500,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-01-19,UD Las Palmas,Racing Santander,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-01-19,Varese,Grosseto,4,0,serie-b,Italy,football_data,2,0,,,,,,,,,,,,,,,1.7500,3.4000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-01-19,VfL Wolfsburg,VfB Stuttgart,2,0,bundesliga,Germany,football_data,0,0,7,21,2,5,3,8,17,11,0,2,0,0,,,2.1000,3.5000,3.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-19,Walsall,Bournemouth,3,1,league-one,England,football_data,2,0,11,9,5,3,5,6,9,10,3,2,1,0,,,3.3000,3.5000,2.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -464,8 +464,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-01-20,Atromitos FC,Platanias,1,0,greek-super,Greece,football_data,1,0,,,,,,,,,,,,,,,1.5500,3.6000,7.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-01-20,Bastia,Stade Rennais,0,2,ligue1,France,football_data,0,1,3,15,1,8,4,8,8,16,2,2,0,0,,,3.0000,3.2000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-20,Belize,Guatemala,0,0,international,Costa Rica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,UNCAF Cup,1
-2013-01-20,CA Osasuna,Deportivo La Coruña,2,1,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-01-20,CA Osasuna,La Coruna,2,1,la-liga,Spain,football_data,1,0,8,17,4,5,8,6,17,19,5,1,0,0,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-01-20,CA Osasuna,Deportivo La Coruña,2,1,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-01-20,Chelsea,Arsenal,2,1,premier-league,England,football_data,2,0,13,12,8,8,3,9,10,11,2,1,0,0,,,1.9100,3.6000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-20,Chievo Verona,Parma Calcio,1,1,serie-a,Italy,football_data,0,1,10,7,6,1,11,2,12,10,2,2,0,0,,,2.6000,3.0000,2.9000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-20,Cordoba,Murcia,5,0,la-liga-2,Spain,football_data,2,0,,,,,,,,,,,,,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -633,8 +633,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-01-26,Racing Santander,Córdoba CF,1,3,la-liga-2,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-01-26,Rangers FC,Montrose,1,1,scottish-div3,Scotland,football_data,1,0,,,,,,,,,,,,,,,1.1300,8.0000,13.0000,,,,,,,,,,,,,,,,49,4,0,0,,0
 2013-01-26,Real Murcia,Sporting Gijón,1,1,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-01-26,Real Zaragoza,Espanyol Barcelona,0,0,la-liga,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2013-01-26,Real Zaragoza,Espanol,0,0,la-liga,Spain,football_data,0,0,14,5,4,2,5,5,16,17,1,3,1,1,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-01-26,Real Zaragoza,Espanyol Barcelona,0,0,la-liga,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2013-01-26,Rotherham United,Bristol Rvs,1,3,league-two,England,football_data,0,1,7,5,5,4,3,6,7,11,1,2,1,0,,,1.5700,4.3300,6.5000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-01-26,SC Freiburg,Bayer Leverkusen,0,0,bundesliga,Germany,football_data,0,0,13,15,4,2,3,2,12,17,1,2,0,0,,,2.7500,3.3000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-26,SS Lazio,Chievo Verona,0,1,serie-a,Italy,football_data,0,0,17,6,6,2,6,3,15,11,3,1,0,0,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -658,8 +658,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-01-27,Aberdeen FC,Hibernian FC,0,0,scottish-prem,Scotland,football_data,0,0,14,3,3,3,6,4,11,10,1,4,0,0,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-27,Alcorcon,Ponferradina,1,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.8000,3.4000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-01-27,Atalanta BC,AC Milan,0,1,serie-a,Italy,football_data,0,1,8,15,1,3,7,7,14,13,5,4,1,0,,,3.5000,3.3000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-01-27,Athletic Bilbao,Atlético Madrid,3,0,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-01-27,Athletic Bilbao,Ath Madrid,3,0,la-liga,Spain,football_data,0,0,22,17,10,6,8,9,9,14,1,4,0,0,,,3.0000,3.2500,2.3800,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-01-27,Athletic Bilbao,Atlético Madrid,3,0,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-01-27,Atromitos FC,Panathinaikos FC,1,2,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,2.3000,2.9000,3.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-01-27,Barcelona B,Real Madrid B,3,1,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,1.7000,3.6000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-01-27,Bologna FC,AS Roma,3,3,serie-a,Italy,football_data,2,2,13,14,9,7,7,3,23,21,5,3,0,0,,,2.9000,3.5000,2.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -694,8 +694,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-01-27,Paris Saint-Germain,LOSC Lille,1,0,ligue1,France,football_data,0,0,7,13,2,2,4,4,11,17,3,3,0,0,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-27,Parma Calcio,SSC Napoli,1,2,serie-a,Italy,football_data,0,1,19,16,4,8,13,6,17,12,5,3,0,0,,,3.0000,3.2500,2.3800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-27,Platanias,Asteras Tripolis,0,3,greek-super,Greece,football_data,0,3,,,,,,,,,,,,,,,2.8000,3.0000,2.6300,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-01-27,RCD Mallorca,Málaga CF,2,3,la-liga,Spain,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-01-27,RCD Mallorca,Malaga CF,2,3,la-liga,Spain,football_data,1,2,23,5,3,3,13,3,13,16,3,3,0,1,,,3.0000,3.2000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-01-27,RCD Mallorca,Málaga CF,2,3,la-liga,Spain,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-01-27,Rayo Vallecano,Real Betis,3,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-01-27,Real Madrid,Getafe CF,4,0,la-liga,Spain,football_data,0,0,22,6,13,3,11,3,8,17,2,6,0,0,,,1.1400,7.5000,17.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-01-27,SBV Vitesse,AFC Ajax,3,2,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,4.0000,3.6000,1.8500,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -769,8 +769,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-01,Stade Malherbe Caen,Nimes,1,0,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,1.7500,3.2500,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-01,Toulouse FC,Paris Saint-Germain,0,4,ligue1,France,football_data,0,2,10,15,3,10,4,5,14,10,0,0,1,0,,,5.0000,3.2500,1.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-01,Tours,Chateauroux,3,1,ligue2,France,football_data,1,1,,,,,,,,,,,,,,,2.0500,3.1000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-02-01,Union Berlin,Sandhausen,3,1,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-01,Union Berlin,SV Sandhausen,3,1,bundesliga-2,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-02-01,Union Berlin,Sandhausen,3,1,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-01,Uzbekistan,Azerbaijan,0,0,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
 2013-02-01,VfR Aalen,VfL Bochum,2,2,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-01,Waalwijk,SC Heerenveen,0,1,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -822,8 +822,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-02,Granada CF,Real Madrid,1,0,la-liga,Spain,football_data,1,0,4,17,0,4,4,8,19,7,2,3,0,0,,,9.0000,5.0000,1.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-02,Grosseto,Padova,1,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.7000,3.0000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-02,Guadalajara,Villarreal CF,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,3.2000,3.2500,2.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-02-02,Hamburger SV,Eintracht Frankfurt,0,2,bundesliga,Germany,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-02-02,Hamburger SV,Ein Frankfurt,0,2,bundesliga,Germany,football_data,0,2,23,16,10,5,7,6,19,11,3,1,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-02-02,Hamburger SV,Eintracht Frankfurt,0,2,bundesliga,Germany,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-02-02,Hartlepool,Notts County,2,1,league-one,England,football_data,1,0,10,12,5,7,2,4,10,9,2,1,0,0,,,3.6000,3.5000,2.1500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-02-02,Hercules,Alcorcon,3,0,la-liga-2,Spain,football_data,2,0,,,,,,,,,,,,,,,2.6300,3.2000,2.7000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-02,Hércules CF,AD Alcorcón,3,0,la-liga-2,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -1028,8 +1028,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-08,Clermont Foot,Le Mans,1,1,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.1000,4.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-08,Dundee FC,Ross County FC,0,2,scottish-prem,Scotland,football_data,0,0,7,6,5,3,3,3,6,11,2,2,0,0,,,3.1000,3.2500,2.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-08,Eintracht Braunschweig,VfR Aalen,1,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-02-08,Erzgebirge Aue,Frankfurt FSV,0,2,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-08,Erzgebirge Aue,FSV Frankfurt,0,2,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-02-08,Erzgebirge Aue,Frankfurt FSV,0,2,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-08,Kaiserslautern,Dresden,3,0,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-08,Nimes,Laval,3,0,ligue2,France,football_data,2,0,,,,,,,,,,,,,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-08,Niort,Istres,0,0,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -1104,8 +1104,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-09,Girona FC,Hércules CF,1,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-09,Girona FC,Hercules,1,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.8500,3.4000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-09,Hamilton,Dunfermline,1,2,scottish-div1,Scotland,football_data,0,1,,,,,,,,,,,,,,,2.8000,3.6000,2.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-02-09,Hannover 96,TSG Hoffenheim,1,0,bundesliga,Germany,football_data,1,0,7,16,3,9,5,10,21,20,2,2,0,0,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-09,Hannover 96,1899 Hoffenheim,1,0,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-02-09,Hannover 96,TSG Hoffenheim,1,0,bundesliga,Germany,football_data,1,0,7,16,3,9,5,10,21,20,2,2,0,0,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-09,Hellas Verona,Vicenza,0,1,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-09,Heracles Almelo,Willem II,4,1,eredivisie,Netherlands,football_data,3,1,,,,,,,,,,,,,,,1.4400,4.0000,8.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-02-09,Huddersfield Town,Cardiff City,0,0,championship,England,football_data,0,0,3,7,0,3,4,6,14,12,2,3,0,0,,,3.9000,3.7500,2.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -1133,8 +1133,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-09,Nepal,Pakistan,0,1,international,Nepal,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
 2013-02-09,Northampton,Rochdale,3,1,league-two,England,football_data,1,0,15,19,6,8,3,7,13,6,0,1,0,0,,,2.1000,3.7500,3.6000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-02-09,Norwich City,Fulham,0,0,premier-league,England,football_data,0,0,15,7,8,5,3,4,10,16,2,2,0,0,,,2.3000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-02-09,Notts County,Crewe Alexandra,1,1,league-one,England,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-09,Notts County,Crewe,1,1,league-one,England,football_data,0,1,10,16,4,9,2,4,14,9,2,0,0,0,,,2.1000,3.5000,3.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
+2013-02-09,Notts County,Crewe Alexandra,1,1,league-one,England,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-09,OGC Nice,FC Lorient,1,1,ligue1,France,football_data,0,0,12,9,6,4,4,2,18,10,1,1,0,0,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-09,Oldham Athletic,Milton Keynes Dons,3,1,league-one,England,football_data,2,1,15,10,10,5,4,10,12,9,0,0,0,0,,,3.2500,3.5000,2.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-02-09,Oxford United,Bristol Rvs,0,2,league-two,England,football_data,0,0,12,7,3,5,8,2,11,14,3,1,0,0,,,2.1500,3.6000,3.6000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -1430,8 +1430,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-17,Orduspor,Buyuksehyr,2,2,super-lig,Turkey,football_data,2,1,,,,,,,,,,,,,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-02-17,Pacos Ferreira,Nacional,1,1,primeira-liga,Portugal,football_data,1,0,,,,,,,,,,,,,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-02-17,Pescara,Cagliari Calcio,0,2,serie-a,Italy,football_data,0,0,6,11,2,8,0,3,24,25,4,2,0,0,,,3.0000,3.2000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-02-17,Real Madrid,Rayo Vallecano,2,0,la-liga,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-02-17,Real Madrid,Vallecano,2,0,la-liga,Spain,football_data,2,0,10,10,6,1,2,8,15,18,3,4,1,0,,,1.1800,7.5000,12.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-02-17,Real Madrid,Rayo Vallecano,2,0,la-liga,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-02-17,Real Sociedad,Levante UD,1,1,la-liga,Spain,football_data,1,1,12,7,5,7,12,4,13,16,2,5,0,1,,,1.6700,3.8000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-17,Real Valladolid,Atlético Madrid,0,3,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-02-17,Real Valladolid,Ath Madrid,0,3,la-liga,Spain,football_data,0,1,3,13,0,8,3,4,10,13,4,0,0,0,,,3.7500,3.4000,2.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -1512,8 +1512,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-22,Spezia Calcio,Novara,0,6,serie-b,Italy,football_data,0,2,,,,,,,,,,,,,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-22,St Pauli,Frankfurt FSV,3,0,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-22,Stade Malherbe Caen,Laval,2,1,ligue2,France,football_data,2,1,,,,,,,,,,,,,,,1.6700,3.4000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-02-22,VfL Bochum,Duisburg,2,2,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.2000,3.3000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-22,VfL Bochum,MSV Duisburg,2,2,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-02-22,VfL Bochum,Duisburg,2,2,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.2000,3.3000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-22,Willem II,Nijmegen,2,3,eredivisie,Netherlands,football_data,1,3,,,,,,,,,,,,,,,3.5000,3.4000,2.0500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-02-23,1. FC Köln,Union Berlin,2,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-23,1. Wiener Neustädter SC,SV Ried,0,0,austrian-bl,Austria,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
@@ -1545,8 +1545,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-23,Chesterfield,Gillingham,0,1,league-two,England,football_data,0,0,8,11,2,7,3,11,8,10,3,2,0,0,,,2.7500,3.4000,2.7000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-02-23,Cittadella,Livorno,0,2,serie-b,Italy,football_data,0,2,,,,,,,,,,,,,,,2.6300,3.2000,2.7000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-23,Colchester,Tranmere,1,5,league-one,England,football_data,1,2,14,12,8,7,5,5,11,7,1,1,0,0,,,2.8000,3.4000,2.7000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-02-23,Coventry City,Crewe Alexandra,1,2,league-one,England,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-23,Coventry City,Crewe,1,2,league-one,England,football_data,1,1,18,9,8,6,6,3,14,8,3,1,0,0,,,1.9100,3.7500,4.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2013-02-23,Coventry City,Crewe Alexandra,1,2,league-one,England,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-23,Cowdenbeath,Raith Rvs,1,1,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,2.6300,3.5000,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-23,Dag and Red,AFC Wimbledon,0,1,league-two,England,football_data,0,0,10,10,7,3,6,4,9,9,2,2,0,0,,,2.1000,3.6000,3.7500,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-02-23,Demir Grup Sivasspor,Besiktas JK,0,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,3.2000,3.2000,2.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -1559,8 +1559,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-23,Elazigspor,Antalyaspor,2,1,super-lig,Turkey,football_data,1,1,,,,,,,,,,,,,,,2.8000,3.2500,2.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-02-23,Empoli FC,Padova,1,1,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-23,Evian Thonon Gaillard,Montpellier HSC,0,1,ligue1,France,football_data,0,0,13,15,3,5,2,6,15,19,2,4,0,0,,,2.9000,3.1000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-02-23,FC Augsburg,TSG Hoffenheim,2,1,bundesliga,Germany,football_data,1,0,20,7,3,2,3,1,17,24,1,5,0,0,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-23,FC Augsburg,1899 Hoffenheim,2,1,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-02-23,FC Augsburg,TSG Hoffenheim,2,1,bundesliga,Germany,football_data,1,0,20,7,3,2,3,1,17,24,1,5,0,0,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-23,FC Barcelona,Sevilla FC,2,1,la-liga,Spain,football_data,0,1,17,7,3,4,10,1,10,12,0,2,0,0,,,1.1800,7.0000,13.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-23,FC Barcelona B,Hércules CF,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-23,FC Crotone,Ternana,0,1,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -1663,8 +1663,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-24,FC Utrecht,Roda,4,0,eredivisie,Netherlands,football_data,2,0,,,,,,,,,,,,,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-02-24,Fenerbahce SK,Kasimpasa SK,3,1,super-lig,Turkey,football_data,0,1,,,,,,,,,,,,,,,1.5700,3.7500,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-02-24,Feyenoord,PSV Eindhoven,2,1,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,3.1000,3.5000,2.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-02-24,Girona FC,Córdoba CF,2,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-24,Girona FC,Cordoba,2,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-02-24,Girona FC,Córdoba CF,2,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-24,Inter Milan,AC Milan,1,1,serie-a,Italy,football_data,0,1,13,19,4,6,1,4,17,17,2,4,0,0,,,3.1000,3.3000,2.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-24,Juventus,Siena,3,0,serie-a,Italy,football_data,1,0,19,5,6,2,6,2,7,5,1,1,0,0,,,1.2000,6.5000,13.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-24,Karabukspor,Akhisar Belediyespor,0,2,super-lig,Turkey,football_data,0,2,,,,,,,,,,,,,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -1680,8 +1680,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-24,Platanias,AEK,2,1,greek-super,Greece,football_data,1,1,,,,,,,,,,,,,,,2.9000,2.9000,2.6500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-02-24,RC Celta,Granada CF,2,1,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-02-24,Rayo Vallecano,Real Valladolid,1,2,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-02-24,Real Betis,Malaga CF,3,0,la-liga,Spain,football_data,3,0,21,3,8,1,6,2,18,12,2,1,0,1,,,2.5000,3.2500,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-24,Real Betis,Málaga CF,3,0,la-liga,Spain,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-02-24,Real Betis,Malaga CF,3,0,la-liga,Spain,football_data,3,0,21,3,8,1,6,2,18,12,2,1,0,1,,,2.5000,3.2500,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-24,Real Madrid B,Guadalajara,2,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-24,Real Madrid Castilla,CD Guadalajara,2,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-02-24,SL Benfica,Pacos Ferreira,3,0,primeira-liga,Portugal,football_data,1,0,,,,,,,,,,,,,,,1.2500,5.2500,13.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -1701,8 +1701,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-02-25,AS Monaco,RC Lens,2,1,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,1.6700,3.5000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-25,Academica,Maritimo,2,3,primeira-liga,Portugal,football_data,1,2,,,,,,,,,,,,,,,2.4000,3.2000,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-02-25,Galatasaray SK,Orduspor,4,2,super-lig,Turkey,football_data,0,2,,,,,,,,,,,,,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-02-25,Hertha Berlin,Kaiserslautern,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.8500,3.5000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-25,Hertha Berlin,1. FC Kaiserslautern,1,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-02-25,Hertha Berlin,Kaiserslautern,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.8500,3.5000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-02-25,Levante UD,CA Osasuna,0,2,la-liga,Spain,football_data,0,0,8,17,3,6,7,2,10,22,0,2,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-25,SS Lazio,Pescara,2,0,serie-a,Italy,football_data,2,0,13,5,4,1,3,3,11,8,0,0,0,0,,,1.2500,5.5000,12.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-02-25,Udinese Calcio,SSC Napoli,0,0,serie-a,Italy,football_data,0,0,9,8,1,1,4,3,13,21,1,4,0,0,,,3.0000,3.2000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -1782,8 +1782,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-01,Montpellier HSC,Stade Rennais,2,0,ligue1,France,football_data,0,0,13,7,2,1,4,6,19,15,1,2,0,0,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-01,Regensburg,Sandhausen,1,3,bundesliga-2,Germany,football_data,1,2,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-01,SBV Vitesse,FC Utrecht,2,0,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-03-01,SC Paderborn 07,Cottbus,0,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.2500,3.2500,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-01,SC Paderborn 07,Energie Cottbus,0,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-03-01,SC Paderborn 07,Cottbus,0,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.2500,3.2500,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-01,SSC Napoli,Juventus,1,1,serie-a,Italy,football_data,1,1,20,13,8,5,10,4,13,8,4,2,0,0,,,3.0000,3.2000,2.3800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-01,Tours,Stade Malherbe Caen,1,1,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,3.2000,3.0000,2.3800,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-01,Union Berlin,Erzgebirge Aue,3,0,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -1850,8 +1850,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-02,La Coruna,Vallecano,0,0,la-liga,Spain,football_data,0,0,13,18,4,3,3,7,13,18,1,5,1,0,,,2.3000,3.3000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-02,Laos,Mongolia,1,1,international,Laos,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Challenge Cup qualification,0
 2013-03-02,Leeds United,Millwall,1,0,championship,England,football_data,0,0,10,9,6,3,6,7,16,14,0,3,0,0,,,2.1500,3.5000,3.6000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-03-02,Leyton Orient,Bournemouth,3,1,league-one,England,football_data,1,0,14,13,5,5,2,5,9,9,2,0,0,0,,,3.1000,3.4000,2.2500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-03-02,Leyton Orient,AFC Bournemouth,3,1,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-03-02,Leyton Orient,Bournemouth,3,1,league-one,England,football_data,1,0,14,13,5,5,2,5,9,9,2,0,0,0,,,3.1000,3.4000,2.2500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-03-02,Livingston FC,Airdrie Utd,4,1,scottish-div1,Scotland,football_data,3,0,,,,,,,,,,,,,,,1.3600,4.7500,8.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-02,Manchester United,Norwich City,4,0,premier-league,England,football_data,1,0,13,1,10,1,7,3,5,15,0,4,0,0,,,1.3300,5.5000,11.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-02,Middlesbrough,Cardiff City,2,1,championship,England,football_data,2,0,11,13,5,6,6,13,11,10,2,3,0,0,,,3.0000,3.4000,2.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -2134,8 +2134,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-09,Rangers FC,Annan Athletic,1,2,scottish-div3,Scotland,football_data,0,0,,,,,,,,,,,,,,,1.1000,8.5000,15.0000,,,,,,,,,,,,,,,,49,4,0,0,,0
 2013-03-09,Rayo Vallecano,Espanyol Barcelona,2,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-03-09,Reading,Aston Villa,1,2,premier-league,England,football_data,1,2,10,18,4,7,6,1,8,7,2,3,0,0,,,2.4500,3.4000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-03-09,Real Valladolid,Málaga CF,1,1,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-03-09,Real Valladolid,Malaga CF,1,1,la-liga,Spain,football_data,1,1,9,6,4,1,8,1,14,12,1,1,0,0,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-03-09,Real Valladolid,Málaga CF,1,1,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-03-09,Rochdale,Wycombe Wanderers,4,1,league-two,England,football_data,1,1,17,6,11,4,8,4,7,16,0,3,0,0,,,2.3000,3.5000,3.2500,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-03-09,Ross County FC,Celtic FC,3,2,scottish-prem,Scotland,football_data,2,2,11,12,4,7,4,4,13,11,0,2,0,0,,,8.0000,4.5000,1.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-09,Rotherham United,Dag and Red,1,2,league-two,England,football_data,0,0,13,6,6,4,5,3,11,10,3,1,1,0,,,1.7300,4.0000,5.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -2197,8 +2197,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-10,Fenerbahce SK,Bursaspor,4,1,super-lig,Turkey,football_data,1,1,,,,,,,,,,,,,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-03-10,Girona FC,SD Huesca,2,1,la-liga-2,Spain,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-10,Girona FC,Huesca,2,1,la-liga-2,Spain,football_data,2,1,,,,,,,,,,,,,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-03-10,Hannover 96,Eintracht Frankfurt,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2013-03-10,Hannover 96,Ein Frankfurt,0,0,bundesliga,Germany,football_data,0,0,7,11,3,2,5,7,18,13,2,0,0,0,,,2.3000,3.5000,2.9000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-03-10,Hannover 96,Eintracht Frankfurt,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2013-03-10,Hertha Berlin,MSV Duisburg,4,2,bundesliga-2,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-10,Hertha Berlin,Duisburg,4,2,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,1.3600,4.7500,8.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-10,Hibernian FC,Heart of Midlothian,0,0,scottish-prem,Scotland,football_data,0,0,7,12,3,6,6,5,12,20,1,3,0,0,,,2.7000,3.2500,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -2225,8 +2225,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-10,Santander,Murcia,2,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-10,Veria,OFI,0,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,1.9500,3.2000,4.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-03-10,VfB Stuttgart,Hamburger SV,0,1,bundesliga,Germany,football_data,0,0,13,12,7,3,8,5,15,23,2,1,0,0,,,2.2500,3.4000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-03-10,Villarreal CF,Sp Gijon,2,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-10,Villarreal CF,Sporting Gijón,2,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-03-10,Villarreal CF,Sp Gijon,2,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-10,Xanthi,Giannina,0,1,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,2.2500,3.2000,3.3000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-03-11,Braunschweig,Kaiserslautern,1,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.2000,3.3000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-11,Burnley,Hull City,0,1,championship,England,football_data,0,0,9,8,3,5,5,3,9,4,0,1,0,0,,,2.7500,3.4000,2.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -2281,11 +2281,11 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-15,Motherwell FC,Hibernian FC,4,1,scottish-prem,Scotland,football_data,0,1,13,8,10,5,3,4,13,12,1,1,0,0,,,2.0500,3.4000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-15,Olympique Marseille,Ajaccio,0,0,ligue1,France,football_data,0,0,21,6,3,1,8,1,14,19,0,1,0,0,,,1.4400,4.0000,8.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-15,Reggina,Cesena,1,2,serie-b,Italy,football_data,1,2,,,,,,,,,,,,,,,2.1500,3.1000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-03-15,SC Paderborn 07,FSV Frankfurt,3,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-15,SC Paderborn 07,Frankfurt FSV,3,0,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,2.3000,3.2000,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-03-15,SC Paderborn 07,FSV Frankfurt,3,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-15,Tours,Laval,1,1,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,2.0500,3.1000,3.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-03-15,Union Berlin,FC St. Pauli,4,2,bundesliga-2,Germany,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-15,Union Berlin,St Pauli,4,2,bundesliga-2,Germany,football_data,2,1,,,,,,,,,,,,,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-03-15,Union Berlin,FC St. Pauli,4,2,bundesliga-2,Germany,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-15,VfL Wolfsburg,Fortuna Dusseldorf,1,1,bundesliga,Germany,football_data,0,1,18,9,6,3,7,1,13,14,2,2,0,0,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-15,Zwolle,Roda,3,2,eredivisie,Netherlands,football_data,2,2,,,,,,,,,,,,,,,2.0000,3.5000,3.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-03-16,1. FC Nurnberg,Schalke 04,3,0,bundesliga,Germany,football_data,1,0,12,15,8,5,6,4,11,11,0,1,0,0,,,3.1000,3.4000,2.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -2399,8 +2399,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-16,US Sassuolo,Cittadella,1,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.5500,3.6000,7.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-16,VVV Venlo,Heracles Almelo,0,2,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.5000,2.6300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-03-16,Valencia CF,Real Betis,3,0,la-liga,Spain,football_data,1,0,15,9,4,4,9,4,17,12,3,3,0,1,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-03-16,VfL Bochum,Eintracht Braunschweig,0,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-16,VfL Bochum,Braunschweig,0,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,3.1000,3.4000,2.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-03-16,VfL Bochum,Eintracht Braunschweig,0,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-16,Vicenza,Ternana,0,1,serie-b,Italy,football_data,0,1,,,,,,,,,,,,,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-16,Walsall,Crawley Town,2,2,league-one,England,football_data,0,0,15,8,11,5,5,5,7,13,1,1,0,0,,,2.4000,3.5000,3.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-03-16,Werder Bremen,SpVgg Greuther Furth,2,2,bundesliga,Germany,football_data,0,0,18,9,8,3,9,4,11,23,0,2,0,0,,,1.5000,4.3300,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -2581,8 +2581,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-23,Falkirk,Hamilton,0,2,scottish-div1,Scotland,football_data,0,2,,,,,,,,,,,,,,,1.9100,3.7500,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-23,Fleetwood Town,Dag and Red,2,1,league-two,England,football_data,1,1,10,11,5,6,5,6,9,9,1,1,0,0,,,2.1000,3.5000,3.8000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-03-23,Gillingham,Accrington Stanley,1,0,league-two,England,football_data,1,0,11,7,6,2,8,4,10,8,0,2,0,0,,,1.6200,4.2000,6.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2013-03-23,Girona FC,CD Mirandés,4,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-23,Girona FC,Mirandes,4,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.7300,3.6000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-03-23,Girona FC,CD Mirandés,4,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-23,Grosseto,Cesena,1,2,serie-b,Italy,football_data,0,2,,,,,,,,,,,,,,,2.2500,3.2000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-23,Hartlepool,Walsall,0,0,league-one,England,football_data,0,0,7,12,3,5,4,2,8,4,0,1,0,0,,,3.3000,3.5000,2.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-03-23,Indonesia,Saudi Arabia,1,2,asian-cup,Indonesia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFC Asian Cup qualification,0
@@ -2696,8 +2696,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-28,Cottbus,Aalen,1,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.4000,4.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-28,Eintracht Braunschweig,Dynamo Dresden,2,1,bundesliga-2,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-28,Energie Cottbus,VfR Aalen,1,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-03-28,Erzgebirge Aue,TSV 1860 München,0,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-28,Erzgebirge Aue,Munich 1860,0,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,3.2000,3.2500,2.3800,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-03-28,Erzgebirge Aue,TSV 1860 München,0,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-03-28,FC Crotone,Spezia Calcio,0,2,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.2500,3.1000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-28,Juve Stabia,Modena,1,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.2000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-28,Pro Vercelli,Empoli FC,0,1,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,3.6000,3.3000,2.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -2818,8 +2818,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-30,SL Benfica,Rio Ave FC,6,1,primeira-liga,Portugal,football_data,3,0,,,,,,,,,,,,,,,1.2000,6.5000,13.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-03-30,SS Lazio,Catania,2,1,serie-a,Italy,football_data,0,0,17,4,5,1,16,5,13,21,2,3,0,0,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-30,SV Ried,SK Rapid Wien,3,2,austrian-bl,Austria,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-03-30,Schalke 04,1899 Hoffenheim,3,0,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-03-30,Schalke 04,TSG Hoffenheim,3,0,bundesliga,Germany,football_data,0,0,14,5,5,1,3,3,13,15,1,2,0,0,,,1.5700,4.1000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-03-30,Schalke 04,1899 Hoffenheim,3,0,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-03-30,Setubal,Maritimo,2,4,primeira-liga,Portugal,football_data,0,3,,,,,,,,,,,,,,,2.8800,3.2000,2.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-03-30,Sheffield Wednesday,Barnsley,2,1,championship,England,football_data,0,0,7,11,5,7,2,5,10,13,3,2,1,0,,,2.3000,3.5000,3.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-03-30,Southampton,Chelsea,2,1,premier-league,England,football_data,2,1,13,7,8,4,7,7,12,6,2,1,0,0,,,3.5000,3.5000,2.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -2832,8 +2832,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-03-30,Sunderland,Manchester United,0,1,premier-league,England,football_data,0,1,9,10,4,6,3,6,11,9,3,1,0,0,,,6.0000,4.0000,1.6500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-30,Swansea City,Tottenham Hotspur,1,2,premier-league,England,football_data,0,2,11,9,3,7,5,2,5,10,2,4,0,0,,,3.4000,3.4000,2.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-30,Torino FC,SSC Napoli,3,5,serie-a,Italy,football_data,1,1,12,15,4,8,10,8,16,15,4,1,0,0,,,3.3000,3.2500,2.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-03-30,UD Las Palmas,Guadalajara,0,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-30,UD Las Palmas,CD Guadalajara,0,1,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-03-30,UD Las Palmas,Guadalajara,0,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-03-30,Udinese Calcio,Bologna FC,0,0,serie-a,Italy,football_data,0,0,16,9,5,1,6,2,19,20,1,6,0,0,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-30,Valenciennes,Bastia,3,4,ligue1,France,football_data,2,1,16,16,10,8,5,5,20,15,3,1,0,0,,,1.9100,3.2000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-03-30,Vallecano,Malaga CF,1,3,la-liga,Spain,football_data,1,1,15,12,6,4,4,4,14,6,2,1,0,0,,,1.8500,3.4000,4.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -3096,8 +3096,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-07,AS Saint-Etienne,Evian Thonon Gaillard,1,0,ligue1,France,football_data,0,0,13,8,6,2,9,0,12,12,0,3,0,0,,,1.4500,4.1000,7.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-07,Akhisar Belediyespor,Trabzonspor,1,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.8800,3.3000,2.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-07,Asteras Tripolis,Xanthi,0,1,greek-super,Greece,football_data,0,1,,,,,,,,,,,,,,,1.5700,3.5000,7.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-04-07,CA Osasuna,Espanol,0,2,la-liga,Spain,football_data,0,0,13,10,3,4,5,6,13,21,4,4,0,0,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-07,CA Osasuna,Espanyol Barcelona,0,2,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-04-07,CA Osasuna,Espanol,0,2,la-liga,Spain,football_data,0,0,13,10,3,4,5,6,13,21,4,4,0,0,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-07,CD Guadalajara,Córdoba CF,3,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-07,CE Sabadell,Sporting Gijón,4,3,la-liga-2,Spain,openfootball,3,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-07,Catania,Cagliari Calcio,0,0,serie-a,Italy,football_data,0,0,18,12,3,0,6,4,17,19,1,5,0,0,,,1.9100,3.3000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -3110,11 +3110,11 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-07,FC Utrecht,Den Haag,1,0,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,1.5700,4.0000,5.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-07,GD Estoril Praia,Nacional,4,0,primeira-liga,Portugal,football_data,3,0,,,,,,,,,,,,,,,2.2500,3.1000,3.3000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-07,Genclerbirligi,Gaziantepspor,2,2,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,2.0000,3.3000,3.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-04-07,Getafe CF,Ath Madrid,0,0,la-liga,Spain,football_data,0,0,17,11,4,5,1,7,10,20,2,1,0,2,,,3.6000,3.5000,2.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-07,Getafe CF,Atlético Madrid,0,0,la-liga,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
+2013-04-07,Getafe CF,Ath Madrid,0,0,la-liga,Spain,football_data,0,0,17,11,4,5,1,7,10,20,2,1,0,2,,,3.6000,3.5000,2.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-07,Gil Vicente FC,Academica,2,1,primeira-liga,Portugal,football_data,0,1,,,,,,,,,,,,,,,2.3000,3.2500,3.1000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-04-07,Girona FC,Murcia,5,2,la-liga-2,Spain,football_data,2,1,,,,,,,,,,,,,,,1.7000,3.6000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-07,Girona FC,Real Murcia,5,2,la-liga-2,Spain,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-04-07,Girona FC,Murcia,5,2,la-liga-2,Spain,football_data,2,1,,,,,,,,,,,,,,,1.7000,3.6000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-07,Guadalajara,Cordoba,3,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.3000,3.3000,3.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-07,Hannover 96,VfB Stuttgart,0,0,bundesliga,Germany,football_data,0,0,13,14,1,6,6,6,22,9,0,0,0,0,,,2.3000,3.3000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-07,Inter Milan,Atalanta BC,3,4,serie-a,Italy,football_data,1,0,18,14,6,5,10,3,12,13,2,2,0,1,,,1.7500,3.6000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -3308,12 +3308,12 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-13,Stirling,Peterhead,0,1,scottish-div3,Scotland,football_data,0,1,,,,,,,,,,,,,,,2.6000,3.3000,2.6300,,,,,,,,,,,,,,,,49,4,0,0,,0
 2013-04-13,Ternana,Reggina,1,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.4000,2.9000,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-13,Tranmere,Hartlepool,0,1,league-one,England,football_data,0,1,9,6,2,4,9,3,5,12,2,2,0,0,,,1.8500,3.6000,4.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-04-13,UD Las Palmas,Hércules CF,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-04-13,UD Las Palmas,Hercules,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-04-13,UD Las Palmas,Hércules CF,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-04-13,US Sassuolo,Brescia Calcio,1,1,serie-b,Italy,football_data,0,1,,,,,,,,,,,,,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-13,Varese,Livorno,1,3,serie-b,Italy,football_data,0,2,,,,,,,,,,,,,,,2.6000,3.0000,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-04-13,VfL Wolfsburg,TSG Hoffenheim,2,2,bundesliga,Germany,football_data,1,1,13,10,5,5,2,4,24,24,2,1,0,0,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-13,VfL Wolfsburg,1899 Hoffenheim,2,2,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-04-13,VfL Wolfsburg,TSG Hoffenheim,2,2,bundesliga,Germany,football_data,1,1,13,10,5,5,2,4,24,24,2,1,0,0,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-13,Wolfsberger AC,SV Ried,1,3,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-04-13,Wolverhampton Wanderers,Huddersfield Town,1,3,championship,England,football_data,1,1,7,7,3,5,12,4,12,12,2,3,1,0,,,2.2000,3.5000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-04-13,Wycombe Wanderers,Aldershot,2,1,league-two,England,football_data,0,0,4,3,3,3,5,5,14,7,2,1,0,0,,,2.5000,3.4000,3.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -3333,8 +3333,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-14,Elazigspor,Buyuksehyr,1,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.6000,3.2000,2.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-14,Elche,Xerez,2,1,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,1.2900,5.0000,11.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-14,Energie Cottbus,VfL Bochum,0,2,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-04-14,FC Augsburg,Ein Frankfurt,2,0,bundesliga,Germany,football_data,1,0,19,8,4,3,5,3,12,18,3,2,0,0,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-14,FC Augsburg,Eintracht Frankfurt,2,0,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-04-14,FC Augsburg,Ein Frankfurt,2,0,bundesliga,Germany,football_data,1,0,19,8,4,3,5,3,12,18,3,2,0,0,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-14,FC Koln,Aalen,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-14,Fenerbahce SK,Eskisehirspor,1,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-14,Gaziantepspor,Yukatel Kayserispor,0,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -3371,8 +3371,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-14,Waalwijk,Feyenoord,1,1,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,4.0000,3.7500,1.8300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-15,Besiktas JK,Antalyaspor,1,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.7500,4.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-15,Chateauroux,FC Nantes,0,4,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,3.1000,3.0000,2.4500,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-04-15,Erzgebirge Aue,1. FC Kaiserslautern,1,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-15,Erzgebirge Aue,Kaiserslautern,1,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,3.5000,3.2500,2.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-04-15,Erzgebirge Aue,1. FC Kaiserslautern,1,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-15,RCD Mallorca,Celta de Vigo,1,0,la-liga,Spain,football_data,0,0,14,8,6,2,9,1,17,19,3,1,0,0,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-15,RCD Mallorca,RC Celta,1,0,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-04-15,SS Lazio,Juventus,0,2,serie-a,Italy,football_data,0,2,20,17,2,5,9,3,18,11,2,2,0,0,,,4.1000,3.4000,1.9100,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -3407,8 +3407,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-16,Sheffield United,Brentford,2,2,league-one,England,football_data,0,1,15,10,6,7,9,9,20,13,5,4,1,2,,,2.6000,3.3000,3.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-04-16,Spezia Calcio,Cesena,1,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.9500,3.1000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-16,Stenhousemuir,Queen of Sth,2,1,scottish-div2,Scotland,football_data,1,1,,,,,,,,,,,,,,,6.0000,4.3300,1.5000,,,,,,,,,,,,,,,,49,3,0,0,,0
-2013-04-16,Swindon Town,Crewe,4,1,league-one,England,football_data,3,0,13,8,7,2,9,4,15,8,1,2,0,0,,,1.5500,4.2000,7.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-04-16,Swindon Town,Crewe Alexandra,4,1,league-one,England,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-04-16,Swindon Town,Crewe,4,1,league-one,England,football_data,3,0,13,8,7,2,9,4,15,8,1,2,0,0,,,1.5500,4.2000,7.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-04-16,Torquay,Barnet,3,2,league-two,England,football_data,1,0,16,10,9,5,5,6,12,16,2,2,0,0,,,2.4000,3.3000,3.2500,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-04-16,Vicenza,Ascoli,1,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.2500,2.8800,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-16,Virtus Lanciano,Ternana,1,1,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,2.2500,3.0000,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -3436,8 +3436,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-19,Jahn Regensburg,FC Ingolstadt 04,1,2,bundesliga-2,Germany,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-19,Le Havre AC,Sedan,1,1,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,2.0500,3.2000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-19,Montpellier HSC,Olympique Lyonnais,1,2,ligue1,France,football_data,1,1,13,13,4,4,4,5,16,20,0,3,0,0,,,2.3000,3.2500,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-04-19,RCD Mallorca,Rayo Vallecano,1,1,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-04-19,RCD Mallorca,Vallecano,1,1,la-liga,Spain,football_data,1,1,11,19,5,3,5,3,30,12,4,5,0,0,,,2.2000,3.5000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-04-19,RCD Mallorca,Rayo Vallecano,1,1,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-04-19,Regensburg,Ingolstadt,1,2,bundesliga-2,Germany,football_data,1,2,,,,,,,,,,,,,,,3.3000,3.2500,2.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-19,SCO Angers,Stade Malherbe Caen,1,1,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,2.4000,3.0000,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-19,Sabadell,Recreativo,1,1,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,2.1500,3.3000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -3494,8 +3494,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-20,Fulham,Arsenal,0,1,premier-league,England,football_data,0,1,7,10,5,7,7,3,13,8,0,2,1,1,,,5.0000,4.0000,1.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-20,Genoa CFC,Atalanta BC,1,1,serie-a,Italy,football_data,1,1,17,3,4,2,6,2,17,29,4,5,0,0,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-20,Gillingham,AFC Wimbledon,2,2,league-two,England,football_data,2,0,9,11,3,4,0,4,10,9,1,1,0,0,,,1.8000,3.8000,4.7500,,,,,,,,,,,,,,,,65,3,0,0,,0
-2013-04-20,Girona FC,Lugo,4,0,la-liga-2,Spain,football_data,2,0,,,,,,,,,,,,,,,1.6700,3.5000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-20,Girona FC,CD Lugo,4,0,la-liga-2,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-04-20,Girona FC,Lugo,4,0,la-liga-2,Spain,football_data,2,0,,,,,,,,,,,,,,,1.6700,3.5000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-20,Granada CF,Real Valladolid,1,1,la-liga,Spain,football_data,0,0,28,2,10,2,9,0,12,13,3,1,0,0,,,2.1000,3.2500,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-20,Grosseto,Livorno,0,3,serie-b,Italy,football_data,0,1,,,,,,,,,,,,,,,7.0000,4.0000,1.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-20,Guadalajara,Huesca,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.8500,3.4000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -3620,8 +3620,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-21,UD Almería,CD Numancia,1,1,la-liga-2,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-21,VVV Venlo,FC Twente,2,2,eredivisie,Netherlands,football_data,2,0,,,,,,,,,,,,,,,5.0000,4.0000,1.6200,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-21,VfB Stuttgart,SC Freiburg,2,1,bundesliga,Germany,football_data,2,0,15,11,7,3,3,6,14,15,0,3,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-04-21,Villarreal CF,Racing Santander,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-21,Villarreal CF,Santander,1,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-04-21,Villarreal CF,Racing Santander,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-21,Xanthi,Aris FC,0,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,5.0000,3.7500,1.5300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-21,Yukatel Kayserispor,Demir Grup Sivasspor,1,1,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,1.8300,3.5000,4.3300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-22,AS Monaco,Clermont Foot,4,0,ligue2,France,football_data,2,0,,,,,,,,,,,,,,,1.5000,3.7500,7.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -3669,8 +3669,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-26,Santander,Barcelona B,1,2,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,2.3800,3.4000,2.8800,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-26,SpVgg Greuther Furth,Hannover 96,2,3,bundesliga,Germany,football_data,1,1,20,8,8,4,6,5,13,13,1,5,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-26,Tours,Le Havre AC,1,2,ligue2,France,football_data,0,2,,,,,,,,,,,,,,,2.1000,3.1000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-04-26,Union Berlin,Regensburg,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.5000,4.1000,6.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-26,Union Berlin,Jahn Regensburg,1,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-04-26,Union Berlin,Regensburg,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.5000,4.1000,6.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-26,Vallecano,CA Osasuna,2,2,la-liga,Spain,football_data,1,2,11,6,5,5,9,4,9,19,1,3,0,0,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-27,1899 Hoffenheim,1. FC Nürnberg,2,1,bundesliga,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-04-27,AD Alcorcón,Xerez CD,2,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -3720,8 +3720,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-27,Dundee FC,Heart of Midlothian,1,0,scottish-prem,Scotland,football_data,0,0,4,1,2,1,10,4,7,9,1,3,1,1,,,3.5000,3.2500,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-27,East Stirling,Rangers FC,2,4,scottish-div3,Scotland,football_data,1,2,,,,,,,,,,,,,,,11.0000,6.5000,1.2200,,,,,,,,,,,,,,,,49,4,0,0,,0
 2013-04-27,Elazigspor,Karabukspor,1,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.8000,3.2500,2.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-04-27,Erzgebirge Aue,MSV Duisburg,0,0,bundesliga-2,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-04-27,Erzgebirge Aue,Duisburg,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-04-27,Erzgebirge Aue,MSV Duisburg,0,0,bundesliga-2,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-04-27,Everton,Fulham,1,0,premier-league,England,football_data,1,0,17,6,10,2,7,2,12,16,1,3,0,0,,,1.5000,4.5000,7.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-27,FC Augsburg,VfB Stuttgart,3,0,bundesliga,Germany,football_data,0,0,22,7,7,3,9,4,15,13,4,4,0,0,,,2.2500,3.2500,3.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-27,FC Girondins de Bordeaux,Stade de Reims,0,0,ligue1,France,football_data,0,0,11,6,3,0,10,4,11,13,2,2,0,0,,,1.6700,3.5000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -3735,8 +3735,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-27,Ipswich Town,Birmingham City,3,1,championship,England,football_data,2,0,12,14,5,9,4,1,11,9,2,0,0,0,,,2.2500,3.5000,3.4000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-04-27,Juve Stabia,Ternana,1,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.1000,2.6300,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-27,Leeds United,Brighton & Hove Albion,1,2,championship,England,football_data,0,1,8,10,3,4,8,2,5,15,1,2,2,1,,,3.2500,3.4000,2.3800,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-04-27,Levante UD,Celta de Vigo,0,1,la-liga,Spain,football_data,0,1,11,9,2,4,10,3,16,13,2,5,0,0,,,2.0500,3.3000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-27,Levante UD,RC Celta,0,1,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-04-27,Levante UD,Celta de Vigo,0,1,la-liga,Spain,football_data,0,1,11,9,2,4,10,3,16,13,2,5,0,0,,,2.0500,3.3000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-27,Leyton Orient,Oldham Athletic,1,1,league-one,England,football_data,1,0,9,11,2,6,5,3,6,11,1,2,0,0,,,1.9500,3.5000,4.3300,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-04-27,Livorno,Vicenza,2,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-27,Lugo,Villarreal CF,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,4.2000,3.3000,1.9100,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -3788,8 +3788,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-27,Tranmere Rovers,AFC Bournemouth,0,0,league-one,England,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-04-27,Valenciennes,Nancy,0,0,ligue1,France,football_data,0,0,18,9,4,4,4,2,11,12,1,2,0,0,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-27,Varese,Cittadella,2,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,1.6500,3.5000,5.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-04-27,VfL Wolfsburg,Bor. Mönchengladbach,3,1,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-04-27,VfL Wolfsburg,Borussia Monchengladbach,3,1,bundesliga,Germany,football_data,1,0,17,6,5,4,5,3,5,14,0,1,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-04-27,VfL Wolfsburg,Bor. Mönchengladbach,3,1,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-04-27,Virtus Lanciano,FC Crotone,1,1,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,2.2000,2.9000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-27,Wigan Athletic,Tottenham Hotspur,2,2,premier-league,England,football_data,1,1,6,14,4,7,3,3,12,10,3,1,0,0,,,3.8000,3.6000,2.0500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-27,Wolfsberger AC,SK Sturm Graz,3,0,austrian-bl,Austria,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -3812,8 +3812,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-28,FC Koln,Munich 1860,1,1,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,1.6200,3.6000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-28,FC St. Pauli,Hertha Berlin,2,3,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-28,FC Twente,Nijmegen,5,2,eredivisie,Netherlands,football_data,2,0,,,,,,,,,,,,,,,1.3600,5.0000,7.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-04-28,FSV Mainz 05,Eintracht Frankfurt,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2013-04-28,FSV Mainz 05,Ein Frankfurt,0,0,bundesliga,Germany,football_data,0,0,14,8,2,3,7,7,14,15,0,2,0,0,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-04-28,FSV Mainz 05,Eintracht Frankfurt,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2013-04-28,Fenerbahce SK,Yukatel Kayserispor,2,1,super-lig,Turkey,football_data,0,1,,,,,,,,,,,,,,,1.6200,3.7500,5.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-28,Feyenoord,Heracles Almelo,6,0,eredivisie,Netherlands,football_data,4,0,,,,,,,,,,,,,,,1.2200,6.0000,13.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-28,Gaziantepspor,Galatasaray SK,0,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,6.0000,3.7500,1.5700,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -3836,8 +3836,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-28,Recreativo Huelva,CD Guadalajara,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-28,Rio Ave FC,Beira Mar,2,1,primeira-liga,Portugal,football_data,0,1,,,,,,,,,,,,,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-28,SBV Vitesse,Willem II,3,1,eredivisie,Netherlands,football_data,2,0,,,,,,,,,,,,,,,1.2900,5.7500,8.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-04-28,SC Paderborn 07,Aalen,2,2,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-28,SC Paderborn 07,VfR Aalen,2,2,bundesliga-2,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-04-28,SC Paderborn 07,Aalen,2,2,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-28,Schalke 04,Hamburger SV,4,1,bundesliga,Germany,football_data,2,1,20,9,10,1,6,3,14,10,1,3,0,0,,,1.5700,4.1000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-28,Sp Lisbon,Nacional,2,1,primeira-liga,Portugal,football_data,1,0,,,,,,,,,,,,,,,1.7500,3.6000,4.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-04-28,St Pauli,Hertha Berlin,2,3,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,3.3000,3.3000,2.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -3850,8 +3850,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-04-29,Cottbus,Kaiserslautern,4,2,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,4.0000,3.4000,1.9100,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-29,Energie Cottbus,1. FC Kaiserslautern,4,2,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-04-29,Maritimo,SL Benfica,1,2,primeira-liga,Portugal,football_data,1,1,,,,,,,,,,,,,,,8.5000,4.3300,1.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-04-29,Real Betis,La Coruna,1,1,la-liga,Spain,football_data,0,1,20,12,4,6,8,3,17,19,5,4,0,0,,,1.9100,3.6000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-29,Real Betis,Deportivo La Coruña,1,1,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-04-29,Real Betis,La Coruna,1,1,la-liga,Spain,football_data,0,1,20,12,4,6,8,3,17,19,5,4,0,0,,,1.9100,3.6000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-04-29,Sedan,AS Monaco,1,1,ligue2,France,football_data,1,1,,,,,,,,,,,,,,,4.0000,3.4000,1.9100,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-04-30,Brechin,Albion Rvs,2,0,scottish-div2,Scotland,football_data,1,0,,,,,,,,,,,,,,,1.5300,4.3300,5.5000,,,,,,,,,,,,,,,,49,3,0,0,,0
 2013-04-30,Millwall,Crystal Palace,0,0,championship,England,football_data,0,0,3,3,1,1,5,5,12,9,4,1,0,0,,,2.7500,3.2000,2.7000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -3955,16 +3955,16 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-05-04,Ternana,Livorno,1,1,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,5.7500,3.3000,1.7000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-04,Tottenham Hotspur,Southampton,1,0,premier-league,England,football_data,0,0,7,10,4,6,5,5,8,9,1,1,0,0,,,1.4400,4.7500,8.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-04,Toulouse FC,LOSC Lille,4,2,ligue1,France,football_data,2,1,14,11,9,8,3,6,24,16,2,0,0,0,,,3.7500,3.4000,2.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-05-04,UD Las Palmas,Sp Gijon,4,2,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.3000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-04,UD Las Palmas,Sporting Gijón,4,2,la-liga-2,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-05-04,UD Las Palmas,Sp Gijon,4,2,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.3000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-04,Valencia CF,CA Osasuna,4,0,la-liga,Spain,football_data,2,0,18,8,7,3,7,7,17,17,2,3,0,2,,,1.4000,4.5000,7.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-04,VfB Stuttgart,SpVgg Greuther Furth,0,2,bundesliga,Germany,football_data,0,0,14,10,4,4,5,2,17,23,1,2,1,0,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-05-04,VfL Bochum,1. FC Köln,2,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-05-04,VfL Bochum,FC Koln,2,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,3.1000,3.3000,2.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-05-04,VfL Bochum,1. FC Köln,2,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-05-04,Vicenza,Empoli FC,1,5,serie-b,Italy,football_data,1,5,,,,,,,,,,,,,,,3.4000,3.2000,2.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-04,Watford,Leeds United,1,2,championship,England,football_data,1,1,15,7,8,3,4,2,9,12,3,2,1,0,,,1.4400,4.7500,8.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-05-04,Werder Bremen,1899 Hoffenheim,2,2,bundesliga,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-04,Werder Bremen,TSG Hoffenheim,2,2,bundesliga,Germany,football_data,2,0,18,13,3,5,4,2,23,15,3,3,0,0,,,2.1000,3.6000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-05-04,Werder Bremen,1899 Hoffenheim,2,2,bundesliga,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-04,West Bromwich Albion,Wigan Athletic,2,3,premier-league,England,football_data,1,1,17,13,11,8,7,5,9,7,4,3,0,0,,,2.4500,3.5000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-04,West Ham United,Newcastle United,0,0,premier-league,England,football_data,0,0,9,11,3,6,7,3,12,12,1,1,0,0,,,2.3800,3.4000,3.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-04,Yukatel Kayserispor,Trabzonspor,2,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.2500,3.3000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -4006,8 +4006,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-05-05,RCD Mallorca,Levante UD,1,1,la-liga,Spain,football_data,1,1,21,3,8,1,10,1,16,14,0,3,0,0,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-05,Real Madrid B,Murcia,2,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-05,Real Madrid Castilla,Real Murcia,2,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-05-05,Real Zaragoza,Vallecano,3,0,la-liga,Spain,football_data,1,0,16,7,6,3,5,7,14,12,4,2,0,0,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-05,Real Zaragoza,Rayo Vallecano,3,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-05-05,Real Zaragoza,Vallecano,3,0,la-liga,Spain,football_data,1,0,16,7,6,3,5,7,14,12,4,2,0,0,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-05,Ross County FC,Celtic FC,1,1,scottish-prem,Scotland,football_data,1,1,12,8,7,6,4,7,10,9,0,0,0,0,,,5.0000,3.8000,1.6700,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-05,SC Freiburg,FC Augsburg,2,0,bundesliga,Germany,football_data,1,0,17,19,10,6,5,8,15,19,3,2,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-05,SC Heerenveen,FC Utrecht,2,4,eredivisie,Netherlands,football_data,1,1,,,,,,,,,,,,,,,1.8300,3.7500,4.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -4092,8 +4092,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-05-11,FC Girondins de Bordeaux,Nancy,3,2,ligue1,France,football_data,2,0,24,9,12,3,7,4,16,11,3,2,0,0,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-11,FC Porto,SL Benfica,2,1,primeira-liga,Portugal,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.6000,3.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-05-11,FC Wacker Innsbruck,FK Austria Wien,0,3,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-05-11,FSV Mainz 05,Borussia Monchengladbach,2,4,bundesliga,Germany,football_data,1,1,10,17,4,6,3,3,10,12,1,0,0,0,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-11,FSV Mainz 05,Bor. Mönchengladbach,2,4,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-05-11,FSV Mainz 05,Borussia Monchengladbach,2,4,bundesliga,Germany,football_data,1,1,10,17,4,6,3,3,10,12,1,0,0,0,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-11,Fortuna Dusseldorf,1. FC Nurnberg,1,2,bundesliga,Germany,football_data,1,0,6,13,2,4,1,5,19,19,4,1,0,0,,,1.8500,3.5000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-11,GD Estoril Praia,Beira Mar,2,1,primeira-liga,Portugal,football_data,1,1,,,,,,,,,,,,,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-05-11,Girona FC,Xerez,2,4,la-liga-2,Spain,football_data,1,3,,,,,,,,,,,,,,,1.2900,5.5000,10.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -4224,8 +4224,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-05-18,Aberdeen FC,Heart of Midlothian,1,1,scottish-prem,Scotland,football_data,0,0,12,4,6,4,11,7,15,15,1,2,0,0,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-18,Barcelona B,Alcorcon,1,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.4000,3.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-18,Bor. Mönchengladbach,Bayern München,3,4,bundesliga,Germany,openfootball,3,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-05-18,Borussia Dortmund,1899 Hoffenheim,1,2,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-18,Borussia Dortmund,TSG Hoffenheim,1,2,bundesliga,Germany,football_data,1,0,21,9,8,5,3,0,13,20,1,4,1,0,,,1.3300,5.0000,8.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-05-18,Borussia Dortmund,1899 Hoffenheim,1,2,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-18,Borussia Monchengladbach,Bayern Munich,3,4,bundesliga,Germany,football_data,3,2,11,26,5,13,1,10,7,7,0,0,0,0,,,7.0000,4.3300,1.4400,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-18,Brescia Calcio,Varese,2,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.9100,3.3000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-18,Buyuksehyr,Kasimpasa SK,1,2,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,1.5700,4.0000,5.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -4308,8 +4308,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-05-19,Inter Milan,Udinese Calcio,2,5,serie-a,Italy,football_data,1,3,18,12,6,6,5,4,9,17,2,1,0,0,,,3.2500,3.5000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-19,Kaiserslautern,St Pauli,1,2,bundesliga-2,Germany,football_data,0,2,,,,,,,,,,,,,,,1.7500,3.7500,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-19,La Coruna,Espanol,2,0,la-liga,Spain,football_data,0,0,17,7,5,2,7,6,11,25,3,5,0,0,,,1.5700,4.0000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-05-19,Levante UD,Rayo Vallecano,2,3,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-19,Levante UD,Vallecano,2,3,la-liga,Spain,football_data,0,1,12,18,4,7,6,3,25,13,1,5,0,0,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-05-19,Levante UD,Rayo Vallecano,2,3,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-19,Liverpool,Queens Park Rangers,1,0,premier-league,England,football_data,1,0,27,10,20,3,14,0,7,3,1,3,0,0,,,1.2500,7.0000,12.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-19,MSV Duisburg,SC Paderborn 07,3,2,bundesliga-2,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-05-19,Manchester City,Norwich City,2,3,premier-league,England,football_data,1,1,12,12,5,7,7,7,10,8,1,0,0,0,,,1.3300,5.5000,11.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -4390,8 +4390,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-05-26,FC Red Bull Salzburg,FK Austria Wien,3,0,austrian-bl,Austria,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-26,Getafe CF,Rayo Vallecano,1,2,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-26,Getafe CF,Vallecano,1,2,la-liga,Spain,football_data,0,0,14,13,6,7,10,7,21,18,3,5,0,0,,,2.1000,3.5000,3.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-05-26,Girona FC,Barcelona B,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.6000,4.0000,5.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-26,Girona FC,FC Barcelona B,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-05-26,Girona FC,Barcelona B,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.6000,4.0000,5.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-26,LOSC Lille,AS Saint-Etienne,1,1,ligue1,France,football_data,1,0,19,6,4,2,5,3,10,17,2,2,0,1,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-26,Lugo,Sabadell,2,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-26,Malaga CF,La Coruna,3,1,la-liga,Spain,football_data,1,0,15,28,9,4,5,6,12,6,1,1,0,0,,,2.3800,3.4000,2.8800,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -4404,8 +4404,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-05-26,Real Betis,Real Zaragoza,4,0,la-liga,Spain,football_data,2,0,13,16,5,3,4,4,18,12,2,6,0,0,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-05-26,Real Murcia,SD Ponferradina,0,2,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-05-26,Real Sociedad,Real Madrid,3,3,la-liga,Spain,football_data,0,1,27,11,12,4,11,5,7,12,1,2,0,0,,,2.5000,3.6000,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-05-26,Real Valladolid,RC Celta,0,2,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-26,Real Valladolid,Celta de Vigo,0,2,la-liga,Spain,football_data,0,1,13,17,3,10,3,3,13,7,4,2,0,0,,,3.0000,3.4000,2.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-05-26,Real Valladolid,RC Celta,0,2,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-05-26,Recreativo,Cordoba,2,1,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-05-26,Recreativo Huelva,Córdoba CF,2,1,la-liga-2,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-05-26,SK Rapid Wien,SV Ried,3,0,austrian-bl,Austria,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -4435,8 +4435,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-06-01,CE Sabadell,Elche CF,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-06-01,Celta de Vigo,Espanol,1,0,la-liga,Spain,football_data,1,0,12,8,5,1,6,6,17,17,1,3,0,1,,,1.4400,4.5000,6.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-06-01,Deportivo La Coruña,Real Sociedad,0,1,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-06-01,FC Barcelona,Málaga CF,4,1,la-liga,Spain,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-06-01,FC Barcelona,Malaga CF,4,1,la-liga,Spain,football_data,3,0,10,11,6,5,9,6,5,5,0,0,0,0,,,1.2500,6.0000,10.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-06-01,FC Barcelona,Málaga CF,4,1,la-liga,Spain,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-06-01,Granada CF,Getafe CF,2,0,la-liga,Spain,football_data,1,0,16,11,5,0,4,4,10,7,1,1,0,0,,,1.9500,3.6000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-06-01,La Coruna,Real Sociedad,0,1,la-liga,Spain,football_data,0,1,20,13,5,6,7,1,12,19,7,2,0,1,,,2.6000,3.5000,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-06-01,Levante UD,Real Betis,1,1,la-liga,Spain,football_data,0,0,13,9,4,2,7,5,17,15,3,4,0,0,,,3.2000,3.4000,2.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -4446,8 +4446,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-06-01,RCD Mallorca,Real Valladolid,4,2,la-liga,Spain,football_data,2,1,20,11,10,5,9,5,8,11,2,0,0,0,,,1.5000,4.3300,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-06-01,Rayo Vallecano,Athletic Bilbao,2,2,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-06-01,Real Madrid,CA Osasuna,4,2,la-liga,Spain,football_data,2,0,18,26,9,13,4,5,15,12,1,1,0,0,,,1.2500,6.0000,10.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-06-01,Real Zaragoza,Ath Madrid,1,3,la-liga,Spain,football_data,0,0,15,16,6,4,7,4,11,11,2,1,0,0,,,2.2000,3.5000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-06-01,Real Zaragoza,Atlético Madrid,1,3,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-06-01,Real Zaragoza,Ath Madrid,1,3,la-liga,Spain,football_data,0,0,15,16,6,4,7,4,11,11,2,1,0,0,,,2.2000,3.5000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-06-01,Sabadell,Elche,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.8000,3.4000,2.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-06-01,Sevilla FC,Valencia CF,4,3,la-liga,Spain,football_data,2,1,21,17,9,7,9,1,14,11,3,6,0,1,,,3.3000,3.5000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-06-01,Vallecano,Athletic Bilbao,2,2,la-liga,Spain,football_data,1,1,28,5,6,3,11,1,12,20,1,3,0,1,,,2.0500,3.6000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -4701,8 +4701,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-07-20,Lesotho,South Africa,1,2,international,Zambia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,COSAFA Cup,1
 2013-07-20,Mexico,Trinidad and Tobago,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
 2013-07-20,Panama,Cuba,6,1,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Gold Cup,1
-2013-07-20,SC Paderborn 07,1. FC Kaiserslautern,0,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-07-20,SC Paderborn 07,Kaiserslautern,0,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,3.2500,3.4000,2.1500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-07-20,SC Paderborn 07,1. FC Kaiserslautern,0,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-07-20,SV Grödig,SV Ried,0,0,austrian-bl,Austria,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2013-07-20,South Korea,Australia,0,0,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,EAFF Championship,0
 2013-07-20,Wolfsberger AC,SK Rapid Wien,2,2,austrian-bl,Austria,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -4730,8 +4730,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-07-26,Kaiserslautern,Ingolstadt,3,1,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-07-26,VfR Aalen,SpVgg Greuther Fürth,0,2,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-07-27,Bergen,Cercle Brugge KSV,1,1,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,1.8300,3.6000,4.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-07-27,Erzgebirge Aue,SV Sandhausen,1,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-07-27,Erzgebirge Aue,Sandhausen,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.6000,3.8000,5.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-07-27,Erzgebirge Aue,SV Sandhausen,1,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-07-27,FC Admira Wacker,FC Wacker Innsbruck,1,2,austrian-bl,Austria,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-07-27,FC Red Bull Salzburg,FK Austria Wien,5,1,austrian-bl,Austria,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-07-27,KRC Genk,Oostende,3,0,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,1.4400,4.7500,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -4754,8 +4754,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-07-28,South Korea,Japan,1,2,international,South Korea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,EAFF Championship,0
 2013-07-28,TSV 1860 München,FSV Frankfurt,2,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-07-28,United States,Panama,1,0,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Gold Cup,0
-2013-07-29,VfL Bochum,Dresden,1,1,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,1.9500,3.5000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-07-29,VfL Bochum,Dynamo Dresden,1,1,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-07-29,VfL Bochum,Dresden,1,1,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,1.9500,3.5000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-02,AFC Ajax,Roda,3,0,eredivisie,Netherlands,football_data,2,0,,,,,,,,,,,,,,,1.1400,8.0000,16.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-02,Arles,Le Havre AC,2,0,ligue2,France,football_data,2,0,,,,,,,,,,,,,,,2.4500,3.0000,3.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-02,Cercle Brugge KSV,RSC Anderlecht,0,4,belgian-pro,Belgium,football_data,0,2,,,,,,,,,,,,,,,4.5000,3.7500,1.7300,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -4890,8 +4890,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-10,Hannover 96,VfL Wolfsburg,2,0,bundesliga,Germany,football_data,1,0,20,15,8,4,7,2,28,11,4,0,0,2,,,2.6000,3.4000,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-10,Hartlepool,Southend,0,1,league-two,England,football_data,0,1,14,7,4,2,6,1,11,13,2,0,0,1,,,2.4000,3.3000,3.2500,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-08-10,Heracles Almelo,Zwolle,1,3,eredivisie,Netherlands,football_data,1,2,,,,,,,,,,,,,,,1.9100,3.6000,3.8000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-08-10,Hertha Berlin,Eintracht Frankfurt,6,1,bundesliga,Germany,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-08-10,Hertha Berlin,Ein Frankfurt,6,1,bundesliga,Germany,football_data,2,1,16,10,9,4,5,4,19,18,0,2,0,0,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-08-10,Hertha Berlin,Eintracht Frankfurt,6,1,bundesliga,Germany,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-08-10,Huddersfield Town,Queens Park Rangers,1,1,championship,England,football_data,1,1,6,17,2,6,1,3,9,11,1,1,0,0,,,3.4000,3.4000,2.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-08-10,Ingolstadt,Karlsruhe,0,2,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-10,Ipswich Town,Millwall,3,0,championship,England,football_data,0,0,8,5,5,0,8,4,7,10,1,2,0,0,,,2.1000,3.5000,3.8000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -5029,8 +5029,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-16,Partick,Heart of Midlothian,1,1,scottish-prem,Scotland,football_data,0,0,15,11,5,4,4,4,10,10,1,1,0,0,,,2.1500,3.2000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-16,Sochaux,Olympique Lyonnais,1,3,ligue1,France,football_data,1,2,11,15,8,8,8,5,14,19,3,0,0,0,,,3.6000,3.2000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-16,Stade Malherbe Caen,Creteil,3,0,ligue2,France,football_data,2,0,,,,,,,,,,,,,,,1.6200,3.6000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-08-16,VfL Bochum,FC St. Pauli,2,2,bundesliga-2,Germany,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-16,VfL Bochum,St Pauli,2,2,bundesliga-2,Germany,football_data,1,2,,,,,,,,,,,,,,,2.4000,3.3000,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-08-16,VfL Bochum,FC St. Pauli,2,2,bundesliga-2,Germany,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-17,1. FC Kaiserslautern,Erzgebirge Aue,2,1,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-17,1. FC Köln,SV Sandhausen,2,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-17,AFC Bournemouth,Wigan Athletic,1,0,championship,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -5164,8 +5164,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-18,Asteras Tripolis,Giannina,3,3,greek-super,Greece,football_data,2,2,,,,,,,,,,,,,,,1.6200,3.5000,6.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-18,Belenenses,Rio Ave FC,0,3,primeira-liga,Portugal,football_data,0,1,,,,,,,,,,,,,,,2.6300,3.1000,2.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-18,Besiktas JK,Trabzonspor,2,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.0500,3.4000,3.6000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-08-18,Borussia Dortmund,Braunschweig,2,1,bundesliga,Germany,football_data,0,0,24,8,6,3,4,3,8,12,0,1,0,0,,,1.1700,7.5000,13.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-18,Borussia Dortmund,Eintracht Braunschweig,2,1,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-08-18,Borussia Dortmund,Braunschweig,2,1,bundesliga,Germany,football_data,0,0,24,8,6,3,4,3,8,12,0,1,0,0,,,1.1700,7.5000,13.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-18,CA Osasuna,Granada CF,1,2,la-liga,Spain,football_data,0,2,14,13,5,4,7,6,15,17,1,4,0,0,,,2.0000,3.3000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-18,CE Sabadell,RCD Mallorca,4,0,la-liga-2,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-18,Chelsea,Hull City,2,0,premier-league,England,football_data,2,0,22,7,5,2,5,1,7,16,0,1,0,0,,,1.2000,7.0000,21.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -5301,8 +5301,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-24,Hellas Verona,AC Milan,2,1,serie-a,Italy,football_data,1,1,14,15,8,5,6,5,11,14,2,3,0,0,,,4.7500,3.6000,1.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-24,Heracles Almelo,PSV Eindhoven,1,1,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,8.0000,4.5000,1.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-24,Hertha Berlin,Hamburger SV,1,0,bundesliga,Germany,football_data,0,0,16,15,5,7,6,9,16,18,1,4,0,0,,,1.9100,3.6000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-08-24,Huddersfield Town,AFC Bournemouth,5,1,championship,England,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-24,Huddersfield Town,Bournemouth,5,1,championship,England,football_data,3,0,13,11,8,3,6,8,11,9,2,2,0,0,,,2.1000,3.5000,3.8000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2013-08-24,Huddersfield Town,AFC Bournemouth,5,1,championship,England,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-24,Hull City,Norwich City,1,0,premier-league,England,football_data,1,0,6,13,1,4,1,5,14,19,1,1,1,0,,,2.4500,3.4000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-24,Ipswich Town,Leeds United,1,2,championship,England,football_data,1,1,16,9,5,3,13,3,4,9,0,1,0,0,,,2.5000,3.4000,3.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-08-24,Kasimpasa SK,Yukatel Kayserispor,3,1,super-lig,Turkey,football_data,2,0,,,,,,,,,,,,,,,2.2000,3.3000,3.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -5311,8 +5311,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-24,La Coruna,Cordoba,0,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.6000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-24,Laval,RC Lens,0,2,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,3.2000,3.2500,2.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-24,Leicester City,Birmingham City,3,2,championship,England,football_data,0,1,13,6,4,4,12,4,7,5,0,1,0,0,,,1.7300,3.8000,5.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-08-24,Leyton Orient,Crewe Alexandra,2,0,league-one,England,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-24,Leyton Orient,Crewe,2,0,league-one,England,football_data,2,0,10,13,4,4,4,10,17,14,3,3,0,0,,,1.8000,3.7500,5.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2013-08-24,Leyton Orient,Crewe Alexandra,2,0,league-one,England,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-24,Lierse,Waasland-Beveren,1,0,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,2.3000,3.2500,3.1000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-24,Livingston FC,Falkirk,0,3,scottish-div1,Scotland,football_data,0,2,,,,,,,,,,,,,,,2.7500,3.5000,2.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-24,Mansfield,Portsmouth,2,2,league-two,England,football_data,1,2,14,9,6,4,7,7,6,6,0,0,0,0,,,2.8000,3.5000,2.6000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -5341,8 +5341,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-24,Raith Rvs,Dundee FC,0,0,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,2.7500,3.6000,2.3800,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-24,Real Madrid B,Alcorcon,0,1,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,2.3000,3.3000,3.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-24,Real Madrid Castilla,AD Alcorcón,0,1,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-08-24,Real Zaragoza,Mirandes,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.6000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-24,Real Zaragoza,CD Mirandés,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2013-08-24,Real Zaragoza,Mirandes,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.6000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-24,Ross County FC,St Mirren FC,3,0,scottish-prem,Scotland,football_data,2,0,13,12,8,5,4,6,18,8,1,1,0,0,,,2.5000,3.2000,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-24,Rotherham United,Shrewsbury Town,2,2,league-one,England,football_data,0,1,10,8,4,5,2,5,12,6,2,1,0,0,,,2.0000,3.6000,4.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-08-24,SD Eibar,Girona FC,0,3,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -5352,8 +5352,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-24,Southampton,Sunderland,1,1,premier-league,England,football_data,0,1,17,8,6,3,5,2,12,13,2,2,0,0,,,1.7300,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-24,SpVgg Greuther Furth,FC Koln,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-24,SpVgg Greuther Fürth,1. FC Köln,0,0,bundesliga-2,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
-2013-08-24,Spezia Calcio,AS Cittadella,0,0,serie-b,Italy,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-08-24,Spezia Calcio,Cittadella,0,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.8000,3.4000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-08-24,Spezia Calcio,AS Cittadella,0,0,serie-b,Italy,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-08-24,Stade Brest,Dijon FCO,0,0,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-24,Stenhousemuir,Dunfermline,4,5,scottish-div2,Scotland,football_data,2,0,,,,,,,,,,,,,,,2.7500,3.5000,2.4000,,,,,,,,,,,,,,,,49,3,0,0,,0
 2013-08-24,Stirling,East Stirling,1,3,scottish-div3,Scotland,football_data,0,2,,,,,,,,,,,,,,,1.7300,4.0000,4.2000,,,,,,,,,,,,,,,,49,4,0,0,,0
@@ -5415,17 +5415,17 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-25,Parma Calcio,Chievo Verona,0,0,serie-a,Italy,football_data,0,0,14,16,4,3,7,3,17,17,2,3,0,0,,,1.8500,3.5000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-25,Platanias,Asteras Tripolis,1,1,greek-super,Greece,football_data,1,0,,,,,,,,,,,,,,,2.7500,3.0000,2.7000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-25,Ponferradina,Sabadell,2,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.8300,3.5000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-08-25,RCD Mallorca,Real Murcia,2,4,la-liga-2,Spain,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-25,RCD Mallorca,Murcia,2,4,la-liga-2,Spain,football_data,0,2,,,,,,,,,,,,,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-08-25,RCD Mallorca,Real Murcia,2,4,la-liga-2,Spain,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-25,RSC Anderlecht,Sporting Charleroi,5,2,belgian-pro,Belgium,football_data,2,1,,,,,,,,,,,,,,,1.2200,6.0000,12.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-08-25,Real Betis,Celta de Vigo,1,2,la-liga,Spain,football_data,0,0,20,13,6,4,12,8,9,18,1,3,0,1,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-25,Real Betis,RC Celta,1,2,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-08-25,Real Betis,Celta de Vigo,1,2,la-liga,Spain,football_data,0,0,20,13,6,4,12,8,9,18,1,3,0,1,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-25,Recreativo,Sp Gijon,1,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.2500,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-25,Recreativo Huelva,Sporting Gijón,1,1,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-25,Rio Ave FC,Setubal,2,0,primeira-liga,Portugal,football_data,1,0,,,,,,,,,,,,,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-25,SBV Vitesse,FC Twente,1,0,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,3.0000,3.6000,2.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-08-25,SC Paderborn 07,Munich 1860,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.8000,3.2500,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-25,SC Paderborn 07,TSV 1860 München,1,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-08-25,SC Paderborn 07,Munich 1860,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.8000,3.2500,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-25,SD Ponferradina,CE Sabadell,2,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-25,SK Rapid Wien,SV Grödig,0,1,austrian-bl,Austria,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-08-25,SL Benfica,Gil Vicente FC,2,1,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,1.1700,7.0000,15.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -5439,8 +5439,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-25,Wigan Athletic,Middlesbrough,2,2,championship,England,football_data,1,1,7,11,5,7,1,6,14,12,1,0,0,0,,,1.8000,3.8000,4.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-08-25,Xanthi,Panthrakikos,1,0,greek-super,Greece,football_data,1,0,,,,,,,,,,,,,,,1.9100,3.2000,4.3300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-26,AC Cesena,AS Varese 1910,1,0,serie-b,Italy,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-08-26,ACF Fiorentina,Catania,2,1,serie-a,Italy,football_data,2,1,16,13,6,4,3,3,16,20,2,4,0,0,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-26,ACF Fiorentina,Calcio Catania,2,1,serie-a,Italy,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-08-26,ACF Fiorentina,Catania,2,1,serie-a,Italy,football_data,2,1,16,13,6,4,3,3,16,20,2,4,0,0,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-26,Cesena,Varese,1,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.4500,3.0000,3.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-26,Erciyesspor,Besiktas JK,2,4,super-lig,Turkey,football_data,2,1,,,,,,,,,,,,,,,3.4000,3.4000,2.1000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-26,Ergotelis,Levadeiakos,2,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -5522,8 +5522,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-31,Exeter City,York,2,1,league-two,England,football_data,1,1,5,7,2,4,4,5,8,10,0,1,0,0,,,2.2500,3.4000,3.5000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-08-31,FC Admira Wacker,SV Ried,1,4,austrian-bl,Austria,openfootball,0,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-08-31,FC Barcelona B,Real Zaragoza,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-08-31,FC Crotone,Cesena,1,2,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-31,FC Crotone,AC Cesena,1,2,serie-b,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-08-31,FC Crotone,Cesena,1,2,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-08-31,FC Lorient,Valenciennes,1,0,ligue1,France,football_data,1,0,15,8,3,1,6,5,9,19,1,1,0,1,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-31,FC Twente,SC Heerenveen,1,1,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,1.4400,4.5000,6.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-31,FK Austria Wien,FC Wacker Innsbruck,1,1,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -5542,8 +5542,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-08-31,Hércules CF,Real Madrid Castilla,2,1,la-liga-2,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-08-31,Inverness C,Heart of Midlothian,2,0,scottish-prem,Scotland,football_data,2,0,19,3,7,0,8,1,13,11,1,1,0,1,,,1.7500,3.6000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-08-31,Juve Stabia,Spezia Calcio,1,2,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,2.6000,3.1000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-08-31,Juventus,Lazio Roma,4,1,serie-a,Italy,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-08-31,Juventus,SS Lazio,4,1,serie-a,Italy,football_data,2,1,12,17,5,11,4,5,12,15,1,0,0,1,,,1.3600,4.5000,9.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-08-31,Juventus,Lazio Roma,4,1,serie-a,Italy,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-08-31,KAA Gent,Bergen,1,0,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-31,KV Mechelen,Lierse,0,0,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,1.5700,3.7500,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-08-31,Kallonis,Giannina,1,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,2.7500,3.0000,2.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -5662,11 +5662,11 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-01,Panthrakikos,Panetolikos,2,1,greek-super,Greece,football_data,2,1,,,,,,,,,,,,,,,2.3000,3.0000,3.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-01,Real Madrid,Athletic Bilbao,3,1,la-liga,Spain,football_data,2,0,20,12,7,2,9,6,15,13,1,2,0,0,,,1.1700,7.0000,16.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-01,Real Murcia,SD Ponferradina,2,2,la-liga-2,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-09-01,Real Sociedad,Ath Madrid,1,2,la-liga,Spain,football_data,0,1,10,16,4,9,5,5,19,21,2,4,0,0,,,2.9000,3.3000,2.3800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-01,Real Sociedad,Atlético Madrid,1,2,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-09-01,Real Sociedad,Ath Madrid,1,2,la-liga,Spain,football_data,0,1,10,16,4,9,5,5,19,21,2,4,0,0,,,2.9000,3.3000,2.3800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-01,Sassuolo Calcio,AS Livorno,1,4,serie-a,Italy,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-09-01,Sevilla FC,Málaga CF,2,2,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-01,Sevilla FC,Malaga CF,2,2,la-liga,Spain,football_data,1,1,15,15,7,6,10,1,17,13,3,3,0,1,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-09-01,Sevilla FC,Málaga CF,2,2,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-01,Sp Gijon,RCD Mallorca,3,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-01,Sporting Charleroi,KRC Genk,1,1,belgian-pro,Belgium,football_data,1,1,,,,,,,,,,,,,,,4.5000,3.7500,1.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-01,Sporting Gijón,RCD Mallorca,3,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -5879,8 +5879,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-13,CA Bastia,Dijon FCO,0,0,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,3.0000,3.0000,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-13,Creteil,Nancy,1,1,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,2.4000,3.1000,3.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-13,ESTAC Troyes,Chateauroux,3,0,ligue2,France,football_data,3,0,,,,,,,,,,,,,,,1.6700,3.4000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-09-13,Erzgebirge Aue,Bielefeld,0,2,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.6000,3.3000,2.7000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-13,Erzgebirge Aue,Arminia Bielefeld,0,2,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-09-13,Erzgebirge Aue,Bielefeld,0,2,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.6000,3.3000,2.7000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-13,FC Girondins de Bordeaux,Paris Saint-Germain,0,2,ligue1,France,football_data,0,1,6,14,1,7,1,5,14,13,2,2,0,0,,,4.3300,3.2500,1.9100,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-13,FC Metz,Nimes,2,2,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-13,Galatasaray SK,Antalyaspor,1,1,super-lig,Turkey,football_data,0,1,,,,,,,,,,,,,,,1.4500,4.3300,7.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -5993,8 +5993,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-14,Queens Park Rangers,Birmingham City,1,0,championship,England,football_data,0,0,10,9,2,1,3,2,17,14,1,4,0,0,,,1.5700,4.2000,6.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-09-14,RSC Anderlecht,KV Mechelen,5,0,belgian-pro,Belgium,football_data,4,0,,,,,,,,,,,,,,,1.3600,4.6000,8.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-14,Rangers FC,Arbroath,5,1,scottish-div2,Scotland,football_data,0,0,,,,,,,,,,,,,,,1.1400,7.0000,13.0000,,,,,,,,,,,,,,,,49,3,0,0,,0
-2013-09-14,Real Zaragoza,CD Tenerife,3,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-09-14,Real Zaragoza,Tenerife,3,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.8300,3.6000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-09-14,Real Zaragoza,CD Tenerife,3,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-09-14,Rio Ave FC,Vitoria SC,0,1,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,1.8500,3.4000,4.3300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-14,Rochdale,Torquay,1,0,league-two,England,football_data,0,0,9,7,4,3,10,11,11,10,1,0,0,0,,,2.0000,3.8000,3.8000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-09-14,Rotherham United,Oldham Athletic,3,2,league-one,England,football_data,1,1,17,7,9,6,10,2,9,11,0,2,0,1,,,2.1500,3.5000,3.6000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -6021,11 +6021,11 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-14,Varese,Pescara,3,2,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,2.5000,3.2000,2.8800,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-14,Veria,PAOK FC,1,2,greek-super,Greece,football_data,0,1,,,,,,,,,,,,,,,5.5000,3.4000,1.7000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-14,Villarreal CF,Real Madrid,2,2,la-liga,Spain,football_data,1,1,19,20,9,6,10,3,14,13,2,3,0,0,,,5.5000,4.2000,1.5700,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-09-14,Virtus Lanciano,Avellino,1,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-14,Virtus Lanciano,AS Avellino,1,0,serie-b,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-09-14,Virtus Lanciano,Avellino,1,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-14,Watford,Charlton Athletic,1,1,championship,England,football_data,0,0,15,5,4,2,3,4,14,9,3,2,0,0,,,1.6200,4.2000,6.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-09-14,Werder Bremen,Ein Frankfurt,0,3,bundesliga,Germany,football_data,0,2,12,14,4,6,5,10,14,13,2,0,1,0,,,2.4500,3.3000,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-14,Werder Bremen,Eintracht Frankfurt,0,3,bundesliga,Germany,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-09-14,Werder Bremen,Ein Frankfurt,0,3,bundesliga,Germany,football_data,0,2,12,14,4,6,5,10,14,13,2,0,1,0,,,2.4500,3.3000,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-14,Wolfsberger AC,FC Admira Wacker,3,1,austrian-bl,Austria,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-14,Wolverhampton Wanderers,Swindon Town,3,2,league-one,England,football_data,2,0,11,23,6,9,4,9,10,12,2,3,0,0,,,1.9100,3.9000,4.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-09-14,York,Mansfield,1,2,league-two,England,football_data,1,1,13,11,4,7,9,7,11,14,3,3,1,1,,,3.0000,3.3000,2.6000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -6053,8 +6053,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-15,Fortuna Düsseldorf,Dynamo Dresden,1,1,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-09-15,Genclerbirligi,Yukatel Kayserispor,1,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-15,Getafe CF,CA Osasuna,2,1,la-liga,Spain,football_data,1,1,14,11,5,6,7,4,15,17,2,4,0,0,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-09-15,Granada CF,Espanol,0,1,la-liga,Spain,football_data,0,0,9,7,1,3,4,4,17,16,3,3,1,0,,,2.4000,3.2000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-15,Granada CF,Espanyol Barcelona,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-09-15,Granada CF,Espanol,0,1,la-liga,Spain,football_data,0,0,9,7,1,3,4,4,17,16,3,3,1,0,,,2.4000,3.2000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-15,Hellas Verona,US Sassuolo,2,0,serie-a,Italy,football_data,1,0,10,18,3,2,5,10,18,11,3,1,0,0,,,2.2500,3.2000,3.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-15,Hellas Verona,Sassuolo Calcio,2,0,serie-a,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-15,Hercules,RCD Mallorca,2,2,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,2.3000,3.1000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6218,8 +6218,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-21,Lierse,Kortrijk,2,0,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,3.1000,3.2500,2.3000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-21,Liverpool,Southampton,0,1,premier-league,England,football_data,0,0,10,12,5,7,6,6,6,9,0,1,0,0,,,1.6000,4.0000,6.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-21,Mansfield,Northampton,3,0,league-two,England,football_data,2,0,9,19,4,7,1,8,13,8,0,0,0,0,,,2.0000,3.5000,4.2000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2013-09-21,Middlesbrough,Bournemouth,3,3,championship,England,football_data,2,2,20,7,6,0,3,5,11,9,2,3,1,0,,,2.0000,3.6000,4.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-09-21,Middlesbrough,AFC Bournemouth,3,3,championship,England,openfootball,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-09-21,Middlesbrough,Bournemouth,3,3,championship,England,football_data,2,2,20,7,6,0,3,5,11,9,2,3,1,0,,,2.0000,3.6000,4.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-09-21,Modena,Trapani,3,1,serie-b,Italy,football_data,2,0,,,,,,,,,,,,,,,2.2500,3.0000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-21,Montrose,Peterhead,2,1,scottish-div3,Scotland,football_data,1,1,,,,,,,,,,,,,,,3.4000,3.6000,1.9100,,,,,,,,,,,,,,,,49,4,0,0,,0
 2013-09-21,Morecambe,Dag and Red,2,2,league-two,England,football_data,0,1,18,8,10,3,6,1,7,10,1,0,0,0,,,2.3000,3.3000,3.5000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -6229,8 +6229,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-21,Norwich City,Aston Villa,0,1,premier-league,England,football_data,0,1,12,16,1,4,7,4,15,10,1,0,0,0,,,2.4000,3.4000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-21,Notts County,Tranmere,2,0,league-one,England,football_data,1,0,17,8,6,2,6,4,16,7,2,2,0,0,,,2.4000,3.4000,3.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-09-21,Numancia,Sabadell,3,1,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-09-21,Oldham Athletic,Crewe Alexandra,1,1,league-one,England,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-09-21,Oldham Athletic,Crewe,1,1,league-one,England,football_data,0,1,10,9,5,7,3,5,14,9,1,1,0,0,,,1.8500,3.7500,4.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2013-09-21,Oldham Athletic,Crewe Alexandra,1,1,league-one,England,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-09-21,Oxford United,Chesterfield,0,1,league-two,England,football_data,0,1,9,8,2,4,3,6,10,6,1,2,1,0,,,2.9000,3.3000,2.6300,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-09-21,Panathinaikos FC,OFI,1,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,1.6500,3.5000,5.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-21,Partick,Kilmarnock FC,1,1,scottish-prem,Scotland,football_data,1,0,10,7,8,3,6,5,7,9,3,4,0,0,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -6339,8 +6339,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-22,Standard Liege,Lokeren,2,1,belgian-pro,Belgium,football_data,2,1,,,,,,,,,,,,,,,1.6000,4.0000,5.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-22,US Sassuolo,Inter Milan,0,7,serie-a,Italy,football_data,0,3,7,23,4,11,2,7,8,13,3,1,0,0,,,4.5000,3.7500,1.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-22,Valencia CF,Sevilla FC,3,1,la-liga,Spain,football_data,1,0,26,9,6,3,8,8,15,12,2,1,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-09-22,VfB Stuttgart,Eintracht Frankfurt,1,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-22,VfB Stuttgart,Ein Frankfurt,1,1,bundesliga,Germany,football_data,1,1,14,16,4,4,4,7,10,13,3,2,0,0,,,2.1500,3.4000,3.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-09-22,VfB Stuttgart,Eintracht Frankfurt,1,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-22,Vitoria SC,SL Benfica,0,1,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,8.5000,4.3300,1.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-22,Waasland-Beveren,KRC Genk,0,0,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,5.5000,4.0000,1.5700,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-22,Waregem,Oud-Heverlee Leuven,4,2,belgian-pro,Belgium,football_data,0,1,,,,,,,,,,,,,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -6367,8 +6367,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-24,Creteil,Dijon FCO,1,3,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,2.4500,3.1000,3.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-24,Delfino Pescara,AS Avellino,1,1,serie-b,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-09-24,ESTAC Troyes,SCO Angers,3,3,ligue2,France,football_data,0,2,,,,,,,,,,,,,,,2.0500,3.1000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-09-24,Empoli FC,Siena,0,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-24,Empoli FC,AC Siena,0,0,serie-b,Italy,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2013-09-24,Empoli FC,Siena,0,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-24,FC Barcelona,Real Sociedad,4,1,la-liga,Spain,football_data,3,0,23,9,9,5,6,1,6,12,0,1,0,0,,,1.1300,8.0000,19.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-24,FC Crotone,Modena,3,1,serie-b,Italy,football_data,2,0,,,,,,,,,,,,,,,2.2500,3.2000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-24,FC Metz,Nancy,3,0,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.0000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6404,8 +6404,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-25,Livorno,Cagliari Calcio,1,1,serie-a,Italy,football_data,1,0,10,20,3,5,6,5,8,15,2,4,0,0,,,2.7500,3.1000,2.6300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-25,Parma Calcio,Atalanta BC,4,3,serie-a,Italy,football_data,4,2,14,12,6,4,3,4,18,23,3,4,1,0,,,1.9100,3.3000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-25,SS Lazio,Catania,3,1,serie-a,Italy,football_data,2,1,29,10,13,1,8,3,13,12,2,2,0,1,,,1.5700,3.7500,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-09-25,SSC Napoli,Sassuolo Calcio,1,1,serie-a,Italy,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-25,SSC Napoli,US Sassuolo,1,1,serie-a,Italy,football_data,1,1,19,17,8,6,8,6,11,18,2,2,0,0,,,1.1700,7.0000,15.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-09-25,SSC Napoli,Sassuolo Calcio,1,1,serie-a,Italy,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-25,Sevilla FC,Vallecano,4,1,la-liga,Spain,football_data,1,0,16,10,7,4,4,2,14,18,3,4,0,2,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-25,Sevilla FC,Rayo Vallecano,4,1,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-25,Torino FC,Hellas Verona,2,2,serie-a,Italy,football_data,1,1,11,7,7,6,9,3,11,17,1,0,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -6417,8 +6417,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-26,Getafe CF,RC Celta,2,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-26,Inter Milan,ACF Fiorentina,2,1,serie-a,Italy,football_data,0,0,15,18,5,6,6,6,15,7,4,1,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-26,Montpellier HSC,Stade Rennais,0,0,ligue1,France,football_data,0,0,20,8,4,3,7,2,18,14,3,1,0,0,,,2.1000,3.1000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-09-26,Villarreal CF,Espanol,2,1,la-liga,Spain,football_data,1,0,8,12,5,3,3,5,15,22,1,3,0,0,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-26,Villarreal CF,Espanyol Barcelona,2,1,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-09-26,Villarreal CF,Espanol,2,1,la-liga,Spain,football_data,1,0,8,12,5,3,3,5,15,22,1,3,0,0,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-27,Aalen,FC Koln,0,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,3.6000,3.3000,2.0500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-27,Bursaspor,Akhisar Belediyespor,0,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,1.6000,3.7500,5.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-27,CA Bastia,Laval,1,1,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,2.5000,3.0000,3.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6434,8 +6434,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-27,Istres,ESTAC Troyes,0,2,ligue2,France,football_data,0,2,,,,,,,,,,,,,,,3.1000,3.0000,2.4500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-27,Nancy,Arles,0,0,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-27,Nimes,Clermont Foot,1,1,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,2.0500,3.1000,3.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-09-27,Real Valladolid,Málaga CF,2,2,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-27,Real Valladolid,Malaga CF,2,2,la-liga,Spain,football_data,0,1,13,11,3,4,11,4,6,7,3,0,0,0,,,2.9000,3.2000,2.4500,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-09-27,Real Valladolid,Málaga CF,2,2,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-27,SCO Angers,Tours,1,1,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,2.0000,3.2000,3.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-27,Southend,Bristol Rvs,1,1,league-two,England,football_data,0,0,16,6,5,4,12,5,6,9,1,4,0,0,,,2.0500,3.6000,3.8000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-09-27,Stade Brest,Creteil,1,2,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,2.0500,3.2000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6538,8 +6538,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-28,Raith Rvs,Falkirk,1,1,scottish-div1,Scotland,football_data,1,0,,,,,,,,,,,,,,,2.3000,3.5000,2.8800,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-28,Rangers FC,Stenhousemuir,8,0,scottish-div2,Scotland,football_data,3,0,,,,,,,,,,,,,,,1.1700,7.5000,13.0000,,,,,,,,,,,,,,,,49,3,0,0,,0
 2013-09-28,Reading,Birmingham City,2,0,championship,England,football_data,1,0,11,17,5,5,2,4,7,12,0,2,0,0,,,1.9500,3.6000,4.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-09-28,Real Madrid,Ath Madrid,0,1,la-liga,Spain,football_data,0,1,20,13,5,4,2,7,21,18,4,4,0,0,,,1.6200,3.7500,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-28,Real Madrid,Atlético Madrid,0,1,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-09-28,Real Madrid,Ath Madrid,0,1,la-liga,Spain,football_data,0,1,20,13,5,4,2,7,21,18,4,4,0,0,,,1.6200,3.7500,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-28,Real Sociedad,Sevilla FC,1,1,la-liga,Spain,football_data,0,1,17,10,5,3,8,5,11,10,0,4,0,1,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-28,Reggina,Carpi,0,1,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.8000,3.3000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-28,Rio Ave FC,Nacional,0,3,primeira-liga,Portugal,football_data,0,1,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -6566,12 +6566,12 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-28,Tranmere,Port Vale,0,1,league-one,England,football_data,0,0,12,21,3,10,5,7,10,12,2,4,1,0,,,2.5000,3.4000,3.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-09-28,UD Almeria,FC Barcelona,0,2,la-liga,Spain,football_data,0,1,5,15,1,4,2,3,20,15,1,2,0,0,,,13.0000,7.0000,1.1800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-09-28,US Palermo,Juve Stabia,3,0,serie-b,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-09-28,Valencia CF,Rayo Vallecano,1,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-28,Valencia CF,Vallecano,1,0,la-liga,Spain,football_data,1,0,5,13,4,3,3,5,14,21,3,5,0,0,,,1.2900,5.2500,10.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-09-28,Valencia CF,Rayo Vallecano,1,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-28,Varese,Ternana,2,1,serie-b,Italy,football_data,0,1,,,,,,,,,,,,,,,1.8500,3.3000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-28,Veria,Ergotelis,0,1,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-09-28,Virtus Lanciano,Bari,1,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.6300,3.1000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-28,Virtus Lanciano,AS Bari,1,0,serie-b,Italy,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-09-28,Virtus Lanciano,Bari,1,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.6300,3.1000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-28,Waalwijk,Heracles Almelo,1,4,eredivisie,Netherlands,football_data,1,2,,,,,,,,,,,,,,,2.1000,3.5000,3.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-28,Watford,Wigan Athletic,1,0,championship,England,football_data,0,0,11,8,4,3,3,2,9,9,2,1,0,0,,,2.1500,3.6000,3.6000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-09-28,Wolverhampton Wanderers,Sheffield United,2,0,league-one,England,football_data,0,0,11,12,6,3,7,5,10,7,2,1,0,0,,,1.9100,3.6000,4.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -6607,8 +6607,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-09-29,Feyenoord,Den Haag,4,2,eredivisie,Netherlands,football_data,2,0,,,,,,,,,,,,,,,1.2900,5.5000,9.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-29,Genclerbirligi,Fenerbahce SK,0,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,5.0000,3.5000,1.7300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-09-29,Giannina,Xanthi,2,1,greek-super,Greece,football_data,1,0,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-09-29,Hellas Verona,AS Livorno,2,1,serie-a,Italy,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-29,Hellas Verona,Livorno,2,1,serie-a,Italy,football_data,1,1,16,19,5,8,5,5,15,8,3,2,0,0,,,1.9100,3.3000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-09-29,Hellas Verona,AS Livorno,2,1,serie-a,Italy,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-09-29,Hercules,La Coruna,0,2,la-liga-2,Spain,football_data,0,2,,,,,,,,,,,,,,,2.7500,3.2000,2.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-09-29,Hércules CF,Deportivo La Coruña,0,2,la-liga-2,Spain,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-09-29,Ingolstadt,St Pauli,1,2,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.5000,3.3000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6690,8 +6690,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-04,Sheffield United,Crawley Town,1,1,league-one,England,football_data,0,1,13,13,6,3,8,10,9,12,1,3,0,0,,,2.4000,3.5000,3.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-04,St Pauli,SC Paderborn 07,1,2,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.6700,3.9000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-04,Tours,Stade Brest,1,1,ligue2,France,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.1000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-10-04,Union Berlin,Sandhausen,3,0,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-04,Union Berlin,SV Sandhausen,3,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-10-04,Union Berlin,Sandhausen,3,0,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-04,Villarreal CF,Granada CF,3,0,la-liga,Spain,football_data,1,0,16,8,4,1,6,4,9,13,0,1,0,0,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-05,AC Cesena,AC Siena,1,1,serie-b,Italy,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-05,AFC Bournemouth,Millwall,5,2,championship,England,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -6708,8 +6708,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-05,Borussia Monchengladbach,Borussia Dortmund,2,0,bundesliga,Germany,football_data,0,0,6,27,3,8,1,9,8,9,2,2,0,1,,,5.0000,3.7500,1.6700,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-05,Bournemouth,Millwall,5,2,championship,England,football_data,1,2,21,8,8,4,3,3,4,16,1,2,0,1,,,2.3000,3.4000,3.4000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-05,Brentford,Rotherham United,0,1,league-one,England,football_data,0,1,15,10,5,2,7,4,11,17,1,6,0,0,,,2.1500,3.6000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-10-05,Brescia Calcio,US Palermo,1,1,serie-b,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-05,Brescia Calcio,Palermo,1,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,3.0000,3.2000,2.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-10-05,Brescia Calcio,US Palermo,1,1,serie-b,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-05,Brighton & Hove Albion,Nottingham Forest,1,3,championship,England,football_data,1,0,21,11,3,6,2,3,11,19,1,4,0,1,,,2.6300,3.3000,2.9000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-05,Bristol Rvs,Fleetwood Town,1,3,league-two,England,football_data,0,0,10,11,2,4,6,4,11,12,1,2,0,0,,,3.2000,3.5000,2.3500,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-10-05,Burnley,Reading,2,1,championship,England,football_data,1,0,21,7,8,3,8,3,7,8,0,2,0,0,,,2.2000,3.5000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -6744,8 +6744,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-05,FC Barcelona,Real Valladolid,4,1,la-liga,Spain,football_data,1,1,21,7,8,1,7,4,7,15,0,3,0,0,,,1.0900,10.0000,21.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-05,FC Nantes,Evian Thonon Gaillard,3,0,ligue1,France,football_data,2,0,7,11,4,2,6,4,11,13,1,2,0,0,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-05,FC Wacker Innsbruck,FC Admira Wacker,3,3,austrian-bl,Austria,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-10-05,FSV Mainz 05,1899 Hoffenheim,2,2,bundesliga,Germany,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-05,FSV Mainz 05,TSG Hoffenheim,2,2,bundesliga,Germany,football_data,0,2,17,14,8,5,7,1,23,16,2,2,0,0,,,2.2500,3.5000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-10-05,FSV Mainz 05,1899 Hoffenheim,2,2,bundesliga,Germany,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-05,Falkirk,Queen of Sth,2,1,scottish-div1,Scotland,football_data,1,0,,,,,,,,,,,,,,,2.3000,3.5000,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-05,Forfar,Dunfermline,4,0,scottish-div2,Scotland,football_data,2,0,,,,,,,,,,,,,,,3.4000,3.6000,1.9100,,,,,,,,,,,,,,,,49,3,0,0,,0
 2013-10-05,Fulham,Stoke City,1,0,premier-league,England,football_data,0,0,9,16,2,3,7,5,11,13,3,2,0,0,,,2.4000,3.3000,3.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -6772,8 +6772,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-05,Morton,Alloa,0,2,scottish-div1,Scotland,football_data,0,1,,,,,,,,,,,,,,,1.9500,3.5000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-05,NAC Breda,Heracles Almelo,2,1,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-05,Nimes,Stade Malherbe Caen,2,1,ligue2,France,football_data,2,1,,,,,,,,,,,,,,,3.2500,3.1000,2.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-10-05,Notts County,Crewe,4,0,league-one,England,football_data,2,0,8,15,4,7,1,4,19,10,1,1,0,0,,,2.1000,3.6000,3.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-05,Notts County,Crewe Alexandra,4,0,league-one,England,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-10-05,Notts County,Crewe,4,0,league-one,England,football_data,2,0,8,15,4,7,1,4,19,10,1,1,0,0,,,2.1000,3.6000,3.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-05,Novara,Virtus Lanciano,0,3,serie-b,Italy,football_data,0,2,,,,,,,,,,,,,,,1.7300,3.4000,5.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-05,Numancia,Sp Gijon,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.4000,3.2500,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-05,Oldham Athletic,Leyton Orient,1,1,league-one,England,football_data,1,0,14,6,9,3,4,3,15,23,0,2,0,0,,,2.9000,3.4000,2.6000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -6804,13 +6804,13 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-05,Torquay,York,0,3,league-two,England,football_data,0,0,11,9,4,4,7,7,11,12,1,1,0,0,,,2.5000,3.6000,2.8800,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-10-05,Toulouse FC,OGC Nice,1,0,ligue1,France,football_data,1,0,8,10,2,3,1,4,18,13,1,1,0,0,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-05,Trapani,Latina,1,1,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-10-05,UD Las Palmas,Córdoba CF,2,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-05,UD Las Palmas,Cordoba,2,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.6000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-10-05,UD Las Palmas,Córdoba CF,2,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-05,Valenciennes,Stade de Reims,1,1,ligue1,France,football_data,0,1,18,9,11,4,22,4,15,16,0,2,0,0,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-05,Vallecano,Real Sociedad,1,0,la-liga,Spain,football_data,0,0,11,18,1,6,7,6,9,8,2,2,0,0,,,2.9000,3.4000,2.3800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-05,VfB Stuttgart,Werder Bremen,1,1,bundesliga,Germany,football_data,1,1,20,7,6,2,13,1,11,9,1,2,0,0,,,1.7000,3.8000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-10-05,VfL Wolfsburg,Eintracht Braunschweig,0,2,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-05,VfL Wolfsburg,Braunschweig,0,2,bundesliga,Germany,football_data,0,1,17,7,3,3,7,2,21,26,2,3,0,0,,,1.2900,5.5000,9.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-10-05,VfL Wolfsburg,Eintracht Braunschweig,0,2,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-05,Waasland-Beveren,Oostende,2,0,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-05,Walsall,Bradford City,0,2,league-one,England,football_data,0,1,15,8,4,3,6,3,6,2,0,0,0,0,,,2.5000,3.4000,3.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-05,Wolfsberger AC,SV Ried,1,1,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -6872,8 +6872,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-06,SBV Vitesse,Feyenoord,1,2,eredivisie,Netherlands,football_data,0,2,,,,,,,,,,,,,,,2.6300,3.5000,2.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-06,SC Freiburg,Ein Frankfurt,1,1,bundesliga,Germany,football_data,0,0,13,11,4,5,7,10,12,20,3,2,0,1,,,2.7000,3.4000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-06,SC Freiburg,Eintracht Frankfurt,1,1,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-10-06,SD Eibar,Alcorcon,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.2000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-06,SD Eibar,AD Alcorcón,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2013-10-06,SD Eibar,Alcorcon,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.2000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-06,SD Ponferradina,FC Barcelona B,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-06,SS Lazio,ACF Fiorentina,0,0,serie-a,Italy,football_data,0,0,20,3,4,0,6,1,15,17,4,4,0,0,,,2.2500,3.4000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-06,SSC Napoli,Livorno,4,0,serie-a,Italy,football_data,2,0,10,10,6,2,4,4,19,17,0,2,0,0,,,1.2200,5.2500,17.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7112,8 +7112,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-19,Bristol Rvs,Wycombe Wanderers,0,1,league-two,England,football_data,0,0,5,20,0,6,2,10,6,10,0,1,1,0,,,2.5000,3.6000,2.8800,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-10-19,CA Osasuna,FC Barcelona,0,0,la-liga,Spain,football_data,0,0,4,12,1,3,2,5,13,8,3,2,0,0,,,12.0000,6.0000,1.2200,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-19,CD Alavés,FC Barcelona B,2,3,la-liga-2,Spain,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2013-10-19,Cagliari Calcio,Catania,2,1,serie-a,Italy,football_data,1,1,29,7,10,4,11,5,12,18,3,1,0,1,,,1.9100,3.3000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-19,Cagliari Calcio,Calcio Catania,2,1,serie-a,Italy,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-10-19,Cagliari Calcio,Catania,2,1,serie-a,Italy,football_data,1,1,29,7,10,4,11,5,12,18,3,1,0,1,,,1.9100,3.3000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-19,Calcio Padova,Juve Stabia,2,1,serie-b,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-19,Cercle Brugge KSV,Waregem,1,1,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,3.7500,3.6000,1.9100,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-19,Chelsea,Cardiff City,4,1,premier-league,England,football_data,1,1,20,13,7,3,6,9,12,5,1,2,0,0,,,1.2500,6.5000,15.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7172,8 +7172,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-19,Newcastle United,Liverpool,2,2,premier-league,England,football_data,1,1,14,23,4,7,3,13,8,10,2,3,1,0,,,4.5000,3.9000,1.8300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-19,Newport County,York,3,0,league-two,England,football_data,2,0,13,7,4,2,6,5,10,10,2,2,0,0,,,2.3800,3.5000,3.1000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-10-19,Northampton,Dag and Red,2,2,league-two,England,football_data,1,2,19,9,5,3,6,3,16,11,4,1,0,0,,,2.2500,3.5000,3.4000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2013-10-19,Nottingham Forest,AFC Bournemouth,1,1,championship,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-19,Nottingham Forest,Bournemouth,1,1,championship,England,football_data,1,0,21,14,5,4,10,5,11,9,4,2,0,0,,,1.6700,4.0000,5.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
+2013-10-19,Nottingham Forest,AFC Bournemouth,1,1,championship,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-19,Oldham Athletic,Carlisle,1,0,league-one,England,football_data,1,0,14,9,6,2,9,7,13,9,3,2,0,0,,,1.9100,3.7500,4.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-19,Oostende,KV Mechelen,0,3,belgian-pro,Belgium,football_data,0,3,,,,,,,,,,,,,,,2.5000,3.3000,2.8000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-19,Oud-Heverlee Leuven,Waasland-Beveren,4,2,belgian-pro,Belgium,football_data,1,1,,,,,,,,,,,,,,,1.9500,3.5000,3.8000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -7225,8 +7225,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-20,Antalyaspor,Akhisar Belediyespor,1,0,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-20,Apollon,Panetolikos,1,1,greek-super,Greece,football_data,1,0,,,,,,,,,,,,,,,2.4000,3.0000,3.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-20,Aston Villa,Tottenham Hotspur,0,2,premier-league,England,football_data,0,1,15,13,2,6,4,7,13,12,3,4,0,0,,,4.0000,3.5000,2.0500,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-10-20,Atalanta BC,Lazio Roma,2,1,serie-a,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-20,Atalanta BC,SS Lazio,2,1,serie-a,Italy,football_data,1,0,14,16,5,4,8,2,7,17,0,2,0,0,,,2.7000,3.2000,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-10-20,Atalanta BC,Lazio Roma,2,1,serie-a,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-20,CD Numancia,Hércules CF,1,1,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-20,Deportivo La Coruña,Real Zaragoza,1,1,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-20,Erciyesspor,Fenerbahce SK,1,2,super-lig,Turkey,football_data,1,1,,,,,,,,,,,,,,,5.0000,3.7500,1.6700,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -7235,8 +7235,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-20,FC Ingolstadt 04,Fortuna Düsseldorf,1,2,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-20,Gaziantepspor,Konyaspor,3,3,super-lig,Turkey,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-20,Genoa CFC,Chievo Verona,2,1,serie-a,Italy,football_data,1,0,9,15,5,7,4,2,15,20,1,4,0,0,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-10-20,Girona FC,Sporting Gijón,2,1,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-20,Girona FC,Sp Gijon,2,1,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,2.4000,3.2000,3.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-10-20,Girona FC,Sporting Gijón,2,1,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-20,Granada CF,Getafe CF,0,2,la-liga,Spain,football_data,0,0,12,15,5,7,9,3,21,12,3,2,1,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-20,Hamburger SV,VfB Stuttgart,3,3,bundesliga,Germany,football_data,1,2,20,9,6,3,10,0,16,12,1,2,0,1,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-20,Hellas Verona,Parma Calcio,3,2,serie-a,Italy,football_data,1,2,14,14,7,6,6,3,16,21,0,7,0,0,,,2.3000,3.2000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7258,8 +7258,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-20,Real Betis,Elche,1,2,la-liga,Spain,football_data,1,2,15,7,7,4,6,7,22,8,4,2,0,1,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-20,Real Jaén,AD Alcorcón,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-20,Real Valladolid,Sevilla FC,2,2,la-liga,Spain,football_data,0,2,11,16,5,6,6,5,14,17,2,3,0,0,,,2.8000,3.4000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-10-20,SD Eibar,CD Mirandés,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-20,SD Eibar,Mirandes,1,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.0500,3.3000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-10-20,SD Eibar,CD Mirandés,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-20,SK Rapid Wien,SK Sturm Graz,2,2,austrian-bl,Austria,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-20,Sassuolo Calcio,Bologna FC,2,1,serie-a,Italy,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-20,Sochaux,AS Monaco,2,2,ligue1,France,football_data,0,2,16,12,7,5,9,3,16,18,2,2,0,0,,,8.0000,4.0000,1.4400,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7270,8 +7270,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-20,Trabzonspor,Demir Grup Sivasspor,0,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-20,UD Almeria,Vallecano,0,1,la-liga,Spain,football_data,0,0,6,16,2,10,7,6,21,13,2,3,0,1,,,1.9100,3.6000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-20,UD Almería,Rayo Vallecano,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-10-20,UD Las Palmas,Real Murcia,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-10-20,UD Las Palmas,Murcia,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-10-20,UD Las Palmas,Real Murcia,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-10-20,US Sassuolo,Bologna FC,2,1,serie-a,Italy,football_data,2,1,8,20,5,6,1,13,18,11,4,2,0,0,,,2.3800,3.2000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-20,Veria,Aris FC,0,1,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-20,Zwolle,Den Haag,6,1,eredivisie,Netherlands,football_data,3,0,,,,,,,,,,,,,,,1.5500,4.0000,5.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -7357,8 +7357,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-26,Bradford City,Wolverhampton Wanderers,1,2,league-one,England,football_data,1,2,12,14,5,5,5,7,9,13,2,2,0,0,,,3.4000,3.5000,2.2500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-26,Brechin,Arbroath,3,1,scottish-div2,Scotland,football_data,1,0,,,,,,,,,,,,,,,2.0000,3.7500,3.4000,,,,,,,,,,,,,,,,49,3,0,0,,0
 2013-10-26,Brentford,Shrewsbury Town,1,0,league-one,England,football_data,1,0,25,9,7,4,3,6,13,10,1,2,0,0,,,1.7300,3.9000,5.2500,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-10-26,Brescia Calcio,Siena,2,2,serie-b,Italy,football_data,2,0,,,,,,,,,,,,,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-26,Brescia Calcio,AC Siena,2,2,serie-b,Italy,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-10-26,Brescia Calcio,Siena,2,2,serie-b,Italy,football_data,2,0,,,,,,,,,,,,,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-26,Bristol Rvs,Chesterfield,0,0,league-two,England,football_data,0,0,5,7,1,3,2,8,9,12,0,0,0,1,,,3.7000,3.4000,2.1500,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-10-26,Burnley,Queens Park Rangers,2,0,championship,England,football_data,0,0,9,6,3,1,5,3,16,13,2,4,0,0,,,2.6500,3.3000,2.8800,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-26,CD Tenerife,Deportivo La Coruña,2,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -7384,13 +7384,13 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-26,FC Lorient,Sochaux,2,1,ligue1,France,football_data,1,0,10,7,6,2,4,3,18,9,1,1,0,0,,,1.7500,3.4000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-26,FC Wacker Innsbruck,Wolfsberger AC,1,2,austrian-bl,Austria,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-26,FSV Frankfurt,VfR Aalen,0,0,bundesliga-2,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
-2013-10-26,FSV Mainz 05,Eintracht Braunschweig,2,0,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-26,FSV Mainz 05,Braunschweig,2,0,bundesliga,Germany,football_data,1,0,9,6,3,1,0,8,25,17,2,3,0,0,,,1.5700,4.1000,5.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-10-26,FSV Mainz 05,Eintracht Braunschweig,2,0,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-26,Fortuna Dusseldorf,SC Paderborn 07,1,6,bundesliga-2,Germany,football_data,1,2,,,,,,,,,,,,,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-26,Frankfurt FSV,Aalen,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-26,Hamilton,Falkirk,2,0,scottish-div1,Scotland,football_data,1,0,,,,,,,,,,,,,,,1.9100,3.6000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-10-26,Hannover 96,1899 Hoffenheim,1,4,bundesliga,Germany,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-26,Hannover 96,TSG Hoffenheim,1,4,bundesliga,Germany,football_data,0,2,11,10,3,5,8,1,21,11,3,2,2,0,,,2.3000,3.5000,2.9000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-10-26,Hannover 96,1899 Hoffenheim,1,4,bundesliga,Germany,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-26,Hibernian FC,Aberdeen FC,0,2,scottish-prem,Scotland,football_data,0,0,4,11,0,6,6,7,8,11,1,1,0,0,,,3.0000,3.4000,2.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-26,Huddersfield Town,Leeds United,3,2,championship,England,football_data,1,1,15,13,4,4,5,5,14,13,1,2,0,0,,,2.6500,3.4000,2.8000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-26,Inter Milan,Hellas Verona,4,2,serie-a,Italy,football_data,3,1,21,9,8,4,9,1,11,10,3,3,1,1,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7398,8 +7398,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-26,KV Mechelen,Oud-Heverlee Leuven,4,2,belgian-pro,Belgium,football_data,1,1,,,,,,,,,,,,,,,1.6200,3.7500,5.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-26,Karabukspor,Antalyaspor,1,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.3000,3.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-26,Kilmarnock FC,Heart of Midlothian,2,0,scottish-prem,Scotland,football_data,1,0,18,10,10,4,8,3,11,12,3,3,0,0,,,2.2500,3.4000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-10-26,Leicester City,AFC Bournemouth,2,1,championship,England,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-26,Leicester City,Bournemouth,2,1,championship,England,football_data,1,1,20,11,5,1,9,3,17,8,1,1,0,1,,,1.6200,4.1000,6.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2013-10-26,Leicester City,AFC Bournemouth,2,1,championship,England,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-26,Levante UD,Espanyol Barcelona,3,0,la-liga,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-26,Levante UD,Espanol,3,0,la-liga,Spain,football_data,2,0,6,20,3,6,3,11,14,23,2,5,0,0,,,2.4000,3.3000,2.9000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-26,Leyton Orient,Rotherham United,1,0,league-one,England,football_data,1,0,14,10,10,1,6,4,6,18,1,2,0,0,,,2.0000,3.7000,3.9000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -7433,8 +7433,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-26,Schalke 04,Borussia Dortmund,1,3,bundesliga,Germany,football_data,0,1,12,10,5,8,2,2,11,12,3,1,0,0,,,4.2000,3.6000,1.8300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-26,Scunthorpe,Hartlepool,1,0,league-two,England,football_data,0,0,6,14,3,6,5,5,6,4,1,1,0,0,,,2.3500,3.4000,3.2500,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-10-26,Setubal,Belenenses,0,0,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.2000,2.8000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-10-26,Sheffield United,Crewe,3,1,league-one,England,football_data,2,0,11,9,8,3,3,3,18,12,0,1,0,0,,,1.7300,3.7500,5.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-26,Sheffield United,Crewe Alexandra,3,1,league-one,England,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-10-26,Sheffield United,Crewe,3,1,league-one,England,football_data,2,0,11,9,8,3,3,3,18,12,0,1,0,0,,,1.7300,3.7500,5.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-26,Southampton,Fulham,2,0,premier-league,England,football_data,2,0,20,1,6,0,10,3,12,8,0,2,0,0,,,1.6200,4.0000,6.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-26,Spezia Calcio,Modena,2,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-26,Stade Malherbe Caen,Nancy,1,2,ligue2,France,football_data,1,1,,,,,,,,,,,,,,,1.7500,3.4000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -7450,8 +7450,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-26,US Palermo,AS Varese 1910,0,0,serie-b,Italy,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2013-10-26,Valenciennes,Evian Thonon Gaillard,0,1,ligue1,France,football_data,0,0,10,5,2,3,7,4,10,11,1,3,0,0,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-26,VfL Wolfsburg,Werder Bremen,3,0,bundesliga,Germany,football_data,1,0,19,8,12,2,5,4,12,17,1,2,0,0,,,1.6200,3.7500,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-10-26,Virtus Lanciano,Calcio Padova,1,0,serie-b,Italy,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-26,Virtus Lanciano,Padova,1,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.1500,3.1000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-10-26,Virtus Lanciano,Calcio Padova,1,0,serie-b,Italy,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-26,Waasland-Beveren,Lokeren,0,2,belgian-pro,Belgium,football_data,0,2,,,,,,,,,,,,,,,3.7500,3.4000,2.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-26,Walsall,Coventry City,0,1,league-one,England,football_data,0,0,6,9,2,4,4,10,7,13,1,1,0,0,,,2.7000,3.4000,2.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-10-26,Wycombe Wanderers,Bury,1,2,league-two,England,football_data,1,0,4,10,2,2,6,6,14,11,2,1,1,0,,,2.1500,3.6000,3.6000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -7538,8 +7538,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-28,Novara Calcio,AC Cesena,1,1,serie-b,Italy,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-28,Pacos Ferreira,Vitoria SC,1,3,primeira-liga,Portugal,football_data,1,1,,,,,,,,,,,,,,,2.2500,3.2000,3.3000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-28,Panetolikos,Kallonis,4,0,greek-super,Greece,football_data,3,0,,,,,,,,,,,,,,,1.8300,3.2000,4.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-10-28,VfL Bochum,Kaiserslautern,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,4.0000,3.5000,1.9100,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-28,VfL Bochum,1. FC Kaiserslautern,0,0,bundesliga-2,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2013-10-28,VfL Bochum,Kaiserslautern,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,4.0000,3.5000,1.9100,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-10-29,AS Cittadella,AS Avellino,1,2,serie-b,Italy,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-10-29,Annan Athletic,East Stirling,1,2,scottish-div3,Scotland,football_data,0,1,,,,,,,,,,,,,,,1.8000,4.0000,3.8000,,,,,,,,,,,,,,,,49,4,0,0,,0
 2013-10-29,Atalanta BC,Inter Milan,1,1,serie-a,Italy,football_data,1,1,12,13,8,4,8,7,11,14,3,1,0,0,,,3.8000,3.3000,2.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7557,13 +7557,13 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-10-30,AC Milan,SS Lazio,1,1,serie-a,Italy,football_data,0,0,18,5,5,3,4,3,12,19,4,2,0,0,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-30,ACF Fiorentina,SSC Napoli,1,2,serie-a,Italy,football_data,1,2,11,4,3,2,9,3,22,16,2,3,1,1,,,2.5000,3.3000,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-30,AS Livorno,Torino FC,3,3,serie-a,Italy,openfootball,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-10-30,CA Osasuna,Vallecano,3,1,la-liga,Spain,football_data,2,0,10,21,6,5,5,10,10,9,0,2,1,0,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-30,CA Osasuna,Rayo Vallecano,3,1,la-liga,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-10-30,CA Osasuna,Vallecano,3,1,la-liga,Spain,football_data,2,0,10,21,6,5,5,10,10,9,0,2,1,0,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-30,Cagliari Calcio,Bologna FC,0,3,serie-a,Italy,football_data,0,1,11,17,2,5,7,3,17,21,2,3,1,0,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-30,Genoa CFC,Parma Calcio,1,0,serie-a,Italy,football_data,0,0,5,10,5,3,2,3,14,12,3,2,0,0,,,2.4000,3.2000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-30,Hellas Verona,UC Sampdoria,2,0,serie-a,Italy,football_data,0,0,12,15,5,5,7,3,12,13,0,1,0,0,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-10-30,Juventus,Calcio Catania,4,0,serie-a,Italy,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-30,Juventus,Catania,4,0,serie-a,Italy,football_data,2,0,23,7,10,1,9,5,14,11,2,0,0,1,,,1.1800,6.2500,17.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-10-30,Juventus,Calcio Catania,4,0,serie-a,Italy,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-10-30,KRC Genk,Kortrijk,1,0,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-10-30,Livorno,Torino FC,3,3,serie-a,Italy,football_data,2,2,19,13,6,7,8,8,13,18,6,5,0,0,,,2.8000,3.1000,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-10-30,Lokeren,Lierse,1,0,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -7598,8 +7598,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-01,Cottbus,VfL Bochum,0,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-01,Delfino Pescara,Brescia Calcio,3,3,serie-b,Italy,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-01,Dijon FCO,Niort,2,2,ligue2,France,football_data,0,2,,,,,,,,,,,,,,,1.7300,3.4000,5.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-11-01,Empoli FC,Bari,1,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,1.5700,3.6000,6.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-01,Empoli FC,AS Bari,1,1,serie-b,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-11-01,Empoli FC,Bari,1,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,1.5700,3.6000,6.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-01,Energie Cottbus,VfL Bochum,0,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-01,FC Barcelona,Espanol,1,0,la-liga,Spain,football_data,0,0,19,8,5,2,9,2,7,19,1,3,0,0,,,1.0900,10.0000,26.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-01,FC Barcelona,Espanyol Barcelona,1,0,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -7665,8 +7665,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-02,Fulham,Manchester United,1,3,premier-league,England,football_data,0,3,15,10,6,4,4,4,6,12,2,1,0,0,,,6.5000,4.2000,1.5700,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-02,Giannina,Platanias,1,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,1.8500,3.2500,4.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-11-02,Gillingham,Carlisle,1,0,league-one,England,football_data,0,0,3,10,1,2,0,9,13,12,1,3,1,1,,,2.2500,3.4000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-11-02,Girona FC,Hércules CF,2,2,la-liga-2,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-02,Girona FC,Hercules,2,2,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-11-02,Girona FC,Hércules CF,2,2,la-liga-2,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-02,Hamburger SV,Bor. Mönchengladbach,0,2,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-11-02,Hamburger SV,Borussia Monchengladbach,0,2,bundesliga,Germany,football_data,0,1,17,8,8,4,7,2,11,12,0,2,0,0,,,2.3000,3.5000,2.9000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-02,Hartlepool,Dag and Red,2,1,league-two,England,football_data,1,0,8,9,4,5,5,4,11,8,4,1,0,0,,,2.1000,3.5000,3.7500,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -7722,8 +7722,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-02,Swindon Town,Port Vale,5,2,league-one,England,football_data,1,0,12,6,11,2,4,0,5,16,1,3,0,0,,,1.7500,3.8000,5.2500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-02,TSG Hoffenheim,Bayern Munich,1,2,bundesliga,Germany,football_data,1,1,7,17,3,7,6,4,20,16,2,0,0,0,,,12.0000,6.0000,1.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-02,UD Almeria,Real Valladolid,1,0,la-liga,Spain,football_data,1,0,14,8,7,2,3,5,15,13,4,2,0,1,,,2.1500,3.3000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-11-02,UD Las Palmas,Alcorcon,1,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-02,UD Las Palmas,AD Alcorcón,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-11-02,UD Las Palmas,Alcorcon,1,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-02,Vallecano,Real Madrid,2,3,la-liga,Spain,football_data,0,2,23,11,6,5,6,1,13,12,3,5,0,0,,,11.0000,6.0000,1.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-02,Watford,Leicester City,0,3,championship,England,football_data,0,1,19,14,5,4,6,3,10,10,2,1,0,0,,,2.3800,3.4000,3.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-02,West Bromwich Albion,Crystal Palace,2,0,premier-league,England,football_data,1,0,9,12,4,4,10,3,11,9,0,1,0,0,,,1.5500,4.2000,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7789,8 +7789,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-03,TSV 1860 München,Dynamo Dresden,1,3,bundesliga-2,Germany,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-03,Torino FC,AS Roma,1,1,serie-a,Italy,football_data,0,1,14,12,5,3,5,5,12,11,2,3,0,0,,,4.0000,3.5000,1.9100,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-03,Trabzonspor,Elazigspor,4,0,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,1.3600,4.7500,8.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-11-03,UC Sampdoria,US Sassuolo,3,4,serie-a,Italy,football_data,1,0,13,19,5,10,4,3,17,14,2,2,1,0,,,1.9500,3.5000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-03,UC Sampdoria,Sassuolo Calcio,3,4,serie-a,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-11-03,UC Sampdoria,US Sassuolo,3,4,serie-a,Italy,football_data,1,0,13,19,5,10,4,3,17,14,2,2,1,0,,,1.9500,3.5000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-03,Udinese Calcio,Inter Milan,0,3,serie-a,Italy,football_data,0,2,9,13,3,5,6,4,12,13,0,3,0,0,,,2.6300,3.3000,2.6300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-03,Waasland-Beveren,Cercle Brugge KSV,0,1,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,2.2500,3.4000,3.1000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-11-03,Werder Bremen,Hannover 96,3,2,bundesliga,Germany,football_data,2,2,12,18,6,6,3,6,20,24,3,4,0,0,,,2.2500,3.5000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7819,10 +7819,10 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-08,FC Ingolstadt 04,VfR Aalen,2,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-08,FSV Frankfurt,1. FC Kaiserslautern,0,4,bundesliga-2,Germany,openfootball,0,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-08,Frankfurt FSV,Kaiserslautern,0,4,bundesliga-2,Germany,football_data,0,3,,,,,,,,,,,,,,,4.3300,3.6000,1.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-11-08,Granada CF,Malaga CF,3,1,la-liga,Spain,football_data,0,0,16,17,10,6,7,5,17,17,3,3,0,0,,,2.3000,3.2000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-08,Granada CF,Málaga CF,3,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-11-08,Hannover 96,Braunschweig,0,0,bundesliga,Germany,football_data,0,0,19,8,6,1,6,2,27,16,1,1,0,0,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-11-08,Granada CF,Malaga CF,3,1,la-liga,Spain,football_data,0,0,16,17,10,6,7,5,17,17,3,3,0,0,,,2.3000,3.2000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-08,Hannover 96,Eintracht Braunschweig,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
+2013-11-08,Hannover 96,Braunschweig,0,0,bundesliga,Germany,football_data,0,0,19,8,6,1,6,2,27,16,1,1,0,0,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-08,Ingolstadt,Aalen,2,0,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.2000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-08,Kuwait,Malaysia,3,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
 2013-11-08,Le Havre AC,SCO Angers,1,2,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.0500,3.2000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -7831,8 +7831,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-08,Nimes,CA Bastia,0,1,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,1.5300,3.8000,6.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-08,SC Heerenveen,Waalwijk,5,2,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.5000,4.3300,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-11-08,SpVgg Greuther Furth,SC Paderborn 07,3,0,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,1.6700,3.8000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-11-08,Spezia Calcio,AC Cesena,2,1,serie-b,Italy,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-08,Spezia Calcio,Cesena,2,1,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-11-08,Spezia Calcio,AC Cesena,2,1,serie-b,Italy,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-08,Stade Malherbe Caen,Istres,4,0,ligue2,France,football_data,2,0,,,,,,,,,,,,,,,1.5000,3.8000,7.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-09,1899 Hoffenheim,Hertha Berlin,2,3,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-11-09,AD Alcorcón,Córdoba CF,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
@@ -7862,8 +7862,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-09,Brescia Calcio,AS Avellino,0,2,serie-b,Italy,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-09,Brescia Calcio,Avellino,0,2,serie-b,Italy,football_data,0,1,,,,,,,,,,,,,,,2.0000,3.1000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-09,Brighton & Hove Albion,Blackburn Rovers,3,0,championship,England,football_data,1,0,15,18,6,8,6,9,9,15,2,2,0,0,,,2.2500,3.4000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2013-11-09,Burnley,Bournemouth,1,1,championship,England,football_data,0,0,20,11,8,4,7,3,8,11,0,4,0,0,,,1.7300,3.8000,5.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-09,Burnley,AFC Bournemouth,1,1,championship,England,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-11-09,Burnley,Bournemouth,1,1,championship,England,football_data,0,0,20,11,8,4,7,3,8,11,0,4,0,0,,,1.7300,3.8000,5.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-09,CD Lugo,Real Murcia,1,1,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-09,Calcio Catania,Udinese Calcio,1,0,serie-a,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-11-09,Carpi,FC Crotone,1,2,serie-b,Italy,football_data,1,2,,,,,,,,,,,,,,,2.3000,3.1000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -7940,12 +7940,12 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-09,United Arab Emirates,Philippines,4,0,international,United Arab Emirates,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
 2013-11-09,Valenciennes,Montpellier HSC,1,1,ligue1,France,football_data,1,0,11,11,3,2,8,7,20,17,3,4,0,1,,,2.6000,3.1000,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-09,VfL Wolfsburg,Borussia Dortmund,2,1,bundesliga,Germany,football_data,0,1,10,12,4,2,5,2,13,19,2,4,0,0,,,4.5000,3.8000,1.7300,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-11-09,Virtus Lanciano,Siena,1,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.8800,3.1000,2.5500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-09,Virtus Lanciano,AC Siena,1,1,serie-b,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-11-09,Virtus Lanciano,Siena,1,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.8800,3.1000,2.5500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-09,Yukatel Kayserispor,Besiktas JK,0,3,super-lig,Turkey,football_data,0,1,,,,,,,,,,,,,,,3.7500,3.4000,2.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-11-10,ACF Fiorentina,UC Sampdoria,2,1,serie-a,Italy,football_data,2,0,14,13,5,3,9,1,7,15,0,4,0,0,,,1.4000,4.5000,8.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-11-10,AS Roma,US Sassuolo,1,1,serie-a,Italy,football_data,1,0,16,11,6,7,10,3,10,18,3,4,0,0,,,1.2200,6.0000,13.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-10,AS Roma,Sassuolo Calcio,1,1,serie-a,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-11-10,AS Roma,US Sassuolo,1,1,serie-a,Italy,football_data,1,0,16,11,6,7,10,3,10,18,3,4,0,0,,,1.2200,6.0000,13.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-10,AS Saint-Etienne,Olympique Lyonnais,1,2,ligue1,France,football_data,0,0,13,9,3,5,6,3,10,18,2,3,0,0,,,2.0500,3.2000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-10,Atalanta BC,Bologna FC,2,1,serie-a,Italy,football_data,0,0,13,11,3,4,8,1,17,17,3,2,0,0,,,2.0500,3.3000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-10,CD Mirandés,Girona FC,1,2,la-liga-2,Spain,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -7998,10 +7998,10 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-10,Tottenham Hotspur,Newcastle United,0,1,premier-league,England,football_data,0,1,31,8,14,4,11,4,5,15,1,2,0,0,,,1.5700,4.3300,6.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-10,Valencia CF,Real Valladolid,2,2,la-liga,Spain,football_data,1,1,19,11,6,6,6,6,8,17,1,5,0,0,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-10,Veria,Kallonis,0,3,greek-super,Greece,football_data,0,2,,,,,,,,,,,,,,,1.8500,3.3000,4.6000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-11-10,VfL Bochum,1. FC Köln,1,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-10,VfL Bochum,FC Koln,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,4.0000,3.3000,1.9500,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-11-10,Villarreal CF,Ath Madrid,1,1,la-liga,Spain,football_data,0,1,15,7,3,1,5,1,14,22,3,4,0,0,,,3.4000,3.4000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-11-10,VfL Bochum,1. FC Köln,1,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-10,Villarreal CF,Atlético Madrid,1,1,la-liga,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-11-10,Villarreal CF,Ath Madrid,1,1,la-liga,Spain,football_data,0,1,15,7,3,1,5,1,14,22,3,4,0,0,,,3.4000,3.4000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-10,Waregem,Waasland-Beveren,2,0,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,1.4400,4.5000,6.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-11-10,Yeovil,Wigan Athletic,0,1,championship,England,football_data,0,0,13,23,6,6,12,8,14,12,1,4,0,0,,,3.9000,3.6000,2.0500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-10,Zwolle,FC Twente,1,1,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,3.5000,3.6000,2.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8054,8 +8054,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-16,Annan Athletic,Berwick,3,2,scottish-div3,Scotland,football_data,1,2,,,,,,,,,,,,,,,2.5000,3.5000,2.6300,,,,,,,,,,,,,,,,49,4,0,0,,0
 2013-11-16,Aruba,Bonaire,1,2,international,Curaçao,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,ABCS Tournament,1
 2013-11-16,Brechin,Ayr,1,1,scottish-div2,Scotland,football_data,0,1,,,,,,,,,,,,,,,2.2000,3.6000,3.0000,,,,,,,,,,,,,,,,49,3,0,0,,0
-2013-11-16,Brentford,Crewe,5,0,league-one,England,football_data,1,0,17,5,9,1,1,4,17,9,1,3,0,0,,,1.4500,4.5000,8.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-16,Brentford,Crewe Alexandra,5,0,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-11-16,Brentford,Crewe,5,0,league-one,England,football_data,1,0,17,5,9,1,1,4,17,9,1,3,0,0,,,1.4500,4.5000,8.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-16,Bristol Rvs,Bury,1,1,league-two,England,football_data,1,1,8,12,3,5,12,4,18,12,2,2,0,0,,,2.7500,3.6000,2.6300,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-11-16,CD Alavés,Recreativo Huelva,3,3,la-liga-2,Spain,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-16,CE Sabadell,AD Alcorcón,1,2,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -8071,8 +8071,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-16,East Fife,Stranraer,1,2,scottish-div2,Scotland,football_data,1,1,,,,,,,,,,,,,,,2.6000,3.6000,2.5000,,,,,,,,,,,,,,,,49,3,0,0,,0
 2013-11-16,Equatorial Guinea,Spain,1,2,international,Equatorial Guinea,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
 2013-11-16,Exeter City,Southend,0,2,league-two,England,football_data,0,2,13,9,5,7,3,3,12,12,1,1,0,0,,,2.6300,3.6000,2.7500,,,,,,,,,,,,,,,,65,3,0,0,,0
-2013-11-16,Girona FC,Barcelona B,1,2,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,1.8500,3.5000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-16,Girona FC,FC Barcelona B,1,2,la-liga-2,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-11-16,Girona FC,Barcelona B,1,2,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,1.8500,3.5000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-16,Honduras,Brazil,0,5,international,United States,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
 2013-11-16,Jaen,Real Zaragoza,3,0,la-liga-2,Spain,football_data,2,0,,,,,,,,,,,,,,,2.4000,3.3000,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-16,Leyton Orient,Preston North End,0,1,league-one,England,football_data,0,1,5,11,1,4,5,7,14,17,2,3,0,0,,,2.0500,3.6000,3.9000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -8199,8 +8199,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-22,Sandhausen,SC Paderborn 07,3,2,bundesliga-2,Germany,football_data,1,1,,,,,,,,,,,,,,,2.4500,3.3000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-22,Stade Brest,Niort,0,1,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,2.4500,3.0000,3.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-22,Tours,Le Havre AC,2,2,ligue2,France,football_data,1,1,,,,,,,,,,,,,,,2.3000,3.0000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-11-22,VfB Stuttgart,Bor. Mönchengladbach,0,2,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-11-22,VfB Stuttgart,Borussia Monchengladbach,0,2,bundesliga,Germany,football_data,0,1,9,19,2,11,1,5,14,10,0,2,0,0,,,2.3000,3.5000,2.9000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-11-22,VfB Stuttgart,Bor. Mönchengladbach,0,2,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-11-23,1. FC Kaiserslautern,Union Berlin,3,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-23,1. FC Köln,FC Ingolstadt 04,0,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-23,1. FC Nurnberg,VfL Wolfsburg,1,1,bundesliga,Germany,football_data,0,1,11,23,6,6,3,5,19,17,1,1,0,0,,,3.2000,3.4000,2.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -8305,8 +8305,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-23,Raith Rvs,Queen of Sth,2,1,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.5000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-23,Real Madrid B,Numancia,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.4000,3.2500,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-23,Real Madrid Castilla,CD Numancia,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
-2013-11-23,Real Sociedad,Celta de Vigo,4,3,la-liga,Spain,football_data,1,2,23,10,12,5,7,3,11,24,2,2,0,1,,,1.6700,3.6000,5.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-23,Real Sociedad,RC Celta,4,3,la-liga,Spain,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-11-23,Real Sociedad,Celta de Vigo,4,3,la-liga,Spain,football_data,1,2,23,10,12,5,7,3,11,24,2,2,0,1,,,1.6700,3.6000,5.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-23,Rochdale,Exeter City,3,1,league-two,England,football_data,1,0,7,5,4,1,4,4,2,4,0,1,0,0,,,1.7500,4.0000,5.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-11-23,Rotherham United,Carlisle,0,0,league-one,England,football_data,0,0,19,6,6,2,6,6,12,15,0,0,0,1,,,1.7300,3.8000,5.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-23,SL Benfica,Sp Braga,1,0,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8326,8 +8326,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-23,Swindon Town,Leyton Orient,1,3,league-one,England,football_data,1,2,9,11,3,6,5,6,16,13,2,2,1,0,,,2.3800,3.5000,3.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-23,Ternana,Modena,1,1,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,2.0500,3.2000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-23,UD Almeria,Real Madrid,0,5,la-liga,Spain,football_data,0,1,12,35,4,15,1,6,15,7,1,2,0,0,,,9.5000,5.5000,1.2900,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-11-23,Virtus Lanciano,Varese,2,0,serie-b,Italy,football_data,2,0,,,,,,,,,,,,,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-23,Virtus Lanciano,AS Varese 1910,2,0,serie-b,Italy,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-11-23,Virtus Lanciano,Varese,2,0,serie-b,Italy,football_data,2,0,,,,,,,,,,,,,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-23,Waregem,KV Mechelen,3,1,belgian-pro,Belgium,football_data,0,1,,,,,,,,,,,,,,,1.6700,4.0000,4.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-11-23,Watford,Bolton Wanderers,0,1,championship,England,football_data,0,1,19,9,1,3,7,5,10,10,2,1,0,0,,,1.9500,3.7500,4.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-11-23,West Ham United,Chelsea,0,3,premier-league,England,football_data,0,2,8,20,1,8,8,4,12,10,0,0,0,0,,,6.0000,4.2000,1.6200,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -8470,8 +8470,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-11-29,Union Berlin,VfR Aalen,1,3,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-29,Union Berlin,Aalen,1,3,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.6000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-11-29,VfL Wolfsburg,Hamburger SV,1,1,bundesliga,Germany,football_data,1,1,20,17,4,8,2,3,16,12,4,1,0,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-11-29,Villarreal CF,Malaga CF,1,1,la-liga,Spain,football_data,1,0,7,8,3,3,9,8,12,11,1,4,0,0,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-29,Villarreal CF,Málaga CF,1,1,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-11-29,Villarreal CF,Malaga CF,1,1,la-liga,Spain,football_data,1,0,7,8,3,3,9,8,12,11,1,4,0,0,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-11-30,1899 Hoffenheim,Werder Bremen,4,4,bundesliga,Germany,openfootball,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-11-30,AFC Bournemouth,Brighton & Hove Albion,1,1,championship,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-11-30,AS Avellino,AC Cesena,0,0,serie-b,Italy,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
@@ -8600,8 +8600,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-01,Calcio Catania,AC Milan,1,3,serie-a,Italy,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-12-01,Catania,AC Milan,1,3,serie-a,Italy,football_data,1,1,12,13,3,7,2,5,18,15,3,3,1,0,,,4.7500,3.6000,1.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,Chelsea,Southampton,3,1,premier-league,England,football_data,0,1,16,9,7,1,8,4,15,14,1,4,0,0,,,1.5700,4.2000,6.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-12-01,Chievo Verona,Livorno,3,0,serie-a,Italy,football_data,1,0,19,14,6,4,11,6,21,4,4,2,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,Chievo Verona,AS Livorno,3,0,serie-a,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-12-01,Chievo Verona,Livorno,3,0,serie-a,Italy,football_data,1,0,19,14,6,4,11,6,21,4,4,2,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,Den Haag,AFC Ajax,0,4,eredivisie,Netherlands,football_data,0,2,,,,,,,,,,,,,,,6.0000,4.7500,1.4400,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-01,Deportivo Alaves,Ponferradina,2,2,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.0500,3.2500,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-01,Dominica,Saint Lucia,1,0,international,Dominica,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
@@ -8612,8 +8612,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-01,Girona FC,Tenerife,2,2,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,2.2500,3.2000,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-01,Girona FC,CD Tenerife,2,2,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-01,Granada CF,Sevilla FC,1,2,la-liga,Spain,football_data,0,1,17,13,8,7,8,3,13,14,4,7,0,0,,,2.8000,3.2500,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-12-01,Hannover 96,Ein Frankfurt,2,0,bundesliga,Germany,football_data,1,0,13,12,3,4,7,7,19,18,1,2,0,1,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,Hannover 96,Eintracht Frankfurt,2,0,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-12-01,Hannover 96,Ein Frankfurt,2,0,bundesliga,Germany,football_data,1,0,13,12,3,4,7,7,19,18,1,2,0,1,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,Hull City,Liverpool,3,1,premier-league,England,football_data,1,1,12,9,4,4,2,6,10,16,2,0,0,0,,,6.5000,4.0000,1.6200,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,Inter Milan,UC Sampdoria,1,1,serie-a,Italy,football_data,1,0,11,14,2,5,4,5,17,17,3,3,0,0,,,1.4000,4.5000,8.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,Jaen,Real Madrid B,0,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -8634,8 +8634,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-01,Panionios,Xanthi,0,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,3.1000,3.1000,2.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-01,Paris Saint-Germain,Olympique Lyonnais,4,0,ligue1,France,football_data,2,0,13,6,6,1,5,3,10,18,2,4,0,0,,,1.3600,4.7500,8.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,RSC Anderlecht,Cercle Brugge KSV,2,1,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,1.2000,7.0000,11.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-12-01,Real Betis,Vallecano,2,2,la-liga,Spain,football_data,1,0,12,9,4,5,8,4,21,16,3,5,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,Real Betis,Rayo Vallecano,2,2,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-12-01,Real Betis,Vallecano,2,2,la-liga,Spain,football_data,1,0,12,9,4,5,8,4,21,16,3,5,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-01,Real Jaén,Real Madrid Castilla,0,1,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-01,Real Murcia,Hércules CF,1,2,la-liga-2,Spain,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-01,Rio Ave FC,SL Benfica,1,3,primeira-liga,Portugal,football_data,0,1,,,,,,,,,,,,,,,6.0000,4.0000,1.5300,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8881,8 +8881,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-08,Ponferradina,SD Eibar,2,1,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,2.1000,3.1000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-08,RCD Mallorca,Numancia,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-08,RCD Mallorca,CD Numancia,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
-2013-12-08,Real Zaragoza,Córdoba CF,2,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-08,Real Zaragoza,Cordoba,2,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-12-08,Real Zaragoza,Córdoba CF,2,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-08,Roda,Heracles Almelo,1,3,eredivisie,Netherlands,football_data,1,1,,,,,,,,,,,,,,,1.9500,3.7500,3.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-08,SC Freiburg,VfL Wolfsburg,0,3,bundesliga,Germany,football_data,0,2,13,17,2,7,4,7,11,16,0,1,0,0,,,3.7500,3.4000,2.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-08,SC Heerenveen,Feyenoord,1,2,eredivisie,Netherlands,football_data,1,2,,,,,,,,,,,,,,,3.0000,3.5000,2.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8890,11 +8890,11 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-08,SV Sandhausen,SpVgg Greuther Fürth,1,3,bundesliga-2,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-08,Sandhausen,SpVgg Greuther Furth,1,3,bundesliga-2,Germany,football_data,1,1,,,,,,,,,,,,,,,3.8000,3.3000,2.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-08,Sassuolo Calcio,Chievo Verona,0,1,serie-a,Italy,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-12-08,Torino FC,Lazio Roma,1,0,serie-a,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-12-08,Torino FC,SS Lazio,1,0,serie-a,Italy,football_data,1,0,5,21,3,3,1,15,8,19,3,2,0,0,,,2.3800,3.2000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-12-08,Torino FC,Lazio Roma,1,0,serie-a,Italy,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-12-08,Toulouse FC,Montpellier HSC,1,1,ligue1,France,football_data,0,1,15,12,4,3,10,3,14,20,3,1,1,1,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2013-12-08,UC Sampdoria,Catania,2,0,serie-a,Italy,football_data,0,0,17,5,7,0,7,3,17,13,3,2,0,0,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-08,UC Sampdoria,Calcio Catania,2,0,serie-a,Italy,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-12-08,UC Sampdoria,Catania,2,0,serie-a,Italy,football_data,0,0,17,5,7,0,7,3,17,13,3,2,0,0,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-08,US Sassuolo,Chievo Verona,0,1,serie-a,Italy,football_data,0,0,6,9,2,5,4,4,19,26,2,2,0,0,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-08,VfR Aalen,SC Paderborn 07,2,4,bundesliga-2,Germany,openfootball,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-08,Wolfsberger AC,SK Rapid Wien,2,1,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -8979,8 +8979,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-14,Chesterfield,Plymouth,2,0,league-two,England,football_data,2,0,7,12,5,5,7,8,15,12,0,3,1,0,,,1.7500,4.0000,5.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2013-12-14,Colchester,Notts County,0,4,league-one,England,football_data,0,2,14,17,6,12,1,8,11,8,2,2,0,0,,,2.6000,3.4000,2.9000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-12-14,Cottbus,Fortuna Dusseldorf,1,3,bundesliga-2,Germany,football_data,1,1,,,,,,,,,,,,,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-12-14,Coventry City,Crewe,2,2,league-one,England,football_data,1,1,13,7,5,3,5,5,12,13,1,1,0,0,,,1.5000,4.5000,7.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-12-14,Coventry City,Crewe Alexandra,2,2,league-one,England,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-12-14,Coventry City,Crewe,2,2,league-one,England,football_data,1,1,13,7,5,3,5,5,12,13,1,1,0,0,,,1.5000,4.5000,7.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-12-14,Crawley Town,Preston North End,2,2,league-one,England,football_data,0,2,13,11,4,4,6,4,6,14,0,3,0,0,,,2.8800,3.4000,2.6300,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-12-14,Demir Grup Sivasspor,Caykur Rizespor,3,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,1.7300,3.7500,4.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-14,Den Haag,Waalwijk,1,2,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8989,8 +8989,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-14,Dundee FC,Cowdenbeath,1,2,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,1.3600,4.7500,8.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-14,EA Guingamp,AS Monaco,0,2,ligue1,France,football_data,0,2,10,17,3,3,4,7,11,13,1,2,1,0,,,5.0000,3.5000,1.7300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-14,Elazigspor,Antalyaspor,4,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.9000,3.3000,2.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-12-14,Empoli FC,Cesena,0,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.6200,3.5000,6.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-14,Empoli FC,AC Cesena,0,0,serie-b,Italy,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2013-12-14,Empoli FC,Cesena,0,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.6200,3.5000,6.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-14,Energie Cottbus,Fortuna Düsseldorf,1,3,bundesliga-2,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-14,Everton,Fulham,4,1,premier-league,England,football_data,1,0,22,16,7,3,12,2,10,7,1,2,0,0,,,1.3600,5.0000,10.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-14,Evian Thonon Gaillard,Stade de Reims,1,1,ligue1,France,football_data,0,0,16,11,5,5,2,3,12,18,0,1,0,0,,,2.1000,3.1000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -9000,8 +9000,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-14,FC Barcelona,Villarreal CF,2,1,la-liga,Spain,football_data,1,0,13,3,7,1,7,4,7,12,1,1,0,0,,,1.2900,5.5000,11.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-14,FC Nantes,Toulouse FC,1,2,ligue1,France,football_data,0,0,13,11,2,4,8,5,18,5,2,2,0,0,,,2.0500,3.1000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-14,FC Twente,Go Ahead Eagles,3,1,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.2200,6.0000,13.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-12-14,FSV Mainz 05,Borussia Monchengladbach,0,0,bundesliga,Germany,football_data,0,0,6,10,0,1,1,4,6,8,0,2,0,0,,,2.7500,3.3000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-14,FSV Mainz 05,Bor. Mönchengladbach,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
+2013-12-14,FSV Mainz 05,Borussia Monchengladbach,0,0,bundesliga,Germany,football_data,0,0,6,10,0,1,1,4,6,8,0,2,0,0,,,2.7500,3.3000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-14,Forfar,Arbroath,1,1,scottish-div2,Scotland,football_data,0,0,,,,,,,,,,,,,,,1.8000,4.0000,3.8000,,,,,,,,,,,,,,,,49,3,0,0,,0
 2013-12-14,Giannina,Ergotelis,2,0,greek-super,Greece,football_data,1,0,,,,,,,,,,,,,,,1.9100,3.2500,4.3300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-14,Gillingham,Peterboro,2,2,league-one,England,football_data,0,1,6,13,5,7,1,7,12,10,1,1,0,0,,,4.0000,3.6000,2.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -9077,8 +9077,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-15,Aston Villa,Manchester United,0,3,premier-league,England,football_data,0,2,17,14,6,5,3,4,15,8,4,2,0,0,,,5.2500,3.8000,1.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-15,Ath Madrid,Valencia CF,3,0,la-liga,Spain,football_data,0,0,14,3,6,0,8,1,9,14,2,4,0,0,,,1.3300,4.7500,10.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-15,Atlético Madrid,Valencia CF,3,0,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2013-12-15,Bayer Leverkusen,Ein Frankfurt,0,1,bundesliga,Germany,football_data,0,0,15,16,7,5,8,4,15,23,4,3,0,0,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-15,Bayer Leverkusen,Eintracht Frankfurt,0,1,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-12-15,Bayer Leverkusen,Ein Frankfurt,0,1,bundesliga,Germany,football_data,0,0,15,16,7,5,8,4,15,23,4,3,0,0,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-15,Bielefeld,SpVgg Greuther Furth,4,1,bundesliga-2,Germany,football_data,1,1,,,,,,,,,,,,,,,4.0000,3.5000,1.9100,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-15,Cambuur,AFC Ajax,1,2,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,5.0000,4.3300,1.5700,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-15,Chievo Verona,UC Sampdoria,0,1,serie-a,Italy,football_data,0,1,11,9,6,2,7,3,15,23,4,5,0,0,,,2.2500,3.0000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -9095,8 +9095,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-15,Genoa CFC,Atalanta BC,1,1,serie-a,Italy,football_data,0,0,13,15,3,4,10,8,10,13,0,2,0,0,,,2.1500,3.2500,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-15,Heracles Almelo,AZ Alkmaar,2,0,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,2.7500,3.5000,2.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-15,Jaen,RCD Mallorca,2,1,la-liga-2,Spain,football_data,2,0,,,,,,,,,,,,,,,2.6300,3.2000,2.7000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-12-15,Juventus,Sassuolo Calcio,4,0,serie-a,Italy,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-12-15,Juventus,US Sassuolo,4,0,serie-a,Italy,football_data,3,0,20,12,8,0,5,2,12,15,1,1,0,0,,,1.1700,6.5000,17.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-12-15,Juventus,Sassuolo Calcio,4,0,serie-a,Italy,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-12-15,KAA Gent,RSC Anderlecht,1,2,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,3.1000,3.4000,2.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-15,Kallonis,PAOK FC,2,5,greek-super,Greece,football_data,1,2,,,,,,,,,,,,,,,11.0000,4.5000,1.3300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-15,Karlsruhe,Frankfurt FSV,3,3,bundesliga-2,Germany,football_data,3,0,,,,,,,,,,,,,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -9114,8 +9114,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-15,Real Sociedad,Real Betis,5,1,la-liga,Spain,football_data,1,1,20,15,9,4,11,1,8,12,4,2,0,0,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-15,Rio Ave FC,FC Porto,1,3,primeira-liga,Portugal,football_data,1,1,,,,,,,,,,,,,,,7.0000,4.0000,1.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-15,SBV Vitesse,NAC Breda,3,2,eredivisie,Netherlands,football_data,1,1,,,,,,,,,,,,,,,1.2500,5.5000,12.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-12-15,SD Eibar,Deportivo La Coruña,2,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-15,SD Eibar,La Coruna,2,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,3.0000,3.0000,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2013-12-15,SD Eibar,Deportivo La Coruña,2,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-15,SK Rapid Wien,1. Wiener Neustädter SC,0,0,austrian-bl,Austria,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2013-12-15,SS Lazio,Livorno,2,0,serie-a,Italy,football_data,2,0,17,10,5,1,1,5,22,17,2,5,0,0,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-15,SSC Napoli,Inter Milan,4,2,serie-a,Italy,football_data,3,2,13,11,9,5,5,6,12,9,2,1,0,1,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -9139,8 +9139,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-16,GD Estoril Praia,Gil Vicente FC,2,0,primeira-liga,Portugal,football_data,1,0,,,,,,,,,,,,,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-16,Munich 1860,St Pauli,0,2,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.2500,3.2500,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-16,Nacional,Pacos Ferreira,2,1,primeira-liga,Portugal,football_data,1,0,,,,,,,,,,,,,,,2.1000,3.2500,3.6000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-12-16,Real Valladolid,RC Celta,3,0,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-12-16,Real Valladolid,Celta de Vigo,3,0,la-liga,Spain,football_data,0,0,11,14,6,3,7,5,17,17,3,1,0,1,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2013-12-16,Real Valladolid,RC Celta,3,0,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-12-16,TSV 1860 München,FC St. Pauli,0,2,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-16,Trabzonspor,Bursaspor,2,2,super-lig,Turkey,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-17,Brechin,Airdrie Utd,4,3,scottish-div2,Scotland,football_data,2,0,,,,,,,,,,,,,,,1.6200,4.2000,4.7500,,,,,,,,,,,,,,,,49,3,0,0,,0
@@ -9292,8 +9292,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-21,Rotherham United,Wolverhampton Wanderers,3,3,league-one,England,football_data,2,1,14,7,5,4,4,5,14,7,0,3,0,0,,,2.7500,3.4000,2.7000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2013-12-21,SC Freiburg,Hannover 96,2,1,bundesliga,Germany,football_data,2,0,11,20,3,6,0,1,16,13,1,2,0,0,,,2.4500,3.3000,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-21,Scunthorpe,Morecambe,2,0,league-two,England,football_data,2,0,15,9,8,1,11,13,12,8,1,1,0,0,,,1.9500,3.7000,4.2000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2013-12-21,Sheffield Wednesday,AFC Bournemouth,1,2,championship,England,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-21,Sheffield Wednesday,Bournemouth,1,2,championship,England,football_data,0,2,16,11,3,5,5,3,10,13,1,1,0,0,,,2.3800,3.4000,3.2500,,,,,,,,,,,,,,,,65,2,0,0,,0
+2013-12-21,Sheffield Wednesday,AFC Bournemouth,1,2,championship,England,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-21,Siena,Latina,1,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-21,Sochaux,Stade Rennais,2,1,ligue1,France,football_data,1,1,7,14,4,5,1,3,17,11,1,2,0,0,,,3.0000,3.1000,2.4500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-21,Sp Lisbon,Nacional,0,0,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,1.4000,4.5000,7.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -9344,8 +9344,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-22,Getafe CF,FC Barcelona,2,5,la-liga,Spain,football_data,2,3,12,15,2,7,7,1,26,7,4,3,0,0,,,7.0000,4.7500,1.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-22,Gil Vicente FC,Arouca,0,3,primeira-liga,Portugal,football_data,0,1,,,,,,,,,,,,,,,2.3000,3.2000,3.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-22,Go Ahead Eagles,FC Utrecht,2,1,eredivisie,Netherlands,football_data,1,1,,,,,,,,,,,,,,,2.1000,3.6000,3.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-12-22,Hellas Verona,SS Lazio,4,1,serie-a,Italy,football_data,2,1,13,18,7,9,1,10,7,13,1,2,0,0,,,2.7000,3.2000,2.6300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-22,Hellas Verona,Lazio Roma,4,1,serie-a,Italy,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2013-12-22,Hellas Verona,SS Lazio,4,1,serie-a,Italy,football_data,2,1,13,18,7,9,1,10,7,13,1,2,0,0,,,2.7000,3.2000,2.6300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-22,Inter Milan,AC Milan,1,0,serie-a,Italy,football_data,0,0,15,18,7,5,5,7,13,15,3,4,0,1,,,2.6300,3.3000,2.6300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2013-12-22,KAA Gent,Club Brugge KV,1,3,belgian-pro,Belgium,football_data,1,1,,,,,,,,,,,,,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2013-12-22,Kallonis,Ergotelis,0,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,3.1000,3.2500,2.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -9360,12 +9360,12 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2013-12-22,Ponferradina,Jaen,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.8500,3.4000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-22,RC Celta,CA Osasuna,1,1,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-12-22,RCD Mallorca,Girona FC,2,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.6700,3.6000,5.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
-2013-12-22,Real Zaragoza,Murcia,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-22,Real Zaragoza,Real Murcia,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2013-12-22,Real Zaragoza,Murcia,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-22,Recreativo,UD Las Palmas,1,3,la-liga-2,Spain,football_data,1,2,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-22,Roda,AFC Ajax,1,2,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,5.5000,4.3300,1.5300,,,,,,,,,,,,,,,,49,1,0,0,,0
-2013-12-22,SC Paderborn 07,Cottbus,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-22,SC Paderborn 07,Energie Cottbus,1,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2013-12-22,SC Paderborn 07,Cottbus,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2013-12-22,SD Ponferradina,Real Jaén,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2013-12-22,Sassuolo Calcio,ACF Fiorentina,0,1,serie-a,Italy,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2013-12-22,Southampton,Tottenham Hotspur,2,3,premier-league,England,football_data,1,1,12,13,5,3,2,5,10,18,1,1,0,0,,,2.5500,3.3000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0

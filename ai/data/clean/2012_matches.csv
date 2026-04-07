@@ -857,8 +857,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-02-04,TSG Hoffenheim,FC Augsburg,2,2,bundesliga,Germany,football_data,1,1,13,11,4,5,3,7,21,16,4,2,0,0,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-02-04,UD Almeria,Cordoba,2,1,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-02-04,UD Las Palmas,Guadalajara,3,2,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,1.8500,3.4000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-02-04,VfL Wolfsburg,Bor. Mönchengladbach,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-02-04,VfL Wolfsburg,Borussia Monchengladbach,0,0,bundesliga,Germany,football_data,0,0,11,5,2,0,8,3,16,8,1,1,0,0,,,2.8800,3.4000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-02-04,VfL Wolfsburg,Bor. Mönchengladbach,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-02-04,Waregem,KVC Westerlo,3,1,belgian-pro,Belgium,football_data,2,0,,,,,,,,,,,,,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-02-04,Watford,Barnsley,2,1,championship,England,football_data,1,0,14,6,7,3,4,2,9,13,1,3,0,0,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-02-04,West Bromwich Albion,Swansea City,1,2,premier-league,England,football_data,0,0,18,15,11,8,8,7,11,6,2,1,0,0,,,2.1000,3.3000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -1494,8 +1494,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-02-25,VVV Venlo,Heracles Almelo,3,1,eredivisie,Netherlands,football_data,2,1,,,,,,,,,,,,,,,3.7500,3.6000,1.9100,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-02-25,Valenciennes,FC Lorient,2,0,ligue1,France,football_data,0,0,13,15,5,4,6,2,16,10,0,1,0,0,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-02-25,VfB Stuttgart,SC Freiburg,4,1,bundesliga,Germany,football_data,2,1,17,10,8,3,5,7,11,13,0,0,0,0,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-02-25,VfL Wolfsburg,1899 Hoffenheim,1,2,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-02-25,VfL Wolfsburg,TSG Hoffenheim,1,2,bundesliga,Germany,football_data,0,1,13,14,5,7,6,1,24,19,2,1,0,0,,,2.2000,3.3000,3.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-02-25,VfL Wolfsburg,1899 Hoffenheim,1,2,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-02-25,Watford,Southampton,0,3,championship,England,football_data,0,2,6,8,1,4,5,0,10,6,0,2,0,0,,,3.7500,3.4000,2.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-02-25,Werder Bremen,1. FC Nurnberg,0,1,bundesliga,Germany,football_data,0,0,20,11,5,5,3,6,15,20,3,3,0,0,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-02-25,West Bromwich Albion,Sunderland,4,0,premier-league,England,football_data,2,0,18,10,13,4,7,0,6,8,1,1,0,0,,,2.4000,3.2500,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -2014,8 +2014,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-03-10,SV Mattersburg,FC Wacker Innsbruck,0,1,austrian-bl,Austria,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-03-10,SV Ried,Kapfenberger SV 1919,3,0,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-03-10,Sabadell,Barcelona B,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.8000,3.2000,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-03-10,Sheffield Wednesday,Bournemouth,3,0,league-one,England,football_data,3,0,11,9,10,4,5,7,11,11,1,0,0,0,,,1.8300,3.5000,4.3300,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-03-10,Sheffield Wednesday,AFC Bournemouth,3,0,league-one,England,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-03-10,Sheffield Wednesday,Bournemouth,3,0,league-one,England,football_data,3,0,11,9,10,4,5,7,11,11,1,0,0,0,,,1.8300,3.5000,4.3300,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-03-10,Shrewsbury Town,Burton,1,0,league-two,England,football_data,0,0,15,7,7,4,13,3,7,13,0,3,0,0,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-03-10,Southampton,Barnsley,2,0,championship,England,football_data,1,0,13,5,9,0,7,4,9,8,0,1,0,0,,,1.3600,4.5000,9.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-03-10,Southend,Accrington Stanley,2,2,league-two,England,football_data,0,1,10,7,2,6,5,7,7,9,2,5,0,1,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -2272,8 +2272,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-03-18,FC Utrecht,FC Groningen,3,1,eredivisie,Netherlands,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.6000,3.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-03-18,Gaziantepspor,Karabukspor,3,0,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,1.8300,3.5000,4.3300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-03-18,Germinal,Lokeren,2,2,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,2.7500,3.2000,2.6000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-03-18,Hannover 96,1. FC Köln,4,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-03-18,Hannover 96,FC Koln,4,1,bundesliga,Germany,football_data,1,1,18,14,10,7,8,7,12,17,0,1,0,0,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-03-18,Hannover 96,1. FC Köln,4,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-03-18,Heart of Midlothian,Hibernian FC,2,0,scottish-prem,Scotland,football_data,1,0,10,6,7,3,7,5,20,20,2,3,0,0,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-03-18,Inter Milan,Atalanta BC,0,0,serie-a,Italy,football_data,0,0,16,7,4,2,5,3,14,20,2,4,0,0,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-03-18,KAA Gent,Kortrijk,3,1,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -2479,8 +2479,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-03-24,Nottingham Forest,Brighton & Hove Albion,1,1,championship,England,football_data,0,0,13,3,5,2,8,0,9,13,1,4,0,1,,,2.2500,3.4000,3.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-03-24,OFI,Panathinaikos FC,0,1,greek-super,Greece,football_data,0,1,,,,,,,,,,,,,,,5.0000,3.2000,1.8000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-03-24,OGC Nice,Olympique Marseille,1,1,ligue1,France,football_data,0,0,24,2,5,1,16,2,21,19,3,3,0,1,,,3.1000,3.1000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-03-24,Oldham Athletic,Bournemouth,1,0,league-one,England,football_data,0,0,8,9,2,5,2,9,11,12,1,3,0,0,,,2.6300,3.2500,2.6300,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-03-24,Oldham Athletic,AFC Bournemouth,1,0,league-one,England,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-03-24,Oldham Athletic,Bournemouth,1,0,league-one,England,football_data,0,0,8,9,2,5,2,9,11,12,1,3,0,0,,,2.6300,3.2500,2.6300,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-03-24,Olympique Lyonnais,Sochaux,2,1,ligue1,France,football_data,1,0,12,10,4,6,2,5,14,7,1,0,0,0,,,1.3300,4.7500,9.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-03-24,Palermo,Udinese Calcio,1,1,serie-a,Italy,football_data,1,0,9,23,3,5,2,5,18,14,2,1,0,0,,,2.4000,3.3000,2.8800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-03-24,Partick,Ross County FC,0,1,scottish-div1,Scotland,football_data,0,1,,,,,,,,,,,,,,,3.3000,3.5000,1.9100,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -2491,8 +2491,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-03-24,Real Madrid,Real Sociedad,5,1,la-liga,Spain,football_data,3,1,19,11,10,4,9,3,14,8,1,4,0,0,,,1.1300,8.0000,21.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-03-24,Recreativo,Alcorcon,1,2,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,2.2000,3.2500,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-03-24,Roda,SBV Vitesse,3,1,eredivisie,Netherlands,football_data,2,1,,,,,,,,,,,,,,,2.1000,3.5000,3.3000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-03-24,SC Freiburg,1. FC Kaiserslautern,2,0,bundesliga,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-03-24,SC Freiburg,Kaiserslautern,2,0,bundesliga,Germany,football_data,2,0,10,4,3,4,4,2,24,17,2,1,0,0,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-03-24,SC Freiburg,1. FC Kaiserslautern,2,0,bundesliga,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-03-24,SC Heerenveen,VVV Venlo,4,1,eredivisie,Netherlands,football_data,2,0,,,,,,,,,,,,,,,1.2500,5.5000,12.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-03-24,Sabadell,Guadalajara,2,2,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-03-24,Schalke 04,Bayer Leverkusen,2,0,bundesliga,Germany,football_data,1,0,17,8,6,2,6,3,14,11,1,2,0,0,,,1.9100,3.6000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -2751,8 +2751,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-04-01,FK Austria Wien,FC Red Bull Salzburg,1,1,austrian-bl,Austria,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-04-01,Feirense,Beira Mar,1,3,primeira-liga,Portugal,football_data,0,2,,,,,,,,,,,,,,,2.4000,3.1000,3.1000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-04-01,Gil Vicente FC,Setubal,0,1,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,1.9100,3.2500,4.3300,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-04-01,Hannover 96,Bor. Mönchengladbach,2,1,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-04-01,Hannover 96,Borussia Monchengladbach,2,1,bundesliga,Germany,football_data,0,0,12,14,3,6,5,6,8,9,0,1,0,0,,,2.7000,3.2500,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-04-01,Hannover 96,Bor. Mönchengladbach,2,1,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-04-01,Ingolstadt,Duisburg,1,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-04-01,Inter Milan,Genoa CFC,5,4,serie-a,Italy,football_data,3,1,22,15,9,8,2,10,12,17,2,4,1,1,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-04-01,Inverness C,Hibernian FC,2,3,scottish-prem,Scotland,football_data,0,0,7,5,3,5,11,5,10,11,1,2,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -2919,8 +2919,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-04-07,SV Ried,FK Austria Wien,0,1,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-04-07,Sabadell,Gimnastic,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.0000,3.3000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-04-07,Samsunspor,Demir Grup Sivasspor,1,2,super-lig,Turkey,football_data,1,1,,,,,,,,,,,,,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-04-07,Sheffield United,AFC Bournemouth,2,1,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-04-07,Sheffield United,Bournemouth,2,1,league-one,England,football_data,1,0,14,13,7,5,7,4,10,10,0,1,0,0,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2012-04-07,Sheffield United,AFC Bournemouth,2,1,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-04-07,Southampton,Portsmouth,2,2,championship,England,football_data,1,1,14,8,7,3,9,3,7,12,2,6,0,0,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-04-07,Sp Braga,FC Porto,0,1,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,3.2000,3.2500,2.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-04-07,St Johnstone FC,Inverness C,0,0,scottish-prem,Scotland,football_data,0,0,9,6,5,3,5,5,14,15,2,5,0,0,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -3020,8 +3020,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-04-10,Excelsior,Nijmegen,0,2,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,4.5000,3.7500,1.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-04-10,FC Augsburg,VfB Stuttgart,1,3,bundesliga,Germany,football_data,1,2,20,14,2,9,9,2,16,19,2,3,0,0,,,2.7000,3.4000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-04-10,FC Barcelona,Getafe CF,4,0,la-liga,Spain,football_data,2,0,14,2,7,0,13,5,9,10,1,1,0,0,,,1.0600,13.0000,26.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-04-10,FSV Mainz 05,FC Koln,4,0,bundesliga,Germany,football_data,3,0,7,3,4,0,3,2,14,13,2,0,0,0,,,1.5700,4.0000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-04-10,FSV Mainz 05,1. FC Köln,4,0,bundesliga,Germany,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-04-10,FSV Mainz 05,FC Koln,4,0,bundesliga,Germany,football_data,3,0,7,3,4,0,3,2,14,13,2,0,0,0,,,1.5700,4.0000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-04-10,Falkirk,Hamilton,3,0,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-04-10,Fortuna Dusseldorf,Frankfurt FSV,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.4000,4.5000,8.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-04-10,Hertha Berlin,SC Freiburg,1,2,bundesliga,Germany,football_data,0,1,12,10,4,5,6,1,18,14,4,1,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -3206,8 +3206,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-04-15,Real Betis,CA Osasuna,1,0,la-liga,Spain,football_data,1,0,10,5,4,1,3,3,10,7,1,2,0,1,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-04-15,Real Zaragoza,Granada CF,1,0,la-liga,Spain,football_data,1,0,8,10,4,0,2,3,25,10,3,3,1,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-04-15,SBV Vitesse,Den Haag,1,0,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,1.6200,3.7500,5.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-04-15,SC Freiburg,1899 Hoffenheim,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-04-15,SC Freiburg,TSG Hoffenheim,0,0,bundesliga,Germany,football_data,0,0,10,7,2,0,4,4,21,13,1,1,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-04-15,SC Freiburg,1899 Hoffenheim,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-04-15,SC Paderborn 07,Cottbus,3,1,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,1.8300,3.4000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-04-15,Sochaux,Dijon FCO,1,0,ligue1,France,football_data,0,0,16,11,6,1,4,1,14,19,1,3,0,0,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-04-15,Valenciennes,Evian Thonon Gaillard,0,3,ligue1,France,football_data,0,3,22,8,4,6,10,5,16,9,1,1,0,0,,,2.0000,3.1000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -3283,8 +3283,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-04-21,Blackburn Rovers,Norwich City,2,0,premier-league,England,football_data,1,0,9,12,6,5,9,7,8,13,1,1,0,0,,,2.1000,3.4000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-04-21,Blackpool,Burnley,4,0,championship,England,football_data,1,0,13,18,12,9,5,11,8,8,1,1,0,0,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-04-21,Bolton Wanderers,Swansea City,1,1,premier-league,England,football_data,1,1,7,20,5,12,8,10,19,7,2,1,0,0,,,2.2000,3.3000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-04-21,Borussia Dortmund,Bor. Mönchengladbach,2,0,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-04-21,Borussia Dortmund,Borussia Monchengladbach,2,0,bundesliga,Germany,football_data,1,0,18,4,8,1,6,2,14,8,1,1,0,0,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-04-21,Borussia Dortmund,Bor. Mönchengladbach,2,0,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-04-21,Bournemouth,Colchester,1,1,league-one,England,football_data,1,0,12,15,6,7,8,5,6,7,0,1,0,0,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-04-21,Bradford City,Macclesfield,1,0,league-two,England,football_data,0,0,12,4,5,1,2,3,18,10,4,4,0,0,,,1.7300,3.7500,4.5000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-04-21,Brighton & Hove Albion,Birmingham City,1,1,championship,England,football_data,0,0,8,7,4,3,9,6,8,15,2,3,0,0,,,3.1000,3.4000,2.2500,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -3739,8 +3739,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-05-05,FC Porto,Sp Lisbon,2,0,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,1.6700,3.6000,5.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-05-05,FC Trenkwalder Admira,FK Austria Wien,3,2,austrian-bl,Austria,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-05-05,FC Wacker Innsbruck,SV Mattersburg,3,6,austrian-bl,Austria,openfootball,1,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2012-05-05,FSV Mainz 05,Bor. Mönchengladbach,0,3,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-05-05,FSV Mainz 05,Borussia Monchengladbach,0,3,bundesliga,Germany,football_data,0,1,5,11,1,5,4,5,11,10,0,0,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-05-05,FSV Mainz 05,Bor. Mönchengladbach,0,3,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-05-05,Falkirk,Ayr,3,2,scottish-div1,Scotland,football_data,1,0,,,,,,,,,,,,,,,1.5700,4.0000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-05-05,Feirense,Vitoria SC,1,3,primeira-liga,Portugal,football_data,1,1,,,,,,,,,,,,,,,2.4000,3.2000,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-05-05,Gillingham,Morecambe,2,0,league-two,England,football_data,1,0,10,12,3,4,6,4,14,9,1,2,0,0,,,1.9100,3.6000,3.7500,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -3748,8 +3748,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-05-05,Grosseto,Pescara,2,4,serie-b,Italy,football_data,0,2,,,,,,,,,,,,,,,5.2500,3.8000,1.5700,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-05-05,Guadalajara,Girona FC,1,4,la-liga-2,Spain,football_data,0,2,,,,,,,,,,,,,,,2.2500,3.2500,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-05-05,Hamilton,Partick,2,2,scottish-div1,Scotland,football_data,2,2,,,,,,,,,,,,,,,2.3800,3.5000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-05-05,Hannover 96,1. FC Kaiserslautern,2,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-05-05,Hannover 96,Kaiserslautern,2,1,bundesliga,Germany,football_data,1,1,25,11,6,4,16,2,12,11,2,1,0,0,,,1.3300,5.0000,9.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-05-05,Hannover 96,1. FC Kaiserslautern,2,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-05-05,Hellas Verona,Livorno,1,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.7300,3.3000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-05-05,Hercules,UD Almeria,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-05-05,Hereford,Torquay,3,2,league-two,England,football_data,3,0,7,18,4,9,3,11,9,11,2,1,0,0,,,3.2000,3.4000,2.2000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -4374,8 +4374,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-08-03,Arles,RC Lens,0,0,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.3800,3.0000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-03,Clermont Foot,SCO Angers,1,2,ligue2,France,football_data,0,2,,,,,,,,,,,,,,,2.2000,3.0000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-03,EA Guingamp,Le Havre AC,3,3,ligue2,France,football_data,2,1,,,,,,,,,,,,,,,2.0000,3.1000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-08-03,Erzgebirge Aue,St Pauli,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,3.3000,3.4000,2.1500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-03,Erzgebirge Aue,FC St. Pauli,0,0,bundesliga-2,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2012-08-03,Erzgebirge Aue,St Pauli,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,3.3000,3.4000,2.1500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-03,FC Ingolstadt 04,Energie Cottbus,2,2,bundesliga-2,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-08-03,Hertha Berlin,SC Paderborn 07,2,2,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,1.5700,4.1000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-03,Ingolstadt,Cottbus,2,2,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,2.0000,3.3000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -4399,8 +4399,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-08-04,St Mirren FC,Inverness C,2,2,scottish-prem,Scotland,football_data,1,0,13,11,5,7,4,10,18,15,3,4,1,0,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-08-04,Stade Malherbe Caen,AJ Auxerre,3,1,ligue2,France,football_data,2,1,,,,,,,,,,,,,,,2.3000,3.1000,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-04,TSV 1860 München,Jahn Regensburg,1,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2012-08-04,VfL Bochum,Dresden,2,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-04,VfL Bochum,Dynamo Dresden,2,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-08-04,VfL Bochum,Dresden,2,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-04,Waasland-Beveren,KV Mechelen,0,0,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,3.3000,3.4000,2.1500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-08-04,Wolfsberger AC,FC Red Bull Salzburg,0,2,austrian-bl,Austria,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-08-05,Braunschweig,FC Koln,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -4604,8 +4604,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-08-18,Fulham,Norwich City,5,0,premier-league,England,football_data,2,0,11,4,9,2,6,3,12,11,0,0,0,0,,,1.8000,3.6000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-08-18,Gaziantepspor,Demir Grup Sivasspor,0,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-08-18,Gillingham,Bradford City,3,1,league-two,England,football_data,1,0,7,9,3,3,8,5,16,7,2,0,0,0,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2012-08-18,Girona FC,CE Sabadell,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2012-08-18,Girona FC,Sabadell,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.2500,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-08-18,Girona FC,CE Sabadell,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2012-08-18,Hamilton,Morton,1,1,scottish-div1,Scotland,football_data,0,1,,,,,,,,,,,,,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-18,Hartlepool,Swindon Town,0,0,league-one,England,football_data,0,0,9,7,2,5,3,6,11,14,0,1,0,0,,,3.2000,3.2000,2.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-08-18,Heart of Midlothian,Inverness C,2,2,scottish-prem,Scotland,football_data,2,0,7,8,3,1,6,3,14,16,3,4,0,1,,,1.9100,3.3000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -4629,8 +4629,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-08-18,PSV Eindhoven,Roda,5,0,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.2000,6.5000,13.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-08-18,Plymouth,Aldershot,0,2,league-two,England,football_data,0,1,13,2,6,2,3,3,14,13,2,1,0,0,,,2.3000,3.2000,3.2000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-08-18,Port Vale,Barnet,3,0,league-two,England,football_data,2,0,3,0,1,0,5,5,6,5,0,0,0,0,,,1.8300,3.6000,4.2000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2012-08-18,Portsmouth,AFC Bournemouth,1,1,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-08-18,Portsmouth,Bournemouth,1,1,league-one,England,football_data,1,0,14,12,5,4,5,6,12,9,1,1,0,0,,,3.5000,3.5000,1.9100,,,,,,,,,,,,,,,,65,2,0,0,,0
+2012-08-18,Portsmouth,AFC Bournemouth,1,1,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-08-18,Preston North End,Colchester,0,0,league-one,England,football_data,0,0,12,6,7,2,8,3,10,10,2,1,0,0,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-08-18,Queens Park,Montrose,2,2,scottish-div3,Scotland,football_data,0,1,,,,,,,,,,,,,,,1.5300,4.3300,5.5000,,,,,,,,,,,,,,,,49,4,0,0,,0
 2012-08-18,Queens Park Rangers,Swansea City,0,5,premier-league,England,football_data,0,1,20,12,11,8,5,3,11,14,2,2,0,0,,,2.0000,3.4000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -4683,8 +4683,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-08-19,FC Girondins de Bordeaux,Stade Rennais,1,0,ligue1,France,football_data,0,0,10,11,4,3,8,5,11,13,1,1,0,0,,,2.1000,3.1000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-08-19,FC Groningen,Willem II,1,1,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.5000,4.3300,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-08-19,Gil Vicente FC,FC Porto,0,0,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,9.0000,4.5000,1.3600,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-08-19,Levante UD,Ath Madrid,1,1,la-liga,Spain,football_data,1,1,6,11,1,3,3,6,17,7,2,1,0,0,,,3.2000,3.4000,2.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-08-19,Levante UD,Atlético Madrid,1,1,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-08-19,Levante UD,Ath Madrid,1,1,la-liga,Spain,football_data,1,1,6,11,1,3,3,6,17,7,2,1,0,0,,,3.2000,3.4000,2.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-08-19,Manchester City,Southampton,3,2,premier-league,England,football_data,1,0,20,9,15,6,7,3,4,6,1,2,0,0,,,1.1700,7.0000,17.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-08-19,Mersin Idman Yurdu,Orduspor,0,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.1000,2.9000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-08-19,Nacional,Setubal,2,2,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.4000,5.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -4764,8 +4764,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-08-24,Clermont Foot,Sedan,0,2,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.3800,3.2000,3.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-24,Eintracht Braunschweig,SC Paderborn 07,2,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-08-24,Evian Thonon Gaillard,Olympique Lyonnais,1,1,ligue1,France,football_data,0,0,18,10,3,2,6,5,14,16,2,2,0,0,,,3.6000,3.2000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-08-24,Hertha Berlin,Jahn Regensburg,2,1,bundesliga-2,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-08-24,Hertha Berlin,Regensburg,2,1,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,1.4000,4.5000,8.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-08-24,Hertha Berlin,Jahn Regensburg,2,1,bundesliga-2,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-08-24,Kasimpasa SK,Karabukspor,2,1,super-lig,Turkey,football_data,1,1,,,,,,,,,,,,,,,2.2000,3.2500,3.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-08-24,Modena,Hellas Verona,1,1,serie-b,Italy,football_data,0,1,,,,,,,,,,,,,,,2.9000,3.1000,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-24,Nimes,Stade Malherbe Caen,0,2,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,2.4000,3.3000,2.8800,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -4798,8 +4798,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-08-25,Bournemouth,Preston North End,1,1,league-one,England,football_data,0,0,9,10,5,6,3,8,7,11,2,3,1,0,,,2.0500,3.3000,3.6000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-08-25,Bradford City,AFC Wimbledon,5,1,league-two,England,football_data,5,1,15,6,10,2,7,4,5,6,0,1,0,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-08-25,Brechin,East Fife,2,1,scottish-div2,Scotland,football_data,2,0,,,,,,,,,,,,,,,2.5000,3.6000,2.6000,,,,,,,,,,,,,,,,49,3,0,0,,0
-2012-08-25,Brentford,Crewe Alexandra,5,1,league-one,England,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-08-25,Brentford,Crewe,5,1,league-one,England,football_data,3,0,17,7,12,6,7,4,12,8,0,1,0,0,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
+2012-08-25,Brentford,Crewe Alexandra,5,1,league-one,England,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-08-25,Brighton & Hove Albion,Barnsley,5,1,championship,England,football_data,3,1,11,6,6,3,4,4,4,6,1,3,0,0,,,1.7000,3.7500,4.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-08-25,Bristol City,Cardiff City,4,2,championship,England,football_data,2,0,13,14,6,8,5,6,10,7,0,1,0,0,,,2.8000,3.5000,2.3800,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-08-25,Burton,Fleetwood Town,0,1,league-two,England,football_data,0,0,20,4,10,3,3,9,8,11,0,1,0,0,,,2.8000,3.4000,2.4000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -4877,8 +4877,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-08-25,Pro Vercelli,Ternana,1,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.0000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-25,Queen of Sth,Albion Rvs,1,0,scottish-div2,Scotland,football_data,1,0,,,,,,,,,,,,,,,1.4000,4.7500,7.0000,,,,,,,,,,,,,,,,49,3,0,0,,0
 2012-08-25,Raith Rvs,Livingston FC,0,0,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-08-25,Real Betis,Rayo Vallecano,1,2,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-08-25,Real Betis,Vallecano,1,2,la-liga,Spain,football_data,1,1,14,19,4,5,6,8,14,17,5,5,0,0,,,1.7000,3.6000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-08-25,Real Betis,Rayo Vallecano,1,2,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-08-25,Real Madrid B,Barcelona B,3,2,la-liga-2,Spain,football_data,2,1,,,,,,,,,,,,,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-08-25,Real Madrid Castilla,FC Barcelona B,3,2,la-liga-2,Spain,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-08-25,Real Sociedad,RC Celta,2,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -5051,8 +5051,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-01,Fortuna Dusseldorf,Borussia Monchengladbach,0,0,bundesliga,Germany,football_data,0,0,5,13,0,4,5,4,15,23,3,2,0,0,,,2.9000,3.3000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-01,Fortuna Düsseldorf,Bor. Mönchengladbach,0,0,bundesliga,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-09-01,Gillingham,Chesterfield,1,1,league-two,England,football_data,1,1,13,13,8,7,6,6,12,13,1,3,0,1,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2012-09-01,Girona FC,SD Ponferradina,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-01,Girona FC,Ponferradina,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.2000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-09-01,Girona FC,SD Ponferradina,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-01,Hartlepool,Scunthorpe,2,0,league-one,England,football_data,1,0,11,9,5,4,3,7,9,4,0,0,0,1,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-09-01,Hellas Verona,Spezia Calcio,1,1,serie-b,Italy,football_data,0,1,,,,,,,,,,,,,,,1.9100,3.2500,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-01,Hull City,Bolton Wanderers,3,1,championship,England,football_data,1,1,11,12,5,6,5,8,13,7,1,1,0,0,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -5085,8 +5085,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-01,RC Celta,CA Osasuna,2,0,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-01,RCD Mallorca,Real Sociedad,1,0,la-liga,Spain,football_data,0,0,15,10,5,3,6,3,21,11,5,2,0,0,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-01,Real Murcia,SD Huesca,2,1,la-liga-2,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2012-09-01,Real Zaragoza,Malaga CF,0,1,la-liga,Spain,football_data,0,0,11,11,4,3,10,10,23,14,1,4,0,0,,,2.7000,3.2500,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-01,Real Zaragoza,Málaga CF,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-09-01,Real Zaragoza,Malaga CF,0,1,la-liga,Spain,football_data,0,0,11,11,4,3,10,10,23,14,1,4,0,0,,,2.7000,3.2500,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-01,Reggina,Pro Vercelli,1,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-01,Rochdale,Barnet,2,0,league-two,England,football_data,2,0,9,5,4,2,3,7,8,15,1,0,0,0,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-09-01,Roda,Willem II,3,0,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -5165,8 +5165,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-02,Inter Milan,AS Roma,1,3,serie-a,Italy,football_data,1,1,21,12,6,3,11,2,17,17,2,2,0,1,,,1.9500,3.6000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-02,Jahn Regensburg,VfL Bochum,0,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-02,LOSC Lille,Paris Saint-Germain,1,2,ligue1,France,football_data,1,2,9,7,4,3,3,3,17,21,1,2,0,0,,,2.7000,3.2500,2.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-09-02,Levante UD,Espanyol Barcelona,3,2,la-liga,Spain,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-02,Levante UD,Espanol,3,2,la-liga,Spain,football_data,0,2,11,9,4,2,6,2,30,21,3,6,1,0,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-09-02,Levante UD,Espanyol Barcelona,3,2,la-liga,Spain,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-02,Liverpool,Arsenal,0,2,premier-league,England,football_data,0,1,17,11,8,7,10,2,12,7,2,2,0,0,,,2.0000,3.5000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-02,Lokeren,Kortrijk,0,1,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-02,Motherwell FC,Inverness C,4,1,scottish-prem,Scotland,football_data,2,1,11,14,6,9,10,10,16,11,1,1,0,0,,,2.1000,3.2500,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -5186,8 +5186,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-02,Rio Ave FC,Academica,0,0,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-02,SBV Vitesse,Feyenoord,1,0,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-02,SC Heerenveen,AFC Ajax,2,2,eredivisie,Netherlands,football_data,2,1,,,,,,,,,,,,,,,5.5000,4.3300,1.5300,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-09-02,SC Paderborn 07,Ingolstadt,1,3,bundesliga-2,Germany,football_data,0,2,,,,,,,,,,,,,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-02,SC Paderborn 07,FC Ingolstadt 04,1,3,bundesliga-2,Germany,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-09-02,SC Paderborn 07,Ingolstadt,1,3,bundesliga-2,Germany,football_data,0,2,,,,,,,,,,,,,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-02,SK Rapid Wien,SV Mattersburg,3,0,austrian-bl,Austria,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-02,SL Benfica,Nacional,3,0,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,1.2200,6.0000,13.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-02,SS Lazio,Palermo,3,0,serie-a,Italy,football_data,1,0,21,9,6,2,7,4,14,10,3,2,0,0,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -5297,8 +5297,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-08,Sudan,Ethiopia,5,3,international,Sudan,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
 2012-09-08,Swindon Town,Leyton Orient,0,1,league-one,England,football_data,0,0,5,6,3,1,2,4,15,12,0,2,0,0,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-09-08,Torquay,Plymouth,0,0,league-two,England,football_data,0,0,16,9,7,3,8,5,16,5,2,2,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2012-09-08,UD Las Palmas,AD Alcorcón,1,3,la-liga-2,Spain,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-08,UD Las Palmas,Alcorcon,1,3,la-liga-2,Spain,football_data,1,2,,,,,,,,,,,,,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-09-08,UD Las Palmas,AD Alcorcón,1,3,la-liga-2,Spain,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-08,Walsall,Milton Keynes Dons,1,0,league-one,England,football_data,1,0,9,20,4,11,7,15,6,10,1,4,0,0,,,3.5000,3.4000,2.0500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-09-08,Wycombe Wanderers,Cheltenham,1,1,league-two,England,football_data,1,1,1,12,0,6,6,8,11,7,3,2,0,0,,,2.6000,3.6000,2.5000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-09-08,Yeovil,Bournemouth,0,1,league-one,England,football_data,0,1,5,15,1,7,1,6,8,12,2,1,0,0,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -5407,8 +5407,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-14,Sedan,Laval,1,3,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-14,Stade Malherbe Caen,Le Mans,0,2,ligue2,France,football_data,0,1,,,,,,,,,,,,,,,1.8000,3.4000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-14,Stade de Reims,Montpellier HSC,3,1,ligue1,France,football_data,1,0,11,19,5,9,3,6,16,11,1,1,0,0,,,3.4000,3.0000,2.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-09-14,VfL Bochum,Munich 1860,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.7000,3.4000,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-14,VfL Bochum,TSV 1860 München,0,0,bundesliga-2,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2012-09-14,VfL Bochum,Munich 1860,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.7000,3.4000,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-15,AC Milan,Atalanta BC,0,1,serie-a,Italy,football_data,0,0,17,10,7,4,8,5,12,19,2,4,0,0,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-15,AD Alcorcón,Córdoba CF,2,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-15,AFC Ajax,Waalwijk,2,0,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,1.2000,6.5000,13.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -5587,8 +5587,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-16,Stade Rennais,FC Lorient,1,2,ligue1,France,football_data,0,2,16,10,5,6,7,5,13,16,1,1,1,2,,,1.8300,3.2500,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-16,Torino FC,Inter Milan,0,2,serie-a,Italy,football_data,0,1,11,8,3,3,6,1,14,7,4,4,0,0,,,3.1000,3.3000,2.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-16,Trabzonspor,Demir Grup Sivasspor,1,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-09-16,Villarreal CF,Hércules CF,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-16,Villarreal CF,Hercules,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-09-16,Villarreal CF,Hércules CF,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-16,Wolverhampton Wanderers,Leicester City,2,1,championship,England,football_data,2,0,15,20,9,10,6,5,9,16,1,2,0,0,,,2.6300,3.3000,2.6300,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-09-17,1. FC Köln,FC St. Pauli,0,0,bundesliga-2,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2012-09-17,Besiktas JK,Elazigspor,3,0,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -5662,8 +5662,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-21,Roda,FC Utrecht,0,1,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,2.4000,3.6000,2.7000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-21,Standard Liege,KAA Gent,1,2,belgian-pro,Belgium,football_data,1,1,,,,,,,,,,,,,,,1.8300,3.7500,4.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-21,Tours,Sedan,1,1,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,2.6000,3.0000,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-09-21,Union Berlin,1. FC Köln,2,1,bundesliga-2,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-21,Union Berlin,FC Koln,2,1,bundesliga-2,Germany,football_data,1,1,,,,,,,,,,,,,,,2.3800,3.4000,2.8800,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-09-21,Union Berlin,1. FC Köln,2,1,bundesliga-2,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-21,VfR Aalen,Erzgebirge Aue,2,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-22,1. FC Kaiserslautern,Hertha Berlin,1,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-22,1. Wiener Neustädter SC,SK Sturm Graz,1,1,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -5753,8 +5753,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-22,Port Vale,Gillingham,0,2,league-two,England,football_data,0,2,7,3,2,3,6,5,7,8,2,2,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-09-22,Pro Vercelli,Ascoli,3,1,serie-b,Italy,football_data,3,0,,,,,,,,,,,,,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-22,RC Celta,Getafe CF,2,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2012-09-22,Real Betis,Espanyol Barcelona,1,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-22,Real Betis,Espanol,1,0,la-liga,Spain,football_data,1,0,15,11,3,2,7,1,24,13,6,4,0,1,,,1.9500,3.5000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-09-22,Real Betis,Espanyol Barcelona,1,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-22,Real Zaragoza,CA Osasuna,3,1,la-liga,Spain,football_data,2,1,10,11,4,3,1,2,18,13,2,2,0,0,,,2.2500,3.2500,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-22,Recreativo,Lugo,3,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-22,Recreativo Huelva,CD Lugo,3,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -5810,12 +5810,12 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-23,Aruba,Dominican Republic,2,2,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
 2012-09-23,Atalanta BC,Palermo,1,0,serie-a,Italy,football_data,0,0,10,11,2,2,6,5,12,21,4,3,0,0,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-23,Ath Madrid,Real Valladolid,2,1,la-liga,Spain,football_data,2,0,14,4,7,3,6,1,15,23,2,6,0,0,,,1.3000,5.2500,10.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-09-23,Athletic Bilbao,Málaga CF,0,0,la-liga,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-09-23,Athletic Bilbao,Malaga CF,0,0,la-liga,Spain,football_data,0,0,9,12,1,4,7,7,7,6,3,3,0,0,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-09-23,Athletic Bilbao,Málaga CF,0,0,la-liga,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-09-23,Atlético Madrid,Real Valladolid,2,1,la-liga,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-23,Barbados,Dominica,1,0,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup qualification,0
-2012-09-23,Bayer Leverkusen,Borussia Monchengladbach,1,1,bundesliga,Germany,football_data,1,1,31,5,9,1,10,3,13,12,0,4,0,0,,,1.9100,3.6000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-23,Bayer Leverkusen,Bor. Mönchengladbach,1,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-09-23,Bayer Leverkusen,Borussia Monchengladbach,1,1,bundesliga,Germany,football_data,1,1,31,5,9,1,10,3,13,12,0,4,0,0,,,1.9100,3.6000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-23,Bologna FC,Pescara,1,1,serie-a,Italy,football_data,1,1,22,13,8,6,15,4,24,8,1,3,0,1,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-23,CD Numancia,Real Murcia,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-23,Cagliari Calcio,AS Roma,0,3,serie-a,Italy,football_data,,,,,,,,,,,,,,,,,3.1000,3.5000,2.2000,,,,,,,,,,,,,,,,45,1,0,0,,0
@@ -5917,8 +5917,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-26,French Guiana,Saint Pierre and Miquelon,11,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Coupe de l'Outre-Mer,1
 2012-09-26,Genoa CFC,Parma Calcio,1,1,serie-a,Italy,football_data,0,1,11,10,5,4,5,7,10,13,2,4,0,0,,,2.3000,3.2000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-26,Hannover 96,1. FC Nurnberg,4,1,bundesliga,Germany,football_data,2,0,7,6,4,2,5,6,15,19,3,2,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-09-26,Hertha Berlin,Dynamo Dresden,1,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-26,Hertha Berlin,Dresden,1,0,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-09-26,Hertha Berlin,Dynamo Dresden,1,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-26,Ingolstadt,Munich 1860,0,2,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.3800,3.3000,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-26,Martinique,Mayotte,3,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Coupe de l'Outre-Mer,1
 2012-09-26,New Caledonia,Tahiti,0,1,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Coupe de l'Outre-Mer,1
@@ -5935,8 +5935,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-27,Dominican Republic,Dominica,2,1,international,Barbados,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
 2012-09-27,Philippines,Macau,5,0,international,Philippines,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
 2012-09-27,Siena,Bologna FC,1,0,serie-a,Italy,football_data,0,0,8,14,3,7,6,11,18,20,4,2,0,0,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-09-27,VfL Bochum,1. FC Kaiserslautern,1,2,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-27,VfL Bochum,Kaiserslautern,1,2,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.7500,3.3000,2.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-09-27,VfL Bochum,1. FC Kaiserslautern,1,2,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-28,Aalen,Frankfurt FSV,3,0,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,2.3000,3.3000,3.1000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-28,Chateauroux,Le Havre AC,1,1,ligue2,France,football_data,1,0,,,,,,,,,,,,,,,2.1500,3.1000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-28,Cheltenham,Morecambe,2,0,league-two,England,football_data,1,0,15,7,8,4,5,10,13,12,0,1,0,1,,,1.9500,3.5000,3.7500,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -5980,8 +5980,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-29,Bayer Leverkusen,SpVgg Greuther Furth,2,0,bundesliga,Germany,football_data,0,0,13,7,7,1,7,2,15,14,1,1,0,0,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-29,Bergen,Germinal,1,0,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,1.9500,3.5000,3.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-29,Bolton Wanderers,Crystal Palace,0,1,championship,England,football_data,0,0,5,9,3,6,4,8,14,9,1,1,0,0,,,1.5700,4.0000,5.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2012-09-29,Borussia Dortmund,Bor. Mönchengladbach,5,0,bundesliga,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-29,Borussia Dortmund,Borussia Monchengladbach,5,0,bundesliga,Germany,football_data,2,0,17,9,8,3,10,5,10,8,0,1,0,0,,,1.3600,4.5000,9.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-09-29,Borussia Dortmund,Bor. Mönchengladbach,5,0,bundesliga,Germany,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-29,Bournemouth,Walsall,1,2,league-one,England,football_data,0,1,7,13,3,4,5,6,10,5,2,0,0,0,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-09-29,Bradford City,Port Vale,0,1,league-two,England,football_data,0,1,17,5,11,4,6,5,12,10,0,4,0,0,,,2.3800,3.4000,2.8800,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-09-29,Brighton & Hove Albion,Birmingham City,0,1,championship,England,football_data,0,1,8,3,3,2,12,0,10,10,1,1,0,0,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -6017,8 +6017,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-29,Forfar,Albion Rvs,4,2,scottish-div2,Scotland,football_data,2,0,,,,,,,,,,,,,,,1.6200,4.2000,4.7500,,,,,,,,,,,,,,,,49,3,0,0,,0
 2012-09-29,Fulham,Manchester City,1,2,premier-league,England,football_data,1,1,7,21,3,12,2,4,7,12,0,1,0,0,,,4.3300,3.6000,1.8300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-29,Gillingham,Rochdale,1,2,league-two,England,football_data,0,1,9,12,4,6,10,6,11,15,2,4,1,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,3,0,0,,0
-2012-09-29,Girona FC,Sp Gijon,3,1,la-liga-2,Spain,football_data,3,0,,,,,,,,,,,,,,,2.3000,3.2000,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-29,Girona FC,Sporting Gijón,3,1,la-liga-2,Spain,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-09-29,Girona FC,Sp Gijon,3,1,la-liga-2,Spain,football_data,3,0,,,,,,,,,,,,,,,2.3000,3.2000,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-29,Guadeloupe,Mayotte,1,0,international,France,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Coupe de l'Outre-Mer,1
 2012-09-29,Hamburger SV,Hannover 96,1,0,bundesliga,Germany,football_data,1,0,10,14,4,5,2,8,25,12,3,1,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-29,Hamilton,Dunfermline,0,3,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,4.2000,3.6000,1.8300,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6041,8 +6041,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-29,Malaga CF,Real Betis,4,0,la-liga,Spain,football_data,2,0,21,4,11,2,6,6,13,8,2,0,0,1,,,1.7000,3.7500,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-29,Manchester United,Tottenham Hotspur,2,3,premier-league,England,football_data,0,2,15,10,8,6,9,5,5,7,0,0,0,0,,,1.5700,4.0000,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-29,Middlesbrough,Leicester City,1,2,championship,England,football_data,0,0,6,7,3,3,1,6,10,3,1,0,0,0,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
-2012-09-29,Milton Keynes Dons,Crewe,1,0,league-one,England,football_data,1,0,10,4,5,2,4,3,8,6,0,0,0,0,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-09-29,Milton Keynes Dons,Crewe Alexandra,1,0,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-09-29,Milton Keynes Dons,Crewe,1,0,league-one,England,football_data,1,0,10,4,5,2,4,3,8,6,0,0,0,0,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-09-29,Motherwell FC,Celtic FC,0,2,scottish-prem,Scotland,football_data,0,2,3,18,0,12,2,7,10,6,2,2,1,0,,,5.5000,4.0000,1.5700,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-29,Munich 1860,Sandhausen,4,0,bundesliga-2,Germany,football_data,3,0,,,,,,,,,,,,,,,1.5300,3.8000,6.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-29,Málaga CF,Real Betis,4,0,la-liga,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -6088,12 +6088,12 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-29,TSV 1860 München,SV Sandhausen,4,0,bundesliga-2,Germany,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-29,Tranmere,Brentford,1,1,league-one,England,football_data,0,0,3,5,1,2,4,4,8,12,1,3,0,0,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-09-29,US Sassuolo,Ascoli,1,0,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,1.5700,3.6000,6.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-09-29,Union Berlin,Cottbus,3,1,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-29,Union Berlin,Energie Cottbus,3,1,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-09-29,Union Berlin,Cottbus,3,1,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-29,Valencia CF,Real Zaragoza,2,0,la-liga,Spain,football_data,1,0,13,17,4,7,3,8,20,11,2,2,1,0,,,1.3600,4.7500,8.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-29,Vicenza,Grosseto,2,1,serie-b,Italy,football_data,0,1,,,,,,,,,,,,,,,2.2500,3.2000,3.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-09-29,Villarreal CF,Córdoba CF,2,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-29,Villarreal CF,Cordoba,2,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.4000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-09-29,Villarreal CF,Córdoba CF,2,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-29,Virtus Lanciano,Modena,1,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.9000,3.0000,2.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-09-29,Werder Bremen,Bayern Munich,0,2,bundesliga,Germany,football_data,0,0,8,19,2,5,2,6,14,17,2,2,0,0,,,6.0000,4.0000,1.5300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-29,Wolverhampton Wanderers,Sheffield Wednesday,1,0,championship,England,football_data,1,0,7,3,1,1,7,4,6,10,2,1,0,0,,,1.9100,3.6000,3.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -6121,8 +6121,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-30,FC Red Bull Salzburg,SK Sturm Graz,3,2,austrian-bl,Austria,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-30,Genclerbirligi,Yukatel Kayserispor,4,0,super-lig,Turkey,football_data,2,0,,,,,,,,,,,,,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-30,Gil Vicente FC,Moreirense FC,4,3,primeira-liga,Portugal,football_data,3,3,,,,,,,,,,,,,,,2.4000,3.2000,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-09-30,Granada CF,Celta de Vigo,2,1,la-liga,Spain,football_data,2,1,7,19,4,9,3,8,12,14,3,3,0,0,,,2.3000,3.2500,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-30,Granada CF,RC Celta,2,1,la-liga,Spain,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-09-30,Granada CF,Celta de Vigo,2,1,la-liga,Spain,football_data,2,1,7,19,4,9,3,8,12,14,3,3,0,0,,,2.3000,3.2500,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-30,Inter Milan,ACF Fiorentina,2,1,serie-a,Italy,football_data,2,1,15,14,6,5,7,10,19,15,4,3,0,1,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-30,KAA Gent,Club Brugge KV,2,2,belgian-pro,Belgium,football_data,2,2,,,,,,,,,,,,,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-30,Kaiserslautern,Braunschweig,1,1,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.2500,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6138,8 +6138,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-30,Platanias,Xanthi,3,2,greek-super,Greece,football_data,0,1,,,,,,,,,,,,,,,2.8000,2.8800,2.8000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-30,Real Madrid,Deportivo La Coruña,5,1,la-liga,Spain,openfootball,3,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-30,Real Madrid,La Coruna,5,1,la-liga,Spain,football_data,3,1,23,5,13,2,12,2,15,11,2,2,0,0,,,1.1300,8.0000,21.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-09-30,Real Valladolid,Rayo Vallecano,6,1,la-liga,Spain,openfootball,4,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-30,Real Valladolid,Vallecano,6,1,la-liga,Spain,football_data,4,1,14,14,10,4,5,9,14,17,1,3,0,0,,,1.8300,3.5000,4.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-09-30,Real Valladolid,Rayo Vallecano,6,1,la-liga,Spain,openfootball,4,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-09-30,SS Lazio,Siena,2,1,serie-a,Italy,football_data,2,0,10,9,4,3,5,4,19,11,2,2,0,0,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-30,Trabzonspor,Mersin Idman Yurdu,1,1,super-lig,Turkey,football_data,0,1,,,,,,,,,,,,,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-30,UC Sampdoria,SSC Napoli,0,1,serie-a,Italy,football_data,0,0,9,15,2,4,6,5,18,14,4,3,1,0,,,3.4000,3.4000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -6148,8 +6148,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-09-30,Udinese Calcio,Genoa CFC,0,0,serie-a,Italy,football_data,0,0,13,6,3,3,10,4,16,15,1,2,0,0,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-30,VVV Venlo,PSV Eindhoven,0,6,eredivisie,Netherlands,football_data,0,2,,,,,,,,,,,,,,,9.5000,5.5000,1.2900,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-09-30,Valenciennes,Olympique Marseille,4,1,ligue1,France,football_data,3,0,15,11,6,3,3,6,12,13,1,3,0,0,,,3.3000,3.1000,2.3000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-09-30,VfL Bochum,FC Ingolstadt 04,1,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-30,VfL Bochum,Ingolstadt,1,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.0500,3.3000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-09-30,VfL Bochum,FC Ingolstadt 04,1,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-09-30,VfL Wolfsburg,FSV Mainz 05,0,2,bundesliga,Germany,football_data,0,2,19,7,5,3,11,2,18,18,3,3,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-09-30,Willem II,Zwolle,0,1,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,2.2500,3.5000,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-01,AJ Auxerre,Arles,2,1,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,1.8300,3.2500,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6171,8 +6171,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-02,Cardiff City,Birmingham City,2,1,championship,England,football_data,1,0,12,8,5,5,5,1,11,14,2,1,0,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-10-02,Charlton Athletic,Watford,1,2,championship,England,football_data,1,1,16,10,11,9,7,2,11,14,2,5,0,1,,,2.2500,3.4000,3.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-10-02,Coventry City,Milton Keynes Dons,1,1,league-one,England,football_data,1,1,12,11,5,6,4,5,8,9,1,1,0,0,,,3.1000,3.2500,2.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2012-10-02,Crawley Town,AFC Bournemouth,3,1,league-one,England,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-02,Crawley Town,Bournemouth,3,1,league-one,England,football_data,2,0,12,8,9,5,8,3,11,12,0,3,0,0,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2012-10-02,Crawley Town,AFC Bournemouth,3,1,league-one,England,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-02,Crewe,Oldham Athletic,0,2,league-one,England,football_data,0,0,6,17,1,10,2,6,6,14,0,0,0,0,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-10-02,Crewe Alexandra,Oldham Athletic,0,2,league-one,England,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-02,Doncaster,Preston North End,1,3,league-one,England,football_data,1,1,3,4,0,1,7,5,13,9,3,1,0,0,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -6252,8 +6252,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-06,Chievo Verona,UC Sampdoria,2,1,serie-a,Italy,football_data,1,0,12,8,7,2,3,4,25,14,2,2,0,0,,,2.5000,3.1000,2.9000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-06,Cordoba,Barcelona B,2,1,la-liga-2,Spain,football_data,2,0,,,,,,,,,,,,,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-06,Cottbus,Duisburg,0,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,1.8000,3.7500,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-10-06,Coventry City,AFC Bournemouth,1,0,league-one,England,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-06,Coventry City,Bournemouth,1,0,league-one,England,football_data,0,0,14,14,9,7,3,8,7,5,0,0,0,0,,,2.2000,3.3000,3.3000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2012-10-06,Coventry City,AFC Bournemouth,1,0,league-one,England,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-06,Crewe,Hartlepool,2,1,league-one,England,football_data,1,1,15,12,8,4,3,5,7,6,0,3,0,0,,,2.2000,3.2500,3.2500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-10-06,Crewe Alexandra,Hartlepool United,2,1,league-one,England,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-06,Crystal Palace,Burnley,4,3,championship,England,football_data,1,2,14,9,8,5,3,1,2,9,0,2,0,0,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -6369,8 +6369,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-07,Celtic FC,Heart of Midlothian,1,0,scottish-prem,Scotland,football_data,1,0,14,7,5,4,6,5,10,12,1,2,0,0,,,1.3000,5.2500,9.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-07,Club Brugge KV,KRC Genk,1,1,belgian-pro,Belgium,football_data,1,0,,,,,,,,,,,,,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-07,Demir Grup Sivasspor,Bursaspor,2,2,super-lig,Turkey,football_data,0,1,,,,,,,,,,,,,,,2.4000,3.2500,2.9000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-10-07,Erzgebirge Aue,Jahn Regensburg,3,1,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-07,Erzgebirge Aue,Regensburg,3,1,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-10-07,Erzgebirge Aue,Jahn Regensburg,3,1,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-07,FC Barcelona,Real Madrid,2,2,la-liga,Spain,football_data,1,1,10,10,2,3,7,2,17,16,2,4,0,0,,,1.8300,4.0000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-07,FC Groningen,Feyenoord,2,2,eredivisie,Netherlands,football_data,2,1,,,,,,,,,,,,,,,3.2000,3.4000,2.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-07,FC Ingolstadt 04,1. FC Kaiserslautern,1,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -6501,8 +6501,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-13,Nigeria,Liberia,6,1,international,Nigeria,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,African Cup of Nations qualification,0
 2012-10-13,Northampton,Exeter City,3,0,league-two,England,football_data,2,0,13,13,10,9,2,3,14,11,4,4,0,0,,,2.4000,3.6000,2.7000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-10-13,Novara,Brescia Calcio,4,2,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-10-13,Portsmouth,Crewe Alexandra,2,0,league-one,England,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-13,Portsmouth,Crewe,2,0,league-one,England,football_data,2,0,8,5,6,4,8,8,13,4,6,1,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2012-10-13,Portsmouth,Crewe Alexandra,2,0,league-one,England,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-13,Queens Park,Annan Athletic,2,2,scottish-div3,Scotland,football_data,1,1,,,,,,,,,,,,,,,1.6000,4.2000,5.0000,,,,,,,,,,,,,,,,49,4,0,0,,0
 2012-10-13,Rochdale,Morecambe,1,2,league-two,England,football_data,0,1,13,19,5,12,6,5,12,7,2,1,0,0,,,1.9100,3.6000,3.7500,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-10-13,Rotherham United,Southend,0,3,league-two,England,football_data,0,0,12,8,4,3,5,7,4,5,0,0,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -6726,8 +6726,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-20,Pro Vercelli,Padova,1,2,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.8000,3.0000,2.7000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-20,Queen of Sth,Stenhousemuir,2,2,scottish-div2,Scotland,football_data,1,0,,,,,,,,,,,,,,,1.3600,5.0000,7.5000,,,,,,,,,,,,,,,,49,3,0,0,,0
 2012-10-20,Rangers FC,Queens Park,2,0,scottish-div3,Scotland,football_data,0,0,,,,,,,,,,,,,,,1.1400,7.0000,10.0000,,,,,,,,,,,,,,,,49,4,0,0,,0
-2012-10-20,Real Madrid,RC Celta,2,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-10-20,Real Madrid,Celta de Vigo,2,0,la-liga,Spain,football_data,1,0,24,7,3,3,11,5,11,15,3,2,0,0,,,1.1000,9.0000,23.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-10-20,Real Madrid,RC Celta,2,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-10-20,Regensburg,FC Koln,2,3,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,3.1000,3.1000,2.3800,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-20,Roda,FC Twente,1,1,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,5.5000,4.0000,1.5700,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-20,Ross County FC,Hibernian FC,3,2,scottish-prem,Scotland,football_data,2,2,11,10,6,4,7,9,9,17,1,2,0,0,,,2.5000,3.4000,2.7000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -6794,8 +6794,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-21,Queens Park Rangers,Everton,1,1,premier-league,England,football_data,1,1,14,10,6,4,5,4,12,18,2,1,0,1,,,3.2500,3.4000,2.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-21,Racing Santander,CD Lugo,0,0,la-liga-2,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
 2012-10-21,Real Murcia,Elche CF,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2012-10-21,Real Sociedad,Atlético Madrid,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-10-21,Real Sociedad,Ath Madrid,0,1,la-liga,Spain,football_data,0,0,15,12,3,4,10,6,11,14,5,2,0,0,,,3.4000,3.4000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-10-21,Real Sociedad,Atlético Madrid,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-10-21,Recreativo,Villarreal CF,2,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,3.0000,3.2000,2.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-21,SC Heerenveen,FC Groningen,3,0,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,1.6700,4.2000,4.3300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-21,SC Paderborn 07,St Pauli,1,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.2500,3.2500,3.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6806,8 +6806,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-21,UD Las Palmas,Sabadell,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.9100,3.2000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-21,UD Las Palmas,CE Sabadell,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-21,Udinese Calcio,Pescara,1,0,serie-a,Italy,football_data,0,0,18,12,5,6,5,8,9,18,0,3,1,0,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-10-21,Union Berlin,FSV Frankfurt,1,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-21,Union Berlin,Frankfurt FSV,1,0,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-10-21,Union Berlin,FSV Frankfurt,1,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-21,VVV Venlo,Feyenoord,2,3,eredivisie,Netherlands,football_data,2,1,,,,,,,,,,,,,,,5.5000,4.0000,1.5700,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-21,VfR Aalen,Energie Cottbus,1,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-10-21,Waalwijk,Zwolle,1,2,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,1.5700,3.9000,6.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -6933,8 +6933,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-27,Espanol,Malaga CF,0,0,la-liga,Spain,football_data,0,0,12,13,3,4,6,8,19,21,4,5,0,0,,,2.8000,3.3000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-27,Espanyol Barcelona,Málaga CF,0,0,la-liga,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-10-27,FC Admira Wacker,FK Austria Wien,4,6,austrian-bl,Austria,openfootball,3,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2012-10-27,FSV Mainz 05,TSG Hoffenheim,3,0,bundesliga,Germany,football_data,1,0,11,7,5,2,4,2,12,19,1,2,0,0,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-27,FSV Mainz 05,1899 Hoffenheim,3,0,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-10-27,FSV Mainz 05,TSG Hoffenheim,3,0,bundesliga,Germany,football_data,1,0,11,7,5,2,4,2,12,19,1,2,0,0,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-27,Falkirk,Partick,0,0,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,3.6000,3.6000,1.9500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-27,Fortuna Dusseldorf,VfL Wolfsburg,1,4,bundesliga,Germany,football_data,0,0,6,10,2,7,1,4,19,18,1,1,1,0,,,2.3000,3.3000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-27,Galatasaray SK,Yukatel Kayserispor,3,0,super-lig,Turkey,football_data,3,0,,,,,,,,,,,,,,,1.3600,4.7500,8.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -7009,8 +7009,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-27,VVV Venlo,NAC Breda,1,4,eredivisie,Netherlands,football_data,1,4,,,,,,,,,,,,,,,2.2000,3.5000,3.1000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-27,Vallecano,FC Barcelona,0,5,la-liga,Spain,football_data,0,1,18,15,3,10,7,4,18,14,5,1,0,0,,,11.0000,6.0000,1.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-27,Vicenza,FC Crotone,0,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.3000,3.1000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-10-27,Villarreal CF,Mirandes,2,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-27,Villarreal CF,CD Mirandés,2,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-10-27,Villarreal CF,Mirandes,2,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-27,Waasland-Beveren,Waregem,0,2,belgian-pro,Belgium,football_data,0,1,,,,,,,,,,,,,,,3.1000,3.4000,2.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-27,Wigan Athletic,West Ham United,2,1,premier-league,England,football_data,1,0,17,15,13,11,6,6,10,16,3,4,0,0,,,2.2500,3.4000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-27,Wolverhampton Wanderers,Charlton Athletic,1,1,championship,England,football_data,1,0,8,9,6,3,2,2,5,12,0,1,0,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -7041,8 +7041,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-10-28,GD Estoril Praia,FC Porto,1,2,primeira-liga,Portugal,football_data,1,0,,,,,,,,,,,,,,,10.0000,4.3300,1.3600,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-28,Gaziantepspor,Orduspor,3,0,super-lig,Turkey,football_data,2,0,,,,,,,,,,,,,,,2.5000,3.2000,2.8800,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-10-28,Giannina,Atromitos FC,0,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,2.7500,3.0000,2.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-10-28,Girona FC,Numancia,3,1,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-28,Girona FC,CD Numancia,3,1,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-10-28,Girona FC,Numancia,3,1,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-10-28,Hannover 96,Bor. Mönchengladbach,2,3,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-10-28,Hannover 96,Borussia Monchengladbach,2,3,bundesliga,Germany,football_data,0,0,5,14,3,9,4,7,17,15,2,1,0,0,,,1.9100,3.6000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-10-28,Heracles Almelo,SC Heerenveen,6,3,eredivisie,Netherlands,football_data,2,1,,,,,,,,,,,,,,,2.0000,3.7500,3.4000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -7124,8 +7124,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-02,Eintracht Braunschweig,SV Sandhausen,2,1,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-02,Eintracht Frankfurt,SpVgg Greuther Fürth,1,1,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-02,FC Porto,Maritimo,5,0,primeira-liga,Portugal,football_data,2,0,,,,,,,,,,,,,,,1.2000,6.0000,15.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-11-02,Hertha Berlin,Ingolstadt,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-02,Hertha Berlin,FC Ingolstadt 04,0,0,bundesliga-2,Germany,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,2,0,0,,0
+2012-11-02,Hertha Berlin,Ingolstadt,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-02,Jahn Regensburg,SC Paderborn 07,0,2,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-02,Laval,Istres,2,1,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.3500,3.0000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-02,Nimes,Arles,4,1,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.0500,3.2000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -7162,8 +7162,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-03,Empoli FC,Pro Vercelli,2,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,1.8300,3.2500,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-03,Eskisehirspor,Gaziantepspor,4,0,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,1.8300,3.5000,4.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-03,Evian Thonon Gaillard,LOSC Lille,0,2,ligue1,France,football_data,0,1,15,12,3,6,7,6,13,15,2,1,0,0,,,3.6000,3.2000,2.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-11-03,FC Barcelona,Celta de Vigo,3,1,la-liga,Spain,football_data,2,1,13,11,6,4,4,5,9,11,1,2,0,0,,,1.0800,10.0000,26.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-03,FC Barcelona,RC Celta,3,1,la-liga,Spain,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-11-03,FC Barcelona,Celta de Vigo,3,1,la-liga,Spain,football_data,2,1,13,11,6,4,4,5,9,11,1,2,0,0,,,1.0800,10.0000,26.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-03,FC Nantes,SCO Angers,1,0,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,1.8000,3.2500,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-03,FC Red Bull Salzburg,FC Admira Wacker,5,0,austrian-bl,Austria,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-03,Fulham,Everton,2,2,premier-league,England,football_data,1,0,8,26,5,15,5,9,16,9,3,1,0,0,,,2.7500,3.4000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7268,8 +7268,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-04,Panionios,PAOK FC,1,2,greek-super,Greece,football_data,0,2,,,,,,,,,,,,,,,3.6000,3.0000,2.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-04,Pescara,Parma Calcio,2,0,serie-a,Italy,football_data,0,0,9,19,3,5,7,7,15,15,2,3,0,0,,,3.4000,3.1000,2.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-04,Queens Park Rangers,Reading,1,1,premier-league,England,football_data,0,1,23,18,12,8,8,8,11,15,0,2,0,0,,,1.8000,3.6000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-11-04,Real Sociedad,Espanyol Barcelona,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-04,Real Sociedad,Espanol,0,1,la-liga,Spain,football_data,0,0,16,8,8,2,11,7,16,23,1,6,0,0,,,1.8300,3.5000,4.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-11-04,Real Sociedad,Espanyol Barcelona,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-04,Recreativo,UD Almeria,0,2,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-04,SC Heerenveen,Zwolle,2,1,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.5000,4.2000,6.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-04,SD Huesca,Real Madrid Castilla,2,2,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -7283,8 +7283,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-04,UC Sampdoria,Atalanta BC,1,2,serie-a,Italy,football_data,0,1,15,15,5,3,6,2,17,19,3,3,0,0,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-04,UD Las Palmas,Ponferradina,1,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.0500,3.2500,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-04,UD Las Palmas,SD Ponferradina,1,0,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2012-11-04,VfL Bochum,Energie Cottbus,2,2,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-04,VfL Bochum,Cottbus,2,2,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.5000,3.4000,2.7000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-11-04,VfL Bochum,Energie Cottbus,2,2,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-04,VfR Aalen,1. FC Köln,2,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-04,Werder Bremen,FSV Mainz 05,2,1,bundesliga,Germany,football_data,1,0,17,13,4,4,5,4,11,14,1,3,0,0,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-04,Xanthi,Levadeiakos,1,0,greek-super,Greece,football_data,0,0,,,,,,,,,,,,,,,2.4000,3.1000,3.1000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -7350,8 +7350,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-09,Demir Grup Sivasspor,Eskisehirspor,1,0,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,2.5500,3.3000,2.7000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-09,Dijon FCO,Nimes,2,1,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-09,EA Guingamp,Tours,0,0,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.4000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-11-09,Erzgebirge Aue,Braunschweig,1,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,3.8000,3.3000,2.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-09,Erzgebirge Aue,Eintracht Braunschweig,1,1,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-11-09,Erzgebirge Aue,Braunschweig,1,1,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,3.8000,3.3000,2.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-09,FC Koln,Duisburg,0,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-09,FC Nantes,Chateauroux,1,1,ligue2,France,football_data,1,1,,,,,,,,,,,,,,,1.7500,3.4000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-09,FSV Mainz 05,1. FC Nurnberg,2,1,bundesliga,Germany,football_data,2,1,12,10,2,3,3,6,17,21,5,5,0,0,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7416,8 +7416,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-10,Fortuna Dusseldorf,TSG Hoffenheim,1,1,bundesliga,Germany,football_data,1,1,11,4,3,1,6,1,17,18,1,1,0,1,,,2.7500,3.3000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-10,Fortuna Düsseldorf,1899 Hoffenheim,1,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-10,Giannina,Xanthi,1,0,greek-super,Greece,football_data,1,0,,,,,,,,,,,,,,,2.1000,3.1000,3.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-11-10,Girona FC,Santander,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.7500,3.4000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-10,Girona FC,Racing Santander,1,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-11-10,Girona FC,Santander,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.7500,3.4000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-10,Guadalajara,Sp Gijon,2,1,la-liga-2,Spain,football_data,2,1,,,,,,,,,,,,,,,3.1000,3.1000,2.3800,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-10,Inverness C,Heart of Midlothian,1,1,scottish-prem,Scotland,football_data,1,0,7,15,5,9,4,5,10,9,1,2,0,0,,,2.6000,3.2000,2.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-10,Ipswich Town,Burnley,2,1,championship,England,football_data,0,0,9,10,7,4,2,1,17,10,1,2,0,0,,,2.5000,3.4000,2.7000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -7453,8 +7453,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-10,Rangers FC,Peterhead,2,0,scottish-div3,Scotland,football_data,1,0,,,,,,,,,,,,,,,1.1700,6.5000,12.0000,,,,,,,,,,,,,,,,49,4,0,0,,0
 2012-11-10,Rayo Vallecano,RC Celta,3,2,la-liga,Spain,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-10,Reading,Norwich City,0,0,premier-league,England,football_data,0,0,7,10,3,3,10,3,9,16,0,1,0,0,,,2.2500,3.4000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-11-10,Real Zaragoza,La Coruna,5,3,la-liga,Spain,football_data,1,2,23,12,9,5,7,6,19,12,4,3,0,1,,,2.0500,3.2500,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-10,Real Zaragoza,Deportivo La Coruña,5,3,la-liga,Spain,openfootball,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-11-10,Real Zaragoza,La Coruna,5,3,la-liga,Spain,football_data,1,2,23,12,9,5,7,6,19,12,4,3,0,1,,,2.0500,3.2500,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-10,SC Freiburg,Hamburger SV,0,0,bundesliga,Germany,football_data,0,0,16,9,3,4,9,3,19,20,2,3,0,1,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-10,SC Paderborn 07,Kaiserslautern,1,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,2.8000,3.4000,2.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-10,SC Paderborn 07,1. FC Kaiserslautern,1,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -7664,8 +7664,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-17,Burnley,Charlton Athletic,0,1,championship,England,football_data,0,0,12,10,4,5,8,7,8,15,0,1,1,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-11-17,Burton,Dag and Red,3,2,league-two,England,football_data,0,1,14,14,8,8,6,9,9,9,1,2,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-11-17,Buyuksehyr,Elazigspor,1,1,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-11-17,CA Osasuna,Malaga CF,0,0,la-liga,Spain,football_data,0,0,19,14,8,3,12,4,17,13,4,1,0,0,,,3.0000,3.2000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-17,CA Osasuna,Málaga CF,0,0,la-liga,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
+2012-11-17,CA Osasuna,Malaga CF,0,0,la-liga,Spain,football_data,0,0,19,14,8,3,12,4,17,13,4,1,0,0,,,3.0000,3.2000,2.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-17,CD Lugo,Girona FC,1,2,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-17,Cardiff City,Middlesbrough,1,0,championship,England,football_data,1,0,6,19,2,10,3,7,12,8,1,2,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-11-17,Carlisle,Leyton Orient,1,4,league-one,England,football_data,1,4,12,8,5,5,5,4,11,15,1,1,0,0,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -7787,8 +7787,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-18,Feyenoord,Willem II,3,0,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.1800,7.0000,13.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-18,Fulham,Sunderland,1,3,premier-league,England,football_data,0,0,18,12,13,9,4,4,9,13,1,3,1,0,,,1.6700,3.7500,5.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-18,Getafe CF,Real Valladolid,2,1,la-liga,Spain,football_data,0,1,19,13,8,3,5,3,12,16,2,0,0,0,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-11-18,Granada CF,Atlético Madrid,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-18,Granada CF,Ath Madrid,0,1,la-liga,Spain,football_data,0,0,13,12,2,6,4,9,14,11,3,3,0,1,,,4.5000,3.7500,1.7300,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-11-18,Granada CF,Atlético Madrid,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-18,Guyana,French Guiana,4,3,international,Grenada,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup qualification,1
 2012-11-18,Heracles Almelo,Roda,5,1,eredivisie,Netherlands,football_data,2,1,,,,,,,,,,,,,,,1.5000,3.9000,7.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-18,Huesca,Guadalajara,2,1,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -7826,8 +7826,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-18,Yukatel Kayserispor,Gaziantepspor,1,1,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-19,AS Roma,Torino FC,2,0,serie-a,Italy,football_data,0,0,25,8,9,4,9,4,8,17,3,4,0,0,,,1.6000,4.2000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-19,Asteras Tripolis,Atromitos FC,3,0,greek-super,Greece,football_data,2,0,,,,,,,,,,,,,,,2.1000,3.1000,3.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-11-19,Hertha Berlin,St Pauli,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.6700,3.9000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-19,Hertha Berlin,FC St. Pauli,1,0,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-11-19,Hertha Berlin,St Pauli,1,0,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.6700,3.9000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-19,Orduspor,Trabzonspor,1,2,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,2.9000,3.1000,2.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-19,Real Sociedad,Vallecano,4,0,la-liga,Spain,football_data,2,0,26,9,10,2,12,5,8,16,1,3,0,0,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-19,Real Sociedad,Rayo Vallecano,4,0,la-liga,Spain,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -7856,8 +7856,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-20,Preston North End,Notts County,0,0,league-one,England,football_data,0,0,18,6,8,2,7,4,22,14,1,3,0,1,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-11-20,Rotherham United,Wycombe Wanderers,2,3,league-two,England,football_data,2,1,9,11,4,7,6,4,15,11,1,3,0,0,,,1.5000,4.1000,6.5000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-11-20,Scunthorpe,Bury,1,2,league-one,England,football_data,0,1,11,16,8,8,10,5,14,11,0,0,0,0,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2012-11-20,Sheffield United,Crewe Alexandra,3,3,league-one,England,openfootball,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-20,Sheffield United,Crewe,3,3,league-one,England,football_data,2,2,18,15,9,7,7,11,8,11,0,0,0,0,,,1.5500,4.0000,6.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2012-11-20,Sheffield United,Crewe Alexandra,3,3,league-one,England,openfootball,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-20,Shrewsbury Town,Milton Keynes Dons,2,2,league-one,England,football_data,0,1,8,10,6,7,3,4,8,8,0,2,0,0,,,3.8000,3.3000,2.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-11-20,Swindon Town,Brentford,0,1,league-one,England,football_data,0,0,10,4,2,1,9,4,13,9,1,2,0,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-11-20,Tranmere,Walsall,0,0,league-one,England,football_data,0,0,8,9,2,2,4,7,5,4,1,1,0,0,,,1.7500,3.7500,4.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -7881,8 +7881,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-23,Queens Park,Stirling,2,1,scottish-div3,Scotland,football_data,0,0,,,,,,,,,,,,,,,1.5300,4.3300,5.5000,,,,,,,,,,,,,,,,49,4,0,0,,0
 2012-11-23,Real Sociedad,CA Osasuna,0,0,la-liga,Spain,football_data,0,0,13,19,3,5,9,4,10,16,3,4,0,0,,,1.8500,3.5000,4.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-23,Regensburg,Aalen,1,3,bundesliga-2,Germany,football_data,1,0,,,,,,,,,,,,,,,2.5000,3.2500,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-11-23,SC Paderborn 07,Dynamo Dresden,2,2,bundesliga-2,Germany,openfootball,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-23,SC Paderborn 07,Dresden,2,2,bundesliga-2,Germany,football_data,2,2,,,,,,,,,,,,,,,1.7500,3.7500,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-11-23,SC Paderborn 07,Dynamo Dresden,2,2,bundesliga-2,Germany,openfootball,2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-23,Sedan,Le Havre AC,1,2,ligue2,France,football_data,0,2,,,,,,,,,,,,,,,2.2500,3.1000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-23,Stade Malherbe Caen,SCO Angers,1,0,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,1.9100,3.2500,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-23,Standard Liege,Lierse,3,0,belgian-pro,Belgium,football_data,3,0,,,,,,,,,,,,,,,1.3600,4.7500,8.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -7982,8 +7982,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-24,SL Benfica,Olhanense,2,0,primeira-liga,Portugal,football_data,1,0,,,,,,,,,,,,,,,1.1700,7.0000,15.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-24,SV Ried,FC Red Bull Salzburg,3,1,austrian-bl,Austria,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-24,Sabadell,Mirandes,1,1,la-liga-2,Spain,football_data,1,1,,,,,,,,,,,,,,,1.9100,3.2500,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-11-24,Schalke 04,Eintracht Frankfurt,1,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-24,Schalke 04,Ein Frankfurt,1,1,bundesliga,Germany,football_data,1,1,18,11,4,2,9,1,12,13,1,1,0,1,,,1.5000,4.3300,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-11-24,Schalke 04,Eintracht Frankfurt,1,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-24,Sheffield Wednesday,Leicester City,0,2,championship,England,football_data,0,1,6,14,5,10,3,7,7,12,2,2,0,0,,,3.3000,3.5000,2.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-11-24,Sochaux,OGC Nice,0,1,ligue1,France,football_data,0,1,6,17,1,4,4,4,16,17,1,2,0,0,,,2.3800,3.1000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-24,Southend,Rochdale,3,1,league-two,England,football_data,0,0,10,17,6,11,4,11,12,10,1,2,0,0,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,3,0,0,,0
@@ -7998,8 +7998,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-24,Sunderland,West Bromwich Albion,2,4,premier-league,England,football_data,0,2,19,11,12,6,7,2,12,15,2,3,0,0,,,2.5000,3.3000,2.8800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-24,Ternana,Virtus Lanciano,2,2,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-24,Thailand,Philippines,2,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFF Championship,0
-2012-11-24,UD Las Palmas,Cordoba,3,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.0000,3.3000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-24,UD Las Palmas,Córdoba CF,3,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-11-24,UD Las Palmas,Cordoba,3,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.0000,3.3000,3.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-24,US Sassuolo,Reggina,3,1,serie-b,Italy,football_data,2,1,,,,,,,,,,,,,,,1.6700,3.5000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-24,Uganda,Kenya,1,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
 2012-11-24,Union Berlin,TSV 1860 München,2,2,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
@@ -8026,8 +8026,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-25,Asteras Tripolis,Panionios,2,1,greek-super,Greece,football_data,2,0,,,,,,,,,,,,,,,1.8000,3.2500,5.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-11-25,Atalanta BC,Genoa CFC,0,1,serie-a,Italy,football_data,0,1,16,6,6,2,9,2,8,15,1,2,0,1,,,1.8000,3.4000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-25,Ath Madrid,Sevilla FC,4,0,la-liga,Spain,football_data,3,0,18,2,7,2,7,0,13,12,2,2,0,3,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-11-25,Athletic Bilbao,La Coruna,1,1,la-liga,Spain,football_data,1,0,26,9,6,5,13,4,16,8,4,3,0,0,,,1.6700,3.8000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-25,Athletic Bilbao,Deportivo La Coruña,1,1,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-11-25,Athletic Bilbao,La Coruna,1,1,la-liga,Spain,football_data,1,0,26,9,6,5,13,4,16,8,4,3,0,0,,,1.6700,3.8000,5.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-25,Atlético Madrid,Sevilla FC,4,0,la-liga,Spain,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-25,Barcelona B,Santander,4,1,la-liga-2,Spain,football_data,3,0,,,,,,,,,,,,,,,1.6200,4.1000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-25,Bari,Modena,2,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -8126,8 +8126,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-27,TSV 1860 München,SC Paderborn 07,1,0,bundesliga-2,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-11-27,Thailand,Myanmar,4,0,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,AFF Championship,0
 2012-11-27,Uganda,Ethiopia,1,0,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
-2012-11-27,VfL Bochum,Frankfurt FSV,1,3,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-27,VfL Bochum,FSV Frankfurt,1,3,bundesliga-2,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-11-27,VfL Bochum,Frankfurt FSV,1,3,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-27,Vietnam,Philippines,0,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,AFF Championship,1
 2012-11-27,Wolfsberger AC,SK Sturm Graz,1,1,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-11-27,Wolverhampton Wanderers,Millwall,0,1,championship,England,football_data,0,0,8,12,2,8,7,7,11,10,0,0,0,0,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -8162,8 +8162,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-11-28,VfB Stuttgart,FC Augsburg,2,1,bundesliga,Germany,football_data,1,1,10,16,3,8,1,5,14,17,1,1,0,0,,,1.6000,4.0000,5.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-28,Werder Bremen,Bayer Leverkusen,1,4,bundesliga,Germany,football_data,0,1,17,9,5,5,9,3,20,15,3,1,0,0,,,2.6000,3.5000,2.5500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-11-28,Wigan Athletic,Manchester City,0,2,premier-league,England,football_data,0,0,9,15,4,6,6,6,13,12,1,1,0,0,,,6.0000,4.2000,1.5300,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-11-29,Hertha Berlin,FC Koln,1,1,bundesliga-2,Germany,football_data,1,1,,,,,,,,,,,,,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-29,Hertha Berlin,1. FC Köln,1,1,bundesliga-2,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-11-29,Hertha Berlin,FC Koln,1,1,bundesliga-2,Germany,football_data,1,1,,,,,,,,,,,,,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-11-29,Malawi,Eritrea,3,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
 2012-11-29,Palestine,Bahrain,0,2,international,Qatar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
 2012-11-29,Rwanda,Zanzibar,1,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
@@ -8213,8 +8213,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-01,Dijon FCO,Stade Malherbe Caen,1,0,ligue2,France,football_data,0,0,,,,,,,,,,,,,,,2.7500,3.0000,2.7000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-01,Empoli FC,Spezia Calcio,2,2,serie-b,Italy,football_data,1,2,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-01,Eritrea,Rwanda,0,2,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CECAFA Cup,1
-2012-12-01,Erzgebirge Aue,Sandhausen,2,2,bundesliga-2,Germany,football_data,1,1,,,,,,,,,,,,,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-01,Erzgebirge Aue,SV Sandhausen,2,2,bundesliga-2,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-12-01,Erzgebirge Aue,Sandhausen,2,2,bundesliga-2,Germany,football_data,1,1,,,,,,,,,,,,,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-01,Evian Thonon Gaillard,Nancy,1,1,ligue1,France,football_data,1,0,10,16,4,5,5,5,11,17,2,3,0,0,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-01,FC Augsburg,SC Freiburg,1,1,bundesliga,Germany,football_data,1,1,14,10,4,3,2,2,20,16,3,4,0,0,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-01,FC Barcelona,Athletic Bilbao,5,1,la-liga,Spain,football_data,3,0,19,6,10,2,3,1,7,10,1,3,0,0,,,1.0900,10.0000,21.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -8224,8 +8224,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-01,FSV Mainz 05,Hannover 96,2,1,bundesliga,Germany,football_data,1,1,13,14,3,3,4,6,13,17,2,3,1,0,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-01,Feyenoord,Waalwijk,2,0,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.4000,4.5000,7.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-12-01,Fulham,Tottenham Hotspur,0,3,premier-league,England,football_data,0,0,8,10,2,6,2,1,10,8,0,2,0,0,,,2.8800,3.3000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-12-01,Getafe CF,Malaga CF,1,0,la-liga,Spain,football_data,0,0,13,8,3,5,5,5,15,11,1,4,1,0,,,2.6000,3.2500,2.7000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-01,Getafe CF,Málaga CF,1,0,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-12-01,Getafe CF,Malaga CF,1,0,la-liga,Spain,football_data,0,0,13,8,3,5,5,5,15,11,1,4,1,0,,,2.6000,3.2500,2.7000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-01,Hong Kong,Guam,2,1,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,EAFF Championship,0
 2012-12-01,Huddersfield Town,Leeds United,2,4,championship,England,football_data,2,2,7,11,3,7,4,4,10,8,1,1,0,0,,,2.3800,3.4000,2.8800,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-12-01,Juve Stabia,Cittadella,1,1,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -8254,8 +8254,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-01,Queens Park Rangers,Aston Villa,1,1,premier-league,England,football_data,1,1,17,7,12,3,11,4,5,6,1,2,0,0,,,1.9500,3.5000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-01,RSC Anderlecht,Cercle Brugge KSV,2,1,belgian-pro,Belgium,football_data,0,1,,,,,,,,,,,,,,,1.2900,6.0000,8.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-12-01,Reading,Manchester United,3,4,premier-league,England,football_data,3,4,10,10,7,5,6,1,10,12,1,1,0,0,,,7.5000,4.7500,1.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-12-01,Real Madrid,Ath Madrid,2,0,la-liga,Spain,football_data,1,0,13,4,6,2,3,4,19,23,1,5,0,0,,,1.4400,4.5000,6.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-01,Real Madrid,Atlético Madrid,2,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-12-01,Real Madrid,Ath Madrid,2,0,la-liga,Spain,football_data,1,0,13,4,6,2,3,4,19,23,1,5,0,0,,,1.4400,4.5000,6.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-01,Rochdale,York,2,3,league-two,England,football_data,0,3,13,7,4,4,4,6,12,13,2,1,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2012-12-01,SK Rapid Wien,SV Ried,4,3,austrian-bl,Austria,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-12-01,SK Sturm Graz,1. Wiener Neustädter SC,3,1,austrian-bl,Austria,openfootball,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -8310,8 +8310,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-02,FSV Frankfurt,Eintracht Braunschweig,1,2,bundesliga-2,Germany,openfootball,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-12-02,Frankfurt FSV,Braunschweig,1,2,bundesliga-2,Germany,football_data,0,2,,,,,,,,,,,,,,,3.2000,3.3000,2.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-02,Genoa CFC,Chievo Verona,2,4,serie-a,Italy,football_data,1,3,16,11,3,7,8,2,17,17,4,4,0,1,,,2.1000,3.2500,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-12-02,Granada CF,Espanyol Barcelona,0,0,la-liga,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-12-02,Granada CF,Espanol,0,0,la-liga,Spain,football_data,0,0,24,12,7,2,11,2,14,22,0,4,0,0,,,2.0500,3.4000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-12-02,Granada CF,Espanyol Barcelona,0,0,la-liga,Spain,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2012-12-02,Huesca,Hercules,1,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.3000,3.1000,3.2500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-02,Inter Milan,Palermo,1,0,serie-a,Italy,football_data,0,0,16,8,4,1,7,1,11,17,2,3,0,0,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-02,La Coruna,Real Betis,2,3,la-liga,Spain,football_data,0,1,17,12,7,7,12,5,9,16,3,5,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -8329,8 +8329,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-02,Recreativo,Ponferradina,0,2,la-liga-2,Spain,football_data,0,1,,,,,,,,,,,,,,,2.0000,3.2000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-02,Recreativo Huelva,SD Ponferradina,0,2,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-12-02,SBV Vitesse,Roda,3,0,eredivisie,Netherlands,football_data,2,0,,,,,,,,,,,,,,,1.2200,6.5000,11.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2012-12-02,SC Paderborn 07,Duisburg,0,2,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.7000,3.6000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-02,SC Paderborn 07,MSV Duisburg,0,2,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-12-02,SC Paderborn 07,Duisburg,0,2,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,1.7000,3.6000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-02,SD Huesca,Hércules CF,1,1,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-12-02,SS Lazio,Parma Calcio,2,1,serie-a,Italy,football_data,2,0,6,14,3,4,3,7,13,11,3,0,0,0,,,1.7300,3.6000,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-02,SSC Napoli,Pescara,5,1,serie-a,Italy,football_data,2,1,28,5,11,1,7,5,12,15,2,2,0,1,,,1.2000,6.0000,15.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -8495,8 +8495,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-08,Tranmere,Portsmouth,2,2,league-one,England,football_data,1,0,15,9,7,4,5,3,9,14,0,3,0,0,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-12-08,UD Almeria,Lugo,0,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,1.5000,4.0000,7.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-08,UD Almería,CD Lugo,0,1,la-liga-2,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2012-12-08,UD Las Palmas,Huesca,4,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.7000,3.6000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-08,UD Las Palmas,SD Huesca,4,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2012-12-08,UD Las Palmas,Huesca,4,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.7000,3.6000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-08,Uganda,Kenya,2,1,international,Uganda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CECAFA Cup,0
 2012-12-08,VfB Stuttgart,Schalke 04,3,1,bundesliga,Germany,football_data,2,1,13,13,7,3,4,8,24,17,4,1,1,1,,,3.1000,3.4000,2.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-08,Vicenza,Livorno,3,3,serie-b,Italy,football_data,2,1,,,,,,,,,,,,,,,3.4000,3.0000,2.3000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -8511,8 +8511,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-09,Antigua and Barbuda,Trinidad and Tobago,2,0,international,Antigua and Barbuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,CFU Caribbean Cup,0
 2012-12-09,Asteras Tripolis,Aris FC,1,1,greek-super,Greece,football_data,0,1,,,,,,,,,,,,,,,1.5700,3.5000,7.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-12-09,Ath Madrid,La Coruna,6,0,la-liga,Spain,football_data,3,0,14,9,9,1,5,7,8,11,0,2,0,0,,,1.2900,5.5000,10.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-12-09,Athletic Bilbao,RC Celta,1,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-12-09,Athletic Bilbao,Celta de Vigo,1,0,la-liga,Spain,football_data,1,0,10,11,2,1,7,6,16,20,3,3,0,0,,,1.8300,3.7500,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-12-09,Athletic Bilbao,RC Celta,1,0,la-liga,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-12-09,Atlético Madrid,Deportivo La Coruña,6,0,la-liga,Spain,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-12-09,Australia,Taiwan,8,0,international,Hong Kong,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,EAFF Championship,1
 2012-12-09,Bahrain,Yemen,1,0,international,Kuwait,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,WAFF Championship,1
@@ -8788,8 +8788,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-16,Cuba,Trinidad and Tobago,1,0,international,Antigua and Barbuda,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,CFU Caribbean Cup,1
 2012-12-16,Duisburg,Regensburg,4,2,bundesliga-2,Germany,football_data,0,2,,,,,,,,,,,,,,,1.8300,3.5000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-16,Elche,UD Almeria,1,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.2000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2012-12-16,FC Barcelona,Ath Madrid,4,1,la-liga,Spain,football_data,2,1,11,8,6,1,9,5,15,16,1,1,0,0,,,1.2500,6.0000,10.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-16,FC Barcelona,Atlético Madrid,4,1,la-liga,Spain,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-12-16,FC Barcelona,Ath Madrid,4,1,la-liga,Spain,football_data,2,1,11,8,6,1,9,5,15,16,1,1,0,0,,,1.2500,6.0000,10.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-16,FC Utrecht,SC Heerenveen,3,1,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,1.8300,3.5000,4.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-12-16,FK Austria Wien,SK Sturm Graz,3,1,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-12-16,Feyenoord,Den Haag,3,2,eredivisie,Netherlands,football_data,2,1,,,,,,,,,,,,,,,1.3300,5.0000,9.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8811,8 +8811,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-16,Parma Calcio,Cagliari Calcio,4,1,serie-a,Italy,football_data,1,1,14,6,8,5,3,6,15,15,4,6,0,0,,,2.0000,3.2000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-16,RSC Anderlecht,Oud-Heverlee Leuven,2,1,belgian-pro,Belgium,football_data,1,1,,,,,,,,,,,,,,,1.2200,6.0000,13.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-12-16,Racing Santander,CE Sabadell,0,1,la-liga-2,Spain,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
-2012-12-16,Real Madrid,Espanol,2,2,la-liga,Spain,football_data,1,1,29,12,10,3,11,7,10,14,2,4,0,0,,,1.1000,10.0000,17.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-16,Real Madrid,Espanyol Barcelona,2,2,la-liga,Spain,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2012-12-16,Real Madrid,Espanol,2,2,la-liga,Spain,football_data,1,1,29,12,10,3,11,7,10,14,2,4,0,0,,,1.1000,10.0000,17.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-16,Real Zaragoza,Levante UD,0,1,la-liga,Spain,football_data,0,1,12,10,2,3,2,3,15,22,4,4,0,1,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-16,Recreativo,UD Las Palmas,0,0,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.1000,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-16,SBV Vitesse,Waalwijk,2,2,eredivisie,Netherlands,football_data,1,0,,,,,,,,,,,,,,,1.5000,4.2000,6.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8825,8 +8825,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-16,TSG Hoffenheim,Borussia Dortmund,1,3,bundesliga,Germany,football_data,1,1,9,17,1,9,1,4,19,18,1,0,0,0,,,7.0000,4.3300,1.4400,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-16,TSV 1860 München,Dynamo Dresden,1,1,bundesliga-2,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-12-16,Tottenham Hotspur,Swansea City,1,0,premier-league,England,football_data,0,0,24,4,16,0,9,3,12,8,2,3,0,0,,,1.6200,4.0000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-12-16,Valencia CF,Rayo Vallecano,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-12-16,Valencia CF,Vallecano,0,1,la-liga,Spain,football_data,0,0,8,8,2,2,4,4,17,18,2,5,0,0,,,1.4400,4.3300,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2012-12-16,Valencia CF,Rayo Vallecano,0,1,la-liga,Spain,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2012-12-16,Veria,Panathinaikos FC,3,0,greek-super,Greece,football_data,2,0,,,,,,,,,,,,,,,5.5000,3.2500,1.7300,,,,,,,,,,,,,,,,49,1,0,0,,0
 2012-12-16,VfL Bochum,SC Paderborn 07,4,0,bundesliga-2,Germany,football_data,2,0,,,,,,,,,,,,,,,2.4000,3.3000,2.9000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2012-12-16,Waregem,KRC Genk,3,2,belgian-pro,Belgium,football_data,1,1,,,,,,,,,,,,,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8969,8 +8969,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2012-12-22,Torino FC,Chievo Verona,2,0,serie-a,Italy,football_data,2,0,8,4,2,1,2,3,11,11,4,2,0,0,,,2.0000,3.3000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-22,Tottenham Hotspur,Stoke City,0,0,premier-league,England,football_data,0,0,21,4,14,2,11,4,8,11,2,5,0,0,,,1.6200,3.7500,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2012-12-22,UC Sampdoria,SS Lazio,0,1,serie-a,Italy,football_data,0,1,11,9,2,1,7,3,12,22,2,3,0,0,,,3.2500,3.2500,2.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
-2012-12-22,UD Las Palmas,CD Mirandés,2,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-12-22,UD Las Palmas,Mirandes,2,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.7000,3.6000,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
+2012-12-22,UD Las Palmas,CD Mirandés,2,0,la-liga-2,Spain,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2012-12-22,Walsall,Colchester,1,0,league-one,England,football_data,0,0,15,8,8,1,13,2,5,13,0,3,0,0,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-12-22,Watford,Nottingham Forest,2,0,championship,England,football_data,2,0,19,7,11,5,7,5,9,10,3,4,0,1,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2012-12-22,West Bromwich Albion,Norwich City,2,1,premier-league,England,football_data,1,1,12,10,8,4,6,5,14,9,1,1,0,0,,,1.9100,3.6000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0

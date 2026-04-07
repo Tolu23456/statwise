@@ -3619,8 +3619,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-05-06,Sedan,FC Metz,3,1,ligue2,France,football_data,2,1,,,,,,,,,,,,,,,1.9500,3.2500,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-05-07,1. FC Nurnberg,TSG Hoffenheim,1,2,bundesliga,Germany,football_data,1,1,11,15,5,4,9,4,15,20,0,2,0,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-05-07,AJ Auxerre,Montpellier HSC,1,0,ligue1,France,football_data,0,0,11,10,1,1,6,2,20,14,2,3,0,0,,,2.2000,3.0000,3.6000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2011-05-07,AS Monaco,Paris Saint-Germain,1,1,ligue1,France,football_data,1,0,8,19,4,6,2,9,18,24,1,2,0,0,,,3.2500,3.0000,2.3800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-05-07,AS Monaco,Vatican City,2,1,international,Italy,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Friendly,1
+2011-05-07,AS Monaco,Paris Saint-Germain,1,1,ligue1,France,football_data,1,0,8,19,4,6,2,9,18,24,1,2,0,0,,,3.2500,3.0000,2.3800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-05-07,AS Roma,AC Milan,0,0,serie-a,Italy,football_data,0,0,6,8,2,1,5,6,17,15,1,3,0,0,,,2.5000,3.2000,2.8800,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-05-07,Aberdeen FC,St Johnstone FC,0,2,scottish-prem,Scotland,football_data,0,1,2,7,1,3,3,6,8,2,1,0,0,0,,,2.2000,3.3000,3.2500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-05-07,Airdrie Utd,East Fife,2,2,scottish-div2,Scotland,football_data,1,1,,,,,,,,,,,,,,,2.8000,3.5000,2.2000,,,,,,,,,,,,,,,,49,3,0,0,,0
@@ -4275,8 +4275,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-07-02,Turks and Caicos Islands,Bahamas,0,4,world-cup,Turks and Caicos Islands,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
 2011-07-02,United States,Colombia,3,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,2011 FIFA Women's World Cup,1
 2011-07-03,Australia,Equatorial Guinea,3,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,2011 FIFA Women's World Cup,1
-2011-07-03,Brazil,Norway,3,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,2011 FIFA Women's World Cup,1
 2011-07-03,Brazil,Venezuela,0,0,international,Argentina,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Copa América,1
+2011-07-03,Brazil,Norway,3,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,2011 FIFA Women's World Cup,1
 2011-07-03,Laos,Cambodia,6,2,world-cup,Laos,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
 2011-07-03,Macau,Vietnam,1,7,world-cup,Macau,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
 2011-07-03,Myanmar,Mongolia,2,0,world-cup,Myanmar,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup qualification,0
@@ -4497,8 +4497,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-08-06,Forfar,Cowdenbeath,2,2,scottish-div2,Scotland,football_data,0,1,,,,,,,,,,,,,,,2.0000,3.7500,3.4000,,,,,,,,,,,,,,,,49,3,0,0,,0
 2011-08-06,Germinal,KAA Gent,2,2,belgian-pro,Belgium,football_data,1,2,,,,,,,,,,,,,,,3.3000,3.4000,2.1500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-08-06,Gillingham,Cheltenham,1,0,league-two,England,football_data,1,0,11,13,7,4,5,6,15,14,3,2,1,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2011-08-06,Hannover 96,1899 Hoffenheim,2,1,bundesliga,Germany,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-08-06,Hannover 96,TSG Hoffenheim,2,1,bundesliga,Germany,football_data,2,1,7,12,4,5,4,5,14,20,2,2,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2011-08-06,Hannover 96,1899 Hoffenheim,2,1,bundesliga,Germany,openfootball,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-08-06,Hertha Berlin,1. FC Nurnberg,0,1,bundesliga,Germany,football_data,0,0,4,13,0,7,2,3,25,27,2,3,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-06,Huddersfield Town,Bury,1,1,league-one,England,football_data,0,0,7,11,5,5,5,1,14,8,1,2,0,0,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-08-06,Lierse,KRC Genk,0,0,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,4.3300,3.5000,1.8300,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -4545,8 +4545,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-08-06,Waalwijk,Heracles Almelo,2,2,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,3.2000,3.4000,2.2000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-08-06,Walsall,Leyton Orient,1,0,league-one,England,football_data,1,0,9,8,4,3,4,6,11,7,3,1,0,0,,,2.5000,3.2500,2.8000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-08-06,Waregem,Oud-Heverlee Leuven,2,1,belgian-pro,Belgium,football_data,2,0,,,,,,,,,,,,,,,1.7300,3.5000,5.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2011-08-06,Werder Bremen,1. FC Kaiserslautern,2,0,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-08-06,Werder Bremen,Kaiserslautern,2,0,bundesliga,Germany,football_data,0,0,19,9,5,3,6,5,14,27,1,2,0,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
+2011-08-06,Werder Bremen,1. FC Kaiserslautern,2,0,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-08-06,Wycombe Wanderers,Scunthorpe,1,1,league-one,England,football_data,1,1,5,15,1,11,8,2,9,18,1,1,1,0,,,2.5000,3.3000,2.8000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-08-07,AZ Alkmaar,PSV Eindhoven,3,1,eredivisie,Netherlands,football_data,2,1,,,,,,,,,,,,,,,2.7500,3.3000,2.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-08-07,Aberdeen FC,Celtic FC,0,1,scottish-prem,Scotland,football_data,0,0,6,25,3,13,5,5,11,9,2,1,0,0,,,9.0000,5.0000,1.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -4713,8 +4713,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-08-13,SC Freiburg,FSV Mainz 05,1,2,bundesliga,Germany,football_data,0,0,18,9,7,4,4,6,11,18,0,2,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-13,SC Paderborn 07,SpVgg Greuther Furth,0,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,3.2500,3.3000,2.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-08-13,SK Sturm Graz,SK Rapid Wien,1,0,austrian-bl,Austria,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2011-08-13,Schalke 04,FC Koln,5,1,bundesliga,Germany,football_data,1,1,18,6,5,2,7,2,17,16,0,3,0,0,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-13,Schalke 04,1. FC Köln,5,1,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2011-08-13,Schalke 04,FC Koln,5,1,bundesliga,Germany,football_data,1,1,18,6,5,2,7,2,17,16,0,3,0,0,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-13,Scunthorpe,Preston North End,1,1,league-one,England,football_data,0,1,17,12,8,5,9,8,6,12,0,3,0,0,,,2.4000,3.3000,2.8800,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-08-13,Seychelles,Mauritius,1,1,international,Seychelles,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Indian Ocean Island Games,0
 2011-08-13,Sheffield United,Brentford,2,0,league-one,England,football_data,0,0,8,8,2,1,6,2,7,10,1,2,0,0,,,2.1000,3.2500,3.6000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -4853,8 +4853,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-08-20,Elgin,Queens Park,2,0,scottish-div3,Scotland,football_data,2,0,,,,,,,,,,,,,,,2.6000,3.6000,2.5000,,,,,,,,,,,,,,,,49,4,0,0,,0
 2011-08-20,Everton,Queens Park Rangers,0,1,premier-league,England,football_data,0,1,14,4,7,3,2,1,12,9,1,1,0,0,,,1.5300,3.8000,7.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-20,Excelsior,Graafschap,1,1,eredivisie,Netherlands,football_data,0,1,,,,,,,,,,,,,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2011-08-20,FC Augsburg,TSG Hoffenheim,0,2,bundesliga,Germany,football_data,0,1,12,17,4,5,4,2,18,18,1,1,0,0,,,2.8000,3.3000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-20,FC Augsburg,1899 Hoffenheim,0,2,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2011-08-20,FC Augsburg,TSG Hoffenheim,0,2,bundesliga,Germany,football_data,0,1,12,17,4,5,4,2,18,18,1,1,0,0,,,2.8000,3.3000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-20,FC Girondins de Bordeaux,AJ Auxerre,1,1,ligue1,France,football_data,1,0,16,8,4,2,10,1,14,16,1,3,0,0,,,1.8300,3.2500,4.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-20,FC Koln,Kaiserslautern,1,1,bundesliga,Germany,football_data,1,1,10,8,5,3,7,5,16,22,3,4,0,0,,,2.3000,3.3000,3.1000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-20,FC Wacker Innsbruck,FC Trenkwalder Admira,2,2,austrian-bl,Austria,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -5027,8 +5027,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-08-27,Granada CF,Real Betis,0,1,la-liga,Spain,football_data,0,0,11,18,2,3,8,5,12,16,2,2,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-27,Grosseto,Gubbio,2,0,serie-b,Italy,football_data,2,0,,,,,,,,,,,,,,,1.9100,3.2000,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-08-27,Guadalajara,UD Las Palmas,1,1,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,2.4000,3.2000,3.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2011-08-27,Hamburger SV,FC Koln,3,4,bundesliga,Germany,football_data,1,1,15,7,6,5,5,4,18,21,1,3,0,0,,,1.8500,3.6000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-27,Hamburger SV,1. FC Köln,3,4,bundesliga,Germany,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2011-08-27,Hamburger SV,FC Koln,3,4,bundesliga,Germany,football_data,1,1,15,7,6,5,5,4,18,21,1,3,0,0,,,1.8500,3.6000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-27,Hamilton,Livingston FC,1,1,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-08-27,Hercules,Cartagena,2,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-08-27,Huddersfield Town,Wycombe Wanderers,3,0,league-one,England,football_data,0,0,8,8,3,1,5,2,7,9,0,2,0,0,,,1.5700,3.7500,6.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -5122,8 +5122,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-08-28,Real Zaragoza,Real Madrid,0,6,la-liga,Spain,football_data,0,2,8,39,1,16,7,9,16,16,2,1,0,0,,,8.5000,5.0000,1.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-28,Rio Ave FC,Olhanense,0,1,primeira-liga,Portugal,football_data,0,1,,,,,,,,,,,,,,,2.1000,3.1000,3.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-08-28,SV Ried,Kapfenberger SV 1919,1,0,austrian-bl,Austria,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
-2011-08-28,Schalke 04,Borussia Monchengladbach,1,0,bundesliga,Germany,football_data,0,0,22,12,9,5,8,6,11,13,2,3,0,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-28,Schalke 04,Bor. Mönchengladbach,1,0,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2011-08-28,Schalke 04,Borussia Monchengladbach,1,0,bundesliga,Germany,football_data,0,0,22,12,9,5,8,6,11,13,2,3,0,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-28,Sevilla FC,Malaga CF,2,1,la-liga,Spain,football_data,2,0,15,6,9,1,2,8,15,7,3,1,0,0,,,2.1000,3.4000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-28,Sochaux,AS Saint-Etienne,2,1,ligue1,France,football_data,2,1,12,7,5,1,4,5,17,16,2,3,0,1,,,2.2000,3.2000,3.4000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-08-28,Sp Lisbon,Maritimo,2,3,primeira-liga,Portugal,football_data,1,0,,,,,,,,,,,,,,,1.4400,4.0000,8.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -5559,8 +5559,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-09-13,Dag and Red,Oxford United,0,1,league-two,England,football_data,0,1,12,12,3,7,5,3,11,11,2,1,0,0,,,2.3800,3.4000,2.8800,,,,,,,,,,,,,,,,65,3,0,0,,0
 2011-09-13,Exeter City,Notts County,1,1,league-one,England,football_data,1,1,3,10,1,2,3,3,13,10,2,1,0,0,,,2.6300,3.3000,2.6000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-09-13,Hereford,Aldershot,0,2,league-two,England,football_data,0,1,6,14,5,9,3,11,12,4,1,0,0,0,,,2.9000,3.3000,2.4000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2011-09-13,Leyton Orient,Bournemouth,1,3,league-one,England,football_data,1,1,9,11,4,7,1,5,14,13,3,3,1,0,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-09-13,Leyton Orient,AFC Bournemouth,1,3,league-one,England,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2011-09-13,Leyton Orient,Bournemouth,1,3,league-one,England,football_data,1,1,9,11,4,7,1,5,14,13,3,3,1,0,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-09-13,Macclesfield,Morecambe,1,1,league-two,England,football_data,1,1,6,7,4,3,5,6,12,7,3,1,0,0,,,3.0000,3.4000,2.3000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2011-09-13,Port Vale,Bradford City,3,2,league-two,England,football_data,2,1,9,12,7,5,10,4,14,15,1,0,0,0,,,2.1000,3.2500,3.6000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2011-09-13,Rochdale,Scunthorpe,1,0,league-one,England,football_data,0,0,13,14,8,8,7,6,6,9,2,0,0,0,,,2.6000,3.3000,2.6300,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -6116,8 +6116,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-10-01,Hartlepool,Sheffield Wednesday,0,1,league-one,England,football_data,0,1,10,7,3,2,7,2,11,11,1,2,0,0,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-10-01,Hercules,Alcorcon,1,0,la-liga-2,Spain,football_data,1,0,,,,,,,,,,,,,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-10-01,Hereford,Oxford United,0,1,league-two,England,football_data,0,1,8,12,2,4,5,6,12,9,2,2,0,0,,,3.8000,3.6000,1.9100,,,,,,,,,,,,,,,,65,3,0,0,,0
-2011-10-01,Hertha Berlin,1. FC Köln,3,0,bundesliga,Germany,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-10-01,Hertha Berlin,FC Koln,3,0,bundesliga,Germany,football_data,3,0,10,4,3,2,3,5,15,19,2,2,0,0,,,1.9100,3.5000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2011-10-01,Hertha Berlin,1. FC Köln,3,0,bundesliga,Germany,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-10-01,Huesca,Cordoba,0,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.2000,3.1000,3.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-10-01,Hull City,Cardiff City,2,1,championship,England,football_data,1,0,14,10,6,6,5,7,9,6,3,0,0,0,,,2.5000,3.2000,2.8800,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-10-01,Ingolstadt,VfL Bochum,3,5,bundesliga-2,Germany,football_data,3,1,,,,,,,,,,,,,,,2.4000,3.4000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6507,8 +6507,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-10-15,Macclesfield,Oxford United,1,1,league-two,England,football_data,0,0,15,13,8,6,5,5,13,13,1,1,0,0,,,3.2500,3.3000,2.2000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2011-10-15,Manchester City,Aston Villa,4,1,premier-league,England,football_data,1,0,15,8,10,6,5,1,10,6,1,1,0,0,,,1.3300,5.0000,10.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-10-15,Middlesbrough,Millwall,1,1,championship,England,football_data,1,0,10,8,5,4,8,4,10,10,1,2,0,0,,,1.8300,3.4000,4.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
-2011-10-15,Milton Keynes Dons,Bournemouth,2,2,league-one,England,football_data,1,0,10,4,6,3,7,7,6,5,0,0,0,0,,,1.7300,3.7500,4.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-10-15,Milton Keynes Dons,AFC Bournemouth,2,2,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2011-10-15,Milton Keynes Dons,Bournemouth,2,2,league-one,England,football_data,1,0,10,4,6,3,7,7,6,5,0,0,0,0,,,1.7300,3.7500,4.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-10-15,Montpellier HSC,Dijon FCO,5,3,ligue1,France,football_data,1,2,22,15,8,8,5,7,23,12,2,2,0,0,,,1.4400,4.0000,8.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-10-15,Morton,Hamilton,0,2,scottish-div1,Scotland,football_data,0,0,,,,,,,,,,,,,,,2.5000,3.5000,2.6300,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-10-15,Nocerina,Modena,1,1,serie-b,Italy,football_data,1,0,,,,,,,,,,,,,,,1.9100,3.2500,4.3300,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6658,8 +6658,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-10-22,Beira Mar,SL Benfica,0,1,primeira-liga,Portugal,football_data,0,1,,,,,,,,,,,,,,,9.0000,4.5000,1.3600,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-10-22,Blackpool,Nottingham Forest,1,2,championship,England,football_data,1,1,10,10,5,7,6,7,5,13,0,3,0,1,,,2.0000,3.4000,3.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-10-22,Bolton Wanderers,Sunderland,0,2,premier-league,England,football_data,0,0,15,18,8,10,2,11,15,14,0,3,0,0,,,2.2000,3.2000,3.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2011-10-22,Borussia Dortmund,1. FC Köln,5,0,bundesliga,Germany,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-10-22,Borussia Dortmund,FC Koln,5,0,bundesliga,Germany,football_data,3,0,24,2,9,1,2,3,13,10,2,2,0,0,,,1.2900,5.5000,9.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2011-10-22,Borussia Dortmund,1. FC Köln,5,0,bundesliga,Germany,openfootball,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-10-22,Bournemouth,Bury,1,2,league-one,England,football_data,1,1,12,12,4,8,4,4,8,15,1,2,0,0,,,2.1000,3.2500,3.6000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-10-22,Bradford City,Northampton,2,1,league-two,England,football_data,0,0,6,4,2,3,1,7,8,7,1,3,0,0,,,2.2000,3.3000,3.2500,,,,,,,,,,,,,,,,65,3,0,0,,0
 2011-10-22,Braunschweig,Dresden,0,2,bundesliga-2,Germany,football_data,0,1,,,,,,,,,,,,,,,1.5700,3.8000,6.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6972,8 +6972,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-10-29,Oxford United,Port Vale,2,1,league-two,England,football_data,1,0,13,10,5,6,7,7,8,7,1,2,0,0,,,2.0000,3.5000,3.6000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2011-10-29,Panetolikos,Xanthi,2,0,greek-super,Greece,football_data,1,0,,,,,,,,,,,,,,,2.5000,3.0000,3.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-10-29,Paris Saint-Germain,Stade Malherbe Caen,4,2,ligue1,France,football_data,1,1,23,14,9,6,12,4,17,11,2,4,0,1,,,1.3300,4.5000,10.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
-2011-10-29,Preston North End,AFC Bournemouth,1,3,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2011-10-29,Preston North End,Bournemouth,1,3,league-one,England,football_data,1,0,10,6,4,5,4,1,13,10,1,2,0,0,,,1.8000,3.6000,4.3300,,,,,,,,,,,,,,,,65,2,0,0,,0
+2011-10-29,Preston North End,AFC Bournemouth,1,3,league-one,England,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2011-10-29,Queen of Sth,Livingston FC,0,2,scottish-div1,Scotland,football_data,0,1,,,,,,,,,,,,,,,2.5000,3.3000,2.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-10-29,Real Sociedad,Real Madrid,0,1,la-liga,Spain,football_data,0,1,5,12,3,6,3,5,18,18,5,2,0,0,,,15.0000,7.0000,1.1700,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-10-29,Recreativo,Numancia,1,1,la-liga-2,Spain,football_data,0,0,,,,,,,,,,,,,,,2.1000,3.1000,3.8000,,,,,,,,,,,,,,,,49,2,0,0,,0
@@ -6985,8 +6985,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-10-29,SL Benfica,Olhanense,2,1,primeira-liga,Portugal,football_data,2,0,,,,,,,,,,,,,,,1.1800,6.5000,16.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-10-29,SV Mattersburg,FC Trenkwalder Admira,0,0,austrian-bl,Austria,openfootball,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40,1,0,0,,0
 2011-10-29,Sabadell,Alcoyano,2,2,la-liga-2,Spain,football_data,1,2,,,,,,,,,,,,,,,1.8000,3.2500,5.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
-2011-10-29,Schalke 04,TSG Hoffenheim,3,1,bundesliga,Germany,football_data,1,0,16,11,10,2,5,4,20,20,1,2,0,0,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-10-29,Schalke 04,1899 Hoffenheim,3,1,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2011-10-29,Schalke 04,TSG Hoffenheim,3,1,bundesliga,Germany,football_data,1,0,16,11,10,2,5,4,20,20,1,2,0,0,,,1.9500,3.3000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-10-29,Scunthorpe,Tranmere,4,2,league-one,England,football_data,2,2,9,16,8,9,1,7,12,17,2,1,0,1,,,2.3000,3.2500,3.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-10-29,Sedan,Amiens,3,1,ligue2,France,football_data,2,0,,,,,,,,,,,,,,,1.7000,3.4000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-10-29,Sheffield United,Exeter City,4,4,league-one,England,football_data,1,2,21,10,13,8,12,2,12,8,0,1,0,0,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -7036,8 +7036,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-10-30,Feirense,Sp Lisbon,0,2,primeira-liga,Portugal,football_data,0,0,,,,,,,,,,,,,,,7.5000,3.8000,1.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-10-30,Frankfurt FSV,Fortuna Dusseldorf,2,5,bundesliga-2,Germany,football_data,2,1,,,,,,,,,,,,,,,3.7500,3.4000,2.0000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-10-30,Graafschap,SBV Vitesse,0,1,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,3.5000,3.6000,2.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2011-10-30,Hamburger SV,1. FC Kaiserslautern,1,1,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-10-30,Hamburger SV,Kaiserslautern,1,1,bundesliga,Germany,football_data,0,1,16,11,5,5,4,3,18,23,2,2,1,0,,,1.9100,3.4000,4.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2011-10-30,Hamburger SV,1. FC Kaiserslautern,1,1,bundesliga,Germany,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-10-30,Heracles Almelo,AZ Alkmaar,0,1,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,3.3000,3.5000,2.1000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-10-30,Ingolstadt,Ein Frankfurt,1,1,bundesliga-2,Germany,football_data,0,0,,,,,,,,,,,,,,,6.0000,4.0000,1.5500,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-10-30,Kapfenberger SV 1919,FK Austria Wien,2,2,austrian-bl,Austria,openfootball,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
@@ -7570,8 +7570,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-11-19,Watford,Portsmouth,2,0,championship,England,football_data,2,0,13,8,6,3,7,3,19,10,1,1,0,0,,,2.3800,3.2500,3.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-11-19,West Bromwich Albion,Bolton Wanderers,2,1,premier-league,England,football_data,1,1,16,8,9,6,7,5,12,12,1,0,0,0,,,2.0000,3.4000,3.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-11-19,Wigan Athletic,Blackburn Rovers,3,3,premier-league,England,football_data,2,1,21,6,11,2,7,3,14,13,2,3,0,1,,,2.5000,3.2500,2.8800,,,,,,,,,,,,,,,,65,1,0,0,,0
-2011-11-19,Wycombe Wanderers,Bournemouth,0,1,league-one,England,football_data,0,1,4,6,2,2,3,9,13,9,2,2,0,0,,,2.7500,3.3000,2.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-11-19,Wycombe Wanderers,AFC Bournemouth,0,1,league-one,England,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
+2011-11-19,Wycombe Wanderers,Bournemouth,0,1,league-one,England,football_data,0,1,4,6,2,2,3,9,13,9,2,2,0,0,,,2.7500,3.3000,2.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-11-19,Yeovil,Exeter City,2,2,league-one,England,football_data,1,2,11,7,7,2,8,9,14,9,4,1,0,0,,,2.3000,3.3000,3.1000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-11-19,Yukatel Kayserispor,Orduspor,1,0,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,2.2500,3.2500,3.2500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-11-20,AS Roma,US Lecce,2,1,serie-a,Italy,football_data,1,0,16,9,6,2,7,1,5,17,1,2,0,0,,,1.3600,4.5000,9.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -7594,8 +7594,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-11-20,Gaziantepspor,Manisaspor,1,1,super-lig,Turkey,football_data,1,0,,,,,,,,,,,,,,,2.1500,3.2000,3.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-11-20,Genoa CFC,Novara,1,0,serie-a,Italy,football_data,0,0,13,14,4,2,6,7,15,22,3,4,1,1,,,1.5700,3.7500,6.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-11-20,Giannina,Xanthi,0,2,greek-super,Greece,football_data,0,1,,,,,,,,,,,,,,,2.0500,3.1000,4.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2011-11-20,Hamburger SV,TSG Hoffenheim,2,0,bundesliga,Germany,football_data,1,0,18,19,7,8,6,3,17,15,0,3,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-11-20,Hamburger SV,1899 Hoffenheim,2,0,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2011-11-20,Hamburger SV,TSG Hoffenheim,2,0,bundesliga,Germany,football_data,1,0,18,19,7,8,6,3,17,15,0,3,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-11-20,Juventus,Palermo,3,0,serie-a,Italy,football_data,1,0,15,8,4,2,4,4,14,14,0,2,0,0,,,1.4400,4.2000,7.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-11-20,Leicester City,Crystal Palace,3,0,championship,England,football_data,0,0,14,11,10,3,6,8,12,9,0,0,0,0,,,1.6700,3.7500,5.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-11-20,Millwall,Bristol City,1,2,championship,England,football_data,0,1,11,12,5,5,5,3,7,15,0,2,0,0,,,1.8000,3.5000,4.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
@@ -8110,8 +8110,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-12-10,Derby County,Bristol City,2,1,championship,England,football_data,0,0,9,12,4,5,0,6,15,14,1,2,0,0,,,2.5000,3.3000,2.7500,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-12-10,Dundee FC,Queen of Sth,2,1,scottish-div1,Scotland,football_data,2,0,,,,,,,,,,,,,,,1.6200,3.8000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-12-10,Excelsior,SC Heerenveen,0,5,eredivisie,Netherlands,football_data,0,3,,,,,,,,,,,,,,,6.0000,4.3300,1.5000,,,,,,,,,,,,,,,,49,1,0,0,,0
-2011-12-10,FC Augsburg,Borussia Monchengladbach,1,0,bundesliga,Germany,football_data,0,0,11,13,5,5,5,4,22,22,3,2,0,0,,,4.0000,3.4000,1.9100,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-12-10,FC Augsburg,Bor. Mönchengladbach,1,0,bundesliga,Germany,openfootball,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
+2011-12-10,FC Augsburg,Borussia Monchengladbach,1,0,bundesliga,Germany,football_data,0,0,11,13,5,5,5,4,22,22,3,2,0,0,,,4.0000,3.4000,1.9100,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-12-10,FC Koln,SC Freiburg,4,0,bundesliga,Germany,football_data,1,0,14,11,6,5,4,2,9,12,1,2,0,0,,,2.3000,3.4000,3.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-12-10,FC Twente,Nijmegen,2,0,eredivisie,Netherlands,football_data,0,0,,,,,,,,,,,,,,,1.1700,6.5000,19.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-12-10,FSV Mainz 05,Hamburger SV,0,0,bundesliga,Germany,football_data,0,0,12,8,5,5,4,5,16,11,1,0,0,0,,,2.2000,3.4000,3.2000,,,,,,,,,,,,,,,,65,1,0,0,,0
@@ -8124,8 +8124,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-12-10,Hellas Verona,Albinoleffe,1,0,serie-b,Italy,football_data,0,0,,,,,,,,,,,,,,,1.7300,3.3000,5.5000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-12-10,Hereford,Rotherham United,2,3,league-two,England,football_data,2,2,12,7,2,2,7,7,10,10,2,1,0,0,,,3.2500,3.3000,2.2000,,,,,,,,,,,,,,,,65,3,0,0,,0
 2011-12-10,Hibernian FC,Rangers FC,0,2,scottish-prem,Scotland,football_data,0,0,8,4,4,2,4,4,13,8,1,3,0,0,,,7.5000,4.2000,1.4400,,,,,,,,,,,,,,,,65,1,0,0,,0
-2011-12-10,Huddersfield Town,AFC Bournemouth,0,1,league-one,England,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2011-12-10,Huddersfield Town,Bournemouth,0,1,league-one,England,football_data,0,1,7,9,1,4,2,4,9,13,0,2,0,0,,,1.5300,4.0000,6.0000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2011-12-10,Huddersfield Town,AFC Bournemouth,0,1,league-one,England,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2011-12-10,Inter Milan,ACF Fiorentina,2,0,serie-a,Italy,football_data,1,0,22,8,6,1,6,2,12,12,1,1,0,0,,,1.9100,3.2500,4.3300,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-12-10,Inverness C,Dundee United,2,3,scottish-prem,Scotland,football_data,1,0,7,4,4,2,4,10,17,14,2,2,1,0,,,2.7500,3.3000,2.5000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-12-10,KAA Gent,Germinal,0,1,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,1.3300,5.0000,9.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8203,8 +8203,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-12-11,Athletic Bilbao,Santander,1,1,la-liga,Spain,football_data,0,0,16,6,2,2,10,1,13,23,2,4,0,0,,,1.4000,4.5000,8.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-12-11,Besiktas JK,Buyuksehyr,1,1,super-lig,Turkey,football_data,0,0,,,,,,,,,,,,,,,1.7500,3.5000,4.7500,,,,,,,,,,,,,,,,49,1,0,0,,0
 2011-12-11,Bologna FC,AC Milan,2,2,serie-a,Italy,football_data,1,1,12,13,3,4,2,11,17,13,4,3,0,0,,,8.0000,4.0000,1.4400,,,,,,,,,,,,,,,,65,1,0,0,,0
-2011-12-11,Borussia Dortmund,1. FC Kaiserslautern,1,1,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-12-11,Borussia Dortmund,Kaiserslautern,1,1,bundesliga,Germany,football_data,1,0,23,12,5,3,9,4,12,25,1,2,0,0,,,1.2500,5.5000,12.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
+2011-12-11,Borussia Dortmund,1. FC Kaiserslautern,1,1,bundesliga,Germany,openfootball,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,1,0,0,,0
 2011-12-11,Brescia Calcio,Bari,1,3,serie-b,Italy,football_data,1,1,,,,,,,,,,,,,,,2.0000,3.1000,4.2000,,,,,,,,,,,,,,,,49,2,0,0,,0
 2011-12-11,Cagliari Calcio,Parma Calcio,0,0,serie-a,Italy,football_data,0,0,9,13,1,5,3,5,15,16,2,3,0,0,,,2.1000,3.1000,3.7500,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-12-11,Club Brugge KV,St Truiden,1,0,belgian-pro,Belgium,football_data,0,0,,,,,,,,,,,,,,,1.2500,6.0000,10.0000,,,,,,,,,,,,,,,,49,1,0,0,,0
@@ -8519,8 +8519,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 2011-12-26,Birmingham City,West Ham United,1,1,championship,England,football_data,0,1,16,8,10,5,10,5,11,13,0,4,0,0,,,2.5000,3.2500,2.8000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-12-26,Bolton Wanderers,Newcastle United,0,2,premier-league,England,football_data,0,0,4,12,3,7,4,4,9,11,1,1,0,0,,,2.5000,3.4000,2.8000,,,,,,,,,,,,,,,,65,1,0,0,,0
 2011-12-26,Bradford City,Crewe,3,0,league-two,England,football_data,1,0,8,6,4,4,3,4,15,6,3,1,0,0,,,2.2500,3.5000,3.0000,,,,,,,,,,,,,,,,65,3,0,0,,0
-2011-12-26,Brentford,AFC Bournemouth,1,1,league-one,England,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2011-12-26,Brentford,Bournemouth,1,1,league-one,England,football_data,0,1,12,9,8,5,2,9,12,10,2,2,0,0,,,2.1000,3.3000,3.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
+2011-12-26,Brentford,AFC Bournemouth,1,1,league-one,England,openfootball,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,44,2,0,0,,0
 2011-12-26,Bristol Rvs,Plymouth,2,3,league-two,England,football_data,2,0,8,11,5,8,8,9,15,15,1,1,0,0,,,1.8300,3.5000,4.3300,,,,,,,,,,,,,,,,65,3,0,0,,0
 2011-12-26,Burnley,Doncaster,3,0,championship,England,football_data,1,0,23,13,13,5,9,5,9,8,2,2,0,0,,,1.7300,3.7500,4.5000,,,,,,,,,,,,,,,,65,2,0,0,,0
 2011-12-26,Chelsea,Fulham,1,1,premier-league,England,football_data,0,0,24,9,15,6,9,3,10,12,1,1,0,0,,,1.3000,5.0000,12.0000,,,,,,,,,,,,,,,,65,1,0,0,,0
