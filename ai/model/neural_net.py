@@ -8,6 +8,13 @@ Each ResBlock: Linear → BN → ReLU → Dropout → Linear → BN → residual
 Training: AdamW + OneCycleLR scheduler + gradient clipping.
 sklearn API: fit / predict_proba / predict (compatible with StackingClassifier).
 
+v3 improvements:
+  - Epochs: 50 → 120 (better convergence on large dataset)
+  - LR: 3e-3 → 1e-3 (more stable training)
+  - Input dropout: 0.3 → 0.2 (less aggressive regularization on input)
+  - Label smoothing: 0.05 (improves probability calibration)
+  - Validation split with early stopping: patience=10 epochs (avoids overfitting)
+
 Falls back to LogisticRegression when PyTorch is unavailable.
 """
 from __future__ import annotations
@@ -52,6 +59,7 @@ if _TORCH:
         """
         Deep residual MLP for football match prediction.
         Stem + 2 residual stages + 2 downsampling transitions + linear head.
+        v3: input dropout reduced to 0.2.
         """
         def __init__(self, n_in: int, n_out: int):
             super().__init__()
@@ -59,7 +67,7 @@ if _TORCH:
                 nn.Linear(n_in, 256),
                 nn.BatchNorm1d(256),
                 nn.ReLU(inplace=True),
-                nn.Dropout(0.3),
+                nn.Dropout(0.2),   # reduced from 0.3
             )
             self.res1  = _ResBlock(256, dropout=0.3)
             self.down1 = nn.Sequential(
@@ -101,26 +109,35 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
 
     Parameters
     ----------
-    epochs       : training epochs (default 80)
+    epochs       : training epochs (default 120)
     batch_size   : mini-batch size (default 512)
-    lr           : peak learning rate for OneCycleLR (default 3e-3)
+    lr           : peak learning rate for OneCycleLR (default 1e-3)
     weight_decay : AdamW weight decay (default 1e-4)
+    label_smooth : label smoothing for CrossEntropyLoss (default 0.05)
+    patience     : early stopping patience in epochs (default 10, 0=disabled)
+    val_frac     : fraction of data to hold out for early stopping (default 0.1)
     random_state : seed for reproducibility
     """
     _estimator_type = "classifier"
 
     def __init__(
         self,
-        epochs:       int   = 80,
+        epochs:       int   = 120,
         batch_size:   int   = 512,
-        lr:           float = 3e-3,
+        lr:           float = 1e-3,
         weight_decay: float = 1e-4,
+        label_smooth: float = 0.05,
+        patience:     int   = 10,
+        val_frac:     float = 0.10,
         random_state: int   = 0,
     ):
         self.epochs       = epochs
         self.batch_size   = batch_size
         self.lr           = lr
         self.weight_decay = weight_decay
+        self.label_smooth = label_smooth
+        self.patience     = patience
+        self.val_frac     = val_frac
         self.random_state = random_state
 
     def fit(self, X: np.ndarray, y: np.ndarray,
@@ -137,25 +154,47 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         self._label_map = {c: i for i, c in enumerate(self.classes_)}
 
         y_idx = np.array([self._label_map[c] for c in y], dtype=np.int64)
+        n     = len(X)
+
+        # ── Validation split for early stopping ───────────────────────────────
+        use_early = self.patience > 0 and n > 500 and self.val_frac > 0
+        if use_early:
+            val_size = max(100, int(self.val_frac * n))
+            X_tr, y_tr = X[:-val_size], y_idx[:-val_size]
+            X_val_np, y_val_np = X[-val_size:], y_idx[-val_size:]
+            X_val_t = torch.FloatTensor(np.ascontiguousarray(X_val_np, dtype=np.float32))
+            y_val_t = torch.LongTensor(np.ascontiguousarray(y_val_np, dtype=np.int64))
+        else:
+            X_tr, y_tr = X, y_idx
+            X_val_t = None; y_val_t = None
+
+        if sample_weight is not None:
+            sw_tr = sample_weight[:-int(self.val_frac * n)] if use_early else sample_weight
+        else:
+            sw_tr = None
 
         self._model = _FootballResNet(n_features, n_classes)
 
-        counts    = np.bincount(y_idx, minlength=n_classes).astype(np.float32)
-        cls_w     = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1))))
-        # sample_weight: if provided, compute per-class mean weight and merge
-        if sample_weight is not None:
-            sw = np.asarray(sample_weight, dtype=np.float32)
+        # Class weights from training fold only
+        counts = np.bincount(y_tr, minlength=n_classes).astype(np.float32)
+        cls_w  = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1))))
+        if sw_tr is not None:
+            sw = np.asarray(sw_tr, dtype=np.float32)
             for c in range(n_classes):
-                mask = (y_idx == c)
+                mask = (y_tr == c)
                 if mask.any():
                     cls_w[c] *= float(sw[mask].mean())
-        criterion = nn.CrossEntropyLoss(weight=cls_w)
+
+        criterion = nn.CrossEntropyLoss(
+            weight=cls_w,
+            label_smoothing=self.label_smooth,
+        )
 
         opt = torch.optim.AdamW(
             self._model.parameters(),
             lr=self.lr, weight_decay=self.weight_decay,
         )
-        steps_per_epoch = max(1, math.ceil(len(X) / self.batch_size))
+        steps_per_epoch = max(1, math.ceil(len(X_tr) / self.batch_size))
         sched = torch.optim.lr_scheduler.OneCycleLR(
             opt, max_lr=self.lr,
             epochs=self.epochs, steps_per_epoch=steps_per_epoch,
@@ -163,13 +202,17 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         )
 
         dataset = tud.TensorDataset(
-            torch.FloatTensor(np.ascontiguousarray(X, dtype=np.float32)),
-            torch.LongTensor(np.ascontiguousarray(y_idx, dtype=np.int64)),
+            torch.FloatTensor(np.ascontiguousarray(X_tr, dtype=np.float32)),
+            torch.LongTensor(np.ascontiguousarray(y_tr, dtype=np.int64)),
         )
         loader = tud.DataLoader(
             dataset, batch_size=self.batch_size,
             shuffle=True, drop_last=False,
         )
+
+        best_val_loss = float('inf')
+        best_state    = None
+        no_improve    = 0
 
         self._model.train()
         for epoch in range(self.epochs):
@@ -180,8 +223,34 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
                 nn.utils.clip_grad_norm_(self._model.parameters(), 1.0)
                 opt.step()
                 sched.step()
+
             if (epoch + 1) % 20 == 0:
                 logger.debug(f"  [NeuralNet] epoch {epoch+1}/{self.epochs}")
+
+            # Early stopping check
+            if use_early and X_val_t is not None:
+                self._model.eval()
+                with torch.no_grad():
+                    val_logits = self._model(X_val_t)
+                    val_loss   = nn.functional.cross_entropy(val_logits, y_val_t).item()
+                self._model.train()
+
+                if val_loss < best_val_loss - 1e-4:
+                    best_val_loss = val_loss
+                    best_state    = {k: v.clone() for k, v in self._model.state_dict().items()}
+                    no_improve    = 0
+                else:
+                    no_improve += 1
+                    if no_improve >= self.patience:
+                        logger.debug(
+                            f"  [NeuralNet] early stop at epoch {epoch+1} "
+                            f"(val_loss={best_val_loss:.4f})"
+                        )
+                        break
+
+        # Restore best weights if early stopping triggered
+        if best_state is not None:
+            self._model.load_state_dict(best_state)
 
         self._model.eval()
         return self

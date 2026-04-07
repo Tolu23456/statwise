@@ -67,7 +67,7 @@ def _py_elo_probabilities(elo_home: float, elo_away: float,
 
 def _py_form_vector(matches: list[dict], team: str) -> np.ndarray:
     results = []
-    for m in reversed(matches[-15:]):
+    for m in reversed(matches[-25:]):   # extended from 15 → 25
         if m.get('home_team') == team:
             results.append((int(m.get('home_goals', 0)), int(m.get('away_goals', 0))))
         elif m.get('away_team') == team:
@@ -98,7 +98,7 @@ def _py_form_vector(matches: list[dict], team: str) -> np.ndarray:
 
 def _py_h2h_stats(matches: list[dict], team_a: str, team_b: str) -> np.ndarray:
     wins = draws = losses = ga = gb = n = 0.0
-    for m in matches:
+    for m in matches[-25:]:   # extended from 15 → 25
         if m['home_team'] == team_a and m['away_team'] == team_b:
             s, c = m['home_goals'], m['away_goals']
         elif m['home_team'] == team_b and m['away_team'] == team_a:
@@ -321,7 +321,7 @@ def form_vector(matches: list[dict], team: str) -> np.ndarray:
     lib = _load_lib()
     if lib:
         team_m = [m for m in matches
-                  if m['home_team'] == team or m['away_team'] == team][-15:]
+                  if m['home_team'] == team or m['away_team'] == team][-25:]
         n = len(team_m)
         if n == 0:
             return np.zeros(10)
@@ -338,7 +338,7 @@ def h2h_stats(matches: list[dict], team_a: str, team_b: str) -> np.ndarray:
     lib = _load_lib()
     if lib:
         h2h = [m for m in matches
-               if {m['home_team'], m['away_team']} == {team_a, team_b}][-15:]
+               if {m['home_team'], m['away_team']} == {team_a, team_b}][-25:]
         n = len(h2h)
         if n == 0:
             return np.zeros(6)

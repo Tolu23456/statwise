@@ -20,17 +20,20 @@ Preferred communication style: Simple, everyday language.
 ### AI Backend (ai/)
 - **Language:** Python 3.11
 - **Model:** 5-model deep stacking ensemble: XGBoost + HistGB + ExtraTrees + RandomForest + PyTorch NeuralNet → LogisticRegressionCV meta-learner
-- **Features:** 98 features across 22 groups (Elo, Attack/Defence Elo, Dixon-Coles score matrix, Poisson goal probs, H2H, venue-split form, consecutive runs, goals variance, etc.)
+- **Features:** 104 features across 23 groups (Elo, Attack/Defence Elo, Dixon-Coles, Poisson goals, H2H, venue-split form, consecutive runs, goals variance, temporal/draw context, etc.)
 - **C++ kernel:** ai/libstatwise.so — 11 exported functions including Dixon-Coles, attack/defence Elo, goals variance, venue-split form, consecutive run counters
 - **Schedule:** Predictions every 20 minutes, model retrain every 24 hours
 - **Entry point:** ai/scheduler.py
-- **Anti-bias measures:**
-  - Balanced sample weights at training time (inverse-frequency per class: home 0.74×, draw 1.33×, away 1.12×)
-  - PyTorch NeuralNet: class-frequency CrossEntropyLoss weights merged with per-class sample weights
-  - Draw detection floor: draw predicted when P(draw)≥0.255 AND home/away gap ≤0.14
-  - Away boost: predict away when P(away) ≥ P(home) - 0.03
-  - ET + RF base estimators use `class_weight='balanced'`
-  - Draw confidence capped at 62% to avoid overconfidence
+- **Phase 1+2 improvements (v3):**
+  - Elo leakage fix: per-match pre-match Elo snapshots stored during fit()
+  - Probability calibration: isotonic regression cv=3 (was broken sigmoid cv=2)
+  - Draw heuristic removed: pure argmax (no more DRAW_PROB_FLOOR / DRAW_MARGIN)
+  - Recency weighting: 3yr=1.0×, 3-6yr=0.7×, 6+yr=0.4× sample weights
+  - MAX_TRAINING_SAMPLES raised to 200K, chronological tail sampling
+  - Form windows extended 15→25 matches
+  - Stacking cv=5, passthrough=True; XGB max_depth 4 + L1/L2 regularisation
+  - NN: 120 epochs with early stopping + 0.05 label smoothing
+  - Backtest: test set deduplication + real bookmaker odds ROI
 
 ### Backend (Supabase - Serverless)
 - **URL:** https://pdrcyuzfdqjnsltqqxvr.supabase.co

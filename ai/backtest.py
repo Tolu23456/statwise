@@ -169,6 +169,16 @@ def main():
     history_df = df[df["date"] < cutoff].copy()
     test_df    = df[df["date"] >= cutoff].copy()
 
+    # Deduplicate test set — some matches appear twice with different team name
+    # spellings (encoding variants). Keep one copy to avoid counting errors twice.
+    before_dedup = len(test_df)
+    test_df = test_df.drop_duplicates(
+        subset=["date", "home_goals", "away_goals",
+                "home_team", "away_team"]
+    ).reset_index(drop=True)
+    if len(test_df) < before_dedup:
+        log.info(f"Deduplication removed {before_dedup - len(test_df):,} duplicate test rows")
+
     log.info(f"History: {len(history_df):,} matches  |  Test: {len(test_df):,} matches  "
              f"(cutoff={TEST_CUTOFF})")
 
@@ -215,16 +225,20 @@ def main():
             correct   = predicted == actual
 
             all_results.append({
-                "league":     slug,
-                "home":       home,
-                "away":       away,
-                "predicted":  predicted,
-                "actual":     actual,
-                "confidence": conf,
-                "correct":    correct,
-                "prob_home":  pred.get("prob_home", 0),
-                "prob_draw":  pred.get("prob_draw", 0),
-                "prob_away":  pred.get("prob_away", 0),
+                "league":         slug,
+                "home":           home,
+                "away":           away,
+                "predicted":      predicted,
+                "actual":         actual,
+                "confidence":     conf,
+                "correct":        correct,
+                "prob_home":      pred.get("prob_home", 0),
+                "prob_draw":      pred.get("prob_draw", 0),
+                "prob_away":      pred.get("prob_away", 0),
+                # Real bookmaker odds for fair ROI calculation
+                "bk_odds_home":   oh,
+                "bk_odds_draw":   od,
+                "bk_odds_away":   oa,
             })
 
             # Per-league tracking (only for report leagues)
@@ -289,15 +303,22 @@ def main():
     bs  = brier_score(all_results)
     ll  = log_loss(all_results)
 
-    # Flat-stake ROI (bet 1 unit on every prediction at implied model odds)
-    roi_profit, roi_bets = 0.0, 0
+    # Flat-stake ROI — prefer real bookmaker odds (fair comparison).
+    # Falls back to model-implied odds only when market odds are absent.
+    roi_profit = 0.0; roi_bets = 0; roi_real_odds = 0
     for r in all_results:
-        p_key = f"prob_{r['predicted']}"
-        prob  = r.get(p_key, 0) / 100.0
-        if prob > 0.01:
-            implied_odds = 1.0 / prob
-            roi_profit  += (implied_odds - 1.0) if r["correct"] else -1.0
-            roi_bets    += 1
+        pred = r["predicted"]
+        bk_odds = r.get(f"bk_odds_{pred}")    # real bookmaker odds for predicted outcome
+        if bk_odds and bk_odds > 1.0:
+            use_odds = bk_odds
+            roi_real_odds += 1
+        else:
+            p_key = f"prob_{pred}"
+            prob  = r.get(p_key, 0) / 100.0
+            use_odds = 1.0 / prob if prob > 0.01 else 0.0
+        if use_odds > 1.0:
+            roi_profit += (use_odds - 1.0) if r["correct"] else -1.0
+            roi_bets   += 1
     roi_pct = round(roi_profit / roi_bets * 100, 1) if roi_bets else 0.0
 
     # Per-league accuracy

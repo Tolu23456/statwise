@@ -3,7 +3,7 @@ FootballPredictor – 5-model deep stacking ensemble.
 
 Architecture (Layer 1 → Layer 2):
   Base models (5), each probability-calibrated:
-    1. XGBoost              – histogram trees, colsample/subsample noise
+    1. XGBoost              – histogram trees, stronger regularization (v3)
     2. HistGradientBoosting – sklearn native, NaN support, class-balanced
     3. ExtraTreesClassifier – high-variance random splits for diversity
     4. RandomForestClassifier – bagged decision trees, class-balanced
@@ -15,11 +15,14 @@ Architecture (Layer 1 → Layer 2):
 
   Separate stacks for: Outcome (Home/Draw/Away) and Goals (O/U 2.5).
 
-Speed optimisations vs previous version:
-  - XGB/HGB/ET/RF estimator counts reduced (~40% less compute)
-  - Calibration: sigmoid (fast) instead of isotonic
-  - Stacking cv=3 (was 5)
-  - XGB: tree_method='hist' (explicit, avoids auto-detection overhead)
+v3 improvements:
+  - Calibration: isotonic cv=3 (was sigmoid cv=2) — fixes overconfidence
+  - Stacking: cv=5 (was 3), passthrough=True (meta-learner sees raw features)
+  - XGB: max_depth 6→4, min_child_weight 5→12, reg_lambda 2→4, n_est 200→300
+  - NeuralNet: epochs 50→120, lr 3e-3→1e-3
+  - Sample weights: recency-weighted (recent seasons weighted higher)
+  - Prediction logic: pure argmax replaces broken DRAW_PROB_FLOOR heuristic
+  - Elo leakage fixed in features.py; confidence clamping removed
 """
 from __future__ import annotations
 import os, logging, joblib
@@ -52,9 +55,9 @@ OUTCOME_LABELS = ['Home Win', 'Draw', 'Away Win']
 
 def _xgb(n_classes: int, seed: int = 42) -> XGBClassifier:
     return XGBClassifier(
-        n_estimators=200, max_depth=6, learning_rate=0.05,
+        n_estimators=300, max_depth=4, learning_rate=0.03,
         subsample=0.8, colsample_bytree=0.75, colsample_bylevel=0.75,
-        min_child_weight=5, gamma=0.1, reg_alpha=0.2, reg_lambda=2.0,
+        min_child_weight=12, gamma=0.1, reg_alpha=0.3, reg_lambda=4.0,
         tree_method='hist',
         eval_metric='mlogloss' if n_classes > 2 else 'logloss',
         random_state=seed, n_jobs=2, verbosity=0,
@@ -63,8 +66,8 @@ def _xgb(n_classes: int, seed: int = 42) -> XGBClassifier:
 
 def _hgb(seed: int = 42) -> HistGradientBoostingClassifier:
     return HistGradientBoostingClassifier(
-        max_iter=150, max_depth=6, max_leaf_nodes=47,
-        learning_rate=0.05, min_samples_leaf=20,
+        max_iter=200, max_depth=5, max_leaf_nodes=47,
+        learning_rate=0.04, min_samples_leaf=25,
         l2_regularization=2.0, random_state=seed,
         class_weight='balanced',
     )
@@ -72,7 +75,7 @@ def _hgb(seed: int = 42) -> HistGradientBoostingClassifier:
 
 def _et(n_classes: int, seed: int = 42) -> ExtraTreesClassifier:
     return ExtraTreesClassifier(
-        n_estimators=150, max_depth=20, min_samples_leaf=5,
+        n_estimators=150, max_depth=18, min_samples_leaf=8,
         max_features='sqrt', random_state=seed, n_jobs=2,
         class_weight='balanced',
     )
@@ -80,7 +83,7 @@ def _et(n_classes: int, seed: int = 42) -> ExtraTreesClassifier:
 
 def _rf(seed: int = 42) -> RandomForestClassifier:
     return RandomForestClassifier(
-        n_estimators=150, max_depth=16, min_samples_leaf=5,
+        n_estimators=150, max_depth=14, min_samples_leaf=8,
         max_features='sqrt', random_state=seed, n_jobs=2,
         class_weight='balanced',
     )
@@ -88,25 +91,23 @@ def _rf(seed: int = 42) -> RandomForestClassifier:
 
 def _nn(seed: int = 0) -> NeuralNetClassifier:
     return NeuralNetClassifier(
-        epochs=50, batch_size=512,
-        lr=3e-3, weight_decay=1e-4,
+        epochs=120, batch_size=512,
+        lr=1e-3, weight_decay=1e-4,
         random_state=seed,
     )
 
 
 def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     """
-    Build a 5-model stacking classifier wrapped in a StandardScaler pipeline.
+    5-model stacking classifier wrapped in a StandardScaler pipeline.
 
-    Memory-safe design:
-      - StackingClassifier n_jobs=1: folds run sequentially so we never have
-        5 × 3 model copies alive at the same time; each model still uses its
-        own limited thread pool.
-      - passthrough=False: meta-learner sees only the 15 OOF probability
-        columns, not 98 raw features concatenated (saves ~150 MB peak RAM).
-      - cv=3: three-fold OOF (good balance of bias/variance).
+    v3 changes:
+      - Calibration: isotonic cv=3 (better probability calibration)
+      - cv=5: more OOF folds → less bias in meta-learner training data
+      - passthrough=True: meta-learner sees OOF probs AND raw features
+      - n_jobs=1: sequential folds to keep peak memory bounded
     """
-    _cal = lambda est: CalibratedClassifierCV(est, method='sigmoid', cv=2)
+    _cal = lambda est: CalibratedClassifierCV(est, method='isotonic', cv=3)
 
     base = [
         ('xgb', _cal(_xgb(n_classes, seed))),
@@ -118,16 +119,16 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     meta = LogisticRegressionCV(
         Cs=10, cv=5, max_iter=1000,
         solver='lbfgs', n_jobs=-1, random_state=seed,
-        l1_ratios=(0,),           # silence FutureWarning in sklearn ≥1.10
+        l1_ratios=(0,),
         use_legacy_attributes=False,
     )
     stack = StackingClassifier(
         estimators=base,
         final_estimator=meta,
-        cv=3,
+        cv=5,
         stack_method='predict_proba',
-        passthrough=False,          # meta-learner sees OOF probs only → less RAM
-        n_jobs=1,                   # sequential folds → peak memory stays bounded
+        passthrough=True,   # meta-learner sees OOF probs + raw 102 features
+        n_jobs=1,           # sequential folds → peak memory stays bounded
     )
     return Pipeline([('scaler', StandardScaler()), ('stack', stack)])
 
@@ -148,8 +149,8 @@ class FootballPredictor:
         logger.info("Step 1/4  Computing Elo ratings and league stats…")
         self.feature_pipe.fit(df)
 
-        logger.info(f"Step 2/4  Building feature matrix ({N_FEATURES} features, ≤60 K samples)…")
-        X, y_1x2, y_goals = self.feature_pipe.build_training_set(df)
+        logger.info(f"Step 2/4  Building feature matrix ({N_FEATURES} features)…")
+        X, y_1x2, y_goals, train_dates = self.feature_pipe.build_training_set(df)
         if len(X) < min_samples:
             raise ValueError(f"Not enough samples: {len(X)} < {min_samples}")
         logger.info(f"Step 2/4  Done — {len(X):,} samples × {N_FEATURES} features.")
@@ -158,16 +159,36 @@ class FootballPredictor:
         X = np.where(np.isfinite(X), X, 0.0)
         X = np.clip(X, -1e6, 1e6)
 
-        # Compute balanced sample weights to counteract home-win class imbalance.
-        # StackingClassifier passes these to every base estimator that supports it.
-        def _balanced_weights(y: np.ndarray) -> np.ndarray:
+        def _balanced_weights(y: np.ndarray, dates: np.ndarray) -> np.ndarray:
+            """
+            Class-balanced weights multiplied by recency decay.
+            Matches from the last 3 years get full weight.
+            Matches 3-6 years old get 0.70 weight.
+            Matches 6+ years old get 0.40 weight.
+            This makes the model prioritise modern football patterns.
+            """
             classes, counts = np.unique(y, return_counts=True)
             freq = dict(zip(classes, counts / len(y)))
             w = np.array([1.0 / freq[c] for c in y], dtype=np.float64)
+
+            # Recency weighting via date
+            try:
+                ts = pd.to_datetime(pd.Series(dates), errors='coerce')
+                valid = ts.notna()
+                if valid.any():
+                    now = ts[valid].max()
+                    age_days = (now - ts).dt.days.fillna(1825).values.astype(float)
+                    age_years = age_days / 365.25
+                    recency = np.where(age_years < 3, 1.0,
+                              np.where(age_years < 6, 0.70, 0.40))
+                    w *= recency
+            except Exception:
+                pass   # if date parsing fails, fall back to class-only weighting
+
             return w / w.mean()   # normalise so mean weight == 1
 
-        sw_1x2   = _balanced_weights(y_1x2)
-        sw_goals = _balanced_weights(y_goals)
+        sw_1x2   = _balanced_weights(y_1x2,   train_dates)
+        sw_goals = _balanced_weights(y_goals,  train_dates)
 
         dist = {int(c): int(n) for c, n in zip(*np.unique(y_1x2, return_counts=True))}
         logger.info(f"Outcome class distribution (0=home,1=draw,2=away): {dist}")
@@ -183,7 +204,7 @@ class FootballPredictor:
                              stack__sample_weight=sw_goals)
 
         self._trained = True
-        logger.info("Training complete ✓  [5-model deep stacking ensemble]")
+        logger.info("Training complete ✓  [5-model deep stacking ensemble v3]")
         return self
 
     def save(self, path: Optional[str] = None) -> str:
@@ -215,7 +236,7 @@ class FootballPredictor:
         obj._goals_pipe    = data.get('goals_pipe')
         obj.home_advantage = data.get('home_advantage', 100.0)
         obj._trained       = True
-        logger.info(f"Model loaded from {path}  [5-model deep stacking ensemble]")
+        logger.info(f"Model loaded from {path}  [5-model deep stacking ensemble v3]")
         return obj
 
     def predict_match(
@@ -237,39 +258,23 @@ class FootballPredictor:
         hist_df = history if isinstance(history, pd.DataFrame) else pd.DataFrame()
         X = self.feature_pipe.build_features([match], hist_df)
 
-        outcome_probs = self._outcome_pipe.predict_proba(X)[0]  # ty:ignore[unresolved-attribute]
-        goals_probs   = self._goals_pipe.predict_proba(X)[0]  # ty:ignore[unresolved-attribute]
+        outcome_probs = self._outcome_pipe.predict_proba(X)[0]
+        goals_probs   = self._goals_pipe.predict_proba(X)[0]
 
         p_home, p_draw, p_away = float(outcome_probs[0]), float(outcome_probs[1]), float(outcome_probs[2])
         p_over25 = float(goals_probs[1]) if len(goals_probs) > 1 else 0.5
 
         probs = [p_home, p_draw, p_away]
 
-        # ── Prediction decision logic ────────────────────────────────────
-        #
-        # Draw is predicted when p_draw is above base-rate AND the leading
-        # non-draw outcome doesn't dominate it by more than DRAW_MARGIN.
-        # 0.20 means: even if home leads draw by up to 20pp, still pick draw
-        # when it clears the floor — this corrects the model's structural
-        # under-prediction of draws.
-        DRAW_PROB_FLOOR = 0.245
-        DRAW_MARGIN     = 0.20
-
-        winner_p = max(p_home, p_away)
-        if p_draw >= DRAW_PROB_FLOOR and (winner_p - p_draw) <= DRAW_MARGIN:
-            idx = 1
-        elif p_home >= p_away:
-            idx = 0
-        else:
-            idx = 2
+        # ── Pure argmax — let the calibrated model decide ────────────────────
+        # Removed the broken DRAW_PROB_FLOOR / DRAW_MARGIN heuristic which was
+        # overriding model predictions with arbitrary constants.
+        idx = int(np.argmax(probs))
 
         prediction_label = OUTCOME_LABELS[idx]
         raw_conf = int(round(probs[idx] * 100))
-        # Report honest confidence — no artificial floors that lie about certainty
-        if idx == 1:
-            confidence = max(45, min(65, raw_conf))
-        else:
-            confidence = max(45, min(95, raw_conf))
+        # Honest confidence: clamp only at extremes (33% = random, 95% = upper cap)
+        confidence = max(33, min(95, raw_conf))
 
         def edge(prob, odds):
             return round((prob * odds) - 1.0, 3) if odds and odds > 1 else 0.0
@@ -279,12 +284,12 @@ class FootballPredictor:
             home_team, away_team, prediction_label,
             p_home, p_draw, p_away,
             feat_vec[0], feat_vec[1], feat_vec[2],   # elo_h, elo_a, elo_diff
-            feat_vec[13], feat_vec[23],               # home_ppg, away_ppg
+            feat_vec[17], feat_vec[27],               # home_ppg (idx 17), away_ppg (idx 27)
             p_over25, confidence,
-            feat_vec[50], feat_vec[51],               # home_streak, away_streak (FIXED)
-            feat_vec[52], feat_vec[53],               # home_trend, away_trend (FIXED)
-            feat_vec[31], feat_vec[56],               # h2h_n_matches, h2h_avg_goals (FIXED)
-            feat_vec[60], feat_vec[61],               # [NEW] recent-3 goals scored
+            feat_vec[74], feat_vec[75],               # home_streak, away_streak
+            feat_vec[76], feat_vec[77],               # home_trend, away_trend
+            feat_vec[43], feat_vec[80],               # h2h_n_matches (43), h2h_avg_goals (80)
+            feat_vec[94], feat_vec[95],               # home_last3_goals, away_last3_goals
         )
 
         return {
@@ -387,7 +392,7 @@ def _build_reasoning(
 
     # Model signature
     parts.append(
-        f"5-model deep ensemble (XGBoost+HistGB+ExtraTrees+RandomForest+NeuralNet→LR): "
+        f"5-model deep ensemble v3 (XGBoost+HistGB+ExtraTrees+RandomForest+NeuralNet→LR): "
         f"{home} Win {ph*100:.0f}%, Draw {pd_*100:.0f}%, {away} Win {pa*100:.0f}%. "
         f"Confidence: {confidence}%."
     )
