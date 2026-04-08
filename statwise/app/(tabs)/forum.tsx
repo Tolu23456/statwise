@@ -98,11 +98,7 @@ export default function ForumScreen() {
     setInput('');
     setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
 
-    const { error } = await supabase.from('forum_messages').insert({
-      user_id: user.id,
-      message: text,
-      created_at: new Date().toISOString(),
-    });
+    const { error } = await supabase.rpc('send_forum_message', { p_message: text });
 
     if (error) {
       setMessages(prev => prev.filter(m => m.id !== optimisticId));

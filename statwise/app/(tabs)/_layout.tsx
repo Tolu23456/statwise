@@ -1,55 +1,60 @@
 import React from 'react';
-import { Tabs } from 'expo-router';
-import { Platform, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Tabs, useRouter, usePathname } from 'expo-router';
+import {
+  Platform, View, Text, TouchableOpacity, StyleSheet, useWindowDimensions,
+} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/colors';
 import { useTheme } from '@/context/ThemeContext';
 
 const TAB_ITEMS = [
-  { name: 'index', title: 'Predictions', icon: 'football-outline' as const },
-  { name: 'insights', title: 'Insights', icon: 'analytics-outline' as const },
-  { name: 'subscriptions', title: 'Plans', icon: 'diamond-outline' as const },
-  { name: 'forum', title: 'Community', icon: 'chatbubbles-outline' as const },
-  { name: 'profile', title: 'Profile', icon: 'person-outline' as const },
+  { name: 'index',         path: '/',             title: 'Predictions', icon: 'football-outline'    as const },
+  { name: 'insights',      path: '/insights',     title: 'Insights',    icon: 'analytics-outline'   as const },
+  { name: 'subscriptions', path: '/subscriptions',title: 'Plans',       icon: 'diamond-outline'     as const },
+  { name: 'forum',         path: '/forum',        title: 'Community',   icon: 'chatbubbles-outline' as const },
+  { name: 'profile',       path: '/profile',      title: 'Profile',     icon: 'person-outline'      as const },
 ];
 
-function WebTopNav({ state, navigation }: any) {
+function WebTopNav({ compact }: { compact: boolean }) {
   const { scheme } = useTheme();
   const C = Colors[scheme];
-
-  const visibleRoutes = state.routes.filter(
-    (_: any, i: number) => i < TAB_ITEMS.length,
-  );
+  const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <View style={[styles.webNav, { backgroundColor: C.tabBar, borderBottomColor: C.tabBarBorder }]}>
-      <View style={styles.brand}>
+      <TouchableOpacity style={styles.brand} onPress={() => router.push('/')} activeOpacity={0.8}>
         <View style={[styles.brandIcon, { backgroundColor: C.primaryLight }]}>
           <Ionicons name="stats-chart" size={16} color={C.primary} />
         </View>
-        <Text style={[styles.brandText, { color: C.text }]}>StatWise</Text>
-      </View>
+        {!compact && (
+          <Text style={[styles.brandText, { color: C.text }]}>StatWise</Text>
+        )}
+      </TouchableOpacity>
 
       <View style={styles.navTabs}>
-        {visibleRoutes.map((route: any, index: number) => {
-          const item = TAB_ITEMS[index];
-          if (!item) return null;
-          const isFocused = state.index === index;
+        {TAB_ITEMS.map(item => {
+          const isFocused =
+            item.path === '/'
+              ? pathname === '/'
+              : pathname.startsWith(item.path);
           return (
             <TouchableOpacity
-              key={route.key}
-              style={[styles.navTab, isFocused && { borderBottomColor: C.primary, borderBottomWidth: 2 }]}
-              onPress={() => navigation.navigate(route.name)}
+              key={item.name}
+              style={[
+                styles.navTab,
+                compact && styles.navTabCompact,
+                isFocused && { borderBottomWidth: 2, borderBottomColor: C.primary },
+              ]}
+              onPress={() => router.push(item.path as any)}
               activeOpacity={0.75}
             >
-              <Ionicons
-                name={item.icon}
-                size={17}
-                color={isFocused ? C.primary : C.textMuted}
-              />
-              <Text style={[styles.navTabText, { color: isFocused ? C.primary : C.textMuted }]}>
-                {item.title}
-              </Text>
+              <Ionicons name={item.icon} size={17} color={isFocused ? C.primary : C.textMuted} />
+              {!compact && (
+                <Text style={[styles.navTabText, { color: isFocused ? C.primary : C.textMuted }]}>
+                  {item.title}
+                </Text>
+              )}
             </TouchableOpacity>
           );
         })}
@@ -61,77 +66,75 @@ function WebTopNav({ state, navigation }: any) {
 export default function TabLayout() {
   const { scheme } = useTheme();
   const C = Colors[scheme];
+  const { width } = useWindowDimensions();
 
-  const bottomTabBarStyle = {
+  const isWeb = Platform.OS === 'web';
+  const showTopNav = isWeb && width >= 600;
+  const compact = isWeb && width < 860;
+
+  const tabBarStyle = {
     backgroundColor: C.tabBar,
     borderTopColor: C.tabBarBorder,
     borderTopWidth: 1,
-    height: Platform.OS === 'web' ? 84 : undefined,
-    paddingBottom: Platform.OS === 'web' ? 34 : undefined,
-    display: Platform.OS === 'web' ? ('none' as const) : ('flex' as const),
+    height: isWeb ? 84 : undefined,
+    paddingBottom: isWeb ? 34 : undefined,
+    display: showTopNav ? ('none' as const) : ('flex' as const),
   };
 
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarStyle: bottomTabBarStyle,
-        tabBarActiveTintColor: C.primary,
-        tabBarInactiveTintColor: C.textMuted,
-        tabBarLabelStyle: { fontSize: 11, fontFamily: 'Inter_500Medium', marginBottom: 2 },
-      }}
-      tabBar={Platform.OS === 'web' ? (props) => <WebTopNav {...props} /> : undefined}
-    >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Predictions',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="football-outline" size={size} color={color} />
-          ),
+    <View style={{ flex: 1, backgroundColor: C.background }}>
+      {showTopNav && <WebTopNav compact={compact} />}
+
+      <Tabs
+        screenOptions={{
+          headerShown: false,
+          tabBarStyle,
+          tabBarActiveTintColor: C.primary,
+          tabBarInactiveTintColor: C.textMuted,
+          tabBarLabelStyle: { fontSize: 11, fontFamily: 'Inter_500Medium', marginBottom: 2 },
         }}
-      />
-      <Tabs.Screen
-        name="insights"
-        options={{
-          title: 'Insights',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="analytics-outline" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="subscriptions"
-        options={{
-          title: 'Plans',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="diamond-outline" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="forum"
-        options={{
-          title: 'Community',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="chatbubbles-outline" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: 'Profile',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person-outline" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen name="insight-detail" options={{ href: null }} />
-      <Tabs.Screen name="backtesting" options={{ href: null }} />
-      <Tabs.Screen name="privacy-policy" options={{ href: null }} />
-      <Tabs.Screen name="terms-of-service" options={{ href: null }} />
-    </Tabs>
+      >
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: 'Predictions',
+            tabBarIcon: ({ color, size }) => <Ionicons name="football-outline" size={size} color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="insights"
+          options={{
+            title: 'Insights',
+            tabBarIcon: ({ color, size }) => <Ionicons name="analytics-outline" size={size} color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="subscriptions"
+          options={{
+            title: 'Plans',
+            tabBarIcon: ({ color, size }) => <Ionicons name="diamond-outline" size={size} color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="forum"
+          options={{
+            title: 'Community',
+            tabBarIcon: ({ color, size }) => <Ionicons name="chatbubbles-outline" size={size} color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: 'Profile',
+            tabBarIcon: ({ color, size }) => <Ionicons name="person-outline" size={size} color={color} />,
+          }}
+        />
+        <Tabs.Screen name="insight-detail"   options={{ href: null }} />
+        <Tabs.Screen name="backtesting"      options={{ href: null }} />
+        <Tabs.Screen name="privacy-policy"   options={{ href: null }} />
+        <Tabs.Screen name="terms-of-service" options={{ href: null }} />
+      </Tabs>
+    </View>
   );
 }
 
@@ -142,15 +145,43 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     borderBottomWidth: 1,
+  },
+  brand: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginRight: 24,
+  },
+  brandIcon: {
+    width: 30,
+    height: 30,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  brandText: {
+    fontSize: 18,
+    fontFamily: 'Inter_700Bold',
+    letterSpacing: -0.5,
+  },
+  navTabs: {
+    flexDirection: 'row',
+    flex: 1,
+  },
+  navTab: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingHorizontal: 14,
+    height: 64,
+    borderBottomWidth: 0,
+  },
+  navTabCompact: {
+    paddingHorizontal: 10,
     gap: 0,
   },
-  brand: { flexDirection: 'row', alignItems: 'center', gap: 8, marginRight: 32 },
-  brandIcon: { width: 30, height: 30, borderRadius: 8, alignItems: 'center', justifyContent: 'center' },
-  brandText: { fontSize: 18, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 },
-  navTabs: { flexDirection: 'row', flex: 1, gap: 0 },
-  navTab: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    paddingHorizontal: 16, height: 64, borderBottomWidth: 0,
+  navTabText: {
+    fontSize: 14,
+    fontFamily: 'Inter_500Medium',
   },
-  navTabText: { fontSize: 14, fontFamily: 'Inter_500Medium' },
 });

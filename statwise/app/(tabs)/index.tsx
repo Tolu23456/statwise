@@ -180,7 +180,7 @@ export default function HomeScreen() {
     return list;
   }, [predictions, selectedLeague, search]);
 
-  const topInset = Platform.OS === 'web' ? 67 : insets.top;
+  const topInset = Platform.OS === 'web' ? 0 : insets.top;
 
   const EmptyState = () => {
     if (search) {
@@ -245,7 +245,6 @@ export default function HomeScreen() {
             opacity: badgeFade,
             pointerEvents: newPredictionsBadge > 0 ? 'box-none' : 'none',
           },
-          Platform.OS === 'web' && { top: 64 },
         ]}
       >
         <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
