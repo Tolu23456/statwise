@@ -193,8 +193,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 1966-07-25,Germany,Russia,2,1,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1966-07-25,West Germany,Soviet Union,2,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1966 FIFA Men's World Cup,1
 1966-07-26,England,Portugal,2,1,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
-1966-07-28,Portugal,Russia,2,1,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1966-07-28,Portugal,Soviet Union,2,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1966 FIFA Men's World Cup,1
+1966-07-28,Portugal,Russia,2,1,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1966-07-30,England,West Germany,4,2,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1966 FIFA Men's World Cup,1
 1966-07-30,England,Germany,4,2,world-cup,England,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
 1966-07-31,Cameroon,Congo,2,3,international,Cameroon,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
@@ -213,8 +213,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 1966-08-19,Hong Kong,South Korea,0,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
 1966-08-19,Malaysia,Thailand,0,0,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Merdeka Tournament,0
 1966-08-20,Japan,Taiwan,5,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
-1966-08-20,Singapore,Taiwan,4,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
 1966-08-20,Singapore,Vietnam Republic,1,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
+1966-08-20,Singapore,Taiwan,4,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
 1966-08-21,Ghana,Togo,6,2,international,Ghana,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
 1966-08-21,Hong Kong,Myanmar,0,2,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
 1966-08-21,South Korea,Thailand,2,1,international,Malaysia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Merdeka Tournament,1
@@ -340,8 +340,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 1966-12-11,Tahiti,Wallis Islands and Futuna,5,0,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,South Pacific Games,1
 1966-12-12,Kenya,Sudan,3,2,international,Kenya,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
 1966-12-12,Malaysia,India,1,2,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
-1966-12-12,New Caledonia,Solomon Islands,8,0,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Pacific Games,0
 1966-12-12,New Caledonia,Vanuatu,5,0,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Pacific Games,0
+1966-12-12,New Caledonia,Solomon Islands,8,0,international,New Caledonia,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,South Pacific Games,0
 1966-12-12,South Korea,Myanmar,0,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
 1966-12-12,Vietnam Republic,Taiwan,2,1,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1
 1966-12-13,India,Iran,1,4,international,Thailand,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,Asian Games,1

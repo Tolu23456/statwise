@@ -206,8 +206,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 1986-06-04,Scotland,Denmark,0,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-04,Uruguay,Germany,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-04,Uruguay,West Germany,1,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
-1986-06-05,France,Soviet Union,1,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
 1986-06-05,France,Russia,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-05,France,Soviet Union,1,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
 1986-06-05,Italy,Argentina,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-05,South Korea,Bulgaria,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-06,Brazil,Algeria,1,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
@@ -235,8 +235,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 1986-06-11,Portugal,Morocco,1,3,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-12,Algeria,Spain,0,3,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-12,Northern Ireland,Brazil,0,3,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
-1986-06-13,Denmark,West Germany,2,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
 1986-06-13,Denmark,Germany,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
+1986-06-13,Denmark,West Germany,2,0,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
 1986-06-13,Réunion,Mauritius,0,0,international,Réunion,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,Friendly,0
 1986-06-13,Scotland,Uruguay,0,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-15,Mexico,Bulgaria,2,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43,0,1,0,FIFA World Cup,0
@@ -245,8 +245,8 @@ date,home_team,away_team,home_goals,away_goals,league_slug,country,source,halfti
 1986-06-16,Argentina,Uruguay,1,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-16,Brazil,Poland,4,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-17,Italy,France,0,2,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
-1986-06-17,Morocco,Germany,0,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-17,Morocco,West Germany,0,1,world-cup,Neutral,worldcup,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,1986 FIFA Men's World Cup,1
+1986-06-17,Morocco,Germany,0,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-18,Denmark,Spain,1,5,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-18,England,Paraguay,3,0,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
 1986-06-21,Brazil,France,1,1,world-cup,Mexico,international,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45,0,1,0,FIFA World Cup,1
