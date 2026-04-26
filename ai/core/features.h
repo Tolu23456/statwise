@@ -219,6 +219,85 @@ extern "C" {
         int        n_matches,
         double*    out            /* 2 doubles */
     );
+
+    /* ── NEW v3: Additional features for accuracy ───────────────────────── */
+
+    void compute_form_trend(
+        const int* home_goals,
+        const int* away_goals,
+        const int* was_home,
+        int        n_matches,
+        double*    out            /* 1 double */
+    );
+
+    void compute_scoring_consistency(
+        const int* home_goals,
+        const int* away_goals,
+        const int* was_home,
+        int        n_matches,
+        double*    out            /* 1 double */
+    );
+
+    void compute_h2h_extended(
+        const int* home_goals,
+        const int* away_goals,
+        const int* was_home_team_first,
+        int        n_matches,
+        double*    out            /* 2 doubles: [avg_goals, adv_factor] */
+    );
+
+    void compute_last_n_goals(
+        const int* home_goals,
+        const int* away_goals,
+        const int* was_home,
+        int        n_matches,
+        int        n,
+        int        is_scored,     /* 1 for scored, 0 for conceded */
+        double*    out            /* 1 double */
+    );
+
+    void compute_draw_rate(
+        const int* home_goals,
+        const int* away_goals,
+        int        n_matches,
+        double*    out            /* 1 double */
+    );
+
+    /**
+     * out[0] = days_since_last (normalized)
+     * out[1] = season_stage (normalized)
+     */
+    void compute_temporal_features(
+        double     current_timestamp,
+        const double* history_timestamps,
+        int        n_matches,
+        double*    out            /* 2 doubles */
+    );
+
+    void compute_streak(
+        const int* home_goals,
+        const int* away_goals,
+        const int* was_home,
+        int        n_matches,
+        double*    out            /* 1 double */
+    );
+
+    /**
+     * Compute all 104 features for a single match.
+     */
+    void compute_all_features_v3(
+        const double* pre_elos,        /* 6: elo_h, elo_a, diff, ph, pd, pa */
+        const double* pre_att_def,     /* 4: att_h, def_h, att_a, def_a */
+        const int*    match_goals,     /* 2: hg, ag */
+        const double* odds,            /* 3: h, d, a */
+        double        current_ts,
+        const double* league_stats,    /* 6: avg_g, att_h, att_a, adv, win_h, draw */
+        int           n_h, const int* gh_h, const int* ga_h, const int* wh_h, const double* ts_h,
+        int           n_a, const int* gh_a, const int* ga_a, const int* wh_a, const double* ts_a,
+        int           n_h2h, const int* gh_h2h, const int* ga_h2h, const int* wh_h2h,
+        double        home_advantage,
+        double*       out              /* 104 doubles */
+    );
 }
 
 } // namespace statwise

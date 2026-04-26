@@ -65,9 +65,9 @@ def _load_clean_data() -> "pd.DataFrame":
     # Drop international matches (model is tuned for club football)
     if "is_international" in df.columns:
         df = df[pd.to_numeric(df["is_international"], errors="coerce").fillna(0) == 0]
-    # Quality filter — require at least goals + source confirmed (score ≥ 20)
+    # Quality filter — require at least goals + source confirmed (score ≥ 40)
     if "quality_score" in df.columns:
-        df = df[pd.to_numeric(df["quality_score"], errors="coerce").fillna(0) >= 20]
+        df = df[pd.to_numeric(df["quality_score"], errors="coerce").fillna(0) >= 40]
     logger.info(f"Clean data: {len(df):,} rows from {len(paths)} year files")
     return df.reset_index(drop=True)
 
@@ -115,8 +115,24 @@ def run(force: bool = False) -> bool:
             df = df[df["away_team"] != "Reference"]
         logger.info(f"Dropped {before - len(df):,} synthetic ClubElo rows")
 
+        # Robust deduplication by normalizing team names
+        def normalize_name(name):
+            if not isinstance(name, str): return ""
+            import unicodedata
+            name = name.lower().strip()
+            name = "".join(c for c in unicodedata.normalize('NFD', name)
+                           if unicodedata.category(c) != 'Mn')
+            # Remove punctuation
+            import string
+            name = "".join(c for c in name if c not in string.punctuation)
+            return name
+
+        df["h_norm"] = df["home_team"].apply(normalize_name)
+        df["a_norm"] = df["away_team"].apply(normalize_name)
+
         df = df.drop_duplicates(
-            subset=["home_team", "away_team", "date", "home_goals", "away_goals"])
+            subset=["h_norm", "a_norm", "date", "home_goals", "away_goals"])
+        df = df.drop(columns=["h_norm", "a_norm"])
     else:
         logger.info("[2/2] Supplementary live sources skipped (clean data available)")
 

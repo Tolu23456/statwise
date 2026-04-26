@@ -31,6 +31,7 @@ import pandas as pd
 from typing import Optional
 
 from xgboost import XGBClassifier
+from lightgbm import LGBMClassifier
 from sklearn.ensemble import (
     HistGradientBoostingClassifier,
     ExtraTreesClassifier,
@@ -41,6 +42,7 @@ from sklearn.linear_model import LogisticRegressionCV
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
+from sklearn.model_selection import TimeSeriesSplit
 
 from .features import FeaturePipeline, N_FEATURES
 from .neural_net import NeuralNetClassifier
@@ -94,6 +96,16 @@ def _rf(seed: int = 42) -> RandomForestClassifier:
     )
 
 
+def _lgbm(seed: int = 42) -> LGBMClassifier:
+    return LGBMClassifier(
+        n_estimators=300, max_depth=5, learning_rate=0.03,
+        num_leaves=31, min_child_samples=20,
+        reg_alpha=0.5, reg_lambda=3.0,
+        random_state=seed, n_jobs=2, importance_type='gain',
+        verbosity=-1,
+    )
+
+
 def _nn(seed: int = 0) -> NeuralNetClassifier:
     return NeuralNetClassifier(
         epochs=120, batch_size=512,
@@ -115,11 +127,12 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     _cal = lambda est: CalibratedClassifierCV(est, method='isotonic', cv=3)
 
     base = [
-        ('xgb', _cal(_xgb(n_classes, seed))),
-        ('hgb', _cal(_hgb(seed))),
-        ('et',  _cal(_et(n_classes, seed))),
-        ('rf',  _cal(_rf(seed))),
-        ('nn',  _nn(seed)),
+        ('xgb',  _cal(_xgb(n_classes, seed))),
+        ('lgbm', _cal(_lgbm(seed))),
+        ('hgb',  _cal(_hgb(seed))),
+        ('et',   _cal(_et(n_classes, seed))),
+        ('rf',   _cal(_rf(seed))),
+        ('nn',   _nn(seed)),
     ]
     meta = LogisticRegressionCV(
         Cs=10, cv=5, max_iter=1000,
