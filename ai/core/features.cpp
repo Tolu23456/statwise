@@ -21,6 +21,7 @@
 #include <vector>
 #include <string>
 #include <stdexcept>
+#include <ctime>
 
 namespace statwise {
 
@@ -457,6 +458,327 @@ void compute_goals_variance(
 
     out[0] = vs;
     out[1] = vc;
+}
+
+/* ── 12. compute_form_trend (NEW v3) ─────────────────────────────────── */
+
+void compute_form_trend(
+    const int* home_goals, const int* away_goals,
+    const int* was_home, int n_matches, double* out)
+{
+    if (n_matches < 6) { *out = 0.0; return; }
+
+    auto get_ppg = [&](int start, int end) {
+        if (start >= end) return 0.0;
+        double pts = 0;
+        for (int i = start; i < end; ++i) {
+            int s = was_home[i] ? home_goals[i] : away_goals[i];
+            int c = was_home[i] ? away_goals[i] : home_goals[i];
+            if (s > c) pts += 3.0; else if (s == c) pts += 1.0;
+        }
+        return pts / (end - start);
+    };
+
+    int n5 = std::min(5, n_matches);
+    double ppg_recent = get_ppg(n_matches - n5, n_matches);
+    double ppg_prev = 0;
+    if (n_matches >= 10) {
+        ppg_prev = get_ppg(n_matches - 10, n_matches - 5);
+    } else {
+        ppg_prev = get_ppg(0, n_matches - n5);
+    }
+    *out = ppg_recent - ppg_prev;
+}
+
+/* ── 13. compute_scoring_consistency (NEW v3) ───────────────────────── */
+
+void compute_scoring_consistency(
+    const int* home_goals, const int* away_goals,
+    const int* was_home, int n_matches, double* out)
+{
+    int n = std::min(n_matches, 15);
+    if (n < 3) { *out = 0.5; return; }
+
+    double mean = 0, var = 0;
+    std::vector<double> goals(n);
+    std::vector<double> weights(n, 1.0);
+    for (int i = 0; i < n; ++i) {
+        int idx = n_matches - n + i;
+        goals[i] = was_home[idx] ? home_goals[idx] : away_goals[idx];
+    }
+    weighted_moments(goals.data(), weights.data(), n, mean, var);
+    *out = 1.0 / (1.0 + std::sqrt(var));
+}
+
+/* ── 14. compute_h2h_extended (NEW v3) ──────────────────────────────── */
+
+void compute_h2h_extended(
+    const int* home_goals, const int* away_goals,
+    const int* was_home_team_first, int n_matches, double* out)
+{
+    if (n_matches == 0) { out[0] = 2.6; out[1] = 1.25; return; }
+
+    double total_goals = 0;
+    double home_wins = 0, away_wins = 0, draws = 0;
+
+    for (int i = 0; i < n_matches; ++i) {
+        int g1 = was_home_team_first[i] ? home_goals[i] : away_goals[i];
+        int g2 = was_home_team_first[i] ? away_goals[i] : home_goals[i];
+        total_goals += (g1 + g2);
+        if (g1 > g2) home_wins++;
+        else if (g1 < g2) away_wins++;
+        else draws++;
+    }
+    out[0] = total_goals / n_matches;
+    out[1] = (home_wins + 0.5) / (away_wins + 0.5);
+}
+
+/* ── 15. compute_last_n_goals (NEW v3) ──────────────────────────────── */
+
+void compute_last_n_goals(
+    const int* home_goals, const int* away_goals,
+    const int* was_home, int n_matches, int n, int is_scored, double* out)
+{
+    int count = std::min(n, n_matches);
+    if (count == 0) { *out = 1.2; return; }
+
+    double sum = 0;
+    for (int i = 0; i < count; ++i) {
+        int idx = n_matches - 1 - i;
+        int s = was_home[idx] ? home_goals[idx] : away_goals[idx];
+        int c = was_home[idx] ? away_goals[idx] : home_goals[idx];
+        sum += (is_scored ? s : c);
+    }
+    *out = sum / count;
+}
+
+/* ── 16. compute_draw_rate (NEW v3) ─────────────────────────────────── */
+
+void compute_draw_rate(
+    const int* home_goals, const int* away_goals, int n_matches, double* out)
+{
+    if (n_matches < 3) { *out = 0.24; return; }
+    int draws = 0;
+    for (int i = 0; i < n_matches; ++i) {
+        if (home_goals[i] == away_goals[i]) draws++;
+    }
+    *out = static_cast<double>(draws) / n_matches;
+}
+
+/* ── 17. compute_temporal_features (NEW v3) ─────────────────────────── */
+
+void compute_temporal_features(
+    double current_ts, const double* history_ts, int n_matches, double* out)
+{
+    /* days since last match */
+    double days = 7.0; // default
+    if (n_matches > 0) {
+        double last_ts = history_ts[n_matches - 1];
+        if (current_ts > last_ts) {
+            days = (current_ts - last_ts) / 86400.0;
+        }
+    }
+    out[0] = std::min(days, 60.0) / 60.0;
+
+    /* season stage */
+    /* Simple approximation of season stage from timestamp.
+       Assumes standard European season Aug-May. */
+    time_t rawtime = static_cast<time_t>(current_ts);
+    struct tm timeinfo;
+    gmtime_r(&rawtime, &timeinfo);
+    int month = timeinfo.tm_mon + 1; // 1-12
+
+    int pos = 0;
+    if (month == 8) pos = 0;
+    else if (month == 9) pos = 1;
+    else if (month == 10) pos = 2;
+    else if (month == 11) pos = 3;
+    else if (month == 12) pos = 4;
+    else if (month == 1) pos = 5;
+    else if (month == 2) pos = 6;
+    else if (month == 3) pos = 7;
+    else if (month == 4) pos = 8;
+    else if (month == 5) pos = 9;
+    else pos = -1;
+
+    out[1] = (pos == -1) ? 0.5 : (pos / 9.0);
+}
+
+/* ── 18. compute_streak (NEW v3) ────────────────────────────────────── */
+
+void compute_streak(
+    const int* home_goals, const int* away_goals,
+    const int* was_home, int n_matches, double* out)
+{
+    int streak = 0;
+    int sign = 0;
+    int count = std::min(n_matches, 12);
+
+    for (int i = 0; i < count; ++i) {
+        int idx = n_matches - 1 - i;
+        int s = was_home[idx] ? home_goals[idx] : away_goals[idx];
+        int c = was_home[idx] ? away_goals[idx] : home_goals[idx];
+
+        int outcome = (s > c) ? 1 : ((s < c) ? -1 : 0);
+        if (streak == 0) {
+            streak = outcome;
+            sign = outcome;
+        } else if (outcome == sign) {
+            streak += sign;
+        } else {
+            break;
+        }
+    }
+    *out = std::max(-1.0, std::min(1.0, streak / 5.0));
+}
+
+/* ── 19. compute_all_features_v3 (NEW v3) ───────────────────────────── */
+
+void compute_all_features_v3(
+    const double* pre_elos,
+    const double* pre_att_def,
+    const int*    match_goals,
+    const double* odds,
+    double        current_ts,
+    const double* league_stats,
+    int           n_h, const int* gh_h, const int* ga_h, const int* wh_h, const double* ts_h,
+    int           n_a, const int* gh_a, const int* ga_a, const int* wh_a, const double* ts_a,
+    int           n_h2h, const int* gh_h2h, const int* ga_h2h, const int* wh_h2h,
+    double        home_advantage,
+    double*       out)
+{
+    /* 1. Elo (6) 0-5 */
+    std::memcpy(out, pre_elos, 6 * sizeof(double));
+
+    /* 2. Attack / Defence Elo (4) 6-9 */
+    std::memcpy(out + 6, pre_att_def, 4 * sizeof(double));
+
+    /* 3. Home overall form (10) 10-19 */
+    compute_form_vector(gh_h, ga_h, wh_h, n_h, nullptr, out + 10);
+
+    /* 4. Away overall form (10) 20-29 */
+    compute_form_vector(gh_a, ga_a, wh_a, n_a, nullptr, out + 20);
+
+    /* 5. Home venue-split form (4) 30-33 */
+    compute_venue_split_form(gh_h, ga_h, wh_h, n_h, 1, out + 30);
+
+    /* 6. Away venue-split form (4) 34-37 */
+    compute_venue_split_form(gh_a, ga_a, wh_a, n_a, 0, out + 34);
+
+    /* 7. H2H (6) 38-43 */
+    compute_h2h_stats(gh_h2h, ga_h2h, wh_h2h, n_h2h, out + 38);
+
+    /* 8. Dixon-Coles goal probs (10) 44-53 */
+    double lh = out[13] / std::max(league_stats[0]/2, 0.1) * out[24] / std::max(league_stats[0]/2, 0.1) * league_stats[3] * (league_stats[0]/2);
+    // Wait, the logic in features.py is more complex.
+    // Let's use the parameters directly as in features.py
+    double lavg = league_stats[0];
+    double half = std::max(lavg / 2.0, 0.1);
+    double ha_str = out[13] / half;
+    double hd_str = std::max(half - out[14], 0.1) / half;
+    double aa_str = out[23] / half;
+    double ad_str = std::max(half - out[24], 0.1) / half;
+
+    double l_h = std::max(ha_str * ad_str * league_stats[3] * half, 0.1);
+    double l_a = std::max(aa_str * hd_str * half, 0.1);
+    l_h = std::min(l_h, 6.0); l_a = std::min(l_a, 6.0);
+
+    compute_poisson_score_matrix(l_h, l_a, -0.13, out + 44);
+    out[50] = l_h;
+    out[51] = l_a;
+    out[52] = l_h / std::max(l_a, 0.01);
+    out[53] = l_h + l_a;
+
+    /* 9. Dixon-Coles exact score probs (4) 54-57 are already in out + 50...53 from above?
+       Wait, compute_poisson_score_matrix fills 10 doubles.
+       [0..5] are aggregates, [6..9] are 0-0, 1-0, 0-1, 1-1.
+       In features.py, 44-53 areaggregates + lambda stats. 54-57 are exact scores.
+    */
+    // Re-filling to match features.py exactly:
+    double dc[10];
+    compute_poisson_score_matrix(l_h, l_a, -0.13, dc);
+    out[44] = dc[0]; out[45] = dc[1]; out[46] = dc[2]; out[47] = dc[3]; out[48] = dc[4]; out[49] = dc[5];
+    out[50] = l_h; out[51] = l_a; out[52] = l_h / std::max(l_a, 0.01); out[53] = l_h + l_a;
+    out[54] = dc[6]; out[55] = dc[7]; out[56] = dc[8]; out[57] = dc[9];
+
+    /* 10. Differentials (4) 58-61 */
+    out[58] = out[10] - out[20];
+    out[59] = out[13] - out[23];
+    out[60] = out[16] - out[26];
+    out[61] = out[17] - out[27];
+
+    /* 11. Market (4) 62-65 */
+    double oh = odds[0], od = odds[1], oa = odds[2];
+    bool real_odds = (oh > 1 && od > 1 && oa > 1);
+    double ih = real_odds ? (1.0/oh) : out[3];
+    double id = real_odds ? (1.0/od) : out[4];
+    double ia = real_odds ? (1.0/oa) : out[5];
+    double ovr = ih + id + ia;
+    double s = (ovr > 1e-9) ? ovr : 1.0;
+    out[62] = ih / s; out[63] = id / s; out[64] = ia / s; out[65] = ovr;
+
+    /* 12. Strengths (4) 66-69 */
+    out[66] = ha_str; out[67] = aa_str; out[68] = hd_str; out[69] = ad_str;
+
+    /* 13. Consecutive runs (4) 70-73 */
+    compute_consecutive_runs(gh_h, ga_h, wh_h, n_h, out + 70);
+    compute_consecutive_runs(gh_a, ga_a, wh_a, n_a, out + 72);
+
+    /* 14. Streaks (2) 74-75 */
+    compute_streak(gh_h, ga_h, wh_h, n_h, out + 74);
+    compute_streak(gh_a, ga_a, wh_a, n_a, out + 75);
+
+    /* 15. Trends (2) 76-77 */
+    compute_form_trend(gh_h, ga_h, wh_h, n_h, out + 76);
+    compute_form_trend(gh_a, ga_a, wh_a, n_a, out + 77);
+
+    /* 16. Consistency (2) 78-79 */
+    compute_scoring_consistency(gh_h, ga_h, wh_h, n_h, out + 78);
+    compute_scoring_consistency(gh_a, ga_a, wh_a, n_a, out + 79);
+
+    /* 17. H2H extended (2) 80-81 */
+    compute_h2h_extended(gh_h2h, ga_h2h, wh_h2h, n_h2h, out + 80);
+
+    /* 18. League context (3) 82-84 */
+    out[82] = lavg; out[83] = league_stats[4]; out[84] = league_stats[5];
+
+    /* 19. Venue PPG diff (1) 85 */
+    out[85] = out[31] - out[35];
+
+    /* 20. Attack/defence vs league (4) 86-89 */
+    double latt_half = std::max(league_stats[1] * half, 0.1);
+    out[86] = out[13] / latt_half - 1.0;
+    out[87] = out[23] / latt_half - 1.0;
+    out[88] = 1.0 - out[14] / latt_half;
+    out[89] = 1.0 - out[24] / latt_half;
+
+    /* 21. Goals variance (4) 90-93 */
+    compute_goals_variance(gh_h, ga_h, wh_h, n_h, out + 90);
+    compute_goals_variance(gh_a, ga_a, wh_a, n_a, out + 92);
+
+    /* 22. Recent 3-match goals (4) 94-97 */
+    compute_last_n_goals(gh_h, ga_h, wh_h, n_h, 3, 1, out + 94);
+    compute_last_n_goals(gh_a, ga_a, wh_a, n_a, 3, 1, out + 95);
+    compute_last_n_goals(gh_h, ga_h, wh_h, n_h, 3, 0, out + 96);
+    compute_last_n_goals(gh_a, ga_a, wh_a, n_a, 3, 0, out + 97);
+
+    /* 23. Temporal / draw context (6) 98-103 */
+    compute_temporal_features(current_ts, ts_h, n_h, out + 98);
+    // Days since last for away is out[99]
+    double tmp_away[2];
+    compute_temporal_features(current_ts, ts_a, n_a, tmp_away);
+    out[99] = tmp_away[0];
+    // out[100] is season_stage (already in out[99] from home call)
+    out[100] = out[99]; // Wait, temporal call for home sets out[99] as season_stage.
+    // Let's re-correct:
+    // temporal for home: out[98] = days_h, out[99] = season_stage
+    // temporal for away: tmp[0] = days_a, tmp[1] = season_stage
+    out[99] = tmp_away[0];
+    out[100] = tmp_away[1]; // season_stage
+
+    compute_draw_rate(gh_h, ga_h, n_h, out + 101);
+    compute_draw_rate(gh_a, ga_a, n_a, out + 102);
+    out[103] = real_odds ? 1.0 : 0.0;
 }
 
 } // extern "C"
