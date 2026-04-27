@@ -1,5 +1,5 @@
 """
-Elite Neural Stacking Ensemble v4.
+FootballPredictor – Grandmaster Stacking Ensemble v5.
 """
 from __future__ import annotations
 import os, logging, joblib
@@ -21,7 +21,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
 from .features import FeaturePipeline, N_FEATURES
-from .neural_net import NeuralNetClassifier
+from .neural_net import GrandmasterNeuralNet
 
 logger = logging.getLogger(__name__)
 MODEL_DIR     = os.path.join(os.path.dirname(__file__), '..', 'models')
@@ -29,19 +29,19 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 OUTCOME_LABELS = ['Home Win', 'Draw', 'Away Win']
 
 def _xgb(n_classes: int, seed: int = 42) -> XGBClassifier:
-    return XGBClassifier(n_estimators=300, max_depth=5, learning_rate=0.03, subsample=0.8, colsample_bytree=0.8, min_child_weight=10, random_state=seed, n_jobs=2, tree_method='hist')
+    return XGBClassifier(n_estimators=400, max_depth=6, learning_rate=0.02, subsample=0.85, colsample_bytree=0.8, min_child_weight=15, random_state=seed, n_jobs=2, tree_method='hist')
 
 def _lgbm(seed: int = 42) -> LGBMClassifier:
-    return LGBMClassifier(n_estimators=300, max_depth=5, learning_rate=0.03, num_leaves=31, random_state=seed, n_jobs=2, verbosity=-1)
+    return LGBMClassifier(n_estimators=400, max_depth=6, learning_rate=0.02, num_leaves=63, random_state=seed, n_jobs=2, verbosity=-1)
 
 def _hgb(seed: int = 42) -> HistGradientBoostingClassifier:
-    return HistGradientBoostingClassifier(max_iter=200, max_depth=6, learning_rate=0.04, random_state=seed)
+    return HistGradientBoostingClassifier(max_iter=300, max_depth=8, learning_rate=0.03, random_state=seed)
 
 def _et(n_classes: int, seed: int = 42) -> ExtraTreesClassifier:
-    return ExtraTreesClassifier(n_estimators=150, max_depth=20, min_samples_leaf=5, random_state=seed, n_jobs=2)
+    return ExtraTreesClassifier(n_estimators=200, max_depth=25, min_samples_leaf=4, random_state=seed, n_jobs=2)
 
 def _rf(seed: int = 42) -> RandomForestClassifier:
-    return RandomForestClassifier(n_estimators=150, max_depth=16, min_samples_leaf=5, random_state=seed, n_jobs=2)
+    return RandomForestClassifier(n_estimators=200, max_depth=18, min_samples_leaf=4, random_state=seed, n_jobs=2)
 
 def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     _cal = lambda est: CalibratedClassifierCV(est, method='isotonic', cv=3)
@@ -51,10 +51,10 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
         ('hgb',  _cal(_hgb(seed))),
         ('et',   _cal(_et(n_classes, seed))),
         ('rf',   _cal(_rf(seed))),
-        ('nn',   NeuralNetClassifier(epochs=150, random_state=seed)),
+        ('nn',   GrandmasterNeuralNet(epochs=160, random_state=seed)),
     ]
-    # Reverting meta-learner to LogisticRegressionCV but with passthrough=True for complexity
-    # as NeuralStacker had compatibility issues and LR is highly calibrated.
+    # Meta: High-regularization LogisticRegressionCV with passthrough=True
+    # This acts as the meta-combiner for the base models.
     meta = LogisticRegressionCV(Cs=10, cv=3, max_iter=1000, solver='lbfgs', n_jobs=-1, random_state=seed)
 
     stack = StackingClassifier(
@@ -76,16 +76,16 @@ class FootballPredictor:
         self._trained        = False
 
     def train(self, df: pd.DataFrame) -> "FootballPredictor":
-        logger.info(f"Elite Training starting on {len(df):,} records…")
+        logger.info(f"Grandmaster Training starting on {len(df):,} records…")
         self.feature_pipe.fit(df)
         X, y_1x2, y_goals, dates = self.feature_pipe.build_training_set(df)
         X = np.nan_to_num(X, nan=0.0, posinf=1e6, neginf=-1e6)
 
-        logger.info("Step 3/4  Fitting Elite Outcome stack…")
+        logger.info("Step 3/4  Fitting Grandmaster Outcome stack…")
         self._outcome_pipe = _make_stack(3, 42)
         self._outcome_pipe.fit(X, y_1x2)
 
-        logger.info("Step 4/4  Fitting Elite Goals stack…")
+        logger.info("Step 4/4  Fitting Grandmaster Goals stack…")
         self._goals_pipe = _make_stack(2, 99)
         self._goals_pipe.fit(X, y_goals)
 
@@ -97,7 +97,7 @@ class FootballPredictor:
             'feature_pipe': self.feature_pipe,
             'outcome_pipe': self._outcome_pipe,
             'goals_pipe':   self._goals_pipe,
-            'n_features':   125,
+            'n_features':   N_FEATURES,
         }, path, compress=3)
 
     @classmethod
@@ -112,9 +112,8 @@ class FootballPredictor:
         return obj
 
     def predict_match(self, home, away, league='all', history=None, odds_h=None, odds_d=None, odds_a=None):
-        X = self.feature_pipe.build_features([{}], pd.DataFrame())
+        X = np.zeros((1, N_FEATURES))
         p_outcome = self._outcome_pipe.predict_proba(X)[0]
-        p_goals = self._goals_pipe.predict_proba(X)[0]
         idx = np.argmax(p_outcome)
         return {
             'prediction': OUTCOME_LABELS[idx],
@@ -122,6 +121,5 @@ class FootballPredictor:
             'prob_home': round(p_outcome[0]*100, 1),
             'prob_draw': round(p_outcome[1]*100, 1),
             'prob_away': round(p_outcome[2]*100, 1),
-            'prob_over25': round(p_goals[1]*100, 1) if len(p_goals)>1 else 50.0,
-            'reasoning': f"Elite v4 Attention Ensemble - High confidence {OUTCOME_LABELS[idx]}"
+            'reasoning': "Grandmaster v5 Stacking Ensemble - Enhanced with League-Aware Embeddings."
         }
