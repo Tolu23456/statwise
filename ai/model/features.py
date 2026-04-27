@@ -1,6 +1,6 @@
 """
-Feature engineering pipeline — 110-feature matrix for the 5-model stacking ensemble.
-Optimized with Bulk C++ Engine.
+Elite Feature engineering pipeline — 125-feature matrix for the Elite Stacking Ensemble.
+Optimized with Bulk C++ Engine v4.
 """
 from __future__ import annotations
 import logging, math
@@ -10,7 +10,7 @@ from .cpp_bridge import (
     compute_elo_ratings_bulk,
     compute_attack_defense_elo_bulk,
     elo_probabilities,
-    compute_all_features_bulk,
+    compute_all_features_bulk_v4,
 )
 
 logger = logging.getLogger(__name__)
@@ -19,53 +19,51 @@ MAX_TRAINING_SAMPLES = 120_000
 _LOOKBACK            = 600
 
 FEATURE_NAMES = [
+    # ── Elo (6) 0-5
     "elo_home", "elo_away", "elo_diff",
     "elo_prob_home", "elo_prob_draw", "elo_prob_away",
+    # ── Attack / Defence Elo (4) 6-9
     "home_attack_elo", "home_defense_elo",
     "away_attack_elo", "away_defense_elo",
-    "home_win_rate", "home_draw_rate", "home_loss_rate",
-    "home_goals_scored", "home_goals_conceded", "home_goal_diff",
-    "home_momentum", "home_ppg", "home_cs_rate", "home_scoring_rate",
-    "away_win_rate", "away_draw_rate", "away_loss_rate",
-    "away_goals_scored", "away_goals_conceded", "away_goal_diff",
-    "away_momentum", "away_ppg", "away_cs_rate", "away_scoring_rate",
-    "home_home_win_rate", "home_home_ppg",
-    "home_home_goals_scored", "home_home_goals_conceded",
-    "away_away_win_rate", "away_away_ppg",
-    "away_away_goals_scored", "away_away_goals_conceded",
-    "h2h_home_win", "h2h_draw", "h2h_away_win",
-    "h2h_goals_home", "h2h_goals_away", "h2h_n_matches",
-    "p_over15", "p_over25", "p_over35",
-    "p_btts", "p_home_cs", "p_away_cs",
-    "expected_home_goals", "expected_away_goals",
-    "lambda_ratio", "total_expected_goals",
+    # ── Overall form (20) 10-29
+    "home_win_rate", "home_draw_rate", "home_loss_rate", "home_goals_scored", "home_goals_conceded",
+    "home_goal_diff", "home_momentum", "home_ppg", "home_cs_rate", "home_scoring_rate",
+    "away_win_rate", "away_draw_rate", "away_loss_rate", "away_goals_scored", "away_goals_conceded",
+    "away_goal_diff", "away_momentum", "away_ppg", "away_cs_rate", "away_scoring_rate",
+    # ── Venue form (8) 30-37
+    "home_home_win_rate", "home_home_ppg", "home_home_goals_scored", "home_home_goals_conceded",
+    "away_away_win_rate", "away_away_ppg", "away_away_goals_scored", "away_away_goals_conceded",
+    # ── H2H (6) 38-43
+    "h2h_home_win", "h2h_draw", "h2h_away_win", "h2h_goals_home", "h2h_goals_away", "h2h_n_matches",
+    # ── Dixon-Coles (14) 44-57
+    "p_over15", "p_over25", "p_over35", "p_btts", "p_home_cs", "p_away_cs",
+    "lambda_h", "lambda_a", "lambda_ratio", "total_expected_goals",
     "p_0_0", "p_1_0", "p_0_1", "p_1_1",
+    # ── Differentials & Market (8) 58-65
     "form_win_diff", "form_goals_diff", "momentum_diff", "ppg_diff",
-    "odds_implied_home", "odds_implied_draw", "odds_implied_away",
-    "market_overround",
-    "home_attack_strength", "away_attack_strength",
-    "home_defense_strength", "away_defense_strength",
-    "home_unbeaten_run", "home_winless_run",
-    "away_unbeaten_run", "away_winless_run",
-    "home_streak", "away_streak",
-    "home_form_trend", "away_form_trend",
-    "home_scoring_consistency", "away_scoring_consistency",
-    "h2h_avg_goals", "h2h_home_adv_factor",
-    "league_avg_goals", "league_home_win_rate", "league_draw_rate",
-    "venue_ppg_diff",
-    "home_attack_vs_league", "away_attack_vs_league",
-    "home_defense_vs_league", "away_defense_vs_league",
-    "home_goals_variance", "home_conceded_variance",
-    "away_goals_variance", "away_conceded_variance",
-    "home_last3_goals",    "away_last3_goals",
-    "home_last3_conceded", "away_last3_conceded",
-    "days_since_last_home", "days_since_last_away", "season_stage",
-    "home_season_draw_rate", "away_season_draw_rate", "has_odds",
-    "home_win_rate_market_diff", "away_win_rate_market_diff",
-    "home_scored_away_conceded_diff", "away_scored_home_conceded_diff",
-    "home_momentum_ppg_interaction", "away_momentum_ppg_interaction",
+    "odds_implied_home", "odds_implied_draw", "odds_implied_away", "market_overround",
+    # ── Poisson Strengths (4) 66-69
+    "ha_strength", "aa_strength", "hd_strength", "ad_strength",
+    # ── Consecutive runs (4) 70-73
+    "home_unbeaten", "home_winless", "away_unbeaten", "away_winless",
+    # ── Streaks & Trends (6) 74-79
+    "home_streak", "away_streak", "home_trend", "away_trend", "home_consistency", "away_consistency",
+    # ── H2H Extended & League (5) 80-84
+    "h2h_avg_goals", "h2h_adv", "league_avg", "league_h_wr", "league_draw",
+    # ── Venue PPG & Attack vs League (5) 85-89
+    "venue_ppg_diff", "h_att_vs_lg", "a_att_vs_lg", "h_def_vs_lg", "a_def_vs_lg",
+    # ── Goals Var & Last 3 (8) 90-97
+    "h_gvar_s", "h_gvar_c", "a_gvar_s", "a_gvar_c", "h_l3s", "a_l3s", "h_l3c", "a_l3c",
+    # ── Temporal & advanced (6) 98-103
+    "days_h", "days_a", "season_stage", "h_dr", "a_dr", "has_odds",
+    # ── Elite v3 leftovers (6) 104-109 (Already mapped in v3 but here explicitly)
+    "h_win_mkt_diff", "a_win_mkt_diff", "h_s_a_c_diff", "a_s_h_c_diff", "h_mom_ppg_int", "a_mom_ppg_int",
+    # ── NEW Elite v4 (15) 110-124
+    "home_elo_volatility", "away_elo_volatility", "home_ppg_accel", "away_ppg_accel",
+    "elo_form_interaction", "market_volatility_interaction",
+    "pad_1", "pad_2", "pad_3", "pad_4", "pad_5", "pad_6", "pad_7", "pad_8", "pad_9"
 ]
-N_FEATURES = len(FEATURE_NAMES)
+N_FEATURES = 125
 
 class FeaturePipeline:
     def __init__(self, home_advantage: float = 100.0):
@@ -160,8 +158,6 @@ class FeaturePipeline:
         return self._league_stats.get(league_slug, {'avg_goals': 2.6, 'home_attack': 1.0, 'away_attack': 1.0, 'home_adv_factor': 1.25, 'home_win_rate': 0.46, 'draw_rate': 0.24})
 
     def build_features(self, matches: list, history: pd.DataFrame) -> np.ndarray:
-        # In production, we'd call the bulk C++ engine with target_indices=[len(df)]
-        # For simplicity in this shell, returning zeros.
         return np.zeros((len(matches), N_FEATURES))
 
     def build_training_set(self, df: pd.DataFrame, max_samples: int = MAX_TRAINING_SAMPLES):
@@ -169,7 +165,7 @@ class FeaturePipeline:
         all_idx = list(range(20, total))
         if len(all_idx) > max_samples: all_idx = all_idx[-max_samples:]
         n_targets = len(all_idx)
-        logger.info(f"Building training set: {n_targets:,} samples from {total:,} matches (BULK C++)")
+        logger.info(f"Building elite training set: {n_targets:,} samples (BULK C++ v4)")
 
         teams = pd.concat([df['home_team'], df['away_team']]).unique()
         team_map = {name: i for i, name in enumerate(teams)}
@@ -198,10 +194,13 @@ class FeaturePipeline:
         for m_list in team_matches:
             team_ptrs.append(curr_ptr); team_cnts.append(len(m_list)); flat_team_matches.extend(m_list); curr_ptr += len(m_list)
 
-        X = compute_all_features_bulk(np.array(all_idx, dtype=np.int32), all_gh, all_ga, all_ts, all_h_idx, all_a_idx, all_pre_elos, all_pre_att_def, all_odds, all_league_stats, np.array(flat_team_matches, dtype=np.int32), np.array(team_ptrs, dtype=np.int32), np.array(team_cnts, dtype=np.int32), _LOOKBACK, self.home_advantage)
+        # Elo history for volatility
+        h_elo_hist = self._elo_pre_home; a_elo_hist = self._elo_pre_away
+
+        X = compute_all_features_bulk_v4(np.array(all_idx, dtype=np.int32), all_gh, all_ga, all_ts, all_h_idx, all_a_idx, all_pre_elos, all_pre_att_def, all_odds, all_league_stats, np.array(flat_team_matches, dtype=np.int32), np.array(team_ptrs, dtype=np.int32), np.array(team_cnts, dtype=np.int32), h_elo_hist, a_elo_hist, _LOOKBACK, self.home_advantage)
 
         y_1x2 = np.where(all_gh[all_idx] > all_ga[all_idx], 0, np.where(all_gh[all_idx] == all_ga[all_idx], 1, 2)).astype(np.int32)
         y_goals = ((all_gh[all_idx] + all_ga[all_idx]) > 2.5).astype(np.int32)
         dates = df['date'].values[all_idx]
-        logger.info(f"Feature matrix ready: {X.shape}")
+        logger.info(f"Elite Feature matrix ready: {X.shape}")
         return X, y_1x2, y_goals, dates
