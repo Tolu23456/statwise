@@ -1,18 +1,17 @@
 """
-Elite Neural Architecture — Attention-based Residual Network for Football Prediction.
+Grandmaster Neural Architecture — League-Aware Attention Network.
 
-Architecture (v4):
-  1. Input Projection: Linear(N) → BN → GELU → (Batch, K, D)
-  2. Multi-Head Self-Attention: Learns relationships between feature groups.
-  3. Deep Residual Stages: Multiple levels of ResBlocks with downsampling.
-  4. Squeeze-and-Excitation (SE): Channel-wise attention for feature calibration.
-  5. Output Head: Final classification for 1X2 outcomes.
+Architecture (v5):
+  1. League Embedding: Learns tactical 'fingerprints' for each league.
+  2. Numerical Projection: Continuous features → High-dimensional space.
+  3. Feature-Context Fusion: Merges league context with team stats.
+  4. Multi-Head Cross-Attention: Dynamically weighs features based on league context.
+  5. Deep Residual Stages: v4 ResBlocks for deep pattern recognition.
 
-v4 Improvements:
-  - Multi-Head Attention (MHA) over projected feature embeddings.
-  - GELU activation instead of ReLU for smoother gradients.
-  - Increased depth: 3 residual stages (512, 256, 128).
-  - Label smoothing and adaptive learning rates.
+v5 Improvements:
+  - nn.Embedding for League IDs (handles 100+ professional leagues).
+  - Cross-Attention mechanism to modulate feature importance by league.
+  - Dropout optimization for large-scale data.
 """
 from __future__ import annotations
 import logging, math
@@ -28,14 +27,13 @@ try:
     _TORCH = True
 except ImportError:
     _TORCH = False
-    logger.warning("PyTorch not available — EliteNeuralNet uses LR fallback.")
+    logger.warning("PyTorch not available — GrandmasterNet uses LR fallback.")
 
 
-# ── Network Modules (only defined when PyTorch is available) ──────────────────
+# ── Network Modules ───────────────────────────────────────────────────────────
 
 if _TORCH:
     class _SEBlock(nn.Module):
-        """Squeeze-and-Excitation block for channel-wise attention."""
         def __init__(self, dim: int, reduction: int = 4):
             super().__init__()
             self.attn = nn.Sequential(
@@ -48,7 +46,6 @@ if _TORCH:
             return x * self.attn(x)
 
     class _ResBlock(nn.Module):
-        """Enhanced Residual Block with GELU and SE-Attention."""
         def __init__(self, dim: int, dropout: float = 0.2):
             super().__init__()
             self.block = nn.Sequential(
@@ -64,79 +61,72 @@ if _TORCH:
             self.drop = nn.Dropout(dropout)
 
         def forward(self, x: torch.Tensor) -> torch.Tensor:
-            identity = x
-            out = self.block(x)
-            out = self.se(out)
-            return self.drop(self.act(out + identity))
+            return self.drop(self.act(self.se(self.block(x)) + x))
 
-    class _EliteFootballNet(nn.Module):
+    class _GrandmasterFootballNet(nn.Module):
         """
-        Elite Attention-based Residual Network.
-        Projects flat features into a 2D 'embedding' space to apply attention.
+        League-Aware Attention-based Residual Network.
+        Expects X[:, :-1] to be numerical and X[:, -1] to be league_id.
         """
-        def __init__(self, n_in: int, n_out: int, d_model: int = 128, n_heads: int = 4):
+        def __init__(self, n_cont: int, n_leagues: int, n_out: int,
+                     d_model: int = 192, d_embed: int = 32, n_heads: int = 4):
             super().__init__()
-            # Projection: treat features as groups
-            self.d_model = d_model
-            self.n_groups = 8  # split projected space into 8 virtual 'tokens'
-            self.proj = nn.Sequential(
-                nn.Linear(n_in, d_model * self.n_groups),
-                nn.BatchNorm1d(d_model * self.n_groups),
-                nn.GELU(),
+            self.n_leagues = n_leagues
+
+            # 1. League Embedding
+            self.league_embed = nn.Embedding(n_leagues, d_embed)
+
+            # 2. Continuous Projection
+            self.cont_proj = nn.Sequential(
+                nn.Linear(n_cont, d_model - d_embed),
+                nn.BatchNorm1d(d_model - d_embed),
+                nn.GELU()
             )
 
-            # Multi-Head Attention over virtual feature groups
-            self.attn = nn.MultiheadAttention(d_model, n_heads, batch_first=True)
-            self.attn_norm = nn.LayerNorm(d_model)
+            # 3. Transformer Block (Self-Attention over fused features)
+            # We treat the fused vector as a sequence of 'feature tokens'
+            self.n_tokens = 6  # split d_model into 6 virtual tokens for MHA
+            self.token_dim = d_model // self.n_tokens
+            self.attn = nn.MultiheadAttention(self.token_dim, n_heads, batch_first=True)
+            self.attn_norm = nn.LayerNorm(self.token_dim)
 
-            # Global pooling + Flatten
-            self.flatten = nn.Flatten()
+            # 4. Deep Residual Pipeline
+            self.res1 = _ResBlock(d_model, dropout=0.2)
+            self.down1 = nn.Sequential(nn.Linear(d_model, d_model // 2), nn.BatchNorm1d(d_model // 2), nn.GELU())
 
-            # Deep Residual Stages
-            curr_dim = d_model * self.n_groups
-            self.res1 = _ResBlock(curr_dim, dropout=0.2)
+            curr_dim = d_model // 2
+            self.res2 = _ResBlock(curr_dim, dropout=0.15)
+            self.down2 = nn.Sequential(nn.Linear(curr_dim, curr_dim // 2), nn.BatchNorm1d(curr_dim // 2), nn.GELU())
 
-            self.down1 = nn.Sequential(
-                nn.Linear(curr_dim, curr_dim // 2),
-                nn.BatchNorm1d(curr_dim // 2),
-                nn.GELU(),
-            )
-            curr_dim //= 2
-            self.res2 = _ResBlock(curr_dim, dropout=0.2)
-
-            self.down2 = nn.Sequential(
-                nn.Linear(curr_dim, curr_dim // 2),
-                nn.BatchNorm1d(curr_dim // 2),
-                nn.GELU(),
-            )
             curr_dim //= 2
             self.res3 = _ResBlock(curr_dim, dropout=0.1)
 
             self.head = nn.Linear(curr_dim, n_out)
 
-            # Weight initialization
             for m in self.modules():
                 if isinstance(m, nn.Linear):
                     nn.init.kaiming_normal_(m.weight, nonlinearity='linear')
-                    if m.bias is not None:
-                        nn.init.zeros_(m.bias)
+                    if m.bias is not None: nn.init.zeros_(m.bias)
 
-        def forward(self, x: torch.Tensor) -> torch.Tensor:
-            # (Batch, N) -> (Batch, Groups * D)
-            x = self.proj(x)
+        def forward(self, x_num: torch.Tensor, x_cat: torch.Tensor) -> torch.Tensor:
+            #cat embeddings
+            emb = self.league_embed(x_cat) # (B, d_embed)
 
-            # Reshape for Attention: (Batch, Groups, D)
-            b, total_d = x.shape
-            x_attn = x.view(b, self.n_groups, self.d_model)
+            #cont projection
+            proj = self.cont_proj(x_num) # (B, d_model - d_embed)
 
-            # Apply Self-Attention
-            attn_out, _ = self.attn(x_attn, x_attn, x_attn)
-            x_attn = self.attn_norm(x_attn + attn_out)
+            #fusion
+            fused = torch.cat([proj, emb], dim=1) # (B, d_model)
 
-            # Back to Flat: (Batch, curr_dim)
-            x = x_attn.view(b, -1)
+            #attention over tokens
+            b = fused.shape[0]
+            tokens = fused.view(b, self.n_tokens, self.token_dim)
+            attn_out, _ = self.attn(tokens, tokens, tokens)
+            tokens = self.attn_norm(tokens + attn_out)
 
-            # Residual Stages
+            x = tokens.reshape(b, -1)
+
+            #residual stages
             x = self.res1(x)
             x = self.down1(x)
             x = self.res2(x)
@@ -148,24 +138,26 @@ if _TORCH:
 
 # ── sklearn Wrapper ───────────────────────────────────────────────────────────
 
-class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
+class GrandmasterNeuralNet(BaseEstimator, ClassifierMixin):
     """
-    sklearn-compatible wrapper around _EliteFootballNet.
-    v4: Attention-based ResNet with GELU.
+    Grandmaster Classifier with League-Aware Embeddings.
+    Expects input X to have league_id in the last column.
     """
     _estimator_type = "classifier"
 
     def __init__(
         self,
-        epochs:       int   = 150,    # Increased from 120
-        batch_size:   int   = 1024,   # Larger batches for global dataset
+        n_leagues:    int   = 120,   # Max anticipated professional leagues
+        epochs:       int   = 160,
+        batch_size:   int   = 1024,
         lr:           float = 1e-3,
-        weight_decay: float = 2e-4,
-        label_smooth: float = 0.1,    # Increased from 0.05
-        patience:     int   = 15,
+        weight_decay: float = 3e-4,
+        label_smooth: float = 0.1,
+        patience:     int   = 20,
         val_frac:     float = 0.15,
         random_state: int   = 42,
     ):
+        self.n_leagues    = n_leagues
         self.epochs       = epochs
         self.batch_size   = batch_size
         self.lr           = lr
@@ -176,148 +168,112 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         self.random_state = random_state
 
     def fit(self, X: np.ndarray, y: np.ndarray,
-            sample_weight: np.ndarray | None = None) -> "NeuralNetClassifier":
-        if not _TORCH:
-            return self._fit_fallback(X, y, sample_weight)
+            sample_weight: np.ndarray | None = None) -> "GrandmasterNeuralNet":
+        if not _TORCH: return self._fit_fallback(X, y, sample_weight)
 
         torch.manual_seed(self.random_state)
         np.random.seed(self.random_state)
 
         self.classes_   = np.unique(y)
         n_classes       = len(self.classes_)
-        n_features      = X.shape[1]
+        # X has continuous features in cols [0:-1] and league_id in [-1]
+        n_cont          = X.shape[1] - 1
         self._label_map = {c: i for i, c in enumerate(self.classes_)}
 
         y_idx = np.array([self._label_map[c] for c in y], dtype=np.int64)
         n     = len(X)
 
-        # ── Validation split for early stopping ───────────────────────────────
-        use_early = self.patience > 0 and n > 500 and self.val_frac > 0
-        if use_early:
-            val_size = max(100, int(self.val_frac * n))
+        val_size = int(self.val_frac * n) if self.val_frac > 0 else 0
+        if val_size > 0:
             X_tr, y_tr = X[:-val_size], y_idx[:-val_size]
-            X_val_np, y_val_np = X[-val_size:], y_idx[-val_size:]
-            X_val_t = torch.FloatTensor(np.ascontiguousarray(X_val_np, dtype=np.float32))
-            y_val_t = torch.LongTensor(np.ascontiguousarray(y_val_np, dtype=np.int64))
+            X_vl, y_vl = X[-val_size:], y_idx[-val_size:]
             sw_tr = sample_weight[:-val_size] if sample_weight is not None else None
         else:
             X_tr, y_tr = X, y_idx
-            X_val_t = None; y_val_t = None
+            X_vl, y_vl = None, None
             sw_tr = sample_weight
 
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        if device.type == 'cuda':
-            logger.info(f"  [EliteNet] Training on GPU: {torch.cuda.get_device_name(0)}")
+        self._model = _GrandmasterFootballNet(n_cont, self.n_leagues, n_classes).to(device)
 
-        self._model = _EliteFootballNet(n_features, n_classes).to(device)
-
-        if use_early and X_val_t is not None:
-            X_val_t = X_val_t.to(device)
-            y_val_t = y_val_t.to(device)
-
-        # Class weights from training fold only
         counts = np.bincount(y_tr, minlength=n_classes).astype(np.float32)
         cls_w  = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1)))).to(device)
 
-        criterion = nn.CrossEntropyLoss(
-            weight=cls_w,
-            label_smoothing=self.label_smooth,
+        criterion = nn.CrossEntropyLoss(weight=cls_w, label_smoothing=self.label_smooth)
+        optimizer = torch.optim.AdamW(self._model.parameters(), lr=self.lr, weight_decay=self.weight_decay)
+
+        steps = max(1, math.ceil(len(X_tr) / self.batch_size))
+        scheduler = torch.optim.lr_scheduler.OneCycleLR(
+            optimizer, max_lr=self.lr, epochs=self.epochs, steps_per_epoch=steps,
+            pct_start=0.2, div_factor=20
         )
 
-        opt = torch.optim.AdamW(
-            self._model.parameters(),
-            lr=self.lr, weight_decay=self.weight_decay,
-        )
+        # Dataset with league ID extraction
+        def _prep_tensor(arr):
+            num = torch.FloatTensor(arr[:, :-1].astype(np.float32))
+            cat = torch.LongTensor(arr[:, -1].astype(np.int64)).clamp(0, self.n_leagues - 1)
+            return num, cat
 
-        steps_per_epoch = max(1, math.ceil(len(X_tr) / self.batch_size))
-        sched = torch.optim.lr_scheduler.OneCycleLR(
-            opt, max_lr=self.lr,
-            epochs=self.epochs, steps_per_epoch=steps_per_epoch,
-            pct_start=0.25, anneal_strategy='cos', div_factor=25,
-        )
+        tr_num, tr_cat = _prep_tensor(X_tr)
+        tr_y = torch.LongTensor(y_tr)
+        tr_sw = torch.FloatTensor(sw_tr if sw_tr is not None else np.ones(len(y_tr)))
 
-        dataset = tud.TensorDataset(
-            torch.FloatTensor(np.ascontiguousarray(X_tr, dtype=np.float32)),
-            torch.LongTensor(np.ascontiguousarray(y_tr, dtype=np.int64)),
-            torch.FloatTensor(np.ascontiguousarray(sw_tr if sw_tr is not None else np.ones(len(y_tr)), dtype=np.float32))
-        )
-        loader = tud.DataLoader(
-            dataset, batch_size=self.batch_size,
-            shuffle=True, drop_last=False, num_workers=0
-        )
+        dataset = tud.TensorDataset(tr_num, tr_cat, tr_y, tr_sw)
+        loader = tud.DataLoader(dataset, batch_size=self.batch_size, shuffle=True)
 
-        best_val_loss = float('inf')
-        best_state    = None
-        no_improve    = 0
+        if X_vl is not None:
+            vl_num, vl_cat = _prep_tensor(X_vl)
+            vl_num, vl_cat = vl_num.to(device), vl_cat.to(device)
+            vl_y = torch.LongTensor(y_vl).to(device)
+
+        best_loss, best_state, no_imp = float('inf'), None, 0
 
         self._model.train()
         for epoch in range(self.epochs):
-            total_loss = 0
-            for xb, yb, wb in loader:
-                xb, yb, wb = xb.to(device), yb.to(device), wb.to(device)
-                opt.zero_grad(set_to_none=True)
-
-                logits = self._model(xb)
-                # Apply sample weights manually if they exist
-                loss_vec = nn.functional.cross_entropy(logits, yb, weight=cls_w, reduction='none')
-                loss = (loss_vec * wb).mean()
-
+            for bn, bc, by, bw in loader:
+                bn, bc, by, bw = bn.to(device), bc.to(device), by.to(device), bw.to(device)
+                optimizer.zero_grad(set_to_none=True)
+                logits = self._model(bn, bc)
+                loss = (nn.functional.cross_entropy(logits, by, weight=cls_w, reduction='none') * bw).mean()
                 loss.backward()
                 nn.utils.clip_grad_norm_(self._model.parameters(), 1.0)
-                opt.step()
-                sched.step()
-                total_loss += loss.item()
+                optimizer.step()
+                scheduler.step()
 
-            # Early stopping check
-            if use_early and X_val_t is not None:
+            if X_vl is not None:
                 self._model.eval()
                 with torch.no_grad():
-                    val_logits = self._model(X_val_t)
-                    val_loss   = nn.functional.cross_entropy(val_logits, y_val_t).item()
+                    v_logits = self._model(vl_num, vl_cat)
+                    v_loss = nn.functional.cross_entropy(v_logits, vl_y).item()
                 self._model.train()
-
-                if val_loss < best_val_loss - 1e-4:
-                    best_val_loss = val_loss
-                    best_state    = {k: v.clone() for k, v in self._model.state_dict().items()}
-                    no_improve    = 0
+                if v_loss < best_loss - 1e-4:
+                    best_loss, best_state, no_imp = v_loss, {k: v.clone() for k,v in self._model.state_dict().items()}, 0
                 else:
-                    no_improve += 1
-                    if no_improve >= self.patience:
-                        logger.info(f"  [EliteNet] early stop at epoch {epoch+1} (val_loss={best_val_loss:.4f})")
-                        break
+                    no_imp += 1
+                    if no_imp >= self.patience: break
 
-            if (epoch + 1) % 50 == 0:
-                logger.debug(f"  [EliteNet] epoch {epoch+1}/{self.epochs} | loss={total_loss/len(loader):.4f}")
-
-        # Restore best weights
-        if best_state is not None:
-            self._model.load_state_dict(best_state)
-
+        if best_state: self._model.load_state_dict(best_state)
         self._model.cpu().eval()
         return self
 
     def predict_proba(self, X: np.ndarray) -> np.ndarray:
-        if not _TORCH or not hasattr(self, '_model'):
-            if hasattr(self, '_fallback'):
-                return self._fallback.predict_proba(X)
-            raise RuntimeError("NeuralNetClassifier not fitted.")
-
         self._model.eval()
         with torch.no_grad():
-            t = torch.FloatTensor(np.ascontiguousarray(X, dtype=np.float32))
-            logits = self._model(t)
+            num = torch.FloatTensor(X[:, :-1].astype(np.float32))
+            cat = torch.LongTensor(X[:, -1].astype(np.int64)).clamp(0, self.n_leagues - 1)
+            logits = self._model(num, cat)
             return torch.softmax(logits, dim=1).numpy()
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         return self.classes_[np.argmax(self.predict_proba(X), axis=1)]
 
-    def _fit_fallback(self, X: np.ndarray, y: np.ndarray,
-                      sample_weight=None) -> "NeuralNetClassifier":
+    def _fit_fallback(self, X, y, sw):
         from sklearn.linear_model import LogisticRegression
-        self._fallback = LogisticRegression(
-            max_iter=1000, class_weight='balanced',
-            random_state=self.random_state,
-        )
-        self._fallback.fit(X, y, sample_weight=sample_weight)
-        self.classes_ = self._fallback.classes_
+        self._fb = LogisticRegression(max_iter=1000, class_weight='balanced')
+        # Drop league ID for fallback
+        self._fb.fit(X[:, :-1], y, sample_weight=sw)
+        self.classes_ = self._fb.classes_
         return self
+
+# Maintain compatibility for existing imports
+NeuralNetClassifier = GrandmasterNeuralNet

@@ -21,18 +21,18 @@ static constexpr int    SCORE_MAX          = 7;
 static constexpr double DIXON_COLES_RHO    = -0.13;
 static constexpr int    RUN_CAP            = 15;
 
-static double expected_score(double ra, double rb) {
+static inline double expected_score(double ra, double rb) {
     return 1.0 / (1.0 + std::pow(10.0, (rb - ra) / ELO_SCALE));
 }
 
-static double gd_multiplier(int gd) {
+static inline double gd_multiplier(int gd) {
     if (gd <= 1) return 1.0;
     if (gd == 2) return 1.5;
     if (gd == 3) return 1.75;
     return std::min(1.75 + 0.15 * (gd - 3), 3.0);
 }
 
-static double poisson_pmf(double lambda, int k) {
+static inline double poisson_pmf(double lambda, int k) {
     if (lambda <= 0.0) return (k == 0) ? 1.0 : 0.0;
     if (k < 0) return 0.0;
     double lp = k * std::log(lambda) - lambda;
@@ -40,7 +40,7 @@ static double poisson_pmf(double lambda, int k) {
     return std::exp(lp);
 }
 
-static double dc_correction(int h, int a, double lh, double la, double rho) {
+static inline double dc_correction(int h, int a, double lh, double la, double rho) {
     if (h == 0 && a == 0) return 1.0 - lh * la * rho;
     if (h == 0 && a == 1) return 1.0 + lh * rho;
     if (h == 1 && a == 0) return 1.0 + la * rho;
@@ -48,9 +48,11 @@ static double dc_correction(int h, int a, double lh, double la, double rho) {
     return 1.0;
 }
 
-static void weighted_moments(const double* vals, const double* w, int n,
+/* SIMD-ready weighted moments calculation */
+static void weighted_moments(const double* __restrict__ vals, const double* __restrict__ w, int n,
                               double& mean, double& var) {
     double sw = 0, sx = 0, sx2 = 0;
+    #pragma omp simd reduction(+:sw, sx, sx2)
     for (int i = 0; i < n; ++i) {
         sw  += w[i];
         sx  += w[i] * vals[i];
@@ -92,9 +94,9 @@ void compute_form_vector(const int* home_goals, const int* away_goals, const int
 }
 
 void compute_h2h_stats(const int* home_goals, const int* away_goals, const int* was_first, int n_matches, double* out_h2h) {
-    if (n_matches == 0) { for (int i=0;i<6;++i) out_h2h[i]=0; return; }
+    if (n_matches == 0) { for (int i=0; i<6; ++i) out_h2h[i]=0; return; }
     double wins=0,draws=0,losses=0,gf=0,gs2=0;
-    for (int i=0; i<n_matches;++i) {
+    for (int i=0; i<n_matches; ++i) {
         int g1 = was_first[i] ? home_goals[i] : away_goals[i], g2 = was_first[i] ? away_goals[i] : home_goals[i];
         if (g1>g2) wins++; else if(g1==g2) draws++; else losses++;
         gf+=g1; gs2+=g2;
