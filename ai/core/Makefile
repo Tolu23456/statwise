@@ -1,5 +1,5 @@
 CXX      := g++
-CXXFLAGS := -std=c++17 -O3 -march=native -ffast-math -fPIC -Wall -Wextra
+CXXFLAGS := -fopenmp  -std=c++17 -O3 -march=native -ffast-math -fPIC -Wall -Wextra
 TARGET   := ../libstatwise.so
 
 all: $(TARGET)

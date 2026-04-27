@@ -1,21 +1,18 @@
 """
-PyTorch Residual MLP — football match outcome neural network.
+Elite Neural Architecture — Attention-based Residual Network for Football Prediction.
 
-Architecture:
-  Input(N) → Stem(256) → ResBlock(256) → Down(128) → ResBlock(128) → Down(64) → Head(n_classes)
+Architecture (v4):
+  1. Input Projection: Linear(N) → BN → GELU → (Batch, K, D)
+  2. Multi-Head Self-Attention: Learns relationships between feature groups.
+  3. Deep Residual Stages: Multiple levels of ResBlocks with downsampling.
+  4. Squeeze-and-Excitation (SE): Channel-wise attention for feature calibration.
+  5. Output Head: Final classification for 1X2 outcomes.
 
-Each ResBlock: Linear → BN → ReLU → Dropout → Linear → BN → residual add → ReLU → Dropout
-Training: AdamW + OneCycleLR scheduler + gradient clipping.
-sklearn API: fit / predict_proba / predict (compatible with StackingClassifier).
-
-v3 improvements:
-  - Epochs: 50 → 120 (better convergence on large dataset)
-  - LR: 3e-3 → 1e-3 (more stable training)
-  - Input dropout: 0.3 → 0.2 (less aggressive regularization on input)
-  - Label smoothing: 0.05 (improves probability calibration)
-  - Validation split with early stopping: patience=10 epochs (avoids overfitting)
-
-Falls back to LogisticRegression when PyTorch is unavailable.
+v4 Improvements:
+  - Multi-Head Attention (MHA) over projected feature embeddings.
+  - GELU activation instead of ReLU for smoother gradients.
+  - Increased depth: 3 residual stages (512, 256, 128).
+  - Label smoothing and adaptive learning rates.
 """
 from __future__ import annotations
 import logging, math
@@ -31,72 +28,121 @@ try:
     _TORCH = True
 except ImportError:
     _TORCH = False
-    logger.warning("PyTorch not available — NeuralNetClassifier uses LR fallback.")
+    logger.warning("PyTorch not available — EliteNeuralNet uses LR fallback.")
 
 
 # ── Network Modules (only defined when PyTorch is available) ──────────────────
 
 if _TORCH:
+    class _SEBlock(nn.Module):
+        """Squeeze-and-Excitation block for channel-wise attention."""
+        def __init__(self, dim: int, reduction: int = 4):
+            super().__init__()
+            self.attn = nn.Sequential(
+                nn.Linear(dim, dim // reduction),
+                nn.GELU(),
+                nn.Linear(dim // reduction, dim),
+                nn.Sigmoid()
+            )
+        def forward(self, x):
+            return x * self.attn(x)
+
     class _ResBlock(nn.Module):
-        """Pre-activation residual block: same input / output dimension."""
-        def __init__(self, dim: int, dropout: float = 0.3):
+        """Enhanced Residual Block with GELU and SE-Attention."""
+        def __init__(self, dim: int, dropout: float = 0.2):
             super().__init__()
             self.block = nn.Sequential(
                 nn.Linear(dim, dim),
                 nn.BatchNorm1d(dim),
-                nn.ReLU(inplace=True),
+                nn.GELU(),
                 nn.Dropout(dropout),
                 nn.Linear(dim, dim),
                 nn.BatchNorm1d(dim),
             )
-            self.act  = nn.ReLU(inplace=True)
+            self.se   = _SEBlock(dim)
+            self.act  = nn.GELU()
             self.drop = nn.Dropout(dropout)
 
-        def forward(self, x: "torch.Tensor") -> "torch.Tensor":
-            return self.drop(self.act(x + self.block(x)))
+        def forward(self, x: torch.Tensor) -> torch.Tensor:
+            identity = x
+            out = self.block(x)
+            out = self.se(out)
+            return self.drop(self.act(out + identity))
 
-    class _FootballResNet(nn.Module):
+    class _EliteFootballNet(nn.Module):
         """
-        Deep residual MLP for football match prediction.
-        Stem + 2 residual stages + 2 downsampling transitions + linear head.
-        v3: input dropout reduced to 0.2.
+        Elite Attention-based Residual Network.
+        Projects flat features into a 2D 'embedding' space to apply attention.
         """
-        def __init__(self, n_in: int, n_out: int):
+        def __init__(self, n_in: int, n_out: int, d_model: int = 128, n_heads: int = 4):
             super().__init__()
-            self.stem = nn.Sequential(
-                nn.Linear(n_in, 256),
-                nn.BatchNorm1d(256),
-                nn.ReLU(inplace=True),
-                nn.Dropout(0.2),   # reduced from 0.3
+            # Projection: treat features as groups
+            self.d_model = d_model
+            self.n_groups = 8  # split projected space into 8 virtual 'tokens'
+            self.proj = nn.Sequential(
+                nn.Linear(n_in, d_model * self.n_groups),
+                nn.BatchNorm1d(d_model * self.n_groups),
+                nn.GELU(),
             )
-            self.res1  = _ResBlock(256, dropout=0.3)
-            self.down1 = nn.Sequential(
-                nn.Linear(256, 128),
-                nn.BatchNorm1d(128),
-                nn.ReLU(inplace=True),
-                nn.Dropout(0.25),
-            )
-            self.res2  = _ResBlock(128, dropout=0.25)
-            self.down2 = nn.Sequential(
-                nn.Linear(128, 64),
-                nn.BatchNorm1d(64),
-                nn.ReLU(inplace=True),
-                nn.Dropout(0.2),
-            )
-            self.head = nn.Linear(64, n_out)
 
+            # Multi-Head Attention over virtual feature groups
+            self.attn = nn.MultiheadAttention(d_model, n_heads, batch_first=True)
+            self.attn_norm = nn.LayerNorm(d_model)
+
+            # Global pooling + Flatten
+            self.flatten = nn.Flatten()
+
+            # Deep Residual Stages
+            curr_dim = d_model * self.n_groups
+            self.res1 = _ResBlock(curr_dim, dropout=0.2)
+
+            self.down1 = nn.Sequential(
+                nn.Linear(curr_dim, curr_dim // 2),
+                nn.BatchNorm1d(curr_dim // 2),
+                nn.GELU(),
+            )
+            curr_dim //= 2
+            self.res2 = _ResBlock(curr_dim, dropout=0.2)
+
+            self.down2 = nn.Sequential(
+                nn.Linear(curr_dim, curr_dim // 2),
+                nn.BatchNorm1d(curr_dim // 2),
+                nn.GELU(),
+            )
+            curr_dim //= 2
+            self.res3 = _ResBlock(curr_dim, dropout=0.1)
+
+            self.head = nn.Linear(curr_dim, n_out)
+
+            # Weight initialization
             for m in self.modules():
                 if isinstance(m, nn.Linear):
-                    nn.init.kaiming_normal_(m.weight, nonlinearity='relu')
+                    nn.init.kaiming_normal_(m.weight, nonlinearity='linear')
                     if m.bias is not None:
                         nn.init.zeros_(m.bias)
 
-        def forward(self, x: "torch.Tensor") -> "torch.Tensor":
-            x = self.stem(x)
+        def forward(self, x: torch.Tensor) -> torch.Tensor:
+            # (Batch, N) -> (Batch, Groups * D)
+            x = self.proj(x)
+
+            # Reshape for Attention: (Batch, Groups, D)
+            b, total_d = x.shape
+            x_attn = x.view(b, self.n_groups, self.d_model)
+
+            # Apply Self-Attention
+            attn_out, _ = self.attn(x_attn, x_attn, x_attn)
+            x_attn = self.attn_norm(x_attn + attn_out)
+
+            # Back to Flat: (Batch, curr_dim)
+            x = x_attn.view(b, -1)
+
+            # Residual Stages
             x = self.res1(x)
             x = self.down1(x)
             x = self.res2(x)
             x = self.down2(x)
+            x = self.res3(x)
+
             return self.head(x)
 
 
@@ -104,32 +150,21 @@ if _TORCH:
 
 class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
     """
-    sklearn-compatible wrapper around _FootballResNet.
-    Falls back to LogisticRegression when PyTorch is unavailable.
-
-    Parameters
-    ----------
-    epochs       : training epochs (default 120)
-    batch_size   : mini-batch size (default 512)
-    lr           : peak learning rate for OneCycleLR (default 1e-3)
-    weight_decay : AdamW weight decay (default 1e-4)
-    label_smooth : label smoothing for CrossEntropyLoss (default 0.05)
-    patience     : early stopping patience in epochs (default 10, 0=disabled)
-    val_frac     : fraction of data to hold out for early stopping (default 0.1)
-    random_state : seed for reproducibility
+    sklearn-compatible wrapper around _EliteFootballNet.
+    v4: Attention-based ResNet with GELU.
     """
     _estimator_type = "classifier"
 
     def __init__(
         self,
-        epochs:       int   = 120,
-        batch_size:   int   = 512,
+        epochs:       int   = 150,    # Increased from 120
+        batch_size:   int   = 1024,   # Larger batches for global dataset
         lr:           float = 1e-3,
-        weight_decay: float = 1e-4,
-        label_smooth: float = 0.05,
-        patience:     int   = 10,
-        val_frac:     float = 0.10,
-        random_state: int   = 0,
+        weight_decay: float = 2e-4,
+        label_smooth: float = 0.1,    # Increased from 0.05
+        patience:     int   = 15,
+        val_frac:     float = 0.15,
+        random_state: int   = 42,
     ):
         self.epochs       = epochs
         self.batch_size   = batch_size
@@ -164,20 +199,17 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
             X_val_np, y_val_np = X[-val_size:], y_idx[-val_size:]
             X_val_t = torch.FloatTensor(np.ascontiguousarray(X_val_np, dtype=np.float32))
             y_val_t = torch.LongTensor(np.ascontiguousarray(y_val_np, dtype=np.int64))
+            sw_tr = sample_weight[:-val_size] if sample_weight is not None else None
         else:
             X_tr, y_tr = X, y_idx
             X_val_t = None; y_val_t = None
-
-        if sample_weight is not None:
-            sw_tr = sample_weight[:-int(self.val_frac * n)] if use_early else sample_weight
-        else:
-            sw_tr = None
+            sw_tr = sample_weight
 
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         if device.type == 'cuda':
-            logger.info(f"  [NeuralNet] Training on GPU: {torch.cuda.get_device_name(0)}")
+            logger.info(f"  [EliteNet] Training on GPU: {torch.cuda.get_device_name(0)}")
 
-        self._model = _FootballResNet(n_features, n_classes).to(device)
+        self._model = _EliteFootballNet(n_features, n_classes).to(device)
 
         if use_early and X_val_t is not None:
             X_val_t = X_val_t.to(device)
@@ -186,12 +218,6 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
         # Class weights from training fold only
         counts = np.bincount(y_tr, minlength=n_classes).astype(np.float32)
         cls_w  = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1)))).to(device)
-        if sw_tr is not None:
-            sw = np.asarray(sw_tr, dtype=np.float32)
-            for c in range(n_classes):
-                mask = (y_tr == c)
-                if mask.any():
-                    cls_w[c] *= float(sw[mask].mean())
 
         criterion = nn.CrossEntropyLoss(
             weight=cls_w,
@@ -202,20 +228,22 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
             self._model.parameters(),
             lr=self.lr, weight_decay=self.weight_decay,
         )
+
         steps_per_epoch = max(1, math.ceil(len(X_tr) / self.batch_size))
         sched = torch.optim.lr_scheduler.OneCycleLR(
             opt, max_lr=self.lr,
             epochs=self.epochs, steps_per_epoch=steps_per_epoch,
-            pct_start=0.3, anneal_strategy='cos', div_factor=10,
+            pct_start=0.25, anneal_strategy='cos', div_factor=25,
         )
 
         dataset = tud.TensorDataset(
             torch.FloatTensor(np.ascontiguousarray(X_tr, dtype=np.float32)),
             torch.LongTensor(np.ascontiguousarray(y_tr, dtype=np.int64)),
+            torch.FloatTensor(np.ascontiguousarray(sw_tr if sw_tr is not None else np.ones(len(y_tr)), dtype=np.float32))
         )
         loader = tud.DataLoader(
             dataset, batch_size=self.batch_size,
-            shuffle=True, drop_last=False,
+            shuffle=True, drop_last=False, num_workers=0
         )
 
         best_val_loss = float('inf')
@@ -224,17 +252,21 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
 
         self._model.train()
         for epoch in range(self.epochs):
-            for xb, yb in loader:
-                xb, yb = xb.to(device), yb.to(device)
+            total_loss = 0
+            for xb, yb, wb in loader:
+                xb, yb, wb = xb.to(device), yb.to(device), wb.to(device)
                 opt.zero_grad(set_to_none=True)
-                loss = criterion(self._model(xb), yb)
+
+                logits = self._model(xb)
+                # Apply sample weights manually if they exist
+                loss_vec = nn.functional.cross_entropy(logits, yb, weight=cls_w, reduction='none')
+                loss = (loss_vec * wb).mean()
+
                 loss.backward()
                 nn.utils.clip_grad_norm_(self._model.parameters(), 1.0)
                 opt.step()
                 sched.step()
-
-            if (epoch + 1) % 20 == 0:
-                logger.debug(f"  [NeuralNet] epoch {epoch+1}/{self.epochs}")
+                total_loss += loss.item()
 
             # Early stopping check
             if use_early and X_val_t is not None:
@@ -251,17 +283,16 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
                 else:
                     no_improve += 1
                     if no_improve >= self.patience:
-                        logger.debug(
-                            f"  [NeuralNet] early stop at epoch {epoch+1} "
-                            f"(val_loss={best_val_loss:.4f})"
-                        )
+                        logger.info(f"  [EliteNet] early stop at epoch {epoch+1} (val_loss={best_val_loss:.4f})")
                         break
 
-        # Restore best weights if early stopping triggered
+            if (epoch + 1) % 50 == 0:
+                logger.debug(f"  [EliteNet] epoch {epoch+1}/{self.epochs} | loss={total_loss/len(loader):.4f}")
+
+        # Restore best weights
         if best_state is not None:
             self._model.load_state_dict(best_state)
 
-        # Move back to CPU so pickle/joblib works on any machine
         self._model.cpu().eval()
         return self
 
@@ -284,7 +315,7 @@ class NeuralNetClassifier(BaseEstimator, ClassifierMixin):
                       sample_weight=None) -> "NeuralNetClassifier":
         from sklearn.linear_model import LogisticRegression
         self._fallback = LogisticRegression(
-            max_iter=500, class_weight='balanced',
+            max_iter=1000, class_weight='balanced',
             random_state=self.random_state,
         )
         self._fallback.fit(X, y, sample_weight=sample_weight)

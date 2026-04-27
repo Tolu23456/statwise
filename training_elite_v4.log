@@ -1,0 +1,16 @@
+2026-04-26 23:17:50,633 [INFO ] statwise.retrain: ============================================================
+2026-04-26 23:17:50,633 [INFO ] statwise.retrain:  StatWise multi-source retrain starting
+2026-04-26 23:17:50,633 [INFO ] statwise.retrain: ============================================================
+2026-04-26 23:17:50,633 [INFO ] statwise.retrain: [1/2] Loading clean match data (ai/data/clean/)…
+2026-04-26 23:17:59,985 [INFO ] statwise.retrain: Clean data: 175,440 rows from 73 year files
+2026-04-26 23:18:00,001 [INFO ] statwise.retrain: [2/2] Supplementary live sources skipped (clean data available)
+2026-04-26 23:18:00,001 [INFO ] statwise.retrain: Combined dataset: 175,440 unique real matches
+2026-04-26 23:18:00,001 [INFO ] statwise.retrain: Training model (5-model deep stacking ensemble: XGB+HGB+ET+RF+NeuralNet→LR) …
+2026-04-26 23:18:00,001 [INFO ] model.trainer: Elite Training starting on 175,440 records…
+2026-04-26 23:18:00,001 [INFO ] model.features: Fitting feature pipeline on 175,440 matches…
+2026-04-26 23:18:00,902 [WARNING] model.cpp_bridge: Failed to load libstatwise.so: /app/ai/libstatwise.so: undefined symbol: batch_compute_features
+2026-04-26 23:18:01,974 [INFO ] model.features: Feature pipeline fitted.
+2026-04-26 23:18:01,984 [INFO ] model.features: Building elite training set: 120,000 samples (BULK C++ v4)
+2026-04-26 23:18:21,450 [INFO ] model.features: Elite Feature matrix ready: (120000, 125)
+2026-04-26 23:18:22,845 [INFO ] model.trainer: Step 3/4  Fitting Elite Outcome stack…
+2026-04-26 23:18:23,169 [ERROR] statwise.retrain: Training failed: 'final_estimator' parameter should be a classifier. Got NeuralStacker(n_classes=3, n_features=143)

@@ -1,303 +1,33 @@
-#pragma once
-#include <vector>
-#include <string>
-#include <unordered_map>
-#include <array>
+#ifndef STATWISE_FEATURES_H
+#define STATWISE_FEATURES_H
 
 namespace statwise {
 
-struct MatchRecord {
-    int  home_goals;
-    int  away_goals;
-    bool neutral_venue;
-};
-
-struct TeamElo {
-    std::string name;
-    double rating;
-    int    games_played;
-};
-
-struct FormVector {
-    double win_rate;
-    double draw_rate;
-    double loss_rate;
-    double goals_scored_avg;
-    double goals_conceded_avg;
-    double goal_diff_avg;
-    double points_per_game;
-    double weighted_momentum;
-    double clean_sheets_rate;
-    double scoring_games_rate;
-};
-
-struct FeatureVector {
-    double elo_home;
-    double elo_away;
-    double elo_diff;
-    double elo_win_prob_home;
-    double elo_win_prob_away;
-    double elo_draw_prob;
-
-    double home_form_win_rate;
-    double home_form_goals_scored;
-    double home_form_goals_conceded;
-    double home_form_momentum;
-    double home_form_ppg;
-
-    double away_form_win_rate;
-    double away_form_goals_scored;
-    double away_form_goals_conceded;
-    double away_form_momentum;
-    double away_form_ppg;
-
-    double h2h_home_win_rate;
-    double h2h_draw_rate;
-    double h2h_away_win_rate;
-    double h2h_home_goals_avg;
-    double h2h_away_goals_avg;
-    double h2h_total_matches;
-
-    double home_advantage_weight;
-    double league_attack_home;
-    double league_attack_away;
-    double league_defense_home;
-    double league_defense_away;
-
-    double over25_probability;
-    double btts_probability;
-};
-
 extern "C" {
 
-    /* ── Original functions ─────────────────────────────────────────────── */
+void compute_elo_ratings(const char** home_teams, const char** away_teams, const int* home_goals, const int* away_goals, int n_matches, double k_factor, double home_advantage, double* out_home_elos, double* out_away_elos);
+void compute_form_vector(const int* home_goals, const int* away_goals, const int* was_home, int n_matches, const double* recency_weights, double* out_form);
+void compute_h2h_stats(const int* home_goals, const int* away_goals, const int* was_first, int n_matches, double* out_h2h);
+void compute_goal_probability(double attack_home, double defense_away, double attack_away, double defense_home, double league_avg_goals, double home_adv, double* out_over25, double* out_btts);
+void compute_elo_probabilities(double elo_home, double elo_away, double home_advantage, double* prob_home, double* prob_draw, double* prob_away);
+void batch_compute_features(const double* home_elos, const double* away_elos, const double* home_forms, const double* away_forms, const double* h2h_stats_in, const double* league_stats, double home_advantage, int n_matches, double* out_features, int n_features);
+void compute_attack_defense_elo(const char** home_teams, const char** away_teams, const int* home_goals, const int* away_goals, int n_matches, double k_factor, double home_advantage, double* out_home_att, double* out_home_def, double* out_away_att, double* out_away_def);
+void compute_poisson_score_matrix(double lh, double la, double rho, double* out);
+void compute_consecutive_runs(const int* hg, const int* ag, const int* wh, int n, double* out);
+void compute_venue_split_form(const int* hg, const int* ag, const int* wh, int n_m, int is_h, double* out);
+void compute_goals_variance(const int* hg, const int* ag, const int* wh, int n_m, double* out);
+void compute_form_trend(const int* hg, const int* ag, const int* wh, int n, double* out);
+void compute_scoring_consistency(const int* hg, const int* ag, const int* wh, int n_m, double* out);
+void compute_h2h_extended(const int* hg, const int* ag, const int* wf, int n, double* out);
+void compute_last_n_goals(const int* hg, const int* ag, const int* wh, int n_m, int n, int is_s, double* out);
+void compute_draw_rate(const int* hg, const int* ag, int n, double* out);
+void compute_temporal_features(double cts, const double* hts, int n, double* out);
+void compute_streak(const int* hg, const int* ag, const int* wh, int n_m, double* out);
 
-    void compute_elo_ratings(
-        const char** home_teams,
-        const char** away_teams,
-        const int*   home_goals,
-        const int*   away_goals,
-        int          n_matches,
-        double       k_factor,
-        double       home_advantage,
-        double*      out_home_elos,
-        double*      out_away_elos
-    );
+void compute_all_features_v3(const double* pe, const double* pad, const int* mg, const double* od, double cts, const double* ls, int nh, const int* ghh, const int* gah, const int* whh, const double* tsh, int na, const int* gha, const int* gaa, const int* wha, const double* tsa, int n2, const int* gh2, const int* ga2, const int* wh2, double ha, double* out);
+void compute_all_features_bulk_v4(const int* ti, int nt, const int* agh, const int* aga, const double* ats, const int* ahi, const int* aai, const double* ape, const double* apad, const double* ao, const double* als, const int* tmi, const int* tmp, const int* tmc, const double* ahe, const double* aae, int lb, double ha, double* out);
 
-    void compute_form_vector(
-        const int*    home_goals,
-        const int*    away_goals,
-        const int*    was_home,
-        int           n_matches,
-        const double* recency_weights,
-        double*       out_form        /* 10 doubles */
-    );
-
-    void compute_h2h_stats(
-        const int* home_goals,
-        const int* away_goals,
-        const int* was_home_team_first,
-        int        n_matches,
-        double*    out_h2h            /* 6 doubles */
-    );
-
-    void compute_goal_probability(
-        double attack_home,
-        double defense_away,
-        double attack_away,
-        double defense_home,
-        double league_avg_goals,
-        double home_adv,
-        double* out_prob_over25,
-        double* out_prob_btts
-    );
-
-    void compute_elo_probabilities(
-        double elo_home,
-        double elo_away,
-        double home_advantage,
-        double* prob_home,
-        double* prob_draw,
-        double* prob_away
-    );
-
-    void batch_compute_features(
-        const double* home_elos,
-        const double* away_elos,
-        const double* home_forms,
-        const double* away_forms,
-        const double* h2h_stats,
-        const double* league_stats,
-        double        home_advantage,
-        int           n_matches,
-        double*       out_features,
-        int           n_features
-    );
-
-    /* ── NEW: Attack / Defence Elo ──────────────────────────────────────── */
-
-    /**
-     * Separate attack and defence Elo ratings for every team.
-     * Attack Elo rises when a team scores more than "expected" given the
-     * opponent's defence Elo, and vice-versa.  Both start at 1500.
-     * out_*[i] = ratings *after* match i for home / away team.
-     */
-    void compute_attack_defense_elo(
-        const char** home_teams,
-        const char** away_teams,
-        const int*   home_goals,
-        const int*   away_goals,
-        int          n_matches,
-        double       k_factor,
-        double       home_advantage,
-        double*      out_home_att,
-        double*      out_home_def,
-        double*      out_away_att,
-        double*      out_away_def
-    );
-
-    /* ── NEW: Dixon-Coles Poisson score matrix ──────────────────────────── */
-
-    /**
-     * Full Poisson score matrix up to 6×6 with Dixon-Coles correction
-     * for low-scoring cells (rho = -0.13 is standard).
-     *
-     * Returns 10 scalars in out[]:
-     *   [0] p_over15    [1] p_over25    [2] p_over35
-     *   [3] p_btts      [4] p_home_cs   [5] p_away_cs
-     *   [6] p_0_0       [7] p_1_0       [8] p_0_1     [9] p_1_1
-     */
-    void compute_poisson_score_matrix(
-        double  lambda_home,
-        double  lambda_away,
-        double  rho,
-        double* out            /* 10 doubles */
-    );
-
-    /* ── NEW: Consecutive run lengths ───────────────────────────────────── */
-
-    /**
-     * Current unbeaten / winless run for a team (normalised to [-1,1]).
-     * out[0] = unbeaten_run_norm  (positive = currently unbeaten)
-     * out[1] = winless_run_norm   (positive = currently without a win)
-     */
-    void compute_consecutive_runs(
-        const int* home_goals,
-        const int* away_goals,
-        const int* was_home,
-        int        n_matches,
-        double*    out            /* 2 doubles */
-    );
-
-    /* ── NEW: Venue-split form vector ───────────────────────────────────── */
-
-    /**
-     * 4-element form vector for home-only (is_home_venue=1) or
-     * away-only (is_home_venue=0) matches.
-     * out: [win_rate, ppg, avg_goals_scored, avg_goals_conceded]
-     */
-    void compute_venue_split_form(
-        const int* home_goals,
-        const int* away_goals,
-        const int* was_home,
-        int        n_matches,
-        int        is_home_venue,
-        double*    out            /* 4 doubles */
-    );
-
-    /* ── NEW: Goals variance ────────────────────────────────────────────── */
-
-    /**
-     * Recency-weighted variance in goals scored and conceded.
-     * out[0] = scored_variance
-     * out[1] = conceded_variance
-     */
-    void compute_goals_variance(
-        const int* home_goals,
-        const int* away_goals,
-        const int* was_home,
-        int        n_matches,
-        double*    out            /* 2 doubles */
-    );
-
-    /* ── NEW v3: Additional features for accuracy ───────────────────────── */
-
-    void compute_form_trend(
-        const int* home_goals,
-        const int* away_goals,
-        const int* was_home,
-        int        n_matches,
-        double*    out            /* 1 double */
-    );
-
-    void compute_scoring_consistency(
-        const int* home_goals,
-        const int* away_goals,
-        const int* was_home,
-        int        n_matches,
-        double*    out            /* 1 double */
-    );
-
-    void compute_h2h_extended(
-        const int* home_goals,
-        const int* away_goals,
-        const int* was_home_team_first,
-        int        n_matches,
-        double*    out            /* 2 doubles: [avg_goals, adv_factor] */
-    );
-
-    void compute_last_n_goals(
-        const int* home_goals,
-        const int* away_goals,
-        const int* was_home,
-        int        n_matches,
-        int        n,
-        int        is_scored,     /* 1 for scored, 0 for conceded */
-        double*    out            /* 1 double */
-    );
-
-    void compute_draw_rate(
-        const int* home_goals,
-        const int* away_goals,
-        int        n_matches,
-        double*    out            /* 1 double */
-    );
-
-    /**
-     * out[0] = days_since_last (normalized)
-     * out[1] = season_stage (normalized)
-     */
-    void compute_temporal_features(
-        double     current_timestamp,
-        const double* history_timestamps,
-        int        n_matches,
-        double*    out            /* 2 doubles */
-    );
-
-    void compute_streak(
-        const int* home_goals,
-        const int* away_goals,
-        const int* was_home,
-        int        n_matches,
-        double*    out            /* 1 double */
-    );
-
-    /**
-     * Compute all 104 features for a single match.
-     */
-    void compute_all_features_v3(
-        const double* pre_elos,        /* 6: elo_h, elo_a, diff, ph, pd, pa */
-        const double* pre_att_def,     /* 4: att_h, def_h, att_a, def_a */
-        const int*    match_goals,     /* 2: hg, ag */
-        const double* odds,            /* 3: h, d, a */
-        double        current_ts,
-        const double* league_stats,    /* 6: avg_g, att_h, att_a, adv, win_h, draw */
-        int           n_h, const int* gh_h, const int* ga_h, const int* wh_h, const double* ts_h,
-        int           n_a, const int* gh_a, const int* ga_a, const int* wh_a, const double* ts_a,
-        int           n_h2h, const int* gh_h2h, const int* ga_h2h, const int* wh_h2h,
-        double        home_advantage,
-        double*       out              /* 104 doubles */
-    );
-}
-
+} // extern "C"
 } // namespace statwise
+
+#endif
