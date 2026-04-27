@@ -53,8 +53,6 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
         ('rf',   _cal(_rf(seed))),
         ('nn',   GrandmasterNeuralNet(epochs=160, random_state=seed)),
     ]
-    # Meta: High-regularization LogisticRegressionCV with passthrough=True
-    # This acts as the meta-combiner for the base models.
     meta = LogisticRegressionCV(Cs=10, cv=3, max_iter=1000, solver='lbfgs', n_jobs=-1, random_state=seed)
 
     stack = StackingClassifier(
@@ -111,15 +109,62 @@ class FootballPredictor:
         obj._trained = True
         return obj
 
-    def predict_match(self, home, away, league='all', history=None, odds_h=None, odds_d=None, odds_a=None):
-        X = np.zeros((1, N_FEATURES))
+    def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0):
+        if history is None or history.empty:
+            history = pd.DataFrame(columns=['date', 'home_team', 'away_team', 'home_goals', 'away_goals'])
+
+        X = self.feature_pipe.build_features([{'home': home, 'away': away, 'league': league, 'odds_home': odds_home, 'odds_draw': odds_draw, 'odds_away': odds_away}], history)
+
         p_outcome = self._outcome_pipe.predict_proba(X)[0]
+        p_goals = self._goals_pipe.predict_proba(X)[0]
         idx = np.argmax(p_outcome)
+
+        # Compute real statistics from history
+        def get_stats(team):
+            th = history[(history['home_team'] == team) | (history['away_team'] == team)].sort_values('date').tail(5)
+            form = []
+            for _, r in th.iterrows():
+                if r['home_team'] == team:
+                    form.append(1.0 if r['home_goals'] > r['away_goals'] else (0.5 if r['home_goals'] == r['away_goals'] else 0.0))
+                else:
+                    form.append(1.0 if r['away_goals'] > r['home_goals'] else (0.5 if r['home_goals'] == r['away_goals'] else 0.0))
+            return form
+
+        h2h = history[((history['home_team'] == home) & (history['away_team'] == away)) | ((history['home_team'] == away) & (history['away_team'] == home))]
+        hw = len(h2h[((h2h['home_team'] == home) & (h2h['home_goals'] > h2h['away_goals'])) | ((h2h['away_team'] == home) & (h2h['away_goals'] > h2h['home_goals']))])
+        aw = len(h2h[((h2h['home_team'] == away) & (h2h['home_goals'] > h2h['away_goals'])) | ((h2h['away_team'] == away) & (h2h['away_goals'] > h2h['home_goals']))])
+        dr = len(h2h) - hw - aw
+
+        total_h2h = max(len(h2h), 1)
+        avg_g = (h2h['home_goals'] + h2h['away_goals']).mean() if not h2h.empty else 2.5
+
+        stats = {
+            "h2h": {"home_wins": int(hw/total_h2h*100), "draws": int(dr/total_h2h*100), "away_wins": int(aw/total_h2h*100)},
+            "home_form": get_stats(home),
+            "away_form": get_stats(away),
+            "avg_goals": round(float(avg_g), 2)
+        }
+
+        # Dynamic reasoning based on model insights
+        conf = int(p_outcome[idx] * 100)
+        reasoning = f"Grandmaster v5 Analysis: {OUTCOME_LABELS[idx]} predicted with {conf}% confidence. "
+        if stats['h2h']['home_wins'] > 50:
+            reasoning += f"{home} dominates the historical H2H matchup. "
+        elif stats['h2h']['away_wins'] > 50:
+            reasoning += f"{away} has a strong historical advantage in this fixture. "
+
+        avg_f_h = sum(stats['home_form'])/len(stats['home_form']) if stats['home_form'] else 0.5
+        avg_f_a = sum(stats['away_form'])/len(stats['away_form']) if stats['away_form'] else 0.5
+        if avg_f_h > 0.7: reasoning += f"{home} is in elite form. "
+        if avg_f_a > 0.7: reasoning += f"{away} is in elite form. "
+
         return {
             'prediction': OUTCOME_LABELS[idx],
-            'confidence': int(p_outcome[idx] * 100),
+            'confidence': conf,
             'prob_home': round(p_outcome[0]*100, 1),
             'prob_draw': round(p_outcome[1]*100, 1),
             'prob_away': round(p_outcome[2]*100, 1),
-            'reasoning': "Grandmaster v5 Stacking Ensemble - Enhanced with League-Aware Embeddings."
+            'prob_over25': round(p_goals[1]*100, 1) if len(p_goals)>1 else 50.0,
+            'stats': stats,
+            'reasoning': reasoning.strip()
         }
