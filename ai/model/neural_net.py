@@ -65,41 +65,47 @@ if _TORCH:
 
     class _GrandmasterFootballNet(nn.Module):
         """
-        League-Aware Attention-based Residual Network.
-        Expects X[:, :-1] to be numerical and X[:, -1] to be league_id.
+        Scalable League-Aware Attention-based Residual Network (v5-Extended).
+        Optimized for multi-million row datasets.
         """
         def __init__(self, n_cont: int, n_leagues: int, n_out: int,
-                     d_model: int = 192, d_embed: int = 32, n_heads: int = 4):
+                     d_model: int = 256, d_embed: int = 64, n_heads: int = 8):
             super().__init__()
             self.n_leagues = n_leagues
 
-            # 1. League Embedding
+            # 1. League Embedding (Deeper representation)
             self.league_embed = nn.Embedding(n_leagues, d_embed)
 
             # 2. Continuous Projection
             self.cont_proj = nn.Sequential(
                 nn.Linear(n_cont, d_model - d_embed),
                 nn.BatchNorm1d(d_model - d_embed),
+                nn.GELU(),
+                nn.Linear(d_model - d_embed, d_model - d_embed),
+                nn.BatchNorm1d(d_model - d_embed),
                 nn.GELU()
             )
 
-            # 3. Transformer Block (Self-Attention over fused features)
-            # We treat the fused vector as a sequence of 'feature tokens'
-            self.n_tokens = 6  # split d_model into 6 virtual tokens for MHA
+            # 3. Transformer Blocks (Deeper Self-Attention)
+            self.n_tokens = 8  # Increased token density
             self.token_dim = d_model // self.n_tokens
-            self.attn = nn.MultiheadAttention(self.token_dim, n_heads, batch_first=True)
+            self.attn1 = nn.MultiheadAttention(self.token_dim, n_heads, batch_first=True, dropout=0.1)
+            self.attn2 = nn.MultiheadAttention(self.token_dim, n_heads, batch_first=True, dropout=0.1)
             self.attn_norm = nn.LayerNorm(self.token_dim)
 
-            # 4. Deep Residual Pipeline
-            self.res1 = _ResBlock(d_model, dropout=0.2)
+            # 4. Deep Residual Pipeline (Increased depth and width)
+            self.res1 = _ResBlock(d_model, dropout=0.25)
+            self.res1b = _ResBlock(d_model, dropout=0.2)
             self.down1 = nn.Sequential(nn.Linear(d_model, d_model // 2), nn.BatchNorm1d(d_model // 2), nn.GELU())
 
             curr_dim = d_model // 2
             self.res2 = _ResBlock(curr_dim, dropout=0.15)
+            self.res2b = _ResBlock(curr_dim, dropout=0.15)
             self.down2 = nn.Sequential(nn.Linear(curr_dim, curr_dim // 2), nn.BatchNorm1d(curr_dim // 2), nn.GELU())
 
             curr_dim //= 2
             self.res3 = _ResBlock(curr_dim, dropout=0.1)
+            self.res3b = _ResBlock(curr_dim, dropout=0.1)
 
             self.head = nn.Linear(curr_dim, n_out)
 
@@ -109,29 +115,29 @@ if _TORCH:
                     if m.bias is not None: nn.init.zeros_(m.bias)
 
         def forward(self, x_num: torch.Tensor, x_cat: torch.Tensor) -> torch.Tensor:
-            #cat embeddings
-            emb = self.league_embed(x_cat) # (B, d_embed)
+            emb = self.league_embed(x_cat)
+            proj = self.cont_proj(x_num)
+            fused = torch.cat([proj, emb], dim=1)
 
-            #cont projection
-            proj = self.cont_proj(x_num) # (B, d_model - d_embed)
-
-            #fusion
-            fused = torch.cat([proj, emb], dim=1) # (B, d_model)
-
-            #attention over tokens
             b = fused.shape[0]
             tokens = fused.view(b, self.n_tokens, self.token_dim)
-            attn_out, _ = self.attn(tokens, tokens, tokens)
-            tokens = self.attn_norm(tokens + attn_out)
+
+            # Deep Attention block
+            a1, _ = self.attn1(tokens, tokens, tokens)
+            tokens = self.attn_norm(tokens + a1)
+            a2, _ = self.attn2(tokens, tokens, tokens)
+            tokens = self.attn_norm(tokens + a2)
 
             x = tokens.reshape(b, -1)
 
-            #residual stages
             x = self.res1(x)
+            x = self.res1b(x)
             x = self.down1(x)
             x = self.res2(x)
+            x = self.res2b(x)
             x = self.down2(x)
             x = self.res3(x)
+            x = self.res3b(x)
 
             return self.head(x)
 
