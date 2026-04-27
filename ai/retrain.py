@@ -58,10 +58,9 @@ def _load_clean_data() -> "pd.DataFrame":
     if "date" in df.columns:
         df["date"] = pd.to_datetime(df["date"], errors="coerce")
         df = df.sort_values("date").reset_index(drop=True)
-    # Only use matches from 2005 onward — pre-2005 data has poor tracking,
-    # no odds, and represents a different era of football that hurts signal.
+    # Expanded temporal window to utilize historical depth (back to 1993)
     if "date" in df.columns:
-        df = df[df["date"] >= pd.Timestamp("2005-01-01")]
+        df = df[df["date"] >= pd.Timestamp("1993-08-01")]
     # Drop international matches (model is tuned for club football)
     if "is_international" in df.columns:
         df = df[pd.to_numeric(df["is_international"], errors="coerce").fillna(0) == 0]

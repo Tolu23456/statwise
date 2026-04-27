@@ -66,6 +66,16 @@ function OddsRow({ label, value, highlight, C }: {
   );
 }
 
+function FormDot({ val, C }: { val: number; C: typeof Colors.dark }) {
+  const color = val === 1 ? C.success : val === 0.5 ? C.warning : C.danger;
+  const label = val === 1 ? 'W' : val === 0.5 ? 'D' : 'L';
+  return (
+    <View style={[styles.formDot, { backgroundColor: color }]}>
+      <Text style={styles.formDotText}>{label}</Text>
+    </View>
+  );
+}
+
 export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
   const { scheme } = useTheme();
   const C = Colors[scheme];
@@ -86,6 +96,8 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
   const isHome = predLabel.includes('home') || predLabel.includes(prediction.home_team?.toLowerCase() ?? '');
   const isDraw = predLabel.includes('draw');
   const isAway = predLabel.includes('away') || predLabel.includes(prediction.away_team?.toLowerCase() ?? '');
+
+  const stats = prediction.stats;
 
   return (
     <Modal
@@ -163,6 +175,56 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 </View>
               </View>
             </View>
+
+            {/* ── Match Statistics (NEW) ── */}
+            {stats && (
+              <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
+                <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Match Insights</Text>
+
+                {/* H2H Breakdown */}
+                <View style={{ marginBottom: 16 }}>
+                  <Text style={{ color: C.textSecondary, fontSize: 12, marginBottom: 6, textTransform: 'uppercase' }}>Head-to-Head History</Text>
+                  <View style={styles.h2hRow}>
+                    <View style={[styles.h2hBar, { flex: stats.h2h.home_wins, backgroundColor: C.primary }]}>
+                      <Text style={styles.h2hText}>{stats.h2h.home_wins}</Text>
+                    </View>
+                    <View style={[styles.h2hBar, { flex: stats.h2h.draws, backgroundColor: C.textMuted }]}>
+                      <Text style={styles.h2hText}>{stats.h2h.draws}</Text>
+                    </View>
+                    <View style={[styles.h2hBar, { flex: stats.h2h.away_wins, backgroundColor: C.danger }]}>
+                      <Text style={styles.h2hText}>{stats.h2h.away_wins}</Text>
+                    </View>
+                  </View>
+                  <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 4 }}>
+                    <Text style={{ color: C.textMuted, fontSize: 10 }}>Home Wins</Text>
+                    <Text style={{ color: C.textMuted, fontSize: 10 }}>Draws</Text>
+                    <Text style={{ color: C.textMuted, fontSize: 10 }}>Away Wins</Text>
+                  </View>
+                </View>
+
+                {/* Form Comparison */}
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                  <View style={{ flex: 1 }}>
+                    <Text style={{ color: C.textSecondary, fontSize: 12, marginBottom: 6 }}>Home Form</Text>
+                    <View style={{ flexDirection: 'row', gap: 4 }}>
+                      {stats.home_form.map((v, i) => <FormDot key={i} val={v} C={C} />)}
+                    </View>
+                  </View>
+                  <View style={{ flex: 1, alignItems: 'flex-end' }}>
+                    <Text style={{ color: C.textSecondary, fontSize: 12, marginBottom: 6 }}>Away Form</Text>
+                    <View style={{ flexDirection: 'row', gap: 4 }}>
+                      {stats.away_form.map((v, i) => <FormDot key={i} val={v} C={C} />)}
+                    </View>
+                  </View>
+                </View>
+
+                <View style={{ marginTop: 12, paddingTop: 12, borderTopWidth: 1, borderTopColor: C.border }}>
+                  <Text style={{ color: C.textSecondary, fontSize: 12 }}>
+                    Avg. Match Goals: <Text style={{ color: C.text, fontWeight: '700' }}>{stats.avg_goals.toFixed(2)}</Text>
+                  </Text>
+                </View>
+              </View>
+            )}
 
             {/* ── Win Probability Breakdown ── */}
             {(pHome !== null || pDraw !== null || pAway !== null) && (
@@ -290,6 +352,11 @@ const styles = StyleSheet.create({
   reasoningHeader: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 8 },
   reasoningText: { fontSize: 14, lineHeight: 21 },
   disclaimer: { fontSize: 11, textAlign: 'center', paddingTop: 4 },
+  h2hRow: { height: 24, flexDirection: 'row', borderRadius: 6, overflow: 'hidden' },
+  h2hBar: { height: '100%', alignItems: 'center', justifyContent: 'center' },
+  h2hText: { color: '#fff', fontSize: 11, fontWeight: '800' },
+  formDot: { width: 22, height: 22, borderRadius: 11, alignItems: 'center', justifyContent: 'center' },
+  formDotText: { color: '#fff', fontSize: 10, fontWeight: '800' },
 });
 
 const probStyles = StyleSheet.create({

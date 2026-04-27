@@ -79,13 +79,23 @@ def fetch_statsbomb() -> pd.DataFrame:
 # ─── 3. OpenFootball (openfootball/football.json) ────────────────────────────
 # URL format: /{season}/{code}.json  e.g. /2023-24/en.1.json
 
-OF_SEASONS = ["2023-24", "2022-23", "2021-22", "2020-21"]
+OF_SEASONS = ["2024-25", "2023-24", "2022-23", "2021-22", "2020-21", "2019-20", "2018-19"]
 OF_LEAGUES = {
     "en.1": "openfootball-premier-league",
+    "en.2": "openfootball-championship",
     "de.1": "openfootball-bundesliga",
+    "de.2": "openfootball-bundesliga-2",
     "es.1": "openfootball-la-liga",
+    "es.2": "openfootball-la-liga-2",
     "it.1": "openfootball-serie-a",
+    "it.2": "openfootball-serie-b",
     "fr.1": "openfootball-ligue1",
+    "fr.2": "openfootball-ligue2",
+    "at.1": "openfootball-austria",
+    "be.1": "openfootball-belgium",
+    "ch.1": "openfootball-switzerland",
+    "nl.1": "openfootball-netherlands",
+    "pt.1": "openfootball-portugal",
 }
 OF_BASE = "https://raw.githubusercontent.com/openfootball/football.json/master"
 OF_CACHE = os.path.join(DATA_DIR, "openfootball.csv")
@@ -189,9 +199,13 @@ def fetch_international_results() -> pd.DataFrame:
 # clubelo.com exposes historical match records via simple HTTP
 
 CELO_CLUBS = [
-    "ManCity", "Arsenal", "Liverpool", "Chelsea", "Tottenham",
-    "Bayern", "Dortmund", "RealMadrid", "Barcelona", "Atletico",
-    "Juventus", "Milan", "Inter", "PSG", "Lyon",
+    "ManCity", "Arsenal", "Liverpool", "Chelsea", "Tottenham", "ManUtd", "AstonVilla", "Newcastle",
+    "Bayern", "Dortmund", "Leverkusen", "Leipzig", "Frankfurt",
+    "RealMadrid", "Barcelona", "Atletico", "Sociedad", "Villarreal", "Sevilla",
+    "Juventus", "Milan", "Inter", "Napoli", "Lazio", "Roma", "Atalanta",
+    "PSG", "Lyon", "Marseille", "Monaco", "Lille",
+    "Ajax", "PSV", "Feyenoord", "Porto", "Benfica", "Sporting",
+    "Celtic", "Rangers", "Benfica", "Sporting", "Porto",
 ]
 CELO_CACHE = os.path.join(DATA_DIR, "clubelo.csv")
 

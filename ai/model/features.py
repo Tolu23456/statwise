@@ -108,6 +108,10 @@ class FeaturePipeline:
         for t, e in zip(hts, elo_h_bulk): self._elo_ratings[t] = e
         for t, e in zip(ats, elo_a_bulk): self._elo_ratings[t] = e
 
+        att_h_bulk, def_h_bulk, att_a_bulk, def_a_bulk = compute_attack_defense_elo_bulk(hts, ats, hgs, ags, 24.0, self.home_advantage)
+        for t, a, d in zip(hts, att_h_bulk, def_h_bulk): self._att_elo[t] = a; self._def_elo[t] = d
+        for t, a, d in zip(ats, att_a_bulk, def_a_bulk): self._att_elo[t] = a; self._def_elo[t] = d
+
         groups = df.groupby('league_slug') if 'league_slug' in df.columns else [('all', df)]
         for slug, grp in groups:
             self._league_stats[slug] = {
@@ -168,4 +172,40 @@ class FeaturePipeline:
         return X, y_1x2, y_goals, df['date'].values[all_idx]
 
     def build_features(self, matches: list, history: pd.DataFrame) -> np.ndarray:
-        return np.zeros((len(matches), N_FEATURES))
+        X_out = []
+        for m in matches:
+            home, away = m['home'], m['away']
+            league = m.get('league', 'all')
+
+            rh = self._elo_ratings.get(home, 1500.0); ra = self._elo_ratings.get(away, 1500.0)
+            pe = np.array([rh, ra, rh-ra, 0, 0, 0], dtype=np.float64)
+            pe[3:6] = elo_probabilities(rh, ra, self.home_advantage)
+
+            ah, dh = self._att_elo.get(home, 1500.0), self._def_elo.get(home, 1500.0)
+            aa, da = self._att_elo.get(away, 1500.0), self._def_elo.get(away, 1500.0)
+            pad = np.array([ah, dh, aa, da], dtype=np.float64)
+
+            mg = np.array([0, 0], dtype=np.int32)
+            od = np.array([m.get('odds_home', 0), m.get('odds_draw', 0), m.get('odds_away', 0)], dtype=np.float64)
+            cts = pd.Timestamp.now().timestamp()
+
+            ls_d = self._league_stats.get(league, {'avg_goals': 2.6, 'home_attack': 1.0, 'away_attack': 1.0, 'home_adv_factor': 1.25, 'home_win_rate': 0.46, 'draw_rate': 0.24})
+            ls = np.array([ls_d['avg_goals'], ls_d['home_attack'], ls_d['away_attack'], ls_d['home_adv_factor'], ls_d['home_win_rate'], ls_d['draw_rate']], dtype=np.float64)
+
+            def get_hist(t):
+                h = history[(history['home_team'] == t) | (history['away_team'] == t)].sort_values('date').tail(_LOOKBACK)
+                gh = h['home_goals'].values.astype(np.int32); ga = h['away_goals'].values.astype(np.int32)
+                wh = (h['home_team'] == t).values.astype(np.int32)
+                ts = pd.to_datetime(h['date']).values.astype(np.float64) / 1e9
+                eh = np.full(len(h), self._elo_ratings.get(t, 1500.0), dtype=np.float64)
+                return len(h), gh, ga, wh, ts, eh
+
+            nh, ghh, gah, whh, tsh, ehh = get_hist(home); na, gha, gaa, wha, tsa, eha = get_hist(away)
+            h2 = history[((history['home_team'] == home) & (history['away_team'] == away)) | ((history['home_team'] == away) & (history['away_team'] == home))].sort_values('date')
+            n2 = len(h2); gh2 = h2['home_goals'].values.astype(np.int32); ga2 = h2['away_goals'].values.astype(np.int32); wh2 = (h2['home_team'] == home).values.astype(np.int32)
+
+            from .cpp_bridge import compute_all_features_v4
+            feat = compute_all_features_v4(pe, pad, mg, od, cts, ls, nh, ghh, gah, whh, tsh, ehh, na, gha, gaa, wha, tsa, eha, n2, gh2, ga2, wh2, self.home_advantage)
+            if feat is None: feat = np.zeros(125)
+            X_out.append(np.append(feat, self._league_map.get(league, 0)))
+        return np.array(X_out)

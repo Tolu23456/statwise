@@ -25,6 +25,7 @@ void compute_temporal_features(double cts, const double* hts, int n, double* out
 void compute_streak(const int* hg, const int* ag, const int* wh, int n_m, double* out);
 
 void compute_all_features_v3(const double* pe, const double* pad, const int* mg, const double* od, double cts, const double* ls, int nh, const int* ghh, const int* gah, const int* whh, const double* tsh, int na, const int* gha, const int* gaa, const int* wha, const double* tsa, int n2, const int* gh2, const int* ga2, const int* wh2, double ha, double* out);
+void compute_all_features_v4(const double* pe, const double* pad, const int* mg, const double* od, double cts, const double* ls, int nh, const int* ghh, const int* gah, const int* whh, const double* tsh, const double* ehh, int na, const int* gha, const int* gaa, const int* wha, const double* tsa, const double* eha, int n2, const int* gh2, const int* ga2, const int* wh2, double ha, double* out);
 void compute_all_features_bulk_v4(const int* ti, int nt, const int* agh, const int* aga, const double* ats, const int* ahi, const int* aai, const double* ape, const double* apad, const double* ao, const double* als, const int* tmi, const int* tmp, const int* tmc, const double* ahe, const double* aae, int lb, double ha, double* out);
 
 } // extern "C"

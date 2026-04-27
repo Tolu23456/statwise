@@ -16,6 +16,9 @@ BASE_URL  = "https://www.football-data.co.uk/mmz4281"
 LEAGUE_CODES = {
     "premier-league":    ("E0", "England"),
     "championship":      ("E1", "England"),
+    "league-1":          ("E2", "England"),
+    "league-2":          ("E3", "England"),
+    "conference":        ("EC", "England"),
     "la-liga":           ("SP1", "Spain"),
     "la-liga-2":         ("SP2", "Spain"),
     "bundesliga":        ("D1", "Germany"),
@@ -27,12 +30,21 @@ LEAGUE_CODES = {
     "eredivisie":        ("N1", "Netherlands"),
     "primeira-liga":     ("P1", "Portugal"),
     "scottish-prem":     ("SC0", "Scotland"),
+    "scottish-div1":     ("SC1", "Scotland"),
+    "scottish-div2":     ("SC2", "Scotland"),
+    "scottish-div3":     ("SC3", "Scotland"),
     "belgian-pro":       ("B1", "Belgium"),
     "super-lig":         ("T1", "Turkey"),
     "greek-super":       ("G1", "Greece"),
 }
 
-SEASONS = ["2324", "2223", "2122", "2021", "1920", "1819", "1718", "1617", "1516"]
+# Extensive season list back to 1993/94
+SEASONS = [
+    "2425", "2324", "2223", "2122", "2021", "1920", "1819", "1718", "1617", "1516",
+    "1415", "1314", "1213", "1112", "1011", "0910", "0809", "0708", "0607", "0506",
+    "0405", "0304", "0203", "0102", "0001", "9900", "9899", "9798", "9697", "9596",
+    "9495", "9394"
+]
 
 os.makedirs(DATA_DIR, exist_ok=True)
 
@@ -68,7 +80,7 @@ def download_season(league_slug: str, season: str, force: bool = False) -> Optio
 
 
 def download_all(seasons=None, leagues=None) -> pd.DataFrame:
-    if seasons is None: seasons = SEASONS[:6]
+    if seasons is None: seasons = SEASONS
     if leagues is None: leagues = list(LEAGUE_CODES.keys())
 
     frames = []
@@ -140,24 +152,35 @@ def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
 def load_training_data(seasons=None, leagues=None) -> pd.DataFrame:
     raw = download_all(seasons=seasons, leagues=leagues)
     if raw.empty:
-        return pd.DataFrame()
-    df = normalize_columns(raw)
+        df = pd.DataFrame()
+    else:
+        df = normalize_columns(raw)
 
-    # Append StatsBomb open data (836 rows with xG-derived labels)
+    # Ingest from secondary open sources (OpenFootball, International, ClubElo)
+    try:
+        from .open_sources import load_all_open_sources
+        secondary = load_all_open_sources()
+        if not secondary.empty:
+            df = pd.concat([df, secondary], ignore_index=True)
+            logger.info(f"Merged {len(secondary):,} matches from secondary open sources")
+    except Exception as e:
+        logger.warning(f"Failed to load secondary open sources: {e}")
+
+    # Append local StatsBomb cache if it exists
     sb_path = os.path.join(DATA_DIR, 'statsbomb_open.csv')
     if os.path.exists(sb_path):
         try:
             sb = pd.read_csv(sb_path)
-            # statsbomb_open.csv already has: home_team, away_team, home_goals, away_goals, date, league_slug
             for col in ['odds_home', 'odds_draw', 'odds_away']:
-                sb[col] = float('nan')
+                if col not in sb.columns: sb[col] = float('nan')
             sb['date'] = pd.to_datetime(sb['date'], errors='coerce')
-            needed = ['home_team', 'away_team', 'home_goals', 'away_goals', 'date', 'league_slug',
-                      'odds_home', 'odds_draw', 'odds_away']
-            sb = sb[[c for c in needed if c in sb.columns]].dropna(subset=['home_team', 'away_team'])
             df = pd.concat([df, sb], ignore_index=True)
-            logger.info(f"StatsBomb open data merged: +{len(sb)} rows  (total {len(df)})")
+            logger.info(f"Merged {len(sb):,} matches from local StatsBomb cache")
         except Exception as e:
             logger.warning(f"Could not load statsbomb_open.csv: {e}")
+
+    if not df.empty:
+        df = df.dropna(subset=['home_team', 'away_team', 'home_goals', 'away_goals'])
+        df = df.sort_values('date').reset_index(drop=True)
 
     return df

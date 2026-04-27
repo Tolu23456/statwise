@@ -322,23 +322,50 @@ void compute_all_features_bulk_v4(const int* ti, int nt, const int* agh, const i
     #pragma omp parallel for schedule(dynamic)
     for (int i=0; i<nt; ++i) {
         int idx=ti[i], ht=ahi[idx], at=aai[idx];
-        auto f_h = [&](int tid, std::vector<int>& v, std::vector<double>& ev, const double* all_e) {
-            int p=tmp[tid], c=tmc[tid];
-            for (int j=0; j<c; ++j) { int mid=tmi[p+j]; if(mid<idx) { v.push_back(mid); ev.push_back(all_e[mid]); } else break; }
-            if ((int)v.size()>lb) { v.erase(v.begin(), v.end()-lb); ev.erase(ev.begin(), ev.end()-lb); }
-        };
-        std::vector<int> hh, ah; std::vector<double> ehh, eha; f_h(ht, hh, ehh, ahe); f_h(at, ah, eha, aae);
-        std::vector<int> h2; const std::vector<int>& sm=(hh.size()<ah.size())?hh:ah;
-        for (int m:sm) if((ahi[m]==ht&&aai[m]==at)||(ahi[m]==at&&aai[m]==ht)) h2.push_back(m);
-        int nh=hh.size(), na=ah.size(), n2=h2.size();
-        std::vector<int> ghh(nh), gah(nh), whh(nh); std::vector<double> tsh(nh);
-        for(int j=0;j<nh;++j){ int m=hh[j]; ghh[j]=agh[m]; gah[j]=aga[m]; whh[j]=(ahi[m]==ht?1:0); tsh[j]=ats[m]; }
-        std::vector<int> gha(na), gaa(na), wha(na); std::vector<double> tsa(na);
-        for(int j=0;j<na;++j){ int m=ah[j]; gha[j]=agh[m]; gaa[j]=aga[m]; wha[j]=(ahi[m]==at?1:0); tsa[j]=ats[m]; }
-        std::vector<int> gh2(n2), ga2(n2), wh2(n2);
-        for(int j=0;j<n2;++j){ int m=h2[j]; gh2[j]=agh[m]; ga2[j]=aga[m]; wh2[j]=(ahi[m]==ht?1:0); }
+
+        // Use stack-allocated buffers where possible to avoid heap thrashing
+        int hh_idx[1024], ah_idx[1024];
+        double ehh_b[1024], eha_b[1024];
+        int nh=0, na=0;
+
+        int p_h=tmp[ht], c_h=tmc[ht];
+        for (int j=0; j<c_h && nh<1024; ++j) {
+            int mid=tmi[p_h+j];
+            if(mid<idx) { hh_idx[nh]=mid; ehh_b[nh]=ahe[mid]; nh++; } else break;
+        }
+        if (nh > lb) {
+            int shift = nh - lb;
+            for(int j=0; j<lb; ++j) { hh_idx[j]=hh_idx[j+shift]; ehh_b[j]=ehh_b[j+shift]; }
+            nh = lb;
+        }
+
+        int p_a=tmp[at], c_a=tmc[at];
+        for (int j=0; j<c_a && na<1024; ++j) {
+            int mid=tmi[p_a+j];
+            if(mid<idx) { ah_idx[na]=mid; eha_b[na]=ahe[mid]; na++; } else break;
+        }
+        if (na > lb) {
+            int shift = na - lb;
+            for(int j=0; j<lb; ++j) { ah_idx[j]=ah_idx[j+shift]; eha_b[j]=eha_b[j+shift]; }
+            na = lb;
+        }
+
+        int h2_idx[256], n2=0;
+        int max_h2 = (nh < na) ? nh : na;
+        for (int j=0; j<max_h2 && n2<256; ++j) {
+            int m = (nh < na) ? hh_idx[j] : ah_idx[j];
+            if((ahi[m]==ht&&aai[m]==at)||(ahi[m]==at&&aai[m]==ht)) h2_idx[n2++] = m;
+        }
+
+        int ghh[1024], gah[1024], whh[1024]; double tsh[1024];
+        for(int j=0;j<nh;++j){ int m=hh_idx[j]; ghh[j]=agh[m]; gah[j]=aga[m]; whh[j]=(ahi[m]==ht?1:0); tsh[j]=ats[m]; }
+        int gha[1024], gaa[1024], wha[1024]; double tsa[1024];
+        for(int j=0;j<na;++j){ int m=ah_idx[j]; gha[j]=agh[m]; gaa[j]=aga[m]; wha[j]=(ahi[m]==at?1:0); tsa[j]=ats[m]; }
+        int gh2[256], ga2[256], wh2[256];
+        for(int j=0;j<n2;++j){ int m=h2_idx[j]; gh2[j]=agh[m]; ga2[j]=aga[m]; wh2[j]=(ahi[m]==ht?1:0); }
+
         int mg[2]={agh[idx], aga[idx]};
-        compute_all_features_v4(ape+idx*6, apad+idx*4, mg, ao+idx*3, ats[idx], als+idx*6, nh, ghh.data(), gah.data(), whh.data(), tsh.data(), ehh.data(), na, gha.data(), gaa.data(), wha.data(), tsa.data(), eha.data(), n2, gh2.data(), ga2.data(), wh2.data(), ha, out+(long long)i*125);
+        compute_all_features_v4(ape+idx*6, apad+idx*4, mg, ao+idx*3, ats[idx], als+idx*6, nh, ghh, gah, whh, tsh, ehh_b, na, gha, gaa, wha, tsa, eha_b, n2, gh2, ga2, wh2, ha, out+(long long)i*125);
     }
 }
 

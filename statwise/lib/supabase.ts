@@ -77,6 +77,12 @@ export type Prediction = {
   tier: string;
   tier_required: string;
   reasoning?: string;
+  stats?: {
+    h2h: { home_wins: number; draws: number; away_wins: number };
+    home_form: number[];
+    away_form: number[];
+    avg_goals: number;
+  } | null;
   status?: string;
   actual_result?: string | null;
   home_score?: number | null;

@@ -113,20 +113,14 @@ class PredictionEngine:
         for fix in fixtures:
             try:
                 pred = self.predictor.predict_match(
-                    home_team  = fix['home_team'],
-                    away_team  = fix['away_team'],
-                    league_slug= fix.get('league_slug', 'all'),
-                    history    = self.history,
-                    odds_home  = fix.get('odds_home'),
-                    odds_draw  = fix.get('odds_draw'),
-                    odds_away  = fix.get('odds_away'),
+                    home  = fix['home_team'],
+                    away  = fix['away_team'],
+                    league= fix.get('league_slug', 'all'),
+                    history= self.history,
                 )
                 tier_name, tier_db = _tier_for_confidence(pred['confidence'])
                 kickoff    = fix.get('kickoff_time', '')
                 match_date = kickoff[:10] if kickoff else str(datetime.date.today())
-
-                # Use real odds from API if available, fall back to model suggestion
-                odds_val = (fix.get('odds_home') or pred.get('suggested_odds') or 1.90)
 
                 row = {
                     "match_id":      fix['match_id'],
@@ -137,11 +131,9 @@ class PredictionEngine:
                     "league_slug":   fix.get('league_slug', 'all'),
                     "prediction":    pred['prediction'],
                     "confidence":    pred['confidence'],
-                    "odds":          odds_val,
-                    "odds_home":     fix.get('odds_home'),
-                    "odds_draw":     fix.get('odds_draw'),
-                    "odds_away":     fix.get('odds_away'),
+                    "odds":          fix.get('odds_home') or 1.90,
                     "reasoning":     pred['reasoning'],
+                    "stats":         pred.get('stats'),
                     "kickoff_time":  kickoff,
                     "match_date":    match_date,
                     "tier":          tier_db,
@@ -155,12 +147,10 @@ class PredictionEngine:
         logger.info(f"Generated {len(results)} predictions.")
         return results
 
-    # Columns that exist in the Supabase predictions table.
-    # odds_home / odds_draw / odds_away are NOT in the schema — strip them.
     _DB_COLUMNS = {
         "match_id", "match_title", "home_team", "away_team",
         "league", "league_slug", "prediction", "confidence",
-        "odds", "reasoning", "kickoff_time", "match_date",
+        "odds", "reasoning", "stats", "kickoff_time", "match_date",
         "tier", "tier_required", "status",
         "actual_result", "settled_at",
     }
@@ -176,7 +166,6 @@ class PredictionEngine:
         saved = 0
         for p in predictions:
             try:
-                # Strip any keys not in the schema to avoid PGRST204 errors
                 row = {k: v for k, v in p.items() if k in self._DB_COLUMNS}
                 sb.table("predictions").upsert(row, on_conflict="match_id").execute()
                 saved += 1
@@ -187,11 +176,6 @@ class PredictionEngine:
         return saved
 
     def settle_past_predictions(self) -> int:
-        """
-        Fetch past predictions that are still 'upcoming' and try to settle
-        them with actual results for backtesting accuracy tracking.
-        Returns number of predictions settled.
-        """
         sb = self._ensure_supabase()
         if sb is None:
             return 0
