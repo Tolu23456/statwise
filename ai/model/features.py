@@ -15,7 +15,7 @@ from .cpp_bridge import (
 
 logger = logging.getLogger(__name__)
 
-MAX_TRAINING_SAMPLES = 120_000
+MAX_TRAINING_SAMPLES = 500_000
 _LOOKBACK            = 600
 
 # Continuous features (0-124) + Categorical (League ID at 125)

@@ -1,8 +1,8 @@
 # StatWise AI Documentation
 
 > Last updated: April 2026  
-> Pipeline version: v3.0 (7 data sources, 48-column schema, 10-phase cleaner)  
-> Model version: v2 (98 features, 5-model deep stacking ensemble)
+> Pipeline version: v3.1 (Expanded historical coverage to 1993, 22+ divisions)
+> Model version: v5-Extended (126 features, League-Aware Attention Stacking Ensemble)
 
 ## Table of Contents
 1. [System Overview](#1-system-overview)
@@ -234,22 +234,23 @@ Empty cells = value absent or failed validation (never filled with `0`).
 **File:** `ai/models/football_predictor.pkl`  
 **Trainer:** `ai/model/trainer.py`
 
-### Architecture: 5-Model Deep Stacking Ensemble
+### Architecture: Grandmaster v5-Extended Stacking Ensemble
 
 **Base Learners (Level 1)**
 
 | Model | Library | Key params |
 |-------|---------|-----------|
-| XGBoost | xgboost | `n_estimators=500, max_depth=6, lr=0.05` |
-| HistGradientBoosting | scikit-learn | `max_iter=400, max_depth=8` |
-| ExtraTrees | scikit-learn | `n_estimators=300, class_weight=balanced` |
-| RandomForest | scikit-learn | `n_estimators=300, class_weight=balanced` |
-| PyTorch NeuralNet | pytorch | 4 hidden layers, BatchNorm, Dropout 0.3, class-weighted CrossEntropy |
+| XGBoost | xgboost | `n_estimators=800, max_depth=8, lr=0.015` |
+| LightGBM | lightgbm | `n_estimators=800, num_leaves=127` |
+| HistGradientBoosting | scikit-learn | `max_iter=600, max_depth=12` |
+| ExtraTrees | scikit-learn | `n_estimators=300, max_depth=30` |
+| RandomForest | scikit-learn | `n_estimators=300, max_depth=22` |
+| Grandmaster NeuralNet | pytorch | **League-Aware Attention Network**: d_model=256, 8 heads, dual transformer blocks, entity embeddings for 120+ leagues. |
 
 **Meta-Learner (Level 2)**  
-`LogisticRegressionCV` (5-fold CV) trained on out-of-fold base learner probability outputs.
+`LogisticRegressionCV` (5-fold CV) with global **Isotonic Calibration** (CalibratedStack) to ensure mathematically precise confidence scores.
 
-### Features (98 total)
+### Features (126 total)
 
 | Group | Count | Description |
 |-------|-------|-------------|
@@ -304,13 +305,15 @@ Upsert to Supabase `predictions` table (keyed on match_id)
 Settle past predictions (TheSportsDB actual scores)
 ```
 
-### C++ Kernel (libstatwise.so) — 11 Exported Functions
-- `dixon_coles_matrix` — Poisson + rho-correction score probability matrix
-- `attack_defence_elo` — dual-track Elo for attack/defence strength
-- `goals_variance` — rolling variance of goals over N matches
-- `venue_split_form` — home-only / away-only recent form vectors
-- `consecutive_run` — streak length counters
-- + 6 more feature calculation functions
+### C++ Kernel (libstatwise.so) — 12 Exported Functions
+- `compute_all_features_bulk_v4` — High-performance bulk engine using stack-allocated buffers and SIMD/AVX-512 optimization.
+- `compute_all_features_v4` — Real-time single-match feature extraction.
+- `dixon_coles_matrix` — Poisson + rho-correction score probability matrix.
+- `attack_defence_elo` — dual-track Elo for attack/defence strength.
+- `goals_variance` — rolling variance of goals over N matches.
+- `venue_split_form` — home-only / away-only recent form vectors.
+- `consecutive_run` — streak length counters.
+- + 5 more specialized calculation functions.
 
 ---
 
