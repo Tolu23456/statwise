@@ -10,15 +10,16 @@ from .cpp_bridge import (
     compute_elo_ratings_bulk,
     compute_attack_defense_elo_bulk,
     elo_probabilities,
-    compute_all_features_bulk_v4,
+    compute_all_features_bulk_v6,
+    compute_all_features_v6,
 )
 
 logger = logging.getLogger(__name__)
 
-MAX_TRAINING_SAMPLES = 120_000
+MAX_TRAINING_SAMPLES = 500_000
 _LOOKBACK            = 600
 
-# Continuous features (0-124) + Categorical (League ID at 125)
+# Continuous features (0-159) + Categorical (League ID at 160)
 FEATURE_NAMES = [
     # ... existing 125 features ...
     "elo_home", "elo_away", "elo_diff", "elo_prob_home", "elo_prob_draw", "elo_prob_away",
@@ -46,10 +47,18 @@ FEATURE_NAMES = [
     "home_elo_volatility", "away_elo_volatility", "home_ppg_accel", "away_ppg_accel",
     "elo_form_interaction", "market_volatility_interaction",
     "pad_1", "pad_2", "pad_3", "pad_4", "pad_5", "pad_6", "pad_7", "pad_8", "pad_9",
-    # ── League Embedding Index (125)
+    # Titan v6 Player/Squad Features
+    "home_squad_value", "away_squad_value", "squad_value_ratio",
+    "home_avg_age", "away_avg_age", "home_lineup_rating", "away_lineup_rating",
+    "lineup_rating_diff",
+    # Padding for future Titan features (indices 133-159)
+    "pad_133", "pad_134", "pad_135", "pad_136", "pad_137", "pad_138", "pad_139",
+    "pad_140", "pad_141", "pad_142", "pad_143", "pad_144", "pad_145", "pad_146", "pad_147", "pad_148", "pad_149",
+    "pad_150", "pad_151", "pad_152", "pad_153", "pad_154", "pad_155", "pad_156", "pad_157", "pad_158", "pad_159",
+    # ── League Embedding Index (160)
     "league_id"
 ]
-N_FEATURES = 126
+N_FEATURES = 161
 
 class FeaturePipeline:
     def __init__(self, home_advantage: float = 100.0):
@@ -158,13 +167,23 @@ class FeaturePipeline:
         for ml in team_matches:
             t_ptr.append(curr); t_cnt.append(len(ml)); flat_m.extend(ml); curr += len(ml)
 
-        # 1. Continuous block (125)
-        X_cont = compute_all_features_bulk_v4(np.array(all_idx, dtype=np.int32), all_gh, all_ga, all_ts, all_h_idx, all_a_idx, all_pre_elos, all_pre_att_def, all_odds, all_league_stats, np.array(flat_m, dtype=np.int32), np.array(t_ptr, dtype=np.int32), np.array(t_cnt, dtype=np.int32), self._elo_pre_home, self._elo_pre_away, _LOOKBACK, self.home_advantage)
+        # Titan-v6 Multi-Modal block (Squad values, age, ratings)
+        all_squad_v = np.zeros((len(df), 6), dtype=np.float64)
+        if 'home_squad_value' in df.columns:
+            all_squad_v[:, 0] = df['home_squad_value'].fillna(0).values
+            all_squad_v[:, 1] = df['away_squad_value'].fillna(0).values
+            all_squad_v[:, 2] = df['home_avg_age'].fillna(25).values
+            all_squad_v[:, 3] = df['away_avg_age'].fillna(25).values
+            all_squad_v[:, 4] = df['home_lineup_rating'].fillna(70).values
+            all_squad_v[:, 5] = df['away_lineup_rating'].fillna(70).values
+
+        # 1. Continuous block (160)
+        X_cont = compute_all_features_bulk_v6(np.array(all_idx, dtype=np.int32), all_gh, all_ga, all_ts, all_h_idx, all_a_idx, all_pre_elos, all_pre_att_def, all_odds, all_league_stats, np.array(flat_m, dtype=np.int32), np.array(t_ptr, dtype=np.int32), np.array(t_cnt, dtype=np.int32), self._elo_pre_home.astype(np.float64), self._elo_pre_away.astype(np.float64), all_squad_v, _LOOKBACK, self.home_advantage)
 
         # 2. League IDs (1)
         league_ids = df['league_slug'].fillna('all').map(self._league_map).values[all_idx].reshape(-1, 1)
 
-        # 3. Concatenate to 126 features
+        # 3. Concatenate to 161 features
         X = np.hstack([X_cont, league_ids])
 
         y_1x2 = np.where(all_gh[all_idx] > all_ga[all_idx], 0, np.where(all_gh[all_idx] == all_ga[all_idx], 1, 2)).astype(np.int32)
@@ -204,8 +223,9 @@ class FeaturePipeline:
             h2 = history[((history['home_team'] == home) & (history['away_team'] == away)) | ((history['home_team'] == away) & (history['away_team'] == home))].sort_values('date')
             n2 = len(h2); gh2 = h2['home_goals'].values.astype(np.int32); ga2 = h2['away_goals'].values.astype(np.int32); wh2 = (h2['home_team'] == home).values.astype(np.int32)
 
-            from .cpp_bridge import compute_all_features_v4
-            feat = compute_all_features_v4(pe, pad, mg, od, cts, ls, nh, ghh, gah, whh, tsh, ehh, na, gha, gaa, wha, tsa, eha, n2, gh2, ga2, wh2, self.home_advantage)
-            if feat is None: feat = np.zeros(125)
+            squad_v = np.array([m.get('home_squad_value', 0), m.get('away_squad_value', 0), m.get('home_avg_age', 25), m.get('away_avg_age', 25), m.get('home_lineup_rating', 70), m.get('away_lineup_rating', 70)], dtype=np.float64)
+
+            feat = compute_all_features_v6(pe, pad, mg, od, cts, ls, nh, ghh, gah, whh, tsh, ehh, na, gha, gaa, wha, tsa, eha, n2, gh2, ga2, wh2, self.home_advantage, squad_v)
+            if feat is None: feat = np.zeros(160)
             X_out.append(np.append(feat, self._league_map.get(league, 0)))
         return np.array(X_out)

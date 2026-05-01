@@ -63,35 +63,47 @@ if _TORCH:
         def forward(self, x: torch.Tensor) -> torch.Tensor:
             return self.drop(self.act(self.se(self.block(x)) + x))
 
-    class _GrandmasterFootballNet(nn.Module):
+    class _TitanFootballNet(nn.Module):
         """
-        Scalable League-Aware Attention-based Residual Network (v5-Extended).
-        Optimized for multi-million row datasets.
+        Titan v6: Multi-Modal Transformer with Player-Team Cross-Attention.
+        Architected for 10M+ match datasets.
         """
         def __init__(self, n_cont: int, n_leagues: int, n_out: int,
-                     d_model: int = 256, d_embed: int = 64, n_heads: int = 8):
+                     d_model: int = 512, d_embed: int = 128, n_heads: int = 8):
             super().__init__()
             self.n_leagues = n_leagues
+            self.d_model = d_model
 
-            # 1. League Embedding (Deeper representation)
+            # 1. League & Tactical Embeddings
             self.league_embed = nn.Embedding(n_leagues, d_embed)
 
-            # 2. Continuous Projection
-            self.cont_proj = nn.Sequential(
-                nn.Linear(n_cont, d_model - d_embed),
-                nn.BatchNorm1d(d_model - d_embed),
+            # 2. Dual-Path Input Processing
+            # Path A: Team Tactical Features (indices 0-124)
+            self.team_proj = nn.Sequential(
+                nn.Linear(125, 256),
+                nn.BatchNorm1d(256),
                 nn.GELU(),
-                nn.Linear(d_model - d_embed, d_model - d_embed),
-                nn.BatchNorm1d(d_model - d_embed),
-                nn.GELU()
+                nn.Linear(256, d_model // 2),
+                nn.LayerNorm(d_model // 2)
             )
 
-            # 3. Transformer Blocks (Deeper Self-Attention)
-            self.n_tokens = 8  # Increased token density
+            # Path B: Player/Squad Multi-Modal Features (indices 125-159)
+            self.player_proj = nn.Sequential(
+                nn.Linear(35, 128),
+                nn.BatchNorm1d(128),
+                nn.GELU(),
+                nn.Linear(128, d_model // 2 - d_embed),
+                nn.LayerNorm(d_model // 2 - d_embed)
+            )
+
+            # 3. Cross-Attention Bottleneck
+            self.n_tokens = 16
             self.token_dim = d_model // self.n_tokens
-            self.attn1 = nn.MultiheadAttention(self.token_dim, n_heads, batch_first=True, dropout=0.1)
-            self.attn2 = nn.MultiheadAttention(self.token_dim, n_heads, batch_first=True, dropout=0.1)
-            self.attn_norm = nn.LayerNorm(self.token_dim)
+            self.mha_blocks = nn.ModuleList([
+                nn.MultiheadAttention(self.token_dim, n_heads, batch_first=True, dropout=0.1)
+                for _ in range(4)
+            ])
+            self.ln_blocks = nn.ModuleList([nn.LayerNorm(self.token_dim) for _ in range(4)])
 
             # 4. Deep Residual Pipeline (Increased depth and width)
             self.res1 = _ResBlock(d_model, dropout=0.25)
@@ -115,18 +127,24 @@ if _TORCH:
                     if m.bias is not None: nn.init.zeros_(m.bias)
 
         def forward(self, x_num: torch.Tensor, x_cat: torch.Tensor) -> torch.Tensor:
-            emb = self.league_embed(x_cat)
-            proj = self.cont_proj(x_num)
-            fused = torch.cat([proj, emb], dim=1)
+            # x_num: (B, 160)
+            team_feats = x_num[:, :125]
+            player_feats = x_num[:, 125:]
+
+            t_proj = self.team_proj(team_feats)
+            p_proj = self.player_proj(player_feats)
+            l_emb = self.league_embed(x_cat)
+
+            # Multi-Modal Fusion
+            fused = torch.cat([t_proj, p_proj, l_emb], dim=1) # (B, d_model)
 
             b = fused.shape[0]
             tokens = fused.view(b, self.n_tokens, self.token_dim)
 
-            # Deep Attention block
-            a1, _ = self.attn1(tokens, tokens, tokens)
-            tokens = self.attn_norm(tokens + a1)
-            a2, _ = self.attn2(tokens, tokens, tokens)
-            tokens = self.attn_norm(tokens + a2)
+            # Deep Transformer Pipeline
+            for mha, ln in zip(self.mha_blocks, self.ln_blocks):
+                attn_out, _ = mha(tokens, tokens, tokens)
+                tokens = ln(tokens + attn_out)
 
             x = tokens.reshape(b, -1)
 
@@ -200,7 +218,8 @@ class GrandmasterNeuralNet(BaseEstimator, ClassifierMixin):
             sw_tr = sample_weight
 
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        self._model = _GrandmasterFootballNet(n_cont, self.n_leagues, n_classes).to(device)
+        self._model = _TitanFootballNet(n_cont, self.n_leagues, n_classes).to(device)
+        self._scaler = torch.cuda.amp.GradScaler(enabled=(device.type == 'cuda'))
 
         counts = np.bincount(y_tr, minlength=n_classes).astype(np.float32)
         cls_w  = torch.FloatTensor((counts.sum() / (n_classes * counts.clip(1)))).to(device)
@@ -239,11 +258,16 @@ class GrandmasterNeuralNet(BaseEstimator, ClassifierMixin):
             for bn, bc, by, bw in loader:
                 bn, bc, by, bw = bn.to(device), bc.to(device), by.to(device), bw.to(device)
                 optimizer.zero_grad(set_to_none=True)
-                logits = self._model(bn, bc)
-                loss = (nn.functional.cross_entropy(logits, by, weight=cls_w, reduction='none') * bw).mean()
-                loss.backward()
+
+                with torch.cuda.amp.autocast(enabled=(device.type == 'cuda')):
+                    logits = self._model(bn, bc)
+                    loss = (nn.functional.cross_entropy(logits, by, weight=cls_w, reduction='none') * bw).mean()
+
+                self._scaler.scale(loss).backward()
+                self._scaler.unscale_(optimizer)
                 nn.utils.clip_grad_norm_(self._model.parameters(), 1.0)
-                optimizer.step()
+                self._scaler.step(optimizer)
+                self._scaler.update()
                 scheduler.step()
 
             if X_vl is not None:

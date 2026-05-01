@@ -1017,6 +1017,9 @@ struct Match {
     double asian_handicap_line = -1, asian_handicap_home = -1, asian_handicap_away = -1;
     double over25_odds = -1, under25_odds = -1, max_over25 = -1, max_under25 = -1;
     double xg_home = -1, xg_away = -1;
+    double home_squad_value = -1, away_squad_value = -1;
+    double home_avg_age = -1, away_avg_age = -1;
+    double home_lineup_rating = -1, away_lineup_rating = -1;
     int  quality_score  = 0;     // 0-100
     int  league_tier    = 2;     // 1=elite … 4=lower, 0=international
     bool is_international = false;
@@ -1100,6 +1103,7 @@ struct Match {
                "asian_handicap_line,asian_handicap_home,asian_handicap_away,"
                "over25_odds,under25_odds,max_over25,max_under25,"
                "xg_home,xg_away,"
+               "home_squad_value,away_squad_value,home_avg_age,away_avg_age,home_lineup_rating,away_lineup_rating,"
                "quality_score,league_tier,is_international,score_conflict,"
                "tournament,is_neutral";
     }
@@ -1136,6 +1140,9 @@ struct Match {
              + fmt_d(over25_odds) + "," + fmt_d(under25_odds) + ","
              + fmt_d(max_over25) + "," + fmt_d(max_under25) + ","
              + fmt_d(xg_home) + "," + fmt_d(xg_away) + ","
+             + fmt_d(home_squad_value) + "," + fmt_d(away_squad_value) + ","
+             + fmt_d(home_avg_age) + "," + fmt_d(away_avg_age) + ","
+             + fmt_d(home_lineup_rating) + "," + fmt_d(away_lineup_rating) + ","
              + std::to_string(quality_score) + ","
              + std::to_string(league_tier) + ","
              + (is_international ? "1" : "0") + ","
@@ -1879,6 +1886,34 @@ static void process_worldcup_file(const std::string& path) {
     LOG_OK("  [worldcup] → " + std::to_string(matches.size()) + " rows");
 }
 
+static void process_engsoccerdata_file(const std::string& path) {
+    LOG_DEBUG("  [engsoccerdata] " + path);
+    std::ifstream f(path);
+    if (!f.is_open()) return;
+    std::string line;
+    std::getline(f, line);
+    auto hdr = parse_csv_row(line);
+    auto idx = make_header_idx(hdr);
+    std::vector<Match> batch;
+    while (std::getline(f, line)) {
+        auto row = parse_csv_row(line);
+        if (row.size() < 4) continue;
+        Match m;
+        m.date = normalise_date(get(row, idx, "Date"));
+        if (m.date.empty()) continue;
+        m.home_team = normalise_team(get(row, idx, "home"));
+        m.away_team = normalise_team(get(row, idx, "visitor"));
+        m.home_goals = parse_i(get(row, idx, "hgoal"));
+        m.away_goals = parse_i(get(row, idx, "vgoal"));
+        if (!valid_score(m.home_goals) || !valid_score(m.away_goals)) continue;
+        m.league_slug = lower(get(row, idx, "tier"));
+        m.source = "engsoccerdata";
+        m.compute_quality();
+        batch.push_back(std::move(m));
+    }
+    merge_into_global(batch);
+}
+
 static void process_openfootball_file(const std::string& path) {
     std::string comp = of_comp_from_filename(path);
     LOG_DEBUG("  [openfootball] " + path + " comp=" + comp);
@@ -2035,6 +2070,18 @@ int main(int argc, char* argv[]) {
     if (g_stop.load()) { LOG_WARN("Interrupted."); return 1; }
 
     // ── Phase 7: Cross-source conflict summary ────────────────────────────────
+    LOG_INFO("── Titan-v6: engsoccerdata (global archives) ───────────");
+    {
+        std::string es_dir = raw_dir + "/engsoccerdata";
+        auto es_files = list_files(es_dir, ".csv");
+        for (const auto& fpath : es_files) {
+            if (g_stop.load()) break;
+            pool.enqueue([fpath]{ process_engsoccerdata_file(fpath); });
+        }
+        pool.wait_all();
+    }
+    if (g_stop.load()) { LOG_WARN("Interrupted."); return 1; }
+
     LOG_INFO("── Phase 7: Score conflict summary ─────────────────────");
     LOG_INFO("  Score conflicts detected: " + std::to_string((int)g_total_conflict));
 

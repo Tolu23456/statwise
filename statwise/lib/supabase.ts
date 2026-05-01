@@ -82,6 +82,10 @@ export type Prediction = {
     home_form: number[];
     away_form: number[];
     avg_goals: number;
+    home_value?: number;
+    away_value?: number;
+    home_rating?: number;
+    away_rating?: number;
   } | null;
   status?: string;
   actual_result?: string | null;

@@ -508,6 +508,27 @@ int main(int argc, char* argv[]) {
     build_openfootball_tasks(outdir,   tasks);
     build_statsbomb_tasks(outdir,      tasks);
 
+    // Titan-v6: Added Massive High-Signal Sources (Transfermarkt, FBRef, EngSoccerData)
+    auto build_titan_tasks = [&](const std::string& d, std::vector<DownloadTask>& t) {
+        // Transfermarkt Match/Player/Value data (~60k matches, 200k player valuations)
+        const std::string tm_base = "https://raw.githubusercontent.com/dcarpg/transfermarkt-datasets/master/data";
+        for (const auto& file : {"matches.csv", "players.csv", "player_valuations.csv", "appearances.csv", "clubs.csv"}) {
+            t.push_back({tm_base + "/" + file, d + "/transfermarkt/" + file, std::string("transfermarkt/") + file, 500, true});
+        }
+        // EngSoccerData (Millions of historical records across global leagues)
+        const std::string es_base = "https://raw.githubusercontent.com/jason-p-collins/engsoccerdata/master/data-raw";
+        for (const auto& file : {"england.csv", "germany.csv", "italy.csv", "spain.csv", "france.csv", "holland.csv", "belgium.csv", "portugal.csv", "turkey.csv", "greece.csv", "scotland.csv"}) {
+             t.push_back({es_base + "/" + file, d + "/engsoccerdata/" + file, std::string("engsoccerdata/") + file, 1024, true});
+        }
+        // SoFIFA (Player ratings history for squad quality features)
+        const std::string sf_base = "https://raw.githubusercontent.com/maelsterv/fifa-stats-dataset/master";
+        for (int yr = 15; yr <= 25; ++yr) {
+            std::string file = "fifa" + std::to_string(yr) + "_players.csv";
+            t.push_back({sf_base + "/" + file, d + "/sofifa/" + file, "sofifa/" + file, 1024, true});
+        }
+    };
+    build_titan_tasks(outdir, tasks);
+
     LOG_INFO("Total download tasks : " + std::to_string(tasks.size()));
     LOG_INFO("  football-data.co.uk: " +
              std::to_string(FD_LEAGUES.size() * FD_SEASONS_MAIN.size()) + " slots (many optional)");
