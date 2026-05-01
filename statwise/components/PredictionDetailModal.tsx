@@ -219,9 +219,28 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 </View>
 
                 <View style={{ marginTop: 12, paddingTop: 12, borderTopWidth: 1, borderTopColor: C.border }}>
-                  <Text style={{ color: C.textSecondary, fontSize: 12 }}>
-                    Avg. Match Goals: <Text style={{ color: C.text, fontWeight: '700' }}>{stats.avg_goals.toFixed(2)}</Text>
-                  </Text>
+                  <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <Text style={{ color: C.textSecondary, fontSize: 12 }}>Avg. Match Goals</Text>
+                    <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>{stats.avg_goals.toFixed(2)}</Text>
+                  </View>
+
+                  {stats.home_value !== undefined && (
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
+                      <Text style={{ color: C.textSecondary, fontSize: 12 }}>Squad Market Value</Text>
+                      <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>
+                        €{(stats.home_value / 1e6).toFixed(1)}M vs €{(stats.away_value! / 1e6).toFixed(1)}M
+                      </Text>
+                    </View>
+                  )}
+
+                  {stats.home_rating !== undefined && (
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                      <Text style={{ color: C.textSecondary, fontSize: 12 }}>Squad Quality Rating</Text>
+                      <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>
+                        {stats.home_rating.toFixed(1)} vs {stats.away_rating!.toFixed(1)}
+                      </Text>
+                    </View>
+                  )}
                 </View>
               </View>
             )}

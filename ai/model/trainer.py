@@ -21,7 +21,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
 from .features import FeaturePipeline, N_FEATURES
-from .neural_net import GrandmasterNeuralNet
+from .neural_net import GrandmasterNeuralNet, _TitanFootballNet
 
 logger = logging.getLogger(__name__)
 MODEL_DIR     = os.path.join(os.path.dirname(__file__), '..', 'models')
@@ -163,10 +163,16 @@ class FootballPredictor:
         return obj
 
     def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0):
+        home_squad_value = history[history["home_team"] == home]["home_squad_value"].tail(1).values[0] if "home_squad_value" in history.columns and not history[history["home_team"] == home].empty else 0
+        away_squad_value = history[history["away_team"] == away]["away_squad_value"].tail(1).values[0] if "away_squad_value" in history.columns and not history[history["away_team"] == away].empty else 0
+        home_avg_age = history[history["home_team"] == home]["home_avg_age"].tail(1).values[0] if "home_avg_age" in history.columns and not history[history["home_team"] == home].empty else 25
+        away_avg_age = history[history["away_team"] == away]["away_avg_age"].tail(1).values[0] if "away_avg_age" in history.columns and not history[history["away_team"] == away].empty else 25
+        home_lineup_rating = history[history["home_team"] == home]["home_lineup_rating"].tail(1).values[0] if "home_lineup_rating" in history.columns and not history[history["home_team"] == home].empty else 70
+        away_lineup_rating = history[history["away_team"] == away]["away_lineup_rating"].tail(1).values[0] if "away_lineup_rating" in history.columns and not history[history["away_team"] == away].empty else 70
         if history is None or history.empty:
             history = pd.DataFrame(columns=['date', 'home_team', 'away_team', 'home_goals', 'away_goals'])
 
-        X = self.feature_pipe.build_features([{'home': home, 'away': away, 'league': league, 'odds_home': odds_home, 'odds_draw': odds_draw, 'odds_away': odds_away}], history)
+        X = self.feature_pipe.build_features([{"home": home, "away": away, "league": league, "odds_home": odds_home, "odds_draw": odds_draw, "odds_away": odds_away, "home_squad_value": home_squad_value, "away_squad_value": away_squad_value, "home_avg_age": home_avg_age, "away_avg_age": away_avg_age, "home_lineup_rating": home_lineup_rating, "away_lineup_rating": away_lineup_rating}], history)
 
         p_outcome = self._outcome_pipe.predict_proba(X)[0]
         p_goals = self._goals_pipe.predict_proba(X)[0]
@@ -195,7 +201,11 @@ class FootballPredictor:
             "h2h": {"home_wins": int(hw/total_h2h*100), "draws": int(dr/total_h2h*100), "away_wins": int(aw/total_h2h*100)},
             "home_form": get_stats(home),
             "away_form": get_stats(away),
-            "avg_goals": round(float(avg_g), 2)
+            "avg_goals": round(float(avg_g), 2),
+            "home_value": float(X[0, 125]),
+            "away_value": float(X[0, 126]),
+            "home_rating": float(X[0, 130]),
+            "away_rating": float(X[0, 131])
         }
 
         # Dynamic reasoning based on model insights

@@ -37,7 +37,8 @@ def _load_lib() -> ctypes.CDLL | None:
         _lib.compute_streak.restype               = None
         _lib.compute_all_features_v3.restype      = None
         _lib.compute_all_features_v4.restype      = None
-        _lib.compute_all_features_bulk_v4.restype = None
+        _lib.compute_all_features_v6.restype      = None
+        _lib.compute_all_features_bulk_v6.restype = None
         logger.info("libstatwise.so loaded successfully")
         return _lib
     except Exception as e:
@@ -93,10 +94,24 @@ def compute_all_features_v4(pe: np.ndarray, pad: np.ndarray, mg: np.ndarray, od:
         return np.array(list(out))
     return None
 
-def compute_all_features_bulk_v4(target_indices: np.ndarray, all_gh: np.ndarray, all_ga: np.ndarray, all_ts: np.ndarray, all_h_idx: np.ndarray, all_a_idx: np.ndarray, all_pre_elos: np.ndarray, all_pre_att_def: np.ndarray, all_odds: np.ndarray, all_league_stats: np.ndarray, team_matches_idx: np.ndarray, team_matches_ptr: np.ndarray, team_matches_cnt: np.ndarray, all_h_elo: np.ndarray, all_a_elo: np.ndarray, lookback: int, home_advantage: float) -> np.ndarray | None:
+def compute_all_features_v6(pe: np.ndarray, pad: np.ndarray, mg: np.ndarray, od: np.ndarray, cts: float, ls: np.ndarray, nh: int, ghh: np.ndarray, gah: np.ndarray, whh: np.ndarray, tsh: np.ndarray, ehh: np.ndarray, na: int, gha: np.ndarray, gaa: np.ndarray, wha: np.ndarray, tsa: np.ndarray, eha: np.ndarray, n2: int, gh2: np.ndarray, ga2: np.ndarray, wh2: np.ndarray, ha: float, asv: np.ndarray) -> np.ndarray | None:
     lib = _load_lib()
     if lib:
-        nt = len(target_indices); out = (ctypes.c_double * (nt * 125))()
-        lib.compute_all_features_bulk_v4(target_indices.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), nt, all_gh.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), all_ga.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), all_ts.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), all_h_idx.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), all_a_idx.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), all_pre_elos.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), all_pre_att_def.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), all_odds.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), all_league_stats.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), team_matches_idx.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), team_matches_ptr.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), team_matches_cnt.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), all_h_elo.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), all_a_elo.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), lookback, ctypes.c_double(home_advantage), out)
-        return np.array(list(out)).reshape((nt, 125))
+        out = (ctypes.c_double * 160)()
+        lib.compute_all_features_v6(
+            pe.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), pad.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), mg.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), od.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), ctypes.c_double(cts), ls.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+            nh, ghh.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), gah.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), whh.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), tsh.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), ehh.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+            na, gha.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), gaa.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), wha.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), tsa.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), eha.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+            n2, gh2.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), ga2.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), wh2.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
+            ctypes.c_double(ha), asv.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), out
+        )
+        return np.array(list(out))
+    return None
+
+def compute_all_features_bulk_v6(ti: np.ndarray, agh: np.ndarray, aga: np.ndarray, ats: np.ndarray, ahi: np.ndarray, aai: np.ndarray, ape: np.ndarray, apad: np.ndarray, ao: np.ndarray, als: np.ndarray, tmi: np.ndarray, tmp: np.ndarray, tmc: np.ndarray, ahe: np.ndarray, aae: np.ndarray, asv: np.ndarray, lb: int, ha: float) -> np.ndarray | None:
+    lib = _load_lib()
+    if lib:
+        nt = len(ti); out = (ctypes.c_double * (nt * 160))()
+        lib.compute_all_features_bulk_v6(ti.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), nt, agh.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), aga.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), ats.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), ahi.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), aai.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), ape.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), apad.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), ao.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), als.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), tmi.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), tmp.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), tmc.ctypes.data_as(ctypes.POINTER(ctypes.c_int)), ahe.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), aae.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), asv.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), lb, ctypes.c_double(ha), out)
+        return np.array(list(out)).reshape((nt, 160))
     return None

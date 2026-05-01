@@ -48,9 +48,7 @@ static inline double dc_correction(int h, int a, double lh, double la, double rh
     return 1.0;
 }
 
-/* SIMD-ready weighted moments calculation */
-static void weighted_moments(const double* __restrict__ vals, const double* __restrict__ w, int n,
-                              double& mean, double& var) {
+static void weighted_moments(const double* __restrict__ vals, const double* __restrict__ w, int n, double& mean, double& var) {
     double sw = 0, sx = 0, sx2 = 0;
     #pragma omp simd reduction(+:sw, sx, sx2)
     for (int i = 0; i < n; ++i) {
@@ -79,75 +77,69 @@ void compute_elo_ratings(const char** home_teams, const char** away_teams, const
     }
 }
 
-void compute_form_vector(const int* home_goals, const int* away_goals, const int* was_home, int n_matches, const double* recency_weights, double* out_form) {
-    double ws = 0, wins = 0, draws = 0, losses = 0, gs = 0, gc = 0, mom = 0, cs = 0, sg = 0;
-    int n = std::min(n_matches, FORM_WINDOW);
+void compute_form_vector(const int* hg, const int* ag, const int* wh, int n_m, const double* rw, double* out) {
+    double ws = 0, w=0, d=0, l=0, gs=0, gc=0, mom=0, cs=0, sg=0;
+    int n = std::min(n_m, FORM_WINDOW);
     for (int i = 0; i < n; ++i) {
-        int idx = n_matches - n + i;
-        double w = recency_weights ? recency_weights[i] : std::pow(FORM_DECAY, n - 1 - i);
-        ws += w; int s = was_home[idx] ? home_goals[idx] : away_goals[idx], c = was_home[idx] ? away_goals[idx] : home_goals[idx];
-        gs += w * s; gc += w * c; if (s > c) { wins += w; mom += w * 3.0; } else if (s == c) { draws += w; mom += w * 1.0; } else losses += w;
-        if (c == 0) cs += w; if (s > 0) sg += w;
+        int idx = n_m - n + i;
+        double weight = rw ? rw[i] : std::pow(FORM_DECAY, n - 1 - i);
+        ws += weight; int s = wh[idx] ? hg[idx] : ag[idx], c = wh[idx] ? ag[idx] : hg[idx];
+        gs += weight * s; gc += weight * c; if (s > c) { w += weight; mom += weight * 3.0; } else if (s == c) { d += weight; mom += weight * 1.0; } else l += weight;
+        if (c == 0) cs += weight; if (s > 0) sg += weight;
     }
-    if (ws < 1e-9) { for (int j=0;j<10;++j) out_form[j]=0; return; }
-    out_form[0]=wins/ws; out_form[1]=draws/ws; out_form[2]=losses/ws; out_form[3]=gs/ws; out_form[4]=gc/ws; out_form[5]=(gs-gc)/ws; out_form[6]=mom/ws; out_form[7]=(wins*3+draws)/(ws*3); out_form[8]=cs/ws; out_form[9]=sg/ws;
+    if (ws < 1e-9) { for (int j=0;j<10;++j) out[j]=0; return; }
+    out[0]=w/ws; out[1]=d/ws; out[2]=l/ws; out[3]=gs/ws; out[4]=gc/ws; out[5]=(gs-gc)/ws; out[6]=mom/ws; out[7]=(w*3+d)/(ws*3); out[8]=cs/ws; out[9]=sg/ws;
 }
 
-void compute_h2h_stats(const int* home_goals, const int* away_goals, const int* was_first, int n_matches, double* out_h2h) {
-    if (n_matches == 0) { for (int i=0; i<6; ++i) out_h2h[i]=0; return; }
-    double wins=0,draws=0,losses=0,gf=0,gs2=0;
-    for (int i=0; i<n_matches; ++i) {
-        int g1 = was_first[i] ? home_goals[i] : away_goals[i], g2 = was_first[i] ? away_goals[i] : home_goals[i];
-        if (g1>g2) wins++; else if(g1==g2) draws++; else losses++;
-        gf+=g1; gs2+=g2;
+void compute_h2h_stats(const int* hg, const int* ag, const int* wh, int n_m, double* out) {
+    if (n_m == 0) { for (int i=0; i<6; ++i) out[i]=0; return; }
+    double w=0,d=0,l=0,gf=0,ga=0;
+    for (int i=0; i<n_m; ++i) {
+        int g1 = wh[i] ? hg[i] : ag[i], g2 = wh[i] ? ag[i] : hg[i];
+        if (g1>g2) w++; else if(g1==g2) d++; else l++;
+        gf+=g1; ga+=g2;
     }
-    double n=(double)n_matches;
-    out_h2h[0]=wins/n; out_h2h[1]=draws/n; out_h2h[2]=losses/n; out_h2h[3]=gf/n; out_h2h[4]=gs2/n; out_h2h[5]=n;
+    double n=(double)n_m;
+    out[0]=w/n; out[1]=d/n; out[2]=l/n; out[3]=gf/n; out[4]=ga/n; out[5]=n;
 }
 
-void compute_goal_probability(double attack_home, double defense_away, double attack_away, double defense_home, double league_avg_goals, double home_adv, double* out_over25, double* out_btts) {
-    double lh = std::min(attack_home * defense_away * home_adv, POISSON_LAMBDA_CAP), la = std::min(attack_away * defense_home, POISSON_LAMBDA_CAP);
-    if (lh <= 0) lh = league_avg_goals * home_adv / 2.0; if (la <= 0) la = league_avg_goals / 2.0;
-    double pu25 = 0; for (int h=0; h<=2; ++h) for (int a=0; a<=2-h; ++a) pu25 += poisson_pmf(lh,h) * poisson_pmf(la,a);
-    *out_over25 = 1.0 - pu25; *out_btts = (1.0 - poisson_pmf(lh,0)) * (1.0 - poisson_pmf(la,0));
+void compute_goal_probability(double ah, double da, double aa, double dh, double la, double ha, double* o25, double* btts) {
+    double lh = std::min(ah * da * ha, POISSON_LAMBDA_CAP), lag = std::min(aa * dh, POISSON_LAMBDA_CAP);
+    if (lh <= 0) lh = la * ha / 2.0; if (lag <= 0) lag = la / 2.0;
+    double pu25 = 0; for (int h=0; h<=2; ++h) for (int a=0; a<=2-h; ++a) pu25 += poisson_pmf(lh,h) * poisson_pmf(lag,a);
+    *o25 = 1.0 - pu25; *btts = (1.0 - poisson_pmf(lh,0)) * (1.0 - poisson_pmf(lag,0));
 }
 
-void compute_elo_probabilities(double elo_home, double elo_away, double home_advantage, double* prob_home, double* prob_draw, double* prob_away) {
-    double adj = elo_home + home_advantage, eh = expected_score(adj, elo_away), diff = std::abs(adj - elo_away);
+void compute_elo_probabilities(double eh, double ea, double ha, double* ph, double* pd, double* pa) {
+    double adj = eh + ha, ex = expected_score(adj, ea), diff = std::abs(adj - ea);
     double dpb = std::max(0.05, std::min(0.35, 0.28 * std::exp(-0.0015 * diff))), rem = 1.0 - dpb;
-    *prob_home = eh * rem; *prob_away = (1.0 - eh) * rem; *prob_draw = dpb;
-    double tot = *prob_home + *prob_draw + *prob_away; *prob_home /= tot; *prob_draw /= tot; *prob_away /= tot;
+    *ph = ex * rem; *pa = (1.0 - ex) * rem; *pd = dpb;
+    double tot = *ph + *pd + *pa; *ph /= tot; *pd /= tot; *pa /= tot;
 }
 
-void batch_compute_features(const double* home_elos, const double* away_elos, const double* home_forms, const double* away_forms, const double* h2h_stats_in, const double* league_stats, double home_advantage, int n_matches, double* out_features, int n_features) {
-    const int FD=10, H2HD=6, LD=4;
-    for (int i=0; i<n_matches; ++i) {
-        double* feat = out_features + i * n_features;
-        double eh=home_elos[i], ea=away_elos[i], ph,pd,pa;
-        compute_elo_probabilities(eh,ea,home_advantage,&ph,&pd,&pa);
-        feat[0]=eh; feat[1]=ea; feat[2]=eh-ea; feat[3]=ph; feat[4]=pd; feat[5]=pa;
-        const double* hf = home_forms + i*FD; for (int j=0;j<FD;++j) feat[6+j]=hf[j];
-        const double* af = away_forms + i*FD; for (int j=0;j<FD;++j) feat[16+j]=af[j];
-        const double* h2 = h2h_stats_in + i*H2HD; for (int j=0;j<H2HD;++j) feat[26+j]=h2[j];
-        const double* ls = league_stats + i*LD; double p25,pbt;
-        compute_goal_probability(hf[3],af[4],af[3],hf[4],ls[0],ls[3],&p25,&pbt);
-        feat[32]=p25; feat[33]=pbt; feat[34]=hf[0]-af[0]; feat[35]=hf[3]-af[3]; feat[36]=hf[6]-af[6]; feat[37]=hf[7]-af[7];
+void batch_compute_features(const double* he, const double* ae, const double* hf, const double* af, const double* h2h, const double* ls, double ha, int n, double* out, int nf) {
+    for (int i=0; i<n; ++i) {
+        double* feat = out + i * nf; double ph,pd,pa;
+        compute_elo_probabilities(he[i], ae[i], ha, &ph, &pd, &pa);
+        feat[0]=he[i]; feat[1]=ae[i]; feat[2]=he[i]-ae[i]; feat[3]=ph; feat[4]=pd; feat[5]=pa;
+        for (int j=0;j<10;++j) { feat[6+j]=hf[i*10+j]; feat[16+j]=af[i*10+j]; }
+        for (int j=0;j<6;++j) feat[26+j]=h2h[i*6+j];
+        double o25, bt; compute_goal_probability(hf[i*10+3], af[i*10+4], af[i*10+3], hf[i*10+4], ls[i*4], ls[i*4+3], &o25, &bt);
+        feat[32]=o25; feat[33]=bt; feat[34]=hf[i*10+0]-af[i*10+0]; feat[35]=hf[i*10+3]-af[i*10+3]; feat[36]=hf[i*10+6]-af[i*10+6]; feat[37]=hf[i*10+7]-af[i*10+7];
     }
 }
 
-void compute_attack_defense_elo(const char** home_teams, const char** away_teams, const int* home_goals, const int* away_goals, int n_matches, double k_factor, double home_advantage, double* out_home_att, double* out_home_def, double* out_away_att, double* out_away_def) {
+void compute_attack_defense_elo(const char** ht, const char** at, const int* hg, const int* ag, int n, double k, double ha, double* oha, double* ohd, double* oaa, double* oad) {
     std::unordered_map<std::string, double> att, def;
-    for (int i = 0; i < n_matches; ++i) {
-        std::string home(home_teams[i]), away(away_teams[i]);
+    for (int i = 0; i < n; ++i) {
+        std::string home(ht[i]), away(at[i]);
         if (!att.count(home)) { att[home]=DEFAULT_ELO; def[home]=DEFAULT_ELO; }
         if (!att.count(away)) { att[away]=DEFAULT_ELO; def[away]=DEFAULT_ELO; }
-        double e_ha = 1.0 / (1.0 + std::pow(10.0, (def[away] - att[home] - 30.0) / 300.0)), e_aa = 1.0 / (1.0 + std::pow(10.0, (def[home] - att[away] + 30.0) / 300.0));
-        double ek = k_factor * gd_multiplier(std::abs(home_goals[i] - away_goals[i]));
-        att[home] += ek * (std::min(home_goals[i]/2.5, 1.0) - e_ha);
-        att[away] += ek * (std::min(away_goals[i]/2.5, 1.0) - e_aa);
-        def[home] += ek * (std::max(0.0, 1.0 - away_goals[i]/2.5) - (1.0 - e_aa));
-        def[away] += ek * (std::max(0.0, 1.0 - home_goals[i]/2.5) - (1.0 - e_ha));
-        out_home_att[i] = att[home]; out_home_def[i] = def[home]; out_away_att[i] = att[away]; out_away_def[i] = def[away];
+        double eha = 1.0 / (1.0 + std::pow(10.0, (def[away] - att[home] - 30.0) / 300.0)), eaa = 1.0 / (1.0 + std::pow(10.0, (def[home] - att[away] + 30.0) / 300.0));
+        double ek = k * gd_multiplier(std::abs(hg[i] - ag[i]));
+        att[home] += ek * (std::min(hg[i]/2.5, 1.0) - eha); att[away] += ek * (std::min(ag[i]/2.5, 1.0) - eaa);
+        def[home] += ek * (std::max(0.0, 1.0 - ag[i]/2.5) - (1.0 - eaa)); def[away] += ek * (std::max(0.0, 1.0 - hg[i]/2.5) - (1.0 - eha));
+        oha[i] = att[home]; ohd[i] = def[home]; oaa[i] = att[away]; oad[i] = def[away];
     }
 }
 
@@ -169,14 +161,8 @@ void compute_poisson_score_matrix(double lh, double la, double rho, double* out)
 
 void compute_consecutive_runs(const int* hg, const int* ag, const int* wh, int n, double* out) {
     int ub = 0, wl = 0;
-    for (int i=n-1; i>=0; --i) {
-        int s = wh[i]?hg[i]:ag[i], c = wh[i]?ag[i]:hg[i];
-        if (s>=c) ub++; else break;
-    }
-    for (int i=n-1; i>=0; --i) {
-        int s = wh[i]?hg[i]:ag[i], c = wh[i]?ag[i]:hg[i];
-        if (s<=c) wl++; else break;
-    }
+    for (int i=n-1; i>=0; --i) { int s = wh[i]?hg[i]:ag[i], c = wh[i]?ag[i]:hg[i]; if (s>=c) ub++; else break; }
+    for (int i=n-1; i>=0; --i) { int s = wh[i]?hg[i]:ag[i], c = wh[i]?ag[i]:hg[i]; if (s<=c) wl++; else break; }
     out[0]=std::min(ub, 15)/15.0; out[1]=std::min(wl, 15)/15.0;
 }
 
@@ -184,8 +170,7 @@ void compute_venue_split_form(const int* hg, const int* ag, const int* wh, int n
     double w=0, pts=0, gs=0, gc=0, n=0;
     for (int i=0; i<n_m; ++i) {
         if (wh[i] != is_h) continue;
-        int s = is_h?hg[i]:ag[i], c = is_h?ag[i]:hg[i];
-        if (s>c) { w++; pts+=3; } else if (s==c) pts+=1;
+        int s = is_h?hg[i]:ag[i], c = is_h?ag[i]:hg[i]; if (s>c) { w++; pts+=3; } else if (s==c) pts+=1;
         gs+=s; gc+=c; n++;
     }
     if (n<1e-9) { for(int i=0;i<4;++i) out[i]=0; return; }
@@ -195,9 +180,7 @@ void compute_venue_split_form(const int* hg, const int* ag, const int* wh, int n
 void compute_goals_variance(const int* hg, const int* ag, const int* wh, int n_m, double* out) {
     int n = std::min(n_m, 30); if (n==0) { out[0]=0; out[1]=0; return; }
     std::vector<double> s(n), c(n), w(n);
-    for (int i=0; i<n; ++i) {
-        int idx = n_m-n+i; s[i]=wh[idx]?hg[idx]:ag[idx]; c[i]=wh[idx]?ag[idx]:hg[idx]; w[i]=std::pow(0.85, n-1-i);
-    }
+    for (int i=0; i<n; ++i) { int idx = n_m-n+i; s[i]=wh[idx]?hg[idx]:ag[idx]; c[i]=wh[idx]?ag[idx]:hg[idx]; w[i]=std::pow(0.85, n-1-i); }
     double ms, vs, mc, vc; weighted_moments(s.data(), w.data(), n, ms, vs); weighted_moments(c.data(), w.data(), n, mc, vc);
     out[0]=vs; out[1]=vc;
 }
@@ -222,10 +205,7 @@ void compute_scoring_consistency(const int* hg, const int* ag, const int* wh, in
 void compute_h2h_extended(const int* hg, const int* ag, const int* wf, int n, double* out) {
     if (n==0) { out[0]=2.6; out[1]=1.25; return; }
     double tg=0, hw=0, aw=0;
-    for (int i=0; i<n; ++i) {
-        int g1=wf[i]?hg[i]:ag[i], g2=wf[i]?ag[i]:hg[i]; tg+=(g1+g2);
-        if (g1>g2) hw++; else if (g1<g2) aw++;
-    }
+    for (int i=0; i<n; ++i) { int g1=wf[i]?hg[i]:ag[i], g2=wf[i]?ag[i]:hg[i]; tg+=(g1+g2); if (g1>g2) hw++; else if (g1<g2) aw++; }
     out[0]=tg/n; out[1]=(hw+0.5)/(aw+0.5);
 }
 
@@ -252,10 +232,7 @@ void compute_temporal_features(double cts, const double* hts, int n, double* out
 
 void compute_streak(const int* hg, const int* ag, const int* wh, int n_m, double* out) {
     int s=0, sn=0, c=std::min(n_m, 12);
-    for (int i=0; i<c; ++i) {
-        int idx=n_m-1-i, s1=wh[idx]?hg[idx]:ag[idx], c1=wh[idx]?ag[idx]:hg[idx], o=(s1>c1?1:(s1<c1?-1:0));
-        if (s==0) { s=o; sn=o; } else if (o==sn) s+=sn; else break;
-    }
+    for (int i=0; i<c; ++i) { int idx=n_m-1-i, s1=wh[idx]?hg[idx]:ag[idx], c1=wh[idx]?ag[idx]:hg[idx], o=(s1>c1?1:(s1<c1?-1:0)); if (s==0) { s=o; sn=o; } else if (o==sn) s+=sn; else break; }
     *out=std::max(-1.0, std::min(1.0, s/5.0));
 }
 
@@ -271,10 +248,7 @@ void compute_acceleration(const int* hg, const int* ag, const int* wh, int n, do
     if (n < 10) { *out = 0; return; }
     auto get_p = [&](int s, int e) {
         double pts = 0;
-        for (int i = s; i < e; ++i) {
-            int sc = wh[i] ? hg[i] : ag[i], co = wh[i] ? ag[i] : hg[i];
-            if (sc > co) pts += 3; else if (sc == co) pts += 1;
-        }
+        for (int i = s; i < e; ++i) { int sc = wh[i] ? hg[i] : ag[i], co = wh[i] ? ag[i] : hg[i]; if (sc > co) pts += 3; else if (sc == co) pts += 1; }
         return pts / (e - s);
     };
     double p1 = get_p(n - 5, n), p2 = get_p(n - 10, n - 5), p3 = (n >= 15) ? get_p(n - 15, n - 10) : p2;
@@ -318,54 +292,38 @@ void compute_all_features_v4(const double* pe, const double* pad, const int* mg,
     for(int j=116; j<125; ++j) out[j]=0.0;
 }
 
-void compute_all_features_bulk_v4(const int* ti, int nt, const int* agh, const int* aga, const double* ats, const int* ahi, const int* aai, const double* ape, const double* apad, const double* ao, const double* als, const int* tmi, const int* tmp, const int* tmc, const double* ahe, const double* aae, int lb, double ha, double* out) {
+void compute_all_features_v6(const double* pe, const double* pad, const int* mg, const double* od, double cts, const double* ls, int nh, const int* ghh, const int* gah, const int* whh, const double* tsh, const double* ehh, int na, const int* gha, const int* gaa, const int* wha, const double* tsa, const double* eha, int n2, const int* gh2, const int* ga2, const int* wh2, double ha, const double* squad_v, double* out) {
+    compute_all_features_v4(pe, pad, mg, od, cts, ls, nh, ghh, gah, whh, tsh, ehh, na, gha, gaa, wha, tsa, eha, n2, gh2, ga2, wh2, ha, out);
+    double hv = squad_v[0], av = squad_v[1];
+    out[125] = hv; out[126] = av;
+    out[127] = (hv + 1.0) / (av + 1.0);
+    out[128] = squad_v[2]; out[129] = squad_v[3];
+    out[130] = squad_v[4]; out[131] = squad_v[5];
+    out[132] = (squad_v[4] - squad_v[5]) / 10.0;
+    for(int j=133; j<160; ++j) out[j] = 0.0;
+}
+
+void compute_all_features_bulk_v6(const int* ti, int nt, const int* agh, const int* aga, const double* ats, const int* ahi, const int* aai, const double* ape, const double* apad, const double* ao, const double* als, const int* tmi, const int* tmp, const int* tmc, const double* ahe, const double* aae, const double* asv, int lb, double ha, double* out) {
     #pragma omp parallel for schedule(dynamic)
     for (int i=0; i<nt; ++i) {
         int idx=ti[i], ht=ahi[idx], at=aai[idx];
-
-        // Use stack-allocated buffers where possible to avoid heap thrashing
-        int hh_idx[1024], ah_idx[1024];
-        double ehh_b[1024], eha_b[1024];
-        int nh=0, na=0;
-
+        int hh_idx[1024], ah_idx[1024]; double ehh_b[1024], eha_b[1024]; int nh=0, na=0;
         int p_h=tmp[ht], c_h=tmc[ht];
-        for (int j=0; j<c_h && nh<1024; ++j) {
-            int mid=tmi[p_h+j];
-            if(mid<idx) { hh_idx[nh]=mid; ehh_b[nh]=ahe[mid]; nh++; } else break;
-        }
-        if (nh > lb) {
-            int shift = nh - lb;
-            for(int j=0; j<lb; ++j) { hh_idx[j]=hh_idx[j+shift]; ehh_b[j]=ehh_b[j+shift]; }
-            nh = lb;
-        }
-
+        for (int j=0; j<c_h && nh<1024; ++j) { int mid=tmi[p_h+j]; if(mid<idx) { hh_idx[nh]=mid; ehh_b[nh]=ahe[mid]; nh++; } else break; }
+        if (nh > lb) { int sh = nh - lb; for(int j=0; j<lb; ++j) { hh_idx[j]=hh_idx[j+sh]; ehh_b[j]=ehh_b[j+sh]; } nh = lb; }
         int p_a=tmp[at], c_a=tmc[at];
-        for (int j=0; j<c_a && na<1024; ++j) {
-            int mid=tmi[p_a+j];
-            if(mid<idx) { ah_idx[na]=mid; eha_b[na]=ahe[mid]; na++; } else break;
-        }
-        if (na > lb) {
-            int shift = na - lb;
-            for(int j=0; j<lb; ++j) { ah_idx[j]=ah_idx[j+shift]; eha_b[j]=eha_b[j+shift]; }
-            na = lb;
-        }
-
-        int h2_idx[256], n2=0;
-        int max_h2 = (nh < na) ? nh : na;
-        for (int j=0; j<max_h2 && n2<256; ++j) {
-            int m = (nh < na) ? hh_idx[j] : ah_idx[j];
-            if((ahi[m]==ht&&aai[m]==at)||(ahi[m]==at&&aai[m]==ht)) h2_idx[n2++] = m;
-        }
-
+        for (int j=0; j<c_a && na<1024; ++j) { int mid=tmi[p_a+j]; if(mid<idx) { ah_idx[na]=mid; eha_b[na]=ahe[mid]; na++; } else break; }
+        if (na > lb) { int sh = na - lb; for(int j=0; j<lb; ++j) { ah_idx[j]=ah_idx[j+sh]; eha_b[j]=eha_b[j+sh]; } na = lb; }
+        int h2_idx[256], n2=0; int max_h2 = (nh < na) ? nh : na;
+        for (int j=0; j<max_h2 && n2<256; ++j) { int m = (nh < na) ? hh_idx[j] : ah_idx[j]; if((ahi[m]==ht&&aai[m]==at)||(ahi[m]==at&&aai[m]==ht)) h2_idx[n2++] = m; }
         int ghh[1024], gah[1024], whh[1024]; double tsh[1024];
         for(int j=0;j<nh;++j){ int m=hh_idx[j]; ghh[j]=agh[m]; gah[j]=aga[m]; whh[j]=(ahi[m]==ht?1:0); tsh[j]=ats[m]; }
         int gha[1024], gaa[1024], wha[1024]; double tsa[1024];
         for(int j=0;j<na;++j){ int m=ah_idx[j]; gha[j]=agh[m]; gaa[j]=aga[m]; wha[j]=(ahi[m]==at?1:0); tsa[j]=ats[m]; }
         int gh2[256], ga2[256], wh2[256];
         for(int j=0;j<n2;++j){ int m=h2_idx[j]; gh2[j]=agh[m]; ga2[j]=aga[m]; wh2[j]=(ahi[m]==ht?1:0); }
-
         int mg[2]={agh[idx], aga[idx]};
-        compute_all_features_v4(ape+idx*6, apad+idx*4, mg, ao+idx*3, ats[idx], als+idx*6, nh, ghh, gah, whh, tsh, ehh_b, na, gha, gaa, wha, tsa, eha_b, n2, gh2, ga2, wh2, ha, out+(long long)i*125);
+        compute_all_features_v6(ape+idx*6, apad+idx*4, mg, ao+idx*3, ats[idx], als+idx*6, nh, ghh, gah, whh, tsh, ehh_b, na, gha, gaa, wha, tsa, eha_b, n2, gh2, ga2, wh2, ha, asv+idx*6, out+(long long)i*160);
     }
 }
 
