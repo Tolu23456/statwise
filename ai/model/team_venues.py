@@ -10,7 +10,7 @@ Used by the historical backfill (ai/enrich_weather_history.py) and the live
 predictor (forecast weather at prediction time).
 """
 from __future__ import annotations
-import gzip, json, os, re, time, urllib.parse, urllib.request
+import gzip, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VENUE_CACHE = os.path.join(BASE, "data", "team_venues.json")
@@ -126,6 +126,32 @@ def _get(url: str) -> dict:
     return {}
 
 
+def _get_archive(url: str) -> tuple[dict | list | None, int]:
+    """Like _get, but surfaces the HTTP status so callers can back off on 429s.
+
+    Returns (parsed_json, http_status). Status 0 = network error/timeout.
+    """
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept-Encoding": "gzip"})
+    status, last_err = 0, None
+    try:
+        with urllib.request.urlopen(req, timeout=90) as r:
+            raw = r.read()
+            if raw[:2] == b"\x1f\x8b":
+                raw = gzip.decompress(raw)
+            return json.loads(raw), 200
+    except urllib.error.HTTPError as e:
+        status = e.code
+        try:
+            e.read()
+        except Exception:
+            pass
+    except Exception as e:  # URLError / timeout
+        last_err = str(e)
+    print(f"      archive fetch failed (http {status}{' ' + last_err if last_err else ''})",
+          file=sys.stderr, flush=True)
+    return None, status
+
+
 def _load_cache(path: str):
     try:
         with open(path) as f:
@@ -160,9 +186,12 @@ def _candidates(team: str) -> list[str]:
     return out
 
 
-def resolve_venue(team: str, country: str | None = None, verbose: bool = False) -> dict | None:
+def resolve_venue(team: str, country: str | None = None, verbose: bool = False,
+                  cache: dict | None = None, persist: bool = True) -> dict | None:
     """Return {city, country, lat, lon} for a team; None if unresolvable."""
-    cache = _load_cache(VENUE_CACHE)
+    own_cache = cache is None
+    if own_cache:
+        cache = _load_cache(VENUE_CACHE)
     key = team.strip()
     if key in cache and cache[key] and cache[key].get("lat") is not None:
         return cache[key]
@@ -216,40 +245,130 @@ def resolve_venue(team: str, country: str | None = None, verbose: bool = False) 
             result = {"city": None, "country": country, "lat": h.get("latitude"), "lon": h.get("longitude")}
 
     cache[key] = result
-    _save_cache(VENUE_CACHE, cache)
+    if persist and own_cache:
+        _save_cache(VENUE_CACHE, cache)
     if verbose:
         print(f"  {'ok  ' if result else 'MISS'} {team} -> {result}")
     return result
 
 
+def resolve_many(teams: list[tuple[str, str | None]], workers: int = 4) -> dict[str, dict | None]:
+    """Resolve many teams concurrently; shares one cache, saves once at the end."""
+    from concurrent.futures import ThreadPoolExecutor
+    cache = _load_cache(VENUE_CACHE)
+    todo = [(t, c) for t, c in teams
+            if not (cache.get(t) and cache[t] and cache[t].get("lat") is not None)]
+    print(f"  {len(teams) - len(todo)} already cached, {len(todo)} to resolve")
+    if todo:
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            list(ex.map(lambda tc: resolve_venue(tc[0], tc[1], cache=cache, persist=False), todo))
+        _save_cache(VENUE_CACHE, cache)
+    out = {}
+    for t, _ in teams:
+        v = cache.get(t)
+        out[t] = v if (v and v.get("lat") is not None) else None
+    return out
+
+
 def fetch_archive_weather(lat: float, lon: float) -> dict[str, dict]:
     """Daily weather 2000-01-01 -> today for one location. Cached per rounded city."""
-    os.makedirs(WX_CACHE_DIR, exist_ok=True)
-    key = f"{round(lat, 1):.1f}_{round(lon, 1):.1f}"
-    path = os.path.join(WX_CACHE_DIR, key + ".json")
-    import datetime as _dt
-    today = _dt.date.today().isoformat()
-    cached = _load_cache(path)
-    if cached.get("_through") == today:
-        return cached["days"]
+    out = fetch_archive_weather_many([(lat, lon)])
+    return out.get(_wx_key(lat, lon), {})
 
-    url = (f"https://archive-api.open-meteo.com/v1/archive?latitude={lat}&longitude={lon}"
-           f"&start_date=2000-01-01&end_date={today}"
-           "&daily=temperature_2m_mean,precipitation_sum,wind_speed_10m_max,weather_code&timezone=auto")
-    data = _get(url)
-    dly = data.get("daily") or {}
-    times = dly.get("time") or []
-    days = {}
-    for i, d in enumerate(times):
-        days[d] = {
-            "temp_c": (dly.get("temperature_2m_mean") or [None] * len(times))[i],
-            "precip_mm": (dly.get("precipitation_sum") or [None] * len(times))[i],
-            "wind_kmh": (dly.get("wind_speed_10m_max") or [None] * len(times))[i],
-            "weather_code": (dly.get("weather_code") or [None] * len(times))[i],
-        }
-    if days:
-        _save_cache(path, {"_through": today, "lat": lat, "lon": lon, "days": days})
-    return days
+
+def _wx_key(lat: float, lon: float) -> str:
+    return f"{round(lat, 1):.1f}_{round(lon, 1):.1f}"
+
+
+def fetch_archive_weather_many(coords: list[tuple[float, float]],
+                               batch: int = 30, pause: float = 2.0) -> dict[str, dict]:
+    """Archive weather for many locations, batched (30 cities/request), cached per city.
+
+    Open-Meteo accepts comma-separated coordinates; one request covers the whole
+    2000->today daily range for every city in the batch.
+    """
+    import datetime as _dt
+    os.makedirs(WX_CACHE_DIR, exist_ok=True)
+    today = _dt.date.today().isoformat()
+
+    pending: dict[str, tuple[float, float]] = {}
+    result: dict[str, dict] = {}
+    for lat, lon in coords:
+        key = _wx_key(lat, lon)
+        if key in result:
+            continue
+        cached = _load_cache(os.path.join(WX_CACHE_DIR, key + ".json"))
+        if cached.get("_through") == today:
+            result[key] = cached["days"]
+        else:
+            pending[key] = (lat, lon)
+
+    chunks = [list(pending.items())[i:i + batch] for i in range(0, len(pending), batch)]
+    consecutive_fail = 0
+    for ci, chunk in enumerate(chunks, 1):
+        lats = ",".join(f"{lat}" for _, (lat, _) in chunk)
+        lons = ",".join(f"{lon}" for _, (_, lon) in chunk)
+        url = (f"https://archive-api.open-meteo.com/v1/archive?latitude={lats}&longitude={lons}"
+               f"&start_date=2000-01-01&end_date={today}"
+               "&daily=temperature_2m_mean,precipitation_sum,wind_speed_10m_max,weather_code"
+               "&timezone=auto")
+        data, status, wait = None, 0, 0
+        for attempt in range(4):
+            data, status = _get_archive(url)
+            if data:
+                break
+            wait = (120 if status == 429 else 20) * (attempt + 1)  # throttle: back off hard
+            time.sleep(wait)
+        if not data:
+            consecutive_fail += 1
+            print(f"  batch {ci}/{len(chunks)}: FAILED (http {status}) "
+                  f"[{consecutive_fail} consecutive]", flush=True)
+            if consecutive_fail >= 4:
+                print("  rate-limited too hard — stopping; rerun later, cache resumes.",
+                      flush=True)
+                break
+            continue
+        consecutive_fail = 0
+        items = data if isinstance(data, list) else [data] if data else []
+        positional = len(items) == len(chunk)
+        got = 0
+        for ii, loc in enumerate(items):
+            dly = loc.get("daily") or {}
+            times = dly.get("time") or []
+            if not times:
+                continue
+            # match back to the requested city (API echoes lat/lon); fall back to order
+            key = None
+            try:
+                rlat, rlon = round(float(loc.get("latitude")), 1), round(float(loc.get("longitude")), 1)
+                for k, (lat, lon) in chunk:
+                    if round(lat, 1) == rlat and round(lon, 1) == rlon:
+                        key = k
+                        break
+            except (TypeError, ValueError):
+                pass
+            if key is None and positional:
+                key = chunk[ii][0]
+            if key is None:
+                continue
+            days = {}
+            tm = dly.get("time")
+            tcol = dly.get("temperature_2m_mean") or [None] * len(tm)
+            pcol = dly.get("precipitation_sum") or [None] * len(tm)
+            wcol = dly.get("wind_speed_10m_max") or [None] * len(tm)
+            ccol = dly.get("weather_code") or [None] * len(tm)
+            for i, d in enumerate(tm):
+                days[d] = {"temp_c": tcol[i], "precip_mm": pcol[i],
+                           "wind_kmh": wcol[i], "weather_code": ccol[i]}
+            if days:
+                _save_cache(os.path.join(WX_CACHE_DIR, key + ".json"),
+                            {"_through": today, "days": days})
+                result[key] = days
+                got += 1
+        print(f"  batch {ci}/{len(chunks)}: {got}/{len(chunk)} cities", flush=True)
+        if ci < len(chunks):
+            time.sleep(pause)
+    return result
 
 
 def fetch_forecast_weather(lat: float, lon: float, date_str: str) -> dict | None:
