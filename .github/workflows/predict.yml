@@ -36,10 +36,15 @@ jobs:
             statwise-model-v1-
 
       - name: Install dependencies
-        run: pip install -r ai/requirements.txt
+        run: |
+          pip install -r ai/requirements.txt
+          # the trainer's stacking ensemble needs lightgbm + torch to unpickle
+          pip install --no-cache-dir lightgbm "scikit-learn==1.8.0"
+          pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
 
       - name: Run prediction cycle
         env:
-          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
-          SUPABASE_SERVICE_ROLE: ${{ secrets.SUPABASE_SERVICE_ROLE }}
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN || vars.FOOTBALL_DATA_TOKEN }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
         run: python ai/scheduler.py --once

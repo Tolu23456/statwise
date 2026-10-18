@@ -66,6 +66,12 @@ jobs:
           print('model loads OK, trained =', m._trained)
           PY
 
+      - name: Publish model to cache (restored by the prediction workflow)
+        uses: actions/cache@v4
+        with:
+          path: ai/models/football_predictor.pkl
+          key: statwise-model-v1-${{ hashFiles('ai/model/trainer.py', 'ai/model/features.py') }}
+
       - name: Publish artifact
         uses: actions/upload-artifact@v4
         with:
