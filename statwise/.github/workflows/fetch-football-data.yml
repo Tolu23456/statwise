@@ -34,3 +34,9 @@ jobs:
           SUPABASE_URL: ${{ vars.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ vars.SUPABASE_SERVICE_ROLE_KEY }}
         run: node .github/scripts/fetch_football_data.js
+
+      - name: Enrich predictions with match details (venue, weather, lineups)
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python3 ai/enrich_match_details.py

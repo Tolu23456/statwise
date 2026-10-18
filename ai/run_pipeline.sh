@@ -61,6 +61,19 @@ echo ""
 "$BINDIR/dataset_cleaner" "$RAW" "$CLEAN"
 CL_EXIT=$?
 
+# ── phase 3: weather enrichment ────────────────────────────────────────────────
+echo ""
+echo "══════════════════════════════════════════════════════════════"
+echo " PHASE 3 — Weather enrichment (Open-Meteo archive, incremental)"
+echo "══════════════════════════════════════════════════════════════"
+WX_EXIT=0
+PY="$ROOT/.venv/bin/python"
+[ -x "$PY" ] || PY="$(command -v python3)"
+"$PY" "$ROOT/ai/enrich_weather_history.py" || WX_EXIT=$?
+if [ $WX_EXIT -ne 0 ]; then
+    echo "[pipeline] Weather enrichment failed (exit=$WX_EXIT) — training will run without weather features."
+fi
+
 # ── summary ───────────────────────────────────────────────────────────────────
 echo ""
 echo "══════════════════════════════════════════════════════════════"
@@ -69,6 +82,7 @@ echo "════════════════════════�
 echo "[pipeline] Finished: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "[pipeline] Downloader exit : $DL_EXIT"
 echo "[pipeline] Cleaner exit    : $CL_EXIT"
+echo "[pipeline] Weather exit    : ${WX_EXIT:-n/a}"
 echo ""
 echo "[pipeline] Output files:"
 if ls "$CLEAN"/*.csv 1>/dev/null 2>&1; then

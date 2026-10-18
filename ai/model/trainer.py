@@ -162,7 +162,7 @@ class FootballPredictor:
         obj._trained = True
         return obj
 
-    def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0):
+    def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0, weather: dict | None = None):
         home_squad_value = history[history["home_team"] == home]["home_squad_value"].tail(1).values[0] if "home_squad_value" in history.columns and not history[history["home_team"] == home].empty else 0
         away_squad_value = history[history["away_team"] == away]["away_squad_value"].tail(1).values[0] if "away_squad_value" in history.columns and not history[history["away_team"] == away].empty else 0
         home_avg_age = history[history["home_team"] == home]["home_avg_age"].tail(1).values[0] if "home_avg_age" in history.columns and not history[history["home_team"] == home].empty else 25
@@ -172,7 +172,11 @@ class FootballPredictor:
         if history is None or history.empty:
             history = pd.DataFrame(columns=['date', 'home_team', 'away_team', 'home_goals', 'away_goals'])
 
-        X = self.feature_pipe.build_features([{"home": home, "away": away, "league": league, "odds_home": odds_home, "odds_draw": odds_draw, "odds_away": odds_away, "home_squad_value": home_squad_value, "away_squad_value": away_squad_value, "home_avg_age": home_avg_age, "away_avg_age": away_avg_age, "home_lineup_rating": home_lineup_rating, "away_lineup_rating": away_lineup_rating}], history)
+        if weather and "temperature_c" in weather:  # normalize enricher-style keys
+            weather = {"temp_c": weather.get("temperature_c"), "precip_mm": weather.get("precipitation_mm"),
+                       "wind_kmh": weather.get("wind_speed_kmh", weather.get("wind_kmh")),
+                       "weather_code": weather.get("weather_code")}
+        X = self.feature_pipe.build_features([{"home": home, "away": away, "league": league, "odds_home": odds_home, "odds_draw": odds_draw, "odds_away": odds_away, "home_squad_value": home_squad_value, "away_squad_value": away_squad_value, "home_avg_age": home_avg_age, "away_avg_age": away_avg_age, "home_lineup_rating": home_lineup_rating, "away_lineup_rating": away_lineup_rating, "weather": weather}], history)
 
         p_outcome = self._outcome_pipe.predict_proba(X)[0]
         p_goals = self._goals_pipe.predict_proba(X)[0]

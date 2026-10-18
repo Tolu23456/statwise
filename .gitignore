@@ -1,0 +1,17 @@
+# Local environment secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.uv-cache/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Weather archive cache (large, reproducible from Open-Meteo)
+ai/data/weather_cache/

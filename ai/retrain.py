@@ -58,6 +58,19 @@ def _load_clean_data() -> "pd.DataFrame":
     if "date" in df.columns:
         df["date"] = pd.to_datetime(df["date"], errors="coerce")
         df = df.sort_values("date").reset_index(drop=True)
+    # Weather enrichment sidecar (ai/enrich_weather_history.py -> data/weather_by_match.csv)
+    wx_path = os.path.join(BASE_DIR, "data", "weather_by_match.csv")
+    if os.path.exists(wx_path) and "date" in df.columns:
+        try:
+            wx = pd.read_csv(wx_path)
+            wx["date"] = pd.to_datetime(wx["date"], errors="coerce")
+            wx = wx.dropna(subset=["date"]).drop_duplicates(subset=["date", "home_team"])
+            n0 = len(df.columns)
+            df = df.merge(wx, on=["date", "home_team"], how="left")
+            cov = pd.to_numeric(df.get("temp_c"), errors="coerce").notna().mean() if "temp_c" in df else 0
+            logger.info(f"Weather sidecar joined: +{len(df.columns) - n0} cols, {cov:.0%} coverage")
+        except Exception as e:
+            logger.warning(f"Weather sidecar join failed: {e}")
     # Expanded temporal window to utilize historical depth (back to 1993)
     if "date" in df.columns:
         df = df[df["date"] >= pd.Timestamp("1993-08-01")]

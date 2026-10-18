@@ -112,15 +112,29 @@ class PredictionEngine:
         results = []
         for fix in fixtures:
             try:
+                # Match-time weather (Open-Meteo forecast) — a live model feature (slots 133-140)
+                kickoff    = fix.get('kickoff_time', '')
+                match_date = kickoff[:10] if kickoff else str(datetime.date.today())
+                weather = None
+                try:
+                    from .team_venues import resolve_venue, fetch_forecast_weather
+                    v = resolve_venue(fix['home_team'], None)
+                    if v and v.get("lat") is not None:
+                        weather = fetch_forecast_weather(v["lat"], v["lon"], match_date)
+                except Exception as we:
+                    logger.debug(f"Weather fetch failed for {fix.get('match_title', '?')}: {we}")
+
                 pred = self.predictor.predict_match(
                     home  = fix['home_team'],
                     away  = fix['away_team'],
                     league= fix.get('league_slug', 'all'),
                     history= self.history,
+                    weather= weather,
                 )
                 tier_name, tier_db = _tier_for_confidence(pred['confidence'])
-                kickoff    = fix.get('kickoff_time', '')
-                match_date = kickoff[:10] if kickoff else str(datetime.date.today())
+                stats = pred.get('stats') or {}
+                if weather:
+                    stats['details'] = {**(stats.get('details') or {}), 'weather': weather}
 
                 row = {
                     "match_id":      fix['match_id'],
@@ -133,7 +147,7 @@ class PredictionEngine:
                     "confidence":    pred['confidence'],
                     "odds":          fix.get('odds_home') or 1.90,
                     "reasoning":     pred['reasoning'],
-                    "stats":         pred.get('stats'),
+                    "stats":         stats,
                     "kickoff_time":  kickoff,
                     "match_date":    match_date,
                     "tier":          tier_db,

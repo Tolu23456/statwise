@@ -51,13 +51,38 @@ FEATURE_NAMES = [
     "home_squad_value", "away_squad_value", "squad_value_ratio",
     "home_avg_age", "away_avg_age", "home_lineup_rating", "away_lineup_rating",
     "lineup_rating_diff",
-    # Padding for future Titan features (indices 133-159)
-    "pad_133", "pad_134", "pad_135", "pad_136", "pad_137", "pad_138", "pad_139",
-    "pad_140", "pad_141", "pad_142", "pad_143", "pad_144", "pad_145", "pad_146", "pad_147", "pad_148", "pad_149",
+    # Weather at match time (Open-Meteo; indices 133-140) + padding (141-159)
+    "w_temp", "w_precip", "w_wind", "w_code", "w_rain", "w_cold", "w_heat", "w_present",
+    "pad_141", "pad_142", "pad_143", "pad_144", "pad_145", "pad_146", "pad_147", "pad_148", "pad_149",
     "pad_150", "pad_151", "pad_152", "pad_153", "pad_154", "pad_155", "pad_156", "pad_157", "pad_158", "pad_159",
     # ── League Embedding Index (160)
     "league_id"
 ]
+
+
+def weather_features(row: pd.Series | dict) -> np.ndarray:
+    """8 weather features (slots 133-140) from temp_c/precip_mm/wind_kmh/weather_code."""
+    def g(k):
+        v = row.get(k) if hasattr(row, "get") else None
+        try:
+            v = float(v)
+            return v if v == v else 0.0  # NaN -> 0
+        except (TypeError, ValueError):
+            return 0.0
+    t, p, w, c = g("temp_c"), g("precip_mm"), g("wind_kmh"), g("weather_code")
+    has = 1.0 if (row.get("temp_c") is not None and str(row.get("temp_c")) != "nan") else 0.0
+    if not has:
+        return np.zeros(8, dtype=np.float64)
+    return np.array([
+        (t - 10.0) / 15.0,
+        min(math.log1p(max(p, 0.0)) / 3.0, 1.0),
+        min(max(w, 0.0) / 100.0, 1.5),
+        c / 100.0,
+        1.0 if p > 1.0 else 0.0,
+        1.0 if t < 2.0 else 0.0,
+        1.0 if t > 30.0 else 0.0,
+        has,
+    ], dtype=np.float64)
 N_FEATURES = 161
 
 class FeaturePipeline:
@@ -179,6 +204,28 @@ class FeaturePipeline:
 
         # 1. Continuous block (160)
         X_cont = compute_all_features_bulk_v6(np.array(all_idx, dtype=np.int32), all_gh, all_ga, all_ts, all_h_idx, all_a_idx, all_pre_elos, all_pre_att_def, all_odds, all_league_stats, np.array(flat_m, dtype=np.int32), np.array(t_ptr, dtype=np.int32), np.array(t_cnt, dtype=np.int32), self._elo_pre_home.astype(np.float64), self._elo_pre_away.astype(np.float64), all_squad_v, _LOOKBACK, self.home_advantage)
+        X_cont = np.asarray(X_cont, dtype=np.float64)
+
+        # 1b. Weather at match time (slots 133-140) — enriched via ai/enrich_weather_history.py
+        if 'temp_c' in df.columns:
+            sub = df.iloc[all_idx]
+            wb = np.zeros((len(sub), 8), dtype=np.float64)
+            t = pd.to_numeric(sub['temp_c'], errors='coerce').values
+            p = pd.to_numeric(sub['precip_mm'], errors='coerce').values
+            w = pd.to_numeric(sub['wind_kmh'], errors='coerce').values
+            c = pd.to_numeric(sub['weather_code'], errors='coerce').values
+            tv = np.nan_to_num(t); pv = np.nan_to_num(p); wv = np.nan_to_num(w); cv = np.nan_to_num(c)
+            wb[:, 0] = (tv - 10.0) / 15.0
+            wb[:, 1] = np.minimum(np.log1p(np.maximum(pv, 0.0)) / 3.0, 1.0)
+            wb[:, 2] = np.minimum(np.maximum(wv, 0.0) / 100.0, 1.5)
+            wb[:, 3] = cv / 100.0
+            wb[:, 4] = (pv > 1.0).astype(np.float64)
+            wb[:, 5] = (tv < 2.0).astype(np.float64)
+            wb[:, 6] = (tv > 30.0).astype(np.float64)
+            wb[:, 7] = (~np.isnan(t)).astype(np.float64)
+            wb[np.isnan(t)] = 0.0  # no weather data -> neutral zeros, w_present=0
+            if X_cont.shape[1] >= 141:
+                X_cont[:, 133:141] = wb
 
         # 2. League IDs (1)
         league_ids = df['league_slug'].fillna('all').map(self._league_map).values[all_idx].reshape(-1, 1)
@@ -227,5 +274,9 @@ class FeaturePipeline:
 
             feat = compute_all_features_v6(pe, pad, mg, od, cts, ls, nh, ghh, gah, whh, tsh, ehh, na, gha, gaa, wha, tsa, eha, n2, gh2, ga2, wh2, self.home_advantage, squad_v)
             if feat is None: feat = np.zeros(160)
+            feat = np.asarray(feat, dtype=np.float64)
+            # Weather at match time (slots 133-140) — forecast from Open-Meteo via team_venues
+            if feat.shape[0] >= 141:
+                feat[133:141] = weather_features(m.get('weather') or {})
             X_out.append(np.append(feat, self._league_map.get(league, 0)))
         return np.array(X_out)
