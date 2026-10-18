@@ -10,6 +10,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
 import { useTheme } from '@/context/ThemeContext';
+import { useAuth } from '@/context/AuthContext';
 
 type PredictionResult = {
   id: string;
@@ -18,8 +19,11 @@ type PredictionResult = {
   status: string;
   confidence: number;
   league: string;
+  league_slug?: string;
   match_title: string;
   match_date: string;
+  tier?: string;
+  tier_required?: string;
 };
 
 type Stats = {
@@ -33,17 +37,34 @@ type Stats = {
   byTier: Record<string, { total: number; correct: number }>;
 };
 
+// Mirrors app/(tabs)/index.tsx — a user may only see accuracy data for
+// prediction tiers they're subscribed to.
+const TIER_DB_ALLOWED: Record<string, string[]> = {
+  'Free Tier':    ['free'],
+  'Premium Tier': ['free', 'premium'],
+  'VIP Tier':     ['free', 'premium', 'vip'],
+  'VVIP Tier':    ['free', 'premium', 'vip', 'vvip'],
+};
+
 function computeStats(results: PredictionResult[]): Stats {
   const completed = results.filter(r => r.actual_result);
   const correct = completed.filter(r => r.prediction === r.actual_result).length;
   const byLeague: Record<string, { total: number; correct: number }> = {};
   const byTier: Record<string, { total: number; correct: number }> = {};
 
-  for (const r of completed) {
-    const lg = r.league || 'Unknown';
-    byLeague[lg] = byLeague[lg] ?? { total: 0, correct: 0 };
-    byLeague[lg].total++;
-    if (r.prediction === r.actual_result) byLeague[lg].correct++;
+  for (const r of results) {
+    const tr = (r.tier || 'free').toLowerCase();
+    byTier[tr] = byTier[tr] ?? { total: 0, correct: 0 };
+    if (r.actual_result) {
+      const lg = r.league || 'Unknown';
+      byLeague[lg] = byLeague[lg] ?? { total: 0, correct: 0 };
+      byLeague[lg].total++;
+      byTier[tr].total++;
+      if (r.prediction === r.actual_result) {
+        byLeague[lg].correct++;
+        byTier[tr].correct++;
+      }
+    }
   }
 
   return {
@@ -65,16 +86,21 @@ export default function BacktestingScreen() {
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const { profile } = useAuth();
   const topInset = Platform.OS === 'web' ? 67 : insets.top;
 
+  const userTier = profile?.current_tier ?? 'Free Tier';
+  const allowedTiers = TIER_DB_ALLOWED[userTier] ?? ['free'];
+
   const { data: results = [], isLoading, refetch, isFetching } = useQuery<PredictionResult[]>({
-    queryKey: ['backtesting'],
+    queryKey: ['backtesting', userTier],
     queryFn: async () => {
       const thirtyDaysAgo = new Date(Date.now() - 30 * 86400000).toISOString().split('T')[0];
       const { data, error } = await supabase
         .from('predictions')
-        .select('id, prediction, actual_result, status, confidence, league, match_title, match_date')
+        .select('id, prediction, actual_result, status, confidence, league, league_slug, match_title, match_date, tier, tier_required')
         .gte('match_date', thirtyDaysAgo)
+        .in('tier', allowedTiers)
         .order('match_date', { ascending: false });
       if (error) throw error;
       return data ?? [];
@@ -86,6 +112,8 @@ export default function BacktestingScreen() {
   const topLeagues = Object.entries(stats.byLeague)
     .sort((a, b) => b[1].total - a[1].total)
     .slice(0, 5);
+  const tierEntries = Object.entries(stats.byTier)
+    .sort((a, b) => b[1].total - a[1].total);
 
   return (
     <View style={[styles.container, { backgroundColor: C.background }]}>
@@ -169,11 +197,38 @@ export default function BacktestingScreen() {
             </View>
           )}
 
+          {tierEntries.length > 0 && (
+            <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
+              <Text style={[styles.sectionTitle, { color: C.text }]}>By Tier</Text>
+              {tierEntries.map(([tier, s]) => {
+                const pct = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
+                return (
+                  <View key={tier} style={styles.leagueRow}>
+                    <Text style={[styles.leagueName, { color: C.textSecondary }]} numberOfLines={1}>
+                      {tier}
+                    </Text>
+                    <View style={[styles.miniBar, { backgroundColor: C.border }]}>
+                      <View style={[styles.miniBarFill, { width: `${pct}%` as any, backgroundColor: C.primary }]} />
+                    </View>
+                    <Text style={[styles.leaguePct, { color: C.text }]}>{pct}%</Text>
+                  </View>
+                );
+              })}
+            </View>
+          )}
+
           {results.slice(0, 20).map(r => (
             <View key={r.id} style={[styles.resultRow, { backgroundColor: C.card, borderColor: C.border }]}>
               <View style={styles.resultInfo}>
                 <Text style={[styles.resultMatch, { color: C.text }]} numberOfLines={1}>{r.match_title}</Text>
-                <Text style={[styles.resultDate, { color: C.textMuted }]}>{r.match_date}</Text>
+                <View style={styles.resultMetaRow}>
+                  <Text style={[styles.resultDate, { color: C.textMuted }]}>{r.match_date}</Text>
+                  {r.tier && r.tier !== 'free' && (
+                    <View style={[styles.tierBadge, { backgroundColor: C.primaryLight }]}>
+                      <Text style={[styles.tierBadgeText, { color: C.primary }]}>{r.tier}</Text>
+                    </View>
+                  )}
+                </View>
               </View>
               <View style={styles.resultRight}>
                 <Text style={[styles.resultPred, { color: C.textSecondary }]}>{r.prediction}</Text>
@@ -240,6 +295,9 @@ const styles = StyleSheet.create({
   resultInfo: { flex: 1 },
   resultMatch: { fontSize: 14, fontFamily: 'Inter_600SemiBold', marginBottom: 2 },
   resultDate: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  resultMetaRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2 },
+  tierBadge: { paddingHorizontal: 6, paddingVertical: 1, borderRadius: 6 },
+  tierBadgeText: { fontSize: 10, fontFamily: 'Inter_600SemiBold', textTransform: 'uppercase' },
   resultRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   resultPred: { fontSize: 13, fontFamily: 'Inter_400Regular' },
   resultBadge: { width: 24, height: 24, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },

@@ -2,7 +2,8 @@ name: Fetch Football Data
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */3 * * *' # every 3 hours; also cron: '30 06,18 * * *' to run twice daily? Or prefer 3h; alternatively 0 6,12,18 * * * 
+    - cron: '0 6,12,18 * * *' # 3x daily at 06:00,12:00,18:00 UTC
   workflow_dispatch:
   push:
     branches: [main]

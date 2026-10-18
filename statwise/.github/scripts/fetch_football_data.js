@@ -19,6 +19,15 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
   auth: { persistSession: false },
 });
 
+// The app filters predictions with .in('tier', ['free','premium','vip','vvip']),
+// so every row must carry the short db tier code alongside the display label.
+const TIER_DB_CODE = {
+  'Free Tier': 'free',
+  'Premium Tier': 'premium',
+  'VIP Tier': 'vip',
+  'VVIP Tier': 'vvip',
+};
+
 const COMPETITIONS = [
   { code: 'PL',  name: 'Premier League',    slug: 'premier-league',    tier: 'Free Tier' },
   { code: 'PD',  name: 'La Liga',           slug: 'la-liga',           tier: 'Premium Tier' },
@@ -166,6 +175,7 @@ async function run() {
       reasoning,
       kickoff_time: utcDate,
       match_date: getMatchDate(utcDate),
+      tier: TIER_DB_CODE[comp.tier] ?? 'free',
       tier_required: comp.tier,
       status: 'upcoming',
       updated_at: new Date().toISOString(),
