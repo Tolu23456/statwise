@@ -98,6 +98,7 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
   const isAway = predLabel.includes('away') || predLabel.includes(prediction.away_team?.toLowerCase() ?? '');
 
   const stats = prediction.stats;
+  const details = stats?.details;
 
   return (
     <Modal
@@ -245,6 +246,175 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
               </View>
             )}
 
+            {/* ── Match Details: venue, weather, attendance ── */}
+            {details && (details.venue || details.weather || details.attendance) && (
+              <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
+                <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Match Info</Text>
+
+                {details.venue && (
+                  <View style={styles.infoRow}>
+                    <Ionicons name="location-outline" size={15} color={C.textSecondary} />
+                    <View style={{ flex: 1 }}>
+                      <Text style={[styles.infoLabel, { color: C.text }]}>{details.venue}</Text>
+                      {(details.city || details.country) && (
+                        <Text style={[styles.infoSub, { color: C.textMuted }]}>
+                          {[details.city, details.country].filter(Boolean).join(', ')}
+                        </Text>
+                      )}
+                    </View>
+                  </View>
+                )}
+
+                {details.attendance != null && (
+                  <View style={styles.infoRow}>
+                    <Ionicons name="people-outline" size={15} color={C.textSecondary} />
+                    <Text style={[styles.infoLabel, { color: C.text }]}>
+                      {details.attendance.toLocaleString()} attendance
+                    </Text>
+                  </View>
+                )}
+
+                {details.referee && (
+                  <View style={styles.infoRow}>
+                    <Ionicons name="person-outline" size={15} color={C.textSecondary} />
+                    <Text style={[styles.infoLabel, { color: C.text }]}>Ref: {details.referee}</Text>
+                  </View>
+                )}
+
+                {details.weather && (
+                  <View style={[styles.weatherBox, { backgroundColor: C.inputBg, borderColor: C.border }]}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                      <Ionicons name="partly-sunny-outline" size={16} color={C.warning} />
+                      <Text style={{ color: C.text, fontWeight: '700', fontSize: 13 }}>
+                        {details.weather.temperature_c != null ? `${details.weather.temperature_c.toFixed(0)}°C` : '—'}
+                        {details.weather.condition ? ` · ${details.weather.condition}` : ''}
+                      </Text>
+                    </View>
+                    <View style={{ flexDirection: 'row', gap: 14, marginTop: 6 }}>
+                      {details.weather.wind_kmh != null && (
+                        <Text style={{ color: C.textSecondary, fontSize: 12 }}>
+                          💨 {details.weather.wind_kmh.toFixed(0)} km/h
+                        </Text>
+                      )}
+                      {details.weather.humidity_pct != null && (
+                        <Text style={{ color: C.textSecondary, fontSize: 12 }}>
+                          💧 {details.weather.humidity_pct.toFixed(0)}%
+                        </Text>
+                      )}
+                      {details.weather.precipitation_mm != null && (
+                        <Text style={{ color: C.textSecondary, fontSize: 12 }}>
+                          🌧 {details.weather.precipitation_mm.toFixed(1)} mm
+                        </Text>
+                      )}
+                    </View>
+                  </View>
+                )}
+              </View>
+            )}
+
+            {/* ── Goal Scorers ── */}
+            {details?.scorers && details.scorers.length > 0 && (
+              <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
+                <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Goal Scorers</Text>
+                {details.scorers.map((s, i) => (
+                  <View key={i} style={styles.scorerRow}>
+                    <Text style={[styles.scorerMinute, { color: C.primary }]}>{s.minute}</Text>
+                    <View style={{ flex: 1 }}>
+                      <Text style={{ color: C.text, fontSize: 13, fontWeight: '600' }}>{s.player}</Text>
+                      <Text style={{ color: C.textMuted, fontSize: 11 }}>{s.team}</Text>
+                    </View>
+                    <Ionicons name="football-outline" size={14} color={C.success} />
+                  </View>
+                ))}
+              </View>
+            )}
+
+            {/* ── Cards ── */}
+            {details?.cards && details.cards.length > 0 && (
+              <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
+                <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Cards</Text>
+                {details.cards.map((c, i) => (
+                  <View key={i} style={styles.scorerRow}>
+                    <Text style={[styles.scorerMinute, { color: C.textSecondary }]}>{c.minute}</Text>
+                    <View style={{ flex: 1 }}>
+                      <Text style={{ color: C.text, fontSize: 13, fontWeight: '600' }}>{c.player}</Text>
+                      <Text style={{ color: C.textMuted, fontSize: 11 }}>{c.team}</Text>
+                    </View>
+                    <View style={[
+                      styles.cardIcon,
+                      { backgroundColor: c.type === 'red_card' ? C.dangerLight : c.type === 'yellow_card' ? '#FFD60033' : C.inputBg },
+                    ]}>
+                      <View style={{
+                        width: 8, height: 11, borderRadius: 2,
+                        backgroundColor: c.type === 'red_card' ? C.danger : c.type === 'yellow_card' ? '#FFC107' : C.textMuted,
+                      }} />
+                    </View>
+                  </View>
+                ))}
+              </View>
+            )}
+
+            {/* ── Match Stats comparison (completed matches) ── */}
+            {details?.team_stats && Object.keys(details.team_stats).length === 2 && (
+              <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
+                <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Match Statistics</Text>
+                {(() => {
+                  const [t1, t2] = Object.keys(details.team_stats!);
+                  const s1 = details.team_stats![t1];
+                  const s2 = details.team_stats![t2];
+                  const rows: [string, string, string][] = [
+                    ['Possession %', s1['possession'] ?? s1['Possession'] ?? '—', s2['possession'] ?? s2['Possession'] ?? '—'],
+                    ['Shots', s1['shots'] ?? '—', s2['shots'] ?? '—'],
+                    ['On Target', s1['on_goal'] ?? '—', s2['on_goal'] ?? '—'],
+                    ['Offsides', s1['offsides'] ?? '—', s2['offsides'] ?? '—'],
+                    ['Corner Kicks', s1['corner_kicks'] ?? '—', s2['corner_kicks'] ?? '—'],
+                    ['Fouls', s1['fouls'] ?? '—', s2['fouls'] ?? '—'],
+                    ['Yellow Cards', s1['yellow_cards'] ?? '—', s2['yellow_cards'] ?? '—'],
+                    ['Saves', s1['saves'] ?? '—', s2['saves'] ?? '—'],
+                  ];
+                  return (
+                    <>
+                      <View style={styles.statHeaderRow}>
+                        <Text style={[styles.statTeamName, { color: C.text, textAlign: 'left' }]} numberOfLines={1}>{t1}</Text>
+                        <Text style={{ color: C.textMuted, fontSize: 10 }}>STAT</Text>
+                        <Text style={[styles.statTeamName, { color: C.text, textAlign: 'right' }]} numberOfLines={1}>{t2}</Text>
+                      </View>
+                      {rows.map(([label, v1, v2]) => (
+                        <View key={label} style={styles.statRow}>
+                          <Text style={[styles.statValue, { color: C.primary, textAlign: 'left' }]}>{v1}</Text>
+                          <Text style={[styles.statLabel, { color: C.textSecondary }]}>{label}</Text>
+                          <Text style={[styles.statValue, { color: C.danger, textAlign: 'right' }]}>{v2}</Text>
+                        </View>
+                      ))}
+                    </>
+                  );
+                })()}
+              </View>
+            )}
+
+            {/* ── Lineups ── */}
+            {details?.lineups && Object.keys(details.lineups).length > 0 && (
+              <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
+                <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Lineups</Text>
+                {Object.entries(details.lineups).map(([team, lu]) => (
+                  lu.starting.length > 0 && (
+                    <View key={team} style={{ marginBottom: 14 }}>
+                      <Text style={{ color: C.textSecondary, fontSize: 12, fontWeight: '700', marginBottom: 6 }}>{team}</Text>
+                      {lu.starting.map((p, i) => (
+                        <View key={i} style={styles.lineupRow}>
+                          <Text style={[styles.lineupJersey, { color: C.primary, backgroundColor: C.primaryLight }]}>{p.jersey ?? '–'}</Text>
+                          <Text style={{ color: C.text, fontSize: 13, flex: 1 }}>{p.name}</Text>
+                          {p.position && (
+                            <Text style={{ color: C.textMuted, fontSize: 11 }}>{p.position}</Text>
+                          )}
+                        </View>
+                      ))}
+                    </View>
+                  )
+                ))}
+              </View>
+            )}
+
             {/* ── Win Probability Breakdown ── */}
             {(pHome !== null || pDraw !== null || pAway !== null) && (
               <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
@@ -376,6 +546,34 @@ const styles = StyleSheet.create({
   h2hText: { color: '#fff', fontSize: 11, fontWeight: '800' },
   formDot: { width: 22, height: 22, borderRadius: 11, alignItems: 'center', justifyContent: 'center' },
   formDotText: { color: '#fff', fontSize: 10, fontWeight: '800' },
+  infoRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 10, marginBottom: 10 },
+  infoLabel: { fontSize: 13, fontWeight: '600' },
+  infoSub: { fontSize: 11, marginTop: 1 },
+  weatherBox: { borderRadius: 10, borderWidth: 1, padding: 12, marginTop: 4 },
+  scorerRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 10,
+    paddingVertical: 7, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#8884',
+  },
+  scorerMinute: { width: 34, fontSize: 12, fontWeight: '800', textAlign: 'center' },
+  cardIcon: { width: 20, height: 20, borderRadius: 4, alignItems: 'center', justifyContent: 'center' },
+  lineupRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 8, paddingVertical: 4,
+  },
+  lineupJersey: {
+    width: 22, height: 22, borderRadius: 11, textAlign: 'center',
+    fontSize: 10, fontWeight: '800', lineHeight: 22, overflow: 'hidden',
+  },
+  statHeaderRow: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+    marginBottom: 8, gap: 8,
+  },
+  statTeamName: { flex: 1, fontSize: 12, fontWeight: '700' },
+  statRow: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+    paddingVertical: 5, gap: 8,
+  },
+  statValue: { width: 64, fontSize: 13, fontWeight: '700' },
+  statLabel: { flex: 1, fontSize: 11, textAlign: 'center', textTransform: 'uppercase', letterSpacing: 0.4 },
 });
 
 const probStyles = StyleSheet.create({

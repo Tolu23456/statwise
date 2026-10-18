@@ -1,0 +1,241 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,29/03/2025,Djurgården,Malmö FF,0,1,A
+,29/03/2025,BK Häcken,IF Brommapojkarna,2,0,H
+,30/03/2025,Hammarby IF,IFK Göteborg,4,0,H
+,30/03/2025,IF Elfsborg,Mjällby AIF,2,2,D
+,30/03/2025,Halmstads BK,Degerfors IF,0,5,A
+,30/03/2025,IFK Norrköping,Östers IF,4,3,H
+,31/03/2025,IFK Värnamo,IK Sirius,1,2,A
+,31/03/2025,GAIS,AIK,0,1,A
+,05/04/2025,IFK Göteborg,Halmstads BK,1,0,H
+,05/04/2025,IK Sirius,Djurgården,0,1,A
+,05/04/2025,Östers IF,BK Häcken,2,0,H
+,06/04/2025,AIK,IFK Norrköping,4,3,H
+,06/04/2025,IF Brommapojkarna,Hammarby IF,0,2,A
+,06/04/2025,Degerfors IF,IFK Värnamo,1,0,H
+,06/04/2025,Mjällby AIF,GAIS,1,1,D
+,07/04/2025,Malmö FF,IF Elfsborg,2,1,H
+,12/04/2025,BK Häcken,Mjällby AIF,0,3,A
+,12/04/2025,IF Elfsborg,IFK Norrköping,2,0,H
+,13/04/2025,Hammarby IF,Djurgården,2,0,H
+,13/04/2025,IFK Värnamo,IFK Göteborg,0,1,A
+,13/04/2025,GAIS,Degerfors IF,2,0,H
+,13/04/2025,IK Sirius,IF Brommapojkarna,0,3,A
+,14/04/2025,Halmstads BK,Östers IF,1,0,H
+,14/04/2025,AIK,Malmö FF,0,0,D
+,18/04/2025,Malmö FF,IK Sirius,1,1,D
+,18/04/2025,Mjällby AIF,Hammarby IF,3,1,H
+,19/04/2025,Degerfors IF,IF Elfsborg,0,1,A
+,19/04/2025,IFK Norrköping,Halmstads BK,3,0,H
+,20/04/2025,IF Brommapojkarna,IFK Värnamo,3,2,H
+,20/04/2025,Östers IF,AIK,0,1,A
+,20/04/2025,IFK Göteborg,BK Häcken,2,3,A
+,21/04/2025,Djurgården,GAIS,0,0,D
+,23/04/2025,BK Häcken,Degerfors IF,3,4,A
+,23/04/2025,Halmstads BK,Mjällby AIF,1,3,A
+,23/04/2025,Hammarby IF,Malmö FF,2,0,H
+,23/04/2025,IF Elfsborg,IK Sirius,4,3,H
+,24/04/2025,Djurgården,Östers IF,1,0,H
+,24/04/2025,GAIS,IF Brommapojkarna,1,1,D
+,24/04/2025,IFK Norrköping,IFK Göteborg,2,3,A
+,24/04/2025,IFK Värnamo,AIK,1,2,A
+,27/04/2025,BK Häcken,Hammarby IF,1,1,D
+,27/04/2025,Mjällby AIF,Degerfors IF,4,1,H
+,27/04/2025,AIK,IF Elfsborg,2,0,H
+,27/04/2025,IFK Värnamo,IFK Norrköping,1,3,A
+,27/04/2025,IK Sirius,Halmstads BK,1,1,D
+,28/04/2025,IFK Göteborg,GAIS,1,1,D
+,29/04/2025,Malmö FF,Östers IF,2,0,H
+,03/05/2025,Degerfors IF,IK Sirius,1,1,D
+,03/05/2025,Halmstads BK,IFK Värnamo,4,2,H
+,04/05/2025,Djurgården,AIK,1,1,D
+,04/05/2025,IFK Norrköping,BK Häcken,0,2,A
+,04/05/2025,Mjällby AIF,IFK Göteborg,1,0,H
+,04/05/2025,Östers IF,Hammarby IF,0,3,A
+,05/05/2025,Malmö FF,IF Brommapojkarna,1,2,A
+,05/05/2025,IF Elfsborg,GAIS,2,0,H
+,10/05/2025,IF Brommapojkarna,Halmstads BK,0,1,A
+,10/05/2025,GAIS,IFK Värnamo,1,1,D
+,10/05/2025,IK Sirius,BK Häcken,2,0,H
+,11/05/2025,AIK,Mjällby AIF,2,1,H
+,11/05/2025,Hammarby IF,IFK Norrköping,1,1,D
+,11/05/2025,Degerfors IF,Malmö FF,1,4,A
+,11/05/2025,Östers IF,IF Elfsborg,0,1,A
+,12/05/2025,IFK Göteborg,Djurgården,1,2,A
+,14/05/2025,BK Häcken,AIK,3,3,D
+,14/05/2025,Halmstads BK,GAIS,1,3,A
+,14/05/2025,Hammarby IF,IK Sirius,3,2,H
+,15/05/2025,Djurgården,Mjällby AIF,1,3,A
+,15/05/2025,IF Elfsborg,IF Brommapojkarna,4,3,H
+,15/05/2025,IFK Göteborg,Östers IF,0,1,A
+,15/05/2025,IFK Norrköping,Degerfors IF,1,2,A
+,15/05/2025,IFK Värnamo,Malmö FF,2,2,D
+,18/05/2025,AIK,Hammarby IF,0,0,D
+,18/05/2025,BK Häcken,IFK Värnamo,2,0,H
+,18/05/2025,Malmö FF,Halmstads BK,3,0,H
+,18/05/2025,Östers IF,GAIS,1,1,D
+,19/05/2025,Degerfors IF,IFK Göteborg,1,3,A
+,19/05/2025,IK Sirius,IFK Norrköping,1,2,A
+,19/05/2025,Mjällby AIF,IF Brommapojkarna,1,0,H
+,19/05/2025,IF Elfsborg,Djurgården,4,0,H
+,22/05/2025,Hammarby IF,Mjällby AIF,1,2,A
+,22/05/2025,Malmö FF,AIK,0,0,D
+,24/05/2025,IFK Värnamo,Östers IF,1,1,D
+,24/05/2025,GAIS,IK Sirius,2,1,H
+,25/05/2025,Halmstads BK,IF Elfsborg,1,4,A
+,25/05/2025,IFK Göteborg,Malmö FF,1,0,H
+,25/05/2025,Djurgården,BK Häcken,1,1,D
+,25/05/2025,IF Brommapojkarna,AIK,0,1,A
+,26/05/2025,IFK Norrköping,Mjällby AIF,1,1,D
+,26/05/2025,Hammarby IF,Degerfors IF,1,0,H
+,29/05/2025,IF Brommapojkarna,Djurgården,0,1,A
+,31/05/2025,Degerfors IF,Östers IF,1,2,A
+,31/05/2025,IF Elfsborg,Hammarby IF,0,2,A
+,31/05/2025,IFK Norrköping,GAIS,0,3,A
+,01/06/2025,Halmstads BK,Djurgården,1,0,H
+,01/06/2025,IF Brommapojkarna,IFK Göteborg,1,3,A
+,01/06/2025,Malmö FF,BK Häcken,3,0,H
+,01/06/2025,IK Sirius,AIK,3,1,H
+,01/06/2025,Mjällby AIF,IFK Värnamo,2,0,H
+,28/06/2025,Hammarby IF,Halmstads BK,2,0,H
+,28/06/2025,Östers IF,IK Sirius,2,2,D
+,29/06/2025,AIK,IFK Göteborg,3,0,H
+,29/06/2025,Degerfors IF,IF Brommapojkarna,0,3,A
+,29/06/2025,BK Häcken,GAIS,1,3,A
+,29/06/2025,IFK Värnamo,IF Elfsborg,0,0,D
+,30/06/2025,Djurgården,IFK Norrköping,1,1,D
+,30/06/2025,Mjällby AIF,Malmö FF,1,1,D
+,05/07/2025,GAIS,Malmö FF,0,0,D
+,05/07/2025,Östers IF,Mjällby AIF,0,1,A
+,05/07/2025,Hammarby IF,IFK Värnamo,1,0,H
+,06/07/2025,Halmstads BK,AIK,2,0,H
+,06/07/2025,IFK Göteborg,IK Sirius,3,1,H
+,06/07/2025,Djurgården,Degerfors IF,5,1,H
+,06/07/2025,IF Elfsborg,BK Häcken,0,2,A
+,07/07/2025,IFK Norrköping,IF Brommapojkarna,0,1,A
+,12/07/2025,IFK Göteborg,IF Elfsborg,1,2,A
+,12/07/2025,Malmö FF,IFK Norrköping,3,1,H
+,13/07/2025,GAIS,Hammarby IF,3,2,H
+,13/07/2025,IF Brommapojkarna,Östers IF,2,0,H
+,13/07/2025,AIK,Degerfors IF,3,0,H
+,13/07/2025,IFK Värnamo,Djurgården,1,0,H
+,13/07/2025,BK Häcken,Halmstads BK,4,1,H
+,14/07/2025,IK Sirius,Mjällby AIF,1,2,A
+,19/07/2025,Djurgården,IF Elfsborg,1,0,H
+,19/07/2025,Östers IF,Malmö FF,0,2,A
+,19/07/2025,Degerfors IF,GAIS,0,3,A
+,20/07/2025,IK Sirius,IFK Göteborg,0,1,A
+,20/07/2025,Mjällby AIF,AIK,2,0,H
+,20/07/2025,Halmstads BK,BK Häcken,0,0,D
+,20/07/2025,Hammarby IF,IF Brommapojkarna,3,2,H
+,21/07/2025,IFK Norrköping,IFK Värnamo,3,1,H
+,26/07/2025,GAIS,Halmstads BK,3,0,H
+,26/07/2025,IF Brommapojkarna,Malmö FF,2,3,A
+,26/07/2025,Degerfors IF,IFK Norrköping,0,0,D
+,27/07/2025,AIK,Östers IF,0,0,D
+,27/07/2025,BK Häcken,Djurgården,1,6,A
+,27/07/2025,IFK Värnamo,Hammarby IF,2,3,A
+,27/07/2025,Mjällby AIF,IK Sirius,2,1,H
+,28/07/2025,IF Elfsborg,IFK Göteborg,4,3,H
+,02/08/2025,IF Brommapojkarna,IFK Norrköping,6,4,H
+,02/08/2025,IFK Värnamo,GAIS,2,2,D
+,03/08/2025,BK Häcken,IF Elfsborg,1,2,A
+,03/08/2025,Djurgården,Halmstads BK,1,1,D
+,03/08/2025,IK Sirius,Östers IF,1,1,D
+,04/08/2025,IFK Göteborg,Degerfors IF,3,0,H
+,09/08/2025,Malmö FF,Mjällby AIF,1,3,A
+,09/08/2025,Halmstads BK,IK Sirius,0,1,A
+,10/08/2025,AIK,Djurgården,0,0,D
+,10/08/2025,Degerfors IF,BK Häcken,0,0,D
+,10/08/2025,IFK Norrköping,Hammarby IF,0,2,A
+,10/08/2025,Östers IF,IF Brommapojkarna,1,1,D
+,11/08/2025,GAIS,IFK Göteborg,0,1,A
+,11/08/2025,IF Elfsborg,IFK Värnamo,2,2,D
+,16/08/2025,Halmstads BK,Malmö FF,0,4,A
+,16/08/2025,IFK Norrköping,IF Elfsborg,2,1,H
+,17/08/2025,IF Brommapojkarna,IK Sirius,2,4,A
+,17/08/2025,IFK Göteborg,AIK,2,1,H
+,17/08/2025,BK Häcken,Östers IF,0,2,A
+,17/08/2025,Hammarby IF,GAIS,1,2,A
+,17/08/2025,Mjällby AIF,Djurgården,1,1,D
+,18/08/2025,IFK Värnamo,Degerfors IF,3,2,H
+,24/08/2025,Djurgården,IF Brommapojkarna,1,0,H
+,24/08/2025,IK Sirius,Hammarby IF,3,1,H
+,24/08/2025,Degerfors IF,AIK,0,1,A
+,24/08/2025,IF Elfsborg,Halmstads BK,1,2,A
+,24/08/2025,IFK Värnamo,BK Häcken,1,5,A
+,24/08/2025,Malmö FF,IFK Göteborg,0,0,D
+,25/08/2025,GAIS,Mjällby AIF,0,2,A
+,25/08/2025,Östers IF,IFK Norrköping,1,2,A
+,30/08/2025,IF Brommapojkarna,IF Elfsborg,3,0,H
+,30/08/2025,IFK Göteborg,IFK Värnamo,1,0,H
+,30/08/2025,Mjällby AIF,Halmstads BK,1,0,H
+,31/08/2025,AIK,IK Sirius,2,1,H
+,31/08/2025,IFK Norrköping,Djurgården,0,4,A
+,31/08/2025,Malmö FF,Degerfors IF,1,1,D
+,31/08/2025,GAIS,BK Häcken,2,1,H
+,31/08/2025,Hammarby IF,Östers IF,4,0,H
+,13/09/2025,Degerfors IF,Mjällby AIF,0,1,A
+,13/09/2025,Halmstads BK,IFK Norrköping,1,1,D
+,14/09/2025,Djurgården,Hammarby IF,3,3,D
+,14/09/2025,Östers IF,IFK Värnamo,4,3,H
+,14/09/2025,IF Elfsborg,Malmö FF,2,2,D
+,14/09/2025,IK Sirius,GAIS,3,0,H
+,15/09/2025,AIK,IF Brommapojkarna,2,1,H
+,15/09/2025,BK Häcken,IFK Göteborg,1,2,A
+,20/09/2025,GAIS,IF Elfsborg,2,0,H
+,20/09/2025,Malmö FF,Djurgården,0,1,A
+,20/09/2025,Mjällby AIF,Östers IF,1,1,D
+,21/09/2025,Hammarby IF,BK Häcken,4,0,H
+,21/09/2025,IFK Göteborg,IF Brommapojkarna,0,1,A
+,21/09/2025,IK Sirius,Degerfors IF,1,3,A
+,22/09/2025,IFK Värnamo,Halmstads BK,1,2,A
+,22/09/2025,IFK Norrköping,AIK,3,1,H
+,27/09/2025,IF Elfsborg,Degerfors IF,1,2,A
+,27/09/2025,BK Häcken,IFK Norrköping,2,0,H
+,28/09/2025,Halmstads BK,Hammarby IF,1,0,H
+,28/09/2025,IF Brommapojkarna,Mjällby AIF,0,1,A
+,28/09/2025,AIK,GAIS,1,1,D
+,28/09/2025,Malmö FF,IFK Värnamo,3,2,H
+,29/09/2025,Djurgården,IK Sirius,8,2,H
+,29/09/2025,Östers IF,IFK Göteborg,0,2,A
+,04/10/2025,Degerfors IF,Djurgården,1,1,D
+,04/10/2025,Mjällby AIF,IF Elfsborg,2,0,H
+,04/10/2025,Östers IF,Halmstads BK,3,0,H
+,04/10/2025,GAIS,IFK Norrköping,2,1,H
+,05/10/2025,AIK,IFK Värnamo,2,3,A
+,05/10/2025,IFK Göteborg,Hammarby IF,1,2,A
+,05/10/2025,IF Brommapojkarna,BK Häcken,1,3,A
+,05/10/2025,IK Sirius,Malmö FF,5,1,H
+,18/10/2025,IFK Norrköping,Malmö FF,0,2,A
+,18/10/2025,BK Häcken,IK Sirius,1,1,D
+,19/10/2025,GAIS,Djurgården,3,2,H
+,19/10/2025,Hammarby IF,AIK,2,1,H
+,19/10/2025,IF Elfsborg,Östers IF,5,1,H
+,19/10/2025,IFK Värnamo,IF Brommapojkarna,1,1,D
+,20/10/2025,Degerfors IF,Halmstads BK,0,1,A
+,20/10/2025,IFK Göteborg,Mjällby AIF,0,2,A
+,25/10/2025,Djurgården,IFK Värnamo,6,2,H
+,25/10/2025,Östers IF,Degerfors IF,1,2,A
+,26/10/2025,IK Sirius,IF Elfsborg,4,0,H
+,26/10/2025,Mjällby AIF,IFK Norrköping,2,1,H
+,26/10/2025,AIK,BK Häcken,2,2,D
+,26/10/2025,Halmstads BK,IFK Göteborg,0,3,A
+,27/10/2025,IF Brommapojkarna,GAIS,0,2,A
+,27/10/2025,Malmö FF,Hammarby IF,1,3,A
+,01/11/2025,BK Häcken,Malmö FF,1,1,D
+,01/11/2025,IFK Norrköping,IK Sirius,1,2,A
+,02/11/2025,Halmstads BK,IF Brommapojkarna,0,0,D
+,02/11/2025,IF Elfsborg,AIK,0,3,A
+,02/11/2025,Djurgården,IFK Göteborg,0,0,D
+,02/11/2025,GAIS,Östers IF,1,1,D
+,03/11/2025,Degerfors IF,Hammarby IF,1,1,D
+,03/11/2025,IFK Värnamo,Mjällby AIF,0,5,A
+,09/11/2025,AIK,Halmstads BK,0,2,A
+,09/11/2025,Hammarby IF,IF Elfsborg,3,0,H
+,09/11/2025,IF Brommapojkarna,Degerfors IF,1,3,A
+,09/11/2025,IFK Göteborg,IFK Norrköping,2,0,H
+,09/11/2025,IK Sirius,IFK Värnamo,3,1,H
+,09/11/2025,Malmö FF,GAIS,2,1,H
+,09/11/2025,Mjällby AIF,BK Häcken,1,0,H
+,09/11/2025,Östers IF,Djurgården,1,3,A

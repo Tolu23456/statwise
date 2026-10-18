@@ -16,16 +16,16 @@ logger = logging.getLogger(__name__)
 
 SUPABASE_URL = os.environ.get(
     "SUPABASE_URL",
-    "https://pdrcyuzfdqjnsltqqxvr.supabase.co"
+    "https://fwpriiugfjhtoymcbmso.supabase.co"
 )
 SUPABASE_KEY = os.environ.get(
     "SUPABASE_SERVICE_KEY",
     os.environ.get(
         "SUPABASE_ANON_KEY",
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9."
-        "eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkcmN5dXpmZHFqbnNsdHFxeHZyIiwi"
-        "cm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4Nzg2NTYsImV4cCI6MjA5MDQ1NDY1Nn0."
-        "LNWI2nhJdubyZmYGh1b-60fqzeo-fTenCknXyMwYmw8"
+        "eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3cHJpaXVnZmpodG95bWNibXNvIiwi"
+        "cm9sZSI6ImFub24iLCJpYXQiOjE3NTY5MDc3MTgsImV4cCI6MjA3MjQ4MzcxOH0."
+        "Sy3iehhGx2UNi28UBEjfNd81TjMxOVXJjY9HJS3xVjs"
     )
 )
 

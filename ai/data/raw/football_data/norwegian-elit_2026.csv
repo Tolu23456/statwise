@@ -1,0 +1,181 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,14/03/2026,Hamarkameratene,VIKING FK,2,1,H
+,14/03/2026,Molde,Rosenborg,2,0,H
+,15/03/2026,Kristiansund BK,SK Brann,3,2,H
+,15/03/2026,Aalesund,Lillestrom,1,3,A
+,15/03/2026,KFUM Oslo,IK Start,2,0,H
+,15/03/2026,Vålerenga,Sandefjord,1,0,H
+,15/03/2026,Tromso,Fredrikstad,4,0,H
+,21/03/2026,IK Start,Aalesund,1,1,D
+,21/03/2026,VIKING FK,Molde,4,1,H
+,22/03/2026,Rosenborg,Vålerenga,0,2,A
+,22/03/2026,Fredrikstad,KFUM Oslo,3,1,H
+,22/03/2026,Sandefjord,Sarpsborg FK,0,2,A
+,22/03/2026,SK Brann,Tromso,1,2,A
+,06/04/2026,Vålerenga,VIKING FK,0,1,A
+,06/04/2026,Hamarkameratene,SK Brann,1,5,A
+,06/04/2026,Kristiansund BK,Bodo/Glimt,0,3,A
+,06/04/2026,Molde,Lillestrom,0,1,A
+,06/04/2026,Sarpsborg FK,IK Start,1,1,D
+,06/04/2026,Tromso,Rosenborg,2,0,H
+,07/04/2026,Aalesund,Fredrikstad,2,3,A
+,07/04/2026,KFUM Oslo,Sandefjord,1,2,A
+,11/04/2026,Lillestrom,IK Start,3,1,H
+,11/04/2026,Tromso,Kristiansund BK,2,0,H
+,11/04/2026,VIKING FK,Bodo/Glimt,5,0,H
+,12/04/2026,Rosenborg,Sarpsborg FK,2,1,H
+,12/04/2026,Aalesund,KFUM Oslo,2,2,D
+,12/04/2026,Fredrikstad,Vålerenga,1,1,D
+,12/04/2026,Molde,Hamarkameratene,4,1,H
+,12/04/2026,SK Brann,Sandefjord,0,1,A
+,15/04/2026,Sarpsborg FK,Bodo/Glimt,1,1,D
+,15/04/2026,Tromso,Lillestrom,0,0,D
+,18/04/2026,Bodo/Glimt,Aalesund,3,0,H
+,18/04/2026,Sandefjord,Rosenborg,0,0,D
+,18/04/2026,VIKING FK,SK Brann,3,2,H
+,19/04/2026,Vålerenga,Lillestrom,0,2,A
+,19/04/2026,Hamarkameratene,KFUM Oslo,4,0,H
+,19/04/2026,Kristiansund BK,Fredrikstad,2,0,H
+,19/04/2026,Sarpsborg FK,Tromso,0,1,A
+,19/04/2026,IK Start,Molde,1,1,D
+,25/04/2026,Fredrikstad,VIKING FK,1,2,A
+,25/04/2026,Rosenborg,SK Brann,1,1,D
+,26/04/2026,Molde,Vålerenga,5,1,H
+,26/04/2026,Aalesund,Kristiansund BK,1,1,D
+,26/04/2026,Hamarkameratene,IK Start,2,1,H
+,26/04/2026,KFUM Oslo,Sarpsborg FK,1,0,H
+,26/04/2026,Tromso,Sandefjord,3,1,H
+,26/04/2026,Lillestrom,Bodo/Glimt,0,2,A
+,29/04/2026,Tromso,SK Brann,0,5,A
+,30/04/2026,Bodo/Glimt,IK Start,5,0,H
+,01/05/2026,VIKING FK,Rosenborg,3,0,H
+,02/05/2026,SK Brann,Fredrikstad,3,1,H
+,03/05/2026,Lillestrom,Sarpsborg FK,4,0,H
+,03/05/2026,IK Start,Tromso,1,1,D
+,03/05/2026,Kristiansund BK,Hamarkameratene,1,1,D
+,03/05/2026,Sandefjord,Aalesund,1,0,H
+,03/05/2026,Vålerenga,KFUM Oslo,2,2,D
+,04/05/2026,Bodo/Glimt,Molde,0,1,A
+,08/05/2026,Hamarkameratene,Vålerenga,1,0,H
+,09/05/2026,Sarpsborg FK,Fredrikstad,2,1,H
+,10/05/2026,Rosenborg,Lillestrom,2,0,H
+,10/05/2026,KFUM Oslo,VIKING FK,0,2,A
+,10/05/2026,Sandefjord,Kristiansund BK,2,0,H
+,10/05/2026,Tromso,Molde,2,0,H
+,16/05/2026,SK Brann,KFUM Oslo,2,1,H
+,16/05/2026,Fredrikstad,Hamarkameratene,2,1,H
+,16/05/2026,Lillestrom,Sandefjord,3,1,H
+,16/05/2026,Molde,Kristiansund BK,1,0,H
+,16/05/2026,Rosenborg,Aalesund,2,3,A
+,16/05/2026,VIKING FK,IK Start,6,3,H
+,16/05/2026,Bodo/Glimt,Tromso,5,0,H
+,16/05/2026,Vålerenga,Sarpsborg FK,3,2,H
+,20/05/2026,IK Start,Bodo/Glimt,1,4,A
+,20/05/2026,Lillestrom,Kristiansund BK,1,2,A
+,20/05/2026,Aalesund,SK Brann,2,1,H
+,24/05/2026,Bodo/Glimt,SK Brann,3,1,H
+,24/05/2026,Kristiansund BK,VIKING FK,1,2,A
+,25/05/2026,IK Start,Vålerenga,2,0,H
+,25/05/2026,Hamarkameratene,Lillestrom,2,0,H
+,25/05/2026,KFUM Oslo,Rosenborg,2,0,H
+,25/05/2026,Sarpsborg FK,Molde,2,1,H
+,25/05/2026,Tromso,Aalesund,1,1,D
+,25/05/2026,Sandefjord,Fredrikstad,1,1,D
+,29/05/2026,Aalesund,Hamarkameratene,0,0,D
+,29/05/2026,Fredrikstad,IK Start,2,1,H
+,29/05/2026,KFUM Oslo,Tromso,0,0,D
+,29/05/2026,Rosenborg,Bodo/Glimt,2,2,D
+,29/05/2026,SK Brann,Sarpsborg FK,1,2,A
+,29/05/2026,Vålerenga,Kristiansund BK,0,0,D
+,30/05/2026,Molde,Sandefjord,2,1,H
+,11/07/2026,Fredrikstad,Lillestrom,0,2,A
+,11/07/2026,Aalesund,Molde,2,2,D
+,11/07/2026,Tromso,Vålerenga,4,0,H
+,12/07/2026,KFUM Oslo,Bodo/Glimt,0,2,A
+,12/07/2026,Rosenborg,Kristiansund BK,3,0,H
+,12/07/2026,Sandefjord,Hamarkameratene,2,2,D
+,12/07/2026,SK Brann,IK Start,2,1,H
+,12/07/2026,Sarpsborg FK,VIKING FK,1,0,H
+,16/07/2026,Vålerenga,Aalesund,6,1,H
+,17/07/2026,Bodo/Glimt,Fredrikstad,1,0,H
+,18/07/2026,Hamarkameratene,Tromso,1,4,A
+,18/07/2026,IK Start,Rosenborg,0,3,A
+,18/07/2026,Kristiansund BK,Sarpsborg FK,0,0,D
+,18/07/2026,Lillestrom,KFUM Oslo,2,1,H
+,18/07/2026,Molde,SK Brann,1,2,A
+,18/07/2026,VIKING FK,Sandefjord,2,1,H
+,22/07/2026,Bodo/Glimt,Hamarkameratene,3,0,H
+,22/07/2026,Lillestrom,VIKING FK,1,2,A
+,25/07/2026,Kristiansund BK,IK Start,1,2,A
+,26/07/2026,SK Brann,Vålerenga,2,3,A
+,26/07/2026,KFUM Oslo,Molde,2,4,A
+,26/07/2026,Sandefjord,Bodo/Glimt,0,3,A
+,26/07/2026,Sarpsborg FK,Hamarkameratene,1,0,H
+,26/07/2026,Aalesund,VIKING FK,1,1,D
+,27/07/2026,Rosenborg,Fredrikstad,4,0,H
+,31/07/2026,Vålerenga,Hamarkameratene,0,3,A
+,31/07/2026,Bodo/Glimt,Lillestrom,4,0,H
+,01/08/2026,Fredrikstad,Sandefjord,1,0,H
+,01/08/2026,IK Start,VIKING FK,0,3,A
+,02/08/2026,Aalesund,Tromso,2,6,A
+,02/08/2026,KFUM Oslo,Kristiansund BK,2,1,H
+,02/08/2026,Molde,Sarpsborg FK,3,3,D
+,02/08/2026,SK Brann,Rosenborg,3,2,H
+,07/08/2026,Sandefjord,KFUM Oslo,0,1,A
+,08/08/2026,Vålerenga,Bodo/Glimt,1,2,A
+,08/08/2026,VIKING FK,Sarpsborg FK,2,1,H
+,08/08/2026,IK Start,Fredrikstad,0,1,A
+,09/08/2026,Lillestrom,Rosenborg,0,2,A
+,09/08/2026,Hamarkameratene,Aalesund,1,1,D
+,09/08/2026,Kristiansund BK,Molde,2,1,H
+,14/08/2026,Rosenborg,VIKING FK,2,1,H
+,15/08/2026,KFUM Oslo,Lillestrom,1,1,D
+,16/08/2026,Aalesund,Vålerenga,5,5,D
+,16/08/2026,Molde,Tromso,3,2,H
+,16/08/2026,Sarpsborg FK,Sandefjord,1,2,A
+,16/08/2026,SK Brann,Hamarkameratene,3,0,H
+,16/08/2026,Fredrikstad,Kristiansund BK,1,0,H
+,30/08/2026,Bodo/Glimt,Rosenborg,4,2,H
+,30/08/2026,Hamarkameratene,Kristiansund BK,2,2,D
+,30/08/2026,IK Start,KFUM Oslo,4,1,H
+,30/08/2026,Sandefjord,SK Brann,0,0,D
+,30/08/2026,Tromso,Sarpsborg FK,0,0,D
+,30/08/2026,Vålerenga,Molde,3,4,A
+,30/08/2026,VIKING FK,Aalesund,2,1,H
+,30/08/2026,Lillestrom,Fredrikstad,1,4,A
+,04/09/2026,Aalesund,IK Start,2,0,H
+,04/09/2026,Fredrikstad,Bodo/Glimt,1,2,A
+,04/09/2026,Sandefjord,VIKING FK,1,1,D
+,05/09/2026,Rosenborg,Hamarkameratene,4,0,H
+,05/09/2026,SK Brann,Lillestrom,1,2,A
+,06/09/2026,Molde,KFUM Oslo,2,0,H
+,06/09/2026,Sarpsborg FK,Vålerenga,2,2,D
+,06/09/2026,Kristiansund BK,Tromso,2,0,H
+,12/09/2026,Lillestrom,Vålerenga,2,0,H
+,12/09/2026,Rosenborg,Tromso,5,3,H
+,13/09/2026,VIKING FK,Kristiansund BK,8,1,H
+,13/09/2026,Hamarkameratene,Molde,1,5,A
+,13/09/2026,IK Start,SK Brann,2,0,H
+,13/09/2026,KFUM Oslo,Aalesund,2,1,H
+,13/09/2026,Fredrikstad,Sarpsborg FK,1,1,D
+,14/09/2026,Bodo/Glimt,Sandefjord,3,2,H
+,18/09/2026,Sarpsborg FK,KFUM Oslo,1,3,A
+,19/09/2026,Kristiansund BK,Rosenborg,1,3,A
+,19/09/2026,Molde,Aalesund,1,2,A
+,20/09/2026,Vålerenga,Fredrikstad,1,1,D
+,20/09/2026,Sandefjord,IK Start,3,0,H
+,20/09/2026,Tromso,Hamarkameratene,3,2,H
+,20/09/2026,VIKING FK,Lillestrom,3,0,H
+,20/09/2026,SK Brann,Bodo/Glimt,2,1,H
+,09/10/2026,SK Brann,VIKING FK,0,2,A
+,10/10/2026,Bodo/Glimt,Kristiansund BK,3,1,H
+,10/10/2026,Rosenborg,Sandefjord,1,1,D
+,11/10/2026,Fredrikstad,Tromso,1,1,D
+,11/10/2026,Aalesund,Sarpsborg FK,2,4,A
+,11/10/2026,IK Start,Hamarkameratene,2,4,A
+,11/10/2026,Lillestrom,Molde,2,2,D
+,12/10/2026,KFUM Oslo,Vålerenga,2,1,H
+,17/10/2026,Hamarkameratene,Bodo/Glimt,0,2,A
+,17/10/2026,Kristiansund BK,Aalesund,1,4,A
+,17/10/2026,VIKING FK,Fredrikstad,3,2,H
+,18/10/2026,Sarpsborg FK,Rosenborg,0,3,A

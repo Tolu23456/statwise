@@ -1,0 +1,444 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,22/01/2026,Aldosivi,Defensa y Justicia,0,0,D
+,22/01/2026,Banfield,Huracán,1,1,D
+,22/01/2026,Unión (Santa Fe),Platense,0,0,D
+,23/01/2026,Central Córdoba (Santiago del Estero),Gimnasia (Mendoza),0,1,A
+,23/01/2026,Instituto (Córdoba),Vélez Sarsfield,0,1,A
+,23/01/2026,San Lorenzo,Lanús,2,3,A
+,23/01/2026,Independiente,Estudiantes de La Plata,1,1,D
+,24/01/2026,Independiente Rivadavia,Atlético Tucumán,2,1,H
+,24/01/2026,Talleres (Córdoba),Newell's Old Boys,2,1,H
+,24/01/2026,Barracas Central,River Plate,0,1,A
+,24/01/2026,Gimnasia La Plata,Racing Club,2,1,H
+,25/01/2026,Rosario Central,Belgrano (Córdoba),1,2,A
+,25/01/2026,Boca Juniors,Deportivo Riestra,1,0,H
+,26/01/2026,Argentinos Juniors,Sarmiento (Junín),1,0,H
+,26/01/2026,Tigre,Estudiantes de Río Cuarto,2,0,H
+,26/01/2026,Platense,Instituto (Córdoba),2,1,H
+,27/01/2026,Vélez Sarsfield,Talleres (Córdoba),2,1,H
+,27/01/2026,Gimnasia (Mendoza),San Lorenzo,0,1,A
+,27/01/2026,Huracán,Independiente Rivadavia,1,2,A
+,28/01/2026,Atlético Tucumán,Central Córdoba (Santiago del Estero),0,0,D
+,28/01/2026,Newell's Old Boys,Independiente,1,1,D
+,28/01/2026,Aldosivi,Barracas Central,0,0,D
+,28/01/2026,Racing Club,Rosario Central,1,2,A
+,28/01/2026,River Plate,Gimnasia La Plata,2,0,H
+,29/01/2026,Estudiantes de La Plata,Boca Juniors,2,1,H
+,29/01/2026,Deportivo Riestra,Defensa y Justicia,0,1,A
+,29/01/2026,Belgrano (Córdoba),Tigre,1,1,D
+,29/01/2026,Lanús,Unión (Santa Fe),2,1,H
+,30/01/2026,Estudiantes de Río Cuarto,Argentinos Juniors,0,0,D
+,30/01/2026,Sarmiento (Junín),Banfield,1,0,H
+,31/01/2026,San Lorenzo,Central Córdoba (Santiago del Estero),1,0,H
+,31/01/2026,Independiente,Vélez Sarsfield,1,1,D
+,01/02/2026,Atlético Tucumán,Huracán,1,1,D
+,01/02/2026,Talleres (Córdoba),Platense,1,2,A
+,01/02/2026,Barracas Central,Deportivo Riestra,1,1,D
+,01/02/2026,Boca Juniors,Newell's Old Boys,2,0,H
+,02/02/2026,Rosario Central,River Plate,0,0,D
+,02/02/2026,Gimnasia La Plata,Aldosivi,3,1,H
+,02/02/2026,Defensa y Justicia,Estudiantes de La Plata,0,0,D
+,02/02/2026,Tigre,Racing Club,3,1,H
+,03/02/2026,Argentinos Juniors,Belgrano (Córdoba),0,0,D
+,03/02/2026,Unión (Santa Fe),Gimnasia (Mendoza),4,0,H
+,03/02/2026,Banfield,Estudiantes de Río Cuarto,2,1,H
+,04/02/2026,Independiente Rivadavia,Sarmiento (Junín),2,1,H
+,04/02/2026,Instituto (Córdoba),Lanús,2,2,D
+,07/02/2026,Central Córdoba (Santiago del Estero),Unión (Santa Fe),1,0,H
+,07/02/2026,Aldosivi,Rosario Central,1,1,D
+,07/02/2026,Racing Club,Argentinos Juniors,2,1,H
+,07/02/2026,River Plate,Tigre,1,4,A
+,08/02/2026,Belgrano (Córdoba),Banfield,1,0,H
+,08/02/2026,Newell's Old Boys,Defensa y Justicia,2,3,A
+,08/02/2026,Platense,Independiente,0,1,A
+,08/02/2026,Sarmiento (Junín),Atlético Tucumán,2,1,H
+,08/02/2026,Huracán,San Lorenzo,1,0,H
+,09/02/2026,Gimnasia (Mendoza),Instituto (Córdoba),1,0,H
+,09/02/2026,Vélez Sarsfield,Boca Juniors,2,1,H
+,09/02/2026,Barracas Central,Gimnasia La Plata,2,0,H
+,09/02/2026,Estudiantes de La Plata,Deportivo Riestra,1,0,H
+,09/02/2026,Lanús,Talleres (Córdoba),1,1,D
+,10/02/2026,Estudiantes de Río Cuarto,Independiente Rivadavia,0,1,A
+,12/02/2026,Tigre,Aldosivi,1,0,H
+,13/02/2026,Argentinos Juniors,River Plate,1,0,H
+,13/02/2026,Independiente,Lanús,2,0,H
+,14/02/2026,Defensa y Justicia,Vélez Sarsfield,1,1,D
+,14/02/2026,Unión (Santa Fe),San Lorenzo,0,0,D
+,14/02/2026,Banfield,Racing Club,0,2,A
+,14/02/2026,Huracán,Sarmiento (Junín),1,0,H
+,14/02/2026,Talleres (Córdoba),Gimnasia (Mendoza),2,1,H
+,15/02/2026,Atlético Tucumán,Estudiantes de Río Cuarto,4,0,H
+,15/02/2026,Independiente Rivadavia,Belgrano (Córdoba),0,1,A
+,15/02/2026,Gimnasia La Plata,Estudiantes de La Plata,0,0,D
+,15/02/2026,Boca Juniors,Platense,0,0,D
+,16/02/2026,Instituto (Córdoba),Central Córdoba (Santiago del Estero),2,0,H
+,16/02/2026,Rosario Central,Barracas Central,2,0,H
+,16/02/2026,Deportivo Riestra,Newell's Old Boys,1,1,D
+,20/02/2026,Defensa y Justicia,Belgrano (Córdoba),1,1,D
+,20/02/2026,Estudiantes de La Plata,Sarmiento (Junín),1,0,H
+,20/02/2026,Boca Juniors,Racing Club,0,0,D
+,20/02/2026,Instituto (Córdoba),Atlético Tucumán,2,1,H
+,21/02/2026,Gimnasia (Mendoza),Gimnasia La Plata,0,1,A
+,21/02/2026,Rosario Central,Talleres (Córdoba),0,1,A
+,21/02/2026,Independiente Rivadavia,Independiente,3,2,H
+,21/02/2026,Platense,Barracas Central,1,0,H
+,21/02/2026,Banfield,Newell's Old Boys,3,0,H
+,21/02/2026,Deportivo Riestra,Huracán,0,0,D
+,22/02/2026,Central Córdoba (Santiago del Estero),Tigre,0,0,D
+,22/02/2026,San Lorenzo,Estudiantes de Río Cuarto,2,0,H
+,22/02/2026,Vélez Sarsfield,River Plate,1,0,H
+,23/02/2026,Unión (Santa Fe),Aldosivi,1,0,H
+,24/02/2026,Platense,Defensa y Justicia,0,0,D
+,24/02/2026,San Lorenzo,Instituto (Córdoba),1,1,D
+,24/02/2026,Central Córdoba (Santiago del Estero),Talleres (Córdoba),2,0,H
+,25/02/2026,Belgrano (Córdoba),Atlético Tucumán,3,1,H
+,25/02/2026,Gimnasia (Mendoza),Independiente,1,1,D
+,25/02/2026,Barracas Central,Tigre,2,1,H
+,25/02/2026,Gimnasia La Plata,Rosario Central,1,2,A
+,25/02/2026,Newell's Old Boys,Estudiantes de La Plata,0,2,A
+,25/02/2026,Vélez Sarsfield,Deportivo Riestra,0,0,D
+,26/02/2026,Racing Club,Independiente Rivadavia,1,1,D
+,26/02/2026,Sarmiento (Junín),Unión (Santa Fe),1,3,A
+,26/02/2026,Estudiantes de Río Cuarto,Huracán,2,0,H
+,26/02/2026,River Plate,Banfield,3,1,H
+,28/02/2026,Boca Juniors,Gimnasia (Mendoza),1,1,D
+,28/02/2026,Independiente,Central Córdoba (Santiago del Estero),2,0,H
+,01/03/2026,Talleres (Córdoba),San Lorenzo,0,0,D
+,01/03/2026,Newell's Old Boys,Rosario Central,0,2,A
+,01/03/2026,Argentinos Juniors,Barracas Central,1,1,D
+,01/03/2026,Instituto (Córdoba),Unión (Santa Fe),1,2,A
+,02/03/2026,Defensa y Justicia,Lanús,1,1,D
+,02/03/2026,Tigre,Gimnasia La Plata,2,2,D
+,02/03/2026,Deportivo Riestra,Platense,0,0,D
+,02/03/2026,Estudiantes de La Plata,Vélez Sarsfield,0,1,A
+,03/03/2026,Banfield,Aldosivi,2,0,H
+,03/03/2026,Independiente Rivadavia,River Plate,1,1,D
+,03/03/2026,Sarmiento (Junín),Estudiantes de Río Cuarto,1,0,H
+,03/03/2026,Huracán,Belgrano (Córdoba),3,1,H
+,04/03/2026,Atlético Tucumán,Racing Club,0,3,A
+,05/03/2026,Lanús,Boca Juniors,0,3,A
+,10/03/2026,Independiente,Unión (Santa Fe),4,4,D
+,10/03/2026,Tigre,Vélez Sarsfield,1,1,D
+,11/03/2026,Newell's Old Boys,Platense,1,1,D
+,11/03/2026,Sarmiento (Junín),Racing Club,0,0,D
+,11/03/2026,Argentinos Juniors,Rosario Central,0,0,D
+,11/03/2026,Banfield,Gimnasia La Plata,1,2,A
+,11/03/2026,Boca Juniors,San Lorenzo,1,1,D
+,12/03/2026,Atlético Tucumán,Aldosivi,1,1,D
+,12/03/2026,Independiente Rivadavia,Barracas Central,1,2,A
+,12/03/2026,Defensa y Justicia,Central Córdoba (Santiago del Estero),1,1,D
+,12/03/2026,Deportivo Riestra,Gimnasia (Mendoza),0,0,D
+,12/03/2026,Estudiantes de Río Cuarto,Belgrano (Córdoba),0,1,A
+,12/03/2026,Talleres (Córdoba),Instituto (Córdoba),2,0,H
+,13/03/2026,Huracán,River Plate,1,2,A
+,13/03/2026,Estudiantes de La Plata,Lanús,0,1,A
+,14/03/2026,Platense,Vélez Sarsfield,0,2,A
+,15/03/2026,Rosario Central,Banfield,2,1,H
+,15/03/2026,Gimnasia La Plata,Independiente Rivadavia,2,3,A
+,15/03/2026,Belgrano (Córdoba),Talleres (Córdoba),0,0,D
+,15/03/2026,River Plate,Sarmiento (Junín),2,0,H
+,16/03/2026,Tigre,Argentinos Juniors,1,1,D
+,16/03/2026,Unión (Santa Fe),Boca Juniors,1,1,D
+,16/03/2026,Aldosivi,Huracán,0,0,D
+,16/03/2026,Barracas Central,Atlético Tucumán,2,1,H
+,16/03/2026,San Lorenzo,Defensa y Justicia,2,5,A
+,16/03/2026,Racing Club,Estudiantes de Río Cuarto,2,0,H
+,17/03/2026,Instituto (Córdoba),Independiente,2,1,H
+,17/03/2026,Lanús,Newell's Old Boys,5,0,H
+,18/03/2026,Central Córdoba (Santiago del Estero),Deportivo Riestra,1,0,H
+,18/03/2026,Gimnasia (Mendoza),Estudiantes de La Plata,1,2,A
+,21/03/2026,Atlético Tucumán,Gimnasia La Plata,1,0,H
+,21/03/2026,Banfield,Tigre,1,0,H
+,21/03/2026,Vélez Sarsfield,Lanús,0,1,A
+,21/03/2026,Defensa y Justicia,Unión (Santa Fe),2,0,H
+,21/03/2026,Newell's Old Boys,Gimnasia (Mendoza),1,0,H
+,21/03/2026,Independiente,Talleres (Córdoba),1,2,A
+,22/03/2026,Belgrano (Córdoba),Racing Club,1,2,A
+,22/03/2026,Sarmiento (Junín),Aldosivi,2,0,H
+,22/03/2026,Estudiantes de Río Cuarto,River Plate,0,2,A
+,22/03/2026,Boca Juniors,Instituto (Córdoba),2,0,H
+,23/03/2026,Argentinos Juniors,Platense,1,0,H
+,23/03/2026,Independiente Rivadavia,Rosario Central,2,0,H
+,23/03/2026,Estudiantes de La Plata,Central Córdoba (Santiago del Estero),5,0,H
+,24/03/2026,Huracán,Barracas Central,0,0,D
+,25/03/2026,Deportivo Riestra,San Lorenzo,1,1,D
+,27/03/2026,Argentinos Juniors,Lanús,2,1,H
+,31/03/2026,Aldosivi,Argentinos Juniors,0,2,A
+,01/04/2026,Lanús,Platense,0,0,D
+,02/04/2026,Barracas Central,Sarmiento (Junín),1,2,A
+,02/04/2026,Tigre,Independiente Rivadavia,0,2,A
+,02/04/2026,Talleres (Córdoba),Boca Juniors,0,1,A
+,03/04/2026,Gimnasia (Mendoza),Vélez Sarsfield,3,2,H
+,03/04/2026,Unión (Santa Fe),Deportivo Riestra,2,0,H
+,03/04/2026,San Lorenzo,Estudiantes de La Plata,1,0,H
+,04/04/2026,Aldosivi,Estudiantes de Río Cuarto,0,0,D
+,04/04/2026,Independiente,Racing Club,1,0,H
+,05/04/2026,Rosario Central,Atlético Tucumán,2,1,H
+,05/04/2026,Gimnasia La Plata,Huracán,0,3,A
+,05/04/2026,River Plate,Belgrano (Córdoba),3,0,H
+,05/04/2026,Central Córdoba (Santiago del Estero),Newell's Old Boys,1,3,A
+,06/04/2026,Argentinos Juniors,Banfield,3,2,H
+,07/04/2026,Instituto (Córdoba),Defensa y Justicia,2,0,H
+,11/04/2026,Belgrano (Córdoba),Aldosivi,1,0,H
+,11/04/2026,Deportivo Riestra,Instituto (Córdoba),0,1,A
+,11/04/2026,Independiente Rivadavia,Argentinos Juniors,3,1,H
+,11/04/2026,Estudiantes de La Plata,Unión (Santa Fe),2,1,H
+,11/04/2026,Boca Juniors,Independiente,1,1,D
+,12/04/2026,Estudiantes de Río Cuarto,Barracas Central,1,2,A
+,12/04/2026,Newell's Old Boys,San Lorenzo,0,0,D
+,12/04/2026,Platense,Gimnasia (Mendoza),1,1,D
+,12/04/2026,Atlético Tucumán,Tigre,0,0,D
+,12/04/2026,Huracán,Rosario Central,3,1,H
+,12/04/2026,Racing Club,River Plate,0,2,A
+,13/04/2026,Defensa y Justicia,Talleres (Córdoba),1,2,A
+,13/04/2026,Sarmiento (Junín),Gimnasia La Plata,1,2,A
+,13/04/2026,Lanús,Banfield,1,0,H
+,14/04/2026,Vélez Sarsfield,Central Córdoba (Santiago del Estero),1,0,H
+,17/04/2026,Unión (Santa Fe),Newell's Old Boys,2,3,A
+,18/04/2026,Gimnasia La Plata,Estudiantes de Río Cuarto,1,0,H
+,18/04/2026,Instituto (Córdoba),Estudiantes de La Plata,0,1,A
+,18/04/2026,Independiente,Defensa y Justicia,3,1,H
+,19/04/2026,Argentinos Juniors,Atlético Tucumán,1,0,H
+,19/04/2026,Aldosivi,Racing Club,1,1,D
+,19/04/2026,River Plate,Boca Juniors,0,1,A
+,19/04/2026,Rosario Central,Sarmiento (Junín),2,1,H
+,19/04/2026,Talleres (Córdoba),Deportivo Riestra,2,0,H
+,20/04/2026,Barracas Central,Belgrano (Córdoba),0,0,D
+,20/04/2026,Banfield,Independiente Rivadavia,0,0,D
+,20/04/2026,Central Córdoba (Santiago del Estero),Platense,4,3,H
+,20/04/2026,San Lorenzo,Vélez Sarsfield,0,0,D
+,21/04/2026,Gimnasia (Mendoza),Lanús,1,0,H
+,21/04/2026,Tigre,Huracán,1,1,D
+,23/04/2026,Defensa y Justicia,Boca Juniors,0,4,A
+,24/04/2026,Deportivo Riestra,Independiente,2,0,H
+,24/04/2026,Estudiantes de Río Cuarto,Rosario Central,1,2,A
+,24/04/2026,Lanús,Central Córdoba (Santiago del Estero),0,0,D
+,25/04/2026,Platense,San Lorenzo,0,1,A
+,25/04/2026,Racing Club,Barracas Central,1,1,D
+,25/04/2026,Estudiantes de La Plata,Talleres (Córdoba),0,0,D
+,25/04/2026,Sarmiento (Junín),Tigre,1,0,H
+,26/04/2026,River Plate,Aldosivi,3,1,H
+,26/04/2026,Independiente Rivadavia,Gimnasia (Mendoza),5,1,H
+,26/04/2026,Belgrano (Córdoba),Gimnasia La Plata,0,1,A
+,26/04/2026,Newell's Old Boys,Instituto (Córdoba),1,1,D
+,26/04/2026,Atlético Tucumán,Banfield,1,1,D
+,27/04/2026,Vélez Sarsfield,Unión (Santa Fe),2,2,D
+,28/04/2026,Huracán,Argentinos Juniors,1,2,A
+,02/05/2026,Barracas Central,Banfield,1,2,A
+,02/05/2026,Lanús,Deportivo Riestra,0,0,D
+,02/05/2026,Central Córdoba (Santiago del Estero),Boca Juniors,1,2,A
+,02/05/2026,San Lorenzo,Independiente,1,2,A
+,02/05/2026,Unión (Santa Fe),Talleres (Córdoba),1,1,D
+,03/05/2026,Platense,Estudiantes de La Plata,0,2,A
+,03/05/2026,Aldosivi,Independiente Rivadavia,1,1,D
+,03/05/2026,Belgrano (Córdoba),Sarmiento (Junín),4,0,H
+,03/05/2026,Gimnasia La Plata,Argentinos Juniors,2,0,H
+,03/05/2026,Racing Club,Huracán,0,0,D
+,03/05/2026,Rosario Central,Tigre,1,1,D
+,03/05/2026,River Plate,Atlético Tucumán,0,1,A
+,04/05/2026,Gimnasia (Mendoza),Defensa y Justicia,2,1,H
+,04/05/2026,Vélez Sarsfield,Newell's Old Boys,1,1,D
+,05/05/2026,Estudiantes de Río Cuarto,Instituto (Córdoba),0,2,A
+,09/05/2026,Talleres (Córdoba),Belgrano (Córdoba),0,1,A
+,09/05/2026,Boca Juniors,Huracán,2,3,A
+,10/05/2026,Independiente Rivadavia,Unión (Santa Fe),1,2,A
+,10/05/2026,Argentinos Juniors,Lanús,2,0,H
+,10/05/2026,Rosario Central,Independiente,3,1,H
+,10/05/2026,Estudiantes de La Plata,Racing Club,0,1,A
+,10/05/2026,River Plate,San Lorenzo,2,2,D
+,11/05/2026,Vélez Sarsfield,Gimnasia La Plata,0,1,A
+,12/05/2026,Belgrano (Córdoba),Unión (Santa Fe),2,0,H
+,13/05/2026,Argentinos Juniors,Huracán,1,0,H
+,13/05/2026,Rosario Central,Racing Club,2,1,H
+,14/05/2026,River Plate,Gimnasia La Plata,2,0,H
+,16/05/2026,River Plate,Rosario Central,1,0,H
+,17/05/2026,Argentinos Juniors,Belgrano (Córdoba),1,1,D
+,24/05/2026,River Plate,Belgrano (Córdoba),2,3,A
+,23/07/2026,Belgrano (Córdoba),Rosario Central,2,1,H
+,23/07/2026,Sarmiento (Junín),Argentinos Juniors,2,3,A
+,24/07/2026,Defensa y Justicia,Aldosivi,1,1,D
+,24/07/2026,Gimnasia (Mendoza),Central Córdoba (Santiago del Estero),1,0,H
+,24/07/2026,Racing Club,Gimnasia La Plata,2,1,H
+,24/07/2026,Vélez Sarsfield,Instituto (Córdoba),1,0,H
+,25/07/2026,Huracán,Banfield,1,0,H
+,25/07/2026,Platense,Unión (Santa Fe),2,2,D
+,25/07/2026,Estudiantes de Río Cuarto,Tigre,1,0,H
+,25/07/2026,Newell's Old Boys,Talleres (Córdoba),1,0,H
+,25/07/2026,River Plate,Barracas Central,0,1,A
+,26/07/2026,Lanús,San Lorenzo,1,0,H
+,26/07/2026,Atlético Tucumán,Independiente Rivadavia,0,0,D
+,26/07/2026,Estudiantes de La Plata,Independiente,0,2,A
+,26/07/2026,Deportivo Riestra,Boca Juniors,3,0,H
+,28/07/2026,Banfield,Sarmiento (Junín),3,2,H
+,28/07/2026,San Lorenzo,Gimnasia (Mendoza),1,0,H
+,29/07/2026,Argentinos Juniors,Estudiantes de Río Cuarto,3,0,H
+,29/07/2026,Rosario Central,Racing Club,0,0,D
+,29/07/2026,Barracas Central,Aldosivi,1,0,H
+,29/07/2026,Defensa y Justicia,Deportivo Riestra,2,1,H
+,29/07/2026,Gimnasia La Plata,River Plate,1,0,H
+,30/07/2026,Instituto (Córdoba),Platense,2,1,H
+,30/07/2026,Independiente Rivadavia,Huracán,2,1,H
+,30/07/2026,Talleres (Córdoba),Vélez Sarsfield,1,3,A
+,31/07/2026,Central Córdoba (Santiago del Estero),Atlético Tucumán,0,2,A
+,31/07/2026,Independiente,Newell's Old Boys,1,0,H
+,01/08/2026,Estudiantes de Río Cuarto,Banfield,0,0,D
+,01/08/2026,Gimnasia (Mendoza),Unión (Santa Fe),2,0,H
+,01/08/2026,Belgrano (Córdoba),Argentinos Juniors,0,1,A
+,01/08/2026,Estudiantes de La Plata,Defensa y Justicia,3,0,H
+,01/08/2026,Racing Club,Tigre,1,3,A
+,02/08/2026,Aldosivi,Gimnasia La Plata,1,2,A
+,02/08/2026,Deportivo Riestra,Barracas Central,0,1,A
+,02/08/2026,Newell's Old Boys,Boca Juniors,2,2,D
+,02/08/2026,River Plate,Rosario Central,0,1,A
+,03/08/2026,Lanús,Instituto (Córdoba),0,1,A
+,03/08/2026,Sarmiento (Junín),Independiente Rivadavia,2,1,H
+,03/08/2026,Platense,Talleres (Córdoba),0,4,A
+,03/08/2026,Vélez Sarsfield,Independiente,1,0,H
+,04/08/2026,Central Córdoba (Santiago del Estero),San Lorenzo,1,0,H
+,04/08/2026,Huracán,Atlético Tucumán,0,0,D
+,05/08/2026,Boca Juniors,Estudiantes de La Plata,1,0,H
+,06/08/2026,Tigre,Belgrano (Córdoba),0,0,D
+,06/08/2026,Unión (Santa Fe),Lanús,2,1,H
+,07/08/2026,Rosario Central,Aldosivi,2,1,H
+,08/08/2026,Independiente Rivadavia,Estudiantes de Río Cuarto,2,1,H
+,08/08/2026,Atlético Tucumán,Sarmiento (Junín),1,2,A
+,08/08/2026,Deportivo Riestra,Estudiantes de La Plata,2,0,H
+,08/08/2026,Tigre,River Plate,1,0,H
+,08/08/2026,Boca Juniors,Vélez Sarsfield,1,1,D
+,09/08/2026,Independiente,Platense,0,1,A
+,09/08/2026,Instituto (Córdoba),Gimnasia (Mendoza),1,0,H
+,09/08/2026,San Lorenzo,Huracán,0,2,A
+,09/08/2026,Defensa y Justicia,Newell's Old Boys,2,1,H
+,09/08/2026,Gimnasia La Plata,Barracas Central,2,0,H
+,09/08/2026,Argentinos Juniors,Racing Club,2,1,H
+,10/08/2026,Banfield,Belgrano (Córdoba),0,2,A
+,11/08/2026,Unión (Santa Fe),Central Córdoba (Santiago del Estero),1,2,A
+,12/08/2026,Talleres (Córdoba),Lanús,0,3,A
+,14/08/2026,Racing Club,Banfield,0,1,A
+,15/08/2026,Aldosivi,Tigre,0,0,D
+,15/08/2026,San Lorenzo,Unión (Santa Fe),1,0,H
+,15/08/2026,Estudiantes de La Plata,Gimnasia La Plata,4,0,H
+,15/08/2026,Belgrano (Córdoba),Independiente Rivadavia,2,0,H
+,15/08/2026,Newell's Old Boys,Deportivo Riestra,2,0,H
+,16/08/2026,Platense,Boca Juniors,1,1,D
+,16/08/2026,Sarmiento (Junín),Huracán,2,0,H
+,16/08/2026,River Plate,Argentinos Juniors,2,0,H
+,16/08/2026,Barracas Central,Rosario Central,0,1,A
+,16/08/2026,Central Córdoba (Santiago del Estero),Instituto (Córdoba),0,1,A
+,17/08/2026,Estudiantes de Río Cuarto,Atlético Tucumán,0,1,A
+,17/08/2026,Lanús,Independiente,1,3,A
+,17/08/2026,Vélez Sarsfield,Defensa y Justicia,1,1,D
+,18/08/2026,Gimnasia (Mendoza),Talleres (Córdoba),3,1,H
+,21/08/2026,Aldosivi,Unión (Santa Fe),1,3,A
+,21/08/2026,Estudiantes de Río Cuarto,San Lorenzo,0,0,D
+,22/08/2026,Atlético Tucumán,Instituto (Córdoba),0,0,D
+,22/08/2026,Gimnasia La Plata,Gimnasia (Mendoza),2,3,A
+,22/08/2026,Independiente,Independiente Rivadavia,0,0,D
+,23/08/2026,Huracán,Deportivo Riestra,0,0,D
+,23/08/2026,Newell's Old Boys,Banfield,2,1,H
+,23/08/2026,Barracas Central,Platense,1,2,A
+,23/08/2026,Sarmiento (Junín),Estudiantes de La Plata,2,0,H
+,23/08/2026,Belgrano (Córdoba),Defensa y Justicia,1,2,A
+,23/08/2026,River Plate,Vélez Sarsfield,2,2,D
+,24/08/2026,Racing Club,Boca Juniors,1,1,D
+,24/08/2026,Tigre,Central Córdoba (Santiago del Estero),2,1,H
+,25/08/2026,Lanús,Argentinos Juniors,1,1,D
+,25/08/2026,Talleres (Córdoba),Rosario Central,2,2,D
+,28/08/2026,Unión (Santa Fe),Sarmiento (Junín),4,1,H
+,29/08/2026,Boca Juniors,Lanús,1,0,H
+,29/08/2026,Deportivo Riestra,Vélez Sarsfield,1,1,D
+,29/08/2026,Rosario Central,Gimnasia La Plata,1,2,A
+,29/08/2026,Huracán,Estudiantes de Río Cuarto,1,1,D
+,30/08/2026,Atlético Tucumán,Belgrano (Córdoba),0,0,D
+,30/08/2026,Talleres (Córdoba),Central Córdoba (Santiago del Estero),0,0,D
+,30/08/2026,Banfield,River Plate,2,3,A
+,30/08/2026,Argentinos Juniors,Aldosivi,2,1,H
+,30/08/2026,Independiente,Gimnasia (Mendoza),0,3,A
+,31/08/2026,Independiente Rivadavia,Racing Club,3,1,H
+,31/08/2026,Defensa y Justicia,Platense,1,0,H
+,31/08/2026,Estudiantes de La Plata,Newell's Old Boys,0,0,D
+,01/09/2026,Instituto (Córdoba),San Lorenzo,1,0,H
+,01/09/2026,Tigre,Barracas Central,0,0,D
+,04/09/2026,Estudiantes de Río Cuarto,Sarmiento (Junín),0,2,A
+,04/09/2026,Belgrano (Córdoba),Huracán,1,1,D
+,04/09/2026,Platense,Deportivo Riestra,1,1,D
+,05/09/2026,Aldosivi,Banfield,3,1,H
+,05/09/2026,Gimnasia La Plata,Tigre,2,1,H
+,05/09/2026,Gimnasia (Mendoza),Boca Juniors,2,2,D
+,05/09/2026,San Lorenzo,Talleres (Córdoba),1,0,H
+,06/09/2026,Vélez Sarsfield,Estudiantes de La Plata,1,0,H
+,06/09/2026,Rosario Central,Newell's Old Boys,1,1,D
+,06/09/2026,Central Córdoba (Santiago del Estero),Independiente,0,1,A
+,06/09/2026,Lanús,Defensa y Justicia,1,0,H
+,06/09/2026,River Plate,Independiente Rivadavia,3,1,H
+,07/09/2026,Racing Club,Atlético Tucumán,1,2,A
+,07/09/2026,Barracas Central,Argentinos Juniors,0,0,D
+,08/09/2026,Unión (Santa Fe),Instituto (Córdoba),3,2,H
+,11/09/2026,Newell's Old Boys,Vélez Sarsfield,1,1,D
+,11/09/2026,Defensa y Justicia,Gimnasia (Mendoza),2,0,H
+,12/09/2026,Boca Juniors,Central Córdoba (Santiago del Estero),3,1,H
+,12/09/2026,Estudiantes de La Plata,Platense,2,1,H
+,12/09/2026,Independiente Rivadavia,Aldosivi,4,3,H
+,12/09/2026,Atlético Tucumán,River Plate,1,2,A
+,12/09/2026,Talleres (Córdoba),Unión (Santa Fe),2,1,H
+,13/09/2026,Sarmiento (Junín),Belgrano (Córdoba),1,1,D
+,13/09/2026,Tigre,Rosario Central,0,1,A
+,13/09/2026,Argentinos Juniors,Gimnasia La Plata,1,1,D
+,13/09/2026,Independiente,San Lorenzo,1,1,D
+,14/09/2026,Huracán,Racing Club,2,1,H
+,14/09/2026,Banfield,Barracas Central,1,1,D
+,14/09/2026,Deportivo Riestra,Lanús,0,3,A
+,15/09/2026,Instituto (Córdoba),Estudiantes de Río Cuarto,2,1,H
+,18/09/2026,Central Córdoba (Santiago del Estero),Defensa y Justicia,2,2,D
+,19/09/2026,Racing Club,Sarmiento (Junín),3,1,H
+,19/09/2026,Gimnasia (Mendoza),Deportivo Riestra,0,0,D
+,19/09/2026,Gimnasia La Plata,Banfield,2,2,D
+,19/09/2026,Unión (Santa Fe),Independiente,1,2,A
+,19/09/2026,River Plate,Huracán,1,2,A
+,20/09/2026,Instituto (Córdoba),Talleres (Córdoba),3,1,H
+,20/09/2026,San Lorenzo,Boca Juniors,0,2,A
+,20/09/2026,Platense,Newell's Old Boys,0,1,A
+,20/09/2026,Rosario Central,Argentinos Juniors,1,0,H
+,20/09/2026,Belgrano (Córdoba),Estudiantes de Río Cuarto,2,1,H
+,21/09/2026,Vélez Sarsfield,Tigre,3,2,H
+,21/09/2026,Aldosivi,Atlético Tucumán,1,0,H
+,21/09/2026,Barracas Central,Independiente Rivadavia,0,1,A
+,22/09/2026,Lanús,Estudiantes de La Plata,2,1,H
+,02/10/2026,Independiente,Instituto (Córdoba),1,4,A
+,03/10/2026,Boca Juniors,Unión (Santa Fe),3,0,H
+,03/10/2026,Independiente Rivadavia,Gimnasia La Plata,1,1,D
+,03/10/2026,Defensa y Justicia,San Lorenzo,3,0,H
+,03/10/2026,Atlético Tucumán,Barracas Central,2,3,A
+,03/10/2026,Newell's Old Boys,Lanús,0,0,D
+,04/10/2026,Huracán,Aldosivi,1,0,H
+,04/10/2026,Talleres (Córdoba),Belgrano (Córdoba),0,1,A
+,04/10/2026,Argentinos Juniors,Tigre,2,1,H
+,05/10/2026,Estudiantes de Río Cuarto,Racing Club,1,2,A
+,05/10/2026,Deportivo Riestra,Central Córdoba (Santiago del Estero),1,1,D
+,05/10/2026,Estudiantes de La Plata,Gimnasia (Mendoza),3,0,H
+,05/10/2026,Vélez Sarsfield,Platense,2,2,D
+,06/10/2026,Banfield,Rosario Central,1,1,D
+,09/10/2026,Aldosivi,Sarmiento (Junín),1,3,A
+,09/10/2026,Gimnasia La Plata,Atlético Tucumán,1,1,D
+,09/10/2026,Instituto (Córdoba),Boca Juniors,2,2,D
+,10/10/2026,Unión (Santa Fe),Defensa y Justicia,0,2,A
+,10/10/2026,Barracas Central,Huracán,2,0,H
+,10/10/2026,Central Córdoba (Santiago del Estero),Estudiantes de La Plata,2,2,D
+,10/10/2026,Tigre,Banfield,1,2,A
+,11/10/2026,River Plate,Estudiantes de Río Cuarto,1,0,H
+,11/10/2026,San Lorenzo,Deportivo Riestra,1,0,H
+,11/10/2026,Platense,Argentinos Juniors,1,1,D
+,11/10/2026,Rosario Central,Independiente Rivadavia,5,0,H
+,11/10/2026,Racing Club,Belgrano (Córdoba),0,2,A
+,12/10/2026,Talleres (Córdoba),Independiente,0,0,D
+,12/10/2026,Lanús,Vélez Sarsfield,2,0,H
+,12/10/2026,Gimnasia (Mendoza),Newell's Old Boys,1,0,H
+,14/10/2026,Sarmiento (Junín),River Plate,1,1,D
+,15/10/2026,Huracán,Gimnasia La Plata,1,2,A
+,16/10/2026,Defensa y Justicia,Instituto (Córdoba),0,1,A
+,17/10/2026,Boca Juniors,Talleres (Córdoba),2,1,H
+,17/10/2026,Banfield,Argentinos Juniors,0,1,A
+,17/10/2026,Independiente Rivadavia,Tigre,2,2,D
+,17/10/2026,Platense,Lanús,0,1,A
+,17/10/2026,Atlético Tucumán,Rosario Central,2,3,A
+,17/10/2026,Vélez Sarsfield,Gimnasia (Mendoza),1,0,H

@@ -1,0 +1,451 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,21/02/2026,St. Louis CITY SC,Charlotte FC,1,1,D
+,21/02/2026,FC Cincinnati,Atlanta United FC,2,0,H
+,22/02/2026,D.C. United,Philadelphia Union,1,0,H
+,22/02/2026,Orlando City SC,Red Bull New York,1,2,A
+,22/02/2026,Vancouver Whitecaps,Real Salt Lake,1,0,H
+,22/02/2026,Austin FC,Minnesota United FC,2,2,D
+,22/02/2026,FC Dallas,Toronto FC,3,2,H
+,22/02/2026,Houston Dynamo FC,Chicago Fire FC,2,1,H
+,22/02/2026,Nashville SC,New England Revolution,4,1,H
+,22/02/2026,LAFC,Inter Miami CF,3,0,H
+,22/02/2026,Portland Timbers,Columbus Crew,3,2,H
+,22/02/2026,San Diego FC,CF Montréal,5,0,H
+,22/02/2026,San Jose Earthquakes,Sporting Kansas City,3,0,H
+,23/02/2026,LA Galaxy,New York City FC,1,1,D
+,23/02/2026,Seattle Sounders FC,Colorado Rapids,2,0,H
+,28/02/2026,Chicago Fire FC,CF Montréal,3,0,H
+,28/02/2026,Red Bull New York,New England Revolution,1,0,H
+,28/02/2026,Colorado Rapids,Portland Timbers,2,0,H
+,28/02/2026,Minnesota United FC,FC Cincinnati,1,0,H
+,01/03/2026,Real Salt Lake,Seattle Sounders FC,2,1,H
+,01/03/2026,San Jose Earthquakes,Atlanta United FC,2,0,H
+,01/03/2026,FC Dallas,Nashville SC,0,0,D
+,01/03/2026,Houston Dynamo FC,LAFC,0,2,A
+,01/03/2026,Sporting Kansas City,Columbus Crew,2,2,D
+,01/03/2026,Vancouver Whitecaps,Toronto FC,3,0,H
+,01/03/2026,LA Galaxy,Charlotte FC,3,0,H
+,01/03/2026,Austin FC,D.C. United,1,0,H
+,01/03/2026,Philadelphia Union,New York City FC,1,2,A
+,02/03/2026,Orlando City SC,Inter Miami CF,2,4,A
+,02/03/2026,San Diego FC,St. Louis CITY SC,2,0,H
+,07/03/2026,New York City FC,Orlando City SC,5,0,H
+,07/03/2026,D.C. United,Inter Miami CF,1,2,A
+,08/03/2026,Atlanta United FC,Real Salt Lake,2,3,A
+,08/03/2026,Charlotte FC,Austin FC,3,1,H
+,08/03/2026,Columbus Crew,Chicago Fire FC,0,0,D
+,08/03/2026,Philadelphia Union,San Jose Earthquakes,0,1,A
+,08/03/2026,Nashville SC,Minnesota United FC,3,1,H
+,08/03/2026,Sporting Kansas City,San Diego FC,0,1,A
+,08/03/2026,St. Louis CITY SC,Seattle Sounders FC,0,1,A
+,08/03/2026,Colorado Rapids,LA Galaxy,4,1,H
+,08/03/2026,LAFC,FC Dallas,1,0,H
+,08/03/2026,Portland Timbers,Vancouver Whitecaps,1,4,A
+,08/03/2026,Red Bull New York,CF Montréal,0,3,A
+,08/03/2026,FC Cincinnati,Toronto FC,0,1,A
+,14/03/2026,Toronto FC,Red Bull New York,1,1,D
+,14/03/2026,Atlanta United FC,Philadelphia Union,3,1,H
+,14/03/2026,Columbus Crew,Nashville SC,0,1,A
+,14/03/2026,Charlotte FC,Inter Miami CF,0,0,D
+,14/03/2026,New York City FC,Colorado Rapids,3,1,H
+,14/03/2026,Orlando City SC,CF Montréal,2,1,H
+,15/03/2026,Chicago Fire FC,D.C. United,1,2,A
+,15/03/2026,FC Dallas,San Diego FC,3,3,D
+,15/03/2026,Houston Dynamo FC,Portland Timbers,3,2,H
+,15/03/2026,LA Galaxy,Sporting Kansas City,1,2,A
+,15/03/2026,Real Salt Lake,Austin FC,2,1,H
+,15/03/2026,LAFC,St. Louis CITY SC,2,0,H
+,15/03/2026,New England Revolution,FC Cincinnati,6,1,H
+,15/03/2026,Vancouver Whitecaps,Minnesota United FC,6,0,H
+,15/03/2026,San Jose Earthquakes,Seattle Sounders FC,0,1,A
+,21/03/2026,Toronto FC,Columbus Crew,2,1,H
+,21/03/2026,Philadelphia Union,Chicago Fire FC,1,2,A
+,21/03/2026,Nashville SC,Orlando City SC,5,0,H
+,21/03/2026,Atlanta United FC,D.C. United,0,0,D
+,21/03/2026,Charlotte FC,Red Bull New York,6,1,H
+,22/03/2026,FC Dallas,Houston Dynamo FC,4,3,H
+,22/03/2026,Sporting Kansas City,Colorado Rapids,1,4,A
+,22/03/2026,St. Louis CITY SC,New England Revolution,3,1,H
+,22/03/2026,Austin FC,LAFC,0,0,D
+,22/03/2026,Vancouver Whitecaps,San Jose Earthquakes,0,1,A
+,22/03/2026,FC Cincinnati,CF Montréal,4,3,H
+,22/03/2026,New York City FC,Inter Miami CF,2,3,A
+,22/03/2026,Minnesota United FC,Seattle Sounders FC,0,0,D
+,22/03/2026,Portland Timbers,LA Galaxy,1,1,D
+,22/03/2026,San Diego FC,Real Salt Lake,2,2,D
+,04/04/2026,Toronto FC,Colorado Rapids,3,2,H
+,04/04/2026,New England Revolution,CF Montréal,3,0,H
+,04/04/2026,Real Salt Lake,Sporting Kansas City,3,1,H
+,04/04/2026,Atlanta United FC,Columbus Crew,1,3,A
+,04/04/2026,Charlotte FC,Philadelphia Union,2,1,H
+,04/04/2026,D.C. United,FC Dallas,0,4,A
+,04/04/2026,Inter Miami CF,Austin FC,2,2,D
+,04/04/2026,New York City FC,St. Louis CITY SC,1,1,D
+,04/04/2026,Red Bull New York,FC Cincinnati,4,2,H
+,05/04/2026,Chicago Fire FC,Nashville SC,1,0,H
+,05/04/2026,Houston Dynamo FC,Seattle Sounders FC,0,1,A
+,05/04/2026,LAFC,Orlando City SC,6,0,H
+,05/04/2026,LA Galaxy,Minnesota United FC,1,2,A
+,05/04/2026,San Jose Earthquakes,San Diego FC,3,0,H
+,05/04/2026,Vancouver Whitecaps,Portland Timbers,3,2,H
+,11/04/2026,Toronto FC,FC Cincinnati,1,1,D
+,11/04/2026,Austin FC,LA Galaxy,1,2,A
+,11/04/2026,CF Montréal,Philadelphia Union,1,2,A
+,11/04/2026,Portland Timbers,LAFC,2,1,H
+,11/04/2026,Charlotte FC,Nashville SC,1,2,A
+,11/04/2026,Inter Miami CF,Red Bull New York,2,2,D
+,11/04/2026,New England Revolution,D.C. United,1,0,H
+,11/04/2026,Vancouver Whitecaps,New York City FC,2,0,H
+,12/04/2026,Chicago Fire FC,Atlanta United FC,1,0,H
+,12/04/2026,FC Dallas,St. Louis CITY SC,1,1,D
+,12/04/2026,Sporting Kansas City,San Jose Earthquakes,1,3,A
+,12/04/2026,Colorado Rapids,Houston Dynamo FC,6,2,H
+,12/04/2026,San Diego FC,Minnesota United FC,1,2,A
+,12/04/2026,Columbus Crew,Orlando City SC,1,1,D
+,18/04/2026,Vancouver Whitecaps,Sporting Kansas City,3,0,H
+,18/04/2026,Toronto FC,Austin FC,3,3,D
+,18/04/2026,CF Montréal,Red Bull New York,4,1,H
+,18/04/2026,Colorado Rapids,Inter Miami CF,2,3,A
+,18/04/2026,Atlanta United FC,Nashville SC,0,2,A
+,18/04/2026,FC Cincinnati,Chicago Fire FC,3,3,D
+,18/04/2026,New England Revolution,Columbus Crew,2,1,H
+,18/04/2026,New York City FC,Charlotte FC,1,2,A
+,18/04/2026,Orlando City SC,Houston Dynamo FC,0,1,A
+,18/04/2026,Philadelphia Union,D.C. United,0,0,D
+,19/04/2026,FC Dallas,LA Galaxy,2,2,D
+,19/04/2026,Minnesota United FC,Portland Timbers,2,0,H
+,19/04/2026,Real Salt Lake,San Diego FC,4,2,H
+,19/04/2026,Seattle Sounders FC,St. Louis CITY SC,4,1,H
+,19/04/2026,LAFC,San Jose Earthquakes,1,4,A
+,22/04/2026,New York City FC,FC Cincinnati,4,4,D
+,22/04/2026,Orlando City SC,Charlotte FC,4,1,H
+,22/04/2026,Red Bull New York,D.C. United,4,4,D
+,22/04/2026,Toronto FC,Philadelphia Union,3,3,D
+,22/04/2026,Atlanta United FC,New England Revolution,1,2,A
+,23/04/2026,FC Dallas,Minnesota United FC,0,1,A
+,23/04/2026,Houston Dynamo FC,San Diego FC,1,0,H
+,23/04/2026,Real Salt Lake,Inter Miami CF,0,2,A
+,23/04/2026,Columbus Crew,LA Galaxy,2,1,H
+,23/04/2026,LAFC,Colorado Rapids,0,0,D
+,23/04/2026,San Jose Earthquakes,Austin FC,5,1,H
+,25/04/2026,Toronto FC,Atlanta United FC,1,2,A
+,25/04/2026,CF Montréal,New York City FC,1,0,H
+,25/04/2026,Minnesota United FC,LAFC,0,1,A
+,25/04/2026,Columbus Crew,Philadelphia Union,2,0,H
+,25/04/2026,D.C. United,Orlando City SC,3,2,H
+,25/04/2026,FC Cincinnati,Red Bull New York,2,0,H
+,25/04/2026,Inter Miami CF,New England Revolution,1,1,D
+,26/04/2026,Austin FC,Houston Dynamo FC,2,0,H
+,26/04/2026,Chicago Fire FC,Sporting Kansas City,5,0,H
+,26/04/2026,Nashville SC,Charlotte FC,4,2,H
+,26/04/2026,St. Louis CITY SC,San Jose Earthquakes,2,3,A
+,26/04/2026,San Diego FC,Portland Timbers,1,2,A
+,26/04/2026,Seattle Sounders FC,FC Dallas,2,1,H
+,26/04/2026,Vancouver Whitecaps,Colorado Rapids,3,1,H
+,26/04/2026,LA Galaxy,Real Salt Lake,2,1,H
+,02/05/2026,Toronto FC,San Jose Earthquakes,1,1,D
+,02/05/2026,Sporting Kansas City,Seattle Sounders FC,1,1,D
+,02/05/2026,Real Salt Lake,Portland Timbers,2,0,H
+,02/05/2026,Inter Miami CF,Orlando City SC,3,4,A
+,02/05/2026,Atlanta United FC,CF Montréal,3,1,H
+,02/05/2026,Columbus Crew,Minnesota United FC,2,3,A
+,02/05/2026,New England Revolution,Charlotte FC,1,0,H
+,02/05/2026,Philadelphia Union,Nashville SC,0,0,D
+,02/05/2026,Red Bull New York,FC Dallas,0,2,A
+,03/05/2026,Chicago Fire FC,FC Cincinnati,2,3,A
+,03/05/2026,Houston Dynamo FC,Colorado Rapids,1,0,H
+,03/05/2026,San Diego FC,LAFC,2,2,D
+,03/05/2026,LA Galaxy,Vancouver Whitecaps,1,1,D
+,03/05/2026,New York City FC,D.C. United,0,2,A
+,03/05/2026,Austin FC,St. Louis CITY SC,2,0,H
+,09/05/2026,Toronto FC,Inter Miami CF,2,4,A
+,09/05/2026,Chicago Fire FC,Red Bull New York,1,3,A
+,09/05/2026,CF Montréal,Orlando City SC,2,0,H
+,09/05/2026,Atlanta United FC,LA Galaxy,1,2,A
+,09/05/2026,Charlotte FC,FC Cincinnati,2,2,D
+,09/05/2026,New England Revolution,Philadelphia Union,2,1,H
+,10/05/2026,FC Dallas,Real Salt Lake,3,1,H
+,10/05/2026,Nashville SC,D.C. United,2,2,D
+,10/05/2026,Colorado Rapids,St. Louis CITY SC,0,1,A
+,10/05/2026,Portland Timbers,Sporting Kansas City,6,0,H
+,10/05/2026,San Jose Earthquakes,Vancouver Whitecaps,1,1,D
+,10/05/2026,Seattle Sounders FC,San Diego FC,1,1,D
+,10/05/2026,New York City FC,Columbus Crew,3,0,H
+,10/05/2026,Minnesota United FC,Austin FC,2,2,D
+,11/05/2026,LAFC,Houston Dynamo FC,1,4,A
+,13/05/2026,Charlotte FC,New York City FC,0,1,A
+,13/05/2026,CF Montréal,Portland Timbers,2,2,D
+,13/05/2026,D.C. United,Chicago Fire FC,1,3,A
+,13/05/2026,FC Cincinnati,Inter Miami CF,3,5,A
+,13/05/2026,New England Revolution,Nashville SC,0,3,A
+,13/05/2026,Orlando City SC,Philadelphia Union,4,3,H
+,13/05/2026,Red Bull New York,Columbus Crew,3,2,H
+,14/05/2026,FC Dallas,Vancouver Whitecaps,2,3,A
+,14/05/2026,Minnesota United FC,Colorado Rapids,0,1,A
+,14/05/2026,Sporting Kansas City,LA Galaxy,3,1,H
+,14/05/2026,St. Louis CITY SC,LAFC,2,1,H
+,14/05/2026,Real Salt Lake,Houston Dynamo FC,3,0,H
+,14/05/2026,San Diego FC,Austin FC,5,0,H
+,14/05/2026,Seattle Sounders FC,San Jose Earthquakes,3,2,H
+,16/05/2026,CF Montréal,Chicago Fire FC,0,2,A
+,16/05/2026,Charlotte FC,Toronto FC,3,1,H
+,16/05/2026,D.C. United,St. Louis CITY SC,1,1,D
+,16/05/2026,New England Revolution,Minnesota United FC,2,1,H
+,16/05/2026,Orlando City SC,Atlanta United FC,1,1,D
+,16/05/2026,Philadelphia Union,Columbus Crew,1,1,D
+,16/05/2026,Red Bull New York,New York City FC,1,1,D
+,17/05/2026,Austin FC,Sporting Kansas City,1,2,A
+,17/05/2026,Houston Dynamo FC,Vancouver Whitecaps,1,0,H
+,17/05/2026,Seattle Sounders FC,LA Galaxy,0,2,A
+,17/05/2026,Real Salt Lake,Colorado Rapids,2,1,H
+,17/05/2026,San Diego FC,FC Cincinnati,3,3,D
+,17/05/2026,San Jose Earthquakes,FC Dallas,2,3,A
+,17/05/2026,Inter Miami CF,Portland Timbers,2,0,H
+,18/05/2026,Nashville SC,LAFC,3,2,H
+,23/05/2026,St. Louis CITY SC,Austin FC,3,0,H
+,23/05/2026,Minnesota United FC,Real Salt Lake,1,1,D
+,23/05/2026,Charlotte FC,New England Revolution,1,0,H
+,23/05/2026,D.C. United,CF Montréal,4,4,D
+,23/05/2026,FC Cincinnati,Orlando City SC,6,2,H
+,24/05/2026,Chicago Fire FC,Toronto FC,2,1,H
+,24/05/2026,Nashville SC,New York City FC,2,1,H
+,24/05/2026,Sporting Kansas City,Red Bull New York,1,2,A
+,24/05/2026,Colorado Rapids,FC Dallas,1,2,A
+,24/05/2026,Portland Timbers,San Jose Earthquakes,1,3,A
+,24/05/2026,San Diego FC,Vancouver Whitecaps,2,4,A
+,24/05/2026,LA Galaxy,Houston Dynamo FC,1,1,D
+,24/05/2026,Columbus Crew,Atlanta United FC,2,0,H
+,24/05/2026,Inter Miami CF,Philadelphia Union,6,4,H
+,25/05/2026,LAFC,Seattle Sounders FC,1,0,H
+,16/07/2026,CF Montréal,Toronto FC,0,0,D
+,17/07/2026,St. Louis CITY SC,Sporting Kansas City,3,2,H
+,17/07/2026,Seattle Sounders FC,Portland Timbers,1,5,A
+,18/07/2026,Nashville SC,Atlanta United FC,1,0,H
+,18/07/2026,LA Galaxy,LAFC,0,3,A
+,22/07/2026,Columbus Crew,New York City FC,1,2,A
+,22/07/2026,FC Cincinnati,Vancouver Whitecaps,4,3,H
+,22/07/2026,Inter Miami CF,Chicago Fire FC,3,2,H
+,22/07/2026,New England Revolution,Toronto FC,0,0,D
+,22/07/2026,Philadelphia Union,Red Bull New York,3,1,H
+,23/07/2026,Charlotte FC,Atlanta United FC,2,2,D
+,23/07/2026,Houston Dynamo FC,D.C. United,1,1,D
+,23/07/2026,Nashville SC,CF Montréal,1,0,H
+,23/07/2026,Sporting Kansas City,Minnesota United FC,2,1,H
+,23/07/2026,Austin FC,Seattle Sounders FC,3,1,H
+,23/07/2026,Colorado Rapids,San Diego FC,1,0,H
+,23/07/2026,LA Galaxy,St. Louis CITY SC,1,3,A
+,23/07/2026,LAFC,Real Salt Lake,3,1,H
+,23/07/2026,Portland Timbers,FC Dallas,2,2,D
+,23/07/2026,San Jose Earthquakes,Orlando City SC,0,4,A
+,25/07/2026,Red Bull New York,Charlotte FC,0,2,A
+,25/07/2026,Columbus Crew,FC Cincinnati,2,1,H
+,25/07/2026,CF Montréal,Inter Miami CF,0,1,A
+,25/07/2026,D.C. United,Toronto FC,2,1,H
+,25/07/2026,New England Revolution,Atlanta United FC,4,1,H
+,25/07/2026,New York City FC,Chicago Fire FC,3,1,H
+,25/07/2026,Philadelphia Union,Seattle Sounders FC,1,0,H
+,26/07/2026,Houston Dynamo FC,Austin FC,3,0,H
+,26/07/2026,Minnesota United FC,Vancouver Whitecaps,0,0,D
+,26/07/2026,St. Louis CITY SC,Colorado Rapids,1,0,H
+,26/07/2026,Orlando City SC,Nashville SC,1,0,H
+,26/07/2026,San Diego FC,FC Dallas,1,0,H
+,26/07/2026,LAFC,Sporting Kansas City,4,0,H
+,26/07/2026,Portland Timbers,Real Salt Lake,2,1,H
+,26/07/2026,San Jose Earthquakes,LA Galaxy,1,1,D
+,30/07/2026,MLS All-Stars,Liga MX All-Stars,4,3,H
+,31/07/2026,New York City FC,Toronto FC,1,1,D
+,01/08/2026,CF Montréal,New England Revolution,2,2,D
+,01/08/2026,D.C. United,Nashville SC,2,2,D
+,01/08/2026,Philadelphia Union,Atlanta United FC,3,2,H
+,01/08/2026,Red Bull New York,Orlando City SC,3,2,H
+,01/08/2026,Vancouver Whitecaps,LAFC,1,1,D
+,02/08/2026,Inter Miami CF,Columbus Crew,2,2,D
+,02/08/2026,Chicago Fire FC,Charlotte FC,2,1,H
+,02/08/2026,Minnesota United FC,San Diego FC,1,1,D
+,02/08/2026,Sporting Kansas City,Houston Dynamo FC,0,2,A
+,02/08/2026,St. Louis CITY SC,Real Salt Lake,1,1,D
+,02/08/2026,Colorado Rapids,Austin FC,1,0,H
+,02/08/2026,FC Cincinnati,San Jose Earthquakes,4,2,H
+,02/08/2026,LA Galaxy,FC Dallas,0,0,D
+,02/08/2026,Portland Timbers,Seattle Sounders FC,2,1,H
+,08/08/2026,New England Revolution,Houston Dynamo FC,0,2,A
+,15/08/2026,Atlanta United FC,Red Bull New York,2,1,H
+,15/08/2026,CF Montréal,D.C. United,1,1,D
+,15/08/2026,Charlotte FC,Columbus Crew,3,1,H
+,15/08/2026,Orlando City SC,FC Cincinnati,1,1,D
+,15/08/2026,Toronto FC,New England Revolution,2,1,H
+,16/08/2026,Houston Dynamo FC,LA Galaxy,1,0,H
+,16/08/2026,Nashville SC,Inter Miami CF,4,1,H
+,16/08/2026,Colorado Rapids,Sporting Kansas City,2,0,H
+,16/08/2026,Real Salt Lake,Minnesota United FC,1,1,D
+,16/08/2026,LAFC,San Diego FC,0,1,A
+,16/08/2026,San Jose Earthquakes,St. Louis CITY SC,1,3,A
+,16/08/2026,Chicago Fire FC,Portland Timbers,2,1,H
+,16/08/2026,New York City FC,Philadelphia Union,2,3,A
+,17/08/2026,Austin FC,FC Dallas,1,2,A
+,17/08/2026,Seattle Sounders FC,Vancouver Whitecaps,0,2,A
+,19/08/2026,Columbus Crew,CF Montréal,1,2,A
+,19/08/2026,D.C. United,New England Revolution,0,3,A
+,19/08/2026,FC Cincinnati,New York City FC,2,1,H
+,19/08/2026,Orlando City SC,Chicago Fire FC,1,2,A
+,19/08/2026,Philadelphia Union,Inter Miami CF,2,2,D
+,19/08/2026,Red Bull New York,Nashville SC,0,1,A
+,19/08/2026,Toronto FC,Charlotte FC,3,3,D
+,20/08/2026,Sporting Kansas City,St. Louis CITY SC,1,1,D
+,20/08/2026,Minnesota United FC,Atlanta United FC,1,2,A
+,20/08/2026,Colorado Rapids,LAFC,1,0,H
+,20/08/2026,Real Salt Lake,FC Dallas,3,4,A
+,20/08/2026,Seattle Sounders FC,Austin FC,1,2,A
+,20/08/2026,LA Galaxy,San Jose Earthquakes,1,0,H
+,20/08/2026,Portland Timbers,San Diego FC,3,1,H
+,20/08/2026,Vancouver Whitecaps,Houston Dynamo FC,0,1,A
+,22/08/2026,CF Montréal,LA Galaxy,2,2,D
+,22/08/2026,Charlotte FC,D.C. United,3,1,H
+,22/08/2026,FC Cincinnati,Seattle Sounders FC,1,1,D
+,22/08/2026,Inter Miami CF,Toronto FC,1,2,A
+,22/08/2026,Orlando City SC,Real Salt Lake,2,1,H
+,22/08/2026,Red Bull New York,Chicago Fire FC,1,1,D
+,23/08/2026,Nashville SC,Columbus Crew,3,2,H
+,23/08/2026,St. Louis CITY SC,Houston Dynamo FC,2,1,H
+,23/08/2026,Austin FC,Philadelphia Union,1,1,D
+,23/08/2026,Vancouver Whitecaps,FC Dallas,5,0,H
+,23/08/2026,LAFC,Portland Timbers,1,1,D
+,23/08/2026,San Diego FC,Colorado Rapids,3,0,H
+,23/08/2026,San Jose Earthquakes,Minnesota United FC,1,5,A
+,23/08/2026,New England Revolution,New York City FC,1,1,D
+,23/08/2026,Atlanta United FC,Sporting Kansas City,2,1,H
+,29/08/2026,Seattle Sounders FC,Chicago Fire FC,2,2,D
+,29/08/2026,Atlanta United FC,Charlotte FC,0,2,A
+,29/08/2026,D.C. United,LAFC,0,0,D
+,29/08/2026,Inter Miami CF,CF Montréal,7,1,H
+,29/08/2026,Red Bull New York,Philadelphia Union,1,3,A
+,29/08/2026,Toronto FC,New York City FC,1,1,D
+,30/08/2026,Houston Dynamo FC,San Jose Earthquakes,0,0,D
+,30/08/2026,Minnesota United FC,Orlando City SC,3,3,D
+,30/08/2026,Nashville SC,FC Cincinnati,4,0,H
+,30/08/2026,Sporting Kansas City,Vancouver Whitecaps,0,3,A
+,30/08/2026,Colorado Rapids,Real Salt Lake,1,0,H
+,30/08/2026,Portland Timbers,Austin FC,1,2,A
+,30/08/2026,San Diego FC,LA Galaxy,3,1,H
+,30/08/2026,Columbus Crew,New England Revolution,1,3,A
+,30/08/2026,St. Louis CITY SC,FC Dallas,3,3,D
+,04/09/2026,New York City FC,Nashville SC,0,0,D
+,05/09/2026,Charlotte FC,Houston Dynamo FC,0,0,D
+,05/09/2026,Columbus Crew,Colorado Rapids,3,0,H
+,05/09/2026,Orlando City SC,San Diego FC,1,0,H
+,05/09/2026,Philadelphia Union,CF Montréal,2,0,H
+,05/09/2026,Toronto FC,Chicago Fire FC,4,4,D
+,06/09/2026,Austin FC,San Jose Earthquakes,1,1,D
+,06/09/2026,FC Dallas,Sporting Kansas City,4,3,H
+,06/09/2026,Seattle Sounders FC,Red Bull New York,0,0,D
+,06/09/2026,Inter Miami CF,Atlanta United FC,2,2,D
+,06/09/2026,LA Galaxy,New England Revolution,2,1,H
+,06/09/2026,Real Salt Lake,LAFC,2,2,D
+,06/09/2026,Portland Timbers,Minnesota United FC,5,4,H
+,06/09/2026,Vancouver Whitecaps,St. Louis CITY SC,1,3,A
+,09/09/2026,Atlanta United FC,Orlando City SC,2,3,A
+,09/09/2026,CF Montréal,Charlotte FC,1,2,A
+,09/09/2026,D.C. United,Columbus Crew,2,1,H
+,09/09/2026,Toronto FC,Nashville SC,2,1,H
+,09/09/2026,Philadelphia Union,FC Cincinnati,5,0,H
+,10/09/2026,New York City FC,New England Revolution,1,2,A
+,10/09/2026,Austin FC,Colorado Rapids,1,1,D
+,10/09/2026,Chicago Fire FC,Inter Miami CF,1,1,D
+,10/09/2026,Houston Dynamo FC,Real Salt Lake,2,1,H
+,10/09/2026,Minnesota United FC,FC Dallas,1,2,A
+,10/09/2026,LAFC,Red Bull New York,2,0,H
+,10/09/2026,Portland Timbers,St. Louis CITY SC,2,2,D
+,10/09/2026,San Diego FC,San Jose Earthquakes,2,3,A
+,10/09/2026,Vancouver Whitecaps,LA Galaxy,3,0,H
+,12/09/2026,Columbus Crew,Red Bull New York,0,1,A
+,12/09/2026,D.C. United,Atlanta United FC,0,0,D
+,12/09/2026,FC Cincinnati,Charlotte FC,3,3,D
+,12/09/2026,Inter Miami CF,Nashville SC,2,2,D
+,12/09/2026,Orlando City SC,Toronto FC,3,0,H
+,13/09/2026,FC Dallas,Portland Timbers,2,1,H
+,13/09/2026,Sporting Kansas City,LAFC,3,1,H
+,13/09/2026,St. Louis CITY SC,Minnesota United FC,4,2,H
+,13/09/2026,Colorado Rapids,CF Montréal,1,0,H
+,13/09/2026,Real Salt Lake,New York City FC,0,2,A
+,13/09/2026,LA Galaxy,Seattle Sounders FC,1,1,D
+,13/09/2026,San Jose Earthquakes,Houston Dynamo FC,1,0,H
+,13/09/2026,Chicago Fire FC,New England Revolution,1,2,A
+,13/09/2026,Vancouver Whitecaps,Austin FC,1,2,A
+,14/09/2026,San Diego FC,Philadelphia Union,0,5,A
+,18/09/2026,New York City FC,Red Bull New York,0,1,A
+,19/09/2026,CF Montréal,Columbus Crew,0,2,A
+,19/09/2026,D.C. United,Charlotte FC,1,2,A
+,19/09/2026,New England Revolution,Orlando City SC,4,2,H
+,19/09/2026,San Jose Earthquakes,LAFC,2,2,D
+,20/09/2026,FC Dallas,Austin FC,0,0,D
+,20/09/2026,Houston Dynamo FC,FC Cincinnati,2,2,D
+,20/09/2026,Minnesota United FC,LA Galaxy,2,3,A
+,20/09/2026,Sporting Kansas City,Philadelphia Union,3,4,A
+,20/09/2026,St. Louis CITY SC,Toronto FC,3,1,H
+,20/09/2026,Colorado Rapids,Seattle Sounders FC,3,3,D
+,20/09/2026,Nashville SC,Chicago Fire FC,3,0,H
+,20/09/2026,Real Salt Lake,Vancouver Whitecaps,0,3,A
+,20/09/2026,Portland Timbers,Atlanta United FC,0,1,A
+,20/09/2026,Inter Miami CF,San Diego FC,2,2,D
+,24/09/2026,Seattle Sounders FC,Real Salt Lake,2,0,H
+,26/09/2026,Atlanta United FC,New York City FC,2,2,D
+,26/09/2026,CF Montréal,FC Cincinnati,3,1,H
+,26/09/2026,Charlotte FC,Chicago Fire FC,0,1,A
+,26/09/2026,Philadelphia Union,Orlando City SC,4,2,H
+,27/09/2026,Austin FC,San Diego FC,3,3,D
+,27/09/2026,FC Dallas,LAFC,1,0,H
+,27/09/2026,Houston Dynamo FC,Sporting Kansas City,0,2,A
+,27/09/2026,Nashville SC,Toronto FC,2,0,H
+,27/09/2026,Seattle Sounders FC,Minnesota United FC,3,1,H
+,27/09/2026,Real Salt Lake,New England Revolution,3,0,H
+,27/09/2026,LA Galaxy,Colorado Rapids,3,2,H
+,27/09/2026,San Jose Earthquakes,Portland Timbers,3,1,H
+,27/09/2026,Vancouver Whitecaps,D.C. United,3,3,D
+,27/09/2026,Columbus Crew,Inter Miami CF,2,1,H
+,30/09/2026,Red Bull New York,St. Louis CITY SC,0,3,A
+,02/10/2026,Seattle Sounders FC,Sporting Kansas City,2,1,H
+,07/10/2026,Chicago Fire FC,Vancouver Whitecaps,3,1,H
+,10/10/2026,Toronto FC,CF Montréal,2,1,H
+,10/10/2026,Chicago Fire FC,New York City FC,2,1,H
+,10/10/2026,Atlanta United FC,FC Cincinnati,1,3,A
+,10/10/2026,Charlotte FC,FC Dallas,3,2,H
+,10/10/2026,Inter Miami CF,D.C. United,4,0,H
+,10/10/2026,New England Revolution,Seattle Sounders FC,0,3,A
+,10/10/2026,Orlando City SC,Columbus Crew,3,2,H
+,10/10/2026,Philadelphia Union,Real Salt Lake,2,1,H
+,10/10/2026,Red Bull New York,San Diego FC,4,1,H
+,11/10/2026,Austin FC,Nashville SC,1,4,A
+,11/10/2026,Minnesota United FC,Houston Dynamo FC,2,2,D
+,11/10/2026,Sporting Kansas City,Portland Timbers,3,3,D
+,11/10/2026,Colorado Rapids,San Jose Earthquakes,1,1,D
+,11/10/2026,LAFC,Vancouver Whitecaps,1,1,D
+,11/10/2026,St. Louis CITY SC,LA Galaxy,6,2,H
+,14/10/2026,CF Montréal,Atlanta United FC,0,3,A
+,14/10/2026,Columbus Crew,Charlotte FC,3,1,H
+,14/10/2026,D.C. United,Red Bull New York,2,1,H
+,14/10/2026,FC Cincinnati,New England Revolution,2,3,A
+,14/10/2026,Inter Miami CF,New York City FC,2,0,H
+,14/10/2026,Toronto FC,Orlando City SC,3,3,D
+,15/10/2026,Chicago Fire FC,Philadelphia Union,1,3,A
+,15/10/2026,FC Dallas,Seattle Sounders FC,1,0,H
+,15/10/2026,Nashville SC,Sporting Kansas City,4,0,H
+,15/10/2026,St. Louis CITY SC,Vancouver Whitecaps,0,0,D
+,15/10/2026,Colorado Rapids,Minnesota United FC,2,2,D
+,15/10/2026,Real Salt Lake,San Jose Earthquakes,1,1,D
+,15/10/2026,LA Galaxy,Portland Timbers,2,0,H
+,15/10/2026,LAFC,Austin FC,3,1,H
+,15/10/2026,San Diego FC,Houston Dynamo FC,3,3,D
+,17/10/2026,Philadelphia Union,Charlotte FC,2,2,D
+,17/10/2026,Minnesota United FC,St. Louis CITY SC,3,2,H
+,17/10/2026,Atlanta United FC,Inter Miami CF,1,3,A
+,17/10/2026,New England Revolution,Chicago Fire FC,1,0,H
+,17/10/2026,New York City FC,LAFC,1,1,D
+,17/10/2026,Orlando City SC,D.C. United,4,1,H
+,17/10/2026,Red Bull New York,Toronto FC,0,2,A
+,18/10/2026,Austin FC,Vancouver Whitecaps,1,2,A
+,18/10/2026,Houston Dynamo FC,FC Dallas,2,2,D
+,18/10/2026,Sporting Kansas City,Real Salt Lake,1,3,A
+,18/10/2026,LA Galaxy,San Diego FC,2,2,D
+,18/10/2026,Portland Timbers,Colorado Rapids,0,0,D
+,18/10/2026,San Jose Earthquakes,Nashville SC,1,1,D
+,18/10/2026,Seattle Sounders FC,CF Montréal,1,1,D

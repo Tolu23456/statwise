@@ -1,0 +1,147 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,06/02/2026,RB Salzburg,Austria Vienna,0,2,A
+,07/02/2026,LASK Linz,WSG Swarovski Tirol,1,0,H
+,07/02/2026,Rapid Vienna,TSV Hartberg,1,1,D
+,08/02/2026,SC Rheindorf Altach,FC Blau-Weiß Linz,1,0,H
+,08/02/2026,Wolfsberger,Grazer AK,2,2,D
+,08/02/2026,SK Sturm Graz,SV Josko Ried,1,0,H
+,14/02/2026,SV Josko Ried,LASK Linz,1,1,D
+,14/02/2026,TSV Hartberg,SC Rheindorf Altach,0,0,D
+,14/02/2026,WSG Swarovski Tirol,SK Sturm Graz,1,0,H
+,15/02/2026,FC Blau-Weiß Linz,Wolfsberger,2,1,H
+,15/02/2026,Grazer AK,RB Salzburg,1,1,D
+,15/02/2026,Austria Vienna,Rapid Vienna,2,0,H
+,21/02/2026,Rapid Vienna,Wolfsberger,2,0,H
+,21/02/2026,SC Rheindorf Altach,Austria Vienna,2,1,H
+,21/02/2026,TSV Hartberg,Grazer AK,1,0,H
+,22/02/2026,SK Sturm Graz,FC Blau-Weiß Linz,1,0,H
+,22/02/2026,WSG Swarovski Tirol,SV Josko Ried,1,1,D
+,22/02/2026,LASK Linz,RB Salzburg,1,5,A
+,01/03/2026,Austria Vienna,LASK Linz,2,2,D
+,01/03/2026,FC Blau-Weiß Linz,WSG Swarovski Tirol,2,3,A
+,01/03/2026,Grazer AK,SV Josko Ried,2,1,H
+,01/03/2026,RB Salzburg,TSV Hartberg,0,0,D
+,01/03/2026,SC Rheindorf Altach,Rapid Vienna,1,1,D
+,01/03/2026,Wolfsberger,SK Sturm Graz,2,2,D
+,08/03/2026,LASK Linz,Wolfsberger,3,1,H
+,08/03/2026,Rapid Vienna,RB Salzburg,1,0,H
+,08/03/2026,SK Sturm Graz,SC Rheindorf Altach,2,0,H
+,08/03/2026,SV Josko Ried,Austria Vienna,0,2,A
+,08/03/2026,TSV Hartberg,FC Blau-Weiß Linz,1,1,D
+,08/03/2026,WSG Swarovski Tirol,Grazer AK,2,0,H
+,13/03/2026,LASK Linz,TSV Hartberg,0,0,D
+,14/03/2026,Grazer AK,Wolfsberger,2,0,H
+,14/03/2026,SC Rheindorf Altach,FC Blau-Weiß Linz,3,1,H
+,14/03/2026,SV Josko Ried,WSG Swarovski Tirol,2,1,H
+,15/03/2026,RB Salzburg,Rapid Vienna,0,1,A
+,15/03/2026,Austria Vienna,SK Sturm Graz,2,5,A
+,20/03/2026,SK Sturm Graz,RB Salzburg,1,1,D
+,21/03/2026,FC Blau-Weiß Linz,SV Josko Ried,3,2,H
+,21/03/2026,Wolfsberger,SC Rheindorf Altach,1,1,D
+,21/03/2026,WSG Swarovski Tirol,Grazer AK,1,5,A
+,22/03/2026,TSV Hartberg,Austria Vienna,0,1,A
+,22/03/2026,Rapid Vienna,LASK Linz,4,2,H
+,03/04/2026,SV Josko Ried,SC Rheindorf Altach,3,2,H
+,04/04/2026,Grazer AK,FC Blau-Weiß Linz,2,1,H
+,04/04/2026,WSG Swarovski Tirol,Wolfsberger,3,1,H
+,05/04/2026,LASK Linz,Austria Vienna,4,1,H
+,05/04/2026,TSV Hartberg,RB Salzburg,1,2,A
+,05/04/2026,Rapid Vienna,SK Sturm Graz,0,2,A
+,10/04/2026,RB Salzburg,LASK Linz,2,3,A
+,11/04/2026,SC Rheindorf Altach,Grazer AK,1,0,H
+,11/04/2026,Wolfsberger,SV Josko Ried,0,0,D
+,11/04/2026,FC Blau-Weiß Linz,WSG Swarovski Tirol,5,0,H
+,12/04/2026,SK Sturm Graz,TSV Hartberg,0,0,D
+,12/04/2026,Austria Vienna,Rapid Vienna,1,1,D
+,17/04/2026,Grazer AK,SV Josko Ried,1,1,D
+,18/04/2026,Wolfsberger,FC Blau-Weiß Linz,0,0,D
+,18/04/2026,WSG Swarovski Tirol,SC Rheindorf Altach,2,2,D
+,19/04/2026,Austria Vienna,RB Salzburg,1,3,A
+,19/04/2026,TSV Hartberg,Rapid Vienna,2,2,D
+,19/04/2026,LASK Linz,SK Sturm Graz,1,1,D
+,21/04/2026,FC Blau-Weiß Linz,Wolfsberger,3,0,H
+,21/04/2026,SC Rheindorf Altach,WSG Swarovski Tirol,0,0,D
+,21/04/2026,SV Josko Ried,Grazer AK,2,1,H
+,22/04/2026,Rapid Vienna,TSV Hartberg,0,2,A
+,22/04/2026,RB Salzburg,Austria Vienna,3,1,H
+,22/04/2026,SK Sturm Graz,LASK Linz,1,1,D
+,24/04/2026,FC Blau-Weiß Linz,SC Rheindorf Altach,3,0,H
+,25/04/2026,Wolfsberger,Grazer AK,1,0,H
+,25/04/2026,WSG Swarovski Tirol,SV Josko Ried,1,0,H
+,26/04/2026,Rapid Vienna,RB Salzburg,1,0,H
+,26/04/2026,TSV Hartberg,LASK Linz,1,5,A
+,26/04/2026,SK Sturm Graz,Austria Vienna,1,1,D
+,02/05/2026,Grazer AK,WSG Swarovski Tirol,4,0,H
+,02/05/2026,SV Josko Ried,FC Blau-Weiß Linz,2,0,H
+,03/05/2026,Austria Vienna,TSV Hartberg,1,0,H
+,03/05/2026,RB Salzburg,SK Sturm Graz,1,1,D
+,04/05/2026,SC Rheindorf Altach,Wolfsberger,1,4,A
+,04/05/2026,LASK Linz,Rapid Vienna,3,1,H
+,09/05/2026,Grazer AK,SC Rheindorf Altach,2,2,D
+,09/05/2026,SV Josko Ried,Wolfsberger,0,1,A
+,09/05/2026,WSG Swarovski Tirol,FC Blau-Weiß Linz,1,1,D
+,10/05/2026,LASK Linz,RB Salzburg,2,1,H
+,10/05/2026,Rapid Vienna,Austria Vienna,0,2,A
+,10/05/2026,TSV Hartberg,SK Sturm Graz,2,4,A
+,16/05/2026,FC Blau-Weiß Linz,Grazer AK,0,3,A
+,16/05/2026,SC Rheindorf Altach,SV Josko Ried,2,0,H
+,16/05/2026,Wolfsberger,WSG Swarovski Tirol,2,0,H
+,17/05/2026,Austria Vienna,LASK Linz,0,3,A
+,17/05/2026,RB Salzburg,TSV Hartberg,1,3,A
+,17/05/2026,SK Sturm Graz,Rapid Vienna,2,0,H
+,19/05/2026,SV Josko Ried,Wolfsberger,2,1,H
+,22/05/2026,SV Josko Ried,Rapid Vienna,2,1,H
+,25/05/2026,Rapid Vienna,SV Josko Ried,3,0,H
+,31/07/2026,LASK Linz,Grazer AK,3,0,H
+,01/08/2026,WSG Swarovski Tirol,SK Sturm Graz,1,1,D
+,01/08/2026,RB Salzburg,TSV Hartberg,1,0,H
+,02/08/2026,Austria Lustenau,SV Josko Ried,1,1,D
+,02/08/2026,Wolfsberger,Austria Vienna,3,0,H
+,02/08/2026,Rapid Vienna,SC Rheindorf Altach,1,0,H
+,07/08/2026,SC Rheindorf Altach,WSG Swarovski Tirol,3,1,H
+,08/08/2026,Grazer AK,Austria Lustenau,2,1,H
+,08/08/2026,TSV Hartberg,SK Sturm Graz,0,2,A
+,09/08/2026,SV Josko Ried,Rapid Vienna,1,2,A
+,09/08/2026,Wolfsberger,RB Salzburg,1,1,D
+,09/08/2026,Austria Vienna,LASK Linz,0,2,A
+,14/08/2026,LASK Linz,SV Josko Ried,4,1,H
+,15/08/2026,Austria Lustenau,Wolfsberger,2,1,H
+,15/08/2026,SK Sturm Graz,SC Rheindorf Altach,1,0,H
+,16/08/2026,TSV Hartberg,Austria Vienna,0,2,A
+,16/08/2026,WSG Swarovski Tirol,RB Salzburg,0,3,A
+,16/08/2026,Rapid Vienna,Grazer AK,8,0,H
+,21/08/2026,SV Josko Ried,Grazer AK,1,0,H
+,22/08/2026,SC Rheindorf Altach,TSV Hartberg,1,2,A
+,22/08/2026,SK Sturm Graz,Austria Lustenau,1,1,D
+,28/08/2026,Austria Lustenau,WSG Swarovski Tirol,0,4,A
+,29/08/2026,Grazer AK,Wolfsberger,0,0,D
+,29/08/2026,LASK Linz,SC Rheindorf Altach,3,0,H
+,30/08/2026,Rapid Vienna,SK Sturm Graz,3,1,H
+,30/08/2026,TSV Hartberg,SV Josko Ried,3,2,H
+,30/08/2026,RB Salzburg,Austria Vienna,4,1,H
+,01/09/2026,Wolfsberger,LASK Linz,1,3,A
+,02/09/2026,Austria Vienna,WSG Swarovski Tirol,0,1,A
+,02/09/2026,RB Salzburg,Rapid Vienna,5,1,H
+,11/09/2026,SV Josko Ried,RB Salzburg,1,1,D
+,12/09/2026,SC Rheindorf Altach,Grazer AK,1,2,A
+,12/09/2026,Wolfsberger,Rapid Vienna,0,3,A
+,13/09/2026,Austria Vienna,Austria Lustenau,2,1,H
+,13/09/2026,WSG Swarovski Tirol,TSV Hartberg,2,2,D
+,13/09/2026,SK Sturm Graz,LASK Linz,2,1,H
+,18/09/2026,Rapid Vienna,WSG Swarovski Tirol,3,0,H
+,19/09/2026,Austria Lustenau,SC Rheindorf Altach,2,0,H
+,19/09/2026,Grazer AK,Austria Vienna,2,2,D
+,20/09/2026,SV Josko Ried,Wolfsberger,4,1,H
+,20/09/2026,TSV Hartberg,LASK Linz,3,3,D
+,20/09/2026,RB Salzburg,SK Sturm Graz,3,0,H
+,10/10/2026,Grazer AK,RB Salzburg,0,0,D
+,10/10/2026,WSG Swarovski Tirol,SV Josko Ried,1,2,A
+,10/10/2026,Austria Vienna,SK Sturm Graz,0,2,A
+,11/10/2026,SC Rheindorf Altach,Wolfsberger,3,0,H
+,11/10/2026,TSV Hartberg,Austria Lustenau,4,3,H
+,11/10/2026,LASK Linz,Rapid Vienna,0,2,A
+,16/10/2026,Rapid Vienna,TSV Hartberg,3,1,H
+,17/10/2026,Austria Lustenau,LASK Linz,0,4,A
+,17/10/2026,SV Josko Ried,Austria Vienna,3,2,H
+,18/10/2026,RB Salzburg,SC Rheindorf Altach,3,0,H
+,18/10/2026,Wolfsberger,WSG Swarovski Tirol,0,2,A

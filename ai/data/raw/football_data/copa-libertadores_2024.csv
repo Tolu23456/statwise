@@ -1,0 +1,156 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR
+,07/02/2024,Academia Puerto Cabello,Defensor SC,3,2,H,2,1,H
+,08/02/2024,Club Aurora,FBC Melgar,1,0,H,1,0,H
+,09/02/2024,SD Aucas,Club Nacional,1,0,H,0,0,D
+,14/02/2024,Defensor SC,Academia Puerto Cabello,2,4,A,1,0,H
+,15/02/2024,FBC Melgar,Club Aurora,1,1,D,1,1,D
+,16/02/2024,Club Nacional,SD Aucas,3,0,H,2,0,H
+,20/02/2024,Portuguesa FC,CD Palestino,1,2,A,1,2,A
+,21/02/2024,Rionegro Águilas,RB Bragantino,0,0,D,0,0,D
+,21/02/2024,Club Always Ready,CS Cristal,6,1,H,1,1,D
+,21/02/2024,Academia Puerto Cabello,Club Nacional de Football,0,2,A,0,2,A
+,22/02/2024,Club Nacional,CDC Atlético Nacional,1,0,H,0,0,D
+,22/02/2024,Club Aurora,Botafogo FR,1,1,D,0,1,A
+,22/02/2024,Sportivo Trinidense,CSCyD El Nacional,1,1,D,1,0,H
+,23/02/2024,CD Godoy Cruz Antonio Tomba,CSD Colo-Colo,0,1,A,0,0,D
+,27/02/2024,CD Palestino,Portuguesa FC,2,1,H,1,0,H
+,28/02/2024,RB Bragantino,Rionegro Águilas,4,3,H,0,0,D
+,28/02/2024,CS Cristal,Club Always Ready,3,1,H,1,1,D
+,28/02/2024,Club Nacional de Football,Academia Puerto Cabello,2,0,H,0,0,D
+,29/02/2024,CDC Atlético Nacional,Club Nacional,0,3,A,0,1,A
+,29/02/2024,Botafogo FR,Club Aurora,6,0,H,3,0,H
+,29/02/2024,CSCyD El Nacional,Sportivo Trinidense,0,1,A,0,0,D
+,01/03/2024,CSD Colo-Colo,CD Godoy Cruz Antonio Tomba,0,0,D,0,0,D
+,06/03/2024,Club Nacional,CD Palestino,0,2,A,0,0,D
+,07/03/2024,Botafogo FR,RB Bragantino,2,1,H,1,1,D
+,07/03/2024,Sportivo Trinidense,CSD Colo-Colo,1,1,D,1,0,H
+,08/03/2024,Club Always Ready,Club Nacional de Football,1,0,H,1,0,H
+,13/03/2024,CD Palestino,Club Nacional,3,1,H,0,1,A
+,14/03/2024,RB Bragantino,Botafogo FR,1,1,D,0,0,D
+,14/03/2024,CSD Colo-Colo,Sportivo Trinidense,2,1,H,2,1,H
+,15/03/2024,Club Nacional de Football,Club Always Ready,5,4,H,1,1,D
+,02/04/2024,CD Cobresal,Barcelona SC,1,1,D,0,0,D
+,02/04/2024,Millonarios FC,CR Flamengo,1,1,D,0,0,D
+,03/04/2024,Club The Strongest,Grêmio FBPA,2,0,H,1,0,H
+,03/04/2024,Deportivo Táchira FC,CA River Plate,0,2,A,0,0,D
+,03/04/2024,Club Universitario de Deportes,LDU de Quito,2,1,H,0,1,A
+,03/04/2024,Club Nacional de Football,Club Libertad Asuncion,2,0,H,1,0,H
+,03/04/2024,CD Huachipato,Estudiantes de La Plata,1,1,D,0,1,A
+,03/04/2024,Botafogo FR,CDP Junior FC,1,3,A,1,3,A
+,04/04/2024,CSD Colo-Colo,Club Cerro Porteño,1,0,H,0,0,D
+,04/04/2024,CA San Lorenzo de Almagro,SE Palmeiras,1,1,D,1,0,H
+,04/04/2024,Club Alianza Lima,Fluminense FC,1,1,D,1,0,H
+,04/04/2024,Caracas FC,CA Mineiro,1,4,A,0,3,A
+,04/04/2024,CA Rosario Central,CA Peñarol,1,0,H,1,0,H
+,05/04/2024,Liverpool FC,CAR Independiente del Valle,1,1,D,0,1,A
+,05/04/2024,CA Talleres,São Paulo FC,2,1,H,1,0,H
+,05/04/2024,CD Palestino,Club Bolívar,0,4,A,0,2,A
+,09/04/2024,Estudiantes de La Plata,Club The Strongest,2,1,H,0,1,A
+,09/04/2024,Grêmio FBPA,CD Huachipato,0,2,A,0,2,A
+,10/04/2024,Club Libertad Asuncion,Deportivo Táchira FC,3,0,H,2,0,H
+,10/04/2024,Fluminense FC,CSD Colo-Colo,2,1,H,1,1,D
+,10/04/2024,CDP Junior FC,Club Universitario de Deportes,1,1,D,1,1,D
+,10/04/2024,CAR Independiente del Valle,CA San Lorenzo de Almagro,2,0,H,2,0,H
+,10/04/2024,CA Mineiro,CA Rosario Central,2,1,H,1,0,H
+,10/04/2024,Club Cerro Porteño,Club Alianza Lima,1,0,H,0,0,D
+,11/04/2024,CA Peñarol,Caracas FC,5,0,H,4,0,H
+,11/04/2024,São Paulo FC,CD Cobresal,2,0,H,0,0,D
+,11/04/2024,CR Flamengo,CD Palestino,2,0,H,1,0,H
+,11/04/2024,Barcelona SC,CA Talleres,2,2,D,1,1,D
+,11/04/2024,LDU de Quito,Botafogo FR,1,0,H,1,0,H
+,11/04/2024,Club Bolívar,Millonarios FC,3,2,H,3,1,H
+,12/04/2024,SE Palmeiras,Liverpool FC,3,1,H,1,1,D
+,12/04/2024,CA River Plate,Club Nacional de Football,2,0,H,1,0,H
+,23/04/2024,Caracas FC,CA Rosario Central,1,1,D,1,0,H
+,23/04/2024,Estudiantes de La Plata,Grêmio FBPA,0,1,A,0,0,D
+,24/04/2024,Liverpool FC,CA San Lorenzo de Almagro,1,0,H,0,0,D
+,24/04/2024,CA Mineiro,CA Peñarol,3,2,H,2,0,H
+,24/04/2024,CSD Colo-Colo,Club Alianza Lima,0,0,D,0,0,D
+,24/04/2024,CDP Junior FC,LDU de Quito,1,1,D,1,1,D
+,24/04/2024,Club Nacional de Football,Deportivo Táchira FC,2,1,H,2,1,H
+,24/04/2024,CD Huachipato,Club The Strongest,0,0,D,0,0,D
+,24/04/2024,Botafogo FR,Club Universitario de Deportes,3,1,H,0,0,D
+,25/04/2024,CAR Independiente del Valle,SE Palmeiras,2,3,A,2,1,H
+,25/04/2024,Club Libertad Asuncion,CA River Plate,1,2,A,1,1,D
+,25/04/2024,Club Bolívar,CR Flamengo,2,1,H,1,1,D
+,25/04/2024,Club Cerro Porteño,Fluminense FC,0,0,D,0,0,D
+,25/04/2024,CD Cobresal,CA Talleres,0,2,A,0,2,A
+,26/04/2024,CD Palestino,Millonarios FC,3,1,H,2,1,H
+,26/04/2024,Barcelona SC,São Paulo FC,0,2,A,0,1,A
+,07/05/2024,CA Rosario Central,CA Mineiro,0,1,A,0,0,D
+,07/05/2024,Caracas FC,CA Peñarol,0,1,A,0,1,A
+,08/05/2024,CD Palestino,CR Flamengo,1,0,H,0,0,D
+,08/05/2024,Deportivo Táchira FC,Club Libertad Asuncion,1,1,D,1,0,H
+,08/05/2024,Club Nacional de Football,CA River Plate,2,2,D,0,2,A
+,08/05/2024,Club Universitario de Deportes,CDP Junior FC,1,1,D,1,1,D
+,08/05/2024,CA Talleres,Barcelona SC,3,1,H,2,0,H
+,09/05/2024,Club Alianza Lima,Club Cerro Porteño,1,1,D,0,1,A
+,09/05/2024,CD Cobresal,São Paulo FC,1,3,A,1,1,D
+,09/05/2024,Botafogo FR,LDU de Quito,2,1,H,1,1,D
+,09/05/2024,Millonarios FC,Club Bolívar,1,1,D,1,0,H
+,09/05/2024,CA San Lorenzo de Almagro,CAR Independiente del Valle,2,0,H,2,0,H
+,09/05/2024,Liverpool FC,SE Palmeiras,0,5,A,0,1,A
+,10/05/2024,CSD Colo-Colo,Fluminense FC,0,1,A,0,0,D
+,10/05/2024,Club The Strongest,Estudiantes de La Plata,1,0,H,1,0,H
+,14/05/2024,CA Peñarol,CA Mineiro,2,0,H,0,0,D
+,14/05/2024,CA Talleres,CD Cobresal,1,0,H,0,0,D
+,14/05/2024,LDU de Quito,CDP Junior FC,0,1,A,0,1,A
+,15/05/2024,CA River Plate,Club Libertad Asuncion,2,0,H,1,0,H
+,15/05/2024,Millonarios FC,CD Palestino,1,1,D,1,0,H
+,15/05/2024,Deportivo Táchira FC,Club Nacional de Football,0,1,A,0,0,D
+,15/05/2024,Club The Strongest,CD Huachipato,4,0,H,1,0,H
+,16/05/2024,Club Alianza Lima,CSD Colo-Colo,1,1,D,1,0,H
+,16/05/2024,CR Flamengo,Club Bolívar,4,0,H,3,0,H
+,16/05/2024,SE Palmeiras,CAR Independiente del Valle,2,1,H,2,0,H
+,16/05/2024,CA Rosario Central,Caracas FC,4,1,H,2,0,H
+,16/05/2024,Fluminense FC,Club Cerro Porteño,2,1,H,1,1,D
+,16/05/2024,Club Universitario de Deportes,Botafogo FR,0,1,A,0,0,D
+,17/05/2024,CA San Lorenzo de Almagro,Liverpool FC,3,2,H,2,1,H
+,17/05/2024,São Paulo FC,Barcelona SC,0,0,D,0,0,D
+,28/05/2024,CA Mineiro,Caracas FC,4,0,H,2,0,H
+,28/05/2024,CA Peñarol,CA Rosario Central,2,1,H,1,0,H
+,28/05/2024,CDP Junior FC,Botafogo FR,0,0,D,0,0,D
+,28/05/2024,LDU de Quito,Club Universitario de Deportes,2,0,H,1,0,H
+,29/05/2024,Club Bolívar,CD Palestino,3,1,H,1,0,H
+,29/05/2024,CR Flamengo,Millonarios FC,3,0,H,3,0,H
+,29/05/2024,Estudiantes de La Plata,CD Huachipato,3,4,A,1,2,A
+,29/05/2024,Grêmio FBPA,Club The Strongest,4,0,H,1,0,H
+,30/05/2024,Fluminense FC,Club Alianza Lima,3,2,H,0,1,A
+,30/05/2024,Club Cerro Porteño,CSD Colo-Colo,1,1,D,1,1,D
+,30/05/2024,Barcelona SC,CD Cobresal,2,1,H,2,0,H
+,30/05/2024,São Paulo FC,CA Talleres,2,0,H,1,0,H
+,30/05/2024,CAR Independiente del Valle,Liverpool FC,2,1,H,1,1,D
+,30/05/2024,SE Palmeiras,CA San Lorenzo de Almagro,0,0,D,0,0,D
+,31/05/2024,CA River Plate,Deportivo Táchira FC,2,0,H,0,0,D
+,31/05/2024,Club Libertad Asuncion,Club Nacional de Football,2,1,H,2,1,H
+,05/06/2024,CD Huachipato,Grêmio FBPA,0,1,A,0,1,A
+,08/06/2024,Grêmio FBPA,Estudiantes de La Plata,1,1,D,0,0,D
+,13/08/2024,Grêmio FBPA,Fluminense FC,2,1,H,0,0,D
+,14/08/2024,CA San Lorenzo de Almagro,CA Mineiro,1,1,D,1,0,H
+,14/08/2024,CSD Colo-Colo,CDP Junior FC,1,0,H,0,0,D
+,14/08/2024,CA Peñarol,Club The Strongest,4,0,H,3,0,H
+,15/08/2024,CA Talleres,CA River Plate,0,1,A,0,0,D
+,15/08/2024,Botafogo FR,SE Palmeiras,2,1,H,2,1,H
+,15/08/2024,Club Nacional de Football,São Paulo FC,0,0,D,0,0,D
+,16/08/2024,CR Flamengo,Club Bolívar,2,0,H,1,0,H
+,20/08/2024,Fluminense FC,Grêmio FBPA,4,2,H,2,0,H
+,21/08/2024,CA Mineiro,CA San Lorenzo de Almagro,1,0,H,0,0,D
+,21/08/2024,CDP Junior FC,CSD Colo-Colo,1,2,A,1,1,D
+,21/08/2024,Club The Strongest,CA Peñarol,1,0,H,1,0,H
+,22/08/2024,CA River Plate,CA Talleres,2,1,H,1,0,H
+,22/08/2024,SE Palmeiras,Botafogo FR,2,2,D,0,0,D
+,22/08/2024,São Paulo FC,Club Nacional de Football,2,0,H,1,0,H
+,23/08/2024,Club Bolívar,CR Flamengo,1,0,H,0,0,D
+,18/09/2024,CSD Colo-Colo,CA River Plate,1,1,D,0,1,A
+,18/09/2024,Fluminense FC,CA Mineiro,1,0,H,0,0,D
+,19/09/2024,Botafogo FR,São Paulo FC,0,0,D,0,0,D
+,19/09/2024,CR Flamengo,CA Peñarol,0,1,A,0,1,A
+,25/09/2024,CA River Plate,CSD Colo-Colo,1,0,H,1,0,H
+,25/09/2024,CA Mineiro,Fluminense FC,2,0,H,0,0,D
+,26/09/2024,São Paulo FC,Botafogo FR,4,5,A,0,1,A
+,26/09/2024,CA Peñarol,CR Flamengo,0,0,D,0,0,D
+,23/10/2024,CA Mineiro,CA River Plate,3,0,H,1,0,H
+,24/10/2024,Botafogo FR,CA Peñarol,5,0,H,0,0,D
+,30/10/2024,CA River Plate,CA Mineiro,0,0,D,0,0,D
+,31/10/2024,CA Peñarol,Botafogo FR,3,1,H,1,0,H
+,30/11/2024,CA Mineiro,Botafogo FR,1,3,A,0,2,A

@@ -1,0 +1,341 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,11/01/2025,Querétaro,América,0,1,A
+,11/01/2025,Mazatlán FC,FC Juárez,1,1,D
+,11/01/2025,Tijuana,Toluca,2,4,A
+,11/01/2025,Atlético de San Luis,Tigres UANL,1,3,A
+,12/01/2025,Guadalajara,Santos,1,0,H
+,12/01/2025,Cruz Azul,Atlas,1,1,D
+,12/01/2025,Pumas UNAM,Necaxa,2,1,H
+,13/01/2025,Monterrey,Puebla,1,1,D
+,17/01/2025,América,Tijuana,1,1,D
+,18/01/2025,Puebla,Atlético de San Luis,1,2,A
+,18/01/2025,Tigres UANL,Mazatlán FC,2,1,H
+,18/01/2025,Necaxa,Guadalajara,3,2,H
+,18/01/2025,FC Juárez,Cruz Azul,1,0,H
+,19/01/2025,Toluca,Monterrey,1,1,D
+,19/01/2025,Atlas,León,1,2,A
+,19/01/2025,Querétaro,Pumas UNAM,3,2,H
+,21/01/2025,Pachuca,Santos,2,1,H
+,25/01/2025,Atlético de San Luis,Necaxa,0,3,A
+,25/01/2025,Mazatlán FC,Toluca,2,1,H
+,25/01/2025,Tijuana,Querétaro,2,1,H
+,25/01/2025,Cruz Azul,Puebla,1,1,D
+,25/01/2025,León,FC Juárez,1,0,H
+,26/01/2025,Guadalajara,Tigres UANL,1,1,D
+,26/01/2025,Santos,América,1,4,A
+,26/01/2025,Monterrey,Pachuca,2,3,A
+,26/01/2025,Pumas UNAM,Atlas,0,0,D
+,29/01/2025,América,Atlético de San Luis,3,0,H
+,29/01/2025,Puebla,Mazatlán FC,0,1,A
+,29/01/2025,León,Guadalajara,2,1,H
+,29/01/2025,Tigres UANL,Tijuana,4,0,H
+,29/01/2025,Necaxa,Cruz Azul,1,3,A
+,30/01/2025,Atlas,Monterrey,3,3,D
+,30/01/2025,Querétaro,Pachuca,0,1,A
+,30/01/2025,FC Juárez,Santos,1,0,H
+,30/01/2025,Pumas UNAM,Toluca,1,1,D
+,01/02/2025,Mazatlán FC,León,1,2,A
+,01/02/2025,Tijuana,Cruz Azul,2,3,A
+,01/02/2025,América,FC Juárez,4,0,H
+,01/02/2025,Guadalajara,Querétaro,1,1,D
+,02/02/2025,Pachuca,Atlas,0,0,D
+,02/02/2025,Monterrey,Necaxa,1,0,H
+,02/02/2025,Toluca,Tigres UANL,1,0,H
+,02/02/2025,Santos,Puebla,0,2,A
+,03/02/2025,Atlético de San Luis,Pumas UNAM,2,3,A
+,06/02/2025,Pachuca,León,1,2,A
+,08/02/2025,Necaxa,Santos,3,2,H
+,08/02/2025,Querétaro,Atlético de San Luis,1,0,H
+,08/02/2025,Puebla,América,1,2,A
+,09/02/2025,León,Toluca,3,3,D
+,09/02/2025,Tigres UANL,Atlas,2,1,H
+,09/02/2025,FC Juárez,Monterrey,2,1,H
+,09/02/2025,Cruz Azul,Pachuca,2,1,H
+,10/02/2025,Pumas UNAM,Mazatlán FC,1,0,H
+,10/02/2025,Guadalajara,Tijuana,2,1,H
+,15/02/2025,América,Necaxa,2,3,A
+,15/02/2025,Mazatlán FC,Santos,1,1,D
+,15/02/2025,Tijuana,FC Juárez,1,2,A
+,15/02/2025,Atlas,Puebla,3,2,H
+,16/02/2025,Tigres UANL,Cruz Azul,2,1,H
+,16/02/2025,Toluca,Guadalajara,2,1,H
+,16/02/2025,Querétaro,Monterrey,2,4,A
+,17/02/2025,Atlético de San Luis,León,1,2,A
+,17/02/2025,Pachuca,Pumas UNAM,2,1,H
+,19/02/2025,Atlas,Necaxa,0,4,A
+,20/02/2025,América,León,1,1,D
+,20/02/2025,Santos,Cruz Azul,0,1,A
+,22/02/2025,Necaxa,Mazatlán FC,3,1,H
+,22/02/2025,Puebla,Tijuana,2,0,H
+,22/02/2025,FC Juárez,Toluca,0,4,A
+,23/02/2025,León,Tigres UANL,1,0,H
+,23/02/2025,Monterrey,Atlético de San Luis,3,1,H
+,23/02/2025,Guadalajara,Pachuca,2,1,H
+,23/02/2025,Pumas UNAM,América,0,2,A
+,23/02/2025,Santos,Atlas,2,0,H
+,24/02/2025,Cruz Azul,Querétaro,1,0,H
+,26/02/2025,Tigres UANL,FC Juárez,0,1,A
+,26/02/2025,Mazatlán FC,Monterrey,1,0,H
+,26/02/2025,Tijuana,Pumas UNAM,4,2,H
+,27/02/2025,Pachuca,Puebla,2,1,H
+,27/02/2025,Toluca,Querétaro,5,0,H
+,27/02/2025,Atlético de San Luis,Guadalajara,3,1,H
+,01/03/2025,Mazatlán FC,Cruz Azul,1,1,D
+,01/03/2025,América,Toluca,3,0,H
+,01/03/2025,FC Juárez,Pachuca,2,2,D
+,02/03/2025,León,Tijuana,2,1,H
+,02/03/2025,Necaxa,Tigres UANL,1,2,A
+,02/03/2025,Pumas UNAM,Guadalajara,0,1,A
+,02/03/2025,Querétaro,Puebla,2,0,H
+,03/03/2025,Atlas,Atlético de San Luis,3,1,H
+,03/03/2025,Monterrey,Santos,4,2,H
+,08/03/2025,Atlético de San Luis,FC Juárez,1,0,H
+,08/03/2025,Tigres UANL,Querétaro,1,0,H
+,08/03/2025,Puebla,Pumas UNAM,1,3,A
+,08/03/2025,Toluca,Necaxa,5,2,H
+,09/03/2025,Pachuca,Mazatlán FC,1,1,D
+,09/03/2025,Cruz Azul,Monterrey,1,1,D
+,09/03/2025,Guadalajara,América,0,0,D
+,09/03/2025,Santos,León,2,1,H
+,10/03/2025,Tijuana,Atlas,3,4,A
+,15/03/2025,Necaxa,León,2,1,H
+,15/03/2025,Querétaro,Mazatlán FC,1,0,H
+,15/03/2025,Puebla,Toluca,0,3,A
+,15/03/2025,Tigres UANL,Santos,3,0,H
+,16/03/2025,Cruz Azul,Atlético de San Luis,3,0,H
+,16/03/2025,FC Juárez,Guadalajara,1,1,D
+,16/03/2025,Atlas,América,1,3,A
+,17/03/2025,Pumas UNAM,Monterrey,1,3,A
+,17/03/2025,Pachuca,Tijuana,4,1,H
+,29/03/2025,Necaxa,Querétaro,2,0,H
+,29/03/2025,Mazatlán FC,Atlas,3,2,H
+,29/03/2025,FC Juárez,Puebla,2,0,H
+,29/03/2025,Toluca,Pachuca,3,2,H
+,30/03/2025,América,Tigres UANL,3,0,H
+,30/03/2025,Guadalajara,Cruz Azul,0,1,A
+,30/03/2025,Monterrey,Tijuana,1,2,A
+,30/03/2025,Santos,Atlético de San Luis,2,3,A
+,31/03/2025,León,Pumas UNAM,1,2,A
+,05/04/2025,Querétaro,León,1,1,D
+,05/04/2025,Tijuana,Necaxa,1,2,A
+,05/04/2025,Puebla,Tigres UANL,0,0,D
+,05/04/2025,Atlas,FC Juárez,1,1,D
+,05/04/2025,Pachuca,América,1,0,H
+,06/04/2025,Atlético de San Luis,Mazatlán FC,2,1,H
+,06/04/2025,Monterrey,Guadalajara,3,1,H
+,06/04/2025,Cruz Azul,Pumas UNAM,3,2,H
+,07/04/2025,Toluca,Santos,2,1,H
+,11/04/2025,Tijuana,Atlético de San Luis,2,1,H
+,12/04/2025,Necaxa,Pachuca,3,5,A
+,12/04/2025,Mazatlán FC,Guadalajara,1,1,D
+,12/04/2025,León,Puebla,1,0,H
+,12/04/2025,Pumas UNAM,FC Juárez,0,0,D
+,13/04/2025,Tigres UANL,Monterrey,2,1,H
+,13/04/2025,Atlas,Toluca,2,3,A
+,13/04/2025,América,Cruz Azul,0,0,D
+,13/04/2025,Santos,Querétaro,1,2,A
+,16/04/2025,Pachuca,Tigres UANL,0,0,D
+,16/04/2025,Guadalajara,Puebla,1,0,H
+,16/04/2025,FC Juárez,Necaxa,2,2,D
+,16/04/2025,Cruz Azul,León,2,1,H
+,17/04/2025,Monterrey,América,1,0,H
+,17/04/2025,Querétaro,Atlas,1,2,A
+,17/04/2025,Atlético de San Luis,Toluca,0,1,A
+,17/04/2025,Mazatlán FC,Tijuana,0,2,A
+,17/04/2025,Pumas UNAM,Santos,2,0,H
+,19/04/2025,Puebla,Necaxa,0,1,A
+,19/04/2025,América,Mazatlán FC,5,0,H
+,20/04/2025,Toluca,Cruz Azul,2,2,D
+,20/04/2025,Tigres UANL,Pumas UNAM,2,1,H
+,20/04/2025,Atlas,Guadalajara,1,1,D
+,20/04/2025,Santos,Tijuana,0,4,A
+,21/04/2025,Atlético de San Luis,Pachuca,2,1,H
+,21/04/2025,León,Monterrey,0,2,A
+,21/04/2025,FC Juárez,Querétaro,0,2,A
+,28/04/2025,FC Juárez,Pumas UNAM,1,1,D
+,28/04/2025,Monterrey,Pachuca,1,2,A
+,05/05/2025,Monterrey,Pumas UNAM,2,0,H
+,08/05/2025,Monterrey,Toluca,3,2,H
+,08/05/2025,Pachuca,América,0,0,D
+,09/05/2025,Necaxa,Tigres UANL,0,0,D
+,09/05/2025,León,Cruz Azul,2,3,A
+,11/05/2025,Toluca,Monterrey,2,1,H
+,11/05/2025,América,Pachuca,2,0,H
+,12/05/2025,Cruz Azul,León,2,1,H
+,12/05/2025,Tigres UANL,Necaxa,2,2,D
+,15/05/2025,Tigres UANL,Toluca,1,1,D
+,16/05/2025,Cruz Azul,América,1,0,H
+,18/05/2025,Toluca,Tigres UANL,3,0,H
+,19/05/2025,América,Cruz Azul,2,1,H
+,23/05/2025,América,Toluca,0,0,D
+,26/05/2025,Toluca,América,2,0,H
+,12/07/2025,Puebla,Atlas,2,3,A
+,12/07/2025,FC Juárez,América,1,1,D
+,12/07/2025,Tijuana,Querétaro,1,0,H
+,13/07/2025,Santos,Pumas UNAM,3,0,H
+,13/07/2025,Toluca,Necaxa,3,1,H
+,13/07/2025,Cruz Azul,Mazatlán FC,0,0,D
+,13/07/2025,Pachuca,Monterrey,3,0,H
+,14/07/2025,León,Atlético de San Luis,0,1,A
+,17/07/2025,América,Tijuana,3,1,H
+,17/07/2025,Santos,Toluca,2,4,A
+,19/07/2025,Necaxa,Querétaro,3,1,H
+,19/07/2025,Atlético de San Luis,Monterrey,0,1,A
+,19/07/2025,Mazatlán FC,Puebla,2,1,H
+,20/07/2025,León,Guadalajara,1,0,H
+,20/07/2025,Tigres UANL,FC Juárez,1,0,H
+,20/07/2025,Atlas,Cruz Azul,3,3,D
+,20/07/2025,Pumas UNAM,Pachuca,2,3,A
+,26/07/2025,Puebla,Santos,1,0,H
+,26/07/2025,Querétaro,Pumas UNAM,0,2,A
+,26/07/2025,Tijuana,FC Juárez,1,1,D
+,26/07/2025,Pachuca,Mazatlán FC,1,0,H
+,26/07/2025,Guadalajara,Atlético de San Luis,4,3,H
+,27/07/2025,Cruz Azul,León,4,1,H
+,27/07/2025,Monterrey,Atlas,3,1,H
+,27/07/2025,Toluca,Tigres UANL,3,4,A
+,27/07/2025,Necaxa,América,1,1,D
+,09/08/2025,Tigres UANL,Puebla,7,0,H
+,10/08/2025,América,Querétaro,1,0,H
+,10/08/2025,Mazatlán FC,Tijuana,2,2,D
+,10/08/2025,Atlas,Pachuca,0,3,A
+,11/08/2025,Pumas UNAM,Necaxa,1,1,D
+,11/08/2025,Santos,Guadalajara,1,0,H
+,12/08/2025,León,Monterrey,1,3,A
+,12/08/2025,FC Juárez,Toluca,0,2,A
+,12/08/2025,Atlético de San Luis,Cruz Azul,1,2,A
+,16/08/2025,Puebla,Atlético de San Luis,0,2,A
+,16/08/2025,Necaxa,León,0,1,A
+,16/08/2025,Guadalajara,FC Juárez,1,2,A
+,17/08/2025,Cruz Azul,Santos,3,2,H
+,17/08/2025,Pachuca,Tijuana,0,2,A
+,17/08/2025,Tigres UANL,América,1,3,A
+,17/08/2025,Toluca,Pumas UNAM,1,1,D
+,17/08/2025,Querétaro,Atlas,3,3,D
+,18/08/2025,Monterrey,Mazatlán FC,3,2,H
+,23/08/2025,FC Juárez,Santos,2,1,H
+,23/08/2025,Querétaro,Atlético de San Luis,3,2,H
+,23/08/2025,Tijuana,Guadalajara,3,3,D
+,23/08/2025,León,Pachuca,1,1,D
+,24/08/2025,Mazatlán FC,Tigres UANL,2,2,D
+,24/08/2025,Monterrey,Necaxa,3,0,H
+,24/08/2025,Cruz Azul,Toluca,1,0,H
+,24/08/2025,Pumas UNAM,Puebla,0,0,D
+,25/08/2025,Atlas,América,2,4,A
+,30/08/2025,Atlético de San Luis,Toluca,1,3,A
+,30/08/2025,FC Juárez,Mazatlán FC,1,0,H
+,30/08/2025,Puebla,Monterrey,2,4,A
+,30/08/2025,León,Querétaro,3,0,H
+,31/08/2025,Santos,Tigres UANL,0,1,A
+,31/08/2025,Guadalajara,Cruz Azul,1,2,A
+,31/08/2025,América,Pachuca,2,0,H
+,31/08/2025,Pumas UNAM,Atlas,1,0,H
+,01/09/2025,Tijuana,Necaxa,3,0,H
+,13/09/2025,Necaxa,FC Juárez,1,1,D
+,13/09/2025,Mazatlán FC,Pumas UNAM,1,4,A
+,13/09/2025,Pachuca,Cruz Azul,0,1,A
+,14/09/2025,Atlas,Santos,2,2,D
+,14/09/2025,Tigres UANL,León,0,0,D
+,14/09/2025,Toluca,Puebla,3,1,H
+,14/09/2025,América,Guadalajara,1,2,A
+,14/09/2025,Querétaro,Monterrey,0,1,A
+,15/09/2025,Atlético de San Luis,Tijuana,1,1,D
+,18/09/2025,Guadalajara,Tigres UANL,0,0,D
+,20/09/2025,Cruz Azul,FC Juárez,3,2,H
+,20/09/2025,Necaxa,Puebla,1,0,H
+,20/09/2025,Mazatlán FC,Atlas,1,1,D
+,20/09/2025,Tijuana,León,5,0,H
+,20/09/2025,Pachuca,Querétaro,0,2,A
+,21/09/2025,Pumas UNAM,Tigres UANL,1,1,D
+,21/09/2025,Guadalajara,Toluca,0,3,A
+,21/09/2025,Monterrey,América,2,2,D
+,21/09/2025,Santos,Atlético de San Luis,1,4,A
+,24/09/2025,Puebla,Pachuca,2,2,D
+,24/09/2025,Guadalajara,Necaxa,3,1,H
+,24/09/2025,FC Juárez,Pumas UNAM,3,1,H
+,24/09/2025,León,Mazatlán FC,2,2,D
+,25/09/2025,Cruz Azul,Querétaro,2,2,D
+,25/09/2025,Tigres UANL,Atlas,2,0,H
+,25/09/2025,Toluca,Monterrey,6,2,H
+,25/09/2025,Atlético de San Luis,América,0,1,A
+,25/09/2025,Santos,Tijuana,1,0,H
+,27/09/2025,FC Juárez,León,2,0,H
+,27/09/2025,Atlas,Necaxa,3,2,H
+,27/09/2025,Pachuca,Atlético de San Luis,2,1,H
+,27/09/2025,Puebla,Guadalajara,0,2,A
+,28/09/2025,Monterrey,Santos,1,0,H
+,28/09/2025,Toluca,Mazatlán FC,3,1,H
+,28/09/2025,América,Pumas UNAM,4,1,H
+,28/09/2025,Querétaro,Tigres UANL,0,2,A
+,29/09/2025,Tijuana,Cruz Azul,2,0,H
+,04/10/2025,Necaxa,Pachuca,0,1,A
+,04/10/2025,Mazatlán FC,Atlético de San Luis,2,1,H
+,04/10/2025,Atlas,FC Juárez,3,1,H
+,04/10/2025,Querétaro,Puebla,3,1,H
+,05/10/2025,León,Toluca,2,4,A
+,05/10/2025,Tigres UANL,Cruz Azul,1,1,D
+,05/10/2025,América,Santos,3,0,H
+,06/10/2025,Pumas UNAM,Guadalajara,1,2,A
+,06/10/2025,Tijuana,Monterrey,2,2,D
+,18/10/2025,Puebla,Tijuana,4,3,H
+,18/10/2025,Atlético de San Luis,Atlas,2,0,H
+,18/10/2025,Tigres UANL,Necaxa,5,3,H
+,18/10/2025,FC Juárez,Pachuca,2,2,D
+,18/10/2025,Santos,León,2,0,H
+,18/10/2025,Toluca,Querétaro,4,0,H
+,19/10/2025,Monterrey,Pumas UNAM,1,1,D
+,19/10/2025,Guadalajara,Mazatlán FC,2,0,H
+,19/10/2025,Cruz Azul,América,2,1,H
+,22/10/2025,América,Puebla,2,1,H
+,22/10/2025,Necaxa,Cruz Azul,1,1,D
+,22/10/2025,Mazatlán FC,Santos,2,2,D
+,22/10/2025,Monterrey,FC Juárez,4,2,H
+,23/10/2025,Pachuca,Tigres UANL,1,2,A
+,23/10/2025,Querétaro,Guadalajara,1,0,H
+,23/10/2025,Atlas,León,2,0,H
+,23/10/2025,Tijuana,Toluca,0,0,D
+,23/10/2025,Pumas UNAM,Atlético de San Luis,0,1,A
+,25/10/2025,FC Juárez,Puebla,4,4,D
+,25/10/2025,Mazatlán FC,América,2,2,D
+,25/10/2025,Tigres UANL,Tijuana,2,0,H
+,26/10/2025,León,Pumas UNAM,1,1,D
+,26/10/2025,Guadalajara,Atlas,4,1,H
+,26/10/2025,Cruz Azul,Monterrey,2,0,H
+,26/10/2025,Santos,Querétaro,3,1,H
+,27/10/2025,Atlético de San Luis,Necaxa,3,4,A
+,27/10/2025,Toluca,Pachuca,2,2,D
+,01/11/2025,Necaxa,Santos,4,1,H
+,01/11/2025,Atlético de San Luis,FC Juárez,1,2,A
+,01/11/2025,Puebla,Cruz Azul,0,3,A
+,01/11/2025,Atlas,Toluca,0,0,D
+,02/11/2025,Monterrey,Tigres UANL,1,1,D
+,02/11/2025,América,León,2,0,H
+,02/11/2025,Pumas UNAM,Tijuana,4,1,H
+,02/11/2025,Querétaro,Mazatlán FC,1,0,H
+,03/11/2025,Pachuca,Guadalajara,0,1,A
+,08/11/2025,FC Juárez,Querétaro,1,2,A
+,08/11/2025,Mazatlán FC,Necaxa,1,1,D
+,08/11/2025,Tijuana,Atlas,2,0,H
+,08/11/2025,Tigres UANL,Atlético de San Luis,3,1,H
+,08/11/2025,Guadalajara,Monterrey,4,2,H
+,09/11/2025,León,Puebla,1,2,A
+,09/11/2025,Toluca,América,2,0,H
+,09/11/2025,Cruz Azul,Pumas UNAM,2,3,A
+,09/11/2025,Santos,Pachuca,1,0,H
+,21/11/2025,Pachuca,Pumas UNAM,3,1,H
+,21/11/2025,Tijuana,FC Juárez,3,1,H
+,24/11/2025,FC Juárez,Pachuca,2,1,H
+,27/11/2025,FC Juárez,Toluca,1,2,A
+,27/11/2025,Monterrey,América,2,0,H
+,27/11/2025,Tijuana,Tigres UANL,3,0,H
+,28/11/2025,Guadalajara,Cruz Azul,0,0,D
+,29/11/2025,América,Monterrey,2,1,H
+,30/11/2025,Toluca,FC Juárez,0,0,D
+,30/11/2025,Tigres UANL,Tijuana,5,0,H
+,01/12/2025,Cruz Azul,Guadalajara,3,2,H
+,04/12/2025,Cruz Azul,Tigres UANL,1,1,D
+,04/12/2025,Monterrey,Toluca,1,0,H
+,07/12/2025,Toluca,Monterrey,3,2,H
+,07/12/2025,Tigres UANL,Cruz Azul,1,1,D
+,12/12/2025,Tigres UANL,Toluca,1,0,H
+,15/12/2025,Toluca,Tigres UANL,2,1,H

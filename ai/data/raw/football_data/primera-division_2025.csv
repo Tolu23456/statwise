@@ -1,0 +1,511 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,23/01/2025,Godoy Cruz Antonio Tomba,Rosario Central,0,3,A
+,23/01/2025,Tigre,Vélez Sarsfield,3,0,H
+,24/01/2025,Defensa y Justicia,Banfield,0,1,A
+,24/01/2025,Lanús,Deportivo Riestra,0,2,A
+,24/01/2025,Newell's Old Boys,Independiente Rivadavia,0,1,A
+,24/01/2025,Barracas Central,Racing Club,1,3,A
+,24/01/2025,Independiente,Sarmiento (Junín),2,1,H
+,25/01/2025,Belgrano (Córdoba),Huracán,1,1,D
+,25/01/2025,San Martín (San Juan),Atlético Tucumán,0,1,A
+,25/01/2025,San Lorenzo,Talleres (Córdoba),1,0,H
+,25/01/2025,Estudiantes de La Plata,Unión (Santa Fe),3,1,H
+,25/01/2025,Instituto (Córdoba),Gimnasia La Plata,3,0,H
+,26/01/2025,Platense,River Plate,1,1,D
+,26/01/2025,Boca Juniors,Argentinos Juniors,0,0,D
+,27/01/2025,Central Córdoba (Santiago del Estero),Aldosivi,1,0,H
+,27/01/2025,Banfield,Newell's Old Boys,3,0,H
+,28/01/2025,Deportivo Riestra,San Martín (San Juan),0,0,D
+,28/01/2025,Rosario Central,Lanús,2,1,H
+,28/01/2025,Sarmiento (Junín),Godoy Cruz Antonio Tomba,0,0,D
+,29/01/2025,Independiente Rivadavia,Barracas Central,0,0,D
+,29/01/2025,Vélez Sarsfield,Platense,0,1,A
+,29/01/2025,Gimnasia La Plata,San Lorenzo,0,2,A
+,29/01/2025,Talleres (Córdoba),Independiente,2,3,A
+,29/01/2025,Huracán,Estudiantes de La Plata,0,0,D
+,29/01/2025,Unión (Santa Fe),Boca Juniors,1,1,D
+,30/01/2025,River Plate,Instituto (Córdoba),1,0,H
+,30/01/2025,Aldosivi,Defensa y Justicia,0,5,A
+,30/01/2025,Racing Club,Belgrano (Córdoba),4,0,H
+,31/01/2025,Argentinos Juniors,Tigre,1,0,H
+,31/01/2025,Central Córdoba (Santiago del Estero),Atlético Tucumán,2,0,H
+,01/02/2025,Barracas Central,Banfield,1,0,H
+,01/02/2025,San Martín (San Juan),Rosario Central,0,0,D
+,02/02/2025,Lanús,Sarmiento (Junín),2,0,H
+,02/02/2025,San Lorenzo,River Plate,0,0,D
+,02/02/2025,Boca Juniors,Huracán,2,1,H
+,02/02/2025,Newell's Old Boys,Aldosivi,1,0,H
+,03/02/2025,Independiente,Gimnasia La Plata,2,0,H
+,03/02/2025,Instituto (Córdoba),Vélez Sarsfield,2,0,H
+,03/02/2025,Defensa y Justicia,Central Córdoba (Santiago del Estero),2,1,H
+,03/02/2025,Estudiantes de La Plata,Racing Club,2,0,H
+,03/02/2025,Tigre,Unión (Santa Fe),1,0,H
+,04/02/2025,Argentinos Juniors,Platense,1,0,H
+,04/02/2025,Belgrano (Córdoba),Independiente Rivadavia,0,3,A
+,05/02/2025,Atlético Tucumán,Deportivo Riestra,0,3,A
+,06/02/2025,Aldosivi,Barracas Central,1,3,A
+,06/02/2025,Sarmiento (Junín),San Martín (San Juan),1,1,D
+,07/02/2025,Banfield,Belgrano (Córdoba),1,1,D
+,07/02/2025,Central Córdoba (Santiago del Estero),Newell's Old Boys,2,0,H
+,07/02/2025,Huracán,Tigre,2,0,H
+,08/02/2025,Independiente Rivadavia,Estudiantes de La Plata,2,2,D
+,08/02/2025,Unión (Santa Fe),Argentinos Juniors,0,1,A
+,08/02/2025,Vélez Sarsfield,San Lorenzo,0,0,D
+,08/02/2025,Rosario Central,Atlético Tucumán,3,1,H
+,08/02/2025,River Plate,Independiente,2,0,H
+,09/02/2025,Racing Club,Boca Juniors,2,0,H
+,09/02/2025,Deportivo Riestra,Defensa y Justicia,1,1,D
+,09/02/2025,Platense,Instituto (Córdoba),1,0,H
+,09/02/2025,Gimnasia La Plata,Godoy Cruz Antonio Tomba,3,0,H
+,10/02/2025,Talleres (Córdoba),Lanús,0,1,A
+,11/02/2025,Barracas Central,Central Córdoba (Santiago del Estero),3,3,D
+,11/02/2025,Boca Juniors,Independiente Rivadavia,2,0,H
+,11/02/2025,Estudiantes de La Plata,Banfield,1,0,H
+,12/02/2025,Belgrano (Córdoba),Aldosivi,2,0,H
+,12/02/2025,Tigre,Racing Club,1,0,H
+,12/02/2025,Deportivo Riestra,Rosario Central,0,0,D
+,12/02/2025,Newell's Old Boys,Defensa y Justicia,0,1,A
+,12/02/2025,Argentinos Juniors,Huracán,1,1,D
+,12/02/2025,Independiente,Vélez Sarsfield,3,0,H
+,13/02/2025,Godoy Cruz Antonio Tomba,River Plate,0,0,D
+,13/02/2025,Lanús,Gimnasia La Plata,0,0,D
+,13/02/2025,San Lorenzo,Platense,2,1,H
+,13/02/2025,San Martín (San Juan),Talleres (Córdoba),0,1,A
+,14/02/2025,Atlético Tucumán,Sarmiento (Junín),5,0,H
+,14/02/2025,Unión (Santa Fe),Instituto (Córdoba),0,0,D
+,14/02/2025,Banfield,Boca Juniors,0,1,A
+,15/02/2025,Aldosivi,Estudiantes de La Plata,2,2,D
+,15/02/2025,Defensa y Justicia,Barracas Central,1,1,D
+,15/02/2025,Central Córdoba (Santiago del Estero),Belgrano (Córdoba),4,0,H
+,15/02/2025,Independiente Rivadavia,Tigre,1,4,A
+,16/02/2025,Racing Club,Argentinos Juniors,2,3,A
+,16/02/2025,Newell's Old Boys,Rosario Central,1,2,A
+,16/02/2025,River Plate,Lanús,1,0,H
+,17/02/2025,Huracán,Unión (Santa Fe),1,0,H
+,17/02/2025,Talleres (Córdoba),Atlético Tucumán,1,1,D
+,17/02/2025,Gimnasia La Plata,San Martín (San Juan),1,0,H
+,17/02/2025,Sarmiento (Junín),Deportivo Riestra,2,1,H
+,17/02/2025,Platense,Independiente,1,1,D
+,18/02/2025,Instituto (Córdoba),San Lorenzo,0,1,A
+,18/02/2025,Vélez Sarsfield,Godoy Cruz Antonio Tomba,0,2,A
+,21/02/2025,Deportivo Riestra,Talleres (Córdoba),0,0,D
+,21/02/2025,Estudiantes de La Plata,Central Córdoba (Santiago del Estero),3,2,H
+,21/02/2025,Godoy Cruz Antonio Tomba,Platense,1,1,D
+,22/02/2025,Lanús,Vélez Sarsfield,0,0,D
+,22/02/2025,Independiente,Instituto (Córdoba),2,0,H
+,22/02/2025,Boca Juniors,Aldosivi,2,1,H
+,23/02/2025,San Martín (San Juan),River Plate,0,2,A
+,23/02/2025,Rosario Central,Sarmiento (Junín),1,0,H
+,23/02/2025,Huracán,San Lorenzo,2,0,H
+,24/02/2025,Atlético Tucumán,Gimnasia La Plata,0,1,A
+,24/02/2025,Belgrano (Córdoba),Defensa y Justicia,2,0,H
+,24/02/2025,Barracas Central,Newell's Old Boys,2,0,H
+,24/02/2025,Argentinos Juniors,Independiente Rivadavia,0,0,D
+,25/02/2025,Tigre,Banfield,1,0,H
+,28/02/2025,Boca Juniors,Rosario Central,1,0,H
+,01/03/2025,Central Córdoba (Santiago del Estero),Deportivo Riestra,0,0,D
+,01/03/2025,San Martín (San Juan),Belgrano (Córdoba),3,1,H
+,01/03/2025,Aldosivi,Sarmiento (Junín),2,2,D
+,01/03/2025,River Plate,Estudiantes de La Plata,0,2,A
+,02/03/2025,Talleres (Córdoba),Tigre,1,2,A
+,02/03/2025,Unión (Santa Fe),Gimnasia La Plata,1,0,H
+,02/03/2025,Argentinos Juniors,Instituto (Córdoba),2,0,H
+,02/03/2025,Independiente Rivadavia,Lanús,1,1,D
+,02/03/2025,Vélez Sarsfield,Huracán,0,2,A
+,03/03/2025,Barracas Central,Godoy Cruz Antonio Tomba,1,2,A
+,03/03/2025,San Lorenzo,Racing Club,3,2,H
+,04/03/2025,Atlético Tucumán,Newell's Old Boys,1,2,A
+,04/03/2025,Banfield,Independiente,0,0,D
+,04/03/2025,Platense,Defensa y Justicia,0,1,A
+,07/03/2025,Banfield,Argentinos Juniors,1,2,A
+,07/03/2025,Vélez Sarsfield,San Martín (San Juan),1,0,H
+,08/03/2025,Central Córdoba (Santiago del Estero),Boca Juniors,0,3,A
+,08/03/2025,San Lorenzo,Independiente,1,2,A
+,08/03/2025,Racing Club,Huracán,0,1,A
+,09/03/2025,Platense,Lanús,0,0,D
+,09/03/2025,Sarmiento (Junín),Barracas Central,1,1,D
+,09/03/2025,Aldosivi,Tigre,0,2,A
+,09/03/2025,Defensa y Justicia,Estudiantes de La Plata,1,0,H
+,09/03/2025,River Plate,Atlético Tucumán,1,0,H
+,10/03/2025,Instituto (Córdoba),Godoy Cruz Antonio Tomba,1,1,D
+,10/03/2025,Newell's Old Boys,Belgrano (Córdoba),0,0,D
+,10/03/2025,Gimnasia La Plata,Deportivo Riestra,1,1,D
+,11/03/2025,Independiente Rivadavia,Unión (Santa Fe),2,0,H
+,11/03/2025,Talleres (Córdoba),Rosario Central,0,0,D
+,14/03/2025,Argentinos Juniors,Aldosivi,0,2,A
+,15/03/2025,Godoy Cruz Antonio Tomba,San Lorenzo,0,0,D
+,15/03/2025,Deportivo Riestra,River Plate,0,0,D
+,15/03/2025,Estudiantes de La Plata,Newell's Old Boys,1,1,D
+,15/03/2025,Rosario Central,Gimnasia La Plata,2,1,H
+,16/03/2025,Huracán,Independiente Rivadavia,2,0,H
+,16/03/2025,Sarmiento (Junín),Talleres (Córdoba),0,0,D
+,16/03/2025,Independiente,Racing Club,1,1,D
+,16/03/2025,Boca Juniors,Defensa y Justicia,4,0,H
+,17/03/2025,Belgrano (Córdoba),Barracas Central,1,1,D
+,17/03/2025,Lanús,Instituto (Córdoba),4,1,H
+,17/03/2025,Tigre,Central Córdoba (Santiago del Estero),1,2,A
+,17/03/2025,Unión (Santa Fe),Banfield,3,1,H
+,18/03/2025,Atlético Tucumán,Vélez Sarsfield,1,2,A
+,18/03/2025,San Martín (San Juan),Platense,0,2,A
+,21/03/2025,Unión (Santa Fe),Racing Club,0,1,A
+,22/03/2025,Godoy Cruz Antonio Tomba,Talleres (Córdoba),0,0,D
+,27/03/2025,Aldosivi,Unión (Santa Fe),2,1,H
+,27/03/2025,Barracas Central,Estudiantes de La Plata,2,1,H
+,28/03/2025,Independiente Rivadavia,Racing Club,2,1,H
+,28/03/2025,Defensa y Justicia,Tigre,1,2,A
+,28/03/2025,Banfield,Huracán,0,0,D
+,28/03/2025,San Lorenzo,Lanús,1,1,D
+,29/03/2025,Platense,Atlético Tucumán,2,1,H
+,29/03/2025,Vélez Sarsfield,Deportivo Riestra,0,1,A
+,29/03/2025,Instituto (Córdoba),San Martín (San Juan),1,0,H
+,29/03/2025,Central Córdoba (Santiago del Estero),Argentinos Juniors,1,1,D
+,29/03/2025,Independiente,Godoy Cruz Antonio Tomba,4,0,H
+,30/03/2025,River Plate,Rosario Central,2,2,D
+,30/03/2025,Belgrano (Córdoba),Talleres (Córdoba),1,1,D
+,30/03/2025,Gimnasia La Plata,Sarmiento (Junín),0,0,D
+,30/03/2025,Newell's Old Boys,Boca Juniors,2,0,H
+,04/04/2025,Estudiantes de La Plata,Belgrano (Córdoba),0,1,A
+,05/04/2025,San Martín (San Juan),San Lorenzo,0,1,A
+,05/04/2025,Godoy Cruz Antonio Tomba,Independiente Rivadavia,1,1,D
+,05/04/2025,Rosario Central,Vélez Sarsfield,2,1,H
+,05/04/2025,Huracán,Aldosivi,3,3,D
+,05/04/2025,Talleres (Córdoba),Gimnasia La Plata,2,0,H
+,05/04/2025,Sarmiento (Junín),River Plate,1,1,D
+,06/04/2025,Lanús,Independiente,1,1,D
+,06/04/2025,Unión (Santa Fe),Central Córdoba (Santiago del Estero),1,0,H
+,06/04/2025,Boca Juniors,Barracas Central,1,0,H
+,06/04/2025,Argentinos Juniors,Defensa y Justicia,4,1,H
+,06/04/2025,Racing Club,Banfield,4,1,H
+,07/04/2025,Deportivo Riestra,Platense,1,0,H
+,08/04/2025,Atlético Tucumán,Instituto (Córdoba),3,2,H
+,08/04/2025,Tigre,Newell's Old Boys,0,2,A
+,11/04/2025,Banfield,Independiente Rivadavia,1,1,D
+,12/04/2025,Newell's Old Boys,Argentinos Juniors,0,0,D
+,12/04/2025,San Lorenzo,Atlético Tucumán,1,0,H
+,12/04/2025,Barracas Central,Tigre,1,0,H
+,12/04/2025,Belgrano (Córdoba),Boca Juniors,1,3,A
+,13/04/2025,Gimnasia La Plata,Estudiantes de La Plata,1,1,D
+,13/04/2025,Instituto (Córdoba),Deportivo Riestra,3,0,H
+,13/04/2025,Independiente,San Martín (San Juan),2,0,H
+,13/04/2025,River Plate,Talleres (Córdoba),1,1,D
+,14/04/2025,Aldosivi,Racing Club,0,2,A
+,14/04/2025,Central Córdoba (Santiago del Estero),Huracán,1,2,A
+,14/04/2025,Defensa y Justicia,Unión (Santa Fe),0,0,D
+,15/04/2025,Godoy Cruz Antonio Tomba,Lanús,0,0,D
+,15/04/2025,Vélez Sarsfield,Sarmiento (Junín),0,1,A
+,15/04/2025,Platense,Rosario Central,0,0,D
+,18/04/2025,Gimnasia La Plata,River Plate,0,3,A
+,18/04/2025,Racing Club,Central Córdoba (Santiago del Estero),1,0,H
+,18/04/2025,Talleres (Córdoba),Vélez Sarsfield,0,1,A
+,19/04/2025,Unión (Santa Fe),Newell's Old Boys,1,1,D
+,19/04/2025,Lanús,Banfield,1,1,D
+,19/04/2025,Huracán,Defensa y Justicia,1,1,D
+,19/04/2025,Boca Juniors,Estudiantes de La Plata,2,0,H
+,20/04/2025,Deportivo Riestra,San Lorenzo,0,0,D
+,20/04/2025,San Martín (San Juan),Godoy Cruz Antonio Tomba,1,0,H
+,20/04/2025,Sarmiento (Junín),Platense,0,1,A
+,20/04/2025,Rosario Central,Instituto (Córdoba),3,0,H
+,22/04/2025,Argentinos Juniors,Barracas Central,3,0,H
+,22/04/2025,Tigre,Belgrano (Córdoba),0,0,D
+,23/04/2025,Independiente Rivadavia,Aldosivi,1,0,H
+,26/04/2025,Aldosivi,Banfield,2,1,H
+,26/04/2025,San Lorenzo,Rosario Central,0,1,A
+,26/04/2025,Belgrano (Córdoba),Argentinos Juniors,1,1,D
+,27/04/2025,River Plate,Boca Juniors,2,1,H
+,27/04/2025,Instituto (Córdoba),Sarmiento (Junín),1,1,D
+,27/04/2025,Lanús,San Martín (San Juan),1,0,H
+,28/04/2025,Independiente,Deportivo Riestra,0,0,D
+,28/04/2025,Barracas Central,Unión (Santa Fe),2,1,H
+,28/04/2025,Godoy Cruz Antonio Tomba,Atlético Tucumán,1,0,H
+,28/04/2025,Defensa y Justicia,Racing Club,1,2,A
+,28/04/2025,Estudiantes de La Plata,Tigre,0,0,D
+,29/04/2025,Central Córdoba (Santiago del Estero),Independiente Rivadavia,1,2,A
+,29/04/2025,Vélez Sarsfield,Gimnasia La Plata,1,0,H
+,29/04/2025,Newell's Old Boys,Huracán,2,0,H
+,29/04/2025,Platense,Talleres (Córdoba),2,1,H
+,01/05/2025,Atlético Tucumán,Independiente,2,0,H
+,02/05/2025,Argentinos Juniors,Estudiantes de La Plata,4,0,H
+,02/05/2025,Banfield,Central Córdoba (Santiago del Estero),3,1,H
+,02/05/2025,Independiente Rivadavia,Defensa y Justicia,3,2,H
+,02/05/2025,Racing Club,Newell's Old Boys,1,0,H
+,02/05/2025,Unión (Santa Fe),Belgrano (Córdoba),1,1,D
+,03/05/2025,Deportivo Riestra,Godoy Cruz Antonio Tomba,3,0,H
+,03/05/2025,Sarmiento (Junín),San Lorenzo,1,1,D
+,03/05/2025,Talleres (Córdoba),Instituto (Córdoba),1,2,A
+,03/05/2025,Rosario Central,Independiente,1,0,H
+,04/05/2025,Atlético Tucumán,Lanús,1,0,H
+,04/05/2025,Huracán,Barracas Central,0,1,A
+,04/05/2025,Gimnasia La Plata,Platense,1,0,H
+,04/05/2025,San Martín (San Juan),Aldosivi,0,3,A
+,04/05/2025,Tigre,Boca Juniors,1,1,D
+,04/05/2025,River Plate,Vélez Sarsfield,4,1,H
+,10/05/2025,San Lorenzo,Tigre,2,1,H
+,10/05/2025,Rosario Central,Estudiantes de La Plata,2,0,H
+,10/05/2025,Racing Club,Platense,0,1,A
+,11/05/2025,Boca Juniors,Lanús,0,0,D
+,11/05/2025,Independiente,Independiente Rivadavia,1,0,H
+,11/05/2025,Argentinos Juniors,Instituto (Córdoba),3,1,H
+,11/05/2025,Huracán,Deportivo Riestra,3,2,H
+,12/05/2025,River Plate,Barracas Central,3,0,H
+,18/05/2025,Rosario Central,Huracán,0,1,A
+,19/05/2025,Argentinos Juniors,San Lorenzo,1,1,D
+,20/05/2025,Boca Juniors,Independiente,0,1,A
+,20/05/2025,River Plate,Platense,1,1,D
+,24/05/2025,Independiente,Huracán,0,0,D
+,25/05/2025,San Lorenzo,Platense,0,1,A
+,01/06/2025,Huracán,Platense,0,1,A
+,11/07/2025,Aldosivi,Central Córdoba (Santiago del Estero),0,0,D
+,11/07/2025,Talleres (Córdoba),San Lorenzo,1,2,A
+,12/07/2025,Rosario Central,Godoy Cruz Antonio Tomba,1,1,D
+,12/07/2025,Gimnasia La Plata,Instituto (Córdoba),0,1,A
+,12/07/2025,Huracán,Belgrano (Córdoba),0,3,A
+,12/07/2025,Racing Club,Barracas Central,0,1,A
+,13/07/2025,Sarmiento (Junín),Independiente,2,2,D
+,13/07/2025,Atlético Tucumán,San Martín (San Juan),2,1,H
+,13/07/2025,Independiente Rivadavia,Newell's Old Boys,1,2,A
+,13/07/2025,Argentinos Juniors,Boca Juniors,0,0,D
+,14/07/2025,River Plate,Platense,3,1,H
+,14/07/2025,Deportivo Riestra,Lanús,1,0,H
+,14/07/2025,Banfield,Defensa y Justicia,0,0,D
+,15/07/2025,Unión (Santa Fe),Estudiantes de La Plata,1,0,H
+,15/07/2025,Vélez Sarsfield,Tigre,2,1,H
+,18/07/2025,Boca Juniors,Unión (Santa Fe),1,1,D
+,19/07/2025,Atlético Tucumán,Central Córdoba (Santiago del Estero),1,1,D
+,19/07/2025,San Lorenzo,Gimnasia La Plata,0,0,D
+,19/07/2025,Lanús,Rosario Central,0,1,A
+,19/07/2025,Godoy Cruz Antonio Tomba,Sarmiento (Junín),0,0,D
+,19/07/2025,Platense,Vélez Sarsfield,0,0,D
+,20/07/2025,Instituto (Córdoba),River Plate,0,4,A
+,20/07/2025,Barracas Central,Independiente Rivadavia,0,3,A
+,20/07/2025,Newell's Old Boys,Banfield,1,2,A
+,20/07/2025,Tigre,Argentinos Juniors,2,1,H
+,20/07/2025,Belgrano (Córdoba),Racing Club,0,1,A
+,21/07/2025,Independiente,Talleres (Córdoba),1,2,A
+,21/07/2025,Estudiantes de La Plata,Huracán,2,1,H
+,22/07/2025,Defensa y Justicia,Aldosivi,2,0,H
+,22/07/2025,San Martín (San Juan),Deportivo Riestra,3,2,H
+,25/07/2025,Sarmiento (Junín),Lanús,0,2,A
+,26/07/2025,Independiente Rivadavia,Belgrano (Córdoba),0,0,D
+,26/07/2025,Unión (Santa Fe),Tigre,0,0,D
+,26/07/2025,Aldosivi,Newell's Old Boys,0,0,D
+,26/07/2025,Rosario Central,San Martín (San Juan),0,0,D
+,26/07/2025,Platense,Argentinos Juniors,0,0,D
+,26/07/2025,Vélez Sarsfield,Instituto (Córdoba),0,0,D
+,27/07/2025,Racing Club,Estudiantes de La Plata,0,1,A
+,27/07/2025,Gimnasia La Plata,Independiente,1,0,H
+,27/07/2025,Talleres (Córdoba),Godoy Cruz Antonio Tomba,0,0,D
+,27/07/2025,Huracán,Boca Juniors,1,0,H
+,27/07/2025,River Plate,San Lorenzo,0,0,D
+,28/07/2025,Deportivo Riestra,Atlético Tucumán,1,0,H
+,28/07/2025,Central Córdoba (Santiago del Estero),Defensa y Justicia,2,1,H
+,28/07/2025,Banfield,Barracas Central,1,3,A
+,07/08/2025,Godoy Cruz Antonio Tomba,Gimnasia La Plata,1,2,A
+,07/08/2025,San Lorenzo,Vélez Sarsfield,1,0,H
+,08/08/2025,Estudiantes de La Plata,Independiente Rivadavia,2,1,H
+,08/08/2025,Tigre,Huracán,0,1,A
+,09/08/2025,Newell's Old Boys,Central Córdoba (Santiago del Estero),1,1,D
+,09/08/2025,Lanús,Talleres (Córdoba),1,0,H
+,09/08/2025,San Martín (San Juan),Sarmiento (Junín),0,1,A
+,09/08/2025,Boca Juniors,Racing Club,1,1,D
+,09/08/2025,Independiente,River Plate,0,0,D
+,09/08/2025,Atlético Tucumán,Rosario Central,0,0,D
+,09/08/2025,Belgrano (Córdoba),Banfield,2,1,H
+,10/08/2025,Barracas Central,Aldosivi,3,1,H
+,10/08/2025,Instituto (Córdoba),Platense,1,1,D
+,10/08/2025,Argentinos Juniors,Unión (Santa Fe),1,0,H
+,11/08/2025,Defensa y Justicia,Deportivo Riestra,1,0,H
+,15/08/2025,Aldosivi,Belgrano (Córdoba),0,0,D
+,15/08/2025,Instituto (Córdoba),Unión (Santa Fe),0,4,A
+,16/08/2025,Racing Club,Tigre,1,2,A
+,16/08/2025,Platense,San Lorenzo,2,1,H
+,16/08/2025,Huracán,Argentinos Juniors,1,0,H
+,16/08/2025,Rosario Central,Deportivo Riestra,1,1,D
+,16/08/2025,Vélez Sarsfield,Independiente,2,1,H
+,17/08/2025,Defensa y Justicia,Newell's Old Boys,1,1,D
+,17/08/2025,Gimnasia La Plata,Lanús,1,2,A
+,17/08/2025,Banfield,Estudiantes de La Plata,3,2,H
+,17/08/2025,Central Córdoba (Santiago del Estero),Barracas Central,1,1,D
+,17/08/2025,River Plate,Godoy Cruz Antonio Tomba,4,2,H
+,17/08/2025,Independiente Rivadavia,Boca Juniors,0,3,A
+,18/08/2025,Sarmiento (Junín),Atlético Tucumán,2,2,D
+,19/08/2025,Talleres (Córdoba),San Martín (San Juan),0,0,D
+,22/08/2025,Barracas Central,Defensa y Justicia,1,1,D
+,22/08/2025,Tigre,Independiente Rivadavia,1,1,D
+,23/08/2025,San Lorenzo,Instituto (Córdoba),1,0,H
+,23/08/2025,Rosario Central,Newell's Old Boys,1,0,H
+,23/08/2025,Atlético Tucumán,Talleres (Córdoba),3,0,H
+,23/08/2025,San Martín (San Juan),Gimnasia La Plata,1,0,H
+,24/08/2025,Unión (Santa Fe),Huracán,1,1,D
+,24/08/2025,Argentinos Juniors,Racing Club,4,1,H
+,24/08/2025,Boca Juniors,Banfield,2,0,H
+,25/08/2025,Deportivo Riestra,Sarmiento (Junín),3,0,H
+,25/08/2025,Godoy Cruz Antonio Tomba,Vélez Sarsfield,0,2,A
+,25/08/2025,Belgrano (Córdoba),Central Córdoba (Santiago del Estero),0,3,A
+,25/08/2025,Estudiantes de La Plata,Aldosivi,1,0,H
+,26/08/2025,Lanús,River Plate,1,1,D
+,29/08/2025,Banfield,Tigre,1,0,H
+,29/08/2025,Newell's Old Boys,Barracas Central,1,2,A
+,30/08/2025,Instituto (Córdoba),Independiente,0,0,D
+,30/08/2025,San Lorenzo,Huracán,0,0,D
+,30/08/2025,Central Córdoba (Santiago del Estero),Estudiantes de La Plata,2,0,H
+,30/08/2025,Independiente Rivadavia,Argentinos Juniors,2,1,H
+,31/08/2025,Vélez Sarsfield,Lanús,3,0,H
+,31/08/2025,Aldosivi,Boca Juniors,0,2,A
+,31/08/2025,Defensa y Justicia,Belgrano (Córdoba),2,1,H
+,31/08/2025,Talleres (Córdoba),Deportivo Riestra,0,1,A
+,31/08/2025,River Plate,San Martín (San Juan),2,0,H
+,01/09/2025,Racing Club,Unión (Santa Fe),2,3,A
+,01/09/2025,Gimnasia La Plata,Atlético Tucumán,1,0,H
+,01/09/2025,Platense,Godoy Cruz Antonio Tomba,1,3,A
+,11/09/2025,Belgrano (Córdoba),San Martín (San Juan),0,0,D
+,12/09/2025,Deportivo Riestra,Central Córdoba (Santiago del Estero),2,0,H
+,12/09/2025,Huracán,Vélez Sarsfield,0,0,D
+,12/09/2025,Racing Club,San Lorenzo,2,0,H
+,13/09/2025,Lanús,Independiente Rivadavia,1,0,H
+,13/09/2025,Newell's Old Boys,Atlético Tucumán,2,0,H
+,13/09/2025,Godoy Cruz Antonio Tomba,Barracas Central,0,0,D
+,13/09/2025,Independiente,Banfield,0,1,A
+,13/09/2025,Estudiantes de La Plata,River Plate,1,2,A
+,14/09/2025,Sarmiento (Junín),Aldosivi,2,0,H
+,14/09/2025,Gimnasia La Plata,Unión (Santa Fe),1,3,A
+,14/09/2025,Instituto (Córdoba),Argentinos Juniors,2,0,H
+,14/09/2025,Rosario Central,Boca Juniors,1,1,D
+,14/09/2025,Defensa y Justicia,Platense,1,2,A
+,14/09/2025,Tigre,Talleres (Córdoba),0,0,D
+,19/09/2025,Deportivo Riestra,Gimnasia La Plata,1,0,H
+,19/09/2025,Huracán,Racing Club,0,2,A
+,19/09/2025,San Martín (San Juan),Vélez Sarsfield,1,2,A
+,20/09/2025,Lanús,Platense,2,1,H
+,20/09/2025,Barracas Central,Sarmiento (Junín),0,1,A
+,20/09/2025,Unión (Santa Fe),Independiente Rivadavia,2,2,D
+,21/09/2025,Atlético Tucumán,River Plate,2,0,H
+,21/09/2025,Tigre,Aldosivi,2,0,H
+,21/09/2025,Independiente,San Lorenzo,1,1,D
+,21/09/2025,Godoy Cruz Antonio Tomba,Instituto (Córdoba),1,1,D
+,21/09/2025,Argentinos Juniors,Banfield,3,0,H
+,21/09/2025,Rosario Central,Talleres (Córdoba),1,1,D
+,22/09/2025,Boca Juniors,Central Córdoba (Santiago del Estero),2,2,D
+,22/09/2025,Estudiantes de La Plata,Defensa y Justicia,1,0,H
+,23/09/2025,Belgrano (Córdoba),Newell's Old Boys,3,0,H
+,26/09/2025,Banfield,Unión (Santa Fe),0,0,D
+,26/09/2025,Platense,San Martín (San Juan),2,2,D
+,27/09/2025,Central Córdoba (Santiago del Estero),Tigre,0,1,A
+,27/09/2025,Aldosivi,Argentinos Juniors,0,2,A
+,27/09/2025,Gimnasia La Plata,Rosario Central,0,3,A
+,27/09/2025,San Lorenzo,Godoy Cruz Antonio Tomba,2,0,H
+,27/09/2025,Defensa y Justicia,Boca Juniors,2,1,H
+,28/09/2025,Talleres (Córdoba),Sarmiento (Junín),1,0,H
+,28/09/2025,Racing Club,Independiente,0,0,D
+,28/09/2025,River Plate,Deportivo Riestra,1,2,A
+,28/09/2025,Independiente Rivadavia,Huracán,0,0,D
+,28/09/2025,Instituto (Córdoba),Lanús,0,0,D
+,29/09/2025,Barracas Central,Belgrano (Córdoba),1,1,D
+,29/09/2025,Vélez Sarsfield,Atlético Tucumán,3,1,H
+,30/09/2025,Newell's Old Boys,Estudiantes de La Plata,1,1,D
+,03/10/2025,Tigre,Defensa y Justicia,1,1,D
+,04/10/2025,Argentinos Juniors,Central Córdoba (Santiago del Estero),0,0,D
+,04/10/2025,Unión (Santa Fe),Aldosivi,0,2,A
+,04/10/2025,Sarmiento (Junín),Gimnasia La Plata,0,1,A
+,04/10/2025,San Martín (San Juan),Instituto (Córdoba),0,0,D
+,04/10/2025,Atlético Tucumán,Platense,2,0,H
+,04/10/2025,Huracán,Banfield,1,0,H
+,05/10/2025,Lanús,San Lorenzo,2,1,H
+,05/10/2025,Godoy Cruz Antonio Tomba,Independiente,1,1,D
+,05/10/2025,Estudiantes de La Plata,Barracas Central,1,1,D
+,05/10/2025,Talleres (Córdoba),Belgrano (Córdoba),0,0,D
+,05/10/2025,Boca Juniors,Newell's Old Boys,5,0,H
+,06/10/2025,Rosario Central,River Plate,2,1,H
+,06/10/2025,Deportivo Riestra,Vélez Sarsfield,2,2,D
+,07/10/2025,Racing Club,Independiente Rivadavia,0,0,D
+,10/10/2025,San Lorenzo,San Martín (San Juan),0,1,A
+,10/10/2025,Defensa y Justicia,Argentinos Juniors,1,0,H
+,10/10/2025,Central Córdoba (Santiago del Estero),Unión (Santa Fe),3,1,H
+,10/10/2025,Newell's Old Boys,Tigre,1,1,D
+,11/10/2025,Gimnasia La Plata,Talleres (Córdoba),1,2,A
+,11/10/2025,Banfield,Racing Club,1,3,A
+,12/10/2025,Belgrano (Córdoba),Estudiantes de La Plata,1,1,D
+,12/10/2025,Vélez Sarsfield,Rosario Central,1,2,A
+,12/10/2025,Aldosivi,Huracán,2,0,H
+,12/10/2025,Independiente Rivadavia,Godoy Cruz Antonio Tomba,0,0,D
+,12/10/2025,Instituto (Córdoba),Atlético Tucumán,2,0,H
+,12/10/2025,River Plate,Sarmiento (Junín),0,1,A
+,13/10/2025,Independiente,Lanús,0,2,A
+,13/10/2025,Platense,Deportivo Riestra,1,1,D
+,17/10/2025,Racing Club,Aldosivi,1,0,H
+,18/10/2025,Argentinos Juniors,Newell's Old Boys,3,1,H
+,18/10/2025,Lanús,Godoy Cruz Antonio Tomba,2,0,H
+,18/10/2025,Independiente Rivadavia,Banfield,1,2,A
+,18/10/2025,Boca Juniors,Belgrano (Córdoba),1,2,A
+,18/10/2025,Talleres (Córdoba),River Plate,0,2,A
+,19/10/2025,Estudiantes de La Plata,Gimnasia La Plata,2,0,H
+,19/10/2025,Sarmiento (Junín),Vélez Sarsfield,0,2,A
+,19/10/2025,Rosario Central,Platense,1,0,H
+,19/10/2025,San Martín (San Juan),Independiente,1,0,H
+,20/10/2025,Deportivo Riestra,Instituto (Córdoba),1,0,H
+,20/10/2025,Tigre,Barracas Central,2,2,D
+,21/10/2025,Atlético Tucumán,San Lorenzo,1,2,A
+,21/10/2025,Unión (Santa Fe),Defensa y Justicia,3,0,H
+,22/10/2025,Huracán,Central Córdoba (Santiago del Estero),0,1,A
+,24/10/2025,Sarmiento (Junín),Rosario Central,0,1,A
+,24/10/2025,Independiente,Platense,3,0,H
+,27/10/2025,Barracas Central,Boca Juniors,1,3,A
+,31/10/2025,San Lorenzo,Deportivo Riestra,1,0,H
+,01/11/2025,Instituto (Córdoba),Rosario Central,1,3,A
+,01/11/2025,Newell's Old Boys,Unión (Santa Fe),0,1,A
+,01/11/2025,Aldosivi,Independiente Rivadavia,3,1,H
+,01/11/2025,Barracas Central,Argentinos Juniors,2,0,H
+,01/11/2025,Vélez Sarsfield,Talleres (Córdoba),0,1,A
+,01/11/2025,Independiente,Atlético Tucumán,3,0,H
+,02/11/2025,Estudiantes de La Plata,Boca Juniors,1,2,A
+,02/11/2025,Godoy Cruz Antonio Tomba,San Martín (San Juan),0,0,D
+,02/11/2025,River Plate,Gimnasia La Plata,0,1,A
+,03/11/2025,Defensa y Justicia,Huracán,1,3,A
+,03/11/2025,Platense,Sarmiento (Junín),1,1,D
+,03/11/2025,Central Córdoba (Santiago del Estero),Racing Club,0,0,D
+,04/11/2025,Banfield,Lanús,2,1,H
+,04/11/2025,Belgrano (Córdoba),Tigre,0,0,D
+,08/11/2025,Rosario Central,San Lorenzo,0,0,D
+,08/11/2025,Huracán,Newell's Old Boys,0,2,A
+,08/11/2025,Racing Club,Defensa y Justicia,1,0,H
+,08/11/2025,Talleres (Córdoba),Platense,1,0,H
+,09/11/2025,San Martín (San Juan),Lanús,1,1,D
+,09/11/2025,Unión (Santa Fe),Barracas Central,0,0,D
+,09/11/2025,Boca Juniors,River Plate,2,0,H
+,09/11/2025,Banfield,Aldosivi,0,1,A
+,09/11/2025,Sarmiento (Junín),Instituto (Córdoba),2,1,H
+,10/11/2025,Atlético Tucumán,Godoy Cruz Antonio Tomba,2,1,H
+,10/11/2025,Tigre,Estudiantes de La Plata,1,0,H
+,10/11/2025,Gimnasia La Plata,Vélez Sarsfield,2,0,H
+,10/11/2025,Deportivo Riestra,Independiente,0,1,A
+,11/11/2025,Argentinos Juniors,Belgrano (Córdoba),1,0,H
+,11/11/2025,Independiente Rivadavia,Central Córdoba (Santiago del Estero),0,0,D
+,14/11/2025,Lanús,Atlético Tucumán,3,1,H
+,15/11/2025,Aldosivi,San Martín (San Juan),4,2,H
+,15/11/2025,Godoy Cruz Antonio Tomba,Deportivo Riestra,1,1,D
+,15/11/2025,San Lorenzo,Sarmiento (Junín),1,1,D
+,16/11/2025,Independiente,Rosario Central,1,0,H
+,16/11/2025,Instituto (Córdoba),Talleres (Córdoba),0,0,D
+,16/11/2025,Vélez Sarsfield,River Plate,0,0,D
+,16/11/2025,Boca Juniors,Tigre,2,0,H
+,16/11/2025,Central Córdoba (Santiago del Estero),Banfield,1,1,D
+,16/11/2025,Estudiantes de La Plata,Argentinos Juniors,1,2,A
+,16/11/2025,Newell's Old Boys,Racing Club,0,1,A
+,17/11/2025,Barracas Central,Huracán,1,1,D
+,17/11/2025,Belgrano (Córdoba),Unión (Santa Fe),0,0,D
+,17/11/2025,Defensa y Justicia,Independiente Rivadavia,0,2,A
+,17/11/2025,Platense,Gimnasia La Plata,0,3,A
+,22/11/2025,Vélez Sarsfield,Argentinos Juniors,0,2,A
+,23/11/2025,Central Córdoba (Santiago del Estero),San Lorenzo,2,1,H
+,23/11/2025,Rosario Central,Estudiantes de La Plata,0,1,A
+,23/11/2025,Boca Juniors,Talleres (Córdoba),2,0,H
+,24/11/2025,Deportivo Riestra,Barracas Central,0,1,A
+,24/11/2025,Racing Club,River Plate,3,2,H
+,25/11/2025,Unión (Santa Fe),Gimnasia La Plata,1,2,A
+,27/11/2025,Lanús,Tigre,0,1,A
+,30/11/2025,Central Córdoba (Santiago del Estero),Estudiantes de La Plata,0,1,A
+,30/11/2025,Boca Juniors,Argentinos Juniors,1,0,H
+,01/12/2025,Barracas Central,Gimnasia La Plata,0,2,A
+,02/12/2025,Racing Club,Tigre,0,0,D
+,07/12/2025,Boca Juniors,Racing Club,0,1,A
+,08/12/2025,Gimnasia La Plata,Estudiantes de La Plata,0,1,A
+,14/12/2025,Racing Club,Estudiantes de La Plata,1,1,D

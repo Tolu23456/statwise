@@ -1,0 +1,273 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,10/01/2026,Mazatlán FC,FC Juárez,1,2,A
+,10/01/2026,Atlas,Puebla,1,0,H
+,10/01/2026,Tijuana,América,0,0,D
+,10/01/2026,Guadalajara,Pachuca,2,0,H
+,11/01/2026,León,Cruz Azul,2,1,H
+,11/01/2026,Santos,Necaxa,1,3,A
+,11/01/2026,Monterrey,Toluca,0,1,A
+,11/01/2026,Pumas UNAM,Querétaro,1,1,D
+,12/01/2026,Atlético de San Luis,Tigres UANL,1,2,A
+,13/01/2026,Puebla,Mazatlán FC,2,1,H
+,14/01/2026,Necaxa,Monterrey,0,2,A
+,14/01/2026,Pachuca,León,2,1,H
+,14/01/2026,FC Juárez,Guadalajara,0,1,A
+,14/01/2026,Cruz Azul,Atlas,2,0,H
+,15/01/2026,Querétaro,Tijuana,1,2,A
+,15/01/2026,América,Atlético de San Luis,0,2,A
+,15/01/2026,Tigres UANL,Pumas UNAM,0,1,A
+,15/01/2026,Toluca,Santos,3,1,H
+,17/01/2026,Mazatlán FC,Monterrey,1,5,A
+,17/01/2026,Necaxa,Atlas,0,1,A
+,17/01/2026,Guadalajara,Querétaro,2,1,H
+,18/01/2026,Tigres UANL,Toluca,0,0,D
+,18/01/2026,Cruz Azul,Puebla,1,0,H
+,18/01/2026,Tijuana,Atlético de San Luis,1,1,D
+,18/01/2026,Pumas UNAM,León,1,1,D
+,18/01/2026,Santos,FC Juárez,2,2,D
+,19/01/2026,Pachuca,América,0,0,D
+,31/01/2026,Puebla,Toluca,0,0,D
+,31/01/2026,Pumas UNAM,Santos,4,0,H
+,31/01/2026,FC Juárez,Cruz Azul,3,4,A
+,31/01/2026,América,Necaxa,2,0,H
+,31/01/2026,Atlas,Mazatlán FC,1,0,H
+,31/01/2026,Atlético de San Luis,Guadalajara,2,3,A
+,01/02/2026,Monterrey,Tijuana,2,2,D
+,01/02/2026,León,Tigres UANL,1,2,A
+,01/02/2026,Querétaro,Pachuca,0,0,D
+,07/02/2026,Necaxa,Atlético de San Luis,4,1,H
+,07/02/2026,Tigres UANL,Santos,5,1,H
+,07/02/2026,Mazatlán FC,Guadalajara,1,2,A
+,07/02/2026,Tijuana,Puebla,0,0,D
+,07/02/2026,Querétaro,León,2,0,H
+,07/02/2026,Toluca,Cruz Azul,1,1,D
+,08/02/2026,Atlas,Pumas UNAM,2,2,D
+,08/02/2026,Pachuca,FC Juárez,2,0,H
+,08/02/2026,América,Monterrey,1,0,H
+,14/02/2026,Puebla,Pumas UNAM,2,3,A
+,14/02/2026,Toluca,Tijuana,1,0,H
+,14/02/2026,Atlético de San Luis,Querétaro,3,0,H
+,14/02/2026,Pachuca,Atlas,3,1,H
+,15/02/2026,Monterrey,León,1,0,H
+,15/02/2026,FC Juárez,Necaxa,1,2,A
+,15/02/2026,Guadalajara,América,1,0,H
+,15/02/2026,Cruz Azul,Tigres UANL,2,1,H
+,15/02/2026,Santos,Mazatlán FC,1,2,A
+,21/02/2026,Tigres UANL,Pachuca,1,2,A
+,21/02/2026,Puebla,América,0,4,A
+,21/02/2026,Atlas,Atlético de San Luis,3,2,H
+,22/02/2026,León,Santos,2,1,H
+,22/02/2026,Necaxa,Toluca,0,3,A
+,22/02/2026,Cruz Azul,Guadalajara,2,1,H
+,22/02/2026,Tijuana,Mazatlán FC,1,1,D
+,22/02/2026,Pumas UNAM,Monterrey,2,0,H
+,28/02/2026,Mazatlán FC,Pachuca,1,0,H
+,28/02/2026,Querétaro,Santos,2,2,D
+,28/02/2026,FC Juárez,Atlas,3,1,H
+,28/02/2026,Tijuana,Pumas UNAM,1,1,D
+,28/02/2026,Atlético de San Luis,Puebla,0,1,A
+,28/02/2026,Toluca,Guadalajara,2,0,H
+,01/03/2026,Monterrey,Cruz Azul,0,2,A
+,01/03/2026,León,Necaxa,2,1,H
+,01/03/2026,América,Tigres UANL,1,4,A
+,04/03/2026,Pachuca,Necaxa,2,1,H
+,04/03/2026,Santos,Cruz Azul,1,2,A
+,04/03/2026,Atlético de San Luis,Mazatlán FC,4,1,H
+,04/03/2026,Pumas UNAM,Toluca,2,3,A
+,05/03/2026,Monterrey,Querétaro,4,0,H
+,05/03/2026,Puebla,Tigres UANL,3,1,H
+,05/03/2026,América,FC Juárez,1,2,A
+,05/03/2026,Atlas,Tijuana,2,1,H
+,07/03/2026,Mazatlán FC,León,4,2,H
+,07/03/2026,Necaxa,Pumas UNAM,0,1,A
+,07/03/2026,Cruz Azul,Atlético de San Luis,3,0,H
+,07/03/2026,Querétaro,América,1,2,A
+,08/03/2026,Atlas,Guadalajara,1,2,A
+,08/03/2026,Pachuca,Puebla,2,1,H
+,08/03/2026,Tigres UANL,Monterrey,1,0,H
+,08/03/2026,Toluca,FC Juárez,3,1,H
+,09/03/2026,Tijuana,Santos,1,2,A
+,14/03/2026,Puebla,Necaxa,0,0,D
+,14/03/2026,FC Juárez,Monterrey,2,2,D
+,14/03/2026,Atlético de San Luis,Pachuca,1,1,D
+,14/03/2026,Guadalajara,Santos,3,0,H
+,15/03/2026,León,Tijuana,0,3,A
+,15/03/2026,Toluca,Atlas,1,1,D
+,15/03/2026,Pumas UNAM,Cruz Azul,2,2,D
+,15/03/2026,Tigres UANL,Querétaro,0,0,D
+,16/03/2026,América,Mazatlán FC,2,0,H
+,19/03/2026,Guadalajara,León,5,0,H
+,21/03/2026,Necaxa,Tijuana,3,0,H
+,21/03/2026,Mazatlán FC,Cruz Azul,1,1,D
+,21/03/2026,Atlas,Querétaro,0,0,D
+,22/03/2026,Atlético de San Luis,León,1,2,A
+,22/03/2026,Monterrey,Guadalajara,2,3,A
+,22/03/2026,Pumas UNAM,América,1,0,H
+,22/03/2026,Pachuca,Toluca,1,1,D
+,22/03/2026,Santos,Puebla,2,1,H
+,23/03/2026,FC Juárez,Tigres UANL,2,1,H
+,04/04/2026,Puebla,FC Juárez,1,1,D
+,04/04/2026,Necaxa,Mazatlán FC,2,1,H
+,04/04/2026,Tijuana,Tigres UANL,1,0,H
+,04/04/2026,Monterrey,Atlético de San Luis,1,2,A
+,04/04/2026,Querétaro,Toluca,1,0,H
+,05/04/2026,León,Atlas,2,0,H
+,05/04/2026,Cruz Azul,Pachuca,1,2,A
+,05/04/2026,Santos,América,1,1,D
+,06/04/2026,Guadalajara,Pumas UNAM,2,2,D
+,08/04/2026,Querétaro,FC Juárez,1,1,D
+,11/04/2026,Puebla,León,0,1,A
+,11/04/2026,FC Juárez,Tijuana,1,2,A
+,11/04/2026,Querétaro,Necaxa,3,1,H
+,11/04/2026,Tigres UANL,Guadalajara,4,1,H
+,12/04/2026,Atlas,Monterrey,0,0,D
+,12/04/2026,Pachuca,Santos,4,2,H
+,12/04/2026,América,Cruz Azul,1,1,D
+,12/04/2026,Pumas UNAM,Mazatlán FC,3,1,H
+,13/04/2026,Toluca,Atlético de San Luis,1,1,D
+,18/04/2026,Atlético de San Luis,Pumas UNAM,0,2,A
+,18/04/2026,Mazatlán FC,Querétaro,1,1,D
+,18/04/2026,Cruz Azul,Tijuana,1,1,D
+,18/04/2026,Necaxa,Tigres UANL,1,1,D
+,19/04/2026,Monterrey,Pachuca,1,3,A
+,19/04/2026,Guadalajara,Puebla,5,0,H
+,19/04/2026,León,FC Juárez,3,1,H
+,19/04/2026,América,Toluca,2,1,H
+,19/04/2026,Santos,Atlas,0,1,A
+,22/04/2026,Pumas UNAM,FC Juárez,4,2,H
+,22/04/2026,Querétaro,Cruz Azul,1,1,D
+,22/04/2026,Monterrey,Puebla,2,1,H
+,22/04/2026,León,América,2,3,A
+,23/04/2026,Atlas,Tigres UANL,0,0,D
+,23/04/2026,Atlético de San Luis,Santos,2,0,H
+,23/04/2026,Mazatlán FC,Toluca,4,3,H
+,23/04/2026,Tijuana,Pachuca,3,1,H
+,23/04/2026,Necaxa,Guadalajara,0,0,D
+,25/04/2026,Puebla,Querétaro,1,2,A
+,25/04/2026,Pachuca,Pumas UNAM,0,2,A
+,25/04/2026,Tigres UANL,Mazatlán FC,5,1,H
+,26/04/2026,Toluca,León,4,1,H
+,26/04/2026,Guadalajara,Tijuana,0,0,D
+,26/04/2026,FC Juárez,Atlético de San Luis,2,1,H
+,26/04/2026,América,Atlas,0,1,A
+,26/04/2026,Santos,Monterrey,3,0,H
+,27/04/2026,Cruz Azul,Necaxa,4,1,H
+,03/05/2026,Tigres UANL,Guadalajara,3,1,H
+,03/05/2026,Atlas,Cruz Azul,2,3,A
+,03/05/2026,América,Pumas UNAM,3,3,D
+,04/05/2026,Toluca,Pachuca,0,1,A
+,10/05/2026,Guadalajara,Tigres UANL,2,0,H
+,10/05/2026,Cruz Azul,Atlas,1,0,H
+,10/05/2026,Pachuca,Toluca,2,0,H
+,11/05/2026,Pumas UNAM,América,3,3,D
+,14/05/2026,Cruz Azul,Guadalajara,2,2,D
+,15/05/2026,Pachuca,Pumas UNAM,1,0,H
+,17/05/2026,Guadalajara,Cruz Azul,1,2,A
+,18/05/2026,Pumas UNAM,Pachuca,1,0,H
+,22/05/2026,Cruz Azul,Pumas UNAM,0,0,D
+,25/05/2026,Pumas UNAM,Cruz Azul,1,2,A
+,17/07/2026,Necaxa,Atlante,2,1,H
+,17/07/2026,Tijuana,Tigres UANL,3,1,H
+,18/07/2026,Atlético de San Luis,Cruz Azul,2,3,A
+,18/07/2026,León,Atlas,2,3,A
+,18/07/2026,FC Juárez,Puebla,0,1,A
+,18/07/2026,Pumas UNAM,Pachuca,0,3,A
+,19/07/2026,Monterrey,Santos,3,2,H
+,19/07/2026,Guadalajara,Toluca,0,2,A
+,19/07/2026,Querétaro,América,0,1,A
+,22/07/2026,Cruz Azul,Puebla,2,1,H
+,22/07/2026,Toluca,Pumas UNAM,1,2,A
+,25/07/2026,Atlante,América,1,1,D
+,25/07/2026,Tijuana,León,1,0,H
+,25/07/2026,Guadalajara,FC Juárez,1,0,H
+,26/07/2026,Santos,Atlas,0,1,A
+,26/07/2026,Tigres UANL,Atlético de San Luis,2,2,D
+,26/07/2026,Necaxa,Monterrey,2,1,H
+,27/07/2026,Pachuca,Querétaro,1,2,A
+,01/08/2026,Puebla,Guadalajara,1,1,D
+,01/08/2026,Atlético de San Luis,Tijuana,0,0,D
+,01/08/2026,FC Juárez,Pumas UNAM,1,5,A
+,01/08/2026,Querétaro,Tigres UANL,3,2,H
+,02/08/2026,Atlas,Monterrey,0,2,A
+,02/08/2026,León,Pachuca,1,0,H
+,02/08/2026,Cruz Azul,Atlante,2,3,A
+,02/08/2026,América,Santos,3,0,H
+,03/08/2026,Toluca,Necaxa,3,1,H
+,15/08/2026,Atlante,Toluca,0,0,D
+,16/08/2026,Monterrey,FC Juárez,6,1,H
+,16/08/2026,Atlas,Tigres UANL,2,1,H
+,16/08/2026,Pumas UNAM,Querétaro,0,0,D
+,16/08/2026,América,Atlético de San Luis,3,0,H
+,17/08/2026,Santos,Guadalajara,0,1,A
+,17/08/2026,Tijuana,Cruz Azul,2,1,H
+,18/08/2026,Necaxa,León,1,2,A
+,18/08/2026,Pachuca,Puebla,2,3,A
+,22/08/2026,León,Monterrey,2,0,H
+,22/08/2026,Tigres UANL,Atlante,2,0,H
+,22/08/2026,FC Juárez,América,1,2,A
+,22/08/2026,Querétaro,Toluca,1,2,A
+,22/08/2026,Guadalajara,Tijuana,5,2,H
+,23/08/2026,Puebla,Santos,3,2,H
+,23/08/2026,Cruz Azul,Atlas,0,2,A
+,23/08/2026,Atlético de San Luis,Pachuca,1,1,D
+,24/08/2026,Pumas UNAM,Necaxa,1,1,D
+,29/08/2026,Atlante,León,1,1,D
+,29/08/2026,Necaxa,Cruz Azul,1,3,A
+,29/08/2026,Tijuana,Pumas UNAM,2,0,H
+,29/08/2026,Atlas,Querétaro,1,3,A
+,29/08/2026,Pachuca,Guadalajara,1,1,D
+,30/08/2026,América,Puebla,2,0,H
+,30/08/2026,Santos,Tigres UANL,0,0,D
+,31/08/2026,Toluca,FC Juárez,4,0,H
+,31/08/2026,Monterrey,Atlético de San Luis,1,3,A
+,05/09/2026,FC Juárez,Pachuca,0,2,A
+,05/09/2026,Atlético de San Luis,Guadalajara,0,3,A
+,06/09/2026,Tigres UANL,Necaxa,1,1,D
+,06/09/2026,Atlas,Atlante,1,1,D
+,06/09/2026,Cruz Azul,Santos,1,0,H
+,11/09/2026,Pumas UNAM,León,3,1,H
+,12/09/2026,Necaxa,Puebla,0,1,A
+,12/09/2026,Atlante,Pachuca,0,3,A
+,12/09/2026,Tijuana,Querétaro,0,1,A
+,12/09/2026,Toluca,Atlas,5,2,H
+,13/09/2026,Monterrey,Tigres UANL,0,0,D
+,13/09/2026,Cruz Azul,América,4,3,H
+,14/09/2026,Santos,FC Juárez,2,1,H
+,14/09/2026,Guadalajara,Pumas UNAM,3,0,H
+,15/09/2026,León,Atlético de San Luis,2,0,H
+,16/09/2026,Puebla,Toluca,0,1,A
+,19/09/2026,Puebla,Atlante,1,1,D
+,19/09/2026,FC Juárez,Tigres UANL,2,0,H
+,19/09/2026,Atlas,Pumas UNAM,1,1,D
+,19/09/2026,Atlético de San Luis,Necaxa,3,1,H
+,20/09/2026,Monterrey,Cruz Azul,1,0,H
+,20/09/2026,América,Guadalajara,2,2,D
+,21/09/2026,Pachuca,Tijuana,2,2,D
+,21/09/2026,Toluca,Santos,2,3,A
+,21/09/2026,Querétaro,León,1,1,D
+,26/09/2026,Atlante,Monterrey,4,2,H
+,26/09/2026,Tijuana,Atlas,2,3,A
+,26/09/2026,Cruz Azul,Toluca,3,3,D
+,26/09/2026,Guadalajara,Querétaro,0,2,A
+,27/09/2026,Santos,Pachuca,1,0,H
+,27/09/2026,Tigres UANL,Puebla,1,0,H
+,27/09/2026,Pumas UNAM,Atlético de San Luis,2,3,A
+,28/09/2026,León,FC Juárez,2,1,H
+,28/09/2026,Necaxa,América,2,4,A
+,10/10/2026,Puebla,León,1,1,D
+,10/10/2026,Tigres UANL,Toluca,3,2,H
+,10/10/2026,FC Juárez,Tijuana,1,1,D
+,10/10/2026,Querétaro,Atlante,2,0,H
+,11/10/2026,Atlas,Guadalajara,1,1,D
+,11/10/2026,América,Monterrey,1,1,D
+,11/10/2026,Atlético de San Luis,Santos,1,2,A
+,11/10/2026,Pachuca,Necaxa,3,3,D
+,12/10/2026,Pumas UNAM,Cruz Azul,3,3,D
+,17/10/2026,Necaxa,Atlas,0,2,A
+,17/10/2026,Atlante,Pumas UNAM,1,2,A
+,17/10/2026,Tijuana,Puebla,0,0,D
+,17/10/2026,Santos,Querétaro,5,0,H
+,17/10/2026,Guadalajara,Tigres UANL,1,1,D
+,18/10/2026,León,América,3,5,A
+,18/10/2026,Toluca,Atlético de San Luis,1,1,D
+,18/10/2026,Cruz Azul,FC Juárez,5,0,H

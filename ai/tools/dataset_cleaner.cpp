@@ -830,6 +830,14 @@ static const std::unordered_map<std::string, DivPair> DIVISION_MAP = {
     {"SWI", {"swiss-super",      "Switzerland"}},
     {"USA", {"mls",              "USA"}},
     {"JPN", {"j-league",         "Japan"}},
+    // Codes used by xgabora/Matches.csv (not football-data.co.uk)
+    {"JAP", {"j-league",         "Japan"}},
+    {"SUI", {"swiss-super",      "Switzerland"}},
+    {"MEX", {"liga-mx",          "Mexico"}},
+    {"EC",  {"conference-national", "England"}},
+    {"ROM", {"romanian-liga1",   "Romania"}},
+    {"POL", {"polish-ekstraklasa", "Poland"}},
+    {"RUS", {"russian-premier",  "Russia"}},
 };
 
 // ─── league tier (1=elite, 2=second, 3=third, 4=lower, 0=international) ──────
@@ -1170,29 +1178,99 @@ static std::vector<Match> parse_xgabora(const std::string& path) {
     auto hdr = parse_csv_row(line);
     auto idx = make_header_idx(hdr);
 
+    // Current xgabora schema (2000 → 2026-27):
+    //   Division,MatchDate,MatchTime,HomeTeam,AwayTeam,HomeElo,AwayElo,
+    //   Form3Home,Form5Home,Form3Away,Form5Away,FTHome,FTAway,FTResult,
+    //   HTHome,HTAway,HTResult,HomeShots,AwayShots,HomeTarget,AwayTarget,
+    //   HomeFouls,AwayFouls,HomeCorners,AwayCorners,HomeYellow,AwayYellow,
+    //   HomeRed,AwayRed,OddHome,OddDraw,OddAway,MaxHome,MaxDraw,MaxAway,
+    //   Over25,Under25,MaxOver25,MaxUnder25,HandiSize,HandiHome,HandiAway
     while (std::getline(f, line)) {
         if (line.empty()) continue;
         auto row = parse_csv_row(line);
         Match m;
-        m.date      = normalise_date(get(row, idx, "date"));
+        m.date      = normalise_date(get(row, idx, "MatchDate"));
         if (m.date.empty()) { ++g_total_invalid; continue; }
-        m.home_team = normalise_team(get(row, idx, "home_team"));
-        m.away_team = normalise_team(get(row, idx, "away_team"));
+        m.home_team = normalise_team(get(row, idx, "HomeTeam"));
+        m.away_team = normalise_team(get(row, idx, "AwayTeam"));
         if (m.home_team.empty() || m.away_team.empty() || m.home_team == m.away_team)
             { ++g_total_invalid; continue; }
-        m.home_goals = parse_i(get(row, idx, "home_goals"));
-        m.away_goals = parse_i(get(row, idx, "away_goals"));
+        m.home_goals = parse_i(get(row, idx, "FTHome"));
+        m.away_goals = parse_i(get(row, idx, "FTAway"));
         if (!valid_score(m.home_goals) || !valid_score(m.away_goals))
             { ++g_total_invalid; continue; }
-        std::string raw_slug = lower(trim(get(row, idx, "league")));
-        m.league_slug = raw_slug.empty() ? "unknown" : raw_slug;
-        m.country     = trim(get(row, idx, "country"));
+
+        // Division code → league slug + country (xgabora shares most codes
+        // with football-data.co.uk; JAP/SUI/MEX/EC/ROM/POL/RUS are extras)
+        std::string div = trim(get(row, idx, "Division"));
+        auto dit = DIVISION_MAP.find(div);
+        if (dit != DIVISION_MAP.end()) {
+            m.league_slug = dit->second.first;
+            m.country     = dit->second.second;
+        } else {
+            std::string raw_slug = lower(div);
+            m.league_slug = raw_slug.empty() ? "unknown" : raw_slug;
+            m.country     = "";
+        }
+
         m.source      = "xgabora";
-        m.elo_home    = parse_d(get(row, idx, "elo_home"));
-        m.elo_away    = parse_d(get(row, idx, "elo_away"));
+        m.elo_home    = parse_d(get(row, idx, "HomeElo"));
+        m.elo_away    = parse_d(get(row, idx, "AwayElo"));
         if (m.elo_home <= 0 || m.elo_home > 3000) m.elo_home = -1;
         if (m.elo_away <= 0 || m.elo_away > 3000) m.elo_away = -1;
-        m.league_tier    = get_league_tier(m.league_slug);
+
+        // Half-time and match stats
+        m.ht_home              = parse_i(get(row, idx, "HTHome"));
+        m.ht_away              = parse_i(get(row, idx, "HTAway"));
+        m.shots_home           = parse_i(get(row, idx, "HomeShots"));
+        m.shots_away           = parse_i(get(row, idx, "AwayShots"));
+        m.shots_on_target_home = parse_i(get(row, idx, "HomeTarget"));
+        m.shots_on_target_away = parse_i(get(row, idx, "AwayTarget"));
+        m.fouls_home           = parse_i(get(row, idx, "HomeFouls"));
+        m.fouls_away           = parse_i(get(row, idx, "AwayFouls"));
+        m.corners_home         = parse_i(get(row, idx, "HomeCorners"));
+        m.corners_away         = parse_i(get(row, idx, "AwayCorners"));
+        m.yellows_home         = parse_i(get(row, idx, "HomeYellow"));
+        m.yellows_away         = parse_i(get(row, idx, "AwayYellow"));
+        m.reds_home            = parse_i(get(row, idx, "HomeRed"));
+        m.reds_away            = parse_i(get(row, idx, "AwayRed"));
+        if (m.shots_home >= 0 && !valid_shots(m.shots_home)) m.shots_home = -1;
+        if (m.shots_away >= 0 && !valid_shots(m.shots_away)) m.shots_away = -1;
+        if (m.corners_home >= 0 && !valid_corners(m.corners_home)) m.corners_home = -1;
+        if (m.corners_away >= 0 && !valid_corners(m.corners_away)) m.corners_away = -1;
+        if (m.fouls_home >= 0 && !valid_fouls(m.fouls_home)) m.fouls_home = -1;
+        if (m.fouls_away >= 0 && !valid_fouls(m.fouls_away)) m.fouls_away = -1;
+        if (m.yellows_home >= 0 && !valid_cards(m.yellows_home)) m.yellows_home = -1;
+        if (m.yellows_away >= 0 && !valid_cards(m.yellows_away)) m.yellows_away = -1;
+
+        // Odds: this source has a single price column + a max column
+        m.odds_home     = parse_d(get(row, idx, "OddHome"));
+        m.odds_draw     = parse_d(get(row, idx, "OddDraw"));
+        m.odds_away     = parse_d(get(row, idx, "OddAway"));
+        m.max_odds_home = parse_d(get(row, idx, "MaxHome"));
+        m.max_odds_draw = parse_d(get(row, idx, "MaxDraw"));
+        m.max_odds_away = parse_d(get(row, idx, "MaxAway"));
+        if (!valid_odds_trio(m.odds_home, m.odds_draw, m.odds_away))
+            m.odds_home = m.odds_draw = m.odds_away = -1;
+        if (!valid_odds_trio(m.max_odds_home, m.max_odds_draw, m.max_odds_away))
+            m.max_odds_home = m.max_odds_draw = m.max_odds_away = -1;
+
+        m.over25_odds  = parse_d(get(row, idx, "Over25"));
+        m.under25_odds = parse_d(get(row, idx, "Under25"));
+        m.max_over25   = parse_d(get(row, idx, "MaxOver25"));
+        m.max_under25  = parse_d(get(row, idx, "MaxUnder25"));
+        if (!valid_odds(m.over25_odds))  m.over25_odds  = -1;
+        if (!valid_odds(m.under25_odds)) m.under25_odds = -1;
+        if (!valid_odds(m.max_over25))   m.max_over25   = -1;
+        if (!valid_odds(m.max_under25))  m.max_under25  = -1;
+
+        m.asian_handicap_line = parse_d(get(row, idx, "HandiSize"));
+        m.asian_handicap_home = parse_d(get(row, idx, "HandiHome"));
+        m.asian_handicap_away = parse_d(get(row, idx, "HandiAway"));
+        if (!valid_odds(m.asian_handicap_home)) m.asian_handicap_home = -1;
+        if (!valid_odds(m.asian_handicap_away)) m.asian_handicap_away = -1;
+
+        m.league_tier      = get_league_tier(m.league_slug);
         m.is_international = false;
         m.compute_quality();
         out.push_back(std::move(m));

@@ -1,0 +1,200 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,14/02/2025,Brøndby IF,Viborg FF,4,1,H
+,16/02/2025,Silkeborg IF,Vejle Boldklub,0,1,A
+,16/02/2025,Sønderjyske Fodbold,AGF,1,4,A
+,16/02/2025,FC Midtjylland,Lyngby Boldklub,1,0,H
+,17/02/2025,Randers FC,F.C. København,1,2,A
+,21/02/2025,Lyngby Boldklub,Randers FC,0,0,D
+,23/02/2025,AGF,AaB,4,0,H
+,23/02/2025,FC Nordsjælland,Sønderjyske Fodbold,3,2,H
+,23/02/2025,Vejle Boldklub,Brøndby IF,2,2,D
+,23/02/2025,F.C. København,FC Midtjylland,1,0,H
+,24/02/2025,Viborg FF,Silkeborg IF,1,4,A
+,26/02/2025,AaB,FC Nordsjælland,1,2,A
+,28/02/2025,Randers FC,AGF,1,1,D
+,02/03/2025,Sønderjyske Fodbold,Silkeborg IF,1,3,A
+,02/03/2025,Viborg FF,Vejle Boldklub,3,1,H
+,02/03/2025,FC Midtjylland,FC Nordsjælland,2,1,H
+,02/03/2025,AaB,F.C. København,0,0,D
+,03/03/2025,Brøndby IF,Lyngby Boldklub,1,1,D
+,07/03/2025,FC Nordsjælland,Vejle Boldklub,3,1,H
+,09/03/2025,AaB,FC Midtjylland,1,4,A
+,09/03/2025,Silkeborg IF,Lyngby Boldklub,0,1,A
+,09/03/2025,AGF,Viborg FF,1,1,D
+,09/03/2025,F.C. København,Sønderjyske Fodbold,1,1,D
+,10/03/2025,Randers FC,Brøndby IF,4,2,H
+,16/03/2025,Brøndby IF,Silkeborg IF,2,2,D
+,16/03/2025,FC Midtjylland,Randers FC,4,2,H
+,16/03/2025,Lyngby Boldklub,FC Nordsjælland,1,0,H
+,16/03/2025,Sønderjyske Fodbold,AaB,0,3,A
+,16/03/2025,Vejle Boldklub,AGF,3,2,H
+,16/03/2025,Viborg FF,F.C. København,3,2,H
+,28/03/2025,AaB,Viborg FF,0,4,A
+,30/03/2025,Lyngby Boldklub,Vejle Boldklub,1,2,A
+,30/03/2025,Sønderjyske Fodbold,Silkeborg IF,2,1,H
+,30/03/2025,AGF,FC Nordsjælland,2,0,H
+,30/03/2025,FC Midtjylland,Brøndby IF,0,2,A
+,31/03/2025,F.C. København,Randers FC,1,0,H
+,04/04/2025,Randers FC,FC Midtjylland,2,1,H
+,06/04/2025,Silkeborg IF,Lyngby Boldklub,2,1,H
+,06/04/2025,Viborg FF,Sønderjyske Fodbold,2,1,H
+,06/04/2025,Vejle Boldklub,AaB,1,1,D
+,06/04/2025,FC Nordsjælland,F.C. København,0,1,A
+,07/04/2025,Brøndby IF,AGF,2,1,H
+,11/04/2025,AaB,Lyngby Boldklub,2,2,D
+,13/04/2025,F.C. København,Brøndby IF,1,2,A
+,13/04/2025,Viborg FF,Silkeborg IF,2,1,H
+,13/04/2025,AGF,FC Midtjylland,1,1,D
+,13/04/2025,FC Nordsjælland,Randers FC,5,2,H
+,14/04/2025,Sønderjyske Fodbold,Vejle Boldklub,1,0,H
+,16/04/2025,Silkeborg IF,AaB,4,0,H
+,17/04/2025,Lyngby Boldklub,Sønderjyske Fodbold,0,2,A
+,17/04/2025,Vejle Boldklub,Viborg FF,3,3,D
+,17/04/2025,Randers FC,AGF,3,1,H
+,17/04/2025,FC Midtjylland,F.C. København,4,2,H
+,18/04/2025,Brøndby IF,FC Nordsjælland,0,0,D
+,20/04/2025,AaB,Sønderjyske Fodbold,2,3,A
+,21/04/2025,Vejle Boldklub,Silkeborg IF,0,4,A
+,21/04/2025,Viborg FF,Lyngby Boldklub,1,1,D
+,21/04/2025,Brøndby IF,Randers FC,4,3,H
+,21/04/2025,F.C. København,AGF,3,1,H
+,22/04/2025,FC Nordsjælland,FC Midtjylland,3,2,H
+,25/04/2025,Randers FC,Brøndby IF,0,0,D
+,27/04/2025,Lyngby Boldklub,Silkeborg IF,2,0,H
+,27/04/2025,Sønderjyske Fodbold,Viborg FF,2,2,D
+,27/04/2025,AGF,F.C. København,1,3,A
+,27/04/2025,FC Midtjylland,FC Nordsjælland,5,0,H
+,28/04/2025,AaB,Vejle Boldklub,0,1,A
+,02/05/2025,Randers FC,FC Nordsjælland,3,2,H
+,04/05/2025,Lyngby Boldklub,Viborg FF,0,0,D
+,04/05/2025,Silkeborg IF,Vejle Boldklub,1,1,D
+,04/05/2025,Brøndby IF,F.C. København,0,3,A
+,04/05/2025,FC Midtjylland,AGF,3,1,H
+,05/05/2025,Sønderjyske Fodbold,AaB,2,2,D
+,11/05/2025,FC Nordsjælland,Brøndby IF,2,2,D
+,11/05/2025,Silkeborg IF,Sønderjyske Fodbold,1,0,H
+,11/05/2025,AGF,Randers FC,1,3,A
+,11/05/2025,Viborg FF,AaB,3,1,H
+,11/05/2025,F.C. København,FC Midtjylland,1,1,D
+,12/05/2025,Vejle Boldklub,Lyngby Boldklub,2,0,H
+,16/05/2025,FC Nordsjælland,AGF,2,0,H
+,18/05/2025,AaB,Silkeborg IF,2,3,A
+,18/05/2025,Viborg FF,Vejle Boldklub,0,1,A
+,18/05/2025,Sønderjyske Fodbold,Lyngby Boldklub,5,1,H
+,18/05/2025,Randers FC,F.C. København,0,4,A
+,19/05/2025,Brøndby IF,FC Midtjylland,1,2,A
+,24/05/2025,Lyngby Boldklub,AaB,3,1,H
+,24/05/2025,Silkeborg IF,Viborg FF,1,2,A
+,24/05/2025,Vejle Boldklub,Sønderjyske Fodbold,2,3,A
+,25/05/2025,AGF,Brøndby IF,2,3,A
+,25/05/2025,F.C. København,FC Nordsjælland,3,0,H
+,25/05/2025,FC Midtjylland,Randers FC,3,2,H
+,01/06/2025,Randers FC,Silkeborg IF,1,3,A
+,18/07/2025,Viborg FF,F.C. København,2,3,A
+,20/07/2025,FC Fredericia,FC Nordsjælland,2,3,A
+,20/07/2025,Vejle Boldklub,Randers FC,1,1,D
+,20/07/2025,Sønderjyske Fodbold,AGF,1,1,D
+,20/07/2025,FC Midtjylland,Odense Boldklub,3,3,D
+,20/07/2025,Brøndby IF,Silkeborg IF,3,0,H
+,25/07/2025,AGF,Randers FC,1,2,A
+,26/07/2025,F.C. København,Vejle Boldklub,2,0,H
+,27/07/2025,Odense Boldklub,Viborg FF,3,1,H
+,27/07/2025,Silkeborg IF,FC Fredericia,0,2,A
+,27/07/2025,FC Nordsjælland,Brøndby IF,0,1,A
+,28/07/2025,FC Midtjylland,Sønderjyske Fodbold,6,2,H
+,01/08/2025,FC Fredericia,F.C. København,0,2,A
+,01/08/2025,Vejle Boldklub,Odense Boldklub,4,0,H
+,03/08/2025,Randers FC,Silkeborg IF,1,0,H
+,03/08/2025,Sønderjyske Fodbold,FC Nordsjælland,3,2,H
+,03/08/2025,AGF,FC Midtjylland,0,0,D
+,03/08/2025,Brøndby IF,Viborg FF,0,2,A
+,08/08/2025,F.C. København,AGF,2,3,A
+,08/08/2025,Viborg FF,Sønderjyske Fodbold,1,0,H
+,10/08/2025,FC Midtjylland,FC Fredericia,3,3,D
+,10/08/2025,Silkeborg IF,FC Nordsjælland,4,2,H
+,10/08/2025,Brøndby IF,Vejle Boldklub,2,1,H
+,11/08/2025,Odense Boldklub,Randers FC,3,2,H
+,15/08/2025,FC Nordsjælland,F.C. København,1,3,A
+,15/08/2025,FC Fredericia,Sønderjyske Fodbold,3,2,H
+,17/08/2025,Vejle Boldklub,FC Midtjylland,0,2,A
+,17/08/2025,Viborg FF,Silkeborg IF,2,3,A
+,17/08/2025,Randers FC,Brøndby IF,0,2,A
+,18/08/2025,Odense Boldklub,AGF,1,5,A
+,23/08/2025,F.C. København,Odense Boldklub,1,1,D
+,24/08/2025,FC Fredericia,Randers FC,1,0,H
+,24/08/2025,FC Midtjylland,Silkeborg IF,4,2,H
+,24/08/2025,Sønderjyske Fodbold,Brøndby IF,2,0,H
+,24/08/2025,AGF,Vejle Boldklub,1,0,H
+,25/08/2025,FC Nordsjælland,Viborg FF,1,0,H
+,29/08/2025,Vejle Boldklub,Viborg FF,1,2,A
+,31/08/2025,AGF,FC Fredericia,4,1,H
+,31/08/2025,Silkeborg IF,Sønderjyske Fodbold,0,2,A
+,31/08/2025,Odense Boldklub,FC Nordsjælland,1,2,A
+,31/08/2025,Randers FC,F.C. København,1,5,A
+,31/08/2025,Brøndby IF,FC Midtjylland,1,3,A
+,12/09/2025,Sønderjyske Fodbold,Randers FC,0,1,A
+,13/09/2025,Brøndby IF,F.C. København,2,1,H
+,14/09/2025,Viborg FF,AGF,1,2,A
+,14/09/2025,FC Nordsjælland,FC Midtjylland,1,0,H
+,14/09/2025,Silkeborg IF,Odense Boldklub,2,1,H
+,15/09/2025,FC Fredericia,Vejle Boldklub,1,1,D
+,19/09/2025,Odense Boldklub,FC Fredericia,3,2,H
+,20/09/2025,FC Midtjylland,Viborg FF,2,0,H
+,21/09/2025,Vejle Boldklub,Sønderjyske Fodbold,2,2,D
+,21/09/2025,F.C. København,Silkeborg IF,3,3,D
+,21/09/2025,AGF,Brøndby IF,1,0,H
+,22/09/2025,Randers FC,FC Nordsjælland,3,0,H
+,27/09/2025,Sønderjyske Fodbold,F.C. København,1,2,A
+,28/09/2025,Viborg FF,FC Fredericia,2,1,H
+,28/09/2025,Silkeborg IF,Vejle Boldklub,1,1,D
+,28/09/2025,FC Nordsjælland,AGF,1,2,A
+,28/09/2025,Brøndby IF,Odense Boldklub,5,1,H
+,29/09/2025,FC Midtjylland,Randers FC,2,1,H
+,03/10/2025,Odense Boldklub,Sønderjyske Fodbold,1,1,D
+,05/10/2025,Randers FC,Viborg FF,2,1,H
+,05/10/2025,Vejle Boldklub,FC Nordsjælland,0,3,A
+,05/10/2025,AGF,Silkeborg IF,3,1,H
+,05/10/2025,F.C. København,FC Midtjylland,1,1,D
+,05/10/2025,FC Fredericia,Brøndby IF,0,2,A
+,17/10/2025,Silkeborg IF,F.C. København,3,1,H
+,19/10/2025,FC Nordsjælland,Randers FC,1,0,H
+,19/10/2025,Viborg FF,Odense Boldklub,1,2,A
+,19/10/2025,Brøndby IF,AGF,3,3,D
+,19/10/2025,FC Midtjylland,Vejle Boldklub,5,1,H
+,20/10/2025,Sønderjyske Fodbold,FC Fredericia,3,0,H
+,24/10/2025,AGF,FC Nordsjælland,1,0,H
+,26/10/2025,FC Fredericia,FC Midtjylland,0,4,A
+,26/10/2025,Vejle Boldklub,Silkeborg IF,1,2,A
+,26/10/2025,Randers FC,Sønderjyske Fodbold,0,0,D
+,26/10/2025,F.C. København,Viborg FF,0,0,D
+,27/10/2025,Odense Boldklub,Brøndby IF,1,4,A
+,01/11/2025,F.C. København,FC Fredericia,3,2,H
+,02/11/2025,Viborg FF,Randers FC,3,2,H
+,02/11/2025,Sønderjyske Fodbold,Vejle Boldklub,2,1,H
+,02/11/2025,FC Nordsjælland,Odense Boldklub,2,4,A
+,02/11/2025,Silkeborg IF,Brøndby IF,0,2,A
+,03/11/2025,FC Midtjylland,AGF,1,1,D
+,07/11/2025,Odense Boldklub,Silkeborg IF,1,1,D
+,09/11/2025,FC Fredericia,Viborg FF,0,3,A
+,09/11/2025,Vejle Boldklub,F.C. København,2,0,H
+,09/11/2025,Randers FC,FC Midtjylland,0,2,A
+,09/11/2025,AGF,Sønderjyske Fodbold,2,3,A
+,09/11/2025,Brøndby IF,FC Nordsjælland,2,0,H
+,21/11/2025,Silkeborg IF,AGF,0,2,A
+,23/11/2025,F.C. København,Brøndby IF,1,0,H
+,23/11/2025,Viborg FF,Vejle Boldklub,5,2,H
+,23/11/2025,FC Nordsjælland,FC Fredericia,5,0,H
+,23/11/2025,Sønderjyske Fodbold,FC Midtjylland,2,1,H
+,24/11/2025,Randers FC,Odense Boldklub,0,0,D
+,28/11/2025,Sønderjyske Fodbold,Viborg FF,2,2,D
+,30/11/2025,AGF,F.C. København,2,0,H
+,30/11/2025,Silkeborg IF,Randers FC,0,0,D
+,30/11/2025,FC Midtjylland,FC Nordsjælland,6,0,H
+,30/11/2025,Odense Boldklub,Vejle Boldklub,3,0,H
+,01/12/2025,Brøndby IF,FC Fredericia,1,3,A
+,05/12/2025,FC Fredericia,Odense Boldklub,1,3,A
+,07/12/2025,FC Nordsjælland,Silkeborg IF,5,0,H
+,07/12/2025,Viborg FF,FC Midtjylland,3,3,D
+,07/12/2025,Randers FC,AGF,1,2,A
+,07/12/2025,F.C. København,Sønderjyske Fodbold,0,2,A
+,08/12/2025,Vejle Boldklub,Brøndby IF,2,1,H

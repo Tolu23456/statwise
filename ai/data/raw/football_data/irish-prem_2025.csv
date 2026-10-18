@@ -1,0 +1,181 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,14/02/2025,Cork,Galway United FC,2,2,D
+,14/02/2025,Shelbourne,Derry City,3,1,H
+,14/02/2025,St Patrick's Athletic,Drogheda United,0,0,D
+,15/02/2025,Sligo Rovers,Waterford,2,3,A
+,16/02/2025,Bohemians,Shamrock Rovers,1,0,H
+,21/02/2025,Derry City,Bohemians,1,0,H
+,21/02/2025,Drogheda United,Sligo Rovers,3,0,H
+,21/02/2025,Galway United FC,St Patrick's Athletic,2,1,H
+,21/02/2025,Waterford,Shelbourne,0,1,A
+,28/02/2025,Cork,Bohemians,2,1,H
+,28/02/2025,Derry City,Waterford,1,2,A
+,28/02/2025,Drogheda United,Galway United FC,1,1,D
+,28/02/2025,Shelbourne,Shamrock Rovers,1,1,D
+,28/02/2025,St Patrick's Athletic,Sligo Rovers,4,3,H
+,03/03/2025,Bohemians,Drogheda United,0,1,A
+,03/03/2025,Galway United FC,Shelbourne,1,1,D
+,03/03/2025,Sligo Rovers,Shamrock Rovers,2,1,H
+,03/03/2025,St Patrick's Athletic,Derry City,2,0,H
+,03/03/2025,Waterford,Cork,2,1,H
+,07/03/2025,Cork,Sligo Rovers,1,1,D
+,07/03/2025,Derry City,Galway United FC,1,1,D
+,07/03/2025,Shamrock Rovers,St Patrick's Athletic,1,0,H
+,07/03/2025,Shelbourne,Drogheda United,0,1,A
+,07/03/2025,Waterford,Bohemians,0,3,A
+,14/03/2025,Drogheda United,Shamrock Rovers,1,2,A
+,14/03/2025,Galway United FC,Waterford,1,0,H
+,14/03/2025,Shelbourne,Cork,1,1,D
+,14/03/2025,St Patrick's Athletic,Bohemians,3,0,H
+,15/03/2025,Sligo Rovers,Derry City,0,1,A
+,28/03/2025,Bohemians,Galway United FC,0,2,A
+,28/03/2025,Cork,Drogheda United,1,1,D
+,28/03/2025,Sligo Rovers,Shelbourne,1,2,A
+,28/03/2025,Waterford,St Patrick's Athletic,1,2,A
+,28/03/2025,Shamrock Rovers,Derry City,0,0,D
+,04/04/2025,Bohemians,Sligo Rovers,4,2,H
+,04/04/2025,Derry City,Cork,2,1,H
+,04/04/2025,Drogheda United,Waterford,2,0,H
+,04/04/2025,Galway United FC,Shamrock Rovers,0,1,A
+,04/04/2025,St Patrick's Athletic,Shelbourne,0,0,D
+,11/04/2025,Cork,St Patrick's Athletic,0,2,A
+,11/04/2025,Derry City,Drogheda United,1,3,A
+,11/04/2025,Shelbourne,Bohemians,1,0,H
+,11/04/2025,Shamrock Rovers,Waterford,2,0,H
+,12/04/2025,Sligo Rovers,Galway United FC,1,2,A
+,14/04/2025,Shamrock Rovers,Cork,4,1,H
+,18/04/2025,Bohemians,Cork,1,0,H
+,18/04/2025,Drogheda United,Shelbourne,2,2,D
+,18/04/2025,Galway United FC,Derry City,2,3,A
+,18/04/2025,St Patrick's Athletic,Shamrock Rovers,2,2,D
+,18/04/2025,Waterford,Sligo Rovers,0,4,A
+,21/04/2025,Shamrock Rovers,Bohemians,2,3,A
+,21/04/2025,Cork,Waterford,2,1,H
+,21/04/2025,Drogheda United,St Patrick's Athletic,0,0,D
+,21/04/2025,Shelbourne,Galway United FC,2,2,D
+,22/04/2025,Derry City,Sligo Rovers,3,0,H
+,25/04/2025,Bohemians,St Patrick's Athletic,2,1,H
+,25/04/2025,Galway United FC,Drogheda United,2,1,H
+,25/04/2025,Shamrock Rovers,Shelbourne,2,2,D
+,25/04/2025,Waterford,Derry City,2,1,H
+,26/04/2025,Sligo Rovers,Cork,1,1,D
+,02/05/2025,Bohemians,Waterford,1,2,A
+,02/05/2025,Cork,Shamrock Rovers,1,1,D
+,02/05/2025,Derry City,Shelbourne,2,0,H
+,02/05/2025,Sligo Rovers,Drogheda United,2,2,D
+,02/05/2025,St Patrick's Athletic,Galway United FC,2,0,H
+,05/05/2025,Drogheda United,Cork,3,2,H
+,05/05/2025,Galway United FC,Bohemians,1,2,A
+,05/05/2025,Shelbourne,Waterford,0,1,A
+,05/05/2025,Shamrock Rovers,Sligo Rovers,2,0,H
+,05/05/2025,Derry City,St Patrick's Athletic,1,0,H
+,09/05/2025,Cork,Derry City,1,2,A
+,09/05/2025,Shamrock Rovers,Drogheda United,3,0,H
+,09/05/2025,Shelbourne,St Patrick's Athletic,2,1,H
+,09/05/2025,Waterford,Galway United FC,1,0,H
+,10/05/2025,Sligo Rovers,Bohemians,0,1,A
+,16/05/2025,Bohemians,Shelbourne,1,0,H
+,16/05/2025,Drogheda United,Derry City,1,1,D
+,16/05/2025,Galway United FC,Sligo Rovers,0,1,A
+,16/05/2025,St Patrick's Athletic,Cork,3,2,H
+,16/05/2025,Waterford,Shamrock Rovers,1,3,A
+,19/05/2025,Shelbourne,Drogheda United,0,0,D
+,19/05/2025,Shamrock Rovers,St Patrick's Athletic,4,0,H
+,23/05/2025,Derry City,Shamrock Rovers,1,2,A
+,23/05/2025,Drogheda United,Bohemians,1,0,H
+,23/05/2025,Galway United FC,Cork,2,1,H
+,23/05/2025,Shelbourne,Sligo Rovers,3,2,H
+,23/05/2025,St Patrick's Athletic,Waterford,2,2,D
+,30/05/2025,Bohemians,Derry City,1,0,H
+,30/05/2025,Cork,Shelbourne,1,1,D
+,30/05/2025,Sligo Rovers,St Patrick's Athletic,0,1,A
+,30/05/2025,Waterford,Drogheda United,2,2,D
+,30/05/2025,Shamrock Rovers,Galway United FC,0,0,D
+,13/06/2025,Cork,Bohemians,0,2,A
+,13/06/2025,Derry City,Galway United FC,1,1,D
+,13/06/2025,Shelbourne,Shamrock Rovers,1,2,A
+,13/06/2025,St Patrick's Athletic,Drogheda United,0,0,D
+,14/06/2025,Sligo Rovers,Waterford,1,0,H
+,16/06/2025,Drogheda United,Shamrock Rovers,1,2,A
+,16/06/2025,St Patrick's Athletic,Shelbourne,0,1,A
+,20/06/2025,Drogheda United,Sligo Rovers,1,0,H
+,20/06/2025,Galway United FC,St Patrick's Athletic,3,1,H
+,20/06/2025,Shamrock Rovers,Cork,4,1,H
+,20/06/2025,Shelbourne,Derry City,0,1,A
+,20/06/2025,Waterford,Bohemians,2,1,H
+,23/06/2025,Bohemians,Shamrock Rovers,2,0,H
+,23/06/2025,Cork,Drogheda United,1,1,D
+,23/06/2025,Sligo Rovers,Galway United FC,2,1,H
+,23/06/2025,St Patrick's Athletic,Derry City,0,1,A
+,23/06/2025,Waterford,Shelbourne,2,2,D
+,27/06/2025,Bohemians,Sligo Rovers,1,1,D
+,27/06/2025,Cork,St Patrick's Athletic,0,0,D
+,27/06/2025,Derry City,Drogheda United,3,0,H
+,27/06/2025,Galway United FC,Shelbourne,1,1,D
+,27/06/2025,Shamrock Rovers,Waterford,1,0,H
+,04/07/2025,Derry City,Waterford,7,2,H
+,04/07/2025,Drogheda United,Galway United FC,1,0,H
+,04/07/2025,Shelbourne,Cork,3,1,H
+,04/07/2025,St Patrick's Athletic,Bohemians,0,0,D
+,05/07/2025,Sligo Rovers,Shamrock Rovers,2,2,D
+,11/07/2025,Bohemians,Galway United FC,3,0,H
+,11/07/2025,Waterford,Cork,2,0,H
+,12/07/2025,Sligo Rovers,Derry City,2,0,H
+,25/07/2025,Cork,Sligo Rovers,2,3,A
+,25/07/2025,Derry City,Bohemians,1,1,D
+,25/07/2025,Galway United FC,Waterford,2,4,A
+,01/08/2025,Bohemians,Drogheda United,0,1,A
+,01/08/2025,Cork,Galway United FC,1,0,H
+,02/08/2025,Sligo Rovers,Shelbourne,0,2,A
+,03/08/2025,Waterford,St Patrick's Athletic,0,2,A
+,03/08/2025,Shamrock Rovers,Derry City,2,0,H
+,08/08/2025,Derry City,Cork,0,0,D
+,08/08/2025,Drogheda United,Waterford,0,0,D
+,09/08/2025,Shelbourne,Bohemians,2,2,D
+,10/08/2025,Galway United FC,Shamrock Rovers,0,0,D
+,10/08/2025,St Patrick's Athletic,Sligo Rovers,3,0,H
+,22/08/2025,Bohemians,Cork,3,0,H
+,22/08/2025,Drogheda United,St Patrick's Athletic,0,1,A
+,22/08/2025,Galway United FC,Derry City,1,2,A
+,22/08/2025,Waterford,Sligo Rovers,1,2,A
+,29/08/2025,Cork,Waterford,2,0,H
+,29/08/2025,Derry City,St Patrick's Athletic,2,2,D
+,30/08/2025,Sligo Rovers,Bohemians,0,0,D
+,31/08/2025,Shamrock Rovers,Drogheda United,2,1,H
+,07/09/2025,Shelbourne,Galway United FC,1,0,H
+,12/09/2025,Bohemians,Derry City,3,4,A
+,19/09/2025,Bohemians,Waterford,2,1,H
+,19/09/2025,Cork,Shamrock Rovers,1,1,D
+,19/09/2025,Derry City,Shelbourne,1,1,D
+,19/09/2025,Sligo Rovers,Drogheda United,1,1,D
+,19/09/2025,St Patrick's Athletic,Galway United FC,1,1,D
+,22/09/2025,Drogheda United,Shelbourne,2,1,H
+,22/09/2025,Galway United FC,Sligo Rovers,0,1,A
+,22/09/2025,St Patrick's Athletic,Cork,4,0,H
+,22/09/2025,Waterford,Shamrock Rovers,1,2,A
+,26/09/2025,Drogheda United,Derry City,1,1,D
+,26/09/2025,Galway United FC,Cork,2,1,H
+,26/09/2025,Shamrock Rovers,Bohemians,2,1,H
+,26/09/2025,Shelbourne,Waterford,2,1,H
+,27/09/2025,Sligo Rovers,St Patrick's Athletic,1,0,H
+,05/10/2025,Derry City,Sligo Rovers,1,0,H
+,05/10/2025,Waterford,Drogheda United,2,0,H
+,10/10/2025,Shamrock Rovers,Shelbourne,0,1,A
+,13/10/2025,Cork,Shelbourne,1,2,A
+,17/10/2025,Drogheda United,Cork,1,0,H
+,17/10/2025,Galway United FC,Bohemians,2,0,H
+,17/10/2025,Shelbourne,Sligo Rovers,3,1,H
+,17/10/2025,St Patrick's Athletic,Shamrock Rovers,1,0,H
+,17/10/2025,Waterford,Derry City,1,2,A
+,20/10/2025,Bohemians,St Patrick's Athletic,0,0,D
+,24/10/2025,Galway United FC,Drogheda United,1,1,D
+,24/10/2025,St Patrick's Athletic,Waterford,1,1,D
+,25/10/2025,Sligo Rovers,Cork,1,1,D
+,26/10/2025,Derry City,Shamrock Rovers,2,1,H
+,26/10/2025,Bohemians,Shelbourne,2,3,A
+,29/10/2025,Shamrock Rovers,Galway United FC,1,0,H
+,01/11/2025,Cork,Derry City,0,1,A
+,01/11/2025,Drogheda United,Bohemians,1,4,A
+,01/11/2025,Shamrock Rovers,Sligo Rovers,1,2,A
+,01/11/2025,Shelbourne,St Patrick's Athletic,0,0,D
+,01/11/2025,Waterford,Galway United FC,1,1,D

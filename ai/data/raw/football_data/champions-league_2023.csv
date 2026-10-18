@@ -1,0 +1,126 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR
+,19/09/2023,AC Milan,Newcastle United FC,0,0,D,0,0,D
+,19/09/2023,BSC Young Boys,RB Leipzig,1,3,A,1,1,D
+,19/09/2023,SS Lazio,Club Atlético de Madrid,1,1,D,0,1,A
+,19/09/2023,Feyenoord Rotterdam,Celtic FC,2,0,H,1,0,H
+,19/09/2023,Paris Saint-Germain FC,Borussia Dortmund,2,0,H,0,0,D
+,19/09/2023,Manchester City FC,FK Crvena Zvezda,3,1,H,0,1,A
+,19/09/2023,FC Barcelona,Royal Antwerp FC,5,0,H,3,0,H
+,19/09/2023,FK Shakhtar Donetsk,FC Porto,1,3,A,1,3,A
+,20/09/2023,Real Madrid CF,1. FC Union Berlin,1,0,H,0,0,D
+,20/09/2023,Galatasaray SK,FC København,2,2,D,0,1,A
+,20/09/2023,Sevilla FC,Racing Club de Lens,1,1,D,1,1,D
+,20/09/2023,Sporting Clube de Braga,SSC Napoli,1,2,A,0,1,A
+,20/09/2023,Real Sociedad de Fútbol,FC Internazionale Milano,1,1,D,1,0,H
+,20/09/2023,Sport Lisboa e Benfica,FC Red Bull Salzburg,0,2,A,0,1,A
+,20/09/2023,FC Bayern München,Manchester United FC,4,3,H,2,0,H
+,20/09/2023,Arsenal FC,PSV,4,0,H,3,0,H
+,03/10/2023,1. FC Union Berlin,Sporting Clube de Braga,2,3,A,2,1,H
+,03/10/2023,FC Red Bull Salzburg,Real Sociedad de Fútbol,0,2,A,0,2,A
+,03/10/2023,SSC Napoli,Real Madrid CF,2,3,A,1,2,A
+,03/10/2023,FC Internazionale Milano,Sport Lisboa e Benfica,1,0,H,0,0,D
+,03/10/2023,FC København,FC Bayern München,1,2,A,0,0,D
+,03/10/2023,Manchester United FC,Galatasaray SK,2,3,A,1,1,D
+,03/10/2023,Racing Club de Lens,Arsenal FC,2,1,H,1,1,D
+,03/10/2023,PSV,Sevilla FC,2,2,D,0,0,D
+,04/10/2023,Club Atlético de Madrid,Feyenoord Rotterdam,3,2,H,2,2,D
+,04/10/2023,Royal Antwerp FC,FK Shakhtar Donetsk,2,3,A,2,0,H
+,04/10/2023,Celtic FC,SS Lazio,1,2,A,1,1,D
+,04/10/2023,Borussia Dortmund,AC Milan,0,0,D,0,0,D
+,04/10/2023,Newcastle United FC,Paris Saint-Germain FC,4,1,H,2,0,H
+,04/10/2023,FK Crvena Zvezda,BSC Young Boys,2,2,D,1,0,H
+,04/10/2023,RB Leipzig,Manchester City FC,1,3,A,0,1,A
+,04/10/2023,FC Porto,FC Barcelona,0,1,A,0,1,A
+,24/10/2023,FC Internazionale Milano,FC Red Bull Salzburg,2,1,H,1,0,H
+,24/10/2023,Galatasaray SK,FC Bayern München,1,3,A,1,1,D
+,24/10/2023,1. FC Union Berlin,SSC Napoli,0,1,A,0,0,D
+,24/10/2023,Sporting Clube de Braga,Real Madrid CF,1,2,A,0,1,A
+,24/10/2023,Sport Lisboa e Benfica,Real Sociedad de Fútbol,0,1,A,0,0,D
+,24/10/2023,Manchester United FC,FC København,1,0,H,0,0,D
+,24/10/2023,Sevilla FC,Arsenal FC,1,2,A,0,1,A
+,24/10/2023,Racing Club de Lens,PSV,1,1,D,0,0,D
+,25/10/2023,Feyenoord Rotterdam,SS Lazio,3,1,H,2,0,H
+,25/10/2023,FC Barcelona,FK Shakhtar Donetsk,2,1,H,2,0,H
+,25/10/2023,Celtic FC,Club Atlético de Madrid,2,2,D,2,1,H
+,25/10/2023,Paris Saint-Germain FC,AC Milan,3,0,H,1,0,H
+,25/10/2023,Newcastle United FC,Borussia Dortmund,0,1,A,0,1,A
+,25/10/2023,BSC Young Boys,Manchester City FC,1,3,A,0,0,D
+,25/10/2023,RB Leipzig,FK Crvena Zvezda,3,1,H,1,0,H
+,25/10/2023,Royal Antwerp FC,FC Porto,1,4,A,1,0,H
+,07/11/2023,Borussia Dortmund,Newcastle United FC,2,0,H,1,0,H
+,07/11/2023,FK Shakhtar Donetsk,FC Barcelona,1,0,H,1,0,H
+,07/11/2023,Club Atlético de Madrid,Celtic FC,6,0,H,2,0,H
+,07/11/2023,SS Lazio,Feyenoord Rotterdam,1,0,H,1,0,H
+,07/11/2023,AC Milan,Paris Saint-Germain FC,2,1,H,1,1,D
+,07/11/2023,Manchester City FC,BSC Young Boys,3,0,H,2,0,H
+,07/11/2023,FK Crvena Zvezda,RB Leipzig,1,2,A,0,1,A
+,07/11/2023,FC Porto,Royal Antwerp FC,2,0,H,1,0,H
+,08/11/2023,SSC Napoli,1. FC Union Berlin,1,1,D,1,0,H
+,08/11/2023,Real Sociedad de Fútbol,Sport Lisboa e Benfica,3,1,H,3,0,H
+,08/11/2023,Real Madrid CF,Sporting Clube de Braga,3,0,H,1,0,H
+,08/11/2023,FC Red Bull Salzburg,FC Internazionale Milano,0,1,A,0,0,D
+,08/11/2023,FC Bayern München,Galatasaray SK,2,1,H,0,0,D
+,08/11/2023,FC København,Manchester United FC,4,3,H,2,2,D
+,08/11/2023,Arsenal FC,Sevilla FC,2,0,H,1,0,H
+,08/11/2023,PSV,Racing Club de Lens,1,0,H,1,0,H
+,28/11/2023,SS Lazio,Celtic FC,2,0,H,0,0,D
+,28/11/2023,FK Shakhtar Donetsk,Royal Antwerp FC,1,0,H,1,0,H
+,28/11/2023,Feyenoord Rotterdam,Club Atlético de Madrid,1,3,A,0,1,A
+,28/11/2023,AC Milan,Borussia Dortmund,1,3,A,1,1,D
+,28/11/2023,Paris Saint-Germain FC,Newcastle United FC,1,1,D,0,1,A
+,28/11/2023,BSC Young Boys,FK Crvena Zvezda,2,0,H,2,0,H
+,28/11/2023,Manchester City FC,RB Leipzig,3,2,H,0,2,A
+,28/11/2023,FC Barcelona,FC Porto,2,1,H,1,1,D
+,29/11/2023,Galatasaray SK,Manchester United FC,3,3,D,1,2,A
+,29/11/2023,Sevilla FC,PSV,2,3,A,1,0,H
+,29/11/2023,Sporting Clube de Braga,1. FC Union Berlin,1,1,D,0,1,A
+,29/11/2023,Real Madrid CF,SSC Napoli,4,2,H,2,1,H
+,29/11/2023,Sport Lisboa e Benfica,FC Internazionale Milano,3,3,D,3,0,H
+,29/11/2023,Real Sociedad de Fútbol,FC Red Bull Salzburg,0,0,D,0,0,D
+,29/11/2023,FC Bayern München,FC København,0,0,D,0,0,D
+,29/11/2023,Arsenal FC,Racing Club de Lens,6,0,H,5,0,H
+,12/12/2023,PSV,Arsenal FC,1,1,D,0,1,A
+,12/12/2023,Racing Club de Lens,Sevilla FC,2,1,H,0,0,D
+,12/12/2023,1. FC Union Berlin,Real Madrid CF,2,3,A,1,0,H
+,12/12/2023,SSC Napoli,Sporting Clube de Braga,2,0,H,2,0,H
+,12/12/2023,FC Internazionale Milano,Real Sociedad de Fútbol,0,0,D,0,0,D
+,12/12/2023,FC Red Bull Salzburg,Sport Lisboa e Benfica,1,3,A,0,2,A
+,12/12/2023,Manchester United FC,FC Bayern München,0,1,A,0,0,D
+,12/12/2023,FC København,Galatasaray SK,1,0,H,0,0,D
+,13/12/2023,RB Leipzig,BSC Young Boys,2,1,H,0,0,D
+,13/12/2023,FK Crvena Zvezda,Manchester City FC,2,3,A,0,1,A
+,13/12/2023,Club Atlético de Madrid,SS Lazio,2,0,H,1,0,H
+,13/12/2023,Celtic FC,Feyenoord Rotterdam,2,1,H,1,0,H
+,13/12/2023,Newcastle United FC,AC Milan,1,2,A,1,0,H
+,13/12/2023,Borussia Dortmund,Paris Saint-Germain FC,1,1,D,0,0,D
+,13/12/2023,Royal Antwerp FC,FC Barcelona,3,2,H,1,1,D
+,13/12/2023,FC Porto,FK Shakhtar Donetsk,5,3,H,2,1,H
+,13/02/2024,FC København,Manchester City FC,1,3,A,1,2,A
+,13/02/2024,RB Leipzig,Real Madrid CF,0,1,A,0,0,D
+,14/02/2024,Paris Saint-Germain FC,Real Sociedad de Fútbol,2,0,H,0,0,D
+,14/02/2024,SS Lazio,FC Bayern München,1,0,H,0,0,D
+,20/02/2024,FC Internazionale Milano,Club Atlético de Madrid,1,0,H,0,0,D
+,20/02/2024,PSV,Borussia Dortmund,1,1,D,0,1,A
+,21/02/2024,FC Porto,Arsenal FC,1,0,H,0,0,D
+,21/02/2024,SSC Napoli,FC Barcelona,1,1,D,0,0,D
+,05/03/2024,Real Sociedad de Fútbol,Paris Saint-Germain FC,1,2,A,0,1,A
+,05/03/2024,FC Bayern München,SS Lazio,3,0,H,2,0,H
+,06/03/2024,Manchester City FC,FC København,3,1,H,3,1,H
+,06/03/2024,Real Madrid CF,RB Leipzig,1,1,D,0,0,D
+,12/03/2024,Arsenal FC,FC Porto,5,2,H,1,0,H
+,12/03/2024,FC Barcelona,SSC Napoli,3,1,H,2,1,H
+,13/03/2024,Club Atlético de Madrid,FC Internazionale Milano,5,3,H,1,1,D
+,13/03/2024,Borussia Dortmund,PSV,2,0,H,1,0,H
+,09/04/2024,Arsenal FC,FC Bayern München,2,2,D,1,2,A
+,09/04/2024,Real Madrid CF,Manchester City FC,3,3,D,2,1,H
+,10/04/2024,Club Atlético de Madrid,Borussia Dortmund,2,1,H,2,0,H
+,10/04/2024,Paris Saint-Germain FC,FC Barcelona,2,3,A,0,1,A
+,16/04/2024,Borussia Dortmund,Club Atlético de Madrid,4,2,H,2,0,H
+,16/04/2024,FC Barcelona,Paris Saint-Germain FC,1,4,A,1,1,D
+,17/04/2024,FC Bayern München,Arsenal FC,1,0,H,0,0,D
+,17/04/2024,Manchester City FC,Real Madrid CF,4,5,A,0,1,A
+,30/04/2024,FC Bayern München,Real Madrid CF,2,2,D,0,1,A
+,01/05/2024,Borussia Dortmund,Paris Saint-Germain FC,1,0,H,1,0,H
+,07/05/2024,Paris Saint-Germain FC,Borussia Dortmund,0,1,A,0,0,D
+,08/05/2024,Real Madrid CF,FC Bayern München,2,1,H,0,0,D
+,01/06/2024,Borussia Dortmund,Real Madrid CF,0,2,A,0,0,D

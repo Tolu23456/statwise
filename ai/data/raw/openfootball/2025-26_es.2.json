@@ -1,0 +1,4178 @@
+{
+  "name": "Spain Segunda División 2025/26",
+  "matches": [
+    {
+      "round": "1. Round",
+      "date": "2025-08-15",
+      "time": "20:30",
+      "team1": "Burgos CF",
+      "team2": "Cultural Leonesa",
+      "score": {
+        "ft": [
+          5,
+          1
+        ],
+        "ht": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-15",
+      "time": "20:30",
+      "team1": "Real Valladolid",
+      "team2": "AD Ceuta FC",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-16",
+      "time": "16:00",
+      "team1": "Racing Santander",
+      "team2": "CD Castellón",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-16",
+      "time": "18:30",
+      "team1": "Málaga CF",
+      "team2": "SD Eibar",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-16",
+      "time": "20:30",
+      "team1": "Granada CF",
+      "team2": "Deportivo La Coruña",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-17",
+      "time": "16:00",
+      "team1": "Real Sociedad B",
+      "team2": "Real Zaragoza",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-17",
+      "time": "18:30",
+      "team1": "Cádiz CF",
+      "team2": "CD Mirandés",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-17",
+      "time": "20:30",
+      "team1": "SD Huesca",
+      "team2": "CD Leganés",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-17",
+      "time": "20:30",
+      "team1": "UD Las Palmas",
+      "team2": "FC Andorra",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-18",
+      "time": "18:00",
+      "team1": "Sporting Gijón",
+      "team2": "Córdoba CF",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "1. Round",
+      "date": "2025-08-18",
+      "time": "20:30",
+      "team1": "UD Almería",
+      "team2": "Albacete",
+      "score": {
+        "ft": [
+          4,
+          4
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-22",
+      "time": "18:30",
+      "team1": "SD Eibar",
+      "team2": "Granada CF",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-22",
+      "time": "20:30",
+      "team1": "CD Castellón",
+      "team2": "Real Valladolid",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-22",
+      "time": "20:30",
+      "team1": "CD Leganés",
+      "team2": "Cádiz CF",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-23",
+      "time": "16:00",
+      "team1": "CD Mirandés",
+      "team2": "SD Huesca",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-23",
+      "time": "18:00",
+      "team1": "AD Ceuta FC",
+      "team2": "Sporting Gijón",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-23",
+      "time": "20:30",
+      "team1": "Real Zaragoza",
+      "team2": "FC Andorra",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-24",
+      "time": "16:00",
+      "team1": "Deportivo La Coruña",
+      "team2": "Burgos CF",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-24",
+      "time": "18:30",
+      "team1": "Cultural Leonesa",
+      "team2": "UD Almería",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-24",
+      "time": "20:30",
+      "team1": "Málaga CF",
+      "team2": "Real Sociedad B",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-25",
+      "time": "18:30",
+      "team1": "Albacete",
+      "team2": "Racing Santander",
+      "score": {
+        "ft": [
+          2,
+          3
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "2. Round",
+      "date": "2025-08-25",
+      "time": "20:30",
+      "team1": "Córdoba CF",
+      "team2": "UD Las Palmas",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-08-29",
+      "time": "18:30",
+      "team1": "Real Sociedad B",
+      "team2": "UD Almería",
+      "score": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-08-29",
+      "time": "20:30",
+      "team1": "Sporting Gijón",
+      "team2": "Cultural Leonesa",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-08-30",
+      "time": "16:00",
+      "team1": "Racing Santander",
+      "team2": "AD Ceuta FC",
+      "score": {
+        "ft": [
+          4,
+          1
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-08-30",
+      "time": "18:00",
+      "team1": "Real Valladolid",
+      "team2": "Córdoba CF",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-08-30",
+      "time": "20:30",
+      "team1": "CD Castellón",
+      "team2": "Real Zaragoza",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-08-31",
+      "time": "16:00",
+      "team1": "FC Andorra",
+      "team2": "Burgos CF",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-08-31",
+      "time": "16:00",
+      "team1": "Cádiz CF",
+      "team2": "Albacete",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-08-31",
+      "time": "18:30",
+      "team1": "UD Las Palmas",
+      "team2": "Málaga CF",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-08-31",
+      "time": "20:30",
+      "team1": "Granada CF",
+      "team2": "CD Mirandés",
+      "score": {
+        "ft": [
+          1,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-09-01",
+      "time": "18:30",
+      "team1": "SD Huesca",
+      "team2": "SD Eibar",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "3. Round",
+      "date": "2025-09-01",
+      "time": "20:30",
+      "team1": "CD Leganés",
+      "team2": "Deportivo La Coruña",
+      "score": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-05",
+      "time": "18:30",
+      "team1": "Albacete",
+      "team2": "CD Mirandés",
+      "score": {
+        "ft": [
+          1,
+          4
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-05",
+      "time": "20:30",
+      "team1": "Córdoba CF",
+      "team2": "CD Castellón",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-06",
+      "time": "15:15",
+      "team1": "Deportivo La Coruña",
+      "team2": "Sporting Gijón",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-06",
+      "time": "17:30",
+      "team1": "Real Zaragoza",
+      "team2": "Real Valladolid",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-06",
+      "time": "20:00",
+      "team1": "Málaga CF",
+      "team2": "Granada CF",
+      "score": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-07",
+      "time": "13:00",
+      "team1": "AD Ceuta FC",
+      "team2": "SD Huesca",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-07",
+      "time": "15:15",
+      "team1": "Burgos CF",
+      "team2": "UD Las Palmas",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-07",
+      "time": "15:15",
+      "team1": "Real Sociedad B",
+      "team2": "Cádiz CF",
+      "score": {
+        "ft": [
+          3,
+          3
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-07",
+      "time": "17:30",
+      "team1": "UD Almería",
+      "team2": "Racing Santander",
+      "score": {
+        "ft": [
+          2,
+          3
+        ],
+        "ht": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-07",
+      "time": "17:30",
+      "team1": "Cultural Leonesa",
+      "team2": "CD Leganés",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "4. Round",
+      "date": "2025-09-08",
+      "time": "19:30",
+      "team1": "SD Eibar",
+      "team2": "FC Andorra",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-12",
+      "time": "19:30",
+      "team1": "UD Las Palmas",
+      "team2": "Real Sociedad B",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-13",
+      "time": "15:15",
+      "team1": "Cádiz CF",
+      "team2": "SD Eibar",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-13",
+      "time": "15:15",
+      "team1": "CD Mirandés",
+      "team2": "Deportivo La Coruña",
+      "score": {
+        "ft": [
+          1,
+          5
+        ],
+        "ht": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-13",
+      "time": "17:30",
+      "team1": "SD Huesca",
+      "team2": "Málaga CF",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-13",
+      "time": "20:00",
+      "team1": "Real Valladolid",
+      "team2": "UD Almería",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-14",
+      "time": "13:00",
+      "team1": "FC Andorra",
+      "team2": "Córdoba CF",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-14",
+      "time": "15:15",
+      "team1": "Racing Santander",
+      "team2": "Cultural Leonesa",
+      "score": {
+        "ft": [
+          2,
+          4
+        ],
+        "ht": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-14",
+      "time": "17:30",
+      "team1": "CD Castellón",
+      "team2": "AD Ceuta FC",
+      "score": {
+        "ft": [
+          3,
+          3
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-14",
+      "time": "17:30",
+      "team1": "Sporting Gijón",
+      "team2": "Burgos CF",
+      "score": {
+        "ft": [
+          2,
+          3
+        ],
+        "ht": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-14",
+      "time": "20:00",
+      "team1": "Granada CF",
+      "team2": "CD Leganés",
+      "score": {
+        "ft": [
+          0,
+          2
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "5. Round",
+      "date": "2025-09-15",
+      "time": "19:30",
+      "team1": "Real Zaragoza",
+      "team2": "Albacete",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-19",
+      "time": "19:30",
+      "team1": "Deportivo La Coruña",
+      "team2": "SD Huesca",
+      "score": {
+        "ft": [
+          4,
+          0
+        ],
+        "ht": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-20",
+      "time": "15:15",
+      "team1": "Cultural Leonesa",
+      "team2": "CD Castellón",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-20",
+      "time": "17:30",
+      "team1": "CD Leganés",
+      "team2": "UD Las Palmas",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-20",
+      "time": "17:30",
+      "team1": "FC Andorra",
+      "team2": "CD Mirandés",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-20",
+      "time": "20:00",
+      "team1": "UD Almería",
+      "team2": "Sporting Gijón",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-21",
+      "time": "13:00",
+      "team1": "AD Ceuta FC",
+      "team2": "Real Zaragoza",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-21",
+      "time": "15:15",
+      "team1": "Albacete",
+      "team2": "Real Valladolid",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-21",
+      "time": "17:30",
+      "team1": "SD Eibar",
+      "team2": "Real Sociedad B",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-21",
+      "time": "17:30",
+      "team1": "Málaga CF",
+      "team2": "Cádiz CF",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-21",
+      "time": "20:00",
+      "team1": "Córdoba CF",
+      "team2": "Racing Santander",
+      "score": {
+        "ft": [
+          2,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "6. Round",
+      "date": "2025-09-22",
+      "time": "19:30",
+      "team1": "Burgos CF",
+      "team2": "Granada CF",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-26",
+      "time": "19:30",
+      "team1": "CD Mirandés",
+      "team2": "Real Zaragoza",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-27",
+      "time": "17:30",
+      "team1": "SD Eibar",
+      "team2": "Deportivo La Coruña",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-27",
+      "time": "17:30",
+      "team1": "Racing Santander",
+      "team2": "FC Andorra",
+      "score": {
+        "ft": [
+          1,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-27",
+      "time": "20:00",
+      "team1": "UD Las Palmas",
+      "team2": "UD Almería",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-28",
+      "time": "13:00",
+      "team1": "Real Sociedad B",
+      "team2": "Córdoba CF",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-28",
+      "time": "15:15",
+      "team1": "Burgos CF",
+      "team2": "Málaga CF",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-28",
+      "time": "15:15",
+      "team1": "Cádiz CF",
+      "team2": "AD Ceuta FC",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-28",
+      "time": "17:30",
+      "team1": "Sporting Gijón",
+      "team2": "Albacete",
+      "score": {
+        "ft": [
+          3,
+          4
+        ],
+        "ht": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-28",
+      "time": "17:30",
+      "team1": "Real Valladolid",
+      "team2": "Cultural Leonesa",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-28",
+      "time": "20:00",
+      "team1": "SD Huesca",
+      "team2": "Granada CF",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "7. Round",
+      "date": "2025-09-29",
+      "time": "19:30",
+      "team1": "CD Leganés",
+      "team2": "CD Castellón",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-03",
+      "time": "19:30",
+      "team1": "AD Ceuta FC",
+      "team2": "SD Eibar",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-04",
+      "time": "15:15",
+      "team1": "Deportivo La Coruña",
+      "team2": "UD Almería",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-04",
+      "time": "17:30",
+      "team1": "FC Andorra",
+      "team2": "CD Leganés",
+      "score": {
+        "ft": [
+          1,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-04",
+      "time": "17:30",
+      "team1": "SD Huesca",
+      "team2": "Burgos CF",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-04",
+      "time": "20:00",
+      "team1": "Granada CF",
+      "team2": "Real Sociedad B",
+      "score": {
+        "ft": [
+          5,
+          2
+        ],
+        "ht": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-05",
+      "time": "13:00",
+      "team1": "Real Zaragoza",
+      "team2": "Córdoba CF",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-05",
+      "time": "15:15",
+      "team1": "CD Castellón",
+      "team2": "Sporting Gijón",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-05",
+      "time": "17:30",
+      "team1": "Racing Santander",
+      "team2": "Málaga CF",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-05",
+      "time": "17:30",
+      "team1": "Real Valladolid",
+      "team2": "CD Mirandés",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-05",
+      "time": "20:00",
+      "team1": "UD Las Palmas",
+      "team2": "Cádiz CF",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "8. Round",
+      "date": "2025-10-06",
+      "time": "19:30",
+      "team1": "Cultural Leonesa",
+      "team2": "Albacete",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-10",
+      "time": "19:30",
+      "team1": "Granada CF",
+      "team2": "UD Las Palmas",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-11",
+      "time": "15:15",
+      "team1": "CD Mirandés",
+      "team2": "CD Leganés",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-11",
+      "time": "17:30",
+      "team1": "UD Almería",
+      "team2": "Real Zaragoza",
+      "score": {
+        "ft": [
+          4,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-11",
+      "time": "17:30",
+      "team1": "Real Sociedad B",
+      "team2": "FC Andorra",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-12",
+      "time": "13:00",
+      "team1": "Albacete",
+      "team2": "AD Ceuta FC",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-12",
+      "time": "15:15",
+      "team1": "SD Eibar",
+      "team2": "CD Castellón",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-12",
+      "time": "15:15",
+      "team1": "Sporting Gijón",
+      "team2": "Racing Santander",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-12",
+      "time": "17:30",
+      "team1": "Burgos CF",
+      "team2": "Real Valladolid",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-12",
+      "time": "17:30",
+      "team1": "Cádiz CF",
+      "team2": "SD Huesca",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-12",
+      "time": "20:00",
+      "team1": "Málaga CF",
+      "team2": "Deportivo La Coruña",
+      "score": {
+        "ft": [
+          3,
+          0
+        ],
+        "ht": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "9. Round",
+      "date": "2025-10-13",
+      "time": "19:30",
+      "team1": "Córdoba CF",
+      "team2": "Cultural Leonesa",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-17",
+      "time": "19:30",
+      "team1": "FC Andorra",
+      "team2": "Granada CF",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-18",
+      "time": "15:15",
+      "team1": "AD Ceuta FC",
+      "team2": "CD Mirandés",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-18",
+      "time": "17:30",
+      "team1": "Real Zaragoza",
+      "team2": "Cultural Leonesa",
+      "score": {
+        "ft": [
+          0,
+          5
+        ],
+        "ht": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-19",
+      "time": "13:00",
+      "team1": "CD Leganés",
+      "team2": "Málaga CF",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-19",
+      "time": "15:15",
+      "team1": "CD Castellón",
+      "team2": "Albacete",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-19",
+      "time": "15:15",
+      "team1": "Real Valladolid",
+      "team2": "Sporting Gijón",
+      "score": {
+        "ft": [
+          2,
+          3
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-19",
+      "time": "17:30",
+      "team1": "Racing Santander",
+      "team2": "Deportivo La Coruña",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-19",
+      "time": "17:30",
+      "team1": "Córdoba CF",
+      "team2": "UD Almería",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-19",
+      "time": "20:00",
+      "team1": "UD Las Palmas",
+      "team2": "SD Eibar",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-10-20",
+      "time": "19:30",
+      "team1": "Cádiz CF",
+      "team2": "Burgos CF",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "10. Round",
+      "date": "2025-11-05",
+      "time": "19:00",
+      "team1": "Real Sociedad B",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-24",
+      "time": "19:30",
+      "team1": "SD Huesca",
+      "team2": "UD Las Palmas",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-25",
+      "time": "13:00",
+      "team1": "Cultural Leonesa",
+      "team2": "AD Ceuta FC",
+      "score": {
+        "ft": [
+          0,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-25",
+      "time": "15:15",
+      "team1": "Albacete",
+      "team2": "Córdoba CF",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-25",
+      "time": "15:15",
+      "team1": "SD Eibar",
+      "team2": "CD Leganés",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-25",
+      "time": "17:30",
+      "team1": "Burgos CF",
+      "team2": "Real Sociedad B",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-25",
+      "time": "17:30",
+      "team1": "Granada CF",
+      "team2": "Cádiz CF",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-25",
+      "time": "20:00",
+      "team1": "CD Mirandés",
+      "team2": "Racing Santander",
+      "score": {
+        "ft": [
+          1,
+          3
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-26",
+      "time": "13:00",
+      "team1": "Málaga CF",
+      "team2": "FC Andorra",
+      "score": {
+        "ft": [
+          4,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-26",
+      "time": "17:30",
+      "team1": "Sporting Gijón",
+      "team2": "Real Zaragoza",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-26",
+      "time": "17:30",
+      "team1": "UD Almería",
+      "team2": "CD Castellón",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "11. Round",
+      "date": "2025-10-26",
+      "time": "20:00",
+      "team1": "Deportivo La Coruña",
+      "team2": "Real Valladolid",
+      "score": {
+        "ft": [
+          1,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-10-31",
+      "time": "19:30",
+      "team1": "Racing Santander",
+      "team2": "Real Sociedad B",
+      "score": {
+        "ft": [
+          1,
+          0
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-01",
+      "time": "15:15",
+      "team1": "Cultural Leonesa",
+      "team2": "CD Mirandés",
+      "score": {
+        "ft": [
+          3,
+          2
+        ],
+        "ht": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-01",
+      "time": "17:30",
+      "team1": "Albacete",
+      "team2": "SD Huesca",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-01",
+      "time": "17:30",
+      "team1": "CD Leganés",
+      "team2": "Burgos CF",
+      "score": {
+        "ft": [
+          1,
+          2
+        ],
+        "ht": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-01",
+      "time": "20:00",
+      "team1": "UD Almería",
+      "team2": "SD Eibar",
+      "score": {
+        "ft": [
+          3,
+          1
+        ],
+        "ht": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-02",
+      "time": "13:00",
+      "team1": "FC Andorra",
+      "team2": "Cádiz CF",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-02",
+      "time": "15:15",
+      "team1": "Córdoba CF",
+      "team2": "AD Ceuta FC",
+      "score": {
+        "ft": [
+          2,
+          0
+        ],
+        "ht": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-02",
+      "time": "15:15",
+      "team1": "Sporting Gijón",
+      "team2": "UD Las Palmas",
+      "score": [
+        0,
+        0
+      ]
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-02",
+      "time": "17:30",
+      "team1": "CD Castellón",
+      "team2": "Málaga CF",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-02",
+      "time": "20:00",
+      "team1": "Real Zaragoza",
+      "team2": "Deportivo La Coruña",
+      "score": {
+        "ft": [
+          0,
+          2
+        ],
+        "ht": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "round": "12. Round",
+      "date": "2025-11-03",
+      "time": "19:30",
+      "team1": "Real Valladolid",
+      "team2": "Granada CF",
+      "score": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-07",
+      "time": "19:30",
+      "team1": "CD Mirandés",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-08",
+      "time": "13:00",
+      "team1": "Real Sociedad B",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-08",
+      "time": "15:15",
+      "team1": "SD Eibar",
+      "team2": "Albacete"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-08",
+      "time": "15:15",
+      "team1": "SD Huesca",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-08",
+      "time": "17:30",
+      "team1": "Deportivo La Coruña",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-08",
+      "time": "20:00",
+      "team1": "Málaga CF",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-09",
+      "time": "13:00",
+      "team1": "UD Las Palmas",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-09",
+      "time": "15:15",
+      "team1": "AD Ceuta FC",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-09",
+      "time": "17:30",
+      "team1": "Granada CF",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-09",
+      "time": "20:00",
+      "team1": "Cádiz CF",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "13. Round",
+      "date": "2025-11-10",
+      "time": "19:30",
+      "team1": "Burgos CF",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-14",
+      "time": "19:30",
+      "team1": "Real Valladolid",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-15",
+      "time": "15:00",
+      "team1": "Albacete",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-15",
+      "time": "15:00",
+      "team1": "CD Castellón",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-15",
+      "time": "20:00",
+      "team1": "Racing Santander",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-16",
+      "time": "13:00",
+      "team1": "AD Ceuta FC",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-16",
+      "time": "15:15",
+      "team1": "UD Almería",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-16",
+      "time": "15:15",
+      "team1": "Sporting Gijón",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-16",
+      "time": "17:30",
+      "team1": "Córdoba CF",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-16",
+      "time": "17:30",
+      "team1": "CD Mirandés",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-16",
+      "time": "20:00",
+      "team1": "Real Zaragoza",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "14. Round",
+      "date": "2025-11-17",
+      "time": "19:30",
+      "team1": "Cultural Leonesa",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-21",
+      "time": "19:30",
+      "team1": "UD Las Palmas",
+      "team2": "Albacete"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-22",
+      "time": "15:15",
+      "team1": "FC Andorra",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-22",
+      "time": "17:30",
+      "team1": "SD Eibar",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-22",
+      "time": "17:30",
+      "team1": "CD Leganés",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-22",
+      "time": "20:00",
+      "team1": "Granada CF",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-23",
+      "time": "13:00",
+      "team1": "Deportivo La Coruña",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-23",
+      "time": "15:15",
+      "team1": "Cádiz CF",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-23",
+      "time": "15:15",
+      "team1": "SD Huesca",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-23",
+      "time": "17:30",
+      "team1": "Burgos CF",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-23",
+      "time": "20:00",
+      "team1": "Málaga CF",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "15. Round",
+      "date": "2025-11-24",
+      "time": "19:30",
+      "team1": "Real Sociedad B",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-28",
+      "time": "19:30",
+      "team1": "Sporting Gijón",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-29",
+      "time": "13:00",
+      "team1": "AD Ceuta FC",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-29",
+      "time": "15:15",
+      "team1": "Cultural Leonesa",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-29",
+      "time": "17:30",
+      "team1": "Albacete",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-29",
+      "time": "17:30",
+      "team1": "UD Almería",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-29",
+      "time": "20:00",
+      "team1": "Real Valladolid",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-30",
+      "time": "13:00",
+      "team1": "Real Zaragoza",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-30",
+      "time": "15:15",
+      "team1": "Racing Santander",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-30",
+      "time": "17:30",
+      "team1": "Córdoba CF",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-11-30",
+      "time": "20:00",
+      "team1": "CD Castellón",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "16. Round",
+      "date": "2025-12-01",
+      "time": "19:30",
+      "team1": "CD Mirandés",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-05",
+      "time": "19:30",
+      "team1": "Burgos CF",
+      "team2": "Albacete"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-06",
+      "time": "13:00",
+      "team1": "FC Andorra",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-06",
+      "time": "15:15",
+      "team1": "SD Huesca",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-06",
+      "time": "17:30",
+      "team1": "Real Sociedad B",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-07",
+      "time": "13:00",
+      "team1": "Cádiz CF",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-07",
+      "time": "15:15",
+      "team1": "CD Leganés",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-07",
+      "time": "17:30",
+      "team1": "SD Eibar",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-07",
+      "time": "17:30",
+      "team1": "Deportivo La Coruña",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-07",
+      "time": "20:00",
+      "team1": "Granada CF",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-08",
+      "time": "17:30",
+      "team1": "UD Las Palmas",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "17. Round",
+      "date": "2025-12-08",
+      "time": "19:30",
+      "team1": "Málaga CF",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "Albacete",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "CD Castellón",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "AD Ceuta FC",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "Córdoba CF",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "Deportivo La Coruña",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "UD Almería",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "Real Zaragoza",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "Sporting Gijón",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "Cultural Leonesa",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "Racing Santander",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "18. Round",
+      "date": "2025-12-14",
+      "team1": "Real Valladolid",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "Burgos CF",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "Cádiz CF",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "SD Eibar",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "SD Huesca",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "CD Leganés",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "FC Andorra",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "Granada CF",
+      "team2": "Albacete"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "Real Sociedad B",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "CD Mirandés",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "UD Las Palmas",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "19. Round",
+      "date": "2025-12-21",
+      "team1": "Málaga CF",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "Albacete",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "CD Castellón",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "SD Eibar",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "Cultural Leonesa",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "UD Almería",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "Córdoba CF",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "Deportivo La Coruña",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "Real Zaragoza",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "Sporting Gijón",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "Real Valladolid",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "20. Round",
+      "date": "2026-01-04",
+      "team1": "AD Ceuta FC",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "Burgos CF",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "Cádiz CF",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "CD Leganés",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "Racing Santander",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "FC Andorra",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "Real Sociedad B",
+      "team2": "Albacete"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "Granada CF",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "Málaga CF",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "SD Huesca",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "UD Las Palmas",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "21. Round",
+      "date": "2026-01-11",
+      "team1": "CD Mirandés",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "Albacete",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "Burgos CF",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "CD Castellón",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "AD Ceuta FC",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "Córdoba CF",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "Cultural Leonesa",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "UD Almería",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "Granada CF",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "Racing Santander",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "CD Mirandés",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "22. Round",
+      "date": "2026-01-18",
+      "team1": "Real Zaragoza",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "Cádiz CF",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "AD Ceuta FC",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "Deportivo La Coruña",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "CD Leganés",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "FC Andorra",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "Real Valladolid",
+      "team2": "Albacete"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "Málaga CF",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "Real Zaragoza",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "UD Las Palmas",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "SD Eibar",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "23. Round",
+      "date": "2026-01-25",
+      "team1": "Sporting Gijón",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "Albacete",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "Burgos CF",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "Córdoba CF",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "SD Eibar",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "Granada CF",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "UD Almería",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "SD Huesca",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "Cultural Leonesa",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "Real Sociedad B",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "CD Mirandés",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "24. Round",
+      "date": "2026-02-01",
+      "team1": "CD Castellón",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "AD Ceuta FC",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "FC Andorra",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "Deportivo La Coruña",
+      "team2": "Albacete"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "UD Las Palmas",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "Real Valladolid",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "Real Zaragoza",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "CD Leganés",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "Sporting Gijón",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "Málaga CF",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "Cádiz CF",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "25. Round",
+      "date": "2026-02-08",
+      "team1": "Racing Santander",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "Albacete",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "Burgos CF",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "CD Castellón",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "Córdoba CF",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "SD Eibar",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "Granada CF",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "Cultural Leonesa",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "UD Almería",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "SD Huesca",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "CD Mirandés",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "26. Round",
+      "date": "2026-02-15",
+      "team1": "Real Sociedad B",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "Cádiz CF",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "AD Ceuta FC",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "Deportivo La Coruña",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "SD Huesca",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "CD Leganés",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "Sporting Gijón",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "UD Almería",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "FC Andorra",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "Málaga CF",
+      "team2": "Albacete"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "Racing Santander",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "27. Round",
+      "date": "2026-02-22",
+      "team1": "UD Las Palmas",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "Albacete",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "CD Castellón",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "Granada CF",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "Cultural Leonesa",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "Real Zaragoza",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "SD Eibar",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "CD Mirandés",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "Real Sociedad B",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "Real Valladolid",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "Sporting Gijón",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "28. Round",
+      "date": "2026-03-01",
+      "team1": "Córdoba CF",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "Burgos CF",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "Cádiz CF",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "Deportivo La Coruña",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "Málaga CF",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "UD Almería",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "FC Andorra",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "SD Huesca",
+      "team2": "Albacete"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "Real Sociedad B",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "UD Las Palmas",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "Racing Santander",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "29. Round",
+      "date": "2026-03-08",
+      "team1": "CD Leganés",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "Albacete",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "AD Ceuta FC",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "Córdoba CF",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "Cultural Leonesa",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "SD Eibar",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "CD Mirandés",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "Sporting Gijón",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "Málaga CF",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "Real Valladolid",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "Real Zaragoza",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "30. Round",
+      "date": "2026-03-15",
+      "team1": "Granada CF",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "Burgos CF",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "Cádiz CF",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "CD Castellón",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "Deportivo La Coruña",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "UD Las Palmas",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "CD Mirandés",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "FC Andorra",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "Racing Santander",
+      "team2": "Albacete"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "CD Leganés",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "Real Sociedad B",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "31. Round",
+      "date": "2026-03-22",
+      "team1": "SD Huesca",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "Albacete",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "Córdoba CF",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "SD Eibar",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "Granada CF",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "UD Almería",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "Real Valladolid",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "AD Ceuta FC",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "Sporting Gijón",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "Málaga CF",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "Real Zaragoza",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "32. Round",
+      "date": "2026-03-29",
+      "team1": "Cultural Leonesa",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "Burgos CF",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "SD Huesca",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "CD Leganés",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "Racing Santander",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "FC Andorra",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "CD Mirandés",
+      "team2": "Albacete"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "Real Valladolid",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "Deportivo La Coruña",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "Real Sociedad B",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "UD Las Palmas",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "33. Round",
+      "date": "2026-04-01",
+      "team1": "CD Castellón",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "Albacete",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "Cádiz CF",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "CD Castellón",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "Deportivo La Coruña",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "Cultural Leonesa",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "UD Almería",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "FC Andorra",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "SD Eibar",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "UD Las Palmas",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "Real Zaragoza",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "34. Round",
+      "date": "2026-04-05",
+      "team1": "Sporting Gijón",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "Burgos CF",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "AD Ceuta FC",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "Córdoba CF",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "Granada CF",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "CD Leganés",
+      "team2": "Albacete"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "CD Mirandés",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "SD Huesca",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "Real Valladolid",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "Málaga CF",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "Racing Santander",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "35. Round",
+      "date": "2026-04-12",
+      "team1": "Cádiz CF",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "Albacete",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "Deportivo La Coruña",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "SD Eibar",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "UD Almería",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "FC Andorra",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "CD Castellón",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "Sporting Gijón",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "Real Zaragoza",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "Cultural Leonesa",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "UD Las Palmas",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "36. Round",
+      "date": "2026-04-19",
+      "team1": "Real Sociedad B",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "Albacete",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "Burgos CF",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "Cádiz CF",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "AD Ceuta FC",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "Córdoba CF",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "SD Huesca",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "Málaga CF",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "CD Mirandés",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "Granada CF",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "CD Leganés",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "37. Round",
+      "date": "2026-04-26",
+      "team1": "Real Valladolid",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "CD Castellón",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "Deportivo La Coruña",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "SD Eibar",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "UD Las Palmas",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "UD Almería",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "FC Andorra",
+      "team2": "Albacete"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "Real Sociedad B",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "Cultural Leonesa",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "Sporting Gijón",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "Real Zaragoza",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "38. Round",
+      "date": "2026-05-03",
+      "team1": "Racing Santander",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "Albacete",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "Cádiz CF",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "Córdoba CF",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "SD Huesca",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "CD Leganés",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "Málaga CF",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "Real Valladolid",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "FC Andorra",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "AD Ceuta FC",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "CD Mirandés",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "39. Round",
+      "date": "2026-05-10",
+      "team1": "Burgos CF",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "AD Ceuta FC",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "Racing Santander",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "UD Almería",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "Córdoba CF",
+      "team2": "Albacete"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "Granada CF",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "CD Castellón",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "Cultural Leonesa",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "CD Leganés",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "Real Zaragoza",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "Real Sociedad B",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "40. Round",
+      "date": "2026-05-17",
+      "team1": "Deportivo La Coruña",
+      "team2": "FC Andorra"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "Albacete",
+      "team2": "Real Sociedad B"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "Cádiz CF",
+      "team2": "CD Leganés"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "UD Las Palmas",
+      "team2": "Real Zaragoza"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "Málaga CF",
+      "team2": "Racing Santander"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "FC Andorra",
+      "team2": "AD Ceuta FC"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "Cultural Leonesa",
+      "team2": "Burgos CF"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "SD Huesca",
+      "team2": "CD Castellón"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "SD Eibar",
+      "team2": "Córdoba CF"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "Real Valladolid",
+      "team2": "Deportivo La Coruña"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "CD Mirandés",
+      "team2": "Granada CF"
+    },
+    {
+      "round": "41. Round",
+      "date": "2026-05-24",
+      "team1": "Sporting Gijón",
+      "team2": "UD Almería"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "CD Castellón",
+      "team2": "SD Eibar"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "Córdoba CF",
+      "team2": "SD Huesca"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "Deportivo La Coruña",
+      "team2": "UD Las Palmas"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "Granada CF",
+      "team2": "Sporting Gijón"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "CD Leganés",
+      "team2": "CD Mirandés"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "UD Almería",
+      "team2": "Real Valladolid"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "AD Ceuta FC",
+      "team2": "Albacete"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "Racing Santander",
+      "team2": "Cádiz CF"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "Real Sociedad B",
+      "team2": "Cultural Leonesa"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "Real Zaragoza",
+      "team2": "Málaga CF"
+    },
+    {
+      "round": "42. Round",
+      "date": "2026-05-31",
+      "team1": "Burgos CF",
+      "team2": "FC Andorra"
+    }
+  ]
+}

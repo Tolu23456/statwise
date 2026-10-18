@@ -267,7 +267,7 @@ static const std::vector<FDLeague> FD_LEAGUES = {
 
 // Seasons that exist for main leagues — includes historic data back to 1993/94
 static const std::vector<std::string> FD_SEASONS_MAIN = {
-    "2425", "2324", "2223", "2122", "2021", "1920", "1819", "1718",
+    "2627", "2526", "2425", "2324", "2223", "2122", "2021", "1920", "1819", "1718",
     "1617", "1516", "1415", "1314", "1213", "1112", "1011", "0910",
     "0809", "0708", "0607", "0506", "0405", "0304", "0203", "0102",
     "0001", "9900", "9899", "9798", "9697", "9596", "9495", "9394",
@@ -275,7 +275,7 @@ static const std::vector<std::string> FD_SEASONS_MAIN = {
 
 // Overseas leagues only have data from roughly 2012 onwards
 static const std::vector<std::string> FD_SEASONS_EXT = {
-    "2425", "2324", "2223", "2122", "2021", "1920", "1819", "1718",
+    "2627", "2526", "2425", "2324", "2223", "2122", "2021", "1920", "1819", "1718",
     "1617", "1516", "1415", "1314", "1213",
 };
 
@@ -308,7 +308,7 @@ static void build_football_data_tasks(const std::string& outdir,
 static void build_xgabora_tasks(const std::string& outdir,
                                   std::vector<DownloadTask>& tasks) {
     const std::string base =
-        "https://raw.githubusercontent.com/xgabora/Club-Football-Match-Data-2000-2025/main/data";
+        "https://raw.githubusercontent.com/xgabora/Club-Football-Match-Data/main/data";
     tasks.push_back({
         base + "/Matches.csv",
         outdir + "/xgabora/Matches.csv",
@@ -430,11 +430,11 @@ static const std::vector<OFCompetition> OF_COMPS = {
     {"ru.1",  "russian-premier"},
 };
 
-// Seasons available in openfootball/football.json (2011-12 → 2024-25)
+// Seasons available in openfootball/football.json (2011-12 → 2026-27)
 static std::vector<std::string> of_season_list() {
     std::vector<std::string> seasons;
-    // Generate "2024-25", "2023-24", ..., "2011-12"
-    for (int y = 2024; y >= 2011; --y) {
+    // Generate "2026-27", "2025-26", ..., "2011-12"
+    for (int y = 2026; y >= 2011; --y) {
         int y2 = (y + 1) % 100;
         char buf[16];
         snprintf(buf, sizeof(buf), "%d-%02d", y, y2);

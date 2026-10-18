@@ -107,7 +107,7 @@ export default function EmailConfirmationScreen() {
         </TouchableOpacity>
 
         <Link href="/(auth)/login" asChild replace>
-          <TouchableOpacity style={[styles.loginBtn, { backgroundColor: C.primary }]}>
+          <TouchableOpacity style={StyleSheet.flatten([styles.loginBtn, { backgroundColor: C.primary }])}>
             <Text style={styles.loginBtnText}>Back to Sign In</Text>
           </TouchableOpacity>
         </Link>

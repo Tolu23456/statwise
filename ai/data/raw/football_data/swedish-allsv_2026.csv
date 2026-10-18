@@ -1,0 +1,189 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,04/04/2026,Degerfors IF,IK Sirius,0,3,A
+,04/04/2026,Hammarby IF,Mjällby AIF,3,0,H
+,05/04/2026,AIK,Halmstads BK,2,1,H
+,05/04/2026,Kalmar FF,Västerås SK,0,1,A
+,05/04/2026,Örgryte IS,Malmö FF,1,1,D
+,06/04/2026,BK Häcken,IF Brommapojkarna,2,2,D
+,06/04/2026,IF Elfsborg,IFK Göteborg,2,0,H
+,06/04/2026,GAIS,Djurgården,0,1,A
+,11/04/2026,IFK Göteborg,BK Häcken,0,2,A
+,11/04/2026,Mjällby AIF,Örgryte IS,0,2,A
+,11/04/2026,Västerås SK,IF Elfsborg,2,2,D
+,12/04/2026,Djurgården,Kalmar FF,3,2,H
+,12/04/2026,Halmstads BK,Degerfors IF,0,3,A
+,12/04/2026,Malmö FF,GAIS,3,1,H
+,13/04/2026,IF Brommapojkarna,AIK,2,2,D
+,13/04/2026,IK Sirius,Hammarby IF,2,0,H
+,17/04/2026,Degerfors IF,IF Elfsborg,0,1,A
+,17/04/2026,Djurgården,Malmö FF,0,1,A
+,18/04/2026,Halmstads BK,IFK Göteborg,1,1,D
+,18/04/2026,Hammarby IF,Örgryte IS,8,1,H
+,18/04/2026,IK Sirius,Västerås SK,4,1,H
+,18/04/2026,Mjällby AIF,IF Brommapojkarna,3,0,H
+,19/04/2026,AIK,Kalmar FF,1,0,H
+,19/04/2026,BK Häcken,GAIS,2,1,H
+,22/04/2026,Hammarby IF,Halmstads BK,1,1,D
+,22/04/2026,IF Elfsborg,Djurgården,2,1,H
+,22/04/2026,Örgryte IS,IF Brommapojkarna,1,2,A
+,22/04/2026,Västerås SK,BK Häcken,3,3,D
+,23/04/2026,Degerfors IF,AIK,2,1,H
+,23/04/2026,GAIS,Mjällby AIF,0,0,D
+,23/04/2026,Kalmar FF,IFK Göteborg,1,1,D
+,23/04/2026,Malmö FF,IK Sirius,2,3,A
+,26/04/2026,Djurgården,Hammarby IF,1,1,D
+,26/04/2026,IF Brommapojkarna,Västerås SK,1,2,A
+,26/04/2026,IFK Göteborg,GAIS,2,2,D
+,27/04/2026,AIK,Malmö FF,0,1,A
+,27/04/2026,BK Häcken,IK Sirius,2,2,D
+,27/04/2026,Kalmar FF,IF Elfsborg,2,1,H
+,27/04/2026,Mjällby AIF,Halmstads BK,2,0,H
+,27/04/2026,Örgryte IS,Degerfors IF,1,1,D
+,02/05/2026,Degerfors IF,BK Häcken,1,1,D
+,02/05/2026,IK Sirius,Kalmar FF,3,2,H
+,03/05/2026,Hammarby IF,Västerås SK,3,0,H
+,03/05/2026,Malmö FF,Mjällby AIF,2,3,A
+,03/05/2026,GAIS,Örgryte IS,4,0,H
+,03/05/2026,IF Elfsborg,AIK,1,1,D
+,04/05/2026,Djurgården,IFK Göteborg,6,0,H
+,04/05/2026,Halmstads BK,IF Brommapojkarna,1,3,A
+,08/05/2026,IF Elfsborg,IF Brommapojkarna,2,0,H
+,09/05/2026,Degerfors IF,Mjällby AIF,1,4,A
+,09/05/2026,IFK Göteborg,Hammarby IF,0,1,A
+,09/05/2026,Västerås SK,GAIS,0,1,A
+,10/05/2026,AIK,Djurgården,2,4,A
+,10/05/2026,Kalmar FF,Halmstads BK,2,0,H
+,10/05/2026,BK Häcken,Malmö FF,3,2,H
+,11/05/2026,IK Sirius,Örgryte IS,2,0,H
+,16/05/2026,GAIS,Degerfors IF,1,1,D
+,16/05/2026,Halmstads BK,IF Elfsborg,1,1,D
+,17/05/2026,Hammarby IF,Malmö FF,4,1,H
+,17/05/2026,IF Brommapojkarna,Kalmar FF,1,0,H
+,17/05/2026,Mjällby AIF,BK Häcken,0,1,A
+,17/05/2026,Västerås SK,AIK,1,1,D
+,18/05/2026,Djurgården,IK Sirius,2,3,A
+,19/05/2026,Örgryte IS,IFK Göteborg,2,3,A
+,20/05/2026,GAIS,Hammarby IF,2,0,H
+,21/05/2026,IF Elfsborg,Mjällby AIF,1,1,D
+,22/05/2026,Djurgården,IF Brommapojkarna,1,2,A
+,23/05/2026,Halmstads BK,Örgryte IS,2,0,H
+,23/05/2026,Kalmar FF,Degerfors IF,2,1,H
+,24/05/2026,Hammarby IF,AIK,1,2,A
+,24/05/2026,IK Sirius,GAIS,2,1,H
+,24/05/2026,Malmö FF,Västerås SK,2,3,A
+,25/05/2026,IF Elfsborg,BK Häcken,1,1,D
+,25/05/2026,IFK Göteborg,Mjällby AIF,1,1,D
+,29/05/2026,Örgryte IS,IF Elfsborg,0,0,D
+,30/05/2026,AIK,IK Sirius,0,3,A
+,30/05/2026,GAIS,Kalmar FF,3,0,H
+,30/05/2026,Malmö FF,Halmstads BK,5,2,H
+,31/05/2026,BK Häcken,Hammarby IF,3,2,H
+,31/05/2026,Degerfors IF,IF Brommapojkarna,2,2,D
+,31/05/2026,Västerås SK,IFK Göteborg,4,5,A
+,03/07/2026,IK Sirius,Mjällby AIF,4,4,D
+,04/07/2026,Degerfors IF,Malmö FF,0,1,A
+,04/07/2026,Halmstads BK,Västerås SK,1,3,A
+,05/07/2026,IFK Göteborg,AIK,1,2,A
+,05/07/2026,Kalmar FF,Örgryte IS,3,0,H
+,05/07/2026,IF Elfsborg,Hammarby IF,1,2,A
+,06/07/2026,BK Häcken,Djurgården,2,4,A
+,06/07/2026,IF Brommapojkarna,GAIS,1,1,D
+,11/07/2026,Mjällby AIF,AIK,1,2,A
+,11/07/2026,Örgryte IS,BK Häcken,4,3,H
+,12/07/2026,Hammarby IF,Kalmar FF,2,0,H
+,12/07/2026,Malmö FF,IFK Göteborg,4,0,H
+,12/07/2026,Västerås SK,Degerfors IF,2,0,H
+,12/07/2026,GAIS,IF Elfsborg,1,0,H
+,12/07/2026,IF Brommapojkarna,IK Sirius,1,2,A
+,13/07/2026,Djurgården,Halmstads BK,3,0,H
+,17/07/2026,IFK Göteborg,IF Brommapojkarna,2,1,H
+,17/07/2026,Mjällby AIF,Västerås SK,0,0,D
+,18/07/2026,AIK,GAIS,2,0,H
+,19/07/2026,Halmstads BK,BK Häcken,0,2,A
+,19/07/2026,Hammarby IF,Degerfors IF,4,0,H
+,19/07/2026,IF Elfsborg,IK Sirius,1,3,A
+,20/07/2026,Kalmar FF,Malmö FF,2,2,D
+,20/07/2026,Örgryte IS,Djurgården,0,0,D
+,24/07/2026,Västerås SK,Örgryte IS,2,0,H
+,25/07/2026,Degerfors IF,Djurgården,0,1,A
+,25/07/2026,Kalmar FF,Mjällby AIF,2,1,H
+,26/07/2026,IF Brommapojkarna,Hammarby IF,1,1,D
+,26/07/2026,IK Sirius,IFK Göteborg,4,1,H
+,26/07/2026,GAIS,Halmstads BK,1,1,D
+,26/07/2026,Malmö FF,IF Elfsborg,1,2,A
+,27/07/2026,BK Häcken,AIK,0,0,D
+,01/08/2026,BK Häcken,Kalmar FF,1,1,D
+,02/08/2026,IF Brommapojkarna,Malmö FF,1,2,A
+,02/08/2026,IFK Göteborg,Degerfors IF,2,0,H
+,02/08/2026,AIK,Örgryte IS,0,3,A
+,03/08/2026,Djurgården,Västerås SK,6,0,H
+,03/08/2026,Halmstads BK,IK Sirius,0,2,A
+,08/08/2026,Örgryte IS,AIK,3,4,A
+,08/08/2026,Mjällby AIF,IF Elfsborg,0,1,A
+,09/08/2026,Hammarby IF,BK Häcken,3,0,H
+,09/08/2026,Malmö FF,Degerfors IF,1,2,A
+,09/08/2026,Halmstads BK,GAIS,0,2,A
+,09/08/2026,IFK Göteborg,Kalmar FF,3,2,H
+,10/08/2026,IK Sirius,IF Brommapojkarna,2,2,D
+,10/08/2026,Västerås SK,Djurgården,1,0,H
+,14/08/2026,IF Elfsborg,Västerås SK,3,0,H
+,15/08/2026,Mjällby AIF,IK Sirius,4,3,H
+,16/08/2026,Degerfors IF,IFK Göteborg,3,0,H
+,16/08/2026,Djurgården,AIK,1,3,A
+,16/08/2026,IF Brommapojkarna,Örgryte IS,3,1,H
+,16/08/2026,GAIS,Malmö FF,0,1,A
+,16/08/2026,Kalmar FF,Hammarby IF,0,4,A
+,17/08/2026,BK Häcken,Halmstads BK,1,0,H
+,21/08/2026,IK Sirius,BK Häcken,0,3,A
+,22/08/2026,Örgryte IS,Halmstads BK,1,1,D
+,23/08/2026,IFK Göteborg,IF Elfsborg,1,1,D
+,23/08/2026,Västerås SK,Kalmar FF,0,0,D
+,23/08/2026,Hammarby IF,GAIS,2,0,H
+,23/08/2026,IF Brommapojkarna,Degerfors IF,2,0,H
+,24/08/2026,Malmö FF,Djurgården,0,3,A
+,29/08/2026,BK Häcken,Västerås SK,1,3,A
+,29/08/2026,IF Elfsborg,Degerfors IF,2,0,H
+,29/08/2026,Halmstads BK,Kalmar FF,1,0,H
+,30/08/2026,AIK,Hammarby IF,3,2,H
+,30/08/2026,IFK Göteborg,Örgryte IS,1,0,H
+,31/08/2026,Djurgården,Mjällby AIF,4,0,H
+,31/08/2026,GAIS,IF Brommapojkarna,4,0,H
+,31/08/2026,IK Sirius,Malmö FF,0,1,A
+,03/09/2026,Mjällby AIF,Djurgården,0,2,A
+,05/09/2026,Degerfors IF,Halmstads BK,2,0,H
+,05/09/2026,GAIS,BK Häcken,0,0,D
+,05/09/2026,Västerås SK,IK Sirius,0,1,A
+,06/09/2026,Örgryte IS,Hammarby IF,1,1,D
+,06/09/2026,IF Brommapojkarna,IF Elfsborg,2,1,H
+,07/09/2026,Kalmar FF,Djurgården,0,1,A
+,07/09/2026,Malmö FF,AIK,0,0,D
+,07/09/2026,Mjällby AIF,IFK Göteborg,1,4,A
+,11/09/2026,BK Häcken,Mjällby AIF,1,1,D
+,12/09/2026,AIK,Västerås SK,1,4,A
+,12/09/2026,IFK Göteborg,Halmstads BK,2,1,H
+,13/09/2026,Hammarby IF,IF Brommapojkarna,3,1,H
+,13/09/2026,IF Elfsborg,Kalmar FF,1,0,H
+,13/09/2026,Malmö FF,Örgryte IS,4,1,H
+,14/09/2026,Djurgården,GAIS,2,0,H
+,14/09/2026,IK Sirius,Degerfors IF,2,0,H
+,16/09/2026,AIK,Mjällby AIF,1,1,D
+,19/09/2026,IF Brommapojkarna,IFK Göteborg,0,1,A
+,19/09/2026,Västerås SK,Malmö FF,2,0,H
+,19/09/2026,Örgryte IS,IK Sirius,1,2,A
+,20/09/2026,Djurgården,IF Elfsborg,1,2,A
+,20/09/2026,Halmstads BK,AIK,2,1,H
+,20/09/2026,Kalmar FF,BK Häcken,0,5,A
+,20/09/2026,Degerfors IF,Hammarby IF,0,1,A
+,20/09/2026,Mjällby AIF,GAIS,0,3,A
+,09/10/2026,IFK Göteborg,Västerås SK,1,0,H
+,10/10/2026,AIK,IF Brommapojkarna,5,6,A
+,10/10/2026,GAIS,IK Sirius,0,1,A
+,10/10/2026,Mjällby AIF,Degerfors IF,1,1,D
+,11/10/2026,Hammarby IF,Djurgården,0,1,A
+,11/10/2026,BK Häcken,Örgryte IS,3,0,H
+,12/10/2026,IF Elfsborg,Halmstads BK,4,0,H
+,12/10/2026,Malmö FF,Kalmar FF,1,0,H
+,16/10/2026,IF Brommapojkarna,Djurgården,0,2,A
+,17/10/2026,AIK,IFK Göteborg,2,2,D
+,18/10/2026,IK Sirius,IF Elfsborg,2,2,D
+,18/10/2026,Västerås SK,Mjällby AIF,1,0,H

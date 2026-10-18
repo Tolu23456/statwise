@@ -1,0 +1,241 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,22/02/2025,Chengdu Rongcheng,Wuhan Three Towns,1,0,H
+,22/02/2025,Shanghai Shenhua,Changchun Yatai,2,1,H
+,22/02/2025,Yunnan Yukun,Beijing Guoan,0,2,A
+,23/02/2025,Qingdao Hainiu,Qingdao West Coast,2,2,D
+,23/02/2025,Shandong Taishan,Henan,0,0,D
+,23/02/2025,Tianjin Jinmen Tiger,Meizhou Hakka,2,2,D
+,23/02/2025,Zhejiang Professional FC,Dalian Yingbo,1,1,D
+,23/02/2025,Shanghai Port,Shenzhen Xinpengcheng,3,1,H
+,28/02/2025,Shandong Taishan,Dalian Yingbo,4,1,H
+,28/02/2025,Shanghai Port,Changchun Yatai,2,0,H
+,01/03/2025,Qingdao Hainiu,Shenzhen Xinpengcheng,0,1,A
+,01/03/2025,Meizhou Hakka,Henan,2,1,H
+,01/03/2025,Shanghai Shenhua,Beijing Guoan,2,2,D
+,01/03/2025,Yunnan Yukun,Zhejiang Professional FC,1,1,D
+,02/03/2025,Chengdu Rongcheng,Tianjin Jinmen Tiger,1,2,A
+,03/03/2025,Qingdao West Coast,Wuhan Three Towns,2,0,H
+,28/03/2025,Qingdao West Coast,Shanghai Port,3,3,D
+,28/03/2025,Wuhan Three Towns,Zhejiang Professional FC,0,4,A
+,28/03/2025,Shenzhen Xinpengcheng,Yunnan Yukun,3,4,A
+,29/03/2025,Dalian Yingbo,Changchun Yatai,2,0,H
+,29/03/2025,Tianjin Jinmen Tiger,Qingdao Hainiu,1,0,H
+,29/03/2025,Henan,Shanghai Shenhua,1,3,A
+,29/03/2025,Meizhou Hakka,Shandong Taishan,3,4,A
+,29/03/2025,Beijing Guoan,Chengdu Rongcheng,1,1,D
+,01/04/2025,Henan,Qingdao West Coast,2,3,A
+,01/04/2025,Zhejiang Professional FC,Shenzhen Xinpengcheng,3,0,H
+,02/04/2025,Changchun Yatai,Wuhan Three Towns,1,1,D
+,02/04/2025,Shanghai Shenhua,Yunnan Yukun,3,1,H
+,02/04/2025,Qingdao Hainiu,Dalian Yingbo,1,1,D
+,02/04/2025,Shandong Taishan,Chengdu Rongcheng,0,3,A
+,02/04/2025,Tianjin Jinmen Tiger,Beijing Guoan,2,2,D
+,02/04/2025,Shanghai Port,Meizhou Hakka,2,1,H
+,05/04/2025,Shenzhen Xinpengcheng,Henan,1,3,A
+,06/04/2025,Changchun Yatai,Shandong Taishan,1,2,A
+,06/04/2025,Qingdao West Coast,Tianjin Jinmen Tiger,2,2,D
+,06/04/2025,Chengdu Rongcheng,Dalian Yingbo,2,0,H
+,06/04/2025,Meizhou Hakka,Wuhan Three Towns,3,1,H
+,06/04/2025,Beijing Guoan,Zhejiang Professional FC,2,0,H
+,06/04/2025,Shanghai Port,Shanghai Shenhua,1,1,D
+,06/04/2025,Yunnan Yukun,Qingdao Hainiu,1,0,H
+,11/04/2025,Meizhou Hakka,Changchun Yatai,1,3,A
+,11/04/2025,Shandong Taishan,Shenzhen Xinpengcheng,4,0,H
+,12/04/2025,Dalian Yingbo,Tianjin Jinmen Tiger,1,1,D
+,12/04/2025,Qingdao Hainiu,Chengdu Rongcheng,0,1,A
+,12/04/2025,Wuhan Three Towns,Yunnan Yukun,3,1,H
+,12/04/2025,Shanghai Shenhua,Zhejiang Professional FC,3,2,H
+,15/04/2025,Qingdao West Coast,Shandong Taishan,1,5,A
+,15/04/2025,Wuhan Three Towns,Beijing Guoan,4,4,D
+,15/04/2025,Shenzhen Xinpengcheng,Changchun Yatai,3,1,H
+,16/04/2025,Tianjin Jinmen Tiger,Shanghai Port,1,4,A
+,16/04/2025,Dalian Yingbo,Henan,1,0,H
+,16/04/2025,Zhejiang Professional FC,Meizhou Hakka,2,2,D
+,16/04/2025,Chengdu Rongcheng,Yunnan Yukun,1,1,D
+,16/04/2025,Shanghai Shenhua,Qingdao Hainiu,3,2,H
+,19/04/2025,Shanghai Shenhua,Wuhan Three Towns,2,0,H
+,19/04/2025,Beijing Guoan,Shandong Taishan,6,1,H
+,20/04/2025,Changchun Yatai,Yunnan Yukun,0,0,D
+,20/04/2025,Henan,Qingdao Hainiu,3,1,H
+,20/04/2025,Qingdao West Coast,Dalian Yingbo,2,0,H
+,20/04/2025,Meizhou Hakka,Shenzhen Xinpengcheng,3,0,H
+,20/04/2025,Shanghai Port,Chengdu Rongcheng,1,3,A
+,20/04/2025,Tianjin Jinmen Tiger,Zhejiang Professional FC,2,0,H
+,25/04/2025,Beijing Guoan,Henan,1,0,H
+,25/04/2025,Yunnan Yukun,Shanghai Port,2,3,A
+,26/04/2025,Changchun Yatai,Chengdu Rongcheng,1,2,A
+,26/04/2025,Shenzhen Xinpengcheng,Dalian Yingbo,1,1,D
+,26/04/2025,Shandong Taishan,Shanghai Shenhua,0,1,A
+,27/04/2025,Wuhan Three Towns,Tianjin Jinmen Tiger,2,1,H
+,27/04/2025,Qingdao Hainiu,Meizhou Hakka,1,1,D
+,27/04/2025,Zhejiang Professional FC,Qingdao West Coast,2,1,H
+,01/05/2025,Dalian Yingbo,Yunnan Yukun,3,2,H
+,01/05/2025,Shenzhen Xinpengcheng,Tianjin Jinmen Tiger,1,0,H
+,01/05/2025,Henan,Wuhan Three Towns,1,2,A
+,01/05/2025,Zhejiang Professional FC,Changchun Yatai,4,2,H
+,01/05/2025,Shandong Taishan,Qingdao Hainiu,1,1,D
+,01/05/2025,Shanghai Port,Beijing Guoan,1,2,A
+,02/05/2025,Qingdao West Coast,Meizhou Hakka,3,1,H
+,02/05/2025,Chengdu Rongcheng,Shanghai Shenhua,1,0,H
+,05/05/2025,Dalian Yingbo,Beijing Guoan,0,2,A
+,05/05/2025,Henan,Tianjin Jinmen Tiger,3,4,A
+,05/05/2025,Wuhan Three Towns,Shanghai Port,0,2,A
+,05/05/2025,Chengdu Rongcheng,Zhejiang Professional FC,2,1,H
+,05/05/2025,Qingdao Hainiu,Changchun Yatai,3,0,H
+,05/05/2025,Yunnan Yukun,Shandong Taishan,3,2,H
+,06/05/2025,Meizhou Hakka,Shanghai Shenhua,1,3,A
+,06/05/2025,Qingdao West Coast,Shenzhen Xinpengcheng,0,0,D
+,09/05/2025,Shanghai Port,Qingdao Hainiu,3,1,H
+,10/05/2025,Shanghai Shenhua,Qingdao West Coast,4,0,H
+,10/05/2025,Meizhou Hakka,Chengdu Rongcheng,0,4,A
+,10/05/2025,Shandong Taishan,Zhejiang Professional FC,4,2,H
+,10/05/2025,Beijing Guoan,Shenzhen Xinpengcheng,3,1,H
+,11/05/2025,Changchun Yatai,Henan,0,1,A
+,11/05/2025,Tianjin Jinmen Tiger,Yunnan Yukun,0,1,A
+,11/05/2025,Wuhan Three Towns,Dalian Yingbo,2,2,D
+,16/05/2025,Zhejiang Professional FC,Henan,2,2,D
+,16/05/2025,Yunnan Yukun,Meizhou Hakka,2,0,H
+,17/05/2025,Dalian Yingbo,Shanghai Shenhua,0,3,A
+,17/05/2025,Changchun Yatai,Tianjin Jinmen Tiger,1,2,A
+,17/05/2025,Chengdu Rongcheng,Qingdao West Coast,1,1,D
+,17/05/2025,Qingdao Hainiu,Beijing Guoan,1,1,D
+,17/05/2025,Shanghai Port,Shandong Taishan,1,1,D
+,13/06/2025,Dalian Yingbo,Meizhou Hakka,1,0,H
+,13/06/2025,Wuhan Three Towns,Qingdao Hainiu,2,0,H
+,14/06/2025,Zhejiang Professional FC,Shanghai Port,2,2,D
+,14/06/2025,Beijing Guoan,Changchun Yatai,2,1,H
+,14/06/2025,Qingdao West Coast,Yunnan Yukun,0,0,D
+,14/06/2025,Henan,Chengdu Rongcheng,3,2,H
+,14/06/2025,Shenzhen Xinpengcheng,Shanghai Shenhua,3,1,H
+,14/06/2025,Tianjin Jinmen Tiger,Shandong Taishan,1,0,H
+,17/06/2025,Beijing Guoan,Qingdao West Coast,1,0,H
+,18/06/2025,Henan,Shanghai Port,1,3,A
+,18/06/2025,Shenzhen Xinpengcheng,Wuhan Three Towns,1,2,A
+,25/06/2025,Qingdao Hainiu,Zhejiang Professional FC,0,3,A
+,25/06/2025,Shanghai Shenhua,Tianjin Jinmen Tiger,3,0,H
+,25/06/2025,Changchun Yatai,Qingdao West Coast,1,0,H
+,25/06/2025,Meizhou Hakka,Beijing Guoan,0,4,A
+,25/06/2025,Shandong Taishan,Wuhan Three Towns,3,1,H
+,25/06/2025,Chengdu Rongcheng,Shenzhen Xinpengcheng,5,0,H
+,26/06/2025,Shanghai Port,Dalian Yingbo,3,0,H
+,26/06/2025,Yunnan Yukun,Henan,2,1,H
+,29/06/2025,Changchun Yatai,Shanghai Shenhua,1,2,A
+,29/06/2025,Qingdao West Coast,Qingdao Hainiu,1,0,H
+,29/06/2025,Meizhou Hakka,Tianjin Jinmen Tiger,1,2,A
+,29/06/2025,Wuhan Three Towns,Chengdu Rongcheng,2,2,D
+,30/06/2025,Henan,Shandong Taishan,2,2,D
+,30/06/2025,Beijing Guoan,Yunnan Yukun,2,1,H
+,30/06/2025,Dalian Yingbo,Zhejiang Professional FC,1,0,H
+,30/06/2025,Shenzhen Xinpengcheng,Shanghai Port,1,2,A
+,18/07/2025,Changchun Yatai,Shanghai Port,1,3,A
+,18/07/2025,Wuhan Three Towns,Qingdao West Coast,1,1,D
+,18/07/2025,Tianjin Jinmen Tiger,Chengdu Rongcheng,2,1,H
+,18/07/2025,Zhejiang Professional FC,Yunnan Yukun,3,1,H
+,19/07/2025,Dalian Yingbo,Shandong Taishan,2,0,H
+,19/07/2025,Beijing Guoan,Shanghai Shenhua,1,3,A
+,19/07/2025,Shenzhen Xinpengcheng,Qingdao Hainiu,4,0,H
+,19/07/2025,Henan,Meizhou Hakka,1,1,D
+,26/07/2025,Shanghai Port,Qingdao West Coast,2,2,D
+,26/07/2025,Chengdu Rongcheng,Beijing Guoan,2,0,H
+,26/07/2025,Yunnan Yukun,Shenzhen Xinpengcheng,3,1,H
+,27/07/2025,Changchun Yatai,Dalian Yingbo,0,2,A
+,27/07/2025,Qingdao Hainiu,Tianjin Jinmen Tiger,2,0,H
+,27/07/2025,Shanghai Shenhua,Henan,3,2,H
+,27/07/2025,Zhejiang Professional FC,Wuhan Three Towns,3,2,H
+,27/07/2025,Shandong Taishan,Meizhou Hakka,3,0,H
+,02/08/2025,Yunnan Yukun,Shanghai Shenhua,4,4,D
+,02/08/2025,Chengdu Rongcheng,Shandong Taishan,2,1,H
+,02/08/2025,Qingdao West Coast,Henan,2,1,H
+,02/08/2025,Meizhou Hakka,Shanghai Port,2,4,A
+,03/08/2025,Dalian Yingbo,Qingdao Hainiu,2,0,H
+,03/08/2025,Beijing Guoan,Tianjin Jinmen Tiger,2,2,D
+,03/08/2025,Wuhan Three Towns,Changchun Yatai,0,0,D
+,03/08/2025,Shenzhen Xinpengcheng,Zhejiang Professional FC,2,4,A
+,08/08/2025,Dalian Yingbo,Chengdu Rongcheng,0,2,A
+,08/08/2025,Henan,Shenzhen Xinpengcheng,4,1,H
+,09/08/2025,Shandong Taishan,Changchun Yatai,2,1,H
+,09/08/2025,Shanghai Shenhua,Shanghai Port,1,2,A
+,09/08/2025,Qingdao Hainiu,Yunnan Yukun,5,1,H
+,10/08/2025,Tianjin Jinmen Tiger,Qingdao West Coast,0,0,D
+,10/08/2025,Zhejiang Professional FC,Beijing Guoan,3,4,A
+,10/08/2025,Wuhan Three Towns,Meizhou Hakka,1,2,A
+,15/08/2025,Shanghai Port,Henan,4,1,H
+,15/08/2025,Yunnan Yukun,Wuhan Three Towns,2,1,H
+,16/08/2025,Tianjin Jinmen Tiger,Dalian Yingbo,2,0,H
+,16/08/2025,Changchun Yatai,Meizhou Hakka,1,0,H
+,16/08/2025,Qingdao West Coast,Beijing Guoan,1,3,A
+,16/08/2025,Shenzhen Xinpengcheng,Shandong Taishan,1,3,A
+,16/08/2025,Zhejiang Professional FC,Shanghai Shenhua,0,0,D
+,16/08/2025,Chengdu Rongcheng,Qingdao Hainiu,0,0,D
+,20/08/2025,Zhejiang Professional FC,Tianjin Jinmen Tiger,2,0,H
+,23/08/2025,Qingdao Hainiu,Shanghai Shenhua,0,2,A
+,23/08/2025,Yunnan Yukun,Chengdu Rongcheng,1,5,A
+,24/08/2025,Changchun Yatai,Shenzhen Xinpengcheng,1,0,H
+,24/08/2025,Meizhou Hakka,Zhejiang Professional FC,2,2,D
+,24/08/2025,Shanghai Port,Tianjin Jinmen Tiger,1,1,D
+,24/08/2025,Henan,Dalian Yingbo,4,0,H
+,24/08/2025,Shandong Taishan,Qingdao West Coast,3,2,H
+,25/08/2025,Beijing Guoan,Wuhan Three Towns,4,0,H
+,29/08/2025,Qingdao Hainiu,Henan,1,1,D
+,30/08/2025,Chengdu Rongcheng,Shanghai Port,4,1,H
+,30/08/2025,Yunnan Yukun,Changchun Yatai,1,1,D
+,31/08/2025,Wuhan Three Towns,Shanghai Shenhua,1,0,H
+,31/08/2025,Shandong Taishan,Beijing Guoan,6,0,H
+,31/08/2025,Shenzhen Xinpengcheng,Meizhou Hakka,2,0,H
+,12/09/2025,Shanghai Port,Yunnan Yukun,4,2,H
+,12/09/2025,Chengdu Rongcheng,Changchun Yatai,1,0,H
+,12/09/2025,Henan,Beijing Guoan,2,0,H
+,12/09/2025,Shanghai Shenhua,Shandong Taishan,3,3,D
+,13/09/2025,Qingdao West Coast,Zhejiang Professional FC,0,2,A
+,14/09/2025,Dalian Yingbo,Shenzhen Xinpengcheng,2,1,H
+,14/09/2025,Tianjin Jinmen Tiger,Wuhan Three Towns,4,0,H
+,19/09/2025,Wuhan Three Towns,Henan,2,5,A
+,19/09/2025,Yunnan Yukun,Dalian Yingbo,1,1,D
+,20/09/2025,Changchun Yatai,Zhejiang Professional FC,3,3,D
+,20/09/2025,Meizhou Hakka,Qingdao West Coast,1,2,A
+,20/09/2025,Qingdao Hainiu,Shandong Taishan,2,2,D
+,21/09/2025,Beijing Guoan,Shanghai Port,2,3,A
+,21/09/2025,Tianjin Jinmen Tiger,Shenzhen Xinpengcheng,1,0,H
+,21/09/2025,Shanghai Shenhua,Chengdu Rongcheng,1,1,D
+,26/09/2025,Shanghai Shenhua,Meizhou Hakka,6,1,H
+,26/09/2025,Beijing Guoan,Dalian Yingbo,4,2,H
+,26/09/2025,Shanghai Port,Wuhan Three Towns,3,2,H
+,26/09/2025,Zhejiang Professional FC,Chengdu Rongcheng,3,3,D
+,27/09/2025,Changchun Yatai,Qingdao Hainiu,2,2,D
+,28/09/2025,Tianjin Jinmen Tiger,Henan,1,0,H
+,28/09/2025,Shenzhen Xinpengcheng,Qingdao West Coast,1,2,A
+,04/10/2025,Meizhou Hakka,Qingdao Hainiu,1,0,H
+,04/10/2025,Dalian Yingbo,Qingdao West Coast,0,2,A
+,04/10/2025,Shandong Taishan,Yunnan Yukun,1,1,D
+,17/10/2025,Qingdao Hainiu,Shanghai Port,3,4,A
+,17/10/2025,Chengdu Rongcheng,Meizhou Hakka,3,1,H
+,17/10/2025,Qingdao West Coast,Shanghai Shenhua,1,2,A
+,18/10/2025,Shenzhen Xinpengcheng,Beijing Guoan,2,1,H
+,18/10/2025,Zhejiang Professional FC,Shandong Taishan,2,2,D
+,18/10/2025,Yunnan Yukun,Tianjin Jinmen Tiger,2,0,H
+,19/10/2025,Dalian Yingbo,Wuhan Three Towns,0,0,D
+,19/10/2025,Henan,Changchun Yatai,2,0,H
+,24/10/2025,Meizhou Hakka,Yunnan Yukun,1,4,A
+,24/10/2025,Wuhan Three Towns,Shenzhen Xinpengcheng,1,2,A
+,25/10/2025,Tianjin Jinmen Tiger,Changchun Yatai,2,2,D
+,25/10/2025,Henan,Zhejiang Professional FC,2,2,D
+,26/10/2025,Shandong Taishan,Shanghai Port,3,1,H
+,26/10/2025,Qingdao West Coast,Chengdu Rongcheng,2,2,D
+,26/10/2025,Beijing Guoan,Qingdao Hainiu,2,4,A
+,26/10/2025,Shanghai Shenhua,Dalian Yingbo,2,2,D
+,31/10/2025,Shanghai Port,Zhejiang Professional FC,3,0,H
+,31/10/2025,Chengdu Rongcheng,Henan,1,2,A
+,31/10/2025,Shanghai Shenhua,Shenzhen Xinpengcheng,1,0,H
+,01/11/2025,Changchun Yatai,Beijing Guoan,0,4,A
+,01/11/2025,Shandong Taishan,Tianjin Jinmen Tiger,2,1,H
+,01/11/2025,Meizhou Hakka,Dalian Yingbo,2,2,D
+,02/11/2025,Qingdao Hainiu,Wuhan Three Towns,1,0,H
+,02/11/2025,Yunnan Yukun,Qingdao West Coast,1,0,H
+,22/11/2025,Beijing Guoan,Meizhou Hakka,5,1,H
+,22/11/2025,Dalian Yingbo,Shanghai Port,0,1,A
+,22/11/2025,Henan,Yunnan Yukun,1,1,D
+,22/11/2025,Qingdao West Coast,Changchun Yatai,1,0,H
+,22/11/2025,Shenzhen Xinpengcheng,Chengdu Rongcheng,1,1,D
+,22/11/2025,Tianjin Jinmen Tiger,Shanghai Shenhua,1,3,A
+,22/11/2025,Wuhan Three Towns,Shandong Taishan,1,5,A
+,22/11/2025,Zhejiang Professional FC,Qingdao Hainiu,2,2,D

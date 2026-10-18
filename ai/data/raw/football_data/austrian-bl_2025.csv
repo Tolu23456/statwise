@@ -1,0 +1,202 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,07/02/2025,SK Sturm Graz,Austria Vienna,2,2,D
+,08/02/2025,Rapid Vienna,Wolfsberger,1,3,A
+,08/02/2025,SC Rheindorf Altach,Grazer AK,1,2,A
+,09/02/2025,SK Austria Klagenfurt,RB Salzburg,0,0,D
+,09/02/2025,WSG Swarovski Tirol,TSV Hartberg,0,0,D
+,09/02/2025,LASK Linz,FC Blau-Weiß Linz,0,0,D
+,15/02/2025,FC Blau-Weiß Linz,SC Rheindorf Altach,1,3,A
+,15/02/2025,RB Salzburg,WSG Swarovski Tirol,1,1,D
+,15/02/2025,Wolfsberger,SK Sturm Graz,3,0,H
+,16/02/2025,Grazer AK,LASK Linz,0,0,D
+,16/02/2025,TSV Hartberg,SK Austria Klagenfurt,1,1,D
+,16/02/2025,Austria Vienna,Rapid Vienna,2,1,H
+,22/02/2025,Austria Vienna,RB Salzburg,0,1,A
+,22/02/2025,SK Austria Klagenfurt,Grazer AK,4,2,H
+,22/02/2025,WSG Swarovski Tirol,Wolfsberger,3,3,D
+,23/02/2025,SC Rheindorf Altach,TSV Hartberg,0,0,D
+,23/02/2025,SK Sturm Graz,FC Blau-Weiß Linz,2,1,H
+,23/02/2025,LASK Linz,Rapid Vienna,2,1,H
+,01/03/2025,Grazer AK,Austria Vienna,1,2,A
+,01/03/2025,Rapid Vienna,SC Rheindorf Altach,5,0,H
+,01/03/2025,TSV Hartberg,Wolfsberger,0,3,A
+,02/03/2025,FC Blau-Weiß Linz,WSG Swarovski Tirol,2,1,H
+,02/03/2025,SK Austria Klagenfurt,LASK Linz,1,2,A
+,02/03/2025,RB Salzburg,SK Sturm Graz,3,1,H
+,09/03/2025,Austria Vienna,SK Austria Klagenfurt,2,0,H
+,09/03/2025,Grazer AK,SK Sturm Graz,1,2,A
+,09/03/2025,LASK Linz,WSG Swarovski Tirol,2,1,H
+,09/03/2025,SC Rheindorf Altach,RB Salzburg,1,1,D
+,09/03/2025,Wolfsberger,FC Blau-Weiß Linz,1,2,A
+,09/03/2025,TSV Hartberg,Rapid Vienna,2,1,H
+,16/03/2025,FC Blau-Weiß Linz,TSV Hartberg,4,1,H
+,16/03/2025,Rapid Vienna,Grazer AK,3,0,H
+,16/03/2025,RB Salzburg,Wolfsberger,1,0,H
+,16/03/2025,SK Austria Klagenfurt,SC Rheindorf Altach,2,2,D
+,16/03/2025,SK Sturm Graz,LASK Linz,4,2,H
+,16/03/2025,WSG Swarovski Tirol,Austria Vienna,0,2,A
+,28/03/2025,SC Rheindorf Altach,LASK Linz,0,2,A
+,29/03/2025,Grazer AK,WSG Swarovski Tirol,0,0,D
+,29/03/2025,TSV Hartberg,SK Austria Klagenfurt,2,3,A
+,30/03/2025,FC Blau-Weiß Linz,Austria Vienna,0,2,A
+,30/03/2025,Wolfsberger,SK Sturm Graz,1,1,D
+,30/03/2025,Rapid Vienna,RB Salzburg,0,2,A
+,04/04/2025,SK Sturm Graz,Rapid Vienna,2,0,H
+,05/04/2025,LASK Linz,Grazer AK,1,0,H
+,05/04/2025,SK Austria Klagenfurt,SC Rheindorf Altach,2,3,A
+,05/04/2025,WSG Swarovski Tirol,TSV Hartberg,1,3,A
+,06/04/2025,RB Salzburg,FC Blau-Weiß Linz,2,1,H
+,06/04/2025,Austria Vienna,Wolfsberger,0,0,D
+,11/04/2025,FC Blau-Weiß Linz,Wolfsberger,1,2,A
+,12/04/2025,Grazer AK,SC Rheindorf Altach,1,0,H
+,12/04/2025,TSV Hartberg,LASK Linz,0,1,A
+,12/04/2025,WSG Swarovski Tirol,SK Austria Klagenfurt,5,3,H
+,13/04/2025,RB Salzburg,SK Sturm Graz,1,2,A
+,13/04/2025,Rapid Vienna,Austria Vienna,2,0,H
+,18/04/2025,LASK Linz,WSG Swarovski Tirol,2,0,H
+,19/04/2025,SC Rheindorf Altach,TSV Hartberg,1,1,D
+,19/04/2025,SK Austria Klagenfurt,Grazer AK,0,0,D
+,20/04/2025,SK Sturm Graz,FC Blau-Weiß Linz,2,0,H
+,20/04/2025,Wolfsberger,Rapid Vienna,5,1,H
+,20/04/2025,Austria Vienna,RB Salzburg,1,3,A
+,22/04/2025,Grazer AK,TSV Hartberg,0,3,A
+,22/04/2025,WSG Swarovski Tirol,SC Rheindorf Altach,1,0,H
+,22/04/2025,SK Austria Klagenfurt,LASK Linz,1,4,A
+,23/04/2025,FC Blau-Weiß Linz,Rapid Vienna,2,1,H
+,23/04/2025,RB Salzburg,Wolfsberger,1,1,D
+,23/04/2025,Austria Vienna,SK Sturm Graz,2,1,H
+,25/04/2025,TSV Hartberg,Grazer AK,1,1,D
+,26/04/2025,LASK Linz,SK Austria Klagenfurt,6,0,H
+,26/04/2025,SC Rheindorf Altach,WSG Swarovski Tirol,3,0,H
+,27/04/2025,Rapid Vienna,FC Blau-Weiß Linz,0,0,D
+,27/04/2025,Wolfsberger,RB Salzburg,2,1,H
+,27/04/2025,SK Sturm Graz,Austria Vienna,0,1,A
+,02/05/2025,Grazer AK,SK Austria Klagenfurt,1,1,D
+,03/05/2025,WSG Swarovski Tirol,LASK Linz,1,3,A
+,04/05/2025,FC Blau-Weiß Linz,SK Sturm Graz,0,1,A
+,04/05/2025,Rapid Vienna,Wolfsberger,0,1,A
+,04/05/2025,TSV Hartberg,SC Rheindorf Altach,2,0,H
+,04/05/2025,RB Salzburg,Austria Vienna,2,0,H
+,09/05/2025,SK Sturm Graz,RB Salzburg,4,2,H
+,10/05/2025,LASK Linz,TSV Hartberg,0,0,D
+,10/05/2025,SC Rheindorf Altach,Grazer AK,2,2,D
+,10/05/2025,SK Austria Klagenfurt,WSG Swarovski Tirol,1,4,A
+,11/05/2025,Wolfsberger,FC Blau-Weiß Linz,2,0,H
+,11/05/2025,Austria Vienna,Rapid Vienna,1,2,A
+,17/05/2025,Grazer AK,LASK Linz,1,0,H
+,17/05/2025,SC Rheindorf Altach,SK Austria Klagenfurt,0,0,D
+,17/05/2025,TSV Hartberg,WSG Swarovski Tirol,3,2,H
+,18/05/2025,FC Blau-Weiß Linz,RB Salzburg,1,2,A
+,18/05/2025,Rapid Vienna,SK Sturm Graz,3,1,H
+,18/05/2025,Wolfsberger,Austria Vienna,1,2,A
+,23/05/2025,LASK Linz,SC Rheindorf Altach,0,0,D
+,23/05/2025,SK Austria Klagenfurt,TSV Hartberg,0,1,A
+,23/05/2025,WSG Swarovski Tirol,Grazer AK,1,1,D
+,24/05/2025,Austria Vienna,FC Blau-Weiß Linz,2,2,D
+,24/05/2025,RB Salzburg,Rapid Vienna,4,2,H
+,24/05/2025,SK Sturm Graz,Wolfsberger,1,1,D
+,26/05/2025,LASK Linz,TSV Hartberg,2,0,H
+,29/05/2025,LASK Linz,Rapid Vienna,3,1,H
+,01/06/2025,Rapid Vienna,LASK Linz,3,0,H
+,01/08/2025,LASK Linz,SK Sturm Graz,0,2,A
+,02/08/2025,Wolfsberger,SC Rheindorf Altach,0,2,A
+,02/08/2025,WSG Swarovski Tirol,TSV Hartberg,4,2,H
+,02/08/2025,SV Josko Ried,RB Salzburg,2,2,D
+,03/08/2025,Grazer AK,Austria Vienna,2,2,D
+,03/08/2025,Rapid Vienna,FC Blau-Weiß Linz,1,0,H
+,09/08/2025,FC Blau-Weiß Linz,TSV Hartberg,0,1,A
+,09/08/2025,SC Rheindorf Altach,SV Josko Ried,1,0,H
+,09/08/2025,RB Salzburg,Grazer AK,5,0,H
+,10/08/2025,Austria Vienna,Wolfsberger,0,2,A
+,10/08/2025,SK Sturm Graz,Rapid Vienna,1,2,A
+,10/08/2025,WSG Swarovski Tirol,LASK Linz,3,1,H
+,16/08/2025,Grazer AK,WSG Swarovski Tirol,1,1,D
+,16/08/2025,TSV Hartberg,RB Salzburg,1,2,A
+,16/08/2025,SV Josko Ried,SK Sturm Graz,1,3,A
+,17/08/2025,LASK Linz,Austria Vienna,2,1,H
+,17/08/2025,Rapid Vienna,SC Rheindorf Altach,0,0,D
+,17/08/2025,Wolfsberger,FC Blau-Weiß Linz,3,0,H
+,23/08/2025,FC Blau-Weiß Linz,SV Josko Ried,0,2,A
+,23/08/2025,RB Salzburg,LASK Linz,3,0,H
+,24/08/2025,Austria Vienna,TSV Hartberg,1,3,A
+,24/08/2025,SC Rheindorf Altach,Grazer AK,1,1,D
+,24/08/2025,Wolfsberger,Rapid Vienna,1,2,A
+,30/08/2025,LASK Linz,SV Josko Ried,1,3,A
+,30/08/2025,RB Salzburg,FC Blau-Weiß Linz,2,2,D
+,30/08/2025,Grazer AK,SK Sturm Graz,0,3,A
+,31/08/2025,Austria Vienna,SC Rheindorf Altach,1,0,H
+,31/08/2025,TSV Hartberg,Rapid Vienna,0,1,A
+,31/08/2025,WSG Swarovski Tirol,Wolfsberger,1,1,D
+,13/09/2025,FC Blau-Weiß Linz,Grazer AK,3,0,H
+,13/09/2025,SC Rheindorf Altach,LASK Linz,1,0,H
+,13/09/2025,Wolfsberger,RB Salzburg,3,1,H
+,14/09/2025,Rapid Vienna,WSG Swarovski Tirol,4,1,H
+,14/09/2025,SV Josko Ried,TSV Hartberg,0,2,A
+,14/09/2025,SK Sturm Graz,Austria Vienna,0,1,A
+,20/09/2025,Austria Vienna,SV Josko Ried,3,2,H
+,20/09/2025,RB Salzburg,SK Sturm Graz,0,2,A
+,20/09/2025,TSV Hartberg,Wolfsberger,2,2,D
+,21/09/2025,LASK Linz,FC Blau-Weiß Linz,2,0,H
+,21/09/2025,SC Rheindorf Altach,WSG Swarovski Tirol,1,1,D
+,21/09/2025,Grazer AK,Rapid Vienna,1,1,D
+,27/09/2025,FC Blau-Weiß Linz,SC Rheindorf Altach,1,0,H
+,27/09/2025,SV Josko Ried,Grazer AK,0,0,D
+,27/09/2025,Wolfsberger,LASK Linz,1,0,H
+,28/09/2025,SK Sturm Graz,TSV Hartberg,1,0,H
+,28/09/2025,WSG Swarovski Tirol,RB Salzburg,1,2,A
+,28/09/2025,Rapid Vienna,Austria Vienna,1,3,A
+,04/10/2025,Austria Vienna,FC Blau-Weiß Linz,0,1,A
+,04/10/2025,Grazer AK,Wolfsberger,1,3,A
+,04/10/2025,SV Josko Ried,WSG Swarovski Tirol,2,0,H
+,05/10/2025,LASK Linz,TSV Hartberg,3,3,D
+,05/10/2025,SC Rheindorf Altach,SK Sturm Graz,0,2,A
+,05/10/2025,RB Salzburg,Rapid Vienna,2,1,H
+,18/10/2025,Grazer AK,TSV Hartberg,0,0,D
+,18/10/2025,Wolfsberger,SV Josko Ried,1,2,A
+,18/10/2025,WSG Swarovski Tirol,Austria Vienna,2,3,A
+,19/10/2025,FC Blau-Weiß Linz,SK Sturm Graz,3,4,A
+,19/10/2025,RB Salzburg,SC Rheindorf Altach,2,2,D
+,19/10/2025,Rapid Vienna,LASK Linz,0,2,A
+,25/10/2025,LASK Linz,Grazer AK,1,0,H
+,25/10/2025,SC Rheindorf Altach,TSV Hartberg,2,2,D
+,25/10/2025,WSG Swarovski Tirol,FC Blau-Weiß Linz,2,0,H
+,26/10/2025,SK Sturm Graz,Wolfsberger,1,3,A
+,26/10/2025,SV Josko Ried,Rapid Vienna,0,2,A
+,26/10/2025,Austria Vienna,RB Salzburg,0,3,A
+,01/11/2025,FC Blau-Weiß Linz,LASK Linz,0,1,A
+,01/11/2025,Grazer AK,SC Rheindorf Altach,3,1,H
+,01/11/2025,TSV Hartberg,Austria Vienna,2,1,H
+,02/11/2025,RB Salzburg,SV Josko Ried,4,1,H
+,02/11/2025,Wolfsberger,WSG Swarovski Tirol,0,0,D
+,02/11/2025,Rapid Vienna,SK Sturm Graz,2,1,H
+,08/11/2025,Austria Vienna,Grazer AK,2,1,H
+,08/11/2025,SV Josko Ried,FC Blau-Weiß Linz,2,1,H
+,08/11/2025,Wolfsberger,TSV Hartberg,1,2,A
+,09/11/2025,LASK Linz,SC Rheindorf Altach,1,0,H
+,09/11/2025,WSG Swarovski Tirol,Rapid Vienna,1,1,D
+,09/11/2025,SK Sturm Graz,RB Salzburg,1,1,D
+,22/11/2025,FC Blau-Weiß Linz,Austria Vienna,2,3,A
+,22/11/2025,SC Rheindorf Altach,Wolfsberger,3,1,H
+,22/11/2025,TSV Hartberg,SV Josko Ried,2,0,H
+,23/11/2025,RB Salzburg,WSG Swarovski Tirol,2,3,A
+,23/11/2025,SK Sturm Graz,LASK Linz,1,3,A
+,23/11/2025,Rapid Vienna,Grazer AK,1,2,A
+,29/11/2025,Austria Vienna,WSG Swarovski Tirol,0,0,D
+,29/11/2025,Grazer AK,FC Blau-Weiß Linz,3,1,H
+,29/11/2025,SV Josko Ried,Wolfsberger,1,0,H
+,30/11/2025,SC Rheindorf Altach,RB Salzburg,1,1,D
+,30/11/2025,TSV Hartberg,SK Sturm Graz,0,1,A
+,30/11/2025,LASK Linz,Rapid Vienna,3,0,H
+,03/12/2025,SK Sturm Graz,WSG Swarovski Tirol,1,3,A
+,06/12/2025,FC Blau-Weiß Linz,RB Salzburg,0,2,A
+,06/12/2025,Rapid Vienna,SV Josko Ried,1,2,A
+,06/12/2025,TSV Hartberg,LASK Linz,2,2,D
+,07/12/2025,Wolfsberger,Austria Vienna,2,1,H
+,07/12/2025,WSG Swarovski Tirol,SC Rheindorf Altach,0,3,A
+,07/12/2025,SK Sturm Graz,Grazer AK,2,1,H
+,13/12/2025,Grazer AK,LASK Linz,1,2,A
+,13/12/2025,SV Josko Ried,SC Rheindorf Altach,3,0,H
+,13/12/2025,TSV Hartberg,WSG Swarovski Tirol,2,1,H
+,14/12/2025,FC Blau-Weiß Linz,Rapid Vienna,1,1,D
+,14/12/2025,RB Salzburg,Wolfsberger,2,1,H
+,14/12/2025,Austria Vienna,SK Sturm Graz,3,1,H

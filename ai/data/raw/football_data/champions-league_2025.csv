@@ -1,0 +1,190 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR
+,16/09/2025,Athletic Club,Arsenal FC,0,2,A,0,0,D
+,16/09/2025,PSV,Royale Union Saint-Gilloise,1,3,A,0,2,A
+,16/09/2025,Juventus FC,Borussia Dortmund,4,4,D,0,0,D
+,16/09/2025,Sport Lisboa e Benfica,Qarabağ Ağdam FK,2,3,A,2,1,H
+,16/09/2025,Tottenham Hotspur FC,Villarreal CF,1,0,H,1,0,H
+,16/09/2025,Real Madrid CF,Olympique de Marseille,2,1,H,1,1,D
+,17/09/2025,SK Slavia Praha,FK Bodø/Glimt,2,2,D,1,0,H
+,17/09/2025,PAE Olympiakos SFP,Paphos FC,0,0,D,0,0,D
+,17/09/2025,AFC Ajax,FC Internazionale Milano,0,2,A,0,1,A
+,17/09/2025,Liverpool FC,Club Atlético de Madrid,3,2,H,2,1,H
+,17/09/2025,Paris Saint-Germain FC,Atalanta BC,4,0,H,2,0,H
+,17/09/2025,FC Bayern München,Chelsea FC,3,1,H,2,1,H
+,18/09/2025,FC København,Bayer 04 Leverkusen,2,2,D,1,0,H
+,18/09/2025,Club Brugge KV,AS Monaco FC,4,1,H,3,0,H
+,18/09/2025,Newcastle United FC,FC Barcelona,1,2,A,0,0,D
+,18/09/2025,Manchester City FC,SSC Napoli,2,0,H,0,0,D
+,18/09/2025,Eintracht Frankfurt,Galatasaray SK,5,1,H,3,1,H
+,18/09/2025,Sporting Clube de Portugal,FK Kairat,4,1,H,1,0,H
+,30/09/2025,Atalanta BC,Club Brugge KV,2,1,H,0,1,A
+,30/09/2025,FK Kairat,Real Madrid CF,0,5,A,0,1,A
+,30/09/2025,Galatasaray SK,Liverpool FC,1,0,H,1,0,H
+,30/09/2025,Club Atlético de Madrid,Eintracht Frankfurt,5,1,H,3,0,H
+,30/09/2025,Olympique de Marseille,AFC Ajax,4,0,H,3,0,H
+,30/09/2025,FK Bodø/Glimt,Tottenham Hotspur FC,2,2,D,0,0,D
+,30/09/2025,Paphos FC,FC Bayern München,1,5,A,1,4,A
+,30/09/2025,Chelsea FC,Sport Lisboa e Benfica,1,0,H,1,0,H
+,30/09/2025,FC Internazionale Milano,SK Slavia Praha,3,0,H,2,0,H
+,01/10/2025,Qarabağ Ağdam FK,FC København,2,0,H,1,0,H
+,01/10/2025,Royale Union Saint-Gilloise,Newcastle United FC,0,4,A,0,2,A
+,01/10/2025,Borussia Dortmund,Athletic Club,4,1,H,1,0,H
+,01/10/2025,FC Barcelona,Paris Saint-Germain FC,1,2,A,1,1,D
+,01/10/2025,AS Monaco FC,Manchester City FC,2,2,D,1,2,A
+,01/10/2025,Bayer 04 Leverkusen,PSV,1,1,D,0,0,D
+,01/10/2025,Arsenal FC,PAE Olympiakos SFP,2,0,H,1,0,H
+,01/10/2025,Villarreal CF,Juventus FC,2,2,D,1,0,H
+,01/10/2025,SSC Napoli,Sporting Clube de Portugal,2,1,H,1,0,H
+,21/10/2025,FC Barcelona,PAE Olympiakos SFP,6,1,H,2,0,H
+,21/10/2025,FK Kairat,Paphos FC,0,0,D,0,0,D
+,21/10/2025,Royale Union Saint-Gilloise,FC Internazionale Milano,0,4,A,0,2,A
+,21/10/2025,FC København,Borussia Dortmund,2,4,A,1,1,D
+,21/10/2025,Bayer 04 Leverkusen,Paris Saint-Germain FC,2,7,A,1,4,A
+,21/10/2025,Villarreal CF,Manchester City FC,0,2,A,0,2,A
+,21/10/2025,Arsenal FC,Club Atlético de Madrid,4,0,H,0,0,D
+,21/10/2025,Newcastle United FC,Sport Lisboa e Benfica,3,0,H,1,0,H
+,21/10/2025,PSV,SSC Napoli,6,2,H,2,1,H
+,22/10/2025,Galatasaray SK,FK Bodø/Glimt,3,1,H,2,0,H
+,22/10/2025,Athletic Club,Qarabağ Ağdam FK,3,1,H,1,1,D
+,22/10/2025,Eintracht Frankfurt,Liverpool FC,1,5,A,1,3,A
+,22/10/2025,Atalanta BC,SK Slavia Praha,0,0,D,0,0,D
+,22/10/2025,Sporting Clube de Portugal,Olympique de Marseille,2,1,H,0,1,A
+,22/10/2025,AS Monaco FC,Tottenham Hotspur FC,0,0,D,0,0,D
+,22/10/2025,FC Bayern München,Club Brugge KV,4,0,H,3,0,H
+,22/10/2025,Chelsea FC,AFC Ajax,5,1,H,4,1,H
+,22/10/2025,Real Madrid CF,Juventus FC,1,0,H,0,0,D
+,04/11/2025,SK Slavia Praha,Arsenal FC,0,3,A,0,1,A
+,04/11/2025,SSC Napoli,Eintracht Frankfurt,0,0,D,0,0,D
+,04/11/2025,Juventus FC,Sporting Clube de Portugal,1,1,D,1,1,D
+,04/11/2025,Club Atlético de Madrid,Royale Union Saint-Gilloise,3,1,H,1,0,H
+,04/11/2025,Tottenham Hotspur FC,FC København,4,0,H,1,0,H
+,04/11/2025,FK Bodø/Glimt,AS Monaco FC,0,1,A,0,1,A
+,04/11/2025,PAE Olympiakos SFP,PSV,1,1,D,1,0,H
+,04/11/2025,Paris Saint-Germain FC,FC Bayern München,1,2,A,0,2,A
+,04/11/2025,Liverpool FC,Real Madrid CF,1,0,H,0,0,D
+,05/11/2025,Paphos FC,Villarreal CF,1,0,H,0,0,D
+,05/11/2025,Qarabağ Ağdam FK,Chelsea FC,2,2,D,2,1,H
+,05/11/2025,FC Internazionale Milano,FK Kairat,2,1,H,1,0,H
+,05/11/2025,Manchester City FC,Borussia Dortmund,4,1,H,2,0,H
+,05/11/2025,Club Brugge KV,FC Barcelona,3,3,D,2,1,H
+,05/11/2025,Sport Lisboa e Benfica,Bayer 04 Leverkusen,0,1,A,0,0,D
+,05/11/2025,Olympique de Marseille,Atalanta BC,0,1,A,0,0,D
+,05/11/2025,AFC Ajax,Galatasaray SK,0,3,A,0,0,D
+,05/11/2025,Newcastle United FC,Athletic Club,2,0,H,1,0,H
+,25/11/2025,AFC Ajax,Sport Lisboa e Benfica,0,2,A,0,1,A
+,25/11/2025,Galatasaray SK,Royale Union Saint-Gilloise,0,1,A,0,0,D
+,25/11/2025,Borussia Dortmund,Villarreal CF,4,0,H,1,0,H
+,25/11/2025,Manchester City FC,Bayer 04 Leverkusen,0,2,A,0,1,A
+,25/11/2025,FK Bodø/Glimt,Juventus FC,2,3,A,1,0,H
+,25/11/2025,Olympique de Marseille,Newcastle United FC,2,1,H,0,1,A
+,25/11/2025,SK Slavia Praha,Athletic Club,0,0,D,0,0,D
+,25/11/2025,SSC Napoli,Qarabağ Ağdam FK,2,0,H,0,0,D
+,25/11/2025,Chelsea FC,FC Barcelona,3,0,H,1,0,H
+,26/11/2025,Paphos FC,AS Monaco FC,2,2,D,1,2,A
+,26/11/2025,FC København,FK Kairat,3,2,H,1,0,H
+,26/11/2025,Liverpool FC,PSV,1,4,A,1,1,D
+,26/11/2025,Paris Saint-Germain FC,Tottenham Hotspur FC,5,3,H,1,1,D
+,26/11/2025,Eintracht Frankfurt,Atalanta BC,0,3,A,0,0,D
+,26/11/2025,Sporting Clube de Portugal,Club Brugge KV,3,0,H,2,0,H
+,26/11/2025,Arsenal FC,FC Bayern München,3,1,H,1,1,D
+,26/11/2025,PAE Olympiakos SFP,Real Madrid CF,3,4,A,1,3,A
+,26/11/2025,Club Atlético de Madrid,FC Internazionale Milano,2,1,H,1,0,H
+,09/12/2025,FK Kairat,PAE Olympiakos SFP,0,1,A,0,0,D
+,09/12/2025,FC Bayern München,Sporting Clube de Portugal,3,1,H,0,0,D
+,09/12/2025,FC Barcelona,Eintracht Frankfurt,2,1,H,0,1,A
+,09/12/2025,PSV,Club Atlético de Madrid,2,3,A,1,1,D
+,09/12/2025,Royale Union Saint-Gilloise,Olympique de Marseille,2,3,A,1,2,A
+,09/12/2025,Tottenham Hotspur FC,SK Slavia Praha,3,0,H,1,0,H
+,09/12/2025,AS Monaco FC,Galatasaray SK,1,0,H,0,0,D
+,09/12/2025,Atalanta BC,Chelsea FC,2,1,H,0,1,A
+,09/12/2025,FC Internazionale Milano,Liverpool FC,0,1,A,0,0,D
+,10/12/2025,Villarreal CF,FC København,2,3,A,0,1,A
+,10/12/2025,Qarabağ Ağdam FK,AFC Ajax,2,4,A,1,1,D
+,10/12/2025,Borussia Dortmund,FK Bodø/Glimt,2,2,D,1,1,D
+,10/12/2025,Athletic Club,Paris Saint-Germain FC,0,0,D,0,0,D
+,10/12/2025,Bayer 04 Leverkusen,Newcastle United FC,2,2,D,1,0,H
+,10/12/2025,Club Brugge KV,Arsenal FC,0,3,A,0,1,A
+,10/12/2025,Sport Lisboa e Benfica,SSC Napoli,2,0,H,1,0,H
+,10/12/2025,Juventus FC,Paphos FC,2,0,H,0,0,D
+,10/12/2025,Real Madrid CF,Manchester City FC,1,2,A,1,2,A
+,20/01/2026,FK Kairat,Club Brugge KV,1,4,A,0,2,A
+,20/01/2026,FK Bodø/Glimt,Manchester City FC,3,1,H,2,0,H
+,20/01/2026,Tottenham Hotspur FC,Borussia Dortmund,2,0,H,2,0,H
+,20/01/2026,Sporting Clube de Portugal,Paris Saint-Germain FC,2,1,H,0,0,D
+,20/01/2026,PAE Olympiakos SFP,Bayer 04 Leverkusen,2,0,H,2,0,H
+,20/01/2026,Villarreal CF,AFC Ajax,1,2,A,0,0,D
+,20/01/2026,FC København,SSC Napoli,1,1,D,0,1,A
+,20/01/2026,Real Madrid CF,AS Monaco FC,6,1,H,2,0,H
+,20/01/2026,FC Internazionale Milano,Arsenal FC,1,3,A,1,2,A
+,21/01/2026,Qarabağ Ağdam FK,Eintracht Frankfurt,3,2,H,1,1,D
+,21/01/2026,Galatasaray SK,Club Atlético de Madrid,1,1,D,1,1,D
+,21/01/2026,Olympique de Marseille,Liverpool FC,0,3,A,0,1,A
+,21/01/2026,SK Slavia Praha,FC Barcelona,2,4,A,2,2,D
+,21/01/2026,Atalanta BC,Athletic Club,2,3,A,1,0,H
+,21/01/2026,Juventus FC,Sport Lisboa e Benfica,2,0,H,0,0,D
+,21/01/2026,Newcastle United FC,PSV,3,0,H,2,0,H
+,21/01/2026,FC Bayern München,Royale Union Saint-Gilloise,2,0,H,0,0,D
+,21/01/2026,Chelsea FC,Paphos FC,1,0,H,0,0,D
+,28/01/2026,Liverpool FC,Qarabağ Ağdam FK,6,0,H,2,0,H
+,28/01/2026,FC Barcelona,FC København,4,1,H,0,1,A
+,28/01/2026,Manchester City FC,Galatasaray SK,2,0,H,2,0,H
+,28/01/2026,Bayer 04 Leverkusen,Villarreal CF,3,0,H,2,0,H
+,28/01/2026,Arsenal FC,FK Kairat,3,2,H,3,1,H
+,28/01/2026,Royale Union Saint-Gilloise,Atalanta BC,1,0,H,0,0,D
+,28/01/2026,Club Brugge KV,Olympique de Marseille,3,0,H,2,0,H
+,28/01/2026,Eintracht Frankfurt,Tottenham Hotspur FC,0,2,A,0,0,D
+,28/01/2026,AS Monaco FC,Juventus FC,0,0,D,0,0,D
+,28/01/2026,Club Atlético de Madrid,FK Bodø/Glimt,1,2,A,1,1,D
+,28/01/2026,Athletic Club,Sporting Clube de Portugal,2,3,A,2,1,H
+,28/01/2026,AFC Ajax,PAE Olympiakos SFP,1,2,A,0,0,D
+,28/01/2026,Paris Saint-Germain FC,Newcastle United FC,1,1,D,1,1,D
+,28/01/2026,Paphos FC,SK Slavia Praha,4,1,H,1,1,D
+,28/01/2026,PSV,FC Bayern München,1,2,A,0,0,D
+,28/01/2026,SSC Napoli,Chelsea FC,2,3,A,2,1,H
+,28/01/2026,Sport Lisboa e Benfica,Real Madrid CF,4,2,H,2,1,H
+,28/01/2026,Borussia Dortmund,FC Internazionale Milano,0,2,A,0,0,D
+,17/02/2026,Galatasaray SK,Juventus FC,5,2,H,1,2,A
+,17/02/2026,Sport Lisboa e Benfica,Real Madrid CF,0,1,A,0,0,D
+,17/02/2026,AS Monaco FC,Paris Saint-Germain FC,2,3,A,2,2,D
+,17/02/2026,Borussia Dortmund,Atalanta BC,2,0,H,2,0,H
+,18/02/2026,Qarabağ Ağdam FK,Newcastle United FC,1,6,A,0,5,A
+,18/02/2026,Club Brugge KV,Club Atlético de Madrid,3,3,D,0,2,A
+,18/02/2026,PAE Olympiakos SFP,Bayer 04 Leverkusen,0,2,A,0,0,D
+,18/02/2026,FK Bodø/Glimt,FC Internazionale Milano,3,1,H,1,1,D
+,24/02/2026,Club Atlético de Madrid,Club Brugge KV,4,1,H,1,1,D
+,24/02/2026,Newcastle United FC,Qarabağ Ağdam FK,3,2,H,2,0,H
+,24/02/2026,Bayer 04 Leverkusen,PAE Olympiakos SFP,0,0,D,0,0,D
+,24/02/2026,FC Internazionale Milano,FK Bodø/Glimt,1,2,A,0,0,D
+,25/02/2026,Atalanta BC,Borussia Dortmund,4,1,H,2,0,H
+,25/02/2026,Real Madrid CF,Sport Lisboa e Benfica,2,1,H,1,1,D
+,25/02/2026,Paris Saint-Germain FC,AS Monaco FC,2,2,D,0,1,A
+,25/02/2026,Juventus FC,Galatasaray SK,3,2,H,1,0,H
+,10/03/2026,Galatasaray SK,Liverpool FC,1,0,H,1,0,H
+,10/03/2026,Atalanta BC,FC Bayern München,1,6,A,0,3,A
+,10/03/2026,Newcastle United FC,FC Barcelona,1,1,D,0,0,D
+,10/03/2026,Club Atlético de Madrid,Tottenham Hotspur FC,5,2,H,4,1,H
+,11/03/2026,Bayer 04 Leverkusen,Arsenal FC,1,1,D,0,0,D
+,11/03/2026,Paris Saint-Germain FC,Chelsea FC,5,2,H,2,1,H
+,11/03/2026,Real Madrid CF,Manchester City FC,3,0,H,3,0,H
+,11/03/2026,FK Bodø/Glimt,Sporting Clube de Portugal,3,0,H,2,0,H
+,17/03/2026,Sporting Clube de Portugal,FK Bodø/Glimt,5,0,H,1,0,H
+,17/03/2026,Chelsea FC,Paris Saint-Germain FC,0,3,A,0,2,A
+,17/03/2026,Manchester City FC,Real Madrid CF,1,2,A,1,1,D
+,17/03/2026,Arsenal FC,Bayer 04 Leverkusen,2,0,H,1,0,H
+,18/03/2026,FC Barcelona,Newcastle United FC,7,2,H,3,2,H
+,18/03/2026,Liverpool FC,Galatasaray SK,4,0,H,1,0,H
+,18/03/2026,FC Bayern München,Atalanta BC,4,1,H,1,0,H
+,18/03/2026,Tottenham Hotspur FC,Club Atlético de Madrid,3,2,H,1,0,H
+,07/04/2026,Real Madrid CF,FC Bayern München,1,2,A,0,1,A
+,07/04/2026,Sporting Clube de Portugal,Arsenal FC,0,1,A,0,0,D
+,08/04/2026,Paris Saint-Germain FC,Liverpool FC,2,0,H,1,0,H
+,08/04/2026,FC Barcelona,Club Atlético de Madrid,0,2,A,0,1,A
+,14/04/2026,Liverpool FC,Paris Saint-Germain FC,0,2,A,0,0,D
+,14/04/2026,Club Atlético de Madrid,FC Barcelona,1,2,A,1,2,A
+,15/04/2026,FC Bayern München,Real Madrid CF,4,3,H,2,3,A
+,15/04/2026,Arsenal FC,Sporting Clube de Portugal,0,0,D,0,0,D
+,28/04/2026,Paris Saint-Germain FC,FC Bayern München,5,4,H,3,2,H
+,29/04/2026,Club Atlético de Madrid,Arsenal FC,1,1,D,0,1,A
+,05/05/2026,Arsenal FC,Club Atlético de Madrid,1,0,H,1,0,H
+,06/05/2026,FC Bayern München,Paris Saint-Germain FC,1,1,D,0,1,A
+,30/05/2026,Paris Saint-Germain FC,Arsenal FC,5,4,H,0,1,A

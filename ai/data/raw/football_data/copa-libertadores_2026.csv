@@ -1,0 +1,151 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR
+,04/02/2026,Club The Strongest,Deportivo Táchira FC,2,1,H,0,0,D
+,05/02/2026,2 de Mayo,Club Alianza Lima,1,0,H,0,0,D
+,06/02/2026,Juventud de Las Piedras,Universidad Catolica,0,1,A,0,0,D
+,11/02/2026,Deportivo Táchira FC,Club The Strongest,6,3,H,1,0,H
+,12/02/2026,Club Alianza Lima,2 de Mayo,1,1,D,0,0,D
+,13/02/2026,Universidad Catolica,Juventud de Las Piedras,6,8,A,1,2,A
+,17/02/2026,Carabobo FC,CD Huachipato,1,0,H,1,0,H
+,18/02/2026,Liverpool FC,CD Independiente Medellín,1,2,A,0,0,D
+,18/02/2026,2 de Mayo,CS Cristal,2,2,D,0,0,D
+,18/02/2026,O'Higgins FC,EC Bahia,1,0,H,1,0,H
+,19/02/2026,Barcelona SC,AA Argentinos Juniors,0,1,A,0,0,D
+,19/02/2026,Club Nacional Potosí,Botafogo FR,1,0,H,0,0,D
+,19/02/2026,Juventud de Las Piedras,Club Guaraní,0,0,D,0,0,D
+,20/02/2026,Deportivo Táchira FC,CD Tolima,0,1,A,0,0,D
+,24/02/2026,CD Huachipato,Carabobo FC,1,2,A,0,2,A
+,25/02/2026,CS Cristal,2 de Mayo,5,4,H,0,0,D
+,25/02/2026,CD Independiente Medellín,Liverpool FC,0,0,D,0,0,D
+,25/02/2026,EC Bahia,O'Higgins FC,5,5,D,2,0,H
+,26/02/2026,AA Argentinos Juniors,Barcelona SC,4,6,A,0,0,D
+,26/02/2026,Botafogo FR,Club Nacional Potosí,2,0,H,2,0,H
+,26/02/2026,Club Guaraní,Juventud de Las Piedras,1,2,A,0,0,D
+,27/02/2026,CD Tolima,Deportivo Táchira FC,3,1,H,0,0,D
+,04/03/2026,Barcelona SC,Botafogo FR,1,1,D,1,0,H
+,04/03/2026,Carabobo FC,CS Cristal,0,1,A,0,1,A
+,05/03/2026,O'Higgins FC,CD Tolima,1,0,H,1,0,H
+,06/03/2026,Juventud de Las Piedras,CD Independiente Medellín,1,1,D,0,1,A
+,11/03/2026,Botafogo FR,Barcelona SC,0,1,A,0,1,A
+,11/03/2026,CS Cristal,Carabobo FC,4,4,D,0,2,A
+,12/03/2026,CD Tolima,O'Higgins FC,2,0,H,1,0,H
+,13/03/2026,CD Independiente Medellín,Juventud de Las Piedras,2,1,H,1,1,D
+,07/04/2026,CS Independiente Rivadavia,Club Bolívar,1,0,H,1,0,H
+,07/04/2026,Deportivo La Guaira FC,Fluminense FC,0,0,D,0,0,D
+,08/04/2026,Barcelona SC,Cruzeiro EC,0,1,A,0,0,D
+,08/04/2026,Club Always Ready,LDU de Quito,0,1,A,0,0,D
+,08/04/2026,CD Universidad Católica,CA Boca Juniors,1,2,A,0,1,A
+,08/04/2026,CD Tolima,Club Universitario de Deportes,0,0,D,0,0,D
+,08/04/2026,CD Coquimbo Unido,Club Nacional de Football,1,1,D,0,1,A
+,08/04/2026,Mirassol FC,CA Lanús,1,0,H,0,0,D
+,09/04/2026,CD Independiente Medellín,Estudiantes de La Plata,1,1,D,0,1,A
+,09/04/2026,Cusco FC,CR Flamengo,0,2,A,0,0,D
+,09/04/2026,CDP Junior FC,SE Palmeiras,1,1,D,1,0,H
+,09/04/2026,CS Cristal,Club Cerro Porteño,1,0,H,0,0,D
+,09/04/2026,Universidad Central de Venezuela FC,Club Libertad Asuncion,3,1,H,1,0,H
+,09/04/2026,CA Rosario Central,CAR Independiente del Valle,0,0,D,0,0,D
+,10/04/2026,CA Platense,SC Corinthians Paulista,0,2,A,0,0,D
+,10/04/2026,Independiente Santa Fe,CA Peñarol,1,1,D,1,0,H
+,14/04/2026,Estudiantes de La Plata,Cusco FC,2,1,H,1,1,D
+,14/04/2026,Club Nacional de Football,CD Tolima,3,1,H,0,0,D
+,14/04/2026,Club Cerro Porteño,CDP Junior FC,1,0,H,0,0,D
+,15/04/2026,Club Bolívar,Deportivo La Guaira FC,1,1,D,0,1,A
+,15/04/2026,CA Boca Juniors,Barcelona SC,3,0,H,1,0,H
+,15/04/2026,Club Universitario de Deportes,CD Coquimbo Unido,0,2,A,0,1,A
+,15/04/2026,LDU de Quito,Mirassol FC,2,0,H,2,0,H
+,15/04/2026,Cruzeiro EC,CD Universidad Católica,1,2,A,0,1,A
+,15/04/2026,Club Libertad Asuncion,CA Rosario Central,0,1,A,0,0,D
+,16/04/2026,Fluminense FC,CS Independiente Rivadavia,1,2,A,1,1,D
+,16/04/2026,SC Corinthians Paulista,Independiente Santa Fe,2,0,H,0,0,D
+,16/04/2026,CAR Independiente del Valle,Universidad Central de Venezuela FC,3,1,H,2,1,H
+,16/04/2026,SE Palmeiras,CS Cristal,2,1,H,1,1,D
+,16/04/2026,CA Lanús,Club Always Ready,1,0,H,0,0,D
+,17/04/2026,CR Flamengo,CD Independiente Medellín,4,1,H,2,1,H
+,17/04/2026,CA Peñarol,CA Platense,1,2,A,0,1,A
+,28/04/2026,CA Lanús,LDU de Quito,1,0,H,0,0,D
+,28/04/2026,Club Libertad Asuncion,CAR Independiente del Valle,2,3,A,1,1,D
+,29/04/2026,Universidad Central de Venezuela FC,CA Rosario Central,0,3,A,0,1,A
+,29/04/2026,Cruzeiro EC,CA Boca Juniors,1,0,H,0,0,D
+,29/04/2026,CD Tolima,CD Coquimbo Unido,3,0,H,0,0,D
+,29/04/2026,CS Cristal,CDP Junior FC,2,0,H,0,0,D
+,29/04/2026,CA Platense,Independiente Santa Fe,2,1,H,0,0,D
+,29/04/2026,Mirassol FC,Club Always Ready,2,0,H,1,0,H
+,30/04/2026,Barcelona SC,CD Universidad Católica,1,2,A,0,2,A
+,30/04/2026,Estudiantes de La Plata,CR Flamengo,1,1,D,0,1,A
+,30/04/2026,Club Cerro Porteño,SE Palmeiras,1,1,D,0,1,A
+,30/04/2026,Club Universitario de Deportes,Club Nacional de Football,4,2,H,1,1,D
+,30/04/2026,Club Bolívar,Fluminense FC,2,0,H,1,0,H
+,30/04/2026,CS Independiente Rivadavia,Deportivo La Guaira FC,4,1,H,3,1,H
+,01/05/2026,SC Corinthians Paulista,CA Peñarol,2,0,H,2,0,H
+,01/05/2026,CD Independiente Medellín,Cusco FC,1,0,H,0,0,D
+,05/05/2026,CS Cristal,SE Palmeiras,0,2,A,0,1,A
+,05/05/2026,CA Rosario Central,Club Libertad Asuncion,1,0,H,0,0,D
+,06/05/2026,Barcelona SC,CA Boca Juniors,1,0,H,0,0,D
+,06/05/2026,Universidad Central de Venezuela FC,CAR Independiente del Valle,2,0,H,0,0,D
+,06/05/2026,Club Always Ready,CA Lanús,4,0,H,2,0,H
+,06/05/2026,Cusco FC,Estudiantes de La Plata,1,1,D,1,0,H
+,06/05/2026,Deportivo La Guaira FC,Club Bolívar,1,1,D,1,0,H
+,07/05/2026,CS Independiente Rivadavia,Fluminense FC,1,1,D,0,0,D
+,07/05/2026,Independiente Santa Fe,SC Corinthians Paulista,1,1,D,0,0,D
+,07/05/2026,CD Tolima,Club Nacional de Football,3,0,H,1,0,H
+,07/05/2026,CD Universidad Católica,Cruzeiro EC,0,0,D,0,0,D
+,07/05/2026,CA Platense,CA Peñarol,1,1,D,1,1,D
+,07/05/2026,Mirassol FC,LDU de Quito,2,0,H,0,0,D
+,08/05/2026,CD Coquimbo Unido,Club Universitario de Deportes,2,1,H,0,1,A
+,08/05/2026,CDP Junior FC,Club Cerro Porteño,0,1,A,0,1,A
+,19/05/2026,CD Coquimbo Unido,CD Tolima,3,0,H,2,0,H
+,19/05/2026,Fluminense FC,Club Bolívar,2,1,H,1,1,D
+,19/05/2026,CA Rosario Central,Universidad Central de Venezuela FC,4,1,H,2,0,H
+,20/05/2026,Independiente Santa Fe,CA Platense,2,1,H,0,0,D
+,20/05/2026,Club Always Ready,Mirassol FC,1,2,A,0,1,A
+,20/05/2026,CA Boca Juniors,Cruzeiro EC,1,1,D,1,0,H
+,20/05/2026,CAR Independiente del Valle,Club Libertad Asuncion,4,1,H,2,1,H
+,20/05/2026,Club Nacional de Football,Club Universitario de Deportes,0,0,D,0,0,D
+,21/05/2026,CR Flamengo,Estudiantes de La Plata,1,0,H,0,0,D
+,21/05/2026,SE Palmeiras,Club Cerro Porteño,0,1,A,0,0,D
+,21/05/2026,LDU de Quito,CA Lanús,2,0,H,0,0,D
+,21/05/2026,Cusco FC,CD Independiente Medellín,2,3,A,0,1,A
+,21/05/2026,CDP Junior FC,CS Cristal,3,2,H,3,1,H
+,21/05/2026,Deportivo La Guaira FC,CS Independiente Rivadavia,2,4,A,1,2,A
+,22/05/2026,CD Universidad Católica,Barcelona SC,2,0,H,0,0,D
+,22/05/2026,CA Peñarol,SC Corinthians Paulista,1,1,D,1,0,H
+,26/05/2026,CA Lanús,Mirassol FC,1,0,H,1,0,H
+,26/05/2026,LDU de Quito,Club Always Ready,3,2,H,1,2,A
+,27/05/2026,Estudiantes de La Plata,CD Independiente Medellín,1,0,H,0,0,D
+,27/05/2026,CR Flamengo,Cusco FC,3,0,H,0,0,D
+,27/05/2026,Club Universitario de Deportes,CD Tolima,0,0,D,0,0,D
+,27/05/2026,Club Nacional de Football,CD Coquimbo Unido,1,0,H,1,0,H
+,27/05/2026,Club Libertad Asuncion,Universidad Central de Venezuela FC,0,1,A,0,0,D
+,27/05/2026,CAR Independiente del Valle,CA Rosario Central,1,0,H,0,0,D
+,28/05/2026,Club Bolívar,CS Independiente Rivadavia,1,3,A,0,1,A
+,28/05/2026,Fluminense FC,Deportivo La Guaira FC,3,1,H,2,1,H
+,28/05/2026,SC Corinthians Paulista,CA Platense,0,2,A,0,1,A
+,28/05/2026,CA Peñarol,Independiente Santa Fe,0,1,A,0,1,A
+,28/05/2026,Club Cerro Porteño,CS Cristal,2,0,H,0,0,D
+,28/05/2026,SE Palmeiras,CDP Junior FC,4,1,H,3,1,H
+,29/05/2026,Cruzeiro EC,Barcelona SC,4,0,H,1,0,H
+,29/05/2026,CA Boca Juniors,CD Universidad Católica,0,1,A,0,1,A
+,11/08/2026,Fluminense FC,CS Independiente Rivadavia,0,0,D,0,0,D
+,12/08/2026,Estudiantes de La Plata,CD Universidad Católica,1,1,D,1,0,H
+,12/08/2026,CA Platense,CD Coquimbo Unido,1,1,D,1,0,H
+,12/08/2026,SE Palmeiras,Club Cerro Porteño,1,1,D,0,0,D
+,13/08/2026,Cruzeiro EC,CR Flamengo,1,1,D,0,0,D
+,13/08/2026,Mirassol FC,LDU de Quito,1,1,D,1,0,H
+,14/08/2026,CA Rosario Central,SC Corinthians Paulista,0,0,D,0,0,D
+,18/08/2026,CS Independiente Rivadavia,Fluminense FC,5,6,A,0,0,D
+,19/08/2026,CD Universidad Católica,Estudiantes de La Plata,0,3,A,0,1,A
+,19/08/2026,Club Cerro Porteño,SE Palmeiras,0,1,A,0,1,A
+,19/08/2026,CD Coquimbo Unido,CA Platense,6,7,A,0,0,D
+,20/08/2026,CR Flamengo,Cruzeiro EC,2,1,H,1,0,H
+,20/08/2026,LDU de Quito,Mirassol FC,5,4,H,0,0,D
+,21/08/2026,SC Corinthians Paulista,CA Rosario Central,1,0,H,0,0,D
+,26/08/2026,CAR Independiente del Valle,CD Tolima,3,1,H,0,0,D
+,08/09/2026,Fluminense FC,CA Platense,2,0,H,2,0,H
+,09/09/2026,SE Palmeiras,LDU de Quito,1,0,H,1,0,H
+,10/09/2026,Estudiantes de La Plata,SC Corinthians Paulista,1,1,D,1,0,H
+,11/09/2026,CAR Independiente del Valle,CR Flamengo,0,2,A,0,0,D
+,15/09/2026,CA Platense,Fluminense FC,2,1,H,2,0,H
+,16/09/2026,LDU de Quito,SE Palmeiras,6,6,D,0,0,D
+,17/09/2026,SC Corinthians Paulista,Estudiantes de La Plata,0,1,A,0,0,D
+,18/09/2026,CR Flamengo,CAR Independiente del Valle,1,1,D,0,1,A
+,15/10/2026,Fluminense FC,SE Palmeiras,1,2,A,0,1,A
+,16/10/2026,Estudiantes de La Plata,CR Flamengo,0,0,D,0,0,D

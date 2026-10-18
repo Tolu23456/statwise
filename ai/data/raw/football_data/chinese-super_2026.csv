@@ -1,0 +1,225 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,06/03/2026,Chengdu Rongcheng,Shenzhen Xinpengcheng,5,1,H
+,07/03/2026,Shandong Taishan,Liaoning Tieren,3,0,H
+,07/03/2026,Tianjin Jinmen Tiger,Chongqing Tonglianglong,0,0,D
+,07/03/2026,Shanghai Shenhua,Dalian Yingbo,5,3,H
+,07/03/2026,Shanghai Port,Henan,1,2,A
+,07/03/2026,Yunnan Yukun,Qingdao Hainiu,3,1,H
+,08/03/2026,Zhejiang Professional FC,Qingdao West Coast,2,0,H
+,08/03/2026,Wuhan Three Towns,Beijing Guoan,0,2,A
+,13/03/2026,Wuhan Three Towns,Dalian Yingbo,4,1,H
+,14/03/2026,Shandong Taishan,Beijing Guoan,2,1,H
+,14/03/2026,Zhejiang Professional FC,Shanghai Shenhua,1,1,D
+,14/03/2026,Chongqing Tonglianglong,Liaoning Tieren,1,0,H
+,14/03/2026,Shenzhen Xinpengcheng,Tianjin Jinmen Tiger,1,0,H
+,15/03/2026,Henan,Yunnan Yukun,2,1,H
+,15/03/2026,Shanghai Port,Qingdao West Coast,4,1,H
+,15/03/2026,Chengdu Rongcheng,Qingdao Hainiu,1,0,H
+,20/03/2026,Dalian Yingbo,Shanghai Port,1,0,H
+,20/03/2026,Qingdao Hainiu,Zhejiang Professional FC,1,4,A
+,21/03/2026,Beijing Guoan,Shanghai Shenhua,1,1,D
+,21/03/2026,Liaoning Tieren,Tianjin Jinmen Tiger,3,0,H
+,21/03/2026,Henan,Wuhan Three Towns,1,1,D
+,21/03/2026,Chongqing Tonglianglong,Chengdu Rongcheng,3,3,D
+,21/03/2026,Qingdao West Coast,Shenzhen Xinpengcheng,1,0,H
+,21/03/2026,Yunnan Yukun,Shandong Taishan,4,0,H
+,03/04/2026,Chengdu Rongcheng,Qingdao West Coast,5,1,H
+,04/04/2026,Liaoning Tieren,Beijing Guoan,2,1,H
+,04/04/2026,Qingdao Hainiu,Henan,1,0,H
+,04/04/2026,Shandong Taishan,Dalian Yingbo,1,2,A
+,04/04/2026,Shanghai Port,Yunnan Yukun,2,1,H
+,05/04/2026,Zhejiang Professional FC,Chongqing Tonglianglong,0,1,A
+,05/04/2026,Shenzhen Xinpengcheng,Wuhan Three Towns,5,2,H
+,05/04/2026,Tianjin Jinmen Tiger,Shanghai Shenhua,2,3,A
+,10/04/2026,Dalian Yingbo,Zhejiang Professional FC,3,0,H
+,11/04/2026,Chongqing Tonglianglong,Wuhan Three Towns,2,1,H
+,11/04/2026,Qingdao West Coast,Liaoning Tieren,1,1,D
+,11/04/2026,Henan,Shandong Taishan,0,1,A
+,11/04/2026,Shanghai Shenhua,Shanghai Port,1,0,H
+,12/04/2026,Tianjin Jinmen Tiger,Qingdao Hainiu,1,1,D
+,12/04/2026,Beijing Guoan,Chengdu Rongcheng,1,2,A
+,12/04/2026,Shenzhen Xinpengcheng,Yunnan Yukun,3,4,A
+,17/04/2026,Qingdao Hainiu,Qingdao West Coast,0,0,D
+,17/04/2026,Chongqing Tonglianglong,Shenzhen Xinpengcheng,2,0,H
+,17/04/2026,Shandong Taishan,Shanghai Port,1,1,D
+,17/04/2026,Wuhan Three Towns,Chengdu Rongcheng,0,1,A
+,17/04/2026,Yunnan Yukun,Tianjin Jinmen Tiger,0,3,A
+,17/04/2026,Zhejiang Professional FC,Beijing Guoan,0,0,D
+,18/04/2026,Dalian Yingbo,Henan,2,1,H
+,18/04/2026,Shanghai Shenhua,Liaoning Tieren,3,1,H
+,21/04/2026,Shenzhen Xinpengcheng,Beijing Guoan,0,1,A
+,21/04/2026,Chengdu Rongcheng,Yunnan Yukun,2,1,H
+,21/04/2026,Wuhan Three Towns,Zhejiang Professional FC,2,0,H
+,21/04/2026,Shanghai Port,Chongqing Tonglianglong,1,2,A
+,21/04/2026,Tianjin Jinmen Tiger,Shandong Taishan,1,2,A
+,22/04/2026,Liaoning Tieren,Dalian Yingbo,0,1,A
+,22/04/2026,Qingdao West Coast,Henan,0,0,D
+,22/04/2026,Shanghai Shenhua,Qingdao Hainiu,2,0,H
+,25/04/2026,Chengdu Rongcheng,Zhejiang Professional FC,4,0,H
+,25/04/2026,Beijing Guoan,Tianjin Jinmen Tiger,2,4,A
+,25/04/2026,Shanghai Port,Wuhan Three Towns,4,0,H
+,26/04/2026,Qingdao Hainiu,Shandong Taishan,4,1,H
+,26/04/2026,Chongqing Tonglianglong,Qingdao West Coast,1,1,D
+,26/04/2026,Shenzhen Xinpengcheng,Liaoning Tieren,1,0,H
+,26/04/2026,Dalian Yingbo,Yunnan Yukun,1,3,A
+,26/04/2026,Henan,Shanghai Shenhua,0,3,A
+,01/05/2026,Dalian Yingbo,Chongqing Tonglianglong,1,0,H
+,01/05/2026,Henan,Liaoning Tieren,4,0,H
+,01/05/2026,Shandong Taishan,Qingdao West Coast,1,1,D
+,01/05/2026,Tianjin Jinmen Tiger,Wuhan Three Towns,2,2,D
+,01/05/2026,Shanghai Shenhua,Chengdu Rongcheng,2,3,A
+,02/05/2026,Qingdao Hainiu,Shanghai Port,3,1,H
+,02/05/2026,Zhejiang Professional FC,Shenzhen Xinpengcheng,2,1,H
+,02/05/2026,Yunnan Yukun,Beijing Guoan,3,3,D
+,05/05/2026,Qingdao West Coast,Tianjin Jinmen Tiger,1,1,D
+,05/05/2026,Liaoning Tieren,Chengdu Rongcheng,0,1,A
+,05/05/2026,Shandong Taishan,Shanghai Shenhua,4,1,H
+,05/05/2026,Chongqing Tonglianglong,Henan,1,1,D
+,06/05/2026,Wuhan Three Towns,Qingdao Hainiu,1,3,A
+,06/05/2026,Beijing Guoan,Dalian Yingbo,3,0,H
+,06/05/2026,Shanghai Port,Shenzhen Xinpengcheng,1,1,D
+,06/05/2026,Yunnan Yukun,Zhejiang Professional FC,1,2,A
+,09/05/2026,Shanghai Shenhua,Chongqing Tonglianglong,2,2,D
+,09/05/2026,Chengdu Rongcheng,Henan,3,0,H
+,10/05/2026,Qingdao West Coast,Wuhan Three Towns,1,1,D
+,10/05/2026,Shenzhen Xinpengcheng,Shandong Taishan,1,2,A
+,10/05/2026,Liaoning Tieren,Yunnan Yukun,1,2,A
+,10/05/2026,Beijing Guoan,Shanghai Port,2,2,D
+,10/05/2026,Zhejiang Professional FC,Tianjin Jinmen Tiger,1,1,D
+,10/05/2026,Qingdao Hainiu,Dalian Yingbo,3,1,H
+,15/05/2026,Henan,Shenzhen Xinpengcheng,1,0,H
+,15/05/2026,Shanghai Port,Zhejiang Professional FC,2,2,D
+,15/05/2026,Tianjin Jinmen Tiger,Chengdu Rongcheng,1,2,A
+,15/05/2026,Beijing Guoan,Qingdao Hainiu,4,2,H
+,15/05/2026,Dalian Yingbo,Qingdao West Coast,2,3,A
+,16/05/2026,Wuhan Three Towns,Liaoning Tieren,2,2,D
+,16/05/2026,Shandong Taishan,Chongqing Tonglianglong,3,1,H
+,16/05/2026,Yunnan Yukun,Shanghai Shenhua,1,0,H
+,19/05/2026,Shenzhen Xinpengcheng,Dalian Yingbo,1,1,D
+,19/05/2026,Tianjin Jinmen Tiger,Henan,1,2,A
+,19/05/2026,Chengdu Rongcheng,Shanghai Port,0,1,A
+,19/05/2026,Qingdao West Coast,Beijing Guoan,1,1,D
+,20/05/2026,Liaoning Tieren,Qingdao Hainiu,2,1,H
+,20/05/2026,Shanghai Shenhua,Wuhan Three Towns,2,2,D
+,20/05/2026,Chongqing Tonglianglong,Yunnan Yukun,0,0,D
+,20/05/2026,Zhejiang Professional FC,Shandong Taishan,4,1,H
+,23/05/2026,Shanghai Port,Tianjin Jinmen Tiger,1,1,D
+,23/05/2026,Beijing Guoan,Henan,1,2,A
+,23/05/2026,Dalian Yingbo,Chengdu Rongcheng,2,0,H
+,24/05/2026,Qingdao Hainiu,Chongqing Tonglianglong,0,1,A
+,24/05/2026,Yunnan Yukun,Qingdao West Coast,2,3,A
+,24/05/2026,Shandong Taishan,Wuhan Three Towns,3,3,D
+,24/05/2026,Zhejiang Professional FC,Liaoning Tieren,0,5,A
+,24/05/2026,Shanghai Shenhua,Shenzhen Xinpengcheng,1,2,A
+,29/05/2026,Liaoning Tieren,Shanghai Port,0,0,D
+,30/05/2026,Qingdao West Coast,Shanghai Shenhua,2,2,D
+,30/05/2026,Henan,Zhejiang Professional FC,0,2,A
+,30/05/2026,Chengdu Rongcheng,Shandong Taishan,1,0,H
+,30/05/2026,Chongqing Tonglianglong,Beijing Guoan,2,3,A
+,30/05/2026,Shenzhen Xinpengcheng,Qingdao Hainiu,3,2,H
+,31/05/2026,Tianjin Jinmen Tiger,Dalian Yingbo,1,0,H
+,31/05/2026,Wuhan Three Towns,Yunnan Yukun,1,1,D
+,26/06/2026,Qingdao Hainiu,Yunnan Yukun,4,2,H
+,27/06/2026,Liaoning Tieren,Shandong Taishan,1,5,A
+,27/06/2026,Henan,Shanghai Port,1,2,A
+,27/06/2026,Shenzhen Xinpengcheng,Chengdu Rongcheng,2,3,A
+,27/06/2026,Beijing Guoan,Wuhan Three Towns,1,0,H
+,27/06/2026,Chongqing Tonglianglong,Tianjin Jinmen Tiger,1,0,H
+,28/06/2026,Qingdao West Coast,Zhejiang Professional FC,3,1,H
+,28/06/2026,Dalian Yingbo,Shanghai Shenhua,1,4,A
+,03/07/2026,Yunnan Yukun,Henan,2,1,H
+,04/07/2026,Liaoning Tieren,Chongqing Tonglianglong,3,1,H
+,04/07/2026,Qingdao West Coast,Shanghai Port,2,1,H
+,04/07/2026,Beijing Guoan,Shandong Taishan,2,0,H
+,04/07/2026,Dalian Yingbo,Wuhan Three Towns,3,2,H
+,04/07/2026,Tianjin Jinmen Tiger,Shenzhen Xinpengcheng,3,0,H
+,05/07/2026,Qingdao Hainiu,Chengdu Rongcheng,1,1,D
+,05/07/2026,Shanghai Shenhua,Zhejiang Professional FC,3,2,H
+,10/07/2026,Shandong Taishan,Yunnan Yukun,4,3,H
+,11/07/2026,Shenzhen Xinpengcheng,Qingdao West Coast,3,0,H
+,11/07/2026,Chengdu Rongcheng,Chongqing Tonglianglong,1,1,D
+,14/07/2026,Zhejiang Professional FC,Qingdao Hainiu,3,2,H
+,17/07/2026,Qingdao West Coast,Chengdu Rongcheng,1,1,D
+,17/07/2026,Beijing Guoan,Liaoning Tieren,1,1,D
+,17/07/2026,Henan,Qingdao Hainiu,5,1,H
+,17/07/2026,Yunnan Yukun,Shanghai Port,2,2,D
+,18/07/2026,Chongqing Tonglianglong,Zhejiang Professional FC,1,1,D
+,18/07/2026,Dalian Yingbo,Shandong Taishan,3,1,H
+,18/07/2026,Shanghai Shenhua,Tianjin Jinmen Tiger,0,2,A
+,18/07/2026,Wuhan Three Towns,Shenzhen Xinpengcheng,2,0,H
+,25/07/2026,Qingdao Hainiu,Tianjin Jinmen Tiger,0,2,A
+,25/07/2026,Liaoning Tieren,Qingdao West Coast,0,1,A
+,25/07/2026,Shanghai Port,Shanghai Shenhua,2,0,H
+,25/07/2026,Wuhan Three Towns,Chongqing Tonglianglong,1,0,H
+,26/07/2026,Yunnan Yukun,Shenzhen Xinpengcheng,4,3,H
+,26/07/2026,Chengdu Rongcheng,Beijing Guoan,2,2,D
+,26/07/2026,Shandong Taishan,Henan,1,2,A
+,26/07/2026,Zhejiang Professional FC,Dalian Yingbo,3,2,H
+,31/07/2026,Henan,Dalian Yingbo,1,1,D
+,01/08/2026,Tianjin Jinmen Tiger,Yunnan Yukun,3,2,H
+,01/08/2026,Beijing Guoan,Zhejiang Professional FC,2,1,H
+,01/08/2026,Shanghai Port,Shandong Taishan,0,1,A
+,01/08/2026,Chengdu Rongcheng,Wuhan Three Towns,1,1,D
+,02/08/2026,Qingdao West Coast,Qingdao Hainiu,2,0,H
+,02/08/2026,Liaoning Tieren,Shanghai Shenhua,3,1,H
+,02/08/2026,Shenzhen Xinpengcheng,Chongqing Tonglianglong,2,0,H
+,07/08/2026,Beijing Guoan,Shenzhen Xinpengcheng,4,0,H
+,08/08/2026,Qingdao Hainiu,Shanghai Shenhua,0,1,A
+,08/08/2026,Dalian Yingbo,Liaoning Tieren,1,0,H
+,08/08/2026,Yunnan Yukun,Chengdu Rongcheng,1,0,H
+,09/08/2026,Henan,Qingdao West Coast,0,0,D
+,09/08/2026,Chongqing Tonglianglong,Shanghai Port,2,3,A
+,09/08/2026,Shandong Taishan,Tianjin Jinmen Tiger,2,1,H
+,14/08/2026,Shandong Taishan,Qingdao Hainiu,3,1,H
+,14/08/2026,Wuhan Three Towns,Shanghai Port,2,3,A
+,14/08/2026,Qingdao West Coast,Chongqing Tonglianglong,0,0,D
+,15/08/2026,Liaoning Tieren,Shenzhen Xinpengcheng,1,2,A
+,15/08/2026,Tianjin Jinmen Tiger,Beijing Guoan,2,4,A
+,15/08/2026,Zhejiang Professional FC,Chengdu Rongcheng,2,3,A
+,15/08/2026,Shanghai Shenhua,Henan,4,1,H
+,15/08/2026,Yunnan Yukun,Dalian Yingbo,3,1,H
+,18/08/2026,Shanghai Shenhua,Beijing Guoan,0,3,A
+,19/08/2026,Shanghai Port,Dalian Yingbo,1,1,D
+,22/08/2026,Wuhan Three Towns,Tianjin Jinmen Tiger,0,0,D
+,22/08/2026,Chengdu Rongcheng,Shanghai Shenhua,4,5,A
+,22/08/2026,Shenzhen Xinpengcheng,Zhejiang Professional FC,1,1,D
+,22/08/2026,Beijing Guoan,Yunnan Yukun,3,3,D
+,22/08/2026,Qingdao West Coast,Shandong Taishan,2,0,H
+,23/08/2026,Liaoning Tieren,Henan,4,4,D
+,23/08/2026,Shanghai Port,Qingdao Hainiu,2,1,H
+,23/08/2026,Chongqing Tonglianglong,Dalian Yingbo,0,1,A
+,28/08/2026,Dalian Yingbo,Beijing Guoan,1,1,D
+,28/08/2026,Shanghai Shenhua,Shandong Taishan,2,3,A
+,28/08/2026,Shenzhen Xinpengcheng,Shanghai Port,0,1,A
+,29/08/2026,Qingdao Hainiu,Wuhan Three Towns,1,5,A
+,29/08/2026,Tianjin Jinmen Tiger,Qingdao West Coast,1,1,D
+,29/08/2026,Zhejiang Professional FC,Yunnan Yukun,6,0,H
+,29/08/2026,Chengdu Rongcheng,Liaoning Tieren,2,1,H
+,29/08/2026,Henan,Chongqing Tonglianglong,1,1,D
+,05/09/2026,Wuhan Three Towns,Qingdao West Coast,2,2,D
+,05/09/2026,Dalian Yingbo,Qingdao Hainiu,2,1,H
+,05/09/2026,Shanghai Port,Beijing Guoan,0,0,D
+,05/09/2026,Shandong Taishan,Shenzhen Xinpengcheng,1,1,D
+,06/09/2026,Chongqing Tonglianglong,Shanghai Shenhua,1,3,A
+,06/09/2026,Henan,Chengdu Rongcheng,0,0,D
+,06/09/2026,Yunnan Yukun,Liaoning Tieren,5,0,H
+,06/09/2026,Tianjin Jinmen Tiger,Zhejiang Professional FC,2,1,H
+,12/09/2026,Tianjin Jinmen Tiger,Liaoning Tieren,1,0,H
+,12/09/2026,Wuhan Three Towns,Henan,1,1,D
+,18/09/2026,Zhejiang Professional FC,Wuhan Three Towns,4,1,H
+,09/10/2026,Qingdao Hainiu,Beijing Guoan,0,3,A
+,09/10/2026,Shenzhen Xinpengcheng,Henan,2,2,D
+,09/10/2026,Zhejiang Professional FC,Shanghai Port,2,4,A
+,10/10/2026,Chengdu Rongcheng,Tianjin Jinmen Tiger,0,1,A
+,10/10/2026,Shanghai Shenhua,Yunnan Yukun,7,1,H
+,11/10/2026,Qingdao West Coast,Dalian Yingbo,0,4,A
+,11/10/2026,Chongqing Tonglianglong,Shandong Taishan,1,1,D
+,11/10/2026,Liaoning Tieren,Wuhan Three Towns,1,1,D
+,16/10/2026,Henan,Tianjin Jinmen Tiger,0,1,A
+,17/10/2026,Dalian Yingbo,Shenzhen Xinpengcheng,3,1,H
+,17/10/2026,Qingdao Hainiu,Liaoning Tieren,0,4,A
+,17/10/2026,Yunnan Yukun,Chongqing Tonglianglong,1,1,D
+,17/10/2026,Shandong Taishan,Zhejiang Professional FC,5,0,H
+,18/10/2026,Wuhan Three Towns,Shanghai Shenhua,1,3,A
+,18/10/2026,Beijing Guoan,Qingdao West Coast,1,0,H
+,18/10/2026,Shanghai Port,Chengdu Rongcheng,3,0,H

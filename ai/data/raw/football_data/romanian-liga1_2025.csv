@@ -1,0 +1,235 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,17/01/2025,Unirea Slobozia,Sepsi Sfantu Gheorghe,3,2,H
+,17/01/2025,FCSB,Hermannstadt,1,1,D
+,18/01/2025,Universitatea Cluj,Gloria Buzau,2,1,H
+,18/01/2025,Otelul Galati,Petrolul Ploiesti,0,0,D
+,19/01/2025,FC Botosani,CFR Cluj-Napoca,1,1,D
+,19/01/2025,CSU Craiova,Dinamo Bucuresti,1,1,D
+,20/01/2025,FC Farul Constanta,UTA Arad,1,1,D
+,20/01/2025,Rapid Bucuresti,Politehnica Iasi,2,1,H
+,24/01/2025,Gloria Buzau,Unirea Slobozia,3,0,H
+,24/01/2025,Dinamo Bucuresti,Universitatea Cluj,0,0,D
+,25/01/2025,Politehnica Iasi,Hermannstadt,0,2,A
+,25/01/2025,Rapid Bucuresti,CSU Craiova,1,0,H
+,26/01/2025,Sepsi Sfantu Gheorghe,Otelul Galati,2,0,H
+,26/01/2025,UTA Arad,FCSB,0,1,A
+,27/01/2025,Petrolul Ploiesti,FC Botosani,3,1,H
+,27/01/2025,CFR Cluj-Napoca,FC Farul Constanta,3,1,H
+,31/01/2025,Hermannstadt,UTA Arad,0,0,D
+,31/01/2025,Unirea Slobozia,Dinamo Bucuresti,1,3,A
+,01/02/2025,FC Botosani,Sepsi Sfantu Gheorghe,0,0,D
+,01/02/2025,Otelul Galati,Gloria Buzau,2,1,H
+,01/02/2025,Universitatea Cluj,Rapid Bucuresti,2,1,H
+,02/02/2025,CSU Craiova,Politehnica Iasi,4,1,H
+,02/02/2025,FCSB,CFR Cluj-Napoca,1,1,D
+,03/02/2025,FC Farul Constanta,Petrolul Ploiesti,2,1,H
+,04/02/2025,Gloria Buzau,FC Botosani,0,2,A
+,04/02/2025,Rapid Bucuresti,Unirea Slobozia,2,1,H
+,04/02/2025,Dinamo Bucuresti,Otelul Galati,1,0,H
+,05/02/2025,CFR Cluj-Napoca,Hermannstadt,1,0,H
+,05/02/2025,CSU Craiova,Universitatea Cluj,1,0,H
+,06/02/2025,Politehnica Iasi,UTA Arad,0,1,A
+,06/02/2025,Sepsi Sfantu Gheorghe,FC Farul Constanta,1,0,H
+,06/02/2025,Petrolul Ploiesti,FCSB,0,0,D
+,07/02/2025,FC Botosani,Dinamo Bucuresti,1,1,D
+,08/02/2025,Unirea Slobozia,CSU Craiova,0,1,A
+,08/02/2025,Otelul Galati,Rapid Bucuresti,1,1,D
+,09/02/2025,Hermannstadt,Petrolul Ploiesti,1,1,D
+,09/02/2025,Universitatea Cluj,Politehnica Iasi,2,2,D
+,09/02/2025,FCSB,Sepsi Sfantu Gheorghe,3,0,H
+,10/02/2025,FC Farul Constanta,Gloria Buzau,1,0,H
+,10/02/2025,UTA Arad,CFR Cluj-Napoca,1,4,A
+,14/02/2025,Sepsi Sfantu Gheorghe,Hermannstadt,2,3,A
+,14/02/2025,CSU Craiova,Otelul Galati,2,1,H
+,15/02/2025,Petrolul Ploiesti,UTA Arad,0,1,A
+,15/02/2025,Dinamo Bucuresti,FC Farul Constanta,0,2,A
+,16/02/2025,Politehnica Iasi,CFR Cluj-Napoca,1,1,D
+,16/02/2025,Gloria Buzau,FCSB,0,2,A
+,17/02/2025,Universitatea Cluj,Unirea Slobozia,3,2,H
+,17/02/2025,Rapid Bucuresti,FC Botosani,1,0,H
+,21/02/2025,Hermannstadt,Gloria Buzau,2,1,H
+,21/02/2025,Otelul Galati,Universitatea Cluj,0,1,A
+,22/02/2025,FC Botosani,CSU Craiova,2,2,D
+,22/02/2025,CFR Cluj-Napoca,Petrolul Ploiesti,2,0,H
+,23/02/2025,Unirea Slobozia,Politehnica Iasi,0,0,D
+,23/02/2025,FCSB,Dinamo Bucuresti,2,1,H
+,24/02/2025,UTA Arad,Sepsi Sfantu Gheorghe,1,2,A
+,24/02/2025,FC Farul Constanta,Rapid Bucuresti,1,3,A
+,28/02/2025,Unirea Slobozia,Otelul Galati,0,1,A
+,28/02/2025,Sepsi Sfantu Gheorghe,CFR Cluj-Napoca,1,1,D
+,01/03/2025,Universitatea Cluj,FC Botosani,0,1,A
+,01/03/2025,CSU Craiova,FC Farul Constanta,1,0,H
+,02/03/2025,Politehnica Iasi,Petrolul Ploiesti,1,0,H
+,02/03/2025,Rapid Bucuresti,FCSB,0,0,D
+,03/03/2025,Gloria Buzau,UTA Arad,1,1,D
+,03/03/2025,Dinamo Bucuresti,Hermannstadt,2,0,H
+,07/03/2025,Otelul Galati,Politehnica Iasi,2,3,A
+,07/03/2025,FC Farul Constanta,Universitatea Cluj,1,1,D
+,08/03/2025,Petrolul Ploiesti,Sepsi Sfantu Gheorghe,1,0,H
+,08/03/2025,Hermannstadt,Rapid Bucuresti,1,0,H
+,09/03/2025,CFR Cluj-Napoca,Gloria Buzau,6,0,H
+,09/03/2025,FCSB,CSU Craiova,1,0,H
+,10/03/2025,FC Botosani,Unirea Slobozia,1,0,H
+,10/03/2025,UTA Arad,Dinamo Bucuresti,0,2,A
+,14/03/2025,Petrolul Ploiesti,FC Botosani,0,2,A
+,14/03/2025,CSU Craiova,Universitatea Cluj,3,0,H
+,15/03/2025,FC Farul Constanta,Politehnica Iasi,0,0,D
+,15/03/2025,CFR Cluj-Napoca,Dinamo Bucuresti,3,1,H
+,16/03/2025,Hermannstadt,Unirea Slobozia,1,1,D
+,16/03/2025,UTA Arad,Otelul Galati,2,0,H
+,16/03/2025,FCSB,Rapid Bucuresti,3,3,D
+,17/03/2025,Sepsi Sfantu Gheorghe,Gloria Buzau,1,2,A
+,28/03/2025,Unirea Slobozia,Petrolul Ploiesti,0,0,D
+,28/03/2025,Sepsi Sfantu Gheorghe,Hermannstadt,0,2,A
+,29/03/2025,FC Botosani,FC Farul Constanta,4,3,H
+,29/03/2025,Rapid Bucuresti,CSU Craiova,1,2,A
+,30/03/2025,Politehnica Iasi,UTA Arad,4,0,H
+,30/03/2025,Dinamo Bucuresti,FCSB,1,2,A
+,31/03/2025,Gloria Buzau,Otelul Galati,0,2,A
+,31/03/2025,Universitatea Cluj,CFR Cluj-Napoca,1,0,H
+,04/04/2025,Otelul Galati,Politehnica Iasi,1,0,H
+,04/04/2025,Petrolul Ploiesti,Sepsi Sfantu Gheorghe,2,1,H
+,05/04/2025,UTA Arad,FC Botosani,1,0,H
+,05/04/2025,FCSB,Universitatea Cluj,1,0,H
+,06/04/2025,Hermannstadt,Gloria Buzau,0,2,A
+,06/04/2025,Rapid Bucuresti,Dinamo Bucuresti,1,0,H
+,07/04/2025,FC Farul Constanta,Unirea Slobozia,1,1,D
+,07/04/2025,CFR Cluj-Napoca,CSU Craiova,2,0,H
+,11/04/2025,Gloria Buzau,Politehnica Iasi,0,1,A
+,11/04/2025,Hermannstadt,Petrolul Ploiesti,1,1,D
+,12/04/2025,Sepsi Sfantu Gheorghe,FC Farul Constanta,1,4,A
+,12/04/2025,Universitatea Cluj,Dinamo Bucuresti,2,4,A
+,13/04/2025,Unirea Slobozia,UTA Arad,2,1,H
+,13/04/2025,CSU Craiova,FCSB,0,0,D
+,14/04/2025,FC Botosani,Otelul Galati,0,1,A
+,14/04/2025,CFR Cluj-Napoca,Rapid Bucuresti,1,1,D
+,18/04/2025,Otelul Galati,Unirea Slobozia,2,0,H
+,18/04/2025,UTA Arad,Sepsi Sfantu Gheorghe,1,1,D
+,19/04/2025,FC Farul Constanta,Hermannstadt,1,1,D
+,19/04/2025,Rapid Bucuresti,Universitatea Cluj,0,2,A
+,20/04/2025,Politehnica Iasi,FC Botosani,3,0,H
+,20/04/2025,FCSB,CFR Cluj-Napoca,3,2,H
+,21/04/2025,Petrolul Ploiesti,Gloria Buzau,4,0,H
+,21/04/2025,Dinamo Bucuresti,CSU Craiova,0,2,A
+,25/04/2025,Unirea Slobozia,Politehnica Iasi,1,1,D
+,25/04/2025,Sepsi Sfantu Gheorghe,Otelul Galati,0,3,A
+,26/04/2025,Hermannstadt,UTA Arad,3,0,H
+,26/04/2025,Universitatea Cluj,CSU Craiova,2,1,H
+,27/04/2025,Gloria Buzau,FC Botosani,0,2,A
+,27/04/2025,Rapid Bucuresti,FCSB,1,2,A
+,28/04/2025,Petrolul Ploiesti,FC Farul Constanta,0,1,A
+,28/04/2025,Dinamo Bucuresti,CFR Cluj-Napoca,1,1,D
+,02/05/2025,Politehnica Iasi,Sepsi Sfantu Gheorghe,0,0,D
+,02/05/2025,CSU Craiova,Rapid Bucuresti,1,2,A
+,03/05/2025,FC Botosani,Unirea Slobozia,1,1,D
+,03/05/2025,FC Farul Constanta,Gloria Buzau,1,0,H
+,03/05/2025,CFR Cluj-Napoca,Universitatea Cluj,1,0,H
+,04/05/2025,Otelul Galati,Hermannstadt,1,2,A
+,05/05/2025,UTA Arad,Petrolul Ploiesti,2,0,H
+,05/05/2025,FCSB,Dinamo Bucuresti,3,1,H
+,09/05/2025,Gloria Buzau,Unirea Slobozia,0,3,A
+,09/05/2025,Sepsi Sfantu Gheorghe,FC Botosani,2,0,H
+,10/05/2025,FC Farul Constanta,UTA Arad,1,2,A
+,10/05/2025,Hermannstadt,Politehnica Iasi,1,0,H
+,10/05/2025,CSU Craiova,CFR Cluj-Napoca,2,2,D
+,11/05/2025,Universitatea Cluj,FCSB,0,2,A
+,12/05/2025,Petrolul Ploiesti,Otelul Galati,1,3,A
+,12/05/2025,Dinamo Bucuresti,Rapid Bucuresti,0,0,D
+,16/05/2025,Otelul Galati,FC Farul Constanta,0,0,D
+,16/05/2025,Dinamo Bucuresti,Universitatea Cluj,1,3,A
+,17/05/2025,UTA Arad,Gloria Buzau,0,0,D
+,17/05/2025,FCSB,CSU Craiova,1,0,H
+,18/05/2025,FC Botosani,Hermannstadt,2,1,H
+,18/05/2025,Politehnica Iasi,Petrolul Ploiesti,0,2,A
+,18/05/2025,Unirea Slobozia,Sepsi Sfantu Gheorghe,2,1,H
+,19/05/2025,Rapid Bucuresti,CFR Cluj-Napoca,1,4,A
+,23/05/2025,CFR Cluj-Napoca,FCSB,1,1,D
+,24/05/2025,Universitatea Cluj,Rapid Bucuresti,2,2,D
+,24/05/2025,CSU Craiova,Dinamo Bucuresti,2,1,H
+,11/07/2025,Metaloglobus,Universitatea Cluj,1,4,A
+,11/07/2025,FC Arges,Rapid Bucuresti,0,2,A
+,12/07/2025,UTA Arad,CSU Craiova,3,3,D
+,12/07/2025,FCSB,Hermannstadt,1,1,D
+,13/07/2025,Otelul Galati,Petrolul Ploiesti,0,0,D
+,13/07/2025,CFR Cluj-Napoca,Unirea Slobozia,2,1,H
+,14/07/2025,FC Botosani,FC Farul Constanta,1,1,D
+,14/07/2025,Csíkszereda,Dinamo Bucuresti,2,2,D
+,18/07/2025,Hermannstadt,Metaloglobus,2,2,D
+,18/07/2025,CSU Craiova,FC Arges,3,1,H
+,19/07/2025,Universitatea Cluj,UTA Arad,1,1,D
+,19/07/2025,Petrolul Ploiesti,FCSB,0,1,A
+,20/07/2025,FC Farul Constanta,Otelul Galati,3,2,H
+,20/07/2025,Rapid Bucuresti,CFR Cluj-Napoca,1,1,D
+,21/07/2025,Unirea Slobozia,Csíkszereda,6,1,H
+,21/07/2025,Dinamo Bucuresti,FC Botosani,0,0,D
+,25/07/2025,Metaloglobus,Petrolul Ploiesti,0,3,A
+,25/07/2025,Csíkszereda,Rapid Bucuresti,0,2,A
+,26/07/2025,UTA Arad,Hermannstadt,1,0,H
+,26/07/2025,FCSB,FC Farul Constanta,1,2,A
+,27/07/2025,CFR Cluj-Napoca,FC Arges,0,2,A
+,27/07/2025,Otelul Galati,Dinamo Bucuresti,2,1,H
+,28/07/2025,FC Botosani,Unirea Slobozia,4,0,H
+,28/07/2025,CSU Craiova,Universitatea Cluj,2,1,H
+,01/08/2025,FC Farul Constanta,Metaloglobus,2,1,H
+,01/08/2025,Petrolul Ploiesti,UTA Arad,1,2,A
+,02/08/2025,FC Arges,Csíkszereda,3,1,H
+,02/08/2025,Dinamo Bucuresti,FCSB,4,3,H
+,03/08/2025,Hermannstadt,Universitatea Cluj,2,2,D
+,03/08/2025,CFR Cluj-Napoca,CSU Craiova,2,3,A
+,04/08/2025,Unirea Slobozia,Otelul Galati,0,0,D
+,04/08/2025,Rapid Bucuresti,FC Botosani,2,1,H
+,08/08/2025,Metaloglobus,Dinamo Bucuresti,0,1,A
+,09/08/2025,UTA Arad,FC Farul Constanta,2,1,H
+,09/08/2025,Universitatea Cluj,Petrolul Ploiesti,1,1,D
+,10/08/2025,CSU Craiova,Hermannstadt,1,0,H
+,10/08/2025,FCSB,Unirea Slobozia,0,1,A
+,11/08/2025,FC Botosani,FC Arges,3,1,H
+,11/08/2025,Otelul Galati,Rapid Bucuresti,1,1,D
+,15/08/2025,Unirea Slobozia,Metaloglobus,2,1,H
+,15/08/2025,Dinamo Bucuresti,UTA Arad,1,1,D
+,16/08/2025,Petrolul Ploiesti,Hermannstadt,1,1,D
+,17/08/2025,Csíkszereda,CSU Craiova,1,2,A
+,17/08/2025,CFR Cluj-Napoca,FC Botosani,3,3,D
+,17/08/2025,Rapid Bucuresti,FCSB,2,2,D
+,18/08/2025,FC Arges,Otelul Galati,2,0,H
+,18/08/2025,FC Farul Constanta,Universitatea Cluj,0,1,A
+,22/08/2025,UTA Arad,Unirea Slobozia,1,1,D
+,22/08/2025,Metaloglobus,Rapid Bucuresti,1,2,A
+,23/08/2025,FC Botosani,Csíkszereda,3,1,H
+,23/08/2025,Universitatea Cluj,Dinamo Bucuresti,0,1,A
+,24/08/2025,Otelul Galati,CFR Cluj-Napoca,4,1,H
+,24/08/2025,CSU Craiova,Petrolul Ploiesti,2,0,H
+,24/08/2025,FCSB,FC Arges,0,2,A
+,25/08/2025,Hermannstadt,FC Farul Constanta,1,0,H
+,29/08/2025,Rapid Bucuresti,UTA Arad,2,0,H
+,30/08/2025,Unirea Slobozia,Universitatea Cluj,0,1,A
+,30/08/2025,Dinamo Bucuresti,Hermannstadt,2,0,H
+,31/08/2025,FC Arges,Metaloglobus,2,1,H
+,31/08/2025,FC Botosani,CSU Craiova,1,1,D
+,31/08/2025,CFR Cluj-Napoca,FCSB,2,2,D
+,01/09/2025,Csíkszereda,Otelul Galati,1,1,D
+,01/09/2025,FC Farul Constanta,Petrolul Ploiesti,2,1,H
+,12/09/2025,Universitatea Cluj,Rapid Bucuresti,0,0,D
+,13/09/2025,UTA Arad,FC Arges,3,3,D
+,13/09/2025,Metaloglobus,CFR Cluj-Napoca,1,1,D
+,14/09/2025,Otelul Galati,FC Botosani,0,1,A
+,14/09/2025,CSU Craiova,FC Farul Constanta,2,0,H
+,14/09/2025,Csíkszereda,FCSB,1,1,D
+,15/09/2025,Hermannstadt,Unirea Slobozia,0,2,A
+,15/09/2025,Petrolul Ploiesti,Dinamo Bucuresti,0,3,A
+,19/09/2025,FC Botosani,FCSB,3,1,H
+,20/09/2025,FC Arges,Universitatea Cluj,1,0,H
+,20/09/2025,Otelul Galati,CSU Craiova,1,0,H
+,21/09/2025,Unirea Slobozia,Petrolul Ploiesti,1,0,H
+,21/09/2025,CFR Cluj-Napoca,UTA Arad,1,1,D
+,21/09/2025,Rapid Bucuresti,Hermannstadt,1,2,A
+,22/09/2025,Csíkszereda,Metaloglobus,2,2,D
+,22/09/2025,Dinamo Bucuresti,FC Farul Constanta,1,1,D
+,26/09/2025,Hermannstadt,FC Arges,0,1,A
+,26/09/2025,CSU Craiova,Dinamo Bucuresti,2,2,D
+,27/09/2025,UTA Arad,Csíkszereda,0,0,D
+,27/09/2025,Petrolul Ploiesti,Rapid Bucuresti,0,1,A
+,28/09/2025,FC Farul Constanta,Unirea Slobozia,1,1,D
+,28/09/2025,FCSB,Otelul Galati,1,0,H
+,29/09/2025,Metaloglobus,FC Botosani,0,2,A
+,29/09/2025,Universitatea Cluj,CFR Cluj-Napoca,2,2,D

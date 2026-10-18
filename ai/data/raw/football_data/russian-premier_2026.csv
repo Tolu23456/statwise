@@ -1,0 +1,182 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,27/02/2026,Zenit St Petersburg,FC Baltika Kaliningrad,1,0,H
+,28/02/2026,Gazovik Orenburg,Akron Tolyatti,2,0,H
+,28/02/2026,Krasnodar,Rostov,2,1,H
+,28/02/2026,Lokomotiv Moscow,Nizhny Novgorod,2,1,H
+,28/02/2026,Dynamo Makhachkala,Rubin Kazan,2,1,H
+,01/03/2026,Dinamo Moscow,Krylia Sovetov,4,0,H
+,01/03/2026,Akhmat Grozny,CSKA Moscow,1,0,H
+,02/03/2026,Sochi,Spartak Moscow,2,3,A
+,07/03/2026,Rostov,FC Baltika Kaliningrad,1,1,D
+,07/03/2026,Nizhny Novgorod,Sochi,2,1,H
+,08/03/2026,Gazovik Orenburg,Zenit St Petersburg,2,1,H
+,08/03/2026,Krylia Sovetov,Dynamo Makhachkala,2,0,H
+,08/03/2026,Rubin Kazan,Krasnodar,2,1,H
+,08/03/2026,CSKA Moscow,Dinamo Moscow,1,4,A
+,09/03/2026,Lokomotiv Moscow,Akhmat Grozny,2,2,D
+,09/03/2026,Spartak Moscow,Akron Tolyatti,4,3,H
+,13/03/2026,Dynamo Makhachkala,Gazovik Orenburg,1,0,H
+,14/03/2026,Sochi,Krasnodar,1,2,A
+,14/03/2026,Zenit St Petersburg,Spartak Moscow,2,0,H
+,14/03/2026,Rostov,Dinamo Moscow,0,1,A
+,14/03/2026,FC Baltika Kaliningrad,CSKA Moscow,1,0,H
+,15/03/2026,Akron Tolyatti,Akhmat Grozny,1,1,D
+,15/03/2026,Nizhny Novgorod,Krylia Sovetov,3,0,H
+,15/03/2026,Rubin Kazan,Lokomotiv Moscow,3,0,H
+,21/03/2026,Akhmat Grozny,Rostov,1,0,H
+,21/03/2026,CSKA Moscow,Dynamo Makhachkala,3,1,H
+,21/03/2026,Krasnodar,Nizhny Novgorod,5,0,H
+,21/03/2026,FC Baltika Kaliningrad,Sochi,4,0,H
+,22/03/2026,Gazovik Orenburg,Spartak Moscow,0,2,A
+,22/03/2026,Dinamo Moscow,Zenit St Petersburg,1,3,A
+,22/03/2026,Krylia Sovetov,Rubin Kazan,0,0,D
+,22/03/2026,Lokomotiv Moscow,Akron Tolyatti,5,1,H
+,04/04/2026,Akron Tolyatti,CSKA Moscow,1,2,A
+,04/04/2026,Zenit St Petersburg,Krylia Sovetov,2,1,H
+,04/04/2026,Dinamo Moscow,Gazovik Orenburg,3,3,D
+,04/04/2026,Akhmat Grozny,Krasnodar,0,1,A
+,05/04/2026,Nizhny Novgorod,Rostov,0,1,A
+,05/04/2026,Dynamo Makhachkala,FC Baltika Kaliningrad,2,2,D
+,05/04/2026,Spartak Moscow,Lokomotiv Moscow,2,1,H
+,06/04/2026,Sochi,Rubin Kazan,0,1,A
+,11/04/2026,Krylia Sovetov,Akhmat Grozny,2,2,D
+,11/04/2026,Rubin Kazan,Gazovik Orenburg,0,0,D
+,11/04/2026,FC Baltika Kaliningrad,Nizhny Novgorod,2,2,D
+,12/04/2026,CSKA Moscow,Sochi,0,1,A
+,12/04/2026,Lokomotiv Moscow,Dynamo Makhachkala,1,1,D
+,12/04/2026,Rostov,Spartak Moscow,1,1,D
+,12/04/2026,Zenit St Petersburg,Krasnodar,1,1,D
+,13/04/2026,Akron Tolyatti,Dinamo Moscow,2,3,A
+,17/04/2026,Rostov,Sochi,0,1,A
+,18/04/2026,Gazovik Orenburg,Lokomotiv Moscow,0,1,A
+,18/04/2026,Krylia Sovetov,CSKA Moscow,1,1,D
+,18/04/2026,Rubin Kazan,Akron Tolyatti,1,1,D
+,18/04/2026,Nizhny Novgorod,Dinamo Moscow,1,1,D
+,19/04/2026,Dynamo Makhachkala,Zenit St Petersburg,0,1,A
+,19/04/2026,Spartak Moscow,Akhmat Grozny,3,1,H
+,19/04/2026,Krasnodar,FC Baltika Kaliningrad,2,2,D
+,21/04/2026,Sochi,Krylia Sovetov,2,1,H
+,21/04/2026,CSKA Moscow,Rostov,1,1,D
+,22/04/2026,Gazovik Orenburg,Nizhny Novgorod,2,1,H
+,22/04/2026,Dinamo Moscow,Rubin Kazan,0,1,A
+,22/04/2026,Lokomotiv Moscow,Zenit St Petersburg,0,0,D
+,23/04/2026,Akron Tolyatti,Dynamo Makhachkala,1,1,D
+,23/04/2026,Akhmat Grozny,FC Baltika Kaliningrad,1,1,D
+,23/04/2026,Spartak Moscow,Krasnodar,1,2,A
+,25/04/2026,Rostov,Gazovik Orenburg,0,1,A
+,25/04/2026,Krylia Sovetov,Lokomotiv Moscow,2,0,H
+,25/04/2026,Rubin Kazan,CSKA Moscow,0,0,D
+,26/04/2026,Nizhny Novgorod,Spartak Moscow,1,2,A
+,26/04/2026,Dinamo Moscow,Sochi,2,0,H
+,26/04/2026,Krasnodar,Dynamo Makhachkala,2,1,H
+,26/04/2026,Zenit St Petersburg,Akhmat Grozny,2,0,H
+,27/04/2026,FC Baltika Kaliningrad,Akron Tolyatti,0,1,A
+,01/05/2026,Krylia Sovetov,Spartak Moscow,2,1,H
+,01/05/2026,Lokomotiv Moscow,Dinamo Moscow,1,1,D
+,02/05/2026,Dynamo Makhachkala,Rostov,1,2,A
+,02/05/2026,FC Baltika Kaliningrad,Rubin Kazan,0,1,A
+,02/05/2026,CSKA Moscow,Zenit St Petersburg,1,3,A
+,03/05/2026,Sochi,Gazovik Orenburg,3,1,H
+,03/05/2026,Akron Tolyatti,Krasnodar,0,1,A
+,03/05/2026,Akhmat Grozny,Nizhny Novgorod,2,0,H
+,10/05/2026,Gazovik Orenburg,Krylia Sovetov,1,0,H
+,10/05/2026,Zenit St Petersburg,Sochi,2,1,H
+,10/05/2026,Akhmat Grozny,Dynamo Makhachkala,1,1,D
+,10/05/2026,Lokomotiv Moscow,FC Baltika Kaliningrad,1,0,H
+,11/05/2026,Akron Tolyatti,Rostov,1,3,A
+,11/05/2026,Nizhny Novgorod,CSKA Moscow,1,2,A
+,11/05/2026,Spartak Moscow,Rubin Kazan,2,1,H
+,11/05/2026,Dinamo Moscow,Krasnodar,2,1,H
+,17/05/2026,CSKA Moscow,Lokomotiv Moscow,3,1,H
+,17/05/2026,Dynamo Makhachkala,Spartak Moscow,0,0,D
+,17/05/2026,FC Baltika Kaliningrad,Dinamo Moscow,1,2,A
+,17/05/2026,Krasnodar,Gazovik Orenburg,3,0,H
+,17/05/2026,Krylia Sovetov,Akron Tolyatti,4,1,H
+,17/05/2026,Rostov,Zenit St Petersburg,0,1,A
+,17/05/2026,Rubin Kazan,Nizhny Novgorod,2,2,D
+,17/05/2026,Sochi,Akhmat Grozny,1,1,D
+,24/07/2026,CSKA Moscow,FC Baltika Kaliningrad,2,1,H
+,25/07/2026,Dinamo Moscow,Krylia Sovetov,0,0,D
+,25/07/2026,Akron Tolyatti,Zenit St Petersburg,0,5,A
+,25/07/2026,Fakel Voronezh,Dynamo Makhachkala,1,2,A
+,25/07/2026,Spartak Moscow,Rodina Moscow,3,0,H
+,26/07/2026,Lokomotiv Moscow,Akhmat Grozny,1,1,D
+,26/07/2026,Gazovik Orenburg,Rostov,2,1,H
+,26/07/2026,Rubin Kazan,Krasnodar,1,3,A
+,31/07/2026,Rodina Moscow,Rostov,2,4,A
+,01/08/2026,Akron Tolyatti,Rubin Kazan,1,2,A
+,01/08/2026,CSKA Moscow,Krylia Sovetov,1,1,D
+,01/08/2026,Dynamo Makhachkala,Lokomotiv Moscow,2,1,H
+,01/08/2026,FC Baltika Kaliningrad,Dinamo Moscow,2,1,H
+,02/08/2026,Gazovik Orenburg,Zenit St Petersburg,0,3,A
+,02/08/2026,Krasnodar,Fakel Voronezh,3,2,H
+,02/08/2026,Akhmat Grozny,Spartak Moscow,1,2,A
+,08/08/2026,Krylia Sovetov,FC Baltika Kaliningrad,0,2,A
+,08/08/2026,Lokomotiv Moscow,Akron Tolyatti,0,0,D
+,08/08/2026,CSKA Moscow,Rostov,0,0,D
+,09/08/2026,Dinamo Moscow,Dynamo Makhachkala,3,1,H
+,09/08/2026,Zenit St Petersburg,Rodina Moscow,1,2,A
+,09/08/2026,Spartak Moscow,Krasnodar,1,2,A
+,09/08/2026,Rubin Kazan,Gazovik Orenburg,1,1,D
+,10/08/2026,Fakel Voronezh,Akhmat Grozny,0,0,D
+,14/08/2026,Gazovik Orenburg,Lokomotiv Moscow,1,1,D
+,15/08/2026,Rodina Moscow,Akron Tolyatti,3,3,D
+,15/08/2026,CSKA Moscow,Fakel Voronezh,1,0,H
+,15/08/2026,Rostov,Rubin Kazan,1,1,D
+,15/08/2026,Krasnodar,Akhmat Grozny,1,0,H
+,16/08/2026,Zenit St Petersburg,Dinamo Moscow,3,0,H
+,16/08/2026,Krylia Sovetov,Dynamo Makhachkala,1,4,A
+,16/08/2026,FC Baltika Kaliningrad,Spartak Moscow,1,2,A
+,22/08/2026,Fakel Voronezh,Gazovik Orenburg,0,0,D
+,22/08/2026,Akhmat Grozny,Rostov,4,1,H
+,22/08/2026,CSKA Moscow,Lokomotiv Moscow,3,2,H
+,23/08/2026,Akron Tolyatti,Krylia Sovetov,0,3,A
+,23/08/2026,Dinamo Moscow,Rodina Moscow,3,1,H
+,23/08/2026,Dynamo Makhachkala,Krasnodar,0,1,A
+,23/08/2026,Spartak Moscow,Zenit St Petersburg,2,0,H
+,24/08/2026,FC Baltika Kaliningrad,Rubin Kazan,1,1,D
+,28/08/2026,Akron Tolyatti,CSKA Moscow,2,2,D
+,29/08/2026,Fakel Voronezh,Zenit St Petersburg,0,1,A
+,29/08/2026,Krasnodar,Rostov,1,0,H
+,29/08/2026,Akhmat Grozny,Krylia Sovetov,3,3,D
+,29/08/2026,Lokomotiv Moscow,Dinamo Moscow,0,1,A
+,30/08/2026,Rodina Moscow,FC Baltika Kaliningrad,0,3,A
+,30/08/2026,Spartak Moscow,Gazovik Orenburg,1,1,D
+,30/08/2026,Rubin Kazan,Dynamo Makhachkala,3,1,H
+,05/09/2026,Krylia Sovetov,Krasnodar,2,2,D
+,05/09/2026,Zenit St Petersburg,CSKA Moscow,1,2,A
+,05/09/2026,Rostov,Fakel Voronezh,3,1,H
+,06/09/2026,Gazovik Orenburg,Akron Tolyatti,2,2,D
+,06/09/2026,Dynamo Makhachkala,Rodina Moscow,2,0,H
+,06/09/2026,Dinamo Moscow,Spartak Moscow,2,1,H
+,06/09/2026,FC Baltika Kaliningrad,Lokomotiv Moscow,0,1,A
+,07/09/2026,Rubin Kazan,Akhmat Grozny,1,1,D
+,11/09/2026,Krylia Sovetov,Rodina Moscow,2,1,H
+,12/09/2026,Fakel Voronezh,FC Baltika Kaliningrad,2,2,D
+,12/09/2026,Zenit St Petersburg,Lokomotiv Moscow,2,1,H
+,12/09/2026,Dinamo Moscow,Gazovik Orenburg,1,0,H
+,12/09/2026,CSKA Moscow,Rubin Kazan,1,1,D
+,13/09/2026,Akhmat Grozny,Dynamo Makhachkala,3,2,H
+,13/09/2026,Spartak Moscow,Rostov,3,0,H
+,13/09/2026,Krasnodar,Akron Tolyatti,1,1,D
+,16/09/2026,Rodina Moscow,Rubin Kazan,1,1,D
+,16/09/2026,Spartak Moscow,Fakel Voronezh,1,0,H
+,16/09/2026,FC Baltika Kaliningrad,Zenit St Petersburg,2,3,A
+,16/09/2026,Lokomotiv Moscow,Krylia Sovetov,1,1,D
+,17/09/2026,Gazovik Orenburg,Krasnodar,0,0,D
+,17/09/2026,Akron Tolyatti,Akhmat Grozny,2,0,H
+,17/09/2026,Rostov,Dinamo Moscow,0,3,A
+,17/09/2026,Dynamo Makhachkala,CSKA Moscow,1,3,A
+,09/10/2026,Rostov,Akron Tolyatti,1,0,H
+,10/10/2026,Gazovik Orenburg,Dynamo Makhachkala,4,0,H
+,10/10/2026,Fakel Voronezh,Lokomotiv Moscow,0,5,A
+,10/10/2026,Krylia Sovetov,Spartak Moscow,1,1,D
+,10/10/2026,Krasnodar,Zenit St Petersburg,2,3,A
+,11/10/2026,Akhmat Grozny,FC Baltika Kaliningrad,0,0,D
+,11/10/2026,CSKA Moscow,Rodina Moscow,3,0,H
+,11/10/2026,Rubin Kazan,Dinamo Moscow,0,1,A
+,17/10/2026,Krylia Sovetov,Fakel Voronezh,1,2,A
+,17/10/2026,Dynamo Makhachkala,Akron Tolyatti,1,1,D
+,17/10/2026,Lokomotiv Moscow,Krasnodar,3,3,D
+,18/10/2026,Zenit St Petersburg,Akhmat Grozny,3,2,H
+,18/10/2026,Dinamo Moscow,CSKA Moscow,3,1,H

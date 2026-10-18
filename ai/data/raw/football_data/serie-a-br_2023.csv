@@ -1,0 +1,381 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR
+,15/04/2023,SE Palmeiras,Cuiabá EC,2,1,H,1,1,D
+,15/04/2023,América FC,Fluminense FC,0,3,A,0,0,D
+,15/04/2023,Fortaleza EC,SC Internacional,1,1,D,0,0,D
+,15/04/2023,CA Paranaense,Goiás EC,2,0,H,1,0,H
+,15/04/2023,RB Bragantino,EC Bahia,2,1,H,0,1,A
+,15/04/2023,Botafogo FR,São Paulo FC,2,1,H,1,1,D
+,16/04/2023,CA Mineiro,CR Vasco da Gama,1,2,A,1,2,A
+,16/04/2023,SC Corinthians Paulista,Cruzeiro EC,2,1,H,0,0,D
+,16/04/2023,CR Flamengo,Coritiba FBC,3,0,H,1,0,H
+,16/04/2023,Grêmio FBPA,Santos FC,1,0,H,1,0,H
+,22/04/2023,Fluminense FC,CA Paranaense,2,0,H,1,0,H
+,22/04/2023,Cuiabá EC,RB Bragantino,1,1,D,0,0,D
+,22/04/2023,São Paulo FC,América FC,3,0,H,1,0,H
+,23/04/2023,Cruzeiro EC,Grêmio FBPA,1,0,H,0,0,D
+,23/04/2023,SC Internacional,CR Flamengo,2,1,H,0,0,D
+,23/04/2023,Santos FC,CA Mineiro,0,0,D,0,0,D
+,23/04/2023,CR Vasco da Gama,SE Palmeiras,2,2,D,2,1,H
+,23/04/2023,Coritiba FBC,Fortaleza EC,0,3,A,0,0,D
+,23/04/2023,Goiás EC,SC Corinthians Paulista,3,1,H,1,1,D
+,24/04/2023,EC Bahia,Botafogo FR,1,2,A,1,1,D
+,29/04/2023,Coritiba FBC,São Paulo FC,1,1,D,1,0,H
+,29/04/2023,Fortaleza EC,Fluminense FC,4,2,H,2,1,H
+,29/04/2023,RB Bragantino,Cruzeiro EC,0,3,A,0,1,A
+,29/04/2023,Santos FC,América FC,3,2,H,2,1,H
+,29/04/2023,SE Palmeiras,SC Corinthians Paulista,2,1,H,2,0,H
+,30/04/2023,CA Mineiro,CA Paranaense,2,1,H,1,0,H
+,30/04/2023,CR Flamengo,Botafogo FR,2,3,A,0,2,A
+,30/04/2023,SC Internacional,Goiás EC,1,0,H,0,0,D
+,30/04/2023,Cuiabá EC,Grêmio FBPA,1,2,A,1,1,D
+,01/05/2023,CR Vasco da Gama,EC Bahia,0,1,A,0,1,A
+,06/05/2023,Cruzeiro EC,Santos FC,2,1,H,1,0,H
+,07/05/2023,Fluminense FC,CR Vasco da Gama,1,1,D,0,1,A
+,07/05/2023,América FC,Cuiabá EC,1,2,A,1,0,H
+,07/05/2023,CA Paranaense,CR Flamengo,2,1,H,1,1,D
+,07/05/2023,EC Bahia,Coritiba FBC,3,1,H,1,0,H
+,07/05/2023,São Paulo FC,SC Internacional,2,0,H,1,0,H
+,07/05/2023,Grêmio FBPA,RB Bragantino,3,3,D,1,1,D
+,07/05/2023,Goiás EC,SE Palmeiras,0,5,A,0,1,A
+,07/05/2023,Botafogo FR,CA Mineiro,2,0,H,1,0,H
+,08/05/2023,SC Corinthians Paulista,Fortaleza EC,1,1,D,0,0,D
+,10/05/2023,Santos FC,EC Bahia,3,0,H,2,0,H
+,10/05/2023,RB Bragantino,América FC,2,2,D,2,1,H
+,10/05/2023,SC Internacional,CA Paranaense,0,2,A,0,0,D
+,10/05/2023,CR Flamengo,Goiás EC,2,0,H,1,0,H
+,10/05/2023,Cuiabá EC,CA Mineiro,0,4,A,0,1,A
+,11/05/2023,SE Palmeiras,Grêmio FBPA,4,1,H,1,1,D
+,11/05/2023,Cruzeiro EC,Fluminense FC,0,2,A,0,1,A
+,11/05/2023,Coritiba FBC,CR Vasco da Gama,1,1,D,1,0,H
+,11/05/2023,Botafogo FR,SC Corinthians Paulista,3,0,H,1,0,H
+,11/05/2023,Fortaleza EC,São Paulo FC,0,0,D,0,0,D
+,13/05/2023,EC Bahia,CR Flamengo,2,3,A,1,3,A
+,13/05/2023,Fluminense FC,Cuiabá EC,2,0,H,1,0,H
+,13/05/2023,SE Palmeiras,RB Bragantino,1,1,D,0,0,D
+,14/05/2023,CA Mineiro,SC Internacional,2,0,H,1,0,H
+,14/05/2023,Grêmio FBPA,Fortaleza EC,0,0,D,0,0,D
+,14/05/2023,CR Vasco da Gama,Santos FC,0,1,A,0,1,A
+,14/05/2023,SC Corinthians Paulista,São Paulo FC,1,1,D,1,1,D
+,14/05/2023,América FC,Cruzeiro EC,0,4,A,0,1,A
+,14/05/2023,CA Paranaense,Coritiba FBC,3,2,H,0,1,A
+,14/05/2023,Goiás EC,Botafogo FR,2,1,H,1,1,D
+,20/05/2023,EC Bahia,Goiás EC,1,1,D,1,1,D
+,20/05/2023,RB Bragantino,CA Paranaense,2,0,H,1,0,H
+,20/05/2023,América FC,Fortaleza EC,2,1,H,2,1,H
+,20/05/2023,Coritiba FBC,CA Mineiro,1,2,A,1,1,D
+,20/05/2023,Botafogo FR,Fluminense FC,1,0,H,0,0,D
+,20/05/2023,São Paulo FC,CR Vasco da Gama,4,2,H,2,1,H
+,21/05/2023,Santos FC,SE Palmeiras,0,0,D,0,0,D
+,21/05/2023,CR Flamengo,SC Corinthians Paulista,1,0,H,0,0,D
+,21/05/2023,Grêmio FBPA,SC Internacional,3,1,H,2,0,H
+,22/05/2023,Cruzeiro EC,Cuiabá EC,0,1,A,0,1,A
+,27/05/2023,Fortaleza EC,CR Vasco da Gama,2,0,H,0,0,D
+,27/05/2023,CA Paranaense,Grêmio FBPA,1,2,A,1,1,D
+,27/05/2023,Cuiabá EC,Coritiba FBC,1,1,D,1,0,H
+,27/05/2023,CR Flamengo,Cruzeiro EC,1,1,D,1,1,D
+,28/05/2023,São Paulo FC,Goiás EC,2,1,H,0,1,A
+,28/05/2023,SC Internacional,EC Bahia,2,0,H,0,0,D
+,28/05/2023,SC Corinthians Paulista,Fluminense FC,2,0,H,0,0,D
+,28/05/2023,CA Mineiro,SE Palmeiras,1,1,D,1,0,H
+,28/05/2023,RB Bragantino,Santos FC,2,0,H,1,0,H
+,28/05/2023,Botafogo FR,América FC,2,0,H,1,0,H
+,03/06/2023,Fortaleza EC,EC Bahia,0,0,D,0,0,D
+,03/06/2023,Cruzeiro EC,CA Mineiro,0,1,A,0,1,A
+,03/06/2023,América FC,SC Corinthians Paulista,2,0,H,0,0,D
+,03/06/2023,CA Paranaense,Botafogo FR,1,0,H,1,0,H
+,04/06/2023,Santos FC,SC Internacional,1,1,D,1,1,D
+,04/06/2023,Fluminense FC,RB Bragantino,2,1,H,2,0,H
+,04/06/2023,Grêmio FBPA,São Paulo FC,2,1,H,2,1,H
+,04/06/2023,SE Palmeiras,Coritiba FBC,3,1,H,2,0,H
+,04/06/2023,Goiás EC,Cuiabá EC,0,1,A,0,0,D
+,05/06/2023,CR Vasco da Gama,CR Flamengo,1,4,A,0,4,A
+,10/06/2023,Coritiba FBC,Santos FC,0,0,D,0,0,D
+,10/06/2023,EC Bahia,Cruzeiro EC,2,2,D,1,2,A
+,10/06/2023,CA Mineiro,RB Bragantino,1,1,D,1,1,D
+,10/06/2023,SC Corinthians Paulista,Cuiabá EC,1,1,D,0,0,D
+,11/06/2023,Botafogo FR,Fortaleza EC,2,0,H,1,0,H
+,11/06/2023,América FC,CA Paranaense,2,2,D,0,1,A
+,11/06/2023,SC Internacional,CR Vasco da Gama,2,1,H,2,1,H
+,11/06/2023,São Paulo FC,SE Palmeiras,0,2,A,0,1,A
+,11/06/2023,Goiás EC,Fluminense FC,2,2,D,1,1,D
+,11/06/2023,CR Flamengo,Grêmio FBPA,3,0,H,1,0,H
+,21/06/2023,Cruzeiro EC,Fortaleza EC,0,1,A,0,0,D
+,21/06/2023,São Paulo FC,CA Paranaense,2,1,H,1,1,D
+,21/06/2023,Santos FC,SC Corinthians Paulista,0,2,A,0,2,A
+,22/06/2023,EC Bahia,SE Palmeiras,1,0,H,0,0,D
+,22/06/2023,Fluminense FC,CA Mineiro,1,1,D,1,1,D
+,22/06/2023,Grêmio FBPA,América FC,3,1,H,1,1,D
+,22/06/2023,Cuiabá EC,Botafogo FR,0,1,A,0,0,D
+,22/06/2023,Coritiba FBC,SC Internacional,0,1,A,0,0,D
+,22/06/2023,CR Vasco da Gama,Goiás EC,0,1,A,0,0,D
+,23/06/2023,RB Bragantino,CR Flamengo,4,0,H,1,0,H
+,24/06/2023,CA Paranaense,SC Corinthians Paulista,1,0,H,1,0,H
+,24/06/2023,Fortaleza EC,CA Mineiro,2,1,H,0,0,D
+,24/06/2023,Fluminense FC,EC Bahia,2,1,H,0,1,A
+,25/06/2023,Cruzeiro EC,São Paulo FC,1,0,H,1,0,H
+,25/06/2023,Grêmio FBPA,Coritiba FBC,5,1,H,1,1,D
+,25/06/2023,SE Palmeiras,Botafogo FR,0,1,A,0,1,A
+,25/06/2023,América FC,SC Internacional,1,2,A,1,0,H
+,25/06/2023,RB Bragantino,Goiás EC,2,0,H,2,0,H
+,25/06/2023,Santos FC,CR Flamengo,2,3,A,1,1,D
+,27/06/2023,CR Vasco da Gama,Cuiabá EC,1,0,H,0,0,D
+,01/07/2023,São Paulo FC,Fluminense FC,1,0,H,0,0,D
+,01/07/2023,CR Flamengo,Fortaleza EC,2,0,H,1,0,H
+,01/07/2023,EC Bahia,Grêmio FBPA,1,2,A,1,1,D
+,02/07/2023,SC Internacional,Cruzeiro EC,0,0,D,0,0,D
+,02/07/2023,SC Corinthians Paulista,RB Bragantino,0,1,A,0,1,A
+,02/07/2023,Botafogo FR,CR Vasco da Gama,2,0,H,0,0,D
+,02/07/2023,CA Paranaense,SE Palmeiras,2,2,D,0,1,A
+,02/07/2023,CA Mineiro,América FC,2,2,D,2,0,H
+,02/07/2023,Cuiabá EC,Santos FC,3,0,H,0,0,D
+,03/07/2023,Goiás EC,Coritiba FBC,1,2,A,0,2,A
+,08/07/2023,Cuiabá EC,EC Bahia,1,1,D,1,0,H
+,08/07/2023,CR Vasco da Gama,Cruzeiro EC,0,1,A,0,1,A
+,08/07/2023,CA Mineiro,SC Corinthians Paulista,0,1,A,0,1,A
+,08/07/2023,Coritiba FBC,América FC,3,1,H,2,1,H
+,09/07/2023,SE Palmeiras,CR Flamengo,1,1,D,1,0,H
+,09/07/2023,Santos FC,Goiás EC,4,3,H,3,1,H
+,09/07/2023,RB Bragantino,São Paulo FC,0,0,D,0,0,D
+,09/07/2023,Fluminense FC,SC Internacional,2,0,H,2,0,H
+,09/07/2023,Grêmio FBPA,Botafogo FR,0,2,A,0,0,D
+,09/07/2023,Fortaleza EC,CA Paranaense,1,0,H,0,0,D
+,16/07/2023,Botafogo FR,RB Bragantino,2,0,H,0,0,D
+,16/07/2023,Cruzeiro EC,Coritiba FBC,0,0,D,0,0,D
+,16/07/2023,Fortaleza EC,Cuiabá EC,0,1,A,0,1,A
+,16/07/2023,São Paulo FC,Santos FC,4,1,H,2,0,H
+,16/07/2023,Fluminense FC,CR Flamengo,0,0,D,0,0,D
+,16/07/2023,CA Paranaense,EC Bahia,2,0,H,2,0,H
+,16/07/2023,SC Internacional,SE Palmeiras,0,0,D,0,0,D
+,17/07/2023,Goiás EC,CA Mineiro,0,0,D,0,0,D
+,22/07/2023,SE Palmeiras,Fortaleza EC,3,1,H,1,1,D
+,22/07/2023,CR Flamengo,América FC,1,1,D,0,0,D
+,22/07/2023,EC Bahia,SC Corinthians Paulista,0,0,D,0,0,D
+,22/07/2023,Cuiabá EC,São Paulo FC,2,1,H,0,0,D
+,23/07/2023,Grêmio FBPA,CA Mineiro,1,0,H,1,0,H
+,23/07/2023,Cruzeiro EC,Goiás EC,0,1,A,0,1,A
+,23/07/2023,Santos FC,Botafogo FR,2,2,D,1,0,H
+,23/07/2023,RB Bragantino,SC Internacional,0,0,D,0,0,D
+,23/07/2023,CR Vasco da Gama,CA Paranaense,0,2,A,0,0,D
+,24/07/2023,Coritiba FBC,Fluminense FC,2,0,H,2,0,H
+,29/07/2023,CA Paranaense,Cruzeiro EC,3,3,D,1,2,A
+,29/07/2023,SC Internacional,Cuiabá EC,1,2,A,1,1,D
+,29/07/2023,Fluminense FC,Santos FC,1,0,H,0,0,D
+,29/07/2023,Fortaleza EC,RB Bragantino,0,3,A,0,1,A
+,29/07/2023,SC Corinthians Paulista,CR Vasco da Gama,3,1,H,1,0,H
+,30/07/2023,CA Mineiro,CR Flamengo,1,2,A,1,0,H
+,30/07/2023,São Paulo FC,EC Bahia,0,0,D,0,0,D
+,30/07/2023,América FC,SE Palmeiras,1,4,A,1,2,A
+,30/07/2023,Botafogo FR,Coritiba FBC,4,1,H,3,1,H
+,30/07/2023,Goiás EC,Grêmio FBPA,1,1,D,0,0,D
+,05/08/2023,Santos FC,CA Paranaense,1,1,D,0,1,A
+,05/08/2023,SC Internacional,SC Corinthians Paulista,2,2,D,1,1,D
+,05/08/2023,Goiás EC,Fortaleza EC,1,0,H,0,0,D
+,06/08/2023,Fluminense FC,SE Palmeiras,2,1,H,1,0,H
+,06/08/2023,São Paulo FC,CA Mineiro,0,2,A,0,1,A
+,06/08/2023,CR Vasco da Gama,Grêmio FBPA,1,0,H,0,0,D
+,06/08/2023,EC Bahia,América FC,3,1,H,1,0,H
+,06/08/2023,Coritiba FBC,RB Bragantino,0,1,A,0,1,A
+,06/08/2023,Cruzeiro EC,Botafogo FR,0,0,D,0,0,D
+,06/08/2023,Cuiabá EC,CR Flamengo,3,0,H,0,0,D
+,13/08/2023,Botafogo FR,SC Internacional,3,1,H,0,1,A
+,13/08/2023,CA Mineiro,EC Bahia,1,0,H,0,0,D
+,13/08/2023,SC Corinthians Paulista,Coritiba FBC,3,1,H,0,1,A
+,13/08/2023,Grêmio FBPA,Fluminense FC,2,1,H,2,1,H
+,13/08/2023,América FC,Goiás EC,0,1,A,0,1,A
+,13/08/2023,CR Flamengo,São Paulo FC,1,1,D,0,1,A
+,13/08/2023,Fortaleza EC,Santos FC,4,0,H,0,0,D
+,14/08/2023,SE Palmeiras,Cruzeiro EC,1,0,H,0,0,D
+,15/08/2023,RB Bragantino,CR Vasco da Gama,1,1,D,1,1,D
+,15/08/2023,CA Paranaense,Cuiabá EC,2,0,H,1,0,H
+,19/08/2023,SC Internacional,Fortaleza EC,0,1,A,0,1,A
+,19/08/2023,São Paulo FC,Botafogo FR,0,0,D,0,0,D
+,19/08/2023,Cuiabá EC,SE Palmeiras,0,2,A,0,1,A
+,19/08/2023,Fluminense FC,América FC,3,1,H,0,0,D
+,20/08/2023,Cruzeiro EC,SC Corinthians Paulista,1,1,D,1,0,H
+,20/08/2023,CR Vasco da Gama,CA Mineiro,1,0,H,1,0,H
+,20/08/2023,EC Bahia,RB Bragantino,4,0,H,2,0,H
+,20/08/2023,Coritiba FBC,CR Flamengo,2,3,A,1,2,A
+,20/08/2023,Santos FC,Grêmio FBPA,2,1,H,0,0,D
+,21/08/2023,Goiás EC,CA Paranaense,1,1,D,0,1,A
+,26/08/2023,CR Flamengo,SC Internacional,0,0,D,0,0,D
+,27/08/2023,SC Corinthians Paulista,Goiás EC,1,1,D,0,0,D
+,27/08/2023,RB Bragantino,Cuiabá EC,2,0,H,0,0,D
+,27/08/2023,América FC,São Paulo FC,2,1,H,0,0,D
+,27/08/2023,CA Mineiro,Santos FC,2,0,H,1,0,H
+,27/08/2023,Botafogo FR,EC Bahia,3,0,H,1,0,H
+,27/08/2023,Fortaleza EC,Coritiba FBC,3,1,H,2,0,H
+,27/08/2023,CA Paranaense,Fluminense FC,2,2,D,1,0,H
+,27/08/2023,SE Palmeiras,CR Vasco da Gama,1,0,H,0,0,D
+,27/08/2023,Grêmio FBPA,Cruzeiro EC,3,0,H,1,0,H
+,02/09/2023,Goiás EC,SC Internacional,0,0,D,0,0,D
+,02/09/2023,CA Paranaense,CA Mineiro,1,1,D,0,1,A
+,03/09/2023,Botafogo FR,CR Flamengo,1,2,A,1,1,D
+,03/09/2023,Grêmio FBPA,Cuiabá EC,2,0,H,1,0,H
+,03/09/2023,Fluminense FC,Fortaleza EC,1,0,H,0,0,D
+,03/09/2023,SC Corinthians Paulista,SE Palmeiras,0,0,D,0,0,D
+,03/09/2023,Cruzeiro EC,RB Bragantino,0,0,D,0,0,D
+,03/09/2023,EC Bahia,CR Vasco da Gama,1,1,D,1,0,H
+,03/09/2023,América FC,Santos FC,2,0,H,1,0,H
+,14/09/2023,SC Internacional,São Paulo FC,2,1,H,0,1,A
+,14/09/2023,CR Flamengo,CA Paranaense,0,3,A,0,1,A
+,14/09/2023,Fortaleza EC,SC Corinthians Paulista,2,1,H,1,1,D
+,14/09/2023,Santos FC,Cruzeiro EC,0,3,A,0,1,A
+,14/09/2023,Coritiba FBC,EC Bahia,2,4,A,1,3,A
+,15/09/2023,RB Bragantino,Grêmio FBPA,2,0,H,2,0,H
+,15/09/2023,Cuiabá EC,América FC,2,2,D,2,2,D
+,16/09/2023,SE Palmeiras,Goiás EC,1,0,H,0,0,D
+,16/09/2023,CR Vasco da Gama,Fluminense FC,4,2,H,1,0,H
+,17/09/2023,CA Mineiro,Botafogo FR,1,0,H,0,0,D
+,18/09/2023,EC Bahia,Santos FC,1,2,A,0,0,D
+,19/09/2023,SC Corinthians Paulista,Grêmio FBPA,4,4,D,3,2,H
+,20/09/2023,América FC,RB Bragantino,0,2,A,0,1,A
+,20/09/2023,Goiás EC,CR Flamengo,0,0,D,0,0,D
+,21/09/2023,São Paulo FC,Fortaleza EC,1,2,A,0,1,A
+,21/09/2023,Fluminense FC,Cruzeiro EC,1,0,H,0,0,D
+,21/09/2023,CR Vasco da Gama,Coritiba FBC,5,1,H,2,0,H
+,21/09/2023,CA Paranaense,SC Internacional,2,1,H,1,1,D
+,22/09/2023,Grêmio FBPA,SE Palmeiras,1,0,H,1,0,H
+,22/09/2023,SC Corinthians Paulista,Botafogo FR,1,0,H,0,0,D
+,24/09/2023,CA Mineiro,Cuiabá EC,1,0,H,1,0,H
+,25/09/2023,América FC,CR Vasco da Gama,0,1,A,0,0,D
+,27/09/2023,São Paulo FC,Coritiba FBC,2,1,H,2,1,H
+,30/09/2023,Fortaleza EC,Grêmio FBPA,1,1,D,1,0,H
+,30/09/2023,CR Flamengo,EC Bahia,1,0,H,0,0,D
+,30/09/2023,Cuiabá EC,Fluminense FC,3,0,H,0,0,D
+,30/09/2023,São Paulo FC,SC Corinthians Paulista,2,1,H,2,1,H
+,01/10/2023,SC Internacional,CA Mineiro,0,2,A,0,0,D
+,01/10/2023,Coritiba FBC,CA Paranaense,2,0,H,2,0,H
+,01/10/2023,Cruzeiro EC,América FC,1,1,D,1,1,D
+,01/10/2023,Santos FC,CR Vasco da Gama,4,1,H,3,1,H
+,01/10/2023,RB Bragantino,SE Palmeiras,2,1,H,0,1,A
+,02/10/2023,Botafogo FR,Goiás EC,1,1,D,0,1,A
+,07/10/2023,Goiás EC,EC Bahia,4,6,A,3,3,D
+,07/10/2023,CR Vasco da Gama,São Paulo FC,0,0,D,0,0,D
+,08/10/2023,SC Corinthians Paulista,CR Flamengo,1,1,D,0,0,D
+,08/10/2023,SE Palmeiras,Santos FC,1,2,A,1,1,D
+,08/10/2023,Fluminense FC,Botafogo FR,0,2,A,0,2,A
+,08/10/2023,SC Internacional,Grêmio FBPA,3,2,H,1,0,H
+,08/10/2023,CA Mineiro,Coritiba FBC,1,2,A,0,0,D
+,08/10/2023,Fortaleza EC,América FC,3,2,H,1,2,A
+,08/10/2023,CA Paranaense,RB Bragantino,1,1,D,1,1,D
+,15/10/2023,Cuiabá EC,Cruzeiro EC,0,0,D,0,0,D
+,18/10/2023,Grêmio FBPA,CA Paranaense,1,2,A,1,1,D
+,18/10/2023,América FC,Botafogo FR,1,2,A,1,1,D
+,18/10/2023,Coritiba FBC,Cuiabá EC,0,3,A,0,1,A
+,19/10/2023,EC Bahia,SC Internacional,1,0,H,1,0,H
+,19/10/2023,Goiás EC,São Paulo FC,2,0,H,2,0,H
+,19/10/2023,CR Vasco da Gama,Fortaleza EC,1,0,H,0,0,D
+,19/10/2023,Cruzeiro EC,CR Flamengo,0,2,A,0,2,A
+,19/10/2023,SE Palmeiras,CA Mineiro,0,2,A,0,1,A
+,19/10/2023,Santos FC,RB Bragantino,1,3,A,0,2,A
+,20/10/2023,Fluminense FC,SC Corinthians Paulista,3,3,D,1,3,A
+,21/10/2023,São Paulo FC,Grêmio FBPA,3,0,H,1,0,H
+,21/10/2023,Cuiabá EC,Goiás EC,1,1,D,0,1,A
+,21/10/2023,EC Bahia,Fortaleza EC,2,0,H,1,0,H
+,22/10/2023,Botafogo FR,CA Paranaense,1,1,D,1,1,D
+,22/10/2023,CR Flamengo,CR Vasco da Gama,1,0,H,0,0,D
+,22/10/2023,CA Mineiro,Cruzeiro EC,0,1,A,0,0,D
+,22/10/2023,SC Internacional,Santos FC,7,1,H,4,0,H
+,22/10/2023,RB Bragantino,Fluminense FC,1,0,H,1,0,H
+,22/10/2023,SC Corinthians Paulista,América FC,1,1,D,0,1,A
+,22/10/2023,Coritiba FBC,SE Palmeiras,0,2,A,0,2,A
+,25/10/2023,CA Paranaense,América FC,3,2,H,3,1,H
+,25/10/2023,RB Bragantino,CA Mineiro,1,2,A,0,1,A
+,25/10/2023,Fluminense FC,Goiás EC,5,3,H,2,2,D
+,25/10/2023,Cruzeiro EC,EC Bahia,3,0,H,1,0,H
+,25/10/2023,SE Palmeiras,São Paulo FC,5,0,H,3,0,H
+,26/10/2023,Cuiabá EC,SC Corinthians Paulista,0,1,A,0,0,D
+,26/10/2023,Grêmio FBPA,CR Flamengo,3,2,H,0,1,A
+,26/10/2023,CR Vasco da Gama,SC Internacional,1,2,A,0,1,A
+,27/10/2023,Santos FC,Coritiba FBC,2,1,H,1,1,D
+,28/10/2023,SE Palmeiras,EC Bahia,1,0,H,1,0,H
+,28/10/2023,América FC,Grêmio FBPA,3,4,A,2,2,D
+,29/10/2023,CA Mineiro,Fluminense FC,2,0,H,0,0,D
+,29/10/2023,Goiás EC,CR Vasco da Gama,1,1,D,0,0,D
+,29/10/2023,CA Paranaense,São Paulo FC,1,1,D,1,1,D
+,29/10/2023,SC Corinthians Paulista,Santos FC,1,1,D,0,0,D
+,29/10/2023,SC Internacional,Coritiba FBC,3,4,A,1,2,A
+,29/10/2023,Botafogo FR,Cuiabá EC,0,1,A,0,0,D
+,31/10/2023,EC Bahia,Fluminense FC,1,0,H,1,0,H
+,01/11/2023,SC Corinthians Paulista,CA Paranaense,1,0,H,0,0,D
+,01/11/2023,SC Internacional,América FC,1,1,D,1,0,H
+,01/11/2023,Coritiba FBC,Grêmio FBPA,1,2,A,0,1,A
+,01/11/2023,CR Flamengo,Santos FC,1,2,A,1,1,D
+,02/11/2023,CA Mineiro,Fortaleza EC,3,1,H,1,1,D
+,02/11/2023,Botafogo FR,SE Palmeiras,3,4,A,3,0,H
+,02/11/2023,Cuiabá EC,CR Vasco da Gama,0,2,A,0,0,D
+,02/11/2023,Goiás EC,RB Bragantino,0,2,A,0,1,A
+,02/11/2023,São Paulo FC,Cruzeiro EC,1,0,H,0,0,D
+,04/11/2023,Grêmio FBPA,EC Bahia,1,0,H,0,0,D
+,04/11/2023,América FC,CA Mineiro,1,1,D,0,0,D
+,05/11/2023,SE Palmeiras,CA Paranaense,1,0,H,1,0,H
+,05/11/2023,RB Bragantino,SC Corinthians Paulista,1,0,H,1,0,H
+,05/11/2023,Cruzeiro EC,SC Internacional,1,2,A,0,1,A
+,05/11/2023,Fortaleza EC,CR Flamengo,0,2,A,0,1,A
+,05/11/2023,Coritiba FBC,Goiás EC,0,1,A,0,0,D
+,06/11/2023,CR Vasco da Gama,Botafogo FR,1,0,H,1,0,H
+,07/11/2023,Santos FC,Cuiabá EC,0,0,D,0,0,D
+,08/11/2023,SC Internacional,Fluminense FC,0,0,D,0,0,D
+,08/11/2023,América FC,Coritiba FBC,0,3,A,0,2,A
+,08/11/2023,São Paulo FC,RB Bragantino,1,0,H,0,0,D
+,08/11/2023,CA Paranaense,Fortaleza EC,1,1,D,0,0,D
+,09/11/2023,CR Flamengo,SE Palmeiras,3,0,H,2,0,H
+,09/11/2023,SC Corinthians Paulista,CA Mineiro,1,1,D,1,0,H
+,09/11/2023,Goiás EC,Santos FC,0,1,A,0,0,D
+,09/11/2023,EC Bahia,Cuiabá EC,0,3,A,0,1,A
+,09/11/2023,Botafogo FR,Grêmio FBPA,3,4,A,2,1,H
+,11/11/2023,Coritiba FBC,Cruzeiro EC,1,0,H,0,0,D
+,11/11/2023,CR Flamengo,Fluminense FC,1,1,D,1,0,H
+,12/11/2023,SE Palmeiras,SC Internacional,3,0,H,1,0,H
+,12/11/2023,Grêmio FBPA,SC Corinthians Paulista,0,1,A,0,1,A
+,12/11/2023,RB Bragantino,Botafogo FR,2,2,D,1,2,A
+,12/11/2023,Cuiabá EC,Fortaleza EC,2,1,H,1,0,H
+,12/11/2023,EC Bahia,CA Paranaense,1,1,D,0,0,D
+,12/11/2023,CA Mineiro,Goiás EC,2,1,H,1,0,H
+,12/11/2023,Santos FC,São Paulo FC,0,0,D,0,0,D
+,12/11/2023,CR Vasco da Gama,América FC,2,1,H,1,1,D
+,18/11/2023,Fortaleza EC,Cruzeiro EC,0,1,A,0,0,D
+,22/11/2023,Cruzeiro EC,CR Vasco da Gama,2,2,D,2,1,H
+,23/11/2023,Fluminense FC,São Paulo FC,1,0,H,0,0,D
+,23/11/2023,Fortaleza EC,Botafogo FR,2,2,D,2,1,H
+,24/11/2023,CR Flamengo,RB Bragantino,1,0,H,0,0,D
+,25/11/2023,SC Corinthians Paulista,EC Bahia,1,5,A,0,3,A
+,25/11/2023,CA Paranaense,CR Vasco da Gama,0,0,D,0,0,D
+,26/11/2023,Fluminense FC,Coritiba FBC,2,1,H,1,0,H
+,26/11/2023,Botafogo FR,Santos FC,1,1,D,1,0,H
+,26/11/2023,CA Mineiro,Grêmio FBPA,3,0,H,1,0,H
+,26/11/2023,São Paulo FC,Cuiabá EC,0,0,D,0,0,D
+,26/11/2023,América FC,CR Flamengo,0,3,A,0,1,A
+,26/11/2023,Fortaleza EC,SE Palmeiras,2,2,D,1,0,H
+,26/11/2023,SC Internacional,RB Bragantino,1,0,H,1,0,H
+,28/11/2023,Goiás EC,Cruzeiro EC,0,1,A,0,0,D
+,29/11/2023,CR Vasco da Gama,SC Corinthians Paulista,2,4,A,2,2,D
+,29/11/2023,Santos FC,Fluminense FC,0,3,A,0,2,A
+,29/11/2023,CR Flamengo,CA Mineiro,0,3,A,0,1,A
+,29/11/2023,EC Bahia,São Paulo FC,0,1,A,0,0,D
+,29/11/2023,Cuiabá EC,SC Internacional,0,2,A,0,0,D
+,30/11/2023,Coritiba FBC,Botafogo FR,1,1,D,0,0,D
+,30/11/2023,SE Palmeiras,América FC,4,0,H,2,0,H
+,30/11/2023,Grêmio FBPA,Goiás EC,2,1,H,0,1,A
+,30/11/2023,Cruzeiro EC,CA Paranaense,1,1,D,0,0,D
+,30/11/2023,RB Bragantino,Fortaleza EC,1,2,A,1,2,A
+,02/12/2023,SC Corinthians Paulista,SC Internacional,1,2,A,0,1,A
+,03/12/2023,CA Mineiro,São Paulo FC,2,1,H,0,0,D
+,03/12/2023,CR Flamengo,Cuiabá EC,2,1,H,2,0,H
+,03/12/2023,SE Palmeiras,Fluminense FC,1,0,H,1,0,H
+,03/12/2023,Botafogo FR,Cruzeiro EC,0,0,D,0,0,D
+,03/12/2023,RB Bragantino,Coritiba FBC,1,0,H,0,0,D
+,03/12/2023,Grêmio FBPA,CR Vasco da Gama,1,0,H,0,0,D
+,03/12/2023,CA Paranaense,Santos FC,3,0,H,1,0,H
+,03/12/2023,Fortaleza EC,Goiás EC,1,0,H,1,0,H
+,03/12/2023,América FC,EC Bahia,3,2,H,2,1,H
+,06/12/2023,Goiás EC,América FC,1,0,H,1,0,H
+,07/12/2023,Cuiabá EC,CA Paranaense,3,0,H,2,0,H
+,07/12/2023,EC Bahia,CA Mineiro,4,1,H,2,1,H
+,07/12/2023,Coritiba FBC,SC Corinthians Paulista,0,2,A,0,2,A
+,07/12/2023,SC Internacional,Botafogo FR,3,1,H,1,0,H
+,07/12/2023,Cruzeiro EC,SE Palmeiras,1,1,D,0,1,A
+,07/12/2023,Fluminense FC,Grêmio FBPA,2,3,A,1,2,A
+,07/12/2023,CR Vasco da Gama,RB Bragantino,2,1,H,1,0,H
+,07/12/2023,São Paulo FC,CR Flamengo,1,0,H,1,0,H
+,07/12/2023,Santos FC,Fortaleza EC,1,2,A,0,1,A

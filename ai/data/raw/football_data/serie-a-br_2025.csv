@@ -1,0 +1,381 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR
+,29/03/2025,São Paulo FC,SC Recife,0,0,D,0,0,D
+,29/03/2025,Cruzeiro EC,Mirassol FC,2,1,H,2,1,H
+,29/03/2025,Grêmio FBPA,CA Mineiro,2,1,H,2,0,H
+,29/03/2025,Fortaleza EC,Fluminense FC,2,0,H,2,0,H
+,29/03/2025,EC Juventude,EC Vitória,2,0,H,1,0,H
+,30/03/2025,CR Flamengo,SC Internacional,1,1,D,0,1,A
+,30/03/2025,SE Palmeiras,Botafogo FR,0,0,D,0,0,D
+,30/03/2025,CR Vasco da Gama,Santos FC,2,1,H,0,1,A
+,30/03/2025,EC Bahia,SC Corinthians Paulista,1,1,D,1,0,H
+,31/03/2025,RB Bragantino,Ceará SC,2,2,D,1,2,A
+,05/04/2025,SC Corinthians Paulista,CR Vasco da Gama,3,0,H,2,0,H
+,05/04/2025,Ceará SC,Grêmio FBPA,2,0,H,1,0,H
+,06/04/2025,Botafogo FR,EC Juventude,2,0,H,1,0,H
+,06/04/2025,Fluminense FC,RB Bragantino,2,1,H,1,0,H
+,06/04/2025,CA Mineiro,São Paulo FC,0,0,D,0,0,D
+,06/04/2025,Mirassol FC,Fortaleza EC,1,1,D,0,1,A
+,06/04/2025,SC Internacional,Cruzeiro EC,3,0,H,2,0,H
+,06/04/2025,EC Vitória,CR Flamengo,1,2,A,0,0,D
+,06/04/2025,SC Recife,SE Palmeiras,1,2,A,1,1,D
+,06/04/2025,Santos FC,EC Bahia,2,2,D,0,1,A
+,12/04/2025,RB Bragantino,Botafogo FR,1,0,H,1,0,H
+,12/04/2025,EC Juventude,Ceará SC,2,1,H,1,1,D
+,12/04/2025,SE Palmeiras,SC Corinthians Paulista,2,0,H,2,0,H
+,13/04/2025,CR Vasco da Gama,SC Recife,3,1,H,2,0,H
+,13/04/2025,EC Bahia,Mirassol FC,1,1,D,1,1,D
+,13/04/2025,São Paulo FC,Cruzeiro EC,1,1,D,0,0,D
+,13/04/2025,Grêmio FBPA,CR Flamengo,0,2,A,0,1,A
+,13/04/2025,Fluminense FC,Santos FC,1,0,H,0,0,D
+,13/04/2025,Fortaleza EC,SC Internacional,0,0,D,0,0,D
+,13/04/2025,CA Mineiro,EC Vitória,2,2,D,0,0,D
+,16/04/2025,Ceará SC,CR Vasco da Gama,2,1,H,1,0,H
+,16/04/2025,Botafogo FR,São Paulo FC,2,2,D,1,2,A
+,16/04/2025,Mirassol FC,Grêmio FBPA,4,1,H,2,0,H
+,16/04/2025,SC Recife,RB Bragantino,0,1,A,0,1,A
+,16/04/2025,SC Corinthians Paulista,Fluminense FC,0,2,A,0,0,D
+,16/04/2025,SC Internacional,SE Palmeiras,0,1,A,0,0,D
+,17/04/2025,CR Flamengo,EC Juventude,6,0,H,3,0,H
+,17/04/2025,Santos FC,CA Mineiro,2,0,H,2,0,H
+,17/04/2025,EC Vitória,Fortaleza EC,2,1,H,1,0,H
+,18/04/2025,Cruzeiro EC,EC Bahia,3,0,H,1,0,H
+,19/04/2025,SC Corinthians Paulista,SC Recife,2,1,H,0,1,A
+,19/04/2025,CR Vasco da Gama,CR Flamengo,0,0,D,0,0,D
+,20/04/2025,Grêmio FBPA,SC Internacional,1,1,D,1,0,H
+,20/04/2025,EC Juventude,Mirassol FC,2,2,D,2,1,H
+,20/04/2025,São Paulo FC,Santos FC,2,1,H,2,1,H
+,20/04/2025,CA Mineiro,Botafogo FR,1,0,H,0,0,D
+,20/04/2025,Fluminense FC,EC Vitória,1,1,D,1,0,H
+,20/04/2025,Fortaleza EC,SE Palmeiras,1,2,A,0,1,A
+,20/04/2025,RB Bragantino,Cruzeiro EC,1,0,H,1,0,H
+,21/04/2025,EC Bahia,Ceará SC,1,0,H,0,0,D
+,26/04/2025,SC Internacional,EC Juventude,3,1,H,2,1,H
+,26/04/2025,Mirassol FC,CA Mineiro,2,2,D,1,0,H
+,26/04/2025,Ceará SC,São Paulo FC,1,1,D,1,1,D
+,26/04/2025,SC Recife,Fortaleza EC,0,0,D,0,0,D
+,27/04/2025,Botafogo FR,Fluminense FC,2,0,H,1,0,H
+,27/04/2025,CR Flamengo,SC Corinthians Paulista,4,0,H,3,0,H
+,27/04/2025,SE Palmeiras,EC Bahia,0,1,A,0,0,D
+,27/04/2025,Cruzeiro EC,CR Vasco da Gama,1,0,H,0,0,D
+,27/04/2025,EC Vitória,Grêmio FBPA,1,1,D,0,1,A
+,27/04/2025,Santos FC,RB Bragantino,1,2,A,0,0,D
+,03/05/2025,São Paulo FC,Fortaleza EC,0,0,D,0,0,D
+,03/05/2025,Fluminense FC,SC Recife,2,1,H,0,1,A
+,03/05/2025,SC Corinthians Paulista,SC Internacional,4,2,H,1,2,A
+,03/05/2025,Ceará SC,EC Vitória,1,0,H,0,0,D
+,04/05/2025,EC Bahia,Botafogo FR,1,0,H,1,0,H
+,04/05/2025,CR Vasco da Gama,SE Palmeiras,0,1,A,0,0,D
+,04/05/2025,Grêmio FBPA,Santos FC,1,0,H,0,0,D
+,04/05/2025,Cruzeiro EC,CR Flamengo,2,1,H,1,1,D
+,05/05/2025,RB Bragantino,Mirassol FC,1,0,H,0,0,D
+,05/05/2025,EC Juventude,CA Mineiro,0,1,A,0,1,A
+,10/05/2025,Fortaleza EC,EC Juventude,5,0,H,1,0,H
+,10/05/2025,Mirassol FC,SC Corinthians Paulista,2,1,H,0,1,A
+,10/05/2025,Grêmio FBPA,RB Bragantino,1,1,D,0,0,D
+,10/05/2025,EC Vitória,CR Vasco da Gama,2,1,H,0,1,A
+,11/05/2025,CR Flamengo,EC Bahia,1,0,H,1,0,H
+,11/05/2025,SC Recife,Cruzeiro EC,0,4,A,0,3,A
+,11/05/2025,SE Palmeiras,São Paulo FC,1,0,H,0,0,D
+,11/05/2025,CA Mineiro,Fluminense FC,3,2,H,0,0,D
+,11/05/2025,Botafogo FR,SC Internacional,4,0,H,2,0,H
+,12/05/2025,Santos FC,Ceará SC,0,0,D,0,0,D
+,17/05/2025,Ceará SC,SC Recife,2,0,H,1,0,H
+,17/05/2025,CR Vasco da Gama,Fortaleza EC,3,0,H,1,0,H
+,18/05/2025,São Paulo FC,Grêmio FBPA,2,1,H,0,1,A
+,18/05/2025,SC Corinthians Paulista,Santos FC,1,0,H,0,0,D
+,18/05/2025,EC Bahia,EC Vitória,2,1,H,1,0,H
+,18/05/2025,EC Juventude,Fluminense FC,1,1,D,0,0,D
+,18/05/2025,CR Flamengo,Botafogo FR,0,0,D,0,0,D
+,18/05/2025,RB Bragantino,SE Palmeiras,1,2,A,1,0,H
+,18/05/2025,Cruzeiro EC,CA Mineiro,0,0,D,0,0,D
+,18/05/2025,SC Internacional,Mirassol FC,1,1,D,0,1,A
+,24/05/2025,Fluminense FC,CR Vasco da Gama,2,1,H,1,1,D
+,24/05/2025,São Paulo FC,Mirassol FC,0,2,A,0,0,D
+,25/05/2025,CA Mineiro,SC Corinthians Paulista,0,0,D,0,0,D
+,25/05/2025,Grêmio FBPA,EC Bahia,1,0,H,0,0,D
+,25/05/2025,SE Palmeiras,CR Flamengo,0,2,A,0,0,D
+,25/05/2025,SC Recife,SC Internacional,1,1,D,1,0,H
+,25/05/2025,EC Vitória,Santos FC,0,1,A,0,1,A
+,25/05/2025,Fortaleza EC,Cruzeiro EC,0,2,A,0,2,A
+,26/05/2025,RB Bragantino,EC Juventude,1,0,H,1,0,H
+,31/05/2025,EC Bahia,São Paulo FC,2,1,H,0,0,D
+,01/06/2025,CR Vasco da Gama,RB Bragantino,0,2,A,0,2,A
+,01/06/2025,Mirassol FC,SC Recife,1,0,H,1,0,H
+,01/06/2025,EC Juventude,Grêmio FBPA,0,2,A,0,2,A
+,01/06/2025,Santos FC,Botafogo FR,0,1,A,0,0,D
+,01/06/2025,Ceará SC,CA Mineiro,0,1,A,0,0,D
+,01/06/2025,CR Flamengo,Fortaleza EC,5,0,H,1,0,H
+,01/06/2025,SC Corinthians Paulista,EC Vitória,0,0,D,0,0,D
+,01/06/2025,Cruzeiro EC,SE Palmeiras,2,1,H,2,0,H
+,01/06/2025,SC Internacional,Fluminense FC,0,2,A,0,1,A
+,04/06/2025,Botafogo FR,Ceará SC,3,2,H,1,0,H
+,12/06/2025,RB Bragantino,EC Bahia,0,3,A,0,2,A
+,12/06/2025,EC Vitória,Cruzeiro EC,0,0,D,0,0,D
+,12/06/2025,Fortaleza EC,Santos FC,2,3,A,0,2,A
+,12/06/2025,Grêmio FBPA,SC Corinthians Paulista,1,1,D,1,1,D
+,13/06/2025,São Paulo FC,CR Vasco da Gama,1,3,A,0,2,A
+,13/06/2025,CA Mineiro,SC Internacional,2,0,H,1,0,H
+,12/07/2025,CR Flamengo,São Paulo FC,2,0,H,0,0,D
+,12/07/2025,SC Internacional,EC Vitória,1,0,H,0,0,D
+,12/07/2025,CR Vasco da Gama,Botafogo FR,0,2,A,0,0,D
+,13/07/2025,EC Bahia,CA Mineiro,2,1,H,0,0,D
+,13/07/2025,SC Corinthians Paulista,RB Bragantino,1,2,A,0,1,A
+,13/07/2025,Cruzeiro EC,Grêmio FBPA,4,1,H,2,0,H
+,13/07/2025,Fortaleza EC,Ceará SC,0,1,A,0,0,D
+,14/07/2025,EC Juventude,SC Recife,2,0,H,1,0,H
+,16/07/2025,SE Palmeiras,Mirassol FC,1,1,D,0,0,D
+,16/07/2025,Ceará SC,SC Corinthians Paulista,0,1,A,0,0,D
+,16/07/2025,Santos FC,CR Flamengo,1,0,H,0,0,D
+,17/07/2025,Botafogo FR,EC Vitória,0,0,D,0,0,D
+,17/07/2025,RB Bragantino,São Paulo FC,2,2,D,1,1,D
+,17/07/2025,Fluminense FC,Cruzeiro EC,0,2,A,0,2,A
+,19/07/2025,Fortaleza EC,EC Bahia,1,1,D,1,0,H
+,19/07/2025,CR Vasco da Gama,Grêmio FBPA,1,1,D,0,0,D
+,19/07/2025,Mirassol FC,Santos FC,3,0,H,0,0,D
+,20/07/2025,São Paulo FC,SC Corinthians Paulista,2,0,H,2,0,H
+,20/07/2025,SC Internacional,Ceará SC,1,0,H,1,0,H
+,20/07/2025,Cruzeiro EC,EC Juventude,4,0,H,1,0,H
+,20/07/2025,EC Vitória,RB Bragantino,1,0,H,1,0,H
+,20/07/2025,SE Palmeiras,CA Mineiro,3,2,H,1,1,D
+,20/07/2025,SC Recife,Botafogo FR,0,1,A,0,0,D
+,20/07/2025,CR Flamengo,Fluminense FC,1,0,H,0,0,D
+,23/07/2025,Fluminense FC,SE Palmeiras,1,2,A,1,1,D
+,23/07/2025,Ceará SC,Mirassol FC,0,2,A,0,2,A
+,23/07/2025,SC Corinthians Paulista,Cruzeiro EC,0,0,D,0,0,D
+,24/07/2025,Santos FC,SC Internacional,1,2,A,0,1,A
+,24/07/2025,RB Bragantino,CR Flamengo,1,2,A,0,0,D
+,24/07/2025,EC Vitória,SC Recife,2,2,D,0,0,D
+,24/07/2025,EC Juventude,São Paulo FC,0,1,A,0,0,D
+,26/07/2025,Botafogo FR,SC Corinthians Paulista,1,1,D,1,0,H
+,26/07/2025,Mirassol FC,EC Vitória,1,1,D,1,1,D
+,26/07/2025,Fortaleza EC,RB Bragantino,3,1,H,2,1,H
+,26/07/2025,SC Recife,Santos FC,2,2,D,1,0,H
+,27/07/2025,SE Palmeiras,Grêmio FBPA,1,0,H,1,0,H
+,27/07/2025,São Paulo FC,Fluminense FC,3,1,H,1,0,H
+,27/07/2025,Cruzeiro EC,Ceará SC,1,2,A,1,1,D
+,27/07/2025,SC Internacional,CR Vasco da Gama,1,1,D,0,1,A
+,27/07/2025,EC Bahia,EC Juventude,3,0,H,1,0,H
+,27/07/2025,CR Flamengo,CA Mineiro,1,0,H,0,0,D
+,29/07/2025,Grêmio FBPA,Fortaleza EC,2,1,H,2,1,H
+,02/08/2025,SC Recife,EC Bahia,0,0,D,0,0,D
+,02/08/2025,Mirassol FC,CR Vasco da Gama,3,2,H,0,0,D
+,03/08/2025,Fluminense FC,Grêmio FBPA,1,0,H,1,0,H
+,03/08/2025,Botafogo FR,Cruzeiro EC,0,2,A,0,2,A
+,03/08/2025,SC Corinthians Paulista,Fortaleza EC,1,1,D,0,1,A
+,03/08/2025,CA Mineiro,RB Bragantino,2,1,H,1,0,H
+,03/08/2025,Ceará SC,CR Flamengo,1,1,D,0,1,A
+,03/08/2025,EC Vitória,SE Palmeiras,2,2,D,1,0,H
+,03/08/2025,SC Internacional,São Paulo FC,1,2,A,0,1,A
+,04/08/2025,Santos FC,EC Juventude,3,1,H,2,1,H
+,09/08/2025,CR Flamengo,Mirassol FC,2,1,H,1,0,H
+,09/08/2025,São Paulo FC,EC Vitória,2,0,H,1,0,H
+,09/08/2025,RB Bragantino,SC Internacional,1,3,A,0,2,A
+,09/08/2025,Fortaleza EC,Botafogo FR,0,5,A,0,2,A
+,10/08/2025,EC Bahia,Fluminense FC,3,3,D,2,1,H
+,10/08/2025,CR Vasco da Gama,CA Mineiro,1,1,D,1,1,D
+,10/08/2025,SE Palmeiras,Ceará SC,2,1,H,0,0,D
+,10/08/2025,Cruzeiro EC,Santos FC,1,2,A,1,0,H
+,10/08/2025,Grêmio FBPA,SC Recife,0,1,A,0,0,D
+,11/08/2025,EC Juventude,SC Corinthians Paulista,2,1,H,1,0,H
+,16/08/2025,Fluminense FC,Fortaleza EC,2,1,H,1,0,H
+,16/08/2025,Ceará SC,RB Bragantino,1,0,H,1,0,H
+,16/08/2025,EC Vitória,EC Juventude,2,2,D,1,0,H
+,16/08/2025,SC Recife,São Paulo FC,2,2,D,1,0,H
+,17/08/2025,SC Corinthians Paulista,EC Bahia,1,2,A,1,2,A
+,17/08/2025,Santos FC,CR Vasco da Gama,0,6,A,0,1,A
+,17/08/2025,CA Mineiro,Grêmio FBPA,1,3,A,1,1,D
+,17/08/2025,SC Internacional,CR Flamengo,1,3,A,0,2,A
+,17/08/2025,Botafogo FR,SE Palmeiras,0,1,A,0,1,A
+,18/08/2025,Mirassol FC,Cruzeiro EC,1,1,D,0,1,A
+,20/08/2025,EC Juventude,CR Vasco da Gama,2,0,H,2,0,H
+,23/08/2025,RB Bragantino,Fluminense FC,4,2,H,2,1,H
+,23/08/2025,Cruzeiro EC,SC Internacional,2,1,H,1,1,D
+,24/08/2025,Grêmio FBPA,Ceará SC,0,0,D,0,0,D
+,24/08/2025,CR Vasco da Gama,SC Corinthians Paulista,2,3,A,0,1,A
+,24/08/2025,EC Bahia,Santos FC,2,0,H,1,0,H
+,24/08/2025,Fortaleza EC,Mirassol FC,0,1,A,0,1,A
+,24/08/2025,EC Juventude,Botafogo FR,1,3,A,1,1,D
+,24/08/2025,São Paulo FC,CA Mineiro,2,0,H,1,0,H
+,25/08/2025,SE Palmeiras,SC Recife,3,0,H,1,0,H
+,26/08/2025,CR Flamengo,EC Vitória,8,0,H,3,0,H
+,30/08/2025,Ceará SC,EC Juventude,0,1,A,0,0,D
+,30/08/2025,Botafogo FR,RB Bragantino,4,1,H,3,1,H
+,31/08/2025,Cruzeiro EC,São Paulo FC,1,0,H,0,0,D
+,31/08/2025,CR Flamengo,Grêmio FBPA,1,1,D,0,0,D
+,31/08/2025,Santos FC,Fluminense FC,0,0,D,0,0,D
+,31/08/2025,SC Corinthians Paulista,SE Palmeiras,1,1,D,1,1,D
+,31/08/2025,Mirassol FC,EC Bahia,5,1,H,3,0,H
+,31/08/2025,EC Vitória,CA Mineiro,1,0,H,1,0,H
+,31/08/2025,SC Internacional,Fortaleza EC,2,1,H,1,1,D
+,31/08/2025,SC Recife,CR Vasco da Gama,2,3,A,1,2,A
+,13/09/2025,Grêmio FBPA,Mirassol FC,0,1,A,0,1,A
+,13/09/2025,Fortaleza EC,EC Vitória,2,0,H,1,0,H
+,13/09/2025,SE Palmeiras,SC Internacional,4,1,H,4,0,H
+,14/09/2025,Fluminense FC,SC Corinthians Paulista,0,1,A,0,0,D
+,14/09/2025,RB Bragantino,SC Recife,1,1,D,0,0,D
+,14/09/2025,CA Mineiro,Santos FC,1,1,D,0,0,D
+,14/09/2025,EC Juventude,CR Flamengo,0,2,A,0,1,A
+,14/09/2025,São Paulo FC,Botafogo FR,1,0,H,1,0,H
+,14/09/2025,CR Vasco da Gama,Ceará SC,2,2,D,1,1,D
+,15/09/2025,EC Bahia,Cruzeiro EC,1,2,A,0,0,D
+,17/09/2025,Botafogo FR,Mirassol FC,3,3,D,3,0,H
+,20/09/2025,EC Vitória,Fluminense FC,0,1,A,0,1,A
+,20/09/2025,Botafogo FR,CA Mineiro,1,0,H,0,0,D
+,20/09/2025,Ceará SC,EC Bahia,1,1,D,1,0,H
+,21/09/2025,SE Palmeiras,Fortaleza EC,4,1,H,1,1,D
+,21/09/2025,Mirassol FC,EC Juventude,2,0,H,2,0,H
+,21/09/2025,CR Flamengo,CR Vasco da Gama,1,1,D,1,1,D
+,21/09/2025,SC Internacional,Grêmio FBPA,2,3,A,2,2,D
+,21/09/2025,SC Recife,SC Corinthians Paulista,1,0,H,0,0,D
+,21/09/2025,Santos FC,São Paulo FC,1,0,H,0,0,D
+,21/09/2025,Cruzeiro EC,RB Bragantino,2,1,H,1,1,D
+,24/09/2025,CR Vasco da Gama,EC Bahia,3,1,H,1,1,D
+,24/09/2025,Grêmio FBPA,Botafogo FR,1,1,D,0,0,D
+,27/09/2025,Fortaleza EC,SC Recife,1,0,H,1,0,H
+,27/09/2025,CR Vasco da Gama,Cruzeiro EC,2,0,H,1,0,H
+,27/09/2025,EC Juventude,SC Internacional,1,1,D,0,1,A
+,28/09/2025,CA Mineiro,Mirassol FC,1,0,H,1,0,H
+,28/09/2025,Grêmio FBPA,EC Vitória,3,1,H,1,0,H
+,28/09/2025,Fluminense FC,Botafogo FR,2,0,H,1,0,H
+,28/09/2025,EC Bahia,SE Palmeiras,1,0,H,0,0,D
+,28/09/2025,RB Bragantino,Santos FC,2,2,D,1,0,H
+,28/09/2025,SC Corinthians Paulista,CR Flamengo,1,2,A,0,0,D
+,29/09/2025,São Paulo FC,Ceará SC,0,1,A,0,0,D
+,01/10/2025,CA Mineiro,EC Juventude,0,0,D,0,0,D
+,01/10/2025,SE Palmeiras,CR Vasco da Gama,3,0,H,3,0,H
+,01/10/2025,Mirassol FC,RB Bragantino,1,1,D,0,1,A
+,01/10/2025,SC Recife,Fluminense FC,2,2,D,0,0,D
+,01/10/2025,SC Internacional,SC Corinthians Paulista,1,1,D,0,1,A
+,02/10/2025,Botafogo FR,EC Bahia,2,1,H,1,0,H
+,02/10/2025,Santos FC,Grêmio FBPA,1,1,D,0,0,D
+,02/10/2025,EC Vitória,Ceará SC,1,0,H,1,0,H
+,02/10/2025,Fortaleza EC,São Paulo FC,0,2,A,0,1,A
+,02/10/2025,CR Flamengo,Cruzeiro EC,0,0,D,0,0,D
+,04/10/2025,Fluminense FC,CA Mineiro,3,0,H,1,0,H
+,04/10/2025,RB Bragantino,Grêmio FBPA,1,0,H,0,0,D
+,04/10/2025,SC Internacional,Botafogo FR,2,0,H,1,0,H
+,05/10/2025,SC Corinthians Paulista,Mirassol FC,3,0,H,1,0,H
+,05/10/2025,CR Vasco da Gama,EC Vitória,4,3,H,1,2,A
+,05/10/2025,São Paulo FC,SE Palmeiras,2,3,A,2,0,H
+,05/10/2025,EC Bahia,CR Flamengo,1,0,H,1,0,H
+,05/10/2025,EC Juventude,Fortaleza EC,1,2,A,1,0,H
+,05/10/2025,Cruzeiro EC,SC Recife,1,1,D,0,1,A
+,05/10/2025,Ceará SC,Santos FC,3,0,H,1,0,H
+,08/10/2025,CA Mineiro,SC Recife,3,1,H,2,0,H
+,09/10/2025,Mirassol FC,Fluminense FC,2,1,H,1,0,H
+,11/10/2025,SE Palmeiras,EC Juventude,4,1,H,2,0,H
+,15/10/2025,SE Palmeiras,RB Bragantino,5,1,H,1,1,D
+,15/10/2025,Botafogo FR,CR Flamengo,0,3,A,0,1,A
+,15/10/2025,Mirassol FC,SC Internacional,3,1,H,2,1,H
+,15/10/2025,SC Recife,Ceará SC,1,1,D,0,0,D
+,16/10/2025,Santos FC,SC Corinthians Paulista,3,1,H,2,0,H
+,16/10/2025,CA Mineiro,Cruzeiro EC,1,1,D,0,0,D
+,16/10/2025,Fortaleza EC,CR Vasco da Gama,0,2,A,0,1,A
+,16/10/2025,Grêmio FBPA,São Paulo FC,2,0,H,1,0,H
+,17/10/2025,Fluminense FC,EC Juventude,1,0,H,0,0,D
+,17/10/2025,EC Vitória,EC Bahia,2,1,H,1,1,D
+,18/10/2025,SC Corinthians Paulista,CA Mineiro,1,0,H,0,0,D
+,19/10/2025,Cruzeiro EC,Fortaleza EC,1,0,H,1,0,H
+,19/10/2025,CR Flamengo,SE Palmeiras,3,2,H,3,1,H
+,19/10/2025,Mirassol FC,São Paulo FC,3,0,H,2,0,H
+,19/10/2025,SC Internacional,SC Recife,2,0,H,1,0,H
+,19/10/2025,Ceará SC,Botafogo FR,0,2,A,0,1,A
+,19/10/2025,EC Bahia,Grêmio FBPA,4,0,H,2,0,H
+,20/10/2025,EC Juventude,RB Bragantino,1,0,H,1,0,H
+,20/10/2025,CR Vasco da Gama,Fluminense FC,2,0,H,1,0,H
+,21/10/2025,Santos FC,EC Vitória,0,1,A,0,1,A
+,22/10/2025,EC Bahia,SC Internacional,1,0,H,1,0,H
+,25/10/2025,CA Mineiro,Ceará SC,1,0,H,1,0,H
+,25/10/2025,EC Vitória,SC Corinthians Paulista,0,1,A,0,0,D
+,25/10/2025,Fluminense FC,SC Internacional,1,0,H,0,0,D
+,25/10/2025,SC Recife,Mirassol FC,1,2,A,1,1,D
+,25/10/2025,Fortaleza EC,CR Flamengo,1,0,H,1,0,H
+,26/10/2025,São Paulo FC,EC Bahia,2,0,H,2,0,H
+,26/10/2025,Botafogo FR,Santos FC,2,2,D,2,1,H
+,26/10/2025,Grêmio FBPA,EC Juventude,3,1,H,1,0,H
+,26/10/2025,RB Bragantino,CR Vasco da Gama,0,3,A,0,1,A
+,26/10/2025,SE Palmeiras,Cruzeiro EC,0,0,D,0,0,D
+,29/10/2025,Fluminense FC,Ceará SC,1,0,H,1,0,H
+,01/11/2025,Santos FC,Fortaleza EC,1,1,D,0,1,A
+,01/11/2025,Cruzeiro EC,EC Vitória,3,1,H,3,1,H
+,01/11/2025,Mirassol FC,Botafogo FR,0,0,D,0,0,D
+,02/11/2025,CR Flamengo,SC Recife,3,0,H,0,0,D
+,02/11/2025,SC Corinthians Paulista,Grêmio FBPA,2,0,H,1,0,H
+,02/11/2025,EC Bahia,RB Bragantino,2,1,H,0,1,A
+,02/11/2025,Ceará SC,Fluminense FC,2,0,H,1,0,H
+,02/11/2025,SC Internacional,CA Mineiro,0,0,D,0,0,D
+,02/11/2025,EC Juventude,SE Palmeiras,0,2,A,0,1,A
+,02/11/2025,CR Vasco da Gama,São Paulo FC,0,2,A,0,1,A
+,05/11/2025,RB Bragantino,SC Corinthians Paulista,2,1,H,1,0,H
+,05/11/2025,EC Vitória,SC Internacional,1,0,H,0,0,D
+,05/11/2025,SC Recife,EC Juventude,0,2,A,0,1,A
+,05/11/2025,Botafogo FR,CR Vasco da Gama,3,0,H,1,0,H
+,05/11/2025,CA Mineiro,EC Bahia,3,0,H,0,0,D
+,05/11/2025,Grêmio FBPA,Cruzeiro EC,0,1,A,0,1,A
+,06/11/2025,São Paulo FC,CR Flamengo,2,2,D,1,1,D
+,06/11/2025,Fluminense FC,Mirassol FC,1,0,H,1,0,H
+,06/11/2025,Ceará SC,Fortaleza EC,1,1,D,0,1,A
+,07/11/2025,SE Palmeiras,Santos FC,2,0,H,0,0,D
+,08/11/2025,SC Recife,CA Mineiro,2,4,A,1,0,H
+,08/11/2025,CR Vasco da Gama,EC Juventude,1,3,A,1,2,A
+,08/11/2025,SC Internacional,EC Bahia,2,2,D,1,0,H
+,09/11/2025,São Paulo FC,RB Bragantino,0,1,A,0,0,D
+,09/11/2025,SC Corinthians Paulista,Ceará SC,0,1,A,0,1,A
+,09/11/2025,Cruzeiro EC,Fluminense FC,0,0,D,0,0,D
+,09/11/2025,EC Vitória,Botafogo FR,0,0,D,0,0,D
+,09/11/2025,CR Flamengo,Santos FC,3,2,H,1,0,H
+,09/11/2025,Mirassol FC,SE Palmeiras,2,1,H,2,1,H
+,09/11/2025,Fortaleza EC,Grêmio FBPA,2,2,D,1,2,A
+,12/11/2025,CA Mineiro,Fortaleza EC,3,3,D,2,0,H
+,15/11/2025,SC Recife,CR Flamengo,1,5,A,1,1,D
+,16/11/2025,Santos FC,SE Palmeiras,1,0,H,0,0,D
+,16/11/2025,RB Bragantino,CA Mineiro,2,0,H,0,0,D
+,18/11/2025,Botafogo FR,SC Recife,3,2,H,1,2,A
+,19/11/2025,SE Palmeiras,EC Vitória,0,0,D,0,0,D
+,20/11/2025,Fluminense FC,CR Flamengo,2,1,H,2,0,H
+,20/11/2025,Santos FC,Mirassol FC,1,1,D,1,0,H
+,20/11/2025,Grêmio FBPA,CR Vasco da Gama,2,0,H,0,0,D
+,20/11/2025,EC Juventude,Cruzeiro EC,3,3,D,2,1,H
+,20/11/2025,EC Bahia,Fortaleza EC,2,3,A,0,2,A
+,20/11/2025,SC Corinthians Paulista,São Paulo FC,3,1,H,1,0,H
+,21/11/2025,Ceará SC,SC Internacional,1,2,A,0,0,D
+,22/11/2025,Botafogo FR,Grêmio FBPA,3,2,H,2,0,H
+,23/11/2025,CR Flamengo,RB Bragantino,3,0,H,0,0,D
+,23/11/2025,SE Palmeiras,Fluminense FC,0,0,D,0,0,D
+,23/11/2025,São Paulo FC,EC Juventude,2,1,H,1,0,H
+,23/11/2025,EC Bahia,CR Vasco da Gama,1,0,H,0,0,D
+,23/11/2025,SC Recife,EC Vitória,1,3,A,1,2,A
+,23/11/2025,Cruzeiro EC,SC Corinthians Paulista,3,0,H,1,0,H
+,24/11/2025,Mirassol FC,Ceará SC,3,0,H,2,0,H
+,25/11/2025,SC Internacional,Santos FC,1,1,D,1,0,H
+,26/11/2025,CA Mineiro,CR Flamengo,1,1,D,1,0,H
+,26/11/2025,Grêmio FBPA,SE Palmeiras,3,2,H,1,1,D
+,26/11/2025,RB Bragantino,Fortaleza EC,0,1,A,0,0,D
+,27/11/2025,Fluminense FC,São Paulo FC,6,0,H,3,0,H
+,28/11/2025,EC Juventude,EC Bahia,1,1,D,1,1,D
+,28/11/2025,CR Vasco da Gama,SC Internacional,5,1,H,2,1,H
+,29/11/2025,Santos FC,SC Recife,3,0,H,2,0,H
+,29/11/2025,EC Vitória,Mirassol FC,2,0,H,1,0,H
+,30/11/2025,Ceará SC,Cruzeiro EC,1,1,D,0,0,D
+,30/11/2025,SC Corinthians Paulista,Botafogo FR,2,2,D,1,0,H
+,30/11/2025,Fortaleza EC,CA Mineiro,1,0,H,1,0,H
+,02/12/2025,CR Vasco da Gama,Mirassol FC,0,2,A,0,0,D
+,03/12/2025,Grêmio FBPA,Fluminense FC,1,2,A,0,1,A
+,03/12/2025,Fortaleza EC,SC Corinthians Paulista,2,1,H,1,0,H
+,03/12/2025,RB Bragantino,EC Vitória,4,0,H,2,0,H
+,03/12/2025,EC Juventude,Santos FC,0,3,A,0,0,D
+,03/12/2025,São Paulo FC,SC Internacional,3,0,H,2,0,H
+,03/12/2025,EC Bahia,SC Recife,2,0,H,1,0,H
+,04/12/2025,CA Mineiro,SE Palmeiras,0,3,A,0,2,A
+,04/12/2025,CR Flamengo,Ceará SC,1,0,H,1,0,H
+,04/12/2025,Cruzeiro EC,Botafogo FR,2,2,D,1,0,H
+,06/12/2025,Mirassol FC,CR Flamengo,3,3,D,2,2,D
+,07/12/2025,Fluminense FC,EC Bahia,2,0,H,0,0,D
+,07/12/2025,Botafogo FR,Fortaleza EC,4,2,H,1,1,D
+,07/12/2025,SC Corinthians Paulista,EC Juventude,1,1,D,1,0,H
+,07/12/2025,Santos FC,Cruzeiro EC,3,0,H,2,0,H
+,07/12/2025,CA Mineiro,CR Vasco da Gama,5,0,H,2,0,H
+,07/12/2025,SC Internacional,RB Bragantino,3,1,H,0,0,D
+,07/12/2025,EC Vitória,São Paulo FC,1,0,H,0,0,D
+,07/12/2025,Ceará SC,SE Palmeiras,1,3,A,1,1,D
+,07/12/2025,SC Recife,Grêmio FBPA,0,4,A,0,3,A

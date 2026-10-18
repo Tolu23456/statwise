@@ -3,9 +3,9 @@ import { createClient } from '@supabase/supabase-js';
 import * as SecureStore from 'expo-secure-store';
 import { Platform } from 'react-native';
 
-const supabaseUrl = 'https://pdrcyuzfdqjnsltqqxvr.supabase.co';
+const supabaseUrl = 'https://fwpriiugfjhtoymcbmso.supabase.co';
 const supabaseAnonKey =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkcmN5dXpmZHFqbnNsdHFxeHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4Nzg2NTYsImV4cCI6MjA5MDQ1NDY1Nn0.LNWI2nhJdubyZmYGh1b-60fqzeo-fTenCknXyMwYmw8';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3cHJpaXVnZmpodG95bWNibXNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5MDc3MTgsImV4cCI6MjA3MjQ4MzcxOH0.Sy3iehhGx2UNi28UBEjfNd81TjMxOVXJjY9HJS3xVjs';
 
 export const FLUTTERWAVE_PUBLIC_KEY = 'FLWPUBK-30eeb76b5875f40db71221d0960de0a8-X';
 
@@ -86,6 +86,31 @@ export type Prediction = {
     away_value?: number;
     home_rating?: number;
     away_rating?: number;
+    details?: {
+      espn_event_id?: string;
+      venue?: string | null;
+      city?: string | null;
+      country?: string | null;
+      attendance?: number | null;
+      referee?: string | null;
+      weather?: {
+        temperature_c?: number | null;
+        humidity_pct?: number | null;
+        precipitation_mm?: number | null;
+        wind_kmh?: number | null;
+        condition?: string | null;
+      } | null;
+      scorers?: { player: string; team: string; minute: string; type: string }[];
+      cards?: { player: string; team: string; minute: string; type: string }[];
+      substitutions?: {
+        player_in?: string; player_out?: string; text?: string; team: string; minute: string;
+      }[];
+      lineups?: Record<string, {
+        starting: { name: string; jersey: string | null; position: string | null }[];
+        bench: { name: string; jersey: string | null; position: string | null }[];
+      }>;
+      team_stats?: Record<string, Record<string, string>>;
+    } | null;
   } | null;
   status?: string;
   actual_result?: string | null;

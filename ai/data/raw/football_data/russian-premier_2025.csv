@@ -1,0 +1,241 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+,28/02/2025,Dynamo Makhachkala,Lokomotiv Moscow,1,1,D
+,01/03/2025,Nizhny Novgorod,Akron Tolyatti,2,1,H
+,01/03/2025,Zenit St Petersburg,CSKA Moscow,0,0,D
+,01/03/2025,Akhmat Grozny,Rubin Kazan,2,1,H
+,01/03/2025,Krasnodar,Krylia Sovetov,1,1,D
+,02/03/2025,FC Khimki,Fakel Voronezh,1,0,H
+,02/03/2025,Spartak Moscow,Gazovik Orenburg,2,0,H
+,02/03/2025,Rostov,Dinamo Moscow,1,1,D
+,07/03/2025,Nizhny Novgorod,Krasnodar,0,3,A
+,07/03/2025,Lokomotiv Moscow,Akhmat Grozny,1,1,D
+,08/03/2025,Gazovik Orenburg,Rostov,1,2,A
+,08/03/2025,Fakel Voronezh,Zenit St Petersburg,0,2,A
+,08/03/2025,CSKA Moscow,FC Khimki,1,0,H
+,08/03/2025,Dinamo Moscow,Dynamo Makhachkala,4,0,H
+,09/03/2025,Krylia Sovetov,Akron Tolyatti,0,2,A
+,09/03/2025,Rubin Kazan,Spartak Moscow,2,1,H
+,15/03/2025,Gazovik Orenburg,Fakel Voronezh,1,0,H
+,15/03/2025,FC Khimki,Akhmat Grozny,1,1,D
+,15/03/2025,Dynamo Makhachkala,Krylia Sovetov,4,0,H
+,15/03/2025,Lokomotiv Moscow,Dinamo Moscow,2,1,H
+,16/03/2025,Akron Tolyatti,CSKA Moscow,1,2,A
+,16/03/2025,Rubin Kazan,Nizhny Novgorod,1,0,H
+,16/03/2025,Rostov,Krasnodar,0,1,A
+,16/03/2025,Spartak Moscow,Zenit St Petersburg,2,1,H
+,28/03/2025,Krylia Sovetov,Lokomotiv Moscow,5,1,H
+,29/03/2025,Dinamo Moscow,Gazovik Orenburg,5,1,H
+,29/03/2025,FC Khimki,Nizhny Novgorod,2,0,H
+,29/03/2025,CSKA Moscow,Dynamo Makhachkala,2,0,H
+,30/03/2025,Krasnodar,Fakel Voronezh,5,0,H
+,30/03/2025,Akhmat Grozny,Spartak Moscow,0,0,D
+,30/03/2025,Zenit St Petersburg,Rubin Kazan,4,0,H
+,31/03/2025,Akron Tolyatti,Rostov,2,3,A
+,04/04/2025,Nizhny Novgorod,Gazovik Orenburg,1,2,A
+,05/04/2025,Krylia Sovetov,Rubin Kazan,1,1,D
+,05/04/2025,Fakel Voronezh,Akhmat Grozny,0,0,D
+,05/04/2025,Lokomotiv Moscow,Zenit St Petersburg,1,1,D
+,05/04/2025,Krasnodar,Akron Tolyatti,1,0,H
+,06/04/2025,Dynamo Makhachkala,FC Khimki,4,1,H
+,06/04/2025,Rostov,Spartak Moscow,0,3,A
+,06/04/2025,CSKA Moscow,Dinamo Moscow,3,1,H
+,11/04/2025,Spartak Moscow,Dynamo Makhachkala,1,2,A
+,12/04/2025,Gazovik Orenburg,CSKA Moscow,0,2,A
+,12/04/2025,Nizhny Novgorod,Dinamo Moscow,1,1,D
+,12/04/2025,Rubin Kazan,Lokomotiv Moscow,1,0,H
+,12/04/2025,Akhmat Grozny,Rostov,2,1,H
+,13/04/2025,Akron Tolyatti,Fakel Voronezh,1,0,H
+,13/04/2025,Zenit St Petersburg,Krasnodar,4,1,H
+,13/04/2025,FC Khimki,Krylia Sovetov,1,3,A
+,19/04/2025,Gazovik Orenburg,Dynamo Makhachkala,2,1,H
+,19/04/2025,Akron Tolyatti,Spartak Moscow,2,3,A
+,19/04/2025,Lokomotiv Moscow,Nizhny Novgorod,3,0,H
+,19/04/2025,Krasnodar,Akhmat Grozny,3,1,H
+,20/04/2025,Dinamo Moscow,Rubin Kazan,3,1,H
+,20/04/2025,Fakel Voronezh,Rostov,0,2,A
+,20/04/2025,Zenit St Petersburg,FC Khimki,1,0,H
+,20/04/2025,CSKA Moscow,Krylia Sovetov,1,1,D
+,25/04/2025,Dynamo Makhachkala,Krasnodar,2,3,A
+,26/04/2025,Dinamo Moscow,Zenit St Petersburg,1,1,D
+,26/04/2025,Nizhny Novgorod,Akhmat Grozny,1,0,H
+,26/04/2025,Rostov,Lokomotiv Moscow,1,1,D
+,26/04/2025,Spartak Moscow,CSKA Moscow,1,2,A
+,27/04/2025,Krylia Sovetov,Gazovik Orenburg,2,0,H
+,27/04/2025,FC Khimki,Akron Tolyatti,2,2,D
+,27/04/2025,Rubin Kazan,Fakel Voronezh,2,1,H
+,02/05/2025,Akron Tolyatti,Dynamo Makhachkala,1,0,H
+,03/05/2025,Lokomotiv Moscow,Gazovik Orenburg,1,1,D
+,03/05/2025,Krasnodar,Rubin Kazan,2,1,H
+,04/05/2025,Fakel Voronezh,Spartak Moscow,0,0,D
+,04/05/2025,Akhmat Grozny,CSKA Moscow,1,1,D
+,04/05/2025,FC Khimki,Rostov,1,1,D
+,04/05/2025,Zenit St Petersburg,Nizhny Novgorod,2,1,H
+,05/05/2025,Krylia Sovetov,Dinamo Moscow,1,3,A
+,10/05/2025,Gazovik Orenburg,FC Khimki,1,1,D
+,10/05/2025,Dynamo Makhachkala,Zenit St Petersburg,0,1,A
+,10/05/2025,CSKA Moscow,Krasnodar,1,0,H
+,11/05/2025,Akron Tolyatti,Akhmat Grozny,3,2,H
+,11/05/2025,Fakel Voronezh,Lokomotiv Moscow,0,1,A
+,11/05/2025,Dinamo Moscow,Spartak Moscow,2,0,H
+,11/05/2025,Rubin Kazan,Rostov,1,0,H
+,12/05/2025,Nizhny Novgorod,Krylia Sovetov,5,2,H
+,17/05/2025,Gazovik Orenburg,Krasnodar,1,2,A
+,17/05/2025,FC Khimki,Rubin Kazan,3,2,H
+,17/05/2025,Nizhny Novgorod,Fakel Voronezh,1,1,D
+,18/05/2025,Krylia Sovetov,Spartak Moscow,0,2,A
+,18/05/2025,Akhmat Grozny,Dynamo Makhachkala,1,1,D
+,18/05/2025,Dinamo Moscow,Akron Tolyatti,2,1,H
+,18/05/2025,Rostov,Zenit St Petersburg,0,1,A
+,19/05/2025,Lokomotiv Moscow,CSKA Moscow,2,2,D
+,24/05/2025,Akron Tolyatti,Lokomotiv Moscow,1,4,A
+,24/05/2025,CSKA Moscow,Nizhny Novgorod,2,0,H
+,24/05/2025,Dynamo Makhachkala,Rostov,1,1,D
+,24/05/2025,Fakel Voronezh,Krylia Sovetov,1,1,D
+,24/05/2025,Krasnodar,Dinamo Moscow,3,0,H
+,24/05/2025,Rubin Kazan,Gazovik Orenburg,4,2,H
+,24/05/2025,Spartak Moscow,FC Khimki,5,0,H
+,24/05/2025,Zenit St Petersburg,Akhmat Grozny,3,0,H
+,18/07/2025,Dinamo Moscow,FC Baltika Kaliningrad,1,1,D
+,19/07/2025,Akron Tolyatti,Krylia Sovetov,1,1,D
+,19/07/2025,Lokomotiv Moscow,Sochi,3,0,H
+,19/07/2025,Spartak Moscow,Dynamo Makhachkala,1,0,H
+,20/07/2025,Nizhny Novgorod,Krasnodar,0,3,A
+,20/07/2025,Zenit St Petersburg,Rostov,2,1,H
+,20/07/2025,Akhmat Grozny,Rubin Kazan,0,2,A
+,21/07/2025,Gazovik Orenburg,CSKA Moscow,0,0,D
+,25/07/2025,Krylia Sovetov,Nizhny Novgorod,2,0,H
+,26/07/2025,Spartak Moscow,FC Baltika Kaliningrad,0,3,A
+,26/07/2025,Dinamo Moscow,Rostov,1,0,H
+,26/07/2025,Krasnodar,Lokomotiv Moscow,1,2,A
+,26/07/2025,Sochi,Akron Tolyatti,0,4,A
+,27/07/2025,CSKA Moscow,Akhmat Grozny,2,1,H
+,27/07/2025,Gazovik Orenburg,Dynamo Makhachkala,1,1,D
+,27/07/2025,Rubin Kazan,Zenit St Petersburg,2,2,D
+,02/08/2025,Rostov,Krylia Sovetov,1,4,A
+,02/08/2025,Krasnodar,Dinamo Moscow,1,0,H
+,02/08/2025,Nizhny Novgorod,Lokomotiv Moscow,2,3,A
+,03/08/2025,Akron Tolyatti,Spartak Moscow,1,1,D
+,03/08/2025,FC Baltika Kaliningrad,Gazovik Orenburg,3,2,H
+,03/08/2025,Zenit St Petersburg,CSKA Moscow,1,1,D
+,03/08/2025,Dynamo Makhachkala,Akhmat Grozny,1,0,H
+,04/08/2025,Rubin Kazan,Sochi,2,1,H
+,08/08/2025,Dynamo Makhachkala,Akron Tolyatti,1,1,D
+,09/08/2025,Krylia Sovetov,FC Baltika Kaliningrad,1,1,D
+,09/08/2025,CSKA Moscow,Rubin Kazan,5,1,H
+,09/08/2025,Lokomotiv Moscow,Spartak Moscow,4,2,H
+,09/08/2025,Akhmat Grozny,Zenit St Petersburg,1,0,H
+,10/08/2025,Gazovik Orenburg,Krasnodar,0,1,A
+,10/08/2025,Sochi,Dinamo Moscow,1,1,D
+,10/08/2025,Rostov,Nizhny Novgorod,1,0,H
+,16/08/2025,FC Baltika Kaliningrad,Lokomotiv Moscow,1,1,D
+,16/08/2025,Spartak Moscow,Zenit St Petersburg,2,2,D
+,16/08/2025,Akhmat Grozny,Krylia Sovetov,3,1,H
+,17/08/2025,Akron Tolyatti,Gazovik Orenburg,1,2,A
+,17/08/2025,Rubin Kazan,Rostov,1,0,H
+,17/08/2025,Dinamo Moscow,CSKA Moscow,1,3,A
+,17/08/2025,Krasnodar,Sochi,5,1,H
+,18/08/2025,Nizhny Novgorod,Dynamo Makhachkala,2,0,H
+,22/08/2025,Gazovik Orenburg,Akhmat Grozny,2,2,D
+,23/08/2025,Rubin Kazan,Spartak Moscow,0,2,A
+,23/08/2025,Zenit St Petersburg,Dynamo Makhachkala,4,0,H
+,23/08/2025,Lokomotiv Moscow,Rostov,3,3,D
+,23/08/2025,Dinamo Moscow,Nizhny Novgorod,3,0,H
+,24/08/2025,Krylia Sovetov,Krasnodar,0,6,A
+,24/08/2025,CSKA Moscow,Akron Tolyatti,3,1,H
+,24/08/2025,Sochi,FC Baltika Kaliningrad,0,2,A
+,30/08/2025,Gazovik Orenburg,Rubin Kazan,2,2,D
+,30/08/2025,Zenit St Petersburg,Nizhny Novgorod,2,0,H
+,30/08/2025,Spartak Moscow,Sochi,2,1,H
+,30/08/2025,Rostov,Akhmat Grozny,1,1,D
+,31/08/2025,Akron Tolyatti,FC Baltika Kaliningrad,0,2,A
+,31/08/2025,Lokomotiv Moscow,Krylia Sovetov,2,2,D
+,31/08/2025,CSKA Moscow,Krasnodar,1,1,D
+,31/08/2025,Dynamo Makhachkala,Dinamo Moscow,1,0,H
+,12/09/2025,Rubin Kazan,Dynamo Makhachkala,1,0,H
+,13/09/2025,Nizhny Novgorod,Gazovik Orenburg,3,1,H
+,13/09/2025,Akhmat Grozny,Lokomotiv Moscow,1,1,D
+,13/09/2025,Dinamo Moscow,Spartak Moscow,2,2,D
+,13/09/2025,Krasnodar,Akron Tolyatti,2,1,H
+,14/09/2025,Krylia Sovetov,Sochi,2,0,H
+,14/09/2025,FC Baltika Kaliningrad,Zenit St Petersburg,0,0,D
+,14/09/2025,Rostov,CSKA Moscow,1,0,H
+,20/09/2025,Nizhny Novgorod,Akhmat Grozny,1,2,A
+,20/09/2025,Akron Tolyatti,Rubin Kazan,2,2,D
+,20/09/2025,Dynamo Makhachkala,Lokomotiv Moscow,1,1,D
+,21/09/2025,Gazovik Orenburg,Dinamo Moscow,1,3,A
+,21/09/2025,Spartak Moscow,Krylia Sovetov,2,1,H
+,21/09/2025,FC Baltika Kaliningrad,Rostov,0,0,D
+,21/09/2025,Krasnodar,Zenit St Petersburg,0,2,A
+,22/09/2025,Sochi,CSKA Moscow,1,3,A
+,26/09/2025,Krylia Sovetov,Dinamo Moscow,2,3,A
+,27/09/2025,Akhmat Grozny,Akron Tolyatti,3,0,H
+,27/09/2025,Lokomotiv Moscow,Rubin Kazan,1,0,H
+,27/09/2025,Rostov,Krasnodar,0,0,D
+,27/09/2025,Zenit St Petersburg,Gazovik Orenburg,5,2,H
+,28/09/2025,CSKA Moscow,FC Baltika Kaliningrad,1,0,H
+,28/09/2025,Dynamo Makhachkala,Sochi,0,0,D
+,28/09/2025,Spartak Moscow,Nizhny Novgorod,3,0,H
+,04/10/2025,Akron Tolyatti,Zenit St Petersburg,1,1,D
+,04/10/2025,Rubin Kazan,Krylia Sovetov,2,0,H
+,04/10/2025,Krasnodar,Akhmat Grozny,2,0,H
+,04/10/2025,Dinamo Moscow,Lokomotiv Moscow,3,5,A
+,05/10/2025,Gazovik Orenburg,Rostov,0,1,A
+,05/10/2025,Sochi,Nizhny Novgorod,2,1,H
+,05/10/2025,CSKA Moscow,Spartak Moscow,3,2,H
+,05/10/2025,FC Baltika Kaliningrad,Dynamo Makhachkala,2,0,H
+,18/10/2025,Krylia Sovetov,Gazovik Orenburg,1,1,D
+,18/10/2025,Nizhny Novgorod,Akron Tolyatti,0,1,A
+,18/10/2025,Spartak Moscow,Rostov,1,1,D
+,18/10/2025,Dynamo Makhachkala,Krasnodar,0,2,A
+,18/10/2025,Lokomotiv Moscow,CSKA Moscow,3,0,H
+,19/10/2025,Sochi,Zenit St Petersburg,0,3,A
+,19/10/2025,Rubin Kazan,FC Baltika Kaliningrad,0,3,A
+,19/10/2025,Dinamo Moscow,Akhmat Grozny,2,2,D
+,25/10/2025,Spartak Moscow,Gazovik Orenburg,1,0,H
+,25/10/2025,Rostov,Dynamo Makhachkala,1,1,D
+,25/10/2025,CSKA Moscow,Krylia Sovetov,1,0,H
+,26/10/2025,Akron Tolyatti,Lokomotiv Moscow,1,1,D
+,26/10/2025,Nizhny Novgorod,FC Baltika Kaliningrad,0,0,D
+,26/10/2025,Zenit St Petersburg,Dinamo Moscow,2,1,H
+,26/10/2025,Krasnodar,Rubin Kazan,1,0,H
+,27/10/2025,Akhmat Grozny,Sochi,2,4,A
+,31/10/2025,CSKA Moscow,Nizhny Novgorod,2,0,H
+,01/11/2025,Dynamo Makhachkala,Krylia Sovetov,2,0,H
+,01/11/2025,Rubin Kazan,Dinamo Moscow,0,0,D
+,01/11/2025,Rostov,Akron Tolyatti,0,1,A
+,01/11/2025,Zenit St Petersburg,Lokomotiv Moscow,2,0,H
+,02/11/2025,Gazovik Orenburg,Sochi,3,1,H
+,02/11/2025,FC Baltika Kaliningrad,Akhmat Grozny,2,0,H
+,02/11/2025,Krasnodar,Spartak Moscow,2,1,H
+,08/11/2025,Dinamo Moscow,Akron Tolyatti,1,2,A
+,08/11/2025,Dynamo Makhachkala,CSKA Moscow,0,1,A
+,08/11/2025,Nizhny Novgorod,Rubin Kazan,0,0,D
+,08/11/2025,Sochi,Rostov,0,1,A
+,09/11/2025,Krylia Sovetov,Zenit St Petersburg,1,1,D
+,09/11/2025,Lokomotiv Moscow,Gazovik Orenburg,1,0,H
+,09/11/2025,Akhmat Grozny,Spartak Moscow,1,2,A
+,09/11/2025,FC Baltika Kaliningrad,Krasnodar,1,1,D
+,21/11/2025,Akron Tolyatti,Sochi,3,2,H
+,22/11/2025,Gazovik Orenburg,FC Baltika Kaliningrad,0,0,D
+,22/11/2025,Spartak Moscow,CSKA Moscow,1,0,H
+,22/11/2025,Rubin Kazan,Akhmat Grozny,1,0,H
+,23/11/2025,Krylia Sovetov,Rostov,2,0,H
+,23/11/2025,Nizhny Novgorod,Zenit St Petersburg,0,2,A
+,23/11/2025,Dinamo Moscow,Dynamo Makhachkala,3,0,H
+,23/11/2025,Lokomotiv Moscow,Krasnodar,1,1,D
+,29/11/2025,Akron Tolyatti,Nizhny Novgorod,1,2,A
+,29/11/2025,CSKA Moscow,Gazovik Orenburg,2,0,H
+,29/11/2025,FC Baltika Kaliningrad,Spartak Moscow,1,0,H
+,30/11/2025,Krasnodar,Krylia Sovetov,5,0,H
+,30/11/2025,Akhmat Grozny,Dinamo Moscow,2,1,H
+,30/11/2025,Rostov,Lokomotiv Moscow,1,3,A
+,30/11/2025,Zenit St Petersburg,Rubin Kazan,1,0,H
+,01/12/2025,Sochi,Dynamo Makhachkala,0,0,D
+,05/12/2025,Akhmat Grozny,Gazovik Orenburg,1,0,H
+,06/12/2025,Rostov,Rubin Kazan,2,0,H
+,06/12/2025,Spartak Moscow,Dinamo Moscow,1,1,D
+,06/12/2025,Zenit St Petersburg,Akron Tolyatti,2,0,H
+,07/12/2025,Dynamo Makhachkala,Nizhny Novgorod,0,1,A
+,07/12/2025,Sochi,Lokomotiv Moscow,2,4,A
+,07/12/2025,FC Baltika Kaliningrad,Krylia Sovetov,2,0,H
+,07/12/2025,Krasnodar,CSKA Moscow,3,2,H
