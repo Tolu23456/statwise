@@ -150,16 +150,160 @@ def run(force: bool = False) -> bool:
 
     logger.info(f"Combined dataset: {len(df):,} unique real matches")
 
-    # ── Train ──────────────────────────────────────────────────────
-    logger.info("Training model (5-model deep stacking ensemble: XGB+HGB+ET+RF+NeuralNet→LR) …")
-    t1 = time.time()
+    # ── Honest out-of-time split: calibrate + evaluate + market alpha ──
+    # Features are built ONCE through a chronological feature state; the
+    # stacking ensemble trains only on rows BEFORE the holdout window, the
+    # calibrator/alpha/metrics come from the holdout (first half calibrates,
+    # second half evaluates), then Stage B refits the raw stacks on ALL rows
+    # keeping that honest calibrator.  STAGE_B=0 skips the refit (~half time).
+    # KNOWN SMALL LEAK: league-level aggregates are fit on the full frame
+    # (<1% of their signal sits inside a 90d holdout); per-row ratings are
+    # strictly chronological.
+    import numpy as np
+    from sklearn.isotonic import IsotonicRegression
+    from sklearn.metrics import log_loss
+
+    holdout_days = int(os.environ.get("HOLDOUT_DAYS", "90"))
+    stage_b = os.environ.get("STAGE_B", "1") != "0"
+    df = df.sort_values("date", kind="stable").reset_index(drop=True)
+    dates = pd.to_datetime(df["date"], errors="coerce")
+    split_at = dates.max() - pd.Timedelta(days=holdout_days)
+
+    logger.info("Building feature state (single pass over full frame)…")
+    t0f = time.time()
     predictor = FootballPredictor()
-    try:
-        predictor.train(df)
-    except Exception as e:
-        logger.error(f"Training failed: {e}")
-        return False
-    logger.info(f"Training done in {time.time() - t1:.1f}s")
+    predictor.feature_pipe.fit(df)
+    X_all, y_all, g_all, d_all = predictor.feature_pipe.build_training_set(df)
+    X_all = np.nan_to_num(X_all, nan=0.0, posinf=1e6, neginf=-1e6)
+    meta = getattr(predictor.feature_pipe, "last_meta", {}) or {}
+    logger.info(f"Features built in {time.time() - t0f:.1f}s")
+
+    m_tr = pd.to_datetime(d_all) <= split_at
+    m_ho = ~m_tr
+    calib_info: dict = {}
+
+    def _apply_cal(p, calibs):
+        q = np.column_stack([iso.predict(p[:, k]) for k, iso in enumerate(calibs)])
+        q = np.clip(q, 1e-6, None)
+        return q / q.sum(axis=1, keepdims=True)
+
+    def _ll(p, y):
+        return float(log_loss(y, p, labels=[0, 1, 2]))
+
+    if int(m_tr.sum()) >= 2000 and int(m_ho.sum()) >= 600:
+        logger.info(f"[OOT] train {int(m_tr.sum()):,} rows (<= {split_at.date()}) | "
+                    f"holdout {int(m_ho.sum()):,} rows (last {holdout_days}d)")
+
+        t1 = time.time()
+        pred_a = FootballPredictor()
+        pred_a.feature_pipe = predictor.feature_pipe  # share the fitted state
+        try:
+            pred_a.fit_stacks(X_all[m_tr], y_all[m_tr], g_all[m_tr], calibrate=False)
+        except Exception as e:
+            logger.error(f"Training failed: {e}")
+            return False
+        logger.info(f"Stage A train done in {time.time() - t1:.1f}s")
+
+        Xh, yh = X_all[m_ho], y_all[m_ho]
+        odds_h = meta.get("odds")
+        odds_h = odds_h[m_ho] if odds_h is not None else np.zeros((len(Xh), 3))
+        leagues_h = meta.get("leagues")
+        leagues_h = leagues_h[m_ho] if leagues_h is not None else np.array(["all"] * len(Xh))
+
+        raw_h = pred_a._outcome_pipe.predict_proba(Xh)
+        mid = max(len(yh) // 2, 100)
+        # calibrate on the EARLIER holdout half, evaluate on the LATER half
+        calibs = []
+        for k in range(3):
+            iso = IsotonicRegression(out_of_bounds="clip")
+            iso.fit(raw_h[:mid, k], (yh[:mid] == k).astype(float))
+            calibs.append(iso)
+        raw_ev, y_ev = raw_h[mid:], yh[mid:]
+        p_ev = _apply_cal(raw_ev, calibs)
+        o_ev = odds_h[mid:]
+
+        imp = np.zeros_like(p_ev)
+        imp[:, 0] = 1.0 / np.maximum(o_ev[:, 0], 1.0001)
+        imp[:, 1] = 1.0 / np.maximum(o_ev[:, 1], 1.0001)
+        imp[:, 2] = 1.0 / np.maximum(o_ev[:, 2], 1.0001)
+        valid = (o_ev[:, 0] > 1.01) & (o_ev[:, 1] > 1.01) & (o_ev[:, 2] > 1.01)
+        mkt = imp / np.maximum(imp.sum(axis=1, keepdims=True), 1e-9)
+
+        conf = p_ev.max(axis=1)
+        correct = (p_ev.argmax(axis=1) == y_ev).astype(float)
+        ece = 0.0
+        edges = np.linspace(0, 1, 11)
+        for bi in range(10):
+            m = (conf >= edges[bi]) & (conf < edges[bi + 1] if bi < 9 else conf <= edges[bi + 1])
+            if m.sum():
+                ece += float(m.mean()) * abs(float(correct[m].mean()) - float(conf[m].mean()))
+
+        metrics = {
+            "holdout_days": holdout_days,
+            "holdout_matches": int(len(y_ev)),
+            "split_at": str(split_at.date()),
+            "raw_log_loss": round(_ll(raw_ev, y_ev), 5),
+            "calibrated_log_loss": round(_ll(p_ev, y_ev), 5),
+            "market_log_loss": round(_ll(mkt[valid], y_ev[valid]), 5) if int(valid.sum()) > 50 else None,
+            "accuracy": round(float((p_ev.argmax(axis=1) == y_ev).mean()), 4),
+            "brier": round(float(((p_ev - np.eye(3)[y_ev]) ** 2).mean()), 5),
+            "ece": round(ece, 4),
+        }
+
+        # alpha: log-loss-optimal blend of calibrated model vs market, per league
+        def _best_alpha(idx):
+            if int(valid[idx].sum()) < 80:
+                return None
+            best_a, best_ll = None, float("inf")
+            for a in np.arange(0.0, 1.001, 0.05):
+                ll = _ll(a * p_ev[idx] + (1.0 - a) * mkt[idx], y_ev[idx])
+                if ll < best_ll:
+                    best_ll, best_a = ll, float(a)
+            return float(best_a)
+
+        alphas: dict = {}
+        ev_idx = np.arange(len(y_ev))
+        ga = _best_alpha(ev_idx)
+        if ga is not None:
+            alphas["_default"] = ga
+        n_league = 0
+        for slug in pd.unique(leagues_h[mid:]):
+            idx = ev_idx[leagues_h[mid:] == slug]
+            if len(idx) >= 150:
+                a = _best_alpha(idx)
+                if a is not None:
+                    alphas[str(slug)] = a
+                    n_league += 1
+        metrics["alpha_default"] = alphas.get("_default")
+        metrics["alpha_leagues"] = n_league
+        logger.info("[OOT] " + json.dumps(metrics))
+
+        if stage_b:
+            logger.info("Stage B: refitting raw stacks on FULL dataset "
+                        "(keeping holdout calibrator + alphas)…")
+            del pred_a
+            t2 = time.time()
+            try:
+                predictor.fit_stacks(X_all, y_all, g_all, calibrate=False)
+            except Exception as e:
+                logger.error(f"Stage B training failed: {e}")
+                return False
+            logger.info(f"Stage B train done in {time.time() - t2:.1f}s")
+            predictor.attach_calibration(calibs, alphas, metrics)
+        else:
+            logger.info("STAGE_B=0 — deploying Stage A model as-is")
+            predictor = pred_a
+            predictor.attach_calibration(calibs, alphas, metrics)
+        calib_info = metrics
+    else:
+        logger.info("[OOT] holdout too small — full training with prefit calibration")
+        t1 = time.time()
+        try:
+            predictor.fit_stacks(X_all, y_all, g_all, calibrate=True)
+        except Exception as e:
+            logger.error(f"Training failed: {e}")
+            return False
+        logger.info(f"Training done in {time.time() - t1:.1f}s")
 
     # ── Save atomically ────────────────────────────────────────────
     tmp_fd, tmp_path = tempfile.mkstemp(suffix=".pkl", dir=os.path.dirname(MODEL_PATH))
@@ -180,6 +324,7 @@ def run(force: bool = False) -> bool:
         "trained_at":       datetime.datetime.utcnow().isoformat() + "Z",
         "total_matches":    int(len(df)),
         "duration_seconds": round(time.time() - t0, 1),
+        "calibration":      calib_info,
     }
     try:
         with open(INFO_PATH, "w") as f:

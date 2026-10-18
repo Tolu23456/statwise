@@ -235,6 +235,12 @@ class FeaturePipeline:
 
         y_1x2 = np.where(all_gh[all_idx] > all_ga[all_idx], 0, np.where(all_gh[all_idx] == all_ga[all_idx], 1, 2)).astype(np.int32)
         y_goals = ((all_gh[all_idx] + all_ga[all_idx]) > 2.5).astype(np.int32)
+        # side-channel aligned to all_idx — used by retrain.py for honest
+        # holdout evaluation (market baseline + per-league alpha blending)
+        self.last_meta = {
+            "odds":    all_odds[all_idx],
+            "leagues": df['league_slug'].fillna('all').values[all_idx],
+        }
         return X, y_1x2, y_goals, df['date'].values[all_idx]
 
     def build_features(self, matches: list, history: pd.DataFrame) -> np.ndarray:

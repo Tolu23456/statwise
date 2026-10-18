@@ -129,6 +129,11 @@ class PredictionEngine:
                     away  = fix['away_team'],
                     league= fix.get('league_slug', 'all'),
                     history= self.history,
+                    # market odds feed BOTH the odds features (has_odds etc.)
+                    # and the post-hoc alpha blend with the de-vigged market
+                    odds_home=float(fix.get('odds_home') or 0),
+                    odds_draw=float(fix.get('odds_draw') or 0),
+                    odds_away=float(fix.get('odds_away') or 0),
                     weather= weather,
                 )
                 tier_name, tier_db = _tier_for_confidence(pred['confidence'])

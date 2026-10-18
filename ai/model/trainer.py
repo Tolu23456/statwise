@@ -20,7 +20,7 @@ from sklearn.calibration import CalibratedClassifierCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
-from .features import FeaturePipeline, N_FEATURES
+from .features import FeaturePipeline, N_FEATURES, FEATURE_NAMES
 from .neural_net import GrandmasterNeuralNet, _TitanFootballNet
 
 logger = logging.getLogger(__name__)
@@ -61,7 +61,7 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     stack = StackingClassifier(
         estimators=base,
         final_estimator=meta,
-        cv=5, # Increased CV for better meta-training
+        cv=3,  # 3-fold OOF meta-features (5 doubled fit time for <0.1 logloss)
         stack_method='predict_proba',
         passthrough=True,
         n_jobs=-1,
@@ -77,16 +77,32 @@ def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
     ])
 
 class CalibratedStack(Pipeline):
-    """Pipeline extension that automatically handles post-fit calibration."""
-    def fit(self, X, y, **fit_params):
+    """Stacking pipeline with an optional fast prefit-isotonic calibration layer.
+
+    calibrate=True  -> isotonic fitted on the stack's own predictions (prefit:
+                       NO refits of the stack — cv=3 used to retrain the entire
+                       stack 3 extra times, multiplying training time by ~2.5x).
+    calibrate=False -> raw stack probabilities; the caller (retrain.py) fits an
+                       honest calibrator on an out-of-time holdout instead.
+    """
+    def fit(self, X, y, calibrate=True, **fit_params):
         super().fit(X, y, **fit_params)
-        # Apply final calibration layer on the stack's output
-        self.calibrator = CalibratedClassifierCV(self.named_steps['stack'], method='isotonic', cv=3)
-        self.calibrator.fit(self.named_steps['scaler'].transform(X), y)
+        if calibrate:
+            self._fit_prefit_calibrator(X, y)
+        else:
+            self.calibrator = None
         return self
+
+    def _fit_prefit_calibrator(self, X, y):
+        Xt = self.named_steps['scaler'].transform(X)
+        self.calibrator = CalibratedClassifierCV(
+            self.named_steps['stack'], method='isotonic', cv='prefit')
+        self.calibrator.fit(Xt, y)
 
     def predict_proba(self, X):
         Xt = self.named_steps['scaler'].transform(X)
+        if getattr(self, 'calibrator', None) is None:
+            return self.named_steps['stack'].predict_proba(Xt)
         return self.calibrator.predict_proba(Xt)
 
 class FootballPredictor:
@@ -96,15 +112,28 @@ class FootballPredictor:
         self._outcome_pipe: Optional[Pipeline] = None
         self._goals_pipe:   Optional[Pipeline] = None
         self._trained        = False
+        # honest calibration + market-blend alpha (set by retrain.py / load)
+        self._calibrators: Optional[list] = None
+        self._alphas: dict = {}
+        self._calibration_info: dict = {}
 
-    def train(self, df: pd.DataFrame) -> "FootballPredictor":
+    def train(self, df: pd.DataFrame, calibrate: bool = True) -> "FootballPredictor":
         logger.info(f"Grandmaster Training starting on {len(df):,} records…")
         self.feature_pipe.fit(df)
         X, y_1x2, y_goals, dates = self.feature_pipe.build_training_set(df)
+        return self.fit_stacks(X, y_1x2, y_goals, calibrate=calibrate)
+
+    def fit_stacks(self, X: np.ndarray, y_1x2: np.ndarray, y_goals: np.ndarray,
+                   calibrate: bool = True) -> "FootballPredictor":
+        """Fit both stacking pipes on prebuilt feature matrices.
+
+        Split out from train() so retrain.py can build features ONCE for the
+        full frame, slice an out-of-time train/holdout split, and fit only on
+        the train slice without re-deriving feature state.
+        """
         X = np.nan_to_num(X, nan=0.0, posinf=1e6, neginf=-1e6)
 
         logger.info("Step 3/4  Fitting Grandmaster Outcome stack…")
-        # Use CalibratedStack for enhanced confidence mapping
         self._outcome_pipe = CalibratedStack([
             ('scaler', StandardScaler()),
             ('stack', StackingClassifier(
@@ -117,10 +146,10 @@ class FootballPredictor:
                     ('nn',   GrandmasterNeuralNet(epochs=200, batch_size=2048, random_state=42)),
                 ],
                 final_estimator=LogisticRegressionCV(Cs=20, cv=5, max_iter=2000, n_jobs=-1),
-                cv=5, stack_method='predict_proba', passthrough=True, n_jobs=-1
+                cv=3, stack_method='predict_proba', passthrough=True, n_jobs=-1
             ))
         ])
-        self._outcome_pipe.fit(X, y_1x2)
+        self._outcome_pipe.fit(X, y_1x2, calibrate=calibrate)
 
         logger.info("Step 4/4  Fitting Grandmaster Goals stack…")
         self._goals_pipe = CalibratedStack([
@@ -135,13 +164,19 @@ class FootballPredictor:
                     ('nn',   GrandmasterNeuralNet(epochs=200, batch_size=2048, random_state=99)),
                 ],
                 final_estimator=LogisticRegressionCV(Cs=20, cv=5, max_iter=2000, n_jobs=-1),
-                cv=5, stack_method='predict_proba', passthrough=True, n_jobs=-1
+                cv=3, stack_method='predict_proba', passthrough=True, n_jobs=-1
             ))
         ])
-        self._goals_pipe.fit(X, y_goals)
+        self._goals_pipe.fit(X, y_goals, calibrate=calibrate)
 
         self._trained = True
         return self
+
+    def attach_calibration(self, calibrators: list, alphas: dict, info: dict) -> None:
+        """Attach honest holdout-fitted isotonic calibrators + market alphas."""
+        self._calibrators = calibrators
+        self._alphas = alphas or {}
+        self._calibration_info = info or {}
 
     def save(self, path: str):
         joblib.dump({
@@ -149,6 +184,9 @@ class FootballPredictor:
             'outcome_pipe': self._outcome_pipe,
             'goals_pipe':   self._goals_pipe,
             'n_features':   N_FEATURES,
+            'calibrators':  self._calibrators,
+            'alphas':       self._alphas,
+            'calibration_info': self._calibration_info,
         }, path, compress=3)
 
     @classmethod
@@ -160,6 +198,9 @@ class FootballPredictor:
         obj._outcome_pipe = data['outcome_pipe']
         obj._goals_pipe = data['goals_pipe']
         obj._trained = True
+        obj._calibrators = data.get('calibrators')
+        obj._alphas = data.get('alphas') or {}
+        obj._calibration_info = data.get('calibration_info') or {}
         return obj
 
     def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0, weather: dict | None = None):
@@ -177,9 +218,33 @@ class FootballPredictor:
                        "wind_kmh": weather.get("wind_speed_kmh", weather.get("wind_kmh")),
                        "weather_code": weather.get("weather_code")}
         X = self.feature_pipe.build_features([{"home": home, "away": away, "league": league, "odds_home": odds_home, "odds_draw": odds_draw, "odds_away": odds_away, "home_squad_value": home_squad_value, "away_squad_value": away_squad_value, "home_avg_age": home_avg_age, "away_avg_age": away_avg_age, "home_lineup_rating": home_lineup_rating, "away_lineup_rating": away_lineup_rating, "weather": weather}], history)
+        # single-row features can carry NaN (missing squad value / weather /
+        # unknown team elo).  Training sanitizes the matrix the same way — keep
+        # inference consistent so NaN never reaches the scaler or the net.
+        X = np.nan_to_num(np.asarray(X, dtype=np.float64), nan=0.0, posinf=1e6, neginf=-1e6)
 
         p_outcome = self._outcome_pipe.predict_proba(X)[0]
         p_goals = self._goals_pipe.predict_proba(X)[0]
+
+        # 1) honest isotonic calibration (fitted on out-of-time holdout by retrain.py)
+        calibs = getattr(self, '_calibrators', None)
+        if calibs:
+            p_outcome = np.array(
+                [float(iso.predict([float(p_outcome[i])])[0]) for i, iso in enumerate(calibs)])
+            p_outcome = np.clip(p_outcome, 1e-6, None)
+            p_outcome = p_outcome / p_outcome.sum()
+
+        # 2) market blend: alpha*model + (1-alpha)*de-vigged market odds.
+        #    alpha learned per-league on the holdout (log-loss minimizing).
+        alphas = getattr(self, '_alphas', None) or {}
+        if alphas and odds_home and odds_draw and odds_away \
+                and odds_home > 1.01 and odds_draw > 1.01 and odds_away > 1.01:
+            imp = np.array([1.0 / odds_home, 1.0 / odds_draw, 1.0 / odds_away])
+            mkt = imp / imp.sum()
+            alpha = alphas.get(str(league), alphas.get('_default'))
+            if alpha is not None:
+                p_outcome = float(alpha) * p_outcome + (1.0 - float(alpha)) * mkt
+
         idx = np.argmax(p_outcome)
 
         # Compute real statistics from history
@@ -209,7 +274,10 @@ class FootballPredictor:
             "home_value": float(X[0, 125]),
             "away_value": float(X[0, 126]),
             "home_rating": float(X[0, 130]),
-            "away_rating": float(X[0, 131])
+            "away_rating": float(X[0, 131]),
+            # pre-match expected goals — consumed by ai/odds_sync.py in-play mode
+            "lambda_h": float(X[0, FEATURE_NAMES.index("lambda_h")]),
+            "lambda_a": float(X[0, FEATURE_NAMES.index("lambda_a")]),
         }
 
         # Dynamic reasoning based on model insights

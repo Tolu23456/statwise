@@ -1,0 +1,107 @@
+name: Train Model
+
+# Trains the stacking ensemble on GitHub runners (4 vCPU / 16 GB — the local
+# dev box can't hold the full 330k x 161 fit). Runs weekly and on demand;
+# publishes the .pkl as an artifact and best-effort to Supabase storage.
+
+on:
+  workflow_dispatch:
+    inputs:
+      stage_b:
+        description: 'Stage B full-dataset refit after holdout calibration (0 = skip, ~half time)'
+        required: false
+        default: '1'
+      holdout_days:
+        description: 'Out-of-time holdout window (days) for calibration/eval'
+        required: false
+        default: '90'
+  schedule:
+    - cron: '0 10 * * 1'   # Mondays 10:00 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: train-model
+  cancel-in-progress: true
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --no-cache-dir --upgrade pip
+          pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+          pip install --no-cache-dir -r ai/requirements.txt lightgbm "scikit-learn==1.8.0"
+
+      - name: Build C++ feature extension
+        run: make -C ai/core
+
+      - name: Train
+        env:
+          STAGE_B: ${{ inputs.stage_b || '1' }}
+          HOLDOUT_DAYS: ${{ inputs.holdout_days || '90' }}
+        run: |
+          mkdir -p ai/models
+          python ai/retrain.py
+
+      - name: Verify model loads
+        run: |
+          cat ai/data/model_info.json
+          python - <<'PY'
+          import sys
+          sys.path.insert(0, 'ai')
+          from model.trainer import FootballPredictor
+          m = FootballPredictor.load()
+          print('model loads OK, trained =', m._trained)
+          PY
+
+      - name: Publish artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: football-predictor
+          path: |
+            ai/models/football_predictor.pkl
+            ai/data/model_info.json
+          compression-level: 9
+          retention-days: 30
+
+      - name: Upload model to Supabase storage
+        continue-on-error: true   # large objects may exceed storage limits
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then
+            echo "::notice::no service key configured — skipping storage upload"
+            exit 0
+          fi
+          curl -sS -X POST \
+            "$SUPABASE_URL/storage/v1/object/app-assets/models/football_predictor.pkl?upsert=true" \
+            -H "Authorization: Bearer $SUPABASE_SERVICE_KEY" \
+            -H "Content-Type: application/octet-stream" \
+            -H "x-upsert: true" \
+            --data-binary @ai/models/football_predictor.pkl
+
+      - name: Commit retrain metadata
+        continue-on-error: true   # branch protection may block bot pushes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ai/data/model_info.json
+          if git diff --cached --quiet; then
+            echo "no metadata changes"
+          else
+            git commit -m "chore: model retrain metadata [skip ci]"
+            git push || echo "::warning::metadata push failed"
+          fi
