@@ -1,0 +1,61 @@
+name: Odds Sync (The Odds API)
+
+on:
+  schedule:
+    # pre-match odds snapshots — 4×/day (2 credits each on The Odds API)
+    - cron: '0 5,11,17,23 * * *'
+    # in-play sync — every 5 min during match windows; costs credits ONLY when
+    # matches are actually live. Enable by setting repo variable ODDS_LIVE_SYNC=true
+    # (recommended with a paid key; free tier = 500 credits/month).
+    - cron: '*/5 12-22 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Mode to run'
+        required: false
+        default: 'prematch'
+        type: choice
+        options: [prematch, inplay]
+
+concurrency:
+  group: odds-sync
+  cancel-in-progress: false
+
+jobs:
+  prematch:
+    if: >-
+      github.event_name == 'workflow_dispatch' && inputs.mode == 'prematch' ||
+      github.event.schedule == '0 5,11,17,23 * * *'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pre-match odds
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY || vars.ODDS_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$ODDS_API_KEY" ]; then
+            echo "::warning::ODDS_API_KEY not set — skipping. Get a free key at the-odds-api.com and add it as a repo secret."
+            exit 0
+          fi
+          python3 ai/odds_sync.py prematch
+
+  inplay:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && inputs.mode == 'inplay') ||
+      (github.event.schedule == '*/5 12-22 * * *' && vars.ODDS_LIVE_SYNC == 'true')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: In-play states (live score + live odds)
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY || vars.ODDS_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$ODDS_API_KEY" ]; then
+            echo "::warning::ODDS_API_KEY not set — skipping."
+            exit 0
+          fi
+          python3 ai/odds_sync.py inplay
