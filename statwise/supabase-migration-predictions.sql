@@ -44,22 +44,31 @@ CREATE INDEX IF NOT EXISTS idx_predictions_league_slug ON predictions (league_sl
 CREATE INDEX IF NOT EXISTS idx_predictions_status      ON predictions (status);
 CREATE INDEX IF NOT EXISTS idx_predictions_kickoff     ON predictions (kickoff_time);
 
--- ── 4. RLS: anyone signed in or not can read predictions ────────────────────
+-- ── 4. RLS: tier-gated reads ────────────────────────────────────────────────
+-- Free users must never see premium/vip rows.  A USING (true) policy here
+-- exposes the whole table to every anon-key holder (the app's client-side
+-- filter is not a security boundary).  See supabase-migration-rls-tier.sql.
 ALTER TABLE predictions ENABLE ROW LEVEL SECURITY;
 
-DO $$
-BEGIN
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_policies
-    WHERE schemaname = 'public'
-      AND tablename  = 'predictions'
-      AND policyname = 'Public read predictions'
-  ) THEN
-    CREATE POLICY "Public read predictions"
-      ON predictions FOR SELECT
-      USING (true);
-  END IF;
-END $$;
+DROP POLICY IF EXISTS "Public read predictions"              ON predictions;
+DROP POLICY IF EXISTS "Free users can view free predictions" ON predictions;
+DROP POLICY IF EXISTS "Tier-gated prediction access"         ON predictions;
+
+CREATE POLICY "Tier-gated prediction access"
+  ON predictions FOR SELECT
+  USING (
+    predictions.tier = 'free'
+    OR EXISTS (
+      SELECT 1 FROM public.user_profiles p
+      WHERE p.id = auth.uid()
+        AND CASE p.current_tier
+              WHEN 'VVIP Tier'    THEN true
+              WHEN 'VIP Tier'     THEN predictions.tier IN ('free', 'premium', 'vip')
+              WHEN 'Premium Tier' THEN predictions.tier IN ('free', 'premium')
+              ELSE false
+            END
+    )
+  );
 
 GRANT SELECT ON predictions TO anon, authenticated;
 

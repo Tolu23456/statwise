@@ -218,7 +218,10 @@ def run(force: bool = False) -> bool:
         def _recency_weights(mask):
             if half_life <= 0:
                 return None
-            age = (ref_date - dates_all[mask]).dt.days.clip(lower=0).to_numpy(dtype=np.float64)
+            # works whether dates_all is a Series or a DatetimeIndex
+            age_days = np.asarray((ref_date - dates_all) / pd.Timedelta(days=1),
+                                  dtype=np.float64)
+            age = np.clip(age_days[mask], 0.0, None)
             w = np.power(0.5, age / half_life)
             return np.maximum(w, 0.02).astype(np.float32)
 
