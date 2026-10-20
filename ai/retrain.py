@@ -175,7 +175,7 @@ def run(force: bool = False) -> bool:
     from sklearn.metrics import log_loss
 
     holdout_days = int(os.environ.get("HOLDOUT_DAYS", "90"))
-    stage_b = os.environ.get("STAGE_B", "1") != "0"
+    stage_b = os.environ.get("STAGE_B", "0") != "0"
     df = df.sort_values("date", kind="stable").reset_index(drop=True)
     dates = pd.to_datetime(df["date"], errors="coerce")
     split_at = dates.max() - pd.Timedelta(days=holdout_days)
@@ -251,26 +251,34 @@ def run(force: bool = False) -> bool:
                 iso = IsotonicRegression(out_of_bounds="clip")
                 iso.fit(raw_h[:mid, k], (yh[:mid] == k).astype(float))
                 cals.append(iso)
-            p_ev = _apply_cal(raw_h[mid:], cals)
+            p_cal = _apply_cal(raw_h[mid:], cals)
+            p_raw = raw_h[mid:]
             gp = cand._goals_pipe.predict_proba(Xh[mid:])[:, 1]
             goals_brier = float(((gp - gh[mid:]) ** 2).mean())
-            ll_raw = _ll(raw_h[mid:], y_ev)
-            ll_cal = _ll(p_ev, y_ev)
+            ll_raw = _ll(p_raw, y_ev)
+            ll_cal = _ll(p_cal, y_ev)
+            # 1,440 eval rows are not enough for per-class isotonic to pay off
+            # every time — only deploy the calibrator if it wins out of sample.
+            use_cal = ll_cal < ll_raw
+            p_ev = p_cal if use_cal else p_raw
+            ll_eval = min(ll_raw, ll_cal)
             acc = float((p_ev.argmax(axis=1) == y_ev).mean())
             logger.info(f"[OOT:{mode}] {time.time() - t1:.1f}s "
                         f"raw_ll={ll_raw:.5f} cal_ll={ll_cal:.5f} "
-                        f"acc={acc:.4f} goals_brier={goals_brier:.5f}")
+                        f"use_cal={use_cal} acc={acc:.4f} goals_brier={goals_brier:.5f}")
 
-            # lower log loss wins; within 0.0005 prefer better goals Brier
+            # lower deployed log loss wins; within 0.0005 prefer better goals Brier
             better = (best is None
-                      or ll_cal < best["ll"] - 0.0005
-                      or (abs(ll_cal - best["ll"]) <= 0.0005
+                      or ll_eval < best["ll"] - 0.0005
+                      or (abs(ll_eval - best["ll"]) <= 0.0005
                           and goals_brier < best["goals_brier"]))
             if better:
                 if best is not None:
                     del best["pred"]
-                best = dict(mode=mode, pred=cand, raw=raw_h, calibs=cals, p_ev=p_ev,
-                            ll=ll_cal, ll_raw=ll_raw, goals_brier=goals_brier)
+                best = dict(mode=mode, pred=cand, raw=raw_h,
+                            calibs=cals if use_cal else None, p_ev=p_ev,
+                            ll=ll_eval, ll_raw=ll_raw, ll_cal=ll_cal,
+                            use_cal=use_cal, goals_brier=goals_brier)
             else:
                 del cand
             gc.collect()
@@ -284,7 +292,8 @@ def run(force: bool = False) -> bool:
         raw_ev = raw_h[mid:]
         pred_a = best["pred"]
         logger.info(f"[OOT] selected mode='{mode}' "
-                    f"(cal_ll={best['ll']:.5f}, goals_brier={best['goals_brier']:.5f})")
+                    f"(eval_ll={best['ll']:.5f}, calibration={'on' if best['use_cal'] else 'off'}, "
+                    f"goals_brier={best['goals_brier']:.5f})")
 
         conf = p_ev.max(axis=1)
         correct = (p_ev.argmax(axis=1) == y_ev).astype(float)
@@ -301,40 +310,50 @@ def run(force: bool = False) -> bool:
             "holdout_matches": int(len(y_ev)),
             "split_at": str(split_at.date()),
             "raw_log_loss": round(best["ll_raw"], 5),
-            "calibrated_log_loss": round(best["ll"], 5),
+            "isotonic_log_loss": round(best["ll_cal"], 5),
+            "calibration_used": bool(best["use_cal"]),
+            "eval_log_loss": round(best["ll"], 5),
             "market_log_loss": round(_ll(mkt[valid], y_ev[valid]), 5) if int(valid.sum()) > 50 else None,
+            "market_rows": int(valid.sum()),
             "accuracy": round(float((p_ev.argmax(axis=1) == y_ev).mean()), 4),
             "brier": round(float(((p_ev - np.eye(3)[y_ev]) ** 2).mean()), 5),
             "goals_brier": round(best["goals_brier"], 5),
             "ece": round(ece, 4),
         }
 
-        # alpha: log-loss-optimal blend of calibrated model vs market, per league
-        def _best_alpha(idx):
-            if int(valid[idx].sum()) < 80:
+        # alpha: log-loss-optimal blend of the deployed model vs market.
+        # Only rows that actually HAVE odds count: for the rest mkt is uniform
+        # and would push alpha toward 1 (i.e. ignore a market edge that exists).
+        def _best_alpha(mask):
+            m = mask & valid
+            if int(m.sum()) < 50:
                 return None
             best_a, best_ll = None, float("inf")
             for a in np.arange(0.0, 1.001, 0.05):
-                ll = _ll(a * p_ev[idx] + (1.0 - a) * mkt[idx], y_ev[idx])
+                ll = _ll(a * p_ev[m] + (1.0 - a) * mkt[m], y_ev[m])
                 if ll < best_ll:
                     best_ll, best_a = ll, float(a)
             return float(best_a)
 
         alphas: dict = {}
-        ev_idx = np.arange(len(y_ev))
-        ga = _best_alpha(ev_idx)
+        ga = _best_alpha(np.ones(len(y_ev), dtype=bool))
         if ga is not None:
             alphas["_default"] = ga
         n_league = 0
         for slug in pd.unique(leagues_h[mid:]):
-            idx = ev_idx[leagues_h[mid:] == slug]
-            if len(idx) >= 150:
-                a = _best_alpha(idx)
+            mask = (leagues_h[mid:] == slug)
+            if int((mask & valid).sum()) >= 60:
+                a = _best_alpha(mask)
                 if a is not None:
                     alphas[str(slug)] = a
                     n_league += 1
         metrics["alpha_default"] = alphas.get("_default")
         metrics["alpha_leagues"] = n_league
+        if int(valid.sum()) >= 50:
+            m = valid
+            metrics["blended_market_log_loss"] = round(
+                _ll(alphas.get("_default", 1.0) * p_ev[m]
+                    + (1.0 - alphas.get("_default", 1.0)) * mkt[m], y_ev[m]), 5)
         logger.info("[OOT] " + json.dumps(metrics))
 
         if stage_b:

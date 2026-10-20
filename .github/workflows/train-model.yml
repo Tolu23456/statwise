@@ -44,8 +44,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --no-cache-dir --upgrade pip
-          pip install --no-cache-dir -r ai/requirements.txt
+          # keep pip's cache on: setup-python saves ~/.cache/pip in its post step
+          python -m pip install --upgrade pip
+          pip install -r ai/requirements.txt
 
       - name: Build C++ feature extension
         run: make -C ai/core

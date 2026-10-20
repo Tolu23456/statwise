@@ -37,7 +37,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install --no-cache-dir -r ai/requirements.txt
+          pip install -r ai/requirements.txt
 
       - name: Run prediction cycle
         env:
