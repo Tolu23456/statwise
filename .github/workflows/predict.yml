@@ -27,13 +27,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Cache trained model
-        uses: actions/cache@v4
+      - name: Restore trained model
+        # restore-only: the predict run must never write a second copy
+        uses: actions/cache/restore@v4
         with:
           path: ai/models/football_predictor.pkl
-          key: statwise-model-v1-${{ hashFiles('ai/model/trainer.py', 'ai/model/features.py') }}
+          key: statwise-model-v2-${{ github.run_id }}-${{ hashFiles('ai/model/trainer.py', 'ai/model/features.py') }}
           restore-keys: |
-            statwise-model-v1-
+            statwise-model-v2-
 
       - name: Install dependencies
         run: |
