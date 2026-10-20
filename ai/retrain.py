@@ -11,7 +11,7 @@ Usage:
 Can also be imported and called programmatically by the scheduler.
 """
 from __future__ import annotations
-import os, sys, logging, time, json, datetime, shutil, tempfile, glob
+import os, sys, logging, time, json, datetime, shutil, tempfile, glob, gc
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
@@ -21,6 +21,17 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)-5s] %(name)s: %(message)s",
 )
 logger = logging.getLogger("statwise.retrain")
+
+
+def _rss_mb() -> float:
+    try:
+        with open('/proc/self/status') as fh:
+            for line in fh:
+                if line.startswith('VmRSS:'):
+                    return int(line.split()[1]) / 1024.0
+    except Exception:
+        pass
+    return 0.0
 
 MODEL_PATH = os.path.join(BASE_DIR, "models", "football_predictor.pkl")
 INFO_PATH  = os.path.join(BASE_DIR, "data",   "model_info.json")
@@ -148,7 +159,7 @@ def run(force: bool = False) -> bool:
     else:
         logger.info("[2/2] Supplementary live sources skipped (clean data available)")
 
-    logger.info(f"Combined dataset: {len(df):,} unique real matches")
+    logger.info(f"Combined dataset: {len(df):,} unique real matches ({_rss_mb():.0f} MB RSS)")
 
     # ── Honest out-of-time split: calibrate + evaluate + market alpha ──
     # Features are built ONCE through a chronological feature state; the
@@ -174,9 +185,10 @@ def run(force: bool = False) -> bool:
     predictor = FootballPredictor()
     predictor.feature_pipe.fit(df)
     X_all, y_all, g_all, d_all = predictor.feature_pipe.build_training_set(df)
-    X_all = np.nan_to_num(X_all, nan=0.0, posinf=1e6, neginf=-1e6)
+    X_all = np.nan_to_num(X_all, nan=0.0, posinf=1e6, neginf=-1e6).astype(np.float32, copy=False)
     meta = getattr(predictor.feature_pipe, "last_meta", {}) or {}
-    logger.info(f"Features built in {time.time() - t0f:.1f}s")
+    logger.info(f"Features built in {time.time() - t0f:.1f}s "
+                f"({X_all.shape[0]:,} x {X_all.shape[1]} float32 = {X_all.nbytes / 1e6:.0f} MB)")
 
     m_tr = pd.to_datetime(d_all) <= split_at
     m_ho = ~m_tr
@@ -194,40 +206,85 @@ def run(force: bool = False) -> bool:
         logger.info(f"[OOT] train {int(m_tr.sum()):,} rows (<= {split_at.date()}) | "
                     f"holdout {int(m_ho.sum()):,} rows (last {holdout_days}d)")
 
-        t1 = time.time()
-        pred_a = FootballPredictor()
-        pred_a.feature_pipe = predictor.feature_pipe  # share the fitted state
-        try:
-            pred_a.fit_stacks(X_all[m_tr], y_all[m_tr], g_all[m_tr], calibrate=False)
-        except Exception as e:
-            logger.error(f"Training failed: {e}")
-            return False
-        logger.info(f"Stage A train done in {time.time() - t1:.1f}s")
-
-        Xh, yh = X_all[m_ho], y_all[m_ho]
+        Xt, yt, gt = X_all[m_tr], y_all[m_tr], g_all[m_tr]
+        Xh, yh, gh = X_all[m_ho], y_all[m_ho], g_all[m_ho]
         odds_h = meta.get("odds")
         odds_h = odds_h[m_ho] if odds_h is not None else np.zeros((len(Xh), 3))
         leagues_h = meta.get("leagues")
         leagues_h = leagues_h[m_ho] if leagues_h is not None else np.array(["all"] * len(Xh))
 
-        raw_h = pred_a._outcome_pipe.predict_proba(Xh)
         mid = max(len(yh) // 2, 100)
-        # calibrate on the EARLIER holdout half, evaluate on the LATER half
-        calibs = []
-        for k in range(3):
-            iso = IsotonicRegression(out_of_bounds="clip")
-            iso.fit(raw_h[:mid, k], (yh[:mid] == k).astype(float))
-            calibs.append(iso)
-        raw_ev, y_ev = raw_h[mid:], yh[mid:]
-        p_ev = _apply_cal(raw_ev, calibs)
+        y_ev = yh[mid:]
         o_ev = odds_h[mid:]
-
-        imp = np.zeros_like(p_ev)
+        imp = np.zeros((len(o_ev), 3))
         imp[:, 0] = 1.0 / np.maximum(o_ev[:, 0], 1.0001)
         imp[:, 1] = 1.0 / np.maximum(o_ev[:, 1], 1.0001)
         imp[:, 2] = 1.0 / np.maximum(o_ev[:, 2], 1.0001)
         valid = (o_ev[:, 0] > 1.01) & (o_ev[:, 1] > 1.01) & (o_ev[:, 2] > 1.01)
         mkt = imp / np.maximum(imp.sum(axis=1, keepdims=True), 1e-9)
+
+        # ── Candidate architectures ────────────────────────────────
+        # 'single' = 2 LightGBM heads, 'joint' = 1 six-class LightGBM.
+        # 'both' trains each on the SAME train slice and keeps whichever wins
+        # on the untouched later-holdout log loss (goals Brier breaks ties).
+        mode_env = os.environ.get("MODEL_MODE", "both").strip().lower()
+        modes = ["single", "joint"] if mode_env in ("both", "auto") else [mode_env]
+        logger.info(f"[OOT] candidate modes: {modes}")
+
+        best = None
+        for mode in modes:
+            t1 = time.time()
+            cand = FootballPredictor()
+            cand.feature_pipe = predictor.feature_pipe  # share the fitted state
+            try:
+                cand.fit_stacks(Xt, yt, gt, calibrate=False, mode=mode)
+                raw_h = cand._outcome_pipe.predict_proba(Xh)
+            except Exception as e:
+                logger.exception(f"[{mode}] training failed: {e}")
+                del cand
+                gc.collect()
+                continue
+
+            # calibrate on the EARLIER holdout half, evaluate on the LATER half
+            cals = []
+            for k in range(3):
+                iso = IsotonicRegression(out_of_bounds="clip")
+                iso.fit(raw_h[:mid, k], (yh[:mid] == k).astype(float))
+                cals.append(iso)
+            p_ev = _apply_cal(raw_h[mid:], cals)
+            gp = cand._goals_pipe.predict_proba(Xh[mid:])[:, 1]
+            goals_brier = float(((gp - gh[mid:]) ** 2).mean())
+            ll_raw = _ll(raw_h[mid:], y_ev)
+            ll_cal = _ll(p_ev, y_ev)
+            acc = float((p_ev.argmax(axis=1) == y_ev).mean())
+            logger.info(f"[OOT:{mode}] {time.time() - t1:.1f}s "
+                        f"raw_ll={ll_raw:.5f} cal_ll={ll_cal:.5f} "
+                        f"acc={acc:.4f} goals_brier={goals_brier:.5f}")
+
+            # lower log loss wins; within 0.0005 prefer better goals Brier
+            better = (best is None
+                      or ll_cal < best["ll"] - 0.0005
+                      or (abs(ll_cal - best["ll"]) <= 0.0005
+                          and goals_brier < best["goals_brier"]))
+            if better:
+                if best is not None:
+                    del best["pred"]
+                best = dict(mode=mode, pred=cand, raw=raw_h, calibs=cals, p_ev=p_ev,
+                            ll=ll_cal, ll_raw=ll_raw, goals_brier=goals_brier)
+            else:
+                del cand
+            gc.collect()
+
+        if best is None:
+            logger.error("All candidate modes failed to train")
+            return False
+
+        mode = best["mode"]
+        raw_h, calibs, p_ev = best["raw"], best["calibs"], best["p_ev"]
+        raw_ev = raw_h[mid:]
+        pred_a = best["pred"]
+        logger.info(f"[OOT] selected mode='{mode}' "
+                    f"(cal_ll={best['ll']:.5f}, goals_brier={best['goals_brier']:.5f})")
 
         conf = p_ev.max(axis=1)
         correct = (p_ev.argmax(axis=1) == y_ev).astype(float)
@@ -239,14 +296,16 @@ def run(force: bool = False) -> bool:
                 ece += float(m.mean()) * abs(float(correct[m].mean()) - float(conf[m].mean()))
 
         metrics = {
+            "mode": mode,
             "holdout_days": holdout_days,
             "holdout_matches": int(len(y_ev)),
             "split_at": str(split_at.date()),
-            "raw_log_loss": round(_ll(raw_ev, y_ev), 5),
-            "calibrated_log_loss": round(_ll(p_ev, y_ev), 5),
+            "raw_log_loss": round(best["ll_raw"], 5),
+            "calibrated_log_loss": round(best["ll"], 5),
             "market_log_loss": round(_ll(mkt[valid], y_ev[valid]), 5) if int(valid.sum()) > 50 else None,
             "accuracy": round(float((p_ev.argmax(axis=1) == y_ev).mean()), 4),
             "brier": round(float(((p_ev - np.eye(3)[y_ev]) ** 2).mean()), 5),
+            "goals_brier": round(best["goals_brier"], 5),
             "ece": round(ece, 4),
         }
 
@@ -279,31 +338,36 @@ def run(force: bool = False) -> bool:
         logger.info("[OOT] " + json.dumps(metrics))
 
         if stage_b:
-            logger.info("Stage B: refitting raw stacks on FULL dataset "
+            logger.info(f"Stage B: refitting '{mode}' on FULL dataset "
                         "(keeping holdout calibrator + alphas)…")
             del pred_a
+            gc.collect()
             t2 = time.time()
             try:
-                predictor.fit_stacks(X_all, y_all, g_all, calibrate=False)
+                predictor.fit_stacks(X_all, y_all, g_all, calibrate=False, mode=mode)
             except Exception as e:
                 logger.error(f"Stage B training failed: {e}")
                 return False
             logger.info(f"Stage B train done in {time.time() - t2:.1f}s")
             predictor.attach_calibration(calibs, alphas, metrics)
         else:
-            logger.info("STAGE_B=0 — deploying Stage A model as-is")
+            logger.info(f"STAGE_B=0 — deploying the Stage A '{mode}' model as-is")
             predictor = pred_a
             predictor.attach_calibration(calibs, alphas, metrics)
         calib_info = metrics
     else:
         logger.info("[OOT] holdout too small — full training with prefit calibration")
         t1 = time.time()
+        fallback_mode = os.environ.get("MODEL_MODE", "single").strip().lower()
+        if fallback_mode in ("both", "auto"):
+            fallback_mode = "single"
         try:
-            predictor.fit_stacks(X_all, y_all, g_all, calibrate=True)
+            predictor.fit_stacks(X_all, y_all, g_all, calibrate=True, mode=fallback_mode)
         except Exception as e:
             logger.error(f"Training failed: {e}")
             return False
         logger.info(f"Training done in {time.time() - t1:.1f}s")
+        calib_info = {"mode": fallback_mode, "note": "holdout too small; prefit isotonic"}
 
     # ── Save atomically ────────────────────────────────────────────
     tmp_fd, tmp_path = tempfile.mkstemp(suffix=".pkl", dir=os.path.dirname(MODEL_PATH))

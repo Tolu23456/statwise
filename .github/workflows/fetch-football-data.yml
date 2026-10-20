@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '24'   # native WebSocket (realtime-js requires Node >= 22)
 
       - name: Install script dependencies
         run: npm install
@@ -36,6 +36,7 @@ jobs:
         run: node .github/scripts/fetch_football_data.js
 
       - name: Enrich predictions with match details (venue, weather, lineups)
+        continue-on-error: true   # supplemental: never fail the data fetch over ESPN/Open-Meteo
         env:
           SUPABASE_URL: ${{ vars.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ vars.SUPABASE_SERVICE_ROLE_KEY }}

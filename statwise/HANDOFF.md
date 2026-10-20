@@ -141,7 +141,7 @@ components/
 ```
 
 ### Configuration
-- **Supabase URL**: `https://pdrcyuzfdqjnsltqqxvr.supabase.co`
+- **Supabase URL**: `https://fwpriiugfjhtoymcbmso.supabase.co`
 - **Supabase Anon Key**: in `lib/supabase.ts`
 - **Flutterwave Public Key**: `FLWPUBK-30eeb76b5875f40db71221d0960de0a8-X`
 

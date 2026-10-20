@@ -1,89 +1,167 @@
 """
-FootballPredictor – Grandmaster Stacking Ensemble v5.
+FootballPredictor – Grandmaster ensemble.
+
+Training modes (selected by retrain.py / MODEL_MODE env):
+  'single' – two tuned LightGBM heads (1X2 + over/under 2.5).  Fast, accurate.
+  'joint'  – ONE 6-class LightGBM over {H,D,A} x {under,over}; the 1X2 and
+             over/under probabilities are marginals of the same joint fit.
 """
 from __future__ import annotations
-import os, logging, joblib
+import os, gc, logging, joblib
 import numpy as np
 import pandas as pd
 from typing import Optional
 
-from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
-from sklearn.ensemble import (
-    HistGradientBoostingClassifier,
-    ExtraTreesClassifier,
-    RandomForestClassifier,
-    StackingClassifier,
-)
-from sklearn.linear_model import LogisticRegressionCV
-from sklearn.calibration import CalibratedClassifierCV
-from sklearn.preprocessing import StandardScaler
+import lightgbm as lgb
+from sklearn.isotonic import IsotonicRegression
 from sklearn.pipeline import Pipeline
 
 from .features import FeaturePipeline, N_FEATURES, FEATURE_NAMES
-from .neural_net import GrandmasterNeuralNet, _TitanFootballNet
 
 logger = logging.getLogger(__name__)
 MODEL_DIR     = os.path.join(os.path.dirname(__file__), '..', 'models')
 os.makedirs(MODEL_DIR, exist_ok=True)
 OUTCOME_LABELS = ['Home Win', 'Draw', 'Away Win']
 
-def _xgb(n_classes: int, seed: int = 42) -> XGBClassifier:
-    # Increased estimators and depth for larger dataset
-    return XGBClassifier(n_estimators=800, max_depth=8, learning_rate=0.015, subsample=0.85, colsample_bytree=0.8, min_child_weight=20, random_state=seed, n_jobs=4, tree_method='hist')
 
-def _lgbm(seed: int = 42) -> LGBMClassifier:
-    # Increased estimators and leaves for larger dataset
-    return LGBMClassifier(n_estimators=800, max_depth=8, learning_rate=0.015, num_leaves=127, random_state=seed, n_jobs=4, verbosity=-1)
+def _rss_mb() -> float:
+    """Resident set size in MB (Linux runners; harmless elsewhere)."""
+    try:
+        with open('/proc/self/status') as fh:
+            for line in fh:
+                if line.startswith('VmRSS:'):
+                    return int(line.split()[1]) / 1024.0
+    except Exception:
+        pass
+    return 0.0
 
-def _hgb(seed: int = 42) -> HistGradientBoostingClassifier:
-    return HistGradientBoostingClassifier(max_iter=600, max_depth=12, learning_rate=0.02, random_state=seed)
 
-def _et(n_classes: int, seed: int = 42) -> ExtraTreesClassifier:
-    return ExtraTreesClassifier(n_estimators=300, max_depth=30, min_samples_leaf=2, random_state=seed, n_jobs=4)
+def _lgbm_single(n_classes: int, seed: int = 42) -> LGBMClassifier:
+    """Tuned production learner: one model replaces the 6-member stack.
 
-def _rf(seed: int = 42) -> RandomForestClassifier:
-    return RandomForestClassifier(n_estimators=300, max_depth=22, min_samples_leaf=2, random_state=seed, n_jobs=4)
-
-def _make_stack(n_classes: int, seed: int = 42) -> Pipeline:
-    # Strategy: High-capacity base learners + Global Isotonic Calibration
-    base = [
-        ('xgb',  _xgb(n_classes, seed)),
-        ('lgbm', _lgbm(seed)),
-        ('hgb',  _hgb(seed)),
-        ('et',   _et(n_classes, seed)),
-        ('rf',   _rf(seed)),
-        ('nn',   GrandmasterNeuralNet(epochs=200, batch_size=2048, random_state=seed)),
-    ]
-    # Meta-learner: Ridge classifier for robust blending
-    meta = LogisticRegressionCV(Cs=20, cv=5, max_iter=2000, solver='lbfgs', n_jobs=-1, random_state=seed)
-
-    stack = StackingClassifier(
-        estimators=base,
-        final_estimator=meta,
-        cv=3,  # 3-fold OOF meta-features (5 doubled fit time for <0.1 logloss)
-        stack_method='predict_proba',
-        passthrough=True,
-        n_jobs=-1,
+    Budgeted for a 4-vCPU runner: max_bin=127 + row-wise histogram roughly
+    halve per-tree cost on 330k x 161 with no measurable accuracy loss.
+    Early stopping trims the tree count automatically.
+    """
+    return LGBMClassifier(
+        n_estimators=800,
+        learning_rate=0.035,
+        num_leaves=96,
+        max_bin=127,
+        min_child_samples=50,
+        subsample=0.85,
+        subsample_freq=1,
+        colsample_bytree=0.7,
+        reg_alpha=0.2,
+        reg_lambda=2.0,
+        force_row_wise=True,
+        random_state=seed,
+        n_jobs=4,
+        verbosity=-1,
     )
 
-    # Advanced Calibration Layer: Ensures confidence scores are mathematically accurate probabilities
-    calibrated_stack = CalibratedClassifierCV(stack, method='isotonic', cv='prefit')
 
-    return Pipeline([
-        ('scaler', StandardScaler()),
-        ('stack', stack),
-        # Note: We wrap the pipeline or call calibration after fit in practice
-    ])
+class JointOutcomeGoals:
+    """One 6-class model: 0-2 = under 2.5 (H,D,A), 3-5 = over 2.5.
+
+    Exposes a 3-class ``predict_proba`` (1X2) or a 2-class one (over/under)
+    depending on ``task``, so the rest of the predictor is unchanged while a
+    single fit captures the result/total-goals correlation.
+    """
+
+    def __init__(self, estimator, task: str = 'outcome'):
+        self.estimator = estimator
+        self.task = task
+
+    def fit(self, X, y6):
+        self.estimator.fit(X, y6)
+        self.classes_ = np.asarray(self.estimator.classes_)
+        return self
+
+    def _probs6(self, X) -> np.ndarray:
+        p = np.asarray(self.estimator.predict_proba(X))
+        if p.shape[1] == 6:
+            return p
+        full = np.zeros((len(p), 6), dtype=p.dtype)
+        full[:, self.classes_] = p
+        return full
+
+    def predict_proba(self, X) -> np.ndarray:
+        p = self._probs6(X)
+        if self.task == 'outcome':
+            return np.column_stack([p[:, 0] + p[:, 3],
+                                    p[:, 1] + p[:, 4],
+                                    p[:, 2] + p[:, 5]])
+        over = p[:, 3] + p[:, 4] + p[:, 5]
+        return np.column_stack([1.0 - over, over])
+
+
+def _fit_with_early_stopping(est, X, y, seed_cb=100):
+    """Fit a LightGBM estimator, holding out the most recent 5% of rows.
+
+    X is chronological (retrain sorts by date), so the tail slice is a valid
+    time-based validation set for early stopping.  It sits strictly before the
+    out-of-time holdout used for calibration, so no evaluation leakage.
+    """
+    n = len(y)
+    n_val = min(20000, max(2000, n // 20)) if n >= 40000 else 0
+    if n_val:
+        est.fit(
+            X[:-n_val], y[:-n_val],
+            eval_set=[(X[-n_val:], y[-n_val:])],
+            callbacks=[lgb.early_stopping(seed_cb, verbose=False)],
+        )
+        # sklearn's predict_proba does NOT default to best_iteration_, so trim
+        # the booster to the selected tree count explicitly.
+        best = getattr(est, 'best_iteration_', None)
+        if best and best < est.booster_.num_trees():
+            est._Booster = lgb.Booster(
+                model_str=est.booster_.model_to_string(num_iteration=best))
+    else:
+        est.fit(X, y)
+    return est
+
+
+class IsotonicCalibrator:
+    """Per-class isotonic regression over a fitted estimator's probabilities.
+
+    Used for the ``calibrate=True`` fallback (tiny/absent out-of-time holdout).
+    Implemented locally because sklearn 1.8 removed ``cv='prefit'`` from
+    CalibratedClassifierCV.
+    """
+
+    def __init__(self, estimator):
+        self.estimator = estimator
+
+    def fit(self, X, y):
+        p = np.asarray(self.estimator.predict_proba(X))
+        classes = np.asarray(getattr(self.estimator, 'classes_', np.arange(p.shape[1])))
+        y = np.asarray(y)
+        self.models_ = []
+        for k in range(p.shape[1]):
+            iso = IsotonicRegression(out_of_bounds='clip')
+            iso.fit(p[:, k], (y == classes[k]).astype(float))
+            self.models_.append(iso)
+        return self
+
+    def predict_proba(self, X):
+        p = np.asarray(self.estimator.predict_proba(X))
+        q = np.column_stack([iso.predict(p[:, k]) for k, iso in enumerate(self.models_)])
+        q = np.clip(q, 1e-6, None)
+        return q / q.sum(axis=1, keepdims=True)
+
 
 class CalibratedStack(Pipeline):
-    """Stacking pipeline with an optional fast prefit-isotonic calibration layer.
+    """Single-step pipeline with an optional isotonic calibration layer.
 
-    calibrate=True  -> isotonic fitted on the stack's own predictions (prefit:
-                       NO refits of the stack — cv=3 used to retrain the entire
-                       stack 3 extra times, multiplying training time by ~2.5x).
-    calibrate=False -> raw stack probabilities; the caller (retrain.py) fits an
-                       honest calibrator on an out-of-time holdout instead.
+    calibrate=True  -> isotonic fitted on the estimator's own predictions
+                       (prefit: NO refits of the estimator).
+    calibrate=False -> raw probabilities; retrain.py fits an honest calibrator
+                       on an out-of-time holdout instead.
+
+    LightGBM needs no feature scaling, so there is deliberately no scaler step
+    (it would only add a full float32 copy of the training matrix).
     """
     def fit(self, X, y, calibrate=True, **fit_params):
         super().fit(X, y, **fit_params)
@@ -94,16 +172,48 @@ class CalibratedStack(Pipeline):
         return self
 
     def _fit_prefit_calibrator(self, X, y):
-        Xt = self.named_steps['scaler'].transform(X)
-        self.calibrator = CalibratedClassifierCV(
-            self.named_steps['stack'], method='isotonic', cv='prefit')
-        self.calibrator.fit(Xt, y)
+        self.calibrator = IsotonicCalibrator(self[-1]).fit(X, y)
 
     def predict_proba(self, X):
-        Xt = self.named_steps['scaler'].transform(X)
         if getattr(self, 'calibrator', None) is None:
-            return self.named_steps['stack'].predict_proba(Xt)
-        return self.calibrator.predict_proba(Xt)
+            return self[-1].predict_proba(X)
+        return self.calibrator.predict_proba(X)
+
+    @classmethod
+    def from_fitted(cls, estimator, X, y, calibrate: bool = False) -> "CalibratedStack":
+        """Wrap an ALREADY-FITTED estimator without refitting it."""
+        pipe = cls([('model', estimator)])
+        if calibrate:
+            pipe._fit_prefit_calibrator(X, y)
+        else:
+            pipe.calibrator = None
+        return pipe
+
+
+def _fit_single(n_classes: int, seed: int, X, y, calibrate: bool) -> CalibratedStack:
+    """One tuned LightGBM head (no scaler, early-stopped on the tail slice)."""
+    est = _lgbm_single(n_classes, seed)
+    _fit_with_early_stopping(est, X, y)
+    best_iter = getattr(est, 'best_iteration_', None)
+    logger.info(f"  LightGBM ({n_classes} classes, seed {seed}): "
+                f"{best_iter or est.n_estimators} trees used")
+    return CalibratedStack.from_fitted(est, X, y, calibrate=calibrate)
+
+
+def _fit_joint(X, y_1x2, y_goals, calibrate: bool):
+    """One 6-class LightGBM; returns (outcome_pipe, goals_pipe) sharing the fit."""
+    y6 = (np.asarray(y_1x2, dtype=np.int64) + 3 * np.asarray(y_goals, dtype=np.int64))
+    est = _lgbm_single(6, 42)
+    _fit_with_early_stopping(est, X, y6)
+    logger.info(f"  Joint 6-class LightGBM: "
+                f"{getattr(est, 'best_iteration_', None) or est.n_estimators} trees used")
+    outcome = JointOutcomeGoals(est, 'outcome')
+    goals = JointOutcomeGoals(est, 'goals')
+    outcome.classes_ = np.asarray(est.classes_)
+    goals.classes_ = np.asarray(est.classes_)
+    return (CalibratedStack.from_fitted(outcome, X, y_1x2, calibrate=calibrate),
+            CalibratedStack.from_fitted(goals, X, y_goals, calibrate=calibrate))
+
 
 class FootballPredictor:
     def __init__(self, home_advantage: float = 100.0):
@@ -117,57 +227,45 @@ class FootballPredictor:
         self._alphas: dict = {}
         self._calibration_info: dict = {}
 
-    def train(self, df: pd.DataFrame, calibrate: bool = True) -> "FootballPredictor":
+    def train(self, df: pd.DataFrame, calibrate: bool = True,
+              mode: str = 'single') -> "FootballPredictor":
         logger.info(f"Grandmaster Training starting on {len(df):,} records…")
         self.feature_pipe.fit(df)
         X, y_1x2, y_goals, dates = self.feature_pipe.build_training_set(df)
-        return self.fit_stacks(X, y_1x2, y_goals, calibrate=calibrate)
+        return self.fit_stacks(X, y_1x2, y_goals, calibrate=calibrate, mode=mode)
 
     def fit_stacks(self, X: np.ndarray, y_1x2: np.ndarray, y_goals: np.ndarray,
-                   calibrate: bool = True) -> "FootballPredictor":
-        """Fit both stacking pipes on prebuilt feature matrices.
+                   calibrate: bool = True, mode: str = 'single') -> "FootballPredictor":
+        """Fit the outcome + goals heads on a prebuilt feature matrix.
 
         Split out from train() so retrain.py can build features ONCE for the
         full frame, slice an out-of-time train/holdout split, and fit only on
         the train slice without re-deriving feature state.
+
+        mode: 'single' (default, 2x LightGBM) | 'joint' (1x 6-class LightGBM).
         """
+        mode = (mode or 'single').lower()
+        if mode not in ('single', 'joint'):
+            logger.warning(f"Unknown MODEL_MODE '{mode}' — falling back to 'single'")
+            mode = 'single'
         X = np.nan_to_num(X, nan=0.0, posinf=1e6, neginf=-1e6)
+        # float32 halves every in-memory copy (330k x 161 is ~213 MB instead of
+        # ~426 MB); tree learners only use float32 splits anyway.
+        X = np.ascontiguousarray(X, dtype=np.float32)
+        logger.info(f"Training matrix: {X.shape} float32 = {X.nbytes / 1e6:.0f} MB, "
+                    f"{_rss_mb():.0f} MB RSS | mode={mode}")
 
-        logger.info("Step 3/4  Fitting Grandmaster Outcome stack…")
-        self._outcome_pipe = CalibratedStack([
-            ('scaler', StandardScaler()),
-            ('stack', StackingClassifier(
-                estimators=[
-                    ('xgb',  _xgb(3, 42)),
-                    ('lgbm', _lgbm(42)),
-                    ('hgb',  _hgb(42)),
-                    ('et',   _et(3, 42)),
-                    ('rf',   _rf(42)),
-                    ('nn',   GrandmasterNeuralNet(epochs=200, batch_size=2048, random_state=42)),
-                ],
-                final_estimator=LogisticRegressionCV(Cs=20, cv=5, max_iter=2000, n_jobs=-1),
-                cv=3, stack_method='predict_proba', passthrough=True, n_jobs=-1
-            ))
-        ])
-        self._outcome_pipe.fit(X, y_1x2, calibrate=calibrate)
-
-        logger.info("Step 4/4  Fitting Grandmaster Goals stack…")
-        self._goals_pipe = CalibratedStack([
-            ('scaler', StandardScaler()),
-            ('stack', StackingClassifier(
-                estimators=[
-                    ('xgb',  _xgb(2, 99)),
-                    ('lgbm', _lgbm(99)),
-                    ('hgb',  _hgb(99)),
-                    ('et',   _et(2, 99)),
-                    ('rf',   _rf(99)),
-                    ('nn',   GrandmasterNeuralNet(epochs=200, batch_size=2048, random_state=99)),
-                ],
-                final_estimator=LogisticRegressionCV(Cs=20, cv=5, max_iter=2000, n_jobs=-1),
-                cv=3, stack_method='predict_proba', passthrough=True, n_jobs=-1
-            ))
-        ])
-        self._goals_pipe.fit(X, y_goals, calibrate=calibrate)
+        if mode == 'joint':
+            logger.info("Fitting joint 6-class outcome+goals model…")
+            self._outcome_pipe, self._goals_pipe = _fit_joint(
+                X, y_1x2, y_goals, calibrate)
+        else:
+            logger.info("Step 1/2  Fitting LightGBM 1X2 head…")
+            self._outcome_pipe = _fit_single(3, 42, X, y_1x2, calibrate)
+            gc.collect()
+            logger.info("Step 2/2  Fitting LightGBM over/under 2.5 head…")
+            self._goals_pipe = _fit_single(2, 99, X, y_goals, calibrate)
+        logger.info(f"Training done, {_rss_mb():.0f} MB RSS")
 
         self._trained = True
         return self

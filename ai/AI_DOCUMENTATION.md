@@ -18,7 +18,10 @@
 
 ## 1. System Overview
 
-StatWise uses a five-model deep-stacking ensemble to predict football (soccer) match outcomes.
+StatWise predicts football (soccer) match outcomes with a tuned LightGBM model
+(either two heads — 1X2 and over/under 2.5 — or a single joint 6-class model;
+the winner is chosen on an out-of-time holdout), isotonic-calibrated on that
+holdout and blended with de-vigged market odds via a per-league alpha.
 Training data comes from seven independent free sources and is processed by a two-stage C++17
 pipeline before the Python trainer sees it.
 
@@ -234,21 +237,23 @@ Empty cells = value absent or failed validation (never filled with `0`).
 **File:** `ai/models/football_predictor.pkl`  
 **Trainer:** `ai/model/trainer.py`
 
-### Architecture: Grandmaster v5-Extended Stacking Ensemble
+### Architecture: Calibrated LightGBM (single or joint)
 
-**Base Learners (Level 1)**
+**Mode `single`** – two LightGBM heads: 3-class 1X2 and binary over/under 2.5.
+**Mode `joint`** – one 6-class LightGBM over {home, draw, away} × {under, over};
+the 1X2 and over/under probabilities are marginals of the same joint fit, so
+the result/total-goals correlation is modelled directly.
+
+`MODEL_MODE=both` trains both on the same chronological train slice and keeps
+whichever wins on the later-holdout log loss (goals Brier breaks near-ties).
 
 | Model | Library | Key params |
 |-------|---------|-----------|
-| XGBoost | xgboost | `n_estimators=800, max_depth=8, lr=0.015` |
-| LightGBM | lightgbm | `n_estimators=800, num_leaves=127` |
-| HistGradientBoosting | scikit-learn | `max_iter=600, max_depth=12` |
-| ExtraTrees | scikit-learn | `n_estimators=300, max_depth=30` |
-| RandomForest | scikit-learn | `n_estimators=300, max_depth=22` |
-| Grandmaster NeuralNet | pytorch | **League-Aware Attention Network**: d_model=256, 8 heads, dual transformer blocks, entity embeddings for 120+ leagues. |
+| LightGBM | lightgbm | `n_estimators=800, lr=0.035, num_leaves=96, max_bin=127`, bagging 0.85, feature fraction 0.7, L2=2.0, early stopping on the last 5% of rows |
 
-**Meta-Learner (Level 2)**  
-`LogisticRegressionCV` (5-fold CV) with global **Isotonic Calibration** (CalibratedStack) to ensure mathematically precise confidence scores.
+**Calibration & market blend** – an honest isotonic calibrator is fitted on the
+earlier half of the out-of-time holdout; per-league alpha (log-loss-optimal
+weight between model and de-vigged market) is learned on the later half.
 
 ### Features (126 total)
 

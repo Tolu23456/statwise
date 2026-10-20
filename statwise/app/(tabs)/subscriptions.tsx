@@ -179,7 +179,7 @@ export default function SubscriptionsScreen() {
           customizations: {
             title: 'StatWise Subscription',
             description: `${plan.name} - ₦${plan.price.toLocaleString()}/${plan.period}`,
-            logo: 'https://pdrcyuzfdqjnsltqqxvr.supabase.co/storage/v1/object/public/app-assets/logo.png',
+            logo: 'https://fwpriiugfjhtoymcbmso.supabase.co/storage/v1/object/public/app-assets/logo.png',
           },
           callback: async (response: any) => {
             if (response.status === 'successful' || response.status === 'completed') {

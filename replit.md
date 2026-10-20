@@ -31,7 +31,7 @@ Preferred communication style: Simple, everyday language.
 
 ### AI Backend (ai/)
 - **Language:** Python 3.11
-- **Model:** 5-model deep stacking ensemble: XGBoost + HistGB + ExtraTrees + RandomForest + PyTorch NeuralNet → LogisticRegressionCV meta-learner
+- **Model:** tuned LightGBM ensemble — either two heads (1X2 + over/under 2.5) or one joint 6-class head; selected on an out-of-time holdout, then isotonic-calibrated and blended with de-vigged market odds (per-league alpha)
 - **Features:** 104 features across 23 groups (Elo, Attack/Defence Elo, Dixon-Coles, Poisson goals, H2H, venue-split form, consecutive runs, goals variance, temporal/draw context, etc.)
 - **C++ kernel:** ai/libstatwise.so — 11 exported functions including Dixon-Coles, attack/defence Elo, goals variance, venue-split form, consecutive run counters
 - **Schedule:** Predictions every 20 minutes, model retrain every 24 hours
@@ -48,7 +48,7 @@ Preferred communication style: Simple, everyday language.
   - Backtest: test set deduplication + real bookmaker odds ROI
 
 ### Backend (Supabase - Serverless)
-- **URL:** https://pdrcyuzfdqjnsltqqxvr.supabase.co
+- **URL:** https://fwpriiugfjhtoymcbmso.supabase.co
 - **Auth:** Supabase Auth (email/password)
 - **Database:** PostgreSQL via Supabase
 - **Storage:** Supabase Storage (profile-pictures bucket)

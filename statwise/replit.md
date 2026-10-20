@@ -18,7 +18,7 @@ Preferred communication style: Simple, everyday language.
 - **Styling:** React Native StyleSheet
 
 ### Backend (Supabase - Serverless)
-- **URL:** https://pdrcyuzfdqjnsltqqxvr.supabase.co
+- **URL:** https://fwpriiugfjhtoymcbmso.supabase.co
 - **Auth:** Supabase Auth (email/password)
 - **Database:** PostgreSQL via Supabase (same schema as the original PWA)
 - **Storage:** Supabase Storage (`profile-pictures` bucket)
@@ -128,7 +128,7 @@ Add these in your GitHub repo → Settings → Secrets and variables → Actions
 | Secret | Description |
 |--------|-------------|
 | `FOOTBALL_DATA_TOKEN` | Your football-data.org API token (already set) |
-| `SUPABASE_URL` | `https://pdrcyuzfdqjnsltqqxvr.supabase.co` |
+| `SUPABASE_URL` | `https://fwpriiugfjhtoymcbmso.supabase.co` |
 | `SUPABASE_SERVICE_ROLE_KEY` | Found in Supabase → Settings → API → service_role key |
 
 ### Database Setup

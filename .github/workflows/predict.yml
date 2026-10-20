@@ -37,10 +37,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r ai/requirements.txt
-          # the trainer's stacking ensemble needs lightgbm + torch to unpickle
-          pip install --no-cache-dir lightgbm "scikit-learn==1.8.0"
-          pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+          pip install --no-cache-dir -r ai/requirements.txt
 
       - name: Run prediction cycle
         env:

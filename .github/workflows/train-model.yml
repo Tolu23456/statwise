@@ -10,11 +10,15 @@ on:
       stage_b:
         description: 'Stage B full-dataset refit after holdout calibration (0 = skip, ~half time)'
         required: false
-        default: '1'
+        default: '0'
       holdout_days:
         description: 'Out-of-time holdout window (days) for calibration/eval'
         required: false
         default: '90'
+      model_mode:
+        description: 'single | joint | both (train both on the holdout, ship the winner)'
+        required: false
+        default: 'both'
   schedule:
     - cron: '0 10 * * 1'   # Mondays 10:00 UTC
 
@@ -41,16 +45,28 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --no-cache-dir --upgrade pip
-          pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
-          pip install --no-cache-dir -r ai/requirements.txt lightgbm "scikit-learn==1.8.0"
+          pip install --no-cache-dir -r ai/requirements.txt
 
       - name: Build C++ feature extension
         run: make -C ai/core
 
+      - name: Runner diagnostics
+        run: |
+          echo "--- CPU ---"; nproc; lscpu | grep -E 'Model name|^CPU\(s\)' || true
+          echo "--- Memory ---"; free -m
+          echo "--- Disk ---"; df -h / /dev/shm
+
       - name: Train
         env:
-          STAGE_B: ${{ inputs.stage_b || '1' }}
+          STAGE_B: ${{ inputs.stage_b || '0' }}
           HOLDOUT_DAYS: ${{ inputs.holdout_days || '90' }}
+          MODEL_MODE: ${{ inputs.model_mode || 'both' }}
+          # 4-vCPU runner: one LightGBM fit at a time, so give it all 4 threads.
+          OMP_NUM_THREADS: '4'
+          MKL_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '4'
+          NUMEXPR_NUM_THREADS: '4'
+          TOKENIZERS_PARALLELISM: 'false'
         run: |
           mkdir -p ai/models
           python ai/retrain.py
