@@ -340,6 +340,7 @@ def run(force: bool = False) -> bool:
         if stage_b:
             logger.info(f"Stage B: refitting '{mode}' on FULL dataset "
                         "(keeping holdout calibrator + alphas)…")
+            best.pop("pred", None)
             del pred_a
             gc.collect()
             t2 = time.time()
