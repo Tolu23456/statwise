@@ -74,8 +74,8 @@ class JointOutcomeGoals:
         self.estimator = estimator
         self.task = task
 
-    def fit(self, X, y6):
-        self.estimator.fit(X, y6)
+    def fit(self, X, y6, sample_weight=None):
+        self.estimator.fit(X, y6, sample_weight=sample_weight)
         self.classes_ = np.asarray(self.estimator.classes_)
         return self
 
@@ -97,7 +97,7 @@ class JointOutcomeGoals:
         return np.column_stack([1.0 - over, over])
 
 
-def _fit_with_early_stopping(est, X, y, seed_cb=100):
+def _fit_with_early_stopping(est, X, y, seed_cb=100, sample_weight=None):
     """Fit a LightGBM estimator, holding out the most recent 5% of rows.
 
     X is chronological (retrain sorts by date), so the tail slice is a valid
@@ -106,11 +106,17 @@ def _fit_with_early_stopping(est, X, y, seed_cb=100):
     """
     n = len(y)
     n_val = min(20000, max(2000, n // 20)) if n >= 40000 else 0
+    w = None if sample_weight is None else np.asarray(sample_weight)
     if n_val:
+        fit_kw = {}
+        if w is not None:
+            fit_kw["sample_weight"] = w[:-n_val]
+            fit_kw["eval_sample_weight"] = [w[-n_val:]]
         est.fit(
             X[:-n_val], y[:-n_val],
             eval_set=[(X[-n_val:], y[-n_val:])],
             callbacks=[lgb.early_stopping(seed_cb, verbose=False)],
+            **fit_kw,
         )
         # sklearn's predict_proba does NOT default to best_iteration_, so trim
         # the booster to the selected tree count explicitly.
@@ -119,7 +125,7 @@ def _fit_with_early_stopping(est, X, y, seed_cb=100):
             est._Booster = lgb.Booster(
                 model_str=est.booster_.model_to_string(num_iteration=best))
     else:
-        est.fit(X, y)
+        est.fit(X, y, sample_weight=w)
     return est
 
 
@@ -190,21 +196,22 @@ class CalibratedStack(Pipeline):
         return pipe
 
 
-def _fit_single(n_classes: int, seed: int, X, y, calibrate: bool) -> CalibratedStack:
+def _fit_single(n_classes: int, seed: int, X, y, calibrate: bool,
+                sample_weight=None) -> CalibratedStack:
     """One tuned LightGBM head (no scaler, early-stopped on the tail slice)."""
     est = _lgbm_single(n_classes, seed)
-    _fit_with_early_stopping(est, X, y)
+    _fit_with_early_stopping(est, X, y, sample_weight=sample_weight)
     best_iter = getattr(est, 'best_iteration_', None)
     logger.info(f"  LightGBM ({n_classes} classes, seed {seed}): "
                 f"{best_iter or est.n_estimators} trees used")
     return CalibratedStack.from_fitted(est, X, y, calibrate=calibrate)
 
 
-def _fit_joint(X, y_1x2, y_goals, calibrate: bool):
+def _fit_joint(X, y_1x2, y_goals, calibrate: bool, sample_weight=None):
     """One 6-class LightGBM; returns (outcome_pipe, goals_pipe) sharing the fit."""
     y6 = (np.asarray(y_1x2, dtype=np.int64) + 3 * np.asarray(y_goals, dtype=np.int64))
     est = _lgbm_single(6, 42)
-    _fit_with_early_stopping(est, X, y6)
+    _fit_with_early_stopping(est, X, y6, sample_weight=sample_weight)
     logger.info(f"  Joint 6-class LightGBM: "
                 f"{getattr(est, 'best_iteration_', None) or est.n_estimators} trees used")
     outcome = JointOutcomeGoals(est, 'outcome')
@@ -235,7 +242,8 @@ class FootballPredictor:
         return self.fit_stacks(X, y_1x2, y_goals, calibrate=calibrate, mode=mode)
 
     def fit_stacks(self, X: np.ndarray, y_1x2: np.ndarray, y_goals: np.ndarray,
-                   calibrate: bool = True, mode: str = 'single') -> "FootballPredictor":
+                   calibrate: bool = True, mode: str = 'single',
+                   sample_weight=None) -> "FootballPredictor":
         """Fit the outcome + goals heads on a prebuilt feature matrix.
 
         Split out from train() so retrain.py can build features ONCE for the
@@ -258,13 +266,15 @@ class FootballPredictor:
         if mode == 'joint':
             logger.info("Fitting joint 6-class outcome+goals model…")
             self._outcome_pipe, self._goals_pipe = _fit_joint(
-                X, y_1x2, y_goals, calibrate)
+                X, y_1x2, y_goals, calibrate, sample_weight)
         else:
             logger.info("Step 1/2  Fitting LightGBM 1X2 head…")
-            self._outcome_pipe = _fit_single(3, 42, X, y_1x2, calibrate)
+            self._outcome_pipe = _fit_single(3, 42, X, y_1x2, calibrate,
+                                             sample_weight)
             gc.collect()
             logger.info("Step 2/2  Fitting LightGBM over/under 2.5 head…")
-            self._goals_pipe = _fit_single(2, 99, X, y_goals, calibrate)
+            self._goals_pipe = _fit_single(2, 99, X, y_goals, calibrate,
+                                           sample_weight)
         logger.info(f"Training done, {_rss_mb():.0f} MB RSS")
 
         self._trained = True

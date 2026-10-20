@@ -208,6 +208,25 @@ def run(force: bool = False) -> bool:
 
         Xt, yt, gt = X_all[m_tr], y_all[m_tr], g_all[m_tr]
         Xh, yh, gh = X_all[m_ho], y_all[m_ho], g_all[m_ho]
+
+        # Optional time-decay weights: recent seasons resemble the matches we
+        # actually predict.  0 disables it (keeps runs comparable/cheap).
+        half_life = float(os.environ.get("RECENCY_HALF_LIFE_DAYS", "0") or 0)
+        dates_all = pd.to_datetime(d_all, errors="coerce")
+        ref_date = dates_all[m_tr].max()
+
+        def _recency_weights(mask):
+            if half_life <= 0:
+                return None
+            age = (ref_date - dates_all[mask]).dt.days.clip(lower=0).to_numpy(dtype=np.float64)
+            w = np.power(0.5, age / half_life)
+            return np.maximum(w, 0.02).astype(np.float32)
+
+        w_tr = _recency_weights(m_tr)
+        if w_tr is not None:
+            eff = (w_tr.sum() ** 2) / float((w_tr.astype(np.float64) ** 2).sum())
+            logger.info(f"[OOT] recency weights: half-life {half_life:.0f}d, "
+                        f"min={w_tr.min():.3f}, effective_n={eff:,.0f}")
         odds_h = meta.get("odds")
         odds_h = odds_h[m_ho] if odds_h is not None else np.zeros((len(Xh), 3))
         leagues_h = meta.get("leagues")
@@ -237,7 +256,8 @@ def run(force: bool = False) -> bool:
             cand = FootballPredictor()
             cand.feature_pipe = predictor.feature_pipe  # share the fitted state
             try:
-                cand.fit_stacks(Xt, yt, gt, calibrate=False, mode=mode)
+                cand.fit_stacks(Xt, yt, gt, calibrate=False, mode=mode,
+                                sample_weight=w_tr)
                 raw_h = cand._outcome_pipe.predict_proba(Xh)
             except Exception as e:
                 logger.exception(f"[{mode}] training failed: {e}")
@@ -340,12 +360,18 @@ def run(force: bool = False) -> bool:
         if ga is not None:
             alphas["_default"] = ga
         n_league = 0
+        # A league alpha learned on ~60-150 matches is noisy; shrink it toward
+        # the global alpha with weight n/(n+300) instead of trusting it fully.
+        SHRINK_K = 300.0
         for slug in pd.unique(leagues_h[mid:]):
             mask = (leagues_h[mid:] == slug)
-            if int((mask & valid).sum()) >= 60:
+            n_l = int((mask & valid).sum())
+            if n_l >= 60:
                 a = _best_alpha(mask)
                 if a is not None:
-                    alphas[str(slug)] = a
+                    prior = alphas.get("_default", 1.0)
+                    wgt = n_l / (n_l + SHRINK_K)
+                    alphas[str(slug)] = round(float(wgt * a + (1.0 - wgt) * prior), 4)
                     n_league += 1
         metrics["alpha_default"] = alphas.get("_default")
         metrics["alpha_leagues"] = n_league
@@ -364,7 +390,8 @@ def run(force: bool = False) -> bool:
             gc.collect()
             t2 = time.time()
             try:
-                predictor.fit_stacks(X_all, y_all, g_all, calibrate=False, mode=mode)
+                predictor.fit_stacks(X_all, y_all, g_all, calibrate=False, mode=mode,
+                                     sample_weight=_recency_weights(np.ones(len(d_all), dtype=bool)))
             except Exception as e:
                 logger.error(f"Stage B training failed: {e}")
                 return False

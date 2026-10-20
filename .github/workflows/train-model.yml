@@ -1,6 +1,6 @@
 name: Train Model
 
-# Trains the stacking ensemble on GitHub runners (4 vCPU / 16 GB — the local
+# Trains the LightGBM model on GitHub runners (4 vCPU / 16 GB — the local
 # dev box can't hold the full 330k x 161 fit). Runs weekly and on demand;
 # publishes the .pkl as an artifact and best-effort to Supabase storage.
 
@@ -14,7 +14,11 @@ on:
       holdout_days:
         description: 'Out-of-time holdout window (days) for calibration/eval'
         required: false
-        default: '90'
+        default: '180'
+      recency_half_life_days:
+        description: 'Time-decay half-life for training weights (0 = off)'
+        required: false
+        default: '0'
       model_mode:
         description: 'single | joint | both (train both on the holdout, ship the winner)'
         required: false
@@ -60,7 +64,8 @@ jobs:
       - name: Train
         env:
           STAGE_B: ${{ inputs.stage_b || '0' }}
-          HOLDOUT_DAYS: ${{ inputs.holdout_days || '90' }}
+          HOLDOUT_DAYS: ${{ inputs.holdout_days || '180' }}
+          RECENCY_HALF_LIFE_DAYS: ${{ inputs.recency_half_life_days || '0' }}
           MODEL_MODE: ${{ inputs.model_mode || 'both' }}
           # 4-vCPU runner: one LightGBM fit at a time, so give it all 4 threads.
           OMP_NUM_THREADS: '4'
