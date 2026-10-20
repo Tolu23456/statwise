@@ -35,15 +35,31 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
-# ── Supabase config ───────────────────────────────────────────────────────────
-SUPABASE_URL = os.environ.get(
-    "SUPABASE_URL", "https://fwpriiugfjhtoymcbmso.supabase.co"
-)
-SUPABASE_SERVICE_KEY = os.environ.get(
-    "SUPABASE_SERVICE_KEY",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3cHJpaXVnZmpodG95bWNibXNvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NjkwNzcxOCwiZXhwIjoyMDcyNDgzNzE4fQ.VHHC38yn7tPu_PCUHx0O65P6F87LeOT9EUaYHPIRZIo",
-)
-REST = f"{SUPABASE_URL}/rest/v1"
+# ── Supabase config ─────────────────────────────────────────────────────────────
+SUPABASE_URL = (os.environ.get("SUPABASE_URL") or "").strip()
+SUPABASE_SERVICE_KEY = (
+    os.environ.get("SUPABASE_SERVICE_KEY")
+    or os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+    or ""
+).strip()
+
+if not SUPABASE_URL:
+    raise RuntimeError(
+        "Missing SUPABASE_URL. Set it in the GitHub Actions workflow env or repo variables."
+    )
+if not SUPABASE_SERVICE_KEY:
+    raise RuntimeError(
+        "Missing Supabase service key. Set SUPABASE_SERVICE_KEY or SUPABASE_SERVICE_ROLE_KEY."
+    )
+
+parsed = urllib.parse.urlparse(SUPABASE_URL)
+if not parsed.scheme or not parsed.netloc:
+    raise RuntimeError(
+        f"Invalid SUPABASE_URL '{SUPABASE_URL}'. Expected a full HTTPS URL like "
+        "https://<project>.supabase.co"
+    )
+
+REST = f"{SUPABASE_URL.rstrip('/')}/rest/v1"
 
 HEADERS_JSON = {
     "apikey": SUPABASE_SERVICE_KEY,
@@ -119,7 +135,6 @@ def _norm_team(name: str) -> str:
     s = name.lower().strip()
     s = s.replace("’", "'")
     s = _TEAM_NOISE.sub(" ", s)
-    # only strip a trailing suffix when something meaningful remains
     stripped = _SUFFIX.sub(" ", s)
     if re.sub(r"[^a-z0-9]", "", stripped):
         s = stripped
@@ -142,7 +157,6 @@ def _http_json(url: str, retries: int = 3, timeout: int = 30):
     """GET url, auto-decompress gzip, return parsed JSON (or None)."""
     global _min_delay
     for attempt in range(retries):
-        # rate-limit
         wait = _min_delay - time.time()
         if wait > 0:
             time.sleep(wait)
@@ -158,10 +172,10 @@ def _http_json(url: str, retries: int = 3, timeout: int = 30):
                 raw = r.read()
                 if raw[:2] == b"\x1f\x8b":
                     raw = gzip.decompress(raw)
-                _min_delay = time.time() + 0.25  # ~4 req/s ceiling
+                _min_delay = time.time() + 0.25
                 return json.loads(raw)
         except urllib.error.HTTPError as e:
-            if e.code == 429:  # rate limited — back off harder
+            if e.code == 429:
                 time.sleep(2 * (attempt + 1))
                 continue
             if e.code == 404:
@@ -171,8 +185,6 @@ def _http_json(url: str, retries: int = 3, timeout: int = 30):
             time.sleep(1)
     return None
 
-
-# ── ESPN helpers ──────────────────────────────────────────────────────────────
 
 def _find_espn_event(league_slug: str, month: str, home: str, away: str):
     """Find an ESPN event ID for a fixture by league + month + fuzzy team match."""
@@ -188,7 +200,7 @@ def _find_espn_event(league_slug: str, month: str, home: str, away: str):
         data = _http_json(url)
         _scoreboard_cache[key] = (data or {}).get("events", [])
     for ev in _scoreboard_cache[key]:
-        name = ev.get("name", "")  # e.g. "Leeds United at Manchester United"
+        name = ev.get("name", "")
         if " at " not in name:
             continue
         away_name, home_name = name.split(" at ", 1)
@@ -201,7 +213,6 @@ def _parse_summary(summary: dict) -> dict:
     """Extract rich details from an ESPN summary payload."""
     out: dict = {}
 
-    # venue + attendance
     gi = summary.get("gameInfo", {})
     venue = gi.get("venue", {})
     if venue:
@@ -212,14 +223,12 @@ def _parse_summary(summary: dict) -> dict:
     if gi.get("attendance"):
         out["attendance"] = gi["attendance"]
 
-    # referee — usually in header.competitions[0].details[].officials or venue staff
     for comp in summary.get("header", {}).get("competitions", []):
         for d in comp.get("details", []):
-            if d.get("type", {}).get("id") == "17":  # referee official type
+            if d.get("type", {}).get("id") == "17":
                 out["referee"] = d.get("displayName")
                 break
 
-    # key events → scorers, cards, substitutions
     scorers, cards, subs = [], [], []
     for ev in summary.get("keyEvents", []):
         etype = (ev.get("type") or {}).get("type", "")
@@ -229,37 +238,30 @@ def _parse_summary(summary: dict) -> dict:
         scoring = ev.get("scoringPlay", False)
 
         if scoring and etype.startswith("goal"):
-            # extract scorer name from text: "Goal! X 1, Y 2. Player Name (Team) ..."
             m = re.search(r"\.\s+([A-Z][^\(]+?)\s+\(", text)
             player = m.group(1).strip() if m else text[:60]
-            scorers.append(
-                {"player": player, "team": team, "minute": minute, "type": etype}
-            )
+            scorers.append({"player": player, "team": team, "minute": minute, "type": etype})
         elif etype in ("yellow-card", "red-card", "yellow-card-second"):
             m = re.search(r"^(.+?)\s+\(", text)
             player = m.group(1).strip() if m else text[:60]
-            cards.append(
-                {
-                    "player": player,
-                    "team": team,
-                    "minute": minute,
-                    "type": etype.replace("-", "_"),
-                }
-            )
+            cards.append({
+                "player": player,
+                "team": team,
+                "minute": minute,
+                "type": etype.replace("-", "_"),
+            })
         elif etype == "substitution":
             m = re.search(
                 r"(?:Substitution(?:\(.*?\))?|.*?)[,:\s]+(.+?)\s+(?:for|replaces)\s+(.+?)(?:\.|$)",
                 text,
             )
             if m:
-                subs.append(
-                    {
-                        "player_in": m.group(1).strip(),
-                        "player_out": m.group(2).strip(),
-                        "team": team,
-                        "minute": minute,
-                    }
-                )
+                subs.append({
+                    "player_in": m.group(1).strip(),
+                    "player_out": m.group(2).strip(),
+                    "team": team,
+                    "minute": minute,
+                })
             else:
                 subs.append({"text": text, "team": team, "minute": minute})
 
@@ -270,7 +272,6 @@ def _parse_summary(summary: dict) -> dict:
     if subs:
         out["substitutions"] = subs[:20]
 
-    # lineups (rosters) — starters + bench per team
     lineups = {}
     for roster in summary.get("rosters", []):
         team_name = (roster.get("team") or {}).get("displayName", "?")
@@ -290,8 +291,6 @@ def _parse_summary(summary: dict) -> dict:
     if lineups:
         out["lineups"] = lineups
 
-    # possession / shots / passes / offsides / corners etc from boxscore team stats
-    # NOTE: ESPN uses the key "statistics" (not "stats") inside boxscore.teams[]
     team_stats = {}
     for t in summary.get("boxscore", {}).get("teams", []):
         name = (t.get("team") or {}).get("displayName", "?")
@@ -307,8 +306,6 @@ def _parse_summary(summary: dict) -> dict:
 
     return out
 
-
-# ── Open-Meteo helpers ────────────────────────────────────────────────────────
 
 _WMO_CODES = {
     0: "Clear sky", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
@@ -358,7 +355,6 @@ def _weather_at(lat: float, lon: float, iso_dt: str):
     hour = dt.hour
 
     if dt < now - timedelta(days=5):
-        # historical — archive API
         url = (
             f"https://archive-api.open-meteo.com/v1/archive"
             f"?latitude={lat}&longitude={lon}"
@@ -367,7 +363,6 @@ def _weather_at(lat: float, lon: float, iso_dt: str):
             f"&timezone=UTC"
         )
     else:
-        # forecast (works for ~past 7 days too via forecast API's past_days)
         url = (
             f"https://api.open-meteo.com/v1/forecast"
             f"?latitude={lat}&longitude={lon}"
@@ -379,7 +374,6 @@ def _weather_at(lat: float, lon: float, iso_dt: str):
         return None
     hourly = data.get("hourly", {})
     times = hourly.get("time", [])
-    # find the hour index closest to the match kickoff
     target = f"{date_str}T{hour:02d}:00"
     idx = None
     for i, t in enumerate(times):
@@ -387,7 +381,6 @@ def _weather_at(lat: float, lon: float, iso_dt: str):
             idx = i
             break
     if idx is None:
-        # nearest
         for i, t in enumerate(times):
             if t.startswith(date_str):
                 idx = i
@@ -408,8 +401,6 @@ def _weather_at(lat: float, lon: float, iso_dt: str):
         "condition": _WMO_CODES.get(code, f"code {code}") if code is not None else None,
     }
 
-
-# ── Supabase helpers ──────────────────────────────────────────────────────────
 
 def _rest(method: str, path: str, body=None, params=None):
     url = f"{REST}/{path}"
@@ -438,8 +429,6 @@ def update_stats(pred_id: str, new_stats: dict):
     _rest("PATCH", "predictions", body={"stats": new_stats}, params={"id": f"eq.{pred_id}"})
 
 
-# ── main ──────────────────────────────────────────────────────────────────────
-
 def enrich_one(pred: dict, force: bool = False) -> str:
     """Enrich a single prediction. Returns 'ok' | 'skip' | 'fail'."""
     stats = pred.get("stats") or {}
@@ -462,7 +451,6 @@ def enrich_one(pred: dict, force: bool = False) -> str:
     if not month:
         return "fail"
 
-    # 1. locate the ESPN event
     espn_id = _find_espn_event(league, month, home, away)
     details: dict = {}
     if espn_id:
@@ -474,11 +462,9 @@ def enrich_one(pred: dict, force: bool = False) -> str:
         if summary:
             details.update(_parse_summary(summary))
 
-    # 2. weather via Open-Meteo (needs a city — fall back to team-name-less geocode of league country)
     city = details.get("city")
     country = details.get("country")
     if not city:
-        # try geocoding the venue string itself
         city = details.get("venue")
     coords = _geocode(city, country) if city else None
     if coords:
