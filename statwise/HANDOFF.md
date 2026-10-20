@@ -12,7 +12,7 @@ Both workflows are running in the Replit environment:
 
 StatWise is an AI-powered sports prediction platform. It combines:
 1. A **React Native / Expo** mobile-first frontend served as a web app
-2. A **Python AI backend** with a C++-accelerated XGBoost + LightGBM prediction engine
+2. A **Python AI backend** with a C++-accelerated LightGBM prediction engine
 
 Users authenticate via Supabase, see predictions based on their subscription tier
 (Free / Premium / VIP / VVIP), and can subscribe via Flutterwave payments.
@@ -37,7 +37,7 @@ Users authenticate via Supabase, see predictions based on their subscription tie
 - `react-dom@19.2.0` (required for Expo web)
 - `react-native-worklets@0.7.2` (required by reanimated v4)
 - `react@19.2.0` (pinned to match react-dom)
-- Python: `numpy pandas scikit-learn xgboost lightgbm scipy requests supabase joblib schedule`
+- Python: `numpy pandas scikit-learn lightgbm scipy requests supabase joblib schedule`
 
 ---
 
@@ -47,14 +47,15 @@ Users authenticate via Supabase, see predictions based on their subscription tie
 
 | Component | Details |
 |---|---|
-| **Outcome model** | CalibratedXGBClassifier + CalibratedHistGBClassifier blended 50/50 |
-| **Goals model** | Same ensemble for Over/Under 2.5 goals |
-| **Features** | 60 features (was 45) — see table below |
-| **Training** | Historical CSVs in `ai/data/`, sampled every 3rd match (was every 6th) |
-| **Lookback window** | 400 matches per training sample (was 300) |
+| **Outcome model** | LightGBM — either a 3-class 1X2 head or a joint 6-class outcome×goals head (winner picked on an out-of-time holdout) |
+| **Goals model** | Over/Under 2.5 (second head, or the marginal of the joint model) |
+| **Features** | 161 — see `ai/AI_DOCUMENTATION.md` |
+| **Training** | GitHub Actions `Train Model` workflow on ~330k clean matches (`ai/data/clean/`) |
+| **Calibration** | Isotonic on the earlier holdout half, deployed only if it wins out-of-sample |
+| **Market blend** | Per-league alpha learned on the later holdout half (rows with odds only) |
 | **Model file** | `ai/models/football_predictor.pkl` |
 
-### Feature Set (60 features)
+### Feature Set (161 features)
 
 | Group | Features | Count |
 |---|---|---|

@@ -1,7 +1,7 @@
 # StatWise - AI Sports Prediction Platform
 
 ## Overview
-StatWise is an AI-powered sports prediction platform. It combines a React Native / Expo mobile-first frontend served as a web app on port 5000, and a Python AI backend with an XGBoost prediction engine that runs as a background scheduler.
+StatWise is an AI-powered sports prediction platform. It combines a React Native / Expo mobile-first frontend served as a web app on port 5000, and a Python AI backend with a tuned LightGBM prediction engine that runs as a background scheduler.
 
 ## Recent UI/UX Improvements (v2)
 - **Login screen:** `<form>` wrapper for browser autofill, `autoComplete` props on all inputs, Google OAuth via Supabase, stats-chart logo icon, Google logo button with loading state

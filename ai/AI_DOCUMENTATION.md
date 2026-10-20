@@ -2,7 +2,7 @@
 
 > Last updated: April 2026  
 > Pipeline version: v3.1 (Expanded historical coverage to 1993, 22+ divisions)
-> Model version: v5-Extended (126 features, League-Aware Attention Stacking Ensemble)
+> Model version: v6 LightGBM (161 features; single two-head or joint six-class, winner chosen out-of-time)
 
 ## Table of Contents
 1. [System Overview](#1-system-overview)
@@ -41,7 +41,7 @@ ai/data/raw/           ─── per-source subdirectories
 ai/data/clean/         ─── YYYY_matches.csv, 48-column unified schema
       │
       ▼
-[trainer.py]          ←── Python, 5-model ensemble
+[trainer.py]          ←── Python, tuned LightGBM (single/joint) + isotonic + market blend
       │
       ▼
 ai/models/football_predictor.pkl
@@ -252,10 +252,12 @@ whichever wins on the later-holdout log loss (goals Brier breaks near-ties).
 | LightGBM | lightgbm | `n_estimators=800, lr=0.035, num_leaves=96, max_bin=127`, bagging 0.85, feature fraction 0.7, L2=2.0, early stopping on the last 5% of rows |
 
 **Calibration & market blend** – an honest isotonic calibrator is fitted on the
-earlier half of the out-of-time holdout; per-league alpha (log-loss-optimal
-weight between model and de-vigged market) is learned on the later half.
+earlier half of the out-of-time holdout and deployed only if it lowers log loss
+on the later half (a 1.4k–3k row window cannot always support per-class
+isotonic). Per-league alpha (log-loss-optimal weight between model and
+de-vigged market) is learned on later-half rows that actually have odds.
 
-### Features (126 total)
+### Features (161 total)
 
 | Group | Count | Description |
 |-------|-------|-------------|
