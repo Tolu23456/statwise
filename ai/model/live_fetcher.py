@@ -18,7 +18,12 @@ FOOTBALL_DATA_TOKEN = os.environ.get("FOOTBALL_DATA_TOKEN", os.environ.get("FOOT
 RAPIDAPI_KEY        = os.environ.get("X_RAPIDAPI_KEY", "")
 
 FDORG_BASE = "https://api.football-data.org/v4"
-TSDB_BASE  = "https://www.thesportsdb.com/api/v1/json/3"
+# TheSportsDB: "3" is the shared public test key, which now returns 403 on
+# most endpoints.  Put a personal key (free account / Patreon) in
+# THESPORTSDB_KEY to enable this source.
+TSDB_KEY   = os.environ.get("THESPORTSDB_KEY", "3").strip() or "3"
+TSDB_BASE  = f"https://www.thesportsdb.com/api/v1/json/{TSDB_KEY}"
+_tsdb_blocked = False
 RAPID_BASE = "https://api-football-v1.p.rapidapi.com/v3"
 
 # football-data.org league codes
@@ -162,6 +167,9 @@ def _fetch_fdorg_odds(match_id_num: str) -> dict:
 
 
 def _fetch_tsdb_single(slug: str, lid: str) -> list[dict]:
+    global _tsdb_blocked
+    if _tsdb_blocked:
+        return []
     url = f"{TSDB_BASE}/eventsnextleague.php?id={lid}"
     out = []
     try:
@@ -186,8 +194,19 @@ def _fetch_tsdb_single(slug: str, lid: str) -> list[dict]:
                 "match_title":  f"{home} vs {away}",
                 "league_name":  e.get("strLeague", slug.replace('-', ' ').title()),
             })
+    except requests.HTTPError as e:
+        code = getattr(e.response, "status_code", None)
+        if code in (401, 403) and not _tsdb_blocked:
+            _tsdb_blocked = True      # stop hammering the API for every league
+            hint = ("the shared test key is no longer accepted; get a key at "
+                    "thesportsdb.com and set THESPORTSDB_KEY"
+                    if TSDB_KEY == "3" else "check THESPORTSDB_KEY / its plan")
+            logger.warning(f"TheSportsDB disabled for this run (HTTP {code}): {hint}")
+        elif not _tsdb_blocked:
+            logger.warning(f"TheSportsDB error ({slug}): {e}")
     except Exception as e:
-        logger.warning(f"TheSportsDB error ({slug}): {e}")
+        if not _tsdb_blocked:
+            logger.warning(f"TheSportsDB error ({slug}): {e}")
     return out
 
 

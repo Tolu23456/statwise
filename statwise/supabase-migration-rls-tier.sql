@@ -21,9 +21,25 @@ begin;
 
 alter table public.predictions enable row level security;
 
-drop policy if exists "Public read predictions"              on public.predictions;
-drop policy if exists "Free users can view free predictions" on public.predictions;
-drop policy if exists "Tier-gated prediction access"         on public.predictions;
+-- Policies are OR'ed in Postgres: a single permissive policy (e.g. the
+-- "Allow system operations on predictions" FOR ALL USING (true) created by
+-- supabase-schema.sql) exposes every row no matter what else exists.
+-- Drop EVERY policy on the table, then install the one tier policy.
+do $$
+declare pol record;
+begin
+  for pol in
+    select policyname
+    from pg_policies
+    where schemaname = 'public'
+      and tablename  = 'predictions'
+      and policyname <> 'Tier-gated prediction access'
+  loop
+    execute format('drop policy if exists %I on public.predictions', pol.policyname);
+  end loop;
+end $$;
+
+drop policy if exists "Tier-gated prediction access" on public.predictions;
 
 create policy "Tier-gated prediction access"
   on public.predictions
@@ -49,6 +65,12 @@ grant select on public.predictions to anon, authenticated;
 
 commit;
 
--- ── Verification (run after the migration) ─────────────────────────────────
--- With the ANON key (no user session) this must only ever return free rows:
+-- ── Verification — run these two statements in the SQL editor ──────────────
+-- Simulates the anon key (no signed-in user): must return ONE row, tier=free.
+begin;
+  set local role anon;
+  select tier, count(*) from public.predictions group by tier order by tier;
+rollback;
+
+-- From a shell, with the ANON key, this must only ever return free rows:
 --   curl "$SUPABASE_URL/rest/v1/predictions?select=tier" -H "apikey: $ANON_KEY"

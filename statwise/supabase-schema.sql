@@ -505,9 +505,9 @@ CREATE POLICY "Users can view predictions based on their subscription tier" ON p
         END
     );
 
--- System can insert/update predictions (for AI service)
-CREATE POLICY "Allow system operations on predictions" ON predictions
-    FOR ALL USING (true);
+-- NOTE: do NOT add a permissive "FOR ALL USING (true)" policy here.
+-- Policies are OR'ed, so it would expose premium/vip rows to the anon key.
+-- The AI service writes with the service-role key, which bypasses RLS.
 
 -- Matches Policies (public read for sports data)
 DROP POLICY IF EXISTS "Users can view match data" ON matches;

@@ -45,4 +45,5 @@ jobs:
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN || vars.FOOTBALL_DATA_TOKEN }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+          THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY || vars.THESPORTSDB_KEY }}
         run: python ai/scheduler.py --once
