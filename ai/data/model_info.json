@@ -1,24 +1,24 @@
 {
-  "trained_at": "2026-10-20T19:57:25.293439Z",
+  "trained_at": "2026-10-20T20:15:19.325584Z",
   "total_matches": 331949,
-  "duration_seconds": 158.5,
+  "duration_seconds": 169.3,
   "calibration": {
-    "mode": "single",
+    "mode": "joint",
     "holdout_days": 180,
     "holdout_matches": 2250,
     "split_at": "2026-04-21",
-    "raw_log_loss": 1.01302,
-    "isotonic_log_loss": 1.0333,
+    "raw_log_loss": 1.00999,
+    "isotonic_log_loss": 1.02068,
     "calibration_used": false,
-    "eval_log_loss": 1.01302,
+    "eval_log_loss": 1.00999,
     "market_log_loss": 0.99908,
     "market_rows": 1282,
-    "accuracy": 0.4813,
-    "brier": 0.2023,
-    "goals_brier": 0.24036,
-    "ece": 0.0324,
-    "alpha_default": 0.35000000000000003,
+    "accuracy": 0.4867,
+    "brier": 0.20152,
+    "goals_brier": 0.24115,
+    "ece": 0.0264,
+    "alpha_default": 0.4,
     "alpha_leagues": 8,
-    "blended_market_log_loss": 0.99625
+    "blended_market_log_loss": 0.99535
   }
 }
