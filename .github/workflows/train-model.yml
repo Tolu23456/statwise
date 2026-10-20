@@ -16,9 +16,9 @@ on:
         required: false
         default: '180'
       recency_half_life_days:
-        description: 'Time-decay half-life for training weights (0 = off)'
+        description: 'Time-decay half-life for training weights (0 = off; 1460 tuned on holdout)'
         required: false
-        default: '0'
+        default: '1460'
       model_mode:
         description: 'single | joint | both (train both on the holdout, ship the winner)'
         required: false
@@ -65,7 +65,7 @@ jobs:
         env:
           STAGE_B: ${{ inputs.stage_b || '0' }}
           HOLDOUT_DAYS: ${{ inputs.holdout_days || '180' }}
-          RECENCY_HALF_LIFE_DAYS: ${{ inputs.recency_half_life_days || '0' }}
+          RECENCY_HALF_LIFE_DAYS: ${{ inputs.recency_half_life_days || '1460' }}
           MODEL_MODE: ${{ inputs.model_mode || 'both' }}
           # 4-vCPU runner: one LightGBM fit at a time, so give it all 4 threads.
           OMP_NUM_THREADS: '4'
