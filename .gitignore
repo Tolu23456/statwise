@@ -15,3 +15,9 @@ node_modules/
 
 # Weather archive cache (large, reproducible from Open-Meteo)
 ai/data/weather_cache/
+
+# Trained model artifacts (published via cache/artifact/Supabase storage)
+ai/models/
+
+# Local table backups from push_ai_predictions.py
+ai/data/predictions_backup_*.json
