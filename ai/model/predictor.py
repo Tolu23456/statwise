@@ -9,7 +9,7 @@ import pandas as pd
 from typing import Optional
 
 from .trainer import FootballPredictor
-from .live_fetcher import fetch_upcoming_matches, fetch_match_result
+from .live_fetcher import fetch_upcoming_matches, fetch_match_result, _mock_allowed
 from .downloader import load_training_data
 
 logger = logging.getLogger(__name__)
@@ -112,6 +112,18 @@ class PredictionEngine:
         if not fixtures:
             logger.warning("No upcoming fixtures found.")
             return []
+
+        # Hard guard: placeholder fixtures must never be published as real
+        # predictions. They are only permitted when explicitly opted in.
+        if not _mock_allowed():
+            fixtures = [f for f in fixtures if not str(f.get('match_id', '')).startswith('mock_')]
+            if not fixtures:
+                logger.error("Only mock fixtures were returned – refusing to publish.")
+                return []
+        else:
+            logger.warning(
+                "ALLOW_MOCK_FIXTURES is set – placeholder fixtures may be published."
+            )
 
         results = []
         for fix in fixtures:

@@ -26,7 +26,17 @@ from __future__ import annotations
 import os, sys, time, json, logging, datetime, signal, pathlib
 
 # Add parent directory so we can import from ai/
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+_AI_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _AI_DIR)
+
+# Load the repo-root .env so API keys (FOOTBALL_API_TOKEN, SUPABASE_SERVICE_KEY,
+# …) are available. Without this the fetcher silently falls back to
+# placeholder fixtures.
+try:
+    from env_loader import load_dotenv
+except ModuleNotFoundError:  # pragma: no cover - package-style import
+    from ai.env_loader import load_dotenv
+load_dotenv()
 
 logging.basicConfig(
     level    = logging.INFO,

@@ -8,9 +8,21 @@ Sources (queried in parallel):
   4. Mock fixtures  (fallback only)
 """
 from __future__ import annotations
-import os, logging, datetime, json
+import os, sys, logging, datetime, json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
+
+# Load the repo-root .env *before* snapshotting any API keys below, otherwise
+# FOOTBALL_API_TOKEN is missing and the fetcher silently degrades to
+# placeholder fixtures.
+_AI_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _AI_DIR not in sys.path:
+    sys.path.insert(0, _AI_DIR)
+try:                                        # normal: ai/ is on sys.path
+    from env_loader import load_dotenv
+except ModuleNotFoundError:                 # pragma: no cover - package-style import
+    from ai.env_loader import load_dotenv
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
@@ -349,6 +361,16 @@ def fetch_match_result(match_id: str, home_team: str, away_team: str,
     return None
 
 
+def _mock_allowed() -> bool:
+    """True when placeholder (mock) fixtures may be generated.
+
+    Mock fixtures are for local development only. In production they must
+    never be generated, let alone published.
+    """
+    flag = os.environ.get("ALLOW_MOCK_FIXTURES", "").strip().lower()
+    return flag in ("1", "true", "yes", "on")
+
+
 def _generate_mock_fixtures() -> list[dict]:
     today = datetime.date.today()
     templates = [
@@ -446,8 +468,23 @@ def fetch_upcoming_matches(leagues: list[str] | None = None,
                 logger.warning(f"Source fetch failed: {e}")
 
     if not all_matches:
-        logger.info("All live sources returned zero matches – using mock fixtures")
-        all_matches = _generate_mock_fixtures()
+        # Placeholder fixtures must never reach the live predictions table —
+        # they look like real matches to users and would be presented as
+        # genuine model output. Only allow them when explicitly opted in
+        # (local development / demos).
+        if _mock_allowed():
+            logger.warning(
+                "All live sources returned zero matches – using MOCK fixtures "
+                "(ALLOW_MOCK_FIXTURES is set)."
+            )
+            all_matches = _generate_mock_fixtures()
+        else:
+            logger.error(
+                "All live sources returned zero matches and ALLOW_MOCK_FIXTURES is "
+                "not set — refusing to publish placeholder fixtures. "
+                "Check FOOTBALL_API_TOKEN / X_RAPIDAPI_KEY."
+            )
+            return []
 
     # Deduplicate by match_id, preferring records with odds data
     seen: dict[str, dict] = {}
