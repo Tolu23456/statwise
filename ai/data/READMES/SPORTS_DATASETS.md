@@ -31,6 +31,9 @@ ATP/WTA matches) + **FiveThirtyEight tennis serve timing**.
 | `m_points_2020s.csv` | ~547k | Men's point-level charting (2020+) |
 | `m_points_2010s.csv` | ~357k | Men's point-level charting (2010-2019) |
 | `m_points_to_2009.csv` | ~380k | Men's point-level charting (pre-2010) |
+| `w_points_2020s.csv` | ~354k | Women's point-level charting (2020+) |
+| `w_points_2010s.csv` | ~179k | Women's point-level charting (2010-2019) |
+| `w_points_to_2009.csv` | ~61k | Women's point-level charting (pre-2010) |
 | `m_stats_serve_basics.csv` | — | Per-player serve aggregate stats |
 | `m_stats_serve_influence.csv` | — | Serve influence on return outcomes |
 | `m_stats_rally.csv` | — | Rally length distributions |
@@ -67,35 +70,63 @@ edge directly.
 
 ## Baseball — `ai/data/baseball/`
 
-Source: **FiveThirtyEight MLB datasets**.
+Source: **Lahman Baseball Database** (via the Rdatasets CRAN mirror) + **FiveThirtyEight
+MLB datasets**.
 
 | File | Rows | Contents |
 |---|---|---|
-| `mlb_elo.csv` | ~2.4k | Every MLB game since 1903 with team ELO ratings and pitcher info |
-| `quasi_winshares.csv` | ~5k | Career quasi-winshares for hitters and pitchers |
-| `allstar_player_talent.csv` | — | All-Star game talent ratings |
+| `lahman_batting.csv` | ~128k | Every at-bat, 1871–present: hits, HR, RBI, BB, SO, HBP, SF, SH, IBB, Pos, league/team IDs |
+| `lahman_batting_post.csv` | ~18.7k | Postseason batting records |
+| `lahman_pitching.csv` | ~106k | Every pitching line: W/L, ERA, G, GS, CG, SHO, SV, IP, H, ER, HR, BB, SO, WHIP, H5, etc. |
+| `lahman_teams.csv` | ~2.9k | Every team-season: park, attendance, park factors, team batting/pitching ranks |
+| `lahman_people.csv` | ~19.7k | Player biographical data |
+| `lahman_appearances.csv` | ~109k | Per-player games played at each position |
+| `lahman_fielding.csv` | ~174k | Per-player fielding records by position |
+| `lahman_parks.csv` | ~345 | Park dimensions and characteristics |
+| `lahman_awards_players.csv` | ~12.7k | MVP, Cy Young, Gold Glove, Rookie of the Year, All-Star |
+| `quasi_winshares.csv` | ~98.8k | Career quasi-winshares for hitters and pitchers |
+| `allstar_player_talent.csv` | ~3.9k | All-Star game talent ratings |
 
-**Notes:** baseball is the most variance-heavy of the four, but `mlb_elo.csv` is
-already 100+ years deep. Pitcher-vs-batter matchup data is the missing piece for
-a genuinely predictive model.
+**Notes:** this is the deepest dataset of the four — 150+ years. The real modelling
+work is in **pitcher vs. batter matchup** (a starter's ERA against a specific
+opponent), **times-through-the-order bullpen effects**, and **park factors** (all
+present in `lahman_teams.csv`). The 538 `mlb_elo.csv` file was retired when the 538
+site was decommissioned, so the Lahman tables replace it.
 
 ---
 
 ## Volleyball — `ai/data/volleyball/`
 
-Source: **Volleybox** (men's + women's, international leagues and tournaments).
+Source: **bigtimestats/beach-volleyball** — full AVP + FIVB tour archive with
+per-match statistics.
 
-| File | Contents |
-|---|---|
-| `volleybox_men.html` | Men's league/tournament tables + match results |
-| `volleybox_women.html` | Women's equivalents |
-| `volleybox_men_wwc.html` | Men's World Championship |
-| `volleybox_men_cwc.html` | Men's Club World Championship |
+| File | Rows | Contents |
+|---|---|---|
+| `beach_volleyball_full.csv` | ~85.5k | Complete archive 2000–2022: circuit, tournament, country, date, gender, player names, birthdates, ages, heights, nationalities, rankings, score, and per-match stat lines |
+| `bvb_fivb_2021/2022.csv` | ~2.9k each | FIVB tour only, by year |
+| `bvb_avp_2021/2022.csv` | ~1.3k each | AVP tour only, by year |
+| `bvb_2016`–`bvb_2022.csv` | ~3.4k–6.3k each | All tours, by year |
 
-**Notes:** volleyball is the softest market of the four — bookmakers dedicate far
-less quantitative attention to it than to the big three. Set-based scoring also
-means fewer, more decisive games than football. Good candidate for a "value picks"
-product where we only surface high-certainty sets.
+**Notes:** beach volleyball (2v2) rather than indoor — but the *modelling* is
+identical and the dataset is far better documented and richer than anything
+freely available for indoor. Player height, age and birthdate are included,
+which are genuinely predictive in beach volleyball. The 2v2 format also means
+**no draws and no bench** — every match produces a winner, which suits the
+abstain-when-unsure framework perfectly.
+
+---
+
+## Harvest summary
+
+| Sport | Files | Total rows |
+|---|---|---|
+| Tennis | 20 | ~2,451,761 |
+| Basketball | 4 | ~168,264 |
+| Baseball | 12 | ~651,553 |
+| Volleyball | 11 | ~119,766 |
+
+All four harvests complete with **0 failures**. Per-file row counts and column
+lists live in `ai/data/<sport>/MANIFEST.json`.
 
 ---
 

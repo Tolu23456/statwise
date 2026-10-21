@@ -92,16 +92,34 @@ BASKETBALL = [
 ]
 
 BASEBALL = [
-    ("mlb_538_elo",       "https://raw.githubusercontent.com/fivethirtyeight/data/master/mlb-elo/mlb_elo.csv",                     "mlb_elo.csv"),
     ("mlb_538_quasi_win_shares", "https://raw.githubusercontent.com/fivethirtyeight/data/master/mlb-quasi-win-shares/quasi_winshares.csv", "quasi_winshares.csv"),
     ("mlb_538_allstar_talent", "https://raw.githubusercontent.com/fivethirtyeight/data/master/mlb-allstar-teams/allstar_player_talent.csv", "allstar_player_talent.csv"),
+    ("mlb_538_allstar_team_talent", "https://raw.githubusercontent.com/fivethirtyeight/data/master/mlb-allstar-teams/allstar_team_talent.csv", "allstar_team_talent.csv"),
+    # Lahman baseball database (via Rdatasets mirror) — 150+ years of MLB records
+    ("lahman_teams",     "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/Lahman/Teams.csv",       "lahman_teams.csv"),
+    ("lahman_batting",   "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/Lahman/Batting.csv",     "lahman_batting.csv"),
+    ("lahman_batting_post", "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/Lahman/BattingPost.csv", "lahman_batting_post.csv"),
+    ("lahman_pitching",  "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/Lahman/Pitching.csv",    "lahman_pitching.csv"),
+    ("lahman_people",    "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/Lahman/People.csv",      "lahman_people.csv"),
+    ("lahman_appearances","https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/Lahman/Appearances.csv","lahman_appearances.csv"),
+    ("lahman_fielding",  "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/Lahman/Fielding.csv",    "lahman_fielding.csv"),
+    ("lahman_parks",     "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/Lahman/Parks.csv",       "lahman_parks.csv"),
+    ("lahman_awards_players", "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/Lahman/AwardsPlayers.csv", "lahman_awards_players.csv"),
 ]
 
 VOLLEYBALL = [
-    ("volleybox_ewc_2024", "https://volleybox.net/data/men/EPL", "volleybox_men.html"),
-    ("volleybox_w_ewc_2024", "https://volleybox.net/data/women/EPL", "volleybox_women.html"),
-    ("volleybox_m_wwc", "https://volleybox.net/data/men/WWC", "volleybox_men_wwc.html"),
-    ("volleybox_m_cwc", "https://volleybox.net/data/men/CWC", "volleybox_men_cwc.html"),
+    # Beach volleyball — full FIVB + AVP tour archive with match stats
+    ("bvb_full_archive", "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/full_archive/full_archive.csv", "beach_volleyball_full.csv"),
+    ("bvb_fivb_2022",    "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year_and_tour/FIVB_2022.csv", "bvb_fivb_2022.csv"),
+    ("bvb_fivb_2021",    "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year_and_tour/FIVB_2021.csv", "bvb_fivb_2021.csv"),
+    ("bvb_avp_2022",     "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year_and_tour/AVP_2022.csv",  "bvb_avp_2022.csv"),
+    ("bvb_avp_2021",     "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year_and_tour/AVP_2021.csv",  "bvb_avp_2021.csv"),
+    ("bvb_2022",         "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year/bvb_matches_2022.csv", "bvb_2022.csv"),
+    ("bvb_2021",         "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year/bvb_matches_2021.csv", "bvb_2021.csv"),
+    ("bvb_2019",         "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year/bvb_matches_2019.csv", "bvb_2019.csv"),
+    ("bvb_2018",         "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year/bvb_matches_2018.csv", "bvb_2018.csv"),
+    ("bvb_2017",         "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year/bvb_matches_2017.csv", "bvb_2017.csv"),
+    ("bvb_2016",         "https://raw.githubusercontent.com/bigtimestats/beach-volleyball/master/data/by_year/bvb_matches_2016.csv", "bvb_2016.csv"),
 ]
 
 
