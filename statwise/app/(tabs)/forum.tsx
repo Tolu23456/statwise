@@ -262,8 +262,8 @@ export default function ForumScreen() {
                 {displayName}
               </Text>
               {isPremiumUser && (
-                <View style={[styles.tierPill, { backgroundColor: TierBadgeColors[tier as keyof typeof TierBadgeColors] || C.primaryLight }]}>
-                  <Text style={[styles.tierPillText, { color: '#fff' }]}>
+                <View style={[styles.tierPill, { backgroundColor: TierBadgeColors[tier]?.bg ?? C.primaryLight }]}>
+                  <Text style={[styles.tierPillText, { color: TierBadgeColors[tier]?.text ?? C.primary }]}>
                     {tier === 'VVIP Tier' ? 'VVIP' : tier === 'VIP Tier' ? 'VIP' : 'PREM'}
                   </Text>
                 </View>

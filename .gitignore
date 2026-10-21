@@ -21,3 +21,9 @@ ai/models/
 
 # Local table backups from push_ai_predictions.py
 ai/data/predictions_backup_*.json
+
+# Raw multi-sport datasets (large, reproducible via ai/gather_sports_data.py)
+ai/data/tennis/raw/
+ai/data/basketball/raw/
+ai/data/baseball/raw/
+ai/data/volleyball/raw/

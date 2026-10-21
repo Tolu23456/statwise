@@ -135,6 +135,7 @@ export type ForumMessage = {
   user_id: string;
   message: string;
   created_at: string;
+  username?: string | null;
   user_profiles?: {
     username: string;
     display_name: string;

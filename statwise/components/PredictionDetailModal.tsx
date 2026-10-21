@@ -265,7 +265,7 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 <View style={{ marginTop: 12, paddingTop: 12, borderTopWidth: 1, borderTopColor: C.border }}>
                   <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
                     <Text style={{ color: C.textSecondary, fontSize: 12 }}>Avg. Match Goals</Text>
-                    <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>{stats.avg_goals.toFixed(2)}</Text>
+                    <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>{(stats.avg_goals ?? 0).toFixed(2)}</Text>
                   </View>
 
                   {stats.home_value !== undefined && (
