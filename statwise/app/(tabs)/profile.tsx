@@ -145,14 +145,29 @@ export default function ProfileScreen() {
     return name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
   }
 
-  function copyReferralCode() {
+  async function copyReferralCode() {
     if (!referral?.code) return;
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    if (Platform.OS === 'web' && navigator.clipboard) {
-      navigator.clipboard.writeText(referral.code);
+    try { await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium); } catch {}
+    try {
+      if (Platform.OS === 'web') {
+        if (navigator?.clipboard?.writeText) {
+          await navigator.clipboard.writeText(referral.code);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = referral.code;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        alert(`Code "${referral.code}" copied to clipboard.`);
+        return;
+      }
+    } catch {}
+    try {
       Alert.alert('Copied!', `Code "${referral.code}" copied to clipboard.`);
-    } else {
-      Alert.alert('Referral Code', `Your code: ${referral.code}\n\nShare this with friends to earn rewards!`);
+    } catch {
+      Alert.alert('Referral Code', `Your code: ${referral.code}`);
     }
   }
 
@@ -213,17 +228,22 @@ export default function ProfileScreen() {
                 value={displayName}
                 onChangeText={setDisplayName}
                 autoFocus
+                autoCapitalize="none"
+                autoCorrect={false}
+                maxLength={20}
                 returnKeyType="done"
                 onSubmitEditing={saveDisplayName}
+                placeholder="Username"
+                placeholderTextColor={C.textMuted}
               />
               <TouchableOpacity
-                style={[styles.saveBtn, { backgroundColor: C.primary }]}
+                style={[styles.saveBtn, { backgroundColor: displayName.trim() ? C.primary : C.border }]}
                 onPress={saveDisplayName}
-                disabled={savingName}
+                disabled={savingName || !displayName.trim()}
               >
                 {savingName
                   ? <ActivityIndicator color="#fff" size="small" />
-                  : <Ionicons name="checkmark" size={18} color="#fff" />
+                  : <Ionicons name="checkmark" size={18} color={displayName.trim() ? "#fff" : C.textMuted} />
                 }
               </TouchableOpacity>
               <TouchableOpacity

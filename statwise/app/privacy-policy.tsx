@@ -21,7 +21,7 @@ const SECTIONS = [
   },
   {
     title: '4. Prediction Data',
-    body: `AI-generated predictions are for informational and entertainment purposes only. StatWise does not guarantee the accuracy of predictions. Always gamble responsibly and within your means.`,
+    body: `AI-generated predictions are for informational and entertainment purposes only. StatWise does not guarantee the accuracy of predictions. Football is difficult to predict; our model may be wrong. Doing bad with gambling is your responsibility - always gamble responsibly and within your means.`,
   },
   {
     title: '5. Cookies & Local Storage',

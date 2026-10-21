@@ -79,6 +79,7 @@ export default function HomeScreen() {
   const [newPredictionsBadge, setNewPredictionsBadge] = useState(0);
   const [selectedPrediction, setSelectedPrediction] = useState<Prediction | null>(null);
   const [showOnboarding, setShowOnboarding] = useState(false);
+  const [showModelInfo, setShowModelInfo] = useState(false);
 
   const badgeFade = useRef(new Animated.Value(0)).current;
   const pulseAnim = useRef(new Animated.Value(1)).current;
@@ -272,10 +273,10 @@ export default function HomeScreen() {
         <View style={styles.titleRow}>
           <Text style={[styles.title, { color: C.text }]}>Today's Predictions</Text>
           <View style={styles.titleRight}>
-            <View style={[styles.aiBadge, { backgroundColor: C.primaryLight }]}>
+            <TouchableOpacity style={[styles.aiBadge, { backgroundColor: C.primaryLight }]} onPress={() => setShowModelInfo(true)} activeOpacity={0.8}>
               <Ionicons name="hardware-chip-outline" size={11} color={C.primary} />
               <Text style={[styles.aiText, { color: C.primary }]}>AI</Text>
-            </View>
+            </TouchableOpacity>
             <View style={[styles.tierBadge, { backgroundColor: C.primaryLight }]}>
               <Text style={[styles.tierText, { color: C.primary }]}>{userTier}</Text>
             </View>
@@ -406,6 +407,28 @@ export default function HomeScreen() {
         visible={showOnboarding}
         onDone={() => setShowOnboarding(false)}
       />
+
+      {showModelInfo && (
+        <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.6)', justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+          <View style={{ backgroundColor: C.card, borderRadius: 16, maxWidth: 420, width: '100%', padding: 20, borderWidth: 1, borderColor: C.border }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+              <Text style={{ fontSize: 18, fontFamily: 'Inter_700Bold', color: C.text }}>StatWise AI Model</Text>
+              <TouchableOpacity onPress={() => setShowModelInfo(false)}>
+                <Ionicons name="close" size={22} color={C.textMuted} />
+              </TouchableOpacity>
+            </View>
+            <Text style={{ fontSize: 13, fontFamily: 'Inter_400Regular', color: C.textSecondary, lineHeight: 20, marginBottom: 10 }}>
+              Our model is a LightGBM ensemble trained on historical football data. Predictions are probabilistic and calibrated where possible. Football is inherently unpredictable - no model can guarantee 100% accuracy.
+            </Text>
+            <Text style={{ fontSize: 13, fontFamily: 'Inter_400Regular', color: C.textSecondary, lineHeight: 20 }}>
+              We blend model probabilities with market data where available. Always gamble responsibly.
+            </Text>
+            <TouchableOpacity style={{ marginTop: 16, backgroundColor: C.primary, paddingVertical: 10, borderRadius: 10, alignItems: 'center' }} onPress={() => setShowModelInfo(false)}>
+              <Text style={{ color: '#fff', fontFamily: 'Inter_600SemiBold' }}>Got it</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
     </View>
   );
 }

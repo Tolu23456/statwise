@@ -17,7 +17,7 @@ const SECTIONS = [
   },
   {
     title: '3. Disclaimer — Not Gambling Advice',
-    body: `StatWise does NOT provide gambling or betting advice. All predictions are for entertainment purposes only. We strongly encourage responsible gambling practices. Never bet more than you can afford to lose.\n\nStatWise is not responsible for any financial losses incurred from decisions made based on our predictions.`,
+    body: `StatWise does NOT provide gambling or betting advice. All predictions are for entertainment purposes only. We strongly encourage responsible gambling practices. Never bet more than you can afford to lose.\n\nFootball is inherently difficult to predict. Our AI-generated predictions are not 100% accurate and past performance does not guarantee future results. StatWise is not responsible for any financial losses incurred from decisions made based on our predictions. Doing bad with gambling is your responsibility - always bet responsibly.`,
   },
   {
     title: '4. User Accounts',
@@ -25,7 +25,7 @@ const SECTIONS = [
   },
   {
     title: '5. Subscription & Payments',
-    body: `Subscription fees are charged in Nigerian Naira (NGN) through Flutterwave. All payments are final unless otherwise required by law. Subscriptions grant access to the prediction tier for the selected period (daily or monthly).\n\nStatWise reserves the right to change subscription prices with 7 days notice.`,
+    body: `Subscription fees are charged in Nigerian Naira (NGN) through Flutterwave. Payments are securely processed by our payment providers. All payments are final unless otherwise required by law. Subscriptions may renew automatically unless cancelled before renewal. Subscriptions grant access to the prediction tier for the selected period (daily or monthly).\n\nStatWise reserves the right to change subscription prices with 7 days notice.`,
   },
   {
     title: '6. Referral Program',

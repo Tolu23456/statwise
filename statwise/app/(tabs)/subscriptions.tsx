@@ -338,7 +338,7 @@ export default function SubscriptionsScreen() {
                   },
                 ]}
                 onPress={() => handleSubscribe(plan)}
-                disabled={loading === plan.id || isActive}
+                disabled={loading === plan.id || isActive || (currentTier !== 'Free Tier' && plan.tier !== currentTier)}
                 activeOpacity={0.85}
               >
                 {loading === plan.id ? (
