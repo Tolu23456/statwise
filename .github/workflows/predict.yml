@@ -42,8 +42,10 @@ jobs:
 
       - name: Run prediction cycle
         env:
-          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN || vars.FOOTBALL_DATA_TOKEN }}
+          # Support both secret names used across the project's history.
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN || secrets.FOOTBALL_API_TOKEN || vars.FOOTBALL_DATA_TOKEN || vars.FOOTBALL_API_TOKEN }}
+          X_RAPIDAPI_KEY: ${{ secrets.X_RAPIDAPI_KEY || vars.X_RAPIDAPI_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
           THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY || vars.THESPORTSDB_KEY }}
         run: python ai/scheduler.py --once

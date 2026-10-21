@@ -238,7 +238,17 @@ def main_once() -> None:
         sys.exit(1)
     n = run_prediction_cycle(engine)
     logger.info(f"Done. {n} predictions saved to Supabase.")
-    sys.exit(0 if n >= 0 else 1)
+    if n <= 0:
+        # A one-shot run looks 7 days ahead across 10+ leagues. Zero saved
+        # predictions means the fixture source or the database write failed —
+        # fail the CI job so it is visible instead of silently publishing
+        # nothing (or, worse, placeholder data).
+        logger.error(
+            "One-shot run produced no predictions. Check FOOTBALL_DATA_TOKEN / "
+            "X_RAPIDAPI_KEY and the Supabase credentials."
+        )
+        sys.exit(1)
+    sys.exit(0)
 
 
 if __name__ == "__main__":
