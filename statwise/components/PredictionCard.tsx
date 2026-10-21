@@ -116,8 +116,16 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
       <Text style={[styles.matchTitle, { color: C.text }]}>{prediction.match_title}</Text>
 
       <View style={styles.row}>
-        <View style={[styles.predBadge, { backgroundColor: C.primaryLight }]}>
-          <Text style={[styles.predText, { color: C.primary }]}>{prediction.prediction}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+          <View style={[styles.predBadge, { backgroundColor: C.primaryLight }]}>
+            <Text style={[styles.predText, { color: C.primary }]}>{prediction.prediction}</Text>
+          </View>
+          {prediction.confidence >= 90 && (
+            <View style={[styles.aiPickBadge, { backgroundColor: C.successLight, borderColor: C.success }]}>
+              <Ionicons name="star" size={12} color={C.success} />
+              <Text style={[styles.aiPickText, { color: C.success }]}>AI Pick</Text>
+            </View>
+          )}
         </View>
         <Text style={[styles.odds, { color: C.textSecondary }]}>
           {prediction.odds ? `Odds: ${prediction.odds}` : ''}
@@ -193,4 +201,6 @@ const styles = StyleSheet.create({
   lockSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 1 },
   upgradePill: { paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20 },
   upgradePillText: { color: '#fff', fontSize: 12, fontWeight: '700' },
+  aiPickBadge: { flexDirection: 'row', alignItems: 'center', gap: 3, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 20, borderWidth: 1 },
+  aiPickText: { fontSize: 11, fontWeight: '700' },
 });

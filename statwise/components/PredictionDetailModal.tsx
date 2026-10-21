@@ -148,6 +148,12 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
               <View style={styles.pickRow}>
                 <Ionicons name="hardware-chip-outline" size={16} color={C.primary} />
                 <Text style={[styles.pickLabel, { color: C.primary }]}>AI Prediction</Text>
+                {prediction.confidence >= 90 && (
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3, marginLeft: 6, backgroundColor: C.successLight, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 12, borderWidth: 1, borderColor: C.success }}>
+                    <Ionicons name="star" size={10} color={C.success} />
+                    <Text style={{ fontSize: 10, color: C.success, fontWeight: '700' }}>AI Pick</Text>
+                  </View>
+                )}
               </View>
               <Text style={[styles.pickValue, { color: C.primary }]}>{prediction.prediction}</Text>
             </View>

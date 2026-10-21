@@ -1,5 +1,5 @@
 """
-FootballPredictor – Grandmaster ensemble.
+FootballPredictor – Pico ensemble.
 
 Training modes (selected by retrain.py / MODEL_MODE env):
   'single' – two tuned LightGBM heads (1X2 + over/under 2.5).  Fast, accurate.
@@ -412,7 +412,7 @@ class FootballPredictor:
 
         # Dynamic reasoning based on model insights
         conf = int(p_outcome[idx] * 100)
-        reasoning = f"Grandmaster v5 Analysis: {OUTCOME_LABELS[idx]} predicted with {conf}% confidence. "
+        reasoning = f"Pico Analysis: {OUTCOME_LABELS[idx]} predicted with {conf}% confidence. "
         if stats['h2h']['home_wins'] > 50:
             reasoning += f"{home} dominates the historical H2H matchup. "
         elif stats['h2h']['away_wins'] > 50:

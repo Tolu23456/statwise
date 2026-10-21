@@ -1,5 +1,5 @@
 """
-Grandmaster Feature engineering pipeline — 126-feature matrix.
+Pico Feature engineering pipeline — 126-feature matrix.
 Optimized with Bulk C++ Engine v4 + League Embeddings.
 """
 from __future__ import annotations
@@ -101,7 +101,7 @@ class FeaturePipeline:
         self._def_pre_away = None
 
     def fit(self, df: pd.DataFrame) -> "FeaturePipeline":
-        logger.info(f"Fitting Grandmaster pipeline on {len(df):,} matches…")
+        logger.info(f"Fitting Pico pipeline on {len(df):,} matches…")
         df = df.dropna(subset=['home_team', 'away_team', 'home_goals', 'away_goals'])
 
         # League mapping
