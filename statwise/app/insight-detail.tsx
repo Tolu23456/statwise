@@ -27,7 +27,7 @@ export default function InsightDetailScreen() {
       <View style={[styles.container, { backgroundColor: C.background }]}>
         <TouchableOpacity
           style={[styles.backBtn, { paddingTop: (Platform.OS === 'web' ? 67 : insets.top) + 8 }]}
-          onPress={() => router.back()}
+          onPress={() => { try { if (router.canGoBack && router.canGoBack()) router.back(); else router.replace('/(tabs)/insights'); } catch { router.replace('/(tabs)/insights'); } }}
         >
           <Ionicons name="arrow-back" size={24} color={C.text} />
         </TouchableOpacity>
@@ -45,7 +45,7 @@ export default function InsightDetailScreen() {
   return (
     <View style={[styles.container, { backgroundColor: C.background }]}>
       <View style={[styles.header, { paddingTop: topInset + 8, backgroundColor: C.background }]}>
-        <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
+        <TouchableOpacity style={styles.backBtn} onPress={() => { try { if (router.canGoBack && router.canGoBack()) router.back(); else router.replace('/(tabs)/insights'); } catch { router.replace('/(tabs)/insights'); } }}>
           <Ionicons name="arrow-back" size={24} color={C.text} />
         </TouchableOpacity>
         {insight.category && (

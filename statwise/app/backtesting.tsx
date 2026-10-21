@@ -118,7 +118,7 @@ export default function BacktestingScreen() {
   return (
     <View style={[styles.container, { backgroundColor: C.background }]}>
       <View style={[styles.header, { paddingTop: topInset + 8, backgroundColor: C.background }]}>
-        <TouchableOpacity onPress={() => router.back()}>
+        <TouchableOpacity onPress={() => { try { if (router.canGoBack && router.canGoBack()) router.back(); else router.replace('/(tabs)/insights'); } catch { router.replace('/(tabs)/insights'); } }}>
           <Ionicons name="arrow-back" size={24} color={C.text} />
         </TouchableOpacity>
         <Text style={[styles.headerTitle, { color: C.text }]}>Prediction Accuracy</Text>
