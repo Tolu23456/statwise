@@ -376,16 +376,18 @@ class FootballPredictor:
         is_uncertain = bool(entropy_norm >= 0.92 or head_disagreement >= 0.08 or (float(np.max(p_outcome)) * 100.0 < 52.0))
 
         # Certainty score (0-100): how sure the model really is.
-        # Combines raw confidence with how spread out the probabilities are
-        # (low entropy = decisive) and how much the heads agree.
+        # Primary signal = margin over the 2nd-most-likely outcome (a 69/17/14
+        # split is far more decisive than a 45/30/25 split even though both have
+        # similar "confidence"). Blended with the top probability and damped
+        # by how much the model heads disagree.
         sorted_p = np.sort(p_outcome)[::-1]
-        margin = float(sorted_p[0] - sorted_p[1]) * 100.0   # gap to 2nd place
+        p1 = float(sorted_p[0])
+        p2 = float(sorted_p[1])
+        margin = (p1 - p2) * 100.0                       # gap in percentage points
+        margin_ratio = float((p1 - p2) / p1) if p1 > 0 else 0.0
+        agreement = 1.0 - min(1.0, float(head_disagreement) * 4.0)
         certainty = float(
-            max(p_outcome) * 100.0
-            * (1.0 - float(entropy_norm))
-            * 1.35
-            + min(20.0, margin * 0.5)
-            - float(head_disagreement) * 100.0
+            100.0 * (0.55 * p1 + 0.45 * margin_ratio) * (0.85 + 0.15 * agreement)
         )
         certainty = float(max(0.0, min(100.0, certainty)))
 

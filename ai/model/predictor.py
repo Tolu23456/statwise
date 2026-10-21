@@ -30,11 +30,14 @@ SUPABASE_KEY = os.environ.get(
 )
 
 TIER_THRESHOLDS = {
-    "Free Tier":    (0,   45),
-    "Premium Tier": (45,  60),
-    "VIP Tier":     (60,  75),
-    "VVIP Tier":    (75,  101),
+    "Free Tier":    (0,   40),
+    "Premium Tier": (40,  55),
+    "VIP Tier":     (55,  65),
+    "VVIP Tier":    (65,  101),
 }
+
+# Certainty at/above which the model is considered genuinely sure -> "AI Pick"
+AI_PICK_CERTAINTY = 65.0
 TIER_DB = {
     "Free Tier":    "free",
     "Premium Tier": "premium",
@@ -143,13 +146,13 @@ class PredictionEngine:
                 raw_conf = int(pred.get('confidence', 50))
 
                 # "AI Pick" = model is genuinely sure (high certainty score).
-                is_ai_pick = bool(certainty >= 75 and not is_uncertain)
+                is_ai_pick = bool(certainty >= AI_PICK_CERTAINTY and not is_uncertain)
 
                 # Tier is driven by certainty, not raw confidence.
                 # Uncertain picks are forced down to the free tier.
                 tier_score = raw_conf if is_uncertain else max(certainty, raw_conf * 0.6)
                 if is_uncertain:
-                    tier_score = min(tier_score, 44)
+                    tier_score = min(tier_score, 39)
                 tier_name, tier_db = _tier_for_confidence(int(round(tier_score)))
 
                 stats = pred.get('stats') or {}
