@@ -189,17 +189,18 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Match Insights</Text>
 
                 {/* H2H Breakdown */}
+                {stats?.h2h && (
                 <View style={{ marginBottom: 16 }}>
                   <Text style={{ color: C.textSecondary, fontSize: 12, marginBottom: 6, textTransform: 'uppercase' }}>Head-to-Head History</Text>
                   <View style={styles.h2hRow}>
-                    <View style={[styles.h2hBar, { flex: stats.h2h.home_wins, backgroundColor: C.primary }]}>
-                      <Text style={styles.h2hText}>{stats.h2h.home_wins}</Text>
+                    <View style={[styles.h2hBar, { flex: stats.h2h.home_wins || 0, backgroundColor: C.primary }]}>
+                      <Text style={styles.h2hText}>{stats.h2h.home_wins || 0}</Text>
                     </View>
-                    <View style={[styles.h2hBar, { flex: stats.h2h.draws, backgroundColor: C.textMuted }]}>
-                      <Text style={styles.h2hText}>{stats.h2h.draws}</Text>
+                    <View style={[styles.h2hBar, { flex: stats.h2h.draws || 0, backgroundColor: C.textMuted }]}>
+                      <Text style={styles.h2hText}>{stats.h2h.draws || 0}</Text>
                     </View>
-                    <View style={[styles.h2hBar, { flex: stats.h2h.away_wins, backgroundColor: C.danger }]}>
-                      <Text style={styles.h2hText}>{stats.h2h.away_wins}</Text>
+                    <View style={[styles.h2hBar, { flex: stats.h2h.away_wins || 0, backgroundColor: C.danger }]}>
+                      <Text style={styles.h2hText}>{stats.h2h.away_wins || 0}</Text>
                     </View>
                   </View>
                   <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 4 }}>
@@ -208,19 +209,20 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                     <Text style={{ color: C.textMuted, fontSize: 10 }}>Away Wins</Text>
                   </View>
                 </View>
+                )}
 
                 {/* Form Comparison */}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                   <View style={{ flex: 1 }}>
                     <Text style={{ color: C.textSecondary, fontSize: 12, marginBottom: 6 }}>Home Form</Text>
                     <View style={{ flexDirection: 'row', gap: 4 }}>
-                      {stats.home_form.map((v, i) => <FormDot key={i} val={v} C={C} />)}
+                      {(stats.home_form || []).map((v, i) => <FormDot key={i} val={v} C={C} />)}
                     </View>
                   </View>
                   <View style={{ flex: 1, alignItems: 'flex-end' }}>
                     <Text style={{ color: C.textSecondary, fontSize: 12, marginBottom: 6 }}>Away Form</Text>
                     <View style={{ flexDirection: 'row', gap: 4 }}>
-                      {stats.away_form.map((v, i) => <FormDot key={i} val={v} C={C} />)}
+                      {(stats.away_form || []).map((v, i) => <FormDot key={i} val={v} C={C} />)}
                     </View>
                   </View>
                 </View>
