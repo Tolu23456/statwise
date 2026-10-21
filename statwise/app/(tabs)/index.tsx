@@ -17,6 +17,7 @@ import { PredictionCard } from '@/components/PredictionCard';
 import { PredictionDetailModal } from '@/components/PredictionDetailModal';
 import { SkeletonCard } from '@/components/SkeletonCard';
 import { OnboardingModal, shouldShowOnboarding } from '@/components/OnboardingModal';
+import { BookingCodeModal } from '@/components/BookingCodeModal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
 
@@ -87,6 +88,7 @@ export default function HomeScreen() {
   const [selectedPrediction, setSelectedPrediction] = useState<Prediction | null>(null);
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [showModelInfo, setShowModelInfo] = useState(false);
+  const [showBookingCode, setShowBookingCode] = useState(false);
 
   const badgeFade = useRef(new Animated.Value(0)).current;
   const pulseAnim = useRef(new Animated.Value(1)).current;
@@ -344,6 +346,15 @@ export default function HomeScreen() {
           </View>
           <View style={styles.titleRight}>
             <TouchableOpacity
+              style={[styles.bookingBadge, { backgroundColor: C.successLight }]}
+              onPress={() => setShowBookingCode(true)}
+              activeOpacity={0.8}
+              hitSlop={6}
+            >
+              <Ionicons name="ticket-outline" size={12} color={C.success} />
+              <Text style={[styles.bookingText, { color: C.success }]}>Booking Code</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
               style={[styles.aiBadge, { backgroundColor: C.primaryLight }]}
               onPress={() => setShowModelInfo(true)}
               activeOpacity={0.8}
@@ -545,6 +556,12 @@ export default function HomeScreen() {
         onClose={() => setSelectedPrediction(null)}
       />
 
+      <BookingCodeModal
+        visible={showBookingCode}
+        onClose={() => setShowBookingCode(false)}
+        predictions={predictions}
+      />
+
       <OnboardingModal
         visible={showOnboarding}
         onDone={() => setShowOnboarding(false)}
@@ -663,6 +680,9 @@ const styles = StyleSheet.create({
   empty: { alignItems: 'center', paddingTop: 60, gap: 12, paddingHorizontal: 32 },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptyDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 21 },
+
+  bookingBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 9, paddingVertical: 5, borderRadius: 20 },
+  bookingText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
   emptyBtn: {
     flexDirection: 'row', alignItems: 'center', gap: 6,
     paddingHorizontal: 20, paddingVertical: 10, borderRadius: 20, marginTop: 4,
