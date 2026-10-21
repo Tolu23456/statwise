@@ -27,3 +27,7 @@ ai/data/tennis/raw/
 ai/data/basketball/raw/
 ai/data/baseball/raw/
 ai/data/volleyball/raw/
+
+# Generated multi-sport data artefacts
+ai/data/weather_by_match.csv
+.github/scripts/package-lock.json
