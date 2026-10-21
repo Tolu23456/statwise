@@ -375,6 +375,20 @@ class FootballPredictor:
         # High uncertainty if entropy near max or heads disagree a lot
         is_uncertain = bool(entropy_norm >= 0.92 or head_disagreement >= 0.08 or (float(np.max(p_outcome)) * 100.0 < 52.0))
 
+        # Certainty score (0-100): how sure the model really is.
+        # Combines raw confidence with how spread out the probabilities are
+        # (low entropy = decisive) and how much the heads agree.
+        sorted_p = np.sort(p_outcome)[::-1]
+        margin = float(sorted_p[0] - sorted_p[1]) * 100.0   # gap to 2nd place
+        certainty = float(
+            max(p_outcome) * 100.0
+            * (1.0 - float(entropy_norm))
+            * 1.35
+            + min(20.0, margin * 0.5)
+            - float(head_disagreement) * 100.0
+        )
+        certainty = float(max(0.0, min(100.0, certainty)))
+
         idx = np.argmax(p_outcome)
 
         # Compute real statistics from history
@@ -436,5 +450,7 @@ class FootballPredictor:
                 'entropy_norm': round(float(entropy_norm), 3),
                 'head_disagreement': round(float(head_disagreement), 3),
                 'is_uncertain': bool(is_uncertain),
+                'certainty': round(float(certainty), 1),
+                'margin': round(float(margin), 1),
             },
         }

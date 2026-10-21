@@ -78,14 +78,25 @@ export type Prediction = {
   tier_required: string;
   reasoning?: string;
   stats?: {
-    h2h: { home_wins: number; draws: number; away_wins: number };
-    home_form: number[];
-    away_form: number[];
-    avg_goals: number;
+    h2h?: { home_wins: number; draws: number; away_wins: number };
+    home_form?: number[];
+    away_form?: number[];
+    avg_goals?: number;
     home_value?: number;
     away_value?: number;
     home_rating?: number;
     away_rating?: number;
+    /** Certainty score (0-100) — model confidence adjusted for probability spread + head agreement */
+    certainty?: number;
+    /** True when the model is genuinely sure about this match */
+    is_ai_pick?: boolean;
+    uncertainty?: {
+      entropy_norm?: number;
+      head_disagreement?: number;
+      is_uncertain?: boolean;
+      certainty?: number;
+      margin?: number;
+    };
     details?: {
       espn_event_id?: string;
       venue?: string | null;

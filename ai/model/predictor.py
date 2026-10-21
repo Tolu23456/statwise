@@ -30,10 +30,10 @@ SUPABASE_KEY = os.environ.get(
 )
 
 TIER_THRESHOLDS = {
-    "Free Tier":    (0,   70),
-    "Premium Tier": (70,  80),
-    "VIP Tier":     (80,  90),
-    "VVIP Tier":    (90,  101),
+    "Free Tier":    (0,   45),
+    "Premium Tier": (45,  60),
+    "VIP Tier":     (60,  75),
+    "VVIP Tier":    (75,  101),
 }
 TIER_DB = {
     "Free Tier":    "free",
@@ -44,6 +44,7 @@ TIER_DB = {
 
 
 def _tier_for_confidence(confidence: int) -> tuple[str, str]:
+    """Map a certainty score (0-100) to a tier."""
     for tier_name, (lo, hi) in TIER_THRESHOLDS.items():
         if lo <= confidence < hi:
             return tier_name, TIER_DB[tier_name]
@@ -138,10 +139,23 @@ class PredictionEngine:
                 )
                 uncertainty = pred.get('uncertainty') or {}
                 is_uncertain = bool(uncertainty.get('is_uncertain'))
-                if is_uncertain and pred.get('confidence', 0) < 90:
-                    pred['confidence'] = min(int(pred.get('confidence', 50)), 55)
-                tier_name, tier_db = _tier_for_confidence(pred['confidence'])
+                certainty = float(uncertainty.get('certainty') or 0)
+                raw_conf = int(pred.get('confidence', 50))
+
+                # "AI Pick" = model is genuinely sure (high certainty score).
+                is_ai_pick = bool(certainty >= 75 and not is_uncertain)
+
+                # Tier is driven by certainty, not raw confidence.
+                # Uncertain picks are forced down to the free tier.
+                tier_score = raw_conf if is_uncertain else max(certainty, raw_conf * 0.6)
+                if is_uncertain:
+                    tier_score = min(tier_score, 44)
+                tier_name, tier_db = _tier_for_confidence(int(round(tier_score)))
+
                 stats = pred.get('stats') or {}
+                stats['certainty'] = round(certainty, 1)
+                stats['is_ai_pick'] = is_ai_pick
+                stats['uncertainty'] = uncertainty
                 if weather:
                     stats['details'] = {**(stats.get('details') or {}), 'weather': weather}
 

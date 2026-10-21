@@ -99,6 +99,9 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
 
   const stats = prediction.stats;
   const details = stats?.details;
+  const certainty = stats?.certainty ?? prediction.confidence;
+  const isAiPick = stats?.is_ai_pick === true;
+  const uncertainty = stats?.uncertainty;
 
   return (
     <Modal
@@ -148,7 +151,7 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
               <View style={styles.pickRow}>
                 <Ionicons name="hardware-chip-outline" size={16} color={C.primary} />
                 <Text style={[styles.pickLabel, { color: C.primary }]}>AI Prediction</Text>
-                {prediction.confidence >= 90 && (
+                {isAiPick && (
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3, marginLeft: 6, backgroundColor: C.successLight, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 12, borderWidth: 1, borderColor: C.success }}>
                     <Ionicons name="star" size={10} color={C.success} />
                     <Text style={{ fontSize: 10, color: C.success, fontWeight: '700' }}>AI Pick</Text>
@@ -156,6 +159,38 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 )}
               </View>
               <Text style={[styles.pickValue, { color: C.primary }]}>{prediction.prediction}</Text>
+            </View>
+
+            {/* ── Model Certainty ── */}
+            <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
+              <Text style={[styles.sectionTitle, { color: C.text }]}>Model Certainty</Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 8 }}>
+                <Text style={{ color: C.textSecondary, fontSize: 13 }}>Certainty score</Text>
+                <Text style={{ color: C.primary, fontSize: 15, fontWeight: '700' }}>{Math.round(certainty)}%</Text>
+              </View>
+              <View style={[styles.confTrack, { backgroundColor: C.border, marginTop: 6 }]}>
+                <View style={[styles.confFill, { width: `${Math.max(0, Math.min(100, certainty))}%` as any, backgroundColor: C.primary }]} />
+              </View>
+              {uncertainty && (
+                <View style={{ marginTop: 12, gap: 6 }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Text style={{ color: C.textSecondary, fontSize: 12 }}>Probability spread (entropy)</Text>
+                    <Text style={{ color: C.textMuted, fontSize: 12 }}>{Math.round((uncertainty.entropy_norm ?? 0) * 100)}%</Text>
+                  </View>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Text style={{ color: C.textSecondary, fontSize: 12 }}>Model agreement</Text>
+                    <Text style={{ color: C.textMuted, fontSize: 12 }}>{Math.round(Math.max(0, 100 - (uncertainty.head_disagreement ?? 0) * 100))}%</Text>
+                  </View>
+                  {uncertainty.is_uncertain && (
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 4, backgroundColor: C.warningLight ?? C.primaryLight, padding: 10, borderRadius: 10, borderWidth: 1, borderColor: C.warning }}>
+                      <Ionicons name="help-circle" size={16} color={C.warning} />
+                      <Text style={{ color: C.textSecondary, fontSize: 12, flex: 1, lineHeight: 17 }}>
+                        The model is not sure about this match — outcomes are close to even. Treat with caution.
+                      </Text>
+                    </View>
+                  )}
+                </View>
+              )}
             </View>
 
             {/* ── Confidence ── */}

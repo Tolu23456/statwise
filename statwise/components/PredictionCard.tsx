@@ -35,6 +35,9 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
   const router = useRouter();
   const confColor = getConfidenceColor(prediction.confidence, C);
 
+  const certainty = prediction.stats?.certainty ?? prediction.confidence;
+  const isAiPick = prediction.stats?.is_ai_pick === true;
+
   const blurStyle = Platform.OS === 'web'
     ? ({ filter: 'blur(6px)', userSelect: 'none' } as any)
     : { opacity: 0.08 };
@@ -120,7 +123,7 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
           <View style={[styles.predBadge, { backgroundColor: C.primaryLight }]}>
             <Text style={[styles.predText, { color: C.primary }]}>{prediction.prediction}</Text>
           </View>
-          {prediction.confidence >= 90 && (
+          {isAiPick && (
             <View style={[styles.aiPickBadge, { backgroundColor: C.successLight, borderColor: C.success }]}>
               <Ionicons name="star" size={12} color={C.success} />
               <Text style={[styles.aiPickText, { color: C.success }]}>AI Pick</Text>
@@ -137,6 +140,11 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
           Confidence:{' '}
           <Text style={{ color: confColor, fontWeight: '700' }}>{prediction.confidence}%</Text>
         </Text>
+        {typeof certainty === 'number' && (
+          <Text style={[styles.certaintyLabel, { color: C.textMuted }]}>
+            Certainty: <Text style={{ color: C.primary, fontWeight: '700' }}>{Math.round(certainty)}%</Text>
+          </Text>
+        )}
       </View>
       <View style={[styles.bar, { backgroundColor: C.border }]}>
         <View
@@ -179,8 +187,9 @@ const styles = StyleSheet.create({
   predBadge: { paddingHorizontal: 12, paddingVertical: 5, borderRadius: 8 },
   predText: { fontWeight: '700', fontSize: 14 },
   odds: { fontSize: 14 },
-  confidenceRow: { marginBottom: 6 },
+  confidenceRow: { marginBottom: 6, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   confidenceLabel: { fontSize: 13 },
+  certaintyLabel: { fontSize: 12 },
   bar: { height: 6, borderRadius: 3, overflow: 'hidden', marginBottom: 10 },
   fill: { height: '100%', borderRadius: 3 },
   reasoning: { fontSize: 13, lineHeight: 18, marginTop: 2, marginBottom: 8 },
