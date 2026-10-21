@@ -12,6 +12,7 @@ import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, ForumMessage } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
+import { formatChatTime, dayOffset } from '@/lib/format';
 
 const PREMIUM_TIERS = ['Premium Tier', 'VIP Tier', 'VVIP Tier'];
 
@@ -241,7 +242,22 @@ export default function ForumScreen() {
     const tier = profileData.current_tier || 'Free Tier';
     const isPremiumUser = PREMIUM_TIERS.includes(tier);
 
+    // Day divider between messages from different calendar days
+    const prevDay = prev ? dayOffset(prev.created_at) : null;
+    const thisDay = dayOffset(item.created_at);
+    const showDayDivider = prevDay === null || prevDay !== thisDay;
+
     return (
+      <View>
+      {showDayDivider && (
+        <View style={styles.dayDivider}>
+          <View style={[styles.dayDividerLine, { backgroundColor: C.border }]} />
+          <Text style={[styles.dayDividerText, { color: C.textMuted }]}>
+            {thisDay === 0 ? 'Today' : thisDay === -1 ? 'Yesterday' : formatChatTime(item.created_at).split(' ')[0]}
+          </Text>
+          <View style={[styles.dayDividerLine, { backgroundColor: C.border }]} />
+        </View>
+      )}
       <View style={[styles.msgRow, isMe && styles.msgRowMe]}>
         {!isMe && showHeader && (
           <View style={[styles.avatar, { backgroundColor: C.primaryLight }]}>
@@ -286,10 +302,11 @@ export default function ForumScreen() {
               <Text style={[styles.msgText, isMe && { color: '#fff' }]}>{parsed.text}</Text>
             ) : null}
             <Text style={[styles.timeText, isMe && { color: 'rgba(255,255,255,0.7)' }, { color: isMe ? 'rgba(255,255,255,0.7)' : C.textMuted }]}>
-              {new Date(item.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              {formatChatTime(item.created_at)}
             </Text>
           </View>
         </View>
+      </View>
       </View>
     );
   };
@@ -430,6 +447,12 @@ export default function ForumScreen() {
                 </TouchableOpacity>
               )}
             </View>
+
+            {input.length > 800 && (
+              <Text style={[styles.charCount, { color: input.length > 950 ? C.danger : C.textMuted }]}>
+                {input.length}/1000
+              </Text>
+            )}
           </View>
         )}
       </View>
@@ -449,6 +472,10 @@ const styles = StyleSheet.create({
   centered: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 10 },
   loadingText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   listContent: { paddingHorizontal: 16, paddingTop: 8, flexGrow: 1 },
+  dayDivider: { flexDirection: 'row', alignItems: 'center', gap: 10, marginVertical: 12 },
+  dayDividerLine: { flex: 1, height: 1 },
+  dayDividerText: { fontSize: 11, fontFamily: 'Inter_600SemiBold', textTransform: 'uppercase', letterSpacing: 0.6 },
+  charCount: { fontSize: 10, textAlign: 'right', marginTop: 4 },
   empty: { alignItems: 'center', justifyContent: 'center', paddingHorizontal: 32, gap: 12, flex: 1 },
   emptyIconBg: { width: 80, height: 80, borderRadius: 40, alignItems: 'center', justifyContent: 'center' },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },

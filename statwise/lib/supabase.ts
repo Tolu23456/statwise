@@ -53,6 +53,13 @@ export type UserProfile = {
   current_tier: string;
   tier: string;
   subscription_status: string;
+  subscription_period?: string | null;
+  subscription_start?: string | null;
+  subscription_end?: string | null;
+  tier_expiry?: string | null;
+  referral_code?: string | null;
+  total_referrals?: number;
+  total_referral_rewards?: number;
   avatar_url?: string;
   notifications: boolean;
   last_login?: string;
@@ -90,6 +97,16 @@ export type Prediction = {
     certainty?: number;
     /** True when the model is genuinely sure about this match */
     is_ai_pick?: boolean;
+    /** Calibrated three-way outcome probabilities (0-100) */
+    prob_home?: number | null;
+    prob_draw?: number | null;
+    prob_away?: number | null;
+    /** Model probability minus de-vigged market probability, in points */
+    value_edge?: number | null;
+    /** Raw market odds captured at prediction time (for model vs market compare) */
+    odds_home?: number | null;
+    odds_draw?: number | null;
+    odds_away?: number | null;
     uncertainty?: {
       entropy_norm?: number;
       head_disagreement?: number;

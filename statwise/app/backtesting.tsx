@@ -92,20 +92,37 @@ export default function BacktestingScreen() {
   const userTier = profile?.current_tier ?? 'Free Tier';
   const allowedTiers = TIER_DB_ALLOWED[userTier] ?? ['free'];
 
-  const { data: results = [], isLoading, refetch, isFetching } = useQuery<PredictionResult[]>({
+  const { data: results = [], isLoading, refetch, isFetching, error } = useQuery<PredictionResult[]>({
     queryKey: ['backtesting', userTier],
     queryFn: async () => {
       const thirtyDaysAgo = new Date(Date.now() - 30 * 86400000).toISOString().split('T')[0];
+      const cols =
+        'id, prediction, status, confidence, league, league_slug, match_title, match_date, tier, tier_required';
+
       const { data, error } = await supabase
         .from('predictions')
-        .select('id, prediction, actual_result, status, confidence, league, league_slug, match_title, match_date, tier, tier_required')
+        .select(`${cols}, actual_result`)
         .gte('match_date', thirtyDaysAgo)
         .in('tier', allowedTiers)
         .order('match_date', { ascending: false });
-      if (error) throw error;
-      return data ?? [];
+
+      if (!error) return data ?? [];
+
+      // The settlement columns (actual_result / home_score / away_score) may not
+      // exist yet on older databases — fall back to the base columns instead of
+      // failing the whole screen.
+      const fallback = await supabase
+        .from('predictions')
+        .select(cols)
+        .gte('match_date', thirtyDaysAgo)
+        .in('tier', allowedTiers)
+        .order('match_date', { ascending: false });
+
+      if (fallback.error) throw fallback.error;
+      return (fallback.data ?? []).map(r => ({ ...r, actual_result: null }));
     },
     staleTime: 5 * 60 * 1000,
+    retry: 1,
   });
 
   const stats = computeStats(results);
@@ -168,7 +185,16 @@ export default function BacktestingScreen() {
             </View>
           </View>
 
-          {stats.accuracy === 0 && stats.pending === stats.total && (
+          {error && (
+            <View style={[styles.infoCard, { backgroundColor: C.dangerLight, borderColor: C.danger }]}>
+              <Ionicons name="warning-outline" size={20} color={C.danger} />
+              <Text style={[styles.infoText, { color: C.danger }]}>
+                Could not load accuracy history. Pull down to retry.
+              </Text>
+            </View>
+          )}
+
+          {stats.accuracy === 0 && stats.pending === stats.total && !error && (
             <View style={[styles.infoCard, { backgroundColor: C.warningLight, borderColor: C.warning }]}>
               <Ionicons name="information-circle-outline" size={20} color={C.warning} />
               <Text style={[styles.infoText, { color: C.warning }]}>

@@ -5,6 +5,14 @@ import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/colors';
 import { Prediction } from '@/lib/supabase';
 import { useTheme } from '@/context/ThemeContext';
+import {
+  formatKickoff,
+  formatClock,
+  isLive,
+  hasStarted,
+  formatEdge,
+  countdownLabel,
+} from '@/lib/format';
 
 type Props = {
   prediction: Prediction;
@@ -13,20 +21,38 @@ type Props = {
   onPress?: () => void;
 };
 
-function formatKickoff(raw: string): string {
-  try {
-    const d = new Date(raw);
-    if (isNaN(d.getTime())) return raw;
-    return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
-  } catch {
-    return raw;
-  }
-}
-
 function getConfidenceColor(confidence: number, C: typeof Colors.dark) {
   if (confidence >= 75) return C.success;
   if (confidence >= 50) return C.warning;
   return C.danger;
+}
+
+type Outcome = { key: 'H' | 'D' | 'A'; label: string; prob: number };
+
+function buildOutcomes(p: Prediction): Outcome[] | null {
+  const s = p.stats;
+  if (!s) return null;
+  const { prob_home, prob_draw, prob_away } = s;
+  if (
+    typeof prob_home !== 'number' ||
+    typeof prob_draw !== 'number' ||
+    typeof prob_away !== 'number'
+  ) {
+    return null;
+  }
+  return [
+    { key: 'H', label: 'Home', prob: prob_home },
+    { key: 'D', label: 'Draw', prob: prob_draw },
+    { key: 'A', label: 'Away', prob: prob_away },
+  ];
+}
+
+/** Map the model's pick onto a short code. */
+function pickCode(prediction: string): 'H' | 'D' | 'A' | null {
+  if (prediction === 'Home Win') return 'H';
+  if (prediction === 'Draw') return 'D';
+  if (prediction === 'Away Win') return 'A';
+  return null;
 }
 
 export function PredictionCard({ prediction, locked = false, nextTier = 'Premium Tier', onPress }: Props) {
@@ -37,19 +63,36 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
 
   const certainty = prediction.stats?.certainty ?? prediction.confidence;
   const isAiPick = prediction.stats?.is_ai_pick === true;
+  const edge = prediction.stats?.value_edge ?? null;
+  const outcomes = buildOutcomes(prediction);
+  const pick = pickCode(prediction.prediction);
+  const live = isLive(prediction.kickoff_time);
+  const started = hasStarted(prediction.kickoff_time);
+  const countdown = countdownLabel(prediction.kickoff_time);
 
   const blurStyle = Platform.OS === 'web'
     ? ({ filter: 'blur(6px)', userSelect: 'none' } as any)
     : { opacity: 0.08 };
 
+  const showValue = !locked && edge !== null && edge >= 3;
+
+  /* ------------------------------ locked card ----------------------------- */
   if (locked) {
     return (
       <View style={[styles.card, styles.lockedCard, { backgroundColor: C.card, borderColor: C.border }]}>
         <View style={styles.header}>
-          <Text style={[styles.league, { color: C.textMuted, backgroundColor: C.inputBg }]}>
-            {prediction.league}
-          </Text>
-          <Text style={[styles.time, { color: C.textMuted }]}>
+          <View style={styles.leagueWrap}>
+            <Text style={[styles.league, { color: C.textMuted, backgroundColor: C.inputBg }]}>
+              {prediction.league}
+            </Text>
+            {live && (
+              <View style={[styles.liveChip, { backgroundColor: C.dangerLight }]}>
+                <View style={[styles.liveDot, { backgroundColor: C.danger }]} />
+                <Text style={[styles.liveText, { color: C.danger }]}>LIVE</Text>
+              </View>
+            )}
+          </View>
+          <Text style={[styles.time, { color: C.textSecondary }]}>
             {formatKickoff(prediction.kickoff_time)}
           </Text>
         </View>
@@ -63,7 +106,9 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
             <View style={[styles.predBadge, { backgroundColor: C.primaryLight }]}>
               <Text style={[styles.predText, { color: C.primary }]}>{prediction.prediction}</Text>
             </View>
-            <Text style={[styles.odds, { color: C.textSecondary }]}>Odds: {prediction.odds}</Text>
+            <Text style={[styles.odds, { color: C.textSecondary }]}>
+              {prediction.odds ? `Odds ${prediction.odds}` : ''}
+            </Text>
           </View>
           <View style={styles.confidenceRow}>
             <Text style={[styles.confidenceLabel, { color: C.textSecondary }]}>
@@ -100,6 +145,7 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
     );
   }
 
+  /* -------------------------------- card --------------------------------- */
   return (
     <TouchableOpacity
       activeOpacity={0.75}
@@ -107,10 +153,22 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
       style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}
     >
       <View style={styles.header}>
-        <Text style={[styles.league, { color: C.primary, backgroundColor: C.primaryLight }]}>
-          {prediction.league}
-        </Text>
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+        <View style={styles.leagueWrap}>
+          <Text style={[styles.league, { color: C.primary, backgroundColor: C.primaryLight }]}>
+            {prediction.league}
+          </Text>
+          {live ? (
+            <View style={[styles.liveChip, { backgroundColor: C.dangerLight }]}>
+              <View style={[styles.liveDot, { backgroundColor: C.danger }]} />
+              <Text style={[styles.liveText, { color: C.danger }]}>LIVE</Text>
+            </View>
+          ) : countdown ? (
+            <View style={[styles.countdownChip, { backgroundColor: C.inputBg }]}>
+              <Text style={[styles.countdownText, { color: C.textSecondary }]}>in {countdown}</Text>
+            </View>
+          ) : null}
+        </View>
+        <View style={styles.timeWrap}>
           <Text style={[styles.time, { color: C.textSecondary }]}>{formatKickoff(prediction.kickoff_time)}</Text>
           <Ionicons name="chevron-forward" size={14} color={C.textMuted} />
         </View>
@@ -119,7 +177,7 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
       <Text style={[styles.matchTitle, { color: C.text }]}>{prediction.match_title}</Text>
 
       <View style={styles.row}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+        <View style={styles.badgeRow}>
           <View style={[styles.predBadge, { backgroundColor: C.primaryLight }]}>
             <Text style={[styles.predText, { color: C.primary }]}>{prediction.prediction}</Text>
           </View>
@@ -129,11 +187,64 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
               <Text style={[styles.aiPickText, { color: C.success }]}>AI Pick</Text>
             </View>
           )}
+          {showValue && (
+            <View style={[styles.valueBadge, { backgroundColor: C.goldLight, borderColor: C.gold }]}>
+              <Ionicons name="trending-up" size={12} color={C.gold} />
+              <Text style={[styles.valueText, { color: C.gold }]}>
+                Value {formatEdge(edge)}
+              </Text>
+            </View>
+          )}
         </View>
-        <Text style={[styles.odds, { color: C.textSecondary }]}>
-          {prediction.odds ? `Odds: ${prediction.odds}` : ''}
-        </Text>
+        {prediction.odds ? (
+          <Text style={[styles.odds, { color: C.textSecondary }]}>
+            {pick === 'H' ? 'Home' : pick === 'D' ? 'Draw' : pick === 'A' ? 'Away' : 'Odds'}{' '}
+            <Text style={{ color: C.text, fontWeight: '700' }}>{prediction.odds}</Text>
+          </Text>
+        ) : null}
       </View>
+
+      {/* Three-way probability breakdown */}
+      {outcomes && (
+        <View style={styles.probBlock}>
+          <View style={styles.probBars}>
+            {outcomes.map(o => {
+              const isPick = o.key === pick;
+              const barColor = isPick ? C.primary : C.border;
+              return (
+                <View key={o.key} style={styles.probCol}>
+                  <Text
+                    style={[
+                      styles.probValue,
+                      { color: isPick ? C.primary : C.textSecondary },
+                      isPick && { fontWeight: '700' },
+                    ]}
+                  >
+                    {Math.round(o.prob)}%
+                  </Text>
+                  <View style={[styles.probTrack, { backgroundColor: C.inputBg }]}>
+                    <View
+                      style={[
+                        styles.probFill,
+                        { width: `${Math.max(2, Math.min(100, o.prob))}%` as any, backgroundColor: barColor },
+                      ]}
+                    />
+                  </View>
+                  <Text
+                    style={[
+                      styles.probLabel,
+                      { color: isPick ? C.primary : C.textMuted },
+                      isPick && { fontWeight: '700' },
+                    ]}
+                  >
+                    {o.label}
+                  </Text>
+                </View>
+              );
+            })}
+          </View>
+        </View>
+      )}
 
       <View style={styles.confidenceRow}>
         <Text style={[styles.confidenceLabel, { color: C.textSecondary }]}>
@@ -141,11 +252,16 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
           <Text style={{ color: confColor, fontWeight: '700' }}>{prediction.confidence}%</Text>
         </Text>
         {typeof certainty === 'number' && (
-          <Text style={[styles.certaintyLabel, { color: C.textMuted }]}>
-            Certainty: <Text style={{ color: C.primary, fontWeight: '700' }}>{Math.round(certainty)}%</Text>
-          </Text>
+          <View style={styles.certaintyWrap}>
+            <Ionicons name="shield-checkmark" size={12} color={C.primary} />
+            <Text style={[styles.certaintyLabel, { color: C.textMuted }]}>
+              Certainty{' '}
+              <Text style={{ color: C.primary, fontWeight: '700' }}>{Math.round(certainty)}%</Text>
+            </Text>
+          </View>
         )}
       </View>
+
       <View style={[styles.bar, { backgroundColor: C.border }]}>
         <View
           style={[styles.fill, { width: `${prediction.confidence}%` as any, backgroundColor: confColor }]}
@@ -161,6 +277,9 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
       <View style={[styles.tapHint, { borderTopColor: C.border }]}>
         <Ionicons name="analytics-outline" size={13} color={C.textMuted} />
         <Text style={[styles.tapHintText, { color: C.textMuted }]}>Tap for full analysis</Text>
+        {started && !live && (
+          <Text style={[styles.kickedOff, { color: C.textMuted }]}>Kicked off {formatClock(prediction.kickoff_time)}</Text>
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -176,19 +295,38 @@ const styles = StyleSheet.create({
   },
   lockedCard: { opacity: 0.92 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
+  leagueWrap: { flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 1 },
+  timeWrap: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   league: {
     fontSize: 11, fontWeight: '700', paddingHorizontal: 10, paddingVertical: 3,
     borderRadius: 20, overflow: 'hidden', textTransform: 'uppercase', letterSpacing: 0.5,
   },
-  time: { fontSize: 13 },
+  liveChip: {
+    flexDirection: 'row', alignItems: 'center', gap: 4,
+    paddingHorizontal: 7, paddingVertical: 3, borderRadius: 20,
+  },
+  liveDot: { width: 6, height: 6, borderRadius: 3 },
+  liveText: { fontSize: 10, fontWeight: '800', letterSpacing: 0.5 },
+  countdownChip: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 20 },
+  countdownText: { fontSize: 11, fontWeight: '600' },
+  time: { fontSize: 12, fontWeight: '500' },
   matchTitle: { fontSize: 16, fontWeight: '700', marginBottom: 10, lineHeight: 22 },
   blurredSection: { marginBottom: 4 },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
+  badgeRow: { flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 1, flexWrap: 'wrap' },
   predBadge: { paddingHorizontal: 12, paddingVertical: 5, borderRadius: 8 },
   predText: { fontWeight: '700', fontSize: 14 },
-  odds: { fontSize: 14 },
+  odds: { fontSize: 13 },
+  probBlock: { marginBottom: 10 },
+  probBars: { flexDirection: 'row', gap: 8 },
+  probCol: { flex: 1, alignItems: 'center' },
+  probValue: { fontSize: 13, marginBottom: 4 },
+  probTrack: { height: 5, borderRadius: 3, overflow: 'hidden', width: '100%' },
+  probFill: { height: '100%', borderRadius: 3 },
+  probLabel: { fontSize: 10, marginTop: 4, textTransform: 'uppercase', letterSpacing: 0.4 },
   confidenceRow: { marginBottom: 6, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   confidenceLabel: { fontSize: 13 },
+  certaintyWrap: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   certaintyLabel: { fontSize: 12 },
   bar: { height: 6, borderRadius: 3, overflow: 'hidden', marginBottom: 10 },
   fill: { height: '100%', borderRadius: 3 },
@@ -197,7 +335,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center', gap: 5,
     borderTopWidth: 1, paddingTop: 10, marginTop: 2,
   },
-  tapHintText: { fontSize: 12 },
+  tapHintText: { fontSize: 12, flex: 1 },
+  kickedOff: { fontSize: 11 },
   lockCta: {
     flexDirection: 'row', alignItems: 'center', gap: 10,
     borderTopWidth: 1, paddingTop: 12, marginTop: 8,
@@ -212,4 +351,6 @@ const styles = StyleSheet.create({
   upgradePillText: { color: '#fff', fontSize: 12, fontWeight: '700' },
   aiPickBadge: { flexDirection: 'row', alignItems: 'center', gap: 3, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 20, borderWidth: 1 },
   aiPickText: { fontSize: 11, fontWeight: '700' },
+  valueBadge: { flexDirection: 'row', alignItems: 'center', gap: 3, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 20, borderWidth: 1 },
+  valueText: { fontSize: 11, fontWeight: '700' },
 });

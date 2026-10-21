@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput,
   Switch, Alert, ActivityIndicator, Platform, Share,
@@ -26,6 +26,38 @@ const TIER_REWARD_POINTS: Record<string, number> = {
   'Premium Tier': 500,
   'VIP Tier': 2000,
   'VVIP Tier': 5000,
+};
+
+/** What each tier actually unlocks — shown on the profile so the value is obvious. */
+const TIER_PERKS: Record<string, { label: string; icon: string; unlocked: boolean }[]> = {
+  'Free Tier': [
+    { label: '5 daily predictions', icon: 'football-outline', unlocked: true },
+    { label: 'Basic match analysis', icon: 'analytics-outline', unlocked: true },
+    { label: 'Read the community forum', icon: 'chatbubbles-outline', unlocked: true },
+    { label: '25 predictions · advanced analysis', icon: 'lock-closed-outline', unlocked: false },
+    { label: '75 predictions · VIP insights', icon: 'lock-closed-outline', unlocked: false },
+    { label: 'All matches · AI Picks', icon: 'lock-closed-outline', unlocked: false },
+  ],
+  'Premium Tier': [
+    { label: '25 daily predictions', icon: 'football-outline', unlocked: true },
+    { label: 'Advanced match analysis', icon: 'analytics-outline', unlocked: true },
+    { label: 'Post in the community forum', icon: 'chatbubbles-outline', unlocked: true },
+    { label: '75 predictions · VIP insights', icon: 'lock-closed-outline', unlocked: false },
+    { label: 'All matches · AI Picks', icon: 'lock-closed-outline', unlocked: false },
+  ],
+  'VIP Tier': [
+    { label: '75 daily predictions', icon: 'football-outline', unlocked: true },
+    { label: 'Exclusive VIP insights', icon: 'bulb-outline', unlocked: true },
+    { label: 'Live match updates', icon: 'radio-outline', unlocked: true },
+    { label: 'All matches · AI Picks', icon: 'lock-closed-outline', unlocked: false },
+  ],
+  'VVIP Tier': [
+    { label: 'All matches every day', icon: 'football-outline', unlocked: true },
+    { label: 'AI Picks — Pico’s highest certainty', icon: 'star-outline', unlocked: true },
+    { label: 'Exclusive VIP insights', icon: 'bulb-outline', unlocked: true },
+    { label: 'Real-time alerts', icon: 'notifications-outline', unlocked: true },
+    { label: 'Early access to new leagues', icon: 'flash-outline', unlocked: true },
+  ],
 };
 
 export default function ProfileScreen() {
@@ -61,6 +93,14 @@ export default function ProfileScreen() {
   const rewardPoints = referral
     ? referral.total_referrals * (TIER_REWARD_POINTS[profile?.current_tier ?? 'Free Tier'])
     : 0;
+
+  const subscriptionExpiry = useMemo(() => {
+    const raw = profile?.tier_expiry ?? profile?.subscription_end ?? null;
+    if (!raw) return null;
+    const d = new Date(raw);
+    if (isNaN(d.getTime())) return null;
+    return d.toLocaleDateString([], { day: 'numeric', month: 'long', year: 'numeric' });
+  }, [profile?.tier_expiry, profile?.subscription_end]);
 
   async function saveDisplayName() {
     if (!displayName.trim() || !user) return;
@@ -266,9 +306,61 @@ export default function ProfileScreen() {
           </View>
         </View>
 
+        {/* ── Your Plan ── */}
+        <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
+          <View style={styles.planHeader}>
+            <Text style={[styles.sectionTitle, { color: C.text }]}>Your Plan</Text>
+            <View style={[styles.tierBadge, { backgroundColor: tierColors.bg }]}>
+              <Text style={[styles.tierText, { color: tierColors.text }]}>
+                {profile?.current_tier ?? 'Free Tier'}
+              </Text>
+            </View>
+          </View>
+
+          {subscriptionExpiry && (
+            <View style={[styles.expiryRow, { backgroundColor: C.inputBg, borderColor: C.border }]}>
+              <Ionicons name="calendar-outline" size={15} color={C.textSecondary} />
+              <Text style={[styles.expiryText, { color: C.textSecondary }]}>
+                Active until {subscriptionExpiry}
+              </Text>
+            </View>
+          )}
+
+          <View style={{ marginTop: 10, gap: 8 }}>
+            {(TIER_PERKS[profile?.current_tier ?? 'Free Tier'] ?? TIER_PERKS['Free Tier']).map((perk, i) => (
+              <View key={i} style={styles.perkRow}>
+                <Ionicons
+                  name={perk.icon as any}
+                  size={16}
+                  color={perk.unlocked ? C.success : C.textMuted}
+                />
+                <Text
+                  style={[
+                    styles.perkText,
+                    { color: perk.unlocked ? C.text : C.textMuted },
+                    !perk.unlocked && { textDecorationLine: 'none' },
+                  ]}
+                >
+                  {perk.label}
+                </Text>
+              </View>
+            ))}
+          </View>
+
+          {profile?.current_tier !== 'VVIP Tier' && (
+            <TouchableOpacity
+              style={[styles.upgradeBtn, { backgroundColor: C.primary }]}
+              onPress={() => router.push('/(tabs)/subscriptions')}
+              activeOpacity={0.85}
+            >
+              <Ionicons name="rocket-outline" size={16} color="#fff" />
+              <Text style={styles.upgradeBtnText}>Upgrade plan</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+
         {referral && (
-          <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
-            <Text style={[styles.sectionTitle, { color: C.text }]}>Referral Program</Text>
+          <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>            <Text style={[styles.sectionTitle, { color: C.text }]}>Referral Program</Text>
             <Text style={[styles.sectionDesc, { color: C.textSecondary }]}>
               Invite friends and earn reward points when they subscribe.
             </Text>
@@ -448,6 +540,21 @@ const styles = StyleSheet.create({
   tierText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   section: { borderRadius: 16, borderWidth: 1, padding: 16, marginBottom: 14 },
   sectionTitle: { fontSize: 17, fontFamily: 'Inter_700Bold', marginBottom: 6 },
+  planHeader: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6,
+  },
+  expiryRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    borderRadius: 10, borderWidth: 1, paddingHorizontal: 10, paddingVertical: 8, marginTop: 6,
+  },
+  expiryText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
+  perkRow: { flexDirection: 'row', alignItems: 'center', gap: 9 },
+  perkText: { fontSize: 13, fontFamily: 'Inter_400Regular', flex: 1 },
+  upgradeBtn: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
+    marginTop: 14, paddingVertical: 12, borderRadius: 12,
+  },
+  upgradeBtnText: { color: '#fff', fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   sectionDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', marginBottom: 14 },
   codeRow: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',

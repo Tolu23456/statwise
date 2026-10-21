@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
@@ -17,6 +18,7 @@ import { PredictionDetailModal } from '@/components/PredictionDetailModal';
 import { SkeletonCard } from '@/components/SkeletonCard';
 import { OnboardingModal, shouldShowOnboarding } from '@/components/OnboardingModal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
 
 const POLL_INTERVAL_MS = 20 * 60 * 1000;
 
@@ -60,6 +62,10 @@ const TIER_NEXT: Record<string, string> = {
   'VVIP Tier': 'VVIP Tier',
 };
 
+type ListRow =
+  | { kind: 'header'; key: string; label: string; count: number }
+  | { kind: 'prediction'; key: string; prediction: Prediction };
+
 function sendBrowserNotification(title: string, body: string) {
   if (Platform.OS === 'web' && 'Notification' in window && Notification.permission === 'granted') {
     new Notification(title, { body, icon: '/favicon.ico' });
@@ -72,6 +78,7 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   const { profile } = useAuth();
   const queryClient = useQueryClient();
+  const router = useRouter();
 
   const [selectedLeague, setSelectedLeague] = useState('all');
   const [search, setSearch] = useState('');
@@ -95,7 +102,7 @@ export default function HomeScreen() {
     });
   }, []);
 
-  const { data: predictions = [], isLoading, isError, refetch, isFetching } = useQuery<Prediction[]>({
+  const { data: predictions = [], isLoading, isError, refetch, isFetching, dataUpdatedAt } = useQuery<Prediction[]>({
     queryKey: ['predictions', userTier],
     queryFn: async () => {
       const today = new Date().toISOString().split('T')[0];
@@ -111,6 +118,23 @@ export default function HomeScreen() {
     },
     refetchInterval: POLL_INTERVAL_MS,
     refetchIntervalInBackground: false,
+    staleTime: 5 * 60 * 1000,
+  });
+
+  // How many predictions exist for this tier overall — used to tell free users
+  // how many more they could unlock.
+  const { data: totalAvailable } = useQuery<number>({
+    queryKey: ['predictions-total', userTier],
+    queryFn: async () => {
+      const today = new Date().toISOString().split('T')[0];
+      const { count, error } = await supabase
+        .from('predictions')
+        .select('id', { count: 'exact', head: true })
+        .gte('match_date', today)
+        .in('tier', allowedTiers);
+      if (error) throw error;
+      return count ?? 0;
+    },
     staleTime: 5 * 60 * 1000,
   });
 
@@ -180,6 +204,43 @@ export default function HomeScreen() {
     }
     return list;
   }, [predictions, selectedLeague, search]);
+
+  /** Match counts per league tab (based on the unfiltered day's list). */
+  const leagueCounts = useMemo(() => {
+    const counts: Record<string, number> = { all: predictions.length };
+    for (const p of predictions) {
+      counts[p.league_slug] = (counts[p.league_slug] ?? 0) + 1;
+    }
+    return counts;
+  }, [predictions]);
+
+  /** Flatten predictions into day headers + rows so the feed reads chronologically. */
+  const rows = useMemo<ListRow[]>(() => {
+    // First pass: how many matches fall on each calendar day.
+    const counts: Record<string, number> = {};
+    filtered.forEach(p => {
+      const label = formatDayLabel(p.kickoff_time || p.match_date);
+      counts[label] = (counts[label] ?? 0) + 1;
+    });
+
+    // Second pass: emit a header whenever the day changes.
+    const out: ListRow[] = [];
+    let currentLabel = '';
+    filtered.forEach((p, idx) => {
+      const label = formatDayLabel(p.kickoff_time || p.match_date);
+      if (label !== currentLabel) {
+        currentLabel = label;
+        out.push({
+          kind: 'header',
+          key: `hdr-${label}-${idx}`,
+          label: label || 'Upcoming',
+          count: counts[label] ?? 0,
+        });
+      }
+      out.push({ kind: 'prediction', key: p.id, prediction: p });
+    });
+    return out;
+  }, [filtered]);
 
   const topInset = Platform.OS === 'web' ? 0 : insets.top;
 
@@ -271,14 +332,29 @@ export default function HomeScreen() {
 
       <View style={[styles.headerArea, { paddingTop: topInset + 8, backgroundColor: C.background }]}>
         <View style={styles.titleRow}>
-          <Text style={[styles.title, { color: C.text }]}>Today's Predictions</Text>
+          <View style={styles.titleLeft}>
+            <Text style={[styles.title, { color: C.text }]}>Predictions</Text>
+            {predictions.length > 0 && (
+              <Text style={[styles.subtitle, { color: C.textMuted }]}>
+                {formatNumber(predictions.length)} match{predictions.length === 1 ? '' : 'es'}
+                {userLimit !== Infinity && totalAvailable ? ` of ${formatNumber(totalAvailable)}` : ''}
+                {dataUpdatedAt ? ` · ${timeAgo(new Date(dataUpdatedAt).toISOString())}` : ''}
+              </Text>
+            )}
+          </View>
           <View style={styles.titleRight}>
-            <TouchableOpacity style={[styles.aiBadge, { backgroundColor: C.primaryLight }]} onPress={() => setShowModelInfo(true)} activeOpacity={0.8}>
-              <Ionicons name="hardware-chip-outline" size={11} color={C.primary} />
-              <Text style={[styles.aiText, { color: C.primary }]}>AI</Text>
+            <TouchableOpacity
+              style={[styles.aiBadge, { backgroundColor: C.primaryLight }]}
+              onPress={() => setShowModelInfo(true)}
+              activeOpacity={0.8}
+              hitSlop={6}
+            >
+              <Ionicons name="hardware-chip-outline" size={12} color={C.primary} />
+              <Text style={[styles.aiText, { color: C.primary }]}>Pico</Text>
+              <Ionicons name="information-circle-outline" size={12} color={C.primary} />
             </TouchableOpacity>
             <View style={[styles.tierBadge, { backgroundColor: C.primaryLight }]}>
-              <Text style={[styles.tierText, { color: C.primary }]}>{userTier}</Text>
+              <Text style={[styles.tierText, { color: C.primary }]}>{userTier.replace(' Tier', '')}</Text>
             </View>
           </View>
         </View>
@@ -302,6 +378,28 @@ export default function HomeScreen() {
           </TouchableOpacity>
         )}
 
+        {/* Free tier upsell — shows how many picks are hidden behind an upgrade */}
+        {userTier === 'Free Tier' && (totalAvailable ?? 0) > predictions.length && (
+          <TouchableOpacity
+            style={[styles.upsellBanner, { backgroundColor: C.goldLight, borderColor: C.gold }]}
+            onPress={() => router.push('/(tabs)/subscriptions')}
+            activeOpacity={0.85}
+          >
+            <View style={[styles.upsellIcon, { backgroundColor: C.gold }]}>
+              <Ionicons name="lock-open" size={14} color="#fff" />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.upsellTitle, { color: C.text }]}>
+                {formatNumber((totalAvailable ?? 0) - predictions.length)} more picks available
+              </Text>
+              <Text style={[styles.upsellSub, { color: C.textSecondary }]}>
+                Upgrade to Premium for 25 matches a day
+              </Text>
+            </View>
+            <Ionicons name="chevron-forward" size={16} color={C.gold} />
+          </TouchableOpacity>
+        )}
+
         <View style={[styles.searchBar, { backgroundColor: C.inputBg, borderColor: C.border }]}>
           <Ionicons name="search-outline" size={18} color={C.placeholder} />
           <TextInput
@@ -310,7 +408,7 @@ export default function HomeScreen() {
               { color: C.text },
               Platform.OS === 'web' ? ({ outlineStyle: 'none', boxShadow: 'none', borderWidth: 0 } as any) : null,
             ]}
-            placeholder="Search predictions..."
+            placeholder="Search team, league or pick..."
             placeholderTextColor={C.placeholder}
             value={search}
             onChangeText={setSearch}
@@ -318,7 +416,7 @@ export default function HomeScreen() {
             selectionColor={C.primary}
           />
           {search.length > 0 && (
-            <TouchableOpacity onPress={() => setSearch('')}>
+            <TouchableOpacity onPress={() => setSearch('')} hitSlop={8}>
               <Ionicons name="close-circle" size={18} color={C.placeholder} />
             </TouchableOpacity>
           )}
@@ -330,31 +428,52 @@ export default function HomeScreen() {
           contentContainerStyle={styles.leagueTabs}
           fadingEdgeLength={Platform.OS === 'android' ? 32 : undefined}
         >
-          {LEAGUES.map(l => (
-            <TouchableOpacity
-              key={l.slug}
-              style={[
-                styles.leagueTab,
-                {
-                  backgroundColor: selectedLeague === l.slug ? C.primary : C.card,
-                  borderColor: selectedLeague === l.slug ? C.primary : C.border,
-                },
-              ]}
-              onPress={() => {
-                setSelectedLeague(l.slug);
-                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-              }}
-            >
-              <Text
+          {LEAGUES.map(l => {
+            const count = leagueCounts[l.slug] ?? 0;
+            if (l.slug !== 'all' && count === 0) return null;
+            const active = selectedLeague === l.slug;
+            return (
+              <TouchableOpacity
+                key={l.slug}
                 style={[
-                  styles.leagueTabText,
-                  { color: selectedLeague === l.slug ? '#fff' : C.textSecondary },
+                  styles.leagueTab,
+                  {
+                    backgroundColor: active ? C.primary : C.card,
+                    borderColor: active ? C.primary : C.border,
+                  },
                 ]}
+                onPress={() => {
+                  setSelectedLeague(l.slug);
+                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                }}
+                activeOpacity={0.85}
               >
-                {l.name}
-              </Text>
-            </TouchableOpacity>
-          ))}
+                <Text
+                  style={[
+                    styles.leagueTabText,
+                    { color: active ? '#fff' : C.textSecondary },
+                  ]}
+                >
+                  {l.name}
+                </Text>
+                <View
+                  style={[
+                    styles.leagueCount,
+                    { backgroundColor: active ? 'rgba(255,255,255,0.25)' : C.inputBg },
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.leagueCountText,
+                      { color: active ? '#fff' : C.textMuted },
+                    ]}
+                  >
+                    {count}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
         </ScrollView>
       </View>
 
@@ -368,8 +487,8 @@ export default function HomeScreen() {
         />
       ) : (
         <FlatList
-          data={filtered}
-          keyExtractor={item => item.id}
+          data={rows}
+          keyExtractor={item => item.key}
           contentContainerStyle={[
             styles.listContent,
             { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 24 : 80) },
@@ -383,17 +502,40 @@ export default function HomeScreen() {
             />
           }
           ListEmptyComponent={<EmptyState />}
-          renderItem={({ item }) => (
-            <PredictionCard
-              prediction={item}
-              locked={false}
-              nextTier={nextTier}
-              onPress={() => {
-                setSelectedPrediction(item);
-                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-              }}
-            />
-          )}
+          ListFooterComponent={
+            filtered.length > 0 ? (
+              <Text style={[styles.footerNote, { color: C.textMuted }]}>
+                {formatNumber(filtered.length)} prediction{filtered.length === 1 ? '' : 's'} shown
+                {search.trim() ? ' for your search' : ''}
+                {' · '}Pico can still be wrong. Play responsibly.
+              </Text>
+            ) : null
+          }
+          renderItem={({ item }) => {
+            if (item.kind === 'header') {
+              return (
+                <View style={styles.dayHeader}>
+                  <View style={[styles.dayRule, { backgroundColor: C.border }]} />
+                  <Text style={[styles.dayLabel, { color: C.text }]}>{item.label}</Text>
+                  <View style={[styles.dayCountPill, { backgroundColor: C.inputBg }]}>
+                    <Text style={[styles.dayCountText, { color: C.textSecondary }]}>{item.count}</Text>
+                  </View>
+                  <View style={[styles.dayRule, { backgroundColor: C.border }]} />
+                </View>
+              );
+            }
+            return (
+              <PredictionCard
+                prediction={item.prediction}
+                locked={false}
+                nextTier={nextTier}
+                onPress={() => {
+                  setSelectedPrediction(item.prediction);
+                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                }}
+              />
+            );
+          }}
         />
       )}
 
@@ -480,21 +622,44 @@ const styles = StyleSheet.create({
   errorText: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular' },
   headerArea: { paddingHorizontal: 16, paddingBottom: 8 },
   titleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
+  titleLeft: { flex: 1, marginRight: 10 },
   titleRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   title: { fontSize: 22, fontFamily: 'Inter_700Bold' },
-  aiBadge: { flexDirection: 'row', alignItems: 'center', gap: 3, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 20 },
+  subtitle: { fontSize: 12, marginTop: 2 },
+  aiBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 9, paddingVertical: 5, borderRadius: 20 },
   aiText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
-  tierBadge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20 },
+  tierBadge: { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 20 },
   tierText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  upsellBanner: {
+    flexDirection: 'row', alignItems: 'center', gap: 10,
+    borderRadius: 12, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 10, marginBottom: 12,
+  },
+  upsellIcon: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center' },
+  upsellTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  upsellSub: { fontSize: 12, marginTop: 1 },
   searchBar: {
     flexDirection: 'row', alignItems: 'center', gap: 8,
     borderRadius: 12, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 10, marginBottom: 12,
   },
   searchInput: { flex: 1, fontSize: 15, fontFamily: 'Inter_400Regular' },
   leagueTabs: { gap: 8, paddingBottom: 4 },
-  leagueTab: { paddingHorizontal: 14, paddingVertical: 7, borderRadius: 20, borderWidth: 1 },
+  leagueTab: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: 12, paddingVertical: 7, borderRadius: 20, borderWidth: 1,
+  },
   leagueTabText: { fontSize: 13, fontFamily: 'Inter_500Medium' },
+  leagueCount: {
+    minWidth: 20, paddingHorizontal: 5, paddingVertical: 1,
+    borderRadius: 10, alignItems: 'center', justifyContent: 'center',
+  },
+  leagueCountText: { fontSize: 11, fontWeight: '700' },
   listContent: { paddingHorizontal: 16, paddingTop: 12 },
+  dayHeader: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 10, marginTop: 4 },
+  dayRule: { flex: 1, height: 1 },
+  dayLabel: { fontSize: 13, fontWeight: '700', letterSpacing: 0.3 },
+  dayCountPill: { paddingHorizontal: 7, paddingVertical: 2, borderRadius: 10 },
+  dayCountText: { fontSize: 11, fontWeight: '600' },
+  footerNote: { fontSize: 11, textAlign: 'center', marginTop: 4, lineHeight: 16 },
   empty: { alignItems: 'center', paddingTop: 60, gap: 12, paddingHorizontal: 32 },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptyDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 21 },

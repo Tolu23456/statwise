@@ -159,6 +159,35 @@ class PredictionEngine:
                 stats['certainty'] = round(certainty, 1)
                 stats['is_ai_pick'] = is_ai_pick
                 stats['uncertainty'] = uncertainty
+                stats['prob_home'] = pred.get('prob_home')
+                stats['prob_draw'] = pred.get('prob_draw')
+                stats['prob_away'] = pred.get('prob_away')
+                # Value edge vs market: model prob for our pick minus implied prob
+                # from the available odds. Positive = the model likes it more
+                # than the book does.
+                edge = None
+                try:
+                    oh = float(fix.get('odds_home') or 0)
+                    od = float(fix.get('odds_draw') or 0)
+                    oa = float(fix.get('odds_away') or 0)
+                    if oh > 1.01 and od > 1.01 and oa > 1.01:
+                        implied = [1.0 / oh, 1.0 / od, 1.0 / oa]
+                        tot = sum(implied)
+                        implied = [x / tot for x in implied]
+                        pick_idx = {'Home Win': 0, 'Draw': 1, 'Away Win': 2}.get(pred['prediction'], 0)
+                        model_prob = float(pred.get('prob_home' if pick_idx == 0 else ('prob_draw' if pick_idx == 1 else 'prob_away')) or 0)
+                        if model_prob > 0:
+                            edge = round((model_prob / 100.0 - implied[pick_idx]) * 100, 1)
+                except Exception:
+                    edge = None
+                if edge is not None:
+                    stats['value_edge'] = edge
+                # Keep the raw market odds so the app can show model vs market
+                # side-by-side without needing extra columns.
+                for k in ('odds_home', 'odds_draw', 'odds_away'):
+                    v = fix.get(k)
+                    if v:
+                        stats[k] = float(v)
                 if weather:
                     stats['details'] = {**(stats.get('details') or {}), 'weather': weather}
 

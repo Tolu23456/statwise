@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/colors';
 import { Prediction } from '@/lib/supabase';
 import { useTheme } from '@/context/ThemeContext';
+import { formatDayLabel, isLive } from '@/lib/format';
 
 type Props = {
   prediction: Prediction | null;
@@ -32,19 +33,29 @@ function getConfidenceColor(confidence: number, C: typeof Colors.dark) {
 }
 
 function ProbBar({
-  label, value, color, C,
+  label, value, color, C, secondary,
 }: {
-  label: string; value: number; color: string; C: typeof Colors.dark;
+  label: string; value: number; color: string; C: typeof Colors.dark; secondary?: number | null;
 }) {
   return (
     <View style={{ marginBottom: 10 }}>
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 }}>
         <Text style={{ color: C.textSecondary, fontSize: 13 }}>{label}</Text>
-        <Text style={{ color, fontSize: 13, fontWeight: '700' }}>{value.toFixed(0)}%</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+          {secondary !== null && secondary !== undefined && (
+            <Text style={{ color: C.textMuted, fontSize: 11 }}>market {secondary.toFixed(0)}%</Text>
+          )}
+          <Text style={{ color, fontSize: 13, fontWeight: '700' }}>{value.toFixed(0)}%</Text>
+        </View>
       </View>
       <View style={[probStyles.track, { backgroundColor: C.border }]}>
         <View style={[probStyles.fill, { width: `${Math.min(value, 100)}%` as any, backgroundColor: color }]} />
       </View>
+      {secondary !== null && secondary !== undefined && (
+        <View style={[probStyles.track, { backgroundColor: C.border, height: 4, marginTop: 3 }]}>
+          <View style={[probStyles.fill, { width: `${Math.min(secondary, 100)}%` as any, backgroundColor: C.textMuted }]} />
+        </View>
+      )}
     </View>
   );
 }
@@ -84,9 +95,14 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
 
   const confColor = getConfidenceColor(prediction.confidence, C);
 
-  const impliedHome = prediction.odds_home ? (1 / prediction.odds_home) * 100 : null;
-  const impliedDraw = prediction.odds_draw ? (1 / prediction.odds_draw) * 100 : null;
-  const impliedAway = prediction.odds_away ? (1 / prediction.odds_away) * 100 : null;
+  // Market odds may live on the row or inside stats (captured at prediction time).
+  const mktOddsHome = prediction.odds_home ?? prediction.stats?.odds_home ?? null;
+  const mktOddsDraw = prediction.odds_draw ?? prediction.stats?.odds_draw ?? null;
+  const mktOddsAway = prediction.odds_away ?? prediction.stats?.odds_away ?? null;
+
+  const impliedHome = mktOddsHome ? (1 / mktOddsHome) * 100 : null;
+  const impliedDraw = mktOddsDraw ? (1 / mktOddsDraw) * 100 : null;
+  const impliedAway = mktOddsAway ? (1 / mktOddsAway) * 100 : null;
   const overround = (impliedHome ?? 0) + (impliedDraw ?? 0) + (impliedAway ?? 0);
   const pHome = impliedHome && overround > 0 ? (impliedHome / overround) * 100 : null;
   const pDraw = impliedDraw && overround > 0 ? (impliedDraw / overround) * 100 : null;
@@ -102,6 +118,18 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
   const certainty = stats?.certainty ?? prediction.confidence;
   const isAiPick = stats?.is_ai_pick === true;
   const uncertainty = stats?.uncertainty;
+
+  // Pico's own calibrated probabilities (fall back to market-implied if missing)
+  const mHome = typeof stats?.prob_home === 'number' ? stats.prob_home : pHome;
+  const mDraw = typeof stats?.prob_draw === 'number' ? stats.prob_draw : pDraw;
+  const mAway = typeof stats?.prob_away === 'number' ? stats.prob_away : pAway;
+  const hasModelProbs =
+    typeof stats?.prob_home === 'number' &&
+    typeof stats?.prob_draw === 'number' &&
+    typeof stats?.prob_away === 'number';
+
+  const edge = stats?.value_edge ?? null;
+  const live = isLive(prediction.kickoff_time);
 
   return (
     <Modal
@@ -134,8 +162,14 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 4 }}>
                   <Ionicons name="time-outline" size={13} color={C.textMuted} />
                   <Text style={{ color: C.textMuted, fontSize: 13 }}>
-                    {formatKickoff(prediction.kickoff_time)}
+                    {formatDayLabel(prediction.kickoff_time)} · {formatKickoff(prediction.kickoff_time)}
                   </Text>
+                  {live && (
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: C.dangerLight, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 10 }}>
+                      <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: C.danger }} />
+                      <Text style={{ fontSize: 10, color: C.danger, fontWeight: '800' }}>LIVE</Text>
+                    </View>
+                  )}
                 </View>
               </View>
               <TouchableOpacity
@@ -459,47 +493,79 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
             )}
 
             {/* ── Win Probability Breakdown ── */}
-            {(pHome !== null || pDraw !== null || pAway !== null) && (
+            {(mHome !== null || mDraw !== null || mAway !== null) && (
               <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
-                <Text style={[styles.sectionTitle, { color: C.text }]}>Win Probability</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Text style={[styles.sectionTitle, { color: C.text }]}>
+                    {hasModelProbs ? "Pico's Probability" : 'Win Probability'}
+                  </Text>
+                  {hasModelProbs && (
+                    <Text style={{ color: C.textMuted, fontSize: 11 }}>vs market</Text>
+                  )}
+                </View>
                 <View style={{ marginTop: 8 }}>
-                  {pHome !== null && (
+                  {mHome !== null && (
                     <ProbBar
                       label={`${prediction.home_team} Win`}
-                      value={pHome}
+                      value={mHome}
                       color={isHome ? C.primary : C.textSecondary}
+                      secondary={hasModelProbs ? pHome : null}
                       C={C}
                     />
                   )}
-                  {pDraw !== null && (
+                  {mDraw !== null && (
                     <ProbBar
                       label="Draw"
-                      value={pDraw}
+                      value={mDraw}
                       color={isDraw ? C.warning : C.textSecondary}
+                      secondary={hasModelProbs ? pDraw : null}
                       C={C}
                     />
                   )}
-                  {pAway !== null && (
+                  {mAway !== null && (
                     <ProbBar
                       label={`${prediction.away_team} Win`}
-                      value={pAway}
+                      value={mAway}
                       color={isAway ? C.danger : C.textSecondary}
+                      secondary={hasModelProbs ? pAway : null}
                       C={C}
                     />
                   )}
                 </View>
+
+                {edge !== null && (
+                  <View style={[
+                    styles.edgeRow,
+                    {
+                      backgroundColor: edge >= 0 ? C.successLight : C.dangerLight,
+                      borderColor: edge >= 0 ? C.success : C.danger,
+                    },
+                  ]}>
+                    <Ionicons
+                      name={edge >= 0 ? 'trending-up' : 'trending-down'}
+                      size={15}
+                      color={edge >= 0 ? C.success : C.danger}
+                    />
+                    <Text style={{ color: C.text, fontSize: 13, fontWeight: '600', flex: 1 }}>
+                      {edge >= 0 ? 'Value on this pick' : 'No value vs market'}
+                    </Text>
+                    <Text style={{ color: edge >= 0 ? C.success : C.danger, fontSize: 14, fontWeight: '800' }}>
+                      {edge > 0 ? '+' : ''}{edge.toFixed(1)}%
+                    </Text>
+                  </View>
+                )}
               </View>
             )}
 
             {/* ── Odds ── */}
-            {(prediction.odds_home || prediction.odds_draw || prediction.odds_away || prediction.odds) && (
+            {(mktOddsHome || mktOddsDraw || mktOddsAway || prediction.odds) && (
               <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
                 <Text style={[styles.sectionTitle, { color: C.text }]}>Odds</Text>
                 <View style={{ gap: 8, marginTop: 8 }}>
-                  <OddsRow label={`${prediction.home_team} Win`} value={prediction.odds_home} highlight={isHome} C={C} />
-                  <OddsRow label="Draw" value={prediction.odds_draw} highlight={isDraw} C={C} />
-                  <OddsRow label={`${prediction.away_team} Win`} value={prediction.odds_away} highlight={isAway} C={C} />
-                  {!prediction.odds_home && prediction.odds && (
+                  <OddsRow label={`${prediction.home_team} Win`} value={mktOddsHome} highlight={isHome} C={C} />
+                  <OddsRow label="Draw" value={mktOddsDraw} highlight={isDraw} C={C} />
+                  <OddsRow label={`${prediction.away_team} Win`} value={mktOddsAway} highlight={isAway} C={C} />
+                  {!mktOddsHome && prediction.odds && (
                     <OddsRow label="Suggested Odds" value={prediction.odds} highlight C={C} />
                   )}
                 </View>
@@ -583,6 +649,10 @@ const styles = StyleSheet.create({
   confFill: { height: '100%', borderRadius: 4 },
   reasoningHeader: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 8 },
   reasoningText: { fontSize: 14, lineHeight: 21 },
+  edgeRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    borderRadius: 10, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 10, marginTop: 4,
+  },
   disclaimer: { fontSize: 11, textAlign: 'center', paddingTop: 4 },
   h2hRow: { height: 24, flexDirection: 'row', borderRadius: 6, overflow: 'hidden' },
   h2hBar: { height: '100%', alignItems: 'center', justifyContent: 'center' },
