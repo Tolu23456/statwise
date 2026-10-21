@@ -105,12 +105,34 @@ Sources are now queried **simultaneously** (not cascade) and merged/deduped:
 
 ### Tier System
 
-| Tier | Confidence Range | DB value |
+Tiers are driven by the **certainty score**, not raw confidence. Certainty combines
+the model's probability split, the margin between the top two outcomes and the
+agreement between the ensemble heads (`ai/model/trainer.py`).
+
+| Tier | Certainty Range | DB value | Picks/day |
+|---|---|---|---|
+| Free | 0–40 | `free` | 5 |
+| Premium | 40–55 | `premium` | 25 |
+| VIP | 55–65 | `vip` | 75 |
+| VVIP | 65–100 | `vvip` | unlimited |
+
+`AI_PICK_CERTAINTY = 65.0` (`ai/model/predictor.py`) — the **AI Pick** badge is
+awarded at exactly this threshold, so the VVIP tier and the AI Pick set are the
+same matches. Picks the model flags as uncertain are forced down to the free tier.
+
+Per-prediction model output lives inside the existing `stats` JSONB column (no
+schema migration needed): `certainty`, `is_ai_pick`, `uncertainty`,
+`prob_home` / `prob_draw` / `prob_away`, `value_edge`, `odds_home` / `odds_draw` /
+`odds_away`.
+
+### Data integrity guards
+
+| Guard | Where | Why |
 |---|---|---|
-| Free | 0–55% | `free` |
-| Premium | 55–70% | `premium` |
-| VIP | 70–82% | `vip` |
-| VVIP | 82–100%+ | `vvip` |
+| `.env` is loaded before any API key is read | `ai/env_loader.py`, used by `ai/scheduler.py` + `ai/model/live_fetcher.py` | Without it the fetcher silently degraded to placeholder fixtures |
+| Mock fixtures are never published | `ALLOW_MOCK_FIXTURES` env gate (`ai/model/live_fetcher.py`, `ai/model/predictor.py`) | Placeholder "Arsenal vs Chelsea" rows were being written to the live table and shown to users as real predictions |
+| Duplicate fixtures are pruned after each push | `PredictionEngine.prune_duplicate_predictions` | Two id schemes (`575368` vs `fdorg_575368`) left every fixture stored twice |
+| Settlement columns detected before writing | `PredictionEngine.settle_past_predictions` | The `actual_result` column is created by `statwise/supabase-settlement-migration.sql`; without it the accuracy screen stays empty |
 
 ---
 
@@ -135,11 +157,27 @@ app/
 
 constants/colors.ts    – Dark/light theme colors + tier colors
 lib/supabase.ts        – Supabase client (SecureStore auth storage)
+lib/format.ts          – Shared date/time/odds display helpers
 context/AuthContext.tsx – Auth state, profile loading, session management
 components/
   ErrorBoundary.tsx    – App crash recovery
-  PredictionCard.tsx   – Prediction display card
+  PredictionCard.tsx   – Prediction card (prob bars, badges, relative kickoff)
+  PredictionDetailModal.tsx – Full analysis sheet (model vs market, certainty)
+  OnboardingModal.tsx  – First-run intro carousel
+  SkeletonCard.tsx     – Loading placeholder
 ```
+
+### UI/UX highlights
+
+| Area | Detail |
+|---|---|
+| Prediction card | Three-way probability bars (H/D/A, pick highlighted), AI Pick badge, VALUE badge, relative kickoff ("Today 19:45", "in 2h 15m", "Live"), certainty chip, odds labelled with the correct outcome |
+| Home feed | Date group headers (Today / Tomorrow / Sat 25 Oct) with counts, per-league tab counts, result count, last-updated timestamp, free-tier upsell banner |
+| Detail sheet | "Pico's Probability" vs market-implied probability, value/edge row, model-certainty section (entropy + head agreement), share button |
+| Profile | "Your Plan" card with tier perks, subscription expiry date and an upgrade CTA |
+| Plans | Certainty band per tier, honest measured-accuracy ranges (no fabricated win-rate/ROI claims) |
+| Community | Day dividers, chat-style timestamps, character counter |
+| Model info | "Pico" chip in the home header opens a full explanation of the model, certainty and accuracy disclaimer |
 
 ### Configuration
 - **Supabase URL**: `https://fwpriiugfjhtoymcbmso.supabase.co`
@@ -166,30 +204,35 @@ components/
 
 ### HIGH PRIORITY
 
-1. **Payment Integration (Flutterwave)**
+1. **Run the schema migration in Supabase** ⚠️
+   - `statwise/supabase-settlement-migration.sql` (idempotent)
+   - Adds `actual_result` / `home_score` / `away_score` / `settled_at` to `predictions`
+   - Creates `odds_snapshots` and `inplay_states`
+   - Until this runs: the "Prediction Accuracy" screen stays empty and the Odds Sync workflow crashes
+   - Run it in Supabase → SQL Editor → New query → paste → Run
+
+2. **Payment Integration (Flutterwave)**
    - Subscriptions screen shows plans but payment is not wired up
-   - Use `expo-web-browser` or `react-native-webview` to open Flutterwave checkout
+   - Use `expo-web-browser` or `expo-webview` to open Flutterwave checkout
    - On success, update `user_profiles.current_tier` in Supabase
    - The `FLWPUBK` key is already in `lib/supabase.ts`
 
-2. **App Icons**
+3. **App Icons**
    - Current icons in `assets/images/` are placeholders
    - Generate proper icons: `icon.png` (1024×1024), `splash-icon.png` (512×512)
    - Use the media-generation skill
 
-3. **API Keys for Live Data**
+4. **API Keys for Live Data**
    - `FOOTBALL_API_TOKEN` is already a GitHub secret and is used by `.github/workflows/predict.yml`
    - Optionally add `SUPABASE_SERVICE_KEY` as a GitHub secret to bypass Supabase RLS in CI
    - Add `X_RAPIDAPI_KEY` as a GitHub secret for API-Football if more league coverage is needed
-   - Without keys, the system falls back to TheSportsDB (14 leagues, no key needed)
+   - `THESPORTSDB_KEY` — the shared public test key now returns 403, so that source is disabled unless a personal key is set
+   - `ODDS_API_KEY` — currently returns 403 from this network; without it there is no market price, so `value_edge` stays null and the VALUE badge never appears
 
 ### MEDIUM PRIORITY
 
-4. **Push Notifications**
+5. **Push Notifications**
    - Use `expo-notifications` for match alerts and prediction updates
-
-5. **Tier Expiry Dates**
-   - Show subscription expiry in the profile and subscriptions screens
 
 6. **Profile Image Bucket**
    - Ensure `profile-pictures` bucket exists and is public in Supabase Storage
@@ -197,13 +240,17 @@ components/
 7. **Subscription Management**
    - View current subscription details, cancel flow
 
-### LOW PRIORITY
+8. **Tennis / basketball / baseball / volleyball models**
+   - Datasets are harvested and documented in `ai/data/READMES/SPORTS_DATASETS.md`
+   - Still needed: per-sport normalisers, feature builders, a `sport` column on `predictions` and a sport filter on the home tab
 
-8. **Privacy Policy & Terms of Service**
-   - Create `app/privacy-policy.tsx` and `app/terms-of-service.tsx`
+### LOW PRIORITY
 
 9. **Offline Support**
    - `@react-native-community/netinfo` for offline detection
+
+10. **Settled-prediction backfill**
+   - Historical matches before today are not in the table, so the accuracy screen only accumulates from now on
 
 ---
 

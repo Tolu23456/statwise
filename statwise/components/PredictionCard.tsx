@@ -70,6 +70,17 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
   const started = hasStarted(prediction.kickoff_time);
   const countdown = countdownLabel(prediction.kickoff_time);
 
+  // The top-level `odds` column holds the *home* price. When the market
+  // snapshot is available we show the price of the outcome we actually picked.
+  const s = prediction.stats;
+  const pickOdds =
+    pick === 'H' ? s?.odds_home : pick === 'D' ? s?.odds_draw : pick === 'A' ? s?.odds_away : null;
+  const displayOdds = pickOdds ?? (pick === 'H' ? prediction.odds : null);
+  const oddsLabel =
+    pickOdds != null
+      ? pick === 'H' ? 'Home' : pick === 'D' ? 'Draw' : 'Away'
+      : 'Home';
+
   const blurStyle = Platform.OS === 'web'
     ? ({ filter: 'blur(6px)', userSelect: 'none' } as any)
     : { opacity: 0.08 };
@@ -196,10 +207,10 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
             </View>
           )}
         </View>
-        {prediction.odds ? (
+        {displayOdds ? (
           <Text style={[styles.odds, { color: C.textSecondary }]}>
-            {pick === 'H' ? 'Home' : pick === 'D' ? 'Draw' : pick === 'A' ? 'Away' : 'Odds'}{' '}
-            <Text style={{ color: C.text, fontWeight: '700' }}>{prediction.odds}</Text>
+            {oddsLabel}{' '}
+            <Text style={{ color: C.text, fontWeight: '700' }}>{displayOdds}</Text>
           </Text>
         ) : null}
       </View>
@@ -207,6 +218,9 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
       {/* Three-way probability breakdown */}
       {outcomes && (
         <View style={styles.probBlock}>
+          <Text style={[styles.probCaption, { color: C.textMuted }]}>
+            Pico&apos;s win probability
+          </Text>
           <View style={styles.probBars}>
             {outcomes.map(o => {
               const isPick = o.key === pick;
@@ -248,7 +262,7 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
 
       <View style={styles.confidenceRow}>
         <Text style={[styles.confidenceLabel, { color: C.textSecondary }]}>
-          Confidence:{' '}
+          Confidence{' '}
           <Text style={{ color: confColor, fontWeight: '700' }}>{prediction.confidence}%</Text>
         </Text>
         {typeof certainty === 'number' && (
@@ -262,11 +276,14 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
         )}
       </View>
 
-      <View style={[styles.bar, { backgroundColor: C.border }]}>
-        <View
-          style={[styles.fill, { width: `${prediction.confidence}%` as any, backgroundColor: confColor }]}
-        />
-      </View>
+      {/* The confidence bar is redundant once the three-way split is shown. */}
+      {!outcomes && (
+        <View style={[styles.bar, { backgroundColor: C.border }]}>
+          <View
+            style={[styles.fill, { width: `${prediction.confidence}%` as any, backgroundColor: confColor }]}
+          />
+        </View>
+      )}
 
       {prediction.reasoning && (
         <Text style={[styles.reasoning, { color: C.textSecondary }]} numberOfLines={2}>
@@ -318,6 +335,10 @@ const styles = StyleSheet.create({
   predText: { fontWeight: '700', fontSize: 14 },
   odds: { fontSize: 13 },
   probBlock: { marginBottom: 10 },
+  probCaption: {
+    fontSize: 10, textTransform: 'uppercase', letterSpacing: 0.6,
+    marginBottom: 6, fontWeight: '700',
+  },
   probBars: { flexDirection: 'row', gap: 8 },
   probCol: { flex: 1, alignItems: 'center' },
   probValue: { fontSize: 13, marginBottom: 4 },

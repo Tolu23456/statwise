@@ -12,27 +12,33 @@ export const ONBOARDING_KEY = 'statwise_onboarding_v1';
 const SLIDES = [
   {
     icon: 'hardware-chip-outline' as const,
-    title: 'AI-Powered Predictions',
-    desc: 'A five-model deep-learning ensemble analyses thousands of data points to generate high-confidence match predictions, updated every 20 minutes.',
+    title: 'Meet Pico, your AI',
+    desc: 'Pico is a gradient-boosting model trained on 300,000+ historical matches across 100+ leagues — team form, head-to-head history, Elo ratings, squad value, weather and market odds.',
     color: '#1a73e8',
   },
   {
     icon: 'football-outline' as const,
     title: 'Browse Today\'s Picks',
-    desc: 'Filter predictions by league, search for teams, and tap any card for a full breakdown including odds, confidence score, and AI reasoning.',
+    desc: 'Filter by league, search for teams, and tap any card for the full breakdown: win probabilities, confidence, certainty score and AI reasoning.',
     color: '#22c55e',
   },
   {
     icon: 'diamond-outline' as const,
     title: 'Unlock More with a Plan',
-    desc: 'Free users get 5 picks per day. Upgrade to Premium (25), VIP (75), or VVIP (unlimited) for more predictions and exclusive insights.',
+    desc: 'Free users get 5 picks per day. Upgrade to Premium (25), VIP (75), or VVIP (unlimited) for more predictions, AI Picks and exclusive insights.',
     color: '#f5c518',
   },
   {
     icon: 'chatbubbles-outline' as const,
     title: 'Join the Community',
-    desc: 'Discuss matches, share tips, and connect with thousands of bettors in our live community forum — all in real-time.',
+    desc: 'Discuss matches, share tips and chat with other bettors in our live community forum. Higher tiers can post and share media.',
     color: '#a855f7',
+  },
+  {
+    icon: 'shield-checkmark-outline' as const,
+    title: 'Play Responsibly',
+    desc: 'No model is ever 100% accurate — Pico\'s highest-certainty picks still lose sometimes. Treat every prediction as information, not a guarantee, and only stake what you can afford to lose.',
+    color: '#ef4444',
   },
 ];
 

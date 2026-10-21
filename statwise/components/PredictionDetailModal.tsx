@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Modal, View, Text, StyleSheet, ScrollView,
-  TouchableOpacity, Platform, Dimensions,
+  TouchableOpacity, Platform, Dimensions, Share,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/colors';
@@ -131,6 +131,32 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
   const edge = stats?.value_edge ?? null;
   const live = isLive(prediction.kickoff_time);
 
+  // "Today 19:45" / "Fri 24 Oct · in 47h" — avoid repeating the day.
+  const dayLabel = formatDayLabel(prediction.kickoff_time);
+  const kickLabel = formatKickoff(prediction.kickoff_time);
+  const whenLabel =
+    !dayLabel || kickLabel.startsWith(dayLabel) ? kickLabel : `${dayLabel} · ${kickLabel}`;
+
+  async function sharePrediction() {
+    if (!prediction) return;
+    const certaintyLine =
+      typeof certainty === 'number' ? ` · certainty ${Math.round(certainty)}%` : '';
+    const aiLine = isAiPick ? ' · AI Pick' : '';
+    const message =
+      `StatWise Pico predicts: ${prediction.match_title} → ${prediction.prediction}` +
+      ` (${prediction.confidence}% confidence${certaintyLine}${aiLine})\n\n` +
+      `Kickoff ${formatKickoff(prediction.kickoff_time)}. Probabilistic information only — not a guarantee. Play responsibly.`;
+    try {
+      if (Platform.OS === 'web' && typeof navigator !== 'undefined' && navigator.share) {
+        await navigator.share({ title: 'StatWise Prediction', text: message });
+      } else {
+        await Share.share({ message });
+      }
+    } catch {
+      // user dismissed the share sheet
+    }
+  }
+
   return (
     <Modal
       visible={visible}
@@ -162,7 +188,7 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 4 }}>
                   <Ionicons name="time-outline" size={13} color={C.textMuted} />
                   <Text style={{ color: C.textMuted, fontSize: 13 }}>
-                    {formatDayLabel(prediction.kickoff_time)} · {formatKickoff(prediction.kickoff_time)}
+                    {whenLabel}
                   </Text>
                   {live && (
                     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: C.dangerLight, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 10 }}>
@@ -172,12 +198,22 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                   )}
                 </View>
               </View>
-              <TouchableOpacity
-                onPress={onClose}
-                style={[styles.closeBtn, { backgroundColor: C.inputBg }]}
-              >
-                <Ionicons name="close" size={18} color={C.textSecondary} />
-              </TouchableOpacity>
+              <View style={styles.headerActions}>
+                <TouchableOpacity
+                  onPress={sharePrediction}
+                  style={[styles.closeBtn, { backgroundColor: C.inputBg }]}
+                  hitSlop={6}
+                >
+                  <Ionicons name="share-social-outline" size={17} color={C.textSecondary} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={onClose}
+                  style={[styles.closeBtn, { backgroundColor: C.inputBg }]}
+                  hitSlop={6}
+                >
+                  <Ionicons name="close" size={18} color={C.textSecondary} />
+                </TouchableOpacity>
+              </View>
             </View>
 
             {/* ── AI Pick ── */}
@@ -620,6 +656,7 @@ const styles = StyleSheet.create({
   },
   content: { paddingHorizontal: 20, paddingTop: 8, paddingBottom: 24, gap: 14 },
   headerRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 12 },
+  headerActions: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   leagueTag: {
     fontSize: 10, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 0.6,
     paddingHorizontal: 10, paddingVertical: 3, borderRadius: 20, alignSelf: 'flex-start',
