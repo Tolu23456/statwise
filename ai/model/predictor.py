@@ -136,6 +136,10 @@ class PredictionEngine:
                     odds_away=float(fix.get('odds_away') or 0),
                     weather= weather,
                 )
+                uncertainty = pred.get('uncertainty') or {}
+                is_uncertain = bool(uncertainty.get('is_uncertain'))
+                if is_uncertain and pred.get('confidence', 0) < 90:
+                    pred['confidence'] = min(int(pred.get('confidence', 50)), 55)
                 tier_name, tier_db = _tier_for_confidence(pred['confidence'])
                 stats = pred.get('stats') or {}
                 if weather:

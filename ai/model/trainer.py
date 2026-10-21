@@ -331,16 +331,19 @@ class FootballPredictor:
         # inference consistent so NaN never reaches the scaler or the net.
         X = np.nan_to_num(np.asarray(X, dtype=np.float64), nan=0.0, posinf=1e6, neginf=-1e6)
 
-        p_outcome = self._outcome_pipe.predict_proba(X)[0]
+        p_outcome_raw = self._outcome_pipe.predict_proba(X)[0]
         p_goals = self._goals_pipe.predict_proba(X)[0]
+        p_outcome_cal = p_outcome_raw.copy()
 
         # 1) honest isotonic calibration (fitted on out-of-time holdout by retrain.py)
         calibs = getattr(self, '_calibrators', None)
         if calibs:
-            p_outcome = np.array(
-                [float(iso.predict([float(p_outcome[i])])[0]) for i, iso in enumerate(calibs)])
-            p_outcome = np.clip(p_outcome, 1e-6, None)
-            p_outcome = p_outcome / p_outcome.sum()
+            p_outcome_cal = np.array(
+                [float(iso.predict([float(p_outcome_raw[i])])[0]) for i, iso in enumerate(calibs)])
+            p_outcome_cal = np.clip(p_outcome_cal, 1e-6, None)
+            p_outcome_cal = p_outcome_cal / p_outcome_cal.sum()
+
+        p_outcome = p_outcome_cal.copy()
 
         # 2) market blend: alpha*model + (1-alpha)*de-vigged market odds.
         #    alpha learned per-league on the holdout (log-loss minimizing).
@@ -352,6 +355,25 @@ class FootballPredictor:
             alpha = alphas.get(str(league), alphas.get('_default'))
             if alpha is not None:
                 p_outcome = float(alpha) * p_outcome + (1.0 - float(alpha)) * mkt
+                p_outcome = np.clip(p_outcome, 1e-12, None)
+                p_outcome = p_outcome / p_outcome.sum()
+
+        # Uncertainty estimation: entropy + ensemble/head disagreement
+        eps_ent = 1e-12
+        p_for_ent = np.clip(p_outcome, eps_ent, 1.0)
+        entropy = float(-np.sum(p_for_ent * np.log(p_for_ent)))
+        max_entropy = float(-np.log(1.0 / 3.0))  # ~1.098612
+        entropy_norm = float(entropy / max_entropy) if max_entropy > 0 else 0.0
+
+        # Head disagreement: compare raw outcome head vs calibrated outcome head
+        head_disagreement = float(np.mean(np.abs(p_outcome_raw - p_outcome_cal)))
+
+        # If market blend pushed it far from model, also count as disagreement
+        if alphas and odds_home and odds_draw and odds_away:
+            head_disagreement = float(max(head_disagreement, np.mean(np.abs(p_outcome_cal - p_outcome)) * 0.5))
+
+        # High uncertainty if entropy near max or heads disagree a lot
+        is_uncertain = bool(entropy_norm >= 0.92 or head_disagreement >= 0.08 or (float(np.max(p_outcome)) * 100.0 < 52.0))
 
         idx = np.argmax(p_outcome)
 
@@ -404,10 +426,15 @@ class FootballPredictor:
         return {
             'prediction': OUTCOME_LABELS[idx],
             'confidence': conf,
-            'prob_home': round(p_outcome[0]*100, 1),
-            'prob_draw': round(p_outcome[1]*100, 1),
-            'prob_away': round(p_outcome[2]*100, 1),
-            'prob_over25': round(p_goals[1]*100, 1) if len(p_goals)>1 else 50.0,
+            'prob_home': round(float(p_outcome[0])*100, 1),
+            'prob_draw': round(float(p_outcome[1])*100, 1),
+            'prob_away': round(float(p_outcome[2])*100, 1),
+            'prob_over25': round(float(p_goals[1])*100, 1) if len(p_goals)>1 else 50.0,
             'stats': stats,
-            'reasoning': reasoning.strip()
+            'reasoning': reasoning.strip(),
+            'uncertainty': {
+                'entropy_norm': round(float(entropy_norm), 3),
+                'head_disagreement': round(float(head_disagreement), 3),
+                'is_uncertain': bool(is_uncertain),
+            },
         }
