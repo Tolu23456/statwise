@@ -46,7 +46,7 @@ export default function PrivacyPolicyScreen() {
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const topInset = Platform.OS === 'web' ? 67 : insets.top;
+  const topInset = Platform.OS === 'web' ? 0 : insets.top;
 
   return (
     <View style={[styles.container, { backgroundColor: C.background }]}>

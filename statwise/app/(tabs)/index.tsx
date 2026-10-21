@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput,
-  RefreshControl, ScrollView, Platform,
+  RefreshControl, ScrollView, Platform, ActivityIndicator,
   Animated,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -94,7 +94,7 @@ export default function HomeScreen() {
     });
   }, []);
 
-  const { data: predictions = [], isLoading, isError, refetch } = useQuery<Prediction[]>({
+  const { data: predictions = [], isLoading, isError, refetch, isFetching } = useQuery<Prediction[]>({
     queryKey: ['predictions', userTier],
     queryFn: async () => {
       const today = new Date().toISOString().split('T')[0];
@@ -103,7 +103,7 @@ export default function HomeScreen() {
         .select('*')
         .gte('match_date', today)
         .in('tier', allowedTiers)
-        .order('confidence', { ascending: false })
+        .order('kickoff_time', { ascending: true })
         .limit(userLimit === Infinity ? 500 : userLimit);
       if (error) throw error;
       return data ?? [];
@@ -158,9 +158,9 @@ export default function HomeScreen() {
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
-    await refetch();
+    await refetch().catch(() => {});
     setNewPredictionsBadge(0);
-    setRefreshing(false);
+    setTimeout(() => setRefreshing(false), 300);
   }, [refetch]);
 
   const filtered = useMemo(() => {
@@ -227,9 +227,17 @@ export default function HomeScreen() {
         <TouchableOpacity
           style={[styles.emptyBtn, { backgroundColor: C.primaryLight }]}
           onPress={onRefresh}
+          disabled={refreshing || isFetching}
+          activeOpacity={0.8}
         >
-          <Ionicons name="refresh-outline" size={15} color={C.primary} />
-          <Text style={[styles.emptyBtnText, { color: C.primary }]}>Refresh</Text>
+          {(refreshing || isFetching) ? (
+            <ActivityIndicator size="small" color={C.primary} />
+          ) : (
+            <Ionicons name="refresh-outline" size={15} color={C.primary} />
+          )}
+          <Text style={[styles.emptyBtnText, { color: C.primary }]}>
+            {(refreshing || isFetching) ? 'Refreshing...' : 'Refresh'}
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -279,23 +287,34 @@ export default function HomeScreen() {
             style={[styles.errorBanner, { backgroundColor: C.dangerLight, borderColor: C.danger }]}
             onPress={() => refetch()}
             activeOpacity={0.8}
+            disabled={isFetching}
           >
             <Ionicons name="wifi-outline" size={14} color={C.danger} />
             <Text style={[styles.errorText, { color: C.danger }]}>
-              Couldn't load predictions — tap to retry
+              {isFetching ? 'Retrying...' : "Couldn't load predictions — tap to retry"}
             </Text>
-            <Ionicons name="refresh-outline" size={14} color={C.danger} />
+            {isFetching ? (
+              <ActivityIndicator size="small" color={C.danger} />
+            ) : (
+              <Ionicons name="refresh-outline" size={14} color={C.danger} />
+            )}
           </TouchableOpacity>
         )}
 
         <View style={[styles.searchBar, { backgroundColor: C.inputBg, borderColor: C.border }]}>
           <Ionicons name="search-outline" size={18} color={C.placeholder} />
           <TextInput
-            style={[styles.searchInput, { color: C.text }]}
+            style={[
+              styles.searchInput,
+              { color: C.text },
+              Platform.OS === 'web' ? ({ outlineStyle: 'none', boxShadow: 'none', borderWidth: 0 } as any) : null,
+            ]}
             placeholder="Search predictions..."
             placeholderTextColor={C.placeholder}
             value={search}
             onChangeText={setSearch}
+            underlineColorAndroid="transparent"
+            selectionColor={C.primary}
           />
           {search.length > 0 && (
             <TouchableOpacity onPress={() => setSearch('')}>
@@ -356,7 +375,7 @@ export default function HomeScreen() {
           ]}
           refreshControl={
             <RefreshControl
-              refreshing={refreshing}
+              refreshing={refreshing || isFetching}
               onRefresh={onRefresh}
               tintColor={C.primary}
               colors={[C.primary]}

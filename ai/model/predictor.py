@@ -30,10 +30,10 @@ SUPABASE_KEY = os.environ.get(
 )
 
 TIER_THRESHOLDS = {
-    "Free Tier":    (0,   55),
-    "Premium Tier": (55,  70),
-    "VIP Tier":     (70,  82),
-    "VVIP Tier":    (82, 100),
+    "Free Tier":    (0,   70),
+    "Premium Tier": (70,  80),
+    "VIP Tier":     (80,  90),
+    "VVIP Tier":    (90,  101),
 }
 TIER_DB = {
     "Free Tier":    "free",

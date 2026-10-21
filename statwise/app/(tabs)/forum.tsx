@@ -25,6 +25,26 @@ function parseMessage(raw: string): ParsedMessage {
   return { text: raw };
 }
 
+function friendlyError(error: any): string {
+  const msg: string = error?.message ?? error?.toString() ?? 'Unknown error';
+  if (msg.includes('row-level security') || msg.includes('42501') || error?.code === '42501') {
+    return 'Permission denied (RLS). Please run the SQL fix in your Supabase dashboard.';
+  }
+  if (msg.includes('does not exist') || msg.includes('42P01') || error?.code === '42P01') {
+    return 'Forum table missing. Run the setup SQL in your Supabase dashboard.';
+  }
+  if (msg.includes('send_forum_message') || msg.includes('function') || msg.includes('42883')) {
+    return 'Forum function missing. Run supabase-forum-fix.sql in your Supabase SQL Editor.';
+  }
+  if (msg.includes('not-null') || msg.includes('23502')) {
+    return 'Profile issue. Run supabase-forum-fix.sql to fix this.';
+  }
+  if (msg.includes('network') || msg.includes('fetch') || msg.includes('Failed')) {
+    return 'Connection error. Check your internet and try again.';
+  }
+  return msg.length > 120 ? msg.slice(0, 117) + '...' : msg;
+}
+
 export default function ForumScreen() {
   const { scheme } = useTheme();
   const C = Colors[scheme];
@@ -47,23 +67,48 @@ export default function ForumScreen() {
 
   const loadMessages = useCallback(async () => {
     setLoadError(null);
-    const { data, error } = await supabase
-      .from('forum_messages')
-      .select('*, user_profiles(username, display_name, avatar_url, current_tier)')
-      .order('created_at', { ascending: true })
-      .limit(100);
+    try {
+      let { data, error } = await supabase
+        .from('forum_messages')
+        .select('*, user_profiles(username, display_name, avatar_url, current_tier)')
+        .order('created_at', { ascending: true })
+        .limit(100);
 
-    if (error) {
-      setLoadError(friendlyError(error));
-    } else {
-      setMessages((data ?? []) as ForumMessage[]);
-      setTimeout(() => flatListRef.current?.scrollToEnd({ animated: false }), 200);
+      if (error) {
+        const msg: string = error?.message ?? '';
+        if (msg.includes('user_profiles') || msg.includes('relation') || msg.includes('schema') || msg.includes('join')) {
+          const res = await supabase
+            .from('forum_messages')
+            .select('*')
+            .order('created_at', { ascending: true })
+            .limit(100);
+          if (res.error) {
+            setLoadError(friendlyError(res.error));
+            return;
+          }
+          setMessages((res.data ?? []) as ForumMessage[]);
+        } else {
+          setLoadError(friendlyError(error));
+          return;
+        }
+      } else {
+        setMessages((data ?? []) as ForumMessage[]);
+      }
+      setTimeout(() => flatListRef.current?.scrollToEnd({ animated: false }), 150);
+    } catch (e: any) {
+      setLoadError(friendlyError(e));
     }
   }, []);
 
   useEffect(() => {
     setLoading(true);
-    loadMessages().finally(() => setLoading(false));
+    const timeout = setTimeout(() => setLoading(false), 8000);
+    loadMessages()
+      .catch(() => {})
+      .finally(() => {
+        clearTimeout(timeout);
+        setLoading(false);
+      });
 
     const channel = supabase
       .channel('forum_messages')
@@ -84,8 +129,8 @@ export default function ForumScreen() {
 
   async function onRefresh() {
     setRefreshing(true);
-    await loadMessages();
-    setRefreshing(false);
+    await loadMessages().catch(() => {});
+    setTimeout(() => setRefreshing(false), 300);
   }
 
   const doSend = useCallback(async (content: string) => {
@@ -101,8 +146,8 @@ export default function ForumScreen() {
       message: content,
       created_at: new Date().toISOString(),
       user_profiles: {
-        username: profile?.username ?? '',
-        display_name: profile?.display_name ?? 'You',
+        username: profile?.username ?? profile?.display_name ?? 'You',
+        display_name: profile?.display_name ?? profile?.username ?? 'You',
         avatar_url: profile?.avatar_url,
         current_tier: profile?.current_tier ?? 'Free Tier',
       },
@@ -185,114 +230,69 @@ export default function ForumScreen() {
     }
   }
 
-  function friendlyError(error: any): string {
-    const msg: string = error?.message ?? error?.toString() ?? 'Unknown error';
-    if (msg.includes('row-level security') || msg.includes('42501') || error?.code === '42501') {
-      return 'Permission denied (RLS). Please run the SQL fix in your Supabase dashboard.';
-    }
-    if (msg.includes('does not exist') || msg.includes('42P01') || error?.code === '42P01') {
-      return 'Forum table missing. Run the setup SQL in your Supabase dashboard.';
-    }
-    if (msg.includes('send_forum_message') || msg.includes('function') || msg.includes('42883')) {
-      return 'Forum function missing. Run supabase-forum-fix.sql in your Supabase SQL Editor.';
-    }
-    if (msg.includes('network') || msg.includes('fetch') || msg.includes('Failed')) {
-      return 'Connection error. Check your internet and try again.';
-    }
-    return msg;
-  }
-
-  function getInitials(name?: string) {
-    if (!name) return '?';
-    return name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
-  }
-
-  function formatTime(ts: string) {
-    return new Date(ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  }
-
-  const renderMessage = ({ item }: { item: ForumMessage }) => {
-    const isMe = item.user_id === user?.id;
-    const msgProfile = item.user_profiles;
-    const tierColors = TierBadgeColors[msgProfile?.current_tier ?? 'Free Tier'];
-    const isPending = item.id.startsWith('optimistic_');
+  const renderItem = ({ item, index }: { item: ForumMessage; index: number }) => {
+    const isMe = user?.id === item.user_id;
+    const prev = messages[index - 1];
+    const showHeader = !prev || prev.user_id !== item.user_id;
     const parsed = parseMessage(item.message);
+    const profileData = (item as any).user_profiles || {};
+    const displayName = profileData.display_name || profileData.username || item.username || 'User';
+    const avatarUrl = profileData.avatar_url;
+    const tier = profileData.current_tier || 'Free Tier';
+    const isPremiumUser = PREMIUM_TIERS.includes(tier);
 
     return (
       <View style={[styles.msgRow, isMe && styles.msgRowMe]}>
-        {!isMe && (
+        {!isMe && showHeader && (
           <View style={[styles.avatar, { backgroundColor: C.primaryLight }]}>
-            <Text style={[styles.avatarText, { color: C.primary }]}>
-              {getInitials(msgProfile?.display_name ?? msgProfile?.username)}
-            </Text>
+            {avatarUrl ? (
+              <Image source={{ uri: avatarUrl }} style={styles.avatarImg} />
+            ) : (
+              <Text style={[styles.avatarText, { color: C.primary }]}>
+                {displayName.slice(0, 2).toUpperCase()}
+              </Text>
+            )}
           </View>
         )}
-        <View style={[
-          styles.bubble,
-          isMe && styles.bubbleMe,
-          {
-            backgroundColor: isMe ? C.primary : C.card,
-            borderColor: isMe ? C.primary : C.border,
-            opacity: isPending ? 0.65 : 1,
-          },
-        ]}>
-          {!isMe && (
-            <View style={styles.nameRow}>
-              <Text style={[styles.senderName, { color: C.text }]}>
-                {msgProfile?.display_name ?? msgProfile?.username ?? 'User'}
+        {!isMe && !showHeader && <View style={styles.avatarSpacer} />}
+        <View style={[styles.bubbleCol, isMe && styles.bubbleColMe]}>
+          {!isMe && showHeader && (
+            <View style={styles.senderRow}>
+              <Text style={[styles.senderName, { color: C.text }]} numberOfLines={1}>
+                {displayName}
               </Text>
-              {msgProfile?.current_tier && msgProfile.current_tier !== 'Free Tier' && (
-                <View style={[styles.tierPill, { backgroundColor: tierColors.bg }]}>
-                  <Text style={[styles.tierPillText, { color: tierColors.text }]}>
-                    {msgProfile.current_tier.replace(' Tier', '')}
+              {isPremiumUser && (
+                <View style={[styles.tierPill, { backgroundColor: TierBadgeColors[tier as keyof typeof TierBadgeColors] || C.primaryLight }]}>
+                  <Text style={[styles.tierPillText, { color: '#fff' }]}>
+                    {tier === 'VVIP Tier' ? 'VVIP' : tier === 'VIP Tier' ? 'VIP' : 'PREM'}
                   </Text>
                 </View>
               )}
             </View>
           )}
-
-          {parsed.image && (
-            <Image
-              source={{ uri: parsed.image }}
-              style={styles.msgImage}
-              resizeMode="cover"
-            />
-          )}
-          {parsed.video && (
-            <View style={[styles.videoPlaceholder, { backgroundColor: C.border }]}>
-              <Ionicons name="play-circle" size={40} color={isMe ? '#fff' : C.primary} />
-              <Text style={[styles.videoLabel, { color: isMe ? 'rgba(255,255,255,0.8)' : C.textSecondary }]}>
-                Video
-              </Text>
-            </View>
-          )}
-          {!!parsed.text && (
-            <Text style={[
-              styles.msgText,
-              { color: isMe ? '#fff' : C.text },
-              (parsed.image || parsed.video) && { marginTop: 6 },
-            ]}>
-              {parsed.text}
-            </Text>
-          )}
-
-          <View style={styles.msgMeta}>
-            {isPending && <Ionicons name="time-outline" size={11} color={isMe ? 'rgba(255,255,255,0.5)' : C.textMuted} />}
-            <Text style={[styles.msgTime, { color: isMe ? 'rgba(255,255,255,0.6)' : C.textMuted }]}>
-              {isPending ? 'Sending…' : formatTime(item.created_at)}
+          <View style={[
+            styles.bubble,
+            isMe ? [styles.bubbleMe, { backgroundColor: C.primary }] : [styles.bubbleOther, { backgroundColor: C.card, borderColor: C.border }],
+          ]}>
+            {parsed.image && (
+              <Image source={{ uri: parsed.image }} style={styles.mediaImage} resizeMode="cover" />
+            )}
+            {parsed.video && (
+              <View style={[styles.mediaPlaceholder, { backgroundColor: C.inputBg }]}>
+                <Ionicons name="play-circle" size={40} color="#fff" />
+              </View>
+            )}
+            {parsed.text ? (
+              <Text style={[styles.msgText, isMe && { color: '#fff' }]}>{parsed.text}</Text>
+            ) : null}
+            <Text style={[styles.timeText, isMe && { color: 'rgba(255,255,255,0.7)' }, { color: isMe ? 'rgba(255,255,255,0.7)' : C.textMuted }]}>
+              {new Date(item.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
             </Text>
           </View>
         </View>
       </View>
     );
   };
-
-  const showSetupGuide = loadError !== null && (
-    loadError.toLowerCase().includes('rls') ||
-    loadError.toLowerCase().includes('missing') ||
-    loadError.toLowerCase().includes('function') ||
-    loadError.toLowerCase().includes('does not exist')
-  );
 
   const isBusy = sending || mediaUploading;
 
@@ -322,37 +322,20 @@ export default function ForumScreen() {
         </TouchableOpacity>
       )}
 
-      {showSetupGuide && (
-        <View style={[styles.setupGuide, { backgroundColor: C.warningLight, borderColor: C.warning }]}>
-          <Ionicons name="construct-outline" size={16} color={C.warning} />
-          <View style={{ flex: 1 }}>
-            <Text style={[styles.setupTitle, { color: C.warning }]}>One-time setup required</Text>
-            <Text style={[styles.setupDesc, { color: C.textSecondary }]}>
-              Run <Text style={{ fontFamily: 'Inter_600SemiBold' }}>statwise/supabase-forum-fix.sql</Text>
-              {' '}in your Supabase dashboard → SQL Editor to enable forum posting.
-            </Text>
-          </View>
-        </View>
-      )}
-
       {loading ? (
         <View style={styles.centered}>
           <ActivityIndicator size="large" color={C.primary} />
-          <Text style={[styles.loadingText, { color: C.textSecondary }]}>Loading messages…</Text>
+          <Text style={[styles.loadingText, { color: C.textSecondary }]}>Loading messages...</Text>
         </View>
       ) : (
         <FlatList
           ref={flatListRef}
           data={messages}
+          renderItem={renderItem}
           keyExtractor={item => item.id}
-          contentContainerStyle={[
-            styles.list,
-            messages.length === 0 && styles.listEmpty,
-          ]}
-          renderItem={renderMessage}
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={C.primary} colors={[C.primary]} />
-          }
+          contentContainerStyle={[styles.listContent, { paddingBottom: 12 }]}
+          onContentSizeChange={() => flatListRef.current?.scrollToEnd({ animated: false })}
+          refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={C.primary} colors={[C.primary]} />}
           ListEmptyComponent={
             <View style={styles.empty}>
               <View style={[styles.emptyIconBg, { backgroundColor: C.primaryLight }]}>
@@ -367,21 +350,21 @@ export default function ForumScreen() {
         />
       )}
 
-      {sendError && (
-        <View style={[styles.sendErrorBar, { backgroundColor: C.dangerLight, borderColor: C.danger }]}>
-          <Ionicons name="alert-circle-outline" size={14} color={C.danger} />
-          <Text style={[styles.sendErrorText, { color: C.danger }]} numberOfLines={3}>{sendError}</Text>
-          <TouchableOpacity onPress={() => setSendError(null)}>
-            <Ionicons name="close" size={16} color={C.danger} />
-          </TouchableOpacity>
-        </View>
-      )}
-
       <View style={[styles.inputBar, {
-        backgroundColor: C.card,
+        paddingBottom: (Platform.OS === 'web' ? 16 : Math.max(insets.bottom, 10)),
+        backgroundColor: C.background,
         borderTopColor: C.border,
-        paddingBottom: insets.bottom > 0 ? insets.bottom : (Platform.OS === 'web' ? 12 : 10),
       }]}>
+        {sendError && (
+          <View style={[styles.sendErrorBar, { backgroundColor: C.dangerLight, borderColor: C.danger }]}>
+            <Ionicons name="alert-circle-outline" size={14} color={C.danger} />
+            <Text style={[styles.sendErrorText, { color: C.danger }]} numberOfLines={3}>{sendError}</Text>
+            <TouchableOpacity onPress={() => setSendError(null)}>
+              <Ionicons name="close" size={14} color={C.danger} />
+            </TouchableOpacity>
+          </View>
+        )}
+
         {!user ? (
           <View style={[styles.loginPrompt, { backgroundColor: C.inputBg, borderColor: C.border }]}>
             <Ionicons name="lock-closed-outline" size={16} color={C.textSecondary} />
@@ -392,48 +375,29 @@ export default function ForumScreen() {
         ) : (
           <View style={styles.inputRow}>
             <View style={styles.mediaIcons}>
-              <TouchableOpacity
-                style={styles.mediaBtn}
-                onPress={() => pickAndUploadMedia('image')}
-                activeOpacity={0.7}
-              >
-                <Ionicons
-                  name="image-outline"
-                  size={22}
-                  color={isPremium ? C.primary : C.textMuted}
-                />
-                {!isPremium && (
-                  <View style={[styles.lockBadge, { backgroundColor: C.textMuted }]}>
-                    <Ionicons name="lock-closed" size={7} color="#fff" />
-                  </View>
-                )}
+              <TouchableOpacity style={styles.mediaBtn} onPress={() => pickAndUploadMedia('image')} activeOpacity={0.7}>
+                <Ionicons name="image-outline" size={22} color={isPremium ? C.primary : C.textMuted} />
+                {!isPremium && <View style={[styles.lockBadge, { backgroundColor: C.textMuted }]}><Ionicons name="lock-closed" size={7} color="#fff" /></View>}
               </TouchableOpacity>
-
-              <TouchableOpacity
-                style={styles.mediaBtn}
-                onPress={() => pickAndUploadMedia('video')}
-                activeOpacity={0.7}
-              >
-                <Ionicons
-                  name="videocam-outline"
-                  size={22}
-                  color={isPremium ? C.primary : C.textMuted}
-                />
-                {!isPremium && (
-                  <View style={[styles.lockBadge, { backgroundColor: C.textMuted }]}>
-                    <Ionicons name="lock-closed" size={7} color="#fff" />
-                  </View>
-                )}
+              <TouchableOpacity style={styles.mediaBtn} onPress={() => pickAndUploadMedia('video')} activeOpacity={0.7}>
+                <Ionicons name="videocam-outline" size={22} color={isPremium ? C.primary : C.textMuted} />
+                {!isPremium && <View style={[styles.lockBadge, { backgroundColor: C.textMuted }]}><Ionicons name="lock-closed" size={7} color="#fff" /></View>}
               </TouchableOpacity>
             </View>
 
             <View style={[styles.inputContainer, {
               backgroundColor: C.inputBg,
               borderColor: sendError ? C.danger : C.border,
+              alignItems: 'center',
+              paddingRight: 6,
             }]}>
               <TextInput
                 ref={inputRef}
-                style={[styles.textInput, { color: C.text }]}
+                style={[
+                  styles.textInput,
+                  { color: C.text },
+                  Platform.OS === 'web' ? ({ outlineStyle: 'none', boxShadow: 'none', borderWidth: 0 } as any) : null,
+                ]}
                 placeholder="Message…"
                 placeholderTextColor={C.placeholder}
                 value={input}
@@ -443,6 +407,9 @@ export default function ForumScreen() {
                 returnKeyType="send"
                 blurOnSubmit={false}
                 onSubmitEditing={Platform.OS === 'web' ? sendMessage : undefined}
+                underlineColorAndroid="transparent"
+                selectionColor={C.primary}
+                textAlignVertical="center"
               />
 
               {(mediaUploading) ? (
@@ -459,7 +426,7 @@ export default function ForumScreen() {
                   disabled={!input.trim() || isBusy}
                   activeOpacity={0.85}
                 >
-                  <Ionicons name="arrow-up" size={16} color="#fff" />
+                  <Ionicons name="arrow-up" size={16} color={input.trim() && !isBusy ? '#fff' : C.textMuted} />
                 </TouchableOpacity>
               )}
             </View>
@@ -472,113 +439,49 @@ export default function ForumScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  header: {
-    flexDirection: 'row', alignItems: 'center',
-    paddingHorizontal: 16, paddingBottom: 10,
-  },
+  header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingBottom: 10 },
   title: { fontSize: 22, fontFamily: 'Inter_700Bold', flex: 1 },
-  onlinePill: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20,
-  },
+  onlinePill: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 10, paddingVertical: 5, borderRadius: 20 },
   dot: { width: 6, height: 6, borderRadius: 3 },
-  onlineText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  errorBanner: {
-    flexDirection: 'row', alignItems: 'flex-start', gap: 8,
-    marginHorizontal: 12, borderRadius: 10, borderWidth: 1, padding: 10, marginBottom: 4,
-  },
-  errorBannerText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 },
-  setupGuide: {
-    flexDirection: 'row', alignItems: 'flex-start', gap: 10,
-    marginHorizontal: 12, borderRadius: 12, borderWidth: 1, padding: 12, marginBottom: 4,
-  },
-  setupTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold', marginBottom: 3 },
-  setupDesc: { fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 },
-  list: { paddingHorizontal: 12, paddingTop: 8, paddingBottom: 8, gap: 4 },
-  listEmpty: { flexGrow: 1, justifyContent: 'center' },
-  msgRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 8, marginBottom: 6 },
-  msgRowMe: { flexDirection: 'row-reverse' },
-  avatar: {
-    width: 34, height: 34, borderRadius: 17,
-    alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-  },
-  avatarText: { fontSize: 12, fontFamily: 'Inter_700Bold' },
-  bubble: {
-    maxWidth: '75%', borderRadius: 18, borderWidth: 1, padding: 10,
-    borderBottomLeftRadius: 4,
-  },
-  bubbleMe: { borderBottomLeftRadius: 18, borderBottomRightRadius: 4 },
-  nameRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 },
-  senderName: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  tierPill: { paddingHorizontal: 6, paddingVertical: 2, borderRadius: 10 },
-  tierPillText: { fontSize: 10, fontFamily: 'Inter_600SemiBold' },
-  msgImage: { width: 200, height: 160, borderRadius: 10 },
-  videoPlaceholder: {
-    width: 200, height: 120, borderRadius: 10,
-    alignItems: 'center', justifyContent: 'center', gap: 6,
-  },
-  videoLabel: { fontSize: 12, fontFamily: 'Inter_500Medium' },
-  msgText: { fontSize: 15, fontFamily: 'Inter_400Regular', lineHeight: 20 },
-  msgMeta: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 4, alignSelf: 'flex-end' },
-  msgTime: { fontSize: 11, fontFamily: 'Inter_400Regular' },
-  sendErrorBar: {
-    flexDirection: 'row', alignItems: 'center', gap: 8,
-    marginHorizontal: 12, borderRadius: 10, borderWidth: 1, padding: 8, marginBottom: 4,
-  },
-  sendErrorText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular' },
-  inputBar: {
-    paddingHorizontal: 12, paddingTop: 10, borderTopWidth: 1,
-  },
-  loginPrompt: {
-    flexDirection: 'row', alignItems: 'center', gap: 8,
-    borderRadius: 22, borderWidth: 1, paddingHorizontal: 14, paddingVertical: 12,
-  },
-  loginPromptText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
-  inputRow: {
-    flexDirection: 'row', alignItems: 'flex-end', gap: 8,
-  },
-  mediaIcons: {
-    flexDirection: 'row', gap: 2,
-    alignItems: 'flex-end', paddingBottom: 6,
-  },
-  mediaBtn: {
-    width: 36, height: 36, alignItems: 'center', justifyContent: 'center',
-    position: 'relative',
-  },
-  lockBadge: {
-    position: 'absolute', bottom: 4, right: 4,
-    width: 12, height: 12, borderRadius: 6,
-    alignItems: 'center', justifyContent: 'center',
-  },
-  inputContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    borderRadius: 22,
-    borderWidth: 1,
-    paddingLeft: 14,
-    paddingRight: 4,
-    paddingVertical: 4,
-    minHeight: 44,
-  },
-  textInput: {
-    flex: 1,
-    fontSize: 15,
-    fontFamily: 'Inter_400Regular',
-    maxHeight: 100,
-    paddingVertical: 6,
-    paddingRight: 6,
-  },
-  sendBtn: {
-    width: 34, height: 34, borderRadius: 17,
-    alignItems: 'center', justifyContent: 'center',
-    marginBottom: 1,
-    flexShrink: 0,
-  },
+  onlineText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
+  errorBanner: { flexDirection: 'row', alignItems: 'center', gap: 8, marginHorizontal: 16, marginBottom: 10, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 10, borderWidth: 1 },
+  errorBannerText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular' },
   centered: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 10 },
   loadingText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
-  empty: { alignItems: 'center', paddingHorizontal: 32, gap: 12 },
+  listContent: { paddingHorizontal: 16, paddingTop: 8, flexGrow: 1 },
+  empty: { alignItems: 'center', justifyContent: 'center', paddingHorizontal: 32, gap: 12, flex: 1 },
   emptyIconBg: { width: 80, height: 80, borderRadius: 40, alignItems: 'center', justifyContent: 'center' },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptyDesc: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20 },
+  msgRow: { flexDirection: 'row', marginBottom: 12, alignItems: 'flex-end' },
+  msgRowMe: { justifyContent: 'flex-end' },
+  avatar: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center', marginRight: 8 },
+  avatarImg: { width: 32, height: 32, borderRadius: 16 },
+  avatarText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
+  avatarSpacer: { width: 40 },
+  bubbleCol: { maxWidth: '78%' },
+  bubbleColMe: { alignItems: 'flex-end' },
+  senderRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4, marginLeft: 4 },
+  senderName: { fontSize: 12, fontFamily: 'Inter_600SemiBold', maxWidth: 160 },
+  tierPill: { paddingHorizontal: 6, paddingVertical: 2, borderRadius: 6 },
+  tierPillText: { fontSize: 9, fontFamily: 'Inter_700Bold', color: '#fff' },
+  bubble: { borderRadius: 18, paddingHorizontal: 14, paddingVertical: 10, borderWidth: 1 },
+  bubbleMe: { borderTopRightRadius: 4 },
+  bubbleOther: { borderTopLeftRadius: 4 },
+  mediaImage: { width: 220, height: 140, borderRadius: 12, marginBottom: 6 },
+  mediaPlaceholder: { width: 220, height: 140, borderRadius: 12, marginBottom: 6, alignItems: 'center', justifyContent: 'center' },
+  msgText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
+  timeText: { fontSize: 10, fontFamily: 'Inter_400Regular', marginTop: 4, alignSelf: 'flex-end' },
+  inputBar: { borderTopWidth: 1, paddingHorizontal: 12, paddingTop: 10 },
+  sendErrorBar: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 8, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 8, borderWidth: 1 },
+  sendErrorText: { flex: 1, fontSize: 11, fontFamily: 'Inter_400Regular' },
+  loginPrompt: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 14, paddingVertical: 10, borderRadius: 12, borderWidth: 1 },
+  loginPromptText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
+  inputRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 8 },
+  mediaIcons: { flexDirection: 'row', gap: 2, alignItems: 'flex-end', paddingBottom: 6 },
+  mediaBtn: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center', position: 'relative' },
+  lockBadge: { position: 'absolute', bottom: 4, right: 4, width: 12, height: 12, borderRadius: 6, alignItems: 'center', justifyContent: 'center' },
+  inputContainer: { flex: 1, flexDirection: 'row', alignItems: 'center', borderRadius: 22, borderWidth: 1, paddingLeft: 14, paddingRight: 4, paddingVertical: 4, minHeight: 44 },
+  textInput: { flex: 1, fontSize: 15, fontFamily: 'Inter_400Regular', maxHeight: 100, paddingVertical: 6, paddingRight: 6 },
+  sendBtn: { width: 34, height: 34, borderRadius: 17, alignItems: 'center', justifyContent: 'center', alignSelf: 'center', flexShrink: 0 },
 });

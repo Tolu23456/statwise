@@ -38,7 +38,7 @@ export default function InsightDetailScreen() {
     );
   }
 
-  const topInset = Platform.OS === 'web' ? 67 : insets.top;
+  const topInset = Platform.OS === 'web' ? 0 : insets.top;
   const content: string = insight.content ?? insight.summary ?? '';
   const lines = content.split('\n');
 

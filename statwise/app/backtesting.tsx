@@ -87,7 +87,7 @@ export default function BacktestingScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { profile } = useAuth();
-  const topInset = Platform.OS === 'web' ? 67 : insets.top;
+  const topInset = Platform.OS === 'web' ? 0 : insets.top;
 
   const userTier = profile?.current_tier ?? 'Free Tier';
   const allowedTiers = TIER_DB_ALLOWED[userTier] ?? ['free'];
