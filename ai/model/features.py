@@ -163,7 +163,7 @@ class FeaturePipeline:
         all_idx = list(range(20, total))
         if len(all_idx) > max_samples: all_idx = all_idx[-max_samples:]
         n_targets = len(all_idx)
-        logger.info(f"Building Grandmaster set: {n_targets:,} samples (BULK C++ v4 + League IDs)")
+        logger.info(f"Building Pico set: {n_targets:,} samples (BULK C++ v4 + League IDs)")
 
         teams = pd.concat([df['home_team'], df['away_team']]).unique()
         team_map = {name: i for i, name in enumerate(teams)}

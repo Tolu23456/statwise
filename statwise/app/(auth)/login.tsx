@@ -69,7 +69,7 @@ const FormWrapper = ({ children, onSubmit }: { children: React.ReactNode; onSubm
 };
 
 export default function LoginScreen() {
-  const scheme = useColorScheme() ?? 'dark';
+  const scheme = (useColorScheme() ?? 'dark') as 'light' | 'dark';
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const passwordRef = useRef<TextInputType>(null);

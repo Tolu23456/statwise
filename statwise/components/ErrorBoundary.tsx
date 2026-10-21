@@ -7,7 +7,7 @@ import { Colors } from '@/constants/colors';
 
 function ErrorFallback() {
   const insets = useSafeAreaInsets();
-  const scheme = useColorScheme() ?? 'dark';
+  const scheme = (useColorScheme() ?? 'dark') as 'light' | 'dark';
   const C = Colors[scheme];
 
   return (

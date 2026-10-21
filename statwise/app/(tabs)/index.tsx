@@ -409,23 +409,51 @@ export default function HomeScreen() {
       />
 
       {showModelInfo && (
-        <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.6)', justifyContent: 'center', alignItems: 'center', padding: 20 }}>
-          <View style={{ backgroundColor: C.card, borderRadius: 16, maxWidth: 420, width: '100%', padding: 20, borderWidth: 1, borderColor: C.border }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-              <Text style={{ fontSize: 18, fontFamily: 'Inter_700Bold', color: C.text }}>StatWise AI Model</Text>
-              <TouchableOpacity onPress={() => setShowModelInfo(false)}>
-                <Ionicons name="close" size={22} color={C.textMuted} />
+        <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.65)', justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+          <View style={{ backgroundColor: C.card, borderRadius: 16, maxWidth: 440, width: '100%', maxHeight: '85%', borderWidth: 1, borderColor: C.border }}>
+            <ScrollView contentContainerStyle={{ padding: 20 }} showsVerticalScrollIndicator={false}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                  <Ionicons name="hardware-chip-outline" size={22} color={C.primary} />
+                  <Text style={{ fontSize: 18, fontFamily: 'Inter_700Bold', color: C.text }}>Pico — StatWise AI</Text>
+                </View>
+                <TouchableOpacity onPress={() => setShowModelInfo(false)} hitSlop={10}>
+                  <Ionicons name="close" size={22} color={C.textMuted} />
+                </TouchableOpacity>
+              </View>
+
+              <Text style={{ fontSize: 13, fontFamily: 'Inter_400Regular', color: C.textSecondary, lineHeight: 20, marginBottom: 12 }}>
+                Pico is a LightGBM gradient-boosting ensemble trained on 300,000+ historical football matches across 100+ leagues, using 161 engineered features: team form, head-to-head history, squad value, Elo ratings, goal expectancy, weather and market odds.
+              </Text>
+
+              <Text style={{ fontSize: 13, fontFamily: 'Inter_400Regular', color: C.textSecondary, lineHeight: 20, marginBottom: 12 }}>
+                Probabilities are isotonic-calibrated on an out-of-time holdout and then blended with de-vigged bookmaker odds, with the blend weight learned per league.
+              </Text>
+
+              <View style={{ backgroundColor: C.background, borderWidth: 1, borderColor: C.border, borderRadius: 12, padding: 14, marginBottom: 12 }}>
+                <Text style={{ fontSize: 13, fontFamily: 'Inter_600SemiBold', color: C.text, marginBottom: 6 }}>Certainty & the AI Pick badge</Text>
+                <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: C.textSecondary, lineHeight: 18 }}>
+                  Pico measures how sure it really is using three signals: probability entropy (how spread out the outcomes are), agreement between model heads, and the margin over the second-most-likely result. When those are combined, you get the Certainty score.
+                </Text>
+                <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: C.textSecondary, lineHeight: 18, marginTop: 8 }}>
+                  Matches where Pico is genuinely certain are marked with an <Text style={{ color: C.success, fontWeight: '700' }}>AI Pick</Text> badge and reserved for the top tier. Low-certainty matches are pushed down to the free tier, and Pico will say so when it is not sure.
+                </Text>
+              </View>
+
+              <View style={{ backgroundColor: C.warningLight, borderWidth: 1, borderColor: C.warning, borderRadius: 12, padding: 14, marginBottom: 12 }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+                  <Ionicons name="alert-circle" size={15} color={C.warning} />
+                  <Text style={{ fontSize: 13, fontFamily: 'Inter_600SemiBold', color: C.text }}>Accuracy disclaimer</Text>
+                </View>
+                <Text style={{ fontSize: 12, fontFamily: 'Inter_400Regular', color: C.textSecondary, lineHeight: 18 }}>
+                  Football is inherently difficult to predict and no model can be 100% accurate. Even our highest-certainty picks will lose sometimes. Treat every prediction as probabilistic information, not a guarantee. Always gamble responsibly and only with money you can afford to lose.
+                </Text>
+              </View>
+
+              <TouchableOpacity style={{ backgroundColor: C.primary, paddingVertical: 12, borderRadius: 12, alignItems: 'center' }} onPress={() => setShowModelInfo(false)}>
+                <Text style={{ color: '#fff', fontFamily: 'Inter_600SemiBold' }}>Got it</Text>
               </TouchableOpacity>
-            </View>
-            <Text style={{ fontSize: 13, fontFamily: 'Inter_400Regular', color: C.textSecondary, lineHeight: 20, marginBottom: 10 }}>
-              Our model is a LightGBM ensemble trained on historical football data. Predictions are probabilistic and calibrated where possible. Football is inherently unpredictable - no model can guarantee 100% accuracy.
-            </Text>
-            <Text style={{ fontSize: 13, fontFamily: 'Inter_400Regular', color: C.textSecondary, lineHeight: 20 }}>
-              We blend model probabilities with market data where available. Always gamble responsibly.
-            </Text>
-            <TouchableOpacity style={{ marginTop: 16, backgroundColor: C.primary, paddingVertical: 10, borderRadius: 10, alignItems: 'center' }} onPress={() => setShowModelInfo(false)}>
-              <Text style={{ color: '#fff', fontFamily: 'Inter_600SemiBold' }}>Got it</Text>
-            </TouchableOpacity>
+            </ScrollView>
           </View>
         </View>
       )}

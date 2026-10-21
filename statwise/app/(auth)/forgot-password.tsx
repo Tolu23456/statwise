@@ -11,7 +11,7 @@ import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
 
 export default function ForgotPasswordScreen() {
-  const scheme = useColorScheme() ?? 'dark';
+  const scheme = (useColorScheme() ?? 'dark') as 'light' | 'dark';
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const router = useRouter();

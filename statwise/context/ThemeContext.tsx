@@ -35,7 +35,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     AsyncStorage.setItem(STORAGE_KEY, mode);
   };
 
-  const scheme = themeMode === 'system' ? systemScheme : themeMode;
+  const scheme: 'light' | 'dark' =
+    themeMode === 'system' ? (systemScheme === 'light' ? 'light' : 'dark') : themeMode;
 
   return (
     <ThemeContext.Provider value={{ themeMode, setThemeMode, scheme }}>

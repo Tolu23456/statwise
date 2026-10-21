@@ -236,7 +236,7 @@ class FootballPredictor:
 
     def train(self, df: pd.DataFrame, calibrate: bool = True,
               mode: str = 'single') -> "FootballPredictor":
-        logger.info(f"Grandmaster Training starting on {len(df):,} records…")
+        logger.info(f"Pico Training starting on {len(df):,} records…")
         self.feature_pipe.fit(df)
         X, y_1x2, y_goals, dates = self.feature_pipe.build_training_set(df)
         return self.fit_stacks(X, y_1x2, y_goals, calibrate=calibrate, mode=mode)

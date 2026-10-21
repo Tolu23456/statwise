@@ -63,7 +63,7 @@ function getPasswordStrength(pw: string): { label: string; color: string; pct: n
 }
 
 export default function SignupScreen() {
-  const scheme = useColorScheme() ?? 'dark';
+  const scheme = (useColorScheme() ?? 'dark') as 'light' | 'dark';
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const router = useRouter();
