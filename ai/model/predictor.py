@@ -254,7 +254,68 @@ class PredictionEngine:
                 logger.warning(f"Failed to save prediction {p.get('match_id')}: {e}")
 
         logger.info(f"Saved {saved}/{len(predictions)} predictions to Supabase.")
+        self.prune_duplicate_predictions({p.get("match_id") for p in predictions if p.get("match_id")})
         return saved
+
+    def prune_duplicate_predictions(self, keep_match_ids: set[str]) -> int:
+        """Remove rows that duplicate a fixture already stored under another id.
+
+        The same fixture can end up in the table twice when the id scheme
+        changes (e.g. a bare ``575368`` from an older writer and the current
+        ``fdorg_575368``). Those stale copies have no model output attached,
+        so the app would render the same match twice — once as a fresh
+        prediction and once as an empty duplicate.
+        """
+        sb = self._ensure_supabase()
+        if sb is None or not keep_match_ids:
+            return 0
+        try:
+            resp = sb.table("predictions") \
+                .select("id, match_id, home_team, away_team, match_date") \
+                .eq("status", "upcoming") \
+                .execute()
+            rows = resp.data or []
+        except Exception as e:
+            logger.warning(f"Could not fetch predictions for de-duplication: {e}")
+            return 0
+
+        def _norm(v: str) -> str:
+            return "".join(ch for ch in (v or "").lower() if ch.isalnum())
+
+        groups: dict[tuple, list[dict]] = {}
+        for r in rows:
+            key = (_norm(r.get("home_team", "")), _norm(r.get("away_team", "")),
+                   str(r.get("match_date", ""))[:10])
+            groups.setdefault(key, []).append(r)
+
+        stale_ids: list[str] = []
+        for key, group in groups.items():
+            if len(group) < 2:
+                continue
+            # Prefer the row whose id we just wrote; otherwise keep the
+            # lexicographically smallest id and drop the rest.
+            preferred = sorted(
+                group,
+                key=lambda r: (r.get("match_id") not in keep_match_ids, str(r.get("match_id"))),
+            )[0]
+            for r in group:
+                if r["id"] != preferred["id"]:
+                    stale_ids.append(r["id"])
+
+        if not stale_ids:
+            return 0
+
+        deleted = 0
+        for i in range(0, len(stale_ids), 50):
+            chunk = stale_ids[i:i + 50]
+            try:
+                sb.table("predictions").delete().in_("id", chunk).execute()
+                deleted += len(chunk)
+            except Exception as e:
+                logger.warning(f"Could not delete {len(chunk)} duplicate predictions: {e}")
+        if deleted:
+            logger.info(f"Pruned {deleted} duplicate prediction row(s).")
+        return deleted
 
     def settle_past_predictions(self) -> int:
         sb = self._ensure_supabase()
@@ -275,6 +336,18 @@ class PredictionEngine:
 
         if not past:
             logger.info("No past predictions to settle.")
+            return 0
+
+        # The settlement columns must exist before we can write results.
+        # Detect the missing-schema case once so the log stays readable and
+        # the fix (run statwise/supabase-settlement-migration.sql) is obvious.
+        try:
+            sb.table("predictions").select("actual_result").limit(1).execute()
+        except Exception:
+            logger.error(
+                "Cannot settle predictions: the 'actual_result' column is missing. "
+                "Run statwise/supabase-settlement-migration.sql in the Supabase SQL editor."
+            )
             return 0
 
         logger.info(f"Attempting to settle {len(past)} past predictions…")

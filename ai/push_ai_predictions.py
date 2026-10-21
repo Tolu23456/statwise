@@ -92,15 +92,16 @@ def main() -> int:
     out, skipped, replaced, fresh = [], [], 0, 0
     for p in preds:
         mid = str(p.get("match_id", ""))
-        if mid.startswith("fdorg_") and mid[6:] in by_id:
-            mid = mid[6:]          # align with the JS fetcher's bare ids
+        # Keep the canonical id produced by the live fetcher (e.g. "fdorg_575368").
+        # Older writers used bare ids for the same fixture, which produced
+        # duplicate rows in the table — the predictor now prunes those
+        # automatically after every push.
         p["match_id"] = mid
         key = (_norm_team(p.get("home_team", "")), _norm_team(p.get("away_team", "")),
                str(p.get("match_date", ""))[:10])
         other = fixtures.get(key)
         if other is not None and other != mid:
             skipped.append((mid, other, p.get("home_team"), p.get("away_team")))
-            continue
         if mid in by_id:
             replaced += 1
         else:
