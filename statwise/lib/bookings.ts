@@ -48,31 +48,35 @@ export function bookingCodeLoadUrl(code: string): string {
  * the app only ever reads and shares them.
  */
 export async function fetchLatestBookingCode(): Promise<BookingCode | null> {
+  // `prediction_codes` is locked down by RLS, so the generated code is
+  // published as a single app_settings row that the app is allowed to read.
   const { data, error } = await supabase
-    .from('prediction_codes')
-    .select('code, bookmaker, notes, expires_at, created_at')
-    .eq('bookmaker', 'sportybet-ng')
-    .eq('status', 'active')
-    .order('created_at', { ascending: false })
+    .from('app_settings')
+    .select('setting_value, updated_at')
+    .eq('setting_key', 'booking_code')
+    .eq('is_active', true)
     .limit(1);
 
   if (error || !data || data.length === 0) return null;
 
   const row: any = data[0];
-  let notes: any = {};
-  try {
-    notes = typeof row.notes === 'string' ? JSON.parse(row.notes) : row.notes || {};
-  } catch {
-    notes = {};
+  let payload: any = row.setting_value;
+  if (typeof payload === 'string') {
+    try {
+      payload = JSON.parse(payload);
+    } catch {
+      return null;
+    }
   }
+  if (!payload || !payload.code) return null;
 
   return {
-    code: row.code,
-    bookmaker: row.bookmaker,
-    expiresAt: row.expires_at ?? null,
-    createdAt: row.created_at ?? null,
-    shareUrl: notes.share_url ?? null,
-    selections: Array.isArray(notes.selections) ? notes.selections : [],
+    code: payload.code,
+    bookmaker: payload.bookmaker ?? 'sportybet-ng',
+    expiresAt: payload.expires_at ?? null,
+    createdAt: payload.generated_at ?? row.updated_at ?? null,
+    shareUrl: payload.share_url ?? null,
+    selections: Array.isArray(payload.selections) ? payload.selections : [],
   };
 }
 

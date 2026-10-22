@@ -344,38 +344,68 @@ def main(argv: list[str]) -> int:
             if dry_run:
                 return 0
 
-            # Expire previous codes, then publish the fresh one.
-            try:
-                _rest("PATCH",
-                      f"prediction_codes?bookmaker=eq.{BOOKMAKER}&status=eq.active",
-                      {"status": "expired"})
-            except Exception as e:
-                print(f"Could not expire old codes: {e}")
-
             tier_order = ["free", "premium", "vip", "vvip"]
             tiers = [p.get("tier") or "free" for p in picks]
             tier = max(tiers, key=lambda t: tier_order.index(t)
                        if t in tier_order else 0)
 
-            row = {
+            payload = {
                 "code": code,
                 "bookmaker": BOOKMAKER,
-                "league_name": f"{len(selections)}-fold accumulator",
-                "market": "1X2",
-                "pick": f"{len(selections)} AI Picks",
-                "confidence": max((int(p.get("confidence") or 0) for p in picks),
-                                  default=None),
-                "notes": json.dumps({
-                    "share_url": share_url,
-                    "selections": mapped,
-                }),
-                "tier": tier,
-                "status": "active",
-                "usage_limit": None,
-                "usage_count": 0,
+                "share_url": share_url,
+                "selections": mapped,
                 "expires_at": expires_at,
+                "generated_at": datetime.now(timezone.utc).isoformat(),
             }
-            _rest("POST", "prediction_codes", row, prefer="return=minimal")
+
+            # The app role (anon) can read app_settings but not
+            # prediction_codes, so this row is what the UI actually shows.
+            try:
+                updated = _rest(
+                    "PATCH", "app_settings?setting_key=eq.booking_code",
+                    {
+                        "setting_value": payload,
+                        "description": "SportyBet Nigeria accumulator generated from AI Picks",
+                        "is_active": True,
+                    },
+                    prefer="return=representation",
+                )
+                if not updated:
+                    _rest("POST", "app_settings", {
+                        "setting_key": "booking_code",
+                        "setting_value": payload,
+                        "description": "SportyBet Nigeria accumulator generated from AI Picks",
+                        "is_active": True,
+                    }, prefer="return=minimal")
+                print("Published booking code to app_settings.")
+            except Exception as e:
+                print(f"Could not publish to app_settings: {e}")
+
+            # Audit trail. Also keeps any admin tooling that reads
+            # prediction_codes working.
+            try:
+                _rest("PATCH",
+                      f"prediction_codes?bookmaker=eq.{BOOKMAKER}&status=eq.active",
+                      {"status": "expired"})
+                _rest("POST", "prediction_codes", {
+                    "code": code,
+                    "bookmaker": BOOKMAKER,
+                    "league_name": f"{len(selections)}-fold accumulator",
+                    "market": "1X2",
+                    "pick": f"{len(selections)} AI Picks",
+                    "confidence": max((int(p.get("confidence") or 0) for p in picks),
+                                      default=None),
+                    "notes": json.dumps({"share_url": share_url,
+                                         "selections": mapped}),
+                    "tier": tier,
+                    "status": "active",
+                    "usage_limit": None,
+                    "usage_count": 0,
+                    "expires_at": expires_at,
+                }, prefer="return=minimal")
+            except Exception as e:
+                print(f"Could not write audit row: {e}")
+
             print(f"Stored booking code {code} in Supabase.")
             return 0
         finally:
