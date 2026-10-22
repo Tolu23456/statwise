@@ -66,9 +66,51 @@ from enrich_match_details import (  # noqa: E402
 from model.inplay import blend, conditional_win_probs, edge, fit_lambdas_to_probs  # noqa: E402
 
 ODDS_HOST = "https://api.the-odds-api.com/v4"
-CREDITS = {"remaining": None}
 CREDIT_FLOOR = int(os.environ.get("ODDS_CREDIT_FLOOR", "50"))
 CLOCK = dt.timezone.utc
+
+# Repo league slug -> The Odds API sport key(s).
+# Only the leagues we actually publish predictions for are requested: the
+# Odds API prices a request per (market x region) and rejects the very long
+# "all 49 soccer leagues" URL with a CloudFront 403.
+LEAGUE_ODDS_KEYS: dict[str, list[str]] = {
+    "premier-league":   ["soccer_epl"],
+    "championship":     ["soccer_efl_champ"],
+    "efl-championship": ["soccer_efl_champ"],
+    "la-liga":          ["soccer_spain_la_liga"],
+    "bundesliga":       ["soccer_germany_bundesliga"],
+    "serie-a":          ["soccer_italy_serie_a"],
+    "ligue1":           ["soccer_france_ligue_one"],
+    "eredivisie":       ["soccer_netherlands_eredivisie"],
+    "primeira-liga":    ["soccer_portugal_primeira_liga"],
+    "champions-league": ["soccer_uefa_champs_league"],
+    "europa-league":    ["soccer_uefa_europa_league"],
+    "conference-league": ["soccer_uefa_europa_conference_league"],
+    "copa-libertadores": ["soccer_conmebol_copa_libertadores"],
+    "brasileirao":      ["soccer_brazil_campeonato"],
+    "mls":              ["soccer_usa_mls"],
+    "super-lig":        ["soccer_turkey_super_league"],
+    "belgian-pro":      ["soccer_belgium_first_div"],
+    "swiss-super":      ["soccer_switzerland_superleague"],
+    "austrian-bl":      ["soccer_austria_bundesliga"],
+    "danish-superliga": ["soccer_denmark_superliga"],
+    "norwegian-elit":   ["soccer_norway_eliteserien"],
+    "swedish-allsv":    ["soccer_sweden_allsvenskan"],
+    "greek-super":      ["soccer_greece_super_league"],
+    "polish-ekstraklasa": ["soccer_poland_ekstraklasa"],
+    "j-league":         ["soccer_japan_j_league"],
+    "liga-mx":          ["soccer_mexico_ligamx"],
+    "chinese-super":    ["soccer_china_superleague"],
+    "russian-premier":  ["soccer_russia_premier_league"],
+    "premier-league-russia": ["soccer_russia_premier_league"],
+    "primera-division": ["soccer_argentina_primera_division"],
+    "irish-prem":      ["soccer_league_of_ireland"],
+    "finnish-veikkaus": ["soccer_finland_veikkausliiga"],
+    "liga-2":           ["soccer_spain_segunda_division"],
+    "bundesliga-2":     ["soccer_germany_bundesliga2"],
+    "serie-b":          ["soccer_italy_serie_b"],
+    "copa-sudamericana": ["soccer_conmebol_copa_sudamericana"],
+}
 
 
 def _now() -> dt.datetime:
@@ -79,68 +121,262 @@ def _iso(t: dt.datetime) -> str:
     return t.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-# ── The Odds API ───────────────────────────────────────────────────────────────
+# ── fetch cache (credits are precious: 500/month on the free tier) ────────────
 
-def _odds_get(path: str, params: dict, api_key: str):
+CACHE_FILE = os.path.join(BASE, "data", "odds_cache.json")
+
+
+def _load_cache() -> dict:
+    try:
+        with open(CACHE_FILE, "r", encoding="utf-8") as fh:
+            return json.load(fh)
+    except (OSError, ValueError):
+        return {}
+
+
+def _save_cache(cache: dict) -> None:
+    try:
+        os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
+        with open(CACHE_FILE, "w", encoding="utf-8") as fh:
+            json.dump(cache, fh, indent=2)
+    except OSError as e:
+        print(f"could not write odds cache: {e}")
+
+
+def _fresh_enough(cache: dict, league: str, max_age_hours: float) -> bool:
+    """True when we already fetched this league recently enough."""
+    if max_age_hours <= 0:
+        return False
+    stamp = (cache.get(league) or {}).get("at")
+    if not stamp:
+        return False
+    try:
+        t = dt.datetime.fromisoformat(str(stamp).replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    if t.tzinfo is None:
+        t = t.replace(tzinfo=CLOCK)
+    return (_now() - t) < dt.timedelta(hours=max_age_hours)
+
+
+_DB_FRESH_CACHE: dict[str, dt.datetime] = {}
+
+
+def _fresh_in_db(sport_key: str, max_age_hours: float) -> bool:
+    """True when Supabase already holds a snapshot for this sport that is
+    younger than ``max_age_hours``.
+
+    The local JSON cache is useless on CI (every run gets a fresh checkout),
+    so the snapshot table is the shared source of truth between runs.
+    """
+    if max_age_hours <= 0 or not sport_key:
+        return False
+    if sport_key in _DB_FRESH_CACHE:
+        t = _DB_FRESH_CACHE[sport_key]
+        return (_now() - t) < dt.timedelta(hours=max_age_hours)
+    try:
+        rows = _rest("GET", "odds_snapshots", params={
+            "select": "created_at", "sport_key": f"eq.{sport_key}",
+            "order": "created_at.desc", "limit": "1",
+        }) or []
+    except Exception:
+        return False
+    if not rows:
+        return False
+    try:
+        t = dt.datetime.fromisoformat(str(rows[0]["created_at"]).replace("Z", "+00:00"))
+    except (KeyError, ValueError, TypeError):
+        return False
+    if t.tzinfo is None:
+        t = t.replace(tzinfo=CLOCK)
+    _DB_FRESH_CACHE[sport_key] = t
+    return (_now() - t) < dt.timedelta(hours=max_age_hours)
+
+
+# ── The Odds API ───────────────────────────────────────────────────────────────
+#
+# Several free accounts are rotated: each key gets 500 credits/month, so a
+# pool keeps the sync running without one key becoming a single point of
+# failure.  The key with the most remaining credits is used first and a key
+# is retired for the rest of the run as soon as it errors out.
+
+_KEYS: list[str] = []
+_KEY_STATE: dict[str, dict] = {}          # key -> {"remaining": int|None, "bad": str|None}
+CREDITS = {"remaining": None, "key": None}
+
+
+def _init_keys() -> list[str]:
+    """Read the key pool from the environment (order preserved, dupes dropped)."""
+    raw: list[str] = []
+    bulk = os.environ.get("ODDS_API_KEYS", "")
+    if bulk.strip():
+        raw.extend(p.strip() for p in re.split(r"[,\s;]+", bulk) if p.strip())
+    for name in ("ODDS_API_KEY",) + tuple(f"ODDS_API_KEY_{i}" for i in range(2, 9)):
+        v = os.environ.get(name, "").strip()
+        if v:
+            raw.append(v)
+    keys, seen = [], set()
+    for k in raw:
+        if k not in seen:
+            seen.add(k)
+            keys.append(k)
+    for k in keys:
+        _KEY_STATE.setdefault(k, {"remaining": None, "bad": None})
+    global _KEYS
+    _KEYS = keys
+    return keys
+
+
+def _pick_key() -> str:
+    """Best available key: most credits left, untried first, never a bad one."""
+    if not _KEYS:
+        _init_keys()
+    live = [k for k in _KEYS if not _KEY_STATE.get(k, {}).get("bad")]
+    if not live:
+        raise SystemExit(
+            "Every ODDS_API_KEY returned an error — check the key pool in .env "
+            "(ODDS_API_KEY, ODDS_API_KEY_2 … or ODDS_API_KEYS=a,b,c)."
+        )
+
+    def rank(k: str):
+        rem = _KEY_STATE.get(k, {}).get("remaining")
+        # Unknown balance: probe it first (the /sports call is free).
+        return (0, k) if rem is None else (1, -rem, k)
+
+    return min(live, key=rank)
+
+
+def _note_credits(key: str, remaining) -> None:
+    if remaining is None:
+        return
+    try:
+        _KEY_STATE[key]["remaining"] = int(remaining)
+    except (TypeError, ValueError, KeyError):
+        return
+    total = [_KEY_STATE[k]["remaining"] for k in _KEYS
+             if _KEY_STATE.get(k, {}).get("remaining") is not None]
+    CREDITS["remaining"] = max(total) if total else None
+
+
+def _odds_get(path: str, params: dict, api_key: str | None = None):
+    """GET against the Odds API, transparently rotating keys on failure."""
     params = {k: v for k, v in params.items() if v is not None}
-    params["apiKey"] = api_key
-    url = f"{ODDS_HOST}{path}?{urllib.parse.urlencode(params)}"
-    req = urllib.request.Request(
-        url, headers={"User-Agent": "StatWise/1.0", "Accept-Encoding": "gzip"})
+
+    tried: list[str] = []
     last_err = None
-    for attempt in range(4):
-        try:
-            with urllib.request.urlopen(req, timeout=90) as r:
-                rem = r.headers.get("x-requests-remaining")
-                if rem is not None:
-                    CREDITS["remaining"] = int(rem)
-                raw = r.read()
-                if raw[:2] == b"\x1f\x8b":
-                    raw = gzip.decompress(raw)
-                return json.loads(raw)
-        except urllib.error.HTTPError as e:
-            detail = ""
+    while True:
+        key = api_key if api_key and not tried else _pick_key()
+        if key in tried:
+            raise SystemExit(f"The Odds API error: {last_err}")
+        tried.append(key)
+
+        q = dict(params, apiKey=key)
+        url = f"{ODDS_HOST}{path}?{urllib.parse.urlencode(q)}"
+        req = urllib.request.Request(
+            url, headers={"User-Agent": "StatWise/1.0", "Accept-Encoding": "gzip"})
+
+        rotate = False
+        for attempt in range(4):
             try:
-                detail = e.read().decode()[:300]
-            except Exception:
-                pass
-            if e.code in (429, 500, 502, 503) and attempt < 3:
-                last_err = f"HTTP {e.code}: {detail}"
-                time.sleep(8 * (attempt + 1))
-                continue
-            raise SystemExit(f"The Odds API error {e.code}: {detail}")
-        except Exception as e:  # network hiccups
-            last_err = str(e)
-            time.sleep(5 * (attempt + 1))
+                with urllib.request.urlopen(req, timeout=90) as r:
+                    _note_credits(key, r.headers.get("x-requests-remaining"))
+                    raw = r.read()
+                    if raw[:2] == b"\x1f\x8b":
+                        raw = gzip.decompress(raw)
+                    CREDITS["key"] = key
+                    return json.loads(raw)
+            except urllib.error.HTTPError as e:
+                detail = ""
+                try:
+                    detail = e.read().decode()[:300]
+                except Exception:
+                    pass
+                # 401/402/403 = bad or exhausted key -> fall through to another one.
+                if e.code in (401, 402, 403):
+                    _KEY_STATE.setdefault(key, {"remaining": None, "bad": None})["bad"] = \
+                        f"HTTP {e.code}"
+                    last_err = f"{key[:10]}… HTTP {e.code}: {detail}"
+                    rotate = True
+                    break
+                if e.code == 429 and attempt < 3:
+                    last_err = f"HTTP 429: {detail}"
+                    time.sleep(8 * (attempt + 1))
+                    continue
+                if e.code in (500, 502, 503) and attempt < 3:
+                    last_err = f"HTTP {e.code}: {detail}"
+                    time.sleep(8 * (attempt + 1))
+                    continue
+                raise SystemExit(f"The Odds API error {e.code}: {detail}")  # 404 etc.
+            except Exception as e:  # network hiccups
+                last_err = str(e)
+                if attempt < 3:
+                    time.sleep(5 * (attempt + 1))
+                    continue
+                rotate = True
+                break
+        if not rotate:
+            continue
+
     raise SystemExit(f"The Odds API unreachable: {last_err}")
 
 
-def _soccer_keys(api_key: str) -> list[str]:
-    """All active soccer/UEFA/FIFA sport keys (this call is free)."""
+def _soccer_keys(api_key: str | None = None, wanted: list[str] | None = None) -> list[str]:
+    """Active soccer/UEFA/FIFA sport keys (this call is free).
+
+    When ``wanted`` is given the result is narrowed to those keys so the
+    odds URL stays short (the full 49-league list is rejected with 403).
+    """
     sports = _odds_get("/sports", {}, api_key)
     if not isinstance(sports, list):
         raise SystemExit("Unexpected /sports response")
-    return [s["key"] for s in sports
+    keys = [s["key"] for s in sports
             if s.get("active")
             and s["key"].startswith(("soccer_", "uefa_", "fifa_"))]
+    if wanted:
+        allowed = set(wanted)
+        keys = [k for k in keys if k in allowed]
+        missing = allowed - set(keys)
+        if missing:
+            print(f"  (odds API has no market for: {', '.join(sorted(missing))})")
+    return keys
 
 
-def fetch_odds(api_key: str, window: tuple[dt.datetime, dt.datetime] | None) -> list[dict]:
+def fetch_odds(api_key: str | None, window: tuple[dt.datetime, dt.datetime] | None,
+               sport_keys: list[str] | None = None) -> list[dict]:
+    """Fetch h2h odds.
+
+    NOTE: this API plan only accepts ONE sport key per request — a
+    comma-joined list is answered with 404 "Unknown sport". Each request
+    therefore costs one credit (1 market x 1 region).
+    """
     if CREDITS["remaining"] is not None and CREDITS["remaining"] < CREDIT_FLOOR:
         raise SystemExit(f"Credit floor hit ({CREDITS['remaining']} remaining) — skipping run.")
-    keys = _soccer_keys(api_key)
+
+    keys = sport_keys or _soccer_keys(api_key)
     if not keys:
         return []
+
     params = {
         "regions": os.environ.get("ODDS_REGIONS", "eu"),
-        "markets": os.environ.get("ODDS_MARKETS", "h2h,totals"),
+        "markets": os.environ.get("ODDS_MARKETS", "h2h"),
         "oddsFormat": "decimal",
     }
     if window:
         params["commenceTimeFrom"] = _iso(window[0])
         params["commenceTimeTo"] = _iso(window[1])
-    events = _odds_get(f"/sports/{','.join(keys)}/odds", params, api_key)
-    return events if isinstance(events, list) else []
+
+    events: list[dict] = []
+    for key in keys:
+        try:
+            got = _odds_get(f"/sports/{key}/odds", params, api_key)
+        except SystemExit as e:
+            print(f"  {key}: {e}")
+            continue
+        if isinstance(got, list):
+            for ev in got:
+                ev.setdefault("sport_key", key)
+            events.extend(got)
+    return events
 
 
 # ── consensus / de-vig ─────────────────────────────────────────────────────────
@@ -245,6 +481,74 @@ def _set_details(pred: dict, key: str, value: dict) -> None:
     _rest("PATCH", "predictions", body={"stats": stats}, params={"id": f"eq.{pred['id']}"})
 
 
+def _pick_index(prediction: str) -> int:
+    return {"Home Win": 0, "Draw": 1, "Away Win": 2}.get(prediction, 0)
+
+
+def _apply_market_odds(pred: dict, h2h: dict, meta: dict) -> bool:
+    """Write the de-vigged market odds onto the prediction row.
+
+    * ``stats.odds_home / odds_draw / odds_away`` — consensus prices
+    * ``stats.value_edge``                   — model prob vs implied prob
+    * ``odds`` column                        — the price of *our* pick
+
+    Returns True when the row was updated.
+    """
+    stats = pred.get("stats") or {}
+    if isinstance(stats, str):
+        try:
+            stats = json.loads(stats)
+        except Exception:
+            stats = {}
+
+    odds = h2h.get("odds") or {}
+    probs = h2h.get("probs") or {}
+    o_h, o_d, o_a = odds.get("home"), odds.get("draw"), odds.get("away")
+    if not (o_h and o_d and o_a):
+        return False
+
+    stats["odds_home"] = float(o_h)
+    stats["odds_draw"] = float(o_d)
+    stats["odds_away"] = float(o_a)
+
+    # Value edge: our model's probability for the pick minus the market's
+    # implied probability (both vig-free, because `probs` is de-vigged).
+    idx = _pick_index(pred.get("prediction", "Home Win"))
+    model_prob = pred.get("prob_home") or pred.get("prob_draw") or pred.get("prob_away")
+    if model_prob is None:
+        stats_ = stats
+        model_prob = {
+            0: stats_.get("prob_home"),
+            1: stats_.get("prob_draw"),
+            2: stats_.get("prob_away"),
+        }.get(idx)
+    if model_prob is not None:
+        market_p = probs.get(["home", "draw", "away"][idx])
+        if market_p:
+            stats["value_edge"] = round(float(model_prob) - float(market_p) * 100.0, 1)
+
+    details = stats.get("details") or {}
+    details["market"] = {
+        "as_of": _iso(_now()),
+        "commence_time": meta.get("commence_time"),
+        "probs": probs, "odds": odds,
+        "best_odds": h2h.get("best_odds"),
+        "totals": (h2h.get("totals") or {}).get("totals"),
+        "bookmakers": h2h.get("books"),
+        "source": "the-odds-api",
+    }
+    stats["details"] = details
+    pred["stats"] = stats
+
+    pick_odds = [o_h, o_d, o_a][idx]
+    body = {"stats": stats}
+    if pick_odds:
+        body["odds"] = float(pick_odds)
+    _rest("PATCH", "predictions", body=body, params={"id": f"eq.{pred['id']}"})
+    pred["odds"] = float(pick_odds) if pick_odds else pred.get("odds")
+    return True
+
+
 def _upcoming(preds: list[dict], days: int) -> list[dict]:
     now = _now()
     out = []
@@ -261,30 +565,163 @@ def _upcoming(preds: list[dict], days: int) -> list[dict]:
     return out
 
 
+_COLUMN_CACHE: dict[str, set[str]] = {}
+
+# Candidate columns per table; probed once so a schema that lags behind the
+# migration file (stub tables with only id/match_id exist) degrades gracefully.
+_TABLE_COLUMNS = {
+    "odds_snapshots": (
+        "match_id", "market", "live", "commence_time", "bookmakers",
+        "odds", "best_odds", "probs", "totals", "sport_key", "created_at",
+    ),
+    "inplay_states": (
+        "match_id", "minute", "score_home", "score_away", "model_probs",
+        "market_probs", "final_probs", "edge", "lambda_home", "lambda_away",
+        "created_at",
+    ),
+}
+
+
+def _columns_of(table: str) -> set[str] | None:
+    """Column names of `table` that actually exist, or None if unprobed."""
+    if table in _COLUMN_CACHE:
+        return _COLUMN_CACHE[table]
+    if table not in _TABLE_COLUMNS:
+        return None
+    have: set[str] = set()
+    for c in _TABLE_COLUMNS[table]:
+        try:
+            _rest("GET", table, params={"select": c, "limit": "1"})
+            have.add(c)
+        except Exception:
+            pass
+    _COLUMN_CACHE[table] = have
+    return have
+
+
 def _insert(table: str, rows: list[dict]) -> None:
-    if rows:
+    if not rows:
+        return
+    # Drop keys the table does not have so one missing column cannot reject
+    # the whole batch.
+    have = _columns_of(table)
+    if have is not None:
+        if not have:
+            print(f"skip {table}: none of the expected columns exist yet — "
+                  f"run statwise/supabase-settlement-migration.sql")
+            return
+        missing = set(_TABLE_COLUMNS[table]) - have
+        # A row without its payload columns is useless — better to skip than
+        # to write hundreds of near-empty rows we then have to clean up.
+        required = {"odds", "probs"} if table == "odds_snapshots" else {"model_probs"}
+        useless = required - have
+        if useless:
+            print(f"skip {table}: missing essential column(s) "
+                  f"{', '.join(sorted(useless))} — run "
+                  f"statwise/supabase-settlement-migration.sql in the Supabase SQL editor")
+            return
+        if missing:
+            print(f"warning: {table} is missing optional column(s) "
+                  f"{', '.join(sorted(missing))} — run "
+                  f"statwise/supabase-settlement-migration.sql")
+        rows = [{k: v for k, v in r.items() if k in have} for r in rows]
+    try:
         _rest("POST", table, body=rows)
+    except urllib.error.HTTPError as e:
+        try:
+            detail = e.read().decode()[:400]
+        except Exception:
+            detail = str(e)
+        print(f"insert into {table} failed: HTTP {e.code} {detail}")
+        # Retry row-by-row so one bad row does not lose the whole batch.
+        for r in rows:
+            try:
+                _rest("POST", table, body=[r])
+            except urllib.error.HTTPError as e2:
+                try:
+                    d2 = e2.read().decode()[:200]
+                except Exception:
+                    d2 = str(e2)
+                print(f"  row {r.get('match_id')} failed: HTTP {e2.code} {d2}")
+                break
 
 
 # ── mode: prematch ─────────────────────────────────────────────────────────────
 
 def cmd_prepredict(args) -> int:
-    api_key = os.environ.get("ODDS_API_KEY")
-    if not api_key:
-        print("ODDS_API_KEY not set — get a free key at the-odds-api.com and add it to .env")
+    if not _init_keys():
+        print("No Odds API key found — add ODDS_API_KEY (or ODDS_API_KEYS=a,b,c) "
+              "to .env / the ODDS_API_KEYS repo secret.")
         return 2
+    print(f"Key pool: {len(_KEYS)} key(s)")
     preds = _upcoming(fetch_predictions(None, None), args.window_days)
     if not preds:
         print("No upcoming predictions in window — no API call made.")
         return 0
-    events = fetch_odds(api_key, (_now(), _now() + dt.timedelta(days=args.window_days)))
-    print(f"{len(events)} odds events, {len(preds)} upcoming predictions")
+
+    # Only ask for the leagues we actually publish, one request per league:
+    # this API plan rejects a comma-joined sport list (404 "Unknown sport")
+    # and charges one credit per request.
+    slugs = sorted({str(p.get("league_slug") or "") for p in preds})
+    wanted: list[str] = []
+    slug_for_key: dict[str, str] = {}
+    for s in slugs:
+        for k in LEAGUE_ODDS_KEYS.get(s, []):
+            if k not in wanted:
+                wanted.append(k)
+                slug_for_key[k] = s
+    if not wanted:
+        print("No Odds API mapping for our leagues — nothing to fetch.")
+        return 0
+    print(f"Leagues: {', '.join(slugs)}")
+    print(f"Odds API sports: {', '.join(wanted)}")
+
+    cache = _load_cache()
+    max_age = float(args.max_age_hours)
+    # Local JSON cache covers repeated runs on one machine; odds_snapshots in
+    # Supabase is the shared source of truth across CI runs (fresh checkout).
+    due = [k for k in wanted
+           if not (_fresh_in_db(k, max_age)
+                   or _fresh_enough(cache, slug_for_key.get(k, k), max_age))]
+    skipped = [k for k in wanted if k not in due]
+    if skipped:
+        print(f"skipping {len(skipped)} league(s) fetched within {max_age:g}h: "
+              f"{', '.join(slug_for_key.get(k, k) for k in skipped)}")
+    if not due:
+        print("All leagues have fresh odds — nothing to fetch.")
+        return 0
+
+    events: list[dict] = []
+    window = (_now(), _now() + dt.timedelta(days=args.window_days))
+    for key in due:
+        try:
+            got = fetch_odds(None, window, sport_keys=[key])
+        except SystemExit as e:
+            print(f"  {key}: {e}")
+            continue
+        events.extend(got)
+        cache[slug_for_key.get(key, key)] = {
+            "sport_key": key,
+            "at": _iso(_now()),
+            "events": len(got),
+        }
+        print(f"  {slug_for_key.get(key, key):20s} {len(got):3d} event(s), "
+              f"credits left {CREDITS['remaining']}")
+    _save_cache(cache)
+    if not events:
+        print("No odds events returned.")
+        return 0
+
     pairs = match_events(preds, events)
     print(f"matched {len(pairs)} fixtures")
     if args.dry_run:
-        for p, ev, _ in pairs[:5]:
+        # Dry runs must not consume the cache window.
+        for k in due:
+            cache.pop(slug_for_key.get(k, k), None)
+        _save_cache(cache)
+        for p, ev, _ in pairs[:8]:
             c = consensus(ev, "h2h")
-            print(f"  {p['home_team']} vs {p['away_team']} -> {c}")
+            print(f"  {p['home_team']} vs {p['away_team']} -> {c and c['odds']}")
         return 0
 
     rows, updated = [], 0
@@ -293,6 +730,8 @@ def cmd_prepredict(args) -> int:
         if not h2h:
             continue
         tot = consensus(ev, "totals")
+        if tot:
+            h2h["totals"] = tot.get("totals") or {}
         rows.append({
             "match_id": p.get("match_id"),
             "market": "h2h",
@@ -305,16 +744,8 @@ def cmd_prepredict(args) -> int:
             "totals": (tot or {}).get("totals"),
             "sport_key": meta.get("sport_key"),
         })
-        _set_details(p, "market", {
-            "as_of": _iso(_now()),
-            "commence_time": meta.get("commence_time"),
-            "probs": h2h["probs"], "odds": h2h["odds"],
-            "best_odds": h2h["best_odds"],
-            "totals": (tot or {}).get("totals"),
-            "bookmakers": h2h["books"],
-            "source": "the-odds-api",
-        })
-        updated += 1
+        if _apply_market_odds(p, h2h, meta):
+            updated += 1
     _insert("odds_snapshots", rows)
     print(f"stored {len(rows)} snapshots, updated {updated} predictions "
           f"(credits remaining: {CREDITS['remaining']})")
@@ -411,10 +842,10 @@ def _lambda_for(pred: dict, market_probs: dict) -> tuple[float, float, str]:
 
 
 def cmd_inplay(args) -> int:
-    api_key = os.environ.get("ODDS_API_KEY")
-    if not api_key:
-        print("ODDS_API_KEY not set — in-play odds unavailable.")
+    if not _init_keys():
+        print("No Odds API key found — in-play odds unavailable.")
         return 2
+    print(f"Key pool: {len(_KEYS)} key(s)")
     now = _now()
     preds = [p for p in fetch_predictions(None, None) if p.get("status") == "upcoming"]
     candidates = _upcoming(preds, 0)  # kickoff within last 3h .. now
@@ -434,7 +865,25 @@ def cmd_inplay(args) -> int:
         return 0
     print(f"{len(states)} matches live on ESPN — fetching in-play odds…")
 
-    events = fetch_odds(api_key, (now - dt.timedelta(hours=3), now + dt.timedelta(hours=1)))
+    wanted: list[str] = []
+    for p in candidates:
+        for k in LEAGUE_ODDS_KEYS.get(str(p.get("league_slug") or ""), []):
+            if k not in wanted:
+                wanted.append(k)
+    if not wanted:
+        print("No Odds API mapping for the live leagues — no API call made.")
+        return 0
+
+    events: list[dict] = []
+    window = (now - dt.timedelta(hours=3), now + dt.timedelta(hours=1))
+    for key in wanted:
+        try:
+            events.extend(fetch_odds(None, window, sport_keys=[key]))
+        except SystemExit as e:
+            print(f"  {key}: {e}")
+    if not events:
+        print("No in-play odds events returned.")
+        return 0
     pairs = match_events([p for p in candidates if p["id"] in states], events)
     print(f"matched {len(pairs)} live fixtures ({len(events)} events, "
           f"credits left {CREDITS['remaining']})")
@@ -482,6 +931,9 @@ def main() -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
     pm = sub.add_parser("prematch", help="upcoming odds snapshots")
     pm.add_argument("--window-days", type=int, default=7)
+    pm.add_argument("--max-age-hours", type=float, default=24.0,
+                    help="skip a league when its odds were fetched less than "
+                         "this many hours ago (saves Odds API credits)")
     pm.add_argument("--dry-run", action="store_true")
     ip = sub.add_parser("inplay", help="live score-state + live odds")
     ip.add_argument("--alpha", type=float, default=0.5,

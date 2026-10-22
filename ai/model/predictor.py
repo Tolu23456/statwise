@@ -4,12 +4,12 @@ upcoming matches, then pushes them to Supabase.
 Also handles backtesting: settling past predictions with actual results.
 """
 from __future__ import annotations
-import os, logging, datetime
+import os, sys, logging, datetime
 import pandas as pd
 from typing import Optional
 
 from .trainer import FootballPredictor
-from .live_fetcher import fetch_upcoming_matches, fetch_match_result, _mock_allowed
+from .live_fetcher import fetch_upcoming_matches, _mock_allowed
 from .downloader import load_training_data
 
 logger = logging.getLogger(__name__)
@@ -38,6 +38,14 @@ TIER_THRESHOLDS = {
 
 # Certainty at/above which the model is considered genuinely sure -> "AI Pick"
 AI_PICK_CERTAINTY = 65.0
+
+#: How many historical matches a league needs before the model can claim
+#: league-specific form. football-data.co.uk only publishes domestic seasons,
+#: so cup competitions (Europa League, Conference League, Copa Libertadores)
+#: have no season CSV of their own — Pico predicts those from pooled priors.
+#: Rather than quietly implying deep league knowledge, such fixtures are
+#: flagged and held to a higher certainty bar before they can become an AI Pick.
+MIN_LEAGUE_SAMPLES = 200
 TIER_DB = {
     "Free Tier":    "free",
     "Premium Tier": "premium",
@@ -125,6 +133,18 @@ class PredictionEngine:
                 "ALLOW_MOCK_FIXTURES is set – placeholder fixtures may be published."
             )
 
+        # Per-league training support, so a fixture backed by little history can
+        # be flagged instead of being presented as if the model knew the league.
+        # Prefer the counts persisted INSIDE the model: self.history is only
+        # populated when a retrain happened in this process, so reading it alone
+        # would leave the map empty on every ordinary "load the pickle" run.
+        try:
+            league_n = dict(getattr(self.predictor, 'league_counts', None) or {})
+            if not league_n and self.history is not None and 'league' in self.history:
+                league_n = self.history['league'].value_counts().to_dict()
+        except Exception:
+            league_n = {}
+
         results = []
         for fix in fixtures:
             try:
@@ -157,8 +177,22 @@ class PredictionEngine:
                 certainty = float(uncertainty.get('certainty') or 0)
                 raw_conf = int(pred.get('confidence', 50))
 
+                # How much league-specific history actually backs this fixture.
+                # Cup ties (Europa/Conference League, Libertadores) have no
+                # season CSV of their own, so Pico leans on pooled priors there
+                # — worth saying out loud rather than implying deep knowledge.
+                league  = fix.get('league_slug', 'all')
+                # An empty map means the model predates per-league accounting:
+                # treat support as UNKNOWN rather than thin, so a stale pickle
+                # cannot quietly suppress every AI Pick on the board.
+                samples = int(league_n.get(league, 0)) if league_n else -1
+                reduced = bool(0 <= samples < MIN_LEAGUE_SAMPLES)
+
                 # "AI Pick" = model is genuinely sure (high certainty score).
-                is_ai_pick = bool(certainty >= AI_PICK_CERTAINTY and not is_uncertain)
+                # A fixture with thin league support must be surer still, since
+                # AI Picks are exactly what the booking code is built from.
+                pick_bar = AI_PICK_CERTAINTY + (10.0 if reduced else 0.0)
+                is_ai_pick = bool(certainty >= pick_bar and not is_uncertain)
 
                 # Tier is driven by certainty, not raw confidence.
                 # Uncertain picks are forced down to the free tier.
@@ -171,6 +205,8 @@ class PredictionEngine:
                 stats['certainty'] = round(certainty, 1)
                 stats['is_ai_pick'] = is_ai_pick
                 stats['uncertainty'] = uncertainty
+                stats['league_samples'] = samples if samples >= 0 else None
+                stats['reduced_confidence'] = reduced
                 stats['prob_home'] = pred.get('prob_home')
                 stats['prob_draw'] = pred.get('prob_draw')
                 stats['prob_away'] = pred.get('prob_away')
@@ -205,7 +241,7 @@ class PredictionEngine:
 
                 row = {
                     "match_id":      fix['match_id'],
-                    "match_title":   fix['match_title'],
+                    "match_title":   fix.get('match_title') or f"{fix.get('home_team')} vs {fix.get('away_team')}",
                     "home_team":     fix['home_team'],
                     "away_team":     fix['away_team'],
                     "league":        fix.get('league_name', fix.get('league_slug', 'Unknown')),
@@ -318,62 +354,24 @@ class PredictionEngine:
         return deleted
 
     def settle_past_predictions(self) -> int:
+        """Settle finished matches with real scores.
+
+        The actual work lives in ``ai/settle_predictions.py`` so it can run
+        on its own CI schedule without loading LightGBM; this wrapper only
+        supplies the engine's Supabase client.
+        """
         sb = self._ensure_supabase()
         if sb is None:
             return 0
-
-        now = datetime.datetime.utcnow().isoformat() + "Z"
         try:
-            resp = sb.table("predictions") \
-                .select("id, match_id, home_team, away_team, kickoff_time, prediction") \
-                .eq("status", "upcoming") \
-                .lt("kickoff_time", now) \
-                .execute()
-            past = resp.data or []
-        except Exception as e:
-            logger.warning(f"Could not fetch past predictions: {e}")
-            return 0
-
-        if not past:
-            logger.info("No past predictions to settle.")
-            return 0
-
-        # The settlement columns must exist before we can write results.
-        # Detect the missing-schema case once so the log stays readable and
-        # the fix (run statwise/supabase-settlement-migration.sql) is obvious.
-        try:
-            sb.table("predictions").select("actual_result").limit(1).execute()
-        except Exception:
-            logger.error(
-                "Cannot settle predictions: the 'actual_result' column is missing. "
-                "Run statwise/supabase-settlement-migration.sql in the Supabase SQL editor."
-            )
-            return 0
-
-        logger.info(f"Attempting to settle {len(past)} past predictions…")
-        settled = 0
-        for p in past:
-            result = fetch_match_result(
-                match_id     = p.get("match_id", ""),
-                home_team    = p.get("home_team", ""),
-                away_team    = p.get("away_team", ""),
-                kickoff_time = p.get("kickoff_time", ""),
-            )
-            if result:
-                try:
-                    update = {
-                        "actual_result": result["actual_result"],
-                        "home_score":    result.get("home_score"),
-                        "away_score":    result.get("away_score"),
-                        "status":        "completed",
-                    }
-                    sb.table("predictions").update(update).eq("id", p["id"]).execute()
-                    settled += 1
-                except Exception as e:
-                    logger.warning(f"Failed to settle prediction {p['id']}: {e}")
-
-        logger.info(f"Settled {settled}/{len(past)} predictions.")
-        return settled
+            from settle_predictions import settle as _settle
+        except ModuleNotFoundError:
+            # ai/ is not on sys.path (e.g. package-style import) — fix it up.
+            ai_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            if ai_dir not in sys.path:
+                sys.path.insert(0, ai_dir)
+            from settle_predictions import settle as _settle
+        return _settle(sb)
 
     def run_and_push(self, leagues: list[str] | None = None,
                      days_ahead: int = 14) -> int:

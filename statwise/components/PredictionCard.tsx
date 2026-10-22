@@ -63,6 +63,9 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
 
   const certainty = prediction.stats?.certainty ?? prediction.confidence;
   const isAiPick = prediction.stats?.is_ai_pick === true;
+  // Cup competitions with no season CSV of their own are predicted from pooled
+  // priors; the model says so rather than implying league-specific knowledge.
+  const isReducedConfidence = prediction.stats?.reduced_confidence === true;
   const edge = prediction.stats?.value_edge ?? null;
   const outcomes = buildOutcomes(prediction);
   const pick = pickCode(prediction.prediction);
@@ -204,6 +207,12 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
               <Text style={[styles.valueText, { color: C.gold }]}>
                 Value {formatEdge(edge)}
               </Text>
+            </View>
+          )}
+          {isReducedConfidence && (
+            <View style={[styles.aiPickBadge, { backgroundColor: C.warningLight, borderColor: C.warning }]}>
+              <Ionicons name="information-circle-outline" size={12} color={C.warning} />
+              <Text style={[styles.aiPickText, { color: C.warning }]}>Pooled data</Text>
             </View>
           )}
         </View>

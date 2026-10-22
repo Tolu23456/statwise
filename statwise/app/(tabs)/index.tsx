@@ -31,6 +31,8 @@ const LEAGUES = [
   { slug: 'serie-a', name: 'Serie A' },
   { slug: 'ligue1', name: 'Ligue 1' },
   { slug: 'champions-league', name: 'UCL' },
+  { slug: 'europa-league', name: 'Europa' },
+  { slug: 'conference-league', name: 'Conference' },
   { slug: 'mls', name: 'MLS' },
   { slug: 'saudi-pro-league', name: 'Saudi Pro' },
   { slug: 'copa-libertadores', name: 'Libertadores' },
@@ -107,20 +109,30 @@ export default function HomeScreen() {
   const { data: predictions = [], isLoading, isError, refetch, isFetching, dataUpdatedAt } = useQuery<Prediction[]>({
     queryKey: ['predictions', userTier],
     queryFn: async () => {
-      const today = new Date().toISOString().split('T')[0];
-      const { data, error } = await supabase
-        .from('predictions')
-        .select('*')
-        .gte('match_date', today)
-        .in('tier', allowedTiers)
-        .order('kickoff_time', { ascending: true })
-        .limit(userLimit === Infinity ? 500 : userLimit);
-      if (error) throw error;
-      return data ?? [];
+      try {
+        const today = new Date().toISOString().split('T')[0];
+        const { data, error } = await supabase
+          .from('predictions')
+          .select('*')
+          .gte('match_date', today)
+          .in('tier', allowedTiers)
+          .order('kickoff_time', { ascending: true })
+          .limit(userLimit === Infinity ? 500 : userLimit);
+        if (error) {
+          console.error('Predictions fetch error:', error);
+          throw error;
+        }
+        return data ?? [];
+      } catch (e) {
+        console.error('Predictions query error:', e);
+        throw e;
+      }
     },
     refetchInterval: POLL_INTERVAL_MS,
     refetchIntervalInBackground: false,
-    staleTime: 5 * 60 * 1000,
+    staleTime: 2 * 60 * 1000,
+    retry: 3,
+    retryDelay: 1000,
   });
 
   // How many predictions exist for this tier overall — used to tell free users

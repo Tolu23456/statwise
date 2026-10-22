@@ -1,9 +1,11 @@
 name: Fetch Football Data
 
+# Grabs upcoming fixtures from football-data.org into Supabase and then
+# enriches them with venue / weather / lineups / past-match context from ESPN.
+
 on:
   schedule:
-    - cron: '0 */3 * * *' # every 3 hours; also cron: '30 06,18 * * *' to run twice daily? Or prefer 3h; alternatively 0 6,12,18 * * * 
-    - cron: '0 6,12,18 * * *' # 3x daily at 06:00,12:00,18:00 UTC
+    - cron: '0 */3 * * *' # every 3 hours
   workflow_dispatch:
   push:
     branches: [main]
@@ -11,9 +13,14 @@ on:
       - '.github/scripts/fetch_football_data.js'
       - '.github/workflows/fetch-football-data.yml'
 
+concurrency:
+  group: fetch-football-data
+  cancel-in-progress: false
+
 jobs:
   fetch-and-store:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
@@ -23,6 +30,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'   # native WebSocket (realtime-js requires Node >= 22)
+          cache: npm
+          cache-dependency-path: .github/scripts/package.json
 
       - name: Install script dependencies
         run: npm install
@@ -30,14 +39,32 @@ jobs:
 
       - name: Fetch football data and store in Supabase
         env:
-          FOOTBALL_DATA_TOKEN: ${{ vars.FOOTBALL_DATA_TOKEN }}
-          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ vars.SUPABASE_SERVICE_ROLE_KEY }}
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN || secrets.FOOTBALL_API_TOKEN || vars.FOOTBALL_DATA_TOKEN || vars.FOOTBALL_API_TOKEN }}
+          FOOTBALL_DATA_TOKENS: ${{ secrets.FOOTBALL_DATA_TOKENS }}
+          X_RAPIDAPI_KEY: ${{ secrets.X_RAPIDAPI_KEY || vars.X_RAPIDAPI_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+          # Node reads NODE_ vars; the JS script also accepts the SUPABASE_* names.
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
         run: node .github/scripts/fetch_football_data.js
+
+      # This step used to be skipped by the runner silently: it ran
+      # `python3 ai/enrich_match_details.py` on a bare interpreter with no
+      # dependencies installed, then continued on error. Install first, and
+      # only tolerate failures from the third-party APIs it calls.
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install Python dependencies
+        run: pip install -r ai/requirements.txt
 
       - name: Enrich predictions with match details (venue, weather, lineups)
         continue-on-error: true   # supplemental: never fail the data fetch over ESPN/Open-Meteo
         env:
-          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ vars.SUPABASE_SERVICE_ROLE_KEY }}
-        run: python3 ai/enrich_match_details.py
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python ai/enrich_match_details.py

@@ -1,11 +1,26 @@
 const { createClient } = require('@supabase/supabase-js');
 
-const FOOTBALL_DATA_TOKEN = process.env.FOOTBALL_DATA_TOKEN;
+// football-data.org's free tier allows 10 requests/min and 10k requests/month
+// PER TOKEN. Rotating across a pool shares that monthly allowance and keeps a
+// single rate-limited key from failing the whole run.
+const FDORG_TOKENS = [
+  ...new Set(
+    [
+      ...(process.env.FOOTBALL_DATA_TOKENS || '')
+        .split(/[,;\s]+/)
+        .map((token) => token.trim())
+        .filter(Boolean),
+      process.env.FOOTBALL_DATA_TOKEN,
+      process.env.FOOTBALL_API_TOKEN,
+    ].filter(Boolean),
+  ),
+];
+
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 const missing = [];
-if (!FOOTBALL_DATA_TOKEN) missing.push('FOOTBALL_DATA_TOKEN');
+if (FDORG_TOKENS.length === 0) missing.push('FOOTBALL_DATA_TOKENS');
 if (!SUPABASE_URL) missing.push('SUPABASE_URL');
 if (!SUPABASE_SERVICE_ROLE_KEY) missing.push('SUPABASE_SERVICE_ROLE_KEY');
 
@@ -35,8 +50,16 @@ const COMPETITIONS = [
   { code: 'SA',  name: 'Serie A',           slug: 'serie-a',           tier: 'Premium Tier' },
   { code: 'FL1', name: 'Ligue 1',           slug: 'ligue1',            tier: 'VIP Tier' },
   { code: 'CL',  name: 'Champions League',  slug: 'champions-league',  tier: 'VIP Tier' },
+  // European cup nights. These have no football-data.co.uk season CSV, so the
+  // model predicts them from pooled priors — predictor.py flags the resulting
+  // rows with stats.reduced_confidence and holds them to a higher AI-Pick bar.
+  { code: 'EL',  name: 'Europa League',     slug: 'europa-league',     tier: 'VIP Tier' },
+  { code: 'ECL', name: 'Conference League', slug: 'conference-league', tier: 'Premium Tier' },
   { code: 'MLS', name: 'MLS',               slug: 'mls',               tier: 'Free Tier' },
-  { code: 'ELC', name: 'Championship',      slug: 'championship',      tier: 'Premium Tier' },
+  // Slug must match live_fetcher.FDORG_LEAGUE_IDS / the app's league list —
+  // 'championship' used to drift from 'efl-championship' and split one league
+  // across two slugs.
+  { code: 'ELC', name: 'Championship',      slug: 'efl-championship',  tier: 'Premium Tier' },
   { code: 'DED', name: 'Eredivisie',        slug: 'eredivisie',        tier: 'VIP Tier' },
   { code: 'PPL', name: 'Primeira Liga',     slug: 'primeira-liga',     tier: 'VIP Tier' },
 ];
@@ -105,19 +128,47 @@ function getMatchDate(utcDate) {
   return utcDate.split('T')[0];
 }
 
+let tokenCursor = 0;
+
+function nextToken() {
+  const token = FDORG_TOKENS[tokenCursor % FDORG_TOKENS.length];
+  tokenCursor += 1;
+  return token;
+}
+
 async function fetchMatches(dateFrom, dateTo) {
   const url = `https://api.football-data.org/v4/matches?dateFrom=${dateFrom}&dateTo=${dateTo}`;
-  const response = await fetch(url, {
-    headers: { 'X-Auth-Token': FOOTBALL_DATA_TOKEN },
-  });
+  let lastError;
 
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`football-data.org API error ${response.status}: ${text}`);
+  // Rotate on 429 (rate limit) and 403 (invalid token / monthly quota gone).
+  // Anything else — 400, 404 — will not be fixed by a different key.
+  for (let attempt = 0; attempt < FDORG_TOKENS.length * 2 + 1; attempt += 1) {
+    const token = nextToken();
+    const response = await fetch(url, {
+      headers: { 'X-Auth-Token': token },
+    });
+
+    if (response.ok) {
+      const remaining = response.headers.get('X-RequestLimit-Remaining');
+      console.log(
+        `football-data.org OK with token ${token.slice(0, 8)}… (requests left this minute: ${remaining ?? 'n/a'})`,
+      );
+      const data = await response.json();
+      return data.matches ?? [];
+    }
+
+    const text = await response.text().catch(() => '');
+    lastError = new Error(
+      `football-data.org API error ${response.status}: ${text.slice(0, 300)}`,
+    );
+
+    if (response.status !== 429 && response.status !== 403) break;
+    console.warn(
+      `  token ${token.slice(0, 8)}… -> HTTP ${response.status}, rotating to the next key`,
+    );
   }
 
-  const data = await response.json();
-  return data.matches ?? [];
+  throw lastError;
 }
 
 async function run() {
@@ -163,7 +214,11 @@ async function run() {
     const { prediction, confidence, odds, reasoning } = generatePrediction(matchId, homeTeam, awayTeam);
 
     rows.push({
-      match_id: matchId,
+      // Canonical id shape is `fdorg_<id>` (what the Python live fetcher
+      // writes). Writing the bare id here used to create a SECOND row for the
+      // same fixture, because `onConflict: 'match_id'` cannot see that
+      // '561893' and 'fdorg_561893' are the same match.
+      match_id: `fdorg_${matchId}`,
       match_title: `${homeTeam} vs ${awayTeam}`,
       home_team: homeTeam,
       away_team: awayTeam,

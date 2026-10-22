@@ -97,6 +97,14 @@ export type Prediction = {
     certainty?: number;
     /** True when the model is genuinely sure about this match */
     is_ai_pick?: boolean;
+    /**
+     * True when the model has little league-specific training history for this
+     * competition (e.g. the Europa/Conference League, which have no
+     * football-data.co.uk season CSV). Predictions then lean on pooled priors.
+     */
+    reduced_confidence?: boolean;
+    /** Historical matches the model has seen for this league (null = unknown) */
+    league_samples?: number | null;
     /** Calibrated three-way outcome probabilities (0-100) */
     prob_home?: number | null;
     prob_draw?: number | null;

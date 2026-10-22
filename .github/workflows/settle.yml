@@ -1,0 +1,62 @@
+name: Settle Finished Matches
+
+# Writes real scores onto finished predictions (actual_result / home_score /
+# away_score / status / settled_at) so the accuracy screen and the backtest
+# have data. Runs on its own schedule: settlement is cheap and must not be
+# blocked by a prediction cycle failing.
+#
+# Free football-data.org token covers every league we predict; TheSportsDB is
+# the fallback.
+
+on:
+  schedule:
+    - cron: '20 */2 * * *'   # every 2 hours, at :20 (offset from the odds sync)
+    - cron: '40 6,18 * * *'  # right after the big European evening matches
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (show results, write nothing)'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: settle
+  cancel-in-progress: false
+
+jobs:
+  settle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        # settlement only needs supabase + requests, but the shared requirements
+        # file keeps the runner identical to the prediction workflow.
+        run: pip install -r ai/requirements.txt
+
+      - name: Settle finished matches
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN || secrets.FOOTBALL_API_TOKEN || vars.FOOTBALL_DATA_TOKEN || vars.FOOTBALL_API_TOKEN }}
+          FOOTBALL_DATA_TOKENS: ${{ secrets.FOOTBALL_DATA_TOKENS }}
+          THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY || vars.THESPORTSDB_KEY }}
+        run: |
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then
+            echo "::error::SUPABASE_SERVICE_ROLE_KEY is not configured — cannot settle."
+            exit 1
+          fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python ai/settle_predictions.py --dry-run
+          else
+            python ai/settle_predictions.py
+          fi

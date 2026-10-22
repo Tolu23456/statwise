@@ -1,14 +1,21 @@
 name: StatWise AI Predictions
 
+# One-shot pipeline: fetch fixtures → predict → push → settle finished matches.
+# Runs every 4 hours and on demand.
+
 on:
   schedule:
     - cron: "0 */4 * * *"   # every 4 hours
   workflow_dispatch:         # manual trigger from GitHub UI
 
+concurrency:
+  group: predict
+  cancel-in-progress: false
+
 jobs:
   predict:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repo
@@ -41,11 +48,28 @@ jobs:
           pip install -r ai/requirements.txt
 
       - name: Run prediction cycle
+        id: predict
         env:
           # Support both secret names used across the project's history.
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN || secrets.FOOTBALL_API_TOKEN || vars.FOOTBALL_DATA_TOKEN || vars.FOOTBALL_API_TOKEN }}
+          FOOTBALL_DATA_TOKENS: ${{ secrets.FOOTBALL_DATA_TOKENS }}
           X_RAPIDAPI_KEY: ${{ secrets.X_RAPIDAPI_KEY || vars.X_RAPIDAPI_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
           THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY || vars.THESPORTSDB_KEY }}
         run: python ai/scheduler.py --once
+
+      # Settlement has its own workflow (settle.yml) too, but running it here
+      # as well means a finished match is scored right after the next predict
+      # run even if the dedicated job is paused. `if: always()` keeps it going
+      # when the predict step itself failed.
+      - name: Settle finished matches
+        if: always() && steps.predict.outcome != 'skipped'
+        continue-on-error: true
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN || secrets.FOOTBALL_API_TOKEN || vars.FOOTBALL_DATA_TOKEN || vars.FOOTBALL_API_TOKEN }}
+          FOOTBALL_DATA_TOKENS: ${{ secrets.FOOTBALL_DATA_TOKENS }}
+          THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY || vars.THESPORTSDB_KEY }}
+        run: python ai/settle_predictions.py

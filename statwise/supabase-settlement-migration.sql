@@ -72,11 +72,46 @@ CREATE TABLE IF NOT EXISTS public.odds_snapshots (
   created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+-- Tables can already exist as bare stubs (id + match_id only). CREATE TABLE
+-- IF NOT EXISTS does nothing in that case, so add any column that is missing.
+DO $$
+DECLARE
+  col RECORD;
+BEGIN
+  FOR col IN
+    SELECT * FROM (VALUES
+      ('market',        'TEXT'),
+      ('live',          'BOOLEAN NOT NULL DEFAULT FALSE'),
+      ('commence_time', 'TIMESTAMPTZ'),
+      ('bookmakers',    'JSONB'),
+      ('odds',          'JSONB'),
+      ('best_odds',     'JSONB'),
+      ('probs',         'JSONB'),
+      ('totals',        'JSONB'),
+      ('sport_key',     'TEXT'),
+      ('created_at',    'TIMESTAMPTZ NOT NULL DEFAULT NOW()')
+    ) AS c(name, type)
+  LOOP
+    IF NOT EXISTS (
+      SELECT 1 FROM information_schema.columns
+      WHERE table_schema = 'public' AND table_name = 'odds_snapshots'
+        AND column_name = col.name
+    ) THEN
+      EXECUTE format('ALTER TABLE public.odds_snapshots ADD COLUMN %I %s',
+                     col.name, col.type);
+    END IF;
+  END LOOP;
+END
+$$;
+
 CREATE INDEX IF NOT EXISTS odds_snapshots_match_idx
   ON public.odds_snapshots (match_id, created_at DESC);
 
 CREATE INDEX IF NOT EXISTS odds_snapshots_commence_idx
   ON public.odds_snapshots (commence_time DESC);
+
+CREATE INDEX IF NOT EXISTS odds_snapshots_sport_idx
+  ON public.odds_snapshots (sport_key, created_at DESC);
 
 
 -- ── 3. In-play state snapshots ───────────────────────────────────────
@@ -95,6 +130,37 @@ CREATE TABLE IF NOT EXISTS public.inplay_states (
   lambda_away   DOUBLE PRECISION,
   created_at    TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+-- Same stub-table safeguard as odds_snapshots above.
+DO $$
+DECLARE
+  col RECORD;
+BEGIN
+  FOR col IN
+    SELECT * FROM (VALUES
+      ('minute',        'DOUBLE PRECISION'),
+      ('score_home',    'INTEGER'),
+      ('score_away',    'INTEGER'),
+      ('model_probs',   'JSONB'),
+      ('market_probs',  'JSONB'),
+      ('final_probs',   'JSONB'),
+      ('edge',          'JSONB'),
+      ('lambda_home',   'DOUBLE PRECISION'),
+      ('lambda_away',   'DOUBLE PRECISION'),
+      ('created_at',    'TIMESTAMPTZ NOT NULL DEFAULT NOW()')
+    ) AS c(name, type)
+  LOOP
+    IF NOT EXISTS (
+      SELECT 1 FROM information_schema.columns
+      WHERE table_schema = 'public' AND table_name = 'inplay_states'
+        AND column_name = col.name
+    ) THEN
+      EXECUTE format('ALTER TABLE public.inplay_states ADD COLUMN %I %s',
+                     col.name, col.type);
+    END IF;
+  END LOOP;
+END
+$$;
 
 CREATE INDEX IF NOT EXISTS inplay_states_match_idx
   ON public.inplay_states (match_id, created_at DESC);
@@ -115,6 +181,8 @@ DO $$
 DECLARE
   missing_cols TEXT;
   missing_tbls TEXT;
+  missing_snap TEXT;
+  missing_live TEXT;
 BEGIN
   SELECT string_agg(c, ', ')
     INTO missing_cols
@@ -132,11 +200,31 @@ BEGIN
     WHERE table_schema = 'public' AND table_name = t
   );
 
-  IF missing_cols IS NULL AND missing_tbls IS NULL THEN
+  SELECT string_agg(c, ', ')
+    INTO missing_snap
+  FROM unnest(ARRAY['market','live','commence_time','bookmakers','odds',
+                    'best_odds','probs','totals','sport_key','created_at']) AS c
+  WHERE NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public' AND table_name = 'odds_snapshots' AND column_name = c
+  );
+
+  SELECT string_agg(c, ', ')
+    INTO missing_live
+  FROM unnest(ARRAY['minute','score_home','score_away','model_probs',
+                    'market_probs','final_probs','edge','created_at']) AS c
+  WHERE NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public' AND table_name = 'inplay_states' AND column_name = c
+  );
+
+  IF missing_cols IS NULL AND missing_tbls IS NULL
+     AND missing_snap IS NULL AND missing_live IS NULL THEN
     RAISE NOTICE 'StatWise schema migration complete — everything is in place.';
   ELSE
-    RAISE EXCEPTION 'Migration incomplete. missing columns: % | missing tables: %',
-      COALESCE(missing_cols, 'none'), COALESCE(missing_tbls, 'none');
+    RAISE EXCEPTION 'Migration incomplete. missing columns: % | missing tables: % | odds_snapshots: % | inplay_states: %',
+      COALESCE(missing_cols, 'none'), COALESCE(missing_tbls, 'none'),
+      COALESCE(missing_snap, 'none'), COALESCE(missing_live, 'none');
   END IF;
 END
 $$;

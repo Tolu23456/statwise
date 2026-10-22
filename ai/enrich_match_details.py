@@ -80,6 +80,8 @@ ESPN_SLUGS = {
     "primeira-liga": "por.1",
     "champions-league": "uefa.champions",
     "europa-league": "uefa.europa",
+    # ESPN spells the Conference League 'uefa.europa.conf', NOT 'uefa.conf'.
+    "conference-league": "uefa.europa.conf",
     "mls": "usa.1",
     "premier-league-russia": "rus.1",
     "super-lig": "tur.1",

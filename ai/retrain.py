@@ -420,6 +420,15 @@ def run(force: bool = False) -> bool:
         logger.info(f"Training done in {time.time() - t1:.1f}s")
         calib_info = {"mode": fallback_mode, "note": "holdout too small; prefit isotonic"}
 
+    # Per-league sample sizes ride along inside the pickle so predictor.py can
+    # flag fixtures the model has little league-specific history for (the Europa
+    # and Conference League have no football-data.co.uk season CSV of their own).
+    try:
+        predictor.record_league_support(df)
+        logger.info(f"League support recorded for {len(predictor.league_counts)} league(s)")
+    except Exception as e:
+        logger.debug(f"Could not record league support: {e}")
+
     # ── Save atomically ────────────────────────────────────────────
     tmp_fd, tmp_path = tempfile.mkstemp(suffix=".pkl", dir=os.path.dirname(MODEL_PATH))
     os.close(tmp_fd)

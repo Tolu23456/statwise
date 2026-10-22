@@ -233,17 +233,44 @@ class FootballPredictor:
         self._calibrators: Optional[list] = None
         self._alphas: dict = {}
         self._calibration_info: dict = {}
+        # How many historical matches each league contributed to training.
+        # Persisted so we can tell a fixture backed by real league-specific
+        # form from one the model is guessing at from pooled priors (cup ties
+        # like the Europa/Conference League have no season CSV of their own).
+        self._league_counts: dict = {}
+
+    @property
+    def league_counts(self) -> dict:
+        """Per-league match counts seen during training ({} = unknown)."""
+        return self._league_counts or {}
+
+    def record_league_support(self, df: pd.DataFrame) -> None:
+        """Remember per-league sample sizes from the training frame."""
+        try:
+            cols = getattr(df, "columns", [])
+            # The live history frame calls it 'league'; the retrain frame calls
+            # it 'league_slug'. Accept either rather than silently recording {}.
+            for col in ("league", "league_slug"):
+                if col in cols:
+                    self._league_counts = {
+                        str(k): int(v) for k, v in df[col].value_counts().items()
+                    }
+                    return
+        except Exception as e:  # noqa: BLE001
+            logger.debug(f"Could not record league support: {e}")
 
     def train(self, df: pd.DataFrame, calibrate: bool = True,
               mode: str = 'single') -> "FootballPredictor":
         logger.info(f"Pico Training starting on {len(df):,} records…")
+        self.record_league_support(df)
         self.feature_pipe.fit(df)
         X, y_1x2, y_goals, dates = self.feature_pipe.build_training_set(df)
         return self.fit_stacks(X, y_1x2, y_goals, calibrate=calibrate, mode=mode)
 
     def fit_stacks(self, X: np.ndarray, y_1x2: np.ndarray, y_goals: np.ndarray,
                    calibrate: bool = True, mode: str = 'single',
-                   sample_weight=None) -> "FootballPredictor":
+                   sample_weight=None,
+                   league_counts: dict | None = None) -> "FootballPredictor":
         """Fit the outcome + goals heads on a prebuilt feature matrix.
 
         Split out from train() so retrain.py can build features ONCE for the
@@ -277,6 +304,10 @@ class FootballPredictor:
                                            sample_weight)
         logger.info(f"Training done, {_rss_mb():.0f} MB RSS")
 
+        # retrain.py builds the frame itself and calls us directly, so league
+        # support has to be capturable here as well as via train().
+        if league_counts:
+            self._league_counts = {str(k): int(v) for k, v in league_counts.items()}
         self._trained = True
         return self
 
@@ -295,6 +326,9 @@ class FootballPredictor:
             'calibrators':  self._calibrators,
             'alphas':       self._alphas,
             'calibration_info': self._calibration_info,
+            # Written last, and read with .get() so a pickle produced before
+            # this key existed still loads.
+            'league_counts': self._league_counts,
         }, path, compress=3)
 
     @classmethod
@@ -309,6 +343,10 @@ class FootballPredictor:
         obj._calibrators = data.get('calibrators')
         obj._alphas = data.get('alphas') or {}
         obj._calibration_info = data.get('calibration_info') or {}
+        # Older pickles predate this key; {} means "support unknown", which the
+        # predictor must treat as *not* thin rather than as thin — otherwise a
+        # stale model file would silently suppress every AI Pick.
+        obj._league_counts = data.get('league_counts') or {}
         return obj
 
     def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0, weather: dict | None = None):
@@ -428,16 +466,44 @@ class FootballPredictor:
 
         # Dynamic reasoning based on model insights
         conf = int(p_outcome[idx] * 100)
-        reasoning = f"Pico Analysis: {OUTCOME_LABELS[idx]} predicted with {conf}% confidence. "
-        if stats['h2h']['home_wins'] > 50:
-            reasoning += f"{home} dominates the historical H2H matchup. "
-        elif stats['h2h']['away_wins'] > 50:
-            reasoning += f"{away} has a strong historical advantage in this fixture. "
-
+        reasoning_parts = []
+        
+        # Form analysis
         avg_f_h = sum(stats['home_form'])/len(stats['home_form']) if stats['home_form'] else 0.5
         avg_f_a = sum(stats['away_form'])/len(stats['away_form']) if stats['away_form'] else 0.5
-        if avg_f_h > 0.7: reasoning += f"{home} is in elite form. "
-        if avg_f_a > 0.7: reasoning += f"{away} is in elite form. "
+        
+        if stats['home_form']:
+            h_wins = sum(1 for f in stats['home_form'] if f == 1.0)
+            h_draws = sum(1 for f in stats['home_form'] if f == 0.5)
+            reasoning_parts.append(f"{home} form: {h_wins}W-{h_draws}D-{len(stats['home_form'])-h_wins-h_draws}L last 5 ({avg_f_h*100:.0f}% pts)")
+        if stats['away_form']:
+            a_wins = sum(1 for f in stats['away_form'] if f == 1.0)
+            a_draws = sum(1 for f in stats['away_form'] if f == 0.5)
+            reasoning_parts.append(f"{away} form: {a_wins}W-{a_draws}D-{len(stats['away_form'])-a_wins-a_draws}L last 5 ({avg_f_a*100:.0f}% pts)")
+        
+        # H2H analysis
+        if len(h2h) > 0:
+            if stats['h2h']['home_wins'] > 40 and stats['h2h']['home_wins'] > stats['h2h']['away_wins']:
+                reasoning_parts.append(f"H2H favors {home} ({stats['h2h']['home_wins']}% win rate in {len(h2h)} meetings)")
+            elif stats['h2h']['away_wins'] > 40 and stats['h2h']['away_wins'] > stats['h2h']['home_wins']:
+                reasoning_parts.append(f"H2H favors {away} ({stats['h2h']['away_wins']}% win rate in {len(h2h)} meetings)")
+            elif stats['h2h']['draws'] > 40:
+                reasoning_parts.append(f"H2H historically tight ({stats['h2h']['draws']}% draws in {len(h2h)} meetings)")
+            reasoning_parts.append(f"Avg goals in H2H: {avg_g:.1f}")
+        else:
+            reasoning_parts.append("No recent H2H data available")
+        
+        # Goal expectation
+        if stats.get('lambda_h') and stats.get('lambda_a'):
+            exp_total = stats['lambda_h'] + stats['lambda_a']
+            reasoning_parts.append(f"Expected goals: {home} {stats['lambda_h']:.2f} - {stats['lambda_a']:.2f} {away} (Total: {exp_total:.2f})")
+        
+        # Prediction reasoning
+        reasoning_parts.append(f"Pico picks {OUTCOME_LABELS[idx]} ({conf}% confidence, {certainty:.0f}% certainty)")
+        if is_uncertain:
+            reasoning_parts.append("Model shows some uncertainty - consider this pick with caution")
+        
+        reasoning = ". ".join(reasoning_parts) + "."
 
         return {
             'prediction': OUTCOME_LABELS[idx],
