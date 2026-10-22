@@ -8,3 +8,6 @@ httpx>=0.27
 supabase>=2.0
 joblib>=1.3
 schedule>=1.2
+# Used only for the SportyBet booking-code step; the browser binary is cached
+# separately in the predict workflow.
+playwright>=1.40

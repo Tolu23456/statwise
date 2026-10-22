@@ -68,13 +68,15 @@ export type UserProfile = {
 
 export type Prediction = {
   id: string;
+  /** Canonical fixture id; the `espn_` / `fdorg_` prefix identifies the feed. */
+  match_id: string;
   match_title: string;
   home_team: string;
   away_team: string;
   league: string;
   league_slug: string;
   prediction: string;
-  odds: number;
+  odds: number | null;
   odds_home?: number | null;
   odds_draw?: number | null;
   odds_away?: number | null;
@@ -86,13 +88,19 @@ export type Prediction = {
   reasoning?: string;
   stats?: {
     h2h?: { home_wins: number; draws: number; away_wins: number };
+    /** Number of head-to-head meetings behind `h2h` (0 = none in the data) */
+    h2h_matches?: number;
     home_form?: number[];
     away_form?: number[];
-    avg_goals?: number;
+    avg_goals?: number | null;
     home_value?: number;
     away_value?: number;
     home_rating?: number;
     away_rating?: number;
+    /** Model probability of over 2.5 goals (0-100) */
+    prob_over25?: number | null;
+    /** Upstream fixture feed: 'espn' | 'football-data.org' | 'unknown' */
+    source?: 'espn' | 'football-data.org' | 'unknown' | string;
     /** Certainty score (0-100) — model confidence adjusted for probability spread + head agreement */
     certainty?: number;
     /** True when the model is genuinely sure about this match */

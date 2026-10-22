@@ -64,65 +64,14 @@ const COMPETITIONS = [
   { code: 'PPL', name: 'Primeira Liga',     slug: 'primeira-liga',     tier: 'VIP Tier' },
 ];
 
-const PREDICTIONS_POOL = ['Home Win', 'Away Win', 'Draw', 'Over 2.5 Goals', 'Both Teams to Score', 'Home Win or Draw', 'Away Win or Draw'];
-const REASONING_TEMPLATES = [
-  '{home} have been strong at home this season, making a home win the most likely outcome.',
-  '{away} are in excellent form away from home and are slight favourites here.',
-  'Both sides are evenly matched; a draw is the most probable result.',
-  'Recent matches between these sides have produced plenty of goals — expect over 2.5 goals.',
-  'Both attack-minded squads have been scoring freely, expect both teams to find the net.',
-  '{home} are unbeaten at home this season, and the double chance offers good value.',
-  '{away} have lost just once on the road recently; the double chance looks strong.',
-];
-
-function seededRandom(seed) {
-  let s = seed;
-  return function () {
-    s = (s * 16807 + 0) % 2147483647;
-    return (s - 1) / 2147483646;
-  };
-}
-
-function generatePrediction(matchId, homeTeam, awayTeam) {
-  const seed = [...matchId].reduce((acc, c) => acc + c.charCodeAt(0), 0);
-  const rand = seededRandom(seed);
-
-  const r = rand();
-  let prediction;
-  if (r < 0.38) prediction = 'Home Win';
-  else if (r < 0.62) prediction = 'Away Win';
-  else if (r < 0.74) prediction = 'Draw';
-  else if (r < 0.84) prediction = 'Over 2.5 Goals';
-  else if (r < 0.93) prediction = 'Both Teams to Score';
-  else prediction = PREDICTIONS_POOL[Math.floor(rand() * PREDICTIONS_POOL.length)];
-
-  const confidence = Math.floor(55 + rand() * 27);
-
-  const oddsMap = {
-    'Home Win': 1.5 + rand() * 1.5,
-    'Away Win': 1.8 + rand() * 2.0,
-    'Draw': 2.8 + rand() * 1.2,
-    'Over 2.5 Goals': 1.6 + rand() * 0.8,
-    'Both Teams to Score': 1.7 + rand() * 0.9,
-    'Home Win or Draw': 1.3 + rand() * 0.7,
-    'Away Win or Draw': 1.4 + rand() * 0.8,
-  };
-  const odds = parseFloat((oddsMap[prediction] ?? 1.8 + rand()).toFixed(2));
-
-  const reasoningIdx = Math.floor(rand() * REASONING_TEMPLATES.length);
-  const reasoning = REASONING_TEMPLATES[reasoningIdx]
-    .replace('{home}', homeTeam)
-    .replace('{away}', awayTeam);
-
-  return { prediction, confidence, odds, reasoning };
-}
-
-function formatKickoffTime(utcDate) {
-  const d = new Date(utcDate);
-  const hours = d.getUTCHours().toString().padStart(2, '0');
-  const mins = d.getUTCMinutes().toString().padStart(2, '0');
-  return `${hours}:${mins} UTC`;
-}
+// NOTE: this job deliberately does NOT write predictions.
+//
+// It used to invent `prediction` / `confidence` / `odds` / `reasoning` with a
+// seeded pseudo-random generator and upsert them over the model's rows every
+// three hours. That silently replaced real Pico analysis with nonsense until
+// the next prediction run. Fixtures now arrive from the model pipeline itself;
+// this job only refreshes metadata (kickoff times, names, league, tier) for
+// rows that already exist.
 
 function getMatchDate(utcDate) {
   return utcDate.split('T')[0];
@@ -193,7 +142,7 @@ async function run() {
 
   const competitionMap = Object.fromEntries(COMPETITIONS.map(c => [c.code, c]));
 
-  const rows = [];
+  const fixtures = [];
 
   const SKIP_STATUSES = ['FINISHED', 'CANCELLED', 'POSTPONED', 'AWARDED', 'SUSPENDED'];
 
@@ -211,9 +160,7 @@ async function run() {
 
     if (!homeTeam || !awayTeam || !utcDate) continue;
 
-    const { prediction, confidence, odds, reasoning } = generatePrediction(matchId, homeTeam, awayTeam);
-
-    rows.push({
+    fixtures.push({
       // Canonical id shape is `fdorg_<id>` (what the Python live fetcher
       // writes). Writing the bare id here used to create a SECOND row for the
       // same fixture, because `onConflict: 'match_id'` cannot see that
@@ -224,44 +171,57 @@ async function run() {
       away_team: awayTeam,
       league: comp.name,
       league_slug: comp.slug,
-      prediction,
-      confidence,
-      odds,
-      reasoning,
       kickoff_time: utcDate,
       match_date: getMatchDate(utcDate),
       tier: TIER_DB_CODE[comp.tier] ?? 'free',
       tier_required: comp.tier,
-      status: 'upcoming',
       updated_at: new Date().toISOString(),
     });
   }
 
-  if (rows.length === 0) {
-    console.log('No matches found for supported competitions. Nothing to insert.');
+  if (fixtures.length === 0) {
+    console.log('No matches found for supported competitions. Nothing to update.');
     return;
   }
 
-  console.log(`Prepared ${rows.length} prediction rows. Upserting into Supabase...`);
+  // Only rows the model has already produced may be touched. New fixtures are
+  // inserted by the prediction pipeline (which fills every NOT NULL column).
+  const ids = fixtures.map(f => f.match_id);
+  const known = new Set();
+  const LOOKUP_CHUNK = 100;
+  for (let i = 0; i < ids.length; i += LOOKUP_CHUNK) {
+    const chunk = ids.slice(i, i + LOOKUP_CHUNK);
+    const { data, error } = await supabase
+      .from('predictions')
+      .select('match_id')
+      .in('match_id', chunk);
+    if (error) {
+      console.error('Could not read existing fixtures:', error.message);
+      return;
+    }
+    for (const row of data ?? []) known.add(row.match_id);
+  }
 
-  const BATCH_SIZE = 50;
-  let totalUpserted = 0;
+  const updates = fixtures.filter(f => known.has(f.match_id));
+  const skipped = fixtures.length - updates.length;
+  console.log(
+    `Metadata refresh: ${updates.length} existing fixtures, ${skipped} awaiting a prediction run.`,
+  );
 
-  for (let i = 0; i < rows.length; i += BATCH_SIZE) {
-    const batch = rows.slice(i, i + BATCH_SIZE);
+  let updated = 0;
+  for (const { match_id, ...fields } of updates) {
     const { error } = await supabase
       .from('predictions')
-      .upsert(batch, { onConflict: 'match_id', ignoreDuplicates: false });
-
+      .update(fields)
+      .eq('match_id', match_id);
     if (error) {
-      console.error(`Batch ${Math.floor(i / BATCH_SIZE) + 1} upsert error:`, error.message);
+      console.error(`Update failed for ${match_id}:`, error.message);
     } else {
-      totalUpserted += batch.length;
-      console.log(`Batch ${Math.floor(i / BATCH_SIZE) + 1}: upserted ${batch.length} rows.`);
+      updated += 1;
     }
   }
 
-  console.log(`Done. Total rows upserted: ${totalUpserted}`);
+  console.log(`Done. Metadata updated for ${updated}/${updates.length} fixtures.`);
 }
 
 run().catch(err => {

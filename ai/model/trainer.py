@@ -7,7 +7,7 @@ Training modes (selected by retrain.py / MODEL_MODE env):
              over/under probabilities are marginals of the same joint fit.
 """
 from __future__ import annotations
-import os, gc, logging, joblib
+import os, gc, logging, joblib, difflib
 import numpy as np
 import pandas as pd
 from typing import Optional
@@ -23,6 +23,47 @@ logger = logging.getLogger(__name__)
 MODEL_DIR     = os.path.join(os.path.dirname(__file__), '..', 'models')
 os.makedirs(MODEL_DIR, exist_ok=True)
 OUTCOME_LABELS = ['Home Win', 'Draw', 'Away Win']
+
+# Feeds disagree on club names ("Barcelona" vs "FC Barcelona", "Stade Rennais"
+# vs "Stade Rennais FC 1901"). Without reconciliation the form and head-to-head
+# lookups silently return nothing, which is why those panels were blank.
+_TEAM_ALIAS_CACHE: dict[str, str] = {}
+
+
+def _canonical_team(name: str, candidates: set[str], freq: dict | None = None) -> str:
+    """Map a feed's team name onto the spelling used in the historical data."""
+    if not name or not candidates:
+        return name
+    if name in candidates:
+        return name
+    cached = _TEAM_ALIAS_CACHE.get(name)
+    if cached in candidates:
+        return cached
+    needle = name.strip().lower()
+    max_freq = max(freq.values()) if freq else 1
+    best, best_score = name, 0.0
+    for cand in candidates:
+        hay = cand.strip().lower()
+        if hay == needle:
+            best, best_score = cand, 1.0
+            break
+        # Cheap containment pre-check keeps this fast across ~2k club names.
+        if needle in hay or hay in needle:
+            score = difflib.SequenceMatcher(None, needle, hay).ratio()
+            # A name that *ends* with the feed's name is nearly always the
+            # senior club ("FC Barcelona" vs the reserve side "Barcelona B").
+            if hay.endswith(needle):
+                score += 0.12
+            # Frequency breaks remaining ties between lookalikes (FC Barcelona
+            # vs Barcelona SC); the club that actually appears in the data most
+            # is the one a fixture is almost always referring to.
+            if freq:
+                score += 0.03 * (freq.get(cand, 0) / max_freq)
+            if score > best_score:
+                best, best_score = cand, score
+    resolved = best if best_score >= 0.72 else name
+    _TEAM_ALIAS_CACHE[name] = resolved
+    return resolved
 
 
 def _rss_mb() -> float:
@@ -238,11 +279,49 @@ class FootballPredictor:
         # form from one the model is guessing at from pooled priors (cup ties
         # like the Europa/Conference League have no season CSV of their own).
         self._league_counts: dict = {}
+        # Recent matches per team, used only for the analysis panel (form, H2H).
+        self._recent_history = None
 
     @property
     def league_counts(self) -> dict:
         """Per-league match counts seen during training ({} = unknown)."""
         return self._league_counts or {}
+
+    @property
+    def recent_history(self):
+        """Recent matches per team, for the human-readable analysis panel.
+
+        The fitted pipeline already encodes the bulk history, but the app needs
+        *recent* results to show form and head-to-head. Without this the panel
+        was always empty at inference time because the engine's history frame is
+        not part of the pickle. Kept deliberately small: the last few matches
+        per team, unioned.
+        """
+        return self._recent_history if self._recent_history is not None else None
+
+    def record_recent_history(self, df: pd.DataFrame, per_team: int = 40) -> None:
+        """Store the most recent matches per team for display-time statistics."""
+        try:
+            cols = [c for c in ("date", "home_team", "away_team", "home_goals",
+                                "away_goals", "home_squad_value", "away_squad_value",
+                                "home_avg_age", "away_avg_age", "home_lineup_rating",
+                                "away_lineup_rating") if c in getattr(df, "columns", [])]
+            if "date" not in cols or "home_team" not in cols:
+                return
+            d = df[cols].sort_values("date")
+            parts = []
+            for _, g in d.groupby("home_team"):
+                parts.append(g.tail(per_team))
+            for _, g in d.groupby("away_team"):
+                parts.append(g.tail(per_team))
+            if not parts:
+                return
+            recent = pd.concat(parts).drop_duplicates()
+            self._recent_history = recent.reset_index(drop=True)
+            logger.info(f"Recorded recent history for the analysis panel: "
+                        f"{len(self._recent_history):,} rows")
+        except Exception as e:  # noqa: BLE001
+            logger.debug(f"Could not record recent history: {e}")
 
     def record_league_support(self, df: pd.DataFrame) -> None:
         """Remember per-league sample sizes from the training frame."""
@@ -263,6 +342,7 @@ class FootballPredictor:
               mode: str = 'single') -> "FootballPredictor":
         logger.info(f"Pico Training starting on {len(df):,} records…")
         self.record_league_support(df)
+        self.record_recent_history(df)
         self.feature_pipe.fit(df)
         X, y_1x2, y_goals, dates = self.feature_pipe.build_training_set(df)
         return self.fit_stacks(X, y_1x2, y_goals, calibrate=calibrate, mode=mode)
@@ -329,6 +409,8 @@ class FootballPredictor:
             # Written last, and read with .get() so a pickle produced before
             # this key existed still loads.
             'league_counts': self._league_counts,
+            # Compact recent-results snapshot for the analysis panel.
+            'recent_history': self._recent_history,
         }, path, compress=3)
 
     @classmethod
@@ -347,17 +429,49 @@ class FootballPredictor:
         # predictor must treat as *not* thin rather than as thin — otherwise a
         # stale model file would silently suppress every AI Pick.
         obj._league_counts = data.get('league_counts') or {}
+        obj._recent_history = data.get('recent_history')
         return obj
 
-    def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0, weather: dict | None = None):
-        home_squad_value = history[history["home_team"] == home]["home_squad_value"].tail(1).values[0] if "home_squad_value" in history.columns and not history[history["home_team"] == home].empty else 0
-        away_squad_value = history[history["away_team"] == away]["away_squad_value"].tail(1).values[0] if "away_squad_value" in history.columns and not history[history["away_team"] == away].empty else 0
-        home_avg_age = history[history["home_team"] == home]["home_avg_age"].tail(1).values[0] if "home_avg_age" in history.columns and not history[history["home_team"] == home].empty else 25
-        away_avg_age = history[history["away_team"] == away]["away_avg_age"].tail(1).values[0] if "away_avg_age" in history.columns and not history[history["away_team"] == away].empty else 25
-        home_lineup_rating = history[history["home_team"] == home]["home_lineup_rating"].tail(1).values[0] if "home_lineup_rating" in history.columns and not history[history["home_team"] == home].empty else 70
-        away_lineup_rating = history[history["away_team"] == away]["away_lineup_rating"].tail(1).values[0] if "away_lineup_rating" in history.columns and not history[history["away_team"] == away].empty else 70
+    def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0, weather: dict | None = None, insight_history: pd.DataFrame = None):
+        cols = ['date', 'home_team', 'away_team', 'home_goals', 'away_goals']
+        # `history` drives the feature pipeline, whose fitted state already
+        # encodes the bulk training set. `insight_history` is the compact
+        # recent-results snapshot used only for the human-readable analysis
+        # panel — so a small frame there can never alter the prediction itself.
         if history is None or history.empty:
-            history = pd.DataFrame(columns=['date', 'home_team', 'away_team', 'home_goals', 'away_goals'])
+            history = pd.DataFrame(columns=cols)
+        stats_hist = insight_history if (insight_history is not None
+                                         and not insight_history.empty) else history
+        # Reconcile feed names with the historical spellings once per fixture.
+        _freq = None
+        if not stats_hist.empty and 'home_team' in stats_hist.columns:
+            _cands = set(stats_hist['home_team'].dropna().unique()) | \
+                     set(stats_hist['away_team'].dropna().unique())
+            _freq = pd.concat([stats_hist['home_team'], stats_hist['away_team']]) \
+                .dropna().value_counts().to_dict()
+        else:
+            _cands = set()
+        home_key = _canonical_team(home, _cands, _freq)
+        away_key = _canonical_team(away, _cands, _freq)
+
+        def _latest(frame, side_col, team, col, default):
+            try:
+                if col in frame.columns:
+                    sel = frame[frame[side_col] == team]
+                    if not sel.empty:
+                        val = sel[col].tail(1).values[0]
+                        if pd.notna(val):
+                            return val
+            except Exception:
+                pass
+            return default
+
+        home_squad_value = _latest(stats_hist, "home_team", home_key, "home_squad_value", 0)
+        away_squad_value = _latest(stats_hist, "away_team", away_key, "away_squad_value", 0)
+        home_avg_age = _latest(stats_hist, "home_team", home_key, "home_avg_age", 25)
+        away_avg_age = _latest(stats_hist, "away_team", away_key, "away_avg_age", 25)
+        home_lineup_rating = _latest(stats_hist, "home_team", home_key, "home_lineup_rating", 70)
+        away_lineup_rating = _latest(stats_hist, "away_team", away_key, "away_lineup_rating", 70)
 
         if weather and "temperature_c" in weather:  # normalize enricher-style keys
             weather = {"temp_c": weather.get("temperature_c"), "precip_mm": weather.get("precipitation_mm"),
@@ -433,7 +547,7 @@ class FootballPredictor:
 
         # Compute real statistics from history
         def get_stats(team):
-            th = history[(history['home_team'] == team) | (history['away_team'] == team)].sort_values('date').tail(5)
+            th = stats_hist[(stats_hist['home_team'] == team) | (stats_hist['away_team'] == team)].sort_values('date').tail(5)
             form = []
             for _, r in th.iterrows():
                 if r['home_team'] == team:
@@ -442,68 +556,138 @@ class FootballPredictor:
                     form.append(1.0 if r['away_goals'] > r['home_goals'] else (0.5 if r['home_goals'] == r['away_goals'] else 0.0))
             return form
 
-        h2h = history[((history['home_team'] == home) & (history['away_team'] == away)) | ((history['home_team'] == away) & (history['away_team'] == home))]
-        hw = len(h2h[((h2h['home_team'] == home) & (h2h['home_goals'] > h2h['away_goals'])) | ((h2h['away_team'] == home) & (h2h['away_goals'] > h2h['home_goals']))])
-        aw = len(h2h[((h2h['home_team'] == away) & (h2h['home_goals'] > h2h['away_goals'])) | ((h2h['away_team'] == away) & (h2h['away_goals'] > h2h['home_goals']))])
+        h2h = stats_hist[((stats_hist['home_team'] == home_key) & (stats_hist['away_team'] == away_key)) | ((stats_hist['home_team'] == away_key) & (stats_hist['away_team'] == home_key))]
+        hw = len(h2h[((h2h['home_team'] == home_key) & (h2h['home_goals'] > h2h['away_goals'])) | ((h2h['away_team'] == home_key) & (h2h['away_goals'] > h2h['home_goals']))])
+        aw = len(h2h[((h2h['home_team'] == away_key) & (h2h['home_goals'] > h2h['away_goals'])) | ((h2h['away_team'] == away_key) & (h2h['away_goals'] > h2h['home_goals']))])
         dr = len(h2h) - hw - aw
 
         total_h2h = max(len(h2h), 1)
-        avg_g = (h2h['home_goals'] + h2h['away_goals']).mean() if not h2h.empty else 2.5
+        # None (not 2.5) when there is no head-to-head data, so the UI can omit
+        # the row instead of inventing a league-average number.
+        avg_g = (h2h['home_goals'] + h2h['away_goals']).mean() if not h2h.empty else None
 
         stats = {
             "h2h": {"home_wins": int(hw/total_h2h*100), "draws": int(dr/total_h2h*100), "away_wins": int(aw/total_h2h*100)},
-            "home_form": get_stats(home),
-            "away_form": get_stats(away),
-            "avg_goals": round(float(avg_g), 2),
-            "home_value": float(X[0, 125]),
-            "away_value": float(X[0, 126]),
-            "home_rating": float(X[0, 130]),
-            "away_rating": float(X[0, 131]),
+            "h2h_matches": int(len(h2h)),
+            "home_form": get_stats(home_key),
+            "away_form": get_stats(away_key),
+            "avg_goals": round(float(avg_g), 2) if avg_g is not None else None,
+            "home_value": float(home_squad_value or 0),
+            "away_value": float(away_squad_value or 0),
+            "home_rating": float(home_lineup_rating or 0),
+            "away_rating": float(away_lineup_rating or 0),
             # pre-match expected goals — consumed by ai/odds_sync.py in-play mode
             "lambda_h": float(X[0, FEATURE_NAMES.index("lambda_h")]),
             "lambda_a": float(X[0, FEATURE_NAMES.index("lambda_a")]),
+            # over/under 2.5 from the goals head — previously computed and then
+            # thrown away, so the app had no goal-market view at all
+            "prob_over25": round(float(p_goals[1]) * 100, 1) if len(p_goals) > 1 else None,
         }
 
-        # Dynamic reasoning based on model insights
+        # ── Analysis narrative ────────────────────────────────────────────
+        # Written from the numbers the model actually used, so no two fixtures
+        # read alike. Ordered by what matters most: the probability split, then
+        # recent form, head-to-head, goal expectancy, and finally how the market
+        # compares. Every clause is conditional on the data being present —
+        # nothing is asserted that the model did not look at.
+        pick = OUTCOME_LABELS[idx]
         conf = int(p_outcome[idx] * 100)
-        reasoning_parts = []
-        
-        # Form analysis
-        avg_f_h = sum(stats['home_form'])/len(stats['home_form']) if stats['home_form'] else 0.5
-        avg_f_a = sum(stats['away_form'])/len(stats['away_form']) if stats['away_form'] else 0.5
-        
-        if stats['home_form']:
-            h_wins = sum(1 for f in stats['home_form'] if f == 1.0)
-            h_draws = sum(1 for f in stats['home_form'] if f == 0.5)
-            reasoning_parts.append(f"{home} form: {h_wins}W-{h_draws}D-{len(stats['home_form'])-h_wins-h_draws}L last 5 ({avg_f_h*100:.0f}% pts)")
-        if stats['away_form']:
-            a_wins = sum(1 for f in stats['away_form'] if f == 1.0)
-            a_draws = sum(1 for f in stats['away_form'] if f == 0.5)
-            reasoning_parts.append(f"{away} form: {a_wins}W-{a_draws}D-{len(stats['away_form'])-a_wins-a_draws}L last 5 ({avg_f_a*100:.0f}% pts)")
-        
-        # H2H analysis
-        if len(h2h) > 0:
-            if stats['h2h']['home_wins'] > 40 and stats['h2h']['home_wins'] > stats['h2h']['away_wins']:
-                reasoning_parts.append(f"H2H favors {home} ({stats['h2h']['home_wins']}% win rate in {len(h2h)} meetings)")
-            elif stats['h2h']['away_wins'] > 40 and stats['h2h']['away_wins'] > stats['h2h']['home_wins']:
-                reasoning_parts.append(f"H2H favors {away} ({stats['h2h']['away_wins']}% win rate in {len(h2h)} meetings)")
-            elif stats['h2h']['draws'] > 40:
-                reasoning_parts.append(f"H2H historically tight ({stats['h2h']['draws']}% draws in {len(h2h)} meetings)")
-            reasoning_parts.append(f"Avg goals in H2H: {avg_g:.1f}")
+        ph, pd_pct, pa = (float(p_outcome[0]) * 100, float(p_outcome[1]) * 100,
+                          float(p_outcome[2]) * 100)
+        po25 = round(float(p_goals[1]) * 100, 1) if len(p_goals) > 1 else None
+
+        parts: list[str] = []
+
+        # 1. The verdict, expressed through the actual probability split.
+        ranked = sorted([ph, pd_pct, pa], reverse=True)
+        gap = ranked[0] - ranked[1]
+        if gap >= 25:
+            lean = "a clear lean"
+        elif gap >= 12:
+            lean = "a definite edge"
+        elif gap >= 6:
+            lean = "a narrow edge"
         else:
-            reasoning_parts.append("No recent H2H data available")
-        
-        # Goal expectation
-        if stats.get('lambda_h') and stats.get('lambda_a'):
-            exp_total = stats['lambda_h'] + stats['lambda_a']
-            reasoning_parts.append(f"Expected goals: {home} {stats['lambda_h']:.2f} - {stats['lambda_a']:.2f} {away} (Total: {exp_total:.2f})")
-        
-        # Prediction reasoning
-        reasoning_parts.append(f"Pico picks {OUTCOME_LABELS[idx]} ({conf}% confidence, {certainty:.0f}% certainty)")
+            lean = "a near coin-flip"
+        parts.append(f"Pico splits this {ph:.0f}% {home} / {pd_pct:.0f}% draw / "
+                     f"{pa:.0f}% {away} — {lean} towards {pick}")
+
+        # 2. Recent form, with the points actually taken.
+        def _form_line(team, form):
+            if not form:
+                return None
+            w = sum(1 for f in form if f == 1.0)
+            d = sum(1 for f in form if f == 0.5)
+            l = len(form) - w - d
+            return (f"{team} {w}W-{d}D-{l}L in their last {len(form)} "
+                    f"({w * 3 + d}/{len(form) * 3} pts)")
+
+        hf = _form_line(home, stats['home_form'])
+        af = _form_line(away, stats['away_form'])
+        if hf and af:
+            parts.append(f"{hf}, against {af}")
+        elif hf or af:
+            parts.append(hf or af)
+
+        # 3. Head-to-head, using real counts rather than only percentages.
+        if len(h2h) > 0:
+            h2h_line = (f"Head-to-head {home} {hw}W-{dr}D-{aw}L in {len(h2h)} "
+                        f"meeting(s)")
+            if avg_g is not None:
+                h2h_line += f", averaging {avg_g:.1f} goals"
+            parts.append(h2h_line)
+        else:
+            parts.append("No previous meetings between these two in the training data")
+
+        # 4. Goal expectancy — only when the value is plausible. The feature is
+        # clamped to 0.1 when a team has no usable history, and reporting
+        # "0.2 goals" would be worse than saying nothing.
+        lh, la = stats.get('lambda_h'), stats.get('lambda_a')
+        if lh and la and 0.5 <= (lh + la) <= 8.0:
+            gline = f"Pico expects {lh + la:.1f} goals ({lh:.1f} v {la:.1f})"
+            if po25 is not None:
+                gline += f", with over 2.5 rated at {po25:.0f}%"
+            parts.append(gline)
+
+        # 5. Market comparison — only when real prices exist.
+        if odds_home and odds_draw and odds_away:
+            imp = np.array([1.0 / odds_home, 1.0 / odds_draw, 1.0 / odds_away])
+            mkt = imp / imp.sum() * 100
+            model_pick = (ph, pd_pct, pa)[idx]
+            delta = model_pick - mkt[idx]
+            if delta >= 2:
+                verdict = "above the market, which is where the value sits"
+            elif delta <= -2:
+                verdict = "below the market, so the price offers no edge"
+            else:
+                verdict = "in line with the market"
+            parts.append(f"The market implies {mkt[idx]:.0f}% for {pick} — Pico is "
+                         f"{abs(delta):.0f} points {verdict}")
+
+        # 6. How much to trust it.
+        if certainty >= 70:
+            parts.append(f"Certainty is high at {certainty:.0f}%")
+        elif certainty >= 55:
+            parts.append(f"Certainty is moderate at {certainty:.0f}%")
+        else:
+            parts.append(f"Certainty is low at {certainty:.0f}%, so treat this as one "
+                         f"scenario rather than a forecast")
+
+        # 7. Honest caveats, stated rather than hidden.
         if is_uncertain:
-            reasoning_parts.append("Model shows some uncertainty - consider this pick with caution")
-        
-        reasoning = ". ".join(reasoning_parts) + "."
+            parts.append("The outcomes are tightly bunched, which is why this is not "
+                         "promoted to an AI Pick")
+        n_league = 0
+        try:
+            if history is not None and 'league' in getattr(history, 'columns', []):
+                n_league = int((history['league'] == league).sum())
+        except Exception:
+            n_league = 0
+        if 0 < n_league < 200:
+            parts.append(f"Only {n_league} matches of league-specific history back this "
+                         f"competition, so the model leans on pooled priors")
+
+        reasoning = ". ".join(p.rstrip(".") for p in parts) + "."
 
         return {
             'prediction': OUTCOME_LABELS[idx],

@@ -429,6 +429,15 @@ def run(force: bool = False) -> bool:
     except Exception as e:
         logger.debug(f"Could not record league support: {e}")
 
+    # Recent results per team ride along too, so the analysis panel has real
+    # form/head-to-head at inference time instead of always rendering blanks.
+    try:
+        predictor.record_recent_history(df)
+        logger.info(f"Recent history snapshot recorded: "
+                    f"{len(predictor.recent_history) if predictor.recent_history is not None else 0:,} rows")
+    except Exception as e:
+        logger.debug(f"Could not record recent history: {e}")
+
     # ── Save atomically ────────────────────────────────────────────
     tmp_fd, tmp_path = tempfile.mkstemp(suffix=".pkl", dir=os.path.dirname(MODEL_PATH))
     os.close(tmp_fd)

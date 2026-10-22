@@ -115,6 +115,9 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
 
   const stats = prediction.stats;
   const details = stats?.details;
+  // The Match Info card also renders the data source, so `details` itself may
+  // be absent; read through a safe object instead of narrowing every field.
+  const info = details ?? ({} as NonNullable<typeof details>);
   const certainty = stats?.certainty ?? prediction.confidence;
   const isAiPick = stats?.is_ai_pick === true;
   const uncertainty = stats?.uncertainty;
@@ -263,38 +266,13 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
               )}
             </View>
 
-            {/* ── Confidence ── */}
-            <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
-              <Text style={[styles.sectionTitle, { color: C.text }]}>Confidence</Text>
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 8 }}>
-                <View style={[styles.confCircle, { borderColor: confColor }]}>
-                  <Text style={[styles.confNum, { color: confColor }]}>{prediction.confidence}%</Text>
-                </View>
-                <View style={{ flex: 1 }}>
-                  <View style={[styles.confTrack, { backgroundColor: C.border }]}>
-                    <View
-                      style={[styles.confFill, {
-                        width: `${prediction.confidence}%` as any,
-                        backgroundColor: confColor,
-                      }]}
-                    />
-                  </View>
-                  <Text style={{ color: C.textSecondary, fontSize: 12, marginTop: 6 }}>
-                    {prediction.confidence >= 75 ? 'High confidence — strong signal'
-                      : prediction.confidence >= 50 ? 'Medium confidence — moderate signal'
-                      : 'Low confidence — use with caution'}
-                  </Text>
-                </View>
-              </View>
-            </View>
-
             {/* ── Match Statistics (NEW) ── */}
             {stats && (
               <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
                 <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Match Insights</Text>
 
                 {/* H2H Breakdown */}
-                {stats?.h2h && (
+                {stats?.h2h && (stats?.h2h_matches ?? 0) > 0 && (
                 <View style={{ marginBottom: 16 }}>
                   <Text style={{ color: C.textSecondary, fontSize: 12, marginBottom: 6, textTransform: 'uppercase' }}>Head-to-Head History</Text>
                   <View style={styles.h2hRow}>
@@ -333,25 +311,39 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 </View>
 
                 <View style={{ marginTop: 12, paddingTop: 12, borderTopWidth: 1, borderTopColor: C.border }}>
-                  <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <Text style={{ color: C.textSecondary, fontSize: 12 }}>Avg. Match Goals</Text>
-                    <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>{(stats.avg_goals ?? 0).toFixed(2)}</Text>
-                  </View>
-
-                  {stats.home_value !== undefined && (
+                  {stats.avg_goals != null && (
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
-                      <Text style={{ color: C.textSecondary, fontSize: 12 }}>Squad Market Value</Text>
+                      <Text style={{ color: C.textSecondary, fontSize: 12 }}>Avg. Match Goals (H2H)</Text>
+                      <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>{stats.avg_goals.toFixed(2)}</Text>
+                    </View>
+                  )}
+
+                  {stats.prob_over25 != null && (
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
+                      <Text style={{ color: C.textSecondary, fontSize: 12 }}>Over 2.5 Goals</Text>
                       <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>
-                        €{(stats.home_value / 1e6).toFixed(1)}M vs €{(stats.away_value! / 1e6).toFixed(1)}M
+                        {Math.round(stats.prob_over25)}%
                       </Text>
                     </View>
                   )}
 
-                  {stats.home_rating !== undefined && (
+                  {/* Only show market value / rating when the data exists. Both
+                      used to render as "€0.0M" and "70.0 vs 70.0" defaults. */}
+                  {((stats.home_value ?? 0) > 0 || (stats.away_value ?? 0) > 0) && (
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
+                      <Text style={{ color: C.textSecondary, fontSize: 12 }}>Squad Market Value</Text>
+                      <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>
+                        €{((stats.home_value ?? 0) / 1e6).toFixed(1)}M vs €{((stats.away_value ?? 0) / 1e6).toFixed(1)}M
+                      </Text>
+                    </View>
+                  )}
+
+                  {stats.home_rating != null && stats.away_rating != null &&
+                    !(stats.home_rating === 70 && stats.away_rating === 70) && (
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                       <Text style={{ color: C.textSecondary, fontSize: 12 }}>Squad Quality Rating</Text>
                       <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>
-                        {stats.home_rating.toFixed(1)} vs {stats.away_rating!.toFixed(1)}
+                        {stats.home_rating.toFixed(1)} vs {stats.away_rating.toFixed(1)}
                       </Text>
                     </View>
                   )}
@@ -360,63 +352,72 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
             )}
 
             {/* ── Match Details: venue, weather, attendance ── */}
-            {details && (details.venue || details.weather || details.attendance) && (
+            {(stats?.source || (details && (details.venue || details.weather || details.attendance))) && (
               <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
                 <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Match Info</Text>
 
-                {details.venue && (
+                {stats?.source && (
                   <View style={styles.infoRow}>
-                    <Ionicons name="location-outline" size={15} color={C.textSecondary} />
-                    <View style={{ flex: 1 }}>
-                      <Text style={[styles.infoLabel, { color: C.text }]}>{details.venue}</Text>
-                      {(details.city || details.country) && (
-                        <Text style={[styles.infoSub, { color: C.textMuted }]}>
-                          {[details.city, details.country].filter(Boolean).join(', ')}
-                        </Text>
-                      )}
-                    </View>
-                  </View>
-                )}
-
-                {details.attendance != null && (
-                  <View style={styles.infoRow}>
-                    <Ionicons name="people-outline" size={15} color={C.textSecondary} />
+                    <Ionicons name="cloud-download-outline" size={15} color={C.textSecondary} />
                     <Text style={[styles.infoLabel, { color: C.text }]}>
-                      {details.attendance.toLocaleString()} attendance
+                      Fixture data: {stats.source === 'espn' ? 'ESPN' : stats.source === 'football-data.org' ? 'football-data.org' : stats.source}
                     </Text>
                   </View>
                 )}
 
-                {details.referee && (
+                {info.venue && (
                   <View style={styles.infoRow}>
-                    <Ionicons name="person-outline" size={15} color={C.textSecondary} />
-                    <Text style={[styles.infoLabel, { color: C.text }]}>Ref: {details.referee}</Text>
+                    <Ionicons name="location-outline" size={15} color={C.textSecondary} />
+                    <View style={{ flex: 1 }}>
+                      <Text style={[styles.infoLabel, { color: C.text }]}>{info.venue}</Text>
+                      {(info.city || info.country) && (
+                        <Text style={[styles.infoSub, { color: C.textMuted }]}>
+                          {[info.city, info.country].filter(Boolean).join(', ')}
+                        </Text>
+                      )}
+                    </View>
                   </View>
                 )}
 
-                {details.weather && (
+                {info.attendance != null && (
+                  <View style={styles.infoRow}>
+                    <Ionicons name="people-outline" size={15} color={C.textSecondary} />
+                    <Text style={[styles.infoLabel, { color: C.text }]}>
+                      {info.attendance.toLocaleString()} attendance
+                    </Text>
+                  </View>
+                )}
+
+                {info.referee && (
+                  <View style={styles.infoRow}>
+                    <Ionicons name="person-outline" size={15} color={C.textSecondary} />
+                    <Text style={[styles.infoLabel, { color: C.text }]}>Ref: {info.referee}</Text>
+                  </View>
+                )}
+
+                {info.weather && (
                   <View style={[styles.weatherBox, { backgroundColor: C.inputBg, borderColor: C.border }]}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
                       <Ionicons name="partly-sunny-outline" size={16} color={C.warning} />
                       <Text style={{ color: C.text, fontWeight: '700', fontSize: 13 }}>
-                        {details.weather.temperature_c != null ? `${details.weather.temperature_c.toFixed(0)}°C` : '—'}
-                        {details.weather.condition ? ` · ${details.weather.condition}` : ''}
+                        {info.weather.temperature_c != null ? `${info.weather.temperature_c.toFixed(0)}°C` : '—'}
+                        {info.weather.condition ? ` · ${info.weather.condition}` : ''}
                       </Text>
                     </View>
                     <View style={{ flexDirection: 'row', gap: 14, marginTop: 6 }}>
-                      {details.weather.wind_kmh != null && (
+                      {info.weather.wind_kmh != null && (
                         <Text style={{ color: C.textSecondary, fontSize: 12 }}>
-                          💨 {details.weather.wind_kmh.toFixed(0)} km/h
+                          💨 {info.weather.wind_kmh.toFixed(0)} km/h
                         </Text>
                       )}
-                      {details.weather.humidity_pct != null && (
+                      {info.weather.humidity_pct != null && (
                         <Text style={{ color: C.textSecondary, fontSize: 12 }}>
-                          💧 {details.weather.humidity_pct.toFixed(0)}%
+                          💧 {info.weather.humidity_pct.toFixed(0)}%
                         </Text>
                       )}
-                      {details.weather.precipitation_mm != null && (
+                      {info.weather.precipitation_mm != null && (
                         <Text style={{ color: C.textSecondary, fontSize: 12 }}>
-                          🌧 {details.weather.precipitation_mm.toFixed(1)} mm
+                          🌧 {info.weather.precipitation_mm.toFixed(1)} mm
                         </Text>
                       )}
                     </View>

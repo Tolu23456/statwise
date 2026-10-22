@@ -62,6 +62,26 @@ def _tier_for_confidence(confidence: int) -> tuple[str, str]:
     return "VVIP Tier", "vvip"
 
 
+def _picked_odds(fix: dict, prediction: str) -> float | None:
+    """Market price of the outcome we picked, or None when the book had none.
+
+    The old code stored the home price for every pick and fell back to a
+    hard-coded 1.90, so the app displayed a price that did not exist.
+    """
+    key = {
+        "Home Win": "odds_home",
+        "Draw": "odds_draw",
+        "Away Win": "odds_away",
+    }.get(prediction)
+    if not key:
+        return None
+    try:
+        v = float(fix.get(key) or 0)
+    except (TypeError, ValueError):
+        return None
+    return round(v, 2) if v > 1.01 else None
+
+
 def _get_supabase_client():
     try:
         from supabase import create_client
@@ -165,6 +185,10 @@ class PredictionEngine:
                     away  = fix['away_team'],
                     league= fix.get('league_slug', 'all'),
                     history= self.history,
+                    # Recent results for the analysis panel (form, H2H). Kept
+                    # separate from `history` so the feature pipeline is
+                    # unaffected by the compact snapshot.
+                    insight_history= self.predictor.recent_history,
                     # market odds feed BOTH the odds features (has_odds etc.)
                     # and the post-hoc alpha blend with the de-vigged market
                     odds_home=float(fix.get('odds_home') or 0),
@@ -210,6 +234,16 @@ class PredictionEngine:
                 stats['prob_home'] = pred.get('prob_home')
                 stats['prob_draw'] = pred.get('prob_draw')
                 stats['prob_away'] = pred.get('prob_away')
+                stats['prob_over25'] = pred.get('prob_over25')
+                # Which upstream feed produced this fixture. Derived from the
+                # canonical match_id namespace so it cannot drift from the row.
+                mid = str(fix.get('match_id') or '')
+                if mid.startswith('espn_'):
+                    stats['source'] = 'espn'
+                elif mid.startswith('fdorg_'):
+                    stats['source'] = 'football-data.org'
+                else:
+                    stats['source'] = fix.get('source') or 'unknown'
                 # Value edge vs market: model prob for our pick minus implied prob
                 # from the available odds. Positive = the model likes it more
                 # than the book does.
@@ -248,7 +282,10 @@ class PredictionEngine:
                     "league_slug":   fix.get('league_slug', 'all'),
                     "prediction":    pred['prediction'],
                     "confidence":    pred['confidence'],
-                    "odds":          fix.get('odds_home') or 1.90,
+                    # Price of the outcome we actually picked, from the real
+                    # market. Was hard-coded to 1.90 when unavailable, and
+                    # always took the home price even for an away pick.
+                    "odds":          _picked_odds(fix, pred['prediction']),
                     "reasoning":     pred['reasoning'],
                     "stats":         stats,
                     "kickoff_time":  kickoff,

@@ -59,6 +59,30 @@ jobs:
           THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY || vars.THESPORTSDB_KEY }}
         run: python ai/scheduler.py --once
 
+      # ── SportyBet booking code ─────────────────────────────────────────
+      # Builds the accumulator from the AI Picks just published. Non-fatal:
+      # the app falls back to a copyable selection slip if SportyBet is down.
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-v1
+          restore-keys: |
+            playwright-chromium-${{ runner.os }}-
+
+      - name: Install Playwright Chromium
+        if: always() && steps.predict.outcome != 'skipped'
+        continue-on-error: true
+        run: python -m playwright install chromium
+
+      - name: Generate SportyBet booking code
+        if: always() && steps.predict.outcome != 'skipped'
+        continue-on-error: true
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python ai/sportybet_booking.py
+
       # Settlement has its own workflow (settle.yml) too, but running it here
       # as well means a finished match is scored right after the next predict
       # run even if the dedicated job is paused. `if: always()` keeps it going

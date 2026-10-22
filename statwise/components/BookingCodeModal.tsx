@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   View,
   Text,
@@ -10,13 +10,19 @@ import {
   Share,
   Alert,
   ActivityIndicator,
+  Linking,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Clipboard from 'expo-clipboard';
 import { Colors } from '@/constants/colors';
 import { useTheme } from '@/context/ThemeContext';
 import { Prediction } from '@/lib/supabase';
-import { formatSelectionLabel } from '@/lib/bookings';
+import {
+  BookingCode,
+  bookingCodeLoadUrl,
+  fetchLatestBookingCode,
+  formatSelectionLabel,
+} from '@/lib/bookings';
 
 const copyToClipboard = async (text: string) => {
   try {
@@ -41,85 +47,94 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
   const { scheme } = useTheme();
   const C = Colors[scheme];
   const [loading, setLoading] = useState(false);
-  const [bookingCode, setBookingCode] = useState<string | null>(null);
+  const [bookingCode, setBookingCode] = useState<BookingCode | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // Filter AI picks only as requested
-  const aiPicks = useMemo(() => {
-    return predictions.filter((p) => p.stats?.is_ai_pick === true);
-  }, [predictions]);
+  // The booking code is built by the backend from AI Picks only.
+  const aiPicks = useMemo(
+    () => predictions.filter((p) => p.stats?.is_ai_pick === true),
+    [predictions],
+  );
 
-  const generateBookingCode = async () => {
+  useEffect(() => {
+    if (!visible) return;
+    let cancelled = false;
     setLoading(true);
     setError(null);
-    setBookingCode(null);
-
-    try {
-      // For now, we'll create a shareable format
-      // In production, this would call a backend service to generate actual SportyBet booking codes
-      // The backend would need to map our matches to SportyBet's event IDs
-      const selections = aiPicks.map((p, idx) => {
-        const sel = formatSelectionLabel(p);
-        return `${idx + 1}. ${p.home_team} vs ${p.away_team} - ${sel}`;
+    fetchLatestBookingCode()
+      .then((code) => {
+        if (!cancelled) setBookingCode(code);
+      })
+      .catch((e: any) => {
+        if (!cancelled) setError(e?.message || 'Could not load the booking code');
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
       });
+    return () => {
+      cancelled = true;
+    };
+  }, [visible]);
 
-      const code = `STATWISE-${aiPicks.length}-${Date.now().toString().slice(-6)}`;
-      setBookingCode(code);
-    } catch (e: any) {
-      setError(e.message || 'Failed to generate booking code');
-    } finally {
-      setLoading(false);
-    }
-  };
+  const slipText = () =>
+    aiPicks
+      .map((p, idx) => {
+        const sel = formatSelectionLabel(p);
+        const odds = p.odds != null ? ` @ ${p.odds}` : '';
+        return `${idx + 1}. ${p.home_team} vs ${p.away_team} | ${sel}${odds} | ${p.league}`;
+      })
+      .join('\n');
 
   const copyCode = async () => {
     if (!bookingCode) return;
     try {
-      await copyToClipboard(bookingCode);
-      if (Platform.OS === 'web') {
-        alert('Booking code copied to clipboard!');
-      } else {
-        Alert.alert('Copied', 'Booking code copied to clipboard');
-      }
+      await copyToClipboard(bookingCode.code);
+      if (Platform.OS === 'web') alert('Booking code copied!');
+      else Alert.alert('Copied', 'Booking code copied to clipboard');
     } catch (e) {
-      console.error(e);
+      setError('Could not copy — select the code and copy it manually.');
     }
   };
 
   const copyAllSelections = async () => {
-    const text = aiPicks
-      .map((p, idx) => {
-        const sel = formatSelectionLabel(p);
-        return `${idx + 1}. ${p.home_team} vs ${p.away_team} | ${sel} | ${p.league}`;
-      })
-      .join('\n');
     try {
-      await copyToClipboard(text);
-      if (Platform.OS === 'web') {
-        alert('All selections copied!');
-      } else {
-        Alert.alert('Copied', 'All selections copied to clipboard');
-      }
+      await copyToClipboard(slipText());
+      if (Platform.OS === 'web') alert('All selections copied!');
+      else Alert.alert('Copied', 'All selections copied to clipboard');
     } catch (e) {
-      console.error(e);
+      setError('Could not copy the selections.');
+    }
+  };
+
+  const openSportyBet = async () => {
+    const url = bookingCode
+      ? bookingCode.shareUrl || bookingCodeLoadUrl(bookingCode.code)
+      : 'https://www.sportybet.com/ng/';
+    try {
+      if (Platform.OS === 'web') {
+        window.open(url, '_blank');
+      } else {
+        await Linking.openURL(url);
+      }
+    } catch {
+      setError('Could not open SportyBet.');
     }
   };
 
   const shareCode = async () => {
     if (!bookingCode) return;
+    const message =
+      `SportyBet booking code: ${bookingCode.code}\n` +
+      `${aiPicks.length} AI Picks (accumulator)\n` +
+      `Load it: ${bookingCode.shareUrl || bookingCodeLoadUrl(bookingCode.code)}`;
     try {
       if (Platform.OS === 'web' && navigator.share) {
-        await navigator.share({
-          title: 'StatWise Booking Code',
-          text: `StatWise AI Picks Booking Code: ${bookingCode}\n\nPaste this into SportyBet Nigeria's "Load Booking Code" section.`,
-        });
+        await navigator.share({ title: 'StatWise Booking Code', text: message });
       } else {
-        await Share.share({
-          message: `StatWise AI Picks Booking Code: ${bookingCode}\n\nPaste this into SportyBet Nigeria's "Load Booking Code" section.\n${aiPicks.length} selections (Accumulator)`,
-        });
+        await Share.share({ message });
       }
-    } catch (e) {
-      console.error(e);
+    } catch {
+      /* user dismissed */
     }
   };
 
@@ -141,19 +156,77 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
             <View style={[styles.infoBox, { backgroundColor: C.primaryLight, borderColor: C.primary }]}>
               <Ionicons name="information-circle" size={20} color={C.primary} />
               <Text style={[styles.infoText, { color: C.text }]}>
-                Generate a booking code for all AI Pick predictions (Accumulator). Paste it into SportyBet Nigeria's "Load Booking Code" to auto-fill your betslip.
+                One accumulator built only from AI Picks. The code is generated on the
+                server and refreshed whenever Pico publishes new picks.
               </Text>
             </View>
 
-            <Text style={[styles.sectionTitle, { color: C.text }]}>
+            {loading ? (
+              <View style={styles.emptyState}>
+                <ActivityIndicator size="small" color={C.primary} />
+                <Text style={[styles.emptyText, { color: C.textMuted }]}>
+                  Loading the latest booking code…
+                </Text>
+              </View>
+            ) : bookingCode ? (
+              <View style={[styles.codeBox, { backgroundColor: C.successLight, borderColor: C.success }]}>
+                <Text style={[styles.codeLabel, { color: C.textMuted }]}>BOOKING CODE</Text>
+                <Text style={[styles.codeValue, { color: C.success }]} selectable>
+                  {bookingCode.code}
+                </Text>
+                <Text style={[styles.codeMeta, { color: C.textMuted }]}>
+                  {bookingCode.selections.length || aiPicks.length} selections · accumulator
+                  {bookingCode.createdAt
+                    ? ` · updated ${new Date(bookingCode.createdAt).toLocaleString()}`
+                    : ''}
+                </Text>
+                <View style={styles.codeActions}>
+                  <TouchableOpacity
+                    style={[styles.codeActionBtn, { backgroundColor: C.success }]}
+                    onPress={openSportyBet}
+                  >
+                    <Ionicons name="open-outline" size={16} color="#fff" />
+                    <Text style={styles.codeActionText}>Load on SportyBet</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.codeActionBtn, { backgroundColor: C.success }]}
+                    onPress={copyCode}
+                  >
+                    <Ionicons name="copy-outline" size={16} color="#fff" />
+                    <Text style={styles.codeActionText}>Copy</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.codeActionBtn, { backgroundColor: C.success }]}
+                    onPress={shareCode}
+                  >
+                    <Ionicons name="share-outline" size={16} color="#fff" />
+                    <Text style={styles.codeActionText}>Share</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ) : (
+              <View style={[styles.emptyState, { backgroundColor: C.inputBg, borderColor: C.border }]}>
+                <Ionicons name="time-outline" size={32} color={C.textMuted} />
+                <Text style={[styles.emptyText, { color: C.textMuted, textAlign: 'center' }]}>
+                  No booking code has been generated for the current picks yet.
+                </Text>
+                <Text style={[styles.emptyText, { color: C.textMuted, textAlign: 'center', fontSize: 12 }]}>
+                  Codes are created automatically after each prediction run. You can copy the
+                  selections below and place them manually in the meantime.
+                </Text>
+              </View>
+            )}
+
+            <Text style={[styles.sectionTitle, { color: C.text, marginTop: 20 }]}>
               AI Picks ({aiPicks.length})
             </Text>
 
             {aiPicks.length === 0 ? (
               <View style={[styles.emptyState, { backgroundColor: C.inputBg, borderColor: C.border }]}>
                 <Ionicons name="alert-circle-outline" size={32} color={C.textMuted} />
-                <Text style={[styles.emptyText, { color: C.textMuted }]}>
-                  No AI Picks available right now
+                <Text style={[styles.emptyText, { color: C.textMuted, textAlign: 'center' }]}>
+                  No AI Picks right now. Pico only promotes a fixture when certainty is high
+                  enough, so a short list (or an empty one) is normal.
                 </Text>
               </View>
             ) : (
@@ -169,34 +242,12 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
                         {p.home_team} vs {p.away_team}
                       </Text>
                       <Text style={[styles.selectionLeague, { color: C.textMuted }]} numberOfLines={1}>
-                        {p.league} • {formatSelectionLabel(p)} • Odds {p.odds}
+                        {p.league} • {formatSelectionLabel(p)}
+                        {p.odds != null ? ` • ${p.odds}` : ''}
                       </Text>
                     </View>
                   </View>
                 ))}
-              </View>
-            )}
-
-            {bookingCode && (
-              <View style={[styles.codeBox, { backgroundColor: C.successLight, borderColor: C.success }]}>
-                <Text style={[styles.codeLabel, { color: C.textMuted }]}>Your Booking Code</Text>
-                <Text style={[styles.codeValue, { color: C.success }]}>{bookingCode}</Text>
-                <View style={styles.codeActions}>
-                  <TouchableOpacity
-                    style={[styles.codeActionBtn, { backgroundColor: C.success }]}
-                    onPress={copyCode}
-                  >
-                    <Ionicons name="copy-outline" size={16} color="#fff" />
-                    <Text style={styles.codeActionText}>Copy Code</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={[styles.codeActionBtn, { backgroundColor: C.success }]}
-                    onPress={shareCode}
-                  >
-                    <Ionicons name="share-outline" size={16} color="#fff" />
-                    <Text style={styles.codeActionText}>Share</Text>
-                  </TouchableOpacity>
-                </View>
               </View>
             )}
 
@@ -209,44 +260,42 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
             <View style={[styles.howToBox, { backgroundColor: C.inputBg, borderColor: C.border }]}>
               <Text style={[styles.howToTitle, { color: C.text }]}>How to use on SportyBet Nigeria</Text>
               <Text style={[styles.howToStep, { color: C.textSecondary }]}>
-                1. Open sportybet.com/ng or the SportyBet app
+                1. Tap “Load on SportyBet” above (or open sportybet.com/ng)
               </Text>
               <Text style={[styles.howToStep, { color: C.textSecondary }]}>
-                2. Click/Tap "Load Booking Code" (usually on homepage or betslip)
+                2. Open “Load Booking Code” and paste the code
               </Text>
               <Text style={[styles.howToStep, { color: C.textSecondary }]}>
-                3. Paste your booking code and click "Load"
-              </Text>
-              <Text style={[styles.howToStep, { color: C.textSecondary }]}>
-                4. Review your accumulator and place your bet
+                3. Review the accumulator and place your bet
               </Text>
             </View>
           </ScrollView>
 
           <View style={[styles.footer, { borderTopColor: C.border }]}>
-            {aiPicks.length > 0 && !bookingCode && (
+            <TouchableOpacity
+              style={[styles.generateBtn, { backgroundColor: C.primary }]}
+              onPress={openSportyBet}
+            >
+              <Ionicons name="open-outline" size={20} color="#fff" />
+              <Text style={styles.generateBtnText}>Open SportyBet</Text>
+            </TouchableOpacity>
+            {aiPicks.length > 0 && (
               <TouchableOpacity
-                style={[styles.generateBtn, { backgroundColor: C.primary, opacity: loading ? 0.7 : 1 }]}
-                onPress={generateBookingCode}
-                disabled={loading}
-              >
-                {loading ? (
-                  <ActivityIndicator size="small" color="#fff" />
-                ) : (
-                  <Ionicons name="ticket" size={20} color="#fff" />
-                )}
-                <Text style={styles.generateBtnText}>
-                  {loading ? 'Generating...' : `Generate Booking Code (${aiPicks.length} picks)`}
-                </Text>
-              </TouchableOpacity>
-            )}
-            {bookingCode && (
-              <TouchableOpacity
-                style={[styles.generateBtn, { backgroundColor: C.inputBg, borderWidth: 1, borderColor: C.border }]}
+                style={[
+                  styles.generateBtn,
+                  {
+                    backgroundColor: C.inputBg,
+                    borderWidth: 1,
+                    borderColor: C.border,
+                    marginTop: 8,
+                  },
+                ]}
                 onPress={copyAllSelections}
               >
                 <Ionicons name="copy-outline" size={20} color={C.text} />
-                <Text style={[styles.generateBtnText, { color: C.text }]}>Copy All Selections</Text>
+                <Text style={[styles.generateBtnText, { color: C.text }]}>
+                  Copy All Selections
+                </Text>
               </TouchableOpacity>
             )}
           </View>
@@ -358,17 +407,26 @@ const styles = StyleSheet.create({
   codeLabel: {
     fontSize: 12,
     fontFamily: 'Inter_400Regular',
+    letterSpacing: 1,
     marginBottom: 8,
   },
   codeValue: {
     fontSize: 28,
     fontFamily: 'Inter_700Bold',
     letterSpacing: 4,
+    marginBottom: 8,
+  },
+  codeMeta: {
+    fontSize: 11,
+    fontFamily: 'Inter_400Regular',
     marginBottom: 12,
+    textAlign: 'center',
   },
   codeActions: {
     flexDirection: 'row',
     gap: 8,
+    flexWrap: 'wrap',
+    justifyContent: 'center',
   },
   codeActionBtn: {
     flexDirection: 'row',
@@ -428,5 +486,3 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter_600SemiBold',
   },
 });
-
-// Fix clipboard import for web compatibility
