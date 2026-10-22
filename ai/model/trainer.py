@@ -30,6 +30,28 @@ OUTCOME_LABELS = ['Home Win', 'Draw', 'Away Win']
 _TEAM_ALIAS_CACHE: dict[str, str] = {}
 
 
+def _load_insight_data() -> Optional[pd.DataFrame]:
+    """Load the committed clean season files for the analysis snapshot.
+
+    Only called when a cached pickle predates `recent_history`. The files are
+    already part of the checkout, and reading them costs a few seconds once
+    per process — far better than rendering empty form/H2H panels.
+    """
+    import glob
+    clean_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             '..', 'data', 'clean')
+    paths = sorted(glob.glob(os.path.join(clean_dir, '????_matches.csv')))
+    if not paths:
+        return None
+    frames = []
+    for p in paths:
+        try:
+            frames.append(pd.read_csv(p, low_memory=False))
+        except Exception:
+            continue
+    return pd.concat(frames, ignore_index=True) if frames else None
+
+
 def _canonical_team(name: str, candidates: set[str], freq: dict | None = None) -> str:
     """Map a feed's team name onto the spelling used in the historical data."""
     if not name or not candidates:
@@ -430,6 +452,17 @@ class FootballPredictor:
         # stale model file would silently suppress every AI Pick.
         obj._league_counts = data.get('league_counts') or {}
         obj._recent_history = data.get('recent_history')
+        if obj._recent_history is None or len(obj._recent_history) == 0:
+            # The cached model may predate the snapshot (the training workflow
+            # writes it, and may not have run since). Rebuild it from the
+            # committed clean season files so the analysis panel still shows
+            # real form and head-to-head instead of falling back to blanks.
+            try:
+                fallback = _load_insight_data()
+                if fallback is not None and not fallback.empty:
+                    obj.record_recent_history(fallback)
+            except Exception as e:  # noqa: BLE001
+                logger.debug(f"Could not rebuild insight history: {e}")
         return obj
 
     def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0, weather: dict | None = None, insight_history: pd.DataFrame = None):
