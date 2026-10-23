@@ -134,12 +134,16 @@ export default function HomeScreen() {
         const { data, error } = await query;
         if (error) {
           console.error('Predictions fetch error:', error);
+          // Don't throw on network errors to avoid crashes
+          if (error.message?.includes('fetch') || error.message?.includes('network')) {
+            return [];
+          }
           throw error;
         }
         return data ?? [];
       } catch (e: any) {
         // Ignore abort errors to prevent noisy logs
-        if (e?.name === 'AbortError' || e?.message?.includes('abort') || e?.message?.includes('Lock broken')) {
+        if (e?.name === 'AbortError' || e?.message?.includes('abort') || e?.message?.includes('Lock broken') || e?.message?.includes('fetch')) {
           return [];
         }
         console.error('Predictions query error:', e);
@@ -152,10 +156,10 @@ export default function HomeScreen() {
     refetchOnMount: true,
     staleTime: 30 * 1000,
     retry: (failureCount, error: any) => {
-      if (error?.name === 'AbortError' || error?.message?.includes('abort') || error?.message?.includes('Lock broken')) {
+      if (error?.name === 'AbortError' || error?.message?.includes('abort') || error?.message?.includes('Lock broken') || error?.message?.includes('fetch')) {
         return false;
       }
-      return failureCount < 2;
+      return failureCount < 1;
     },
     retryDelay: 1000,
   });
