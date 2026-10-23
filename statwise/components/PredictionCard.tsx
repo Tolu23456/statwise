@@ -208,9 +208,9 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
 
         {/* Teams with logos and score */}
         <View style={styles.teamsRow}>
-          <View style={styles.teamCol}>
-            {homeLogo ? <Image source={{ uri: homeLogo }} style={styles.teamLogo} /> : <View style={[styles.teamLogo, { backgroundColor: C.inputBg }]} />}
-            <Text style={[styles.teamName, { color: C.text }]} numberOfLines={1}>{prediction.home_team}</Text>
+          <View style={[styles.teamCol, { justifyContent: 'flex-start' }]}>
+            {homeLogo ? <Image source={{ uri: homeLogo }} style={styles.teamLogo} resizeMode="contain" /> : <View style={[styles.teamLogo, { backgroundColor: C.inputBg, alignItems: 'center', justifyContent: 'center' }]}><Ionicons name="football-outline" size={18} color={C.textMuted} /></View>}
+            <Text style={[styles.teamName, { color: C.text, flex: 1 }]} numberOfLines={1} ellipsizeMode="tail">{prediction.home_team}</Text>
           </View>
           <View style={styles.scoreCol}>
             {(status.state === 'FT' || status.state === 'LIVE' || status.state === 'HT') && (prediction.home_score != null && prediction.away_score != null) ? (
@@ -220,9 +220,9 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
             )}
             {status.state === 'LIVE' && <Text style={[styles.liveTime, { color: C.danger }]}>LIVE</Text>}
           </View>
-          <View style={[styles.teamCol, { alignItems: 'flex-end' }]}>
-            <Text style={[styles.teamName, { color: C.text, textAlign: 'right' }]} numberOfLines={1}>{prediction.away_team}</Text>
-            {awayLogo ? <Image source={{ uri: awayLogo }} style={styles.teamLogo} /> : <View style={[styles.teamLogo, { backgroundColor: C.inputBg }]} />}
+          <View style={[styles.teamCol, { justifyContent: 'flex-end' }]}>
+            <Text style={[styles.teamName, { color: C.text, textAlign: 'right', flex: 1 }]} numberOfLines={1} ellipsizeMode="tail">{prediction.away_team}</Text>
+            {awayLogo ? <Image source={{ uri: awayLogo }} style={styles.teamLogo} resizeMode="contain" /> : <View style={[styles.teamLogo, { backgroundColor: C.inputBg, alignItems: 'center', justifyContent: 'center' }]}><Ionicons name="football-outline" size={18} color={C.textMuted} /></View>}
           </View>
         </View>
 
@@ -369,11 +369,11 @@ const styles = StyleSheet.create({
   countdownChip: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 20 },
   countdownText: { fontSize: 11, fontWeight: '600' },
   time: { fontSize: 12, fontWeight: '500' },
-  teamsRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 },
-  teamCol: { flexDirection: 'row', alignItems: 'center', gap: 8, flex: 1 },
-  teamLogo: { width: 32, height: 32, borderRadius: 16 },
-  teamName: { fontSize: 13, fontWeight: '600', flex: 1 },
-  scoreCol: { alignItems: 'center', paddingHorizontal: 12 },
+  teamsRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12, gap: 8 },
+  teamCol: { flexDirection: 'row', alignItems: 'center', gap: 8, flex: 1, minWidth: 0 },
+  teamLogo: { width: 32, height: 32, borderRadius: 16, backgroundColor: 'transparent' },
+  teamName: { fontSize: 13, fontWeight: '600', flexShrink: 1 },
+  scoreCol: { alignItems: 'center', paddingHorizontal: 8, minWidth: 60 },
   scoreText: { fontSize: 18, fontWeight: '800' },
   vsText: { fontSize: 12, fontWeight: '700' },
   liveTime: { fontSize: 9, fontWeight: '700', marginTop: 2 },

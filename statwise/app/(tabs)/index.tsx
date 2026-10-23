@@ -21,7 +21,7 @@ import { BookingCodeModal } from '@/components/BookingCodeModal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
 
-const POLL_INTERVAL_MS = 60 * 1000;
+const POLL_INTERVAL_MS = 5 * 1000;
 
 /** Which upstream feed produced a fixture. Newer rows store this in stats;
  *  older ones only carry it in the canonical match_id namespace. */
@@ -119,34 +119,44 @@ export default function HomeScreen() {
 
   const { data: predictions = [], isLoading, isError, refetch, isFetching, dataUpdatedAt } = useQuery<Prediction[]>({
     queryKey: ['predictions', userTier],
-    queryFn: async () => {
+    queryFn: async ({ signal }) => {
       try {
         const today = new Date().toISOString().split('T')[0];
-        const { data, error } = await supabase
+        // Use abort controller compatible query
+        const query = supabase
           .from('predictions')
           .select('*')
           .gte('match_date', today)
           .in('tier', allowedTiers)
           .order('kickoff_time', { ascending: true })
           .limit(userLimit === Infinity ? 500 : userLimit);
+        
+        const { data, error } = await query;
         if (error) {
           console.error('Predictions fetch error:', error);
           throw error;
         }
         return data ?? [];
-      } catch (e) {
+      } catch (e: any) {
+        // Ignore abort errors to prevent noisy logs
+        if (e?.name === 'AbortError' || e?.message?.includes('abort') || e?.message?.includes('Lock broken')) {
+          return [];
+        }
         console.error('Predictions query error:', e);
         throw e;
       }
     },
     refetchInterval: POLL_INTERVAL_MS,
-    refetchIntervalInBackground: false,
-    // Realtime can be unavailable if the table is not in the publication, so
-    // fall back to refetching the moment the user returns to the app.
+    refetchIntervalInBackground: true,
     refetchOnWindowFocus: true,
     refetchOnMount: true,
     staleTime: 30 * 1000,
-    retry: 3,
+    retry: (failureCount, error: any) => {
+      if (error?.name === 'AbortError' || error?.message?.includes('abort') || error?.message?.includes('Lock broken')) {
+        return false;
+      }
+      return failureCount < 2;
+    },
     retryDelay: 1000,
   });
 
@@ -155,16 +165,27 @@ export default function HomeScreen() {
   const { data: totalAvailable } = useQuery<number>({
     queryKey: ['predictions-total', userTier],
     queryFn: async () => {
-      const today = new Date().toISOString().split('T')[0];
-      const { count, error } = await supabase
-        .from('predictions')
-        .select('id', { count: 'exact', head: true })
-        .gte('match_date', today)
-        .in('tier', allowedTiers);
-      if (error) throw error;
-      return count ?? 0;
+      try {
+        const today = new Date().toISOString().split('T')[0];
+        const { count, error } = await supabase
+          .from('predictions')
+          .select('id', { count: 'exact', head: true })
+          .gte('match_date', today)
+          .in('tier', allowedTiers);
+        if (error) {
+          if (error.message?.includes('abort') || error.message?.includes('Lock broken')) return 0;
+          throw error;
+        }
+        return count ?? 0;
+      } catch (e: any) {
+        if (e?.name === 'AbortError' || e?.message?.includes('abort') || e?.message?.includes('Lock broken')) {
+          return 0;
+        }
+        throw e;
+      }
     },
     staleTime: 5 * 60 * 1000,
+    retry: 1,
   });
 
   useEffect(() => {

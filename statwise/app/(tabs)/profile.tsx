@@ -360,7 +360,8 @@ export default function ProfileScreen() {
         </View>
 
         {referral && (
-          <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>            <Text style={[styles.sectionTitle, { color: C.text }]}>Referral Program</Text>
+          <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
+            <Text style={[styles.sectionTitle, { color: C.text }]}>Referral Program</Text>
             <Text style={[styles.sectionDesc, { color: C.textSecondary }]}>
               Invite friends and earn reward points when they subscribe.
             </Text>
