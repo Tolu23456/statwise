@@ -356,14 +356,7 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
               <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
                 <Text style={[styles.sectionTitle, { color: C.text, marginBottom: 12 }]}>Match Info</Text>
 
-                {stats?.source && (
-                  <View style={styles.infoRow}>
-                    <Ionicons name="cloud-download-outline" size={15} color={C.textSecondary} />
-                    <Text style={[styles.infoLabel, { color: C.text }]}>
-                      Fixture data: {stats.source === 'espn' ? 'ESPN' : stats.source === 'football-data.org' ? 'football-data.org' : stats.source}
-                    </Text>
-                  </View>
-                )}
+                {/* Fixture data source tag removed as requested */}
 
                 {info.venue && (
                   <View style={styles.infoRow}>

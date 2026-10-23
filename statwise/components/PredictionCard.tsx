@@ -213,12 +213,25 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
             <Text style={[styles.teamName, { color: C.text, flex: 1 }]} numberOfLines={1} ellipsizeMode="tail">{prediction.home_team}</Text>
           </View>
           <View style={styles.scoreCol}>
-            {(status.state === 'FT' || status.state === 'LIVE' || status.state === 'HT') && (prediction.home_score != null && prediction.away_score != null) ? (
-              <Text style={[styles.scoreText, { color: C.text }]}>{prediction.home_score} - {prediction.away_score}</Text>
-            ) : (
-              <Text style={[styles.vsText, { color: C.textMuted }]}>VS</Text>
-            )}
-            {status.state === 'LIVE' && <Text style={[styles.liveTime, { color: C.danger }]}>LIVE</Text>}
+            <View style={{ alignItems: 'center' }}>
+              {(status.state === 'FT' || status.state === 'LIVE' || status.state === 'HT') && (prediction.home_score != null && prediction.away_score != null) ? (
+                <Text style={[styles.scoreText, { color: C.text }]}>{prediction.home_score} - {prediction.away_score}</Text>
+              ) : (
+                <Text style={[styles.vsText, { color: C.textMuted }]}>VS</Text>
+              )}
+              {status.state === 'LIVE' && <Text style={[styles.liveTime, { color: C.danger }]}>LIVE</Text>}
+              {status.state === 'SCHEDULED' && (() => {
+                const now = Date.now();
+                const kickoff = new Date(prediction.kickoff_time).getTime();
+                const diff = kickoff - now;
+                if (diff > 0 && diff <= 24 * 60 * 60 * 1000) {
+                  const hours = Math.floor(diff / (1000 * 60 * 60));
+                  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                  return <Text style={[styles.countdownText, { color: C.primary, marginTop: 2 }]}>in {hours}h {mins}m</Text>;
+                }
+                return null;
+              })()}
+            </View>
           </View>
           <View style={[styles.teamCol, { justifyContent: 'flex-end' }]}>
             <Text style={[styles.teamName, { color: C.text, textAlign: 'right', flex: 1 }]} numberOfLines={1} ellipsizeMode="tail">{prediction.away_team}</Text>
