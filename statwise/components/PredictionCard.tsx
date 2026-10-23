@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Platform, TouchableOpacity, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/colors';
 import { Prediction } from '@/lib/supabase';
 import { useTheme } from '@/context/ThemeContext';
+import { getTeamLogo, getMatchStatus } from '@/lib/teamLogos';
 import {
   formatKickoff,
   formatClock,
@@ -77,9 +78,10 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
   const edge = prediction.stats?.value_edge ?? null;
   const outcomes = buildOutcomes(prediction);
   const pick = pickCode(prediction.prediction);
-  const live = isLive(prediction.kickoff_time);
-  const started = hasStarted(prediction.kickoff_time);
-  const countdown = countdownLabel(prediction.kickoff_time);
+  const status = getMatchStatus(prediction as any);
+  const homeLogo = getTeamLogo(prediction.home_team);
+  const awayLogo = getTeamLogo(prediction.away_team);
+  const showScore = status.state === 'FT' || status.state === 'HT' || status.live;
 
   // The top-level `odds` column holds the *home* price. When the market
   // snapshot is available we show the price of the outcome we actually picked.
@@ -107,7 +109,7 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
             <Text style={[styles.league, { color: C.textMuted, backgroundColor: C.inputBg }]}>
               {prediction.league}
             </Text>
-            {live && (
+            {status.live && (
               <View style={[styles.liveChip, { backgroundColor: C.dangerLight }]}>
                 <View style={[styles.liveDot, { backgroundColor: C.danger }]} />
                 <Text style={[styles.liveText, { color: C.danger }]}>LIVE</Text>
@@ -174,29 +176,55 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
       onPress={onPress}
       style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}
     >
-      <View style={styles.header}>
-        <View style={styles.leagueWrap}>
-          <Text style={[styles.league, { color: C.primary, backgroundColor: C.primaryLight }]}>
-            {prediction.league}
-          </Text>
-          {live ? (
-            <View style={[styles.liveChip, { backgroundColor: C.dangerLight }]}>
-              <View style={[styles.liveDot, { backgroundColor: C.danger }]} />
-              <Text style={[styles.liveText, { color: C.danger }]}>LIVE</Text>
-            </View>
-          ) : countdown ? (
-            <View style={[styles.countdownChip, { backgroundColor: C.inputBg }]}>
-              <Text style={[styles.countdownText, { color: C.textSecondary }]}>in {countdown}</Text>
-            </View>
-          ) : null}
+        <View style={styles.header}>
+          <View style={styles.leagueWrap}>
+            <Text style={[styles.league, { color: C.primary, backgroundColor: C.primaryLight }]}>
+              {prediction.league}
+            </Text>
+            {status.state === 'LIVE' ? (
+              <View style={[styles.liveChip, { backgroundColor: C.dangerLight }]}>
+                <View style={[styles.liveDot, { backgroundColor: C.danger }]} />
+                <Text style={[styles.liveText, { color: C.danger }]}>LIVE</Text>
+              </View>
+            ) : status.state === 'HT' ? (
+              <View style={[styles.liveChip, { backgroundColor: C.warningLight }]}>
+                <Text style={[styles.liveText, { color: C.warning }]}>HT</Text>
+              </View>
+            ) : status.state === 'FT' ? (
+              <View style={[styles.liveChip, { backgroundColor: C.inputBg }]}>
+                <Text style={[styles.liveText, { color: C.textSecondary }]}>FT</Text>
+              </View>
+            ) : countdownLabel(prediction.kickoff_time) ? (
+              <View style={[styles.countdownChip, { backgroundColor: C.inputBg }]}>
+                <Text style={[styles.countdownText, { color: C.textSecondary }]}>in {countdownLabel(prediction.kickoff_time)}</Text>
+              </View>
+            ) : null}
+          </View>
+          <View style={styles.timeWrap}>
+            <Text style={[styles.time, { color: C.textSecondary }]}>{formatKickoff(prediction.kickoff_time)}</Text>
+            <Ionicons name="chevron-forward" size={14} color={C.textMuted} />
+          </View>
         </View>
-        <View style={styles.timeWrap}>
-          <Text style={[styles.time, { color: C.textSecondary }]}>{formatKickoff(prediction.kickoff_time)}</Text>
-          <Ionicons name="chevron-forward" size={14} color={C.textMuted} />
-        </View>
-      </View>
 
-      <Text style={[styles.matchTitle, { color: C.text }]}>{prediction.match_title}</Text>
+        {/* Teams with logos and score */}
+        <View style={styles.teamsRow}>
+          <View style={styles.teamCol}>
+            {homeLogo ? <Image source={{ uri: homeLogo }} style={styles.teamLogo} /> : <View style={[styles.teamLogo, { backgroundColor: C.inputBg }]} />}
+            <Text style={[styles.teamName, { color: C.text }]} numberOfLines={1}>{prediction.home_team}</Text>
+          </View>
+          <View style={styles.scoreCol}>
+            {(status.state === 'FT' || status.state === 'LIVE' || status.state === 'HT') && (prediction.home_score != null && prediction.away_score != null) ? (
+              <Text style={[styles.scoreText, { color: C.text }]}>{prediction.home_score} - {prediction.away_score}</Text>
+            ) : (
+              <Text style={[styles.vsText, { color: C.textMuted }]}>VS</Text>
+            )}
+            {status.state === 'LIVE' && <Text style={[styles.liveTime, { color: C.danger }]}>LIVE</Text>}
+          </View>
+          <View style={[styles.teamCol, { alignItems: 'flex-end' }]}>
+            <Text style={[styles.teamName, { color: C.text, textAlign: 'right' }]} numberOfLines={1}>{prediction.away_team}</Text>
+            {awayLogo ? <Image source={{ uri: awayLogo }} style={styles.teamLogo} /> : <View style={[styles.teamLogo, { backgroundColor: C.inputBg }]} />}
+          </View>
+        </View>
 
       <View style={styles.row}>
         <View style={styles.badgeRow}>
@@ -299,15 +327,6 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
         )}
       </View>
 
-      {/* The confidence bar is redundant once the three-way split is shown. */}
-      {!outcomes && (
-        <View style={[styles.bar, { backgroundColor: C.border }]}>
-          <View
-            style={[styles.fill, { width: `${prediction.confidence}%` as any, backgroundColor: confColor }]}
-          />
-        </View>
-      )}
-
       {prediction.reasoning && (
         <Text style={[styles.reasoning, { color: C.textSecondary }]} numberOfLines={2}>
           {prediction.reasoning}
@@ -317,7 +336,7 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
       <View style={[styles.tapHint, { borderTopColor: C.border }]}>
         <Ionicons name="analytics-outline" size={13} color={C.textMuted} />
         <Text style={[styles.tapHintText, { color: C.textMuted }]}>Tap for full analysis</Text>
-        {started && !live && (
+        {hasStarted(prediction.kickoff_time) && !status.live && status.state !== 'FT' && (
           <Text style={[styles.kickedOff, { color: C.textMuted }]}>Kicked off {formatClock(prediction.kickoff_time)}</Text>
         )}
       </View>
@@ -334,7 +353,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   lockedCard: { opacity: 0.92 },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },
   leagueWrap: { flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 1 },
   timeWrap: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   league: {
@@ -350,6 +369,14 @@ const styles = StyleSheet.create({
   countdownChip: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 20 },
   countdownText: { fontSize: 11, fontWeight: '600' },
   time: { fontSize: 12, fontWeight: '500' },
+  teamsRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 },
+  teamCol: { flexDirection: 'row', alignItems: 'center', gap: 8, flex: 1 },
+  teamLogo: { width: 32, height: 32, borderRadius: 16 },
+  teamName: { fontSize: 13, fontWeight: '600', flex: 1 },
+  scoreCol: { alignItems: 'center', paddingHorizontal: 12 },
+  scoreText: { fontSize: 18, fontWeight: '800' },
+  vsText: { fontSize: 12, fontWeight: '700' },
+  liveTime: { fontSize: 9, fontWeight: '700', marginTop: 2 },
   matchTitle: { fontSize: 16, fontWeight: '700', marginBottom: 10, lineHeight: 22 },
   blurredSection: { marginBottom: 4 },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
