@@ -1,0 +1,51 @@
+name: Train Attention Experiment
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'ai/experimental/attention/**'
+      - '.github/workflows/train-attention-experiment.yml'
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r ai/requirements.txt
+          pip install -r ai/experimental/attention/requirements.txt
+
+      - name: Train attention model
+        env:
+          PYTHONPATH: ${{ github.workspace }}/ai
+        run: |
+          cd ${{ github.workspace }}
+          python ai/experimental/attention/train_experimental.py
+
+      - name: Compare models
+        env:
+          PYTHONPATH: ${{ github.workspace }}/ai
+        run: |
+          cd ${{ github.workspace }}
+          python ai/experimental/attention/compare_models.py
+
+      - name: Upload experiment artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: attention-experiment-${{ github.run_number }}
+          path: |
+            ai/experimental/attention/models/
+            ai/experimental/attention/reports/
+            ai/experimental/attention/cache/
+          if-no-files-found: warn
