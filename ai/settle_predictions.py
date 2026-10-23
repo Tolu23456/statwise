@@ -35,6 +35,7 @@ load_dotenv()
 import requests  # noqa: E402
 
 from model.live_fetcher import (  # noqa: E402
+    fetch_espn_results_for_dates,
     fetch_match_result,
     fetch_results_for_dates,
     normalize_team_name,
@@ -101,7 +102,7 @@ def settle(sb, dry_run: bool = False) -> int:
         resp = (
             sb.table("predictions")
             .select("id, match_id, match_title, home_team, away_team, "
-                    "kickoff_time, prediction, status, actual_result")
+                    "league_slug, kickoff_time, prediction, status, actual_result")
             .in_("status", ["upcoming", "live"])
             .lt("kickoff_time", now)
             .execute()
@@ -126,12 +127,44 @@ def settle(sb, dry_run: bool = False) -> int:
     bulk = fetch_results_for_dates(days)
     logger.info("football-data.org returned %d finished match(es).", len(bulk))
 
+    # ESPN is the only source for the UEFA cup competitions (football-data.org
+    # returns 403 for them) and it is more complete for the Libertadores, so
+    # fetch its scoreboards for the days where those rows live.
+    espn_leagues = {"europa-league", "conference-league", "copa-libertadores"}
+    espn_days = sorted({
+        (p.get("kickoff_time") or "")[:10]
+        for p in past
+        if (p.get("match_id") or "").startswith("espn_")
+        or (p.get("league_slug") or "") in espn_leagues
+    })
+    espn_by_id, espn_by_names = (
+        fetch_espn_results_for_dates(espn_days) if espn_days else ({}, {})
+    )
+    if espn_days:
+        logger.info("ESPN returned %d finished match(es).", len(espn_by_id))
+
     settled = 0
     for p in past:
         home, away = p.get("home_team", ""), p.get("away_team", "")
+        day = (p.get("kickoff_time") or "")[:10]
         score = bulk.get((normalize_team_name(home), normalize_team_name(away)))
         if score is None:
             for (nh, na), sc in bulk.items():
+                if team_names_match(home, nh) and team_names_match(away, na):
+                    score = sc
+                    break
+
+        # ESPN event ids are exact, so prefer them over name matching.
+        if score is None and (p.get("match_id") or "").startswith("espn_"):
+            score = espn_by_id.get(p["match_id"][5:])
+        if score is None:
+            score = espn_by_names.get(
+                (day, normalize_team_name(home), normalize_team_name(away))
+            )
+        if score is None:
+            for (d, nh, na), sc in espn_by_names.items():
+                if d != day:
+                    continue
                 if team_names_match(home, nh) and team_names_match(away, na):
                     score = sc
                     break

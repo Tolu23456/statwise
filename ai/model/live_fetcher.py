@@ -82,6 +82,16 @@ ESPN_ONLY_LEAGUES = {
     "conference-league": "uefa.europa.conf",
 }
 
+#: Competitions whose results can only be read from ESPN (football-data.org's
+#: free plan returns no UEL/UECL results at all, and its Libertadores feed is
+#: incomplete). Settlement queries these so an ESPN-sourced fixture does not
+#: sit on "upcoming" forever.
+ESPN_RESULT_LEAGUES = (
+    "uefa.europa",
+    "uefa.europa.conf",
+    "conmebol.libertadores",
+)
+
 
 def _american_to_decimal(price) -> float | None:
     """Convert an American moneyline ('+475' / '-275') to decimal odds."""
@@ -177,6 +187,91 @@ def _fetch_espn(league_slugs: list[str], days_ahead: int = 14) -> list[dict]:
         logger.info(f"ESPN supplied {len(matches)} fixture(s) from "
                     f"{len({m['league_slug'] for m in matches})} cup competition(s).")
     return matches
+
+
+def fetch_espn_results_for_dates(dates: list[str],
+                                 league_slugs: tuple[str, ...] = ESPN_RESULT_LEAGUES
+                                 ) -> tuple[dict, dict]:
+    """Bulk-fetch finished ESPN results for the given match days.
+
+    Returns ``(by_id, by_names)`` where:
+
+    * ``by_id``     maps the raw ESPN event id ('401915552') to (home, away)
+    * ``by_names``  maps ``(date, normalised_home, normalised_away)`` to the same
+
+    The id map is exact and preferred — ESPN event ids are stable and immune to
+    the naming differences between feeds. The name map is the fallback for
+    competitions like the Copa Libertadores, where the fixture row came from
+    football-data.org but only ESPN has the scoreline.
+
+    ESPN groups a scoreboard by the venue's local day, so a 00:30 UTC kickoff
+    can appear under the previous date. Each requested day therefore probes
+    day-1, day and day+1 (deduplicated).
+    """
+    by_id: dict = {}
+    by_names: dict = {}
+    if not dates:
+        return by_id, by_names
+
+    # Scoreboard payloads are cached per (day, league) so the same day is only
+    # fetched once — but every requested match-day replays the cached payload
+    # under its own key. Otherwise an event that ESPN files on the previous
+    # local day (a 00:30 UTC kickoff) would exist only under that earlier date
+    # and would never match the fixture's own kickoff date.
+    cache: dict = {}
+
+    for date_str in sorted({d for d in dates if d}):
+        try:
+            base = datetime.date.fromisoformat(date_str)
+        except ValueError:
+            continue
+        for offset in (-1, 0, 1):
+            day = base + datetime.timedelta(days=offset)
+            for slug in league_slugs:
+                key = (day, slug)
+                if key not in cache:
+                    url = (f"https://site.api.espn.com/apis/site/v2/sports/soccer/"
+                           f"{slug}/scoreboard?dates={day:%Y%m%d}")
+                    try:
+                        r = requests.get(url, timeout=20)
+                        if r.status_code != 200:
+                            logger.debug(f"ESPN results {slug} {day} -> HTTP {r.status_code}")
+                            cache[key] = []
+                        else:
+                            cache[key] = (r.json().get("events") or [])
+                    except Exception as e:  # noqa: BLE001
+                        logger.debug(f"ESPN results {slug} {day}: {e}")
+                        cache[key] = []
+
+                for ev in cache[key]:
+                    status = (ev.get("status") or {}).get("type") or {}
+                    if not status.get("completed"):
+                        continue
+                    comps = ev.get("competitions") or []
+                    if not comps:
+                        continue
+                    comp = comps[0]
+                    sides = {c.get("homeAway"): c
+                             for c in comp.get("competitors", [])}
+                    home = (sides.get("home", {}).get("team") or {}).get("displayName")
+                    away = (sides.get("away", {}).get("team") or {}).get("displayName")
+                    hs = sides.get("home", {}).get("score")
+                    as_ = sides.get("away", {}).get("score")
+                    if not home or not away or hs is None or as_ is None:
+                        continue
+                    try:
+                        score = (int(hs), int(as_))
+                    except (TypeError, ValueError):
+                        continue
+                    by_id[str(ev.get("id"))] = score
+                    by_names[(date_str, normalize_team_name(home),
+                              normalize_team_name(away))] = score
+
+    if by_id:
+        logger.info(f"ESPN results: {len(by_id)} finished match(es) across "
+                    f"{len(cache)} scoreboard request(s).")
+    return by_id, by_names
+
 
 # TheSportsDB league IDs
 SLUG_TO_TSDB_LEAGUE = {
