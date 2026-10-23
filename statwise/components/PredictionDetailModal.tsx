@@ -182,24 +182,18 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
             {/* ── Header ── */}
             <View style={styles.headerRow}>
               <View style={{ flex: 1 }}>
-                <Text style={[styles.leagueTag, { color: C.primary, backgroundColor: C.primaryLight }]}>
-                  {prediction.league}
+                <Text style={[styles.matchTitle, { color: C.text, fontSize: 20, lineHeight: 26 }]}>
+                  {prediction.home_team} vs {prediction.away_team}
                 </Text>
-                <Text style={[styles.matchTitle, { color: C.text }]}>
-                  {prediction.match_title || `${prediction.home_team} vs ${prediction.away_team}`}
+                <Text style={{ color: C.textMuted, fontSize: 13, marginTop: 4 }}>
+                  {formatDayLabel(prediction.kickoff_time)} · {formatKickoff(prediction.kickoff_time)}
                 </Text>
-                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 4 }}>
-                  <Ionicons name="time-outline" size={13} color={C.textMuted} />
-                  <Text style={{ color: C.textMuted, fontSize: 13 }}>
-                    {whenLabel}
-                  </Text>
-                  {live && (
-                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: C.dangerLight, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 10 }}>
-                      <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: C.danger }} />
-                      <Text style={{ fontSize: 10, color: C.danger, fontWeight: '800' }}>LIVE</Text>
-                    </View>
-                  )}
-                </View>
+                {live && (
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: C.dangerLight, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 10, alignSelf: 'flex-start', marginTop: 6 }}>
+                    <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: C.danger }} />
+                    <Text style={{ fontSize: 10, color: C.danger, fontWeight: '800' }}>LIVE</Text>
+                  </View>
+                )}
               </View>
               <View style={styles.headerActions}>
                 <TouchableOpacity
