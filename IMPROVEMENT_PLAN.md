@@ -15,18 +15,18 @@
 ## PHASE 1: MODEL & PREDICTION IMPROVEMENTS (P0)
 
 ### Step 1.1: Add Richer Match Features
-- [ ] **Audit current features** - Review `ai/model/features.py` to understand feature pipeline
-- [ ] **Add xG features** - Integrate expected goals from available data sources
-- [ ] **Add shot metrics** - Shots on target, total shots, possession %
-- [ ] **Add rest days** - Calculate days since last match for home/away teams
+- [x] **Audit current features** - Review `ai/model/features.py` to understand feature pipeline
+- [x] **Add xG features** - Integrate expected goals from available data sources
+- [x] **Add shot metrics** - Shots on target, total shots, possession %
+- [x] **Add rest days** - Calculate days since last match for home/away teams
 - [ ] **Add travel/fatigue proxies** - Distance between venues if available, or use league context
 - [ ] **Add form differentials** - Home form vs away form, goal difference trends
 - [ ] **Test feature additions** - Retrain and verify on holdout don't degrade performance
 - [ ] **Commit changes**
 
 ### Step 1.2: Weather & Match Context
-- [ ] **Create weather fetcher** - Add `ai/data/weather_fetcher.py` using Open-Meteo API (free)
-- [ ] **Integrate with prediction pipeline** - Add weather features to `features.py`
+- [x] **Create weather fetcher** - Add `ai/data/weather_fetcher.py` using Open-Meteo API (free)
+- [x] **Integrate with prediction pipeline** - Add weather features to `features.py`
 - [ ] **Add venue data** - City coordinates for stadiums where possible
 - [ ] **Cache weather data** - Avoid repeated API calls for same matches
 - [ ] **Test weather integration** - Verify features are added correctly
@@ -34,7 +34,7 @@
 
 ### Step 1.3: Automated Weekly Retraining
 - [ ] **Review retrain.py** - Understand current retraining workflow
-- [ ] **Create GitHub Action** - Add `.github/workflows/retrain-weekly.yml`
+- [x] **Create GitHub Action** - Add `.github/workflows/retrain-weekly.yml`
 - [ ] **Add holdout validation** - Ensure retrain checks metrics against baseline
 - [ ] **Add model versioning** - Track model versions in `model_info.json`
 - [ ] **Test workflow** - Manual dispatch test
@@ -63,14 +63,14 @@
 
 ### Step 2.1: Smarter Polling Strategy
 - [ ] **Audit current polling** - Review `app/(tabs)/index.tsx` polling logic
-- [ ] **Implement tiered polling** - Live matches: 15s, starting soon (<2h): 60s, others: 300s
+- [x] **Implement tiered polling** - Live matches: 15s, starting soon (<2h): 60s, others: 300s
 - [ ] **Add visibility detection** - Pause polling when app backgrounded
 - [ ] **Add network awareness** - Reduce polling on slow connections
 - [ ] **Test polling behavior** - Verify no unnecessary requests
 - [ ] **Commit changes**
 
 ### Step 2.2: Live Match Enrichment
-- [ ] **Create live data fetcher** - Enhance ESPN integration for live stats
+- [x] **Create live data fetcher** - Enhance ESPN integration for live stats
 - [ ] **Fetch lineups** - When available
 - [ ] **Fetch cards/events** - Goals, cards, substitutions
 - [ ] **Fetch match stats** - Possession, shots, corners
@@ -79,7 +79,7 @@
 - [ ] **Commit changes**
 
 ### Step 2.3: Harden Booking Codes
-- [ ] **Add retry logic** - Retry failed SportyBet generations
+- [x] **Add retry logic** - Retry failed SportyBet generations
 - [ ] **Improve error messages** - User-friendly errors
 - [ ] **Add caching** - Cache generated codes per prediction
 - [ ] **Add fallback** - Graceful handling if generation fails
@@ -134,9 +134,9 @@
 - [ ] **Commit changes**
 
 ### Step 3.4: Loading & Error States
-- [ ] **Add skeleton loaders** - For match cards and detail view
-- [ ] **Add empty states** - When no predictions
-- [ ] **Add retry buttons** - For failed fetches
+- [x] **Add skeleton loaders** - For match cards and detail view
+- [x] **Add empty states** - When no predictions
+- [x] **Add retry buttons** - For failed fetches
 - [ ] **Improve error messages** - User-friendly
 - [ ] **Add offline indicators** - Network status
 - [ ] **Test error scenarios** - Network failures, etc.
@@ -157,7 +157,7 @@
 ## PHASE 4: PERFORMANCE, SECURITY & INFRA (P1/P2)
 
 ### Step 4.1: Query Caching Strategy
-- [ ] **Audit React Query usage** - Review all queries
+- [x] **Audit React Query usage** - Review all queries
 - [ ] **Set optimal staleTime** - Per query type
 - [ ] **Set gcTime** - Proper garbage collection
 - [ ] **Add query invalidation** - On mutations/settlements
