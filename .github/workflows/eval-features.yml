@@ -1,0 +1,75 @@
+name: Feature Holdout Ablation
+
+# Verifies that newly added feature blocks (travel/fatigue 141-145, recent
+# form 146-154) do not degrade the out-of-time holdout before they are kept.
+#
+# Trains the production stack twice on the identical chronological split with
+# identical seeds — once with the new slots populated, once with them zeroed —
+# and scores both on the untouched later half of the holdout (same protocol as
+# ai/retrain.py).  Training runs here rather than on the dev box because the
+# full feature build needs more RAM than the local machine has.
+
+on:
+  workflow_dispatch:
+    inputs:
+      model_mode:
+        description: "MODEL_MODE: single | joint | both"
+        required: false
+        default: "single"
+      holdout_days:
+        description: "Holdout window in days"
+        required: false
+        default: "90"
+
+jobs:
+  ablation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Unit tests (travel + form blocks)
+        run: |
+          python ai/experimental/test_travel.py
+          python ai/experimental/test_form.py
+
+      - name: Run ablation (with vs without new features)
+        id: eval
+        run: |
+          set -o pipefail
+          python ai/experimental/eval_new_features.py 2>&1 | tee eval.log
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo "## Feature ablation (new slots 141-154 vs production behaviour)"
+            echo ""
+            echo "\`\`\`"
+            grep -E "dataset:|travel block:|form  block:|with new features|without \(production\)|market baseline|delta \(with" eval.log \
+              || tail -40 eval.log
+            echo "\`\`\`"
+            if [ "${{ steps.eval.outcome }}" = "success" ]; then
+              echo "✅ New features do not degrade the holdout."
+            else
+              echo "❌ Degradation or error — see job log."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: feature-ablation-log
+          path: eval.log
+          if-no-files-found: ignore

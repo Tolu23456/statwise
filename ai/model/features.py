@@ -13,6 +13,8 @@ from .cpp_bridge import (
     compute_all_features_bulk_v6,
     compute_all_features_v6,
 )
+from .travel import TRAVEL_SLICE, N_TRAVEL, compute_travel_block
+from .form import FORM_SLICE, N_FORM, compute_form_block
 
 logger = logging.getLogger(__name__)
 
@@ -53,8 +55,13 @@ FEATURE_NAMES = [
     "lineup_rating_diff",
     # Weather at match time (Open-Meteo; indices 133-140) + padding (141-159)
     "w_temp", "w_precip", "w_wind", "w_code", "w_rain", "w_cold", "w_heat", "w_present",
-    "pad_141", "pad_142", "pad_143", "pad_144", "pad_145", "pad_146", "pad_147", "pad_148", "pad_149",
-    "pad_150", "pad_151", "pad_152", "pad_153", "pad_154", "pad_155", "pad_156", "pad_157", "pad_158", "pad_159",
+    # Travel / fatigue proxies (141-145) — see ai/model/travel.py
+    "travel_home", "travel_away", "travel_diff", "fatigue_diff", "travel_present",
+    # Recent-form differentials (146-154) — last-5 window, see ai/model/form.py
+    "form5_ppg_home", "form5_ppg_away", "form5_ppg_diff",
+    "form5_gd_home", "form5_gd_away", "form5_gd_diff",
+    "gd_trend_home", "gd_trend_away", "form_present",
+    "pad_155", "pad_156", "pad_157", "pad_158", "pad_159",
     # ── League Embedding Index (160)
     "league_id"
 ]
@@ -227,6 +234,26 @@ class FeaturePipeline:
             if X_cont.shape[1] >= 141:
                 X_cont[:, 133:141] = wb
 
+        # 1c. Travel / fatigue proxies (slots 141-145) — distances between each
+        # side's previous venue and this match's venue (ai/model/travel.py).
+        # Computed over the FULL frame so lookups see complete history, then
+        # aligned to the sampled rows.
+        try:
+            travel_blk = compute_travel_block(df)
+            X_cont[:, TRAVEL_SLICE] = travel_blk[np.asarray(all_idx, dtype=np.int64)]
+        except Exception:
+            logger.warning("travel/fatigue features unavailable — using zeros",
+                           exc_info=True)
+
+        # 1d. Recent-form differentials (slots 146-154) — last-5 PPG, goal
+        # difference and GD trend per side, prior matches only.
+        try:
+            form_blk = compute_form_block(df)
+            X_cont[:, FORM_SLICE] = form_blk[np.asarray(all_idx, dtype=np.int64)]
+        except Exception:
+            logger.warning("form differentials unavailable — using zeros",
+                           exc_info=True)
+
         # 2. League IDs (1)
         league_ids = df['league_slug'].fillna('all').map(self._league_map).values[all_idx].reshape(-1, 1)
 
@@ -244,8 +271,37 @@ class FeaturePipeline:
         return X, y_1x2, y_goals, df['date'].values[all_idx]
 
     def build_features(self, matches: list, history: pd.DataFrame) -> np.ndarray:
+        # Travel/fatigue (141-145) + recent form (146-154): one pass over
+        # history + this batch so inference reproduces training exactly.
+        travel_blk = np.zeros((len(matches), N_TRAVEL), dtype=np.float64)
+        form_blk = np.zeros((len(matches), N_FORM), dtype=np.float64)
+        if matches and history is not None and \
+                {"home_team", "away_team", "date"}.issubset(getattr(history, "columns", ())):
+            try:
+                new = pd.DataFrame({
+                    "home_team": [str(m.get("home", "")) for m in matches],
+                    "away_team": [str(m.get("away", "")) for m in matches],
+                    "date": pd.to_datetime([m.get("date") for m in matches], errors="coerce"),
+                    # upcoming fixtures have no scores yet — harmless, form only
+                    # reads values from matches BEFORE this row
+                    "home_goals": np.nan,
+                    "away_goals": np.nan,
+                })
+                cols = ["home_team", "away_team", "date"]
+                hist_part = history[cols].copy()
+                if "home_goals" in history.columns:
+                    hist_part["home_goals"] = history["home_goals"]
+                if "away_goals" in history.columns:
+                    hist_part["away_goals"] = history["away_goals"]
+                combined = pd.concat([hist_part, new], ignore_index=True)
+                travel_blk = compute_travel_block(combined)[-len(matches):]
+                form_blk = compute_form_block(combined)[-len(matches):]
+            except Exception:
+                logger.warning("travel/form features unavailable — using zeros",
+                               exc_info=True)
+
         X_out = []
-        for m in matches:
+        for i, m in enumerate(matches):
             home, away = m['home'], m['away']
             league = m.get('league', 'all')
 
@@ -284,5 +340,11 @@ class FeaturePipeline:
             # Weather at match time (slots 133-140) — forecast from Open-Meteo via team_venues
             if feat.shape[0] >= 141:
                 feat[133:141] = weather_features(m.get('weather') or {})
+            # Travel / fatigue proxies (slots 141-145)
+            if feat.shape[0] >= TRAVEL_SLICE.stop:
+                feat[TRAVEL_SLICE] = travel_blk[i]
+            # Recent-form differentials (slots 146-154)
+            if feat.shape[0] >= FORM_SLICE.stop:
+                feat[FORM_SLICE] = form_blk[i]
             X_out.append(np.append(feat, self._league_map.get(league, 0)))
         return np.array(X_out)
