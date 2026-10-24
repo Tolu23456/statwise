@@ -22,6 +22,7 @@ from __future__ import annotations
 import json
 import math
 import os
+import re
 
 import numpy as np
 import pandas as pd
@@ -43,6 +44,22 @@ _DEFAULT_REST = 7.0           # days assumed when a team has no history
 
 _venues_cache: dict | None = None
 _norm_map: dict | None = None
+_stem_map: dict | None = None
+
+# Club-name decorations that carry no location info.  Stripping them lets
+# "Liverpool FC" resolve through the cache entry stored as "Liverpool".
+_NOISE_TOKENS = {
+    "fc", "cf", "afc", "bsc", "ssc", "ac", "sc", "afc", "us", "sv", "vfb",
+    "vfl", "tsg", "fk", "pfc", "sk", "skc", "rc", "cd", "sd", "ud", "ca",
+    "cfc", "afc", "aafc", "ifk", "bk", "mk", "sk", "ssp", "csc", "vlc",
+}
+
+
+def _stem(name: str) -> str:
+    """'Liverpool FC' -> 'liverpool'; keeps meaningful words intact."""
+    toks = [t for t in re.split(r"[^0-9A-Za-zÀ-ÿ]+", str(name).strip())
+            if t and t.casefold() not in _NOISE_TOKENS]
+    return " ".join(toks).casefold()
 
 
 def load_venues() -> dict:
@@ -66,14 +83,26 @@ def _key_map() -> dict:
     return _norm_map
 
 
+def _stem_index() -> dict:
+    """stemmed team name -> entry (first writer wins on collisions)."""
+    global _stem_map
+    if _stem_map is None:
+        _stem_map = {}
+        for k, v in load_venues().items():
+            s = _stem(k)
+            if s and s not in _stem_map:
+                _stem_map[s] = v
+    return _stem_map
+
+
 def venue_coords(team: str) -> tuple[float, float]:
     """(lat, lon) for a team's home city, or NaNs when unknown."""
     venues = load_venues()
-    entry = venues.get(team)
-    if entry is None:
-        entry = venues.get(str(team).strip())
+    entry = venues.get(team) or venues.get(str(team).strip())
     if entry is None:
         entry = _key_map().get(" ".join(str(team).split()).casefold())
+    if entry is None:
+        entry = _stem_index().get(_stem(team))
     if isinstance(entry, dict):
         lat, lon = entry.get("lat"), entry.get("lon")
         try:
