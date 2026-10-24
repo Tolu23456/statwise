@@ -422,6 +422,65 @@ def run(force: bool = False) -> bool:
         logger.info(f"Training done in {time.time() - t1:.1f}s")
         calib_info = {"mode": fallback_mode, "note": "holdout too small; prefit isotonic"}
 
+    # ── Holdout validation against the deployed baseline (plan 1.3) ──
+    # Never replace a working model with one that scores worse on the SAME
+    # out-of-time holdout.  Comparability is strict: identical holdout window
+    # and split date, otherwise the numbers are not apples-to-apples and the
+    # gate steps aside (with a loud log rather than a silent pass).
+    prev_info: dict = {}
+    try:
+        with open(INFO_PATH) as f:
+            prev_info = json.load(f)
+    except Exception:
+        prev_info = {}
+    prev_cal = prev_info.get("calibration") or {}
+    tol = float(os.environ.get("MAX_LL_REGRESSION", "0.0005") or 0.0005)
+    force_replace = os.environ.get("FORCE_REPLACE", "").strip() in ("1", "true", "yes")
+
+    gate: dict = {
+        "baseline_version": prev_info.get("version"),
+        "baseline_eval_log_loss": prev_cal.get("eval_log_loss"),
+        "new_eval_log_loss": calib_info.get("eval_log_loss"),
+        "tolerance": tol,
+        "forced": force_replace,
+    }
+    comparable = (
+        isinstance(prev_cal.get("eval_log_loss"), (int, float))
+        and isinstance(calib_info.get("eval_log_loss"), (int, float))
+        and prev_cal.get("holdout_days") == calib_info.get("holdout_days")
+        and prev_cal.get("split_at") == calib_info.get("split_at")
+    )
+    gate["comparable"] = bool(comparable)
+
+    if comparable:
+        d_ll = float(calib_info["eval_log_loss"]) - float(prev_cal["eval_log_loss"])
+        d_acc = (float(calib_info.get("accuracy") or 0.0)
+                 - float(prev_cal.get("accuracy") or 0.0))
+        gate["delta_log_loss"] = round(d_ll, 5)
+        gate["delta_accuracy"] = round(d_acc, 4)
+        if d_ll > tol and not force_replace:
+            gate["decision"] = "rejected"
+            logger.error(
+                f"[GATE] new model is WORSE on the identical holdout: "
+                f"log loss {prev_cal['eval_log_loss']} -> {calib_info['eval_log_loss']} "
+                f"(+{d_ll:.5f} > tolerance {tol}), accuracy {d_acc:+.4f}. "
+                f"Keeping the deployed model. Set FORCE_REPLACE=1 to override.")
+            try:
+                with open(INFO_PATH, "w") as f:
+                    json.dump({**prev_info, "last_rejected": {**gate,
+                                                              "rejected_at": datetime.datetime.utcnow().isoformat() + "Z"}},
+                              f, indent=2)
+            except Exception:
+                pass
+            return False
+        gate["decision"] = "accepted" if d_ll <= 0 else "accepted_with_regression"
+        logger.info(f"[GATE] {gate['decision']}: log loss {d_ll:+.5f}, accuracy {d_acc:+.4f} "
+                    f"vs baseline (tolerance {tol})")
+    else:
+        gate["decision"] = "skipped_not_comparable"
+        logger.warning("[GATE] skipped — no comparable baseline (first run, or the "
+                       "holdout window/split changed since the last model)")
+
     # Per-league sample sizes ride along inside the pickle so predictor.py can
     # flag fixtures the model has little league-specific history for (the Europa
     # and Conference League have no football-data.co.uk season CSV of their own).
@@ -454,12 +513,32 @@ def run(force: bool = False) -> bool:
             pass
         return False
 
-    # ── Write model metadata ───────────────────────────────────────
+    # ── Write model metadata (versioned — plan 1.3) ─────────────────
+    version = int(prev_info.get("version") or 0) + 1
+    entry = {
+        "version": version,
+        "trained_at": datetime.datetime.utcnow().isoformat() + "Z",
+        "mode": calib_info.get("mode"),
+        "eval_log_loss": calib_info.get("eval_log_loss"),
+        "accuracy": calib_info.get("accuracy"),
+        "holdout_days": calib_info.get("holdout_days"),
+        "split_at": calib_info.get("split_at"),
+        "git_sha": _git_sha(),
+    }
+    history = list(prev_info.get("history") or [])
+    history.append(entry)
     info = {
-        "trained_at":       datetime.datetime.utcnow().isoformat() + "Z",
+        "version": version,
+        "trained_at":       entry["trained_at"],
+        "git_sha":          entry["git_sha"],
         "total_matches":    int(len(df)),
         "duration_seconds": round(time.time() - t0, 1),
+        "previous":         {"version": prev_info.get("version"),
+                             "trained_at": prev_info.get("trained_at"),
+                             "git_sha": prev_info.get("git_sha")},
+        "baseline_comparison": gate,
         "calibration":      calib_info,
+        "history":          history[-25:],   # rolling window of deployed versions
     }
     try:
         with open(INFO_PATH, "w") as f:
@@ -467,9 +546,24 @@ def run(force: bool = False) -> bool:
     except Exception:
         pass
 
-    logger.info(f"Model saved to {MODEL_PATH}")
+    logger.info(f"Model saved to {MODEL_PATH} (version {version})")
     logger.info(f"Total retrain time: {time.time() - t0:.1f}s")
     return True
+
+
+def _git_sha() -> str | None:
+    """Best-effort commit the model was trained from (None outside a checkout)."""
+    sha = os.environ.get("GITHUB_SHA")
+    if sha:
+        return sha[:12]
+    try:
+        import subprocess
+        out = subprocess.run(["git", "rev-parse", "--short", "HEAD"],
+                             capture_output=True, text=True, timeout=10,
+                             cwd=os.path.dirname(os.path.abspath(__file__)))
+        return out.stdout.strip() or None
+    except Exception:
+        return None
 
 
 if __name__ == "__main__":
