@@ -228,16 +228,84 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
               <Text style={[styles.pickValue, { color: C.primary }]}>{prediction.prediction}</Text>
             </View>
 
+            {/* ── Win Probability Breakdown ── */}
+            {(mHome !== null || mDraw !== null || mAway !== null) && (
+              <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Text style={[styles.sectionTitle, { color: C.text }]}>
+                    {hasModelProbs ? "Pico's Probability" : 'Win Probability'}
+                  </Text>
+                  {hasModelProbs && (
+                    <Text style={{ color: C.textMuted, fontSize: 11 }}>vs market</Text>
+                  )}
+                </View>
+                <View style={{ marginTop: 8 }}>
+                  {mHome !== null && (
+                    <ProbBar
+                      label={`${prediction.home_team} Win`}
+                      value={mHome}
+                      color={isHome ? C.primary : C.textSecondary}
+                      secondary={hasModelProbs ? pHome : null}
+                      C={C}
+                    />
+                  )}
+                  {mDraw !== null && (
+                    <ProbBar
+                      label="Draw"
+                      value={mDraw}
+                      color={isDraw ? C.warning : C.textSecondary}
+                      secondary={hasModelProbs ? pDraw : null}
+                      C={C}
+                    />
+                  )}
+                  {mAway !== null && (
+                    <ProbBar
+                      label={`${prediction.away_team} Win`}
+                      value={mAway}
+                      color={isAway ? C.danger : C.textSecondary}
+                      secondary={hasModelProbs ? pAway : null}
+                      C={C}
+                    />
+                  )}
+                </View>
+
+                {edge !== null && (
+                  <View style={[
+                    styles.edgeRow,
+                    {
+                      backgroundColor: edge >= 0 ? C.successLight : C.dangerLight,
+                      borderColor: edge >= 0 ? C.success : C.danger,
+                    },
+                  ]}>
+                    <Ionicons
+                      name={edge >= 0 ? 'trending-up' : 'trending-down'}
+                      size={15}
+                      color={edge >= 0 ? C.success : C.danger}
+                    />
+                    <Text style={{ color: C.text, fontSize: 13, fontWeight: '600', flex: 1 }}>
+                      {edge >= 0 ? 'Value on this pick' : 'No value vs market'}
+                    </Text>
+                    <Text style={{ color: edge >= 0 ? C.success : C.danger, fontSize: 14, fontWeight: '800' }}>
+                      {edge > 0 ? '+' : ''}{edge.toFixed(1)}%
+                    </Text>
+                  </View>
+                )}
+              </View>
+            )}
+
             {/* ── Model Certainty ── */}
             <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
               <Text style={[styles.sectionTitle, { color: C.text }]}>Model Certainty</Text>
               <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 8 }}>
-                <Text style={{ color: C.textSecondary, fontSize: 13 }}>Certainty score</Text>
+                <Text style={{ color: C.textSecondary, fontSize: 13 }}>Model confidence</Text>
                 <Text style={{ color: C.primary, fontSize: 15, fontWeight: '700' }}>{Math.round(certainty)}%</Text>
               </View>
               <View style={[styles.confTrack, { backgroundColor: C.border, marginTop: 6 }]}>
                 <View style={[styles.confFill, { width: `${Math.max(0, Math.min(100, certainty))}%` as any, backgroundColor: C.primary }]} />
               </View>
+              <Text style={{ color: C.textMuted, fontSize: 11, marginTop: 6, lineHeight: 15 }}>
+                How sharp the model's probabilities are — not the chance this pick lands. Low means the three outcomes are close to even.
+              </Text>
               {uncertainty && (
                 <View style={{ marginTop: 12, gap: 6 }}>
                   <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -268,7 +336,9 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 {/* H2H Breakdown */}
                 {stats?.h2h && (stats?.h2h_matches ?? 0) > 0 && (
                 <View style={{ marginBottom: 16 }}>
-                  <Text style={{ color: C.textSecondary, fontSize: 12, marginBottom: 6, textTransform: 'uppercase' }}>Head-to-Head History</Text>
+                  <Text style={{ color: C.textSecondary, fontSize: 12, marginBottom: 6, textTransform: 'uppercase' }}>
+                    Head-to-Head History · last {stats.h2h_matches} meetings
+                  </Text>
                   <View style={styles.h2hRow}>
                     <View style={[styles.h2hBar, { flex: stats.h2h.home_wins || 0, backgroundColor: C.primary }]}>
                       <Text style={styles.h2hText}>{stats.h2h.home_wins || 0}</Text>
@@ -513,71 +583,6 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                     </View>
                   )
                 ))}
-              </View>
-            )}
-
-            {/* ── Win Probability Breakdown ── */}
-            {(mHome !== null || mDraw !== null || mAway !== null) && (
-              <View style={[styles.section, { backgroundColor: C.background, borderColor: C.border }]}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <Text style={[styles.sectionTitle, { color: C.text }]}>
-                    {hasModelProbs ? "Pico's Probability" : 'Win Probability'}
-                  </Text>
-                  {hasModelProbs && (
-                    <Text style={{ color: C.textMuted, fontSize: 11 }}>vs market</Text>
-                  )}
-                </View>
-                <View style={{ marginTop: 8 }}>
-                  {mHome !== null && (
-                    <ProbBar
-                      label={`${prediction.home_team} Win`}
-                      value={mHome}
-                      color={isHome ? C.primary : C.textSecondary}
-                      secondary={hasModelProbs ? pHome : null}
-                      C={C}
-                    />
-                  )}
-                  {mDraw !== null && (
-                    <ProbBar
-                      label="Draw"
-                      value={mDraw}
-                      color={isDraw ? C.warning : C.textSecondary}
-                      secondary={hasModelProbs ? pDraw : null}
-                      C={C}
-                    />
-                  )}
-                  {mAway !== null && (
-                    <ProbBar
-                      label={`${prediction.away_team} Win`}
-                      value={mAway}
-                      color={isAway ? C.danger : C.textSecondary}
-                      secondary={hasModelProbs ? pAway : null}
-                      C={C}
-                    />
-                  )}
-                </View>
-
-                {edge !== null && (
-                  <View style={[
-                    styles.edgeRow,
-                    {
-                      backgroundColor: edge >= 0 ? C.successLight : C.dangerLight,
-                      borderColor: edge >= 0 ? C.success : C.danger,
-                    },
-                  ]}>
-                    <Ionicons
-                      name={edge >= 0 ? 'trending-up' : 'trending-down'}
-                      size={15}
-                      color={edge >= 0 ? C.success : C.danger}
-                    />
-                    <Text style={{ color: C.text, fontSize: 13, fontWeight: '600', flex: 1 }}>
-                      {edge >= 0 ? 'Value on this pick' : 'No value vs market'}
-                    </Text>
-                    <Text style={{ color: edge >= 0 ? C.success : C.danger, fontSize: 14, fontWeight: '800' }}>
-                      {edge > 0 ? '+' : ''}{edge.toFixed(1)}%
-                    </Text>
-                  </View>
-                )}
               </View>
             )}
 
