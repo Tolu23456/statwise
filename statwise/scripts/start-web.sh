@@ -6,11 +6,11 @@
 # trying to open a browser, which is what was killing the dev server.
 set -u
 
-PORT="${PORT:-8081}"
+PORT="${PORT:-5000}"
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LOG_FILE="${LOG_FILE:-/tmp/statwise-web.log}"
 PID_FILE="/tmp/statwise-web.pid"
-READY_TIMEOUT="${READY_TIMEOUT:-180}"
+READY_TIMEOUT="${READY_TIMEOUT:-300}"
 
 cd "$APP_DIR" || exit 1
 
@@ -24,7 +24,7 @@ BROWSER=none EXPO_NO_DEVTOOLS=1 \
 echo $! >"$PID_FILE"
 
 for _ in $(seq 1 "$READY_TIMEOUT"); do
-  if curl -sf --max-time 2 "http://localhost:${PORT}" >/dev/null 2>&1; then
+  if curl -sf --max-time 30 "http://localhost:${PORT}" >/dev/null 2>&1; then
     echo "StatWise web is up: http://localhost:${PORT}"
     exit 0
   fi

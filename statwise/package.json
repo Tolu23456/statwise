@@ -4,9 +4,9 @@
   "description": "StatWise - AI Sports Prediction PWA with Supabase backend",
   "main": "expo-router/entry",
   "scripts": {
-    "dev": "BROWSER=none EXPO_NO_DEVTOOLS=1 node node_modules/.bin/expo start --web --port 8081 --clear",
-    "start": "BROWSER=none EXPO_NO_DEVTOOLS=1 node node_modules/.bin/expo start --web --port 8081 --clear",
-    "web": "BROWSER=none EXPO_NO_DEVTOOLS=1 node node_modules/.bin/expo start --web --port 8081",
+    "dev": "BROWSER=none EXPO_NO_DEVTOOLS=1 node node_modules/.bin/expo start --web --port 5000 --clear",
+    "start": "BROWSER=none EXPO_NO_DEVTOOLS=1 node node_modules/.bin/expo start --web --port 5000 --clear",
+    "web": "BROWSER=none EXPO_NO_DEVTOOLS=1 node node_modules/.bin/expo start --web --port 5000",
     "web:bg": "bash scripts/start-web.sh",
     "web:stop": "bash scripts/stop-web.sh"
   },

@@ -2,7 +2,7 @@
 # Stop the StatWise Expo web dev server started by scripts/start-web.sh.
 set -u
 
-PORT="${PORT:-8081}"
+PORT="${PORT:-5000}"
 PID_FILE="/tmp/statwise-web.pid"
 
 if [ -f "$PID_FILE" ]; then

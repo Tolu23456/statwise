@@ -1,4 +1,4 @@
-// File: /home/t85491005/.local/share/opencode/worktree/99d07a/statwise/website/src/app/privacy/page.tsx
+// File: /home/t85491005/statwise/website/src/app/privacy/page.tsx
 import * as entry from '../../../../src/app/privacy/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -18,4 +18,4 @@ npm run web:stop
 bash scripts/stop-web.sh
 ```
 
-The app will be available at http://localhost:8081. Logs go to `/tmp/statwise-web.log`.
+The app will be available at http://localhost:5000. Logs go to `/tmp/statwise-web.log`.

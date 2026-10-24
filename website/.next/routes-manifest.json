@@ -2,8 +2,16 @@
   "version": 3,
   "pages404": true,
   "caseSensitive": false,
-  "basePath": "",
+  "basePath": "/statwise",
   "redirects": [
+    {
+      "source": "/statwise",
+      "destination": "/statwise/",
+      "basePath": false,
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^/statwise$"
+    },
     {
       "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
       "destination": "/:file",
@@ -27,7 +35,13 @@
   ],
   "headers": [],
   "rewrites": {
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/statwise//_next/:path+",
+        "destination": "/statwise/_next/:path+",
+        "regex": "^/statwise//_next(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))(?:/)?$"
+      }
+    ],
     "afterFiles": [],
     "fallback": []
   },

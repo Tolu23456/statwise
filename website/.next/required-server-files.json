@@ -13,7 +13,7 @@
     "typedRoutes": false,
     "distDir": ".next",
     "cleanDistDir": true,
-    "assetPrefix": "",
+    "assetPrefix": "/statwise/",
     "cacheMaxMemorySize": 52428800,
     "configOrigin": "next.config.js",
     "useFileSystemPublicRoutes": true,
@@ -47,7 +47,7 @@
         256,
         384
       ],
-      "path": "/_next/image/",
+      "path": "/statwise/_next/image/",
       "loader": "default",
       "loaderFile": "",
       "domains": [],
@@ -71,9 +71,9 @@
       "pagesBufferLength": 5
     },
     "amp": {
-      "canonicalBase": ""
+      "canonicalBase": "/statwise"
     },
-    "basePath": "",
+    "basePath": "/statwise",
     "sassOptions": {},
     "trailingSlash": true,
     "i18n": null,
@@ -100,7 +100,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/home/t85491005/.local/share/opencode/worktree/99d07a/statwise/website",
+    "outputFileTracingRoot": "/home/t85491005/statwise/website",
     "experimental": {
       "useSkewCookie": false,
       "cacheLife": {
@@ -289,10 +289,10 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
     "turbopack": {
-      "root": "/home/t85491005/.local/share/opencode/worktree/99d07a/statwise/website"
+      "root": "/home/t85491005/statwise/website"
     }
   },
-  "appDir": "/home/t85491005/.local/share/opencode/worktree/99d07a/statwise/website",
+  "appDir": "/home/t85491005/statwise/website",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
