@@ -17,8 +17,8 @@ type Props = {
 };
 
 export default function LiveMatchStats({ stats }: Props) {
-  const { theme } = useTheme();
-  const C = Colors[theme];
+  const { scheme } = useTheme();
+  const C = Colors[scheme];
   
   if (!stats) return null;
   

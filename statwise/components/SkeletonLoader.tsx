@@ -4,8 +4,8 @@ import { Colors } from '@/constants/colors';
 import { useTheme } from '@/context/ThemeContext';
 
 export function MatchCardSkeleton() {
-  const { theme } = useTheme();
-  const C = Colors[theme];
+  const { scheme } = useTheme();
+  const C = Colors[scheme];
   const pulseAnim = useRef(new Animated.Value(0.3)).current;
 
   useEffect(() => {

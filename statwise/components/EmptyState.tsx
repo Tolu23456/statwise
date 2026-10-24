@@ -13,8 +13,8 @@ type Props = {
 };
 
 export default function EmptyState({ icon = 'football-outline', title, message, actionLabel, onAction }: Props) {
-  const { theme } = useTheme();
-  const C = Colors[theme];
+  const { scheme } = useTheme();
+  const C = Colors[scheme];
   
   return (
     <View style={styles.container}>
