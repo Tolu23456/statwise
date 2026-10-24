@@ -1,0 +1,31 @@
+name: Retrain Model Weekly
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'  # Every Monday at 3 AM UTC
+  workflow_dispatch:
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install -r ai/requirements.txt
+      - name: Retrain model
+        run: |
+          cd ai && python retrain.py
+        env:
+          HOLDOUT_DAYS: 180
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ai/models/ ai/data/model_info.json || true
+          git diff --staged --quiet || git commit -m "Auto-retrain: $(date -u +%Y-%m-%d)" && git push
