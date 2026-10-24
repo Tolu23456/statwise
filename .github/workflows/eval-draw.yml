@@ -1,0 +1,71 @@
+name: Draw Blind-Spot Analysis
+
+# User report: "it never picks Draw, and draws are 17% of results".
+#
+# Runs ai/experimental/eval_draw_picks.py on the out-of-time holdout with the
+# production protocol and answers two questions:
+#   1. is the draw class miscalibrated (model says X%, happens Y%)?
+#   2. would promoting draws into the displayed pick improve hit rate?
+#
+# Training runs here rather than on the dev box — the full feature build needs
+# more RAM than that machine has.
+
+on:
+  workflow_dispatch:
+    inputs:
+      holdout_days:
+        description: "Holdout window in days"
+        required: false
+        default: "90"
+      model_mode:
+        description: "MODEL_MODE: single | joint | both"
+        required: false
+        default: "single"
+
+permissions:
+  contents: read
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Analyse draw calibration and pick policy
+        id: eval
+        run: |
+          set -o pipefail
+          HOLDOUT_DAYS=${{ github.event.inputs.holdout_days || '90' }} \
+          MODEL_MODE=${{ github.event.inputs.model_mode || 'single' }} \
+          python ai/experimental/eval_draw_picks.py 2>&1 | tee draw.log
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo "## Draw blind-spot analysis"
+            echo ""
+            echo '```'
+            grep -E "eval rows=|outcome mix|calibration |when draw is|draw prob:|delta=|argmax accuracy|best promoted|model draw prob" draw.log \
+              || tail -40 draw.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: draw-analysis-log
+          path: draw.log
+          if-no-files-found: ignore
