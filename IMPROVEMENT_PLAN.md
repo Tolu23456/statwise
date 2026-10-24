@@ -19,15 +19,15 @@
 - [x] **Add xG features** - Integrate expected goals from available data sources
 - [x] **Add shot metrics** - Shots on target, total shots, possession %
 - [x] **Add rest days** - Calculate days since last match for home/away teams
-- [ ] **Add travel/fatigue proxies** - Distance between venues if available, or use league context
-- [ ] **Add form differentials** - Home form vs away form, goal difference trends
-- [ ] **Test feature additions** - Retrain and verify on holdout don't degrade performance
-- [ ] **Commit changes**
+- [x] **Add travel/fatigue proxies** - Distance between venues if available, or use league context
+- [x] **Add form differentials** - Home form vs away form, goal difference trends
+- [x] **Test feature additions** - Retrain and verify on holdout don't degrade performance
+- [x] **Commit changes**
 
 ### Step 1.2: Weather & Match Context
 - [x] **Create weather fetcher** - Add `ai/data/weather_fetcher.py` using Open-Meteo API (free)
 - [x] **Integrate with prediction pipeline** - Add weather features to `features.py`
-- [ ] **Add venue data** - City coordinates for stadiums where possible
+- [x] **Add venue data** - City coordinates for stadiums where possible
 - [ ] **Cache weather data** - Avoid repeated API calls for same matches
 - [ ] **Test weather integration** - Verify features are added correctly
 - [ ] **Commit changes**

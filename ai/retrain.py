@@ -69,8 +69,10 @@ def _load_clean_data() -> "pd.DataFrame":
     if "date" in df.columns:
         df["date"] = pd.to_datetime(df["date"], errors="coerce")
         df = df.sort_values("date").reset_index(drop=True)
-    # Weather enrichment sidecar (ai/enrich_weather_history.py -> data/weather_by_match.csv)
-    wx_path = os.path.join(BASE_DIR, "data", "weather_by_match.csv")
+    # Weather enrichment sidecar (ai/enrich_weather_history.py -> data/weather_by_match.csv.gz)
+    wx_path = os.path.join(BASE_DIR, "data", "weather_by_match.csv.gz")
+    if not os.path.exists(wx_path):  # older uncompressed sidecar
+        wx_path = os.path.join(BASE_DIR, "data", "weather_by_match.csv")
     if os.path.exists(wx_path) and "date" in df.columns:
         try:
             wx = pd.read_csv(wx_path)

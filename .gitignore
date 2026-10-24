@@ -29,7 +29,7 @@ ai/data/baseball/raw/
 ai/data/volleyball/raw/
 
 # Generated multi-sport data artefacts
-ai/data/weather_by_match.csv
+# (weather_by_match.csv.gz is deliberately TRACKED: CI retrain joins it)
 .github/scripts/package-lock.json
 
 # Runtime state written on every run (noise in diffs)

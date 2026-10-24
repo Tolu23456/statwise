@@ -5,13 +5,15 @@ Resolves each home team to a city (seed map + geocoding, cached once per team),
 fetches Open-Meteo archive daily weather per city (one call per city for the
 whole 2000->today range, cached), and writes a sidecar lookup:
 
-  ai/data/weather_by_match.csv   date, home_team, temp_c, precip_mm, wind_kmh, weather_code
+  ai/data/weather_by_match.csv.gz   date, home_team, temp_c, precip_mm, wind_kmh, weather_code
 
 retrain.py::_load_clean_data() left-joins this file at training time, so the
 cleaner can regenerate the year CSVs freely — weather survives.
 
 Incremental: only (team, date) rows missing from the sidecar are computed.
 Run after every pipeline run (run_pipeline.sh calls it) and for new matches.
+Heavy lifting (889 cities of archive fetches) belongs in GitHub Actions —
+see .github/workflows/weather-backfill.yml.
 
 Usage:
   python enrich_weather_history.py            # backfill missing rows
@@ -30,13 +32,19 @@ sys.path.insert(0, BASE)
 from model.team_venues import resolve_many, fetch_archive_weather_many  # noqa: E402
 
 CLEAN_DIR = os.path.join(BASE, "data", "clean")
-SIDECAR = os.path.join(BASE, "data", "weather_by_match.csv")
+SIDECAR = os.path.join(BASE, "data", "weather_by_match.csv.gz")
+SIDECAR_LEGACY = os.path.join(BASE, "data", "weather_by_match.csv")
+
+
+def _sidecar_path() -> str:
+    return SIDECAR if os.path.exists(SIDECAR) else SIDECAR_LEGACY
 
 
 def _load_existing() -> pd.DataFrame:
-    if os.path.exists(SIDECAR):
+    path = _sidecar_path()
+    if os.path.exists(path):
         try:
-            return pd.read_csv(SIDECAR, dtype={"date": str, "home_team": str})
+            return pd.read_csv(path, dtype={"date": str, "home_team": str})
         except Exception:
             pass
     return pd.DataFrame(columns=["date", "home_team", "temp_c", "precip_mm", "wind_kmh", "weather_code"])
@@ -96,7 +104,7 @@ def main() -> None:
             cities[(rlat, rlon)] = (rlat, rlon)
     print(f"Fetching archive weather for {len(cities)} unique cities...")
     wx: dict[tuple, dict[str, dict]] = {}
-    out = fetch_archive_weather_many(list(cities.values()), batch=3, pause=20.0)
+    out = fetch_archive_weather_many(list(cities.values()), batch=30, pause=3.0)
     for k in cities:
         days = out.get(f"{k[0]:.1f}_{k[1]:.1f}")
         if days:
@@ -111,7 +119,9 @@ def main() -> None:
         if not v or v.get("lat") is None:
             miss_city += 1
             continue
-        k = (round(v["lat"], 1), round(v["lon"], 1))
+        # must use the same 0.5° grid the weather was fetched on — rounding to
+        # 0.1° here silently missed almost every lookup
+        k = (round(v["lat"] * 2) / 2, round(v["lon"] * 2) / 2)
         day = wx.get(k, {}).get(r["date"])
         if not day:
             miss_day += 1
@@ -125,7 +135,11 @@ def main() -> None:
 
     out = pd.concat([ex, pd.DataFrame(new_rows)], ignore_index=True) if new_rows else ex
     out = out.drop_duplicates(subset=["date", "home_team"], keep="last")
-    out.to_csv(SIDECAR, index=False)
+    out.to_csv(SIDECAR, index=False, compression="gzip")
+    # a legacy uncompressed sidecar would shadow nothing (we always write .gz),
+    # but remove it so the two can never disagree
+    if os.path.exists(SIDECAR_LEGACY):
+        os.remove(SIDECAR_LEGACY)
     print(f"\nWrote {SIDECAR}")
     print(f"  filled : {filled:,}")
     print(f"  no city: {miss_city:,}")
