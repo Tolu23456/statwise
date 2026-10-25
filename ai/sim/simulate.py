@@ -303,6 +303,12 @@ def simulate_fixtures(models: list[StrengthModel], h: np.ndarray, a: np.ndarray,
     stats = SuffStats(worlds=len(models))
     pm = posterior_markets(models, h, a, lg)
     n = len(h)
+    # One batch expands to batch_fixtures * n_sims draws carried as ~10
+    # parallel int arrays (~8 B each) — cap the expansion at ~4M elements
+    # so `--sims 50000` (hundreds of millions of outcomes across shards)
+    # still runs in a few hundred MB instead of tens of GB.
+    if n_sims > 0:
+        batch_fixtures = max(1, min(batch_fixtures, 4_000_000 // n_sims))
     for start in range(0, n, batch_fixtures):
         stop = min(start + batch_fixtures, n)
         sl = slice(start, stop)

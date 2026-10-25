@@ -177,6 +177,10 @@ def main() -> int:
     check("baselines present (uniform, league prior, market)",
           all(k in res.get("baselines", {}) for k in ("uniform", "league_prior", "market")))
     check("verdicts present", "beats" in res and "publishable" in res)
+    check("gate reports aggregate goal verdict too",
+          "league_prior_goal_mean" in res["beats"]
+          and "league_prior_goal_wins" in res["beats"],
+          str(res["beats"].get("league_prior_goal_wins")))
 
     teacher = synthesize_on_history(pop, hold)
     check("distillation labels shaped (n,3)", teacher.shape == (len(hold), 3),

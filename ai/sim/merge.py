@@ -232,11 +232,10 @@ def main() -> int:
         print("gate skipped (--no-gate)")
         return 0
     if eval_res.get("publishable"):
-        beats = eval_res.get("beats", {})
-        detail = ("1X2 + goal markets" if beats.get("league_prior_1x2")
-                  else "BTTS/O25/O35 goal markets")
-        print(f"GATE PASS — ensemble beats the league prior on {detail} "
-              "(real out-of-time holdout)")
+        b = eval_res.get("beats", {})
+        print(f"GATE PASS — beats the league prior on 1X2 ({b.get('home_1x2', '?')}), "
+              f"goal-market mean, and {b.get('league_prior_goal_wins', '?')} goal "
+              "markets (real out-of-time holdout)")
         return 0
     print("GATE FAIL — the combined ensemble does not beat the league prior "
           "on the real holdout; nothing was published as a winner")
