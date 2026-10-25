@@ -23,8 +23,10 @@ Run:  .venv/bin/python ai/experimental/test_sim.py
 """
 from __future__ import annotations
 
+import json
 import os
 import sys
+import tempfile
 
 import numpy as np
 import pandas as pd
@@ -271,6 +273,67 @@ def main() -> int:
           bool(np.allclose(pm_all["home"] + pm_all["draw"] + pm_all["away"],
                            1.0, atol=1e-6)))
     check("uncertainty reported", "home_std" in pm_all and "btts_std" in pm_all)
+
+    # ── 9. distillation: soft labels from the stored recipe (step 1.5) ────
+    from sim.distill import load_teacher, sample_soft_labels, teacher_may_fit
+
+    recipe = {
+        "schema": "statwise.sim.worlds.v1",
+        "meta": {"split_at": "2025-07-04", "worlds": 1},
+        "teams": model.teams, "leagues": model.leagues,
+        "models": [{
+            "shard": 0, "rank": 0, "mu": float(model.mu),
+            "home_adv": float(model.home_adv), "xi": float(model.xi),
+            "n_matches": model.n_matches,
+            "att": [round(float(x), 4) for x in model.att],
+            "def": [round(float(x), 4) for x in model.defn],
+            "league_offset": [round(float(x), 4) for x in model.league_offset],
+        }],
+    }
+    rpath = os.path.join(tempfile.gettempdir(), "sim-test-recipe.json")
+    with open(rpath, "w", encoding="utf-8") as fh:
+        json.dump(recipe, fh)
+
+    worlds, rmeta = load_teacher(rpath)
+    check("recipe loads into teacher worlds",
+          len(worlds) == 1 and rmeta.get("split_at") == "2025-07-04")
+    check("missing recipe returns no teacher",
+          load_teacher(rpath + ".does-not-exist") == (None, None))
+    check("teacher accepted when its split <= retrain split",
+          teacher_may_fit(rmeta, pd.Timestamp("2025-07-04"))[0])
+    ok_late, why_late = teacher_may_fit(rmeta, pd.Timestamp("2025-07-01"))
+    check("teacher rejected when it saw holdout outcomes", not ok_late, why_late)
+    check("recipe without split_at rejected",
+          not teacher_may_fit({}, pd.Timestamp("2025-07-04"))[0])
+
+    home = list(df["home_team"])
+    away = list(df["away_team"])
+    lg_names = list(df["league_slug"])
+    home_bad = list(home)
+    home_bad[0] = "Unknown FC Nowhere"
+    idx1, y1, g1 = sample_soft_labels(worlds, home, away, lg_names,
+                                      fraction=0.5, seed=5)
+    idx2, y2, g2 = sample_soft_labels(worlds, home, away, lg_names,
+                                      fraction=0.5, seed=5)
+    check("samples ~fraction of candidate rows",
+          abs(len(idx1) - 0.5 * len(df)) <= 2, f"{len(idx1)} of {len(df)}")
+    check("labels are valid classes",
+          set(np.unique(y1).tolist()) <= {0, 1, 2}
+          and set(np.unique(g1).tolist()) <= {0, 1})
+    check("sampling deterministic per seed",
+          np.array_equal(idx1, idx2) and np.array_equal(y1, y2)
+          and np.array_equal(g1, g2))
+    check("no row duplicated twice", len(np.unique(idx1)) == len(idx1))
+    idx3, _, _ = sample_soft_labels(worlds, home_bad, away, lg_names,
+                                    fraction=1.0, seed=1)
+    check("unknown-team rows never selected", 0 not in set(idx3.tolist()),
+          f"{len(idx3)} rows selected")
+    check("fraction 0 samples nothing",
+          len(sample_soft_labels(worlds, home, away, lg_names,
+                                 fraction=0.0)[0]) == 0)
+    check("no models -> no labels",
+          len(sample_soft_labels([], home, away, lg_names,
+                                 fraction=0.5)[0]) == 0)
 
     print()
     if FAILURES:

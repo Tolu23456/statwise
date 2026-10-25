@@ -129,6 +129,68 @@ def _load_clean_data() -> "pd.DataFrame":
     return df.reset_index(drop=True)
 
 
+def _distill_soft_labels(X, y, g, w, home, away, leagues, split_at, tag):
+    """Step 1.5 distillation: duplicate a fraction of rows with lab labels.
+
+    Appends teacher-sampled duplicates of REAL feature rows (see
+    ai/sim/distill.py).  Returns the possibly-extended (X, y, g, w) plus a
+    JSON-serialisable info dict for the calibration record, or the inputs
+    unchanged with info=None whenever distillation must not happen:
+
+      * SYNTH_LABELS not set                       -> off (default);
+      * no recipe at ai/data/sim/worlds.json       -> the lab hasn't published;
+      * teacher split AFTER our holdout split      -> it saw holdout outcomes;
+      * meta without aligned home/away/leagues     -> can't price the rows.
+
+    Nothing here ever touches the holdout arrays — callers pass train-side
+    slices — and the gate below still decides what ships.
+    """
+    import numpy as np
+
+    flag = os.environ.get("SYNTH_LABELS", "").strip().lower()
+    if flag not in ("1", "true", "yes"):
+        return X, y, g, w, None
+    try:
+        from sim.distill import load_teacher, sample_soft_labels, teacher_may_fit
+    except Exception as e:
+        logger.warning(f"[SYNTH] distill module unavailable: {e}")
+        return X, y, g, w, None
+    recipe_path = (os.environ.get("SYNTH_RECIPE")
+                   or os.path.join(BASE_DIR, "data", "sim", "worlds.json"))
+    worlds, rmeta = load_teacher(recipe_path)
+    if not worlds:
+        logger.info(f"[SYNTH] no teacher recipe at {recipe_path} — "
+                    "training without soft labels")
+        return X, y, g, w, None
+    ok, why = teacher_may_fit(rmeta or {}, split_at)
+    if not ok:
+        logger.warning(f"[SYNTH] distillation skipped: {why}")
+        return X, y, g, w, None
+    if home is None or away is None or leagues is None or len(home) != len(y):
+        logger.warning("[SYNTH] meta missing aligned home/away/leagues — "
+                        "cannot sample teacher labels, training without them")
+        return X, y, g, w, None
+
+    frac = float(os.environ.get("SYNTH_FRACTION", "0.5") or 0.5)
+    seed = int(os.environ.get("SYNTH_SEED", "0") or 0)
+    idx, y_s, g_s = sample_soft_labels(worlds, home, away, leagues,
+                                       fraction=frac, seed=seed)
+    if not len(idx):
+        return X, y, g, w, None
+    X2 = np.concatenate([X, X[idx]])
+    y2 = np.concatenate([np.asarray(y), y_s])
+    g2 = np.concatenate([np.asarray(g), g_s])
+    w2 = np.concatenate([w, w[idx]]) if w is not None else None
+    info = {"enabled": True, "rows_added": int(len(idx)),
+            "rows_before": int(len(X)), "fraction": frac, "seed": seed,
+            "teacher_worlds": len(worlds),
+            "teacher_split": (rmeta or {}).get("split_at")}
+    logger.info(f"[SYNTH] {tag}: +{len(idx):,} teacher-labeled duplicates "
+                f"({len(X):,} -> {len(X2):,} rows, {len(worlds)} worlds, "
+                f"teacher split {info['teacher_split']})")
+    return X2, y2, g2, w2, info
+
+
 def run(force: bool = False) -> bool:
     """
     Full retrain pipeline. Returns True on success.
@@ -265,6 +327,19 @@ def run(force: bool = False) -> bool:
             eff = (w_tr.sum() ** 2) / float((w_tr.astype(np.float64) ** 2).sum())
             logger.info(f"[OOT] recency weights: half-life {half_life:.0f}d, "
                         f"min={w_tr.min():.3f}, effective_n={eff:,.0f}")
+
+        # Step 1.5 distillation: append teacher-labeled duplicates of TRAIN
+        # rows only (holdout arrays below never see them).  Off unless
+        # SYNTH_LABELS=1; skipped automatically when the lab's recipe is
+        # missing or newer than this split (would leak holdout outcomes).
+        _h = meta.get("home"); _a = meta.get("away"); _l = meta.get("leagues")
+        if _h is not None and _a is not None and _l is not None and len(_h) == len(m_tr):
+            _h, _a, _l = _h[m_tr], _a[m_tr], _l[m_tr]
+        else:
+            _h = _a = _l = None
+        Xt, yt, gt, w_tr, synth_a = _distill_soft_labels(
+            Xt, yt, gt, w_tr, _h, _a, _l, split_at, "train")
+
         odds_h = meta.get("odds")
         odds_h = odds_h[m_ho] if odds_h is not None else np.zeros((len(Xh), 3))
         # Closing consensus (plan 1.4 "prefer closing odds when available"):
@@ -389,6 +464,8 @@ def run(force: bool = False) -> bool:
             "brier": round(float(((p_ev - np.eye(3)[y_ev]) ** 2).mean()), 5),
             "goals_brier": round(best["goals_brier"], 5),
             "ece": round(ece, 4),
+            # step-1.5 distillation record: which teacher, how many duplicates
+            "synth_labels": synth_a or {"enabled": False},
         }
 
         # alpha: log-loss-optimal blend of the deployed model vs the CLOSING
@@ -458,8 +535,12 @@ def run(force: bool = False) -> bool:
             gc.collect()
             t2 = time.time()
             try:
-                predictor.fit_stacks(X_all, y_all, g_all, calibrate=False, mode=mode,
-                                     sample_weight=_recency_weights(np.ones(len(d_all), dtype=bool)))
+                w_full = _recency_weights(np.ones(len(d_all), dtype=bool))
+                X_all_s, y_all_s, g_all_s, w_full, _ = _distill_soft_labels(
+                    X_all, y_all, g_all, w_full, meta.get("home"),
+                    meta.get("away"), meta.get("leagues"), split_at, "stage_b")
+                predictor.fit_stacks(X_all_s, y_all_s, g_all_s, calibrate=False,
+                                     mode=mode, sample_weight=w_full)
             except Exception as e:
                 logger.error(f"Stage B training failed: {e}")
                 return False
@@ -477,7 +558,11 @@ def run(force: bool = False) -> bool:
         if fallback_mode in ("both", "auto"):
             fallback_mode = "single"
         try:
-            predictor.fit_stacks(X_all, y_all, g_all, calibrate=True, mode=fallback_mode)
+            X_all_s, y_all_s, g_all_s, _, _ = _distill_soft_labels(
+                X_all, y_all, g_all, None, meta.get("home"), meta.get("away"),
+                meta.get("leagues"), split_at, "fallback")
+            predictor.fit_stacks(X_all_s, y_all_s, g_all_s, calibrate=True,
+                                 mode=fallback_mode)
         except Exception as e:
             logger.error(f"Training failed: {e}")
             return False

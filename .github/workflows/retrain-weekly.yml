@@ -9,6 +9,13 @@ on:
   schedule:
     - cron: '0 3 * * 1'  # Every Monday at 3 AM UTC
   workflow_dispatch:
+    inputs:
+      synth_labels:
+        description: 'Distill Monte Carlo lab soft labels into training (step 1.5)'
+        default: '0'
+      synth_fraction:
+        description: 'Fraction of train rows receiving a teacher-labeled duplicate'
+        default: '0.5'
 
 permissions:
   contents: write
@@ -50,6 +57,13 @@ jobs:
           RECENCY_HALF_LIFE_DAYS: '1460'
           STAGE_B: '0'
           MODEL_MODE: 'both'
+          # Step 1.5 distillation: default OFF for the scheduled run; the
+          # dispatch input turns it on for the apples-to-apples test.  The
+          # teacher recipe (ai/data/sim/worlds.json) and its split-vs-holdout
+          # guard live in ai/sim/distill.py — a stale/missing recipe skips
+          # silently rather than training on smuggled holdout outcomes.
+          SYNTH_LABELS: ${{ inputs.synth_labels || '0' }}
+          SYNTH_FRACTION: ${{ inputs.synth_fraction || '0.5' }}
           OMP_NUM_THREADS: '4'
           MKL_NUM_THREADS: '4'
           OPENBLAS_NUM_THREADS: '4'

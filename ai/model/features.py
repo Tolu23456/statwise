@@ -295,10 +295,14 @@ class FeaturePipeline:
         y_goals = ((all_gh[all_idx] + all_ga[all_idx]) > 2.5).astype(np.int32)
         # side-channel aligned to all_idx — used by retrain.py for honest
         # holdout evaluation (market baseline + per-league alpha blending)
+        # and for the step-1.5 distillation labels (teacher needs to know
+        # which fixture each feature row describes).
         self.last_meta = {
             "odds":    all_odds[all_idx],
             "odds_closing": all_odds_closing[all_idx],
             "leagues": league_series.values[all_idx],
+            "home":    df['home_team'].values[all_idx],
+            "away":    df['away_team'].values[all_idx],
         }
         return X, y_1x2, y_goals, df['date'].values[all_idx]
 

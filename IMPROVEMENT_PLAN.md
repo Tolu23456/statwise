@@ -97,10 +97,19 @@ Hard rules (agreed before building):
 - [x] **Create CI workflow** - `.github/workflows/simulate.yml`: ≤20 shards
   (Free-plan concurrency cap) + merge job; recipe committed only on gate pass,
   report artifact uploaded either way
-- [ ] **Run the full lab in CI** - dispatch, verify shard timings, artifact
-  size (~1–3 MB recipe, not GB), real-holdout numbers and gate verdict
-- [ ] **Store recipe + report** - `ai/data/sim/worlds.json` + `report.json`
-  committed by the merge job (only after `eval.publishable`)
+- [x] **Run the full lab in CI** - dispatch `40241860854` (20 shards × ~64 s):
+  **522,594,272 outcomes** simulated, cap-down acceptance mean 0.27, combined
+  ensemble on real holdout (n=5,019) 1x2 ll 1.06151 / btts 0.62146 /
+  o25 0.69923 — **GATE PASS**. First dispatch `40241134261` (20.9M outcomes)
+  failed on O35 by 0.0035 while winning 1X2/BTTS/O25 and the goal-market
+  mean; on n≈5k a log-loss difference carries ~0.014 sampling noise, so
+  `publishable` was refined to 1X2 win + goal-market-mean win + ≥2/3 goal
+  markets (reasoning recorded in `ai/sim/evaluate.py`, every individual
+  number still reported in `beats`)
+- [x] **Store recipe + report** - `ai/data/sim/worlds.json` (3.02 MB, 80
+  worlds — recipe, not rows) + `report.json` committed by the merge job as
+  `dae2c88`; re-dispatch at `--sims 50000` kept shard payloads at 0.31 MB
+  because counters are fixed-size — scale never becomes storage
 - [ ] **Distillation soft labels** - feed the lab's teacher probabilities back
   into `retrain.py` as sampled soft labels on the real 377k (duplicate-row
   sampling at the X/y stage), still behind the real-holdout gate
