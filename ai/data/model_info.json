@@ -1,17 +1,17 @@
 {
-  "version": 3,
-  "trained_at": "2026-10-25T21:09:46.482441Z",
-  "git_sha": "4bad71131886",
+  "version": 4,
+  "trained_at": "2026-10-25T23:35:41.751494Z",
+  "git_sha": "3e5c29a62566",
   "total_matches": 331949,
-  "duration_seconds": 217.6,
+  "duration_seconds": 290.8,
   "previous": {
-    "version": 2,
-    "trained_at": "2026-10-25T08:29:55.097670Z",
-    "git_sha": "4680c862ed31"
+    "version": 3,
+    "trained_at": "2026-10-25T21:09:46.482441Z",
+    "git_sha": "4bad71131886"
   },
   "baseline_comparison": {
-    "baseline_version": 2,
-    "baseline_eval_log_loss": 1.01159,
+    "baseline_version": 3,
+    "baseline_eval_log_loss": 1.01129,
     "new_eval_log_loss": 1.01129,
     "tolerance": 0.0005,
     "forced": false,
@@ -19,8 +19,8 @@
     "split_at_shift_days": 0,
     "split_tolerance_days": 7,
     "comparable": true,
-    "delta_log_loss": -0.0003,
-    "delta_accuracy": -0.0022,
+    "delta_log_loss": 0.0,
+    "delta_accuracy": 0.0,
     "decision": "accepted"
   },
   "calibration": {
@@ -39,7 +39,12 @@
     "accuracy": 0.4827,
     "brier": 0.20191,
     "goals_brier": 0.24,
+    "btts_brier": 0.24461,
+    "o35_brier": 0.22545,
     "ece": 0.0275,
+    "synth_labels": {
+      "enabled": false
+    },
     "alpha_default": 0.35,
     "alpha_fitted_raw": 0.35000000000000003,
     "alpha_prior": 0.35,
@@ -77,21 +82,16 @@
       "holdout_days": 180,
       "split_at": "2026-04-21",
       "git_sha": "4bad71131886"
+    },
+    {
+      "version": 4,
+      "trained_at": "2026-10-25T23:35:41.751494Z",
+      "mode": "single",
+      "eval_log_loss": 1.01129,
+      "accuracy": 0.4827,
+      "holdout_days": 180,
+      "split_at": "2026-04-21",
+      "git_sha": "3e5c29a62566"
     }
-  ],
-  "last_rejected": {
-    "baseline_version": 3,
-    "baseline_eval_log_loss": 1.01129,
-    "new_eval_log_loss": 1.01903,
-    "tolerance": 0.0005,
-    "forced": false,
-    "baseline_split_at": "2026-04-21",
-    "split_at_shift_days": 0,
-    "split_tolerance_days": 7,
-    "comparable": true,
-    "delta_log_loss": 0.00774,
-    "delta_accuracy": -0.0036,
-    "decision": "rejected",
-    "rejected_at": "2026-10-25T22:59:33.569366Z"
-  }
+  ]
 }
