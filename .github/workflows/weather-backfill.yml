@@ -22,7 +22,10 @@ permissions:
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # A full pass is ~889 cities of 2000->today archive fetches; 429 back-offs
+    # (120s each) make 60 minutes too tight. The fetch cache below makes every
+    # run resume from the last one, so a timeout costs nothing but wall time.
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
 
@@ -39,18 +42,40 @@ jobs:
       - name: Unit tests (weather integration)
         run: python ai/experimental/test_weather.py
 
+      # ai/data/weather_cache/ is gitignored (hundreds of MB), so without this
+      # every run refetched all 889 cities and the runner died holding the only
+      # copy. Restore the newest previous save, then always save this attempt.
+      - name: Restore fetch cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ai/data/weather_cache
+          key: weather-cache-${{ github.run_id }}
+          restore-keys: |
+            weather-cache-
+
       - name: Backfill weather for all matches
         run: |
           set -o pipefail
-          python ai/enrich_weather_history.py 2>&1 | tee backfill.log
+          # -u: without it every pre-fetch print sits in a block-buffered pipe
+          # and is lost when the runner is cancelled — the last run logged
+          # nothing at all for 60 minutes.
+          python -u ai/enrich_weather_history.py 2>&1 | tee backfill.log
+
+      - name: Save fetch cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ai/data/weather_cache
+          key: weather-cache-${{ github.run_id }}
 
       - name: Coverage report
         if: always()
         run: |
-          python ai/enrich_weather_history.py --stats 2>&1 | tee -a backfill.log \
+          python -u ai/enrich_weather_history.py --stats 2>&1 | tee -a backfill.log \
             | sed 's/^/```\n/; $a```' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit and push if changed
+        if: always()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
