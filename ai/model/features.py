@@ -293,6 +293,12 @@ class FeaturePipeline:
 
         y_1x2 = np.where(all_gh[all_idx] > all_ga[all_idx], 0, np.where(all_gh[all_idx] == all_ga[all_idx], 1, 2)).astype(np.int32)
         y_goals = ((all_gh[all_idx] + all_ga[all_idx]) > 2.5).astype(np.int32)
+        # Plan 1.6: auxiliary goal-market labels for the BTTS and over/under
+        # 3.5 heads — same rows, same all_idx alignment as y_1x2/y_goals, and
+        # carried in last_meta so retrain.py can slice them with the same
+        # out-of-time mask it uses for everything else.
+        y_btts = ((all_gh[all_idx] > 0) & (all_ga[all_idx] > 0)).astype(np.int32)
+        y_o35 = ((all_gh[all_idx] + all_ga[all_idx]) > 3.5).astype(np.int32)
         # side-channel aligned to all_idx — used by retrain.py for honest
         # holdout evaluation (market baseline + per-league alpha blending)
         # and for the step-1.5 distillation labels (teacher needs to know
@@ -303,6 +309,9 @@ class FeaturePipeline:
             "leagues": league_series.values[all_idx],
             "home":    df['home_team'].values[all_idx],
             "away":    df['away_team'].values[all_idx],
+            # plan 1.6 goal-market labels (aligned like everything above)
+            "y_btts":  y_btts,
+            "y_o35":   y_o35,
         }
         return X, y_1x2, y_goals, df['date'].values[all_idx]
 

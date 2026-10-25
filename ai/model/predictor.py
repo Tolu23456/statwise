@@ -339,6 +339,10 @@ class PredictionEngine:
                 stats['prob_draw'] = pred.get('prob_draw')
                 stats['prob_away'] = pred.get('prob_away')
                 stats['prob_over25'] = pred.get('prob_over25')
+                # plan 1.6 goal markets — null on older pickles (no aux
+                # heads), which the match-detail modal treats as "no row"
+                stats['prob_btts'] = pred.get('prob_btts')
+                stats['prob_over35'] = pred.get('prob_over35')
                 # Which upstream feed produced this fixture. Derived from the
                 # canonical match_id namespace so it cannot drift from the row.
                 mid = str(fix.get('match_id') or '')

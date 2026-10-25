@@ -110,17 +110,36 @@ Hard rules (agreed before building):
   worlds — recipe, not rows) + `report.json` committed by the merge job as
   `dae2c88`; re-dispatch at `--sims 50000` kept shard payloads at 0.31 MB
   because counters are fixed-size — scale never becomes storage
-- [ ] **Distillation soft labels** - feed the lab's teacher probabilities back
+- [x] **Distillation soft labels** - feed the lab's teacher probabilities back
   into `retrain.py` as sampled soft labels on the real 377k (duplicate-row
-  sampling at the X/y stage), still behind the real-holdout gate
-- [ ] **Commit changes**
+  sampling at the X/y stage), still behind the real-holdout gate. Built
+  (`ai/sim/distill.py` + `SYNTH_LABELS`/`SYNTH_FRACTION` inputs) and
+  dispatched as run `40242465027`: +163,715 teacher-labeled duplicates
+  (327,430 → 491,145 rows, 80 worlds). The gate **REJECTED** it honestly —
+  eval LL 1.01129 → 1.01903 (+0.00774 > 0.0005 tolerance) — so production
+  keeps model v3 and the recipe-based distillation code stays available for
+  a later recipe (gate doing its job, exactly as designed)
+- [x] **Commit changes** (1.5: `21bd04e` lab + `3d9c3d8` gate fix +
+  `dae2c88` CI recipe + `a2e8e44` distillation)
 
 ### Step 1.6: Expand Prediction Markets (BTTS/OU)
-- [ ] **Design BTTS model** - Add both-teams-to-score prediction
-- [ ] **Design Over/Under models** - Add O/U 2.5 and 3.5
-- [ ] **Train separate heads** - Or extend joint model
-- [ ] **Add to API/output** - Expose in predictions
-- [ ] **Update UI** - Show additional markets in match detail
+- [x] **Design BTTS model** - auxiliary binary LightGBM head (`_btts_pipe`)
+  fitted alongside the outcome/goals heads in BOTH modes (independent binary
+  task; label `last_meta["y_btts"] = (H>0)&(A>0)`, row-aligned with y_1x2,
+  and extended by distillation with the teacher's label from the same
+  sampled scoreline)
+- [x] **Design Over/Under models** - O2.5 keeps the existing goals head;
+  O3.5 gets its own aux head (`_o35_pipe`, `last_meta["y_o35"] = total>3.5`);
+  holdout Briers (`btts_brier`/`o35_brier`) recorded in retrain metrics on
+  the same eval rows as `goals_brier`
+- [ ] **Train separate heads** - `fit_stacks(y_btts=…, y_o35=…)` fits them
+  (single AND joint); needs the CI retrain to produce a pickle that carries
+  them — dispatched after this commit
+- [ ] **Add to API/output** - Expose in predictions (`predict_match` returns
+  `prob_btts`/`prob_over35`, predictor passes them into stats; null on
+  pre-1.6 pickles)
+- [ ] **Update UI** - `PredictionDetailModal` renders Both-Teams-to-Score +
+  Over 3.5 rows next to Over 2.5, each only when a number exists
 - [ ] **Commit changes**
 
 **PHASE 1 CHECKPOINT**: All model improvements tested, metrics maintained or improved, no regressions

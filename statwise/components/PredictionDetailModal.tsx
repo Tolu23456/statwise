@@ -391,6 +391,26 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                     </View>
                   )}
 
+                  {/* Plan 1.6: rows render only when the aux head supplied a
+                      number — older model pickles have neither. */}
+                  {stats.prob_btts != null && (
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
+                      <Text style={{ color: C.textSecondary, fontSize: 12 }}>Both Teams to Score</Text>
+                      <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>
+                        {Math.round(stats.prob_btts)}%
+                      </Text>
+                    </View>
+                  )}
+
+                  {stats.prob_over35 != null && (
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
+                      <Text style={{ color: C.textSecondary, fontSize: 12 }}>Over 3.5 Goals</Text>
+                      <Text style={{ color: C.text, fontWeight: '700', fontSize: 12 }}>
+                        {Math.round(stats.prob_over35)}%
+                      </Text>
+                    </View>
+                  )}
+
                   {/* Only show market value / rating when the data exists. Both
                       used to render as "€0.0M" and "70.0 vs 70.0" defaults. */}
                   {((stats.home_value ?? 0) > 0 || (stats.away_value ?? 0) > 0) && (

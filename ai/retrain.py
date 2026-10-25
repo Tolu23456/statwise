@@ -129,7 +129,8 @@ def _load_clean_data() -> "pd.DataFrame":
     return df.reset_index(drop=True)
 
 
-def _distill_soft_labels(X, y, g, w, home, away, leagues, split_at, tag):
+def _distill_soft_labels(X, y, g, w, home, away, leagues, split_at, tag,
+                         aux: dict | None = None):
     """Step 1.5 distillation: duplicate a fraction of rows with lab labels.
 
     Appends teacher-sampled duplicates of REAL feature rows (see
@@ -144,6 +145,13 @@ def _distill_soft_labels(X, y, g, w, home, away, leagues, split_at, tag):
 
     Nothing here ever touches the holdout arrays — callers pass train-side
     slices — and the gate below still decides what ships.
+
+    `aux` (plan 1.6): optional dict of label arrays ALIGNED TO X (e.g.
+    {"y_btts": …, "y_o35": …}); its entries are extended IN PLACE with the
+    TEACHER's label for each duplicated row (same scoreline draw), keeping
+    the auxiliary heads row-aligned with X.  A misaligned or teacherless
+    entry becomes None (with a warning) instead of crashing — fit_stacks
+    then skips that head.
     """
     import numpy as np
 
@@ -173,14 +181,31 @@ def _distill_soft_labels(X, y, g, w, home, away, leagues, split_at, tag):
 
     frac = float(os.environ.get("SYNTH_FRACTION", "0.5") or 0.5)
     seed = int(os.environ.get("SYNTH_SEED", "0") or 0)
-    idx, y_s, g_s = sample_soft_labels(worlds, home, away, leagues,
-                                       fraction=frac, seed=seed)
+    idx, y_s, g_s, b_s, o_s = sample_soft_labels(worlds, home, away, leagues,
+                                                 fraction=frac, seed=seed)
     if not len(idx):
         return X, y, g, w, None
     X2 = np.concatenate([X, X[idx]])
     y2 = np.concatenate([np.asarray(y), y_s])
     g2 = np.concatenate([np.asarray(g), g_s])
     w2 = np.concatenate([w, w[idx]]) if w is not None else None
+    # plan 1.6: aux labels get the TEACHER's label from the SAME scoreline
+    # draw (not the source row's real label — the teacher's belief is the
+    # point of distillation, and all four labels stay jointly consistent).
+    if aux:
+        teacher = {"y_btts": b_s, "y_o35": o_s}
+        for k, arr in list(aux.items()):
+            if arr is None:
+                continue          # upstream already reported labels unavailable
+            if len(arr) != len(X):
+                logger.warning(f"[SYNTH] aux label {k} misaligned "
+                               f"({len(arr)} vs {len(X)}) — head dropped")
+                aux[k] = None
+            elif k not in teacher:
+                logger.warning(f"[SYNTH] no teacher label for aux {k} — head dropped")
+                aux[k] = None
+            else:
+                aux[k] = np.concatenate([np.asarray(arr), teacher[k]])
     info = {"enabled": True, "rows_added": int(len(idx)),
             "rows_before": int(len(X)), "fraction": frac, "seed": seed,
             "teacher_worlds": len(worlds),
@@ -305,6 +330,21 @@ def run(force: bool = False) -> bool:
         Xt, yt, gt = X_all[m_tr], y_all[m_tr], g_all[m_tr]
         Xh, yh, gh = X_all[m_ho], y_all[m_ho], g_all[m_ho]
 
+        # Plan 1.6: auxiliary-head labels (BTTS / over-under 3.5) — sliced
+        # with the SAME out-of-time mask.  The train copy may be extended by
+        # distillation below; the holdout copy never is (holdout rows never
+        # receive duplicates).
+        _bt = meta.get("y_btts"); _ot = meta.get("y_o35")
+        _aux_ok = (_bt is not None and len(_bt) == len(m_tr)
+                   and _ot is not None and len(_ot) == len(m_tr))
+        if not _aux_ok:
+            logger.warning("[1.6] y_btts/y_o35 missing or misaligned in "
+                           "last_meta — training without auxiliary heads")
+        aux_tr = {"y_btts": _bt[m_tr] if _aux_ok else None,
+                  "y_o35": _ot[m_tr] if _aux_ok else None}
+        bh = _bt[m_ho] if _aux_ok else None   # holdout BTTS labels
+        oh = _ot[m_ho] if _aux_ok else None   # holdout O3.5 labels
+
         # Time-decay weights: recent seasons resemble the matches we actually
         # predict.  Tuned on the OOT holdout (joint log loss): 4y half-life
         # 1.00999 < 6y 1.01154 < 2y 1.01194 < none 1.01275.  0 disables.
@@ -338,7 +378,7 @@ def run(force: bool = False) -> bool:
         else:
             _h = _a = _l = None
         Xt, yt, gt, w_tr, synth_a = _distill_soft_labels(
-            Xt, yt, gt, w_tr, _h, _a, _l, split_at, "train")
+            Xt, yt, gt, w_tr, _h, _a, _l, split_at, "train", aux=aux_tr)
 
         odds_h = meta.get("odds")
         odds_h = odds_h[m_ho] if odds_h is not None else np.zeros((len(Xh), 3))
@@ -379,7 +419,8 @@ def run(force: bool = False) -> bool:
             cand.feature_pipe = predictor.feature_pipe  # share the fitted state
             try:
                 cand.fit_stacks(Xt, yt, gt, calibrate=False, mode=mode,
-                                sample_weight=w_tr)
+                                sample_weight=w_tr,
+                                y_btts=aux_tr["y_btts"], y_o35=aux_tr["y_o35"])
                 raw_h = cand._outcome_pipe.predict_proba(Xh)
             except Exception as e:
                 logger.exception(f"[{mode}] training failed: {e}")
@@ -397,6 +438,16 @@ def run(force: bool = False) -> bool:
             p_raw = raw_h[mid:]
             gp = cand._goals_pipe.predict_proba(Xh[mid:])[:, 1]
             goals_brier = float(((gp - gh[mid:]) ** 2).mean())
+            # Plan 1.6: honest holdout Brier for the auxiliary heads on the
+            # SAME eval rows as goals_brier (None when the labels or heads
+            # are absent, e.g. an older feature build).
+            btts_brier = o35_brier = None
+            if getattr(cand, "_btts_pipe", None) is not None and bh is not None:
+                bp = cand._btts_pipe.predict_proba(Xh[mid:])[:, 1]
+                btts_brier = float(((bp - bh[mid:]) ** 2).mean())
+            if getattr(cand, "_o35_pipe", None) is not None and oh is not None:
+                op = cand._o35_pipe.predict_proba(Xh[mid:])[:, 1]
+                o35_brier = float(((op - oh[mid:]) ** 2).mean())
             ll_raw = _ll(p_raw, y_ev)
             ll_cal = _ll(p_cal, y_ev)
             # 1,440 eval rows are not enough for per-class isotonic to pay off
@@ -405,9 +456,14 @@ def run(force: bool = False) -> bool:
             p_ev = p_cal if use_cal else p_raw
             ll_eval = min(ll_raw, ll_cal)
             acc = float((p_ev.argmax(axis=1) == y_ev).mean())
+            _btxt = (f"btts_brier={btts_brier:.5f}" if btts_brier is not None
+                     else "btts_brier=n/a")
+            _otxt = (f"o35_brier={o35_brier:.5f}" if o35_brier is not None
+                     else "o35_brier=n/a")
             logger.info(f"[OOT:{mode}] {time.time() - t1:.1f}s "
                         f"raw_ll={ll_raw:.5f} cal_ll={ll_cal:.5f} "
-                        f"use_cal={use_cal} acc={acc:.4f} goals_brier={goals_brier:.5f}")
+                        f"use_cal={use_cal} acc={acc:.4f} goals_brier={goals_brier:.5f} "
+                        f"{_btxt} {_otxt}")
 
             # lower deployed log loss wins; within 0.0005 prefer better goals Brier
             better = (best is None
@@ -420,7 +476,8 @@ def run(force: bool = False) -> bool:
                 best = dict(mode=mode, pred=cand, raw=raw_h,
                             calibs=cals if use_cal else None, p_ev=p_ev,
                             ll=ll_eval, ll_raw=ll_raw, ll_cal=ll_cal,
-                            use_cal=use_cal, goals_brier=goals_brier)
+                            use_cal=use_cal, goals_brier=goals_brier,
+                            btts_brier=btts_brier, o35_brier=o35_brier)
             else:
                 del cand
             gc.collect()
@@ -463,6 +520,12 @@ def run(force: bool = False) -> bool:
             "accuracy": round(float((p_ev.argmax(axis=1) == y_ev).mean()), 4),
             "brier": round(float(((p_ev - np.eye(3)[y_ev]) ** 2).mean()), 5),
             "goals_brier": round(best["goals_brier"], 5),
+            # plan 1.6: auxiliary goal-market heads — honest holdout Brier
+            # (null when the labels/heads weren't available this run)
+            "btts_brier": (round(best["btts_brier"], 5)
+                           if best.get("btts_brier") is not None else None),
+            "o35_brier": (round(best["o35_brier"], 5)
+                          if best.get("o35_brier") is not None else None),
             "ece": round(ece, 4),
             # step-1.5 distillation record: which teacher, how many duplicates
             "synth_labels": synth_a or {"enabled": False},
@@ -536,11 +599,16 @@ def run(force: bool = False) -> bool:
             t2 = time.time()
             try:
                 w_full = _recency_weights(np.ones(len(d_all), dtype=bool))
+                aux_full = {"y_btts": meta.get("y_btts"),
+                            "y_o35": meta.get("y_o35")}
                 X_all_s, y_all_s, g_all_s, w_full, _ = _distill_soft_labels(
                     X_all, y_all, g_all, w_full, meta.get("home"),
-                    meta.get("away"), meta.get("leagues"), split_at, "stage_b")
+                    meta.get("away"), meta.get("leagues"), split_at, "stage_b",
+                    aux=aux_full)
                 predictor.fit_stacks(X_all_s, y_all_s, g_all_s, calibrate=False,
-                                     mode=mode, sample_weight=w_full)
+                                     mode=mode, sample_weight=w_full,
+                                     y_btts=aux_full["y_btts"],
+                                     y_o35=aux_full["y_o35"])
             except Exception as e:
                 logger.error(f"Stage B training failed: {e}")
                 return False
@@ -558,11 +626,13 @@ def run(force: bool = False) -> bool:
         if fallback_mode in ("both", "auto"):
             fallback_mode = "single"
         try:
+            aux_fb = {"y_btts": meta.get("y_btts"), "y_o35": meta.get("y_o35")}
             X_all_s, y_all_s, g_all_s, _, _ = _distill_soft_labels(
                 X_all, y_all, g_all, None, meta.get("home"), meta.get("away"),
-                meta.get("leagues"), split_at, "fallback")
+                meta.get("leagues"), split_at, "fallback", aux=aux_fb)
             predictor.fit_stacks(X_all_s, y_all_s, g_all_s, calibrate=True,
-                                 mode=fallback_mode)
+                                 mode=fallback_mode,
+                                 y_btts=aux_fb["y_btts"], y_o35=aux_fb["y_o35"])
         except Exception as e:
             logger.error(f"Training failed: {e}")
             return False

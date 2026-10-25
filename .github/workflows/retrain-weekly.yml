@@ -47,6 +47,8 @@ jobs:
           python ai/experimental/test_leak_fixes.py
           # Monte Carlo Match Lab (step 1.5): sampler, breeding, merge math.
           python ai/experimental/test_sim.py
+          # Plan 1.6: BTTS/O3.5 labels + auxiliary heads + pickle round-trip.
+          python ai/experimental/test_markets.py
 
       - name: Retrain model
         id: retrain

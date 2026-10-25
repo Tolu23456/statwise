@@ -311,21 +311,34 @@ def main() -> int:
     lg_names = list(df["league_slug"])
     home_bad = list(home)
     home_bad[0] = "Unknown FC Nowhere"
-    idx1, y1, g1 = sample_soft_labels(worlds, home, away, lg_names,
-                                      fraction=0.5, seed=5)
-    idx2, y2, g2 = sample_soft_labels(worlds, home, away, lg_names,
-                                      fraction=0.5, seed=5)
+    idx1, y1, g1, b1, o1 = sample_soft_labels(worlds, home, away, lg_names,
+                                              fraction=0.5, seed=5)
+    idx2, y2, g2, b2, o2 = sample_soft_labels(worlds, home, away, lg_names,
+                                              fraction=0.5, seed=5)
     check("samples ~fraction of candidate rows",
           abs(len(idx1) - 0.5 * len(df)) <= 2, f"{len(idx1)} of {len(df)}")
     check("labels are valid classes",
           set(np.unique(y1).tolist()) <= {0, 1, 2}
-          and set(np.unique(g1).tolist()) <= {0, 1})
+          and set(np.unique(g1).tolist()) <= {0, 1}
+          and set(np.unique(b1).tolist()) <= {0, 1}
+          and set(np.unique(o1).tolist()) <= {0, 1})
+    check("all five arrays aligned",
+          len(y1) == len(g1) == len(b1) == len(o1) == len(idx1),
+          f"{len(idx1)} rows")
+    # plan 1.6: every label derives from ONE sampled scoreline, so exact
+    # logical implications must hold row-by-row — under-2.5 implies under-3.5,
+    # over-3.5 implies over-2.5.  Independent draws would break these.
+    check("joint consistency: u25 -> u35",
+          not bool(((g1 == 0) & (o1 == 1)).any()))
+    check("joint consistency: o35 -> o25",
+          not bool(((o1 == 1) & (g1 == 0)).any()))
     check("sampling deterministic per seed",
           np.array_equal(idx1, idx2) and np.array_equal(y1, y2)
-          and np.array_equal(g1, g2))
+          and np.array_equal(g1, g2) and np.array_equal(b1, b2)
+          and np.array_equal(o1, o2))
     check("no row duplicated twice", len(np.unique(idx1)) == len(idx1))
-    idx3, _, _ = sample_soft_labels(worlds, home_bad, away, lg_names,
-                                    fraction=1.0, seed=1)
+    idx3 = sample_soft_labels(worlds, home_bad, away, lg_names,
+                              fraction=1.0, seed=1)[0]
     check("unknown-team rows never selected", 0 not in set(idx3.tolist()),
           f"{len(idx3)} rows selected")
     check("fraction 0 samples nothing",

@@ -7,10 +7,11 @@ duplicated with an (1X2, O/U) label SAMPLED from the teacher ensemble's
 posterior scoreline distribution.  Features = real football; target = the
 Monte Carlo lab's belief.  No synthetic fixture ever becomes a row.
 
-Why sample a whole scoreline rather than drawing 1X2 and O/U independently:
-the 'joint' LightGBM mode builds its six-class label from the pair, so the
-pair must be jointly consistent.  Draw (i, j) once from the world-averaged
-grid, derive both labels.
+Why sample a whole scoreline rather than drawing each market independently:
+the 'joint' LightGBM mode builds its six-class label from the (1X2, O/U)
+pair, and plan 1.6's auxiliary BTTS/O3.5 heads must agree with them too, so
+the pair must be jointly consistent.  Draw (i, j) once from the
+world-averaged grid; derive 1X2, O2.5, BTTS and O3.5 from that same draw.
 
 Leak control — two independent guards:
 
@@ -95,16 +96,21 @@ def sample_soft_labels(models: list[StrengthModel], home, away, leagues, *,
                        row_batch: int = 20000):
     """Sample teacher labels for a fraction of the given rows.
 
-    Returns ``(idx, y_1x2, y_goals)``: positions within the input arrays that
-    should receive a duplicated row with a teacher-sampled label.  Rows whose
-    team the recipe does not know are excluded from the candidate pool (their
-    teacher distribution would be meaningless).
+    Returns ``(idx, y_1x2, y_goals, y_btts, y_o35)``: positions within the
+    input arrays that should receive a duplicated row with a teacher-sampled
+    label.  ALL four labels come from ONE sampled scoreline, so a duplicate
+    is jointly consistent across 1X2 / O2.5 / BTTS / O3.5 — the same reason
+    the main labels are sampled as a pair for the joint 6-class head (plan
+    1.6: the auxiliary BTTS and O3.5 heads inherit the identical draw).
+    Rows whose team the recipe does not know are excluded from the candidate
+    pool (their teacher distribution would be meaningless).
 
     Cost: one world-averaged scoreline grid per row-batch, computed in world
     chunks so 160 worlds x 20k rows never materialises the full cube.
     """
-    empty = (np.zeros(0, dtype=np.int64), np.zeros(0, dtype=np.int32),
-             np.zeros(0, dtype=np.int32))
+    z = np.zeros(0, dtype=np.int64)
+    empty = (z, np.zeros(0, dtype=np.int32), np.zeros(0, dtype=np.int32),
+             np.zeros(0, dtype=np.int32), np.zeros(0, dtype=np.int32))
     if not models or fraction <= 0 or len(home) == 0:
         return empty
     m0 = models[0]
@@ -133,6 +139,8 @@ def sample_soft_labels(models: list[StrengthModel], home, away, leagues, *,
     idx_out: list[np.ndarray] = []
     y_out: list[np.ndarray] = []
     g_out: list[np.ndarray] = []
+    b_out: list[np.ndarray] = []
+    o_out: list[np.ndarray] = []
     n_worlds = len(models)
 
     for start in range(0, len(sel), row_batch):
@@ -155,11 +163,17 @@ def sample_soft_labels(models: list[StrengthModel], home, away, leagues, *,
         idx_out.append(sl)
         y_out.append(np.where(ii > jj, 0, np.where(ii == jj, 1, 2)).astype(np.int32))
         g_out.append(((ii + jj) > 2.5).astype(np.int32))
+        # plan 1.6: same scoreline -> BTTS and O3.5 labels (jointly
+        # consistent with 1X2/O2.5 by construction)
+        b_out.append(((ii > 0) & (jj > 0)).astype(np.int32))
+        o_out.append(((ii + jj) > 3.5).astype(np.int32))
 
     idx = np.concatenate(idx_out)
     y = np.concatenate(y_out)
     g = np.concatenate(g_out)
+    b = np.concatenate(b_out)
+    o = np.concatenate(o_out)
     logger.info("distill: sampled teacher labels for %s/%s candidate rows "
                 "(fraction %.2f, seed %d)",
                 f"{len(idx):,}", f"{len(cand):,}", fraction, seed)
-    return idx, y, g
+    return idx, y, g, b, o

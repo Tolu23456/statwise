@@ -99,6 +99,10 @@ export type Prediction = {
     away_rating?: number;
     /** Model probability of over 2.5 goals (0-100) */
     prob_over25?: number | null;
+    /** Model probability both teams score (plan 1.6 aux head; null = no head) */
+    prob_btts?: number | null;
+    /** Model probability of over 3.5 goals (plan 1.6 aux head; null = no head) */
+    prob_over35?: number | null;
     /** Upstream fixture feed: 'espn' | 'football-data.org' | 'unknown' */
     source?: 'espn' | 'football-data.org' | 'unknown' | string;
     /** Certainty score (0-100) — model confidence adjusted for probability spread + head agreement */

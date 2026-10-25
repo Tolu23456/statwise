@@ -292,6 +292,11 @@ class FootballPredictor:
         self.feature_pipe    = FeaturePipeline(home_advantage)
         self._outcome_pipe: Optional[Pipeline] = None
         self._goals_pipe:   Optional[Pipeline] = None
+        # Plan 1.6: auxiliary binary heads for BTTS and over/under 3.5.
+        # None until a retrain with the labels supplies them — predict_match
+        # then simply omits prob_btts/prob_over35 (older pickles predate them).
+        self._btts_pipe: Optional[Pipeline] = None
+        self._o35_pipe:  Optional[Pipeline] = None
         self._trained        = False
         # honest calibration + market-blend alpha (set by retrain.py / load)
         self._calibrators: Optional[list] = None
@@ -368,12 +373,19 @@ class FootballPredictor:
         self.record_recent_history(df)
         self.feature_pipe.fit(df)
         X, y_1x2, y_goals, dates = self.feature_pipe.build_training_set(df)
-        return self.fit_stacks(X, y_1x2, y_goals, calibrate=calibrate, mode=mode)
+        # plan 1.6: fit the BTTS/O3.5 aux heads whenever the feature build
+        # supplied the labels (it always does — see last_meta)
+        _meta = getattr(self.feature_pipe, "last_meta", {}) or {}
+        return self.fit_stacks(X, y_1x2, y_goals, calibrate=calibrate, mode=mode,
+                               y_btts=_meta.get("y_btts"),
+                               y_o35=_meta.get("y_o35"))
 
     def fit_stacks(self, X: np.ndarray, y_1x2: np.ndarray, y_goals: np.ndarray,
                    calibrate: bool = True, mode: str = 'single',
                    sample_weight=None,
-                   league_counts: dict | None = None) -> "FootballPredictor":
+                   league_counts: dict | None = None,
+                   y_btts: np.ndarray | None = None,
+                   y_o35: np.ndarray | None = None) -> "FootballPredictor":
         """Fit the outcome + goals heads on a prebuilt feature matrix.
 
         Split out from train() so retrain.py can build features ONCE for the
@@ -381,6 +393,11 @@ class FootballPredictor:
         the train slice without re-deriving feature state.
 
         mode: 'single' (default, 2x LightGBM) | 'joint' (1x 6-class LightGBM).
+
+        Plan 1.6: `y_btts` / `y_o35` optionally fit AUXILIARY binary heads for
+        the BTTS and over/under 3.5 markets.  They are independent binary
+        tasks, so they get their own 2-class heads regardless of the main
+        mode; absent labels leave the heads None and inference omits them.
         """
         mode = (mode or 'single').lower()
         if mode not in ('single', 'joint'):
@@ -398,13 +415,37 @@ class FootballPredictor:
             self._outcome_pipe, self._goals_pipe = _fit_joint(
                 X, y_1x2, y_goals, calibrate, sample_weight)
         else:
-            logger.info("Step 1/2  Fitting LightGBM 1X2 head…")
+            logger.info("Fitting LightGBM 1X2 head…")
             self._outcome_pipe = _fit_single(3, 42, X, y_1x2, calibrate,
                                              sample_weight)
             gc.collect()
-            logger.info("Step 2/2  Fitting LightGBM over/under 2.5 head…")
+            logger.info("Fitting LightGBM over/under 2.5 head…")
             self._goals_pipe = _fit_single(2, 99, X, y_goals, calibrate,
                                            sample_weight)
+            gc.collect()
+
+        # Plan 1.6 — auxiliary market heads (fit for BOTH main modes: they are
+        # standalone binary tasks sharing only the feature matrix).  Labels
+        # come from last_meta["y_btts"/"y_o35"], extended by distillation the
+        # same way y_1x2/y_goals are, so lengths always match X here.
+        self._btts_pipe = None
+        self._o35_pipe = None
+        for label, y_aux, seed, attr in (("BTTS", y_btts, 7, "_btts_pipe"),
+                                         ("over/under 3.5", y_o35, 14, "_o35_pipe")):
+            if y_aux is None:
+                continue
+            y_aux = np.asarray(y_aux, dtype=np.int64)
+            if len(y_aux) != len(X):
+                logger.warning(f"  Skipping {label} head: {len(y_aux)} labels "
+                               f"for {len(X)} rows")
+                continue
+            if len(np.unique(y_aux)) < 2:
+                logger.warning(f"  Skipping {label} head: single-class labels")
+                continue
+            logger.info(f"Fitting LightGBM {label} head…")
+            setattr(self, attr, _fit_single(2, seed, X, y_aux, calibrate,
+                                            sample_weight))
+            gc.collect()
         logger.info(f"Training done, {_rss_mb():.0f} MB RSS")
 
         # retrain.py builds the frame itself and calls us directly, so league
@@ -425,6 +466,10 @@ class FootballPredictor:
             'feature_pipe': self.feature_pipe,
             'outcome_pipe': self._outcome_pipe,
             'goals_pipe':   self._goals_pipe,
+            # Plan 1.6 auxiliary heads — None for pickles trained without the
+            # BTTS/O35 labels, which is exactly what inference should expect.
+            'btts_pipe':    self._btts_pipe,
+            'o35_pipe':     self._o35_pipe,
             'n_features':   N_FEATURES,
             'calibrators':  self._calibrators,
             'alphas':       self._alphas,
@@ -444,6 +489,9 @@ class FootballPredictor:
         obj.feature_pipe = data['feature_pipe']
         obj._outcome_pipe = data['outcome_pipe']
         obj._goals_pipe = data['goals_pipe']
+        # .get(): pickles from before plan 1.6 simply have no aux heads.
+        obj._btts_pipe = data.get('btts_pipe')
+        obj._o35_pipe = data.get('o35_pipe')
         obj._trained = True
         obj._calibrators = data.get('calibrators')
         obj._alphas = data.get('alphas') or {}
@@ -534,6 +582,12 @@ class FootballPredictor:
 
         p_outcome_raw = self._outcome_pipe.predict_proba(X)[0]
         p_goals = self._goals_pipe.predict_proba(X)[0]
+        # Plan 1.6 auxiliary heads — absent on older pickles, in which case
+        # the goal-market rows below simply don't render.
+        _btts = getattr(self, '_btts_pipe', None)
+        _o35 = getattr(self, '_o35_pipe', None)
+        p_btts = _btts.predict_proba(X)[0] if _btts is not None else None
+        p_o35 = _o35.predict_proba(X)[0] if _o35 is not None else None
         p_outcome_cal = p_outcome_raw.copy()
 
         # 1) honest isotonic calibration (fitted on out-of-time holdout by retrain.py)
@@ -631,6 +685,11 @@ class FootballPredictor:
             # over/under 2.5 from the goals head — previously computed and then
             # thrown away, so the app had no goal-market view at all
             "prob_over25": round(float(p_goals[1]) * 100, 1) if len(p_goals) > 1 else None,
+            # plan 1.6: BTTS + over/under 3.5 from the auxiliary heads
+            "prob_btts": round(float(p_btts[1]) * 100, 1)
+                         if p_btts is not None and len(p_btts) > 1 else None,
+            "prob_over35": round(float(p_o35[1]) * 100, 1)
+                           if p_o35 is not None and len(p_o35) > 1 else None,
         }
 
         # ── Analysis narrative ────────────────────────────────────────────
@@ -745,6 +804,12 @@ class FootballPredictor:
             'prob_draw': round(float(p_outcome[1])*100, 1),
             'prob_away': round(float(p_outcome[2])*100, 1),
             'prob_over25': round(float(p_goals[1])*100, 1) if len(p_goals)>1 else 50.0,
+            # plan 1.6 goal markets (None when the pickle has no aux heads —
+            # the UI renders those rows only when a number exists)
+            'prob_btts': round(float(p_btts[1])*100, 1)
+                         if p_btts is not None and len(p_btts) > 1 else None,
+            'prob_over35': round(float(p_o35[1])*100, 1)
+                           if p_o35 is not None and len(p_o35) > 1 else None,
             'stats': stats,
             'reasoning': reasoning.strip(),
             'uncertainty': {
