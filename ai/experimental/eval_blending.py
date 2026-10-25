@@ -193,6 +193,72 @@ def main() -> int:
                              for a in np.arange(0.0, 1.01, 0.1))
             logger.info(f"DIAG alpha sweep {tag} (base market): {curve}")
 
+    # ── rolling weekly validation of the fitting PROCEDURE ────────────────
+    # Production refits alpha every retrain and deploys it forward, so the
+    # deployable question is not "which alpha is best on this holdout" but
+    # "does an alpha fitted on the trailing {FIT} days beat the market NEXT
+    # week".  Walk the holdout week by week: fit on the previous FIT days,
+    # score the following 7, accumulate over every fold.  Each odds row is
+    # scored exactly once as a future row — no in-sample leakage.
+    ROLL_FIT_DAYS = int(os.environ.get("ROLL_FIT_DAYS", "90") or 90)
+    ROLL_STEP_DAYS = int(os.environ.get("ROLL_STEP_DAYS", "7") or 7)
+    d_ho = dates_all[mask_ho]
+    p_full = p_all if use_cal else raw
+    ob_full, oc_full = odds_base[ho_idx], odds_close[ho_idx]
+    mb_full, mc_full = _mkt(ob_full), _mkt(oc_full)
+    vb_full, vc_full = _valid(ob_full), _valid(oc_full)
+
+    acc: dict[str, list] = {}          # name -> [ll*n, n]
+
+    def bump(name, ll, n):
+        if n > 0:
+            s, c = acc.get(name, [0.0, 0])
+            acc[name] = [s + ll * n, c + n]
+
+    t0_h, t1_h = pd.Timestamp(d_ho.min()), pd.Timestamp(d_ho.max())
+    b = t0_h + pd.Timedelta(days=ROLL_FIT_DAYS)
+    folds = 0
+    while b + pd.Timedelta(days=ROLL_STEP_DAYS) <= t1_h + pd.Timedelta(days=1):
+        b64 = np.datetime64(b)                       # compare against a numpy array
+        tr = (d_ho >= b64 - np.timedelta64(ROLL_FIT_DAYS, "D")) & (d_ho < b64)
+        ev = (d_ho >= b64) & (d_ho < b64 + np.timedelta64(ROLL_STEP_DAYS, "D"))
+        m_tr_b, m_ev_b = tr & vb_full, ev & vb_full
+        m_tr_c, m_ev_c = tr & vc_full, ev & vc_full
+        if int(m_ev_b.sum()) >= 20 and int(m_tr_b.sum()) >= 100:
+            a_b = fit_alpha(p_full[m_tr_b], mb_full[m_tr_b], y_ho[m_tr_b])
+            bump("roll_alpha_base", blend_ll(a_b, p_full[m_ev_b], mb_full[m_ev_b],
+                                             y_ho[m_ev_b]), int(m_ev_b.sum()))
+            bump("roll_market_base", _ll(mb_full[m_ev_b], y_ho[m_ev_b]), int(m_ev_b.sum()))
+            bump("roll_model", _ll(p_full[m_ev_b], y_ho[m_ev_b]), int(m_ev_b.sum()))
+            bump("roll_alpha_035", blend_ll(0.35, p_full[m_ev_b], mb_full[m_ev_b],
+                                            y_ho[m_ev_b]), int(m_ev_b.sum()))
+        if int(m_ev_c.sum()) >= 20 and int(m_tr_c.sum()) >= 100:
+            a_c = fit_alpha(p_full[m_tr_c], mc_full[m_tr_c], y_ho[m_tr_c])
+            bump("roll_alpha_closing", blend_ll(a_c, p_full[m_ev_c], mc_full[m_ev_c],
+                                                y_ho[m_ev_c]), int(m_ev_c.sum()))
+            bump("roll_market_closing", _ll(mc_full[m_ev_c], y_ho[m_ev_c]), int(m_ev_c.sum()))
+            bump("roll_alpha_closing035", blend_ll(0.35, p_full[m_ev_c], mc_full[m_ev_c],
+                                                   y_ho[m_ev_c]), int(m_ev_c.sum()))
+        folds += 1
+        b += pd.Timedelta(days=ROLL_STEP_DAYS)
+
+    if acc:
+        res = {k: (s / c, c) for k, (s, c) in acc.items()}
+        for k in sorted(res):
+            ll, n = res[k]
+            logger.info(f"ROLL {k:22s} ll={ll:.5f}  n={n:,} folds={folds} "
+                        f"(fit {ROLL_FIT_DAYS}d -> next {ROLL_STEP_DAYS}d)")
+        mb_, mc_ = res.get("roll_market_base"), res.get("roll_market_closing")
+        ab_, ac_ = res.get("roll_alpha_base"), res.get("roll_alpha_closing")
+        if mb_ and ab_:
+            logger.info(f"ROLL alpha_base vs market_base = {ab_[0] - mb_[0]:+.5f} "
+                        f"({'blend helps' if ab_[0] < mb_[0] - 0.0002 else 'no edge' if ab_[0] > mb_[0] + 0.0002 else 'tie'})")
+        if mc_ and ac_:
+            logger.info(f"ROLL alpha_closing vs market_closing = {ac_[0] - mc_[0]:+.5f} "
+                        f"({'blend helps' if ac_[0] < mc_[0] - 0.0002 else 'no edge' if ac_[0] > mc_[0] + 0.0002 else 'tie'})")
+        if mc_ and mb_:
+            logger.info(f"ROLL closing vs base market = {mc_[0] - mb_[0]:+.5f}")
+
     out: dict[str, dict] = {}
 
     def record(name, ll, note=""):

@@ -317,6 +317,14 @@ def fetch_archive_weather_many(coords: list[tuple[float, float]],
     queue = [list(pending.items())[i:i + batch] for i in range(0, len(pending), batch)]
     ci = 0
     consecutive_fail = 0
+    last_ok = time.time()
+    chunk_fails: dict[tuple, int] = {}
+    # Open-Meteo throttles shared CI runner IPs hard (the log showed 429 after
+    # ~3 successful batches, then nothing for 80 minutes).  Cycling the queue
+    # with an escalating cooldown instead of abandoning the run is what makes
+    # progress compound: every run saves its fetch cache, so a patient run
+    # finishes what a panicky one threw away.
+    stall_limit = float(os.environ.get("WX_STALL_SECONDS", "1800") or 1800)
     while queue:
         chunk = queue.pop(0)
         ci += 1
@@ -334,7 +342,9 @@ def fetch_archive_weather_many(coords: list[tuple[float, float]],
             if status == 400 and len(chunk) > 1:
                 split = True
                 break
-            wait = (120 if status == 429 else 20) * (attempt + 1)  # throttle: back off hard
+            # Short retries + cycling beats one 20-minute block per chunk: a
+            # throttled IP recovers in bursts, so keep re-asking.
+            wait = (60 if status == 429 else 20) + 30 * attempt
             time.sleep(wait)
         if split:
             half = max(1, len(chunk) // 2)
@@ -343,14 +353,36 @@ def fetch_archive_weather_many(coords: list[tuple[float, float]],
             continue
         if not data:
             consecutive_fail += 1
-            print(f"  batch {ci}: FAILED (http {status}) "
-                  f"[{consecutive_fail} consecutive, {len(queue)} queued]", flush=True)
-            if consecutive_fail >= 4:
-                print("  rate-limited too hard — stopping; rerun later, cache resumes.",
+            ck = tuple(k for k, _ in chunk)
+            chunk_fails[ck] = chunk_fails.get(ck, 0) + 1
+            if chunk_fails[ck] >= 6:
+                # a chunk that still 400s/429s at this size is poison — drop it
+                # rather than burn the whole run re-asking (the rest requeues)
+                print(f"  batch {ci}: dropping chunk of {len(chunk)} city(ies) after "
+                      f"{chunk_fails[ck]} failures (http {status})", flush=True)
+                if not queue:
+                    print("  nothing left to try — stopping; rerun later, cache resumes.",
+                          flush=True)
+                    break
+                continue
+            queue.append(chunk)                      # retry later, don't drop it
+            since = time.time() - last_ok
+            if consecutive_fail % 3 == 0:
+                if since > stall_limit:
+                    print(f"  no city fetched for {since / 60:.0f} min — stopping; "
+                          f"rerun later, cache resumes.", flush=True)
+                    break
+                cooldown = min(300 * (consecutive_fail // 3), 900)
+                print(f"  {consecutive_fail} throttled batches, {since / 60:.0f} min since "
+                      f"last success — cooling down {cooldown}s ({len(queue)} queued)",
                       flush=True)
-                break
+                time.sleep(cooldown)
+            else:
+                print(f"  batch {ci}: FAILED (http {status}) "
+                      f"[{consecutive_fail} consecutive, {len(queue)} queued]", flush=True)
             continue
         consecutive_fail = 0
+        last_ok = time.time()
         if ci % 25 == 0 or not queue:
             print(f"  batch {ci}: {len(queue)} chunk(s) left", flush=True)
         items = data if isinstance(data, list) else [data] if data else []

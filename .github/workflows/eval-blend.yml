@@ -55,7 +55,7 @@ jobs:
             echo "## Market blending ablation"
             echo ""
             echo '```'
-            grep -E "odds coverage|DIAG |BLEND " blend.log | sed 's/^.*BLEND/BLEND/;s/^.*DIAG/DIAG/' || tail -40 blend.log
+            grep -E "odds coverage|DIAG |ROLL |BLEND " blend.log | sed 's/^.*BLEND/BLEND/;s/^.*DIAG/DIAG/;s/^.*ROLL/ROLL/' || tail -40 blend.log
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
