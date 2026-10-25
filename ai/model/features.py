@@ -187,6 +187,14 @@ class FeaturePipeline:
         all_pre_att_def = np.zeros((len(df), 4), dtype=np.float64)
         all_pre_att_def[:, 0] = self._att_pre_home; all_pre_att_def[:, 1] = self._def_pre_home; all_pre_att_def[:, 2] = self._att_pre_away; all_pre_att_def[:, 3] = self._def_pre_away
         all_odds = df[['odds_home', 'odds_draw', 'odds_away']].fillna(0).values.astype(np.float64)
+        # Closing consensus (plan 1.4 "prefer closing odds when available"):
+        # dataset_cleaner.cpp already prefers the *C columns (B365CH/AvgCH…),
+        # and avg_odds_* is the cross-book average of those closing prices —
+        # the same kind of consensus price odds_sync feeds at inference time.
+        # Prefer it where present, fall back to the single-book price so the
+        # row keeps odds instead of losing them (72% -> 48% coverage otherwise).
+        _avg = df[['avg_odds_home', 'avg_odds_draw', 'avg_odds_away']].fillna(0).values.astype(np.float64)
+        all_odds_closing = np.where(_avg > 1.01, _avg, all_odds)
         all_league_stats = np.zeros((len(df), 6), dtype=np.float64)
         for i, slug in enumerate(df['league_slug'].fillna('all')):
             ls = self._league_stats.get(slug, {'avg_goals': 2.6, 'home_attack': 1.0, 'away_attack': 1.0, 'home_adv_factor': 1.25, 'home_win_rate': 0.46, 'draw_rate': 0.24})
@@ -266,6 +274,7 @@ class FeaturePipeline:
         # holdout evaluation (market baseline + per-league alpha blending)
         self.last_meta = {
             "odds":    all_odds[all_idx],
+            "odds_closing": all_odds_closing[all_idx],
             "leagues": df['league_slug'].fillna('all').values[all_idx],
         }
         return X, y_1x2, y_goals, df['date'].values[all_idx]

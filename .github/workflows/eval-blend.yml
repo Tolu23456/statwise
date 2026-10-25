@@ -1,0 +1,68 @@
+name: Blending Ablation
+
+# Step 1.4 of IMPROVEMENT_PLAN.md — "Better Market Blending".
+#
+# Scores the market-blend variants on the untouched later half of the
+# out-of-time holdout: honest alpha fitting (calibration half -> eval half)
+# vs the in-sample alpha retrain.py reports, closing-consensus odds vs the
+# single-book price, and per-league vs global alpha.
+#
+# Training runs here rather than on the dev box because the full feature
+# build needs more RAM than the local machine has.
+
+on:
+  workflow_dispatch:
+    inputs:
+      model_mode:
+        description: "MODEL_MODE: single | joint"
+        required: false
+        default: "joint"
+      holdout_days:
+        description: "Holdout window in days (production uses 180)"
+        required: false
+        default: "180"
+
+jobs:
+  ablation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Run blending ablation
+        id: eval
+        env:
+          MODEL_MODE: ${{ inputs.model_mode }}
+          HOLDOUT_DAYS: ${{ inputs.holdout_days }}
+        run: |
+          set -o pipefail
+          python -u ai/experimental/eval_blending.py 2>&1 | tee blend.log
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo "## Market blending ablation"
+            echo ""
+            echo '```'
+            grep -E "odds coverage|BLEND " blend.log | sed 's/^.*BLEND/BLEND/' || tail -40 blend.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blending-ablation-log
+          path: blend.log
+          if-no-files-found: ignore
