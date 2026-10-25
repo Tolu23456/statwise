@@ -29,6 +29,16 @@ jobs:
         run: |
           pip install -r ai/requirements.txt
 
+      # Cheap guards before spending 20 minutes on a training run: de-vig,
+      # odds validity, alpha damping (step 1.4) and the weather join (1.2).
+      - name: Unit tests
+        run: |
+          python ai/experimental/test_alpha_blend.py
+          python ai/experimental/test_weather.py
+          # Leak-fix regressions: inference history, canonical league slugs,
+          # batch form/travel blocks, and the self-leak date guard.
+          python ai/experimental/test_leak_fixes.py
+
       - name: Retrain model
         id: retrain
         # Same training environment as train-model.yml — the two must produce
@@ -86,8 +96,9 @@ jobs:
           rej = info.get("last_rejected") or {}
           print("### Retrain")
           print(f"- model version: **{info.get('version')}** (`{str(info.get('git_sha'))[:8]}`)")
-          for k in ("mode", "eval_log_loss", "market_log_loss", "blended_market_log_loss",
-                    "accuracy", "brier", "ece", "alpha_default", "alpha_leagues", "split_at"):
+          for k in ("mode", "eval_log_loss", "market_log_loss", "market_closing_log_loss",
+                    "blended_market_log_loss", "accuracy", "brier", "ece", "alpha_default",
+                    "alpha_fitted_raw", "alpha_damp_weight", "alpha_leagues", "split_at"):
               if k in cal:
                   print(f"- {k}: {cal[k]}")
           if rej.get("decision") == "rejected":

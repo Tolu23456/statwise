@@ -39,6 +39,38 @@ os.makedirs(os.path.join(BASE_DIR, "models"), exist_ok=True)
 os.makedirs(os.path.join(BASE_DIR, "data"),   exist_ok=True)
 
 
+def _devig(o) -> "np.ndarray":
+    """De-vigged market probabilities from a 3-column odds matrix."""
+    import numpy as np
+    imp = 1.0 / np.maximum(np.asarray(o, dtype=float), 1.0001)
+    return imp / np.maximum(imp.sum(axis=1, keepdims=True), 1e-9)
+
+
+def _valid_odds(o) -> "np.ndarray":
+    """Rows that actually carry odds on all three outcomes."""
+    import numpy as np
+    a = np.asarray(o, dtype=float)
+    return (a[:, 0] > 1.01) & (a[:, 1] > 1.01) & (a[:, 2] > 1.01)
+
+
+def damp_alpha(fit_alpha, n_valid, prior: float = 0.35, prior_k: float = 1000.0) -> float:
+    """Shrink a holdout-fitted blend weight toward the measured prior (plan 1.4).
+
+    weight = n / (n + prior_k).  The eval-blend ablations measured a fixed
+    alpha of 0.35 on the closing market as the best deployable blend
+    (ll 0.99961 rolling vs 1.00033 for an alpha re-refit every week), so the
+    fit only gets to move the weight in proportion to how much evidence backs
+    it: ~1,280 valid rows with prior_k=1000 -> fit 56% / prior 44%.
+    fit_alpha=None (too few odds rows to fit at all) deploys the prior.
+    """
+    if fit_alpha is None:
+        return round(float(prior), 4)
+    if prior_k <= 0:
+        return round(float(fit_alpha), 4)
+    w = float(n_valid) / (float(n_valid) + float(prior_k))
+    return round(float(w) * float(fit_alpha) + (1.0 - float(w)) * float(prior), 4)
+
+
 def _load_clean_data() -> "pd.DataFrame":
     """Load all matched from ai/data/clean/YYYY_matches.csv (unified 48-col schema)."""
     import pandas as pd
@@ -235,18 +267,27 @@ def run(force: bool = False) -> bool:
                         f"min={w_tr.min():.3f}, effective_n={eff:,.0f}")
         odds_h = meta.get("odds")
         odds_h = odds_h[m_ho] if odds_h is not None else np.zeros((len(Xh), 3))
+        # Closing consensus (plan 1.4 "prefer closing odds when available"):
+        # avg closing across books, falling back to the single-book price per
+        # cell (features.py exposes it as odds_closing).  This is the market
+        # side that won EVERY comparison in the eval-blend ablations —
+        # -0.00112 on the eval half, -0.00109 on the cal half, -0.00136
+        # rolling — and it is the same kind of consensus price odds_sync feeds
+        # at inference, so train and serve now blend against one source.
+        odds_close_h = meta.get("odds_closing")
+        odds_close_h = odds_close_h[m_ho] if odds_close_h is not None else odds_h
         leagues_h = meta.get("leagues")
         leagues_h = leagues_h[m_ho] if leagues_h is not None else np.array(["all"] * len(Xh))
 
         mid = max(len(yh) // 2, 100)
         y_ev = yh[mid:]
         o_ev = odds_h[mid:]
-        imp = np.zeros((len(o_ev), 3))
-        imp[:, 0] = 1.0 / np.maximum(o_ev[:, 0], 1.0001)
-        imp[:, 1] = 1.0 / np.maximum(o_ev[:, 1], 1.0001)
-        imp[:, 2] = 1.0 / np.maximum(o_ev[:, 2], 1.0001)
-        valid = (o_ev[:, 0] > 1.01) & (o_ev[:, 1] > 1.01) & (o_ev[:, 2] > 1.01)
-        mkt = imp / np.maximum(imp.sum(axis=1, keepdims=True), 1e-9)
+        o_ev_c = odds_close_h[mid:]
+
+        mkt = _devig(o_ev)        # single book -> market_log_loss (baseline continuity)
+        mkt_c = _devig(o_ev_c)    # closing consensus -> alpha fit + blend metric
+        valid = _valid_odds(o_ev)
+        valid_c = _valid_odds(o_ev_c)
 
         # ── Candidate architectures ────────────────────────────────
         # 'single' = 2 LightGBM heads, 'joint' = 1 six-class LightGBM.
@@ -341,51 +382,72 @@ def run(force: bool = False) -> bool:
             "eval_log_loss": round(best["ll"], 5),
             "market_log_loss": round(_ll(mkt[valid], y_ev[valid]), 5) if int(valid.sum()) > 50 else None,
             "market_rows": int(valid.sum()),
+            # closing consensus (the source alpha is actually fitted against)
+            "market_closing_log_loss": round(_ll(mkt_c[valid_c], y_ev[valid_c]), 5) if int(valid_c.sum()) > 50 else None,
+            "market_closing_rows": int(valid_c.sum()),
             "accuracy": round(float((p_ev.argmax(axis=1) == y_ev).mean()), 4),
             "brier": round(float(((p_ev - np.eye(3)[y_ev]) ** 2).mean()), 5),
             "goals_brier": round(best["goals_brier"], 5),
             "ece": round(ece, 4),
         }
 
-        # alpha: log-loss-optimal blend of the deployed model vs market.
-        # Only rows that actually HAVE odds count: for the rest mkt is uniform
-        # and would push alpha toward 1 (i.e. ignore a market edge that exists).
+        # alpha: log-loss-optimal blend of the deployed model vs the CLOSING
+        # consensus market (plan 1.4 — the source that won every ablation).
+        # Only rows that actually HAVE odds count: for the rest the market side
+        # is uniform and would push alpha toward 1 (ignore a real market edge).
+        #
+        # The fitted weight is then DAMPED toward the prior that won the
+        # rolling weekly validation (fixed alpha 0.35 + closing market,
+        # ll 0.99961 vs 1.00033 for an alpha re-refit every week): one 180-day
+        # window's optimum is noisy, so the fit gets weight n/(n+K) and the
+        # measured prior keeps the rest.  ~1,280 valid rows -> fit 56% / prior
+        # 44% with K=1000.  ALPHA_PRIOR=1.0 disables the damping entirely.
+        ALPHA_PRIOR = float(os.environ.get("ALPHA_PRIOR", "0.35") or 0.35)
+        ALPHA_PRIOR_K = float(os.environ.get("ALPHA_PRIOR_K", "1000") or 1000)
+
         def _best_alpha(mask):
-            m = mask & valid
+            m = mask & valid_c
             if int(m.sum()) < 50:
                 return None
             best_a, best_ll = None, float("inf")
             for a in np.arange(0.0, 1.001, 0.05):
-                ll = _ll(a * p_ev[m] + (1.0 - a) * mkt[m], y_ev[m])
+                ll = _ll(a * p_ev[m] + (1.0 - a) * mkt_c[m], y_ev[m])
                 if ll < best_ll:
                     best_ll, best_a = ll, float(a)
             return float(best_a)
 
         alphas: dict = {}
-        ga = _best_alpha(np.ones(len(y_ev), dtype=bool))
-        if ga is not None:
-            alphas["_default"] = ga
+        n_a = int(valid_c.sum())
+        damp_w = (n_a / (n_a + ALPHA_PRIOR_K)) if n_a and ALPHA_PRIOR_K > 0 else 1.0
+        ga_raw = _best_alpha(np.ones(len(y_ev), dtype=bool))
+        if ga_raw is not None:
+            alphas["_default"] = damp_alpha(ga_raw, n_a, ALPHA_PRIOR, ALPHA_PRIOR_K)
         n_league = 0
         # A league alpha learned on ~60-150 matches is noisy; shrink it toward
-        # the global alpha with weight n/(n+300) instead of trusting it fully.
+        # the (already damped) global alpha with weight n/(n+300) instead of
+        # trusting it fully — measured a tie against the global alpha, so this
+        # stays conservative rather than being removed.
         SHRINK_K = 300.0
         for slug in pd.unique(leagues_h[mid:]):
             mask = (leagues_h[mid:] == slug)
-            n_l = int((mask & valid).sum())
+            n_l = int((mask & valid_c).sum())
             if n_l >= 60:
                 a = _best_alpha(mask)
                 if a is not None:
-                    prior = alphas.get("_default", 1.0)
+                    prior = alphas.get("_default", ALPHA_PRIOR)
                     wgt = n_l / (n_l + SHRINK_K)
                     alphas[str(slug)] = round(float(wgt * a + (1.0 - wgt) * prior), 4)
                     n_league += 1
         metrics["alpha_default"] = alphas.get("_default")
+        metrics["alpha_fitted_raw"] = ga_raw
+        metrics["alpha_prior"] = ALPHA_PRIOR
+        metrics["alpha_damp_weight"] = round(float(damp_w), 4)
         metrics["alpha_leagues"] = n_league
-        if int(valid.sum()) >= 50:
-            m = valid
+        if int(valid_c.sum()) >= 50:
+            m = valid_c
+            a_dep = alphas.get("_default", ALPHA_PRIOR)
             metrics["blended_market_log_loss"] = round(
-                _ll(alphas.get("_default", 1.0) * p_ev[m]
-                    + (1.0 - alphas.get("_default", 1.0)) * mkt[m], y_ev[m]), 5)
+                _ll(a_dep * p_ev[m] + (1.0 - a_dep) * mkt_c[m], y_ev[m]), 5)
         logger.info("[OOT] " + json.dumps(metrics))
 
         if stage_b:
