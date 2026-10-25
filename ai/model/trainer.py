@@ -18,6 +18,7 @@ from sklearn.isotonic import IsotonicRegression
 from sklearn.pipeline import Pipeline
 
 from .features import FeaturePipeline, N_FEATURES, FEATURE_NAMES
+from .leagues import canon_league
 
 logger = logging.getLogger(__name__)
 MODEL_DIR     = os.path.join(os.path.dirname(__file__), '..', 'models')
@@ -465,8 +466,13 @@ class FootballPredictor:
                 logger.debug(f"Could not rebuild insight history: {e}")
         return obj
 
-    def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0, weather: dict | None = None, insight_history: pd.DataFrame = None):
+    def predict_match(self, home: str, away: str, league: str = 'all', history: pd.DataFrame = None, odds_home: float = 0, odds_draw: float = 0, odds_away: float = 0, weather: dict | None = None, insight_history: pd.DataFrame = None, match_date: str | None = None, feature_blocks=None):
         cols = ['date', 'home_team', 'away_team', 'home_goals', 'away_goals']
+        # Fixture feeds spell six competitions differently from the season
+        # CSVs (efl-championship vs championship); canonicalising once here
+        # fixes league priors, league_id, per-league alphas and league support
+        # in a single place.  See model/leagues.py.
+        league = canon_league(league)
         # `history` drives the feature pipeline, whose fitted state already
         # encodes the bulk training set. `insight_history` is the compact
         # recent-results snapshot used only for the human-readable analysis
@@ -510,7 +516,17 @@ class FootballPredictor:
             weather = {"temp_c": weather.get("temperature_c"), "precip_mm": weather.get("precipitation_mm"),
                        "wind_kmh": weather.get("wind_speed_kmh", weather.get("wind_kmh")),
                        "weather_code": weather.get("weather_code")}
-        X = self.feature_pipe.build_features([{"home": home, "away": away, "league": league, "odds_home": odds_home, "odds_draw": odds_draw, "odds_away": odds_away, "home_squad_value": home_squad_value, "away_squad_value": away_squad_value, "home_avg_age": home_avg_age, "away_avg_age": away_avg_age, "home_lineup_rating": home_lineup_rating, "away_lineup_rating": away_lineup_rating, "weather": weather}], history)
+        X = self.feature_pipe.build_features(
+            [{"home": home, "away": away, "league": league,
+              # the fixture's own date: without it the travel/rest slots read
+              # NaT (they are the only features keyed on kickoff, not "now")
+              "date": match_date,
+              "odds_home": odds_home, "odds_draw": odds_draw, "odds_away": odds_away,
+              "home_squad_value": home_squad_value, "away_squad_value": away_squad_value,
+              "home_avg_age": home_avg_age, "away_avg_age": away_avg_age,
+              "home_lineup_rating": home_lineup_rating, "away_lineup_rating": away_lineup_rating,
+              "weather": weather}],
+            history, blocks=feature_blocks)
         # single-row features can carry NaN (missing squad value / weather /
         # unknown team elo).  Training sanitizes the matrix the same way — keep
         # inference consistent so NaN never reaches the scaler or the net.

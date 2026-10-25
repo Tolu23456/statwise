@@ -15,6 +15,7 @@ from .cpp_bridge import (
 )
 from .travel import TRAVEL_SLICE, N_TRAVEL, compute_travel_block
 from .form import FORM_SLICE, N_FORM, compute_form_block
+from .leagues import canon_league
 
 logger = logging.getLogger(__name__)
 
@@ -107,12 +108,28 @@ class FeaturePipeline:
         self._att_pre_away = None
         self._def_pre_away = None
 
+    @staticmethod
+    def _league_col(df) -> pd.Series:
+        """The frame's league slug, canonicalised (see model/leagues.py).
+
+        Same answer whether the caller hands us a training frame or a live
+        fixture list, so every per-league lookup keys on one spelling.
+        """
+        s = df['league_slug'] if 'league_slug' in df.columns \
+            else pd.Series(['all'] * len(df), index=df.index)
+        return s.fillna('all').map(canon_league)
+
     def fit(self, df: pd.DataFrame) -> "FeaturePipeline":
         logger.info(f"Fitting Pico pipeline on {len(df):,} matches…")
         df = df.dropna(subset=['home_team', 'away_team', 'home_goals', 'away_goals'])
 
-        # League mapping
-        all_leagues = sorted(df['league_slug'].fillna('all').unique())
+        # League mapping.  Canonicalised first: the fixture feeds spell six of
+        # their competitions differently from the season CSVs (efl-championship
+        # vs championship), and a slug the training set has never seen falls
+        # through every per-league lookup — priors, alphas, league_id, support.
+        # See model/leagues.py.
+        league_series = self._league_col(df)
+        all_leagues = sorted(league_series.unique())
         self._league_map = {slug: i for i, slug in enumerate(all_leagues)}
 
         n = len(df)
@@ -153,7 +170,7 @@ class FeaturePipeline:
         for t, a, d in zip(hts, att_h_bulk, def_h_bulk): self._att_elo[t] = a; self._def_elo[t] = d
         for t, a, d in zip(ats, att_a_bulk, def_a_bulk): self._att_elo[t] = a; self._def_elo[t] = d
 
-        groups = df.groupby('league_slug') if 'league_slug' in df.columns else [('all', df)]
+        groups = df.groupby(league_series)
         for slug, grp in groups:
             self._league_stats[slug] = {
                 'avg_goals': (grp['home_goals'] + grp['away_goals']).mean(),
@@ -167,6 +184,9 @@ class FeaturePipeline:
 
     def build_training_set(self, df: pd.DataFrame, max_samples: int = MAX_TRAINING_SAMPLES):
         total = len(df)
+        # Canonical league slug per row (see model/leagues.py) — the fitted
+        # _league_map / _league_stats are keyed on it, so lookups must match.
+        league_series = self._league_col(df)
         all_idx = list(range(20, total))
         if len(all_idx) > max_samples: all_idx = all_idx[-max_samples:]
         n_targets = len(all_idx)
@@ -196,7 +216,7 @@ class FeaturePipeline:
         _avg = df[['avg_odds_home', 'avg_odds_draw', 'avg_odds_away']].fillna(0).values.astype(np.float64)
         all_odds_closing = np.where(_avg > 1.01, _avg, all_odds)
         all_league_stats = np.zeros((len(df), 6), dtype=np.float64)
-        for i, slug in enumerate(df['league_slug'].fillna('all')):
+        for i, slug in enumerate(league_series):
             ls = self._league_stats.get(slug, {'avg_goals': 2.6, 'home_attack': 1.0, 'away_attack': 1.0, 'home_adv_factor': 1.25, 'home_win_rate': 0.46, 'draw_rate': 0.24})
             all_league_stats[i] = [ls['avg_goals'], ls['home_attack'], ls['away_attack'], ls['home_adv_factor'], ls['home_win_rate'], ls['draw_rate']]
 
@@ -263,7 +283,10 @@ class FeaturePipeline:
                            exc_info=True)
 
         # 2. League IDs (1)
-        league_ids = df['league_slug'].fillna('all').map(self._league_map).values[all_idx].reshape(-1, 1)
+        # fillna(0): an unseen slug lands on league_id 0 rather than NaN in the
+        # model matrix (a live-only competition now maps to a real training slug,
+        # but a league the training set genuinely lacks must not poison X).
+        league_ids = league_series.map(self._league_map).fillna(0).astype(np.int32).values[all_idx].reshape(-1, 1)
 
         # 3. Concatenate to 161 features
         X = np.hstack([X_cont, league_ids])
@@ -275,44 +298,103 @@ class FeaturePipeline:
         self.last_meta = {
             "odds":    all_odds[all_idx],
             "odds_closing": all_odds_closing[all_idx],
-            "leagues": df['league_slug'].fillna('all').values[all_idx],
+            "leagues": league_series.values[all_idx],
         }
         return X, y_1x2, y_goals, df['date'].values[all_idx]
 
-    def build_features(self, matches: list, history: pd.DataFrame) -> np.ndarray:
-        # Travel/fatigue (141-145) + recent form (146-154): one pass over
-        # history + this batch so inference reproduces training exactly.
+    def compute_blocks(self, matches: list, history: pd.DataFrame):
+        """Travel/fatigue (141-145) + recent-form (146-154) blocks for a batch.
+
+        Split out of build_features() so a prediction run can derive them ONCE
+        for every fixture.  predict_match() is called per fixture, and these two
+        blocks over the full 377k-row frame cost ~35s (form alone: 26s) —
+        recomputing them per fixture would turn a 50-game run into half an hour.
+        """
         travel_blk = np.zeros((len(matches), N_TRAVEL), dtype=np.float64)
         form_blk = np.zeros((len(matches), N_FORM), dtype=np.float64)
-        if matches and history is not None and \
+        if not matches or history is None or not \
                 {"home_team", "away_team", "date"}.issubset(getattr(history, "columns", ())):
-            try:
-                new = pd.DataFrame({
-                    "home_team": [str(m.get("home", "")) for m in matches],
-                    "away_team": [str(m.get("away", "")) for m in matches],
-                    "date": pd.to_datetime([m.get("date") for m in matches], errors="coerce"),
-                    # upcoming fixtures have no scores yet — harmless, form only
-                    # reads values from matches BEFORE this row
-                    "home_goals": np.nan,
-                    "away_goals": np.nan,
-                })
-                cols = ["home_team", "away_team", "date"]
-                hist_part = history[cols].copy()
-                if "home_goals" in history.columns:
-                    hist_part["home_goals"] = history["home_goals"]
-                if "away_goals" in history.columns:
-                    hist_part["away_goals"] = history["away_goals"]
-                combined = pd.concat([hist_part, new], ignore_index=True)
-                travel_blk = compute_travel_block(combined)[-len(matches):]
-                form_blk = compute_form_block(combined)[-len(matches):]
-            except Exception:
-                logger.warning("travel/form features unavailable — using zeros",
-                               exc_info=True)
+            return travel_blk, form_blk
+        try:
+            # Fixture feeds spell these home_team/away_team/kickoff_time; the
+            # trainer's own dicts use home/away/date.  Normalise here so a
+            # caller cannot silently hand us empty team names — that would
+            # append nameless rows and return an all-zero form/travel block.
+            def _h(m, *keys, default=""):
+                for k in keys:
+                    v = m.get(k)
+                    if v:
+                        return str(v)
+                return default
+
+            new = pd.DataFrame({
+                "home_team": [_h(m, "home", "home_team") for m in matches],
+                "away_team": [_h(m, "away", "away_team") for m in matches],
+                "date": pd.to_datetime(
+                    [_h(m, "date") or _h(m, "kickoff_time")[:10] for m in matches],
+                    errors="coerce"),
+                # upcoming fixtures have no scores yet — harmless, form only
+                # reads values from matches BEFORE this row
+                "home_goals": np.nan,
+                "away_goals": np.nan,
+            })
+            if not (new["home_team"] != "").any() or new["date"].isna().all():
+                # Nothing usable — better to return zeros (the old behaviour)
+                # than to compute blocks for nameless rows.
+                return travel_blk, form_blk
+            cols = ["home_team", "away_team", "date"]
+            hist_part = history[cols].copy()
+            if "home_goals" in history.columns:
+                hist_part["home_goals"] = history["home_goals"]
+            if "away_goals" in history.columns:
+                hist_part["away_goals"] = history["away_goals"]
+
+            # A fixture must never read its own result out of history: the row
+            # would sit here with the final score (re-predicting after
+            # settlement), sort directly ahead of the fixture row, and feed its
+            # own goals into its form and its own venue into its travel.
+            # Drop the exact (home, away, date) rows only — other teams' matches
+            # that day stay, exactly as the training windows see them.
+            key = {(str(h), str(a), str(d)[:10])
+                   for h, a, d in zip(new["home_team"], new["away_team"], new["date"])
+                   if pd.notna(d)}
+            if key:
+                own = [(str(h), str(a), str(d)[:10]) in key
+                       for h, a, d in zip(hist_part["home_team"], hist_part["away_team"],
+                                          hist_part["date"])]
+                if any(own):
+                    hist_part = hist_part[~np.asarray(own)]
+
+            combined = pd.concat([hist_part, new], ignore_index=True)
+            travel_blk = compute_travel_block(combined)[-len(matches):]
+            form_blk = compute_form_block(combined)[-len(matches):]
+        except Exception:
+            logger.warning("travel/form features unavailable — using zeros",
+                           exc_info=True)
+        return travel_blk, form_blk
+
+    def build_features(self, matches: list, history: pd.DataFrame,
+                       blocks=None) -> np.ndarray:
+        # Travel/fatigue (141-145) + recent form (146-154): one pass over
+        # history + this batch so inference reproduces training exactly.
+        # `blocks` lets a prediction run precompute them for the whole fixture
+        # list — see compute_blocks().
+        if blocks is None:
+            blocks = self.compute_blocks(matches, history)
+        travel_blk, form_blk = blocks
+
+        # Column arrays read once: get_hist/h2h run per fixture and the frame
+        # is the full training history (~377k rows), so re-deriving masks from
+        # pandas index arithmetic per match is measurable.
+        h_home = history['home_team'].to_numpy() if len(matches) and 'home_team' in history else np.array([])
+        h_away = history['away_team'].to_numpy() if len(matches) and 'away_team' in history else np.array([])
+        h_date = (pd.to_datetime(history['date'], errors='coerce').to_numpy()
+                  if len(matches) and 'date' in history else np.array([], dtype='datetime64[ns]'))
 
         X_out = []
         for i, m in enumerate(matches):
             home, away = m['home'], m['away']
-            league = m.get('league', 'all')
+            league = canon_league(m.get('league', 'all'))
 
             rh = self._elo_ratings.get(home, 1500.0); ra = self._elo_ratings.get(away, 1500.0)
             pe = np.array([rh, ra, rh-ra, 0, 0, 0], dtype=np.float64)
@@ -329,16 +411,34 @@ class FeaturePipeline:
             ls_d = self._league_stats.get(league, {'avg_goals': 2.6, 'home_attack': 1.0, 'away_attack': 1.0, 'home_adv_factor': 1.25, 'home_win_rate': 0.46, 'draw_rate': 0.24})
             ls = np.array([ls_d['avg_goals'], ls_d['home_attack'], ls_d['away_attack'], ls_d['home_adv_factor'], ls_d['home_win_rate'], ls_d['draw_rate']], dtype=np.float64)
 
+            # Strictly before the fixture: a settled fixture must not read its
+            # own result (or a same-day rematch) out of history.
+            before = np.datetime64('NaT')
+            if m.get('date'):
+                try:
+                    ts = pd.Timestamp(m['date'])
+                    if pd.notna(ts):
+                        before = np.datetime64(ts.to_datetime64())
+                except Exception:
+                    before = np.datetime64('NaT')
+            has_before = before == before  # not NaT
+
             def get_hist(t):
-                h = history[(history['home_team'] == t) | (history['away_team'] == t)].sort_values('date').tail(_LOOKBACK)
+                msk = (h_home == t) | (h_away == t)
+                if has_before:
+                    msk = msk & (h_date < before)
+                h = history.loc[msk].sort_values('date').tail(_LOOKBACK)
                 gh = h['home_goals'].values.astype(np.int32); ga = h['away_goals'].values.astype(np.int32)
                 wh = (h['home_team'] == t).values.astype(np.int32)
-                ts = pd.to_datetime(h['date']).values.astype(np.float64) / 1e9
+                ts_ = pd.to_datetime(h['date']).values.astype(np.float64) / 1e9
                 eh = np.full(len(h), self._elo_ratings.get(t, 1500.0), dtype=np.float64)
-                return len(h), gh, ga, wh, ts, eh
+                return len(h), gh, ga, wh, ts_, eh
 
             nh, ghh, gah, whh, tsh, ehh = get_hist(home); na, gha, gaa, wha, tsa, eha = get_hist(away)
-            h2 = history[((history['home_team'] == home) & (history['away_team'] == away)) | ((history['home_team'] == away) & (history['away_team'] == home))].sort_values('date')
+            m2 = ((h_home == home) & (h_away == away)) | ((h_home == away) & (h_away == home))
+            if has_before:
+                m2 = m2 & (h_date < before)
+            h2 = history.loc[m2].sort_values('date')
             n2 = len(h2); gh2 = h2['home_goals'].values.astype(np.int32); ga2 = h2['away_goals'].values.astype(np.int32); wh2 = (h2['home_team'] == home).values.astype(np.int32)
 
             squad_v = np.array([m.get('home_squad_value', 0), m.get('away_squad_value', 0), m.get('home_avg_age', 25), m.get('away_avg_age', 25), m.get('home_lineup_rating', 70), m.get('away_lineup_rating', 70)], dtype=np.float64)

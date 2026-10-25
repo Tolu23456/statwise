@@ -99,27 +99,38 @@ export default function BacktestingScreen() {
       const cols =
         'id, prediction, status, confidence, league, league_slug, match_title, match_date, tier, tier_required';
 
+      // Rows written by the legacy seeded-PRNG fetch job (fixed 2026-10-22)
+      // carry no model probabilities at all — they were 100% "Home Win" from
+      // a PRNG whose first draw is ~0.0005.  Score only rows Pico actually
+      // wrote, or this screen reports the home-win base rate (44%) as model
+      // skill.  The quarantine tool tags them stats.data_quality='invented'.
+      const isModelRow = (r: { stats?: Record<string, unknown> | null }) =>
+        typeof r?.stats?.prob_home === 'number' &&
+        r?.stats?.data_quality !== 'invented';
+
       const { data, error } = await supabase
         .from('predictions')
-        .select(`${cols}, actual_result`)
+        .select(`${cols}, actual_result, stats`)
         .gte('match_date', thirtyDaysAgo)
         .in('tier', allowedTiers)
         .order('match_date', { ascending: false });
 
-      if (!error) return data ?? [];
+      if (!error) return (data ?? []).filter(isModelRow);
 
       // The settlement columns (actual_result / home_score / away_score) may not
       // exist yet on older databases — fall back to the base columns instead of
       // failing the whole screen.
       const fallback = await supabase
         .from('predictions')
-        .select(cols)
+        .select(`${cols}, stats`)
         .gte('match_date', thirtyDaysAgo)
         .in('tier', allowedTiers)
         .order('match_date', { ascending: false });
 
       if (fallback.error) throw fallback.error;
-      return (fallback.data ?? []).map(r => ({ ...r, actual_result: null }));
+      return (fallback.data ?? [])
+        .filter(isModelRow)
+        .map(r => ({ ...r, actual_result: null }));
     },
     staleTime: 5 * 60 * 1000,
     retry: 1,

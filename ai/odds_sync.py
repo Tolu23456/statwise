@@ -110,7 +110,29 @@ LEAGUE_ODDS_KEYS: dict[str, list[str]] = {
     "bundesliga-2":     ["soccer_germany_bundesliga2"],
     "serie-b":          ["soccer_italy_serie_b"],
     "copa-sudamericana": ["soccer_conmebol_copa_sudamericana"],
+    # Live fixture-feed spellings with no entry of their own.  These five
+    # slugs are what ai/model/live_fetcher.py actually writes into
+    # predictions.league_slug, so without them the Odds API was never asked
+    # for their prices — part of why odds coverage fell 76% -> 38% and why
+    # only 41 of 97 settled fixtures carried odds at all.
+    "turkish-super-lig":  ["soccer_turkey_super_league"],
+    "brazilian-serie-a":  ["soccer_brazil_campeonato"],
+    "argentina-primera":  ["soccer_argentina_primera_division"],
+    "saudi-pro-league":   ["soccer_saudi_pro_league"],
+    "scottish-prem":      ["soccer_scotland_premier_league"],
 }
+
+# NOTE: unlike every MODEL-facing lookup (model/leagues.py), odds keys are
+# deliberately NOT canonicalised.  canon_league() maps europa-league and
+# conference-league onto champions-league so the model sees one European
+# bucket — but the market prices those competitions separately, so
+# canonicalising here would fetch Champions League odds for a Thursday
+# fixture.  This table keys on the REAL competition.
+
+
+def _odds_keys(slug) -> list[str]:
+    """The Odds API sport key(s) for a league slug (empty if unmapped)."""
+    return LEAGUE_ODDS_KEYS.get(str(slug or "").strip(), [])
 
 
 def _now() -> dt.datetime:
@@ -666,10 +688,13 @@ def cmd_prepredict(args) -> int:
     wanted: list[str] = []
     slug_for_key: dict[str, str] = {}
     for s in slugs:
-        for k in LEAGUE_ODDS_KEYS.get(s, []):
+        for k in _odds_keys(s):
             if k not in wanted:
                 wanted.append(k)
                 slug_for_key[k] = s
+    unmapped = [s for s in slugs if not _odds_keys(s)]
+    if unmapped:
+        print(f"no Odds API mapping for: {', '.join(unmapped)} (these fixtures get no odds)")
     if not wanted:
         print("No Odds API mapping for our leagues — nothing to fetch.")
         return 0
@@ -867,7 +892,7 @@ def cmd_inplay(args) -> int:
 
     wanted: list[str] = []
     for p in candidates:
-        for k in LEAGUE_ODDS_KEYS.get(str(p.get("league_slug") or ""), []):
+        for k in _odds_keys(p.get("league_slug", "")):
             if k not in wanted:
                 wanted.append(k)
     if not wanted:

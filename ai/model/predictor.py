@@ -11,6 +11,7 @@ from typing import Optional
 from .trainer import FootballPredictor
 from .live_fetcher import fetch_upcoming_matches, _mock_allowed
 from .downloader import load_training_data
+from .leagues import canon_league
 
 logger = logging.getLogger(__name__)
 
@@ -38,6 +39,52 @@ TIER_THRESHOLDS = {
 
 # Certainty at/above which the model is considered genuinely sure -> "AI Pick"
 AI_PICK_CERTAINTY = 65.0
+
+# ── inference history ───────────────────────────────────────────────────────
+# Live inference used to run on an EMPTY frame whenever the engine merely
+# loaded the pickle — the normal path, since load_or_train() only ever filled
+# self.history after an in-process retrain.  With no history, form, H2H,
+# streaks, Poisson lambdas and travel all read nothing: 103 of 161 features
+# changed, 55 of them outside the training p5-p95 band (home_win_rate
+# 0.607 -> 0, lambda_h 0.418 -> 0.100), leaving live predictions running on
+# Elo plus the market blend.  The committed season files are the very rows
+# retrain.py trains on, so that is what inference should see: ~6s and ~33MB,
+# once per process, cached.
+_LOCAL_HISTORY: Optional[pd.DataFrame] = None
+
+
+def _load_local_history() -> Optional[pd.DataFrame]:
+    """The committed season files (ai/data/clean/*.csv) as inference history."""
+    global _LOCAL_HISTORY
+    if _LOCAL_HISTORY is not None:
+        return _LOCAL_HISTORY
+    import glob
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # .../statwise/ai
+    paths = sorted(glob.glob(os.path.join(base, 'data', 'clean', '????_matches.csv')))
+    if not paths:
+        logger.warning("no season files under ai/data/clean — inference history unavailable")
+        return None
+    usecols = {'date', 'home_team', 'away_team', 'home_goals', 'away_goals'}
+    frames = []
+    for p in paths:
+        try:
+            frames.append(pd.read_csv(p, usecols=lambda c: c in usecols, low_memory=False))
+        except Exception as e:  # noqa: BLE001
+            logger.warning(f"season file unreadable ({os.path.basename(p)}): {e}")
+    if not frames:
+        return None
+    hist = pd.concat(frames, ignore_index=True)
+    hist['date'] = pd.to_datetime(hist['date'], errors='coerce')
+    # Categorical team names: 377k rows cost ~33MB instead of ~83MB, and every
+    # downstream lookup is an equality test, which categoricals answer natively.
+    for c in ('home_team', 'away_team'):
+        if c in hist.columns:
+            hist[c] = hist[c].astype('category')
+    hist = hist.dropna(subset=['date', 'home_team', 'away_team'])
+    hist = hist.sort_values('date', kind='stable').reset_index(drop=True)
+    _LOCAL_HISTORY = hist
+    logger.info(f"Loaded inference history: {len(hist):,} rows from {len(paths)} season files")
+    return hist
 
 #: How many historical matches a league needs before the model can claim
 #: league-specific form. football-data.co.uk only publishes domestic seasons,
@@ -158,15 +205,42 @@ class PredictionEngine:
         # Prefer the counts persisted INSIDE the model: self.history is only
         # populated when a retrain happened in this process, so reading it alone
         # would leave the map empty on every ordinary "load the pickle" run.
+        # Counts are keyed on the CANONICAL slug (they are written by
+        # features.fit), so lookups below must canonicalise too.
         try:
-            league_n = dict(getattr(self.predictor, 'league_counts', None) or {})
+            league_n = {canon_league(k): int(v)
+                        for k, v in (getattr(self.predictor, 'league_counts', None) or {}).items()}
             if not league_n and self.history is not None and 'league' in self.history:
                 league_n = self.history['league'].value_counts().to_dict()
         except Exception:
             league_n = {}
 
+        # Feature history for THIS run: load-once local season files when the
+        # engine merely loaded a pickle (the normal path), otherwise the frame
+        # from an in-process retrain.  Without this, every fixture is scored on
+        # an empty frame and the form/H2H/lambda/travel features all read zero.
+        hist = self.history if (self.history is not None and not self.history.empty) \
+            else _load_local_history()
+        if hist is None or hist.empty:
+            logger.warning(
+                "No inference history available — form/H2H/lambda features will be empty. "
+                "Re-run the data pipeline so ai/data/clean/*.csv exist."
+            )
+            hist = pd.DataFrame(columns=['date', 'home_team', 'away_team',
+                                         'home_goals', 'away_goals'])
+
+        # Travel (141-145) and recent-form (146-154) are one pass over the whole
+        # history frame (~35s on 377k rows).  Derive them ONCE for the entire
+        # fixture list and slice per match — recomputing inside the loop would
+        # cost 35s x N fixtures.
+        try:
+            blocks = self.predictor.feature_pipe.compute_blocks(fixtures, hist)
+        except Exception as be:  # noqa: BLE001
+            logger.warning(f"batch form/travel blocks failed ({be}) — falling back to per-fixture")
+            blocks = None
+
         results = []
-        for fix in fixtures:
+        for idx, fix in enumerate(fixtures):
             try:
                 # Match-time weather (Open-Meteo forecast) — a live model feature (slots 133-140)
                 kickoff    = fix.get('kickoff_time', '')
@@ -184,7 +258,7 @@ class PredictionEngine:
                     home  = fix['home_team'],
                     away  = fix['away_team'],
                     league= fix.get('league_slug', 'all'),
-                    history= self.history,
+                    history= hist,
                     # Recent results for the analysis panel (form, H2H). Kept
                     # separate from `history` so the feature pipeline is
                     # unaffected by the compact snapshot.
@@ -195,6 +269,13 @@ class PredictionEngine:
                     odds_draw=float(fix.get('odds_draw') or 0),
                     odds_away=float(fix.get('odds_away') or 0),
                     weather= weather,
+                    # Fixture kickoff: the travel/rest slots are the only
+                    # features keyed on kickoff rather than "now", and without
+                    # it they read NaT -> zeros for every fixture.
+                    match_date= match_date,
+                    # Precomputed batch slice — see compute_blocks() above.
+                    feature_blocks=None if blocks is None else
+                                   (blocks[0][idx:idx + 1], blocks[1][idx:idx + 1]),
                 )
                 uncertainty = pred.get('uncertainty') or {}
                 is_uncertain = bool(uncertainty.get('is_uncertain'))
@@ -205,7 +286,7 @@ class PredictionEngine:
                 # Cup ties (Europa/Conference League, Libertadores) have no
                 # season CSV of their own, so Pico leans on pooled priors there
                 # — worth saying out loud rather than implying deep knowledge.
-                league  = fix.get('league_slug', 'all')
+                league  = canon_league(fix.get('league_slug', 'all'))
                 # An empty map means the model predates per-league accounting:
                 # treat support as UNKNOWN rather than thin, so a stale pickle
                 # cannot quietly suppress every AI Pick on the board.
@@ -318,15 +399,31 @@ class PredictionEngine:
             return 0
 
         saved = 0
+        refused = 0
         for p in predictions:
             try:
                 row = {k: v for k, v in p.items() if k in self._DB_COLUMNS}
+                # A row without model probabilities is not a Pico prediction.
+                # The legacy fetch job invented H/D/A picks exactly this way
+                # and they polluted the accuracy screen for months; refuse to
+                # write one rather than leave the same trap for the next
+                # writer.  See ai/tools/quarantine_invented_rows.py.
+                stats = row.get("stats")
+                if not isinstance(stats, dict) or stats.get("prob_home") is None:
+                    refused += 1
+                    logger.error(
+                        f"Refusing to save {p.get('match_id')}: stats has no "
+                        f"prob_home — model output missing, not a real prediction."
+                    )
+                    continue
+                stats.setdefault("writer", "pico")
                 sb.table("predictions").upsert(row, on_conflict="match_id").execute()
                 saved += 1
             except Exception as e:
                 logger.warning(f"Failed to save prediction {p.get('match_id')}: {e}")
 
-        logger.info(f"Saved {saved}/{len(predictions)} predictions to Supabase.")
+        logger.info(f"Saved {saved}/{len(predictions)} predictions to Supabase."
+                    + (f" {refused} refused (no model probabilities)." if refused else ""))
         self.prune_duplicate_predictions({p.get("match_id") for p in predictions if p.get("match_id")})
         return saved
 
