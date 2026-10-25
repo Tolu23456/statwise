@@ -15,8 +15,9 @@ Three correctness bugs found by the live-accuracy investigation — all fixed, t
 1. **Empty inference history** — loading the pickle (the normal path) scored every fixture against a zero-length frame; form/H2H/lambda/travel all read nothing. Now falls back to `ai/data/clean/*.csv` (377k rows, cached).
 2. **League-slug drift** — 6 of 21 feed slugs had **0 training rows** (`efl-championship` vs `championship`, etc.). Canonicalised at every model-facing lookup via `ai/model/leagues.py`; Supabase keeps live slugs. 5 slugs also had no Odds API mapping at all.
 3. **Invented rows** — the legacy seeded-PRNG fetch job wrote "Home Win" 100% of the time. 8 surviving rows flagged `stats.data_quality='invented'` by `ai/tools/quarantine_invented_rows.py`; `push_to_supabase` now refuses a row with no `stats.prob_home`; the accuracy screen only scores rows Pico wrote.
+4. **Odds wiped on every predict run** — predict upserts the whole row 4×/day with `odds: None` (the fixture feeds carry no prices; odds_sync PATCHes them in), so 88 upcoming rows were down to **2** with a price. Row building now lives in `_row_for_db()`, which omits `odds` instead of writing null — verified: 2 → 81 of 87 after a predict run.
 
-Regression suite: `ai/experimental/test_leak_fixes.py` (19 checks), wired into the retrain workflow's unit-test step.
+Regression suite: `ai/experimental/test_leak_fixes.py` (25 checks), wired into the retrain workflow's unit-test step.
 
 ---
 
