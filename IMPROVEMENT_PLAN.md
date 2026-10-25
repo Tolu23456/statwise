@@ -28,17 +28,17 @@
 - [x] **Create weather fetcher** - Add `ai/data/weather_fetcher.py` using Open-Meteo API (free)
 - [x] **Integrate with prediction pipeline** - Add weather features to `features.py`
 - [x] **Add venue data** - City coordinates for stadiums where possible
-- [ ] **Cache weather data** - Avoid repeated API calls for same matches
-- [ ] **Test weather integration** - Verify features are added correctly
-- [ ] **Commit changes**
+- [x] **Cache weather data** - Avoid repeated API calls for same matches
+- [x] **Test weather integration** - Verify features are added correctly
+- [x] **Commit changes**
 
 ### Step 1.3: Automated Weekly Retraining
-- [ ] **Review retrain.py** - Understand current retraining workflow
+- [x] **Review retrain.py** - Understand current retraining workflow
 - [x] **Create GitHub Action** - Add `.github/workflows/retrain-weekly.yml`
-- [ ] **Add holdout validation** - Ensure retrain checks metrics against baseline
-- [ ] **Add model versioning** - Track model versions in `model_info.json`
+- [x] **Add holdout validation** - Ensure retrain checks metrics against baseline
+- [x] **Add model versioning** - Track model versions in `model_info.json`
 - [ ] **Test workflow** - Manual dispatch test
-- [ ] **Commit changes**
+- [x] **Commit changes**
 
 ### Step 1.4: Better Market Blending
 - [ ] **Analyze current alphas** - Review per-league alpha values
@@ -177,7 +177,7 @@
 ### Step 4.3: Abuse Prevention
 - [ ] **Rate limiting** - Add to API routes
 - [ ] **Booking code protection** - Prevent abuse
-- [ [ ] **Chat sanitization** - Already done, audit
+- [ ] **Chat sanitization** - Already done, audit
 - [ ] **Input validation** - All user inputs
 - [ ] **Add CAPTCHA if needed** - For sensitive actions
 - [ ] **Audit security** - Review auth/permissions
@@ -205,7 +205,7 @@
 
 ## FINAL CHECKPOINT
 - [ ] **All steps completed** - Review entire checklist
-- [ [ ] **TypeScript compiles** - `cd statwise && npx tsc --noEmit`
+- [ ] **TypeScript compiles** - `cd statwise && npx tsc --noEmit`
 - [ ] **Tests pass** - If any exist
 - [ ] **All changes committed & pushed** - To main
 - [ ] **Website deployed** - Verify https://tolu23456.github.io/statwise/
