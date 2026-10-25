@@ -3,13 +3,24 @@ name: Weather Backfill
 # Fills ai/data/weather_by_match.csv.gz — the per-match weather sidecar that
 # retrain.py left-joins into the training set (feature slots 133-140).
 #
-# It was empty before: the lookup rounded coordinates to 0.1° while the fetch
-# grid is 0.5°, so almost every row missed.  Fixed in
-# ai/enrich_weather_history.py; the fetch itself (889 grid cities) is
-# network-heavy, so it runs here rather than on the dev box.
+# Open-Meteo's free tier is 10k calls/day but is accounted per IP, and GitHub's
+# runners share IPs with everybody else: a single job managed ~45 of the 941
+# cities before the shared IP's hourly budget ran dry (run 40173961685
+# "succeeded" at 10% coverage).  We only need ~63 requests in total — well
+# inside fair use — so the work is split across N jobs, each on its own
+# runner/IP, taking a disjoint slice of the sorted city list (`index % N`;
+# every job checks out the same commit, so the list is identical and there is
+# no coordination step).
 #
-# The sidecar is tracked in git — without it CI retrain trains with every
-# weather feature blank while live inference feeds real forecasts.
+# Fan-out: 20 = the Free-plan concurrent-job cap (40 Pro / 60 Team).  A larger
+# matrix would only queue.  Change the matrix, the `--shards` argument and
+# nothing else — the merge job picks up whatever shard artifacts exist.
+#
+# Each shard: resume from its own cache -> fetch -> save cache -> upload the
+# filled rows as an artifact.  Merge job: download all shard rows, concatenate
+# into the sidecar, commit.  The sidecar is tracked in git — without it CI
+# retrain trains with every weather feature blank while live inference feeds
+# real forecasts.
 
 on:
   workflow_dispatch:
@@ -20,12 +31,16 @@ permissions:
   contents: write
 
 jobs:
-  backfill:
+  fetch:
     runs-on: ubuntu-latest
-    # A full pass is ~889 cities of 2000->today archive fetches; 429 back-offs
-    # (120s each) make 60 minutes too tight. The fetch cache below makes every
-    # run resume from the last one, so a timeout costs nothing but wall time.
-    timeout-minutes: 360
+    # A shard is ~47 cities of 2000->today archive fetches.  Its cache makes
+    # every run resume from the last one, so a timeout costs only wall time.
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        # Keep in sync with the `--shards 20` argument below.
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
     steps:
       - uses: actions/checkout@v4
 
@@ -40,39 +55,94 @@ jobs:
         run: pip install -r ai/requirements.txt
 
       - name: Unit tests (weather integration)
+        if: matrix.shard == 0
         run: python ai/experimental/test_weather.py
 
       # ai/data/weather_cache/ is gitignored (hundreds of MB), so without this
-      # every run refetched all 889 cities and the runner died holding the only
+      # every run refetched its cities and the runner died holding the only
       # copy. Restore the newest previous save, then always save this attempt.
-      - name: Restore fetch cache
+      - name: Restore shard cache
         uses: actions/cache/restore@v4
         with:
           path: ai/data/weather_cache
-          key: weather-cache-${{ github.run_id }}
+          key: weather-shard-${{ matrix.shard }}-${{ github.run_id }}
           restore-keys: |
-            weather-cache-
+            weather-shard-${{ matrix.shard }}-
 
-      - name: Backfill weather for all matches
+      - name: Fetch shard ${{ matrix.shard }}/20
+        env:
+          SHARD: ${{ matrix.shard }}
         run: |
           set -o pipefail
-          # -u: without it every pre-fetch print sits in a block-buffered pipe
-          # and is lost when the runner is cancelled — the last run logged
-          # nothing at all for 60 minutes.
-          python -u ai/enrich_weather_history.py 2>&1 | tee backfill.log
+          # -u: without it every print sits in a block-buffered pipe and is
+          # lost when the runner is cancelled — an early run logged nothing.
+          python -u ai/enrich_weather_history.py --shards 20 --shard "$SHARD" \
+            --rows-out "rows/shard-$SHARD.csv" 2>&1 | tee "fetch-$SHARD.log"
 
-      - name: Save fetch cache
+      - name: Upload shard rows
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weather-rows-${{ matrix.shard }}
+          path: |
+            rows/
+            fetch-${{ matrix.shard }}.log
+          retention-days: 3
+          if-no-files-found: ignore
+
+      - name: Save shard cache
         if: always()
         uses: actions/cache/save@v4
         with:
           path: ai/data/weather_cache
-          key: weather-cache-${{ github.run_id }}
+          key: weather-shard-${{ matrix.shard }}-${{ github.run_id }}
+
+  merge:
+    needs: fetch
+    # Build from whatever the shards managed, even if some failed — partial
+    # progress committed now beats rows sitting in an artifact.
+    if: ${{ always() && needs.fetch.result != 'cancelled' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Download shard rows
+        uses: actions/download-artifact@v4
+        with:
+          pattern: weather-rows-*
+          path: rows
+          merge-multiple: true
+
+      - name: Merge rows into sidecar
+        run: |
+          set -o pipefail
+          ls -la rows/
+          python -u ai/enrich_weather_history.py --merge-rows rows 2>&1 | tee merge.log
 
       - name: Coverage report
         if: always()
         run: |
-          python -u ai/enrich_weather_history.py --stats 2>&1 | tee -a backfill.log \
-            | sed 's/^/```\n/; $a```' >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "## Weather backfill coverage"
+            echo '```'
+            python -u ai/enrich_weather_history.py --stats
+            echo '```'
+            echo '### Shard fetches'
+            echo '```'
+            grep -hE "shard .*(done|cities)|cities fetched|cooling|throttled|stopping" rows/fetch-*.log 2>/dev/null | tail -60 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit and push if changed
         if: always()
@@ -82,15 +152,15 @@ jobs:
           git add ai/data/weather_by_match.csv.gz ai/data/team_venues.json || true
           if ! git diff --staged --quiet; then
             git commit -m "data: weather backfill $(date -u +%Y-%m-%d)"
-            # main may have moved while this job ran (other workflows push too)
+            # main may have moved while the shards ran (other workflows push too)
             git pull --rebase origin main
             git push
           fi
 
-      - name: Upload log
+      - name: Upload merge log
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: weather-backfill-log
-          path: backfill.log
+          name: backfill-merge
+          path: merge.log
           if-no-files-found: ignore
