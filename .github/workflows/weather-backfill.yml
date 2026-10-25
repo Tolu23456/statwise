@@ -36,6 +36,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r ai/requirements.txt
 
+      - name: Unit tests (weather integration)
+        run: python ai/experimental/test_weather.py
+
       - name: Backfill weather for all matches
         run: |
           set -o pipefail
@@ -52,7 +55,12 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ai/data/weather_by_match.csv.gz ai/data/team_venues.json || true
-          git diff --staged --quiet || git commit -m "data: weather backfill $(date -u +%Y-%m-%d)" && git push
+          if ! git diff --staged --quiet; then
+            git commit -m "data: weather backfill $(date -u +%Y-%m-%d)"
+            # main may have moved while this job ran (other workflows push too)
+            git pull --rebase origin main
+            git push
+          fi
 
       - name: Upload log
         if: always()

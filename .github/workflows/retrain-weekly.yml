@@ -31,4 +31,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ai/models/ ai/data/model_info.json || true
-          git diff --staged --quiet || git commit -m "Auto-retrain: $(date -u +%Y-%m-%d)" && git push
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-retrain: $(date -u +%Y-%m-%d)"
+            # main may have moved while training ran (other workflows push too)
+            git pull --rebase origin main
+            git push
+          fi

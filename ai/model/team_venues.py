@@ -5,12 +5,14 @@ and historical/forecast weather fetching.
 Caches:
   ai/data/team_venues.json        team -> {city, country, lat, lon}
   ai/data/weather_cache/{key}.json  per-city daily archive weather 2000->today
+  ai/data/weather_cache/forecast/{lat}_{lon}_{date}.json  per-fixture forecast
+                                   (TTL: 24h far out, 3h inside 2 days, 7d once played)
 
 Used by the historical backfill (ai/enrich_weather_history.py) and the live
 predictor (forecast weather at prediction time).
 """
 from __future__ import annotations
-import gzip, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
+import gzip, datetime as dt, json, math, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VENUE_CACHE = os.path.join(BASE, "data", "team_venues.json")
@@ -294,6 +296,10 @@ def fetch_archive_weather_many(coords: list[tuple[float, float]],
     pending: dict[str, tuple[float, float]] = {}
     result: dict[str, dict] = {}
     for lat, lon in coords:
+        if not (isinstance(lat, (int, float)) and isinstance(lon, (int, float))
+                and math.isfinite(float(lat)) and math.isfinite(float(lon))
+                and -90.0 <= float(lat) <= 90.0 and -180.0 <= float(lon) <= 180.0):
+            continue                      # a malformed coordinate 400s the whole batch
         key = _wx_key(lat, lon)
         if key in result:
             continue
@@ -303,32 +309,50 @@ def fetch_archive_weather_many(coords: list[tuple[float, float]],
         else:
             pending[key] = (lat, lon)
 
-    chunks = [list(pending.items())[i:i + batch] for i in range(0, len(pending), batch)]
+    # Worklist rather than fixed chunks: Open-Meteo answers HTTP 400 when a
+    # request spans too many locations x days (30 cities over 2000->today is
+    # over the limit, 30 over a short range is fine).  On a 400 we halve the
+    # chunk and requeue, so the batch size adapts to the API instead of
+    # failing the run.  429 stays a back-off.
+    queue = [list(pending.items())[i:i + batch] for i in range(0, len(pending), batch)]
+    ci = 0
     consecutive_fail = 0
-    for ci, chunk in enumerate(chunks, 1):
+    while queue:
+        chunk = queue.pop(0)
+        ci += 1
         lats = ",".join(f"{lat}" for _, (lat, _) in chunk)
         lons = ",".join(f"{lon}" for _, (_, lon) in chunk)
         url = (f"https://archive-api.open-meteo.com/v1/archive?latitude={lats}&longitude={lons}"
                f"&start_date=2000-01-01&end_date={today}"
                "&daily=temperature_2m_mean,precipitation_sum,wind_speed_10m_max,weather_code"
                "&timezone=auto")
-        data, status, wait = None, 0, 0
+        data, status, wait, split = None, 0, 0, False
         for attempt in range(4):
             data, status = _get_archive(url)
             if data:
                 break
+            if status == 400 and len(chunk) > 1:
+                split = True
+                break
             wait = (120 if status == 429 else 20) * (attempt + 1)  # throttle: back off hard
             time.sleep(wait)
+        if split:
+            half = max(1, len(chunk) // 2)
+            queue.insert(0, chunk[half:])
+            queue.insert(0, chunk[:half])
+            continue
         if not data:
             consecutive_fail += 1
-            print(f"  batch {ci}/{len(chunks)}: FAILED (http {status}) "
-                  f"[{consecutive_fail} consecutive]", flush=True)
+            print(f"  batch {ci}: FAILED (http {status}) "
+                  f"[{consecutive_fail} consecutive, {len(queue)} queued]", flush=True)
             if consecutive_fail >= 4:
                 print("  rate-limited too hard — stopping; rerun later, cache resumes.",
                       flush=True)
                 break
             continue
         consecutive_fail = 0
+        if ci % 25 == 0 or not queue:
+            print(f"  batch {ci}: {len(queue)} chunk(s) left", flush=True)
         items = data if isinstance(data, list) else [data] if data else []
         positional = len(items) == len(chunk)
         got = 0
@@ -365,24 +389,70 @@ def fetch_archive_weather_many(coords: list[tuple[float, float]],
                             {"_through": today, "days": days})
                 result[key] = days
                 got += 1
-        print(f"  batch {ci}/{len(chunks)}: {got}/{len(chunk)} cities", flush=True)
-        if ci < len(chunks):
+        print(f"  batch {ci}: +{got}/{len(chunk)} cities "
+              f"({len(result)}/{len(pending)} done, {len(queue)} chunk(s) left)", flush=True)
+        if queue:
             time.sleep(pause)
     return result
 
 
+#: Directory for forecast caches: {lat}_{lon}_{date}.json -> {fetched_at, data}.
+#: Lives inside weather_cache/, which is gitignored like the archive cache.
+FC_CACHE_DIR = os.path.join(WX_CACHE_DIR, "forecast")
+
+
+def _forecast_ttl(date_str: str) -> int:
+    """How long a forecast fetched for `date_str` stays trustworthy.
+
+    Far-out forecasts move around the most, so they are re-fetched sooner than
+    near-term ones (which barely change hour to hour).  A date that has already
+    passed is observation, not forecast, and can be kept for a week.
+    """
+    try:
+        target = dt.datetime.strptime(date_str, "%Y-%m-%d").date()
+    except (TypeError, ValueError):
+        return 3 * 3600
+    days = (target - dt.date.today()).days
+    if days < 0:
+        return 7 * 86400
+    if days <= 2:
+        return 3 * 3600
+    if days <= 6:
+        return 6 * 3600
+    return 24 * 3600
+
+
 def fetch_forecast_weather(lat: float, lon: float, date_str: str) -> dict | None:
-    """Forecast/actual weather for an upcoming match date at a location."""
+    """Forecast/actual weather for an upcoming match date at a location.
+
+    Cached per (lat, lon, date) with a distance-aware TTL (see
+    `_forecast_ttl`), so the prediction pipeline makes one API call per
+    fixture per freshness window instead of one per run.
+    """
+    key = f"{lat:.3f}_{lon:.3f}_{date_str}"
+    path = os.path.join(FC_CACHE_DIR, key + ".json")
+    cached = _load_cache(path)
+    if isinstance(cached, dict) and "fetched_at" in cached:
+        age = time.time() - float(cached.get("fetched_at") or 0)
+        # a miss is retried on a short leash; a hit lives for the full TTL
+        ttl = 3600 if cached.get("data") is None else _forecast_ttl(date_str)
+        if 0 <= age < ttl:
+            return cached.get("data")
+
     url = (f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}"
            f"&daily=temperature_2m_mean,precipitation_sum,wind_speed_10m_max,weather_code"
            f"&start_date={date_str}&end_date={date_str}&timezone=auto")
     data = _get(url)
     dly = data.get("daily") or {}
     if not dly.get("time"):
+        # cache the miss too, otherwise a bad date hammers the API every run
+        _save_cache(path, {"fetched_at": time.time(), "data": None})
         return None
-    return {
+    result = {
         "temp_c": (dly.get("temperature_2m_mean") or [None])[0],
         "precip_mm": (dly.get("precipitation_sum") or [None])[0],
         "wind_kmh": (dly.get("wind_speed_10m_max") or [None])[0],
         "weather_code": (dly.get("weather_code") or [None])[0],
     }
+    _save_cache(path, {"fetched_at": time.time(), "data": result})
+    return result
