@@ -1,0 +1,142 @@
+{
+ "n_settled": 89,
+ "published_all_rows": {
+  "n": 97,
+  "correct": 47,
+  "accuracy": 0.4845,
+  "always_home_accuracy": 0.433,
+  "label_rates": {
+   "Home Win": 0.433,
+   "Draw": 0.2474,
+   "Away Win": 0.3196
+  },
+  "market_rows": 31,
+  "market_favourite_accuracy": 0.5161,
+  "model_equals_market_favourite": 0.7419
+ },
+ "accuracy": 0.4607,
+ "correct": 41,
+ "log_loss": 1.02718,
+ "brier": 0.20532,
+ "ece": 0.1065,
+ "mean_max_prob": 0.4354,
+ "geometric_mean_p_true": 0.358,
+ "label_rates": {
+  "Home Win": 0.4045,
+  "Draw": 0.2584,
+  "Away Win": 0.3371
+ },
+ "always_home_accuracy": 0.4045,
+ "pick_distribution": {
+  "Home Win": {
+   "n": 66,
+   "pct": 0.742
+  },
+  "Draw": {
+   "n": 0,
+   "pct": 0.0
+  },
+  "Away Win": {
+   "n": 23,
+   "pct": 0.258
+  }
+ },
+ "hit_rate_by_pick": {
+  "Home Win": {
+   "Home Win": 30,
+   "Draw": 17,
+   "Away Win": 19,
+   "n": 66,
+   "hit_rate": 0.455
+  },
+  "Draw": {
+   "Home Win": 0,
+   "Draw": 0,
+   "Away Win": 0,
+   "n": 0,
+   "hit_rate": null
+  },
+  "Away Win": {
+   "Home Win": 6,
+   "Draw": 6,
+   "Away Win": 11,
+   "n": 23,
+   "hit_rate": 0.478
+  }
+ },
+ "confidence_field_accuracy": {
+  "0.4": {
+   "n": 65,
+   "acc": 0.385
+  },
+  "0.5": {
+   "n": 14,
+   "acc": 0.571
+  },
+  "0.6": {
+   "n": 7,
+   "acc": 0.714
+  },
+  "0.7": {
+   "n": 3,
+   "acc": 1.0
+  }
+ },
+ "reliability": [
+  {
+   "bin": "0.3-0.4",
+   "n": 37,
+   "mean_p": 0.3774,
+   "emp_acc": 0.4054,
+   "gap": 0.028
+  },
+  {
+   "bin": "0.4-0.5",
+   "n": 36,
+   "mean_p": 0.4337,
+   "emp_acc": 0.3333,
+   "gap": -0.1003
+  },
+  {
+   "bin": "0.5-0.6",
+   "n": 12,
+   "mean_p": 0.5457,
+   "emp_acc": 0.8333,
+   "gap": 0.2876
+  },
+  {
+   "bin": "0.6-0.7",
+   "n": 4,
+   "mean_p": 0.656,
+   "emp_acc": 1.0,
+   "gap": 0.344
+  }
+ ],
+ "created_at_days": {
+  "2026-10-20": 71,
+  "2026-10-22": 18
+ },
+ "picked_equals_argmax": 1.0,
+ "second_place_promotion": {
+  "0.0": {
+   "acc": 0.4607,
+   "flips": 0
+  },
+  "0.02": {
+   "acc": 0.4382,
+   "flips": 21
+  },
+  "0.05": {
+   "acc": 0.4607,
+   "flips": 32
+  },
+  "0.08": {
+   "acc": 0.4607,
+   "flips": 51
+  },
+  "0.12": {
+   "acc": 0.427,
+   "flips": 57
+  }
+ }
+}

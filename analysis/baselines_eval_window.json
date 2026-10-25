@@ -1,0 +1,33 @@
+{
+ "all": {
+  "n": 2249,
+  "home": 0.4255,
+  "draw": 0.2646,
+  "away": 0.3099,
+  "always_home": 0.4255,
+  "always_best": 0.4255
+ },
+ "priced": {
+  "n": 1282,
+  "home": 0.4298,
+  "draw": 0.2559,
+  "away": 0.3144,
+  "always_home": 0.4298,
+  "always_best": 0.4298,
+  "market_fav_acc": 0.5023,
+  "model_serve_acc": 0.5554,
+  "model_serve_ll": 1.0019,
+  "market_ll": 0.99796,
+  "blend035_ll": 0.99341,
+  "blend035_acc": 0.5179,
+  "agree": 0.8151
+ },
+ "unpriced": {
+  "n": 967,
+  "home": 0.4199,
+  "draw": 0.2761,
+  "away": 0.304,
+  "always_home": 0.4199,
+  "always_best": 0.4199
+ }
+}

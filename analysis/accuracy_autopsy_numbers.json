@@ -1,0 +1,407 @@
+{
+  "windows": {
+    "2026 YTD (all clean 2026 rows)": {
+      "window": "2026 YTD (all clean 2026 rows)",
+      "n": 10007,
+      "H": 4419,
+      "D": 2573,
+      "A": 3015,
+      "home_win_pct": 44.2,
+      "draw_pct": 25.7,
+      "away_win_pct": 30.1,
+      "always_home_acc": 44.2,
+      "always_draw_acc": 25.7,
+      "always_away_acc": 30.1,
+      "random_acc": 33.3,
+      "n_with_odds": 5418,
+      "market_fav_acc": 51.3,
+      "fav_is_home_pct": 67.8,
+      "fav_is_draw_pct": 0.2,
+      "fav_is_away_pct": 32.0,
+      "home_underdog_share_pct": 32.2,
+      "always_home_acc_when_home_dog": 23.9,
+      "always_home_acc_when_home_fav": 52.8,
+      "draw_occur_when_fav_is_draw_pct": 20.0,
+      "market_vs_home_delta_pp": 7.1
+    },
+    "2026 last 30 days of data": {
+      "window": "2026 last 30 days of data",
+      "n": 1167,
+      "H": 516,
+      "D": 289,
+      "A": 362,
+      "home_win_pct": 44.2,
+      "draw_pct": 24.8,
+      "away_win_pct": 31.0,
+      "always_home_acc": 44.2,
+      "always_draw_acc": 24.8,
+      "always_away_acc": 31.0,
+      "random_acc": 33.3,
+      "n_with_odds": 449,
+      "market_fav_acc": 50.3,
+      "fav_is_home_pct": 67.9,
+      "fav_is_draw_pct": 0.0,
+      "fav_is_away_pct": 32.1,
+      "home_underdog_share_pct": 32.1,
+      "always_home_acc_when_home_dog": 29.2,
+      "always_home_acc_when_home_fav": 51.1,
+      "draw_occur_when_fav_is_draw_pct": NaN,
+      "market_vs_home_delta_pp": 6.1
+    },
+    "2026 most recent 97 rows": {
+      "window": "2026 most recent 97 rows",
+      "n": 97,
+      "H": 38,
+      "D": 25,
+      "A": 34,
+      "home_win_pct": 39.2,
+      "draw_pct": 25.8,
+      "away_win_pct": 35.1,
+      "always_home_acc": 39.2,
+      "always_draw_acc": 25.8,
+      "always_away_acc": 35.1,
+      "random_acc": 33.3,
+      "n_with_odds": 1,
+      "market_fav_acc": 100.0,
+      "fav_is_home_pct": 100.0,
+      "fav_is_draw_pct": 0.0,
+      "fav_is_away_pct": 0.0,
+      "home_underdog_share_pct": 0.0,
+      "always_home_acc_when_home_dog": null,
+      "always_home_acc_when_home_fav": 100.0,
+      "draw_occur_when_fav_is_draw_pct": NaN,
+      "market_vs_home_delta_pp": 60.8
+    },
+    "2025 full year": {
+      "window": "2025 full year",
+      "n": 14905,
+      "H": 6592,
+      "D": 3739,
+      "A": 4574,
+      "home_win_pct": 44.2,
+      "draw_pct": 25.1,
+      "away_win_pct": 30.7,
+      "always_home_acc": 44.2,
+      "always_draw_acc": 25.1,
+      "always_away_acc": 30.7,
+      "random_acc": 33.3,
+      "n_with_odds": 7375,
+      "market_fav_acc": 50.4,
+      "fav_is_home_pct": 68.6,
+      "fav_is_draw_pct": 0.2,
+      "fav_is_away_pct": 31.2,
+      "home_underdog_share_pct": 31.4,
+      "always_home_acc_when_home_dog": 24.5,
+      "always_home_acc_when_home_fav": 51.1,
+      "draw_occur_when_fav_is_draw_pct": 23.1,
+      "market_vs_home_delta_pp": 6.2
+    }
+  },
+  "leagues": {
+    "2026 YTD": {
+      "league-two": {
+        "n": 390,
+        "home_win_pct": 45.4,
+        "draw_pct": 25.6,
+        "always_home_acc": 45.4,
+        "market_fav_acc": 51.5,
+        "fav_is_home_pct": 66.7,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 6.2
+      },
+      "league-one": {
+        "n": 387,
+        "home_win_pct": 41.9,
+        "draw_pct": 28.9,
+        "always_home_acc": 41.9,
+        "market_fav_acc": 49.1,
+        "fav_is_home_pct": 67.2,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 7.2
+      },
+      "championship": {
+        "n": 385,
+        "home_win_pct": 40.0,
+        "draw_pct": 26.2,
+        "always_home_acc": 40.0,
+        "market_fav_acc": 46.8,
+        "fav_is_home_pct": 71.2,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 6.8
+      },
+      "la-liga-2": {
+        "n": 352,
+        "home_win_pct": 47.4,
+        "draw_pct": 22.2,
+        "always_home_acc": 47.4,
+        "market_fav_acc": 53.1,
+        "fav_is_home_pct": 78.4,
+        "fav_is_draw_pct": 0.3,
+        "fav_minus_home_pp": 5.7
+      },
+      "conference-national": {
+        "n": 318,
+        "home_win_pct": 44.7,
+        "draw_pct": 22.0,
+        "always_home_acc": 44.7,
+        "market_fav_acc": 54.1,
+        "fav_is_home_pct": 68.2,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 9.4
+      },
+      "la-liga": {
+        "n": 287,
+        "home_win_pct": 48.8,
+        "draw_pct": 24.7,
+        "always_home_acc": 48.8,
+        "market_fav_acc": 52.6,
+        "fav_is_home_pct": 74.6,
+        "fav_is_draw_pct": 0.7,
+        "fav_minus_home_pp": 3.8
+      },
+      "serie-a": {
+        "n": 274,
+        "home_win_pct": 40.5,
+        "draw_pct": 23.4,
+        "always_home_acc": 40.5,
+        "market_fav_acc": 56.9,
+        "fav_is_home_pct": 60.9,
+        "fav_is_draw_pct": 1.1,
+        "fav_minus_home_pp": 16.4
+      },
+      "serie-b": {
+        "n": 260,
+        "home_win_pct": 45.4,
+        "draw_pct": 28.1,
+        "always_home_acc": 45.4,
+        "market_fav_acc": 51.2,
+        "fav_is_home_pct": 68.8,
+        "fav_is_draw_pct": 1.2,
+        "fav_minus_home_pp": 5.8
+      },
+      "premier-league": {
+        "n": 254,
+        "home_win_pct": 38.6,
+        "draw_pct": 31.9,
+        "always_home_acc": 38.6,
+        "market_fav_acc": 45.3,
+        "fav_is_home_pct": 65.0,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 6.7
+      },
+      "primeira-liga": {
+        "n": 235,
+        "home_win_pct": 43.4,
+        "draw_pct": 26.4,
+        "always_home_acc": 43.4,
+        "market_fav_acc": 55.3,
+        "fav_is_home_pct": 61.7,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 11.9
+      },
+      "eredivisie": {
+        "n": 226,
+        "home_win_pct": 38.5,
+        "draw_pct": 28.8,
+        "always_home_acc": 38.5,
+        "market_fav_acc": 51.8,
+        "fav_is_home_pct": 67.7,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 13.3
+      },
+      "ligue2": {
+        "n": 225,
+        "home_win_pct": 37.8,
+        "draw_pct": 32.9,
+        "always_home_acc": 37.8,
+        "market_fav_acc": 41.8,
+        "fav_is_home_pct": 68.9,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 4.0
+      },
+      "belgian-pro": {
+        "n": 223,
+        "home_win_pct": 43.0,
+        "draw_pct": 20.6,
+        "always_home_acc": 43.0,
+        "market_fav_acc": 53.4,
+        "fav_is_home_pct": 65.0,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 10.3
+      },
+      "ligue1": {
+        "n": 216,
+        "home_win_pct": 42.6,
+        "draw_pct": 26.9,
+        "always_home_acc": 42.6,
+        "market_fav_acc": 53.2,
+        "fav_is_home_pct": 62.5,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 10.6
+      },
+      "bundesliga": {
+        "n": 216,
+        "home_win_pct": 44.9,
+        "draw_pct": 25.0,
+        "always_home_acc": 44.9,
+        "market_fav_acc": 55.1,
+        "fav_is_home_pct": 69.4,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 10.2
+      },
+      "bundesliga-2": {
+        "n": 216,
+        "home_win_pct": 44.9,
+        "draw_pct": 27.8,
+        "always_home_acc": 44.9,
+        "market_fav_acc": 47.7,
+        "fav_is_home_pct": 73.6,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 2.8
+      },
+      "super-lig": {
+        "n": 216,
+        "home_win_pct": 46.8,
+        "draw_pct": 25.9,
+        "always_home_acc": 46.8,
+        "market_fav_acc": 53.7,
+        "fav_is_home_pct": 66.2,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 6.9
+      },
+      "greek-super": {
+        "n": 174,
+        "home_win_pct": 41.4,
+        "draw_pct": 29.9,
+        "always_home_acc": 41.4,
+        "market_fav_acc": 51.7,
+        "fav_is_home_pct": 67.2,
+        "fav_is_draw_pct": 0.6,
+        "fav_minus_home_pp": 10.3
+      },
+      "scottish-prem": {
+        "n": 160,
+        "home_win_pct": 46.2,
+        "draw_pct": 20.6,
+        "always_home_acc": 46.2,
+        "market_fav_acc": 51.9,
+        "fav_is_home_pct": 65.6,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 5.6
+      },
+      "scottish-div3": {
+        "n": 140,
+        "home_win_pct": 50.0,
+        "draw_pct": 24.3,
+        "always_home_acc": 50.0,
+        "market_fav_acc": 51.4,
+        "fav_is_home_pct": 66.4,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 1.4
+      },
+      "scottish-div2": {
+        "n": 135,
+        "home_win_pct": 41.5,
+        "draw_pct": 30.4,
+        "always_home_acc": 41.5,
+        "market_fav_acc": 51.1,
+        "fav_is_home_pct": 60.7,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 9.6
+      },
+      "scottish-div1": {
+        "n": 129,
+        "home_win_pct": 45.0,
+        "draw_pct": 27.9,
+        "always_home_acc": 45.0,
+        "market_fav_acc": 51.2,
+        "fav_is_home_pct": 62.8,
+        "fav_is_draw_pct": 0.0,
+        "fav_minus_home_pp": 6.2
+      }
+    }
+  },
+  "odds_bands": {
+    "2026 YTD": {
+      "<1.30": {
+        "n": 272,
+        "market_fav_acc": 81.2,
+        "always_home_acc": 68.4,
+        "share_of_matches_pct": 5.0
+      },
+      "1.30-1.59": {
+        "n": 944,
+        "market_fav_acc": 67.5,
+        "always_home_acc": 53.8,
+        "share_of_matches_pct": 17.4
+      },
+      "1.60-1.99": {
+        "n": 1708,
+        "market_fav_acc": 50.5,
+        "always_home_acc": 43.1,
+        "share_of_matches_pct": 31.5
+      },
+      "2.00-2.49": {
+        "n": 2061,
+        "market_fav_acc": 43.9,
+        "always_home_acc": 37.3,
+        "share_of_matches_pct": 38.0
+      },
+      "2.50-2.99": {
+        "n": 433,
+        "market_fav_acc": 35.3,
+        "always_home_acc": 36.0,
+        "share_of_matches_pct": 8.0
+      }
+    },
+    "2026 last 30 days": {
+      "<1.30": {
+        "n": 22,
+        "market_fav_acc": 72.7,
+        "always_home_acc": 59.1,
+        "share_of_matches_pct": 4.9
+      },
+      "1.30-1.59": {
+        "n": 78,
+        "market_fav_acc": 75.6,
+        "always_home_acc": 60.3,
+        "share_of_matches_pct": 17.4
+      },
+      "1.60-1.99": {
+        "n": 135,
+        "market_fav_acc": 49.6,
+        "always_home_acc": 44.4,
+        "share_of_matches_pct": 30.1
+      },
+      "2.00-2.49": {
+        "n": 176,
+        "market_fav_acc": 41.5,
+        "always_home_acc": 35.8,
+        "share_of_matches_pct": 39.2
+      },
+      "2.50-2.99": {
+        "n": 38,
+        "market_fav_acc": 28.9,
+        "always_home_acc": 39.5,
+        "share_of_matches_pct": 8.5
+      }
+    }
+  },
+  "invented_pick_sim": {
+    "bare_fdorg_ids": {
+      "Home Win": 100.0
+    },
+    "fdorg_prefixed_ids": {
+      "Home Win": 100.0
+    },
+    "espn_prefixed_ids": {
+      "Home Win": 100.0
+    }
+  },
+  "meta": {
+    "clean_2026_rows": 10007,
+    "clean_2026_max_date": "2026-10-18",
+    "recent30_rows": 1167,
+    "data_coverage_with_odds_2026_pct": 54.1
+  }
+}
