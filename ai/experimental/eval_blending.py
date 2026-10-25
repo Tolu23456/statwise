@@ -172,9 +172,26 @@ def main() -> int:
     vc_c, vc_e = _valid(oc_c), _valid(oc_e)
     common_e = vb_e & vc_e          # same rows for both sources
     leagues_ev = leagues[ho_idx][mid:]
+    common_c = vb_c & vc_c
     logger.info(f"odds coverage (eval): base {int(vb_e.sum()):,}/{len(vb_e):,} "
                 f"closing {int(vc_e.sum()):,}/{len(vc_e):,} "
                 f"common {int(common_e.sum()):,}")
+
+    # ── diagnostics: is the model/market ranking the same on BOTH halves? ──
+    # A honest alpha of 0.00 on the calibration half that becomes 0.35 on the
+    # eval half means the two halves disagree about who is better; show why.
+    for tag, m in (("cal", common_c), ("eval", common_e)):
+        if int(m.sum()) > 50:
+            logger.info(f"DIAG model {tag} ll={_ll(p_cal[m] if tag == 'cal' else p_ev[m], y_cal[m] if tag == 'cal' else y_ev[m]):.5f} "
+                        f"market_base {tag} ll={_ll(mb_c[m] if tag == 'cal' else mb_e[m], y_cal[m] if tag == 'cal' else y_ev[m]):.5f} "
+                        f"market_closing {tag} ll={_ll(mc_c[m] if tag == 'cal' else mc_e[m], y_cal[m] if tag == 'cal' else y_ev[m]):.5f} "
+                        f"n={int(m.sum()):,}")
+    for tag, pc, mc_, yc, m in (("cal", p_cal, mb_c, y_cal, common_c),
+                                ("eval", p_ev, mb_e, y_ev, common_e)):
+        if int(m.sum()) > 50:
+            curve = " ".join(f"{a:.1f}:{blend_ll(a, pc[m], mc_[m], yc[m]):.5f}"
+                             for a in np.arange(0.0, 1.01, 0.1))
+            logger.info(f"DIAG alpha sweep {tag} (base market): {curve}")
 
     out: dict[str, dict] = {}
 

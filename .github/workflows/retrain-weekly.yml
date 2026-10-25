@@ -31,9 +31,22 @@ jobs:
 
       - name: Retrain model
         id: retrain
+        # Same training environment as train-model.yml — the two must produce
+        # comparable holdout numbers or the gate is comparing different things.
+        env:
+          HOLDOUT_DAYS: '180'
+          RECENCY_HALF_LIFE_DAYS: '1460'
+          STAGE_B: '0'
+          MODEL_MODE: 'both'
+          OMP_NUM_THREADS: '4'
+          MKL_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '4'
+          NUMEXPR_NUM_THREADS: '4'
+          TOKENIZERS_PARALLELISM: 'false'
         run: |
           set -o pipefail
           rc=0
+          mkdir -p ai/models
           # -u: progress lines must stream, not sit in a pipe buffer for 20 min
           (cd ai && python -u retrain.py) 2>&1 | tee retrain.log || rc=$?
 
@@ -56,6 +69,8 @@ jobs:
             if [ "$decision" = "rejected" ]; then
               outcome=gate-rejected
               rc=0
+            else
+              outcome=crashed
             fi
           fi
           echo "outcome=$outcome" >> "$GITHUB_OUTPUT"
@@ -98,12 +113,54 @@ jobs:
           path: retrain.log
           if-no-files-found: ignore
 
+      # The .pkl is gitignored, so without these two steps a weekly retrain
+      # trained a model and then threw the weights away — only model_info.json
+      # survived, and predict.yml kept restoring the older train-model cache.
+      - name: Publish model to cache (restored by the prediction workflow)
+        if: steps.retrain.outputs.outcome == 'trained'
+        # save-only: actions/cache would restore an existing entry first and
+        # overwrite the model we just trained.  run_id keeps every save unique;
+        # predict.yml restores the newest via the statwise-model-v2- prefix.
+        uses: actions/cache/save@v4
+        with:
+          path: ai/models/football_predictor.pkl
+          key: statwise-model-v2-${{ github.run_id }}-${{ hashFiles('ai/model/trainer.py', 'ai/model/features.py') }}
+
+      - name: Publish artifact
+        if: steps.retrain.outputs.outcome == 'trained'
+        uses: actions/upload-artifact@v4
+        with:
+          name: football-predictor
+          path: |
+            ai/models/football_predictor.pkl
+            ai/data/model_info.json
+          compression-level: 9
+          retention-days: 30
+
+      - name: Upload model to Supabase storage
+        if: steps.retrain.outputs.outcome == 'trained'
+        continue-on-error: true   # large objects may exceed storage limits
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then
+            echo "::notice::no service key configured — skipping storage upload"
+            exit 0
+          fi
+          curl -sS -X POST \
+            "$SUPABASE_URL/storage/v1/object/app-assets/models/football_predictor.pkl?upsert=true" \
+            -H "Authorization: Bearer $SUPABASE_SERVICE_KEY" \
+            -H "Content-Type: application/octet-stream" \
+            -H "x-upsert: true" \
+            --data-binary @ai/models/football_predictor.pkl
+
       - name: Commit and push if changed
         if: always()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add ai/models/ ai/data/model_info.json || true
+          git add ai/data/model_info.json || true
           if ! git diff --staged --quiet; then
             git commit -m "Auto-retrain: $(date -u +%Y-%m-%d)"
             # main may have moved while training ran (other workflows push too)

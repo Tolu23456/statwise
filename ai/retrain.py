@@ -424,9 +424,10 @@ def run(force: bool = False) -> bool:
 
     # ── Holdout validation against the deployed baseline (plan 1.3) ──
     # Never replace a working model with one that scores worse on the SAME
-    # out-of-time holdout.  Comparability is strict: identical holdout window
-    # and split date, otherwise the numbers are not apples-to-apples and the
-    # gate steps aside (with a loud log rather than a silent pass).
+    # out-of-time holdout.  Comparability: identical HOLDOUT_DAYS and a split
+    # date that has drifted no further than SPLIT_AT_TOLERANCE_DAYS (the split
+    # slides as new rows land), otherwise the numbers are not close enough to
+    # apples-to-apples and the gate steps aside — loudly, never silently.
     prev_info: dict = {}
     try:
         with open(INFO_PATH) as f:
@@ -444,11 +445,31 @@ def run(force: bool = False) -> bool:
         "tolerance": tol,
         "forced": force_replace,
     }
+
+    # split_at = max(date) - HOLDOUT_DAYS, and fetch-football-data appends rows
+    # every 3 hours, so an identical HOLDOUT_DAYS still slides the split a day
+    # or two between runs.  Requiring byte-identical splits would make the gate
+    # skip forever; allow a small drift (default 7d, ~4% of the 180d window)
+    # and record how far it moved so the comparison stays inspectable.
+    max_shift = int(os.environ.get("SPLIT_AT_TOLERANCE_DAYS", "7") or 7)
+    split_shift = None
+    try:
+        prev_split = pd.to_datetime(prev_cal.get("split_at"), errors="coerce")
+        new_split = pd.to_datetime(calib_info.get("split_at"), errors="coerce")
+        if pd.notna(prev_split) and pd.notna(new_split):
+            split_shift = int(abs((new_split - prev_split).days))
+    except Exception:
+        split_shift = None
+    gate["baseline_split_at"] = prev_cal.get("split_at")
+    gate["split_at_shift_days"] = split_shift
+    gate["split_tolerance_days"] = max_shift
+
     comparable = (
         isinstance(prev_cal.get("eval_log_loss"), (int, float))
         and isinstance(calib_info.get("eval_log_loss"), (int, float))
         and prev_cal.get("holdout_days") == calib_info.get("holdout_days")
-        and prev_cal.get("split_at") == calib_info.get("split_at")
+        and split_shift is not None
+        and split_shift <= max_shift
     )
     gate["comparable"] = bool(comparable)
 
@@ -475,11 +496,25 @@ def run(force: bool = False) -> bool:
             return False
         gate["decision"] = "accepted" if d_ll <= 0 else "accepted_with_regression"
         logger.info(f"[GATE] {gate['decision']}: log loss {d_ll:+.5f}, accuracy {d_acc:+.4f} "
-                    f"vs baseline (tolerance {tol})")
+                    f"vs baseline (tolerance {tol}, split_at shift {split_shift}d)")
     else:
         gate["decision"] = "skipped_not_comparable"
-        logger.warning("[GATE] skipped — no comparable baseline (first run, or the "
-                       "holdout window/split changed since the last model)")
+        why = []
+        if prev_cal.get("holdout_days") != calib_info.get("holdout_days"):
+            why.append(f"holdout_days {prev_cal.get('holdout_days')} -> "
+                       f"{calib_info.get('holdout_days')}")
+        if split_shift is None:
+            why.append("baseline has no split_at")
+        elif split_shift > max_shift:
+            why.append(f"split_at moved {split_shift}d "
+                       f"({prev_cal.get('split_at')} -> {calib_info.get('split_at')}, "
+                       f"tolerance {max_shift}d)")
+        if not why:
+            why.append("baseline metrics missing")
+        logger.warning("[GATE] skipped — not apples-to-apples: " + "; ".join(why) +
+                       ". The new model is deployed unverified; the NEXT run "
+                       "will compare against it on an identical window.")
+        gate["skip_reason"] = "; ".join(why)
 
     # Per-league sample sizes ride along inside the pickle so predictor.py can
     # flag fixtures the model has little league-specific history for (the Europa
