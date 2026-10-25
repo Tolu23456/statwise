@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, Modal, TouchableOpacity,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '@/context/ThemeContext';
 import { Colors } from '@/constants/colors';

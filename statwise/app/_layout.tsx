@@ -4,10 +4,14 @@ import { Stack, useRouter, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Platform } from 'react-native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { KeyboardProvider } from 'react-native-keyboard-controller';
-import { useFonts, Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold } from '@expo-google-fonts/inter';
+import { useFonts } from 'expo-font';
+// Per-weight entry points: the package barrel re-exports all 22 Inter TTFs (~7.5 MB),
+// these four are the only faces the app renders with.
+import { Inter_400Regular } from '@expo-google-fonts/inter/400Regular';
+import { Inter_500Medium } from '@expo-google-fonts/inter/500Medium';
+import { Inter_600SemiBold } from '@expo-google-fonts/inter/600SemiBold';
+import { Inter_700Bold } from '@expo-google-fonts/inter/700Bold';
 import * as SplashScreen from 'expo-splash-screen';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { ThemeProvider, useTheme } from '@/context/ThemeContext';
@@ -73,20 +77,16 @@ export default function RootLayout() {
   if (!fontsLoaded && !fontError) return null;
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaProvider>
-        <ErrorBoundary>
-          <QueryClientProvider client={queryClient}>
-            <ThemeProvider>
-              <KeyboardProvider>
-                <AuthProvider>
-                  <RootLayoutNav />
-                </AuthProvider>
-              </KeyboardProvider>
-            </ThemeProvider>
-          </QueryClientProvider>
-        </ErrorBoundary>
-      </SafeAreaProvider>
-    </GestureHandlerRootView>
+    <SafeAreaProvider>
+      <ErrorBoundary>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider>
+            <AuthProvider>
+              <RootLayoutNav />
+            </AuthProvider>
+          </ThemeProvider>
+        </QueryClientProvider>
+      </ErrorBoundary>
+    </SafeAreaProvider>
   );
 }

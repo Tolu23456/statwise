@@ -4,7 +4,7 @@ import {
   Alert, ActivityIndicator, Platform, Animated,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
 import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, FLUTTERWAVE_PUBLIC_KEY } from '@/lib/supabase';

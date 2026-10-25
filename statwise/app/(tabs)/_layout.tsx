@@ -3,7 +3,7 @@ import { Tabs, useRouter, usePathname } from 'expo-router';
 import {
   Platform, View, Text, TouchableOpacity, StyleSheet, useWindowDimensions,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { Colors } from '@/constants/colors';
 import { useTheme } from '@/context/ThemeContext';
 

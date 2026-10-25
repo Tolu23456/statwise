@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Platform, TouchableOpacity, Image } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/colors';
 import { Prediction } from '@/lib/supabase';

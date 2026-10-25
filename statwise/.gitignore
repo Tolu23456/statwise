@@ -16,3 +16,5 @@ build/
 
 expo-env.d.ts
 # @end expo-cli
+# Expo web cache (regenerated on every start)
+.expo/web/

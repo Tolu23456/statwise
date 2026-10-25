@@ -3,7 +3,7 @@ import {
   Modal, View, Text, StyleSheet, ScrollView,
   TouchableOpacity, Platform, Dimensions, Share,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { Colors } from '@/constants/colors';
 import { Prediction } from '@/lib/supabase';
 import { useTheme } from '@/context/ThemeContext';

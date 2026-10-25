@@ -12,7 +12,7 @@ import {
   ActivityIndicator,
   Linking,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Clipboard from 'expo-clipboard';
 import { Colors } from '@/constants/colors';
 import { useTheme } from '@/context/ThemeContext';
