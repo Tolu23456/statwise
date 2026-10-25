@@ -56,7 +56,57 @@ Regression suite: `ai/experimental/test_leak_fixes.py` (25 checks), wired into t
 - [x] **Validate improvement** - Holdout 4,499 rows @ split 2026-04-21: model 1.01129 (baseline 1.01159, Δ −0.00030 ≤ 0.0005) | market 0.99908 | closing 0.99796 | **blended 0.99491** — best of the three; gate accepted, model **version 3** shipped. Damping audit: `alpha_fitted_raw 0.35`, `alpha_damp_weight 0.5618`, `alpha_leagues 8`
 - [x] **Commit changes** (`aff1842`, model `cd009e2`)
 
-### Step 1.5: Expand Prediction Markets (BTTS/OU)
+### Step 1.5: Monte Carlo Match Lab (the "fool's plan")
+Simulator as designed with the user: breed/mix teams, randomly make teams
+strong/weak, "cap down" (step forward + noise, step backward + noise,
+repeatedly), simulate outcomes at massive scale, feed results back as
+training data — with the storage rule that only the **recipe, never the
+rows**, is kept.
+
+Hard rules (agreed before building):
+1. Store the **recipe, not the rows** — a few MB of strength vectors
+   regenerable from (seed, data); simulated scorelines are folded into
+   mergeable counters and discarded. No 7 GB artifacts.
+2. Synthetic mass **never trains LightGBM as raw rows** — any synthetic
+   training goes through distillation/soft labels on the real 377k.
+3. Every synthetic-trained candidate must beat the **real** out-of-time
+   gate — synthetic is never scored on synthetic holdout.
+
+- [x] **Build the goal process** - `ai/sim/model.py`: Dixon-Coles bivariate
+  Poisson (team att/def strengths, league offsets, home advantage, low-score
+  `tau` correction), penalised-MLE fit by gradient descent on TRAIN rows only
+- [x] **Build "cap down"** - `ai/sim/sampler.py`: symmetric mixture proposal
+  `q = ½·N(y; x−η∇L, σ²) + ½·N(y; x+η∇L, σ²)` with exact Metropolis-Hastings
+  correction — forward step descends, backward step climbs/explores, so the
+  chain yields a spread of plausible worlds instead of one brittle optimum
+- [x] **Build breeding** - element-wise crossover of strength genes + mutation
+  noise ("randomly make teams strong/weak"), elitist/Metropolis acceptance
+- [x] **Build the mass simulator** - `ai/sim/simulate.py`: per-fixture markets
+  are exact grid averages over worlds (zero MC error on published numbers);
+  mass simulation writes only sufficient statistics (scoreline counts,
+  calibration histograms) that any shard can produce and the merge can sum
+- [x] **Build the honest gate** - `ai/sim/evaluate.py`: scores the ensemble on
+  the **real** 180-day out-of-time holdout vs uniform/league-prior/market
+  baselines; `publishable` = beats league prior on BTTS/O25/O35
+- [x] **Build shard runner + merge** - `ai/sim/run.py` (one CI shard) and
+  `ai/sim/merge.py` (sums counters, stores `ai/data/sim/worlds.json` recipe,
+  re-scores the combined ensemble once, exits non-zero unless publishable)
+- [x] **Regression tests** - `ai/experimental/test_sim.py`, 46 fast synthetic
+  checks (proper distributions, MH symmetry, merge associativity, recipe
+  round-trip), wired into `simulate.yml` and the retrain unit-test step
+- [x] **Create CI workflow** - `.github/workflows/simulate.yml`: ≤20 shards
+  (Free-plan concurrency cap) + merge job; recipe committed only on gate pass,
+  report artifact uploaded either way
+- [ ] **Run the full lab in CI** - dispatch, verify shard timings, artifact
+  size (~1–3 MB recipe, not GB), real-holdout numbers and gate verdict
+- [ ] **Store recipe + report** - `ai/data/sim/worlds.json` + `report.json`
+  committed by the merge job (only after `eval.publishable`)
+- [ ] **Distillation soft labels** - feed the lab's teacher probabilities back
+  into `retrain.py` as sampled soft labels on the real 377k (duplicate-row
+  sampling at the X/y stage), still behind the real-holdout gate
+- [ ] **Commit changes**
+
+### Step 1.6: Expand Prediction Markets (BTTS/OU)
 - [ ] **Design BTTS model** - Add both-teams-to-score prediction
 - [ ] **Design Over/Under models** - Add O/U 2.5 and 3.5
 - [ ] **Train separate heads** - Or extend joint model

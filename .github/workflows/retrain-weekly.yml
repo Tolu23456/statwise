@@ -38,6 +38,8 @@ jobs:
           # Leak-fix regressions: inference history, canonical league slugs,
           # batch form/travel blocks, and the self-leak date guard.
           python ai/experimental/test_leak_fixes.py
+          # Monte Carlo Match Lab (step 1.5): sampler, breeding, merge math.
+          python ai/experimental/test_sim.py
 
       - name: Retrain model
         id: retrain

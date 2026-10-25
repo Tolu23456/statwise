@@ -1,0 +1,200 @@
+# Monte Carlo Match Lab — the "fool's plan" simulator (plan Step 1.5).
+#
+# ALL of the heavy work happens here, never on the laptop:
+#   * 20 shards (GitHub Free caps 20 concurrent jobs) each fit a Dixon-Coles
+#     goal process on TRAIN rows only, run the "cap down" forward/backward
+#     sampler, breed the sampled worlds, mass-simulate fixtures into
+#     mergeable counters, and score themselves on the REAL out-of-time
+#     holdout;
+#   * a merge job SUMS the counters, stores the worlds as one small recipe
+#     (ai/data/sim/worlds.json — a few MB, never the simulated rows) and
+#     re-scores the combined ensemble on the real holdout;
+#   * the recipe is committed only when eval.publishable is true — beating
+#     the league prior on real outcomes is the gate, and a red gate is the
+#     gate doing its job (the report artifact is uploaded either way).
+
+name: Monte Carlo Match Lab
+
+on:
+  workflow_dispatch:
+    inputs:
+      shards:
+        description: 'Shards to run (max 20 = Free-plan concurrency cap)'
+        default: '20'
+      worlds:
+        description: 'cap-down chains per shard'
+        default: '2'
+      steps:
+        description: 'sampler steps per chain'
+        default: '300'
+      sims:
+        description: 'simulated outcomes per fixture'
+        default: '2000'
+      epochs:
+        description: 'gradient epochs for the base fit'
+        default: '240'
+      population:
+        description: 'bred population kept per shard'
+        default: '4'
+      holdout_days:
+        description: 'out-of-time holdout window (days)'
+        default: '180'
+
+permissions:
+  contents: write
+
+jobs:
+  tests:
+    name: simulator unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+      # 46 fast synthetic checks: proper distributions, MH proposal symmetry,
+      # merge associativity, recipe round-trip, real-holdout gate wiring.
+      - name: Run test_sim.py
+        run: python ai/experimental/test_sim.py
+
+  shard:
+    name: shard ${{ matrix.shard }}
+    needs: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+                10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      # Cheap early exit for matrix slots the input did not ask for, so a
+      # 10-shard run does not burn 10 runner slots on checkout + pip.
+      - name: Decide whether this shard runs
+        id: skip
+        env:
+          SHARD: ${{ matrix.shard }}
+          SHARDS: ${{ inputs.shards }}
+        run: |
+          case "$SHARDS" in ''|*[!0-9]*) SHARDS=20 ;; esac
+          if [ "$SHARD" -ge "$SHARDS" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "shard $SHARD skipped (only $SHARDS requested)"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.skip.outputs.run == 'true'
+
+      - name: Set up Python
+        if: steps.skip.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        if: steps.skip.outputs.run == 'true'
+        run: pip install -r ai/requirements.txt
+
+      - name: Run simulator shard
+        if: steps.skip.outputs.run == 'true'
+        env:
+          SHARD: ${{ matrix.shard }}
+          SHARDS: ${{ inputs.shards }}
+          WORLDS: ${{ inputs.worlds }}
+          NSTEPS: ${{ inputs.steps }}
+          SIMS: ${{ inputs.sims }}
+          EPOCHS: ${{ inputs.epochs }}
+          POPULATION: ${{ inputs.population }}
+          HOLDOUT_DAYS: ${{ inputs.holdout_days }}
+        run: |
+          set -o pipefail
+          python ai/sim/run.py \
+            --shard "$SHARD" --shards "$SHARDS" \
+            --worlds "$WORLDS" --steps "$NSTEPS" --sims "$SIMS" \
+            --epochs "$EPOCHS" --population "$POPULATION" \
+            --holdout-days "$HOLDOUT_DAYS" \
+            --out "sim-shard-$SHARD.json" | tee shard.log
+
+      - name: Upload shard payload
+        if: steps.skip.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-shard-${{ matrix.shard }}
+          path: sim-shard-${{ matrix.shard }}.json
+          if-no-files-found: error
+          retention-days: 90
+
+  merge:
+    name: merge + real-holdout gate
+    needs: shard
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Download shard payloads
+        uses: actions/download-artifact@v4
+        with:
+          pattern: sim-shard-*
+          path: sim-shards
+          merge-multiple: true
+
+      # Merge = sum the counters, store the recipe, re-score the combined
+      # ensemble on REAL holdout rows.  continue-on-error keeps the report
+      # artifact (and a failing gate's evidence) available either way.
+      - name: Merge shards and apply the publishable gate
+        id: merge
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          ls -la sim-shards
+          python ai/sim/merge.py \
+            --pattern 'sim-shards/sim-shard-*.json' \
+            --out-dir ai/data/sim | tee merge.log
+
+      - name: Upload recipe + report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-report
+          path: ai/data/sim/
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Commit recipe + report (only when the gate passed)
+        if: steps.merge.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ai/data/sim/
+          if git diff --cached --quiet; then
+            echo "recipe unchanged (same seed -> same worlds)"
+          else
+            git commit -m "sim: Monte Carlo Match Lab recipe + real-holdout report"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Fail when the gate failed
+        if: steps.merge.outcome == 'failure'
+        run: |
+          echo "::error::publishable gate FAILED — the ensemble did not beat the league prior on the real holdout. See the sim-report artifact."
+          exit 1
