@@ -151,9 +151,37 @@ def test_local_history() -> None:
     check("history cached on second call", _load_local_history() is hist)
 
 
+# ── 4. the Supabase write guard ────────────────────────────────────────────
+def test_row_for_db() -> None:
+    from model.predictor import _row_for_db
+
+    good = {"match_id": "fdorg_1", "prediction": "Home Win", "odds": 2.10,
+            "stats": {"prob_home": 41.0, "prob_draw": 27.0, "prob_away": 32.0}}
+    row = _row_for_db(dict(good, stats=dict(good["stats"])))
+    check("a real Pico row is written", row is not None and row["odds"] == 2.10)
+    check("rows are tagged writer=pico", row is not None and row["stats"]["writer"] == "pico")
+
+    legacy = {"match_id": "575371", "prediction": "Home Win", "confidence": 70,
+              "odds": 1.90, "stats": {"details": {}}}
+    check("a row with no prob_home is refused", _row_for_db(legacy) is None)
+    check("no-stats row is refused",
+          _row_for_db({"match_id": "x", "prediction": "Draw", "stats": None}) is None)
+
+    no_price = {"match_id": "fdorg_2", "odds": None,
+                "stats": {"prob_home": 30.0, "prob_draw": 30.0, "prob_away": 40.0}}
+    r2 = _row_for_db(no_price)
+    check("odds=None is omitted, never written as null",
+          r2 is not None and "odds" not in r2)
+    check("caller dict is not mutated", no_price["stats"] == {"prob_home": 30.0,
+                                                              "prob_draw": 30.0,
+                                                              "prob_away": 40.0}
+          and "writer" not in no_price["stats"])
+
+
 def main() -> int:
     print("leak-fix tests")
-    for fn in (test_canon_league, test_blocks_and_self_leak, test_local_history):
+    for fn in (test_canon_league, test_blocks_and_self_leak, test_local_history,
+               test_row_for_db):
         print(f"{fn.__name__}:")
         try:
             fn()

@@ -138,6 +138,29 @@ def _get_supabase_client():
         return None
 
 
+def _row_for_db(p: dict) -> dict | None:
+    """The Supabase payload for a prediction, or None if it must not be written.
+
+    Two rules, both learned the hard way:
+
+    * a row with no model probabilities is not a Pico prediction — the legacy
+      seeded-PRNG fetch job invented H/D/A picks exactly this way and they
+      polluted the accuracy screen (see tools/quarantine_invented_rows.py);
+    * never blank a price odds_sync already wrote: the fixture feeds carry no
+      odds of their own, so an explicit ``odds=None`` would wipe the price
+      until the next successful odds sync (predict runs 4x/day).
+    """
+    row = {k: v for k, v in p.items()
+           if k in PredictionEngine._DB_COLUMNS
+           and not (k == "odds" and v is None)}
+    stats = row.get("stats")
+    if not isinstance(stats, dict) or stats.get("prob_home") is None:
+        return None
+    # copy: the caller's dict must not be mutated as a side effect
+    row["stats"] = {**stats, "writer": stats.get("writer", "pico")}
+    return row
+
+
 class PredictionEngine:
     def __init__(self, predictor: Optional[FootballPredictor] = None,
                  history: Optional[pd.DataFrame] = None):
@@ -402,21 +425,14 @@ class PredictionEngine:
         refused = 0
         for p in predictions:
             try:
-                row = {k: v for k, v in p.items() if k in self._DB_COLUMNS}
-                # A row without model probabilities is not a Pico prediction.
-                # The legacy fetch job invented H/D/A picks exactly this way
-                # and they polluted the accuracy screen for months; refuse to
-                # write one rather than leave the same trap for the next
-                # writer.  See ai/tools/quarantine_invented_rows.py.
-                stats = row.get("stats")
-                if not isinstance(stats, dict) or stats.get("prob_home") is None:
+                row = _row_for_db(p)
+                if row is None:
                     refused += 1
                     logger.error(
                         f"Refusing to save {p.get('match_id')}: stats has no "
                         f"prob_home — model output missing, not a real prediction."
                     )
                     continue
-                stats.setdefault("writer", "pico")
                 sb.table("predictions").upsert(row, on_conflict="match_id").execute()
                 saved += 1
             except Exception as e:
