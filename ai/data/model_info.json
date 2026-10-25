@@ -78,5 +78,20 @@
       "split_at": "2026-04-21",
       "git_sha": "4bad71131886"
     }
-  ]
+  ],
+  "last_rejected": {
+    "baseline_version": 3,
+    "baseline_eval_log_loss": 1.01129,
+    "new_eval_log_loss": 1.01903,
+    "tolerance": 0.0005,
+    "forced": false,
+    "baseline_split_at": "2026-04-21",
+    "split_at_shift_days": 0,
+    "split_tolerance_days": 7,
+    "comparable": true,
+    "delta_log_loss": 0.00774,
+    "delta_accuracy": -0.0036,
+    "decision": "rejected",
+    "rejected_at": "2026-10-25T22:59:33.569366Z"
+  }
 }
