@@ -1,5 +1,10 @@
 name: Retrain Model Weekly
 
+# Retrains on CI and only replaces the deployed model when it wins on the
+# identical out-of-time holdout (ai/retrain.py::gate).  A rejection is the
+# gate doing its job, so the job reports success with a summary instead of
+# going red — a permanently-red scheduled job is one nobody reads.
+
 on:
   schedule:
     - cron: '0 3 * * 1'  # Every Monday at 3 AM UTC
@@ -18,15 +23,83 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
       - name: Install dependencies
         run: |
           pip install -r ai/requirements.txt
+
       - name: Retrain model
+        id: retrain
         run: |
-          cd ai && python retrain.py
-        env:
-          HOLDOUT_DAYS: 180
+          set -o pipefail
+          rc=0
+          # -u: progress lines must stream, not sit in a pipe buffer for 20 min
+          (cd ai && python -u retrain.py) 2>&1 | tee retrain.log || rc=$?
+
+          outcome=trained
+          if [ "$rc" -ne 0 ]; then
+            # retrain.py exits non-zero when the holdout gate keeps the current
+            # model.  Distinguish that from a real crash by looking for the
+            # decision it records in model_info.json.
+            decision=$(python - <<'PY'
+          import json, os
+          p = os.path.join("ai", "data", "model_info.json")
+          try:
+              info = json.load(open(p))
+              rej = info.get("last_rejected") or {}
+              print(rej.get("decision") or "")
+          except Exception:
+              print("")
+          PY
+            )
+            if [ "$decision" = "rejected" ]; then
+              outcome=gate-rejected
+              rc=0
+            fi
+          fi
+          echo "outcome=$outcome" >> "$GITHUB_OUTPUT"
+
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, os
+          p = os.path.join("ai", "data", "model_info.json")
+          try:
+              info = json.load(open(p))
+          except Exception:
+              print("model_info.json missing"); raise SystemExit
+          cal = info.get("calibration") or {}
+          rej = info.get("last_rejected") or {}
+          print("### Retrain")
+          print(f"- model version: **{info.get('version')}** (`{str(info.get('git_sha'))[:8]}`)")
+          for k in ("mode", "eval_log_loss", "market_log_loss", "blended_market_log_loss",
+                    "accuracy", "brier", "ece", "alpha_default", "alpha_leagues", "split_at"):
+              if k in cal:
+                  print(f"- {k}: {cal[k]}")
+          if rej.get("decision") == "rejected":
+              print(f"- **gate: REJECTED** (ll {rej.get('baseline_eval_log_loss')} -> "
+                    f"{rej.get('new_eval_log_loss')}, delta {rej.get('delta_log_loss')}, "
+                    f"tolerance {rej.get('tolerance')}) — deployed model kept")
+          elif info.get("version"):
+              print(f"- gate: accepted (version {info.get('version')})")
+          hist = info.get("history") or []
+          if hist:
+              last = hist[-1]
+              print(f"- previous: version {last.get('previous', {}).get('version')} "
+                    f"ll {last.get('previous', {}).get('eval_log_loss')}")
+          PY
+
+          exit "$rc"
+
+      - name: Upload log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: retrain-log
+          path: retrain.log
+          if-no-files-found: ignore
+
       - name: Commit and push if changed
+        if: always()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
