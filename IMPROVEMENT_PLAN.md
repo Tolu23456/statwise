@@ -10,6 +10,14 @@
 - Booking codes: SportyBet working
 - Settlement: ESPN + football-data.org
 
+### Train/serve leak fixes (2026-10-25, before Step 1.4)
+Three correctness bugs found by the live-accuracy investigation — all fixed, tested and shipped, because no metric work is trustworthy until they are gone:
+1. **Empty inference history** — loading the pickle (the normal path) scored every fixture against a zero-length frame; form/H2H/lambda/travel all read nothing. Now falls back to `ai/data/clean/*.csv` (377k rows, cached).
+2. **League-slug drift** — 6 of 21 feed slugs had **0 training rows** (`efl-championship` vs `championship`, etc.). Canonicalised at every model-facing lookup via `ai/model/leagues.py`; Supabase keeps live slugs. 5 slugs also had no Odds API mapping at all.
+3. **Invented rows** — the legacy seeded-PRNG fetch job wrote "Home Win" 100% of the time. 8 surviving rows flagged `stats.data_quality='invented'` by `ai/tools/quarantine_invented_rows.py`; `push_to_supabase` now refuses a row with no `stats.prob_home`; the accuracy screen only scores rows Pico wrote.
+
+Regression suite: `ai/experimental/test_leak_fixes.py` (19 checks), wired into the retrain workflow's unit-test step.
+
 ---
 
 ## PHASE 1: MODEL & PREDICTION IMPROVEMENTS (P0)
@@ -37,15 +45,15 @@
 - [x] **Create GitHub Action** - Add `.github/workflows/retrain-weekly.yml`
 - [x] **Add holdout validation** - Ensure retrain checks metrics against baseline
 - [x] **Add model versioning** - Track model versions in `model_info.json`
-- [ ] **Test workflow** - Manual dispatch test
+- [x] **Test workflow** - Manual dispatch test (run 40233806436: unit tests → retrain → gate accepted → model v3 pushed as `cd009e2`)
 - [x] **Commit changes**
 
 ### Step 1.4: Better Market Blending
-- [ ] **Analyze current alphas** - Review per-league alpha values
-- [ ] **Tune blending logic** - Optimize in `retrain.py`/`trainer.py`
-- [ ] **Add closing line weight** - Prefer closing odds when available
-- [ ] **Validate improvement** - Check blended log loss improves
-- [ ] **Commit changes**
+- [x] **Analyze current alphas** - Only 8 leagues + `_default` carry a fitted alpha (0.319–0.501); the other ~37 leagues, including bundesliga/eredivisie/ligue1/champions-league, fall back to `_default 0.40` because odds coverage collapsed 76% → 38%. Fitted values sit close enough to the prior that shrinkage barely moves them (n ≥ 12.8k → |Δ| ≤ 0.007)
+- [x] **Tune blending logic** - Fitted alpha damped toward the fixed 0.35 prior with `n/(n+K)`, `ALPHA_PRIOR_K=1000` (`damp_alpha`, env `ALPHA_PRIOR`/`ALPHA_PRIOR_K`); per-league shrink kept at `n/(n+300)` (measured a tie)
+- [x] **Add closing line weight** - Blend target is now the de-vigged **closing** consensus (`meta["odds_closing"]`); `market_closing_log_loss` reported alongside `market_log_loss`
+- [x] **Validate improvement** - Holdout 4,499 rows @ split 2026-04-21: model 1.01129 (baseline 1.01159, Δ −0.00030 ≤ 0.0005) | market 0.99908 | closing 0.99796 | **blended 0.99491** — best of the three; gate accepted, model **version 3** shipped. Damping audit: `alpha_fitted_raw 0.35`, `alpha_damp_weight 0.5618`, `alpha_leagues 8`
+- [x] **Commit changes** (`aff1842`, model `cd009e2`)
 
 ### Step 1.5: Expand Prediction Markets (BTTS/OU)
 - [ ] **Design BTTS model** - Add both-teams-to-score prediction
