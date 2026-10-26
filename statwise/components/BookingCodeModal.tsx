@@ -19,7 +19,9 @@ import { useTheme } from '@/context/ThemeContext';
 import { Prediction } from '@/lib/supabase';
 import {
   BookingCode,
+  BookingStats,
   bookingCodeLoadUrl,
+  fetchBookingStats,
   fetchLatestBookingCode,
   formatSelectionLabel,
 } from '@/lib/bookings';
@@ -48,6 +50,7 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
   const C = Colors[scheme];
   const [loading, setLoading] = useState(false);
   const [bookingCode, setBookingCode] = useState<BookingCode | null>(null);
+  const [genStats, setGenStats] = useState<BookingStats | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   // The booking code is built by the backend from AI Picks only.
@@ -61,12 +64,12 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
     let cancelled = false;
     setLoading(true);
     setError(null);
-    fetchLatestBookingCode()
-      .then((code) => {
-        if (!cancelled) setBookingCode(code);
-      })
-      .catch((e: any) => {
-        if (!cancelled) setError(e?.message || 'Could not load the booking code');
+    Promise.allSettled([fetchLatestBookingCode(), fetchBookingStats()])
+      .then(([codeRes, statsRes]) => {
+        if (cancelled) return;
+        if (codeRes.status === 'fulfilled') setBookingCode(codeRes.value);
+        else setError(codeRes.reason?.message || 'Could not load the booking code');
+        if (statsRes.status === 'fulfilled') setGenStats(statsRes.value);
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -210,6 +213,15 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
                 <Text style={[styles.emptyText, { color: C.textMuted, textAlign: 'center' }]}>
                   No booking code has been generated for the current picks yet.
                 </Text>
+                {genStats?.lastError && (
+                  <View style={[styles.errorBox, { backgroundColor: C.dangerLight, borderColor: C.danger, marginTop: 10 }]}>
+                    <Text style={[styles.errorText, { color: C.danger }]}>
+                      Last attempt failed{genStats.lastErrorAt
+                        ? ` (${new Date(genStats.lastErrorAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })})`
+                        : ''}: {genStats.lastError}
+                    </Text>
+                  </View>
+                )}
                 <Text style={[styles.emptyText, { color: C.textMuted, textAlign: 'center', fontSize: 12 }]}>
                   Codes are created automatically after each prediction run. You can copy the
                   selections below and place them manually in the meantime.

@@ -1,0 +1,53 @@
+name: Booking Code Smoke Test
+
+# Plan step 2.3 end-to-end check: runs the real SportyBet generator in
+# --dry-run mode (fetches events, matches AI Picks, asks for a share code)
+# but persists nothing. Dispatch it when the booking flow looks broken or
+# after touching ai/sportybet_booking.py.
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: booking-smoke
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-v1
+          restore-keys: |
+            playwright-chromium-${{ runner.os }}-
+
+      - name: Install Playwright Chromium
+        continue-on-error: true
+        run: python -m playwright install chromium
+
+      - name: Booking unit tests (pure helpers)
+        run: python ai/experimental/test_booking.py
+
+      - name: Real end-to-end dry run
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        # --dry-run: reads real picks + real SportyBet events + real share
+        # code, writes nothing to Supabase.
+        run: python ai/sportybet_booking.py --dry-run

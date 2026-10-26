@@ -37,6 +37,51 @@ export type BookingCode = {
   selections: BookingCodeSelection[];
 };
 
+/** Rolling generation counters written by ai/sportybet_booking.py (plan 2.3). */
+export type BookingStats = {
+  attempts: number | null;
+  successes: number | null;
+  failures: number | null;
+  lastError: string | null;
+  lastErrorAt: string | null;
+  lastSuccessAt: string | null;
+};
+
+/**
+ * Why the latest generation attempt failed (or null when it succeeded).
+ * Shown verbatim in the booking modal so users learn *why* there's no code
+ * instead of a bare "not generated yet".
+ */
+export async function fetchBookingStats(): Promise<BookingStats | null> {
+  const { data, error } = await supabase
+    .from('app_settings')
+    .select('setting_value, updated_at')
+    .eq('setting_key', 'booking_code_stats')
+    .limit(1);
+
+  if (error || !data || data.length === 0) return null;
+
+  const row: any = data[0];
+  let payload: any = row.setting_value;
+  if (typeof payload === 'string') {
+    try {
+      payload = JSON.parse(payload);
+    } catch {
+      return null;
+    }
+  }
+  if (!payload || typeof payload !== 'object') return null;
+
+  return {
+    attempts: payload.attempts ?? null,
+    successes: payload.successes ?? null,
+    failures: payload.failures ?? null,
+    lastError: payload.last_error ?? null,
+    lastErrorAt: payload.last_error_at ?? null,
+    lastSuccessAt: payload.last_success_at ?? row.updated_at ?? null,
+  };
+}
+
 export function bookingCodeLoadUrl(code: string): string {
   return `https://www.sportybet.com/ng/?shareCode=${encodeURIComponent(code)}`;
 }

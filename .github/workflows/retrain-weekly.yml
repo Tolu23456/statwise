@@ -51,6 +51,8 @@ jobs:
           python ai/experimental/test_markets.py
           # Plan 2.2: live-window enrichment (window policy, merge, ESPN parse).
           python ai/experimental/test_live_feed.py
+          # Plan 2.3: booking-code cache, retries, friendly errors, stats.
+          python ai/experimental/test_booking.py
 
       - name: Retrain model
         id: retrain
