@@ -53,6 +53,8 @@ jobs:
           python ai/experimental/test_live_feed.py
           # Plan 2.3: booking-code cache, retries, friendly errors, stats.
           python ai/experimental/test_booking.py
+          # Plan 2.4: settlement source-order, day-leak guard, alerts.
+          python ai/experimental/test_settle.py
 
       - name: Retrain model
         id: retrain

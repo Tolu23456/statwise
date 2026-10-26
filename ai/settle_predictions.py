@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import json
 import logging
 import os
 import sys
@@ -34,6 +35,7 @@ load_dotenv()
 
 import requests  # noqa: E402
 
+from enrich_match_details import ESPN_SLUGS  # noqa: E402
 from model.live_fetcher import (  # noqa: E402
     fetch_espn_results_for_dates,
     fetch_match_result,
@@ -59,6 +61,72 @@ SUPABASE_KEY = os.environ.get(
 #: columns the settlement writer needs — probed so a half-run migration
 #: produces a clear message instead of a 400 from PostgREST.
 _STATS_PROBE = ("actual_result", "home_score", "away_score", "settled_at")
+
+#: a row this many hours past kickoff with no result from ANY source is
+#: logged as an alert (plan 2.4) — 6h comfortably covers extra time + a
+#: delayed feed write, without page-worthiness for normal lag.
+ALERT_AFTER_HOURS = 6
+
+
+# ── Pure resolution helpers (unit tested in ai/experimental/test_settle.py) ──
+
+def pick_from_map(p: dict, by_key: dict, keyed_by_day: bool = False):
+    """Best (score, source) for one prediction from a name-keyed result map.
+
+    `by_key` is keyed by (norm_home, norm_away) — football-data bulk — or by
+    (day, norm_home, norm_away) — ESPN by-names — when `keyed_by_day`.
+    Exact normalized names win; fuzzy matching is the fallback.
+    """
+    home, away = p.get("home_team", ""), p.get("away_team", "")
+    day = (p.get("kickoff_time") or "")[:10]
+    exact = ((day,) if keyed_by_day else ()) + (
+        normalize_team_name(home), normalize_team_name(away))
+    score = by_key.get(exact)
+    if score is not None:
+        return score
+    for key, sc in by_key.items():
+        if keyed_by_day and key[0] != day:
+            continue
+        kh, ka = key[-2:]
+        if team_names_match(home, kh) and team_names_match(away, ka):
+            return sc
+    return None
+
+
+def resolve_score(p: dict, bulk: dict, espn_by_id: dict, espn_by_names: dict):
+    """Source-ordered score lookup. Returns (score, source) or (None, None).
+
+    Order:
+      1. football-data.org bulk (exact names, then fuzzy)
+      2. ESPN by event id — exact, immune to feed naming differences
+      3. ESPN by names (exact, then fuzzy, same day only)
+    """
+    score = pick_from_map(p, bulk)
+    if score is not None:
+        return score, "football-data.org"
+    if (p.get("match_id") or "").startswith("espn_"):
+        score = espn_by_id.get(p["match_id"][5:])
+        if score is not None:
+            return score, "espn"
+    score = pick_from_map(p, espn_by_names, keyed_by_day=True)
+    if score is not None:
+        return score, "espn"
+    return None, None
+
+
+def espn_league_of(p: dict) -> str | None:
+    """ESPN result league for a prediction, or None for fd.org-only leagues.
+
+    Cups live on ESPN only (football-data.org 403s them); the big domestic
+    leagues settle from football-data.org first, so they're only needed as a
+    fallback — the caller widens the ESPN fetch when primary bulk comes back
+    empty.
+    """
+    slug = p.get("league_slug") or ""
+    if (p.get("match_id") or "").startswith("espn_") or slug in (
+            "europa-league", "conference-league", "copa-libertadores"):
+        return ESPN_SLUGS.get(slug)
+    return None
 
 
 def get_client():
@@ -130,13 +198,22 @@ def settle(sb, dry_run: bool = False) -> int:
     # ESPN is the only source for the UEFA cup competitions (football-data.org
     # returns 403 for them) and it is more complete for the Libertadores, so
     # fetch its scoreboards for the days where those rows live.
-    espn_leagues = {"europa-league", "conference-league", "copa-libertadores"}
     espn_days = sorted({
         (p.get("kickoff_time") or "")[:10]
         for p in past
-        if (p.get("match_id") or "").startswith("espn_")
-        or (p.get("league_slug") or "") in espn_leagues
+        if espn_league_of(p)
     })
+    # Fallback improvement (plan 2.4): when football-data.org came back empty
+    # (token outage, plan limits), widen ESPN to every league we have a row
+    # for instead of only the cups — the run degrades gracefully instead of
+    # silently settling nothing.
+    widened = False
+    if not bulk and days:
+        espn_days = sorted(set(espn_days) | set(days))
+        widened = True
+        logger.warning(
+            "football-data.org returned no results — widening ESPN fallback "
+            "to %d match day(s).", len(espn_days))
     espn_by_id, espn_by_names = (
         fetch_espn_results_for_dates(espn_days) if espn_days else ({}, {})
     )
@@ -144,30 +221,11 @@ def settle(sb, dry_run: bool = False) -> int:
         logger.info("ESPN returned %d finished match(es).", len(espn_by_id))
 
     settled = 0
+    by_source: dict[str, int] = {}
+    unresolved: list[dict] = []
     for p in past:
         home, away = p.get("home_team", ""), p.get("away_team", "")
-        day = (p.get("kickoff_time") or "")[:10]
-        score = bulk.get((normalize_team_name(home), normalize_team_name(away)))
-        if score is None:
-            for (nh, na), sc in bulk.items():
-                if team_names_match(home, nh) and team_names_match(away, na):
-                    score = sc
-                    break
-
-        # ESPN event ids are exact, so prefer them over name matching.
-        if score is None and (p.get("match_id") or "").startswith("espn_"):
-            score = espn_by_id.get(p["match_id"][5:])
-        if score is None:
-            score = espn_by_names.get(
-                (day, normalize_team_name(home), normalize_team_name(away))
-            )
-        if score is None:
-            for (d, nh, na), sc in espn_by_names.items():
-                if d != day:
-                    continue
-                if team_names_match(home, nh) and team_names_match(away, na):
-                    score = sc
-                    break
+        score, source = resolve_score(p, bulk, espn_by_id, espn_by_names)
 
         result = None
         if score:
@@ -185,21 +243,31 @@ def settle(sb, dry_run: bool = False) -> int:
                 away_team=away,
                 kickoff_time=p.get("kickoff_time", ""),
             )
+            if result:
+                source = "thesportsdb"
 
         if not result:
             # Never flip status without a scoreline — that would lose the row
             # (and it is what used to make yesterday's games look "settled
             # with no result").
-            logger.info("  no result yet for %s vs %s", home, away)
+            hours = _hours_past(p.get("kickoff_time"))
+            if hours is not None and hours >= ALERT_AFTER_HOURS:
+                logger.warning(
+                    "UNRESOLVED %.0fh past kickoff, no result from any source: %s vs %s (%s)",
+                    hours, home, away, p.get("league_slug"))
+                unresolved.append({**p, "hours_past": round(hours)})
+            else:
+                logger.info("  no result yet for %s vs %s", home, away)
             continue
 
         label = result["actual_result"]
         correct = label == p.get("prediction")
         logger.info(
-            "  %s vs %s -> %s-%s (%s)%s",
-            home, away, result["home_score"], result["away_score"], label,
+            "  %s vs %s -> %s-%s (%s, via %s)%s",
+            home, away, result["home_score"], result["away_score"], label, source,
             "  [pico correct]" if correct else "  [pico wrong]",
         )
+        by_source[source] = by_source.get(source, 0) + 1
 
         if dry_run:
             settled += 1
@@ -224,8 +292,83 @@ def settle(sb, dry_run: bool = False) -> int:
         logger.info("Dry run — %d of %d would be settled; nothing written.",
                     settled, len(past))
     else:
-        logger.info("Settled %d/%d predictions.", settled, len(past))
+        logger.info("Settled %d/%d predictions (sources: %s).",
+                    settled, len(past), by_source or "{}")
+        _write_stats(sb, settled, by_source, unresolved, widened)
+
+    if unresolved:
+        logger.warning(
+            "ALERT: %d prediction(s) still unresolved after every source — "
+            "run ai/reconcile_settlement.py for a manual pass.", len(unresolved))
     return settled
+
+
+def _hours_past(kickoff_iso: str | None) -> float | None:
+    """Hours between kickoff and now (None when unparseable)."""
+    if not kickoff_iso:
+        return None
+    try:
+        ko = dt.datetime.fromisoformat(str(kickoff_iso).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if ko.tzinfo is None:
+        ko = ko.replace(tzinfo=dt.timezone.utc)
+    return (dt.datetime.now(dt.timezone.utc) - ko).total_seconds() / 3600.0
+
+
+def _write_stats(sb, settled: int, by_source: dict, unresolved: list,
+                 widened: bool) -> None:
+    """Rolling settlement counters in app_settings (plan 2.4 — visibility).
+
+    Same pattern as booking_code_stats: no DDL, readable by the app role.
+    """
+    stamp = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    try:
+        cur = (
+            sb.table("app_settings")
+            .select("setting_value")
+            .eq("setting_key", "settlement_stats")
+            .limit(1)
+            .execute()
+        )
+        prev = {}
+        if cur.data:
+            val = cur.data[0].get("setting_value")
+            if isinstance(val, str):
+                try:
+                    val = json.loads(val)
+                except Exception:  # noqa: BLE001
+                    val = {}
+            prev = val or {}
+        stats = {
+            "attempts": int(prev.get("attempts") or 0) + 1,
+            "settled_total": int(prev.get("settled_total") or 0) + settled,
+            "last_run_at": stamp,
+            "last_settled": settled,
+            "last_sources": by_source,
+            "unresolved_last": len(unresolved),
+            "unresolved_examples": [
+                {"match": u.get("match_title"), "league": u.get("league_slug"),
+                 "hours_past": u.get("hours_past")}
+                for u in unresolved[:5]
+            ],
+            "fallback_widened": widened,
+        }
+        row = {
+            "setting_value": stats,
+            "description": "Settlement run stats (settled counts, sources, unresolved)",
+            "is_active": True,
+        }
+        if cur.data:
+            sb.table("app_settings").update(row).eq(
+                "setting_key", "settlement_stats").execute()
+        else:
+            sb.table("app_settings").insert(
+                {"setting_key": "settlement_stats", **row}).execute()
+        logger.info("Settlement stats updated: last_settled=%d unresolved=%d.",
+                    settled, len(unresolved))
+    except Exception as e:  # noqa: BLE001
+        logger.warning("Could not write settlement stats: %s", e)
 
 
 def main() -> int:

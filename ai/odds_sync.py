@@ -596,10 +596,15 @@ _TABLE_COLUMNS = {
         "match_id", "market", "live", "commence_time", "bookmakers",
         "odds", "best_odds", "probs", "totals", "sport_key", "created_at",
     ),
+    # Live production schema (probed 2026-10-26 via the OpenAPI spec):
+    #   id, match_id, fixture_key, status, minute, home_score, away_score,
+    #   last_update, raw
+    # The rich model/market payload goes into `raw` (jsonb) — the earlier
+    # column set (score_home/score_away/model_probs/…) never existed in
+    # production, so _insert's required-column check skipped EVERY row.
     "inplay_states": (
-        "match_id", "minute", "score_home", "score_away", "model_probs",
-        "market_probs", "final_probs", "edge", "lambda_home", "lambda_away",
-        "created_at",
+        "match_id", "fixture_key", "status", "minute", "home_score",
+        "away_score", "last_update", "raw",
     ),
 }
 
@@ -635,7 +640,10 @@ def _insert(table: str, rows: list[dict]) -> None:
         missing = set(_TABLE_COLUMNS[table]) - have
         # A row without its payload columns is useless — better to skip than
         # to write hundreds of near-empty rows we then have to clean up.
-        required = {"odds", "probs"} if table == "odds_snapshots" else {"model_probs"}
+        if table == "odds_snapshots":
+            required = {"odds", "probs"}
+        else:  # inplay_states: the live state itself is the payload
+            required = {"minute", "home_score"}
         useless = required - have
         if useless:
             print(f"skip {table}: missing essential column(s) "
@@ -793,8 +801,28 @@ def _parse_minute(st: dict) -> float | None:
     return None
 
 
+def _competitors_of(ev_or_hdr: dict) -> list[dict]:
+    """The competitor list of a raw ESPN event / summary header.
+
+    Both nest competitors under competitions[0] — reading a top-level
+    "competitors" key silently returns [] and every score looked missing
+    (plan 2.4 fix).
+    """
+    comps = ev_or_hdr.get("competitions") or []
+    if not comps:
+        return []
+    return comps[0].get("competitors") or []
+
+
 def _espn_live_state(league_slug: str, kickoff_iso: str, home: str, away: str) -> dict | None:
-    """Live minute/score from the ESPN scoreboard (summary as fallback)."""
+    """Live minute/score from the ESPN scoreboard (summary as fallback).
+
+    Plan 2.4 bug fixes (the old version never matched a live game):
+      - the in-play flag lives at status.type.state, NOT status.state
+        (raw scoreboard events nest it under "type")
+      - competitors live at competitions[0].competitors, NOT top-level
+        "competitors" — in both the scoreboard event and the summary header
+    """
     month = (kickoff_iso or _iso(_now()))[:7].replace("-", "")
     ev_id = _find_espn_event(league_slug, month, home, away)
     if not ev_id:
@@ -805,12 +833,12 @@ def _espn_live_state(league_slug: str, kickoff_iso: str, home: str, away: str) -
     if not ev:
         return None
     st = ev.get("status") or {}
-    if st.get("state") != "in":
+    state = ((st.get("type") or {}).get("state") or "").lower()
+    if state != "in":
         return None
     minute = _parse_minute(st)
     sh = sa = None
-    comps = ev.get("competitors") or []
-    for c in comps:
+    for c in _competitors_of(ev):
         try:
             sc = int(c.get("score"))
         except (TypeError, ValueError):
@@ -824,7 +852,7 @@ def _espn_live_state(league_slug: str, kickoff_iso: str, home: str, away: str) -
         hdr = (summ or {}).get("header", {})
         hst = hdr.get("status") or {}
         minute = minute or _parse_minute(hst)
-        for c in hdr.get("competitors") or []:
+        for c in _competitors_of(hdr):
             try:
                 sc = int(c.get("score"))
             except (TypeError, ValueError):
@@ -925,13 +953,21 @@ def cmd_inplay(args) -> int:
             continue
         final = blend(ip, mkt["probs"], args.alpha)
         e = edge(final, mkt["probs"])
+        # Production schema: home_score/away_score (not score_home/score_away),
+        # plus fixture_key/status/last_update; the model payload lives in raw.
         rows.append({
             "match_id": p.get("match_id"),
-            "minute": st["minute"], "score_home": st["score_home"],
-            "score_away": st["score_away"],
-            "model_probs": ip, "market_probs": mkt["probs"],
-            "final_probs": final, "edge": {k: round(v, 4) for k, v in e.items()},
-            "lambda_home": lh, "lambda_away": la,
+            "fixture_key": st.get("event_id") or p.get("match_id"),
+            "status": "in",
+            "minute": st["minute"],
+            "home_score": st["score_home"],
+            "away_score": st["score_away"],
+            "last_update": _iso(_now()),
+            "raw": {
+                "model_probs": ip, "market_probs": mkt["probs"],
+                "final_probs": final, "edge": {k: round(v, 4) for k, v in e.items()},
+                "lambda_home": lh, "lambda_away": la,
+            },
         })
         _set_details(p, "live", {
             "as_of": _iso(_now()), "minute": st["minute"],

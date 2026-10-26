@@ -19,6 +19,21 @@ on:
         required: false
         default: false
         type: boolean
+      reconcile:
+        description: 'Run the reconciliation pass instead (manual stuck-match fix)'
+        required: false
+        default: false
+        type: boolean
+      mark_void:
+        description: 'Reconcile only: void rows stuck beyond void_after hours'
+        required: false
+        default: false
+        type: boolean
+      void_after:
+        description: 'Reconcile only: hours before a stuck row may be voided'
+        required: false
+        default: '72'
+        type: string
 
 concurrency:
   group: settle
@@ -55,7 +70,16 @@ jobs:
             echo "::error::SUPABASE_SERVICE_ROLE_KEY is not configured — cannot settle."
             exit 1
           fi
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
+          if [ "${{ inputs.reconcile }}" = "true" ]; then
+            # Manual stuck-match pass (plan 2.4): retries every unresolved row
+            # with all sources; optionally voids rows beyond the window.
+            EXTRA=""
+            if [ "${{ inputs.dry_run }}" = "true" ]; then EXTRA="$EXTRA --dry-run"; fi
+            if [ "${{ inputs.mark_void }}" = "true" ]; then EXTRA="$EXTRA --mark-void"; fi
+            if [ -n "${{ inputs.void_after }}" ]; then EXTRA="$EXTRA --void-after ${{ inputs.void_after }}"; fi
+            # shellcheck disable=SC2086
+            python ai/reconcile_settlement.py $EXTRA
+          elif [ "${{ inputs.dry_run }}" = "true" ]; then
             python ai/settle_predictions.py --dry-run
           else
             python ai/settle_predictions.py
