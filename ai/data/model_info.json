@@ -1,16 +1,16 @@
 {
-  "version": 4,
-  "trained_at": "2026-10-25T23:35:41.751494Z",
-  "git_sha": "3e5c29a62566",
+  "version": 5,
+  "trained_at": "2026-10-26T08:18:13.612322Z",
+  "git_sha": "a35f59462379",
   "total_matches": 331949,
-  "duration_seconds": 290.8,
+  "duration_seconds": 167.8,
   "previous": {
-    "version": 3,
-    "trained_at": "2026-10-25T21:09:46.482441Z",
-    "git_sha": "4bad71131886"
+    "version": 4,
+    "trained_at": "2026-10-25T23:35:41.751494Z",
+    "git_sha": "3e5c29a62566"
   },
   "baseline_comparison": {
-    "baseline_version": 3,
+    "baseline_version": 4,
     "baseline_eval_log_loss": 1.01129,
     "new_eval_log_loss": 1.01129,
     "tolerance": 0.0005,
@@ -92,6 +92,16 @@
       "holdout_days": 180,
       "split_at": "2026-04-21",
       "git_sha": "3e5c29a62566"
+    },
+    {
+      "version": 5,
+      "trained_at": "2026-10-26T08:18:13.612322Z",
+      "mode": "single",
+      "eval_log_loss": 1.01129,
+      "accuracy": 0.4827,
+      "holdout_days": 180,
+      "split_at": "2026-04-21",
+      "git_sha": "a35f59462379"
     }
   ]
 }
