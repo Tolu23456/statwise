@@ -158,6 +158,14 @@ export type Prediction = {
         bench: { name: string; jersey: string | null; position: string | null }[];
       }>;
       team_stats?: Record<string, Record<string, string>>;
+      /** Real live state stamped by ai/live_enricher.py (plan 2.2) — supersedes
+       *  the time-based LIVE guess chips when fresh (see lib/liveFeed.ts). */
+      live_state?: {
+        status?: 'pre' | 'in' | 'post' | string | null;
+        minute?: number | null;
+        score?: { home: number | null; away: number | null } | null;
+        as_of?: string;
+      } | null;
     } | null;
   } | null;
   status?: string;

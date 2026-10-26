@@ -1,8 +1,10 @@
 name: App tests
 
 # Frontend/unit guards that don't belong in the model retrain pipeline.
-# Currently: the plan step 2.1 polling policy (tiered cadence, visibility
-# and network gating) — pure Node, no npm install needed.
+# Currently:
+#   - plan 2.1 polling policy (tiered cadence, visibility and network gating)
+#   - plan 2.2 live-state helpers (freshness gating, live chips, scores)
+# Pure Node, no npm install needed.
 
 on:
   workflow_dispatch:
@@ -13,7 +15,7 @@ on:
       - '.github/workflows/test-app.yml'
 
 jobs:
-  polling-policy:
+  frontend-unit-tests:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -30,3 +32,10 @@ jobs:
             --outDir "$RUNNER_TEMP/polling-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/polling-test/polling.test.js"
+      - name: Live-state helper tests (plan 2.2)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/liveFeed.ts statwise/lib/liveFeed.test.ts \
+            --outDir "$RUNNER_TEMP/livefeed-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/livefeed-test/liveFeed.test.js"

@@ -14,6 +14,7 @@ import {
   formatEdge,
   countdownLabel,
 } from '@/lib/format';
+import { getLiveState, liveChip, formatMinute, formatScore } from '@/lib/liveFeed';
 
 type Props = {
   prediction: Prediction;
@@ -79,6 +80,11 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
   const outcomes = buildOutcomes(prediction);
   const pick = pickCode(prediction.prediction);
   const status = getMatchStatus(prediction as any);
+  // Plan 2.2 — real live state (stamped every 5 min by ai/live_enricher.py)
+  // supersedes the time-based guess while it's fresh (<10 min old).
+  const liveState = getLiveState(prediction.stats?.details);
+  const liveInfo = liveChip(liveState);
+  const liveScoreText = liveInfo?.showScore ? formatScore(liveState?.score ?? null) : null;
   const homeLogo = getTeamLogo(prediction.home_team);
   const awayLogo = getTeamLogo(prediction.away_team);
   const showScore = status.state === 'FT' || status.state === 'HT' || status.live;
@@ -109,7 +115,7 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
             <Text style={[styles.league, { color: C.textMuted, backgroundColor: C.inputBg }]}>
               {prediction.league}
             </Text>
-            {status.live && (
+            {(liveInfo?.live ?? status.live) && (
               <View style={[styles.liveChip, { backgroundColor: C.dangerLight }]}>
                 <View style={[styles.liveDot, { backgroundColor: C.danger }]} />
                 <Text style={[styles.liveText, { color: C.danger }]}>LIVE</Text>
@@ -181,7 +187,20 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
             <Text style={[styles.league, { color: C.primary, backgroundColor: C.primaryLight }]}>
               {prediction.league}
             </Text>
-            {status.state === 'LIVE' ? (
+            {liveInfo ? (
+              liveInfo.live ? (
+                <View style={[styles.liveChip, { backgroundColor: C.dangerLight }]}>
+                  <View style={[styles.liveDot, { backgroundColor: C.danger }]} />
+                  <Text style={[styles.liveText, { color: C.danger }]}>
+                    LIVE{liveInfo.showMinute ? ` ${formatMinute(liveState?.minute ?? null)}` : ''}
+                  </Text>
+                </View>
+              ) : (
+                <View style={[styles.liveChip, { backgroundColor: C.inputBg }]}>
+                  <Text style={[styles.liveText, { color: C.textSecondary }]}>FT</Text>
+                </View>
+              )
+            ) : status.state === 'LIVE' ? (
               <View style={[styles.liveChip, { backgroundColor: C.dangerLight }]}>
                 <View style={[styles.liveDot, { backgroundColor: C.danger }]} />
                 <Text style={[styles.liveText, { color: C.danger }]}>LIVE</Text>
@@ -214,13 +233,23 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
           </View>
           <View style={styles.scoreCol}>
             <View style={{ alignItems: 'center' }}>
-              {(status.state === 'FT' || status.state === 'LIVE' || status.state === 'HT') && (prediction.home_score != null && prediction.away_score != null) ? (
+              {liveScoreText ? (
+                <Text style={[styles.scoreText, { color: C.text }]}>{liveScoreText}</Text>
+              ) : (status.state === 'FT' || status.state === 'LIVE' || status.state === 'HT') && (prediction.home_score != null && prediction.away_score != null) ? (
                 <Text style={[styles.scoreText, { color: C.text }]}>{prediction.home_score} - {prediction.away_score}</Text>
               ) : (
                 <Text style={[styles.vsText, { color: C.textMuted }]}>VS</Text>
               )}
-              {status.state === 'LIVE' && <Text style={[styles.liveTime, { color: C.danger }]}>LIVE</Text>}
-              {status.state === 'SCHEDULED' && (() => {
+              {liveInfo?.live ? (
+                liveInfo.showMinute ? (
+                  <Text style={[styles.liveTime, { color: C.danger }]}>{formatMinute(liveState?.minute ?? null)}</Text>
+                ) : (
+                  <Text style={[styles.liveTime, { color: C.danger }]}>LIVE</Text>
+                )
+              ) : status.state === 'LIVE' && (
+                <Text style={[styles.liveTime, { color: C.danger }]}>LIVE</Text>
+              )}
+              {!liveInfo && status.state === 'SCHEDULED' && (() => {
                 const now = Date.now();
                 const kickoff = new Date(prediction.kickoff_time).getTime();
                 const diff = kickoff - now;

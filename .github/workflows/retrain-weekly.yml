@@ -49,6 +49,8 @@ jobs:
           python ai/experimental/test_sim.py
           # Plan 1.6: BTTS/O3.5 labels + auxiliary heads + pickle round-trip.
           python ai/experimental/test_markets.py
+          # Plan 2.2: live-window enrichment (window policy, merge, ESPN parse).
+          python ai/experimental/test_live_feed.py
 
       - name: Retrain model
         id: retrain

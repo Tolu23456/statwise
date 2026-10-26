@@ -1,0 +1,68 @@
+name: Live Match Enrichment
+
+# Plan step 2.2 — keeps stats.details fresh for fixtures in the enrichment
+# window (kickoff - 2h .. kickoff + 4h): lineups as ESPN publishes them,
+# goals/cards/substitutions and possession/shots/corners while the match is
+# in play, final stats after full time, plus a stamped details.live_state
+# (status/minute/score) the UI turns into the live chip + real score.
+#
+# Why this is separate from fetch-football-data (3-hourly): that run's
+# enrich step skips rows that already have stats.details (every row does,
+# from the odds/weather writers), so rich details were never fetched at all.
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # every 5 minutes, all day (matches are global)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (show writes, persist nothing)'
+        required: false
+        default: false
+        type: boolean
+      limit:
+        description: 'Max rows to process (empty = all in-window)'
+        required: false
+        default: ''
+        type: string
+
+concurrency:
+  group: live-enrich
+  # A newer tick supersedes an older one — never pile enrichment runs up.
+  cancel-in-progress: true
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Enrich in-window fixtures
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then
+            echo "::error::SUPABASE_SERVICE_ROLE_KEY is not configured — cannot enrich."
+            exit 1
+          fi
+          EXTRA=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            EXTRA="$EXTRA --dry-run"
+          fi
+          if [ -n "${{ inputs.limit }}" ]; then
+            EXTRA="$EXTRA --limit ${{ inputs.limit }}"
+          fi
+          # shellcheck disable=SC2086
+          python ai/live_enricher.py $EXTRA

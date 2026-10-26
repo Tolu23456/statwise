@@ -8,6 +8,7 @@ import { Colors } from '@/constants/colors';
 import { Prediction } from '@/lib/supabase';
 import { useTheme } from '@/context/ThemeContext';
 import { formatDayLabel, isLive } from '@/lib/format';
+import { getLiveState, liveChip, formatMinute, formatScore } from '@/lib/liveFeed';
 
 type Props = {
   prediction: Prediction | null;
@@ -133,6 +134,10 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
 
   const edge = stats?.value_edge ?? null;
   const live = isLive(prediction.kickoff_time);
+  // Plan 2.2 — real live state from ai/live_enricher.py supersedes the
+  // time-based `live` guess while fresh (<10 min old).
+  const liveState = getLiveState(details);
+  const liveInfo = liveChip(liveState);
 
   // "Today 19:45" / "Fri 24 Oct · in 47h" — avoid repeating the day.
   const dayLabel = formatDayLabel(prediction.kickoff_time);
@@ -188,7 +193,27 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                 <Text style={{ color: C.textMuted, fontSize: 13, marginTop: 4 }}>
                   {formatDayLabel(prediction.kickoff_time)} · {formatKickoff(prediction.kickoff_time)}
                 </Text>
-                {live && (
+                {liveInfo ? (
+                  liveInfo.live ? (
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: C.dangerLight, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 10, alignSelf: 'flex-start', marginTop: 6 }}>
+                      <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: C.danger }} />
+                      <Text style={{ fontSize: 10, color: C.danger, fontWeight: '800' }}>
+                        LIVE{liveInfo.showMinute ? ` · ${formatMinute(liveState?.minute ?? null)}` : ''}
+                      </Text>
+                      {liveInfo.showScore && (
+                        <Text style={{ fontSize: 11, color: C.danger, fontWeight: '800' }}>
+                          {formatScore(liveState?.score ?? null)}
+                        </Text>
+                      )}
+                    </View>
+                  ) : (
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: C.inputBg, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 10, alignSelf: 'flex-start', marginTop: 6 }}>
+                      <Text style={{ fontSize: 10, color: C.textSecondary, fontWeight: '800' }}>
+                        FT{liveInfo.showScore ? ` · ${formatScore(liveState?.score ?? null)}` : ''}
+                      </Text>
+                    </View>
+                  )
+                ) : live && (
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: C.dangerLight, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 10, alignSelf: 'flex-start', marginTop: 6 }}>
                     <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: C.danger }} />
                     <Text style={{ fontSize: 10, color: C.danger, fontWeight: '800' }}>LIVE</Text>

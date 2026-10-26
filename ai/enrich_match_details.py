@@ -253,8 +253,9 @@ def _parse_summary(summary: dict) -> dict:
                 "type": etype.replace("-", "_"),
             })
         elif etype == "substitution":
+            # ESPN: "Substitution, Crystal Palace. Eddie Nketiah replaces J-P Mateta."
             m = re.search(
-                r"(?:Substitution(?:\(.*?\))?|.*?)[,:\s]+(.+?)\s+(?:for|replaces)\s+(.+?)(?:\.|$)",
+                r"Substitution[,\s]+[^.]*\.\s*(.+?)\s+(?:for|replaces)\s+(.+?)(?:\.|$)",
                 text,
             )
             if m:
@@ -275,7 +276,9 @@ def _parse_summary(summary: dict) -> dict:
         out["substitutions"] = subs[:20]
 
     lineups = {}
-    for roster in summary.get("rosters", []):
+    # Home side first — the detail modal lists teams in fixture order.
+    for roster in sorted(summary.get("rosters", []),
+                          key=lambda r: r.get("homeAway") != "home"):
         team_name = (roster.get("team") or {}).get("displayName", "?")
         starters, bench = [], []
         for p in roster.get("roster", []):
@@ -294,11 +297,18 @@ def _parse_summary(summary: dict) -> dict:
         out["lineups"] = lineups
 
     team_stats = {}
-    for t in summary.get("boxscore", {}).get("teams", []):
+    # Home side first: the modal shows Object.keys(team_stats) as home | away.
+    box_teams = sorted(summary.get("boxscore", {}).get("teams", []),
+                       key=lambda t: t.get("homeAway") != "home")
+    for t in box_teams:
         name = (t.get("team") or {}).get("displayName", "?")
         st = {}
         for s in t.get("statistics", t.get("stats", [])):
-            key = s.get("name") or s.get("label")
+            # Prefer the human label: label keys ("Possession" -> "possession",
+            # "ON GOAL" -> "on_goal", "Corner Kicks" -> "corner_kicks") are what
+            # the detail modal's Match Statistics rows read; the ESPN name keys
+            # (possessionPct, shotsOnTarget, wonCorners) never match them.
+            key = s.get("label") or s.get("name")
             if key:
                 st[key.lower().replace(" ", "_")] = s.get("displayValue")
         if st:
