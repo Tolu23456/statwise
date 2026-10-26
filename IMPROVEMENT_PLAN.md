@@ -132,17 +132,28 @@ Hard rules (agreed before building):
   O3.5 gets its own aux head (`_o35_pipe`, `last_meta["y_o35"] = total>3.5`);
   holdout Briers (`btts_brier`/`o35_brier`) recorded in retrain metrics on
   the same eval rows as `goals_brier`
-- [ ] **Train separate heads** - `fit_stacks(y_btts=…, y_o35=…)` fits them
-  (single AND joint); needs the CI retrain to produce a pickle that carries
-  them — dispatched after this commit
-- [ ] **Add to API/output** - Expose in predictions (`predict_match` returns
-  `prob_btts`/`prob_over35`, predictor passes them into stats; null on
-  pre-1.6 pickles)
-- [ ] **Update UI** - `PredictionDetailModal` renders Both-Teams-to-Score +
-  Over 3.5 rows next to Over 2.5, each only when a number exists
-- [ ] **Commit changes**
+- [x] **Train separate heads** - run `40245030516` trained the aux heads for
+  BOTH modes (log: `Fitting LightGBM BTTS/over-under 3.5 head` ×2) with
+  honest holdout **btts_brier=0.24461, o35_brier=0.22545** (same eval rows
+  as goals_brier=0.24000); outcome LL untouched (1.01129 = v3 baseline) →
+  **gate accepted, model v4**; the scheduled weekly run then accepted an
+  identical **v5** (2026-10-26). Both pushed to the model cache + Supabase
+  storage the prediction workflow restores from
+- [x] **Add to API/output** - production rows now carry the fields (verified
+  in Supabase after the first post-1.6 predict run: `prob_btts` 36.7/54.2/
+  65.8, `prob_over35` 15.4/17.5/25.4 next to existing `prob_over25`);
+  local v5 pickle refreshed from storage and a real fixture predict returns
+  all three goal markets (stats mirror matches return dict)
+- [x] **Update UI** - `PredictionDetailModal` renders Both-Teams-to-Score +
+  Over 3.5 rows next to Over 2.5, each only when a number exists (null on
+  pre-1.6 pickles); `Prediction` stats types extended, `tsc --noEmit` clean
+- [x] **Commit changes** (`3e5c29a`; local env aligned to CI — sklearn
+  1.9.1 / lightgbm 4.7.0 — all five suites green, app on :5000)
 
-**PHASE 1 CHECKPOINT**: All model improvements tested, metrics maintained or improved, no regressions
+**PHASE 1 CHECKPOINT**: All model improvements tested, metrics maintained or improved, no regressions —
+verified 2026-10-26: holdout eval LL 1.01129 maintained v3 → v5 (gate
+tolerance 0.0005), blended 0.99491, all five local suites green, and the
+lab's 522.6M-outcome recipe gated on real outcomes only
 
 ---
 
