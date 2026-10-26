@@ -2,7 +2,7 @@ import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput,
   RefreshControl, ScrollView, Platform, ActivityIndicator,
-  Animated,
+  Animated, AppState,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
@@ -20,8 +20,8 @@ import { OnboardingModal, shouldShowOnboarding } from '@/components/OnboardingMo
 import { BookingCodeModal } from '@/components/BookingCodeModal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
-
-const POLL_INTERVAL_MS = 5 * 1000;
+import { pollIntervalMs, kickoffMs } from '@/lib/polling';
+import { currentNetworkState, subscribeNetwork, type NetworkState } from '@/lib/network';
 
 /** Which upstream feed produced a fixture. Newer rows store this in stats;
  *  older ones only carry it in the canonical match_id namespace. */
@@ -117,6 +117,32 @@ export default function HomeScreen() {
     });
   }, []);
 
+  // Plan 2.1 — visibility detection: pause all interval polling while the
+  // app/tab is backgrounded (AppState is backed by visibilitychange on web).
+  const [appActive, setAppActive] = useState(
+    () => AppState.currentState !== 'background' && AppState.currentState !== 'inactive',
+  );
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', state => {
+      setAppActive(state === 'active');
+    });
+    return () => sub?.remove();
+  }, []);
+
+  // Plan 2.1 — network awareness: offline stops polling entirely, slow
+  // (2g/3g-class) connections halve the polling frequency.
+  const [network, setNetwork] = useState<NetworkState>(() => currentNetworkState());
+
+  // Urgency ticker: recompute the poll tier as kickoffs pass (cheap, no I/O).
+  // Without it a fixture going from "quiet" to "live" would only be noticed
+  // on the next refetch (up to 5 minutes late).
+  const [nowMs, setNowMs] = useState(() => Date.now());
+  useEffect(() => {
+    if (!appActive) return;
+    const id = setInterval(() => setNowMs(Date.now()), 30 * 1000);
+    return () => clearInterval(id);
+  }, [appActive]);
+
   const { data: predictions = [], isLoading, isError, refetch, isFetching, dataUpdatedAt } = useQuery<Prediction[]>({
     queryKey: ['predictions', userTier],
     queryFn: async ({ signal }) => {
@@ -150,8 +176,25 @@ export default function HomeScreen() {
         throw e;
       }
     },
-    refetchInterval: POLL_INTERVAL_MS,
-    refetchIntervalInBackground: true,
+    // Plan 2.1 — tiered polling: live 15s / starting-soon 60s / quiet 300s,
+    // `false` (zero requests) when hidden or offline, doubled on slow links.
+    // Function form reads the freshest rows straight off the query.
+    refetchInterval: query => {
+      const rows: Prediction[] = query.state.data ?? [];
+      const kickoffs: number[] = [];
+      for (const row of rows) {
+        const t = kickoffMs(row);
+        if (t !== null) kickoffs.push(t);
+      }
+      return pollIntervalMs({
+        appActive,
+        online: network.online,
+        slow: network.slow,
+        kickoffs,
+        now: nowMs,
+      });
+    },
+    refetchIntervalInBackground: false,
     refetchOnWindowFocus: true,
     refetchOnMount: true,
     staleTime: 30 * 1000,
@@ -163,6 +206,21 @@ export default function HomeScreen() {
     },
     retryDelay: 1000,
   });
+
+  // Plan 2.1 — subscribe to network changes; on reconnect, refresh right
+  // away instead of waiting out the current poll tier.
+  useEffect(() => {
+    let wasOnline = currentNetworkState().online;
+    return subscribeNetwork(state => {
+      setNetwork(prev =>
+        prev.online === state.online && prev.slow === state.slow ? prev : state,
+      );
+      if (state.online && !wasOnline) {
+        refetch().catch(() => {});
+      }
+      wasOnline = state.online;
+    });
+  }, [refetch]);
 
   // How many predictions exist for this tier overall — used to tell free users
   // how many more they could unlock.

@@ -1,0 +1,32 @@
+name: App tests
+
+# Frontend/unit guards that don't belong in the model retrain pipeline.
+# Currently: the plan step 2.1 polling policy (tiered cadence, visibility
+# and network gating) — pure Node, no npm install needed.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'statwise/lib/**'
+      - 'statwise/app/**'
+      - '.github/workflows/test-app.yml'
+
+jobs:
+  polling-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Polling policy tests (plan 2.1)
+        run: |
+          # Compile the policy + test with a pinned TypeScript, then run on
+          # plain Node — no dependency install, works on any node >= 18.
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/polling.ts statwise/lib/polling.test.ts \
+            --outDir "$RUNNER_TEMP/polling-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/polling-test/polling.test.js"
