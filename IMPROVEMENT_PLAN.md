@@ -160,12 +160,35 @@ lab's 522.6M-outcome recipe gated on real outcomes only
 ## PHASE 2: REAL-TIME DATA & RELIABILITY (P0)
 
 ### Step 2.1: Smarter Polling Strategy
-- [ ] **Audit current polling** - Review `app/(tabs)/index.tsx` polling logic
+- [x] **Audit current polling** - Review `app/(tabs)/index.tsx` polling logic
+  (found: flat 5s interval with `refetchIntervalInBackground: true` — polled
+  even when hidden; `refetchOnWindowFocus: true`; staleTime 30s; a Supabase
+  realtime channel already invalidating on new rows; `predictions-total`
+  staleTime 5min; insights/profile/backtesting queries have no intervals;
+  no AppState or NetInfo usage anywhere)
 - [x] **Implement tiered polling** - Live matches: 15s, starting soon (<2h): 60s, others: 300s
-- [ ] **Add visibility detection** - Pause polling when app backgrounded
-- [ ] **Add network awareness** - Reduce polling on slow connections
-- [ ] **Test polling behavior** - Verify no unnecessary requests
-- [ ] **Commit changes**
+  (`lib/polling.ts` policy: kickoff within the past 2h → 15s, kickoff within
+  the next 2h → 60s, otherwise 300s; a 30s ticker recomputes urgency so a
+  fixture escalates the cadence within 30s of kickoff; note: this box had
+  been ticked earlier without code — the code now exists and matches it)
+- [x] **Add visibility detection** - Pause polling when app backgrounded
+  (AppState listener → `background`/`inactive` makes the policy return
+  `false` = zero requests; `refetchIntervalInBackground: false`; on web
+  react-native-web AppState is backed by `visibilitychange`;
+  refetch-on-window-focus covers the return to foreground)
+- [x] **Add network awareness** - Reduce polling on slow connections
+  (`lib/network.ts`: `online`/`offline` events + Network Information API;
+  offline → policy returns `false`, slow effectiveType (slow-2g/2g/3g) →
+  interval doubled; reconnect triggers an immediate refetch; platforms
+  without the APIs degrade to assume-online/fast — never a stall)
+- [x] **Test polling behavior** - Verify no unnecessary requests
+  (`lib/polling.test.ts` — 29 checks: hidden/offline → `false` (zero
+  requests), tier + half-open window edges, slow-connection multiplier,
+  old flat 5s cadence gone; green locally and in CI run 40367017878
+  on `50d18ee` via `.github/workflows/test-app.yml` (push on statwise/**
+  + dispatch); full-project `tsc --noEmit` clean)
+- [x] **Commit changes** (`50d18ee` — pure policy + network module + screen
+  wiring + 29-check test + CI workflow; hot-reloaded onto the running app)
 
 ### Step 2.2: Live Match Enrichment
 - [x] **Create live data fetcher** - Enhance ESPN integration for live stats
