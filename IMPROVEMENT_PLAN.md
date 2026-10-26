@@ -192,12 +192,48 @@ lab's 522.6M-outcome recipe gated on real outcomes only
 
 ### Step 2.2: Live Match Enrichment
 - [x] **Create live data fetcher** - Enhance ESPN integration for live stats
-- [ ] **Fetch lineups** - When available
-- [ ] **Fetch cards/events** - Goals, cards, substitutions
-- [ ] **Fetch match stats** - Possession, shots, corners
-- [ ] **Update match detail UI** - Display live stats
-- [ ] **Update prediction cards** - Show live scores/minute
-- [ ] **Commit changes**
+  (`ai/live_enricher.py` — full rewrite of the dead skeleton; every 5 min it
+  re-fetches the ESPN summary for fixtures in the window [kickoff−2h,
+  kickoff+4h], merges into `stats.details` without clobbering market/weather,
+  and stamps `details.live_state` {status, minute, score, as_of}; summary
+  only fetched when it can add something — in-play always, pre-match within
+  80 min of kickoff, post-match until final data stored; scheduled by
+  `.github/workflows/live-enrich.yml` (cron */5, concurrency group,
+  5-min timeout, dry-run + limit dispatch inputs))
+- [x] **Fetch lineups** - When available
+  (real run 2026-10-26 17:58Z: Santa Clara vs Benfica row gained
+  `lineups` — 11 starters + 12 bench per side, home-first; verified in
+  Supabase; market/weather keys preserved)
+- [x] **Fetch cards/events** - Goals, cards, substitutions
+  (`_parse_summary` keyEvents → `scorers`/`cards`/`substitutions` with
+  player/team/minute; fixed the substitution regex that mangled real ESPN
+  text "Substitution, Crystal Palace. Eddie Nketiah replaces …"; covered by
+  test_live_feed.py against real ESPN payload shapes)
+- [x] **Fetch match stats** - Possession, shots, corners
+  (boxscore → `team_stats`, **label-precedence keys** — the modal reads
+  `possession`/`on_goal`/`corner_kicks` but ESPN's name keys were
+  `possessionPct`/`shotsOnTarget`/`wonCorners`, so every stat row rendered
+  "—" before; both teams now emit the exact UI keys, home-first order;
+  pre-match boxscore holds season aggregates only — per-match stats appear
+  once play starts and replace them on the next tick)
+- [x] **Update match detail UI** - Display live stats
+  (the modal already had Goal Scorers / Cards / Match Statistics / Lineups
+  sections reading `details.*` — they were permanently empty; now populated
+  by the enricher. Header pill upgraded: fresh live state shows real
+  "LIVE · 67' · 1 - 0" / "FT · 2 - 1" from `details.live_state`, time-based
+  guess is the fallback)
+- [x] **Update prediction cards** - Show live scores/minute
+  (`statwise/lib/liveFeed.ts` — pure helpers: `getLiveState`,
+  `isFresh` (≤10 min = two missed enricher ticks), `liveChip`,
+  `formatMinute`/`formatScore`; `PredictionCard` header chip shows
+  "LIVE 67'" / FT from real state and the score column shows the real
+  score + minute, superseding the time-guess chips; stale (>10 min) falls
+  back to `getMatchStatus`; `live_state` added to the `Prediction.stats`
+  type; `lib/liveFeed.test.ts` — 31 checks: parsing, freshness edges,
+  future-skew tolerance, chip semantics, formatting)
+- [x] **Commit changes** (`bc7edf8` — enricher rewrite + parser fixes +
+  workflow + TS helpers/UI + 51 python / 31 TS checks; plan ticked in the
+  follow-up commit)
 
 ### Step 2.3: Harden Booking Codes
 - [x] **Add retry logic** - Retry failed SportyBet generations
