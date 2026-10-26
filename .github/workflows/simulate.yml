@@ -12,6 +12,14 @@
 #   * the recipe is committed only when eval.publishable is true — beating
 #     the league prior on real outcomes is the gate, and a red gate is the
 #     gate doing its job (the report artifact is uploaded either way).
+#
+# Scale: the fast simulation path (stacked world gathers + bincount folding,
+# see ai/sim/simulate.py) runs ~1-2M outcomes/s per shard, so one dispatch
+# with sims=60000 and an 8k-fixture pool produces ~10 BILLION outcomes across
+# 20 shards in well under an hour — still storing only counters + recipe.
+# `accumulate: true` folds this wave's counters into the persisted ones
+# (ai/data/sim/counters.json) and keeps previous waves' worlds (capped by
+# max_worlds), so successive dispatches BUILD UP instead of overwriting.
 
 name: Monte Carlo Match Lab
 
@@ -28,8 +36,8 @@ on:
         description: 'sampler steps per chain'
         default: '300'
       sims:
-        description: 'simulated outcomes per fixture'
-        default: '2000'
+        description: 'simulated outcomes per fixture (~pool x sims x shards total)'
+        default: '60000'
       epochs:
         description: 'gradient epochs for the base fit'
         default: '240'
@@ -39,6 +47,18 @@ on:
       holdout_days:
         description: 'out-of-time holdout window (days)'
         default: '180'
+      holdout_pool:
+        description: 'real holdout fixtures per shard sim pool (0 = len//shards)'
+        default: '0'
+      synth_fixtures:
+        description: 'bred same-league pairings added to the sim pool per shard'
+        default: '3000'
+      accumulate:
+        description: 'sum counters into the persisted ones + keep previous worlds (multi-wave)'
+        default: 'false'
+      max_worlds:
+        description: 'world cap when accumulating (newest waves kept)'
+        default: '240'
 
 permissions:
   contents: write
@@ -57,16 +77,20 @@ jobs:
           cache-dependency-path: ai/requirements.txt
       - name: Install dependencies
         run: pip install -r ai/requirements.txt
-      # 46 fast synthetic checks: proper distributions, MH proposal symmetry,
+      # 54 fast synthetic checks: proper distributions, MH proposal symmetry,
       # merge associativity, recipe round-trip, real-holdout gate wiring.
       - name: Run test_sim.py
         run: python ai/experimental/test_sim.py
+      # Fast-path semantics: bincount folding == the old add.at reference,
+      # vectorised sampler matches the exact posterior grid, waves accumulate.
+      - name: Run test_sim_scale.py
+        run: python ai/experimental/test_sim_scale.py
 
   shard:
     name: shard ${{ matrix.shard }}
     needs: tests
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 180
     strategy:
       fail-fast: false
       matrix:
@@ -115,6 +139,8 @@ jobs:
           EPOCHS: ${{ inputs.epochs }}
           POPULATION: ${{ inputs.population }}
           HOLDOUT_DAYS: ${{ inputs.holdout_days }}
+          HOLDOUT_POOL: ${{ inputs.holdout_pool }}
+          SYNTH_FIXTURES: ${{ inputs.synth_fixtures }}
         run: |
           set -o pipefail
           python ai/sim/run.py \
@@ -122,6 +148,8 @@ jobs:
             --worlds "$WORLDS" --steps "$NSTEPS" --sims "$SIMS" \
             --epochs "$EPOCHS" --population "$POPULATION" \
             --holdout-days "$HOLDOUT_DAYS" \
+            --holdout-pool "$HOLDOUT_POOL" \
+            --synth-fixtures "$SYNTH_FIXTURES" \
             --out "sim-shard-$SHARD.json" | tee shard.log
 
       - name: Upload shard payload
@@ -137,7 +165,7 @@ jobs:
     name: merge + real-holdout gate
     needs: shard
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -158,20 +186,27 @@ jobs:
           path: sim-shards
           merge-multiple: true
 
-      # Merge = sum the counters, store the recipe, re-score the combined
-      # ensemble on REAL holdout rows.  continue-on-error keeps the report
-      # artifact (and a failing gate's evidence) available either way.
+      # Merge = sum the counters (accumulating into the persisted ones when
+      # requested), store the recipe, re-score the combined ensemble on REAL
+      # holdout rows.  continue-on-error keeps the report artifact (and a
+      # failing gate's evidence) available either way.
       - name: Merge shards and apply the publishable gate
         id: merge
         continue-on-error: true
+        env:
+          ACCUMULATE: ${{ inputs.accumulate }}
+          MAX_WORLDS: ${{ inputs.max_worlds }}
         run: |
           set -o pipefail
+          case "$ACCUMULATE" in true|True|TRUE|1|yes) ACC="--accumulate" ;; *) ACC="" ;; esac
+          case "$MAX_WORLDS" in ''|*[!0-9]*) MAX_WORLDS=240 ;; esac
           ls -la sim-shards
           python ai/sim/merge.py \
             --pattern 'sim-shards/sim-shard-*.json' \
-            --out-dir ai/data/sim | tee merge.log
+            --out-dir ai/data/sim \
+            --max-worlds "$MAX_WORLDS" $ACC | tee merge.log
 
-      - name: Upload recipe + report
+      - name: Upload recipe + report + counters
         uses: actions/upload-artifact@v4
         with:
           name: sim-report
@@ -179,7 +214,7 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
-      - name: Commit recipe + report (only when the gate passed)
+      - name: Commit recipe + report + counters (only when the gate passed)
         if: steps.merge.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"

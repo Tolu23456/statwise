@@ -37,7 +37,7 @@ from sim.run import CLEAN_GLOB, load_frame, split_out_of_time  # noqa: E402
 from sim.simulate import SuffStats, calibration_table, scoreline_table  # noqa: E402
 
 RECIPE_SCHEMA = "statwise.sim.worlds.v1"
-REPORT_SCHEMA = "statwise.sim.report.v1"
+REPORT_SCHEMA = "statwise.sim.report.v2"   # v2: multi-wave counters + waves[]
 
 
 # ── loading ───────────────────────────────────────────────────────────────
@@ -51,6 +51,51 @@ def load_shards(pattern: str) -> list[dict]:
             out.append(json.load(fh))
     out.sort(key=lambda d: d.get("meta", {}).get("shard", 0))
     return out
+
+
+# ── multi-wave accumulation ───────────────────────────────────────────────
+def load_counters(path: str) -> SuffStats | None:
+    """Previous waves' merged counters, or None when there are none yet."""
+    if not path or not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as fh:
+        return SuffStats.from_dict(json.load(fh))
+
+
+def accumulate_waves(prev_counters_path: str, new_stats: SuffStats) -> SuffStats:
+    """Sum this wave's counters into the persisted ones (waves accumulate).
+
+    Merge stays a plain element-wise sum, so accumulating wave-by-wave gives
+    exactly the same counters as running every wave's shards at once —
+    test_sim_scale.py proves the round-trip.
+    """
+    prev = load_counters(prev_counters_path)
+    if prev is None:
+        return new_stats
+    prev.merge(new_stats)
+    return prev
+
+
+def accumulate_worlds(prev_recipe: dict | None, new_recipe: dict,
+                      max_worlds: int) -> tuple[list[dict], int]:
+    """Worlds from earlier waves, prepended to this wave's, capped at max.
+
+    Old strength vectors are only meaningful against the SAME team/league
+    header (they are positional), so a header change refuses accumulation
+    loudly instead of silently mis-aligning every old att/def entry.
+    """
+    old = list((prev_recipe or {}).get("models") or [])
+    if not old:
+        return new_recipe["models"], 0
+    if prev_recipe.get("teams") != new_recipe["teams"] or \
+            prev_recipe.get("leagues") != new_recipe["leagues"]:
+        raise SystemExit(
+            "accumulate: the team/league universe changed between waves — "
+            "old world vectors would mis-align. Rerun without --accumulate "
+            "to start a fresh recipe.")
+    keep = max(0, int(max_worlds) - len(new_recipe["models"]))
+    kept = old[-keep:] if keep else []
+    return kept + new_recipe["models"], len(kept)
 
 
 def _check_consistency(shards: list[dict]) -> dict:
@@ -136,6 +181,11 @@ def main() -> int:
                     help="write the report but always exit 0")
     ap.add_argument("--skip-reval", action="store_true",
                     help="trust shard evals instead of re-scoring (debug only)")
+    ap.add_argument("--accumulate", action="store_true",
+                    help="sum this wave's counters into the persisted ones and "
+                         "keep previous waves' worlds (multi-wave runs)")
+    ap.add_argument("--max-worlds", type=int, default=240,
+                    help="world cap when accumulating (newest waves kept)")
     args = ap.parse_args()
     t0 = time.time()
 
@@ -145,9 +195,22 @@ def main() -> int:
           f"{ref['n_train']:,} train / {ref['n_holdout']:,} holdout", flush=True)
 
     # 1. counters: sum, never collect rows
-    stats = merge_suffstats(shards)
-    print(f"  sufficient statistics: {stats.n_sims:,} simulated outcomes, "
-          f"scoreline mass {int(stats.scoreline.sum()):,}", flush=True)
+    wave_stats = merge_suffstats(shards)
+    stats = SuffStats.from_dict(wave_stats.to_dict())
+    print(f"  this wave: {wave_stats.n_sims:,} simulated outcomes, "
+          f"scoreline mass {int(wave_stats.scoreline.sum()):,}", flush=True)
+
+    counters_path = os.path.join(args.out_dir, "counters.json")
+    recipe_path = os.path.join(args.out_dir, "worlds.json")
+    prev_recipe = None
+    if args.accumulate:
+        stats = accumulate_waves(counters_path, stats)
+        if os.path.exists(recipe_path):
+            with open(recipe_path, encoding="utf-8") as fh:
+                prev_recipe = json.load(fh)
+        print(f"  accumulated across waves: {stats.n_sims:,} outcomes "
+              f"({len((prev_recipe or {}).get('models') or [])} previous worlds)",
+              flush=True)
 
     # 2. recipe: shared header + all worlds
     from datetime import datetime, timezone
@@ -161,8 +224,18 @@ def main() -> int:
         "n_holdout": ref["n_holdout"],
         "epochs": ref["epochs"],
         "simulated_outcomes": int(stats.n_sims),
+        "wave_outcomes": int(wave_stats.n_sims),
     }
     recipe = build_recipe(shards, recipe_meta)
+    n_prev_worlds = 0
+    if args.accumulate and prev_recipe:
+        models, n_prev_worlds = accumulate_worlds(prev_recipe, recipe,
+                                                  args.max_worlds)
+        recipe["models"] = models
+        recipe_meta["previous_worlds"] = n_prev_worlds
+        recipe["meta"] = recipe_meta
+        print(f"  recipe now carries {len(models)} worlds "
+              f"({n_prev_worlds} from previous waves)", flush=True)
 
     # 3. the gate, recomputed ONCE over the combined ensemble on REAL rows
     if args.skip_reval:
@@ -185,18 +258,24 @@ def main() -> int:
               f"| o25 ll={eval_res.get('over25', {}).get('log_loss')} "
               f"| publishable={eval_res.get('publishable')}", flush=True)
 
-    # 4. write both files BEFORE judging, so a red job keeps its evidence
+    # 4. write everything BEFORE judging, so a red job keeps its evidence
     os.makedirs(args.out_dir, exist_ok=True)
-    recipe_path = os.path.join(args.out_dir, "worlds.json")
     with open(recipe_path, "w", encoding="utf-8") as fh:
         json.dump(recipe, fh)
     recipe_mb = os.path.getsize(recipe_path) / 1e6
+
+    # the merged counters themselves — the ONLY thing the next wave needs to
+    # accumulate into (still counters, never rows: ~40 KB of int64s).
+    with open(counters_path, "w", encoding="utf-8") as fh:
+        json.dump(stats.to_dict(), fh)
 
     report = {
         "schema": REPORT_SCHEMA,
         "meta": {**recipe_meta,
                  "recipe_mb": round(recipe_mb, 2),
                  "worlds": len(recipe["models"]),
+                 "accumulated": bool(args.accumulate),
+                 "previous_worlds": n_prev_worlds,
                  "duration_s": round(time.time() - t0, 1)},
         "eval": eval_res,
         "scoreline_summary": scoreline_table(stats.scoreline),

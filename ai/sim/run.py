@@ -113,6 +113,12 @@ def main() -> int:
     ap.add_argument("--generations", type=int, default=10)
     ap.add_argument("--population", type=int, default=6)
     ap.add_argument("--sims", type=int, default=2000, help="simulated outcomes per fixture")
+    ap.add_argument("--synth-fixtures", type=int, default=300,
+                    help="bred (same-league) pairings added to the sim pool per shard")
+    ap.add_argument("--holdout-pool", type=int, default=0,
+                    help="real holdout fixtures in the sim pool (0 = len(holdout)//shards)")
+    ap.add_argument("--batch-elements", type=int, default=4_000_000,
+                    help="max expanded draw elements carried in RAM per batch")
     ap.add_argument("--shard", type=int, default=0)
     ap.add_argument("--shards", type=int, default=1)
     ap.add_argument("--seed", type=int, default=20261025)
@@ -176,9 +182,9 @@ def main() -> int:
     #    Each shard takes a different random slice of the holdout matchups
     #    (plus its own bred pairings), so the merged counters cover far more
     #    fixtures than any one shard would.
-    n_slice = max(200, len(holdout) // max(args.shards, 1))
+    n_slice = args.holdout_pool or max(200, len(holdout) // max(args.shards, 1))
     hold_slice = holdout.iloc[rng.permutation(len(holdout))[:n_slice]]
-    synth = breed_pairings(train, rng, n=max(300, len(hold_slice)))
+    synth = breed_pairings(train, rng, n=max(args.synth_fixtures, 200))
     pool = pd.concat([hold_slice, synth], ignore_index=True)
     h = pool["home_team"].astype(str).map(base.t2i).to_numpy(dtype=float)
     a = pool["away_team"].astype(str).map(base.t2i).to_numpy(dtype=float)
@@ -187,9 +193,18 @@ def main() -> int:
     pool_known = pool.loc[ok]
     h, a, lg = h[ok].astype(np.int64), a[ok].astype(np.int64), lg[ok].astype(np.int64)
 
-    stats, pm = simulate_fixtures(pop, h, a, lg, n_sims=args.sims, seed=seed + 7)
+    t_sim = time.time()
+    stats, pm = simulate_fixtures(pop, h, a, lg, n_sims=args.sims, seed=seed + 7,
+                                  batch_elements=args.batch_elements)
+    sim_s = max(time.time() - t_sim, 1e-9)
+    try:
+        import resource
+        peak_mb = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
+    except Exception:
+        peak_mb = float("nan")
     print(f"  simulated {stats.n_sims:,} outcomes over {stats.n_fixtures} fixtures "
-          f"({time.time() - t0:.0f}s)", flush=True)
+          f"in {sim_s:.0f}s ({stats.n_sims / sim_s / 1e6:.1f}M outcomes/s, "
+          f"peak RSS {peak_mb:.0f} MB) ({time.time() - t0:.0f}s)", flush=True)
 
     # 6. optional: price real upcoming fixtures with the ensemble
     markets = None

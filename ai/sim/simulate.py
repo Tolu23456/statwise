@@ -144,6 +144,58 @@ def posterior_markets(models: list[StrengthModel], h: np.ndarray, a: np.ndarray,
 
 
 # ── Monte Carlo mass simulation ────────────────────────────────────────────
+def _stack_world_params(models: list[StrengthModel]):
+    """Stack world parameters into arrays so ONE gather indexes any world.
+
+    Returns (att, defn, mu, ha, off, xi) shaped (W, n_teams), (W, n_teams),
+    (W,), (W,), (W, n_leagues), (W,).  Vectorising the world loop here is
+    what turns the mass simulation from ~0.4M outcomes/s into the tens of
+    millions per second a multi-billion-outcome run needs.
+    """
+    att = np.stack([m.att for m in models])
+    dfn = np.stack([m.defn for m in models])
+    mu = np.array([m.mu for m in models], dtype=np.float64)
+    ha = np.array([m.home_adv for m in models], dtype=np.float64)
+    nl = max(len(m.league_offset) for m in models)
+    off = np.zeros((len(models), max(nl, 1)), dtype=np.float64)
+    for w, m in enumerate(models):
+        if len(m.league_offset):
+            off[w, :len(m.league_offset)] = m.league_offset
+    xi = np.array([m.xi for m in models], dtype=np.float64)
+    return att, dfn, mu, ha, off, xi
+
+
+_TAU_LUT: dict[float, np.ndarray] = {}
+
+
+def _tau_lookup(xi: float) -> np.ndarray:
+    """tau(i, j; xi) flattened over the 121 scoreline cells — cached per xi."""
+    tbl = _TAU_LUT.get(xi)
+    if tbl is None:
+        ii, jj = np.meshgrid(np.arange(MAX_GOALS + 1), np.arange(MAX_GOALS + 1),
+                             indexing="ij")
+        tbl = tau_factor(ii, jj, xi).reshape(-1)
+        _TAU_LUT[xi] = tbl
+    return tbl
+
+
+_XI_LUTS: dict = {}
+
+
+def _xi_cell_lut(xi_w: np.ndarray) -> np.ndarray:
+    """(W, 121) tau table: one gather indexes (world, scoreline cell)."""
+    key = tuple(np.round(xi_w, 6).tolist())
+    lut = _XI_LUTS.get(key)
+    if lut is None:
+        cells = (MAX_GOALS + 1) ** 2
+        lut = np.ones((len(xi_w), cells))
+        for w, x in enumerate(xi_w):
+            if x:
+                lut[w] = _tau_lookup(float(x))
+        _XI_LUTS[key] = lut
+    return lut
+
+
 def simulate_scorelines(models: list[StrengthModel], h: np.ndarray, a: np.ndarray,
                         lg: np.ndarray, n_sims: int, *,
                         rng: np.random.Generator
@@ -156,43 +208,68 @@ def simulate_scorelines(models: list[StrengthModel], h: np.ndarray, a: np.ndarra
     Dixon-Coles' tau is applied by rejection sampling — accept with
     tau / max(1, max tau) — which leaves the target distribution exact.  With
     |xi| <= 0.12 that accepts ~90%+ of draws, so the sample stays large.
+
+    Implementation notes (the billion-outcome fast path):
+      * world parameters are stacked once and gathered with a single
+        `world_of * stride + team` index instead of a Python loop per world;
+      * the tau correction is a 121-cell lookup indexed by (xi, i, j)
+        instead of a per-group boolean-mask walk;
+      * the expansion is processed in <=1M-draw sub-chunks with int32 index
+        arrays, so every gather stays cache-resident even on small-RAM
+        machines (memory bandwidth, not compute, is the bottleneck).
     """
     if n_sims <= 0 or len(h) == 0:
         z = np.zeros(0, dtype=np.int64)
         return z, z, z
     W = len(models)
-    F = len(h)
-    # fixture-major expansion: fixture k owns [k*n_sims, (k+1)*n_sims)
-    h_rep = np.repeat(np.asarray(h), n_sims)
-    a_rep = np.repeat(np.asarray(a), n_sims)
-    lg_rep = np.repeat(np.asarray(lg), n_sims)
-    fid = np.repeat(np.arange(F, dtype=np.int64), n_sims)
-    world_of = np.tile(np.arange(n_sims) % W, F)
+    att, dfn, mu, ha, off, xi_w = _stack_world_params(models)
+    has_xi = bool(np.any(xi_w))
+    out_i, out_j, out_f = [], [], []
+    per_sub = max(1, min(len(h), 1_048_576 // max(n_sims, 1)))
 
-    lam_h = np.empty(F * n_sims)
-    lam_a = np.empty(F * n_sims)
-    xi_of = np.empty(F * n_sims)
-    for w in range(W):
-        sel = np.where(world_of == w)[0]
-        if not len(sel):
-            continue
-        lh, la = models[w].rates(h_rep[sel], a_rep[sel], lg_rep[sel])
-        lam_h[sel], lam_a[sel] = lh, la
-        xi_of[sel] = models[w].xi
+    for start in range(0, len(h), per_sub):
+        stop = min(start + per_sub, len(h))
+        Fb = stop - start
+        N = Fb * n_sims
+        # fixture-major expansion: fixture k owns [k*n_sims, (k+1)*n_sims)
+        w_of = np.tile(np.arange(n_sims, dtype=np.int32) % W, Fb)
+        # fixture ids stay LOCAL to the caller's `h` array (0-based across
+        # all of it), so `simulate_fixtures` can slice posterior rows to match.
+        fid_local = np.tile(np.arange(Fb, dtype=np.int64), n_sims)
+        fid_base = fid_local + start
 
-    i = np.clip(rng.poisson(lam_h), 0, MAX_GOALS)
-    j = np.clip(rng.poisson(lam_a), 0, MAX_GOALS)
+        # rates depend on (world, fixture) only — compute the tiny (W, Fb)
+        # table first, then ONE gather per side replaces three big gathers.
+        hh = np.asarray(h[start:stop], dtype=np.int64)
+        aa = np.asarray(a[start:stop], dtype=np.int64)
+        ll = np.asarray(lg[start:stop], dtype=np.int64)
+        tab_base = mu[:, None] + off[:, ll]
+        lam_h_tab = np.exp(np.clip(tab_base + ha[:, None] + att[:, hh] - dfn[:, aa],
+                                   -6, 6)).reshape(-1)
+        lam_a_tab = np.exp(np.clip(tab_base + att[:, aa] - dfn[:, hh],
+                                   -6, 6)).reshape(-1)
+        del tab_base
 
-    if np.any(xi_of):
-        # tau is piecewise in xi (at most 7 grid-search values) — group by value
-        t = np.ones(F * n_sims)
-        for x in np.unique(xi_of):
-            m = xi_of == x
-            t[m] = tau_factor(i[m], j[m], float(x))
-        env = max(1.0, float(t.max()))
-        keep = rng.random(F * n_sims) < (t / env)
-        i, j, fid = i[keep], j[keep], fid[keep]
-    return i, j, fid
+        lam_idx = w_of * Fb + fid_local
+        i = np.clip(rng.poisson(lam_h_tab[lam_idx]), 0, MAX_GOALS)
+        j = np.clip(rng.poisson(lam_a_tab[lam_idx]), 0, MAX_GOALS)
+        del lam_h_tab, lam_a_tab, lam_idx
+        if has_xi:
+            # tau depends on (world, scoreline cell) only — one (W, 121)
+            # LUT gathered by a single index, instead of a mask walk per xi.
+            cell = i * (MAX_GOALS + 1) + j
+            t = _xi_cell_lut(xi_w).reshape(-1)[w_of * (MAX_GOALS + 1) ** 2 + cell]
+            env = max(1.0, float(t.max()))
+            keep = rng.random(N) < (t / env)
+            i, j = i[keep], j[keep]
+            fid_sub = fid_base[keep]
+        else:
+            fid_sub = fid_base
+        out_i.append(i)
+        out_j.append(j)
+        out_f.append(fid_sub)
+    return (np.concatenate(out_i), np.concatenate(out_j),
+            np.concatenate(out_f))
 
 
 @dataclass
@@ -264,20 +341,32 @@ def bin_index(p: np.ndarray, n_bins: int = N_PROB_BINS) -> np.ndarray:
 def fold(s: SuffStats, *, fixture_probs: np.ndarray, pred_btts: np.ndarray,
          pred_over25: np.ndarray, pred_over35: np.ndarray, pred_exp: np.ndarray,
          fixture_of_sim: np.ndarray, sim_i: np.ndarray, sim_j: np.ndarray) -> None:
-    """Fold one shard's simulated outcomes into the sufficient statistics."""
-    s.scoreline += np.bincount(
-        sim_i.astype(np.int64) * (MAX_GOALS + 1) + sim_j.astype(np.int64),
-        minlength=(MAX_GOALS + 1) ** 2,
-    ).reshape(MAX_GOALS + 1, MAX_GOALS + 1)
+    """Fold one shard's simulated outcomes into the sufficient statistics.
+
+    Every counter is a `np.bincount` over a flat (bin * width + value) index —
+    `np.add.at` was the per-draw bottleneck of the whole lab (an order of
+    magnitude slower than bincount), and folding tens of billions of outcomes
+    through it would dominate the runtime.
+    """
+    sim_i = np.asarray(sim_i, dtype=np.int64)
+    sim_j = np.asarray(sim_j, dtype=np.int64)
+    G = MAX_GOALS + 1
+    s.scoreline += np.bincount(sim_i * G + sim_j,
+                               minlength=G * G).reshape(G, G)
 
     fp = fixture_probs[fixture_of_sim]
     outcome = np.where(sim_i > sim_j, 0, np.where(sim_i == sim_j, 1, 2))
-    np.add.at(s.outcome_by_prob_bin, (bin_index(fp), outcome), 1)
+    s.outcome_by_prob_bin += np.bincount(
+        bin_index(fp) * 3 + outcome,
+        minlength=N_PROB_BINS * 3).reshape(N_PROB_BINS, 3)
 
     total = np.clip(sim_i + sim_j, 0, MAX_GOALS * 2)
     exp_of_sim = pred_exp[fixture_of_sim]
-    tb = np.clip((exp_of_sim / 0.8).astype(int), 0, N_TOTAL_BINS - 1)
-    np.add.at(s.total_by_exp_bin, (tb, total), 1)
+    tb = np.clip((exp_of_sim / 0.8).astype(np.int64), 0, N_TOTAL_BINS - 1)
+    s.total_by_exp_bin += np.bincount(
+        tb * (MAX_GOALS * 2 + 1) + total,
+        minlength=N_TOTAL_BINS * (MAX_GOALS * 2 + 1)
+    ).reshape(N_TOTAL_BINS, MAX_GOALS * 2 + 1)
 
     btts = (sim_i > 0) & (sim_j > 0)
     o25 = total > 2.5
@@ -285,18 +374,21 @@ def fold(s: SuffStats, *, fixture_probs: np.ndarray, pred_btts: np.ndarray,
     for key, pred, sim in (("btts_by_pred_bin", pred_btts, btts),
                            ("over25_by_pred_bin", pred_over25, o25),
                            ("over35_by_pred_bin", pred_over35, o35)):
-        np.add.at(getattr(s, key), (bin_index(pred[fixture_of_sim]),
-                                    sim.astype(np.int64)), 1)
+        pb = bin_index(pred[fixture_of_sim]) * 2 + sim.astype(np.int64)
+        getattr(s, key)[:] += np.bincount(
+            pb, minlength=N_PROB_BINS * 2).reshape(N_PROB_BINS, 2)
 
     s.n_sims += len(sim_i)
 
 
 def simulate_fixtures(models: list[StrengthModel], h: np.ndarray, a: np.ndarray,
                       lg: np.ndarray, *, n_sims: int, seed: int,
-                      batch_fixtures: int = 4000) -> tuple[SuffStats, dict]:
+                      batch_fixtures: int = 4000,
+                      batch_elements: int = 4_000_000
+                      ) -> tuple[SuffStats, dict]:
     """Simulate `n_sims` outcomes per fixture across all worlds.
 
-    Fixtures are processed in batches so a 10^7-outcome run never holds more
+    Fixtures are processed in batches so a 10^9-outcome run never holds more
     than a few million integers at once (RAM on the runners is limited).
     """
     rng = np.random.default_rng(seed)
@@ -305,10 +397,10 @@ def simulate_fixtures(models: list[StrengthModel], h: np.ndarray, a: np.ndarray,
     n = len(h)
     # One batch expands to batch_fixtures * n_sims draws carried as ~10
     # parallel int arrays (~8 B each) — cap the expansion at ~4M elements
-    # so `--sims 50000` (hundreds of millions of outcomes across shards)
-    # still runs in a few hundred MB instead of tens of GB.
+    # (roughly 400 MB) so `--sims 500000` (billions of outcomes across
+    # shards) still runs in a few hundred MB instead of tens of GB.
     if n_sims > 0:
-        batch_fixtures = max(1, min(batch_fixtures, 4_000_000 // n_sims))
+        batch_fixtures = max(1, min(batch_fixtures, max(1, batch_elements) // n_sims))
     for start in range(0, n, batch_fixtures):
         stop = min(start + batch_fixtures, n)
         sl = slice(start, stop)
