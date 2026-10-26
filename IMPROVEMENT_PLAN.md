@@ -338,17 +338,49 @@ source-tracked, alerted, reconcile tool, fallback widening).
 ## PHASE 3: UI/UX & APP EXPERIENCE (P0/P1)
 
 ### Step 3.1: Finish Match Detail Redesign
-- [ ] **Review current design** - Compare to desired layout from user
-- [ ] **Redesign header** - "Home vs Away" + "Today · date/time" as specified
-- [ ] **Add AI Prediction section** - Clean layout
-- [ ] **Add Model Certainty** - With entropy/agreement metrics
-- [ ] **Add Match Insights** - H2H, form, avg goals, over 2.5
-- [ ] **Add Match Info** - Weather, venue, etc.
-- [ ] **Add Pico's Probability vs Market** - Clean table
-- [ ] **Add AI Analysis** - Formatted text
-- [ ] **Remove fixture source tags** - Already done partially, verify all removed
-- [ ] **Test on web/mobile** - Ensure responsive
-- [ ] **Commit changes**
+- [x] **Review current design** - Compare to desired layout from user
+  (audited PredictionDetailModal section by section: header, AI Pick,
+  probability table, certainty, insights, match info, scorers/cards/stats/
+  lineups, odds, analysis — most sections existed; gaps were the fixture
+  source tags still on cards + home-screen filter, dense AI Analysis
+  paragraph, and a stale-capture sheet height on web)
+- [x] **Redesign header** - "Home vs Away" + "Today · date/time" as specified
+  ("{home} vs {away}" 20px title + "Today · 20:00" day/time line; live
+  chip supersedes with real LIVE · 67' / FT · score from plan 2.2)
+- [x] **Add AI Prediction section** - Clean layout
+  (primary-tinted pick card: AI Prediction label, outcome value, AI Pick
+  star pill only when is_ai_pick)
+- [x] **Add Model Certainty** - With entropy/agreement metrics
+  (certainty % + progress bar, plain-language explanation that it is
+  sharpness not pick chance; entropy spread + head-model agreement rows;
+  "not sure" warning when is_uncertain)
+- [x] **Add Match Insights** - H2H, form, avg goals, over 2.5
+  (H2H W-D-L bar, home/away form dots, avg H2H goals, over 2.5 / BTTS /
+  over 3.5 rows render only when the aux heads supplied numbers, squad
+  value + rating rows hidden when absent — no more "€0.0M" defaults)
+- [x] **Add Match Info** - Weather, venue, etc.
+  (venue + city/country, attendance, referee, weather box: temp/condition
+  + wind/humidity/precipitation)
+- [x] **Add Pico's Probability vs Market** - Clean table
+  (three ProbBar rows — team/draw — model value with market-implied as
+  secondary marker; value edge row "+X.X% Value on this pick" /
+  "No value vs market")
+- [x] **Add AI Analysis** - Formatted text
+  (reasoning is model-specific — probabilities, form lines, H2H counts,
+  lambdas, market delta, certainty — verified against live rows; now
+  rendered as bulleted insight rows split per sentence instead of one
+  dense paragraph; verified split on real production text: 6 clean rows)
+- [x] **Remove fixture source tags** - Already done partially, verify all removed
+  (removed the card's "ESPN"/"football-data" cloud badge + its
+  sourceLabel helper, and the home screen's source filter row — state,
+  filter, counts memo, UI block and styles all deleted; "Fixture data:"
+  text was already gone; no other component renders source tags)
+- [x] **Test on web/mobile** - Ensure responsive
+  (modal sheet maxHeight now derives from useWindowDimensions so a browser
+  resize keeps the sheet at 88% of live height — was frozen at module-load
+  Dimensions.get; tsc --noEmit clean; app serves 200 on :5000)
+- [x] **Commit changes** (`79d39a3` — source-tag removal + formatted
+  analysis + responsive sheet; plan ticked in the follow-up commit)
 
 ### Step 3.2: Push Notifications
 - [ ] **Setup Expo notifications** - Configure push notifications
