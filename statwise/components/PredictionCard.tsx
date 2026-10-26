@@ -68,14 +68,6 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
   // Cup competitions with no season CSV of their own are predicted from pooled
   // priors; the model says so rather than implying league-specific knowledge.
   const isReducedConfidence = prediction.stats?.reduced_confidence === true;
-  const sourceLabel = (() => {
-    const src = prediction.stats?.source;
-    if (src === 'espn') return 'ESPN';
-    if (src === 'football-data.org') return 'football-data';
-    if (prediction.match_id?.startsWith('espn_')) return 'ESPN';
-    if (prediction.match_id?.startsWith('fdorg_')) return 'football-data';
-    return null;
-  })();
   const edge = prediction.stats?.value_edge ?? null;
   const outcomes = buildOutcomes(prediction);
   const pick = pickCode(prediction.prediction);
@@ -293,12 +285,9 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
               <Text style={[styles.aiPickText, { color: C.warning }]}>Pooled data</Text>
             </View>
           )}
-          {sourceLabel && (
-            <View style={[styles.aiPickBadge, { backgroundColor: C.inputBg, borderColor: C.border }]}>
-              <Ionicons name="cloud-outline" size={12} color={C.textMuted} />
-              <Text style={[styles.aiPickText, { color: C.textMuted }]}>{sourceLabel}</Text>
-            </View>
-          )}
+          {/* Fixture source tags ("ESPN" / "football-data" badges) removed
+              per user requirement — the data source is an implementation
+              detail, not something to surface on cards. */}
         </View>
         {displayOdds ? (
           <Text style={[styles.odds, { color: C.textSecondary }]}>

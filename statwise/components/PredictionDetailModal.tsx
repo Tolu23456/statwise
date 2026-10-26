@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Modal, View, Text, StyleSheet, ScrollView,
-  TouchableOpacity, Platform, Dimensions, Share,
+  TouchableOpacity, Platform, useWindowDimensions, Share,
 } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Colors } from '@/constants/colors';
@@ -90,6 +90,10 @@ function FormDot({ val, C }: { val: number; C: typeof Colors.dark }) {
 
 export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
   const { scheme } = useTheme();
+  // Live window height so the sheet's maxHeight stays correct when the
+  // browser window is resized (plan 3.1 responsive check) — a module-level
+  // Dimensions.get() would freeze at first import.
+  const { height: windowH } = useWindowDimensions();
   const C = Colors[scheme];
 
   if (!prediction) return null;
@@ -176,7 +180,7 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
       <View style={styles.overlay}>
         <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose} />
 
-        <View style={[styles.sheet, { backgroundColor: C.card }]}>
+        <View style={[styles.sheet, { backgroundColor: C.card, maxHeight: windowH * 0.88 }]}>
           <View style={[styles.handle, { backgroundColor: C.border }]} />
 
           <ScrollView
@@ -653,9 +657,25 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
                   <Ionicons name="bulb-outline" size={15} color={C.warning} />
                   <Text style={[styles.sectionTitle, { color: C.text }]}>AI Analysis</Text>
                 </View>
-                <Text style={[styles.reasoningText, { color: C.textSecondary }]}>
-                  {prediction.reasoning}
-                </Text>
+                {/* The trainer emits one sentence per insight (probabilities,
+                    form, H2H, lambdas, market delta, certainty). Rendering
+                    them as rows instead of a wall of text — plan 3.1. Split
+                    on ". <Capital letter>" (lookahead only, Hermes-safe). */}
+                {(prediction.reasoning || '')
+                  .split(/\. (?=[A-Z])/)
+                  .map(s => {
+                    const t = s.trim();
+                    return t.endsWith('.') ? t : `${t}.`;
+                  })
+                  .filter(Boolean)
+                  .map((sentence, i) => (
+                    <View key={i} style={styles.reasoningRow}>
+                      <View style={[styles.reasoningDot, { backgroundColor: C.warning }]} />
+                      <Text style={[styles.reasoningText, { color: C.textSecondary, flex: 1 }]}>
+                        {sentence}
+                      </Text>
+                    </View>
+                  ))}
               </View>
             )}
 
@@ -670,8 +690,6 @@ export function PredictionDetailModal({ prediction, visible, onClose }: Props) {
   );
 }
 
-const { height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
@@ -684,7 +702,7 @@ const styles = StyleSheet.create({
   sheet: {
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
-    maxHeight: height * 0.88,
+    // maxHeight is set inline from useWindowDimensions (see component).
     paddingBottom: Platform.OS === 'ios' ? 34 : 16,
     overflow: 'hidden',
   },
@@ -724,6 +742,8 @@ const styles = StyleSheet.create({
   confFill: { height: '100%', borderRadius: 4 },
   reasoningHeader: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 8 },
   reasoningText: { fontSize: 14, lineHeight: 21 },
+  reasoningRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 8, marginTop: 8 },
+  reasoningDot: { width: 5, height: 5, borderRadius: 3, marginTop: 8 },
   edgeRow: {
     flexDirection: 'row', alignItems: 'center', gap: 8,
     borderRadius: 10, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 10, marginTop: 4,

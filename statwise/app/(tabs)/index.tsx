@@ -23,16 +23,6 @@ import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
 import { pollIntervalMs, kickoffMs } from '@/lib/polling';
 import { currentNetworkState, subscribeNetwork, type NetworkState } from '@/lib/network';
 
-/** Which upstream feed produced a fixture. Newer rows store this in stats;
- *  older ones only carry it in the canonical match_id namespace. */
-function predictionSource(p: Prediction): 'espn' | 'football-data.org' | 'unknown' {
-  const stored = p.stats?.source;
-  if (stored === 'espn' || stored === 'football-data.org') return stored;
-  if (p.match_id?.startsWith('espn_')) return 'espn';
-  if (p.match_id?.startsWith('fdorg_')) return 'football-data.org';
-  return 'unknown';
-}
-
 const LEAGUES = [
   { slug: 'all', name: 'All' },
   { slug: 'premier-league', name: 'Premier League' },
@@ -94,7 +84,6 @@ export default function HomeScreen() {
   const router = useRouter();
 
   const [selectedLeague, setSelectedLeague] = useState('all');
-  const [selectedSource, setSelectedSource] = useState<'all' | 'espn' | 'football-data.org'>('all');
   const [search, setSearch] = useState('');
   const [refreshing, setRefreshing] = useState(false);
   const [newPredictionsBadge, setNewPredictionsBadge] = useState(0);
@@ -305,9 +294,6 @@ export default function HomeScreen() {
     if (selectedLeague !== 'all') {
       list = list.filter(p => p.league_slug === selectedLeague);
     }
-    if (selectedSource !== 'all') {
-      list = list.filter(p => predictionSource(p) === selectedSource);
-    }
     if (search.trim()) {
       const q = search.toLowerCase();
       list = list.filter(
@@ -318,18 +304,7 @@ export default function HomeScreen() {
       );
     }
     return list;
-  }, [predictions, selectedLeague, selectedSource, search]);
-
-  /** Match counts per source tab. Old rows predate the stored flag, so the
-   *  match_id namespace is used as the fallback. */
-  const sourceCounts = useMemo(() => {
-    const counts: Record<string, number> = { all: predictions.length, espn: 0, 'football-data.org': 0 };
-    for (const p of predictions) {
-      const src = predictionSource(p);
-      if (src in counts) counts[src] += 1;
-    }
-    return counts;
-  }, [predictions]);
+  }, [predictions, selectedLeague, search]);
 
   /** Match counts per league tab (based on the unfiltered day's list). */
   const leagueCounts = useMemo(() => {
@@ -611,41 +586,9 @@ export default function HomeScreen() {
           })}
         </ScrollView>
 
-        {/* Source filter: ESPN vs football-data.org. Only shown when both
-            feeds actually contributed fixtures for the current day. */}
-        {sourceCounts.espn > 0 && sourceCounts['football-data.org'] > 0 && (
-          <View style={styles.sourceRow}>
-            {([
-              { id: 'all' as const, label: 'All sources' },
-              { id: 'football-data.org' as const, label: 'football-data.org' },
-              { id: 'espn' as const, label: 'ESPN' },
-            ]).map(s => {
-              const active = selectedSource === s.id;
-              const count = s.id === 'all' ? sourceCounts.all : sourceCounts[s.id];
-              return (
-                <TouchableOpacity
-                  key={s.id}
-                  onPress={() => {
-                    setSelectedSource(s.id);
-                    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-                  }}
-                  style={[
-                    styles.sourceChip,
-                    {
-                      backgroundColor: active ? C.primaryLight : C.card,
-                      borderColor: active ? C.primary : C.border,
-                    },
-                  ]}
-                  activeOpacity={0.85}
-                >
-                  <Text style={[styles.sourceChipText, { color: active ? C.primary : C.textMuted }]}>
-                    {s.label} {count}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-        )}
+        {/* Fixture-source filter removed per user requirement (plan 3.1) —
+            users pick matches by league/day, not by which feed produced
+            the fixture. */}
       </View>
 
       {isLoading ? (
@@ -830,19 +773,6 @@ const styles = StyleSheet.create({
     borderRadius: 10, alignItems: 'center', justifyContent: 'center',
   },
   leagueCountText: { fontSize: 11, fontWeight: '700' },
-  sourceRow: {
-    flexDirection: 'row',
-    gap: 6,
-    marginTop: 8,
-    flexWrap: 'wrap',
-  },
-  sourceChip: {
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 14,
-    borderWidth: 1,
-  },
-  sourceChipText: { fontSize: 11, fontFamily: 'Inter_500Medium' },
   listContent: { paddingHorizontal: 16, paddingTop: 12 },
   dayHeader: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 10, marginTop: 4 },
   dayRule: { flex: 1, height: 1 },
