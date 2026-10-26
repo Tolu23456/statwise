@@ -270,20 +270,68 @@ lab's 522.6M-outcome recipe gated on real outcomes only
   friendly-sentence coverage, counter arithmetic; wired into
   retrain-weekly unit tests; `.github/workflows/booking-smoke.yml`
   dispatchable real end-to-end: unit suite + `sportybet_booking.py
-  --dry-run` against live SportyBet, writes nothing)
+  --dry-run` against live SportyBet, writes nothing — CI run 40378166996
+  completed success 2026-10-26)
 - [x] **Commit changes** (`07d1a82` — cache + retries + friendly errors +
   stats + 44-check suite + smoke workflow; plan ticked in the follow-up
   commit)
 
 ### Step 2.4: Settlement Improvements
-- [ ] **Add settlement logging** - Better logs for debugging
-- [ ] **Create reconciliation script** - Manual fix for stuck matches
-- [ ] **Add alerts** - Notify on settlement failures
-- [ ] **Improve fallback logic** - Better ESPN/football-data.org switching
-- [ ] **Test settlement** - Verify past matches settle correctly
-- [ ] **Commit changes**
+- [x] **Add settlement logging** - Better logs for debugging
+  (`settle_predictions.py` refactored around pure, testable helpers —
+  `pick_from_map` / `resolve_score` / `espn_league_of`; every settled row
+  logs its winning source ("via football-data.org / espn / thesportsdb"),
+  a `by_source` counter per run, and rolling stats written to
+  `app_settings.settlement_stats` {attempts, settled_total, last_run_at,
+  last_settled, last_sources, unresolved_last, unresolved_examples[:5],
+  fallback_widened} — same no-DDL pattern as booking_code_stats)
+- [x] **Create reconciliation script** - Manual fix for stuck matches
+  (`ai/reconcile_settlement.py` — reports every past row still
+  upcoming/live, retries ALL sources (football-data → ESPN-by-id →
+  ESPN-by-name → TheSportsDB), settles what it finds; `--mark-void
+  [--void-after 72]` sets status='void' + actual_result='Unresolved' for
+  rows a feed will never answer (they leave the app feed, stay auditable);
+  `--match` narrows to one fixture; exit code 3 when rows remain stuck so
+  a cron wrapper can alert; wired into settle.yml as a dispatch mode
+  (reconcile / mark_void / void_after inputs); real dry-run verified
+  2026-10-26 — correctly flagged the in-play Benfica row "within void
+  window, retry later")
+- [x] **Add alerts** - Notify on settlement failures
+  (a row ≥6h past kickoff — `ALERT_AFTER_HOURS`, covers extra time + feed
+  lag — with no result from ANY source logs a WARNING with hours/teams/
+  league and lands in `settlement_stats.unresolved_examples`; the run's
+  closing ALERT line points at reconcile_settlement.py; the stats row's
+  `unresolved_last`/`fallback_widened` are the machine-readable signals)
+- [x] **Improve fallback logic** - Better ESPN/football-data.org switching
+  (source order is now explicit and tested: football-data.org bulk →
+  ESPN by exact event id → ESPN by names (same-day only, no day leakage)
+  → TheSportsDB per-match; when football-data.org comes back EMPTY — token
+  outage/plan limits — the ESPN fetch widens to every stuck match day with
+  a logged warning instead of silently settling nothing; ESPN day-set
+  built from `espn_league_of` incl. every espn_-prefixed row; also fixed
+  two latent odds_sync bugs found on the way: `_espn_live_state` read
+  status.state (real path: status.type.state) and top-level
+  competitors (real path: competitions[0].competitors) so it NEVER
+  matched a live game; and the inplay_states writer targeted a schema
+  that doesn't exist in production — now matches the live table
+  (match_id/fixture_key/status/minute/home_score/away_score/last_update/
+  raw) with the model payload in raw jsonb)
+- [x] **Test settlement** - Verify past matches settle correctly
+  (`ai/experimental/test_settle.py` — 31 checks on tiny synthetic
+  payloads: pick_from_map exact/fuzzy/day-keyed + same-day preference,
+  resolve_score source order incl. fd.org-rows-never-read-ESPN-ids,
+  espn_league_of cup/day mapping (incl. ESPN's CONMEBOL.* spelling),
+  _hours_past tz/garbage edges, result_label; wired into retrain-weekly
+  unit tests; real dry-runs: settle --dry-run (widening fired on empty
+  fd.org) and reconcile --dry-run both clean)
+- [x] **Commit changes** (`8426d4f` — settlement refactor + reconcile
+  script + odds_sync bug fixes + 31-check suite; plan ticked in the
+  follow-up commit)
 
-**PHASE 2 CHECKPOINT**: Real-time data working, booking reliable, settlement robust
+**PHASE 2 CHECKPOINT** ✅ (2026-10-26): Real-time data working (2.1 polling
+policy + 2.2 live enrichment, CI-verified), booking reliable (2.3 cache +
+retries + friendly errors, smoke test green), settlement robust (2.4
+source-tracked, alerted, reconcile tool, fallback widening).
 
 ---
 
