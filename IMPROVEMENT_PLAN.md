@@ -237,12 +237,43 @@ lab's 522.6M-outcome recipe gated on real outcomes only
 
 ### Step 2.3: Harden Booking Codes
 - [x] **Add retry logic** - Retry failed SportyBet generations
-- [ ] **Improve error messages** - User-friendly errors
-- [ ] **Add caching** - Cache generated codes per prediction
-- [ ] **Add fallback** - Graceful handling if generation fails
-- [ ] **Add logging** - Track success/failure rates
-- [ ] **Test booking flow** - End-to-end test
-- [ ] **Commit changes**
+  (note: this box was ticked in the initial TODO commit with no code behind
+  it — implemented for real: `fetch_events` retries each page 3× on
+  network/5xx with backoff, `create_share_code` retries 3× on network/5xx
+  but fails fast on 4xx/bizCode rejection — a rejected accumulator is an
+  answer, not a glitch; homepage load failure no longer aborts the run)
+- [x] **Improve error messages** - User-friendly errors
+  (`friendly_error()` maps 8 failure kinds to actionable sentences;
+  `main()` fails through one funnel that prints + logs the sentence; the
+  booking modal now shows the backend's last failure reason with its
+  timestamp when no code exists — fetched from `booking_code_stats`)
+- [x] **Add caching** - Cache generated codes per prediction
+  (`selection_signature()` — order-independent SHA-1 of eventId:outcomeId
+  pairs — stored in the payload; `should_regenerate()` reuses the stored
+  code when picks are identical and the SportyBet deadline is >6h away, so
+  identical pick sets stop burning a share-code call every cycle; unknown
+  or unparseable state always regenerates — a stale code is worse than an
+  extra call)
+- [x] **Add fallback** - Graceful handling if generation fails
+  (a failed run never clears a good code — the payload is only written on
+  success; the modal keeps the copyable selection slip + "place manually"
+  guidance when there is no code at all)
+- [x] **Add logging** - Track success/failure rates
+  (`bump_stats()` rolling counters in `app_settings.booking_code_stats` —
+  attempts/successes/failures/last_error(+at)/last_success_at/last_code —
+  no DDL needed, readable by the app role; every exit path funnels through
+  it; dry-run never writes)
+- [x] **Test booking flow** - End-to-end test
+  (`ai/experimental/test_booking.py` — 44 checks on tiny synthetic
+  payloads: signature stability/sensitivity, cache decision edges, retry
+  policy shape via fake ctx — 5xx retried, 4xx/bizCode fail fast —
+  friendly-sentence coverage, counter arithmetic; wired into
+  retrain-weekly unit tests; `.github/workflows/booking-smoke.yml`
+  dispatchable real end-to-end: unit suite + `sportybet_booking.py
+  --dry-run` against live SportyBet, writes nothing)
+- [x] **Commit changes** (`07d1a82` — cache + retries + friendly errors +
+  stats + 44-check suite + smoke workflow; plan ticked in the follow-up
+  commit)
 
 ### Step 2.4: Settlement Improvements
 - [ ] **Add settlement logging** - Better logs for debugging
