@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs, useRouter, usePathname } from 'expo-router';
 import {
-  Platform, View, Text, TouchableOpacity, StyleSheet, useWindowDimensions,
+  Platform, View, Text, TouchableOpacity, StyleSheet, useWindowDimensions, Image,
 } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Colors } from '@/constants/colors';
@@ -26,9 +26,11 @@ function WebTopNav({ compact }: { compact: boolean }) {
   return (
     <View style={[styles.webNav, { backgroundColor: C.tabBar, borderBottomColor: C.tabBarBorder }]}>
       <TouchableOpacity style={styles.brand} onPress={() => router.push('/')} activeOpacity={0.8}>
-        <View style={[styles.brandIcon, { backgroundColor: C.primaryLight }]}>
-          <Ionicons name="stats-chart" size={16} color={C.primary} />
-        </View>
+        <Image
+          source={require('@/assets/images/icon.png')}
+          style={styles.brandIcon}
+          resizeMode="cover"
+        />
         {!compact && (
           <Text style={[styles.brandText, { color: C.text }]}>StatWise</Text>
         )}
@@ -170,8 +172,6 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   brandText: {
     fontSize: 18,

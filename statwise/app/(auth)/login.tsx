@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet,
   KeyboardAvoidingView, Platform, ScrollView, useColorScheme,
-  ActivityIndicator, TextInput as TextInputType,
+  ActivityIndicator, TextInput as TextInputType, Image,
 } from 'react-native';
 import { Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -173,7 +173,11 @@ export default function LoginScreen() {
           <View style={styles.header}>
             <View style={styles.logoRow}>
               <View style={[styles.logoIcon, { backgroundColor: C.primaryLight }]}>
-                <Ionicons name="stats-chart" size={22} color={C.primary} />
+                <Image
+                  source={require('@/assets/images/icon.png')}
+                  style={styles.logoMark}
+                  resizeMode="cover"
+                />
               </View>
               <Text style={[styles.logo, { color: C.primary }]}>StatWise</Text>
             </View>
@@ -336,6 +340,7 @@ const styles = StyleSheet.create({
   header: { alignItems: 'center', marginBottom: 36 },
   logoRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 },
   logoIcon: { width: 42, height: 42, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
+  logoMark: { width: 42, height: 42, borderRadius: 12 },
   logo: { fontSize: 36, fontFamily: 'Inter_700Bold', letterSpacing: -1 },
   tagline: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   card: { borderRadius: 20, borderWidth: 1, padding: 24, marginBottom: 24, width: '100%' },

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet,
   KeyboardAvoidingView, Platform, ScrollView, useColorScheme,
-  ActivityIndicator, TextInput as TextInputType,
+  ActivityIndicator, TextInput as TextInputType, Image,
 } from 'react-native';
 import { Link, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -203,7 +203,14 @@ export default function SignupScreen() {
       >
         <View style={styles.inner}>
           <View style={styles.header}>
-            <Text style={[styles.logo, { color: C.primary }]}>StatWise</Text>
+            <View style={styles.logoRow}>
+              <Image
+                source={require('@/assets/images/icon.png')}
+                style={styles.logoMark}
+                resizeMode="cover"
+              />
+              <Text style={[styles.logo, { color: C.primary }]}>StatWise</Text>
+            </View>
             <Text style={[styles.tagline, { color: C.textSecondary }]}>
               Create your free account
             </Text>
@@ -500,6 +507,8 @@ const styles = StyleSheet.create({
   },
   inner: { width: '100%', maxWidth: 440 },
   header: { alignItems: 'center', marginBottom: 28 },
+  logoRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 },
+  logoMark: { width: 42, height: 42, borderRadius: 12 },
   logo: { fontSize: 32, fontFamily: 'Inter_700Bold', letterSpacing: -1 },
   tagline: { fontSize: 14, marginTop: 6, fontFamily: 'Inter_400Regular' },
   card: { borderRadius: 20, borderWidth: 1, padding: 24, marginBottom: 24 },
