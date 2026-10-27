@@ -503,14 +503,46 @@ source-tracked, alerted, reconcile tool, fallback widening).
 - [x] **Commit changes** (`1327d54` code)
 
 ### Step 3.5: Match Card Polish
-- [ ] **Add league badges** - Show league on cards
-- [ ] **Add AI Pick pill** - Prominent on cards
-- [ ] **Improve status display** - Better LIVE/HT/FT indicators
-- [ ] **Add quick actions** - Share, favorite etc.
-- [ ] **Polish animations** - Smooth transitions
-- [ ] **Commit changes**
+- [x] **Add league badges** - Show league on cards
+  (every card carries the uppercase league pill beside the LIVE/FT chip —
+  `PredictionCard` L207; verified present, no fixture-source text anywhere)
+- [x] **Add AI Pick pill** - Prominent on cards
+  (green star "AI Pick" pill next to the prediction badge, with the Value
+  and "Pooled data" pills beside it — verified present)
+- [x] **Improve status display** - Better LIVE/HT/FT indicators
+  (verified present: live chip with the running minute fed by
+  `ai/live_enricher.py`, HT/FT chips, countdown chip "in 2h 15m",
+  live scoreline in the middle of the teams, kick-off note in the footer)
+- [x] **Add quick actions** - Share, favorite etc.
+  (`lib/favorites.ts` + card footer actions: **share** opens the native
+  share sheet and falls back to the clipboard on platforms without the Web
+  Share API, showing "Copied to clipboard" in place of the tap hint for 2s;
+  **bookmark** saves the match to device-local AsyncStorage (cap 200,
+  defensive parsing — corrupt storage can't crash the feed) and feeds the
+  new "Favourites (N)" chip that stacks with the AI Picks filter. Share
+  text is one definition and always ends with the responsibility line)
+- [x] **Polish animations** - Smooth transitions
+  `LayoutAnimation` on AI Picks / Favourites / league filter changes so the
+  feed transitions instead of jumping; existing motion verified:
+  skeleton shimmer loop (800 ms), "new predictions" pulse badge, haptic
+  feedback on every chip/toggle/card tap
+- [x] **Commit changes** (`dd5dfe5` code)
+  `tsc lib/favorites.ts lib/favorites.test.ts` + node → **35/35 PASS**
+  (toggle idempotence + no input mutation, storage parsing across corrupt/
+  wrong-type/duplicate/oversized inputs, serialise round-trip, label copy,
+  3-line share text incl. AI vs plain labelling, omitted unparseable
+  kickoff, no `undefined` leakage); full `tsc --noEmit` exit 0; CI
+  **App tests run 40463945349** → success with all **seven** suites:
+  polling 29, live-state 31, push 14, aiPicks 25, errors 51, network 14,
+  favorites 35 (**199 checks**).
 
-**PHASE 3 CHECKPOINT**: UI polished, notifications working, great UX
+**PHASE 3 CHECKPOINT** ✅: UI polished, notifications working, great UX —
+3.1 detail redesign, 3.2 web push (sender + service worker + preferences,
+cron notifiers, CI smoke), 3.3 AI Picks surfacing (filter + section),
+3.4 friendly errors + offline banner, 3.5 card polish (share/favourites/
+animated filters). Pending user action: run
+`statwise/supabase-notifications-migration.sql` in the Supabase SQL editor
+to start collecting push subscriptions (everything no-ops safely until then).
 
 ---
 
