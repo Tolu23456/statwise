@@ -70,3 +70,10 @@ jobs:
             --outDir "$RUNNER_TEMP/network-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/network-test/network.test.js"
+      - name: Quick-action tests (plan 3.5)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/favorites.ts statwise/lib/favorites.test.ts \
+            --outDir "$RUNNER_TEMP/favorites-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/favorites-test/favorites.test.js"

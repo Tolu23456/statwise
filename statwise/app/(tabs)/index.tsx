@@ -2,7 +2,7 @@ import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput,
   RefreshControl, ScrollView, Platform, ActivityIndicator,
-  Animated, AppState,
+  Animated, AppState, LayoutAnimation,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
@@ -22,6 +22,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
 import { aiPicksLabel, aiPicksOf, certaintyOf, certaintyTone, isAiPick } from '@/lib/aiPicks';
 import { RETRY_COPY } from '@/lib/errors';
+import {
+  FAVORITES_KEY,
+  favoritesLabel,
+  isFavorite,
+  parseFavorites,
+  serializeFavorites,
+  toggleFavorite,
+} from '@/lib/favorites';
 import { pollIntervalMs, kickoffMs } from '@/lib/polling';
 import { currentNetworkState, subscribeNetwork, type NetworkState } from '@/lib/network';
 
@@ -89,6 +97,9 @@ export default function HomeScreen() {
   const [search, setSearch] = useState('');
   // Plan 3.3 — prominent AI Picks filter (works together with the league tabs).
   const [aiOnly, setAiOnly] = useState(false);
+  // Plan 3.5 — quick actions: saved matches, persisted on the device.
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [favOnly, setFavOnly] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [newPredictionsBadge, setNewPredictionsBadge] = useState(0);
   const [selectedPrediction, setSelectedPrediction] = useState<Prediction | null>(null);
@@ -293,10 +304,39 @@ export default function HomeScreen() {
     setTimeout(() => setRefreshing(false), 300);
   }, [refetch]);
 
+  // Plan 3.5 — favourites are device-local: load once, persist on change.
+  useEffect(() => {
+    AsyncStorage.getItem(FAVORITES_KEY)
+      .then(raw => setFavorites(parseFavorites(raw)))
+      .catch(() => {});
+  }, []);
+
+  const onToggleFavorite = useCallback((id: string) => {
+    if (!id) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    setFavorites(prev => {
+      const next = toggleFavorite(prev, id);
+      AsyncStorage.setItem(FAVORITES_KEY, serializeFavorites(next)).catch(() => {});
+      return next;
+    });
+  }, []);
+
+  // Plan 3.5 — filter changes animate the feed instead of jumping.
+  const animateList = useCallback(() => {
+    try {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    } catch {
+      // platform without layout animation — the update still applies
+    }
+  }, []);
+
   const filtered = useMemo(() => {
     let list = predictions;
     if (aiOnly) {
       list = list.filter(isAiPick);
+    }
+    if (favOnly) {
+      list = list.filter(p => isFavorite(favorites, p.id));
     }
     if (selectedLeague !== 'all') {
       list = list.filter(p => p.league_slug === selectedLeague);
@@ -311,15 +351,21 @@ export default function HomeScreen() {
       );
     }
     return list;
-  }, [predictions, aiOnly, selectedLeague, search]);
+  }, [predictions, aiOnly, favOnly, favorites, selectedLeague, search]);
 
   /** How many AI Picks today (drives the filter chip's count badge). */
   const aiCount = useMemo(() => predictions.filter(isAiPick).length, [predictions]);
 
+  /** Saved matches today (drives the favourites chip's count badge). */
+  const favCount = useMemo(
+    () => predictions.filter(p => isFavorite(favorites, p.id)).length,
+    [predictions, favorites],
+  );
+
   /** Dedicated section: best-certainty AI Picks first, capped so it stays a strip. */
   const aiSection = useMemo(
-    () => (aiOnly ? [] : aiPicksOf(predictions).slice(0, 8)),
-    [predictions, aiOnly],
+    () => (aiOnly || favOnly ? [] : aiPicksOf(predictions).slice(0, 8)),
+    [predictions, aiOnly, favOnly],
   );
 
   /** Match counts per league tab (based on the unfiltered day's list). */
@@ -362,23 +408,30 @@ export default function HomeScreen() {
   const topInset = Platform.OS === 'web' ? 0 : insets.top;
 
   const EmptyState = () => {
-    if (aiOnly) {
+    if (aiOnly || favOnly) {
+      const labels = [aiOnly && 'AI Picks', favOnly && 'Favourites']
+        .filter(Boolean)
+        .join(' and ');
       return (
         <View style={styles.empty}>
           <Ionicons name="star-outline" size={52} color={C.textMuted} />
           <Text style={[styles.emptyTitle, { color: C.text }]}>
-            {search ? 'No AI Picks found' : 'No AI Picks here yet'}
+            {search ? `No ${labels} found` : `No ${labels} here yet`}
           </Text>
           <Text style={[styles.emptyDesc, { color: C.textSecondary }]}>
             {search
-              ? `No AI Pick matches "${search}" — clear the search or widen the filter.`
-              : 'Pico only flags a match as an AI Pick when its certainty clears the bar. Check the league tabs or look at all predictions.'}
+              ? `Nothing in ${labels} matches "${search}" — clear the search or widen the filter.`
+              : favOnly && !aiOnly
+                ? 'Nothing you have saved shows up under this league right now. Tap the bookmark on any match to save it here.'
+                : 'Pico only flags a match as an AI Pick when its certainty clears the bar, and only saved matches appear under Favourites. Check the league tabs or look at all predictions.'}
           </Text>
           <TouchableOpacity
             style={[styles.emptyBtn, { backgroundColor: C.primaryLight }]}
             onPress={() => {
               setAiOnly(false);
+              setFavOnly(false);
               setSearch('');
+              animateList();
             }}
           >
             <Text style={[styles.emptyBtnText, { color: C.primary }]}>Show all predictions</Text>
@@ -562,6 +615,7 @@ export default function HomeScreen() {
           ]}
           onPress={() => {
             setAiOnly(v => !v);
+            animateList();
             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
           }}
           activeOpacity={0.85}
@@ -599,6 +653,65 @@ export default function HomeScreen() {
             </Text>
           </View>
         </TouchableOpacity>
+
+        {/* Plan 3.5 — favourites quick filter. Compact chip under the AI Picks
+            row; the two stack (AI Picks ∩ Favourites ∩ league ∩ search). */}
+        <View style={styles.quickFilterRow}>
+          <TouchableOpacity
+            style={[
+              styles.favChip,
+              {
+                backgroundColor: favOnly ? C.primaryLight : C.card,
+                borderColor: favOnly ? C.primary : C.border,
+              },
+            ]}
+            onPress={() => {
+              setFavOnly(v => !v);
+              animateList();
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+            }}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityLabel={favOnly ? 'Show all predictions' : 'Show saved matches only'}
+          >
+            <Ionicons
+              name={favOnly ? 'bookmark' : 'bookmark-outline'}
+              size={13}
+              color={favCount > 0 ? C.primary : C.textMuted}
+            />
+            <Text
+              style={[styles.favChipText, { color: favOnly ? C.primary : C.textSecondary }]}
+            >
+              Favourites
+            </Text>
+            <View
+              style={[
+                styles.favChipCount,
+                {
+                  backgroundColor: favOnly
+                    ? C.primary
+                    : favCount > 0
+                      ? C.inputBg
+                      : 'transparent',
+                },
+              ]}
+            >
+              <Text
+                style={[
+                  styles.favChipCountText,
+                  { color: favOnly ? '#fff' : C.textMuted },
+                ]}
+              >
+                {favCount}
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <Text style={[styles.quickFilterHint, { color: C.textMuted }]}>
+            {favCount > 0
+              ? favoritesLabel(favCount) + (favOnly ? ' · showing only these' : '')
+              : 'Tap the bookmark on any match to save it here'}
+          </Text>
+        </View>
 
         <View style={[styles.searchBar, { backgroundColor: C.inputBg, borderColor: C.border }]}>
           <Ionicons name="search-outline" size={18} color={C.placeholder} />
@@ -644,6 +757,7 @@ export default function HomeScreen() {
                 ]}
                 onPress={() => {
                   setSelectedLeague(l.slug);
+                  animateList();
                   Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
                 }}
                 activeOpacity={0.85}
@@ -796,6 +910,8 @@ export default function HomeScreen() {
                 prediction={item.prediction}
                 locked={false}
                 nextTier={nextTier}
+                favorite={isFavorite(favorites, item.prediction.id)}
+                onToggleFavorite={() => onToggleFavorite(item.prediction.id)}
                 onPress={() => {
                   setSelectedPrediction(item.prediction);
                   Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -935,6 +1051,19 @@ const styles = StyleSheet.create({
   aiCardBar: { flex: 1, height: 5, borderRadius: 3, overflow: 'hidden' },
   aiCardFill: { height: 5, borderRadius: 3 },
   aiCardCert: { fontSize: 11, fontFamily: 'Inter_700Bold', fontWeight: '800', minWidth: 30, textAlign: 'right' },
+  /* Plan 3.5 — favourites quick filter */
+  quickFilterRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 12 },
+  favChip: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    paddingHorizontal: 10, paddingVertical: 6, borderRadius: 20, borderWidth: 1,
+  },
+  favChipText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  favChipCount: {
+    minWidth: 18, height: 18, borderRadius: 9, paddingHorizontal: 4,
+    alignItems: 'center', justifyContent: 'center',
+  },
+  favChipCountText: { fontSize: 10, fontFamily: 'Inter_700Bold' },
+  quickFilterHint: { fontSize: 11, fontFamily: 'Inter_400Regular', flex: 1 },
   searchBar: {
     flexDirection: 'row', alignItems: 'center', gap: 8,
     borderRadius: 12, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 10, marginBottom: 12,

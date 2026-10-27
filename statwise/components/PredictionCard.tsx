@@ -1,11 +1,12 @@
-import React from 'react';
-import { View, Text, StyleSheet, Platform, TouchableOpacity, Image } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Platform, TouchableOpacity, Image, Share } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/colors';
 import { Prediction } from '@/lib/supabase';
 import { useTheme } from '@/context/ThemeContext';
 import { getTeamLogo, getMatchStatus } from '@/lib/teamLogos';
+import { shareText } from '@/lib/favorites';
 import {
   formatKickoff,
   formatClock,
@@ -21,6 +22,9 @@ type Props = {
   locked?: boolean;
   nextTier?: string;
   onPress?: () => void;
+  /** Plan 3.5 — quick actions (bookmark state is owned by the screen). */
+  favorite?: boolean;
+  onToggleFavorite?: () => void;
 };
 
 function getConfidenceColor(confidence: number, C: typeof Colors.dark) {
@@ -57,11 +61,33 @@ function pickCode(prediction: string): 'H' | 'D' | 'A' | null {
   return null;
 }
 
-export function PredictionCard({ prediction, locked = false, nextTier = 'Premium Tier', onPress }: Props) {
+export function PredictionCard({ prediction, locked = false, nextTier = 'Premium Tier', onPress, favorite = false, onToggleFavorite }: Props) {
   const { scheme } = useTheme();
   const C = Colors[scheme];
   const router = useRouter();
   const confColor = getConfidenceColor(prediction.confidence, C);
+  // Plan 3.5 — share falls back to the clipboard when the platform has no
+  // Web Share API, and says so in place of the tap hint for a couple of
+  // seconds (a silent copy would look like a dead button).
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = async (e?: { stopPropagation?: () => void }) => {
+    e?.stopPropagation?.();
+    const text = shareText(prediction);
+    try {
+      await Share.share({ message: text });
+    } catch {
+      try {
+        if (Platform.OS === 'web' && typeof navigator !== 'undefined' && navigator.clipboard) {
+          await navigator.clipboard.writeText(text);
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        }
+      } catch {
+        // nothing to fall back to — the card stays usable, no crash
+      }
+    }
+  };
 
   const certainty = prediction.stats?.certainty ?? prediction.confidence;
   const isAiPick = prediction.stats?.is_ai_pick === true;
@@ -366,10 +392,41 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
 
       <View style={[styles.tapHint, { borderTopColor: C.border }]}>
         <Ionicons name="analytics-outline" size={13} color={C.textMuted} />
-        <Text style={[styles.tapHintText, { color: C.textMuted }]}>Tap for full analysis</Text>
+        <Text style={[styles.tapHintText, { color: copied ? C.primary : C.textMuted }]}>
+          {copied ? 'Copied to clipboard' : 'Tap for full analysis'}
+        </Text>
         {hasStarted(prediction.kickoff_time) && !status.live && status.state !== 'FT' && (
           <Text style={[styles.kickedOff, { color: C.textMuted }]}>Kicked off {formatClock(prediction.kickoff_time)}</Text>
         )}
+        <View style={styles.quickActions}>
+          <TouchableOpacity
+            style={styles.quickBtn}
+            onPress={handleShare}
+            hitSlop={8}
+            accessibilityRole="button"
+            accessibilityLabel="Share this pick"
+          >
+            <Ionicons name="share-outline" size={16} color={copied ? C.primary : C.textMuted} />
+          </TouchableOpacity>
+          {onToggleFavorite && (
+            <TouchableOpacity
+              style={styles.quickBtn}
+              onPress={e => {
+                e.stopPropagation?.();
+                onToggleFavorite();
+              }}
+              hitSlop={8}
+              accessibilityRole="button"
+              accessibilityLabel={favorite ? 'Remove from favourites' : 'Save to favourites'}
+            >
+              <Ionicons
+                name={favorite ? 'bookmark' : 'bookmark-outline'}
+                size={16}
+                color={favorite ? C.primary : C.textMuted}
+              />
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -439,6 +496,8 @@ const styles = StyleSheet.create({
   },
   tapHintText: { fontSize: 12, flex: 1 },
   kickedOff: { fontSize: 11 },
+  quickActions: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  quickBtn: { padding: 2 },
   lockCta: {
     flexDirection: 'row', alignItems: 'center', gap: 10,
     borderTopWidth: 1, paddingTop: 12, marginTop: 8,
