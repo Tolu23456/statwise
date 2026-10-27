@@ -475,10 +475,32 @@ source-tracked, alerted, reconcile tool, fallback widening).
 - [x] **Add skeleton loaders** - For match cards and detail view
 - [x] **Add empty states** - When no predictions
 - [x] **Add retry buttons** - For failed fetches
-- [ ] **Improve error messages** - User-friendly
-- [ ] **Add offline indicators** - Network status
-- [ ] **Test error scenarios** - Network failures, etc.
-- [ ] **Commit changes**
+- [x] **Improve error messages** - User-friendly
+  (`lib/errors.ts`: `friendlyError()`/`isNetworkError()` give an actionable
+  sentence for network failures, rate limits, auth classes, RLS/setup and
+  constraint errors, and an honest generic line for anything unknown — raw
+  internals (JWT strings, relation/column names, credential errors) can
+  never reach the UI. Wired into the three screens that still showed raw
+  Supabase text: Google sign-in, forgot-password alert, resend-confirmation;
+  `RETRY_COPY` makes the home retry banner one definition)
+- [x] **Add offline indicators** - Network status
+  (`components/OfflineBanner.tsx` self-subscribes to `lib/network` and is
+  mounted in `(tabs)/_layout.tsx`, so **every tab** shows
+  "You're offline — showing the last data loaded" or "Slow connection —
+  updating less often"; renders nothing when healthy, no layout shift)
+- [x] **Test error scenarios** - Network failures, etc.
+  `tsc lib/errors.ts lib/errors.test.ts` + node → **51/51 PASS** (six
+  network-failure wordings, 12 category mappings, explicit leak-proofing
+  against JWT/relation/credential text, empty/unknown input) and
+  `lib/network.test.ts` → **14/14 PASS** (offline and slow detection across
+  navigator shapes, `online`/`offline` event round-trip, unsubscribe, safe
+  no-op without `window`) — both in test-app.yml. Full `tsc --noEmit`
+  exit 0; CI **App tests run 40463176339** → success, all six suites
+  (polling 29, live-state 31, push 14, aiPicks 25, errors 51, network 14).
+  Two defects were caught by these tests on the way: rule matching was
+  case-sensitive against raw casing, and "Unable to connect to the
+  internet" wasn't classified as a network failure.
+- [x] **Commit changes** (`1327d54` code)
 
 ### Step 3.5: Match Card Polish
 - [ ] **Add league badges** - Show league on cards
