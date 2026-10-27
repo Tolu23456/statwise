@@ -16,7 +16,11 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Clipboard from 'expo-clipboard';
 import { Colors } from '@/constants/colors';
 import { useTheme } from '@/context/ThemeContext';
+import { useAuth } from '@/context/AuthContext';
 import { Prediction } from '@/lib/supabase';
+import { assignmentFor } from '@/lib/experimentConfig';
+import { logExposure, logExperimentClick } from '@/lib/experiments';
+import { getSessionId } from '@/lib/telemetry';
 import {
   BookingCode,
   BookingStats,
@@ -47,11 +51,29 @@ type Props = {
 
 export function BookingCodeModal({ visible, onClose, predictions }: Props) {
   const { scheme } = useTheme();
+  const { user } = useAuth();
   const C = Colors[scheme];
   const [loading, setLoading] = useState(false);
   const [bookingCode, setBookingCode] = useState<BookingCode | null>(null);
   const [genStats, setGenStats] = useState<BookingStats | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // Plan 4.5 — booking_cta_v1 (see experiments.json). Deterministic per
+  // user (or per session when signed out — the telemetry session id, so
+  // anonymous visitors don't all share one bucket); null while the
+  // experiment is dormant/unknown → control copy and no events, so
+  // production behaviour is unchanged until it is enabled.
+  const ctaAssignment = useMemo(
+    () => assignmentFor('booking_cta_v1', user?.id ?? getSessionId()),
+    [user?.id]);
+
+  useEffect(() => {
+    // One exposure per modal open, for *both* arms — the control arm is the
+    // CTR denominator. Dormant → no assignment → no event.
+    if (visible && ctaAssignment) {
+      logExposure('booking_cta_v1', ctaAssignment.variant);
+    }
+  }, [visible, ctaAssignment]);
 
   // The booking code is built by the backend from AI Picks only.
   const aiPicks = useMemo(
@@ -110,6 +132,9 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
   };
 
   const openSportyBet = async () => {
+    // Plan 4.5 — engagement numerator for the CTA experiment (only while
+    // the user is enrolled; dormant → no event).
+    if (ctaAssignment) logExperimentClick('booking_cta_v1', ctaAssignment.variant);
     // safeShareUrl: https + sportybet.com only (falls back to a URL we build
     // from the validated code) — a tampered settings row can't redirect this.
     const url = bookingCode
@@ -194,7 +219,9 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
                     onPress={openSportyBet}
                   >
                     <Ionicons name="open-outline" size={16} color="#fff" />
-                    <Text style={styles.codeActionText}>Load on SportyBet</Text>
+                    <Text style={styles.codeActionText}>
+                      {ctaAssignment?.variant === 'open_cta' ? 'Open on SportyBet' : 'Load on SportyBet'}
+                    </Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={[styles.codeActionBtn, { backgroundColor: C.success }]}
@@ -277,7 +304,7 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
             <View style={[styles.howToBox, { backgroundColor: C.inputBg, borderColor: C.border }]}>
               <Text style={[styles.howToTitle, { color: C.text }]}>How to use on SportyBet Nigeria</Text>
               <Text style={[styles.howToStep, { color: C.textSecondary }]}>
-                1. Tap “Load on SportyBet” above (or open sportybet.com/ng)
+                1. Tap the button above (or open sportybet.com/ng)
               </Text>
               <Text style={[styles.howToStep, { color: C.textSecondary }]}>
                 2. Open “Load Booking Code” and paste the code

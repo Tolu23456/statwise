@@ -10,6 +10,7 @@ name: App tests
 #   - plan 4.1 query cache policy (stale/gc budgets, retry bounds, keys)
 #   - plan 4.3 input validation, rate limiting, booking-code guards
 #   - plan 4.4 telemetry core (event caps, no-op contract, slow-query predicate)
+#   - plan 4.5 A/B experiment framework (bucketing, config, sample run)
 # Pure Node, no npm install needed.
 
 on:
@@ -117,3 +118,12 @@ jobs:
             --outDir "$RUNNER_TEMP/telemetry-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/telemetry-test/telemetry.test.js"
+      - name: Experiment framework tests (plan 4.5)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/experiments.ts statwise/lib/experiments.test.ts \
+            statwise/lib/telemetry.ts statwise/lib/validation.ts \
+            statwise/lib/rateLimit.ts \
+            --outDir "$RUNNER_TEMP/experiments-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/experiments-test/experiments.test.js"

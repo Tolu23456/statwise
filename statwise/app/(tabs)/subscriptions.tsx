@@ -11,6 +11,8 @@ import { supabase, FLUTTERWAVE_PUBLIC_KEY } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { useQueryClient } from '@tanstack/react-query';
 import { useTheme } from '@/context/ThemeContext';
+import { assignmentFor } from '@/lib/experimentConfig';
+import { logConversion } from '@/lib/experiments';
 
 type Plan = {
   id: string;
@@ -151,6 +153,18 @@ export default function SubscriptionsScreen() {
       // Plan 4.1 — payment is a mutation: reward points and anything keyed
       // on the old tier must not keep showing the pre-purchase state.
       queryClient.invalidateQueries({ queryKey: ['referral'] });
+      // Plan 4.5 — conversion event for the A/B funnel, attributed to the
+      // user's current experiment assignments (no assignment → plain
+      // conversion, still counted in the funnel totals).
+      const bookingAssignment = assignmentFor('booking_cta_v1', user.id);
+      logConversion('subscription_purchase', {
+        plan: plan.id,
+        tier: plan.tier,
+        price: plan.price,
+        ...(bookingAssignment
+          ? { experiment: 'booking_cta_v1', variant: bookingAssignment.variant }
+          : {}),
+      });
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
       Alert.alert('Payment Successful', `You are now on the ${plan.name} plan!`);
     } catch (e) {

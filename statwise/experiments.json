@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "description": "StatWise A/B experiments (plan step 4.5). Definitions ship with the app — enabling or changing an experiment requires a release. Set 'enrollment' to 1–100 to activate during the 'start'..'end' window; 0 keeps it dormant. 'control' must always exist; callers treat a null assignment as control.",
+  "experiments": [
+    {
+      "name": "booking_cta_v1",
+      "description": "Booking modal CTA copy: 'Load on SportyBet' (control) vs 'Open on SportyBet' (variant). Cosmetic only — the destination, bookmaker (SportyBet NG) and AI-Picks-only accumulator policy are unchanged by design. CTR = clicks / opens; conversions logged separately.",
+      "variants": [
+        { "name": "control", "weight": 1 },
+        { "name": "open_cta", "weight": 1 }
+      ],
+      "enrollment": 0,
+      "start": "2026-11-01T00:00:00Z"
+    }
+  ]
+}

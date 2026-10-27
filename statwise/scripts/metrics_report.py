@@ -287,6 +287,71 @@ def section_telemetry() -> tuple[str, int]:
     return "\n".join(lines), errors
 
 
+def section_experiments() -> str:
+    """30-day A/B funnel: exposures → clicks (CTR) → conversions, per
+    experiment and variant (plan step 4.5)."""
+    lines = ["## Experiments & funnels (last 30 days)", ""]
+    if table_missing("/rest/v1/client_events?select=kind&limit=0"):
+        lines.append("_`client_events` table missing — run "
+                     "`statwise/supabase-telemetry-migration.sql`._")
+        lines.append("")
+        return "\n".join(lines)
+
+    rows = select(
+        f"/rest/v1/client_events?select=message,context&kind=eq.custom"
+        f"&message=in.(experiment_exposure,experiment_click,conversion)"
+        f"&created_at=gte.{iso(24 * 30)}&limit={FETCH_CAP}"
+    ) or []
+
+    # experiment -> variant -> counters
+    funnel: dict[str, dict[str, dict[str, int]]] = {}
+    conversions_by_name: dict[str, int] = {}
+    for row in rows:
+        msg = row.get("message")
+        ctx = row.get("context") or {}
+        if msg == "conversion":
+            name = str(ctx.get("name") or "unnamed")
+            conversions_by_name[name] = conversions_by_name.get(name, 0) + 1
+            # Variant-attributed conversions feed the experiment funnel.
+            exp, var = ctx.get("experiment"), ctx.get("variant")
+            if exp and var:
+                funnel.setdefault(str(exp), {}).setdefault(str(var), {})["conversions"] = \
+                    funnel[str(exp)][str(var)].get("conversions", 0) + 1
+            continue
+        exp, var = ctx.get("experiment"), ctx.get("variant")
+        if not exp or not var:
+            continue
+        arm = funnel.setdefault(str(exp), {}).setdefault(str(var), {})
+        key = "exposures" if msg == "experiment_exposure" else "clicks"
+        arm[key] = arm.get(key, 0) + 1
+
+    if not funnel:
+        lines.append("_No experiment events yet — experiments ship dormant "
+                     "(enrollment 0 in experiments.json); enable one to start "
+                     "collecting._")
+        lines.append("")
+    else:
+        for exp in sorted(funnel):
+            lines.append(f"### `{exp}`")
+            for var in sorted(funnel[exp]):
+                arm = funnel[exp][var]
+                exposures = arm.get("exposures", 0)
+                clicks = arm.get("clicks", 0)
+                convs = arm.get("conversions", 0)
+                lines.append(
+                    f"- {var}: {exposures} exposures, CTR {pct(clicks, exposures)}, "
+                    f"conversions {convs} ({pct(convs, exposures)})"
+                )
+            lines.append("")
+
+    if conversions_by_name:
+        lines.append("### Conversions (all traffic)")
+        for name in sorted(conversions_by_name):
+            lines.append(f"- {name}: {conversions_by_name[name]}")
+        lines.append("")
+    return "\n".join(lines)
+
+
 def evaluate_alerts(prediction_total: int, error_events: int) -> list[str]:
     """prediction_total: -1 means the window could not be evaluated (the
     section already says so) — only a definitive 0 alerts."""
@@ -337,6 +402,7 @@ def main() -> int:
     ]
     tel_md, error_events = section_telemetry()
     parts.append(tel_md)
+    parts.append(section_experiments())
 
     alerts = section_alerts + evaluate_alerts(prediction_total, error_events)
     parts.append("## Alerts")
