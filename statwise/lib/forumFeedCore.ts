@@ -123,3 +123,60 @@ export function buildForumContent(
 export function cacheableForumRows<T extends ForumFeedRow>(rows: readonly T[]): T[] {
   return rows.filter(r => !isOptimisticId(r.id)).slice(-FORUM_CACHE_CAP);
 }
+
+// ── mentions + reply previews ──────────────────────────────────────────────
+
+/**
+ * Mention token. Mirrors the SQL side (notify_forum_participants uses
+ * '@([A-Za-z0-9_]{3,30})') — if these two regexes ever diverge, the text
+ * highlighted as a mention would not notify (or vice versa).
+ */
+export const MENTION_PATTERN = '@([A-Za-z0-9_]{3,30})';
+
+export type MentionSegment = { text: string; mention: boolean };
+
+/**
+ * Split message text into mention / non-mention segments for highlighting
+ * (RN <Text> renders each segment as a styled child span). Pure + total:
+ * empty text → empty list, never throws.
+ */
+export function tokenizeMentions(text: string): MentionSegment[] {
+  if (!text) return [];
+  const segments: MentionSegment[] = [];
+  const re = new RegExp(MENTION_PATTERN, 'g');
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) segments.push({ text: text.slice(last, m.index), mention: false });
+    segments.push({ text: m[0], mention: true });
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) segments.push({ text: text.slice(last), mention: false });
+  return segments;
+}
+
+/**
+ * One-line preview of a message for the reply quote bar — from the RAW
+ * stored value: JSON envelopes become "[Image]"/"[Video]"/"[Media]"
+ * markers, plain text is shown as-is, and the result is capped so a
+ * quoted wall of text cannot blow up the composer area.
+ */
+export function replyPreview(raw: string, max = 60): string {
+  if (!raw) return '';
+  let text = raw;
+  if (raw.trimStart().startsWith('{')) {
+    try {
+      const parsed = JSON.parse(raw) as ForumContent;
+      const markers = [
+        parsed.image ? '[Image]' : null,
+        parsed.video ? '[Video]' : null,
+        parsed.text ?? '',
+      ].filter(Boolean) as string[];
+      text = markers.join(' ') || '[Media]';
+    } catch {
+      text = '[Message]';
+    }
+  }
+  const flat = text.replace(/\s+/g, ' ').trim();
+  return flat.length > max ? flat.slice(0, max - 1) + '…' : flat;
+}

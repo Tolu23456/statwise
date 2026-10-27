@@ -13,7 +13,9 @@ import {
   isOptimisticId,
   mergeForumRows,
   OPTIMISTIC_TTL_MS,
+  replyPreview,
   SERVER_MESSAGE_CAP,
+  tokenizeMentions,
 } from './forumFeedCore';
 
 let passed = 0;
@@ -96,5 +98,37 @@ const fatMedia = buildForumContent(
 );
 check('media envelope counts JSON length against the cap', fatMedia.overflow > 0, true);
 check('in-cap media envelope passes cleanly', buildForumContent('ok', 'https://c/x.jpg').overflow, 0);
+
+// --- mentions (mirrors the SQL notify trigger's regex) ----------------------
+check('single mention is its own segment',
+  tokenizeMentions('hi @tolu look'), [
+    { text: 'hi ', mention: false },
+    { text: '@tolu', mention: true },
+    { text: ' look', mention: false },
+  ]);
+check('mentions at the start and end still parse',
+  tokenizeMentions('@abc x @def').map(s => `${s.mention ? 'M' : 'T'}:${s.text}`),
+  ['M:@abc', 'T: x ', 'M:@def']);
+check('handles with digits/underscores only (SQL pattern parity)',
+  tokenizeMentions('@user_09 x').map(s => s.mention), [true, false]);
+check('too-short handles are NOT mentions (SQL needs 3+ chars)',
+  tokenizeMentions('cc @ab end'), [{ text: 'cc @ab end', mention: false }]);
+check('bare @ or trailing punctuation is plain text',
+  tokenizeMentions('mail me @ x'), [{ text: 'mail me @ x', mention: false }]);
+check('empty text tokenizes to nothing', tokenizeMentions(''), []);
+
+// --- reply previews (quote bar) ---------------------------------------------
+check('plain text preview is trimmed and flattened',
+  replyPreview('  hello   there  '), 'hello there');
+check('long preview is capped with an ellipsis',
+  replyPreview('x'.repeat(80)).length, 60);
+check('image envelope previews as [Image] plus its caption',
+  replyPreview('{"image":"https://c/a.jpg","text":"wow"}'), '[Image] wow');
+check('video envelope previews as [Video]',
+  replyPreview('{"video":"https://c/b.mp4"}'), '[Video]');
+check('image AND video envelope shows both markers',
+  replyPreview('{"image":"https://c/a.jpg","video":"https://c/b.mp4"}'), '[Image] [Video]');
+check('broken JSON degrades to a safe marker, not raw source',
+  replyPreview('{"image":'), '[Message]');
 
 console.log(`forumFeedCore.test: ${passed} checks passed`);

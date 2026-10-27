@@ -17,7 +17,7 @@ import {
   subscribeForumMessages,
   upsertForumMessages,
 } from '@/lib/forumFeed';
-import { buildForumContent } from '@/lib/forumFeedCore';
+import { buildForumContent, replyPreview, tokenizeMentions } from '@/lib/forumFeedCore';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { formatChatTime, dayOffset } from '@/lib/format';
@@ -49,11 +49,15 @@ function friendlyError(error: any): string {
   if (msg.includes('row-level security') || msg.includes('42501') || error?.code === '42501') {
     return 'Permission denied (RLS). Please run the SQL fix in your Supabase dashboard.';
   }
+  if (msg.includes('send_forum_message') || msg.includes('function') || msg.includes('42883')) {
+    // BEFORE the generic "does not exist" branch: a missing function's
+    // message ("function ... does not exist") would otherwise be
+    // misreported as a missing table. Covers the pre-migration case of
+    // passing p_reply_to to the old 1-arg function too.
+    return 'Forum function missing or outdated. Run supabase-pending-migrations.sql in your Supabase SQL Editor.';
+  }
   if (msg.includes('does not exist') || msg.includes('42P01') || error?.code === '42P01') {
     return 'Forum table missing. Run the setup SQL in your Supabase dashboard.';
-  }
-  if (msg.includes('send_forum_message') || msg.includes('function') || msg.includes('42883')) {
-    return 'Forum function missing. Run supabase-forum-fix.sql in your Supabase SQL Editor.';
   }
   if (msg.includes('not-null') || msg.includes('23502')) {
     return 'Profile issue. Run supabase-forum-fix.sql to fix this.';
@@ -83,6 +87,9 @@ export default function ForumScreen() {
   const [mediaUploading, setMediaUploading] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(false);
+  // Reply target (tap a bubble → quote it). Cleared on send/cancel; the
+  // quoted id rides the RPC as p_reply_to and the optimistic bubble.
+  const [replyTo, setReplyTo] = useState<ForumMessage | null>(null);
   const flatListRef = useRef<FlatList>(null);
   const inputRef = useRef<TextInput>(null);
 
@@ -114,7 +121,7 @@ export default function ForumScreen() {
     setTimeout(() => setRefreshing(false), 300);
   }
 
-  const doSend = useCallback(async (content: string): Promise<boolean> => {
+  const doSend = useCallback(async (content: string, reply: ForumMessage | null = null): Promise<boolean> => {
     if (!content.trim() || !user) return false;
     setSendError(null);
     setSending(true);
@@ -126,6 +133,7 @@ export default function ForumScreen() {
       user_id: user.id,
       message: content,
       created_at: new Date().toISOString(),
+      reply_to: reply?.id ?? null,
       user_profiles: {
         username: profile?.username ?? profile?.display_name ?? 'You',
         display_name: profile?.display_name ?? profile?.username ?? 'You',
@@ -140,7 +148,12 @@ export default function ForumScreen() {
     upsertForumMessages([optimistic]);
     setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
 
-    const { error } = await supabase.rpc('send_forum_message', { p_message: content });
+    // p_reply_to rides along only when set: the pre-migration 1-arg
+    // function would reject an unexpected named arg, so omit it entirely.
+    const { error } = await supabase.rpc('send_forum_message', {
+      p_message: content,
+      ...(reply?.id ? { p_reply_to: reply.id } : {}),
+    });
 
     if (error) {
       removeOptimisticForumMessage(optimisticId);
@@ -186,15 +199,18 @@ export default function ForumScreen() {
     const restoreText = text;
     const restoreImage = pendingImage;
     const restoreVideo = pendingVideo;
+    const replyTarget = replyTo; // capture before the composer resets
     setInput('');
     setPendingImage(null);
     setPendingVideo(null);
-    const ok = await doSend(content);
+    const ok = await doSend(content, replyTarget);
     if (!ok) {
       // Nothing the user composed is lost to a failed send — restore it.
       setInput(prev => (prev ? prev : restoreText));
       setPendingImage(prev => prev ?? restoreImage);
       setPendingVideo(prev => prev ?? restoreVideo);
+    } else {
+      setReplyTo(null); // sent — drop the quote chip
     }
   }
 
@@ -261,6 +277,41 @@ export default function ForumScreen() {
     }
   }
 
+  // Quoted parent for the reply bar: look it up in the loaded window. If
+  // the parent scrolled out of the 100-row window the quote degrades to
+  // a generic label rather than showing nothing (the SQL side already
+  // refused to persist a reply to a deleted message).
+  const parentOf = (replyId?: string | null): ForumMessage | null =>
+    replyId ? messages.find(m => m.id === replyId) ?? null : null;
+
+  const startReply = (item: ForumMessage) => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    setReplyTo(item);
+    inputRef.current?.focus();
+  };
+
+  const renderMentionText = (text: string, isMe: boolean) => (
+    // Mention tokens (@handle) render highlighted; everything else is
+    // the ordinary bubble text. Mention regex mirrors the SQL trigger.
+    <Text style={[styles.msgText, isMe && { color: '#fff' }]}>
+      {tokenizeMentions(text).map((seg, i) =>
+        seg.mention ? (
+          <Text
+            key={i}
+            style={{
+              color: isMe ? '#ffe8a3' : C.primary,
+              fontFamily: 'Inter_600SemiBold',
+            }}
+          >
+            {seg.text}
+          </Text>
+        ) : (
+          <Text key={i}>{seg.text}</Text>
+        ),
+      )}
+    </Text>
+  );
+
   const renderItem = ({ item, index }: { item: ForumMessage; index: number }) => {
     const isMe = user?.id === item.user_id;
     const prev = messages[index - 1];
@@ -320,6 +371,27 @@ export default function ForumScreen() {
             styles.bubble,
             isMe ? [styles.bubbleMe, { backgroundColor: C.primary }] : [styles.bubbleOther, { backgroundColor: C.card, borderColor: C.border }],
           ]}>
+            {item.reply_to ? (
+              (() => {
+                const parent = parentOf(item.reply_to);
+                const parentName =
+                  parent?.user_profiles?.display_name ||
+                  parent?.user_profiles?.username ||
+                  parent?.username ||
+                  'a message';
+                return (
+                  <View style={[styles.quoteBar, { borderLeftColor: isMe ? 'rgba(255,255,255,0.6)' : C.primary }]}>
+                    <Ionicons name="arrow-undo" size={11} color={isMe ? 'rgba(255,255,255,0.85)' : C.textMuted} />
+                    <Text
+                      numberOfLines={1}
+                      style={[styles.quoteText, { color: isMe ? 'rgba(255,255,255,0.85)' : C.textMuted }]}
+                    >
+                      {parentName}: {parent ? replyPreview(parent.message, 48) : 'original message'}
+                    </Text>
+                  </View>
+                );
+              })()
+            ) : null}
             {parsed.image && (
               <Image source={{ uri: parsed.image }} style={styles.mediaImage} resizeMode="cover" />
             )}
@@ -345,12 +417,20 @@ export default function ForumScreen() {
                 <Text style={[styles.mediaPlayText, { color: C.textSecondary }]}>Play video</Text>
               </TouchableOpacity>
             )}
-            {parsed.text ? (
-              <Text style={[styles.msgText, isMe && { color: '#fff' }]}>{parsed.text}</Text>
-            ) : null}
-            <Text style={[styles.timeText, isMe && { color: 'rgba(255,255,255,0.7)' }, { color: isMe ? 'rgba(255,255,255,0.7)' : C.textMuted }]}>
-              {formatChatTime(item.created_at)}
-            </Text>
+            {parsed.text ? renderMentionText(parsed.text, isMe) : null}
+            <View style={styles.msgFooter}>
+              <Text style={[styles.timeText, { color: isMe ? 'rgba(255,255,255,0.7)' : C.textMuted }]}>
+                {formatChatTime(item.created_at)}
+              </Text>
+              <TouchableOpacity
+                onPress={() => startReply(item)}
+                hitSlop={10}
+                style={styles.replyBtn}
+                accessibilityLabel="Reply to message"
+              >
+                <Ionicons name="return-down-forward" size={13} color={isMe ? 'rgba(255,255,255,0.7)' : C.textMuted} />
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
@@ -440,6 +520,26 @@ export default function ForumScreen() {
           </View>
         ) : (
           <>
+            {replyTo && (
+              <View style={[styles.replyChip, { backgroundColor: C.inputBg, borderColor: C.primary }]}>
+                <Ionicons name="return-down-forward" size={14} color={C.primary} />
+                <View style={{ flex: 1 }}>
+                  <Text style={[styles.replyChipName, { color: C.primary }]} numberOfLines={1}>
+                    Replying to{' '}
+                    {replyTo.user_profiles?.display_name ||
+                      replyTo.user_profiles?.username ||
+                      replyTo.username ||
+                      'a message'}
+                  </Text>
+                  <Text style={[styles.replyChipPreview, { color: C.textMuted }]} numberOfLines={1}>
+                    {replyPreview(replyTo.message, 60)}
+                  </Text>
+                </View>
+                <TouchableOpacity onPress={() => setReplyTo(null)} hitSlop={10} accessibilityLabel="Cancel reply">
+                  <Ionicons name="close-circle" size={18} color={C.textMuted} />
+                </TouchableOpacity>
+              </View>
+            )}
             {(pendingImage || pendingVideo) && (
               <View style={styles.attachRow}>
                 {pendingImage && (
@@ -575,6 +675,21 @@ const styles = StyleSheet.create({
   attachRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingBottom: 8 },
   attachChip: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 16, borderWidth: 1 },
   attachText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
+  // Reply affordances: a quote bar inside the bubble + the chip above the
+  // composer while a reply is staged.
+  quoteBar: {
+    flexDirection: 'row', alignItems: 'center', gap: 5,
+    borderLeftWidth: 3, paddingLeft: 7, marginBottom: 5, opacity: 0.9,
+  },
+  quoteText: { fontSize: 11, fontFamily: 'Inter_500Medium', flexShrink: 1 },
+  msgFooter: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', gap: 6, marginTop: 2 },
+  replyBtn: { padding: 2 },
+  replyChip: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    borderRadius: 10, borderWidth: 1, paddingHorizontal: 10, paddingVertical: 7, marginBottom: 8,
+  },
+  replyChipName: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  replyChipPreview: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 1 },
   msgText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
   timeText: { fontSize: 10, fontFamily: 'Inter_400Regular', marginTop: 4, alignSelf: 'flex-end' },
   inputBar: { borderTopWidth: 1, paddingHorizontal: 12, paddingTop: 10 },

@@ -181,6 +181,8 @@ export type ForumMessage = {
   message: string;
   created_at: string;
   username?: string | null;
+  /** Quoted parent for replies (social migration section 4; null before). */
+  reply_to?: string | null;
   user_profiles?: {
     username: string;
     display_name: string;
