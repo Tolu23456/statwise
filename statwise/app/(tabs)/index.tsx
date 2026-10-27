@@ -98,6 +98,37 @@ function sendBrowserNotification(title: string, body: string) {
   }
 }
 
+/**
+ * Transient fetch failures are not data failures (user report 2026-10-27:
+ * a network blip painted the dev LogBox red screen — read as "the app
+ * crashed" — and the feed behind it was wiped to empty).
+ *
+ * Real sources, both harmless to the data:
+ *  - Supabase Auth serialises token refreshes with the browser Web Locks
+ *    API; when a concurrent refresh recovers by *stealing* the lock, the
+ *    holder rejects with "AbortError: Lock broken by another request with
+ *    the 'steal' option." (@supabase/auth-js locks.ts) — a sub-second
+ *    in-flight race, not a broken request.
+ *  - a plain network drop / timeout while the fetch is in flight.
+ *
+ * These must never reach console.error (it paints the red crash screen in
+ * dev web) and must never wipe a previously good list.
+ */
+function isTransientFeedError(error: unknown): boolean {
+  const e = error as { name?: string; message?: string } | null | undefined;
+  const msg = String(e?.message ?? '').toLowerCase();
+  return (
+    e?.name === 'AbortError' ||
+    msg.includes('abort') ||
+    msg.includes('lock broken') ||
+    msg.includes('fetch') ||
+    msg.includes('network') ||
+    msg.includes('timeout') ||
+    msg.includes('timed out') ||
+    msg.includes('socket hang up')
+  );
+}
+
 export default function HomeScreen() {
   const { scheme } = useTheme();
   const C = Colors[scheme];
@@ -170,9 +201,21 @@ export default function HomeScreen() {
     return () => clearInterval(id);
   }, [appActive]);
 
+  // Last good feed per query key (see isTransientFeedError): a transient
+  // abort/network blip re-serves this instead of emptying the screen.
+  const lastGoodFeed = useRef<{ key: string; rows: Prediction[] }>({ key: '', rows: [] });
+
   const { data: predictions = [], isLoading, isError, refetch, isFetching, dataUpdatedAt } = useQuery<Prediction[]>({
     queryKey: QUERY_KEYS.predictions(userTier),
     queryFn: async ({ signal }) => {
+      // Last successful feed for THIS query key. A transient failure
+      // (isTransientFeedError) re-serves it instead of emptying the list;
+      // a first load has nothing to keep, so it throws and the friendly
+      // retry banner (isError below) shows instead of a silent blank feed.
+      const cacheKey = JSON.stringify(QUERY_KEYS.predictions(userTier));
+      const lastGood =
+        lastGoodFeed.current.key === cacheKey ? lastGoodFeed.current.rows : [];
+      const transient = (e: unknown) => isTransientFeedError(e) || Boolean(signal?.aborted);
       try {
         const today = new Date().toISOString().split('T')[0];
         // Use abort controller compatible query
@@ -186,18 +229,22 @@ export default function HomeScreen() {
         
         const { data, error } = await query;
         if (error) {
-          console.error('Predictions fetch error:', error);
-          // Don't throw on network errors to avoid crashes
-          if (error.message?.includes('fetch') || error.message?.includes('network')) {
-            return [];
+          if (transient(error)) {
+            if (lastGood.length > 0) return lastGood;
+            throw error;
           }
+          // Genuine failure (schema/RLS/etc) — log it for dev visibility;
+          // the retry banner + ErrorBoundary copy handle the user.
+          console.error('Predictions fetch error:', error);
           throw error;
         }
-        return data ?? [];
-      } catch (e: any) {
-        // Ignore abort errors to prevent noisy logs
-        if (e?.name === 'AbortError' || e?.message?.includes('abort') || e?.message?.includes('Lock broken') || e?.message?.includes('fetch')) {
-          return [];
+        const rows = data ?? [];
+        lastGoodFeed.current = { key: cacheKey, rows };
+        return rows;
+      } catch (e: unknown) {
+        if (transient(e)) {
+          if (lastGood.length > 0) return lastGood;
+          throw e;
         }
         console.error('Predictions query error:', e);
         throw e;
