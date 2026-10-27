@@ -1,0 +1,69 @@
+name: Bundle report
+
+# Plan step 4.2 — production web bundle analysis + load-time measurement.
+#
+# Manual dispatch only: `expo export` is a full cold production build
+# (minutes of CPU), so it runs on demand rather than on every push.
+# Each run prints a size report (total, gzip, per-type, top files, font
+# inventory) and a headless-Chromium load measurement with all external
+# requests blocked, so before/after numbers compare like with like.
+
+on:
+  workflow_dispatch:
+    inputs:
+      label:
+        description: 'Label for this report (baseline, after-lazy-modals, ...)'
+        required: false
+        default: 'manual'
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: statwise/package-lock.json
+
+      - name: Install app dependencies
+        working-directory: statwise
+        run: npm ci
+
+      - name: Export production web bundle
+        working-directory: statwise
+        run: npx expo export -p web --output-dir dist
+
+      - name: Size report
+        run: |
+          {
+            echo '### Bundle report (${{ inputs.label }})'
+            echo '```'
+            python3 statwise/scripts/bundle_report.py statwise/dist
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Install measurement tooling
+        run: |
+          pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+
+      - name: Measure load time (headless, external requests blocked)
+        run: |
+          {
+            echo '### Load measurement (${{ inputs.label }})'
+            echo '```json'
+            python3 statwise/scripts/measure_load.py statwise/dist
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload bundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-dist-${{ inputs.label }}
+          path: statwise/dist
+          retention-days: 7
+          if-no-files-found: error
