@@ -852,12 +852,69 @@ to start collecting push subscriptions (everything no-ops safely until then).
   booking metrics work regardless).
 
 ### Step 4.5: A/B Testing Framework
-- [ ] **Design experiment framework** - Feature flags
-- [ ] **Add user bucketing** - Random assignment
-- [ ] **Track metrics** - Log loss, CTR, conversions
-- [ ] **Add experiment config** - JSON config
-- [ ] **Test framework** - Run sample experiment
-- [ ] **Commit changes**
+- [x] **Design experiment framework** - Feature flags
+  `lib/experiments.ts` — pure module (Node-testable, same pattern as
+  validation/telemetry): experiments are feature-flagged by JSON config;
+  **the control-safe default is built into the type**: inactive window,
+  expired end date, unknown name or a non-participating user all return
+  `null`, and every call site treats null as control — a dormant or
+  broken experiment is *indistinguishable from today's behaviour*.
+  Enrollment and variant selection use **independent hash salts** so
+  bucket-space position can't correlate with a variant. Assignment
+  plumbing ships wired end-to-end: exposures (`experiment_exposure`),
+  engagement (`experiment_click`) and business outcomes (`conversion`)
+  flow through the plan-4.4 telemetry pipeline as `custom` events —
+  zero new tables, zero new packages.
+- [x] **Add user bucketing** - Random assignment
+  Deterministic **FNV-1a hash of (user id, experiment name, purpose) →
+  0..9999** (0.01% granularity): the same user lands in the same bucket
+  on every device and session with no server state and no storage —
+  signed-out visitors bucket by the telemetry session id (per-user, not
+  one global bucket). Tests assert stickiness (identical assignment on
+  re-run), a balanced 50/50 arm split over 2,000 synthetic users
+  (46–54% band), a 90/10 weighted split (7–13%) and a 25% enrollment rate
+  (21–29%) — statistical targets asserted as bands, not exact counts.
+- [x] **Track metrics** - Log loss, CTR, conversions
+  CTR and conversions are tracked live: the booking modal logs one
+  exposure per open (both arms — control is the denominator) and one
+  click per CTA press; `processPaymentSuccess` logs
+  `subscription_purchase` conversions **attributed to the user's current
+  assignment**, so per-variant conversion rates are computable.
+  `metrics_report.py` gained an *Experiments & funnels* section
+  (exposures / CTR / conversions per experiment+variant over 30 days,
+  plus totals by conversion name). **Log loss stays with the Python eval
+  harnesses** — honest scope: computing it needs probabilities + settled
+  outcomes, which the gate protocol owns; the client pipeline measures
+  behaviour, the harnesses measure model quality.
+- [x] **Add experiment config** - JSON config
+  `statwise/experiments.json` (versioned, the single source of truth,
+  loaded by `lib/experimentConfig.ts`): one real experiment ships —
+  `booking_cta_v1`, CTA copy *Load on SportyBet* (control) vs *Open on
+  SportyBet* (open_cta) — **dormant at enrollment 0**, so nothing in
+  production changes until it is enabled. Config validation is strict
+  (snake_case names, ≥2 variants, mandatory `control`, positive weights,
+  0–100 enrollment, ISO dates, no duplicates) and a broken file **fails
+  CI loudly** (the test parses the shipped file directly) while the app
+  degrades to "no experiments" rather than crashing. Honest limitation:
+  the config ships with the bundle — enabling an experiment is a release,
+  there is deliberately no remote-config service.
+- [x] **Test framework** - Run sample experiment
+  `lib/experiments.test.ts` — **60 checks**, thirteenth CI suite. The
+  sample run walks the whole funnel deterministically over 2,000
+  synthetic users at 50% enrollment with known ground truth (control
+  CTR 10% / variant 15%, conversions 2% / 3%): enroll → assign → expose
+  → click → convert → aggregate, and the aggregator **recovers the
+  winner on both metrics** with measured rates inside ±3pp of truth.
+  Plus: 12 config-validation rejections, 6 parse-failure modes, hash
+  determinism/range/salting, active-window edges, control-safe
+  fallbacks (unknown/expired/dormant → null), telemetry plumbing shape
+  assertions, and validation of the **shipped** `experiments.json`
+  (parses, has `control`, currently dormant — asserted).
+- [x] **Commit changes** (`74f0470`; App tests run 40477856495 → success,
+  thirteen suites — experiments.test adds **60 checks** for **445
+  total**; `tsc --noEmit` exit 0; metrics smoke-run verified the
+  experiments section degrades honestly while `client_events` is
+  un-migrated).
 
 **PHASE 4 CHECKPOINT**: App optimized, secure, observable, scalable
 
