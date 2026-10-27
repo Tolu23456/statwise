@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { useRouter } from 'expo-router';
+import { useRouter, useFocusEffect } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
@@ -15,6 +15,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { PredictionCard } from '@/components/PredictionCard';
 import { SkeletonCard } from '@/components/SkeletonCard';
+import { AnimatedEntrance } from '@/components/AnimatedEntrance';
 import { shouldShowOnboarding } from '@/lib/onboarding';
 import { LIMITS } from '@/lib/validation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -147,6 +148,21 @@ export default function HomeScreen() {
   const [favOnly, setFavOnly] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [newPredictionsBadge, setNewPredictionsBadge] = useState(0);
+  // Replays the card-entrance animation whenever the user RETURNS to the
+  // Predictions tab (tab screens stay mounted, so mount-only entering
+  // would play exactly once). Initial focus skipped; the key only rides
+  // the card wrapper — the FlatList itself keeps its scroll position.
+  const firstFocus = useRef(true);
+  const [visitKey, setVisitKey] = useState(0);
+  useFocusEffect(
+    useCallback(() => {
+      if (firstFocus.current) {
+        firstFocus.current = false;
+        return;
+      }
+      setVisitKey(k => k + 1);
+    }, []),
+  );
   const [selectedPrediction, setSelectedPrediction] = useState<Prediction | null>(null);
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [showModelInfo, setShowModelInfo] = useState(false);
@@ -1007,7 +1023,7 @@ export default function HomeScreen() {
               </Text>
             ) : null
           }
-          renderItem={({ item }) => {
+          renderItem={({ item, index }) => {
             if (item.kind === 'header') {
               return (
                 <View style={styles.dayHeader}>
@@ -1021,18 +1037,20 @@ export default function HomeScreen() {
               );
             }
             return (
-              <PredictionCard
-                prediction={item.prediction}
-                locked={false}
-                nextTier={nextTier}
-                favorite={isFavorite(favorites, item.prediction.id)}
-                onToggleFavorite={() => onToggleFavorite(item.prediction.id)}
-                onPress={() => {
-                  setDetailMounted(true);
-                  setSelectedPrediction(item.prediction);
-                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-                }}
-              />
+              <AnimatedEntrance key={`${visitKey}:${item.prediction.id}`} index={index}>
+                <PredictionCard
+                  prediction={item.prediction}
+                  locked={false}
+                  nextTier={nextTier}
+                  favorite={isFavorite(favorites, item.prediction.id)}
+                  onToggleFavorite={() => onToggleFavorite(item.prediction.id)}
+                  onPress={() => {
+                    setDetailMounted(true);
+                    setSelectedPrediction(item.prediction);
+                    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                  }}
+                />
+              </AnimatedEntrance>
             );
           }}
         />

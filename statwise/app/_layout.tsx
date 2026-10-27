@@ -84,10 +84,10 @@ function RootLayoutNav() {
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(auth)" />
         <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="insight-detail" options={{ presentation: 'card' }} />
+        <Stack.Screen name="insight-detail" options={{ presentation: 'card', animation: 'slide_from_right' }} />
         <Stack.Screen name="privacy-policy" options={{ presentation: 'modal' }} />
         <Stack.Screen name="terms-of-service" options={{ presentation: 'modal' }} />
-        <Stack.Screen name="backtesting" options={{ presentation: 'card' }} />
+        <Stack.Screen name="backtesting" options={{ presentation: 'card', animation: 'slide_from_right' }} />
       </Stack>
       <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
     </>

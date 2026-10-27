@@ -7,6 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { Colors } from '@/constants/colors';
 import { useTheme } from '@/context/ThemeContext';
 import { OfflineBanner } from '@/components/OfflineBanner';
+import { TabIcon } from '@/components/TabIcon';
 
 const TAB_ITEMS = [
   { name: 'index',         path: '/',             title: 'Predictions', icon: 'football-outline'    as const },
@@ -101,35 +102,45 @@ export default function TabLayout() {
           name="index"
           options={{
             title: 'Predictions',
-            tabBarIcon: ({ color, size }) => <Ionicons name="football-outline" size={size} color={color} />,
+            tabBarIcon: ({ color, size, focused }) => (
+              <TabIcon name="football-outline" color={color} size={size} focused={focused} />
+            ),
           }}
         />
         <Tabs.Screen
           name="insights"
           options={{
             title: 'Insights',
-            tabBarIcon: ({ color, size }) => <Ionicons name="analytics-outline" size={size} color={color} />,
+            tabBarIcon: ({ color, size, focused }) => (
+              <TabIcon name="analytics-outline" color={color} size={size} focused={focused} />
+            ),
           }}
         />
         <Tabs.Screen
           name="subscriptions"
           options={{
             title: 'Plans',
-            tabBarIcon: ({ color, size }) => <Ionicons name="diamond-outline" size={size} color={color} />,
+            tabBarIcon: ({ color, size, focused }) => (
+              <TabIcon name="diamond-outline" color={color} size={size} focused={focused} />
+            ),
           }}
         />
         <Tabs.Screen
           name="forum"
           options={{
             title: 'Community',
-            tabBarIcon: ({ color, size }) => <Ionicons name="chatbubbles-outline" size={size} color={color} />,
+            tabBarIcon: ({ color, size, focused }) => (
+              <TabIcon name="chatbubbles-outline" color={color} size={size} focused={focused} />
+            ),
           }}
         />
         <Tabs.Screen
           name="profile"
           options={{
             title: 'Profile',
-            tabBarIcon: ({ color, size }) => <Ionicons name="person-outline" size={size} color={color} />,
+            tabBarIcon: ({ color, size, focused }) => (
+              <TabIcon name="person-outline" color={color} size={size} focused={focused} />
+            ),
           }}
         />
         <Tabs.Screen name="insight-detail"   options={{ href: null }} />

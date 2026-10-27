@@ -18,6 +18,9 @@ import {
   upsertForumMessages,
 } from '@/lib/forumFeed';
 import { buildForumContent, replyPreview, tokenizeMentions } from '@/lib/forumFeedCore';
+import { useFocusEffect } from 'expo-router';
+import { AnimatedEntrance } from '@/components/AnimatedEntrance';
+import { SkeletonChatRow } from '@/components/Skeletons';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { formatChatTime, dayOffset } from '@/lib/format';
@@ -90,6 +93,20 @@ export default function ForumScreen() {
   // Reply target (tap a bubble → quote it). Cleared on send/cancel; the
   // quoted id rides the RPC as p_reply_to and the optimistic bubble.
   const [replyTo, setReplyTo] = useState<ForumMessage | null>(null);
+  // Replays the message-entrance animation on every visit to this tab —
+  // tab screens stay mounted, so mount-only entering plays just once.
+  // Initial focus is skipped (first mount already animates).
+  const firstFocus = useRef(true);
+  const [visitKey, setVisitKey] = useState(0);
+  useFocusEffect(
+    useCallback(() => {
+      if (firstFocus.current) {
+        firstFocus.current = false;
+        return;
+      }
+      setVisitKey(k => k + 1);
+    }, []),
+  );
   const flatListRef = useRef<FlatList>(null);
   const inputRef = useRef<TextInput>(null);
 
@@ -329,6 +346,7 @@ export default function ForumScreen() {
     const showDayDivider = prevDay === null || prevDay !== thisDay;
 
     return (
+      <AnimatedEntrance index={index}>
       <View>
       {showDayDivider && (
         <View style={styles.dayDivider}>
@@ -435,6 +453,7 @@ export default function ForumScreen() {
         </View>
       </View>
       </View>
+      </AnimatedEntrance>
     );
   };
 
@@ -469,12 +488,14 @@ export default function ForumScreen() {
       )}
 
       {loading && messages.length === 0 ? (
-        <View style={styles.centered}>
-          <ActivityIndicator size="large" color={C.primary} />
-          <Text style={[styles.loadingText, { color: C.textSecondary }]}>Loading messages...</Text>
+        <View style={styles.listContent}>
+          {[0, 1, 2, 3].map(i => (
+            <SkeletonChatRow key={i} />
+          ))}
         </View>
       ) : (
         <FlatList
+          key={`forum-${visitKey}`}
           ref={flatListRef}
           data={messages}
           renderItem={renderItem}

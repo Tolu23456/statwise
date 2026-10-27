@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity,
-  ActivityIndicator, Platform, RefreshControl, ScrollView,
+  Platform, RefreshControl, ScrollView,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useQuery } from '@tanstack/react-query';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { useRouter } from 'expo-router';
+import { useRouter, useFocusEffect } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
@@ -21,6 +21,8 @@ import {
   insightCategories,
   type Insight,
 } from '@/lib/insightsCore';
+import { AnimatedEntrance } from '@/components/AnimatedEntrance';
+import { SkeletonInsightCard } from '@/components/Skeletons';
 
 function timeAgo(dateStr: string): string {
   const diff = Date.now() - new Date(dateStr).getTime();
@@ -67,6 +69,22 @@ export default function InsightsScreen() {
 
   const categories = insightCategories(insights);
   const visible = filterInsights(insights, category);
+
+  // Re-run the entrance animation EVERY time the user comes to this tab
+  // (screens stay mounted in the tab navigator, so a mount-only entering
+  // animation would only ever play once). The initial focus is skipped —
+  // the first mount already animates; only refocuses bump the key.
+  const firstFocus = useRef(true);
+  const [visitKey, setVisitKey] = useState(0);
+  useFocusEffect(
+    useCallback(() => {
+      if (firstFocus.current) {
+        firstFocus.current = false;
+        return;
+      }
+      setVisitKey(k => k + 1);
+    }, []),
+  );
 
   function handleReadMore(item: Insight) {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -153,43 +171,51 @@ export default function InsightsScreen() {
       </View>
 
       {isLoading ? (
-        <View style={styles.centered}>
-          <ActivityIndicator size="large" color={C.primary} />
+        <View style={styles.list}>
+          {[0, 1, 2].map(i => (
+            <SkeletonInsightCard key={i} />
+          ))}
         </View>
       ) : (
         <>
           {categories.length > 2 && (
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.chipRow}
-            >
-              {categories.map(cat => {
-                const active = cat === category;
-                return (
-                  <TouchableOpacity
-                    key={cat}
-                    style={[
-                      styles.chip,
-                      { backgroundColor: active ? C.primary : C.inputBg, borderColor: active ? C.primary : C.border },
-                    ]}
-                    onPress={() => {
-                      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-                      setCategory(cat);
-                    }}
-                    activeOpacity={0.8}
-                  >
-                    <Text
-                      style={[styles.chipText, { color: active ? '#fff' : C.textSecondary }]}
+            // Own layer (zIndex) + no shrink: the chip bar is chrome, list
+            // content must never paint over or squeeze it.
+            <View style={[styles.chipsWrap, { backgroundColor: C.background }]}>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.chipRow}
+              >
+                {categories.map(cat => {
+                  const active = cat === category;
+                  return (
+                    <TouchableOpacity
+                      key={cat}
+                      style={[
+                        styles.chip,
+                        { backgroundColor: active ? C.primary : C.inputBg, borderColor: active ? C.primary : C.border },
+                      ]}
+                      onPress={() => {
+                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                        setCategory(cat);
+                      }}
+                      activeOpacity={0.8}
                     >
-                      {cat}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </ScrollView>
+                      <Text
+                        style={[styles.chipText, { color: active ? '#fff' : C.textSecondary }]}
+                      >
+                        {cat}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </ScrollView>
+            </View>
           )}
           <FlatList
+            key={`insights-${visitKey}`}
+            style={styles.listFlex}
             data={visible}
             keyExtractor={item => item.id}
           contentContainerStyle={[
@@ -199,7 +225,8 @@ export default function InsightsScreen() {
           refreshControl={
             <RefreshControl refreshing={isFetching} onRefresh={refetch} tintColor={C.primary} colors={[C.primary]} />
           }
-          renderItem={({ item }) => (
+          renderItem={({ item, index }) => (
+            <AnimatedEntrance index={index}>
             <View style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}>
               <View style={styles.cardTopRow}>
                 {item.category && (
@@ -228,6 +255,7 @@ export default function InsightsScreen() {
                 </TouchableOpacity>
               </View>
             </View>
+            </AnimatedEntrance>
           )}
           ListEmptyComponent={
             <View style={styles.empty}>
@@ -268,6 +296,8 @@ const styles = StyleSheet.create({
   readBtnText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   centered: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   // Category filter chips (horizontal scroll under the header).
+  chipsWrap: { flexShrink: 0, zIndex: 2 },
+  listFlex: { flex: 1 },
   chipRow: { paddingHorizontal: 16, paddingBottom: 10, gap: 8 },
   chip: {
     paddingHorizontal: 14, paddingVertical: 7, borderRadius: 18,

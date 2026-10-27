@@ -1,44 +1,18 @@
-import React, { useRef, useEffect } from 'react';
-import { View, StyleSheet, Animated } from 'react-native';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { useTheme } from '@/context/ThemeContext';
 import { Colors } from '@/constants/colors';
+import { SkeletonBlock, useSkeletonPulse } from '@/components/Skeletons';
 
-function SkeletonBlock({
-  width,
-  height,
-  radius = 8,
-  opacity,
-  border,
-}: {
-  width: number | string;
-  height: number;
-  radius?: number;
-  opacity: Animated.AnimatedInterpolation<number>;
-  border: string;
-}) {
-  return (
-    <Animated.View
-      style={{ width: width as any, height, borderRadius: radius, backgroundColor: border, opacity }}
-    />
-  );
-}
-
+/**
+ * Prediction-feed placeholder. Shares its pulse with the rest of the
+ * skeleton kit (components/Skeletons.tsx) so every loading state in the
+ * app breathes on the same clock.
+ */
 export function SkeletonCard() {
   const { scheme } = useTheme();
   const C = Colors[scheme];
-  const shimmer = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(shimmer, { toValue: 1, duration: 800, useNativeDriver: true }),
-        Animated.timing(shimmer, { toValue: 0, duration: 800, useNativeDriver: true }),
-      ]),
-    ).start();
-    return () => shimmer.stopAnimation();
-  }, [shimmer]);
-
-  const opacity = shimmer.interpolate({ inputRange: [0, 1], outputRange: [0.35, 0.75] });
+  const opacity = useSkeletonPulse();
 
   return (
     <View style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}>
