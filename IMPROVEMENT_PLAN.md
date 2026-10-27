@@ -660,13 +660,130 @@ to start collecting push subscriptions (everything no-ops safely until then).
 - [x] **Commit changes** (`693c16f` tooling, `f05b4cf` code)
 
 ### Step 4.3: Abuse Prevention
-- [ ] **Rate limiting** - Add to API routes
-- [ ] **Booking code protection** - Prevent abuse
-- [ ] **Chat sanitization** - Already done, audit
-- [ ] **Input validation** - All user inputs
-- [ ] **Add CAPTCHA if needed** - For sensitive actions
-- [ ] **Audit security** - Review auth/permissions
-- [ ] **Commit changes**
+- [x] **Rate limiting** - Add to API routes
+  The app's only bespoke API endpoint is the `send_forum_message` RPC —
+  `supabase-security-migration.sql` rewrites it to enforce **6 messages /
+  60s per user** server-side (plus server-side length cap and sanitization),
+  which holds for anyone talking to PostgREST directly. All four client
+  INSERT policies on `forum_messages` (the three setup scripts each named
+  theirs differently; Postgres ORs them) are dropped so the RPC is the
+  *only* client write path — the direct-table spam bypass was
+  **live-confirmed before the fix** (probe: authenticated `POST
+  /rest/v1/forum_messages` → 201 without ever touching the RPC). Client
+  half: `lib/rateLimit.ts` sliding-window limiter (injected clock,
+  unit-tested) — `authAttempt` 5/5min shared across login + signup +
+  password reset (one budget against credential stuffing), `forumSend`
+  6/60s mirroring the SQL check exactly, `profileSave` 5/60s — each with a
+  human "Try again in Ns" message instead of a raw 429. There is no
+  server of our own beyond the RPC: everything else goes through Supabase
+  REST, whose Auth endpoints carry Supabase's own per-IP limits — recorded
+  as the honest boundary of what a client can enforce.
+- [x] **Booking code protection** - Prevent abuse
+  Three layers: (1) **server-side** — `app_settings` (where the published
+  code + generation stats live) had policy *"Admin users can manage app
+  settings"* **FOR ALL USING (true)**: the security probe showed an **anon
+  key INSERT returned 201** — anyone holding the public bundle could
+  overwrite the booking code; the migration drops it so clients can only
+  SELECT and only the service-role backend writes (verified: every in-repo
+  writer uses `SUPABASE_SERVICE_KEY` — workflows inject it and
+  `notify.yml` fails fast without it; the py scripts' anon *fallback*
+  would simply be denied, which is the correct failure mode for a
+  service-only table). (2) **shape** —
+  `lib/bookingGuard.ts` `sanitizeBookingCode` (`^[A-Za-z0-9_-]{4,32}$`)
+  applied at the fetch choke point: a malformed code makes the row
+  unusable → honest "not generated" state, never echoed or linked.
+  (3) **destination** — `safeShareUrl` is the only URL the modal opens or
+  shares: https AND genuine `sportybet.com` host (exact/dot-suffix, so
+  `evilsportybet.com` / `sportybet.com.evil.io` / `http://` /
+  `javascript:` all fall back to a URL built from the validated code;
+  invalid code → no URL at all). 24 dedicated checks
+  (`bookingGuard.test`).
+- [x] **Chat sanitization** - Already done, audit
+  Audit of the full path: messages render as React `<Text>` children (web
+  auto-escapes; **zero** `dangerouslySetInnerHTML`/HTML rendering in the
+  codebase); payload parse (`parseMessage`) now **drops non-https media
+  URIs** and sanitizes stored text before render; outgoing path was the
+  weak spot and is now three-gated: `sanitizeUserText` (C0 control chars
+  minus tab/newline, DEL, zero-width + bidi overrides, 1000 cap) →
+  explicit over-length error instead of silent truncation → client rate
+  limit → **and** the same sanitization + cap + 6/60s limit repeated
+  server-side in the RPC, with every direct-write policy dropped so
+  there is no way around it (bypass live-confirmed at 201 pre-migration).
+  `send_forum_message` itself keeps its `SECURITY DEFINER` +
+  `auth.uid() IS NULL` check (audited: execute granted to
+  `authenticated` only).
+- [x] **Input validation** - All user inputs
+  Central `lib/validation.ts` — every typed value has one validator, wired
+  into the screens: email (`isValidEmail`/`normalizeEmail` — the duplicated
+  regexes in login/signup/forgot are gone), display name
+  (`displayNameError`: required/2–50) in signup **and** profile save,
+  password (`passwordError`) in signup, referral code
+  (`isValidReferralCodeFormat`, 4–20 alnum) checked locally before the
+  lookup, forum message (`sanitizeUserText` + `exceedsLimit`), search box
+  (`maxLength` cap — client-side in-memory filter only), plus `maxLength`
+  on every other TextInput. **49 checks** (`validation.test`) assert the
+  accept/reject edges incl. injection strings, emoji codes and every
+  sanitization class.
+- [x] **Add CAPTCHA if needed** - For sensitive actions
+  Decision: **no third-party CAPTCHA widget** (would add a dependency +
+  key management for marginal gain) — the bot-relevant actions are signup
+  and password reset, and they get: **honeypot fields** (off-screen,
+  `importantForAutofill=no`, not tabbable; filled → the form fakes the
+  success path and never calls Supabase Auth, so a script learns nothing),
+  the shared 5/5min client throttle, Supabase Auth's own per-IP email
+  limits server-side, and the forum RPC limit. Payment already has
+  Flutterwave's own 3-D Secure. Revisit only if abuse is observed.
+- [x] **Audit security** - Review auth/permissions
+  Audited repo policies against actual usage (all four SQL setup scripts)
+  and **probed the live project** (temp user created → fully cleaned up;
+  probe script outside the repo):
+  * ✅ **Tier gate live**: anon key reads predictions → only `free` rows
+    (80) — the plan-1.x RLS migration holds.
+  * 🔴 **Self-upgrade to VVIP confirmed live**: a fresh user inserting
+    *its own* profile row with `current_tier='VVIP Tier'` → 201, and its
+    prediction read then returned **premium 51 + vip 38 + vvip 45 rows**
+    — full gate bypass. Root cause: the `user_profiles` policies scope
+    *who* but not *which columns* (RLS can't), and tier upgrades are
+    client-attested by design (Flutterwave callback runs in the browser).
+    **Cannot be closed from this repo alone without breaking payments** —
+    recommended fix recorded in the migration header: server-side
+    verification (webhook or edge function holding the Flutterwave secret)
+    upgrading tier from verified transactions; column grants alone would
+    equally block paying customers.
+  * 🔴 **`app_settings` world-writable** (anon INSERT 201) → fixed by the
+    migration (booking code protection box above).
+  * 🟠 **World-UPDATE policies** on `payment_transactions` and
+    `subscription_events` (`FOR UPDATE USING (true)` — any user → any
+    user's rows) → dropped; nothing in the repo updates them as a client,
+    service role bypasses RLS. `referrals` INSERT (`WITH CHECK (true)`)
+    → scoped to the two participants (UPDATE kept: the signup upsert
+    needs it and it's already participant-scoped).
+  * 🟠 **Payment audit trail silently broken**: the app's post-checkout
+    insert sent `plan_id`, which the live API rejects (`42703 column
+    ... does not exist`, probed) — every purchase left **no row** in
+    `payment_transactions` (error was swallowed). Fixed to the live
+    columns (`transaction_id`, `period` verified via `limit=0` selects)
+    with failure logging; side effect: no rollback of a paying customer's
+    tier over the audit row.
+  * 🟡 **Out-of-scope findings, flagged not changed**: `admin_urls` FOR
+    ALL, `admin_users`/`system_logs` world-SELECT (an admin panel outside
+    this repo may depend on them — needs an owner decision);
+    `user_profiles` "public read for referral validation" exposes
+    emails+names to anon (needed by signup's referral lookup — worth
+    narrowing to the code column later). Secrets audit: anon key and
+    Flutterwave *public* key are the only keys in the client bundle (by
+    design), `SUPABASE_SERVICE_KEY` appears only in `.env` (gitignored,
+    never committed) + workflows/ai scripts, and `errors.test` already
+    asserts error copy never leaks internals. Auth screens audit:
+    OAuth redirect is origin-bound, session persists via SecureStore/
+    localStorage adapter, `detectSessionInUrl: false`.
+- [x] **Commit changes** (`bde654f`; App tests run 40472211527 → success,
+  eleven suites — validation 49 + rateLimit 28 + bookingGuard 24 = **101 new
+  checks** for **333 total**; `tsc --noEmit` exit 0). **Action required: run
+  `statwise/supabase-security-migration.sql` in the Supabase SQL editor**
+  — the app-side guards work immediately, the server-side rate limit and
+  RLS locks take effect when the migration runs (verification queries are
+  in the file header).
 
 ### Step 4.4: Observability
 - [ ] **Add error tracking** - Sentry or similar
