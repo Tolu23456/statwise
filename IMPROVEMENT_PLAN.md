@@ -786,12 +786,70 @@ to start collecting push subscriptions (everything no-ops safely until then).
   in the file header).
 
 ### Step 4.4: Observability
-- [ ] **Add error tracking** - Sentry or similar
-- [ ] **Add metrics logging** - Prediction counts, success rates
-- [ ] **Add performance monitoring** - Track slow queries
-- [ ] **Create dashboard** - Simple metrics view
-- [ ] **Add alerts** - For critical failures
-- [ ] **Commit changes**
+- [x] **Add error tracking** - Sentry or similar
+  No Sentry (adds a paid-ish dependency + DSN surface) — a zero-package
+  pipeline instead: `lib/telemetry.ts` defines 5 event kinds
+  (`render_error`, `react_error`, `uncaught`, `slow_query`, `custom`)
+  with **hard caps** (500-char sanitized message, 2 KiB context JSON,
+  path only — never a full URL/query string) and a per-session budget
+  (30/hour on the shared sliding limiter). Four capture paths, all live:
+  (1) `ErrorBoundary.componentDidCatch` reports render crashes with the
+  component stack; (2) `installWebTelemetry` intercepts **minified React
+  invariants** through a delegating `console.error` wrapper — the #418
+  hydration mismatch 4.2 surfaced is now a counted `react_error` metric;
+  (3) `window error` + `unhandledrejection` → `uncaught`; (4) explicit
+  `captureEvent` from screens. The transport (`setEventSink` in
+  `app/_layout.tsx` → `client_events` rows) swallows every failure and is
+  a **no-op until the migration runs** — telemetry can never break the
+  app. **52 checks** (`telemetry.test`, twelfth CI suite) assert the
+  caps, the no-op contract, sink-failure isolation (a throwing sink
+  surfaces nowhere and can't retry-storm), the budget and payload
+  redaction.
+- [x] **Add metrics logging** - Prediction counts, success rates
+  `statwise/scripts/metrics_report.py` (stdlib only — no pip install)
+  logs, per day: predictions published in 24h + **AI Picks share**
+  (`stats.is_ai_pick`) + tier split; **settled accuracy using the exact
+  production rule** from `ai/settle_predictions.py`
+  (`actual_result == prediction`, `status = completed`) overall and per
+  tier; booking-code pipeline counters + published-code age;
+  `client_events` counts by kind. First live run against the real
+  database: 18 predictions/24h (6 AI Picks, 33.3%), **108 settled picks
+  at 48.1%** (free 54.5 / premium 50.0 / vip 40.0 / vvip 33.3 — reported
+  verbatim, including the below-50% tiers), booking 2/2 generations.
+  The script distinguishes *empty window* / *failed query* / *missing
+  table* — a schema problem reads as "unavailable", never as "all clear"
+  (caught and fixed during development: an earlier fallback masked a
+  legitimately empty window).
+- [x] **Add performance monitoring** - Track slow queries
+  A `PerformanceObserver` on Resource Timing flags **Supabase REST calls
+  ≥ 1 s** (`/rest/v1/`, `/auth/v1/` only — static assets and third-party
+  URLs never qualify; query strings are stripped before storage so
+  filters/user data can't leak). Pure predicate `isSlowResource` +
+  `pathOf` unit-tested (13 of the 52 checks). The daily report turns the
+  rows into count / p50 / p95 / max.
+- [x] **Create dashboard** - Simple metrics view
+  The dashboard is the **GitHub Actions step summary** of
+  `metrics-daily.yml` (cron `23 4 * * *` + dispatch) — the full Markdown
+  report lands on every run's summary page, and its run history is
+  itself the trend view. Per the Step 3.3 decision, no new app tab and
+  no new hosted service; the report also prints to stdout for local
+  reads (`python statwise/scripts/metrics_report.py`).
+- [x] **Add alerts** - For critical failures
+  `--enforce-alerts` fails the daily run (→ GitHub's workflow-failure
+  emails, the alert channel) when: **0 predictions published in 24 h**
+  (pipeline died silently) or **≥ 25 client error events in 24 h**
+  (users are actively breaking). Verified live in both modes: report
+  mode exits 0 with the dashboard; enforce mode exits 1 on a real
+  condition. Retention: `--prune` applies the 90-day `client_events`
+  cap from the workflow (pg_cron not assumed enabled).
+- [x] **Commit changes** (`045137d`; App tests run 40474543826 → success,
+  twelve suites — telemetry.test adds **52 checks** for **385 total**;
+  `tsc --noEmit` exit 0; metrics script smoke-run live against the real
+  database, report-only). **Action required: run
+  `statwise/supabase-telemetry-migration.sql` in the Supabase SQL
+  editor** (third pending migration; until then the app's telemetry is a
+  silent no-op and the daily report says so — predictions, accuracy and
+  booking metrics work regardless).
 
 ### Step 4.5: A/B Testing Framework
 - [ ] **Design experiment framework** - Feature flags
