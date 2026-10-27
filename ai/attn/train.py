@@ -168,6 +168,14 @@ def train_model(Ztr: np.ndarray, tgt: np.ndarray, wtr: np.ndarray,
     history = []
     best_ll, best_state, bad = float("inf"), None, 0
     t0 = time.time()
+    # Compute budget (env, minutes): stop AFTER the current epoch once
+    # exceeded, keeping best-so-far weights so parity/eval/report still run.
+    # This is a wall-clock limit chosen a priori — never holdout-derived.
+    budget_s = float(os.environ.get("ATTN_TIME_BUDGET_MIN", "0") or 0) * 60.0
+    budget_stopped = False
+    logger.info(f"[attn] train_model: n={n} tokens={Ztr.shape[1]} "
+                f"batch={batch} steps/epoch={steps_per_epoch} "
+                f"epochs={cfg.epochs}")
     for ep in range(cfg.epochs):
         model.train()
         perm = torch.randperm(n)
@@ -194,6 +202,19 @@ def train_model(Ztr: np.ndarray, tgt: np.ndarray, wtr: np.ndarray,
             opt.step()
             sched.step()
             ep_loss += float(loss.detach())
+            done = i // batch + 1
+            if done % 50 == 0:
+                el = time.time() - t0
+                logger.info(f"[attn]   ep {ep + 1} step {done}/"
+                            f"{steps_per_epoch} ({el:.0f}s elapsed, "
+                            f"{el / max(1, done):.2f}s/step)")
+                if budget_s and el > budget_s:
+                    # Stop mid-epoch: weights so far are valid, and
+                    # best_state (if any) is reloaded after the loop.
+                    budget_stopped = True
+                    logger.info(f"[attn] time budget {budget_s / 60:.0f} min "
+                                f"reached mid-epoch — stopping")
+                    break
         val_ll = _eval_val()
         history.append({"epoch": ep, "train_loss": round(ep_loss / max(1, steps_per_epoch), 5),
                         "inner_val_ll": round(val_ll, 5),
@@ -212,11 +233,20 @@ def train_model(Ztr: np.ndarray, tgt: np.ndarray, wtr: np.ndarray,
             logger.info(f"[attn] early stop at epoch {ep + 1} "
                         f"(best inner-val LL {best_ll:.5f})")
             break
+        if budget_s and time.time() - t0 > budget_s:
+            budget_stopped = True
+            logger.info(f"[attn] time budget {budget_s / 60:.0f} min reached "
+                        f"after epoch {ep + 1} — keeping best-so-far weights "
+                        f"(best inner-val LL {best_ll:.5f})")
+            break
     if best_state is not None:
         model.load_state_dict(best_state)
     model.eval()
-    return model, {"history": history, "best_inner_val_ll": round(best_ll, 5),
-                   "best_epoch": int(np.argmin([h["inner_val_ll"] for h in history]))}
+    info = {"history": history, "best_inner_val_ll": round(best_ll, 5),
+            "best_epoch": int(np.argmin([h["inner_val_ll"] for h in history])),
+            "time_budget_min": round(budget_s / 60.0, 1),
+            "budget_stopped": budget_stopped}
+    return model, info
 
 
 def _lgbm_reference(Xtr, ytr, gtr, wtr, aux, Xh, yh, gh, bh, oh, mid):
@@ -297,6 +327,17 @@ def main(argv=None) -> int:
     df = df.sort_values("date", kind="stable").reset_index(drop=True)
     if args.smoke:
         df = df.tail(int(os.environ.get("ATTN_SMOKE_TAIL", "40000"))).reset_index(drop=True)
+    else:
+        # ATTN_TRAIN_ROWS: keep only the most recent N rows (0 = all).
+        # A-PRIORI compute/recency cap, never chosen by holdout outcomes:
+        # the recency half-life (1460d) down-weights rows older than ~13y
+        # below 0.1 of peak, so 170k rows retains every row with weight
+        # > ~0.10 while cutting feature-build/teacher/train time ~2x.
+        cap = int(os.environ.get("ATTN_TRAIN_ROWS", "0"))
+        if cap and len(df) > cap:
+            logger.info(f"[attn] ATTN_TRAIN_ROWS={cap:,}: "
+                        f"keeping most recent {cap:,} of {len(df):,} rows")
+            df = df.tail(cap).reset_index(drop=True)
     dates_all = pd.to_datetime(df["date"], errors="coerce")
     holdout_days = int(cfg.holdout_days)
     split_at = dates_all.max() - pd.Timedelta(days=holdout_days)
