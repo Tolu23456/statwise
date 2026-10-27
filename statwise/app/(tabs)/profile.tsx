@@ -13,6 +13,7 @@ import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, ReferralCode } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme, ThemeMode } from '@/context/ThemeContext';
+import { QUERY_KEYS, STALE_TIME } from '@/lib/queryConfig';
 import {
   registerForPush, unregisterPush, pushSupported, currentPermission, pushBlockReason,
 } from '@/lib/push';
@@ -87,7 +88,7 @@ export default function ProfileScreen() {
   const tierColors = TierBadgeColors[profile?.current_tier ?? 'Free Tier'];
 
   const { data: referral } = useQuery<ReferralCode | null>({
-    queryKey: ['referral', user?.id],
+    queryKey: QUERY_KEYS.referral(user?.id),
     queryFn: async () => {
       if (!user) return null;
       const { data } = await supabase
@@ -98,6 +99,8 @@ export default function ProfileScreen() {
       return data as ReferralCode ?? null;
     },
     enabled: !!user,
+    // Plan 4.1 — user data: fresh enough for referral rewards, no focus refetch.
+    staleTime: STALE_TIME['user-data'],
   });
 
   const rewardPoints = referral

@@ -10,6 +10,7 @@ import { useRouter } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
+import { QUERY_KEYS, STALE_TIME } from '@/lib/queryConfig';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 
@@ -72,7 +73,7 @@ export default function InsightsScreen() {
   const topInset = Platform.OS === 'web' ? 0 : insets.top;
 
   const { data: insights = [], isLoading, refetch, isFetching } = useQuery<Insight[]>({
-    queryKey: ['insights'],
+    queryKey: QUERY_KEYS.insights(),
     queryFn: async () => {
       const { data, error } = await supabase
         .from('insights')
@@ -82,6 +83,8 @@ export default function InsightsScreen() {
       return data?.length ? data : MOCK_INSIGHTS;
     },
     enabled: hasAccess,
+    // Plan 4.1 — insights only move when the model writes; no focus refetch.
+    staleTime: STALE_TIME.aggregate,
   });
 
   function handleReadMore(item: Insight) {

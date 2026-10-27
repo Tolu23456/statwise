@@ -9,6 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
+import { QUERY_KEYS, STALE_TIME } from '@/lib/queryConfig';
 import { useTheme } from '@/context/ThemeContext';
 import { useAuth } from '@/context/AuthContext';
 
@@ -93,7 +94,7 @@ export default function BacktestingScreen() {
   const allowedTiers = TIER_DB_ALLOWED[userTier] ?? ['free'];
 
   const { data: results = [], isLoading, refetch, isFetching, error } = useQuery<PredictionResult[]>({
-    queryKey: ['backtesting', userTier],
+    queryKey: QUERY_KEYS.backtesting(userTier),
     queryFn: async () => {
       const thirtyDaysAgo = new Date(Date.now() - 30 * 86400000).toISOString().split('T')[0];
       const cols =
@@ -132,7 +133,7 @@ export default function BacktestingScreen() {
         .filter(isModelRow)
         .map(r => ({ ...r, actual_result: null }));
     },
-    staleTime: 5 * 60 * 1000,
+    staleTime: STALE_TIME.backtest,
     retry: 1,
   });
 

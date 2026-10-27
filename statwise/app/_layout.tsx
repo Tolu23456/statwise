@@ -4,6 +4,7 @@ import { Stack, useRouter, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Platform } from 'react-native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QUERY_DEFAULTS } from '@/lib/queryConfig';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 // Per-weight entry points: the package barrel re-exports all 22 Inter TTFs (~7.5 MB),
@@ -19,7 +20,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 SplashScreen.preventAutoHideAsync();
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({ defaultOptions: QUERY_DEFAULTS });
 
 function RootLayoutNav() {
   const { session, loading } = useAuth();

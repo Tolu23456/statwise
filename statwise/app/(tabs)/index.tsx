@@ -22,6 +22,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
 import { aiPicksLabel, aiPicksOf, certaintyOf, certaintyTone, isAiPick } from '@/lib/aiPicks';
 import { RETRY_COPY } from '@/lib/errors';
+import { QUERY_KEYS, STALE_TIME } from '@/lib/queryConfig';
 import {
   FAVORITES_KEY,
   favoritesLabel,
@@ -148,7 +149,7 @@ export default function HomeScreen() {
   }, [appActive]);
 
   const { data: predictions = [], isLoading, isError, refetch, isFetching, dataUpdatedAt } = useQuery<Prediction[]>({
-    queryKey: ['predictions', userTier],
+    queryKey: QUERY_KEYS.predictions(userTier),
     queryFn: async ({ signal }) => {
       try {
         const today = new Date().toISOString().split('T')[0];
@@ -201,7 +202,7 @@ export default function HomeScreen() {
     refetchIntervalInBackground: false,
     refetchOnWindowFocus: true,
     refetchOnMount: true,
-    staleTime: 30 * 1000,
+    staleTime: STALE_TIME['live-feed'],
     retry: (failureCount, error: any) => {
       if (error?.name === 'AbortError' || error?.message?.includes('abort') || error?.message?.includes('Lock broken') || error?.message?.includes('fetch')) {
         return false;
@@ -250,7 +251,7 @@ export default function HomeScreen() {
         throw e;
       }
     },
-    staleTime: 5 * 60 * 1000,
+    staleTime: STALE_TIME.aggregate,
     retry: 1,
   });
 
@@ -261,14 +262,23 @@ export default function HomeScreen() {
         event: '*',
         schema: 'public',
         table: 'predictions',
-      }, () => {
+      }, (payload: any) => {
         setNewPredictionsBadge(prev => prev + 1);
         Animated.sequence([
           Animated.timing(badgeFade, { toValue: 1, duration: 300, useNativeDriver: true }),
           Animated.delay(5000),
           Animated.timing(badgeFade, { toValue: 0, duration: 600, useNativeDriver: true }),
         ]).start();
-        queryClient.invalidateQueries({ queryKey: ['predictions', userTier] });
+        queryClient.invalidateQueries({ queryKey: QUERY_KEYS.predictions(userTier) });
+        // Plan 4.1 — a settlement rewrites accuracy history and insights.
+        // Marking them stale costs nothing while those screens are closed
+        // (react-query only refetches active observers) and guarantees the
+        // numbers are current the moment they are opened.
+        const changed = payload?.new;
+        if (changed?.status === 'completed' || changed?.settled_at) {
+          queryClient.invalidateQueries({ queryKey: QUERY_KEYS.backtesting(userTier) });
+          queryClient.invalidateQueries({ queryKey: QUERY_KEYS.insights() });
+        }
         sendBrowserNotification('StatWise', 'New predictions are available!');
       })
       .subscribe();

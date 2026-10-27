@@ -7,6 +7,7 @@ name: App tests
 #   - plan 3.2 web-push helpers (base64url VAPID key, subscription row)
 #   - plan 3.3 AI Picks surfacing (jsonb flag, certainty ranking/tone)
 #   - plan 3.4 error copy (no raw errors in the UI) + offline detection
+#   - plan 4.1 query cache policy (stale/gc budgets, retry bounds, keys)
 # Pure Node, no npm install needed.
 
 on:
@@ -77,3 +78,10 @@ jobs:
             --outDir "$RUNNER_TEMP/favorites-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/favorites-test/favorites.test.js"
+      - name: Query cache policy tests (plan 4.1)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/queryConfig.ts statwise/lib/queryConfig.test.ts \
+            --outDir "$RUNNER_TEMP/queryconfig-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/queryconfig-test/queryConfig.test.js"

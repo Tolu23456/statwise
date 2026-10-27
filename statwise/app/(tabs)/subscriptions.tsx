@@ -9,6 +9,7 @@ import * as Haptics from 'expo-haptics';
 import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, FLUTTERWAVE_PUBLIC_KEY } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { useQueryClient } from '@tanstack/react-query';
 import { useTheme } from '@/context/ThemeContext';
 
 type Plan = {
@@ -90,6 +91,7 @@ export default function SubscriptionsScreen() {
   const C = Colors[scheme];
   const insets = useSafeAreaInsets();
   const { profile, user, refreshProfile } = useAuth();
+  const queryClient = useQueryClient();
 
   const [period, setPeriod] = useState<'daily' | 'monthly'>('daily');
   const [loading, setLoading] = useState<string | null>(null);
@@ -135,6 +137,9 @@ export default function SubscriptionsScreen() {
       }).select();
 
       await refreshProfile();
+      // Plan 4.1 — payment is a mutation: reward points and anything keyed
+      // on the old tier must not keep showing the pre-purchase state.
+      queryClient.invalidateQueries({ queryKey: ['referral'] });
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
       Alert.alert('Payment Successful', `You are now on the ${plan.name} plan!`);
     } catch (e) {
