@@ -1,5 +1,7 @@
 import { Download, BarChart3, Brain, Trophy, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { LivePredictions } from '@/components/LivePredictions'
+import { AccuracyStats } from '@/components/AccuracyStats'
 
 export default function Home() {
   return (
@@ -27,6 +29,28 @@ export default function Home() {
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Live preview — the same fixture board + settled-hit-rate the app shows */}
+      <section className="px-6 py-14 max-w-6xl mx-auto">
+        <div className="flex items-end justify-between mb-6 gap-4">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold">On the Board Now</h2>
+            <p className="text-gray-400 mt-2">
+              Live from the app — model calls, confidence and value finds.
+            </p>
+          </div>
+          <Link
+            href="/predictions"
+            className="text-primary text-sm font-semibold hover:underline whitespace-nowrap"
+          >
+            See all predictions →
+          </Link>
+        </div>
+        <LivePredictions limit={3} compact />
+        <div className="mt-8">
+          <AccuracyStats compact />
         </div>
       </section>
 
