@@ -135,3 +135,10 @@ jobs:
             --outDir "$RUNNER_TEMP/forumfeed-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/forumfeed-test/forumFeedCore.test.js"
+      - name: Insights library tests (VIP content expansion)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/insightsCore.ts statwise/lib/insightsCore.test.ts \
+            --outDir "$RUNNER_TEMP/insights-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/insights-test/insightsCore.test.js"

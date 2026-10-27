@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity,
-  ActivityIndicator, Platform, RefreshControl,
+  ActivityIndicator, Platform, RefreshControl, ScrollView,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useQuery } from '@tanstack/react-query';
@@ -13,39 +13,14 @@ import { supabase } from '@/lib/supabase';
 import { QUERY_KEYS, STALE_TIME } from '@/lib/queryConfig';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
-
-type Insight = {
-  id: string;
-  title: string;
-  summary: string;
-  content?: string;
-  published_at: string;
-  tier_required: string;
-  category?: string;
-};
-
-const ALLOWED_TIERS = ['VIP Tier', 'VVIP Tier'];
-
-const MOCK_INSIGHTS: Insight[] = [
-  {
-    id: '1', title: 'The Underdog Advantage', category: 'Strategy',
-    summary: 'We explore the statistical patterns of underdog victories and how to spot high-value opportunities in modern football.',
-    content: `## The Underdog Advantage\n\nIn football betting, the concept of "value" is everything. When a team is underestimated by the market, you get an edge.\n\n### Key Findings\n\n- Underdogs with a 30–40% win probability are mispriced 28% of the time in our model\n- Home underdogs outperform expectations by +4.2% ROI on average\n- Teams with 3+ consecutive losses are systematically undervalued\n\n### How to Use This\n\nLook for matches where our model confidence is 10%+ higher than implied odds. That gap is where the value lives.\n\nFocus on mid-table teams playing at home against top-4 sides after an international break — historically the highest edge scenario.`,
-    published_at: new Date(Date.now() - 86400000 * 3).toISOString(), tier_required: 'VIP Tier',
-  },
-  {
-    id: '2', title: 'Market Trends: Q1 Predictions', category: 'Analysis',
-    summary: 'Our models project a significant shift in European league dynamics. Here\'s what to watch out for.',
-    content: `## Market Trends Q1\n\n### What's Changing\n\nThe European market is showing three major trends this quarter:\n\n1. **Under-inflation in La Liga** — goals per game have dropped 0.4 compared to last season. Over/Under lines haven't adjusted yet.\n\n2. **Home advantage erosion** — Post-COVID home advantage data is now fully factored in by our model. Many books still use pre-2020 baselines.\n\n3. **Champions League group stage value** — Heavily favored teams are increasingly being rested mid-competition. Watch for lineup news.\n\n### Recommended Leagues\n\nBest edge currently: Eredivisie (home teams +6.1% ROI) and Brazilian Série A (unders outperforming by 11%).`,
-    published_at: new Date(Date.now() - 86400000 * 5).toISOString(), tier_required: 'VIP Tier',
-  },
-  {
-    id: '3', title: 'Over/Under: The Hidden Edge', category: 'Tactics',
-    summary: 'Why most bettors ignore over/under markets and how you can profit from this systematic blind spot.',
-    content: `## Over/Under: The Hidden Edge\n\n### The Blind Spot\n\nMost casual bettors focus on match winner markets. This concentrates public money and compresses value. The Over/Under (goals) market receives less attention — and is mispriced more often.\n\n### Our Model's Edge\n\nUsing Poisson goal modeling with team-specific attack/defense ratings, our Over/Under accuracy over the last 6 months:\n\n- **Over 2.5 predictions**: 61.4% hit rate (break-even is ~52%)\n- **Under 2.5 predictions**: 58.9% hit rate\n\n### Best Scenarios for Unders\n\n- Both teams in bottom-half defensive form\n- Mid-week cup matches following weekend exertion\n- Rivalry derbies (historically low-scoring due to tactical caution)\n\n### Best Scenarios for Overs\n\n- Both teams' last 5 home/away averages above 2.8 goals\n- Teams with nothing to play for (end of season)\n- Matches with odds_home below 1.60 (dominant team plays open)`,
-    published_at: new Date(Date.now() - 86400000 * 7).toISOString(), tier_required: 'VIP Tier',
-  },
-];
+import {
+  ALL_CATEGORIES,
+  INSIGHTS_LIBRARY,
+  INSIGHT_TIERS,
+  filterInsights,
+  insightCategories,
+  type Insight,
+} from '@/lib/insightsCore';
 
 function timeAgo(dateStr: string): string {
   const diff = Date.now() - new Date(dateStr).getTime();
@@ -69,8 +44,11 @@ export default function InsightsScreen() {
   const { profile } = useAuth();
   const router = useRouter();
 
-  const hasAccess = ALLOWED_TIERS.includes(profile?.current_tier ?? '');
+  const hasAccess = INSIGHT_TIERS.includes(profile?.current_tier ?? '');
   const topInset = Platform.OS === 'web' ? 0 : insets.top;
+  // Category filter — derived from whatever list loaded (library or DB),
+  // so chips always match the data actually on screen.
+  const [category, setCategory] = useState(ALL_CATEGORIES);
 
   const { data: insights = [], isLoading, refetch, isFetching } = useQuery<Insight[]>({
     queryKey: QUERY_KEYS.insights(),
@@ -79,13 +57,16 @@ export default function InsightsScreen() {
         .from('insights')
         .select('*')
         .order('published_at', { ascending: false });
-      if (error) return MOCK_INSIGHTS;
-      return data?.length ? data : MOCK_INSIGHTS;
+      if (error) return INSIGHTS_LIBRARY;
+      return data?.length ? data : INSIGHTS_LIBRARY;
     },
     enabled: hasAccess,
     // Plan 4.1 — insights only move when the model writes; no focus refetch.
     staleTime: STALE_TIME.aggregate,
   });
+
+  const categories = insightCategories(insights);
+  const visible = filterInsights(insights, category);
 
   function handleReadMore(item: Insight) {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -130,7 +111,7 @@ export default function InsightsScreen() {
         </View>
 
         <Text style={[styles.previewLabel, { color: C.textSecondary }]}>Preview — available with VIP:</Text>
-        {MOCK_INSIGHTS.map(insight => (
+        {INSIGHTS_LIBRARY.map(insight => (
           <TouchableOpacity
             key={insight.id}
             style={[styles.previewCard, { backgroundColor: C.card, borderColor: C.border }]}
@@ -176,9 +157,41 @@ export default function InsightsScreen() {
           <ActivityIndicator size="large" color={C.primary} />
         </View>
       ) : (
-        <FlatList
-          data={insights}
-          keyExtractor={item => item.id}
+        <>
+          {categories.length > 2 && (
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.chipRow}
+            >
+              {categories.map(cat => {
+                const active = cat === category;
+                return (
+                  <TouchableOpacity
+                    key={cat}
+                    style={[
+                      styles.chip,
+                      { backgroundColor: active ? C.primary : C.inputBg, borderColor: active ? C.primary : C.border },
+                    ]}
+                    onPress={() => {
+                      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                      setCategory(cat);
+                    }}
+                    activeOpacity={0.8}
+                  >
+                    <Text
+                      style={[styles.chipText, { color: active ? '#fff' : C.textSecondary }]}
+                    >
+                      {cat}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </ScrollView>
+          )}
+          <FlatList
+            data={visible}
+            keyExtractor={item => item.id}
           contentContainerStyle={[
             styles.list,
             { paddingBottom: insets.bottom + (Platform.OS === 'web' ? 24 : 80) },
@@ -222,7 +235,8 @@ export default function InsightsScreen() {
               <Text style={[styles.emptyText, { color: C.textSecondary }]}>No insights yet. Check back soon.</Text>
             </View>
           }
-        />
+          />
+        </>
       )}
     </View>
   );
@@ -253,6 +267,13 @@ const styles = StyleSheet.create({
   readBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 14, paddingVertical: 6, borderRadius: 8 },
   readBtnText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   centered: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  // Category filter chips (horizontal scroll under the header).
+  chipRow: { paddingHorizontal: 16, paddingBottom: 10, gap: 8 },
+  chip: {
+    paddingHorizontal: 14, paddingVertical: 7, borderRadius: 18,
+    borderWidth: 1, alignSelf: 'flex-start',
+  },
+  chipText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   empty: { alignItems: 'center', paddingTop: 60, gap: 12 },
   emptyText: { fontSize: 15, fontFamily: 'Inter_400Regular', textAlign: 'center' },
   lockContainer: { flex: 1, paddingHorizontal: 16 },
