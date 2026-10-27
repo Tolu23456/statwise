@@ -550,12 +550,49 @@ to start collecting push subscriptions (everything no-ops safely until then).
 
 ### Step 4.1: Query Caching Strategy
 - [x] **Audit React Query usage** - Review all queries
-- [ ] **Set optimal staleTime** - Per query type
-- [ ] **Set gcTime** - Proper garbage collection
-- [ ] **Add query invalidation** - On mutations/settlements
-- [ ] **Prevent refetch storms** - Debounce/throttle
-- [ ] **Test performance** - Check network requests
-- [ ] **Commit changes**
+  (all five `useQuery` sites catalogued: home predictions + available-count,
+  insights, profile referral, backtesting — `QueryClient` was constructed
+  with **no defaults**, so staleTime 0 + focus refetch fired on every tab
+  back-and-forth)
+- [x] **Set optimal staleTime** - Per query type
+  (central `lib/queryConfig.ts`: `STALE_TIME['live-feed']` 30s for the
+  predictions feed — realtime events and the plan-2.1 tiered poll do the
+  real refreshing, staleTime only decides when a mount is free data;
+  `aggregate` 5min for counts/insights; `user-data` 5min for the referral
+  code (user-scoped key so account switches can't serve the previous
+  user's code); `backtest` 5min — accuracy only moves when matches settle)
+- [x] **Set gcTime** - Proper garbage collection
+  (`GC_TIME` 10min applied as the default for every query: long enough
+  to outlive the stale budget and survive tab switches, bounded so no
+  session-long memory; every kind's staleTime ≤ gcTime, asserted in tests)
+- [x] **Add query invalidation** - On mutations/settlements
+  (realtime `predictions` handler invalidates the feed always, and
+  invalidates `backtesting` + `insights` **only when the payload row
+  actually settled** — `status === 'completed' || settled_at` — so a row
+  edit doesn't refetch closed screens for nothing; payment success in
+  subscriptions invalidates the `['referral']` prefix so reward points
+  never show the pre-purchase state)
+- [x] **Prevent refetch storms** - Debounce/throttle
+  (`QUERY_DEFAULTS`: `refetchOnWindowFocus: false` globally — only the
+  live home feed opts back in explicitly; react-query's in-flight
+  deduplication plus plan 2.1's visibility/network-gated polling mean a
+  screen refetch, tab switch or reconnect can't stack duplicate requests;
+  `retry: 1` bounds the retry amplification react-query defaults to 3,
+  mutations `retry: 0` so a payment can never double-apply)
+- [x] **Test performance** - Check network requests
+  `tsc lib/queryConfig.ts lib/queryConfig.test.ts` + node → **33/33
+  PASS** (per-kind budgets finite/ordered — live-feed freshest, gcTime
+  ≥ longest stale and bounded ≤1h, focus refetch off, retry bounds,
+  distinct/typed query keys incl. per-user referral isolation); full
+  `tsc --noEmit` exit 0; CI **App tests run 40464899476** → success, all
+  **eight** suites (polling 29, live-state 31, push 14, aiPicks 25,
+  errors 51, network 14, favorites 35, queryConfig 33 = **232 checks**).
+  Honest note: no live network capture — measuring request counts in a
+  real browser needs the running app, which stays untouched per the
+  RAM instruction; the policy-level guarantees above are what's testable
+  here, and the request-count win (no focus refetch, in-flight dedupe)
+  follows from react-query semantics rather than a timed trace.
+- [x] **Commit changes** (`b20e014` code)
 
 ### Step 4.2: Bundle Optimization
 - [ ] **Analyze bundle** - Use expo/bundle tools
