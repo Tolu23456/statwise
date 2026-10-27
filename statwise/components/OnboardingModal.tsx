@@ -6,8 +6,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '@/context/ThemeContext';
 import { Colors } from '@/constants/colors';
-
-export const ONBOARDING_KEY = 'statwise_onboarding_v1';
+import { ONBOARDING_KEY } from '@/lib/onboarding';
 
 const SLIDES = [
   {
@@ -110,14 +109,8 @@ export function OnboardingModal({ visible, onDone }: Props) {
   );
 }
 
-export async function shouldShowOnboarding(): Promise<boolean> {
-  try {
-    const val = await AsyncStorage.getItem(ONBOARDING_KEY);
-    return val !== 'true';
-  } catch {
-    return false;
-  }
-}
+// shouldShowOnboarding / ONBOARDING_KEY moved to lib/onboarding.ts (plan 4.2)
+// so importing the gate no longer drags the whole modal module in.
 
 const styles = StyleSheet.create({
   overlay: {

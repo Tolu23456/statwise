@@ -14,10 +14,8 @@ import { supabase, Prediction } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { PredictionCard } from '@/components/PredictionCard';
-import { PredictionDetailModal } from '@/components/PredictionDetailModal';
 import { SkeletonCard } from '@/components/SkeletonCard';
-import { OnboardingModal, shouldShowOnboarding } from '@/components/OnboardingModal';
-import { BookingCodeModal } from '@/components/BookingCodeModal';
+import { shouldShowOnboarding } from '@/lib/onboarding';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
 import { aiPicksLabel, aiPicksOf, certaintyOf, certaintyTone, isAiPick } from '@/lib/aiPicks';
@@ -33,6 +31,19 @@ import {
 } from '@/lib/favorites';
 import { pollIntervalMs, kickoffMs } from '@/lib/polling';
 import { currentNetworkState, subscribeNetwork, type NetworkState } from '@/lib/network';
+
+// Plan 4.2 — lazy-load the three modals. They are only ever opened by user
+// action (tap a card, tap the booking badge, first run), so their modules —
+// slides, styles, clipboard, detail layout — evaluate on first open instead
+// of at startup. Metro compiles `import()` to a deferred require (the code
+// still ships in the single web bundle; it just doesn't *run* until called),
+// and React.lazy keeps rendering until it resolves.
+const PredictionDetailModal = React.lazy(() =>
+  import('@/components/PredictionDetailModal').then(m => ({ default: m.PredictionDetailModal })));
+const BookingCodeModal = React.lazy(() =>
+  import('@/components/BookingCodeModal').then(m => ({ default: m.BookingCodeModal })));
+const OnboardingModal = React.lazy(() =>
+  import('@/components/OnboardingModal').then(m => ({ default: m.OnboardingModal })));
 
 const LEAGUES = [
   { slug: 'all', name: 'All' },
@@ -107,6 +118,13 @@ export default function HomeScreen() {
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [showModelInfo, setShowModelInfo] = useState(false);
   const [showBookingCode, setShowBookingCode] = useState(false);
+  // Plan 4.2 — mount each modal the first time it is actually opened, then
+  // leave it mounted (visible=false) so close animations still run. This is
+  // what makes the lazy imports deferral-real: nothing below loads its
+  // module until the user opens the thing.
+  const [detailMounted, setDetailMounted] = useState(false);
+  const [bookingMounted, setBookingMounted] = useState(false);
+  const [onboardingMounted, setOnboardingMounted] = useState(false);
 
   const badgeFade = useRef(new Animated.Value(0)).current;
   const pulseAnim = useRef(new Animated.Value(1)).current;
@@ -118,7 +136,10 @@ export default function HomeScreen() {
 
   useEffect(() => {
     shouldShowOnboarding().then(show => {
-      if (show) setShowOnboarding(true);
+      if (show) {
+        setOnboardingMounted(true);
+        setShowOnboarding(true);
+      }
     });
   }, []);
 
@@ -549,7 +570,10 @@ export default function HomeScreen() {
           <View style={styles.titleRight}>
             <TouchableOpacity
               style={[styles.bookingBadge, { backgroundColor: C.successLight }]}
-              onPress={() => setShowBookingCode(true)}
+              onPress={() => {
+                setBookingMounted(true);
+                setShowBookingCode(true);
+              }}
               activeOpacity={0.8}
               hitSlop={6}
             >
@@ -859,6 +883,7 @@ export default function HomeScreen() {
                         key={p.id}
                         style={[styles.aiCard, { backgroundColor: C.card, borderColor: C.border }]}
                         onPress={() => {
+                          setDetailMounted(true);
                           setSelectedPrediction(p);
                           Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
                         }}
@@ -923,6 +948,7 @@ export default function HomeScreen() {
                 favorite={isFavorite(favorites, item.prediction.id)}
                 onToggleFavorite={() => onToggleFavorite(item.prediction.id)}
                 onPress={() => {
+                  setDetailMounted(true);
                   setSelectedPrediction(item.prediction);
                   Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
                 }}
@@ -932,22 +958,34 @@ export default function HomeScreen() {
         />
       )}
 
-      <PredictionDetailModal
-        prediction={selectedPrediction}
-        visible={selectedPrediction !== null}
-        onClose={() => setSelectedPrediction(null)}
-      />
+      {detailMounted && (
+        <React.Suspense fallback={null}>
+          <PredictionDetailModal
+            prediction={selectedPrediction}
+            visible={selectedPrediction !== null}
+            onClose={() => setSelectedPrediction(null)}
+          />
+        </React.Suspense>
+      )}
 
-      <BookingCodeModal
-        visible={showBookingCode}
-        onClose={() => setShowBookingCode(false)}
-        predictions={predictions}
-      />
+      {bookingMounted && (
+        <React.Suspense fallback={null}>
+          <BookingCodeModal
+            visible={showBookingCode}
+            onClose={() => setShowBookingCode(false)}
+            predictions={predictions}
+          />
+        </React.Suspense>
+      )}
 
-      <OnboardingModal
-        visible={showOnboarding}
-        onDone={() => setShowOnboarding(false)}
-      />
+      {onboardingMounted && (
+        <React.Suspense fallback={null}>
+          <OnboardingModal
+            visible={showOnboarding}
+            onDone={() => setShowOnboarding(false)}
+          />
+        </React.Suspense>
+      )}
 
       {showModelInfo && (
         <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.65)', justifyContent: 'center', alignItems: 'center', padding: 20 }}>
