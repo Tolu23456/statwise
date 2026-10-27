@@ -11,3 +11,6 @@ schedule>=1.2
 # Used only for the SportyBet booking-code step; the browser binary is cached
 # separately in the predict workflow.
 playwright>=1.40
+
+# Web push notifications (notify.py sender).
+pywebpush>=2.0

@@ -13,6 +13,9 @@ import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, ReferralCode } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme, ThemeMode } from '@/context/ThemeContext';
+import {
+  registerForPush, unregisterPush, pushSupported, currentPermission, pushBlockReason,
+} from '@/lib/push';
 import { useQuery } from '@tanstack/react-query';
 
 const THEME_OPTIONS: { value: ThemeMode; icon: string; label: string }[] = [
@@ -72,6 +75,13 @@ export default function ProfileScreen() {
   const [savingName, setSavingName] = useState(false);
   const [uploadingPhoto, setUploadingPhoto] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
+  // Plan 3.2: web-push enable/disable feedback (reason shown verbatim).
+  const [pushNote, setPushNote] = useState<string | null>(
+    Platform.OS === 'web' && pushSupported() && currentPermission() === 'denied'
+      ? pushBlockReason('denied')
+      : null,
+  );
+  const [pushBusy, setPushBusy] = useState(false);
 
   const topInset = Platform.OS === 'web' ? 0 : insets.top;
   const tierColors = TierBadgeColors[profile?.current_tier ?? 'Free Tier'];
@@ -441,18 +451,36 @@ export default function ProfileScreen() {
             <Text style={[styles.settingLabel, { color: C.text }]}>Notifications</Text>
             <Switch
               value={profile?.notifications ?? true}
+              disabled={pushBusy}
               onValueChange={async (val) => {
                 if (!user) return;
-                if (val && Platform.OS === 'web' && 'Notification' in window) {
-                  await Notification.requestPermission();
+                setPushBusy(true);
+                try {
+                  // Web: also (un)register this browser for push (plan 3.2).
+                  if (Platform.OS === 'web') {
+                    if (val) {
+                      const res = await registerForPush(supabase, user.id);
+                      setPushNote(res.ok
+                        ? 'Push enabled on this device — you’ll get kickoff, picks and result alerts.'
+                        : res.reason);
+                    } else {
+                      await unregisterPush(supabase);
+                      setPushNote('Push disabled on this device.');
+                    }
+                  }
+                  await supabase.from('user_profiles').update({ notifications: val }).eq('id', user.id);
+                  await refreshProfile();
+                } finally {
+                  setPushBusy(false);
                 }
-                await supabase.from('user_profiles').update({ notifications: val }).eq('id', user.id);
-                await refreshProfile();
               }}
               trackColor={{ false: C.border, true: C.primary }}
               thumbColor="#fff"
             />
           </View>
+          {pushNote ? (
+            <Text style={[styles.pushNote, { color: C.textMuted }]}>{pushNote}</Text>
+          ) : null}
           <View style={[styles.settingRow, { borderBottomColor: C.border }]}>
             <Ionicons name="shield-checkmark-outline" size={20} color={C.textSecondary} />
             <Text style={[styles.settingLabel, { color: C.text }]}>Account Verified</Text>
@@ -580,6 +608,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   settingLabel: { flex: 1, fontSize: 15, fontFamily: 'Inter_400Regular' },
+  pushNote: {
+    fontSize: 12,
+    fontFamily: 'Inter_400Regular',
+    paddingHorizontal: 16,
+    paddingBottom: 12,
+    marginTop: -4,
+  },
   signOutBtn: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10,
     borderRadius: 16, borderWidth: 1.5, padding: 16, marginBottom: 8,

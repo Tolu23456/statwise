@@ -1,0 +1,78 @@
+name: Notify
+
+# Plan step 3.2 — web push notifications.
+#
+# Three kinds, all idempotent (dedupe state in app_settings.notify_state):
+#   kickoff — matches starting in the next ~30 min (cron every 15 min)
+#   picks   — new AI Picks since the last picks run (after each predict run)
+#   settled — picks that settled correctly (after each settle run)
+#
+# Requires the VAPID_PRIVATE_KEY repository secret and the
+# supabase-notifications-migration.sql migration. Without them the script
+# exits 0 with a note — notifications are optional, never break the app.
+
+on:
+  schedule:
+    # Every 15 min: the kickoff window is 25 min, so two ticks always
+    # cover it; :07 offset avoids the :00 thundering herd.
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: 'Which notifications to send'
+        required: true
+        default: 'kickoff'
+        type: choice
+        options:
+          - kickoff
+          - picks
+          - settled
+      dry_run:
+        description: 'Dry run (gather + log, send nothing)'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: notify-${{ github.event.inputs.kind || 'kickoff' }}
+  cancel-in-progress: true
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Send notifications
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then
+            echo "::error::SUPABASE_SERVICE_ROLE_KEY is not configured — cannot notify."
+            exit 1
+          fi
+          # Scheduled runs fan out to every kind (kickoff always; picks and
+          # settled are cheap no-ops when nothing changed).
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python ai/notify.py --kind kickoff
+            python ai/notify.py --kind picks
+            python ai/notify.py --kind settled
+          else
+            EXTRA=""
+            if [ "${{ inputs.dry_run }}" = "true" ]; then EXTRA="--dry-run"; fi
+            # shellcheck disable=SC2086
+            python ai/notify.py --kind ${{ inputs.kind }} $EXTRA
+          fi

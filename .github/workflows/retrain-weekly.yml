@@ -55,6 +55,8 @@ jobs:
           python ai/experimental/test_booking.py
           # Plan 2.4: settlement source-order, day-leak guard, alerts.
           python ai/experimental/test_settle.py
+          # Plan 3.2: push-notification dedupe contract + message builders.
+          python ai/experimental/test_notify.py
 
       - name: Retrain model
         id: retrain

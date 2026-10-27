@@ -39,3 +39,10 @@ jobs:
             --outDir "$RUNNER_TEMP/livefeed-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/livefeed-test/liveFeed.test.js"
+      - name: Web-push helper tests (plan 3.2)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/push.ts statwise/lib/push.test.ts \
+            --outDir "$RUNNER_TEMP/push-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/push-test/push.test.js"
