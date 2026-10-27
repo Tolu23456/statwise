@@ -285,6 +285,11 @@ export default function SubscriptionsScreen() {
       >
         {displayPlans.map(plan => {
           const isActive = plan.tier === currentTier;
+          // Paid users cannot buy a different plan from this screen (the
+          // flow is "switch from your current tier"); those buttons are
+          // disabled and must LOOK disabled — full-opacity tier colours
+          // read as clickable (user report, 2026-10-27).
+          const blocked = !isActive && currentTier !== 'Free Tier' && plan.tier !== currentTier;
           const tc = TierBadgeColors[plan.tier] ?? TierBadgeColors['Free Tier'];
           return (
             <View
@@ -372,12 +377,18 @@ export default function SubscriptionsScreen() {
                 style={[
                   styles.subBtn,
                   {
-                    backgroundColor: isActive ? C.successLight : tc.text,
-                    opacity: loading === plan.id ? 0.7 : 1,
+                    // Disabled states (current plan / locked) sit on the
+                    // neutral surface with muted text instead of the vivid
+                    // tier colour, so they can't be mistaken for actions.
+                    backgroundColor: isActive || blocked ? C.inputBg : tc.text,
+                    opacity: loading === plan.id ? 0.7 : isActive || blocked ? 0.8 : 1,
                   },
+                  isActive || blocked
+                    ? ({ cursor: 'not-allowed' } as object)
+                    : null,
                 ]}
                 onPress={() => handleSubscribe(plan)}
-                disabled={loading === plan.id || isActive || (currentTier !== 'Free Tier' && plan.tier !== currentTier)}
+                disabled={loading === plan.id || isActive || blocked}
                 activeOpacity={0.85}
               >
                 {loading === plan.id ? (
@@ -385,12 +396,17 @@ export default function SubscriptionsScreen() {
                 ) : (
                   <>
                     {isActive && <Ionicons name="checkmark-circle" size={16} color={C.success} />}
-                    <Text style={[styles.subBtnText, { color: isActive ? C.success : '#fff' }]}>
+                    <Text
+                      style={[
+                        styles.subBtnText,
+                        { color: isActive ? C.success : blocked ? C.textMuted : '#fff' },
+                      ]}
+                    >
                       {isActive
                         ? 'Current Plan'
                         : plan.price === 0
                           ? 'Get Free'
-                          : currentTier !== 'Free Tier' && plan.tier !== currentTier
+                          : blocked
                             ? 'Upgrade from here'
                             : 'Pay Now'}
                     </Text>
@@ -398,7 +414,7 @@ export default function SubscriptionsScreen() {
                 )}
               </TouchableOpacity>
 
-              {!isActive && currentTier !== 'Free Tier' && plan.tier !== currentTier && (
+              {blocked && (
                 <Text style={[styles.lockNote, { color: C.textMuted }]}>
                   Switch plans from your current tier on the account screen.
                 </Text>
