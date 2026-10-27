@@ -383,14 +383,59 @@ source-tracked, alerted, reconcile tool, fallback widening).
   analysis + responsive sheet; plan ticked in the follow-up commit)
 
 ### Step 3.2: Push Notifications
-- [ ] **Setup Expo notifications** - Configure push notifications
-- [ ] **Create notification service** - Backend to send notifications
-- [ ] **AI Picks alerts** - Notify on new high-confidence picks
-- [ ] **Match start alerts** - Notify 30min before kickoff
-- [ ] **Settlement alerts** - Notify when picks settle
-- [ ] **Add notification preferences** - User settings
-- [ ] **Test notifications** - End-to-end
-- [ ] **Commit changes**
+- [x] **Setup Expo notifications** - Configure push notifications
+  (browser Push API instead — `expo-notifications` isn't installed and would
+  bloat the Expo **static web** bundle for a native-only feature; zero new npm
+  packages. VAPID keypair: public key in `app_settings.webpush_vapid_public_key`,
+  private key as the `VAPID_PRIVATE_KEY` repo secret)
+- [x] **Create notification service** - Backend to send notifications
+  (`ai/notify.py`: kinds kickoff/picks/settled, dedupe in
+  `app_settings.notify_state` via pure `new_keys`/`mark_sent` with a 500-key
+  cap, 404/410 dead-endpoint purge; `.github/workflows/notify.yml` cron
+  `7,22,37,52 * * * *` fans out all 3 kinds, manual dispatch with `kind` +
+  `dry_run`)
+- [x] **AI Picks alerts** - Notify on new high-confidence picks
+  (`gather_picks`: one grouped batch of new `stats.is_ai_pick` rows since the
+  last run. Flag is **jsonb**, not a column — the first cut filtered
+  `is_ai_pick=eq.true` and got a 400 from PostgREST; now filtered in Python)
+- [x] **Match start alerts** - Notify 30min before kickoff
+  (`gather_kickoff`: 25-min lead with a 5-min under-way floor, cron every
+  15 min so two ticks always cover the window. Real bug caught by a live
+  `--dry-run` — the query only had the `gte` bound and announced fixtures
+  **6250 min** away; now a PostgREST composite `and` (gte+lt) **and** a
+  Python-side window guard, both covered by regression tests)
+- [x] **Settlement alerts** - Notify when picks settle
+  (`gather_settled`: celebrates **correct AI Picks only** — no misses, no
+  non-AI predictions, which would be dozens of pushes a day)
+- [x] **Add notification preferences** - User settings
+  (profile screen Notifications toggle now (un)registers this browser via
+  `registerForPush`/`unregisterPush` and shows the failure reason verbatim;
+  it still writes `user_profiles.notifications`, which `fetch_subscriptions`
+  honours — off means no push even with a stored subscription)
+- [x] **Test notifications** - End-to-end
+  `python ai/experimental/test_notify.py` → **38/38 PASS** (dedupe contract
+  incl. cap, title+body+tag for all 3 kinds, kickoff window bounds, jsonb
+  AI-Pick filter, no-VAPID-key refusal, dry-run no-op) — wired into
+  retrain-weekly.yml; `tsc lib/push.ts lib/push.test.ts` + node →
+  **14/14 PASS** (base64url incl. `-`/`_`, VAPID-shaped key round-trip,
+  subscription row, block reasons) — wired into test-app.yml; full-project
+  `tsc --noEmit` exit 0. Real reads against production, nothing sent:
+  `--kind kickoff/picks/settled --dry-run` all exit 0. CI smoke:
+  notify.yml dispatch run **40461167822** (kind=kickoff, dry_run=true) →
+  **success** — deps incl. `pywebpush` installed clean, log ends
+  `Nothing new for kind=kickoff — no notifications sent.` (no fixture inside
+  the 30-min window at that moment; sends nothing by construction).
+  App tests: run **40461159355** caught a real CI-only defect —
+  `push.ts` referenced `Buffer`, which plain `tsc` has no types for without
+  `@types/node`; dropped the fallback (atob is global in browsers and
+  Node ≥ 16) in `fbba0b7`, re-run **40461508500** → **success**
+  (polling 29 + live-state 31 + web-push 14 checks, all in the same job)
+- [x] **Commit changes** (`8b0f07f` code)
+
+> **Action needed:** run `statwise/supabase-notifications-migration.sql`
+> once in the Supabase SQL editor. Until `push_subscriptions` exists, both
+> the profile toggle and the sender detect it and no-op with a clear log —
+> nothing breaks.
 
 ### Step 3.3: AI Picks Surfacing
 - [ ] **Add AI Picks filter** - Prominent filter on home screen
