@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TextInput, TouchableOpacity,
   ActivityIndicator, KeyboardAvoidingView, Platform, RefreshControl,
-  Alert, Image,
+  Alert, Image, Linking,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -10,6 +10,14 @@ import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, ForumMessage } from '@/lib/supabase';
+import {
+  getForumMessages,
+  refreshForumMessages,
+  removeOptimisticForumMessage,
+  subscribeForumMessages,
+  upsertForumMessages,
+} from '@/lib/forumFeed';
+import { buildForumContent } from '@/lib/forumFeedCore';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { formatChatTime, dayOffset } from '@/lib/format';
@@ -62,10 +70,15 @@ export default function ForumScreen() {
   const insets = useSafeAreaInsets();
   const { user, profile } = useAuth();
 
-  const [messages, setMessages] = useState<ForumMessage[]>([]);
+  // Feed rows come from the app-wide store (lib/forumFeed.ts): hydrated
+  // from AsyncStorage and refreshed in the BACKGROUND by the root-layout
+  // watcher — this screen never owns a fetch loop or a realtime channel.
+  const [messages, setMessages] = useState<ForumMessage[]>(() => getForumMessages());
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [input, setInput] = useState('');
+  const [pendingImage, setPendingImage] = useState<string | null>(null);
+  const [pendingVideo, setPendingVideo] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
   const [mediaUploading, setMediaUploading] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
@@ -76,76 +89,33 @@ export default function ForumScreen() {
   const topInset = Platform.OS === 'web' ? 0 : insets.top;
   const isPremium = PREMIUM_TIERS.includes(profile?.current_tier ?? '');
 
-  const loadMessages = useCallback(async () => {
-    setLoadError(null);
-    try {
-      let { data, error } = await supabase
-        .from('forum_messages')
-        .select('*, user_profiles(username, display_name, avatar_url, current_tier)')
-        .order('created_at', { ascending: true })
-        .limit(100);
-
-      if (error) {
-        const msg: string = error?.message ?? '';
-        if (msg.includes('user_profiles') || msg.includes('relation') || msg.includes('schema') || msg.includes('join')) {
-          const res = await supabase
-            .from('forum_messages')
-            .select('*')
-            .order('created_at', { ascending: true })
-            .limit(100);
-          if (res.error) {
-            setLoadError(friendlyError(res.error));
-            return;
-          }
-          setMessages((res.data ?? []) as ForumMessage[]);
-        } else {
-          setLoadError(friendlyError(error));
-          return;
-        }
-      } else {
-        setMessages((data ?? []) as ForumMessage[]);
-      }
-      setTimeout(() => flatListRef.current?.scrollToEnd({ animated: false }), 150);
-    } catch (e: any) {
-      setLoadError(friendlyError(e));
-    }
-  }, []);
-
   useEffect(() => {
-    setLoading(true);
-    const timeout = setTimeout(() => setLoading(false), 8000);
-    loadMessages()
-      .catch(() => {})
-      .finally(() => {
-        clearTimeout(timeout);
-        setLoading(false);
-      });
-
-    const channel = supabase
-      .channel('forum_messages')
-      .on('postgres_changes', {
-        event: 'INSERT', schema: 'public', table: 'forum_messages',
-      }, payload => {
-        const msg = payload.new as ForumMessage;
-        setMessages(prev => {
-          if (prev.some(m => m.id === msg.id)) return prev;
-          return [...prev, msg];
-        });
-        setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
-      })
-      .subscribe();
-
-    return () => { supabase.removeChannel(channel); };
-  }, [loadMessages]);
+    // Mount = subscribe + one freshness pass (shared/deduped with the
+    // watcher's own refresh). No channel, no interval to clean up here.
+    const unsubscribe = subscribeForumMessages(setMessages);
+    let alive = true;
+    (async () => {
+      const res = await refreshForumMessages();
+      if (!alive) return;
+      if (!res.ok && res.error) setLoadError(friendlyError(res.error));
+      setLoading(false);
+    })();
+    return () => {
+      alive = false;
+      unsubscribe();
+    };
+  }, []);
 
   async function onRefresh() {
     setRefreshing(true);
-    await loadMessages().catch(() => {});
+    const res = await refreshForumMessages();
+    if (!res.ok && res.error) setLoadError(friendlyError(res.error));
+    else setLoadError(null);
     setTimeout(() => setRefreshing(false), 300);
   }
 
-  const doSend = useCallback(async (content: string) => {
-    if (!content.trim() || !user) return;
+  const doSend = useCallback(async (content: string): Promise<boolean> => {
+    if (!content.trim() || !user) return false;
     setSendError(null);
     setSending(true);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -164,23 +134,33 @@ export default function ForumScreen() {
       },
     };
 
-    setMessages(prev => [...prev, optimistic]);
+    // Store-owned bubble: the merge reconciles it against the confirmed row
+    // (same user + same message) when realtime/the next refresh delivers it,
+    // and the 5-minute TTL clears it if the send truly never landed.
+    upsertForumMessages([optimistic]);
     setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
 
     const { error } = await supabase.rpc('send_forum_message', { p_message: content });
 
     if (error) {
-      setMessages(prev => prev.filter(m => m.id !== optimisticId));
+      removeOptimisticForumMessage(optimisticId);
       setSendError(friendlyError(error));
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+      setSending(false);
+      return false;
     }
 
+    // Belt-and-braces: pull the confirmed row now so the bubble flips from
+    // pending to real without waiting for the watcher's next tick.
+    void refreshForumMessages();
     setSending(false);
+    return true;
   }, [user, profile]);
 
   async function sendMessage() {
     const raw = input.trim();
-    if (!raw || sending || mediaUploading) return;
+    const hasAttachment = Boolean(pendingImage || pendingVideo);
+    if ((!raw && !hasAttachment) || sending || mediaUploading) return;
     // Plan 4.3 — explicit length guard instead of silent truncation.
     if (exceedsLimit(raw, LIMITS.messageMax)) {
       setSendError(`Messages are limited to ${LIMITS.messageMax} characters.`);
@@ -194,9 +174,28 @@ export default function ForumScreen() {
       return;
     }
     const text = sanitizeUserText(raw, LIMITS.messageMax);
-    if (!text) return;
+    // Envelope + cap check BEFORE clearing the composer: the server
+    // left(..., 1000) would corrupt an over-long JSON into raw source.
+    const { content, overflow } = buildForumContent(text, pendingImage, pendingVideo);
+    if (overflow > 0) {
+      setSendError(`Message is ${overflow} characters too long — shorten the text or remove an attachment.`);
+      return;
+    }
+    if (!content) return;
+
+    const restoreText = text;
+    const restoreImage = pendingImage;
+    const restoreVideo = pendingVideo;
     setInput('');
-    await doSend(text);
+    setPendingImage(null);
+    setPendingVideo(null);
+    const ok = await doSend(content);
+    if (!ok) {
+      // Nothing the user composed is lost to a failed send — restore it.
+      setInput(prev => (prev ? prev : restoreText));
+      setPendingImage(prev => prev ?? restoreImage);
+      setPendingVideo(prev => prev ?? restoreVideo);
+    }
   }
 
   async function pickAndUploadMedia(type: 'image' | 'video') {
@@ -209,17 +208,27 @@ export default function ForumScreen() {
       return;
     }
 
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: type === 'image'
-        ? ImagePicker.MediaTypeOptions.Images
-        : ImagePicker.MediaTypeOptions.Videos,
-      quality: 0.8,
-      allowsEditing: false,
-    });
+    let pickerResult: ImagePicker.ImagePickerResult;
+    try {
+      pickerResult = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: type === 'image'
+          ? ImagePicker.MediaTypeOptions.Images
+          : ImagePicker.MediaTypeOptions.Videos,
+        quality: 0.8,
+        allowsEditing: false,
+      });
+    } catch {
+      setSendError(
+        Platform.OS === 'web'
+          ? 'This browser blocked the picker. Try a different browser or attach an image instead.'
+          : 'Could not open the media picker.',
+      );
+      return;
+    }
 
-    if (result.canceled || !result.assets?.[0]) return;
+    if (pickerResult.canceled || !pickerResult.assets?.[0]) return;
 
-    const asset = result.assets[0];
+    const asset = pickerResult.assets[0];
     const ext = (asset.uri.split('.').pop() ?? (type === 'image' ? 'jpg' : 'mp4')).toLowerCase();
     const path = `forum/${user!.id}/${Date.now()}.${ext}`;
     const mimeType = asset.mimeType ?? (type === 'image' ? `image/${ext}` : `video/${ext}`);
@@ -239,13 +248,10 @@ export default function ForumScreen() {
 
       const { data: { publicUrl } } = supabase.storage.from('forum-media').getPublicUrl(path);
 
-      const content = JSON.stringify(
-        type === 'image'
-          ? { image: publicUrl, text: input.trim() || '' }
-          : { video: publicUrl, text: input.trim() || '' },
-      );
-      setInput('');
-      await doSend(content);
+      // Attachment is staged, not sent: pick an image AND a video, add a
+      // caption, send everything as ONE message.
+      if (type === 'image') setPendingImage(publicUrl);
+      else setPendingVideo(publicUrl);
     } catch (err: any) {
       setSendError(
         'Upload failed. Make sure a "forum-media" storage bucket exists in your Supabase dashboard (Storage → New bucket → "forum-media", set to Public).',
@@ -317,10 +323,27 @@ export default function ForumScreen() {
             {parsed.image && (
               <Image source={{ uri: parsed.image }} style={styles.mediaImage} resizeMode="cover" />
             )}
-            {parsed.video && (
-              <View style={[styles.mediaPlaceholder, { backgroundColor: C.inputBg }]}>
+            {parsed.video && Platform.OS === 'web' &&
+              // Raw DOM <video> (React web renderer): real playback with
+              // controls, zero new dependencies. RN's style keys map 1:1.
+              React.createElement('video' as any, {
+                src: parsed.video,
+                controls: true,
+                preload: 'metadata',
+                style: {
+                  width: 220, height: 140, borderRadius: 12, marginBottom: 6,
+                  background: '#000', display: 'block',
+                },
+              })}
+            {parsed.video && Platform.OS !== 'web' && (
+              <TouchableOpacity
+                style={[styles.mediaPlaceholder, { backgroundColor: C.inputBg }]}
+                onPress={() => Linking.openURL(parsed.video!).catch(() => {})}
+                activeOpacity={0.8}
+              >
                 <Ionicons name="play-circle" size={40} color="#fff" />
-              </View>
+                <Text style={[styles.mediaPlayText, { color: C.textSecondary }]}>Play video</Text>
+              </TouchableOpacity>
             )}
             {parsed.text ? (
               <Text style={[styles.msgText, isMe && { color: '#fff' }]}>{parsed.text}</Text>
@@ -336,6 +359,8 @@ export default function ForumScreen() {
   };
 
   const isBusy = sending || mediaUploading;
+  const hasAttachment = Boolean(pendingImage || pendingVideo);
+  const canSend = Boolean(input.trim()) || hasAttachment;
 
   return (
     <KeyboardAvoidingView
@@ -363,7 +388,7 @@ export default function ForumScreen() {
         </TouchableOpacity>
       )}
 
-      {loading ? (
+      {loading && messages.length === 0 ? (
         <View style={styles.centered}>
           <ActivityIndicator size="large" color={C.primary} />
           <Text style={[styles.loadingText, { color: C.textSecondary }]}>Loading messages...</Text>
@@ -414,6 +439,30 @@ export default function ForumScreen() {
             </Text>
           </View>
         ) : (
+          <>
+            {(pendingImage || pendingVideo) && (
+              <View style={styles.attachRow}>
+                {pendingImage && (
+                  <View style={[styles.attachChip, { backgroundColor: C.inputBg, borderColor: C.border }]}>
+                    <Ionicons name="image-outline" size={14} color={C.primary} />
+                    <Text style={[styles.attachText, { color: C.textSecondary }]}>Image</Text>
+                    <TouchableOpacity onPress={() => setPendingImage(null)} hitSlop={8}>
+                      <Ionicons name="close-circle" size={16} color={C.textMuted} />
+                    </TouchableOpacity>
+                  </View>
+                )}
+                {pendingVideo && (
+                  <View style={[styles.attachChip, { backgroundColor: C.inputBg, borderColor: C.border }]}>
+                    <Ionicons name="videocam-outline" size={14} color={C.primary} />
+                    <Text style={[styles.attachText, { color: C.textSecondary }]}>Video</Text>
+                    <TouchableOpacity onPress={() => setPendingVideo(null)} hitSlop={8}>
+                      <Ionicons name="close-circle" size={16} color={C.textMuted} />
+                    </TouchableOpacity>
+                  </View>
+                )}
+                {mediaUploading && <ActivityIndicator size="small" color={C.primary} />}
+              </View>
+            )}
           <View style={styles.inputRow}>
             <View style={styles.mediaIcons}>
               <TouchableOpacity style={styles.mediaBtn} onPress={() => pickAndUploadMedia('image')} activeOpacity={0.7}>
@@ -461,13 +510,13 @@ export default function ForumScreen() {
                 <TouchableOpacity
                   style={[
                     styles.sendBtn,
-                    { backgroundColor: input.trim() && !isBusy ? C.primary : C.border },
+                    { backgroundColor: canSend && !isBusy ? C.primary : C.border },
                   ]}
                   onPress={sendMessage}
-                  disabled={!input.trim() || isBusy}
+                  disabled={!canSend || isBusy}
                   activeOpacity={0.85}
                 >
-                  <Ionicons name="arrow-up" size={16} color={input.trim() && !isBusy ? '#fff' : C.textMuted} />
+                  <Ionicons name="arrow-up" size={16} color={canSend && !isBusy ? '#fff' : C.textMuted} />
                 </TouchableOpacity>
               )}
             </View>
@@ -478,6 +527,7 @@ export default function ForumScreen() {
               </Text>
             )}
           </View>
+          </>
         )}
       </View>
     </KeyboardAvoidingView>
@@ -521,6 +571,10 @@ const styles = StyleSheet.create({
   bubbleOther: { borderTopLeftRadius: 6 },
   mediaImage: { width: 220, height: 140, borderRadius: 12, marginBottom: 6 },
   mediaPlaceholder: { width: 220, height: 140, borderRadius: 12, marginBottom: 6, alignItems: 'center', justifyContent: 'center' },
+  mediaPlayText: { fontSize: 12, fontFamily: 'Inter_500Medium', marginTop: 4 },
+  attachRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingBottom: 8 },
+  attachChip: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 16, borderWidth: 1 },
+  attachText: { fontSize: 12, fontFamily: 'Inter_500Medium' },
   msgText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
   timeText: { fontSize: 10, fontFamily: 'Inter_400Regular', marginTop: 4, alignSelf: 'flex-end' },
   inputBar: { borderTopWidth: 1, paddingHorizontal: 12, paddingTop: 10 },

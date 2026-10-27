@@ -11,6 +11,7 @@ name: App tests
 #   - plan 4.3 input validation, rate limiting, booking-code guards
 #   - plan 4.4 telemetry core (event caps, no-op contract, slow-query predicate)
 #   - plan 4.5 A/B experiment framework (bucketing, config, sample run)
+#   - forum feed core (background merge/reconciliation, message envelope)
 # Pure Node, no npm install needed.
 
 on:
@@ -127,3 +128,10 @@ jobs:
             --outDir "$RUNNER_TEMP/experiments-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/experiments-test/experiments.test.js"
+      - name: Forum feed core tests (background forum)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/forumFeedCore.ts statwise/lib/forumFeedCore.test.ts \
+            --outDir "$RUNNER_TEMP/forumfeed-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/forumfeed-test/forumFeedCore.test.js"

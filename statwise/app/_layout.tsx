@@ -19,6 +19,7 @@ import { ThemeProvider, useTheme } from '@/context/ThemeContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { supabase } from '@/lib/supabase';
 import { installWebTelemetry, setEventSink } from '@/lib/telemetry';
+import { startForumFeed } from '@/lib/forumFeed';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -68,6 +69,14 @@ function RootLayoutNav() {
     // slow Supabase calls). Web only; cleans up on hot reload.
     if (Platform.OS !== 'web') return;
     return installWebTelemetry();
+  }, []);
+
+  useEffect(() => {
+    // Forum feed runs app-wide (user request 2026-10-27): hydrate the local
+    // cache, fetch fresh rows and keep them warm in the BACKGROUND — the
+    // forum screen never waits on a network round-trip to open, and updates
+    // land while the user is on any other tab.
+    return startForumFeed();
   }, []);
 
   return (
