@@ -10,6 +10,8 @@ import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
 import { friendlyError } from '@/lib/errors';
+import { LIMITS, isHoneypotTripped, isValidEmail, normalizeEmail } from '@/lib/validation';
+import { checkRateLimit, RATE_RULES, rateLimitMessage } from '@/lib/rateLimit';
 
 export default function ForgotPasswordScreen() {
   const scheme = (useColorScheme() ?? 'dark') as 'light' | 'dark';
@@ -20,15 +22,33 @@ export default function ForgotPasswordScreen() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  // Plan 4.3 — honeypot (see signup.tsx): drops auto-filled bots silently.
+  const [honeypot, setHoneypot] = useState('');
 
   async function handleReset() {
+    if (isHoneypotTripped(honeypot)) {
+      // Fake success: a script learns nothing, no email is dispatched.
+      setSent(true);
+      return;
+    }
     if (!email.trim()) {
       Alert.alert('Email Required', 'Please enter your email address.');
       return;
     }
+    if (!isValidEmail(email)) {
+      Alert.alert('Invalid Email', 'Enter a valid email address (e.g. you@example.com).');
+      return;
+    }
+    // Plan 4.3 — rate limiting: 5 reset emails / 5 min (shared with login
+    // and signup) so this can't be used to spam someone else's inbox.
+    const verdict = checkRateLimit('auth:attempt', RATE_RULES.authAttempt);
+    if (!verdict.allowed) {
+      Alert.alert('Too many attempts', rateLimitMessage(verdict));
+      return;
+    }
     setLoading(true);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    const { error } = await supabase.auth.resetPasswordForEmail(email.trim());
+    const { error } = await supabase.auth.resetPasswordForEmail(normalizeEmail(email));
     setLoading(false);
     if (error) {
       Alert.alert("Couldn't send the reset link", friendlyError(error.message));
@@ -71,11 +91,26 @@ export default function ForgotPasswordScreen() {
               placeholder="you@example.com"
               placeholderTextColor={C.placeholder}
               value={email}
+              maxLength={LIMITS.emailMax}
               onChangeText={setEmail}
               autoCapitalize="none"
               keyboardType="email-address"
               returnKeyType="done"
               onSubmitEditing={handleReset}
+            />
+            {/* Honeypot — off-screen, unfocusable by humans (plan 4.3). */}
+            <TextInput
+              value={honeypot}
+              onChangeText={setHoneypot}
+              style={styles.honeypot}
+              autoComplete="off"
+              textContentType="none"
+              importantForAutofill="no"
+              importantForAccessibility="no-hide-descendants"
+              accessibilityElementsHidden
+              aria-hidden
+              tabIndex={-1}
+              editable
             />
             <TouchableOpacity
               style={[styles.button, { backgroundColor: C.primary, opacity: loading ? 0.7 : 1 }]}
@@ -105,4 +140,5 @@ const styles = StyleSheet.create({
   },
   button: { borderRadius: 14, padding: 16, alignItems: 'center' },
   buttonText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  honeypot: { position: 'absolute', left: -10000, width: 1, height: 1, opacity: 0, padding: 0, margin: 0 },
 });

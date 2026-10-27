@@ -8,6 +8,7 @@ name: App tests
 #   - plan 3.3 AI Picks surfacing (jsonb flag, certainty ranking/tone)
 #   - plan 3.4 error copy (no raw errors in the UI) + offline detection
 #   - plan 4.1 query cache policy (stale/gc budgets, retry bounds, keys)
+#   - plan 4.3 input validation, rate limiting, booking-code guards
 # Pure Node, no npm install needed.
 
 on:
@@ -85,3 +86,25 @@ jobs:
             --outDir "$RUNNER_TEMP/queryconfig-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/queryconfig-test/queryConfig.test.js"
+      - name: Input validation tests (plan 4.3)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/validation.ts statwise/lib/validation.test.ts \
+            --outDir "$RUNNER_TEMP/validation-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/validation-test/validation.test.js"
+      - name: Rate limit tests (plan 4.3)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/rateLimit.ts statwise/lib/rateLimit.test.ts \
+            --outDir "$RUNNER_TEMP/ratelimit-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/ratelimit-test/rateLimit.test.js"
+      - name: Booking code guard tests (plan 4.3)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/bookingGuard.ts statwise/lib/validation.ts \
+            statwise/lib/bookingGuard.test.ts \
+            --outDir "$RUNNER_TEMP/bookingguard-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/bookingguard-test/bookingGuard.test.js"

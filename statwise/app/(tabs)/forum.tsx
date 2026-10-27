@@ -13,6 +13,8 @@ import { supabase, ForumMessage } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { formatChatTime, dayOffset } from '@/lib/format';
+import { LIMITS, exceedsLimit, sanitizeUserText } from '@/lib/validation';
+import { checkRateLimit, RATE_RULES, rateLimitMessage } from '@/lib/rateLimit';
 
 const PREMIUM_TIERS = ['Premium Tier', 'VIP Tier', 'VVIP Tier'];
 
@@ -21,14 +23,17 @@ type ParsedMessage = { text?: string; image?: string; video?: string };
 function parseMessage(raw: string): ParsedMessage {
   try {
     const p = JSON.parse(raw);
-    if (p && typeof p === 'object' && ('text' in p || 'image' in p || 'video' in p)) return p;
+    if (p && typeof p === 'object' && ('text' in p || 'image' in p || 'video' in p)) {
+      // Plan 4.3 — only https media URLs are rendered (an attacker-controlled
+      // message could otherwise point the image/video elements anywhere,
+      // including javascript:/data: payloads or plain http trackers).
+      if (p.image !== undefined && !/^https:\/\/\S+$/.test(String(p.image))) delete p.image;
+      if (p.video !== undefined && !/^https:\/\/\S+$/.test(String(p.video))) delete p.video;
+      if (p.text !== undefined) p.text = sanitizeUserText(String(p.text));
+      return p;
+    }
   } catch {}
-  return { text: raw };
-}
-
-function sanitizeMessage(text: string): string {
-  // Basic sanitization - remove control chars except newlines
-  return text.replace(/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/g, '').slice(0, 1000);
+  return { text: sanitizeUserText(raw) };
 }
 
 function friendlyError(error: any): string {
@@ -174,8 +179,22 @@ export default function ForumScreen() {
   }, [user, profile]);
 
   async function sendMessage() {
-    const text = sanitizeMessage(input.trim());
-    if (!text || sending || mediaUploading) return;
+    const raw = input.trim();
+    if (!raw || sending || mediaUploading) return;
+    // Plan 4.3 — explicit length guard instead of silent truncation.
+    if (exceedsLimit(raw, LIMITS.messageMax)) {
+      setSendError(`Messages are limited to ${LIMITS.messageMax} characters.`);
+      return;
+    }
+    // Plan 4.3 — client half of the limit; send_forum_message enforces the
+    // same 6 / 60s window server-side for anyone who skips this screen.
+    const verdict = checkRateLimit('forum:send', RATE_RULES.forumSend);
+    if (!verdict.allowed) {
+      setSendError(rateLimitMessage(verdict));
+      return;
+    }
+    const text = sanitizeUserText(raw, LIMITS.messageMax);
+    if (!text) return;
     setInput('');
     await doSend(text);
   }

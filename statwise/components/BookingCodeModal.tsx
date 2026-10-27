@@ -20,10 +20,10 @@ import { Prediction } from '@/lib/supabase';
 import {
   BookingCode,
   BookingStats,
-  bookingCodeLoadUrl,
   fetchBookingStats,
   fetchLatestBookingCode,
   formatSelectionLabel,
+  safeShareUrl,
 } from '@/lib/bookings';
 
 const copyToClipboard = async (text: string) => {
@@ -110,9 +110,12 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
   };
 
   const openSportyBet = async () => {
+    // safeShareUrl: https + sportybet.com only (falls back to a URL we build
+    // from the validated code) — a tampered settings row can't redirect this.
     const url = bookingCode
-      ? bookingCode.shareUrl || bookingCodeLoadUrl(bookingCode.code)
+      ? safeShareUrl(bookingCode)
       : 'https://www.sportybet.com/ng/';
+    if (!url) return;
     try {
       if (Platform.OS === 'web') {
         window.open(url, '_blank');
@@ -126,10 +129,12 @@ export function BookingCodeModal({ visible, onClose, predictions }: Props) {
 
   const shareCode = async () => {
     if (!bookingCode) return;
+    const url = safeShareUrl(bookingCode);
+    if (!url) return;
     const message =
       `SportyBet booking code: ${bookingCode.code}\n` +
       `${aiPicks.length} AI Picks (accumulator)\n` +
-      `Load it: ${bookingCode.shareUrl || bookingCodeLoadUrl(bookingCode.code)}`;
+      `Load it: ${url}`;
     try {
       if (Platform.OS === 'web' && navigator.share) {
         await navigator.share({ title: 'StatWise Booking Code', text: message });

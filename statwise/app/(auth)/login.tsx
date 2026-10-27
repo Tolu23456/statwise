@@ -11,6 +11,8 @@ import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
 import { friendlyError, isNetworkError } from '@/lib/errors';
+import { isValidEmail } from '@/lib/validation';
+import { checkRateLimit, RATE_RULES, rateLimitMessage } from '@/lib/rateLimit';
 
 type FieldErrors = {
   email?: string;
@@ -48,10 +50,6 @@ function parseAuthError(message: string, email: string): FieldErrors {
     return { general: 'This account has been disabled. Please contact support.' };
   }
   return { general: message };
-}
-
-function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 }
 
 const FormWrapper = ({ children, onSubmit }: { children: React.ReactNode; onSubmit: () => void }) => {
@@ -103,6 +101,14 @@ export default function LoginScreen() {
   async function handleLogin() {
     setErrors({});
     if (!validateLocally()) {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+      return;
+    }
+    // Plan 4.3 — rate limiting: 5 attempts / 5 min shared with signup and
+    // password reset (credential stuffing hits one budget, not three).
+    const verdict = checkRateLimit('auth:attempt', RATE_RULES.authAttempt);
+    if (!verdict.allowed) {
+      setErrors({ general: rateLimitMessage(verdict) });
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
       return;
     }

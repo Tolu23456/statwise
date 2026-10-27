@@ -10,6 +10,16 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
+import {
+  LIMITS,
+  displayNameError,
+  isValidEmail,
+  isValidReferralCodeFormat,
+  isHoneypotTripped,
+  normalizeEmail,
+  passwordError,
+} from '@/lib/validation';
+import { checkRateLimit, RATE_RULES, rateLimitMessage } from '@/lib/rateLimit';
 
 type FieldErrors = {
   displayName?: string;
@@ -48,10 +58,6 @@ function parseSignupError(message: string): FieldErrors {
   return { general: message };
 }
 
-function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-}
-
 function getPasswordStrength(pw: string): { label: string; color: string; pct: number } {
   if (!pw) return { label: '', color: 'transparent', pct: 0 };
   if (pw.length < 6) return { label: 'Too short', color: '#ef4444', pct: 15 };
@@ -83,6 +89,10 @@ export default function SignupScreen() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<FieldErrors>({});
+  // Plan 4.3 — honeypot: a field no human ever sees (rendered off-screen,
+  // no autofill). Scripts that auto-fill every input trip it and are dropped
+  // silently before anything reaches Supabase Auth.
+  const [honeypot, setHoneypot] = useState('');
 
   function clearFieldError(field: keyof FieldErrors) {
     if (errors[field]) setErrors(prev => ({ ...prev, [field]: undefined }));
@@ -107,25 +117,22 @@ export default function SignupScreen() {
 
   function validateLocally(): boolean {
     const newErrors: FieldErrors = {};
-    if (!displayName.trim()) {
-      newErrors.displayName = 'Display name is required.';
-    } else if (displayName.trim().length < 2) {
-      newErrors.displayName = 'Name must be at least 2 characters.';
-    }
+    const nameErr = displayNameError(displayName);
+    if (nameErr) newErrors.displayName = nameErr;
     if (!email.trim()) {
       newErrors.email = 'Email is required.';
     } else if (!isValidEmail(email)) {
       newErrors.email = 'Enter a valid email address (e.g. you@example.com).';
     }
-    if (!password) {
-      newErrors.password = 'Password is required.';
-    } else if (password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters.';
-    }
+    const pwErr = passwordError(password);
+    if (pwErr) newErrors.password = pwErr;
     if (!confirmPassword) {
       newErrors.confirmPassword = 'Please confirm your password.';
     } else if (password !== confirmPassword) {
       newErrors.confirmPassword = "Passwords don't match. Try again.";
+    }
+    if (referralCode.trim() && !isValidReferralCodeFormat(referralCode)) {
+      newErrors.referralCode = 'Referral codes are 4–20 letters and numbers.';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -133,14 +140,31 @@ export default function SignupScreen() {
 
   async function handleSignup() {
     setErrors({});
+    // Honeypot tripped → bot: fake the success path so the script has
+    // nothing to learn from, without ever calling Supabase.
+    if (isHoneypotTripped(honeypot)) {
+      router.replace({
+        pathname: '/(auth)/email-confirmation',
+        params: { email: normalizeEmail(email) || 'you@example.com' },
+      });
+      return;
+    }
     if (!validateLocally()) {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+      return;
+    }
+    // Plan 4.3 — rate limiting: 5 signups / 5 min per device, shared with
+    // login and password reset (one budget against credential stuffing).
+    const verdict = checkRateLimit('auth:attempt', RATE_RULES.authAttempt);
+    if (!verdict.allowed) {
+      setErrors({ general: rateLimitMessage(verdict) });
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
       return;
     }
     setLoading(true);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     const { error } = await supabase.auth.signUp({
-      email: email.trim(),
+      email: normalizeEmail(email),
       password,
       options: {
         data: {
@@ -156,7 +180,7 @@ export default function SignupScreen() {
     } else {
       router.replace({
         pathname: '/(auth)/email-confirmation',
-        params: { email: email.trim() },
+        params: { email: normalizeEmail(email) },
       });
     }
   }
@@ -211,6 +235,7 @@ export default function SignupScreen() {
               placeholder="Your name"
               placeholderTextColor={C.placeholder}
               value={displayName}
+              maxLength={LIMITS.displayNameMax}
               onChangeText={v => { setDisplayName(v); clearFieldError('displayName'); }}
               autoCapitalize="words"
               returnKeyType="next"
@@ -232,6 +257,7 @@ export default function SignupScreen() {
               placeholder="you@example.com"
               placeholderTextColor={C.placeholder}
               value={email}
+              maxLength={LIMITS.emailMax}
               onChangeText={v => { setEmail(v); clearFieldError('email'); clearFieldError('general'); }}
               autoCapitalize="none"
               keyboardType="email-address"
@@ -368,6 +394,7 @@ export default function SignupScreen() {
                 placeholder="Enter a friend's code"
                 placeholderTextColor={C.placeholder}
                 value={referralCode}
+                maxLength={LIMITS.referralCodeMax}
                 onChangeText={v => {
                   const upper = v.toUpperCase();
                   setReferralCode(upper);
@@ -404,6 +431,22 @@ export default function SignupScreen() {
                 <Text style={[styles.matchText, { color: C.success }]}>Valid referral code</Text>
               </View>
             )}
+
+            {/* Plan 4.3 — honeypot. Off-screen, not focusable, no autofill:
+                a human never fills it; an auto-submitting script does. */}
+            <TextInput
+              value={honeypot}
+              onChangeText={setHoneypot}
+              style={styles.honeypot}
+              autoComplete="off"
+              textContentType="none"
+              importantForAutofill="no"
+              importantForAccessibility="no-hide-descendants"
+              accessibilityElementsHidden
+              aria-hidden
+              tabIndex={-1}
+              editable
+            />
 
             <TouchableOpacity
               style={[styles.button, { backgroundColor: C.primary, opacity: loading ? 0.7 : 1 }]}
@@ -493,6 +536,17 @@ const styles = StyleSheet.create({
   referralIcon: { position: 'absolute', right: 14, top: 0, bottom: 0, textAlignVertical: 'center', alignSelf: 'center' },
   button: { borderRadius: 14, padding: 16, alignItems: 'center', marginTop: 8 },
   buttonText: { color: '#fff', fontSize: 16, fontFamily: 'Inter_600SemiBold' },
+  // Visually absent but present in the DOM — autofill bots fill it, humans
+  // never see it. Kept `editable` so input events still fire for detection.
+  honeypot: {
+    position: 'absolute',
+    left: -10000,
+    width: 1,
+    height: 1,
+    opacity: 0,
+    padding: 0,
+    margin: 0,
+  },
   footer: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center' },
   footerText: { fontSize: 15, fontFamily: 'Inter_400Regular' },
   footerLink: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },

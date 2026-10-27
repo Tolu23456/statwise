@@ -125,16 +125,27 @@ export default function SubscriptionsScreen() {
         updated_at: new Date().toISOString(),
       }).eq('id', user.id);
 
-      await supabase.from('payment_transactions').insert({
+      // Plan 4.3 audit — this insert used to send `plan_id`, a column the
+      // live schema does not have (PGRST204, probed via the API), so every
+      // payment row failed silently and the purchase left no audit record.
+      // Live columns verified present: transaction_id (NOT NULL, UNIQUE),
+      // period, created_at. txRef doubles as transaction_id.
+      const { error: txError } = await supabase.from('payment_transactions').insert({
         user_id: user.id,
+        transaction_id: txRef,
         tx_ref: txRef,
         amount: plan.price,
         currency: 'NGN',
-        plan_id: plan.id,
+        period: plan.period,
         tier: plan.tier,
         status: 'successful',
         created_at: new Date().toISOString(),
       }).select();
+      if (txError) {
+        // Never roll back a paying customer's tier over the audit row — but
+        // make the failure visible instead of swallowing it.
+        console.warn('payment_transactions insert failed:', txError.message);
+      }
 
       await refreshProfile();
       // Plan 4.1 — payment is a mutation: reward points and anything keyed

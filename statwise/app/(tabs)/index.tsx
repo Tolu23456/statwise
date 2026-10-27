@@ -16,6 +16,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { PredictionCard } from '@/components/PredictionCard';
 import { SkeletonCard } from '@/components/SkeletonCard';
 import { shouldShowOnboarding } from '@/lib/onboarding';
+import { LIMITS } from '@/lib/validation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
 import { aiPicksLabel, aiPicksOf, certaintyOf, certaintyTone, isAiPick } from '@/lib/aiPicks';
@@ -759,6 +760,7 @@ export default function HomeScreen() {
             placeholderTextColor={C.placeholder}
             value={search}
             onChangeText={setSearch}
+            maxLength={LIMITS.searchMax}
             underlineColorAndroid="transparent"
             selectionColor={C.primary}
           />

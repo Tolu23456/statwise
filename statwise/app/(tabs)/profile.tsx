@@ -14,6 +14,8 @@ import { supabase, ReferralCode } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme, ThemeMode } from '@/context/ThemeContext';
 import { QUERY_KEYS, STALE_TIME } from '@/lib/queryConfig';
+import { displayNameError } from '@/lib/validation';
+import { checkRateLimit, RATE_RULES, rateLimitMessage } from '@/lib/rateLimit';
 import {
   registerForPush, unregisterPush, pushSupported, currentPermission, pushBlockReason,
 } from '@/lib/push';
@@ -117,6 +119,17 @@ export default function ProfileScreen() {
 
   async function saveDisplayName() {
     if (!displayName.trim() || !user) return;
+    // Plan 4.3 — shared validation + write throttle (5 saves / 60s).
+    const nameErr = displayNameError(displayName);
+    if (nameErr) {
+      Alert.alert('Invalid name', nameErr);
+      return;
+    }
+    const verdict = checkRateLimit('profile:save', RATE_RULES.profileSave);
+    if (!verdict.allowed) {
+      Alert.alert('Too many attempts', rateLimitMessage(verdict));
+      return;
+    }
     setSavingName(true);
     await supabase
       .from('user_profiles')
