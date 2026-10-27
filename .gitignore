@@ -35,3 +35,6 @@ ai/data/volleyball/raw/
 # Runtime state written on every run (noise in diffs)
 ai/data/heartbeat.json
 ai/data/odds_cache.json
+
+# Flutterwave credentials (live secrets — never commit)
+statwise/flutterwave_key

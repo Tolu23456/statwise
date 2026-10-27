@@ -929,19 +929,170 @@ server-side payment verification), 4.4 observability (telemetry pipeline
 + daily metrics dashboard + alert thresholds, live-verified against the
 real database: 108 settled picks at 48.1%), 4.5 A/B framework
 (deterministic bucketing, JSON config, wired CTA experiment dormant at
-0%, sample run recovers the simulated winner). Pending user actions:
-run `statwise/supabase-notifications-migration.sql`,
-`statwise/supabase-security-migration.sql` and
-`statwise/supabase-telemetry-migration.sql` in the Supabase SQL editor
-(everything no-ops safely until then; the security one has live-probe
-verification steps in its header).
+0%, sample run recovers the simulated winner).
+  ~~Pending user actions: run the three migration files~~ **RESOLVED
+  2026-10-27**: superseded by the consolidated
+  `statwise/supabase-pending-migrations.sql`, which the user ran. Live
+  probes confirm every section landed: `user_favorites` exists with RLS
+  (anon insert → 401 `row-level security policy`), `notifications`
+  exists with its four-kind check (forum_reply, forum_mention,
+  bookmark_live, odds_change), `forum_messages.reply_to` is present,
+  and `send_forum_message` answers through PostgREST (anon gets
+  `Not authenticated` — zero side effects). Favourites sync, forum
+  replies/mentions and the notification inbox are unblocked; the inbox
+  UI is Phase 5.2.
+
+---
+
+## PHASE 5: POST-PLAN GROWTH WAVE (P0–P2)
+
+> Added 2026-10-27 at the user's request ("Add all of those plans to the
+> improvement plan file"). Phases 1–4 are complete and checkpointed;
+> this is the ordered backlog that follows. Same house rules apply:
+> explicit-path commits (never `git add -A`), no new npm packages for
+> features (zero-dep pattern), heavy duties run in GitHub Actions with
+> tiny local payloads, and no production model replacement without an
+> apples-to-apples out-of-time win.
+
+### 5.1 Flutterwave payments + webhook (P0 — credentials in hand)
+
+- [ ] **Credential probe** - Identify the auth scheme of the supplied keys
+  `statwise/flutterwave_key` holds `CLIENT_ID` (UUID) + `CLIENT_SECRET` +
+  `ENCRYPTION_KEY`; the file is gitignored (added 2026-10-27 — never
+  commit it). Probe `POST api.flutterwave.com/v3/oauth/token`
+  (`grant_type=client_credentials`) first; if the dashboard also exposes
+  `FLWPUBK-…`/`FLWSECK-…` pair those in directly. Replace the placeholder
+  `FLUTTERWAVE_PUBLIC_KEY` in `lib/supabase.ts` with the verified public
+  key. Live probes only against non-charging endpoints (balance/validate).
+- [ ] **Checkout flow** - Plan paywall → Flutterwave Checkout → receipt
+  The subscriptions screen opens Flutterwave Checkout with the plan's
+  amount (NGN), your `transaction_ref` = `sub:{user_id}:{plan}:{ts}`, and
+  redirects back into the app. No card data ever touches our code —
+  Checkout is hosted by Flutterwave (zero new packages: open in a WebView /
+  the `FLW…` v3.js modal on web).
+- [ ] **`flutterwave-webhook` edge function** - verify, credit, idempotent
+  Supabase edge function validates `verif-hash` (secret hash header),
+  calls `POST /v3/transactions/{id}/verify`, and credits only on
+  `successful` + amount/currency match. Idempotent on `tx_ref` (unique
+  payment_events row, ON CONFLICT DO NOTHING) so Flutterwave's retries are
+  harmless. Stores the raw payload for audit.
+- [ ] **Server-side tier escalation** - closes the 4.3 open finding
+  The documented risk "tier self-escalation needs server-side payment
+  verification" gets closed here: the webhook (or a verify-on-read RPC)
+  is the ONLY writer of `subscriptions.tier` — the client never sets it.
+- [ ] **Payment smoke tests** - tiny payloads, no live charges in CI
+  Pure checks for amount mapping, ref format, idempotency keys, and
+  webhook payload validation; wired as a CI suite with fixtures.
+
+### 5.2 Notification inbox UI (P1) — migration landed 2026-10-27
+
+- [ ] **Bell + badge + inbox screen** - surface the four kinds
+  Header bell on the tabs with an unread badge (from `notifications`
+  where `read_at is null`); inbox screen lists rows (kind icon, title,
+  body, relative time), tap → `url` deep-links into the app (match
+  detail, forum thread, insights). Mark-read via PATCH (`read_at`), RLS
+  already restricts users to their own rows (verified live).
+- [ ] **Live producers wired** - replies/mentions trigger on write
+  `notify_forum_participants()` (migration section 4) writes
+  `forum_reply`/`forum_mention` rows on RPC calls; `notify.py` already
+  pushes `bookmark_live`/`odds_change`/`picks`/`kickoff`. Confirm each
+  producer lands rows post-migration with a real end-to-end send.
+- [ ] **Badge + pull-to-refresh + animations** - match the motion layer
+  Reuses the Phase-5 motion kit (AnimatedEntrance, skeleton rows,
+  focus-replay) — no new animation primitives.
+
+### 5.3 Offline-first feed cache (P1)
+
+- [ ] **Persist the feed** - predictions land in AsyncStorage on fetch
+  Query cache already holds them in memory; mirror the last good response
+  to storage so a cold start with no network renders immediately.
+- [ ] **Stale-while-revalidate UI** - "updated 2h ago" stamp
+  Cached feed shows with a freshness label + background refetch; a
+  transient error NEVER wipes the feed (extends the `fbb8160` crash fix
+  — errors surface as a banner over cached content).
+- [ ] **Cache contract tests** - pure core, tiny payloads
+  `feedCacheCore`-style helpers: serialization round-trip, age-out
+  policy, corrupted-entry eviction, never-empty render decision.
+
+### 5.4 Booking-code share deep link (P2)
+
+- [ ] **`statwise://` / universal link to a match** - expo-linking
+  A shared booking code (or a prediction link) opens the exact match
+  detail in the app; cold start routes through the router to the right
+  card. `expo-linking` is already installed — zero new packages.
+
+### 5.5 Android home-screen widget (P2)
+
+- [ ] **Top-picks widget** - Expo prebuild + config plugin
+  Today's AI Picks + confidence on the home screen, refreshed by the same
+  background fetch. Native module arrives via `expo prebuild` (no new JS
+  packages — the zero-dep rule is about npm additions); verify
+  `com.statwise.app` build still passes `expo prebuild --no-install` +
+  a bundle-report run after the plugin lands.
+
+### 5.6 Website: insights articles page (P1)
+
+- [ ] **/insights renders the 12-article library** - reuse `insightsCore`
+  The site imports the app's `lib/insightsCore.ts` (the same
+  cross-package single-source pattern already proven with
+  `teamLogos.ts` on the predictions page): category chips, lock-preview
+  for VIP pieces, "read in the app" CTA. Rebuild + deploy via gh-pages.
+
+### 5.7 Website: live match center (P1)
+
+- [ ] **Scores/status board** - data the enrichment pipeline already owns
+  The `live-enrich` + `settle` workflows keep scores/status fresh; the
+  site gets a match-center page (live/FT chips, minute, scoreline)
+  fetched client-side like the prediction board — zero new packages.
+
+### 5.8 Subscription expiry / win-back notifications (P2)
+
+- [ ] **7th notify kind in `ai/notify.py`** - expiry ladder
+  `sub:{sub_id}:expiring:{T-3d}` / `sub:{sub_id}:expired:{date}` /
+  `sub:{sub_id}:winback:{T+7d}` — tier-gated audience (`min_rank` =
+  the subscriber's rank), deduped in the sent-set, dispatched from
+  `notify.yml` after the existing six kinds. Inbox row first, push
+  second (same order the other kinds use).
+- [ ] **Renal copy + plan deep link** - every message renews at the
+  subscriptions screen with the plan it lapsed from.
+
+### 5.9 Calibration transparency page (P2)
+
+- [ ] **Reliability curve** - in-app (insights/backtesting) + website
+  Bin the model's stated probabilities against settled outcomes and plot
+  the curve (binned accuracy + sample count per bin, honesty floor: bins
+  under n=10 render as "insufficient sample" rather than a line).
+  Computed from settled rows at read time — never a typed-in number.
+
+### 5.10 Attention-student results (P0 to record, runs in background)
+
+- [ ] **Record run `40503960706` when it lands** - evidence, not vibes
+  Train Attention Student (on `e78272e`) gets its numbers written into
+  this file + Notes: accuracy / log-loss vs the Pico v6 baseline
+  (LL 1.01129, acc 0.4827, blended 0.99491) on the SAME out-of-time
+  holdout. Adoption ONLY on an apples-to-apples win (tolerance 0.0005,
+  `FORCE_REPLACE` never) — otherwise it stays an experiment, exactly as
+  the Notes section already rules.
+
+### 5.11 Forum media bucket verification (P1 — quick)
+
+- [ ] **`forum-media` bucket access** - images + videos must render
+  Confirm the bucket's policies: public read (or signed URLs issued by
+  the upload path) so shared images/videos are visible to every viewer,
+  authenticated-only writes. Post with the upload path's actual policy
+  and a live fetch of a stored object.
+
+**PHASE 5 CHECKPOINT** ⏳ (pending): tick when every box above is `[x]`,
+then re-run the FINAL CHECKPOINT below against the Phase-5 tree.
 
 ---
 
 ## FINAL CHECKPOINT
 - [x] **All steps completed** - Review entire checklist
   Every box in Phases 1–4 is ticked (grep audit: the only unticked boxes
-  in the file were these final-checkpoint ones). Phase boundaries all
+  at sign-off were these final-checkpoint ones). Phase 5 was appended
+  later at the user's request and is explicitly OUT of scope here — it
+  carries its own pending checkpoint above. Phase boundaries all
   carry checkpoint evidence: PHASE 2 ✅, PHASE 3 ✅, PHASE 4 ✅. The
   parallel fool's-plan-v2 effort (Monte Carlo Lab orders of magnitude
   beyond Pico, `ai/sim/**` + `ai/attn/**`) is background work outside
@@ -996,6 +1147,8 @@ verification steps in its header).
 ---
 
 ## Notes
+- Flutterwave credentials live in `statwise/flutterwave_key` (CLIENT_ID / CLIENT_SECRET / ENCRYPTION_KEY) — gitignored 2026-10-27; never commit or log them. The public key placeholder in `lib/supabase.ts` gets replaced once 5.1's probe confirms which scheme the account uses.
+- Supabase migration `statwise/supabase-pending-migrations.sql` was run by the user on 2026-10-27 and verified live (favourites RLS, notifications, reply_to, RPC auth guard) — the three superseded per-file migrations are historical only.
 - Attention model experiment is complete but not recommended for replacement. Consider integrating sequence/embedding features into production LightGBM pipeline as P2 if desired.
 - Always maintain apples-to-apples comparison for any model changes.
 - Keep production model as baseline until new model beats it on same holdout.
