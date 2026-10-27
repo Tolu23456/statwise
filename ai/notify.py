@@ -1,32 +1,53 @@
 #!/usr/bin/env python3
 """
-Web push notification sender (IMPROVEMENT_PLAN Step 3.2).
+Web push notification sender (IMPROVEMENT_PLAN Step 3.2 + social layer).
 
-Sends browser push notifications for three events:
+Sends browser push notifications for six events:
 
-  --kind picks     new AI Picks since the last picks run (high confidence)
-  --kind kickoff   matches starting in the next ~30 minutes
-  --kind settled   picks that settled since the last settled run
+  --kind picks      new AI Picks since the last picks run (TIER-GATED: a
+                    pick only reaches users whose tier rank >= the pick's
+                    tier, so hidden picks never leak)
+  --kind kickoff    matches starting in the next ~30 min (tier-gated the
+                    same way — the message names the pick)
+  --kind settled    AI Picks that settled correctly since the last run
+                    (tier-gated like picks)
+  --kind bookmarked matches a user BOOKMARKED starting in [5, 30] min —
+                    targeted to exactly those users (user_favorites)
+  --kind odds       odds moves (>= 5% relative) on upcoming AI Picks —
+                    premium+ users, at most once per match per day
+  --kind inbox      the notifications table (reply/mention alerts written
+                    by the DB trigger) — pushed to the addressee and
+                    stamped push_sent_at, rows age out after 24h
 
 How it works
 ------------
 ai/notify.py reads `push_subscriptions` (one row per browser, written by
-the app's lib/push.ts) and `user_profiles.notifications` (the existing
-per-user toggle in the profile screen), builds a Web Push payload and
-sends it with pywebpush + the VAPID private key from the
-VAPID_PRIVATE_KEY secret (env).
+the app's lib/push.ts) and `user_profiles` (the per-user toggle plus
+current_tier for audience gating), builds a Web Push payload and sends it
+with pywebpush + the VAPID private key from the VAPID_PRIVATE_KEY secret
+(env).
 
 Dedupe/state lives in app_settings.notify_state so runs never double-send:
 each event carries a key (e.g. "picks:2026-10-26T12:00Z:espn_123") and a
-sent set is kept per kind.
+sent set is kept per kind. `inbox` is different: the notifications table
+itself is the dedupe (push_sent_at stamp), so state is not consulted.
 
-No `push_subscriptions` table yet (migration not run)? Exits 0 with a
-clear note — notifications are optional, nothing else may break.
+Audiences: every event carries an optional audience —
+  None            all subscribed devices
+  {"user_ids":…}  exactly those users (bookmarked, inbox)
+  {"min_rank": n} users with tier rank >= n (picks/kickoff/settled/odds)
+Tiers rank free=0 < premium=1 < vip=2 < vvip=3.
+
+Missing tables (migrations not run yet — user_favorites, notifications)?
+Exits 0 with a clear note — notifications are optional, nothing else may
+break. Same for a missing push_subscriptions table.
 
 Usage:
     python ai/notify.py --kind kickoff
     python ai/notify.py --kind picks --dry-run
-    python ai/notify.py --kind settled --limit 50
+    python ai/notify.py --kind bookmarked --dry-run
+    python ai/notify.py --kind odds
+    python ai/notify.py --kind inbox --limit 50
 """
 from __future__ import annotations
 
@@ -67,6 +88,35 @@ KICKOFF_MIN_MINUTES = 5   # don't alert for matches already under way
 #: Keep at most this many sent-keys per kind in app_settings state.
 MAX_SENT_KEYS = 500
 
+#: Tier ladder for audience gating — a pick/kickoff/settled payload only
+#: goes to users whose rank >= the pick's rank (predictions.tier is the
+#: lowercase slug 'free'/'premium'/'vip'/'vvip'; profiles carry the
+#: display form 'Free Tier'/'VVIP Tier'; both normalize here).
+TIER_RANK = {"free": 0, "premium": 1, "vip": 2, "vvip": 3}
+RANK_MIN = 0
+RANK_PREMIUM = 1   # odds alerts are premium+ per the user's request
+
+#: Odds alerts: relative move on the pick's decimal odds that counts as
+#: worth saying (5%), and how long one match stays quiet afterwards —
+#: the event key carries the UTC date, so <= 1 odds alert / match / day.
+ODDS_MIN_MOVE = 0.05
+
+#: inbox rows older than this are never pushed (stale replies are noise).
+INBOX_MAX_AGE_HOURS = 24
+
+#: Default rows pulled for kinds that take --limit (inbox).
+DEFAULT_LIMIT = 100
+
+
+def tier_rank(value: str | None) -> int:
+    """Normalize a tier ('vvip', 'VVIP Tier', 'vvip tier', None) to a rank.
+
+    Unknown/missing tiers rank as free — a gating bug must fail CLOSED
+    (treat as least privileged), never open.
+    """
+    slug = (value or "").strip().lower().replace(" tier", "").strip()
+    return TIER_RANK.get(slug, RANK_MIN)
+
 
 # ── Supabase (REST via requests — no client SDK needed here) ───────────────
 
@@ -88,7 +138,8 @@ def _rest(method: str, path: str, payload=None, params=None):
 
 
 def fetch_subscriptions() -> list[dict]:
-    """All browser subscriptions joined with the user's notification pref.
+    """All browser subscriptions joined with the user's notification pref
+    and tier (tier drives audience gating in audience_subs()).
 
     Returns [] with a clear log when the table doesn't exist yet.
     """
@@ -108,7 +159,7 @@ def fetch_subscriptions() -> list[dict]:
     try:
         profiles = _rest(
             "GET", "user_profiles",
-            params={"select": "id,notifications,display_name,username",
+            params={"select": "id,notifications,display_name,username,current_tier",
                     "id": f"in.({','.join(sorted({s['user_id'] for s in subs}))})"},
         ) or []
     except Exception as e:  # noqa: BLE001
@@ -120,8 +171,44 @@ def fetch_subscriptions() -> list[dict]:
         prof = by_id.get(s["user_id"]) or {}
         if prof.get("notifications") is False:
             continue  # user turned notifications off in the profile screen
-        out.append({**s, "name": prof.get("display_name") or prof.get("username") or ""})
+        out.append({
+            **s,
+            "name": prof.get("display_name") or prof.get("username") or "",
+            "tier_rank": tier_rank(prof.get("current_tier")),
+        })
     logger.info("%d subscription(s) with notifications enabled.", len(out))
+    return out
+
+
+# ── audiences (pure — unit tested) ──────────────────────────────────────────
+#: Audience shapes an event can carry:
+#:   None                       → every subscribed device (broadcast)
+#:   {"user_ids": {...}}        → exactly those users (bookmarked, inbox)
+#:   {"min_rank": n}            → users with tier rank >= n (picks-family, odds)
+#:   {"user_ids", "min_rank"}   → intersection (odds: premium AND bookmarked)
+#:   {"exclude_user_ids": {...}}→ minus these users (kickoff skips people who
+#:                                get the personal bookmarked alert instead)
+Audience = dict | None
+
+
+def audience_subs(subs: list[dict], audience: Audience) -> list[dict]:
+    """Filter subscriptions to an event's audience (pure — unit tested).
+
+    Ranking fails CLOSED: a subscription whose profile was missing (no
+    tier_rank) ranks RANK_MIN, so a VIP-only pick can never leak to an
+    unknown tier. Empty result → the caller sends nothing for this event.
+    """
+    if not audience:
+        return list(subs)
+    out = []
+    for s in subs:
+        if "user_ids" in audience and s.get("user_id") not in audience["user_ids"]:
+            continue
+        if "exclude_user_ids" in audience and s.get("user_id") in audience["exclude_user_ids"]:
+            continue
+        if "min_rank" in audience and s.get("tier_rank", RANK_MIN) < audience["min_rank"]:
+            continue
+        out.append(s)
     return out
 
 
@@ -218,6 +305,43 @@ def settled_message(p: dict) -> dict:
     }
 
 
+def bookmarked_message(p: dict, minutes: int) -> dict:
+    """The personal "your bookmarked match is about to start" alert.
+
+    Deliberately does NOT name the pick: this event is not tier-gated
+    (the match may have been bookmarked at a higher tier), so echoing the
+    pick here could leak a tier the user no longer pays for.
+    """
+    return {
+        "title": f"Your match starts in {minutes} min",
+        "body": f"{p.get('home_team', '?')} vs {p.get('away_team', '?')} kicks off soon",
+        "tag": f"bookmarked:{p.get('match_id')}",
+        "url": "/",
+    }
+
+
+def odds_message(p: dict, old: float, new: float) -> dict:
+    move = abs(new - old) / old * 100 if old > 0 else 0.0
+    direction = "📈" if new > old else "📉"
+    return {
+        "title": "Odds moved on your match",
+        "body": (f"{p.get('home_team', '?')} vs {p.get('away_team', '?')} — "
+                 f"odds {old:.2f} → {new:.2f} ({direction} {move:.0f}%)"),
+        "tag": f"odds:{p.get('match_id')}",
+        "url": "/",
+    }
+
+
+def inbox_message(r: dict) -> dict:
+    """Push for one notifications row the DB trigger already wrote."""
+    return {
+        "title": r.get("title") or "StatWise",
+        "body": (r.get("body") or "")[:200],
+        "tag": f"inbox:{r.get('kind')}:{r.get('id')}",
+        "url": r.get("url") or "/",
+    }
+
+
 # ── sending ────────────────────────────────────────────────────────────────
 
 def send_payload(subs: list[dict], payload: dict, dry_run: bool) -> tuple[int, list[str]]:
@@ -271,13 +395,109 @@ def purge_dead(endpoints: list[str]) -> None:
         logger.warning("Could not purge dead subscriptions: %s", e)
 
 
+def stamp_inbox_pushed(row_ids: list[str]) -> None:
+    """Mark notifications rows as pushed (the kind=inbox dedupe).
+
+    Only rows that actually reached >= 1 device are stamped — an
+    unsubscribed or transiently failing row stays eligible for the next
+    run until it ages out at INBOX_MAX_AGE_HOURS.
+    """
+    if not row_ids:
+        return
+    now = dt.datetime.now(dt.timezone.utc).replace(
+        microsecond=0).isoformat().replace("+00:00", "Z")
+    try:
+        _rest("PATCH", "notifications?push_sent_at=is.null",
+              {"push_sent_at": now},
+              params={"id": f"in.({','.join(row_ids)})"})
+        logger.info("Stamped %d inbox notification(s) as pushed.", len(row_ids))
+    except FileNotFoundError:
+        logger.info("notifications table not found — nothing to stamp (fine).")
+    except Exception as e:  # noqa: BLE001
+        # Next run re-reads these rows (unstamped) — worst case a duplicate
+        # push, never a lost one.
+        logger.warning("Could not stamp inbox rows: %s", e)
+
+
+def apply_odds_proposal(state: dict, proposal: OddsProposal, sent_keys: list[str],
+                        conditional_only: bool) -> None:
+    """Write proposed odds baselines into `state` (in place).
+
+    conditional_only=True  (nothing new path): only first-sight entries —
+        an alert that dedupe swallowed must NOT move its baseline, or
+        tomorrow's diff would be measured from the blocked value and the
+        move would vanish.
+    conditional_only=False (after send): first-sight entries AND the
+        ratchets whose alert key was actually among sent_keys.
+    """
+    values, conditional = proposal
+    if not values:
+        return
+    snapshot = dict(state.get("odds_snapshot") or {})
+    if conditional_only:
+        movable = set()
+    else:
+        movable = {k.split(":")[1] for k in sent_keys
+                   if k.startswith("odds:") and k.count(":") >= 2}
+    for mid, val in values.items():
+        if mid in conditional and mid not in movable:
+            continue
+        snapshot[mid] = val
+    state["odds_snapshot"] = snapshot
+
+
 # ── per-kind event gathering ───────────────────────────────────────────────
 
-def gather_kickoff(minutes_ahead: int) -> list[tuple[str, dict]]:
-    """(key, payload) for matches starting within the lead window.
+def kickoff_minutes(ko: str, now: dt.datetime) -> int | None:
+    """Whole minutes until kickoff, or None when the timestamp won't parse."""
+    try:
+        return int((dt.datetime.fromisoformat(ko.replace("Z", "+00:00")) - now)
+                   .total_seconds() // 60)
+    except (ValueError, AttributeError, TypeError):
+        return None
+
+
+def fetch_favoriter_ids(pred_ids: list[str]) -> dict[str, list[str]]:
+    """prediction_id → user_ids who bookmarked it (user_favorites).
+
+    Returns {} with a clear note when the table doesn't exist yet (section
+    4 of supabase-pending-migrations.sql not run) — bookmarked/odds alerts
+    simply don't fire until then; nothing breaks.
+    """
+    ids = [i for i in pred_ids if i]
+    if not ids:
+        return {}
+    try:
+        rows = _rest("GET", "user_favorites",
+                     params={"select": "user_id,prediction_id",
+                             "prediction_id": f"in.({','.join(ids)})"}) or []
+    except FileNotFoundError:
+        logger.info("user_favorites table not found — run "
+                    "statwise/supabase-pending-migrations.sql (section 4). "
+                    "bookmarked/odds alerts stay quiet until then (fine).")
+        return {}
+    except Exception as e:  # noqa: BLE001
+        logger.warning("Could not read user_favorites: %s", e)
+        return {}
+    out: dict[str, list[str]] = {}
+    for r in rows:
+        out.setdefault(r.get("prediction_id") or "", []).append(r["user_id"])
+    return out
+
+
+def gather_kickoff(minutes_ahead: int) -> list[tuple[str, dict, Audience]]:
+    """(key, payload, audience) for matches starting within the lead window.
 
     Both bounds are enforced server-side (PostgREST composite `and`) *and*
     re-checked below — a bare `gte` would sweep in every future fixture.
+
+    Two audiences in one query:
+      - everyone entitled to the pick's tier (the message names the pick);
+      - MINUS users who bookmarked the match — they receive the personal
+        "your match starts soon" alert from --kind bookmarked instead, so
+        nobody gets two notifications about the same fixture. With the
+        user_favorites table not yet migrated, the exclusion set is empty
+        and behaviour is exactly the old broadcast.
     """
     now = dt.datetime.now(dt.timezone.utc)
     lo = (now + dt.timedelta(minutes=KICKOFF_MIN_MINUTES)).replace(
@@ -287,24 +507,27 @@ def gather_kickoff(minutes_ahead: int) -> list[tuple[str, dict]]:
     rows = _rest(
         "GET", "predictions",
         params={
-            "select": "match_id,home_team,away_team,prediction,confidence,kickoff_time",
+            "select": "id,match_id,home_team,away_team,prediction,confidence,kickoff_time,tier",
             "and": f"(kickoff_time.gte.{lo},kickoff_time.lt.{hi})",
             "status": "eq.upcoming",
             "order": "kickoff_time.asc",
             "limit": "50",
         },
     ) or []
+    favoriters = fetch_favoriter_ids([r.get("id") or "" for r in rows])
     out = []
     for p in rows:
-        ko = p.get("kickoff_time") or ""
-        try:
-            minutes = int((dt.datetime.fromisoformat(ko.replace("Z", "+00:00")) - now)
-                          .total_seconds() // 60)
-        except ValueError:
+        minutes = kickoff_minutes(p.get("kickoff_time") or "", now)
+        if minutes is None:
             continue
         if not (KICKOFF_MIN_MINUTES <= minutes < minutes_ahead):
             continue  # defensive: window may have moved while we queried
-        out.append((f"kickoff:{p.get('match_id')}", kickoff_message(p, minutes)))
+        audience: Audience = {"min_rank": tier_rank(p.get("tier"))}
+        excluded = set(favoriters.get(p.get("id") or "") or [])
+        if excluded:
+            audience["exclude_user_ids"] = excluded
+        out.append((f"kickoff:{p.get('match_id')}", kickoff_message(p, minutes),
+                    audience))
     return out
 
 
@@ -313,14 +536,19 @@ def is_ai_pick(row: dict) -> bool:
     return bool((row.get("stats") or {}).get("is_ai_pick"))
 
 
-def gather_picks(since: str | None) -> list[tuple[str, dict]]:
-    """One grouped payload for AI Picks published after `since`.
+def gather_picks(since: str | None) -> list[tuple[str, dict, Audience]]:
+    """One grouped payload per TIER RANK for AI Picks published after `since`.
 
     `stats.is_ai_pick` is jsonb, so the flag is filtered here rather than
     in PostgREST (a phantom `is_ai_pick=eq.true` column filter 400s).
+
+    Tier gate: a pick may only reach users with rank >= the pick's tier
+    (free pick → everyone; vvip pick → vvip only), so a hidden pick is
+    never announced to users who cannot open it. Grouping by rank keeps
+    one payload per entitlement level.
     """
     params = {
-        "select": "match_id,home_team,away_team,prediction,confidence,stats,kickoff_time,created_at",
+        "select": "match_id,home_team,away_team,prediction,confidence,stats,kickoff_time,created_at,tier",
         "status": "eq.upcoming",
         "order": "kickoff_time.asc",
         "limit": "100",
@@ -331,17 +559,26 @@ def gather_picks(since: str | None) -> list[tuple[str, dict]]:
             if is_ai_pick(r)][:20]
     if not rows:
         return []
-    return [("picks:" + ",".join(r["match_id"] for r in rows), picks_message(rows))]
+    by_rank: dict[int, list[dict]] = {}
+    for r in rows:
+        by_rank.setdefault(tier_rank(r.get("tier")), []).append(r)
+    return [
+        (f"picks:{rank}:" + ",".join(r["match_id"] for r in group),
+         picks_message(group),
+         {"min_rank": rank})
+        for rank, group in sorted(by_rank.items())
+    ]
 
 
-def gather_settled(since: str | None) -> list[tuple[str, dict]]:
+def gather_settled(since: str | None) -> list[tuple[str, dict, Audience]]:
     """One payload per **AI Pick** that settled correctly after `since`.
 
     Only AI Picks (and only hits) — celebrating every correct tier-3-way
     prediction would be notification spam; misses are never celebrated.
+    Tier-gated by the pick's tier (the message names the pick).
     """
     params = {
-        "select": "match_id,home_team,away_team,prediction,actual_result,home_score,away_score,settled_at,stats",
+        "select": "match_id,home_team,away_team,prediction,actual_result,home_score,away_score,settled_at,stats,tier",
         "status": "eq.completed",
         "order": "settled_at.desc",
         "limit": "100",
@@ -350,60 +587,270 @@ def gather_settled(since: str | None) -> list[tuple[str, dict]]:
         params["settled_at"] = f"gt.{since}"
     rows = [r for r in (_rest("GET", "predictions", params=params) or [])
             if is_ai_pick(r)][:10]
-    return [(f"settled:{r['match_id']}", settled_message(r))
+    return [(f"settled:{r['match_id']}", settled_message(r),
+             {"min_rank": tier_rank(r.get("tier"))})
             for r in rows if r.get("actual_result") == r.get("prediction")]
+
+
+def gather_bookmarked(minutes_ahead: int) -> list[tuple[str, dict, Audience]]:
+    """Matches in the kickoff window that SOMEONE bookmarked — targeted to
+    exactly those users (user request 2026-10-27).
+
+    kickoff kind excludes these users so a bookmarker gets ONE alert (the
+    personal one), not two for the same match. Missing user_favorites
+    table → fetch_favoriter_ids returns {} → kickoff excludes nobody and
+    this returns [] : pre-migration behaviour, unchanged.
+    """
+    now = dt.datetime.now(dt.timezone.utc)
+    lo = (now + dt.timedelta(minutes=KICKOFF_MIN_MINUTES)).replace(
+        microsecond=0).isoformat().replace("+00:00", "Z")
+    hi = (now + dt.timedelta(minutes=minutes_ahead)).replace(
+        microsecond=0).isoformat().replace("+00:00", "Z")
+    rows = _rest(
+        "GET", "predictions",
+        params={
+            "select": "id,match_id,home_team,away_team,prediction,confidence,kickoff_time,tier",
+            "and": f"(kickoff_time.gte.{lo},kickoff_time.lt.{hi})",
+            "status": "eq.upcoming",
+            "order": "kickoff_time.asc",
+            "limit": "50",
+        },
+    ) or []
+    if not rows:
+        return []
+    favoriters = fetch_favoriter_ids([r["id"] for r in rows])
+    out = []
+    for p in rows:
+        minutes = kickoff_minutes(p.get("kickoff_time") or "", now)
+        if minutes is None:
+            continue
+        if not (KICKOFF_MIN_MINUTES <= minutes < minutes_ahead):
+            continue
+        users = favoriters.get(p["id"]) or []
+        if not users:
+            continue
+        out.append((f"bookmarked:{p.get('match_id')}",
+                    bookmarked_message(p, minutes),
+                    {"user_ids": set(users)}))
+    return out
+
+
+#: Baseline updates that may be written even when no alert fired
+#: (first sight of a match) vs updates that ride on a fired alert.
+OddsProposal = tuple[dict, set]
+
+
+def gather_odds(state: dict, limit: int = 200) -> tuple[list[tuple[str, dict, Audience]], OddsProposal]:
+    """AI Pick odds that MOVED enough to be worth saying, premium+ only.
+
+    Compares predictions.odds (decimal) against the last-alerted baseline
+    kept in app_settings state["odds_snapshot"]:
+
+      - first sight of a match  → set baseline, no alert;
+      - |new - old| / old >= 5% → alert, key "odds:{match_id}:{UTC date}"
+        (≤ 1 alert / match / day via the dedupe set) and ratchet baseline;
+      - smaller move            → keep the OLD baseline so drift
+        accumulates until it clears the threshold.
+
+    Audience = users who bookmarked that match AND rank >= premium
+    ({"user_ids", "min_rank"} intersect in audience_subs).
+
+    Returns (events, (proposal, conditional_ids)): the proposal maps
+    match_id → baseline to write; entries in conditional_ids only count
+    if their alert key survived dedupe (main applies them after filtering
+    — otherwise a same-day-blocked alert would silently move the baseline
+    and swallow tomorrow's).
+    """
+    now_iso = dt.datetime.now(dt.timezone.utc).replace(
+        microsecond=0).isoformat().replace("+00:00", "Z")
+    hi = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(days=7)).replace(
+        microsecond=0).isoformat().replace("+00:00", "Z")
+    rows = _rest(
+        "GET", "predictions",
+        params={
+            "select": "id,match_id,home_team,away_team,odds,tier,kickoff_time",
+            "and": f"(kickoff_time.gte.{now_iso},kickoff_time.lt.{hi})",
+            "status": "eq.upcoming",
+            "odds": "not.is.null",
+            "order": "kickoff_time.asc",
+            "limit": str(limit),
+        },
+    ) or []
+    if not rows:
+        return [], ({}, set())
+
+    snapshot: dict = dict(state.get("odds_snapshot") or {})
+    favoriters = fetch_favoriter_ids([r["id"] for r in rows])
+    today = dt.datetime.now(dt.timezone.utc).date().isoformat()
+
+    events: list[tuple[str, dict, Audience]] = []
+    proposal: dict = {}
+    conditional: set = set()
+    for r in rows:
+        mid = r.get("match_id")
+        try:
+            new = float(r.get("odds"))
+        except (TypeError, ValueError):
+            continue
+        if not mid:
+            continue
+        old = snapshot.get(mid)
+        if old is None:
+            proposal[mid] = new          # first sight: silent baseline
+            continue
+        try:
+            old = float(old)
+        except (TypeError, ValueError):
+            proposal[mid] = new
+            continue
+        if old <= 0 or abs(new - old) / old < ODDS_MIN_MOVE:
+            continue                     # below threshold: baseline unchanged
+        users = set(favoriters.get(r["id"]) or [])
+        if not users:
+            continue                     # nobody bookmarked → nobody to tell
+        events.append((f"odds:{mid}:{today}",
+                       odds_message(r, old, new),
+                       {"user_ids": users, "min_rank": RANK_PREMIUM}))
+        proposal[mid] = new              # ratchet — applied only if event sent
+        conditional.add(mid)
+    return events, (proposal, conditional)
+
+
+def gather_inbox(limit: int) -> list[tuple[str, dict, Audience]]:
+    """Notification rows the DB trigger wrote (replies/mentions) that no
+    device has pushed yet, younger than 24h — one event per row, targeted
+    at its addressee. The table IS the dedupe (push_sent_at stamp); the
+    notify_state sent-set is NOT consulted for this kind.
+
+    Missing notifications table (social migration not run) → exits quiet.
+    """
+    cutoff = (dt.datetime.now(dt.timezone.utc)
+              - dt.timedelta(hours=INBOX_MAX_AGE_HOURS)).replace(
+        microsecond=0).isoformat().replace("+00:00", "Z")
+    try:
+        rows = _rest(
+            "GET", "notifications",
+            params={
+                "select": "id,user_id,kind,title,body,url,created_at",
+                "push_sent_at": "is.null",
+                "created_at": f"gt.{cutoff}",
+                "order": "created_at.asc",
+                "limit": str(limit),
+            },
+        ) or []
+    except FileNotFoundError:
+        logger.info("notifications table not found — run "
+                    "statwise/supabase-pending-migrations.sql (section 4). "
+                    "No inbox pushes (this is fine).")
+        return []
+    except Exception as e:  # noqa: BLE001
+        logger.warning("Could not read notifications: %s", e)
+        return []
+    return [
+        (f"inbox:{r['id']}",
+         inbox_message(r),
+         {"user_ids": {r["user_id"]}})
+        for r in rows if r.get("user_id")
+    ]
 
 
 # ── main ───────────────────────────────────────────────────────────────────
 
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--kind", choices=["picks", "kickoff", "settled"], required=True)
+    ap.add_argument("--kind", choices=["picks", "kickoff", "settled",
+                                        "bookmarked", "odds", "inbox"],
+                    required=True)
     ap.add_argument("--dry-run", action="store_true",
                     help="gather + log payloads, send nothing")
     ap.add_argument("--minutes-ahead", type=int, default=KICKOFF_LEAD_MINUTES + 5,
-                    help="kickoff kind: upper window bound in minutes (30)")
+                    help="kickoff/bookmarked: upper window bound in minutes (30)")
+    ap.add_argument("--limit", type=int, default=DEFAULT_LIMIT,
+                    help="inbox/odds: max rows gathered (100)")
     args = ap.parse_args(argv)
 
     if not SUPABASE_URL or not SUPABASE_KEY:
         logger.error("SUPABASE_URL / SUPABASE_SERVICE_KEY not set — cannot run.")
         return 2
 
-    gather = {"kickoff": lambda: gather_kickoff(args.minutes_ahead),
-              "picks": lambda: gather_picks((load_state().get("picks") or {}).get("last_run_at")),
-              "settled": lambda: gather_settled((load_state().get("settled") or {}).get("last_run_at"))}[args.kind]
+    state = load_state()
+    gather = {
+        "kickoff": lambda: gather_kickoff(args.minutes_ahead),
+        "picks": lambda: gather_picks((state.get("picks") or {}).get("last_run_at")),
+        "settled": lambda: gather_settled((state.get("settled") or {}).get("last_run_at")),
+        "bookmarked": lambda: gather_bookmarked(args.minutes_ahead),
+        "odds": lambda: gather_odds(state, args.limit),
+        "inbox": lambda: gather_inbox(args.limit),
+    }[args.kind]
 
     try:
-        events = gather()
+        result = gather()
     except Exception as e:  # noqa: BLE001
         logger.error("Could not gather %s events: %s", args.kind, e)
         return 1
 
-    state = load_state()
-    pending = new_keys(args.kind, [k for k, _ in events], state)
-    events = [(k, m) for k, m in events if k in set(pending)]
+    # gather_odds also proposes baseline writes (see its docstring).
+    odds_proposal: OddsProposal | None = result[1] if args.kind == "odds" else None
+    events: list[tuple[str, dict, Audience]] = result[0] if args.kind == "odds" else result
+
+    # Dedupe: state sent-set for every kind EXCEPT inbox — for inbox the
+    # notifications table is the dedupe (push_sent_at stamp after send), so
+    # a half-crashed run is retried instead of silently swallowed.
+    if args.kind == "inbox":
+        pending_set = {k for k, _, _ in events}
+    else:
+        pending_set = set(new_keys(args.kind, [k for k, _, _ in events], state))
+    events = [e for e in events if e[0] in pending_set]
+
+    def finish_early(keys: list[str]) -> int:
+        """Common path: persist what must be persisted and stop."""
+        if args.kind == "odds" and odds_proposal is not None:
+            apply_odds_proposal(state, odds_proposal, keys, conditional_only=True)
+        if not args.dry_run and args.kind != "inbox":
+            save_state(mark_sent(args.kind, keys, state))
+        return 0
+
     if not events:
         logger.info("Nothing new for kind=%s — no notifications sent.", args.kind)
         # still advance last_run_at so the next window is bounded
-        save_state(mark_sent(args.kind, [], state))
+        finish_early([])
         return 0
     logger.info("%d new %s notification(s).", len(events), args.kind)
 
     subs = fetch_subscriptions()
     if not subs and not args.dry_run:
         logger.info("No subscribed devices — marking keys sent anyway.")
-        save_state(mark_sent(args.kind, [k for k, _ in events], state))
-        return 0
+        return finish_early([k for k, _, _ in events])
 
     total_ok, all_dead = 0, []
-    for _key, payload in events:
-        ok, dead = send_payload(subs, payload, args.dry_run)
+    inbox_stamped: list[str] = []
+    for key, payload, audience in events:
+        target = audience_subs(subs, audience)
+        if not target and not args.dry_run:
+            # Nobody entitled/subscribed for THIS event — not a failure of
+            # the others. Log and move on: non-inbox keys are still marked
+            # sent below (they were processed — retrying would re-skip
+            # forever); inbox rows stay unpushed so they retry next run
+            # until their 24h age-out.
+            logger.info("  %s: no eligible device — skipped.", key)
+            continue
+        ok, dead = send_payload(target, payload, args.dry_run)
         total_ok += ok
         all_dead.extend(dead)
+        if args.kind == "inbox" and not args.dry_run and ok > 0:
+            inbox_stamped.append(key.split(":", 1)[1])
 
     purge_dead(all_dead)
     if not args.dry_run:
-        save_state(mark_sent(args.kind, [k for k, _ in events], state))
+        if args.kind == "inbox":
+            stamp_inbox_pushed(inbox_stamped)
+        else:
+            # Baseline FIRST — save_state serializes the same dict, so a
+            # ratchet applied after the save would be silently dropped.
+            if args.kind == "odds" and odds_proposal is not None:
+                apply_odds_proposal(state, odds_proposal,
+                                    [k for k, _, _ in events], conditional_only=False)
+            save_state(mark_sent(args.kind, [k for k, _, _ in events], state))
     logger.info("Done. delivered=%d%s dead=%d",
                 total_ok, " (dry-run)" if args.dry_run else "", len(all_dead))
     return 0

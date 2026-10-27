@@ -1,15 +1,25 @@
 name: Notify
 
-# Plan step 3.2 — web push notifications.
+# Plan step 3.2 — web push notifications + social layer (2026-10-27).
 #
-# Three kinds, all idempotent (dedupe state in app_settings.notify_state):
-#   kickoff — matches starting in the next ~30 min (cron every 15 min)
-#   picks   — new AI Picks since the last picks run (after each predict run)
-#   settled — picks that settled correctly (after each settle run)
+# Six kinds, all idempotent (dedupe state in app_settings.notify_state,
+# except inbox which dedupes on the notifications table's push_sent_at):
+#   kickoff    — matches starting in the next ~30 min (cron every 15 min),
+#                tier-gated, EXCLUDES users who bookmarked the match
+#   bookmarked — the personal "your bookmarked match starts soon" alert for
+#                exactly those users (user_favorites), same 15-min cron
+#   picks      — new AI Picks since the last picks run, grouped per tier
+#                rank so a pick only reaches users entitled to see it
+#   settled    — AI Picks that settled correctly, tier-gated like picks
+#   odds       — >= 5% odds moves on bookmarked upcoming AI Picks,
+#                premium+ users, <= 1 alert per match per day
+#   inbox      — reply/mention rows the DB trigger wrote, pushed to the
+#                addressee and stamped push_sent_at (rows age out at 24h)
 #
-# Requires the VAPID_PRIVATE_KEY repository secret and the
-# supabase-notifications-migration.sql migration. Without them the script
-# exits 0 with a note — notifications are optional, never break the app.
+# Requires the VAPID_PRIVATE_KEY repository secret and section 4 of
+# supabase-pending-migrations.sql (user_favorites + notifications) for the
+# social kinds. Without them the script exits 0 with a note — notifications
+# are optional, never break the app.
 
 on:
   schedule:
@@ -25,8 +35,11 @@ on:
         type: choice
         options:
           - kickoff
+          - bookmarked
           - picks
           - settled
+          - odds
+          - inbox
       dry_run:
         description: 'Dry run (gather + log, send nothing)'
         required: false
@@ -64,10 +77,15 @@ jobs:
             echo "::error::SUPABASE_SERVICE_ROLE_KEY is not configured — cannot notify."
             exit 1
           fi
-          # Scheduled runs fan out to every kind (kickoff always; picks and
-          # settled are cheap no-ops when nothing changed).
+          # Scheduled runs fan out to every kind (each is a cheap no-op
+          # when nothing changed). Order matters: kickoff EXCLUDES
+          # bookmarkers, so bookmarked runs right after it to give those
+          # users their personal alert instead of the generic one.
           if [ "${{ github.event_name }}" = "schedule" ]; then
             python ai/notify.py --kind kickoff
+            python ai/notify.py --kind bookmarked
+            python ai/notify.py --kind odds
+            python ai/notify.py --kind inbox
             python ai/notify.py --kind picks
             python ai/notify.py --kind settled
           else
