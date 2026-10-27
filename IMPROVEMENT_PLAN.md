@@ -1073,6 +1073,14 @@ real database: 108 settled picks at 48.1%), 4.5 A/B framework
   holdout. Adoption ONLY on an apples-to-apples win (tolerance 0.0005,
   `FORCE_REPLACE` never) — otherwise it stays an experiment, exactly as
   the Notes section already rules.
+  **Run `40503960706` landed FAILED (2026-10-27)** — recorded 2026-10-27:
+  training early-stopped at epoch 12 (best inner-val LL **0.95050**, inner
+  tail only, never the holdout) but the runner received a shutdown signal
+  (exit 143) seconds later, so the **Train student step failed and the gate
+  job was skipped** — no holdout comparison exists, therefore no adoption
+  question yet. Next action: re-dispatch the workflow (the checkpoint cache
+  restores, so it resumes rather than restarts); the box stays unticked
+  until a run produces the gate numbers.
 
 ### 5.11 Forum media bucket verification (P1 — quick)
 
