@@ -438,13 +438,38 @@ source-tracked, alerted, reconcile tool, fallback widening).
 > nothing breaks.
 
 ### Step 3.3: AI Picks Surfacing
-- [ ] **Add AI Picks filter** - Prominent filter on home screen
-- [ ] **Add AI Picks badge** - On match cards
-- [ ] **Create AI Picks section** - Dedicated prominent section
-- [ ] **Add confidence indicators** - Visual badges
-- [ ] **Consider dedicated tab** - Evaluate if needed
-- [ ] **Test UX** - Verify discoverability
-- [ ] **Commit changes**
+- [x] **Add AI Picks filter** - Prominent filter on home screen
+  (gold-star filter row above the search box: live count + ON/OFF pill,
+  composes with league tabs **and** search, own empty state with a
+  "Show all predictions" escape — `app/(tabs)/index.tsx`, `aiOnly` state)
+- [x] **Add AI Picks badge** - On match cards
+  (star "AI Pick" pill next to the prediction badge, `PredictionCard` L268;
+  same flag surfaced in the detail modal L250 — verified present)
+- [x] **Create AI Picks section** - Dedicated prominent section
+  ("AI Picks today" strip at the top of the feed: best certainty first,
+  8 cards max, certainty bar per card, tap → detail modal,
+  "See all N ›" flips the filter on; hidden when the filter is already on
+  or a search is active, so it never duplicates the list)
+- [x] **Add confidence indicators** - Visual badges
+  (cards already carry Confidence % (colour-coded), Certainty % with a
+  shield icon and the three-way probability bars; added one **shared**
+  definition — `certaintyTone` in `lib/aiPicks.ts`: ≥65 high, ≥50 mid,
+  else low — so the section, card and modal can never disagree)
+- [x] **Consider dedicated tab** - Evaluate if needed
+  **Decision: no new tab.** Five tabs already (Predictions, Insights,
+  Forum, Subscriptions, Profile); a sixth would fragment navigation for a
+  subset of rows, and the filter + top-of-feed section puts AI Picks within
+  one tap of the default screen. Revisit only if AI Picks become a primary
+  navigation target (e.g. after a dedicated booking flow).
+- [x] **Test UX** - Verify discoverability
+  `tsc lib/aiPicks.ts lib/aiPicks.test.ts` (strict, CI-simulated types) +
+  node → **25/25 PASS** (jsonb flag incl. null/malformed rows, certainty
+  fallback incl. NaN, stable ranking with ties, shared tone thresholds,
+  label copy); full `tsc --noEmit` exit 0; CI **App tests run 40462391752**
+  → success with all four suites (polling 29, live-state 31, push 14,
+  aiPicks 25). Visual pass on the running app deferred per user instruction
+  (keep RAM free — no localhost restarts).
+- [x] **Commit changes** (`f136e48` code)
 
 ### Step 3.4: Loading & Error States
 - [x] **Add skeleton loaders** - For match cards and detail view
