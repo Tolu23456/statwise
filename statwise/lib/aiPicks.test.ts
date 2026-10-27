@@ -8,6 +8,7 @@
  *   node <dir>/aiPicks.test.js
  */
 import {
+  aiFilterEmptyCopy,
   aiPicksLabel,
   aiPicksOf,
   certaintyOf,
@@ -81,5 +82,48 @@ check('tone low for NaN', certaintyTone(NaN), 'low');
 check('label pluralises', [aiPicksLabel(3), aiPicksLabel(1), aiPicksLabel(0)],
   ['3 AI Picks', '1 AI Pick', 'No AI Picks yet']);
 check('label handles negatives as empty', aiPicksLabel(-2), 'No AI Picks yet');
+
+// --- aiFilterEmptyCopy: every empty state names its real reason ------------
+// The live bug this guards: a day with 0 AI Picks rendered a generic
+// "no picks here yet", which users read as an inverted toggle.
+const noAiToday = aiFilterEmptyCopy({ aiCount: 0, total: 47, leagueNarrowed: false, search: '' });
+check('0 AI Picks -> explicit "no picks today" title', noAiToday.title, 'No AI Picks today');
+check('0 AI Picks copy carries the real feed size',
+  noAiToday.description.includes('all 47 predictions show'), true);
+check('0 AI Picks copy says Pico has not flagged (nothing hidden)',
+  noAiToday.description.includes("he hasn't flagged one today"), true);
+
+const leagueHidden = aiFilterEmptyCopy({ aiCount: 6, total: 47, leagueNarrowed: true, search: '' });
+check('AI Picks behind a league tab -> league title', leagueHidden.title, 'No AI Picks in this league');
+check('league copy carries the hidden count',
+  leagueHidden.description.includes("Today's 6 AI Picks are under other league tabs"), true);
+
+const searchMiss = aiFilterEmptyCopy({ aiCount: 6, total: 47, leagueNarrowed: false, search: 'Arsenal' });
+check('search that matches no AI Pick -> search title', searchMiss.title, 'No AI Picks found');
+check('search copy counts the AI Picks it could not match',
+  searchMiss.description.includes('None of today\'s 6 AI Picks match "Arsenal"'), true);
+
+const searchNoAi = aiFilterEmptyCopy({ aiCount: 0, total: 47, leagueNarrowed: false, search: 'Arsenal' });
+check('search with 0 AI Picks still explains the day (not just the query)',
+  searchNoAi.description.includes("Pico hasn't flagged an AI Pick today"), true);
+
+const searchOne = aiFilterEmptyCopy({ aiCount: 1, total: 47, leagueNarrowed: false, search: 'zzz' });
+check('singular AI Pick in search copy', searchOne.description.includes("match \"zzz\" — clear the search to see it"), true);
+
+const generic = aiFilterEmptyCopy({ aiCount: 3, total: 47, leagueNarrowed: false, search: '' });
+check('no narrowing -> fallback title', generic.title, 'No AI Picks here yet');
+check('fallback counts what is hidden', generic.description.includes('Today has 3 AI Picks'), true);
+
+const singularLeague = aiFilterEmptyCopy({ aiCount: 1, total: 47, leagueNarrowed: true, search: '  ' });
+check('whitespace-only search counts as no search', singularLeague.title, 'No AI Picks in this league');
+check('singular league copy uses "is"', singularLeague.description.includes('1 AI Pick is under other league tabs'), true);
+
+const emptyFeed = aiFilterEmptyCopy({ aiCount: 0, total: 0, leagueNarrowed: false, search: '' });
+check('empty feed edge -> honest "no predictions" title', emptyFeed.title, 'No predictions today');
+check('empty feed copy suggests refresh, never blames the filter',
+  emptyFeed.description.includes('pull down to refresh'), true);
+
+const negative = aiFilterEmptyCopy({ aiCount: -5, total: -5, leagueNarrowed: false, search: '' });
+check('negative counts clamp to the empty-feed branch', negative.title, 'No predictions today');
 
 console.log(`aiPicks.test: ${passed} checks passed`);

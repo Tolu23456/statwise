@@ -71,3 +71,81 @@ export function aiPicksLabel(count: number): string {
   if (count === 1) return '1 AI Pick';
   return `${count} AI Picks`;
 }
+
+/** Inputs for {@link aiFilterEmptyCopy} — all counts come from real state. */
+export type AiFilterEmptyInput = {
+  /** AI Picks in the day's full feed (before the AI/league/search filters). */
+  aiCount: number;
+  /** Total predictions in the day's full feed (before filters). */
+  total: number;
+  /** True when a league tab other than "All" is active. */
+  leagueNarrowed: boolean;
+  /** Active search text; '' (or whitespace) when no search. */
+  search: string;
+};
+
+/**
+ * Empty-state copy for the AI Picks filter (follow-up 2026-10-27).
+ *
+ * Users read an empty filtered list as "the toggle is inverted" unless the
+ * screen says *why* it is empty, so the three honest reasons get distinct
+ * copy, each carrying the real counts:
+ *   1. no AI Picks flagged today — nothing is being hidden from the user,
+ *   2. AI Picks exist but a league tab hides them,
+ *   3. AI Picks exist but the search matches none of them,
+ * plus the edge where the day's feed itself is empty. Pure counts-in,
+ * copy-out — unit-tested on plain Node like the rest of this module.
+ */
+export function aiFilterEmptyCopy(
+  input: AiFilterEmptyInput,
+): { title: string; description: string } {
+  const total = Math.max(0, Math.floor(input.total));
+  const aiCount = Math.max(0, Math.floor(input.aiCount));
+  const query = input.search.trim();
+
+  if (aiCount <= 0 && total <= 0) {
+    return {
+      title: 'No predictions today',
+      description:
+        'There are no predictions for today yet — pull down to refresh. AI Picks appear here once Pico flags one.',
+    };
+  }
+
+  if (query) {
+    return {
+      title: 'No AI Picks found',
+      description:
+        aiCount <= 0
+          ? `Pico hasn't flagged an AI Pick today, so nothing matches "${query}" either — clear the search to see all ${total} predictions.`
+          : `None of today's ${aiPicksLabel(aiCount)} match "${query}" — clear the search to see ${aiCount === 1 ? 'it' : 'them'}.`,
+    };
+  }
+
+  if (aiCount <= 0) {
+    return {
+      title: 'No AI Picks today',
+      description:
+        `Pico flags a match only when his certainty clears the bar, and ` +
+        `he hasn't flagged one today — all ${total} predictions show ` +
+        `with the filter off.`,
+    };
+  }
+
+  if (input.leagueNarrowed) {
+    return {
+      title: 'No AI Picks in this league',
+      description:
+        `Today's ${aiPicksLabel(aiCount)} ${aiCount === 1 ? 'is' : 'are'} ` +
+        `under other league tabs — switch to All leagues or turn the ` +
+        `filter off.`,
+    };
+  }
+
+  return {
+    title: 'No AI Picks here yet',
+    description:
+      `Today has ${aiPicksLabel(aiCount)}, but the current filters hide ` +
+      `${aiCount === 1 ? 'it' : 'them'} — tap Show all predictions to ` +
+      `see the day.`,
+  };
+}

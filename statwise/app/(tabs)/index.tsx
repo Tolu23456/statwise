@@ -19,7 +19,7 @@ import { shouldShowOnboarding } from '@/lib/onboarding';
 import { LIMITS } from '@/lib/validation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
-import { aiPicksLabel, aiPicksOf, certaintyOf, certaintyTone, isAiPick } from '@/lib/aiPicks';
+import { aiFilterEmptyCopy, aiPicksLabel, aiPicksOf, certaintyOf, certaintyTone, isAiPick } from '@/lib/aiPicks';
 import { RETRY_COPY } from '@/lib/errors';
 import { QUERY_KEYS, STALE_TIME } from '@/lib/queryConfig';
 import {
@@ -444,18 +444,32 @@ export default function HomeScreen() {
       const labels = [aiOnly && 'AI Picks', favOnly && 'Favourites']
         .filter(Boolean)
         .join(' and ');
+      // AI-filter empty copy is count-aware (lib/aiPicks.ts): a day with 0
+      // AI Picks says so with the real feed size, instead of the old generic
+      // message that read like an inverted toggle. Favourites copy unchanged.
+      const aiCopy =
+        aiOnly && !favOnly
+          ? aiFilterEmptyCopy({
+              aiCount,
+              total: predictions.length,
+              leagueNarrowed: selectedLeague !== 'all',
+              search,
+            })
+          : null;
       return (
         <View style={styles.empty}>
           <Ionicons name="star-outline" size={52} color={C.textMuted} />
           <Text style={[styles.emptyTitle, { color: C.text }]}>
-            {search ? `No ${labels} found` : `No ${labels} here yet`}
+            {aiCopy ? aiCopy.title : search ? `No ${labels} found` : `No ${labels} here yet`}
           </Text>
           <Text style={[styles.emptyDesc, { color: C.textSecondary }]}>
-            {search
-              ? `Nothing in ${labels} matches "${search}" — clear the search or widen the filter.`
-              : favOnly && !aiOnly
-                ? 'Nothing you have saved shows up under this league right now. Tap the bookmark on any match to save it here.'
-                : 'Pico only flags a match as an AI Pick when its certainty clears the bar, and only saved matches appear under Favourites. Check the league tabs or look at all predictions.'}
+            {aiCopy
+              ? aiCopy.description
+              : search
+                ? `Nothing in ${labels} matches "${search}" — clear the search or widen the filter.`
+                : favOnly && !aiOnly
+                  ? 'Nothing you have saved shows up under this league right now. Tap the bookmark on any match to save it here.'
+                  : 'Pico only flags a match as an AI Pick when its certainty clears the bar, and only saved matches appear under Favourites. Check the league tabs or look at all predictions.'}
           </Text>
           <TouchableOpacity
             style={[styles.emptyBtn, { backgroundColor: C.primaryLight }]}
