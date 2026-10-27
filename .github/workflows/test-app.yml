@@ -4,6 +4,8 @@ name: App tests
 # Currently:
 #   - plan 2.1 polling policy (tiered cadence, visibility and network gating)
 #   - plan 2.2 live-state helpers (freshness gating, live chips, scores)
+#   - plan 3.2 web-push helpers (base64url VAPID key, subscription row)
+#   - plan 3.3 AI Picks surfacing (jsonb flag, certainty ranking/tone)
 # Pure Node, no npm install needed.
 
 on:
@@ -46,3 +48,10 @@ jobs:
             --outDir "$RUNNER_TEMP/push-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/push-test/push.test.js"
+      - name: AI Picks surfacing tests (plan 3.3)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/aiPicks.ts statwise/lib/aiPicks.test.ts \
+            --outDir "$RUNNER_TEMP/aipicks-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/aipicks-test/aiPicks.test.js"
