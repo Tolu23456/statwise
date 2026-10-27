@@ -916,19 +916,79 @@ to start collecting push subscriptions (everything no-ops safely until then).
   experiments section degrades honestly while `client_events` is
   un-migrated).
 
-**PHASE 4 CHECKPOINT**: App optimized, secure, observable, scalable
+**PHASE 4 CHECKPOINT** ✅ (2026-10-27): App optimized, secure, observable,
+scalable — 4.1 central query cache policy (12 suites / 445 CI checks by
+the end of the phase, up from 7 suites / 199), 4.2 bundle work (entry
+1,803,548 → 1,754,038 B with lazy modals; local interleaved measurement
+−46,647 B every run, median load 1,688 → 1,603 ms; honest limits
+recorded), 4.3 abuse prevention (server-side RPC rate limit + RLS locks,
+client validation/rate-limits/booking guards, honeypots; live security
+probes closed the `app_settings` world-write and fixed a silently broken
+payment audit trail; tier self-escalation documented as needing
+server-side payment verification), 4.4 observability (telemetry pipeline
++ daily metrics dashboard + alert thresholds, live-verified against the
+real database: 108 settled picks at 48.1%), 4.5 A/B framework
+(deterministic bucketing, JSON config, wired CTA experiment dormant at
+0%, sample run recovers the simulated winner). Pending user actions:
+run `statwise/supabase-notifications-migration.sql`,
+`statwise/supabase-security-migration.sql` and
+`statwise/supabase-telemetry-migration.sql` in the Supabase SQL editor
+(everything no-ops safely until then; the security one has live-probe
+verification steps in its header).
 
 ---
 
 ## FINAL CHECKPOINT
-- [ ] **All steps completed** - Review entire checklist
-- [ ] **TypeScript compiles** - `cd statwise && npx tsc --noEmit`
-- [ ] **Tests pass** - If any exist
-- [ ] **All changes committed & pushed** - To main
-- [ ] **Website deployed** - Verify https://tolu23456.github.io/statwise/
-- [ ] **App builds** - Check for errors
-- [ ] **Metrics verified** - Production model still performing well
-- [ ] **Documentation updated** - Update relevant docs
+- [x] **All steps completed** - Review entire checklist
+  Every box in Phases 1–4 is ticked (grep audit: the only unticked boxes
+  in the file were these final-checkpoint ones). Phase boundaries all
+  carry checkpoint evidence: PHASE 2 ✅, PHASE 3 ✅, PHASE 4 ✅. The
+  parallel fool's-plan-v2 effort (Monte Carlo Lab orders of magnitude
+  beyond Pico, `ai/sim/**` + `ai/attn/**`) is background work outside
+  this checklist — its attention-student run is still training and its
+  results get recorded here when it lands.
+- [x] **TypeScript compiles** - `cd statwise && npx tsc --noEmit`
+  Exit 0 — run twice today against the final tree (after the 4.5 wiring
+  and again after the last edits).
+- [x] **Tests pass** - If any exist
+  App tests run **40477856495 → success**: 13 suites, **445 checks**
+  (polling 29, liveFeed 31, push 14, aiPicks 25, errors 51, network 14,
+  favorites 35, queryConfig 33, validation 49, rateLimit 28,
+  bookingGuard 24, telemetry 52, experiments 60). Plus the Python-side
+  suites in their own workflows (settle dry-runs, booking smoke, evals).
+- [x] **All changes committed & pushed** - To main
+  This commit completes the tree; every phase pushed its code before its
+  plan evidence (4.1 `b20e014`/`fe60ebe`, 4.2 `693c16f`/`f05b4cf`/
+  `a9c9dd1`, 4.3 `bde654f`/`9a1c0ab`, 4.4 `045137d`/`b81ca2f`, 4.5
+  `74f0470`/`0dddf67`).
+- [x] **Website deployed** - Verify https://tolu23456.github.io/statwise/
+  Fetched live today — the deployed landing page serves (StatWise hero,
+  features, footer links). Note: it is the *marketing* page; the app
+  itself runs at localhost:5000 in dev and in the production export.
+- [x] **App builds** - Check for errors
+  Last production export: bundle-report run **40467285978** (4.2) —
+  entry 1,754,038 B + async modal chunks, no build errors. Today the
+  local dev server was restarted (port 5000 was down) via
+  `scripts/start-web.sh` and serves cleanly — the readiness probe is a
+  full entry bundle, which also proves the 4.5 wiring resolves.
+- [x] **Metrics verified** - Production model still performing well
+  Live daily report (today): prediction pipeline alive (18 published in
+  24h, 6 of them AI Picks), booking pipeline 2/2 generations, and the
+  30-day settled window: **108 picks at 48.1%** (free 54.5% n=33,
+  premium 50.0% n=42, vip 40.0% n=30, vvip 33.3% n=3 — reported
+  verbatim). That tracks the out-of-time holdout expectation almost
+  exactly (Pico v6 acc 0.4827 / LL 1.01129, blended 0.99491): the
+  production model is performing as validated, with small-n tier
+  variance visible rather than hidden.
+- [x] **Documentation updated** - Update relevant docs
+  `statwise/scripts/README.md` — new sections for the metrics report
+  (usage, flags, credentials, workflow) and the bundle-analysis tooling;
+  `statwise/HANDOFF.md` — dated operations update (GitHub Actions
+  inventory, the three pending Supabase migrations with what each
+  unlocks, and the known open tier-escalation finding with its fix
+  path). Every migration file carries its own header: what it fixes, why,
+  honest limits, and post-run verification queries. `IMPROVEMENT_PLAN.md`
+  itself is the phase-by-phase evidence log.
 
 **Completion Date**: ___________
 **Completed By**: ___________

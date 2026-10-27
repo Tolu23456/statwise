@@ -8,6 +8,30 @@ Both workflows are running in the Replit environment:
 
 ---
 
+## Operations update (2026-10-27, plan Phase 4)
+
+CI/CD now lives in **GitHub Actions** (`.github/workflows/`): data fetch →
+predict → settle → notify crons, weekly retrain, daily metrics
+(`metrics-daily.yml` — dashboard in the run's step summary, failure
+emails are the alert channel), `test-app.yml` (13 Node suites, 445
+checks) and dispatch-only `bundle-report.yml` (export size + headless
+load measurement).
+
+**Pending one-time actions — run in the Supabase SQL editor (safe to
+re-run, verification steps in each file header):**
+1. `statwise/supabase-notifications-migration.sql` — push subscriptions
+2. `statwise/supabase-security-migration.sql` — forum RPC rate limit +
+   RLS locks (server-side half of plan 4.3)
+3. `statwise/supabase-telemetry-migration.sql` — `client_events` table
+   for error/performance telemetry (plan 4.4)
+
+All three no-op safely until run. Known open security finding: tier
+upgrades are client-attested after the Flutterwave callback; closing it
+needs server-side payment verification (webhook/edge function holding
+the Flutterwave secret) — see the header of the security migration.
+
+---
+
 ## Project Overview
 
 StatWise is an AI-powered sports prediction platform. It combines:
