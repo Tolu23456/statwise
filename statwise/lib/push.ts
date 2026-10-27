@@ -46,7 +46,10 @@ export function urlBase64ToUint8Array(base64String: string): Uint8Array {
   const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
   const raw = typeof atob === 'function'
     ? atob(base64)
-    : Buffer.from(base64, 'base64').toString('binary');
+    // atob is global in every browser and in Node >= 16; if it's missing the
+    // environment can't do web push anyway. (A Buffer fallback would need
+    // @types/node, which plain `tsc` in CI doesn't have.)
+    : (() => { throw new Error('atob is unavailable in this environment'); })();
   const output = new Uint8Array(raw.length);
   for (let i = 0; i < raw.length; i += 1) output[i] = raw.charCodeAt(i);
   return output;
