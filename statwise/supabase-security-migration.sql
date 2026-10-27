@@ -14,6 +14,10 @@
 --     Now: the RPC strips control/invisible chars, caps at 1000 chars and
 --     enforces 6 messages / 60s per user; ALL client-side write policies on
 --     forum_messages are dropped, so the RPC is the only client write path.
+--     (Signature: p_message text, p_reply_to uuid default null — identical
+--     to supabase-social-migration.sql so any run order converges on ONE
+--     function; p_reply_to only widens the feature, all hardening above
+--     applies unchanged.)
 --
 --  2. app_settings (which holds the published booking code + generation
 --     stats) had policy "Admin users can manage app settings" FOR ALL USING
@@ -63,7 +67,16 @@ begin;
 -- 1. Forum: single, rate-limited, server-sanitized write path
 -- ─────────────────────────────────────────────────────────────────────────
 
-create or replace function public.send_forum_message(p_message text)
+-- Clear legacy 1-argument overloads first (a leftover makes PostgREST
+-- unable to resolve the name), then the shared 2-argument definition —
+-- byte-identical in behaviour to the one in
+-- supabase-social-migration.sql so any execution order converges.
+drop function if exists public.send_forum_message(text);
+
+create or replace function public.send_forum_message(
+  p_message  text,
+  p_reply_to uuid default null
+)
 returns void
 language plpgsql
 security definer
@@ -104,17 +117,25 @@ begin
     raise exception 'Too many messages — wait a moment before sending again.';
   end if;
 
+  -- A quote whose target no longer exists degrades to a plain message
+  -- instead of failing the send.
+  if p_reply_to is not null and not exists (
+    select 1 from public.forum_messages where id = p_reply_to
+  ) then
+    p_reply_to := null;
+  end if;
+
   select coalesce(display_name, username, email) into v_username
   from public.user_profiles
   where id = auth.uid()
   limit 1;
 
-  insert into public.forum_messages (user_id, username, message, created_at)
-  values (auth.uid(), coalesce(v_username, 'User'), v_clean, now());
+  insert into public.forum_messages (user_id, username, message, reply_to, created_at)
+  values (auth.uid(), coalesce(v_username, 'User'), v_clean, p_reply_to, now());
 end;
 $$;
 
-grant execute on function public.send_forum_message(text) to authenticated;
+grant execute on function public.send_forum_message(text, uuid) to authenticated;
 
 -- Drop every client-side write policy the three setup scripts created
 -- (supabase-schema.sql, database_schema.sql, supabase-forum-setup.sql,
