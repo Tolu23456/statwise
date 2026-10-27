@@ -107,6 +107,10 @@ jobs:
           # × backward — 512 peaks ~2 GB, comfortably inside the 16 GiB runner.
           ATTN_BATCH: '512'
           ATTN_EVAL_CHUNK: '1024'
+          # Pure-NumPy eval/serve chunk: float64 attention map is
+          # (chunk, 4, 175, 175) ≈ 0.5 GB at 512 — a full ~6.6k-row
+          # holdout batch unchunked would need ~6 GB.
+          ATTN_NP_CHUNK: '512'
           OMP_NUM_THREADS: '4'
           MKL_NUM_THREADS: '4'
           OPENBLAS_NUM_THREADS: '4'
@@ -165,7 +169,14 @@ jobs:
   # ── the race: SAME gate as the weekly retrain ──────────────────────
   gate:
     needs: train
-    if: inputs.race == 'true' && needs.train.result == 'success'
+    # 'failure' (not 'cancelled') is allowed on purpose: train.py saves the
+    # serving bundle right after parity, so a late eval/ref crash can still
+    # salvage the run — the gate re-evaluates the candidate itself anyway.
+    # No bundle -> the artifact download below fails and the run still ends
+    # red, which is the honest signal.
+    # (explicit always(): GitHub implicitly prepends success() otherwise,
+    # which would re-skip the job on a failed train)
+    if: ${{ always() && inputs.race == 'true' && needs.train.result != 'cancelled' }}
     runs-on: ubuntu-latest
     timeout-minutes: 240
     steps:

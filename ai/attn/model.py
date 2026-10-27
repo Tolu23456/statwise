@@ -18,6 +18,7 @@ after every CI training run.
 from __future__ import annotations
 
 import math
+import os
 
 import numpy as np
 
@@ -162,8 +163,25 @@ class NumpyTabTransformer:
         return module.export_numpy()
 
     def forward(self, X: np.ndarray) -> dict:
-        p = self.p
+        """Forward pass, chunked over rows.
+
+        Rows are fully independent (per-row layernorm + per-row attention),
+        so chunking is EXACT — same numbers as one full-batch call.  The
+        chunk bound exists because the float64 attention map is
+        (chunk, heads, T, T) ≈ 0.5 GB at chunk=512 (T=175); a full holdout
+        batch (~6.6k rows) unchunked would need ~6 GB.
+        """
         X = np.asarray(X, dtype=np.float64)
+        chunk = max(1, int(os.environ.get("ATTN_NP_CHUNK", "512")))
+        if X.shape[0] > chunk:
+            outs = [self._forward_chunk(X[i:i + chunk])
+                    for i in range(0, X.shape[0], chunk)]
+            return {k: np.concatenate([o[k] for o in outs], axis=0)
+                    for k in outs[0]}
+        return self._forward_chunk(X)
+
+    def _forward_chunk(self, X: np.ndarray) -> dict:
+        p = self.p
         tok = X[..., :, None] * p["tok_w"] + p["tok_b"]        # (B, T, d)
         cls = np.broadcast_to(p["cls"], (X.shape[0], 1, p["cls"].size))
         h = np.concatenate([cls, tok], axis=1)

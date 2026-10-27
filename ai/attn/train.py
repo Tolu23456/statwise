@@ -205,9 +205,10 @@ def train_model(Ztr: np.ndarray, tgt: np.ndarray, wtr: np.ndarray,
             done = i // batch + 1
             if done % 50 == 0:
                 el = time.time() - t0
+                total = ep * steps_per_epoch + done   # global step count
                 logger.info(f"[attn]   ep {ep + 1} step {done}/"
                             f"{steps_per_epoch} ({el:.0f}s elapsed, "
-                            f"{el / max(1, done):.2f}s/step)")
+                            f"{el / max(1, total):.2f}s/step avg)")
                 if budget_s and el > budget_s:
                     # Stop mid-epoch: weights so far are valid, and
                     # best_state (if any) is reloaded after the loop.
@@ -489,6 +490,31 @@ def main(argv=None) -> int:
                      "bundle whose predictions would differ from training")
         return 3
 
+    # ── 5b. early bundle save — the serving bundle is FINAL once parity
+    # passes (weights are best-so-far, normalizers/recipe fixed).  Write it
+    # NOW so a crash anywhere in eval/LGBM-ref below cannot cost another
+    # full training run; section 9 rewrites the same file with identical
+    # contents alongside the report.
+    import joblib
+
+    def _save_bundle():
+        payload = {
+            "cfg": cfg.to_dict(),
+            "params": net.p,
+            "n_heads": cfg.n_heads,
+            "x_mean": x_mean, "x_std": x_std,
+            "t_mean": t_mean, "t_std": t_std,
+            "recipe": recipe_raw if teacher_active else None,
+            "recipe_meta": rmeta or {},
+            "git_sha": os.environ.get("GITHUB_SHA", ""),
+        }
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        joblib.dump(payload, out_path)
+        logger.info(f"[attn] bundle saved {out_path} "
+                    f"({os.path.getsize(out_path) / 1e6:.1f} MB)")
+
+    _save_bundle()
+
     # ── 6. holdout evaluation (numpy path, once) ────────────────────
     Xh, yh, gh, Th = X[m_ho], y[m_ho].astype(np.int64), g[m_ho], T[m_ho]
     Zh = _scale(Xh, Th)
@@ -637,21 +663,9 @@ def main(argv=None) -> int:
         "smoke": bool(args.smoke),
     }
 
-    # ── 9. save bundle + report ─────────────────────────────────────
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    # ── 9. save bundle (again, identical) + report ──────────────────
     os.makedirs(os.path.dirname(rep_path), exist_ok=True)
-    import joblib
-    payload = {
-        "cfg": cfg.to_dict(),
-        "params": net.p,
-        "n_heads": cfg.n_heads,
-        "x_mean": x_mean, "x_std": x_std,
-        "t_mean": t_mean, "t_std": t_std,
-        "recipe": recipe_raw if teacher_active else None,
-        "recipe_meta": rmeta or {},
-        "git_sha": report["git_sha"],
-    }
-    joblib.dump(payload, out_path)
+    _save_bundle()
     with open(rep_path, "w") as fh:
         json.dump(report, fh, indent=1)
     logger.info(f"[attn] saved {out_path} "
