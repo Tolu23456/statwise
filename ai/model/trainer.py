@@ -580,6 +580,13 @@ class FootballPredictor:
         # inference consistent so NaN never reaches the scaler or the net.
         X = np.nan_to_num(np.asarray(X, dtype=np.float64), nan=0.0, posinf=1e6, neginf=-1e6)
 
+        # Plan 2.4: the attention student needs the lab-teacher posterior
+        # tokens appended — advertised via needs_teacher on the pipe.  Extend
+        # ONCE here and hand every head the same extended row; LightGBM pipes
+        # never set the flag, so their serving path is byte-identical.
+        if getattr(self._outcome_pipe, "needs_teacher", False):
+            X = self._outcome_pipe.extend(X, [home], [away], league)
+
         p_outcome_raw = self._outcome_pipe.predict_proba(X)[0]
         p_goals = self._goals_pipe.predict_proba(X)[0]
         # Plan 1.6 auxiliary heads — absent on older pickles, in which case

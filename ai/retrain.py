@@ -482,6 +482,90 @@ def run(force: bool = False) -> bool:
                 del cand
             gc.collect()
 
+        # ── Plan 2.4: attention student race ─────────────────────────
+        # The trained bundle (ai/attn/train.py, ATTN_STUDENT env) enters the
+        # SAME competition as the LightGBM modes: identical train/holdout
+        # slices, identical per-candidate isotonic protocol, identical
+        # 0.0005 gate arithmetic below.  Unset env or missing bundle -> the
+        # race silently doesn't happen; FORCE_REPLACE is never read here.
+        attn_path = os.environ.get("ATTN_STUDENT", "").strip()
+        if attn_path and not os.path.exists(attn_path) and \
+                attn_path.startswith("ai" + os.sep):
+            # workflows set repo-root-relative paths but run retrain from ai/
+            _alt = os.path.join(BASE_DIR, attn_path[len("ai" + os.sep):])
+            if os.path.exists(_alt):
+                attn_path = _alt
+        if attn_path:
+            cand = None
+            try:
+                from attn.serve import attach
+                t1 = time.time()
+                cand = FootballPredictor()
+                cand.feature_pipe = predictor.feature_pipe  # share fitted state
+                if attach(cand, attn_path) is None:
+                    logger.warning(f"[attn] bundle {attn_path} missing/unreadable "
+                                   "— attention candidate not raced")
+                    del cand
+                    cand = None
+                else:
+                    _hh = meta.get("home")
+                    _aa = meta.get("away")
+                    _hh = _hh[m_ho] if _hh is not None and len(_hh) == len(X_all) else None
+                    _aa = _aa[m_ho] if _aa is not None and len(_aa) == len(X_all) else None
+                    Xh_e = cand._outcome_pipe.extend(Xh, _hh, _aa, leagues_h)
+                    raw_a = cand._outcome_pipe.predict_proba(Xh_e)
+                    cals_a = []
+                    for k in range(3):
+                        iso = IsotonicRegression(out_of_bounds="clip")
+                        iso.fit(raw_a[:mid, k], (yh[:mid] == k).astype(float))
+                        cals_a.append(iso)
+                    p_cal_a = _apply_cal(raw_a[mid:], cals_a)
+                    p_raw_a = raw_a[mid:]
+                    ll_raw_a, ll_cal_a = _ll(p_raw_a, y_ev), _ll(p_cal_a, y_ev)
+                    use_cal_a = ll_cal_a < ll_raw_a
+                    p_ev_a = p_cal_a if use_cal_a else p_raw_a
+                    ll_a = min(ll_raw_a, ll_cal_a)
+                    goals_a = float(
+                        ((cand._goals_pipe.predict_proba(Xh_e[mid:])[:, 1]
+                          - gh[mid:]) ** 2).mean())
+                    btts_a = o35_a = None
+                    if bh is not None and getattr(cand, "_btts_pipe", None) is not None:
+                        btts_a = float(
+                            ((cand._btts_pipe.predict_proba(Xh_e[mid:])[:, 1]
+                              - bh[mid:]) ** 2).mean())
+                    if oh is not None and getattr(cand, "_o35_pipe", None) is not None:
+                        o35_a = float(
+                            ((cand._o35_pipe.predict_proba(Xh_e[mid:])[:, 1]
+                              - oh[mid:]) ** 2).mean())
+                    logger.info(f"[OOT:attn] {time.time() - t1:.1f}s "
+                                f"raw_ll={ll_raw_a:.5f} cal_ll={ll_cal_a:.5f} "
+                                f"use_cal={use_cal_a} goals_brier={goals_a:.5f}")
+                    better = (best is None
+                              or ll_a < best["ll"] - 0.0005
+                              or (abs(ll_a - best["ll"]) <= 0.0005
+                                  and goals_a < best["goals_brier"]))
+                    if better:
+                        if best is not None:
+                            del best["pred"]
+                        best = dict(mode="attn", pred=cand, raw=raw_a,
+                                    calibs=cals_a if use_cal_a else None,
+                                    p_ev=p_ev_a, ll=ll_a, ll_raw=ll_raw_a,
+                                    ll_cal=ll_cal_a, use_cal=use_cal_a,
+                                    goals_brier=goals_a, btts_brier=btts_a,
+                                    o35_brier=o35_a)
+                        logger.info(f"[OOT] attention student takes the lead "
+                                    f"(eval_ll={ll_a:.5f})")
+                    else:
+                        del cand
+                        cand = None
+                    gc.collect()
+            except Exception:
+                logger.exception("[attn] candidate race failed — "
+                                 "LightGBM result stands")
+                if cand is not None:
+                    del cand
+                    gc.collect()
+
         if best is None:
             logger.error("All candidate modes failed to train")
             return False
@@ -590,6 +674,12 @@ def run(force: bool = False) -> bool:
                 _ll(a_dep * p_ev[m] + (1.0 - a_dep) * mkt_c[m], y_ev[m]), 5)
         logger.info("[OOT] " + json.dumps(metrics))
 
+        # The attention candidate never reaches Stage B: its heads ARE the
+        # student (trained on its own train-side split), and fit_stacks only
+        # knows the LightGBM modes.  The holdout calibrator/alphas stay fit.
+        if stage_b and str(mode) == "attn":
+            logger.info("Stage B skipped for the attention candidate")
+            stage_b = False
         if stage_b:
             logger.info(f"Stage B: refitting '{mode}' on FULL dataset "
                         "(keeping holdout calibrator + alphas)…")
