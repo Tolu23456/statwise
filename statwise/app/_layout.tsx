@@ -17,10 +17,26 @@ import * as SplashScreen from 'expo-splash-screen';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { ThemeProvider, useTheme } from '@/context/ThemeContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { supabase } from '@/lib/supabase';
+import { installWebTelemetry, setEventSink } from '@/lib/telemetry';
 
 SplashScreen.preventAutoHideAsync();
 
 const queryClient = new QueryClient({ defaultOptions: QUERY_DEFAULTS });
+
+// Plan 4.4 — telemetry transport. Events become `client_events` rows that
+// only the service role reads (metrics-daily.yml). Until the telemetry
+// migration is run the insert fails — captured and swallowed here, which is
+// exactly the no-op the module guarantees; a telemetry problem must never
+// surface in the UI or spawn rejection loops.
+setEventSink(async events => {
+  try {
+    const { error } = await supabase.from('client_events').insert(events);
+    if (error) console.debug('telemetry upload skipped:', error.message);
+  } catch {
+    /* never throw from the sink */
+  }
+});
 
 function RootLayoutNav() {
   const { session, loading } = useAuth();
@@ -44,6 +60,14 @@ function RootLayoutNav() {
         Notification.requestPermission();
       }
     }
+  }, []);
+
+  useEffect(() => {
+    // Plan 4.4 — global capture (uncaught errors, unhandled rejections,
+    // React minified invariants such as the #418 hydration mismatch, and
+    // slow Supabase calls). Web only; cleans up on hot reload.
+    if (Platform.OS !== 'web') return;
+    return installWebTelemetry();
   }, []);
 
   return (

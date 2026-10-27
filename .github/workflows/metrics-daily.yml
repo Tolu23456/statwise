@@ -1,0 +1,48 @@
+name: Metrics daily
+
+# Plan step 4.4 — observability dashboard + alerts.
+#
+# Runs statwise/scripts/metrics_report.py (stdlib only — no pip install):
+#   * appends the Markdown dashboard to the run's step summary
+#   * --enforce-alerts fails the run (→ GitHub's failure emails = alerts)
+#     on: 0 predictions published in 24h, or >= 25 client error events
+#   * --prune applies the 90-day client_events retention (pg_cron may not
+#     be enabled on the project, so the workflow does it instead)
+#
+# Read-only except the retention prune. Requires the service role key and
+# (for the telemetry half) supabase-telemetry-migration.sql — without the
+# migration the report notes the gap and still covers predictions,
+# accuracy and the booking pipeline.
+
+on:
+  schedule:
+    # Daily at 04:23 UTC — offset from :00 to avoid the thundering herd.
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: metrics-daily
+  cancel-in-progress: true
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate metrics report and evaluate alerts
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then
+            echo "::error::SUPABASE_SERVICE_ROLE_KEY is not configured — cannot read metrics."
+            exit 1
+          fi
+          python statwise/scripts/metrics_report.py --enforce-alerts --prune

@@ -4,6 +4,7 @@ import { reloadAppAsync } from 'expo';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useColorScheme } from 'react-native';
 import { Colors } from '@/constants/colors';
+import { captureEvent } from '@/lib/telemetry';
 
 function ErrorFallback() {
   const insets = useSafeAreaInsets();
@@ -39,8 +40,18 @@ export class ErrorBoundary extends Component<{ children: React.ReactNode }, Stat
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error) {
+  componentDidCatch(error: Error, info: React.ErrorInfo) {
     console.error('ErrorBoundary caught:', error);
+    // Plan 4.4 — a render crash becomes a tracked event (no-op until the
+    // client_events migration runs; never throws either way).
+    captureEvent({
+      kind: 'render_error',
+      message: error.message,
+      context: {
+        name: error.name,
+        componentStack: info?.componentStack?.slice(0, 800),
+      },
+    });
   }
 
   render() {
