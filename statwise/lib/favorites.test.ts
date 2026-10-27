@@ -9,6 +9,7 @@
  */
 import {
   FAVORITES_MAX,
+  favoriteSyncPlan,
   favoritesLabel,
   isFavorite,
   parseFavorites,
@@ -107,5 +108,20 @@ check('unparseable kickoff is omitted, not echoed', plainLines[1].includes('kick
 check('missing teams still render safely', plainLines[1].includes('A vs B'), true);
 check('missing fields never print undefined',
   !plainMatch.includes('undefined') && !shared.includes('undefined'), true);
+
+// --- server reconciliation plan (user_favorites sync) ----------------------
+
+check('server-only rows are planned for removal (unbookmarked elsewhere)',
+  favoriteSyncPlan(['a', 'b'], ['a', 'b', 'c']).toRemove, ['c']);
+check('local-only rows are planned for addition (new bookmarks)',
+  favoriteSyncPlan(['a', 'b', 'c'], ['a']).toAdd, ['b', 'c']);
+check('identical lists produce an empty plan',
+  favoriteSyncPlan(['a', 'b'], ['b', 'a']), { toAdd: [], toRemove: [] });
+check('blank ids never reach the plan on either side',
+  favoriteSyncPlan(['a', '', 'b'], ['', 'a', 'c']), { toAdd: ['b'], toRemove: ['c'] });
+check('empty device list plans a full server clear',
+  favoriteSyncPlan([], ['a', 'b']), { toAdd: [], toRemove: ['a', 'b'] });
+check('empty server list plans a full re-add',
+  favoriteSyncPlan(['a'], []), { toAdd: ['a'], toRemove: [] });
 
 console.log(`favorites.test: ${passed} checks passed`);

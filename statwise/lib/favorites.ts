@@ -61,6 +61,31 @@ export function favoritesLabel(count: number): string {
   return count === 1 ? '1 saved' : `${count} saved`;
 }
 
+export type FavoriteSyncPlan = { toAdd: string[]; toRemove: string[] };
+
+/**
+ * Reconciliation plan between the device list (authoritative — the user
+ * tapped it) and the server copy (user_favorites, needed by the notify
+ * cron to alert the RIGHT user about THEIR bookmarked match).
+ *
+ *   add    = local \ server   (bookmarks the cron has never seen)
+ *   remove = server \ local   (un-bookmarks done on this or another device)
+ *
+ * The device list is never modified by this function: a failed sync must
+ * not silently change what the user sees — the next reconcile retries.
+ */
+export function favoriteSyncPlan(
+  local: readonly string[],
+  server: readonly string[],
+): FavoriteSyncPlan {
+  const localSet = new Set(local.filter(Boolean));
+  const serverSet = new Set(server.filter(Boolean));
+  return {
+    toAdd: [...localSet].filter(id => !serverSet.has(id)),
+    toRemove: [...serverSet].filter(id => !localSet.has(id)),
+  };
+}
+
 export type ShareableMatch = {
   home_team?: string | null;
   away_team?: string | null;

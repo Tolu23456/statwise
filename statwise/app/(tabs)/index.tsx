@@ -30,6 +30,7 @@ import {
   serializeFavorites,
   toggleFavorite,
 } from '@/lib/favorites';
+import { reconcileFavorites, syncFavoriteToggle } from '@/lib/favoritesSync';
 import { pollIntervalMs, kickoffMs } from '@/lib/polling';
 import { currentNetworkState, subscribeNetwork, type NetworkState } from '@/lib/network';
 
@@ -384,20 +385,36 @@ export default function HomeScreen() {
   }, [refetch]);
 
   // Plan 3.5 — favourites are device-local: load once, persist on change.
+  // Social layer (2026-10-27): the device list is also mirrored to the
+  // user_favorites table (best-effort, silent no-op until the section-4
+  // migration runs) so the notify cron can alert the user about THEIR
+  // bookmarked matches. favRef keeps the latest list for side-effect-free
+  // toggles (no writes inside a state updater).
+  const favRef = useRef<string[]>([]);
   useEffect(() => {
     AsyncStorage.getItem(FAVORITES_KEY)
-      .then(raw => setFavorites(parseFavorites(raw)))
+      .then(raw => {
+        const list = parseFavorites(raw);
+        favRef.current = list;
+        setFavorites(list);
+        // Reconcile in BOTH directions (add local-only, drop server-only)
+        // once per app start — covers bookmarks from another device too.
+        void reconcileFavorites(list);
+      })
       .catch(() => {});
   }, []);
 
   const onToggleFavorite = useCallback((id: string) => {
     if (!id) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    setFavorites(prev => {
-      const next = toggleFavorite(prev, id);
-      AsyncStorage.setItem(FAVORITES_KEY, serializeFavorites(next)).catch(() => {});
-      return next;
-    });
+    const nowFavorite = !isFavorite(favRef.current, id);
+    const next = toggleFavorite(favRef.current, id);
+    favRef.current = next;
+    setFavorites(next);
+    AsyncStorage.setItem(FAVORITES_KEY, serializeFavorites(next)).catch(() => {});
+    // Fire-and-forget server follow-up (single row); failures retry on
+    // the next app-start reconcile.
+    void syncFavoriteToggle(id, nowFavorite);
   }, []);
 
   // Plan 3.5 — filter changes animate the feed instead of jumping.
