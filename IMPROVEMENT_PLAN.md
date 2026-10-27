@@ -595,13 +595,69 @@ to start collecting push subscriptions (everything no-ops safely until then).
 - [x] **Commit changes** (`b20e014` code)
 
 ### Step 4.2: Bundle Optimization
-- [ ] **Analyze bundle** - Use expo/bundle tools
-- [ ] **Lazy load modals** - Reduce initial load
-- [ ] **Optimize images** - Compress further (already started)
-- [ ] **Tree shake** - Remove unused code
-- [ ] **Code splitting** - For web
-- [ ] **Test load times** - Measure improvements
-- [ ] **Commit changes**
+- [x] **Analyze bundle** - Use expo/bundle tools
+  (`.github/workflows/bundle-report.yml` — manual dispatch: `npm ci` +
+  `npx expo export -p web` + `scripts/bundle_report.py` (total/gzip,
+  per-type, top files, **font inventory** as the tree-shaking receipt) +
+  `scripts/measure_load.py` (headless Chromium, all external requests
+  blocked) + artifact upload. **Baseline run 40466039228** on `693c16f`:
+  4.2 MB raw / 1.5 MB gzip, entry JS **1,803,548 B** + sw.js, 5 TTFs
+  (4 Inter faces + Ionicons only), 24 static HTML pages, entry probes
+  clean — no MaterialCommunityIcons, Inter_900Black, reanimated,
+  gesture-handler, keyboard-controller or linear-gradient strings
+  (confirms the earlier `03f0bc2` tree-shaking holds in a production
+  export; the stale local `dist/` from before that fix showed the
+  18-Inter-face/19-icon-TTF, 3.0 MB entry as the before-picture))
+- [x] **Lazy load modals** - Reduce initial load
+  (the three modals — prediction detail, booking code, onboarding — are
+  only opened by user action: `React.lazy(() => import(...))` + mount-once
+  flags so close animations still run. `shouldShowOnboarding` moved to
+  `lib/onboarding.ts` because importing the *gate* from the modal module
+  would have defeated the deferral. Result of the same export pipeline:
+  entry **1,803,548 → 1,754,038 B (−49,510 B)** and three async chunks —
+  PredictionDetailModal 26,333 B, BookingCodeModal 21,828 B, OnboardingModal
+  3,998 B — fetched only when first opened)
+- [x] **Optimize images** - Compress further (already started)
+  (icon.png / adaptive-icon.png / splash-icon.png: 2128 KB → **1228 KB
+  (−42%)** — 1024² re-encoded to a 256-colour palette with Floyd-Steinberg
+  dithering after lossless re-encode proved already optimal; all three
+  visually verified side by side, no gradient banding. Honest scope note:
+  these are `app.json` native/splash assets — the web export ships only
+  `favicon.ico` (14 KB), so this shrinks repo/native-build weight, not
+  web transfer)
+- [x] **Tree shake** - Remove unused code
+  Fresh production export ships exactly **4 Inter faces + 1 icon font**
+  (the pre-`03f0bc2` dist shipped 18 + 19); entry probes for reanimated/
+  gesture-handler/keyboard-controller/unused icon sets all **0 hits**;
+  zero-importer source audit finds no dead code (only the CI test files,
+  which are compiled directly by test-app.yml, legitimately have no
+  importers); unused deps (`@vercel/analytics`, `http-server`,
+  `expo-linear-gradient`, `react-native-keyboard-controller`) already
+  gone and stay gone
+- [x] **Code splitting** - For web
+  **Real async chunks now exist**: the export emits entry + 3 modal
+  chunks (baseline emitted a single entry) — Metro/Expo SDK 55 splits
+  `import()` targets at export time. Modal code (52,159 B total) is off
+  the critical path; the initial document fetches the entry only.
+  Remaining honest limit: no *route*-level splitting beyond Expo's
+  per-route static HTML — each route's HTML shares the one entry bundle,
+  and migrating bundlers for route splitting is not worth it at this size
+- [x] **Test load times** - Measure improvements
+  CI single samples (`bundle-report.yml`, external requests blocked so
+  only our bytes count): baseline 160 ms load / 8 reqs / 3,618,136 B vs
+  after 224 ms / 9 reqs / 3,571,489 B — timing within runner noise (its
+  own TTFB moved 12 → 20 ms). So both artifacts were re-measured locally
+  on the same machine, interleaved 4× each with `measure_load.py`:
+  transferred bytes **3,618,136 → 3,571,489 (−46,647 B, −1.3%) on every
+  run**; median load event **1,688 ms → 1,603 ms** excluding cold-cache
+  first runs; +1 first-run request is the **OnboardingModal chunk being
+  fetched and rendered on demand** — end-to-end proof the lazy path works
+  in a real browser (page errors identical before/after: only the
+  pre-existing React #418 hydration mismatch, unchanged by this work and
+  recorded for step 4.4; CI runs **40466039228** baseline, **40467285978**
+  after, both success; App tests for the lazy-modal commit
+  **40466858697** → success)
+- [x] **Commit changes** (`693c16f` tooling, `f05b4cf` code)
 
 ### Step 4.3: Abuse Prevention
 - [ ] **Rate limiting** - Add to API routes
