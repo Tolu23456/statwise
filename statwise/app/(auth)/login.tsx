@@ -10,6 +10,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
+import { friendlyError, isNetworkError } from '@/lib/errors';
 
 type FieldErrors = {
   email?: string;
@@ -130,7 +131,13 @@ export default function LoginScreen() {
         options: { redirectTo },
       });
       if (error) {
-        setErrors({ general: error.message });
+        // Network failures get the honest offline copy; anything else keeps
+        // the specific "Google sign-in failed" wording (never the raw error).
+        setErrors({
+          general: isNetworkError(error.message)
+            ? friendlyError(error.message)
+            : 'Google sign-in failed — please try again.',
+        });
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
       }
     } catch (e) {

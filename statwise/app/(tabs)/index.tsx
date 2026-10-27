@@ -21,6 +21,7 @@ import { BookingCodeModal } from '@/components/BookingCodeModal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
 import { aiPicksLabel, aiPicksOf, certaintyOf, certaintyTone, isAiPick } from '@/lib/aiPicks';
+import { RETRY_COPY } from '@/lib/errors';
 import { pollIntervalMs, kickoffMs } from '@/lib/polling';
 import { currentNetworkState, subscribeNetwork, type NetworkState } from '@/lib/network';
 
@@ -517,7 +518,7 @@ export default function HomeScreen() {
           >
             <Ionicons name="wifi-outline" size={14} color={C.danger} />
             <Text style={[styles.errorText, { color: C.danger }]}>
-              {isFetching ? 'Retrying...' : "Couldn't load predictions — tap to retry"}
+              {isFetching ? RETRY_COPY.pending : RETRY_COPY.banner}
             </Text>
             {isFetching ? (
               <ActivityIndicator size="small" color={C.danger} />

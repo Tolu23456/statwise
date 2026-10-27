@@ -9,6 +9,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
+import { friendlyError } from '@/lib/errors';
 
 export default function EmailConfirmationScreen() {
   const scheme = (useColorScheme() ?? 'dark') as 'light' | 'dark';
@@ -32,7 +33,7 @@ export default function EmailConfirmationScreen() {
       if (msg.includes('rate') || msg.includes('too many')) {
         setResendMsg('Please wait a few minutes before requesting another email.');
       } else {
-        setResendMsg(error.message);
+        setResendMsg(friendlyError(error.message));
       }
       setResendStatus('error');
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);

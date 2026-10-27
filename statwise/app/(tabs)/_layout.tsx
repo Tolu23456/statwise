@@ -6,6 +6,7 @@ import {
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Colors } from '@/constants/colors';
 import { useTheme } from '@/context/ThemeContext';
+import { OfflineBanner } from '@/components/OfflineBanner';
 
 const TAB_ITEMS = [
   { name: 'index',         path: '/',             title: 'Predictions', icon: 'football-outline'    as const },
@@ -84,6 +85,8 @@ export default function TabLayout() {
   return (
     <View style={{ flex: 1, backgroundColor: C.background }}>
       {showTopNav && <WebTopNav compact={compact} />}
+      {/* Plan 3.4 — offline / slow-connection indicator on every tab. */}
+      <OfflineBanner />
 
       <Tabs
         screenOptions={{

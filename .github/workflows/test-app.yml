@@ -6,6 +6,7 @@ name: App tests
 #   - plan 2.2 live-state helpers (freshness gating, live chips, scores)
 #   - plan 3.2 web-push helpers (base64url VAPID key, subscription row)
 #   - plan 3.3 AI Picks surfacing (jsonb flag, certainty ranking/tone)
+#   - plan 3.4 error copy (no raw errors in the UI) + offline detection
 # Pure Node, no npm install needed.
 
 on:
@@ -55,3 +56,17 @@ jobs:
             --outDir "$RUNNER_TEMP/aipicks-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/aipicks-test/aiPicks.test.js"
+      - name: Error copy tests (plan 3.4)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/errors.ts statwise/lib/errors.test.ts \
+            --outDir "$RUNNER_TEMP/errors-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/errors-test/errors.test.js"
+      - name: Network/offline tests (plan 3.4)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/network.ts statwise/lib/network.test.ts \
+            --outDir "$RUNNER_TEMP/network-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/network-test/network.test.js"

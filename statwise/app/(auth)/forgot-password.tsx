@@ -9,6 +9,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
 import { Colors } from '@/constants/colors';
 import { supabase } from '@/lib/supabase';
+import { friendlyError } from '@/lib/errors';
 
 export default function ForgotPasswordScreen() {
   const scheme = (useColorScheme() ?? 'dark') as 'light' | 'dark';
@@ -30,7 +31,7 @@ export default function ForgotPasswordScreen() {
     const { error } = await supabase.auth.resetPasswordForEmail(email.trim());
     setLoading(false);
     if (error) {
-      Alert.alert('Error', error.message);
+      Alert.alert("Couldn't send the reset link", friendlyError(error.message));
     } else {
       setSent(true);
     }
