@@ -34,6 +34,9 @@ on:
       synth_fraction:
         description: 'Fraction of train rows duplicated with teacher labels'
         default: '0.5'
+      pair:
+        description: '1 = train BOTH arms in this job for a paired significance test (implies synth=1; writes the pair report)'
+        default: '0'
       out:
         description: 'Report JSON path (use a DIFFERENT file per arm)'
         default: 'ai/data/audit_100k_report.json'
@@ -62,6 +65,7 @@ jobs:
           AUDIT_SYNTH: ${{ inputs.synth || '0' }}
           AUDIT_SYNTH_RECIPE: ${{ inputs.synth_recipe || 'ai/data/sim_audit/worlds.json' }}
           AUDIT_SYNTH_FRACTION: ${{ inputs.synth_fraction || '0.5' }}
+          AUDIT_PAIR: ${{ inputs.pair || '0' }}
           AUDIT_OUT: ${{ inputs.out || 'ai/data/audit_100k_report.json' }}
           RECENCY_HALF_LIFE_DAYS: '1460'
           # Match production's recipe so the number is comparable to the
@@ -84,6 +88,7 @@ jobs:
           path: |
             ai/data/audit_100k_report.json
             ai/data/audit_100k_synth_report.json
+            ai/data/audit_100k_pair_report.json
             audit.log
           if-no-files-found: ignore
 
@@ -96,6 +101,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add ai/data/audit_100k_report.json || true
           git add ai/data/audit_100k_synth_report.json || true
+          git add ai/data/audit_100k_pair_report.json || true
           if ! git diff --staged --quiet; then
             git commit -m "Audit(100k): holdout report $(date -u +%Y-%m-%d)"
             git pull --rebase origin main

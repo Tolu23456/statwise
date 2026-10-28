@@ -73,6 +73,11 @@ SYNTH_RECIPE = os.environ.get(
     os.path.join(BASE_DIR, "data", "sim_audit", "worlds.json"))
 SYNTH_FRACTION = float(os.environ.get("AUDIT_SYNTH_FRACTION", "0.5") or 0.5)
 SYNTH_SEED = int(os.environ.get("AUDIT_SYNTH_SEED", "0") or 0)
+# AUDIT_PAIR=1: train BOTH arms (baseline + sim) in one job and score them
+# on the SAME eval rows, so the sim-vs-baseline delta gets a PAIRED
+# significance test instead of overlapping marginal CIs.  Implies SYNTH.
+PAIR = os.environ.get("AUDIT_PAIR", "0").strip().lower() in ("1", "true", "yes")
+SYNTH = SYNTH or PAIR
 
 
 def _resolve_recipe(path: str) -> str:
@@ -120,6 +125,24 @@ def _reject_synthetic(synth_info: dict, generated_at: str) -> int:
     print(f"::error::AUDIT_SYNTH=1 but distillation was rejected: "
           f"{synth_info.get('reason')} — no model trained, see {OUT_PATH}")
     return 1
+
+
+def _per_league(p_ev, y_ev, lg, ll_fn) -> "list[dict]":
+    """Per-league eval breakdown (n>=500), sorted by log loss."""
+    import pandas as pd
+    out = []
+    for slug in pd.unique(lg):
+        m = lg == slug
+        n = int(m.sum())
+        if n >= 500:
+            out.append({
+                "league": str(slug),
+                "n": n,
+                "eval_log_loss": round(ll_fn(p_ev[m], y_ev[m]), 5),
+                "accuracy": round(float((p_ev[m].argmax(1) == y_ev[m]).mean()), 4),
+            })
+    out.sort(key=lambda r: r["eval_log_loss"])
+    return out
 
 
 def main() -> int:
@@ -200,6 +223,10 @@ def main() -> int:
     # freshness guard exits 1 with a rejection record instead of training
     # the baseline silently; (b) split_at here is the AUDIT split, so the
     # guard guarantees the teacher never saw any audit-holdout outcome.
+    # PAIR keeps references to the PRE-distillation train arrays: the block
+    # below rebinds names via concatenate and never mutates, so these stay
+    # pristine for the baseline arm's second training pass.
+    Xt0, yt0, gt0, w0, aux0 = Xt, yt, gt, w_tr, dict(aux_tr)
     synth_info: dict = {"requested": bool(SYNTH)}
     if SYNTH:
         from sim.distill import load_teacher, teacher_may_fit, sample_soft_labels
@@ -293,6 +320,92 @@ def main() -> int:
     per_row = -np.log(np.clip(p_ev[np.arange(len(y_ev)), y_ev], eps, 1 - eps))
     lo_ci, hi_ci = _ci95(list(per_row))
 
+    # ── Paired significance (AUDIT_PAIR=1) ───────────────────────────────
+    # Retrain the BASELINE arm on the pre-distillation arrays with the exact
+    # same protocol, then score BOTH models on the SAME eval rows.  The
+    # sim-vs-baseline delta gets a paired test (per-row loss differences /
+    # McNemar on discordant calls) — far tighter than overlapping marginal
+    # CIs because row difficulty cancels out.
+    pair = None
+    base_block = None
+    if PAIR:
+        print(f"[audit] pair: training baseline stacks on {Xt0.shape[0]:,} rows…")
+        t2 = time.time()
+        cand2 = FootballPredictor()
+        cand2.feature_pipe = predictor.feature_pipe
+        cand2.fit_stacks(Xt0, yt0, gt0, calibrate=False, mode="single",
+                         sample_weight=w0,
+                         y_btts=aux0["y_btts"], y_o35=aux0["y_o35"])
+        raw2 = cand2._outcome_pipe.predict_proba(Xh)
+        cals2 = []
+        for k in range(3):
+            iso2 = IsotonicRegression(out_of_bounds="clip")
+            iso2.fit(raw2[:mid, k], (yh[:mid] == k).astype(float))
+            cals2.append(iso2)
+        p_cal2 = np.column_stack(
+            [cals2[k].predict(raw2[mid:, k]) for k in range(3)])
+        p_cal2 = np.clip(p_cal2, 1e-6, None)
+        p_cal2 = p_cal2 / p_cal2.sum(axis=1, keepdims=True)
+        p2_raw = raw2[mid:]
+        ll_raw2 = _ll(p2_raw, y_ev)
+        ll_cal2 = _ll(p_cal2, y_ev)
+        use_cal2 = ll_cal2 < ll_raw2
+        p2_ev = p_cal2 if use_cal2 else p2_raw
+        ll2 = min(ll_raw2, ll_cal2)
+        per_row2 = -np.log(
+            np.clip(p2_ev[np.arange(len(y_ev)), y_ev], eps, 1 - eps))
+        lo2, hi2 = _ci95(list(per_row2))
+        acc2 = float((p2_ev.argmax(axis=1) == y_ev).mean())
+
+        from math import erfc as _erfc, sqrt as _sqrt
+        d_ll = per_row - per_row2          # per-row LL difference (sim - base)
+        dll_lo, dll_hi = _ci95(list(d_ll))
+        dll_mean = float(d_ll.mean())
+        dll_se = (dll_hi - dll_lo) / (2 * 1.96)
+        dll_z = dll_mean / dll_se if dll_se > 0 else 0.0
+        dll_p = float(_erfc(abs(dll_z) / _sqrt(2))) if dll_se > 0 else None
+
+        c1 = p_ev.argmax(axis=1) == y_ev
+        c0 = p2_ev.argmax(axis=1) == y_ev
+        e = c1.astype(np.float64) - c0.astype(np.float64)
+        dacc_lo, dacc_hi = _ci95(list(e))
+        n10 = int((c1 & ~c0).sum())   # sim right, baseline wrong
+        n01 = int((~c1 & c0).sum())   # baseline right, sim wrong
+        if n10 + n01 > 0:
+            chi2 = (abs(n10 - n01) - 1) ** 2 / (n10 + n01)
+            mcnemar_p = float(_erfc(_sqrt(max(chi2, 0.0) / 2.0)))
+        else:
+            mcnemar_p = 1.0
+
+        pair = {
+            "note": ("both arms trained in THIS job on the identical split; "
+                     "delta = sim - baseline (negative LL = sim better)"),
+            "ll_delta": round(dll_mean, 6),
+            "ll_delta_ci95": [round(dll_lo, 6), round(dll_hi, 6)],
+            "ll_delta_z": round(dll_z, 3),
+            "ll_delta_p": round(dll_p, 6) if dll_p is not None else None,
+            "ll_delta_significant": bool(dll_p is not None and dll_p < 0.05),
+            "accuracy_delta": round(float(e.mean()), 5),
+            "accuracy_delta_ci95": [round(dacc_lo, 5), round(dacc_hi, 5)],
+            "discordant": {"sim_right_base_wrong": n10,
+                           "base_right_sim_wrong": n01},
+            "mcnemar_p": round(mcnemar_p, 6),
+        }
+        base_block = {
+            "eval_log_loss": round(ll2, 5),
+            "eval_log_loss_ci95": [round(lo2, 5), round(hi2, 5)],
+            "accuracy": round(acc2, 4),
+            "brier": round(float(((p2_ev - np.eye(3)[y_ev]) ** 2).mean()), 5),
+            "raw_log_loss": round(ll_raw2, 5),
+            "isotonic_log_loss": round(ll_cal2, 5),
+            "calibration_used": bool(use_cal2),
+            "train_seconds": round(time.time() - t2, 1),
+        }
+        print(f"[audit] pair: baseline LL {ll2:.5f} [{lo2:.5f}, {hi2:.5f}] "
+              f"acc {acc2:.4f} | sim-baseline dLL {dll_mean:+.5f} "
+              f"[{dll_lo:+.5f}, {dll_hi:+.5f}] p={dll_p:.4g} | "
+              f"McNemar p={mcnemar_p:.4g}")
+
     conf = p_ev.max(axis=1)
     correct = (p_ev.argmax(axis=1) == y_ev).astype(float)
     acc = float(correct.mean())
@@ -362,6 +475,8 @@ def main() -> int:
         "holdout_span_days": int((dates.iloc[-1] - split_at).days),
         "mode": "single",
         "distillation": synth_info,
+        "paired": pair,
+        "paired_baseline": base_block,
         "recency_half_life_days": half_life,
         "raw_log_loss": round(ll_raw, 5),
         "isotonic_log_loss": round(ll_cal, 5),
@@ -428,23 +543,20 @@ def main() -> int:
         pass
 
     # Per-league breakdown (top leagues by eval volume) — where the model
-    # is strong/weak on the large slice.
+    # is strong/weak on the large slice.  meta["leagues"] is aligned to the
+    # FULL feature frame (the rows m_ho masks), not to Xh — slice with the
+    # holdout mask first.  (The old len==len(Xh) check could never fire,
+    # which is why earlier reports carried no per_league at all.)
+    per_league = []
+    lg_ev = None
     leagues_h = meta.get("leagues")
-    if leagues_h is not None and len(leagues_h) == len(Xh):
-        lg = leagues_h[mid:]
-        per_league = []
-        for slug in pd.unique(lg):
-            m = lg == slug
-            n = int(m.sum())
-            if n >= 500:
-                per_league.append({
-                    "league": str(slug),
-                    "n": n,
-                    "eval_log_loss": round(_ll(p_ev[m], y_ev[m]), 5),
-                    "accuracy": round(float((p_ev[m].argmax(1) == y_ev[m]).mean()), 4),
-                })
-        per_league.sort(key=lambda r: r["eval_log_loss"])
+    if leagues_h is not None and len(leagues_h) == len(X_all):
+        lg_ev = leagues_h[m_ho][mid:]
+        per_league = _per_league(p_ev, y_ev, lg_ev, _ll)
         metrics["per_league"] = per_league
+    # Same breakdown for the paired baseline arm, side-by-side comparable.
+    if PAIR and base_block is not None and lg_ev is not None:
+        base_block["per_league"] = _per_league(p2_ev, y_ev, lg_ev, _ll)
 
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, "w") as f:
@@ -476,6 +588,17 @@ def main() -> int:
         f" blended         {metrics['blended_market_log_loss']} "
         f"(alpha={metrics['alpha_damped']})",
         f" report -> {OUT_PATH}",
+    ] + ([
+        f" PAIR baseline    LL {base_block['eval_log_loss']:.5f} "
+        f"CI {base_block['eval_log_loss_ci95']} "
+        f"| acc {base_block['accuracy']:.4f}",
+        f" delta (sim-base) LL {pair['ll_delta']:+.5f} "
+        f"CI {pair['ll_delta_ci95']} p={pair['ll_delta_p']} "
+        f"sig={pair['ll_delta_significant']}",
+        f"                   acc {pair['accuracy_delta']:+.5f} "
+        f"CI {pair['accuracy_delta_ci95']} "
+        f"| discordant {pair['discordant']} McNemar p={pair['mcnemar_p']}",
+    ] if pair else []) + [
         "=" * 64,
     ]
     summary = "\n".join(lines)
@@ -493,6 +616,20 @@ def main() -> int:
                     for r in per_league[:15]:
                         fh.write(f"| {r['league']} | {r['n']:,} | "
                                  f"{r['eval_log_loss']} | {r['accuracy']} |\n")
+                if pair:
+                    fh.write("\n### Paired: sim vs baseline (same eval rows)\n\n")
+                    fh.write(f"- baseline LL {base_block['eval_log_loss']} "
+                             f"CI {base_block['eval_log_loss_ci95']} | "
+                             f"sim LL {metrics['eval_log_loss']} "
+                             f"CI {metrics['eval_log_loss_ci95']}\n")
+                    fh.write(f"- delta {pair['ll_delta']:+.5f} "
+                             f"CI {pair['ll_delta_ci95']} "
+                             f"p={pair['ll_delta_p']} "
+                             f"(significant: {pair['ll_delta_significant']})\n")
+                    fh.write(f"- accuracy delta {pair['accuracy_delta']:+.5f} "
+                             f"CI {pair['accuracy_delta_ci95']} "
+                             f"McNemar p={pair['mcnemar_p']} "
+                             f"discordant={pair['discordant']}\n")
         except Exception:
             pass
 
