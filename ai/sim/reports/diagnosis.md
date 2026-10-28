@@ -186,6 +186,13 @@ different angle.
 | H6 | the lab ensemble could beat the closing market | **REFUTED at current state** | 1.07091 vs 0.99796; even blended honestly it loses to the market alone (+0.00505 [+0.00063, +0.00980]) |
 | H7 | the lab's information is already in the production feature matrix | **CONFIRMED** | stacking fit assigns alpha 1.000 (zero lab weight); corr(margin) 0.62; blend difference 0.00000 |
 
+> **Update (post Stages 3/6/7):** this ledger is the Stage-2 snapshot.
+> `ai/sim/reports/final_report.md` §6 carries the superseding verdicts:
+> H5 → **partially confirmed** (each fix helped measurably, v0→v3, but a
+> third of the gap only), H1 → **confirmed but narrowed** (+0.04671 at
+> compare_v1), H7 → **inconclusive** at the honest alpha CI (the v0
+> CONFIRMED is no longer earned at this sample size).
+
 ## 7. What follows (Stage 3 plan, falsifiable)
 
 If H5 is right, fixing the two structural defects must move realism_v1's
