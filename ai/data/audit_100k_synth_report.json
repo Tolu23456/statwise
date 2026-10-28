@@ -1,0 +1,94 @@
+{
+  "audit": "100k out-of-time holdout (READ-ONLY, nothing deployed)",
+  "generated_at": "2026-10-28T10:28:41Z",
+  "dataset_rows": 331949,
+  "train_rows": 232017,
+  "holdout_rows": 99912,
+  "eval_rows": 49956,
+  "split_at": "2019-08-10",
+  "holdout_span_days": 2626,
+  "mode": "single",
+  "distillation": {
+    "requested": true,
+    "recipe": "ai/data/sim_audit/worlds.json",
+    "fraction": 0.5,
+    "seed": 0,
+    "audit_split_at": "2019-08-10",
+    "recipe_split_at": "2019-06-23",
+    "teacher_worlds": 40,
+    "guard": "teacher split 2019-06-23 <= retrain split 2019-08-10",
+    "rows_before": 232017,
+    "applied": true,
+    "rows_added": 115991
+  },
+  "recency_half_life_days": 1460.0,
+  "raw_log_loss": 1.05168,
+  "isotonic_log_loss": 1.01463,
+  "calibration_used": true,
+  "eval_log_loss": 1.01463,
+  "eval_log_loss_ci95": [
+    1.01083,
+    1.01843
+  ],
+  "accuracy": 0.4982,
+  "brier": 0.20218,
+  "ece": 0.0045,
+  "market_log_loss": 0.99835,
+  "market_rows": 35485,
+  "market_closing_log_loss": 0.99791,
+  "market_closing_rows": 35485,
+  "alpha_fitted_raw": 0.05,
+  "alpha_damped": 0.0582,
+  "blended_market_log_loss": 0.99789,
+  "market_closing_accuracy": 0.5081,
+  "blended_accuracy": 0.5078,
+  "reliability_bins": [
+    {
+      "bin": "0.3-0.4",
+      "n": 9393,
+      "confidence": 0.3738,
+      "accuracy": 0.3772
+    },
+    {
+      "bin": "0.4-0.5",
+      "n": 21063,
+      "confidence": 0.4443,
+      "accuracy": 0.4466
+    },
+    {
+      "bin": "0.5-0.6",
+      "n": 10492,
+      "confidence": 0.5405,
+      "accuracy": 0.5466
+    },
+    {
+      "bin": "0.6-0.7",
+      "n": 5155,
+      "confidence": 0.6449,
+      "accuracy": 0.6314
+    },
+    {
+      "bin": "0.7-0.8",
+      "n": 2875,
+      "confidence": 0.7391,
+      "accuracy": 0.7419
+    },
+    {
+      "bin": "0.8-0.9",
+      "n": 971,
+      "confidence": 0.83,
+      "accuracy": 0.8301
+    }
+  ],
+  "goals_brier": 0.24608,
+  "btts_brier": 0.24733,
+  "o35_brier": 0.2041,
+  "train_seconds": 90.4,
+  "production_reference": {
+    "note": "production 180d holdout (DIFFERENT window \u2014 context only)",
+    "eval_log_loss": 1.01129,
+    "accuracy": 0.4827,
+    "blended_market_log_loss": 0.99491,
+    "split_at": "2026-04-21"
+  }
+}
