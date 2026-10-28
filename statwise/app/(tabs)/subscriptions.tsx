@@ -8,23 +8,12 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
 import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, FLUTTERWAVE_PUBLIC_KEY } from '@/lib/supabase';
+import { PLANS, buildTxRef, isTerminalEventStatus, type Plan } from '@/lib/paymentCore';
 import { useAuth } from '@/context/AuthContext';
 import { useQueryClient } from '@tanstack/react-query';
 import { useTheme } from '@/context/ThemeContext';
 import { assignmentFor } from '@/lib/experimentConfig';
 import { logConversion } from '@/lib/experiments';
-
-type Plan = {
-  id: string;
-  tier: string;
-  name: string;
-  price: number;
-  period: 'daily' | 'monthly';
-  predictions: number;
-  features: string[];
-  badge?: string;
-  highlight?: string;
-};
 
 /** Certainty score band each tier unlocks — mirrors ai/model/predictor.py. */
 const AI_PICK_CERTAINTY = 65;
@@ -34,39 +23,6 @@ const TIER_CERTAINTY_BAND: Record<string, { from: number; to: number }> = {
   'VIP Tier':     { from: 55, to: 65 },
   'VVIP Tier':    { from: 65, to: 100 },
 };
-
-const PLANS: Plan[] = [
-  {
-    id: 'free', tier: 'Free Tier', name: 'Free Tier', price: 0, period: 'daily',
-    predictions: 5, badge: 'STARTER', highlight: 'Perfect for beginners',
-    features: ['5 Daily AI Predictions', 'Basic Match Analysis', 'Community Access'],
-  },
-  {
-    id: 'premium_daily', tier: 'Premium Tier', name: 'Premium', price: 500, period: 'daily',
-    predictions: 25, badge: 'POPULAR', highlight: 'Best value for regular users',
-    features: ['25 Daily Predictions', 'Advanced Match Analysis', 'All Major Leagues', 'No Ads', 'Priority Support', 'Win Rate Analytics'],
-  },
-  {
-    id: 'vip_daily', tier: 'VIP Tier', name: 'VIP / Elite', price: 2000, period: 'daily',
-    predictions: 75, badge: 'ELITE', highlight: 'For serious bettors',
-    features: ['75 Daily Predictions', 'All Premium Features', 'Exclusive VIP Insights', 'Live Match Updates', 'Expert Analysis Reports', 'VIP-Only Leagues', 'Advanced Statistics', 'Direct VIP Support'],
-  },
-  {
-    id: 'vvip_daily', tier: 'VVIP Tier', name: 'VVIP', price: 5000, period: 'daily',
-    predictions: 999, badge: 'ULTIMATE', highlight: 'For professional bettors',
-    features: ['Unlimited Predictions', 'All VIP Features', 'Personal Analyst', 'Real-time Alerts', 'Custom Reports', 'VVIP-Only Tips', 'Dedicated Support', 'Early Access'],
-  },
-  {
-    id: 'premium_monthly', tier: 'Premium Tier', name: 'Premium Monthly', price: 12000, period: 'monthly',
-    predictions: 25, badge: 'POPULAR', highlight: 'Save 20% vs daily',
-    features: ['Everything in Premium Daily', 'Monthly Billing (Save 20%)', 'Priority Support'],
-  },
-  {
-    id: 'vip_monthly', tier: 'VIP Tier', name: 'VIP Monthly', price: 45000, period: 'monthly',
-    predictions: 75, badge: 'ELITE', highlight: 'Save 25% vs daily',
-    features: ['Everything in VIP Daily', 'Monthly Billing (Save 25%)', 'Dedicated VIP Manager'],
-  },
-];
 
 function loadFlutterwaveScript(): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -117,38 +73,30 @@ export default function SubscriptionsScreen() {
     ? PLANS.filter(p => p.period === 'monthly')
     : PLANS.filter(p => p.period === 'daily');
 
-  async function processPaymentSuccess(plan: Plan, txRef: string) {
-    if (!user) return;
+  // ── Plan 5.1: server-side verification (queue + poll) ────────────────────
+  // The client NEVER writes tier fields (a DB trigger blocks user-JWT tier
+  // updates) and never writes payment_transactions (RLS INSERT dropped) —
+  // it queues ONE payment_events row, opens the hosted checkout, and polls
+  // until the GitHub Actions verifier (every ~3 min) credits it server-side.
+
+  const pollTimer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const paidRef = useRef(false);
+
+  function stopPolling() {
+    if (pollTimer.current) {
+      clearInterval(pollTimer.current);
+      pollTimer.current = null;
+    }
+  }
+
+  // Unmount must not leave an interval ticking against a dead screen.
+  useEffect(() => stopPolling, []);
+
+  /** The verifier credited the tier — refresh everything keyed on it. */
+  async function onPaymentVerified(plan: Plan) {
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    Alert.alert('Payment Successful', `You are now on the ${plan.name} plan!`);
     try {
-      await supabase.from('user_profiles').update({
-        current_tier: plan.tier,
-        tier: plan.tier,
-        subscription_status: 'active',
-        updated_at: new Date().toISOString(),
-      }).eq('id', user.id);
-
-      // Plan 4.3 audit — this insert used to send `plan_id`, a column the
-      // live schema does not have (PGRST204, probed via the API), so every
-      // payment row failed silently and the purchase left no audit record.
-      // Live columns verified present: transaction_id (NOT NULL, UNIQUE),
-      // period, created_at. txRef doubles as transaction_id.
-      const { error: txError } = await supabase.from('payment_transactions').insert({
-        user_id: user.id,
-        transaction_id: txRef,
-        tx_ref: txRef,
-        amount: plan.price,
-        currency: 'NGN',
-        period: plan.period,
-        tier: plan.tier,
-        status: 'successful',
-        created_at: new Date().toISOString(),
-      }).select();
-      if (txError) {
-        // Never roll back a paying customer's tier over the audit row — but
-        // make the failure visible instead of swallowing it.
-        console.warn('payment_transactions insert failed:', txError.message);
-      }
-
       await refreshProfile();
       // Plan 4.1 — payment is a mutation: reward points and anything keyed
       // on the old tier must not keep showing the pre-purchase state.
@@ -156,7 +104,7 @@ export default function SubscriptionsScreen() {
       // Plan 4.5 — conversion event for the A/B funnel, attributed to the
       // user's current experiment assignments (no assignment → plain
       // conversion, still counted in the funnel totals).
-      const bookingAssignment = assignmentFor('booking_cta_v1', user.id);
+      const bookingAssignment = user ? assignmentFor('booking_cta_v1', user.id) : null;
       logConversion('subscription_purchase', {
         plan: plan.id,
         tier: plan.tier,
@@ -165,11 +113,57 @@ export default function SubscriptionsScreen() {
           ? { experiment: 'booking_cta_v1', variant: bookingAssignment.variant }
           : {}),
       });
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      Alert.alert('Payment Successful', `You are now on the ${plan.name} plan!`);
     } catch (e) {
-      console.warn('Failed to update tier after payment:', e);
+      // The tier IS granted server-side; only the local refresh failed —
+      // say so instead of swallowing it (the alert above already fired).
+      console.warn('post-payment refresh failed:', e);
     }
+  }
+
+  /**
+   * Watch this checkout's verification queue. Ticks every 3 s up to ~7.5 min
+   * (past one poller cycle); transient fetch failures are swallowed and
+   * retried — they can never kill the loop or surface as errors.
+   */
+  function startPolling(plan: Plan, txRef: string) {
+    stopPolling();
+    let ticks = 0;
+    pollTimer.current = setInterval(async () => {
+      ticks += 1;
+      if (ticks > 150) {
+        stopPolling();
+        setLoading(null);
+        Alert.alert(
+          'Verification taking longer than usual',
+          `Your payment is being verified in the background and your plan will activate automatically.\n\nReference: ${txRef}`,
+        );
+        return;
+      }
+      try {
+        const { data } = await supabase
+          .from('payment_events')
+          .select('status, last_error')
+          .eq('tx_ref', txRef)
+          .maybeSingle();
+        const status = typeof data?.status === 'string' ? data.status : '';
+        if (!status || !isTerminalEventStatus(status)) return;
+        stopPolling();
+        setLoading(null);
+        if (status === 'verified') {
+          await onPaymentVerified(plan);
+        } else if (status === 'failed') {
+          const why = data?.last_error ? `\n\nReason: ${data.last_error}` : '';
+          Alert.alert(
+            'Payment not verified',
+            `Flutterwave could not confirm this payment, so no plan was granted.${why}\n\nReference: ${txRef}`,
+          );
+        } else if (status === 'expired') {
+          Alert.alert('Checkout Expired', 'This checkout session expired before a payment completed.');
+        }
+      } catch {
+        /* transient read failure — keep polling */
+      }
+    }, 3000);
   }
 
   async function handleSubscribe(plan: Plan) {
@@ -188,42 +182,82 @@ export default function SubscriptionsScreen() {
 
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
 
-    if (Platform.OS === 'web') {
-      setLoading(plan.id);
-      try {
-        await loadFlutterwaveScript();
-        const txRef = `statwise_${user.id}_${Date.now()}`;
-        (window as any).FlutterwaveCheckout({
-          public_key: FLUTTERWAVE_PUBLIC_KEY,
-          tx_ref: txRef,
-          amount: plan.price,
-          currency: 'NGN',
-          payment_options: 'card,ussd,bank_transfer',
-          customer: {
-            email: user.email,
-            name: profile?.display_name ?? user.email,
-          },
-          customizations: {
-            title: 'StatWise Subscription',
-            description: `${plan.name} - ₦${plan.price.toLocaleString()}/${plan.period}`,
-            logo: 'https://fwpriiugfjhtoymcbmso.supabase.co/storage/v1/object/public/app-assets/logo.png',
-          },
-          callback: async (response: any) => {
-            if (response.status === 'successful' || response.status === 'completed') {
-              await processPaymentSuccess(plan, txRef);
-            }
-          },
-          onclose: () => { setLoading(null); },
-        });
-      } catch (e) {
-        setLoading(null);
-        Alert.alert('Payment Error', 'Could not initialize payment. Please try again.');
-      }
-    } else {
+    if (Platform.OS !== 'web') {
       Alert.alert(
         `Upgrade to ${plan.name}`,
         `₦${plan.price.toLocaleString()}/${plan.period}\n\nPayment is available on web. Please visit our website to subscribe.`,
       );
+      return;
+    }
+
+    setLoading(plan.id);
+    paidRef.current = false;
+    try {
+      const txRef = buildTxRef(plan.id, user.id, Date.now());
+
+      // 1. Queue the checkout — the verifier will only ever honour THIS ref.
+      //    Fail CLOSED on error: never open a checkout nothing can verify
+      //    (missing migration, offline, RLS surprise).
+      const { error: evErr } = await supabase.from('payment_events').insert({
+        user_id: user.id,
+        plan_id: plan.id,
+        tx_ref: txRef,
+        amount: plan.price,
+        currency: 'NGN',
+      });
+      if (evErr) {
+        console.warn('payment_events queue failed:', evErr.message);
+        setLoading(null);
+        Alert.alert(
+          'Payments Temporarily Unavailable',
+          'Subscriptions are being upgraded — please try again in a few minutes.',
+        );
+        return;
+      }
+
+      // 2. Poll from now: a missed modal callback can no longer strand a
+      //    completed payment (the server verifies it regardless).
+      startPolling(plan, txRef);
+
+      // 3. Hosted checkout — Flutterwave collects the money; the server
+      //    decides what it bought (shared catalog in lib/paymentCore.ts).
+      await loadFlutterwaveScript();
+      (window as any).FlutterwaveCheckout({
+        public_key: FLUTTERWAVE_PUBLIC_KEY,
+        tx_ref: txRef,
+        amount: plan.price,
+        currency: 'NGN',
+        payment_options: 'card,ussd,bank_transfer',
+        customer: {
+          email: user.email,
+          name: profile?.display_name ?? user.email,
+        },
+        customizations: {
+          title: 'StatWise Subscription',
+          description: `${plan.name} - ₦${plan.price.toLocaleString()}/${plan.period}`,
+          logo: 'https://fwpriiugfjhtoymcbmso.supabase.co/storage/v1/object/public/app-assets/logo.png',
+        },
+        callback: () => {
+          // Money moved. Verification is server-side from here — keep the
+          // poller running until the event reaches a terminal state.
+          paidRef.current = true;
+        },
+        onclose: () => {
+          if (!paidRef.current) {
+            // Closed without completing: stop spinner + poll; the pending
+            // event expires server-side after 24 h. (A late-completing
+            // transfer still gets credited by the verifier — the tier shows
+            // up on the next profile refresh.)
+            stopPolling();
+            setLoading(null);
+          }
+        },
+      });
+    } catch (e) {
+      console.warn('checkout init failed:', e);
+      stopPolling();
+      setLoading(null);
+      Alert.alert('Payment Error', 'Could not initialize payment. Please try again.');
     }
   }
 

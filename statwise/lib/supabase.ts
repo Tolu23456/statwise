@@ -7,7 +7,7 @@ const supabaseUrl = 'https://fwpriiugfjhtoymcbmso.supabase.co';
 const supabaseAnonKey =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3cHJpaXVnZmpodG95bWNibXNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5MDc3MTgsImV4cCI6MjA3MjQ4MzcxOH0.Sy3iehhGx2UNi28UBEjfNd81TjMxOVXJjY9HJS3xVjs';
 
-export const FLUTTERWAVE_PUBLIC_KEY = 'FLWPUBK-30eeb76b5875f40db71221d0960de0a8-X';
+export const FLUTTERWAVE_PUBLIC_KEY = 'FLWPUBK-cd25f9d8a6e5f291b203cc3d89b7b4d7-X';
 
 const isWeb = Platform.OS === 'web';
 const hasLocalStorage = isWeb && typeof localStorage !== 'undefined';

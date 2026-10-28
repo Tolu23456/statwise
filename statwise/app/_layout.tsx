@@ -19,9 +19,16 @@ import { ThemeProvider, useTheme } from '@/context/ThemeContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { supabase } from '@/lib/supabase';
 import { installWebTelemetry, setEventSink } from '@/lib/telemetry';
+import { installWebAlert } from '@/lib/webAlert';
 import { startForumFeed } from '@/lib/forumFeed';
 
 SplashScreen.preventAutoHideAsync();
+
+// Plan 5.1 — react-native-web ships `Alert.alert` as an empty static method,
+// so every alert in the app (including payment results on the web-only
+// checkout) is invisible there. Patch it once, before any screen renders;
+// native keeps the platform implementation untouched.
+installWebAlert();
 
 const queryClient = new QueryClient({ defaultOptions: QUERY_DEFAULTS });
 

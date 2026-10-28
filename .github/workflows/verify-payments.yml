@@ -1,0 +1,52 @@
+name: Verify Payments (Flutterwave)
+
+# Plan 5.1 — server-side payment verification.
+#
+# Polls the payment_events queue every 3 minutes with the service-role key:
+#   pending event → Flutterwave verify_by_reference → adjudicate
+#   (lib/paymentCore.ts, unit-tested in App tests) → apply_payment_verification
+#   RPC (atomic: ledger insert + tier grant + event flip).
+#
+# The client can only queue its own pending event and poll it; it has no way
+# to credit a tier (DB trigger blocks user-JWT tier updates, and the RPC is
+# granted to the service role only).
+#
+# Secrets required: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY (or _SERVICE_ROLE),
+# FLW_SECRET_KEY (Flutterwave v3 secret key from statwise/flutterwave_key —
+# never commit it).
+
+on:
+  schedule:
+    - cron: '*/3 * * * *'   # hosted checkout verification latency ≤ ~3 min
+  workflow_dispatch:
+
+concurrency:
+  group: verify-payments
+  cancel-in-progress: true   # every action is idempotent; a cancelled run
+                             # resumes cleanly on the next tick
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Compile the poller (pure Node, no npm install)
+        run: |
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/paymentCore.ts statwise/scripts/verify-payments.ts \
+            --outDir "$RUNNER_TEMP/verify-payments" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+
+      - name: Verify pending payment events
+        run: node "$RUNNER_TEMP/verify-payments/scripts/verify-payments.js"
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+          FLW_SECRET_KEY: ${{ secrets.FLW_SECRET_KEY }}

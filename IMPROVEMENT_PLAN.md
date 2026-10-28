@@ -956,33 +956,71 @@ real database: 108 settled picks at 48.1%), 4.5 A/B framework
 
 ### 5.1 Flutterwave payments + webhook (P0 — credentials in hand)
 
-- [ ] **Credential probe** - Identify the auth scheme of the supplied keys
-  `statwise/flutterwave_key` holds `CLIENT_ID` (UUID) + `CLIENT_SECRET` +
-  `ENCRYPTION_KEY`; the file is gitignored (added 2026-10-27 — never
-  commit it). Probe `POST api.flutterwave.com/v3/oauth/token`
-  (`grant_type=client_credentials`) first; if the dashboard also exposes
-  `FLWPUBK-…`/`FLWSECK-…` pair those in directly. Replace the placeholder
-  `FLUTTERWAVE_PUBLIC_KEY` in `lib/supabase.ts` with the verified public
-  key. Live probes only against non-charging endpoints (balance/validate).
-- [ ] **Checkout flow** - Plan paywall → Flutterwave Checkout → receipt
-  The subscriptions screen opens Flutterwave Checkout with the plan's
-  amount (NGN), your `transaction_ref` = `sub:{user_id}:{plan}:{ts}`, and
-  redirects back into the app. No card data ever touches our code —
-  Checkout is hosted by Flutterwave (zero new packages: open in a WebView /
-  the `FLW…` v3.js modal on web).
-- [ ] **`flutterwave-webhook` edge function** - verify, credit, idempotent
-  Supabase edge function validates `verif-hash` (secret hash header),
-  calls `POST /v3/transactions/{id}/verify`, and credits only on
-  `successful` + amount/currency match. Idempotent on `tx_ref` (unique
-  payment_events row, ON CONFLICT DO NOTHING) so Flutterwave's retries are
-  harmless. Stores the raw payload for audit.
-- [ ] **Server-side tier escalation** - closes the 4.3 open finding
-  The documented risk "tier self-escalation needs server-side payment
-  verification" gets closed here: the webhook (or a verify-on-read RPC)
-  is the ONLY writer of `subscriptions.tier` — the client never sets it.
-- [ ] **Payment smoke tests** - tiny payloads, no live charges in CI
-  Pure checks for amount mapping, ref format, idempotency keys, and
-  webhook payload validation; wired as a CI suite with fixtures.
+Built 2026-10-28 as a queue + poller architecture (no Supabase edge-function
+infra in this repo — the "webhook" role is played by a GitHub Actions poller,
+which also keeps secrets out of the client and needs zero new packages).
+
+- [x] **Credential probe** - Identify the auth scheme of the supplied keys
+  DONE 2026-10-28. `statwise/flutterwave_key` is gitignored (never commit
+  it); it holds the v3 `PUBLIC_KEY`/`SECRET_KEY`/`ENCRYPTION_KEY` triple.
+  Live probes confirmed the account is live-production and v3-key auth.
+  `FLUTTERWAVE_PUBLIC_KEY` in `lib/supabase.ts` replaced with the verified
+  `FLWPUBK-cd25f9d8a6e5f291b203cc3d89b7b4d7-X`.
+- [x] **Checkout flow** - Plan paywall → Flutterwave Checkout → receipt
+  DONE 2026-10-28. `app/(tabs)/subscriptions.tsx` rewritten: plan card →
+  amount-confirm Alert → `initializePayment` (v3.js modal on web) with
+  `tx_ref = statwise_{planId}_{userPrefix8}_{epochMs}` (≤50 chars,
+  CI-pinned) and `redirect_url` back to the subscriptions tab. On redirect
+  the client INSERTs its own `payment_events` row (status pending, RLS
+  `auth.uid() = user_id`) and polls it every 3s (~7.5 min window) until the
+  poller flips it to verified/failed. Fail-closed: if the queue insert
+  fails (e.g. migration section 5 not pasted yet) checkout is refused with
+  a visible alert instead of a silent orphan charge.
+- [x] **`flutterwave-webhook` edge function** - verify, credit, idempotent
+  SUPERSEDED by design (recorded here deliberately): no edge-function
+  runtime is wired in this repo, and a cron poller is strictly harder to
+  attack surface-wise (no public endpoint, secrets only in Actions).
+  `scripts/verify-payments.ts` + `.github/workflows/verify-payments.yml`
+  (cron `*/3 * * * *`, concurrency cancel-in-progress) drain the
+  `payment_events` queue with the service-role key: for each pending event
+  call Flutterwave `GET /v3/transactions/{id}/verify` (source=API), then
+  `adjudicateVerification()` (pure, unit-tested) checks plan id, amount,
+  currency, tx_ref prefix and terminal failure states; verified events are
+  applied via the `apply_payment_verification` RPC. Every action is
+  idempotent (ledger unique on `transaction_id`, `ON CONFLICT DO NOTHING`),
+  so both Flutterwave retries and overlapping cron ticks are harmless.
+  Pending events expire after 24h with a terminal `failed` + `last_error`.
+- [x] **Server-side tier escalation** - closes the 4.3 open finding
+  DONE 2026-10-28 (migration section 5 in
+  `statwise/supabase-pending-migrations.sql`): `apply_payment_verification`
+  SECURITY DEFINER RPC is granted to `service_role` ONLY — it writes the
+  ledger, grants the tier with daily/monthly expiry, flips the event, and
+  returns `already` on re-runs. The client cannot reach it. A
+  `protect_tier_columns` BEFORE UPDATE trigger blocks any user-JWT update
+  that touches tier/subscription columns. `payment_transactions` has no
+  client INSERT policy anymore (dropped via name-agnostic DO loop), so the
+  client's only write is its own pending `payment_events` row.
+- [x] **Payment smoke tests** - tiny payloads, no live charges in CI
+  DONE 2026-10-28: `lib/paymentCore.test.ts` (80 checks — catalog
+  invariants, tx_ref build/parse/round-trip + 50-char guard, amount/currency
+  adjudication, expiry math) and `lib/webAlertCore.test.ts` (23 checks),
+  both wired into `.github/workflows/test-app.yml` with the pinned-tsc
+  pattern. The poller itself compiles + dry-runs in
+  `verify-payments.yml` before every live drain.
+- [x] **Web alert visibility shim** - discovered while building checkout
+  `react-native-web`'s `Alert.alert` is a silent no-op, so every
+  `Alert.alert` call in the app (payment confirmations, errors, forum/media
+  prompts — 18+ call sites) was invisible in the web bundle. Fixed
+  zero-dep: `lib/webAlertCore.ts` (pure FIFO queue + overlay-state machine,
+  23-check test) + `lib/webAlert.ts` (patches the static `Alert.alert` with
+  a DOM overlay at app start, native untouched) installed in `app/_layout.tsx`.
+
+**User actions pending for 5.1 to go live:** (1) re-paste the ONE migration
+file `statwise/supabase-pending-migrations.sql` (section 5 only is new —
+creates `payment_events`, the tier trigger and the RPC; until then checkout
+fails closed with "Payments Temporarily Unavailable"); (2) add repo secret
+`FLW_SECRET_KEY` = the `SECRET_KEY` line from `statwise/flutterwave_key`
+(Settings → Secrets → Actions) so the poller can verify transactions.
 
 ### 5.2 Notification inbox UI (P1) — migration landed 2026-10-27
 
@@ -1155,7 +1193,7 @@ then re-run the FINAL CHECKPOINT below against the Phase-5 tree.
 ---
 
 ## Notes
-- Flutterwave credentials live in `statwise/flutterwave_key` (CLIENT_ID / CLIENT_SECRET / ENCRYPTION_KEY) — gitignored 2026-10-27; never commit or log them. The public key placeholder in `lib/supabase.ts` gets replaced once 5.1's probe confirms which scheme the account uses.
+- Flutterwave credentials live in `statwise/flutterwave_key` (v3 PUBLIC_KEY / SECRET_KEY / ENCRYPTION_KEY — user replaced the original oauth-style keys on 2026-10-28) — gitignored; never commit or log them. Public key already swapped into `lib/supabase.ts`; the SECRET_KEY must only ever live in the `FLW_SECRET_KEY` Actions secret (plan 5.1).
 - Supabase migration `statwise/supabase-pending-migrations.sql` was run by the user on 2026-10-27 and verified live (favourites RLS, notifications, reply_to, RPC auth guard) — the three superseded per-file migrations are historical only.
 - Attention model experiment is complete but not recommended for replacement. Consider integrating sequence/embedding features into production LightGBM pipeline as P2 if desired.
 - Always maintain apples-to-apples comparison for any model changes.

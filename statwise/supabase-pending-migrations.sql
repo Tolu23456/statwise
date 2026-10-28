@@ -19,6 +19,12 @@
 --   4) social layer            — bookmarks synced to user_favorites, the
 --                                notifications inbox, forum replies
 --                                (reply_to) and reply/mention triggers.
+--   5) payment verification    — plan 5.1: payment_events checkout queue
+--                                (client only queues + polls), service-role
+--                                apply_payment_verification RPC (ledger +
+--                                tier grant + event flip, one transaction),
+--                                tier-column protection trigger, client
+--                                INSERT on payment_transactions dropped.
 --
 -- AFTER RUNNING: the verification queries at the bottom of each section must
 -- pass (they are included verbatim). Also confirm the public storage bucket
@@ -27,7 +33,7 @@
 -- ═══════════════════════════════════════════════════════════════════════════
 
 -- ╔══════════════════════════════════════════════════════════════════════════╗
--- ║ SECTION 1 of 4 of 4 — push notification subscriptions ║
+-- ║ SECTION 1 of 5 — push notification subscriptions ║
 -- ╚══════════════════════════════════════════════════════════════════════════╝
 
 -- Push notification subscriptions (plan step 3.2).
@@ -82,7 +88,7 @@ create policy "Users can delete their own push subscriptions"
 
 
 -- ╔══════════════════════════════════════════════════════════════════════════╗
--- ║ SECTION 2 of 4 of 4 — security hardening (rate limits, RLS locks) ║
+-- ║ SECTION 2 of 5 — security hardening (rate limits, RLS locks) ║
 -- ╚══════════════════════════════════════════════════════════════════════════╝
 
 -- ═══════════════════════════════════════════════════════════════════════════
@@ -313,7 +319,7 @@ commit;
 
 
 -- ╔══════════════════════════════════════════════════════════════════════════╗
--- ║ SECTION 3 of 4 of 4 — client telemetry (client_events table) ║
+-- ║ SECTION 3 of 5 — client telemetry (client_events table) ║
 -- ╚══════════════════════════════════════════════════════════════════════════╝
 
 -- ═══════════════════════════════════════════════════════════════════════════
@@ -455,7 +461,7 @@ commit;
 
 
 -- ╔══════════════════════════════════════════════════════════════════════════╗
--- ║ SECTION 4 of 4 of 4 — social layer (favorites, inbox, replies/mentions) ║
+-- ║ SECTION 4 of 5 — social layer (favorites, inbox, replies/mentions) ║
 -- ╚══════════════════════════════════════════════════════════════════════════╝
 
 -- ═══════════════════════════════════════════════════════════════════════════
@@ -764,4 +770,246 @@ commit;
 --    (e.g. "@yourname hi") →
 --    select kind, title, body from notifications order by created_at desc limit 1;
 --    -- expect: forum_mention row addressed to you.
+-- ═══════════════════════════════════════════════════════════════════════════
+
+-- ╔══════════════════════════════════════════════════════════════════════════╗
+-- ║ SECTION 5 of 5 — payment verification (payment_events + tier lock)      ║
+-- ╚══════════════════════════════════════════════════════════════════════════╝
+
+-- ═══════════════════════════════════════════════════════════════════════════
+-- StatWise — Flutterwave server-side verification (plan step 5.1)
+--
+-- Run once in the Supabase SQL editor. Safe to re-run (idempotent).
+--
+-- WHAT THIS CHANGES (the old flow let the client credit itself):
+--   * `payment_events` — verification queue + idempotency ledger. The
+--     checkout screen inserts ONE pending row (its tx_ref) and then only
+--     POLLs it; it never writes a tier again and never writes a payment
+--     audit row.
+--   * `apply_payment_verification` — SECURITY DEFINER RPC granted to the
+--     service role ONLY (the GitHub Actions poller, verify-payments.yml).
+--     One transaction: ledger insert (ON CONFLICT DO NOTHING) → tier grant
+--     with expiry → event flip to 'verified'. A re-run returns `already`.
+--   * `protect_tier_columns` trigger — BEFORE UPDATE on user_profiles:
+--     any request carrying a user JWT (auth.uid() IS NOT NULL) that touches
+--     tier / current_tier / subscription_* / tier_expiry is rejected. Only
+--     the service role (auth.uid() NULL) can grant a tier.
+--   * Client INSERT policies on payment_transactions are dropped — the
+--     audit trail is written by the poller alone (SELECT own stays).
+--
+-- The client cannot self-credit even by inventing rows: RLS only lets it
+-- queue its OWN pending event, and the poller re-prices every Flutterwave
+-- transaction against the shared plan catalog (lib/paymentCore.ts) before
+-- it will call the RPC.
+-- ═══════════════════════════════════════════════════════════════════════════
+
+begin;
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- 1. payment_events — verification queue (one row per checkout attempt)
+-- ─────────────────────────────────────────────────────────────────────────
+
+create table if not exists public.payment_events (
+  id             uuid primary key default gen_random_uuid(),
+  user_id        uuid not null references auth.users (id) on delete cascade,
+  plan_id        text not null,
+  tx_ref         text not null unique,          -- statwise_{plan}_{user8}_{ms}
+  amount         numeric(12,2) not null check (amount >= 0),
+  currency       text not null default 'NGN' check (currency = 'NGN'),
+  status         text not null default 'pending'
+                 check (status in ('pending', 'verified', 'failed', 'expired')),
+  flutterwave_id bigint,                        -- set by the poller
+  paid_amount    numeric(12,2),                 -- what Flutterwave charged
+  last_error     text,                          -- adjudication reason on 'failed'
+  verified_at    timestamptz,
+  created_at     timestamptz not null default now()
+);
+
+create index if not exists payment_events_pending_idx
+  on public.payment_events (created_at)
+  where status = 'pending';
+
+alter table public.payment_events enable row level security;
+
+-- Clients may queue their OWN pending event and read their OWN events (the
+-- checkout polls status by tx_ref). Deliberately NO UPDATE/DELETE policy:
+-- only the service role can move an event to verified/failed/expired.
+drop policy if exists "Read own payment events" on public.payment_events;
+create policy "Read own payment events"
+  on public.payment_events for select
+  to authenticated
+  using (auth.uid() = user_id);
+
+drop policy if exists "Queue own pending payment event" on public.payment_events;
+create policy "Queue own pending payment event"
+  on public.payment_events for insert
+  to authenticated
+  with check (auth.uid() = user_id
+              and status = 'pending'
+              and amount >= 0);
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- 2. payment_transactions — audit trail becomes server-writable only
+-- ─────────────────────────────────────────────────────────────────────────
+
+-- The rewritten checkout no longer inserts audit rows (the poller's RPC
+-- does). Drop EVERY insert policy on the table — name-agnostic loop so this
+-- converges whatever the original policy was called. SELECT own stays for
+-- any history view.
+do $$
+declare p record;
+begin
+  for p in
+    select policyname from pg_policies
+     where schemaname = 'public'
+       and tablename   = 'payment_transactions'
+       and cmd         = 'INSERT'
+  loop
+    execute format('drop policy %I on public.payment_transactions', p.policyname);
+    raise notice 'dropped payment_transactions INSERT policy: %', p.policyname;
+  end loop;
+end $$;
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- 3. Tier columns are server-managed — block every user-JWT update
+-- ─────────────────────────────────────────────────────────────────────────
+
+create or replace function public.protect_tier_columns()
+returns trigger
+language plpgsql
+as $$
+begin
+  if auth.uid() is not null and (
+       new.tier                is distinct from old.tier
+    or new.current_tier        is distinct from old.current_tier
+    or new.subscription_status is distinct from old.subscription_status
+    or new.subscription_start  is distinct from old.subscription_start
+    or new.subscription_end    is distinct from old.subscription_end
+    or new.tier_expiry         is distinct from old.tier_expiry
+  ) then
+    raise exception
+      'tier fields are server-managed: payments are credited by the verification poller only'
+      using errcode = '42501';
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists protect_tier_columns on public.user_profiles;
+create trigger protect_tier_columns
+  before update on public.user_profiles
+  for each row
+  execute function public.protect_tier_columns();
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- 4. apply_payment_verification — atomic, idempotent, service role only
+-- ─────────────────────────────────────────────────────────────────────────
+
+create or replace function public.apply_payment_verification(
+  p_event_id    uuid,
+  p_flw_id      bigint,
+  p_paid_amount numeric,
+  p_currency    text,
+  p_tier        text,
+  p_period      text
+)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_event  public.payment_events%rowtype;
+  v_expiry timestamptz;
+begin
+  select * into v_event
+    from public.payment_events
+   where id = p_event_id
+     for update;
+
+  if not found then
+    raise exception 'payment_events row % not found', p_event_id;
+  end if;
+  if v_event.status <> 'pending' then
+    return jsonb_build_object('status', 'already', 'event_status', v_event.status);
+  end if;
+
+  v_expiry := now() + case when p_period = 'monthly'
+                            then interval '30 days'
+                            else interval '1 day' end;
+
+  -- Ledger first: UNIQUE(transaction_id) turns a retried credit into a no-op.
+  insert into public.payment_transactions
+    (user_id, transaction_id, tx_ref, amount, currency, period, tier, status, created_at)
+  values
+    (v_event.user_id, v_event.tx_ref, v_event.tx_ref,
+     p_paid_amount, p_currency, p_period, p_tier, 'successful', now())
+  on conflict (transaction_id) do nothing;
+
+  update public.user_profiles
+     set tier                = p_tier,
+         current_tier        = p_tier,
+         subscription_status = 'active',
+         subscription_start  = now(),
+         subscription_end    = v_expiry,
+         tier_expiry         = v_expiry,
+         updated_at          = now()
+   where id = v_event.user_id;
+
+  update public.payment_events
+     set status         = 'verified',
+         verified_at    = now(),
+         flutterwave_id = p_flw_id,
+         paid_amount    = p_paid_amount,
+         last_error     = null
+   where id = p_event_id;
+
+  return jsonb_build_object('status', 'applied', 'user_id', v_event.user_id);
+end;
+$$;
+
+-- Execute is granted ONLY to the service role: anon/authenticated keys
+-- cannot even call the function, and the tier trigger still guards direct
+-- user_profiles updates as defence in depth.
+revoke execute on function public.apply_payment_verification(uuid, bigint, numeric, text, text, text)
+  from public, anon, authenticated;
+grant execute on function public.apply_payment_verification(uuid, bigint, numeric, text, text, text)
+  to service_role;
+
+commit;
+
+-- ═══════════════════════════════════════════════════════════════════════════
+-- VERIFICATION (run after the migration)
+-- ═══════════════════════════════════════════════════════════════════════════
+-- 1) Queue table + RLS on, exactly two client policies:
+--    select tablename, rowsecurity from pg_tables
+--     where schemaname = 'public' and tablename = 'payment_events';
+--    -- expect: rowsecurity = true
+--    select policyname, cmd from pg_policies
+--     where schemaname = 'public' and tablename = 'payment_events'
+--     order by policyname;
+--    -- expect: "Queue own pending payment event" (INSERT) +
+--    --          "Read own payment events" (SELECT) — nothing else
+--
+-- 2) No client insert left on the audit table:
+--    select policyname, cmd from pg_policies
+--     where schemaname = 'public' and tablename = 'payment_transactions'
+--     order by policyname;
+--    -- expect: SELECT only (no INSERT / UPDATE / DELETE)
+--
+-- 3) Tier trigger exists:
+--    select tgname from pg_trigger
+--     where tgname = 'protect_tier_columns' and not tgisinternal;
+--
+-- 4) The RPC must be uncallable from a user key (run with the anon key):
+--    curl -s -X POST "$SUPABASE_URL/rest/v1/rpc/apply_payment_verification" \
+--      -H "apikey: $SUPABASE_ANON_KEY" \
+--      -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
+--      -H "Content-Type: application/json" \
+--      -d '{"p_event_id":"00000000-0000-0000-0000-000000000000","p_flw_id":0,"p_paid_amount":0,"p_currency":"NGN","p_tier":"Free Tier","p_period":"daily"}'
+--    -- expect: 401 / permission denied for function
+--
+-- 5) Client self-credit blocked (authenticated as a user):
+--    update user_profiles set current_tier = 'VVIP Tier' where id = auth.uid();
+--    -- expect: 42501 tier fields are server-managed
 -- ═══════════════════════════════════════════════════════════════════════════

@@ -149,3 +149,20 @@ jobs:
             --outDir "$RUNNER_TEMP/anim-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/anim-test/animCore.test.js"
+      - name: Payment core tests (plan 5.1)
+        run: |
+          # Shared plan catalog + tx_ref codec + verification adjudication
+          # (used by both the checkout screen and the verify-payments poller).
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/paymentCore.ts statwise/lib/paymentCore.test.ts \
+            --outDir "$RUNNER_TEMP/payment-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/payment-test/paymentCore.test.js"
+      - name: Web alert shim tests (plan 5.1)
+        run: |
+          # Pure queue/overlay logic behind the web Alert.alert fallback.
+          npx --yes -p typescript@5.9.3 tsc \
+            statwise/lib/webAlertCore.ts statwise/lib/webAlertCore.test.ts \
+            --outDir "$RUNNER_TEMP/webalert-test" \
+            --module commonjs --target es2019 --strict --skipLibCheck
+          node "$RUNNER_TEMP/webalert-test/webAlertCore.test.js"
