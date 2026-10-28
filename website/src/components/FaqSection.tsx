@@ -30,7 +30,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Where does the news on this site come from?',
-    a: 'Football News & Insights is syndicated from SportyTrader: the sync action pulls new stories as they appear on their site (every two hours, checked automatically), including headline, image, byline, date and the opening text of each article, and renders them in our own /news reader — so you read here, not on a dozen tabs. Every story is credited to SportyTrader and links to the original article for the remainder and any late updates. We never claim their reporting as our own.',
+    a: 'Football News & Insights is syndicated from Sky Sports and SportyTrader: the sync action pulls new stories as they appear on their sites (every two hours, checked automatically), including headline, image, byline, date and the opening text of each article — plus video stories, which are described here and watched on the source site — and renders everything in our own /news reader, so you read here, not on a dozen tabs. Every story is credited to its publisher and links to the original for the remainder, the video, or any late updates. We never claim their reporting as our own.',
   },
   {
     q: 'Is this betting advice?',

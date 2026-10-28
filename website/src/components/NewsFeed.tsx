@@ -1,13 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Newspaper, RefreshCw } from 'lucide-react';
+import { ArrowRight, Newspaper, PlayCircle, RefreshCw } from 'lucide-react';
 import { useNewsFeed } from '@/lib/useNewsFeed';
 import { NEWS_DISPLAY_COUNT } from '@/lib/siteConfig';
 
 /**
  * Football news preview for the home page — headlines, thumbnails and
- * teasers synced from SportyTrader into website/src/data/news.json.
+ * teasers synced from Sky Sports and SportyTrader into
+ * website/src/data/news.json.
  *
  * Reading happens INSIDE this site: cards open /news/?a=<slug>, the
  * site's own reader (headline, image, byline, date and the story's
@@ -15,7 +16,7 @@ import { NEWS_DISPLAY_COUNT } from '@/lib/siteConfig';
  * The feed never navigates readers away.
  */
 export function NewsFeed() {
-  const { items, syncedAt, live } = useNewsFeed();
+  const { items, sources, syncedAt, live } = useNewsFeed();
 
   const shown = items.slice(0, NEWS_DISPLAY_COUNT);
   const syncedLabel = syncedAt
@@ -27,13 +28,14 @@ export function NewsFeed() {
         timeZone: 'UTC',
       })
     : '';
+  const sourceNames = Object.keys(sources);
 
   return (
     <div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {shown.map(item => (
           <Link
-            key={item.slug}
+            key={`${item.source}-${item.slug}`}
             href={`/news/?a=${item.slug}`}
             className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/50 transition flex flex-col"
           >
@@ -50,8 +52,13 @@ export function NewsFeed() {
                   }}
                 />
               ) : null}
+              {item.kind === 'video' && (
+                <span className="absolute inset-0 flex items-center justify-center bg-black/30">
+                  <PlayCircle className="w-10 h-10 text-white/90" />
+                </span>
+              )}
               <span className="absolute left-2 top-2 px-2 py-0.5 rounded bg-black/70 text-[10px] uppercase tracking-wider text-gray-300">
-                {item.published_label.split(' · ')[0]}
+                {item.kind === 'video' ? 'Video' : item.source}
               </span>
             </div>
             <div className="p-4 flex flex-col gap-2 flex-1">
@@ -63,7 +70,8 @@ export function NewsFeed() {
               </p>
               <div className="flex items-center justify-between text-xs text-gray-500 pt-1 border-t border-border/60">
                 <span>
-                  {item.byline ? `by ${item.byline} · ` : ''}via SportyTrader
+                  {item.byline ? `by ${item.byline} · ` : ''}
+                  {item.source}
                 </span>
                 <span className="text-primary font-semibold group-hover:underline inline-flex items-center gap-1">
                   Read <ArrowRight className="w-3 h-3" />
@@ -78,14 +86,19 @@ export function NewsFeed() {
         <span className="inline-flex items-center gap-2">
           <Newspaper className="w-3.5 h-3.5" />
           Stories from{' '}
-          <a
-            href="https://www.sportytrader.com/en/news/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-primary underline"
-          >
-            SportyTrader
-          </a>
+          {sourceNames.map((name, i) => (
+            <span key={name}>
+              {i > 0 && (i === sourceNames.length - 1 ? ' & ' : ', ')}
+              <a
+                href={sources[name]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary underline"
+              >
+                {name}
+              </a>
+            </span>
+          ))}
           , read right here on StatWise — source credited on every story.
         </span>
         <span className="inline-flex items-center gap-2">

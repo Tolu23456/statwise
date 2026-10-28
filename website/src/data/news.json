@@ -1,12 +1,256 @@
 {
- "synced_at": "2026-10-28T07:57:42+00:00",
- "source": "SportyTrader",
- "source_home": "https://www.sportytrader.com/en/news/",
+ "synced_at": "2026-10-28T09:09:02+00:00",
+ "sources": {
+  "SportyTrader": "https://www.sportytrader.com/en/news/",
+  "Sky Sports": "https://www.skysports.com/football/news"
+ },
  "items": [
+  {
+   "slug": "13604682",
+   "title": "'He knows heartbreak like this!' - The biggest upsets in League Cup history",
+   "url": "https://www.skysports.com/football/video/13604682/round-up-of-the-biggest-upsets-in-league-cup-history",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7389365.jpg?20261028080159",
+   "excerpt": "Following Fleetwood's victory over Arsenal, take a look at some of the biggest upsets in League Cup history.",
+   "published_label": "28 October 2026 · 07:55",
+   "published_iso": "2026-10-28T07:55:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Following Fleetwood's victory over Arsenal, take a look at some of the biggest upsets in League Cup history."
+   ]
+  },
+  {
+   "slug": "13604637",
+   "title": "Arteta explains reaction to Dowman red card amid criticism",
+   "url": "https://www.skysports.com/football/news/13604637/max-dowman-red-card-mikel-arteta-explains-what-he-said-to-16-year-old-after-sending-off-in-carabao-cup-exit-to-fleetwood-town",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-arsenal_7389264.jpg?20261027232527",
+   "excerpt": "Mikel Arteta has explained his reaction to Max Dowman as the 16-year-old went down the tunnel after being sent off in Arsenal's shock Carabao Cup exit to Fleetwood Town.",
+   "published_label": "27 October 2026 · 23:11",
+   "published_iso": "2026-10-27T23:11:00+00:00",
+   "byline": "Sam Blitz",
+   "body": [
+    "Mikel Arteta has explained his reaction to Max Dowman as the 16-year-old went down the tunnel after being sent off in Arsenal's shock Carabao Cup exit to Fleetwood Town.",
+    "Moments before Arsenal exited the competition on penalties to the League Two side, Dowman was sent off for violent conduct for kicking out at Harrison Neal after the Fleetwood defender's strong challenge on the teenager.",
+    "As Dowman headed towards the tunnel and past the dugouts, Arteta leaned in and said something to the teenager, which Paul Merson criticised, saying the Arsenal manager should have put an arm around him. Fleetwood 1-1 Arsenal (4-3 pens) - report and reaction As it happened | Teams | Stats VOTE: Is Cod Army victory the biggest cup shock of all time?",
+    "Asked what he said to Dowman, Arteta told reporters: \"It was something that we discussed before the game.\" Arteta refused to go into any more detail when pressed."
+   ]
+  },
+  {
+   "slug": "13604628",
+   "title": "Arteta's FULL reaction to Fleetwood knocking out Arsenal & Dowman red",
+   "url": "https://www.skysports.com/football/video/13604628/fleetwood-vs-arsenal-mikel-arteta-reacts-to-the-gunners-shock-loss-and-max-dowmans-red-card",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-arteta_7389242.jpg?20261027225751",
+   "excerpt": "Arsenal boss Mikel Arteta shares his thoughts following their shock Carabao Cup loss on penalties to League Two side Fleetwood Town.",
+   "published_label": "27 October 2026 · 22:52",
+   "published_iso": "2026-10-27T22:52:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Arsenal boss Mikel Arteta shares his thoughts following their shock Carabao Cup loss on penalties to League Two side Fleetwood Town."
+   ]
+  },
+  {
+   "slug": "13604626",
+   "title": "Papers: Carrick's job saved by failure to agree on replacement",
+   "url": "https://www.skysports.com/football/transfer-paper-talk/13604626/manchester-united-failure-to-agree-on-michael-carrick-s-successor-buys-under-pressure-head-coach-more-time",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+   "excerpt": "The top stories and transfer rumours from Wednesday's newspapers...",
+   "published_label": "27 October 2026 · 22:45",
+   "published_iso": "2026-10-27T22:45:00+00:00",
+   "byline": "Sky Sports",
+   "body": [
+    "The top stories and transfer rumours from Wednesday's newspapers...",
+    "Man Utd had planned on sacking Michael Carrick this week but failure to settle on a replacement has granted the head coach another stay of execution - The Sun",
+    "Pierre Sage has been given more time to turn around Crystal Palace's fortunes but he remains under huge pressure and could be dismissed if they lose against Tottenham on Saturday - The Guardian Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+    "One of Gianni Infantino's biggest critics, Prince Ali bin al-Hussein of Jordan, is facing the threat of disciplinary action from Asian football chiefs after accusing the Fifa president of hijacking an annual congress to help his re-election bid - The Times"
+   ]
+  },
+  {
+   "slug": "13604625",
+   "title": "Barnet 3-1 York",
+   "url": "https://www.skysports.com/football/video/13604625/barnet-3-1-york-league-two-highlights",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/c057890996c21e47a397e3d5dddbdd6ed63233864c47eb6093693bc080f7ee41_7389234.jpg?20261027224807",
+   "excerpt": "Highlights of the Sky Bet League Two match between Barnet and York.",
+   "published_label": "27 October 2026 · 22:42",
+   "published_iso": "2026-10-27T22:42:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Highlights of the Sky Bet League Two match between Barnet and York."
+   ]
+  },
+  {
+   "slug": "13604621",
+   "title": "MK Dons 4-1 Bromley",
+   "url": "https://www.skysports.com/football/video/13604621/mk-dons-4-1-bromley-league-one-highlights",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/3ddbc6ac0dd921b38b4a548165b0ab82ed715df202ae82e31319272080d50b93_7389231.jpg?20261027224646",
+   "excerpt": "Highlights of the Sky Bet League One match between MK Dons and Bromley.",
+   "published_label": "27 October 2026 · 22:39",
+   "published_iso": "2026-10-27T22:39:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Highlights of the Sky Bet League One match between MK Dons and Bromley."
+   ]
+  },
+  {
+   "slug": "13604615",
+   "title": "Oxford United 1-0 Stockport",
+   "url": "https://www.skysports.com/football/video/13604615/oxford-united-1-0-stockport-league-one-highlights",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/b609b658a9696edfe6e23997a070a8acc7ecdc541e0f3e3a3435cf37be99ba15_7389228.jpg?20261027224427",
+   "excerpt": "Highlights of the Sky Bet League One match between Oxford United and Stockport.",
+   "published_label": "27 October 2026 · 22:35",
+   "published_iso": "2026-10-27T22:35:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Highlights of the Sky Bet League One match between Oxford United and Stockport."
+   ]
+  },
+  {
+   "slug": "13604614",
+   "title": "'We haven't practiced once!' - Fleetwood didn't practice pens before beating Arsenal!",
+   "url": "https://www.skysports.com/football/video/13604614/fleetwood-arsenal-hlts-https-digitalcms-cf-sky-com-story-manager-video-13604607",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-lawlor-fleetwood_7389226.jpg?20261027224244",
+   "excerpt": "Fleetwood Town boss Matt Lawlor confirms his side didn't practice their well-taken penalties that they took against Arsenal.",
+   "published_label": "27 October 2026 · 22:34",
+   "published_iso": "2026-10-27T22:34:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Fleetwood Town boss Matt Lawlor confirms his side didn't practice their well-taken penalties that they took against Arsenal."
+   ]
+  },
+  {
+   "slug": "13603943",
+   "title": "Carabao Cup: Who will go strong as Liverpool host Chelsea?",
+   "url": "https://www.skysports.com/football/news/13603943/arsenal-should-unleash-max-dowman-liverpool-and-chelsea-clash-in-battle-of-the-basques-and-man-city-continue-defence-carabao-cup-talking-points",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-graphic-reggie-watson_7389006.png?20261027201310",
+   "excerpt": "In the battle of the Basques, how strong will Iraola and Alonso go?",
+   "published_label": "27 October 2026 · 22:00",
+   "published_iso": "2026-10-27T22:00:00+00:00",
+   "byline": "Sky Sports",
+   "body": [
+    "In the battle of the Basques, how strong will Iraola and Alonso go?",
+    "Liverpool vs Chelsea - Wednesday, kick-off 8pm live on Sky Sports Main Event",
+    "It will be intriguing to see how strong Andoni Iraola and Xabi Alonso go with their line-ups at Anfield on Wednesday night, with both Basque managers facing crucial Premier League fixtures at the weekend, albeit for different reasons.",
+    "Liverpool are in the midst of a four-game run at Anfield and will head into the Chelsea clash buoyed by three consecutive wins. Will the Reds' head coach prioritise the visit of reigning champions Arsenal on Super Sunday , or could another victory help sustain the feel-good factor around the club?"
+   ]
+  },
+  {
+   "slug": "13604003",
+   "title": "Arsenal dumped out of Carabao Cup by League Two Fleetwood",
+   "url": "https://www.skysports.com/football/news/13604003/fleetwood-1-1-arsenal-5-3-pens-premier-league-champions-dumped-out-of-carabao-cup-by-league-two-side",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-arsenal-fleetwood_7389186.jpg?20261027221939",
+   "excerpt": "Fleetwood Town produced one of the biggest shocks in Carabao Cup history as the League Two team dumped out Premier League champions Arsenal on penalties to reach the quarter-finals.",
+   "published_label": "27 October 2026 · 21:50",
+   "published_iso": "2026-10-27T21:50:00+00:00",
+   "byline": "Sam Blitz",
+   "body": [
+    "Fleetwood Town produced one of the biggest shocks in Carabao Cup history as the League Two team dumped out Premier League champions Arsenal on penalties to reach the quarter-finals.",
+    "Mikel Arteta named a strong Arsenal side with Viktor Gyokeres and Kai Havertz up front and Martin Odegaard playing the second half.",
+    "But they were not at the races, as the team two points above the League Two relegation zone took them to a 1-1 draw after Max Dowman was sent off before the shoot-out.",
+    "Then Bruno Guimaraes saw his penalty saved by Fleetwood goalkeeper Jay Lynch - who also made wonder saves to deny Ben White and Odegaard in stoppage time."
+   ]
+  },
+  {
+   "slug": "13604562",
+   "title": "Bradford City 2-0 Peterborough",
+   "url": "https://www.skysports.com/football/video/13604562/bradford-city-2-0-peterborough-carabao-cup-highlights",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-f-s_7389155.jpg?20261027215444",
+   "excerpt": "Highlights of the Carabao Cup fixture between Bradford City and Peterborough.",
+   "published_label": "27 October 2026 · 21:44",
+   "published_iso": "2026-10-27T21:44:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Highlights of the Carabao Cup fixture between Bradford City and Peterborough."
+   ]
+  },
+  {
+   "slug": "13592538",
+   "title": "Barnet vs York",
+   "url": "https://www.skysports.com/football/news/13592538/x",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+   "excerpt": "Barnet returned to winning ways in League Two with a 3-1 victory over 10-man York at The Hive.",
+   "published_label": "27 October 2026 · 21:35",
+   "published_iso": "2026-10-27T21:35:00+00:00",
+   "byline": "Sky Sports",
+   "body": [
+    "Barnet returned to winning ways in League Two with a 3-1 victory over 10-man York at The Hive.",
+    "Joe Grey's left-footed effort was saved by Barnet goalkeeper Matthew Cox before Mark Kitching was flagged offside after tapping home from a subsequent cross.",
+    "Ollie Pearce's low drive forced Cox into another save on the counter-attack midway through the first half. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+    "York broke the deadlock in the 37th minute through Arthur Read's left-footed strike into the bottom corner, but Barnet's Kabongo Tshimanga equalised two minutes later after turning smartly and finishing past York goalkeeper Alfie McNally."
+   ]
+  },
+  {
+   "slug": "13604446",
+   "title": "MK Dons vs Bromley",
+   "url": "https://www.skysports.com/football/news/13604446/mk-dons-vs-bromley",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+   "excerpt": "Aaron Collins scored twice as MK Dons made it back-to-back wins by thumping Bromley 4-1 at Stadium MK.",
+   "published_label": "27 October 2026 · 21:35",
+   "published_iso": "2026-10-27T21:35:00+00:00",
+   "byline": "Sky Sports",
+   "body": [
+    "Aaron Collins scored twice as MK Dons made it back-to-back wins by thumping Bromley 4-1 at Stadium MK.",
+    "Collins put MK Dons ahead late in the first half before Mitch Pinnock equalised for the Ravens. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+    "Goals by Collins, Alex Gilbey and Charlie Goode gave Paul Warne's side a big win, while managerless Bromley are now without a win in five league games.",
+    "Bromley keeper Grant Smith made early saves to deny Sam Nombe and Gilbey before MK Dons scored after 40 minutes as Gilbey's lofted pass was received by Collins, who dinked the ball home."
+   ]
+  },
+  {
+   "slug": "13592528",
+   "title": "Sheffield Wednesday vs Cambridge",
+   "url": "https://www.skysports.com/football/news/13592528/x",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+   "excerpt": "Managerless Sheffield Wednesday were held to a 1-1 draw by Cambridge at Hillsborough in League One.",
+   "published_label": "27 October 2026 · 21:35",
+   "published_iso": "2026-10-27T21:35:00+00:00",
+   "byline": "Sky Sports",
+   "body": [
+    "Managerless Sheffield Wednesday were held to a 1-1 draw by Cambridge at Hillsborough in League One.",
+    "The Owls, who sacked manager Henrik Pedersen at the weekend, took the lead through Mason Burstow soon after the break. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+    "But substitute Sullay Kaikai equalised midway through the second period to rescue a point for the visitors.",
+    "Cambridge threatened early on, with Ernie Weaver forced to clear off the line while Ben Knight also put an effort wide."
+   ]
+  },
+  {
+   "slug": "13592527",
+   "title": "Oxford vs Stockport",
+   "url": "https://www.skysports.com/football/news/13592527/x",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+   "excerpt": "Wales striker Mark Harris's first-half goal gave Oxford a 1-0 victory over Stockport, who missed out on the chance to go top of League One.",
+   "published_label": "27 October 2026 · 21:35",
+   "published_iso": "2026-10-27T21:35:00+00:00",
+   "byline": "Sky Sports",
+   "body": [
+    "Wales striker Mark Harris's first-half goal gave Oxford a 1-0 victory over Stockport, who missed out on the chance to go top of League One.",
+    "Harris struck in the 35th minute, slamming in Siriki Dembele's low cross following a pacy break down the left.",
+    "The win extended Oxford's unbeaten run to eight games and was a first defeat in seven for Stockport. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+    "The Hatters were without Adama Sidibeh - who came off the bench to earn a point at Notts County - because of a thigh injury."
+   ]
+  },
   {
    "slug": "fleetwood-town-vs-arsenal-the-cod-army-dare-to-dream-of-a-carabao-cup-miracle",
    "title": "Fleetwood Town vs Arsenal: The Cod Army Dare to Dream of a Carabao Cup",
    "url": "https://www.sportytrader.com/en/news/fleetwood-town-vs-arsenal-the-cod-army-dare-to-dream-of-a-carabao-cup-miracle/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/harry-kane-ballon-dor.webp",
    "excerpt": "A David vs Goliath clash is underway as Fleetwood Town, the minnows, prepare to challenge one of English football's biggest clubs, Arsenal, in the third round of the EFL",
    "published_label": "27 October 2026 · 14:00",
@@ -23,6 +267,7 @@
    "slug": "england-captain-harry-kane-wins-2026-ballon-d-or",
    "title": "“A Dream Come True” - England Captain Harry Kane Wins 2026 Ballon d’Or",
    "url": "https://www.sportytrader.com/en-gb/news/england-captain-harry-kane-wins-2026-ballon-d-or/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/michael-carrick-sack.webp",
    "excerpt": "England’s captain Harry Kane was announced as the 2026 Ballon d’Or winner last night in London. The Bayern Munich striker edged Real Madrid’s Kylian Mbappe and Barcelona’",
    "published_label": "27 October 2026 · 12:00",
@@ -36,9 +281,42 @@
    ]
   },
   {
+   "slug": "13604205",
+   "title": "Putellas makes WSL history after winning Ballon d'Or",
+   "url": "https://www.skysports.com/football/video/13604205/alexia-putellas-makes-wsl-history-after-winning-ballon-dor",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-putellas-wsl_7388311.jpg?20261026223914",
+   "excerpt": "Alexia Putellas makes WSL history after winning the Ballon d'Or.",
+   "published_label": "26 October 2026 · 22:52",
+   "published_iso": "2026-10-26T22:52:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Alexia Putellas makes WSL history after winning the Ballon d'Or."
+   ]
+  },
+  {
+   "slug": "13604001",
+   "title": "Bradford roll back the years to reach Carabao Cup quarters",
+   "url": "https://www.skysports.com/football/news/13604001/bradford-city-2-0-peterborough-macauley-gillesphey-and-adam-phillips-fire-bantams-into-carabao-cup-quarter-finals",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-macaulay-gilllesphey_7389227.jpg?20261027224336",
+   "excerpt": "Bradford are through to the Carabao Cup quarter-finals for the first time since they reached Wembley in 2013 with a 2-0 win over Peterborough.",
+   "published_label": "26 October 2026 · 12:54",
+   "published_iso": "2026-10-26T12:54:00+00:00",
+   "byline": "Sky Sports",
+   "body": [
+    "Bradford are through to the Carabao Cup quarter-finals for the first time since they reached Wembley in 2013 with a 2-0 win over Peterborough.",
+    "Goals from Macaulay Gillesphey and Adam Phillips settled the all-League One affair at Valley Parade.",
+    "Brandon Khela drove wide from an early Peterborough chance but it was Bradford who took the lead on 13 minutes. As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+    "Manager Michael Duff had called for his side to be more productive from corners and they obliged when Callum Connolly's set-piece was turned in by defender Gillesphey."
+   ]
+  },
+  {
    "slug": "premier-league-carrick-sack-man-united",
    "title": "Premier League: Carrick On the Brink After Bournemouth Battering at Ol",
    "url": "https://www.sportytrader.com/en-gb/news/premier-league-carrick-sack-man-united/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/pedro_vs_solanke_img.webp",
    "excerpt": "Manchester United suffered another crushing defeat in the Premier League on Sunday, losing 3-0 to Bournemouth at Old Trafford, which leaves them 16th in the league standi",
    "published_label": "26 October 2026 · 10:30",
@@ -55,6 +333,7 @@
    "slug": "chelsea-vs-tottenham-martinez-out-with-jaw-fracture-as-spurs-visit-with-just-six-goals-from-seven-games",
    "title": "Chelsea vs Tottenham: Martinez Out With Jaw Fracture as Spurs Visit Wi",
    "url": "https://www.sportytrader.com/en/news/chelsea-vs-tottenham-martinez-out-with-jaw-fracture-as-spurs-visit-with-just-six-goals-from-seven-games/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/formula-1/2026-us-grand-prix-1.webp",
    "excerpt": "Chelsea host Tottenham at Stamford Bridge on Saturday in Premier League Gameweek 8. Xabi Alonso's side are fourth with 13 points from seven matches after back-to-back win",
    "published_label": "24 October 2026 · 12:00",
@@ -71,6 +350,7 @@
    "slug": "formula-1-united-states-grand-prix-antonelli-title-scenario",
    "title": "United States Grand Prix: How Antonelli Can Become the Youngest World",
    "url": "https://www.sportytrader.com/en/news/formula-1-united-states-grand-prix-antonelli-title-scenario/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/darts/2026-european-champs-1.webp",
    "excerpt": "The Circuit of the Americas has seen history made before, but the stakes in Austin have rarely felt greater than they do this weekend. With the 2026 United States Grand P",
    "published_label": "24 October 2026 · 10:30",
@@ -87,6 +367,7 @@
    "slug": "european-darts-championship-2026-enters-day-3",
    "title": "Curse Ended! Blockbuster Matchups Set As European Darts Championship 2",
    "url": "https://www.sportytrader.com/en-gb/news/european-darts-championship-2026-enters-day-3/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/raphinha_barca_2026.webp",
    "excerpt": "The curse of the champion is broken, but the carnage is far from over! Day 3 of the 2026 European Darts Championship is set to enter what is shaping up to be a thrilling",
    "published_label": "24 October 2026 · 09:30",
@@ -103,6 +384,7 @@
    "slug": "this-weekends-best-player-props-raphinha-olise-and-malen",
    "title": "This Weekend’s Best Player Props: Raphinha, Olise and Malen",
    "url": "https://www.sportytrader.com/en/news/this-weekends-best-player-props-raphinha-olise-and-malen/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/cricket/sa-vs-aus-2nd-test.webp",
    "excerpt": "Another weekend, another list of some of the top player props to watch out for across Europe! This time around, we’re taking a look at El Clasico, Bayern’s trip to Freibu",
    "published_label": "23 October 2026 · 15:00",
@@ -119,6 +401,7 @@
    "slug": "south-africa-smash-australia-to-level-test-series",
    "title": "South Africa Smash Australia to Level Test Series Heading Into Cape To",
    "url": "https://www.sportytrader.com/en-za/news/south-africa-smash-australia-to-level-test-series/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/oh_hyun_gyu.webp",
    "excerpt": "South Africa delivered a commanding performance to beat Australia by an innings and 31 runs at St. George’s Park on Thursday afternoon to level the three-match Test serie",
    "published_label": "23 October 2026 · 10:45",
@@ -132,9 +415,25 @@
    ]
   },
   {
+   "slug": "13602377",
+   "title": "Who should lift Ballon d'Or? Merse, Carra and more pick their winner...",
+   "url": "https://www.skysports.com/football/video/13602377/harry-kane-lamine-yamal-who-should-win-the-ballon-dor",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/sky-sports-football-harry-kane_7383886.jpg?20261022170454",
+   "excerpt": "Take a look at who Sky Sports pundits and journalists are backing to win the 2026 Ballon d'Or.",
+   "published_label": "22 October 2026 · 16:55",
+   "published_iso": "2026-10-22T16:55:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Take a look at who Sky Sports pundits and journalists are backing to win the 2026 Ballon d'Or."
+   ]
+  },
+  {
    "slug": "besiktas-vs-crystal-palace-can-the-south-london-club-turn-its-fortunes-around-in-europe",
    "title": "Besiktas vs Crystal Palace: Can the South London club turn its fortune",
    "url": "https://www.sportytrader.com/en/news/besiktas-vs-crystal-palace-can-the-south-london-club-turn-its-fortunes-around-in-europe/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/uel-bournemouth-vs-ac-milan.webp",
    "excerpt": "Besiktas will welcome a struggling Crystal Palace to the Tupras Stadium on matchday three of the UEFA Europa League (League Phase). It is a battle of the Eagles as the Tu",
    "published_label": "22 October 2026 · 13:00",
@@ -151,6 +450,7 @@
    "slug": "bournemouth-vs-ac-milan-europa-league-matchday-3",
    "title": "Bournemouth vs AC Milan: Cherries Favourites to Stun European Giants i",
    "url": "https://www.sportytrader.com/en/news/bournemouth-vs-ac-milan-europa-league-matchday-3/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/cafcl-sundowns-vs-wiliete.webp",
    "excerpt": "Bournemouth host seven-time European champions AC Milan at the Vitality Stadium tonight. Riding a flawless start in the Europa League, the Premier League side enter tonig",
    "published_label": "22 October 2026 · 12:30",
@@ -167,6 +467,7 @@
    "slug": "caf-champions-league-second-qualifying-round-sundowns-pirates",
    "title": "CAF Champions League: Sundowns, Pirates Brace for Crucial CAFCL Showdo",
    "url": "https://www.sportytrader.com/en-za/news/caf-champions-league-second-qualifying-round-sundowns-pirates/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/bayern-vs-arsenal-ucl-md3.webp",
    "excerpt": "Africa’s premier club competition, the CAF Champions League, reaches a crucial point this weekend, with 32 teams set to face off in the second leg of the second qualifyin",
    "published_label": "22 October 2026 · 09:00",
@@ -183,6 +484,7 @@
    "slug": "bayern-munich-vs-arsenal-uefa-champions-league-matchday-3",
    "title": "Bayern Munich vs Arsenal: Rampant Reds Set To Face UCL’s Most Miserly",
    "url": "https://www.sportytrader.com/en/news/bayern-munich-vs-arsenal-uefa-champions-league-matchday-3/",
+   "source": "SportyTrader",
    "image": "",
    "excerpt": "Two European giants. Two distinct footballing identities. One high-stakes Champions League showdown. Bayern Munich will take on Arsenal at the Allianz Arena tonight, Wedn",
    "published_label": "21 October 2026 · 14:00",
@@ -199,6 +501,7 @@
    "slug": "aston-villa-vs-viking-perfect-home-record-meets-visitors-travel-troubles-in-champions-league-clash",
    "title": "Aston Villa vs Viking: Perfect home record meets visitors’ travel trou",
    "url": "https://www.sportytrader.com/en/news/aston-villa-vs-viking-perfect-home-record-meets-visitors-travel-troubles-in-champions-league-clash/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/cricket/smriti-mandhana-vs-zimbabwe.webp",
    "excerpt": "Aston Villa have made a perfect start to the UEFA Champions League (League Phase). They enter this clash aiming to maintain their 100% record when they welcome Norwegian",
    "published_label": "21 October 2026 · 13:00",
@@ -215,6 +518,7 @@
    "slug": "smriti-mandhana-wins-first-t20i-series-as-india-captain",
    "title": "Smriti Mandhana Begins India Captaincy Reign With T20I Series Sweep Ov",
    "url": "https://www.sportytrader.com/en-in/news/smriti-mandhana-wins-first-t20i-series-as-india-captain/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/fabregas_carrick_img.webp",
    "excerpt": "Following Harmanpreet Kaur’s decision to step down as captain of India’s Women’s national cricket team, Smriti Mandhana enjoyed an excellent start to life as the new skip",
    "published_label": "21 October 2026 · 09:30",
@@ -231,6 +535,7 @@
    "slug": "como-vs-manchester-united-yoro-banned-as-winless-united-visit-fabregas-s-ucl-debutants",
    "title": "Como vs Manchester United: Yoro Banned as Winless United Visit Fabrega",
    "url": "https://www.sportytrader.com/en/news/como-vs-manchester-united-yoro-banned-as-winless-united-visit-fabregas-s-ucl-debutants/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/isak_vs_gulacsi.webp",
    "excerpt": "Como host Manchester United at Stadio Giuseppe Sinigaglia on Wednesday in Champions League Matchday 3. Michael Carrick's side have not won in six matches across all compe",
    "published_label": "21 October 2026 · 09:00",
@@ -247,6 +552,7 @@
    "slug": "liverpool-vs-villarreal-frimpong-and-szoboszlai-miss-out-as-semi-final-rivals-meet-again-at-anfield",
    "title": "Liverpool vs Villarreal: Frimpong and Szoboszlai Miss Out as Semi-Fina",
    "url": "https://www.sportytrader.com/en/news/liverpool-vs-villarreal-frimpong-and-szoboszlai-miss-out-as-semi-final-rivals-meet-again-at-anfield/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/man_city_epl.webp",
    "excerpt": "Liverpool host Villarreal at Anfield on Tuesday evening in Champions League Matchday 3. Andoni Iraola's side have won both of their European matches this season, includin",
    "published_label": "20 October 2026 · 14:00",
@@ -263,6 +569,7 @@
    "slug": "nba-2026-27-opening-night-tips-off-with-triple-header",
    "title": "NBA 2026-27 Opening Night: Season Tips Off With Cracking Triple-Header",
    "url": "https://www.sportytrader.com/en/news/nba-2026-27-opening-night-tips-off-with-triple-header/",
+   "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/formula-1/mckenzie-rsa-f1-bid.webp",
    "excerpt": "The wait is finally over! Tonight, the 2026-27 NBA season explodes into life with a historic, first-of-its-kind opening night triple-header. Fans are set to be treated to",
    "published_label": "20 October 2026 · 12:00",

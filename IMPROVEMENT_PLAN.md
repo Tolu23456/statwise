@@ -1129,6 +1129,33 @@ fails closed with "Payments Temporarily Unavailable"); (2) add repo secret
   default token don't trigger other workflows → no deploy cascade).
   **First dispatch run 40646956199 → success**, committed `28f12f2`
   (`chore(news): sync SportyTrader headlines [auto]`) — the loop works.
+- [x] **Second news source: Sky Sports + video stories** - multi-source
+  sync (2026-10-28, follow-up to the reader launch)
+  `sync_news.py` now syncs TWO publishers: SportyTrader (as before) and
+  Sky Sports. Sky discovery = server-rendered tiles on
+  `/football/news` (13 `sdc-site-tile` cards) + its JSON "load more"
+  endpoints (`/listing/sport/football/<page>`, 6 tiles/page, `hasNext`
+  flag; `SYNC_SKY_PAGES`=2 default). Sky story pages are parsed via
+  JSON-LD (`NewsArticle`: headline/articleBody/datePublished/author/
+  image; `VideoObject`: description/thumbnail) — cleaner than HTML
+  scraping. **Video stories** (Sky's player is proprietary, `embedUrl`
+  empty) are stored as `kind:"video"` items: described in-site with a
+  play badge + "Watch on Sky Sports" link, never embedded. Per-item
+  `source` field + top-level `sources` map drive per-story attribution
+  in the feed/reader (no more hardcoded publisher name). Items: 35
+  (18 Sky + 17 SportyTrader), all with lead text; dateless fresh tiles
+  sort first so the cap can't drop stories before enrichment; Sky keeps
+  its enriched copy wholesale on re-parse (tiles lack date/byline).
+  Verified: backfill 38s, idempotent quiet runs (stable md5), a live
+  story published mid-session was picked up with text on the next run.
+- [x] **AdSense Auto ads mode** - user enabled Auto ads in dashboard
+  Meta tag `google-adsense-account` added to layout metadata (Google's
+  modern verification companion to ads.txt). `AdSlot` now renders a
+  manual `<ins>` ONLY for non-'0' slot ids — pushing a placeholder slot
+  while Auto ads runs would be an invalid ad request (console errors,
+  account-quality noise); placeholder placements show the house ad
+  meanwhile. Auto ads needs nothing else from our side: the server-
+  rendered script tag + ads.txt + meta tag are all live.
 - [x] **Deployed & verified** - `0e24041` then `8bd61f2` pushed, Vercel
   builds success (deployment 7380249562 for the news reader)
   Live curl checks: `/` 143 kB HTML with all new sections (free picks,
@@ -1183,21 +1210,29 @@ fails closed with "Payments Temporarily Unavailable"); (2) add repo secret
 
 ### 5.10 Attention-student results (P0 to record, runs in background)
 
-- [ ] **Record run `40503960706` when it lands** - evidence, not vibes
-  Train Attention Student (on `e78272e`) gets its numbers written into
-  this file + Notes: accuracy / log-loss vs the Pico v6 baseline
-  (LL 1.01129, acc 0.4827, blended 0.99491) on the SAME out-of-time
-  holdout. Adoption ONLY on an apples-to-apples win (tolerance 0.0005,
-  `FORCE_REPLACE` never) — otherwise it stays an experiment, exactly as
-  the Notes section already rules.
-  **Run `40503960706` landed FAILED (2026-10-27)** — recorded 2026-10-27:
-  training early-stopped at epoch 12 (best inner-val LL **0.95050**, inner
-  tail only, never the holdout) but the runner received a shutdown signal
-  (exit 143) seconds later, so the **Train student step failed and the gate
-  job was skipped** — no holdout comparison exists, therefore no adoption
-  question yet. Next action: re-dispatch the workflow (the checkpoint cache
-  restores, so it resumes rather than restarts); the box stays unticked
-  until a run produces the gate numbers.
+- [x] **Run `40636199336` landed (2026-10-28) — recorded, no adoption**
+  The re-dispatch succeeded where `40503960706` failed. Full picture from
+  the run's two jobs:
+  **Train job** (success): the leakage guard fired exactly as designed —
+  *"teacher rejected: teacher split 2026-04-21 is AFTER retrain split
+  2000-01-01 — it saw holdout outcomes"*. The deployed v7's recipe split
+  at the holdout boundary, so using it as the student's teacher would
+  have leaked holdout outcomes into training. The student therefore
+  trained with **neutral teacher features** (training-time mean fallback).
+  **Gate job** (success): the retrain race produced
+  `eval_log_loss 1.01129, accuracy 0.4827, blended 0.99491` —
+  **identical to the deployed v7 baseline** (delta +0.00000 LL /
+  +0.0000 acc, tolerance 0.0005) → `[GATE] accepted` with a zero
+  improvement, i.e. the neutral-teacher student is functionally the
+  baseline. Gate commit `3a4518f` records the comparison.
+  **Verdict**: the mechanism works (guard caught leakage; gate compared
+  honestly; zero-delta = no change to production), but there is still no
+  apples-to-apples holdout WIN for the student — v7 stays deployed
+  untouched. The open question is now sharper: to ever beat the baseline
+  the student needs a teacher whose split is strictly BEFORE the holdout
+  (e.g. the sim-lab recipe's earlier split), otherwise its features are
+  neutral by construction. That is a training-config change for the
+  research track, not an adoption step.
 
 ### 5.11 Forum media bucket verification (P1 — quick)
 

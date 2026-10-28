@@ -6,26 +6,38 @@ import { NEWS_JSON_URL } from '@/lib/siteConfig';
 
 /**
  * One story as stored in website/src/data/news.json: listing metadata
- * plus `body` — the article's opening paragraphs, fetched by the
- * sync-news workflow so readers get the text HERE instead of on the
- * source site (source credited + linked on every story view).
+ * plus `body` — the story's opening text, fetched by the sync-news
+ * workflow so readers get the text HERE instead of on the source site
+ * (source credited + linked on every story view).
  */
 export type NewsItem = {
   slug: string;
   title: string;
   url: string;
+  /** Publisher name, e.g. "Sky Sports" / "SportyTrader". */
+  source: string;
   image: string;
   excerpt: string;
   published_label: string;
   published_iso: string;
   byline: string;
   body?: string[];
+  /** 'video' when the original is a video page (watched on the source). */
+  kind?: string;
 };
 
 export type NewsFeedState = {
   items: NewsItem[];
+  /** Publisher name → its news-desk home URL (per-story credit links). */
+  sources: Record<string, string>;
   syncedAt: string;
   live: boolean;
+};
+
+type FeedPayload = {
+  items?: NewsItem[];
+  sources?: Record<string, string>;
+  synced_at?: string;
 };
 
 /**
@@ -37,8 +49,12 @@ export type NewsFeedState = {
  *      Allow-Origin: *`), re-checking every 30 minutes.
  */
 export function useNewsFeed(): NewsFeedState {
-  const [items, setItems] = useState<NewsItem[]>(bundled.items);
-  const [syncedAt, setSyncedAt] = useState<string>(bundled.synced_at);
+  const initial = bundled as FeedPayload;
+  const [items, setItems] = useState<NewsItem[]>(initial.items ?? []);
+  const [sources, setSources] = useState<Record<string, string>>(
+    initial.sources ?? {}
+  );
+  const [syncedAt, setSyncedAt] = useState<string>(initial.synced_at ?? '');
   const [live, setLive] = useState(false);
 
   useEffect(() => {
@@ -47,12 +63,10 @@ export function useNewsFeed(): NewsFeedState {
       try {
         const res = await fetch(NEWS_JSON_URL, { cache: 'no-store' });
         if (!res.ok) return;
-        const data = (await res.json()) as {
-          items?: NewsItem[];
-          synced_at?: string;
-        };
+        const data = (await res.json()) as FeedPayload;
         if (alive && Array.isArray(data.items) && data.items.length > 0) {
           setItems(data.items);
+          if (data.sources) setSources(data.sources);
           if (data.synced_at) setSyncedAt(data.synced_at);
           setLive(true);
         }
@@ -68,5 +82,5 @@ export function useNewsFeed(): NewsFeedState {
     };
   }, []);
 
-  return { items, syncedAt, live };
+  return { items, sources, syncedAt, live };
 }

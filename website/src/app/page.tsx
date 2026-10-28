@@ -279,10 +279,11 @@ export default function Home() {
           <h2 className="text-3xl font-bold">Football News & Insights</h2>
         </div>
         <p className="text-gray-400 max-w-3xl mb-8">
-          Headlines, images and story text from SportyTrader&apos;s newsroom, synced
-          automatically every two hours — and read right here on StatWise, never
-          bounced off-site. Transfers, injuries, tactical previews: the context
-          around the fixtures the model prices. Every story credits its source.
+          Headlines, images and story text from the Sky Sports and
+          SportyTrader newsrooms, synced automatically every two hours — and
+          read right here on StatWise, never bounced off-site. Match reports,
+          transfers, video reaction: the context around the fixtures the model
+          prices. Every story credits its source.
         </p>
         <NewsFeed />
         <div className="mt-6 text-right">
@@ -386,8 +387,8 @@ export default function Home() {
         </div>
         <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-border/50 text-xs text-gray-600">
           © {new Date().getFullYear()} StatWise. News stories syndicated from
-          SportyTrader with attribution — read in our news desk, with a link
-          to every original article.
+          Sky Sports and SportyTrader with attribution — read in our news
+          desk, with a link to every original article or video.
         </div>
       </footer>
     </main>

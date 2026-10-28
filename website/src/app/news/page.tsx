@@ -4,7 +4,7 @@ import { NewsReader } from '@/components/NewsReader'
 export const metadata: Metadata = {
   title: 'Football News & Insights',
   description:
-    'Football news synced from SportyTrader: headlines, images, bylines and story text, read inside StatWise — with the source credited on every story.',
+    'Football news synced from Sky Sports and SportyTrader: headlines, images, bylines, video stories and story text, read inside StatWise — with the source credited on every story.',
 }
 
 /**

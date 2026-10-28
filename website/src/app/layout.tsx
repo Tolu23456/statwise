@@ -51,6 +51,12 @@ export const metadata: Metadata = {
     icon: ['/favicon.ico', '/icon.png'],
     apple: '/apple-touch-icon.png',
   },
+  // AdSense account-verification meta tag (the modern companion to
+  // ads.txt — Google's site check looks for it in the raw HTML, which
+  // the static export includes).
+  other: {
+    'google-adsense-account': ADSENSE_CLIENT,
+  },
 }
 
 export default function RootLayout({

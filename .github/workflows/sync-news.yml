@@ -1,10 +1,12 @@
 name: Sync news
 
-# Syndicates football news into website/src/data/news.json so the site's
-# news section stays fresh WITHOUT Vercel rebuilds: the site reads the raw
-# file at runtime (useNewsFeed), so committing it is enough. Each run also
-# fetches the opening text of any story still missing it (bounded per run,
-# default 8 pages), which is what the /news reader renders in-site.
+# Syndicates football news from Sky Sports and SportyTrader into
+# website/src/data/news.json so the site's news section stays fresh
+# WITHOUT Vercel rebuilds: the site reads the raw file at runtime
+# (useNewsFeed), so committing it is enough. Each run also fetches the
+# opening text of any story still missing it (bounded per run, default
+# 8 pages; Sky stories come via JSON-LD, videos stored as kind:"video"),
+# which is what the /news reader renders in-site.
 # Pushes use GITHUB_TOKEN, which by design does NOT trigger other
 # workflows — no deploy cascade from a headline.
 on:
@@ -37,5 +39,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add website/src/data/news.json
-          git commit -m "chore(news): sync SportyTrader headlines [auto]"
+          git commit -m "chore(news): sync football news [auto]"
           git push

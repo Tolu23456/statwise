@@ -14,9 +14,13 @@ declare global {
 }
 
 /**
- * Ad slot: renders a Google AdSense unit when siteConfig.ADSENSE_CLIENT is
- * configured, otherwise a house ad promoting the app (which doubles as a
- * funnel step and keeps the layout honest — labelled "Advertisement").
+ * Ad slot: renders a manual Google AdSense unit ONLY when a real slot id
+ * exists for the placement (siteConfig.AD_SLOTS). With Auto ads enabled
+ * in the dashboard, Google's script places ads on its own — pushing a
+ * manual unit with placeholder slot '0' would be an INVALID ad request
+ * (console errors, account-quality noise), so placeholder slots render
+ * the house ad instead: the layout stays honest and every placement is
+ * already wired for when real slot ids arrive.
  *
  * Zero new packages: AdSense loads via a plain <script> injected in
  * layout.tsx; this component only renders the <ins> container and pushes
@@ -29,10 +33,12 @@ export function AdSlot({
   placement: Placement;
   className?: string;
 }) {
+  const slot = AD_SLOTS[placement];
+  const live = Boolean(ADSENSE_CLIENT) && Boolean(slot) && slot !== '0';
   const pushed = useRef(false);
 
   useEffect(() => {
-    if (!ADSENSE_CLIENT || pushed.current) return;
+    if (!live || pushed.current) return;
     pushed.current = true;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -40,9 +46,9 @@ export function AdSlot({
       // AdSense script not loaded yet (blocked/async) — the <ins> stays
       // empty; never let ad machinery break the page.
     }
-  }, []);
+  }, [live]);
 
-  if (!ADSENSE_CLIENT) {
+  if (!live) {
     return (
       <div
         className={`rounded-xl border border-dashed border-border bg-card/60 px-5 py-4 ${className}`}
