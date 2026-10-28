@@ -23,7 +23,7 @@ import { AnimatedEntrance } from '@/components/AnimatedEntrance';
 import { SkeletonChatRow } from '@/components/Skeletons';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
-import { formatChatTime, dayOffset } from '@/lib/format';
+import { formatChatTime, formatDayLabel, dayOffset } from '@/lib/format';
 import { LIMITS, exceedsLimit, sanitizeUserText } from '@/lib/validation';
 import { checkRateLimit, RATE_RULES, rateLimitMessage } from '@/lib/rateLimit';
 
@@ -354,7 +354,9 @@ export default function ForumScreen() {
         <View style={styles.dayDivider}>
           <View style={[styles.dayDividerLine, { backgroundColor: C.border }]} />
           <Text style={[styles.dayDividerText, { color: C.textMuted }]}>
-            {thisDay === 0 ? 'Today' : thisDay === -1 ? 'Yesterday' : formatChatTime(item.created_at).split(' ')[0]}
+            {/* Older than Yesterday: show the actual date (formatChatTime's
+                first token used to leak just the day number, "25"). */}
+            {formatDayLabel(item.created_at)}
           </Text>
           <View style={[styles.dayDividerLine, { backgroundColor: C.border }]} />
         </View>

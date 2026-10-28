@@ -25,15 +25,20 @@
 --                                tier grant + event flip, one transaction),
 --                                tier-column protection trigger, client
 --                                INSERT on payment_transactions dropped.
+--   6) forum-media uploads     — plan 5.11: the public bucket EXISTS but had
+--                                NO write policy, so every in-app image/
+--                                video upload failed with RLS 403. Adds
+--                                INSERT/DELETE scoped to the uploader's own
+--                                folder (forum/<uid>/...).
 --
 -- AFTER RUNNING: the verification queries at the bottom of each section must
--- pass (they are included verbatim). Also confirm the public storage bucket
--- `forum-media` exists (Storage → New bucket → "forum-media" → Public) for
--- forum image/video uploads.
+-- pass (they are included verbatim). The public storage bucket `forum-media`
+-- already exists (verified 2026-10-28: public read works); section 6 adds its
+-- missing write policy.
 -- ═══════════════════════════════════════════════════════════════════════════
 
 -- ╔══════════════════════════════════════════════════════════════════════════╗
--- ║ SECTION 1 of 5 — push notification subscriptions ║
+-- ║ SECTION 1 of 6 — push notification subscriptions ║
 -- ╚══════════════════════════════════════════════════════════════════════════╝
 
 -- Push notification subscriptions (plan step 3.2).
@@ -88,7 +93,7 @@ create policy "Users can delete their own push subscriptions"
 
 
 -- ╔══════════════════════════════════════════════════════════════════════════╗
--- ║ SECTION 2 of 5 — security hardening (rate limits, RLS locks) ║
+-- ║ SECTION 2 of 6 — security hardening (rate limits, RLS locks) ║
 -- ╚══════════════════════════════════════════════════════════════════════════╝
 
 -- ═══════════════════════════════════════════════════════════════════════════
@@ -327,7 +332,7 @@ commit;
 
 
 -- ╔══════════════════════════════════════════════════════════════════════════╗
--- ║ SECTION 3 of 5 — client telemetry (client_events table) ║
+-- ║ SECTION 3 of 6 — client telemetry (client_events table) ║
 -- ╚══════════════════════════════════════════════════════════════════════════╝
 
 -- ═══════════════════════════════════════════════════════════════════════════
@@ -469,7 +474,7 @@ commit;
 
 
 -- ╔══════════════════════════════════════════════════════════════════════════╗
--- ║ SECTION 4 of 5 — social layer (favorites, inbox, replies/mentions) ║
+-- ║ SECTION 4 of 6 — social layer (favorites, inbox, replies/mentions) ║
 -- ╚══════════════════════════════════════════════════════════════════════════╝
 
 -- ═══════════════════════════════════════════════════════════════════════════
@@ -789,7 +794,7 @@ commit;
 -- ═══════════════════════════════════════════════════════════════════════════
 
 -- ╔══════════════════════════════════════════════════════════════════════════╗
--- ║ SECTION 5 of 5 — payment verification (payment_events + tier lock)      ║
+-- ║ SECTION 5 of 6 — payment verification (payment_events + tier lock)      ║
 -- ╚══════════════════════════════════════════════════════════════════════════╝
 
 -- ═══════════════════════════════════════════════════════════════════════════
@@ -1028,4 +1033,79 @@ commit;
 -- 5) Client self-credit blocked (authenticated as a user):
 --    update user_profiles set current_tier = 'VVIP Tier' where id = auth.uid();
 --    -- expect: 42501 tier fields are server-managed
+-- ═══════════════════════════════════════════════════════════════════════════
+
+-- ╔══════════════════════════════════════════════════════════════════════════╗
+-- ║ SECTION 6 of 6 — forum-media storage write policy (plan 5.11)           ║
+-- ╚══════════════════════════════════════════════════════════════════════════╝
+
+begin;
+
+-- PLAN 5.11 VERIFICATION RESULT (2026-10-28): the `forum-media` bucket
+-- EXISTS and is PUBLIC — a service-key upload followed by an unauthenticated
+-- GET on the public URL returned 200 image/png — but it had NO policy that
+-- lets an authenticated user write, so EVERY in-app image/video upload
+-- failed with 403 "new row violates row-level security policy" (verified
+-- with a live user token on the app's own path shape). Public read was fine;
+-- only the write path was missing. This section adds it.
+--
+-- App path convention (forum.tsx upload handler):
+--   forum/<user_id>/<timestamp>.<ext>
+-- so the uploader's user id is folder component [2]. The check pins both
+-- the bucket and that folder, so a user can only ever write under their own
+-- folder — nobody can overwrite or inject files into someone else's.
+
+drop policy if exists "forum-media: uploader writes own folder" on storage.objects;
+create policy "forum-media: uploader writes own folder"
+  on storage.objects
+  for insert
+  to authenticated
+  with check (
+    bucket_id = 'forum-media'
+    and (storage.foldername(name))[2] = auth.uid()::text
+  );
+
+-- DELETE scoped to the same folder: lets a user clean up their own uploads.
+-- The app has no delete UI today; this is standard hygiene for user media
+-- and grants nothing beyond the user's own folder.
+
+drop policy if exists "forum-media: uploader deletes own folder" on storage.objects;
+create policy "forum-media: uploader deletes own folder"
+  on storage.objects
+  for delete
+  to authenticated
+  using (
+    bucket_id = 'forum-media'
+    and (storage.foldername(name))[2] = auth.uid()::text
+  );
+
+commit;
+
+-- VERIFICATION for section 6
+--
+-- 1) The policies exist:
+--
+--    select policyname, cmd from pg_policies
+--     where schemaname = 'storage' and tablename = 'objects'
+--       and policyname like 'forum-media:%'
+--     order by policyname;
+--    -- expect: "forum-media: uploader deletes own folder" (DELETE) +
+--    --          "forum-media: uploader writes own folder" (INSERT)
+--
+-- 2) Live upload test with a USER token (not the service key) — must be 200:
+--
+--    TOK=$(curl -s -X POST "$SUPABASE_URL/auth/v1/token?grant_type=password" \
+--      -H "apikey: $SUPABASE_ANON_KEY" -H "Content-Type: application/json" \
+--      -d '{"email":"<user>","password":"<pass>"}' | jq -r .access_token)
+--    curl -s -o /dev/null -w "%{http_code}\n" \
+--      -X POST "$SUPABASE_URL/storage/v1/object/forum-media/forum/<their-uid>/probe.png" \
+--      -H "Authorization: Bearer $TOK" -H "Content-Type: image/png" \
+--      --data-binary @probe.png
+--    -- expect: 200 (was 403 before this section)
+--
+-- 3) Public read still works for anyone (anon key or none at all):
+--
+--    curl -s -o /dev/null -w "%{http_code}\n" \
+--      "$SUPABASE_URL/storage/v1/object/public/forum-media/forum/<their-uid>/probe.png"
+--    -- expect: 200
 -- ═══════════════════════════════════════════════════════════════════════════

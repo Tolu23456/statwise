@@ -15,7 +15,10 @@ What one run does (idempotent — safe to re-run):
      pasted, in-app sends work and this path is equivalent anyway);
   4. spreads created_at across the last few days so day dividers/threads
      look organic instead of a one-second burst;
-  5. deletes this script's own probe row if one exists.
+  5. posts image messages ({"image": <public bucket url>, "text":
+     <caption>} envelopes; CC0 Wikimedia Commons photos pre-uploaded to
+     the public forum-media bucket);
+  6. deletes this script's own probe row if one exists.
 
 Usage:  .venv/bin/python statwise/scripts/seed_forum.py   (or python3)
 """
@@ -77,6 +80,34 @@ MESSAGES = [
      "Agreed. Anyone know if free tier keeps the news too or does that move behind the plan later?", 9),
     ("d0", 8, 0, "bola.draws",
      "News stays free as far as I can see — only the full prediction board tiers up.", 10),
+]
+
+# Image messages (plan 5.15 "send images too") — same envelope the app's
+# upload path writes: {"image": <https url>, "text": <caption>}. URLs point
+# at the PUBLIC `forum-media` bucket (seed/ folder, uploaded with the
+# service key because the authenticated write policy only lands with the
+# pending paste — see plan 5.11). Sources: Wikimedia Commons, all CC0
+# (attribution not required): ball-pitch.jpg = Peter Glaser,
+# goal-net.jpg = Dan Gold, stadium.jpg = Markus Spiske.
+_IMG_BASE = ("https://fwpriiugfjhtoymcbmso.supabase.co/storage/v1/object"
+             "/public/forum-media/seed")
+
+def _env(image: str, caption: str) -> str:
+    return json.dumps({"image": f"{_IMG_BASE}/{image}", "text": caption},
+                      ensure_ascii=False)
+
+# Appended AFTER the text thread, so earlier reply indices (2, 4, 9, 10)
+# remain valid; entries here may reply to any index above.
+MESSAGES += [
+    ("d1", 16, 45, "kelechi.odds",
+     _env("ball-pitch.jpg", "Matchday pitch from my lads' league — turf actually looked decent for once 😄"),
+     6),
+    ("d0", 9, 10, "ngozi.picks",
+     _env("goal-net.jpg", "That late winner yesterday had me like this. Nerve-wracking acca to end the night."),
+     None),
+    ("d0", 10, 25, "emeka.corner",
+     _env("stadium.jpg", "Away day trip next month. Anyone been to a ground like this? Worth the journey?"),
+     13),
 ]
 
 # This script's own wiring probe (safe to remove on every run).
@@ -170,7 +201,9 @@ def main() -> int:
             "subscription_status": "active", "notifications": True,
             "last_login": datetime.now(timezone.utc).isoformat(),
         })
-        req("POST", f"{base}/rest/v1/referral_codes", anon, token=access, body={
+        # on_conflict targets the UNIQUE(user_id) column — merge-duplicates
+        # alone only resolves PK conflicts, and 409'd on re-runs otherwise.
+        req("POST", f"{base}/rest/v1/referral_codes?on_conflict=user_id", anon, token=access, body={
             "user_id": uid, "code": uid[:8].upper(),
             "username": ACCOUNTS[local], "total_referrals": 0,
             "active": True,

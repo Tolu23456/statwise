@@ -1234,13 +1234,26 @@ fails closed with "Payments Temporarily Unavailable"); (2) add repo secret
   neutral by construction. That is a training-config change for the
   research track, not an adoption step.
 
-### 5.11 Forum media bucket verification (P1 — quick)
+### 5.11 Forum media bucket verification (P1 — done 2026-10-28, fix pending paste)
 
-- [ ] **`forum-media` bucket access** - images + videos must render
-  Confirm the bucket's policies: public read (or signed URLs issued by
-  the upload path) so shared images/videos are visible to every viewer,
-  authenticated-only writes. Post with the upload path's actual policy
-  and a live fetch of a stored object.
+- [x] **`forum-media` bucket access** - images + videos must render
+  VERDICT (live tests, 2026-10-28): the bucket EXISTS and is PUBLIC —
+  service-key upload followed by an unauthenticated GET on the public URL
+  returned **200 image/png**, and three seeded CC0 photos all return
+  200 image/jpeg. **BUT authenticated writes were BROKEN**: a live user
+  token upload on the app's own path (`forum/<uid>/probe.png`) failed
+  with 403 "new row violates row-level security policy" — the bucket had
+  NO write policy, so every in-app image/video upload failed for every
+  user (the app's error hint even says "create the bucket", which
+  misdiagnoses it — the bucket existed all along).
+  Fix written as **SECTION 6** of `supabase-pending-migrations.sql`:
+  INSERT + DELETE on `storage.objects` scoped to `bucket_id =
+  'forum-media'` AND `(storage.foldername(name))[2] = auth.uid()::text`
+  (the app's `forum/<uid>/...` convention puts the uid in folder slot 2)
+  — a user can only ever write under their own folder.
+- [ ] **USER: paste the file, then re-test the live upload** - one curl
+  with a user token against `forum/<uid>/probe.png` must flip 403 → 200
+  (verification snippet included in section 6 of the file).
 
 ### 5.14 100k out-of-time holdout audit (DONE 2026-10-28, subagent)
 
@@ -1332,6 +1345,61 @@ fails closed with "Payments Temporarily Unavailable"); (2) add repo secret
   Credentials: `<name>@statwise.community` / shared seed password in
   script header. Left in place: 2 legacy junk rows ("m"/"mn" by
   "Test Subject Two") — purge if unwanted.
+- [x] **Day divider shows real dates for older days** - the divider used
+  `formatChatTime(...).split(' ')[0]`, which for anything older than
+  Yesterday leaked just the DAY NUMBER ("25"). Now uses the existing
+  `formatDayLabel` helper: Today / Yesterday / "Sat 25 Oct". TSC clean.
+- [x] **Image messages seeded** - 3 CC0 Wikimedia Commons photos
+  (ball-pitch / goal-net / stadium; CC0 = Peter Glaser, Dan Gold, Markus
+  Spiske) uploaded to the PUBLIC `forum-media/seed/` folder (service key;
+  the authenticated path is blocked until section 6 lands), then posted
+  as app-shaped envelopes `{"image": <public url>, "text": <caption>}`
+  from 3 different accounts (2 as threaded replies). Verified: feed
+  parses them (`[IMAGE] caption` in the quote preview path too) and all
+  3 public URLs return 200 image/jpeg. Seeder is idempotent (envelope
+  string is the dedup key; reply indices append-only so the original
+  threads stay linked — referral_codes upsert needed
+  `?on_conflict=user_id` to stop 409-ing on re-runs).
+
+### 5.16 Model improvement campaign: lower LL, higher accuracy (2026-10-28, subagent running)
+
+- [ ] **Experiment program on the 100k paired harness** - honest targets only
+  User asked for "much better model — higher accuracy, lower loss".
+  Honest ceiling stated up front (evidence from 5.14): the MARKET's own
+  closing prices get **50.81% top-1** on this split, our blend 51.15%;
+  therefore realistic targets are **blended acc 53–54%**, **blended LL
+  ≤0.990** (from 0.9952), and the milestone = **standalone model beating
+  the market's 0.9979 LL** (today standalone 1.0158 is worse). Anything
+  showing 70%+ accuracy would be leakage, not prediction.
+  Execution delegated to a background subagent (wall-clock-bound GH
+  Actions sweeps); **the assistant owns the experiment design, the
+  pre-registered metrics, production integration, and the adoption
+  gate** — subagent NEVER writes production model files.
+  Grounded levers verified in code first: a 6-member LightGBM stack was
+  removed for speed (`trainer.py` "_lgbm_single" replaced it) and never
+  re-tried → ensembling is an untried lever; dataset carries 8+ books'
+  OPENING and CLOSING odds (dispersion/steam features unused); per-league
+  LL spans 0.787–1.137 (global blend α=0.204 leaves heterogeneity on
+  the table).
+  **Matrix (pre-registered, in order):** E1 seed/HP ensemble (2/3/5
+  members, avg probs + recalibrate) · E2 per-league hierarchical blend α
+  (shrunk toward global, fit on calibration window only, no retrain) ·
+  E3 recency sample-weighting (half-life 1/2/4 yrs) · E4 multi-book
+  market features (opening-odds dispersion, steam = |open − closing
+  consensus|, book coverage) · E5 calibration upgrade (isotonic vs
+  vector-scaling/Dirichlet/per-league isotonic) · E6 (optional) deeper
+  history for worst leagues. Yardstick = `ai/audit_100k.py` AUDIT_PAIR
+  paired mode (49,956 eval rows; paired ΔLL CI + McNemar). Multiple
+  comparisons: require p<0.01 or consistent multi-seed wins.
+  Subagent hard rules: READ-ONLY production (no `ai/models/**`,
+  no `model_info.json`, no `predictor.save()`, no FORCE_REPLACE); new
+  files only (`ai/exp_*.py`, `ai/data/exp/**`, `exp-*.yml`); never
+  edits to `ai/model/trainer.py`, `ai/model/features.py`,
+  `ai/retrain.py`, `ai/audit_100k.py`, `ai/sim/**`, `ai/attn/**`,
+  `statwise/**`, `website/**`, this file; CI-only heavy work; explicit
+  git add; ff-only merges. A winner becomes a production change by the
+  ASSISTANT, gated through retrain.py's apples-to-apples holdout
+  (tolerance 0.0005) like any other candidate.
 
 **PHASE 5 CHECKPOINT** ⏳ (pending): tick when every box above is `[x]`,
 then re-run the FINAL CHECKPOINT below against the Phase-5 tree.
