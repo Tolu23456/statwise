@@ -186,12 +186,20 @@ begin
 
   -- Server-side sanitization (mirrors lib/validation.ts sanitizeUserText):
   -- C0 control chars minus tab/newline, DEL, then zero-width + bidi
-  -- overrides + line/paragraph separators. E-string double-escapes the
-  -- backslashes so the REGEX engine — not the string parser — sees \xHH.
+  -- overrides + line/paragraph separators.
+  -- Built with chr() ranges instead of \x{...} hex escapes: the live
+  -- PostgreSQL rejected hex escapes inside the bracket expression
+  -- ("invalid regular expression: invalid escape \ sequence"), which made
+  -- EVERY forum send fail since this hardening landed. A chr() pattern
+  -- contains no backslash at all, so it compiles on any PG version.
+  -- (U+0000 cannot occur in a text value, so it needs no stripping.)
   v_clean := regexp_replace(coalesce(p_message, ''),
-             E'[\\x{00}-\\x{08}\\x{0B}\\x{0C}\\x{0E}-\\x{1F}\\x{7F}]', '', 'g');
+             '[' || chr(1) || '-' || chr(8) || chr(11) || chr(12)
+                 || chr(14) || '-' || chr(31) || chr(127) || ']', '', 'g');
   v_clean := regexp_replace(v_clean,
-             E'[\\x{200B}-\\x{200F}\\x{202A}-\\x{202E}\\x{2028}\\x{2029}]', '', 'g');
+             '[' || chr(8203) || '-' || chr(8207)
+                 || chr(8234) || '-' || chr(8238)
+                 || chr(8232) || chr(8233) || ']', '', 'g');
   v_clean := left(btrim(v_clean), 1000);
 
   if v_clean = '' then
@@ -624,12 +632,20 @@ begin
 
   -- Server-side sanitization (mirrors lib/validation.ts sanitizeUserText):
   -- C0 control chars minus tab/newline, DEL, then zero-width + bidi
-  -- overrides + line/paragraph separators. E-string double-escapes the
-  -- backslashes so the REGEX engine — not the string parser — sees \xHH.
+  -- overrides + line/paragraph separators.
+  -- Built with chr() ranges instead of \x{...} hex escapes: the live
+  -- PostgreSQL rejected hex escapes inside the bracket expression
+  -- ("invalid regular expression: invalid escape \ sequence"), which made
+  -- EVERY forum send fail since this hardening landed. A chr() pattern
+  -- contains no backslash at all, so it compiles on any PG version.
+  -- (U+0000 cannot occur in a text value, so it needs no stripping.)
   v_clean := regexp_replace(coalesce(p_message, ''),
-             E'[\\x{00}-\\x{08}\\x{0B}\\x{0C}\\x{0E}-\\x{1F}\\x{7F}]', '', 'g');
+             '[' || chr(1) || '-' || chr(8) || chr(11) || chr(12)
+                 || chr(14) || '-' || chr(31) || chr(127) || ']', '', 'g');
   v_clean := regexp_replace(v_clean,
-             E'[\\x{200B}-\\x{200F}\\x{202A}-\\x{202E}\\x{2028}\\x{2029}]', '', 'g');
+             '[' || chr(8203) || '-' || chr(8207)
+                 || chr(8234) || '-' || chr(8238)
+                 || chr(8232) || chr(8233) || ']', '', 'g');
   v_clean := left(btrim(v_clean), 1000);
 
   if v_clean = '' then

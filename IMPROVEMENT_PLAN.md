@@ -1242,6 +1242,61 @@ fails closed with "Payments Temporarily Unavailable"); (2) add repo secret
   authenticated-only writes. Post with the upload path's actual policy
   and a live fetch of a stored object.
 
+### 5.14 100k out-of-time holdout audit (P0 — in progress, subagent)
+
+- [ ] **Record both arms when the run lands** - evidence, not vibes
+  Scaffold pushed `7efcc3f`: `ai/audit_100k.py` (READ-ONLY — never saves
+  a model, never touches model_info.json) + `audit-100k.yml`
+  (workflow_dispatch, `test_rows` default 100000). Split computed:
+  train 262,805 rows <= 2019-12-20, hold out the most recent 100k
+  (~6.8 yrs), calibrate on holdout first half / evaluate second half
+  (~50k eval rows, 95% CI on log loss, per-league + market gap).
+  Delegated to a background subagent, which must ALSO run the
+  simulation-distillation arm (SYNTH_LABELS-style training from an
+  `ai/sim` recipe — read-only there, recipe-freshness guard respected)
+  on the identical split. When both reports land: baseline vs sim side
+  by side (LL + CI, accuracy, market gap, per-league) + honest verdict
+  against the user's 91% accuracy target (market reality check: closing
+  LL ~0.998 ≈ high-50s% 1X2 accuracy — 91% is beyond any honest model;
+  the achievable frontier is beating the market LL).
+
+### 5.15 Forum: send-path fix + sender font + seeded discussion (2026-10-28)
+
+- [x] **Diagnosed: EVERY in-app send has failed since plan 4.3**
+  Live `send_forum_message` returns SQLSTATE 2201B
+  ("invalid regular expression: invalid escape \ sequence") for any
+  input. Isolation: direct service-key inserts succeed (201) with the
+  `notify_forum_participants` trigger firing → trigger regexes fine; the
+  RPC fails on its FIRST regexp_replace — the sanitization pattern's
+  `\x{...}` hex escapes inside the bracket expression, rejected by the
+  live PG at pattern compile. Present in every file version since
+  `bde654f` (2026-10-27). The app showed the generic send error; the
+  forum only had pre-hardening rows.
+- [x] **Fix written** - `supabase-pending-migrations.sql`: BOTH
+  `send_forum_message` definitions now build the sanitization pattern
+  from `chr()` ranges (C0-except-tab/LF/CR, DEL, zero-width/bidi,
+  line/para separators) — zero backslash escapes, so no escape can be
+  rejected on any PG version. Behaviour otherwise identical (empty
+  check, 6/60s limit, reply degrade, 1000-char cap unchanged).
+- [ ] **USER: re-paste `statwise/supabase-pending-migrations.sql`** -
+  in-app sending stays broken until this lands. After paste, re-run
+  `statwise/scripts/seed_forum.py`-style RPC call to verify (or ask —
+  a one-line RPC probe confirms 204/200).
+- [x] **Sender font white** - `renderMentionText`'s bubble text had NO
+  color (`msgText` uncolored → React Native defaults to BLACK in every
+  theme) — black text on the dark bubble, exactly the reported
+  unreadable font. Now `color: C.text` (renders white on dark theme)
+  with own messages keeping `#fff`.
+- [x] **Seeded starter discussion from 8 accounts**
+  `statwise/scripts/seed_forum.py` (idempotent): admin-creates confirmed
+  users, mirrors `AuthContext.ensureUserProfile` (profile +
+  referral_codes), inserts 12 messages Oct 25–28 shaped exactly like the
+  RPC writes them, with 4 reply threads and organic timestamps; removed
+  this session's probe row. Verified feed join (profiles + reply_to).
+  Credentials: `<name>@statwise.community` / shared seed password in
+  script header. Left in place: 2 legacy junk rows ("m"/"mn" by
+  "Test Subject Two") — purge if unwanted.
+
 **PHASE 5 CHECKPOINT** ⏳ (pending): tick when every box above is `[x]`,
 then re-run the FINAL CHECKPOINT below against the Phase-5 tree.
 

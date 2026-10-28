@@ -310,7 +310,9 @@ export default function ForumScreen() {
   const renderMentionText = (text: string, isMe: boolean) => (
     // Mention tokens (@handle) render highlighted; everything else is
     // the ordinary bubble text. Mention regex mirrors the SQL trigger.
-    <Text style={[styles.msgText, isMe && { color: '#fff' }]}>
+    // C.text keeps received messages readable in BOTH themes — msgText had
+    // no color, so RN fell back to black (invisible on the dark bubble).
+    <Text style={[styles.msgText, { color: C.text }, isMe && { color: '#fff' }]}>
       {tokenizeMentions(text).map((seg, i) =>
         seg.mention ? (
           <Text
