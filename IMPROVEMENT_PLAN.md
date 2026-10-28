@@ -1129,12 +1129,19 @@ fails closed with "Payments Temporarily Unavailable"); (2) add repo secret
   default token don't trigger other workflows → no deploy cascade).
   **First dispatch run 40646956199 → success**, committed `28f12f2`
   (`chore(news): sync SportyTrader headlines [auto]`) — the loop works.
-- [x] **Deployed & verified** - `0e24041` pushed, Vercel build success
+- [x] **Deployed & verified** - `0e24041` then `8bd61f2` pushed, Vercel
+  builds success (deployment 7380249562 for the news reader)
   Live curl checks: `/` 143 kB HTML with all new sections (free picks,
   pricing, FAQ, news, method, chips, OG/Twitter/keywords metadata,
-  nav), `/predictions/ /download/ /privacy/ /terms/` all 200,
-  ads.txt/robots.txt/sitemap.xml 200, news raw URL 200 + CORS `*`.
-  Local pre-flight: `VERCEL=1 npm run build` ×3 exit 0 (8 static pages).
+  nav), `/news/` 200 with server-rendered list heading + home HTML
+  linking `/news/?a=<slug>` per story, deployed reader chunk
+  (`app/news/page-44079e5c53feec05.js`) carries the article view
+  ("View original" / "Story not found" / "More stories" / source
+  credit — client-resolved from `?a=`, as designed for
+  `output: 'export'`), `/predictions/ /download/ /privacy/ /terms/`
+  all 200, ads.txt/robots.txt/sitemap.xml 200, runtime news feed 200
+  (17/17 stories with lead text). Local pre-flight: `VERCEL=1 npm run
+  build` ×4 exit 0 (9 static pages incl. `/news`).
   Outstanding manual step: AdSense dashboard still needs a re-check
   click once Google re-crawls, and real ad-unit slot IDs (or Auto ads)
   must be created there for impressions to fill — `AD_SLOTS` are '0'
