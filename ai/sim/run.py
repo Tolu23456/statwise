@@ -131,6 +131,10 @@ def main() -> int:
                          "Default 1460 d = 4 years, production's measured "
                          "best (retrain.py); do not tune against eval "
                          "windows.")
+    ap.add_argument("--l2", type=float, default=0.02,
+                    help="L2 shrinkage on att/def/league offsets (the "
+                         "historical default; see ai/sim/l2_sensitivity.py "
+                         "for the train-internal sensitivity study)")
     ap.add_argument("--worlds", type=int, default=2, help="cap-down chains this shard")
     ap.add_argument("--steps", type=int, default=300)
     ap.add_argument("--eta", type=float, default=0.02)
@@ -166,13 +170,14 @@ def main() -> int:
     # 1. base fit on TRAIN rows only (leak-free: the holdout is untouched)
     half_life = args.half_life if args.half_life and args.half_life > 0 else None
     base = fit_strengths(train, epochs=args.epochs, seed=seed,
-                         half_life_days=half_life)
+                         half_life_days=half_life, l2=args.l2)
     print(f"  fit: {base.n_matches:,} matches, "
           f"home_adv={np.exp(base.home_adv):.3f}, xi={base.xi:.3f}, "
-          f"half_life={half_life or 'flat'}d "
+          f"half_life={half_life or 'flat'}d, l2={args.l2} "
           f"({time.time() - t0:.0f}s)", flush=True)
 
-    train_data = MatchData.from_frame(train, base, half_life_days=half_life)
+    train_data = MatchData.from_frame(train, base, half_life_days=half_life,
+                                      l2=args.l2)
 
     # 2. cap down — one chain per world, each seeded with its own noise
     worlds = []

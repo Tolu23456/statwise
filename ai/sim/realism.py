@@ -805,7 +805,7 @@ def run_windows(df: pd.DataFrame, *, holdout_days: int, n_windows: int,
                 recipe_path: str | None, epochs: int, capdown_worlds: int,
                 capdown_steps: int, seed: int, n_boot: int,
                 min_train: int = 5000, min_eval: int = 100,
-                half_life_days: float | None = None,
+                half_life_days: float | None = None, l2: float = 0.02,
                 log=print) -> list[dict]:
     from sim.sampler import MatchData, cap_down
 
@@ -831,12 +831,12 @@ def run_windows(df: pd.DataFrame, *, holdout_days: int, n_windows: int,
             # later (chronology guard).
             m = fit_strengths(w["train"], epochs=epochs, seed=seed + w["k"],
                               half_life_days=half_life_days,
-                              ref_date=w["start"])
+                              ref_date=w["start"], l2=l2)
             log(f"  {name}: fresh fit on {m.n_matches:,} rows "
                 f"(home_adv={np.exp(m.home_adv):.3f}, xi={m.xi:.3f}, "
-                f"half_life={half_life_days or 'flat'}d)")
+                f"half_life={half_life_days or 'flat'}d, l2={l2})")
             if capdown_worlds > 0:
-                data = MatchData.from_frame(w["train"], m,
+                data = MatchData.from_frame(w["train"], m, l2=l2,
                                             half_life_days=half_life_days,
                                             ref_date=w["start"])
                 worlds = []
@@ -881,7 +881,8 @@ def build_report(*, tag: str, windows: list[dict], df_len: int,
                  holdout_days: int, seed: int, epochs: int,
                  capdown_worlds: int, capdown_steps: int,
                  recipe_path: str | None, duration_s: float,
-                 half_life_days: float | None = None) -> dict:
+                 half_life_days: float | None = None,
+                 l2: float = 0.02) -> dict:
     overall = all(w["verdict"]["window_pass"] for w in windows)
     report = {
         "schema": REALISM_SCHEMA,
@@ -895,6 +896,7 @@ def build_report(*, tag: str, windows: list[dict], df_len: int,
             "capdown_worlds": capdown_worlds,
             "capdown_steps": capdown_steps,
             "half_life_days": half_life_days,
+            "l2": l2,
             "recipe": recipe_path,
             "duration_s": round(duration_s, 1),
             "thresholds": {
@@ -1073,6 +1075,12 @@ def main() -> int:
                     help="recency half-life in days for fresh window fits "
                          "(0 = flat history, the v0 behaviour).  Default "
                          "1460 d = 4 years, production's measured best.")
+    ap.add_argument("--l2", type=float, default=0.02,
+                    help="L2 shrinkage on att/def/league offsets.  The "
+                         "train-internal sensitivity (ai/sim/"
+                         "l2_sensitivity.py, slice disjoint from every "
+                         "eval window) recommended 0.0; adopt only after "
+                         "the full suite confirms.")
     ap.add_argument("--n-boot", type=int, default=1000)
     ap.add_argument("--seed", type=int, default=20261028)
     ap.add_argument("--min-train", type=int, default=5000)
@@ -1093,7 +1101,8 @@ def main() -> int:
         capdown_steps=args.capdown_steps, seed=args.seed, n_boot=args.n_boot,
         min_train=args.min_train, min_eval=args.min_eval,
         half_life_days=(args.half_life if args.half_life and
-                        args.half_life > 0 else None))
+                        args.half_life > 0 else None),
+        l2=args.l2)
     report = build_report(
         tag=args.tag, windows=windows, df_len=len(df),
         holdout_days=args.holdout_days, seed=args.seed, epochs=args.epochs,
@@ -1101,7 +1110,8 @@ def main() -> int:
         recipe_path=args.recipe if os.path.exists(args.recipe) else None,
         duration_s=time.time() - t0,
         half_life_days=(args.half_life if args.half_life and
-                        args.half_life > 0 else None))
+                        args.half_life > 0 else None),
+        l2=args.l2)
 
     prev_path = find_previous(args.out_dir, args.tag)
     comparison = None
