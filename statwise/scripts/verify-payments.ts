@@ -38,10 +38,17 @@ import {
 // Read env/argv off globalThis so this file compiles both under the app's
 // tsconfig (no @types/node) and under the workflow's bare `tsc` invocation.
 const g = globalThis as {
-  process?: { env?: Record<string, string | undefined>; argv?: string[] };
+  process?: {
+    env?: Record<string, string | undefined>;
+    argv?: string[];
+    exitCode?: number;
+  };
 };
 const env = (k: string): string => g.process?.env?.[k] ?? '';
 const DRY = (g.process?.argv ?? []).includes('--dry-run');
+const setFail = (): void => {
+  if (g.process) g.process.exitCode = 1;
+};
 
 const FLW_VERIFY_URL = 'https://api.flutterwave.com/v3/transactions/verify_by_reference';
 
@@ -115,12 +122,12 @@ async function main(): Promise<void> {
   const flwKey = env('FLW_SECRET_KEY');
   if (!base || !key) {
     fail('SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not configured as secrets');
-    process.exitCode = 1;
+    setFail();
     return;
   }
   if (!flwKey) {
     fail('FLW_SECRET_KEY secret is not set — repo Settings → Secrets and variables → Actions');
-    process.exitCode = 1;
+    setFail();
     return;
   }
 
@@ -141,7 +148,7 @@ async function main(): Promise<void> {
   }
   if (stale.status !== 200) {
     fail(`listing stale events failed: HTTP ${stale.status} ${JSON.stringify(stale.body)}`);
-    process.exitCode = 1;
+    setFail();
     return;
   }
   const staleIds: string[] = (stale.body ?? []).map((r: any) => String(r.id));
@@ -160,7 +167,7 @@ async function main(): Promise<void> {
       );
       if (r.status !== 200) {
         fail(`expiring stale events failed: HTTP ${r.status} ${JSON.stringify(r.body)}`);
-        process.exitCode = 1;
+        setFail();
         return;
       }
       const n = Array.isArray(r.body) ? r.body.length : staleIds.length;
@@ -176,7 +183,7 @@ async function main(): Promise<void> {
   );
   if (fresh.status !== 200) {
     fail(`listing pending events failed: HTTP ${fresh.status} ${JSON.stringify(fresh.body)}`);
-    process.exitCode = 1;
+    setFail();
     return;
   }
   const events: PaymentEventRow[] = (fresh.body ?? []) as PaymentEventRow[];
@@ -216,7 +223,7 @@ async function main(): Promise<void> {
       );
       if (r.status !== 200 && r.status !== 204) {
         fail(`marking ${ev.tx_ref} failed: HTTP ${r.status} ${JSON.stringify(r.body)}`);
-        process.exitCode = 1;
+        setFail();
         continue;
       }
       log(`FAIL  ${ev.tx_ref}: ${adj.reason}`);
@@ -253,7 +260,7 @@ async function main(): Promise<void> {
       } else {
         fail(`credit failed for ${ev.tx_ref}: HTTP ${r.status} ${JSON.stringify(r.body)}`);
       }
-      process.exitCode = 1;
+      setFail();
       continue;
     }
     credits += 1;
@@ -268,5 +275,5 @@ async function main(): Promise<void> {
 
 main().catch((e) => {
   fail(e instanceof Error ? e.message : String(e));
-  process.exitCode = 1;
+  setFail();
 });
