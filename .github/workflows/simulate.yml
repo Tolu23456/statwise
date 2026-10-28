@@ -364,7 +364,7 @@ jobs:
             exit 1
           fi
           python ai/sim/compare_production.py \
-            --out-dir ai/sim/reports --tag compare_v0 | tee compare.log
+            --out-dir ai/sim/reports --tag compare_v1 | tee compare.log
 
       - name: Upload compare reports
         if: always()
@@ -372,16 +372,16 @@ jobs:
         with:
           name: compare-report
           path: |
-            ai/sim/reports/compare_v0.json
-            ai/sim/reports/compare_v0.md
+            ai/sim/reports/compare_v1.json
+            ai/sim/reports/compare_v1.md
           if-no-files-found: error
           retention-days: 90
 
       - name: Verdict to the step summary
         if: always()
         run: |
-          if [ -f ai/sim/reports/compare_v0.md ]; then
-            { echo '## Production comparison (mode=compare)'; sed -n '/## Verdicts/,$p' ai/sim/reports/compare_v0.md; } >> "$GITHUB_STEP_SUMMARY"
+          if [ -f ai/sim/reports/compare_v1.md ]; then
+            { echo '## Production comparison (mode=compare)'; sed -n '/## Verdicts/,$p' ai/sim/reports/compare_v1.md; } >> "$GITHUB_STEP_SUMMARY"
           else
             echo "::error::compare report was not produced" >> "$GITHUB_STEP_SUMMARY"
           fi

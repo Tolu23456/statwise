@@ -1,0 +1,143 @@
+{
+ "schema": "statwise.sim.compare.v1",
+ "meta": {
+  "generated_at": "2026-10-28T08:36:03.442137+00:00",
+  "data_rows": 331949,
+  "holdout_days": 180,
+  "model_path": "/home/runner/work/statwise/statwise/ai/models/football_predictor.pkl",
+  "recipe": "/home/runner/work/statwise/statwise/ai/data/sim/worlds.json",
+  "fresh_feature_state": false,
+  "n_boot": 1000,
+  "seed": 20261028,
+  "duration_s": 16.2
+ },
+ "systems": {
+  "n_eval": 2250,
+  "split_at": "2026-04-21",
+  "eval_second_half_rows": 2250,
+  "first_holdout_half_skipped": 2249,
+  "lgbm": {
+   "ll_1x2": 1.01129,
+   "accuracy": 0.4827,
+   "calibration": "raw"
+  },
+  "lab": {
+   "ll_1x2": 1.058,
+   "accuracy": 0.4467,
+   "known_teams_only_ll_1x2": 1.05859,
+   "n_unknown_team_rows": 82,
+   "unknown_team_rate": 0.0364,
+   "worlds": 80
+  },
+  "uniform": {
+   "ll_1x2": 1.09861
+  },
+  "market": {
+   "ll_1x2": 0.99796,
+   "rows": 1282
+  }
+ },
+ "blends": {
+  "lgbm_market": {
+   "protocol": "production protocol: alpha grid + damp(0.35) on full eval (reproduces the stored 0.99491 when faithful)",
+   "alpha_used": 0.35,
+   "scoring_rows": 1282,
+   "ll_1x2": 0.99491,
+   "endpoint_pa": 1.00467,
+   "endpoint_pb": 0.99796
+  },
+  "lab_market": {
+   "protocol": "honest: alpha fit on first eval half, scored on second",
+   "alpha_used": 0.2101,
+   "scoring_rows": 616,
+   "ll_1x2": 0.9998,
+   "endpoint_pa": 1.04897,
+   "endpoint_pb": 0.99614
+  },
+  "lgbm_lab": {
+   "protocol": "honest: alpha fit on first eval half (prior 1.0 = lab earns its weight), scored on second",
+   "alpha_used": 0.9735,
+   "scoring_rows": 1125,
+   "ll_1x2": 1.00617,
+   "endpoint_pa": 1.00608,
+   "endpoint_pb": 1.05559
+  }
+ },
+ "diffs": {
+  "lab_minus_lgbm": {
+   "n": 2250,
+   "mean": 0.04671,
+   "ci90": [
+    0.03627,
+    0.05742
+   ],
+   "p_a_better": 0.0
+  },
+  "lgbm_lab_blend_minus_lgbm": {
+   "n": 1125,
+   "mean": 9e-05,
+   "ci90": [
+    -0.00042,
+    0.00055
+   ],
+   "p_a_better": 0.365
+  },
+  "lgbm_minus_market": {
+   "n": 1282,
+   "mean": 0.00671,
+   "ci90": [
+    -0.00295,
+    0.01713
+   ],
+   "p_a_better": 0.139
+  },
+  "lab_market_blend_minus_market": {
+   "n": 616,
+   "mean": 0.00366,
+   "ci90": [
+    -0.00066,
+    0.00804
+   ],
+   "p_a_better": 0.076
+  }
+ },
+ "overlap": {
+  "corr_home_prob": 0.69,
+  "corr_draw_prob": 0.4315,
+  "corr_margin_ph_minus_pa": 0.7137,
+  "corr_row_ll": 0.7236
+ },
+ "reproduction": {
+  "used_pickle_feature_state": true,
+  "stored_v7_eval_ll": 1.01129,
+  "recomputed_lgbm_eval_ll": 1.01129,
+  "eval_ll_delta": -0.0,
+  "stored_v7_blend_ll": 0.99491,
+  "recomputed_lgbm_market_blend_ll": 0.99491,
+  "stored_v7_market_ll": 0.99796,
+  "recomputed_market_ll": 0.99796,
+  "data_moved_since_training": false
+ },
+ "verdicts": {
+  "H1": {
+   "claim": "the DC ensemble is a weaker predictor than the deployed LightGBM on identical rows",
+   "result": "confirmed",
+   "gap_ll": 0.04671,
+   "ci90": [
+    0.03627,
+    0.05742
+   ]
+  },
+  "H7": {
+   "claim": "the lab carries no signal beyond the production feature matrix (stacking cannot improve it)",
+   "result": "inconclusive",
+   "gap_ll": 9e-05,
+   "ci90": [
+    -0.00042,
+    0.00055
+   ],
+   "lgbm_weight_alpha": 0.9735
+  },
+  "note": "gaps are log-loss differences: positive = first system worse.  H1 'confirmed' = lab significantly weaker.  H7 'confirmed' = stacking gains nothing; 'refuted' would mean the lab deserves the effort."
+ }
+}
