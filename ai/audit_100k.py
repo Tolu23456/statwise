@@ -272,7 +272,7 @@ def main() -> int:
     # a far tighter read than the production 2,250.
     mid = max(len(yh) // 2, 100)
     y_ev = yh[mid:]
-    d_ev = d_ho.iloc[mid:]
+    d_ev = d_ho[mid:]   # DatetimeIndex (or Series): plain slicing, no .iloc
     cals = []
     for k in range(3):
         iso = IsotonicRegression(out_of_bounds="clip")
