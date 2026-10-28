@@ -1,0 +1,95 @@
+name: Experiment 100k Paired Audit
+
+# Plan 5.16 model-improvement experiments (see ai/exp_plan.md, which is the
+# PRE-REGISTRATION and must not be edited once a run has started).
+#
+# Each dispatch trains one SUITE of arms in a SINGLE process on the identical
+# 100k out-of-time audit split (train <= 2019-08-10, 49,956 eval rows) and
+# scores every arm on the SAME eval rows, so every delta gets a paired test
+# (dLL CI + z/p, McNemar for accuracy) exactly like ai/audit_100k.py.
+#
+# READ-ONLY by construction: ai/exp_audit.py never saves a model and never
+# touches model_info.json, so this can NEVER clobber the deployed predictor.
+# Dispatch-only (no schedule), CI-only heavy training per the plan-5.16 rules.
+
+on:
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'Experiment suite: ensemble (E1/E2/E5) | recency_market (E3/E4)'
+        default: 'ensemble'
+      arms:
+        description: 'Optional arm override (comma list; empty = whole suite)'
+        default: ''
+      out:
+        description: 'Report JSON path'
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  exp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Run paired experiment suite
+        env:
+          EXP_SUITE: ${{ inputs.suite || 'ensemble' }}
+          EXP_ARMS_ARG: ${{ inputs.arms || '' }}
+          EXP_OUT_ARG: ${{ inputs.out || '' }}
+          EXP_TEST_ROWS: '100000'
+          RECENCY_HALF_LIFE_DAYS: '1460'
+          OMP_NUM_THREADS: '4'
+          MKL_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '4'
+          NUMEXPR_NUM_THREADS: '4'
+          TOKENIZERS_PARALLELISM: 'false'
+        run: |
+          set -o pipefail
+          mkdir -p ai/data/exp
+          OUT="${EXP_OUT_ARG:-ai/data/exp/${EXP_SUITE}_report.json}"
+          python -u ai/exp_audit.py --suite "$EXP_SUITE" \
+            ${EXP_ARMS_ARG:+--arms "$EXP_ARMS_ARG"} \
+            --out "$OUT" 2>&1 | tee exp.log
+
+      - name: Upload report + log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exp-${{ inputs.suite || 'ensemble' }}
+          path: |
+            ai/data/exp/*_report.json
+            exp.log
+          if-no-files-found: ignore
+
+      # Commit ONLY the experiment report JSON (never ai/models/,
+      # never model_info.json).  ff-only merge so a concurrent push by
+      # another agent is never rewritten.
+      - name: Commit report if changed
+        if: always()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ai/data/exp/*_report.json || true
+          if git diff --staged --quiet; then
+            echo "no report change to commit"
+            exit 0
+          fi
+          git commit -m "Experiment(plan 5.16): ${{ inputs.suite || 'ensemble' }} report $(date -u +%Y-%m-%d)"
+          git fetch origin
+          if git merge --ff-only origin/main; then
+            git push || echo "::warning::push failed; artifact keeps the report"
+          else
+            echo "::warning::origin/main moved; report kept as artifact only"
+          fi
