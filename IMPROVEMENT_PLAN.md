@@ -5,7 +5,7 @@
 ## Current State
 - Production model: LightGBM ensemble, 48.44% accuracy, log loss 1.0138 on 2026-04-21 holdout
 - Attention experiment: Trained but underperformed on available metrics (48.31% acc, 1.03378 log loss) - do NOT replace production
-- App: Expo React Native + Next.js website deployed
+- App: Expo React Native (port 5000) + Next.js website deployed to GitHub Pages (/statwise/ prefix) and Vercel — `statwise-flax.vercel.app` fixed 2026-10-28: `vercel.json` at repo root builds `website/` (npm ci + next build → `website/out`), and `website/next.config.js` drops basePath when `VERCEL=1` (GitHub Pages keeps `/statwise`); previously vercel[bot] deployed the repo root as a static site → Vercel static NOT_FOUND on `/`. Verified: `/`, `/predictions/`, `/download/`, `/privacy/` + CSS all HTTP 200 on the live domain after push 37ad83c
 - Polling: 5s interval (needs optimization)
 - Booking codes: SportyBet working
 - Settlement: ESPN + football-data.org
