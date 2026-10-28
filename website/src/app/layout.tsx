@@ -1,5 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import Script from 'next/script'
+import { ADSENSE_CLIENT } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'StatWise - AI Football Predictions',
@@ -19,7 +21,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* Google AdSense — official async snippet (publisher from
+            siteConfig). Ad units render via AdSlot; Auto ads, if enabled in
+            the AdSense dashboard, pick up the same script. */}
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        {children}
+      </body>
     </html>
   )
 }
