@@ -281,15 +281,16 @@ jobs:
       # the report artifact is uploaded either way.  Fresh window fits use
       # the 4-year recency half-life (production's measured best); W0 still
       # scores the committed recipe, which stays flat-fit until a new lab
-      # wave regenerates it.  Tag v1+ diffs against the committed v0
-      # baseline via find_previous.
+      # wave regenerates it.  v2 verifies the pre-registered l2=0.0
+      # recommendation from ai/sim/l2_sensitivity.py (train-internal
+      # slice) against the committed v1 baseline (which used l2=0.02).
       - name: Run the realism suite
         id: realism
         continue-on-error: true
         run: |
           set -o pipefail
           python ai/sim/realism.py \
-            --tag v1 --windows 4 --strict --half-life 1460 \
+            --tag v2 --windows 4 --strict --half-life 1460 --l2 0.0 \
             --recipe ai/data/sim/worlds.json | tee realism.log
 
       - name: Upload realism reports
@@ -298,16 +299,16 @@ jobs:
         with:
           name: realism-report
           path: |
-            ai/sim/reports/realism_v1.json
-            ai/sim/reports/realism_v1.md
+            ai/sim/reports/realism_v2.json
+            ai/sim/reports/realism_v2.md
           if-no-files-found: error
           retention-days: 90
 
       - name: Verdict to the step summary
         if: always()
         run: |
-          if [ -f ai/sim/reports/realism_v1.md ]; then
-            { echo '## Realism validation (mode=realism)'; sed -n '1,24p' ai/sim/reports/realism_v1.md; } >> "$GITHUB_STEP_SUMMARY"
+          if [ -f ai/sim/reports/realism_v2.md ]; then
+            { echo '## Realism validation (mode=realism)'; sed -n '1,24p' ai/sim/reports/realism_v2.md; } >> "$GITHUB_STEP_SUMMARY"
           else
             echo "::error::realism report was not produced" >> "$GITHUB_STEP_SUMMARY"
           fi
