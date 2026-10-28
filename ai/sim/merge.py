@@ -37,7 +37,7 @@ from sim.run import CLEAN_GLOB, load_frame, split_out_of_time  # noqa: E402
 from sim.simulate import SuffStats, calibration_table, scoreline_table  # noqa: E402
 
 RECIPE_SCHEMA = "statwise.sim.worlds.v1"
-REPORT_SCHEMA = "statwise.sim.report.v2"   # v2: multi-wave counters + waves[]
+REPORT_SCHEMA = "statwise.sim.report.v3"   # v3: PROPER binary log losses (audit fix)
 
 
 # ── loading ───────────────────────────────────────────────────────────────

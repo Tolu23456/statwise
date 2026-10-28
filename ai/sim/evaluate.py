@@ -56,7 +56,28 @@ def league_priors(train: pd.DataFrame) -> dict[str, dict]:
 
 
 def _log_loss(p: np.ndarray, y: np.ndarray) -> float:
-    return float(-np.log(np.clip(p, EPS, 1.0)).mean())
+    """Proper log loss: -mean(log(probability assigned to the OBSERVED class).
+
+    Accepts either
+      * a 2-D (n, K) matrix + integer labels y, or
+      * a 1-D (n,) probability of the POSITIVE class + binary {0,1} y
+        (the negative outcome is scored on 1 - p).
+
+    Audit fix (2026-10-28, reports/audit.md §2.4): the previous implementation
+    ignored `y` entirely, so every binary-market number was `-mean(log
+    p_positive)` — not a proper score (proof: the stored report's uniform
+    O3.5 "log loss" was 1.10461 > ln 2, impossible for a real binary log
+    loss).  1X2 callers used to pre-index the matrix by y to compensate;
+    they now pass the matrix and let this function score it.  Test coverage:
+    ai/experimental/test_sim.py `test_log_loss_is_proper`.
+    """
+    p = np.asarray(p, dtype=np.float64)
+    y = np.asarray(y)
+    if p.ndim == 2:
+        picked = p[np.arange(len(y)), y]
+        return float(-np.log(np.clip(picked, EPS, 1.0)).mean())
+    q = np.where(y > 0, p, 1.0 - p)
+    return float(-np.log(np.clip(q, EPS, 1.0)).mean())
 
 
 def _brier(p: np.ndarray, y: np.ndarray) -> float:
@@ -128,7 +149,7 @@ def evaluate(models: list[StrengthModel], holdout: pd.DataFrame,
         "n": int(len(df)),
         "worlds": len(models),
         "home_1x2": {
-            "log_loss": round(_log_loss(p1[np.arange(len(df)), y1x2], y1x2), 5),
+            "log_loss": round(_log_loss(p1, y1x2), 5),
             "brier": round(float(((p1 - np.eye(3)[y1x2]) ** 2).mean()), 5),
             "accuracy": round(float((p1.argmax(1) == y1x2).mean()), 4),
             "ece": _multiclass_ece(p1, y1x2),
@@ -161,7 +182,7 @@ def evaluate(models: list[StrengthModel], holdout: pd.DataFrame,
     base_rate_o35 = float(y_o35.mean())
     res["baselines"] = {
         "uniform": {
-            "home_1x2_log_loss": round(_log_loss(uniform1[np.arange(len(df)), y1x2], y1x2), 5),
+            "home_1x2_log_loss": round(_log_loss(uniform1, y1x2), 5),
             "btts_log_loss": round(_log_loss(np.full(len(df), base_rate_btts + EPS), y_btts), 5),
             "over25_log_loss": round(_log_loss(np.full(len(df), base_rate_o25 + EPS), y_o25), 5),
             "over35_log_loss": round(_log_loss(np.full(len(df), base_rate_o35 + EPS), y_o35), 5),
@@ -179,7 +200,7 @@ def evaluate(models: list[StrengthModel], holdout: pd.DataFrame,
     lp_o25 = _prior_vec("over25", 0.50)
     lp_o35 = _prior_vec("over35", 0.27)
     res["baselines"]["league_prior"] = {
-        "home_1x2_log_loss": round(_log_loss(lp[np.arange(len(df)), y1x2], y1x2), 5),
+        "home_1x2_log_loss": round(_log_loss(lp, y1x2), 5),
         "btts_log_loss": round(_log_loss(lp_btts, y_btts), 5),
         "over25_log_loss": round(_log_loss(lp_o25, y_o25), 5),
         "over35_log_loss": round(_log_loss(lp_o35, y_o35), 5),
@@ -196,11 +217,15 @@ def evaluate(models: list[StrengthModel], holdout: pd.DataFrame,
             mv = inv / inv.sum(axis=1, keepdims=True)
             res["baselines"]["market"] = {
                 "n": int(good.sum()),
-                "home_1x2_log_loss": round(
-                    _log_loss(mv[np.arange(good.sum()), y1x2[good]], y1x2[good]), 5),
+                "home_1x2_log_loss": round(_log_loss(mv, y1x2[good]), 5),
             }
 
     # ── verdicts ─────────────────────────────────────────────────────────
+    # All log losses below are PROPER scores (fixed 2026-10-28 — before that
+    # the binary-market numbers were -mean(log p_positive) and the goal-market
+    # legs of this gate were decided on a non-proper score; see
+    # reports/audit.md §2.4).  Recomputed gate verdicts after the fix are the
+    # only ones that count; stored reports from before carry schema v2.
     res["beats"] = {
         "league_prior_1x2": bool(res["home_1x2"]["log_loss"]
                                  < res["baselines"]["league_prior"]["home_1x2_log_loss"]),

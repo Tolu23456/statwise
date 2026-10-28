@@ -184,6 +184,43 @@ def main() -> int:
           and "league_prior_goal_wins" in res["beats"],
           str(res["beats"].get("league_prior_goal_wins")))
 
+    # ── 5b. the log loss must be PROPER (audit fix 2026-10-28) ───────────
+    # Regression guard for reports/audit.md §2.4: the old _log_loss ignored
+    # y, so binary baselines were -ln(rate) (e.g. 1.10461 > ln2 for O3.5 —
+    # impossible for a real binary log loss).  Proper scoring of a constant
+    # at rate q is the Bernoulli entropy H(q) < ln 2.
+    from sim.evaluate import _log_loss
+
+    def _H(q: float) -> float:
+        return float(-(q * np.log(q) + (1 - q) * np.log(1 - q)))
+
+    y_ho = hold["home_goals"].to_numpy()
+    y_ao = hold["away_goals"].to_numpy()
+    q_btts = float(((y_ho > 0) & (y_ao > 0)).mean())
+    uni_btts = res["baselines"]["uniform"]["btts_log_loss"]
+    check("uniform btts baseline == entropy of observed rate",
+          abs(uni_btts - _H(q_btts)) < 1e-4, f"{uni_btts:.5f} vs H={_H(q_btts):.5f}")
+    check("uniform btts baseline < ln 2 (proper, not -ln q)",
+          uni_btts < np.log(2), f"{uni_btts:.5f}")
+    q_o35 = float(((y_ho + y_ao) > 3.5).mean())
+    uni_o35 = res["baselines"]["uniform"]["over35_log_loss"]
+    check("uniform o35 baseline == entropy of observed rate",
+          abs(uni_o35 - _H(q_o35)) < 1e-4, f"{uni_o35:.5f} vs H={_H(q_o35):.5f}")
+    # a constant at the true rate must beat the same constant shifted by 0.1
+    y_bin = ((y_ho > 0) & (y_ao > 0)).astype(int)
+    check("constant at true rate is loss-minimal among constants",
+          _log_loss(np.full(len(y_bin), q_btts), y_bin)
+          <= _log_loss(np.full(len(y_bin), np.clip(q_btts + 0.1, 0, 1)), y_bin) + 1e-9)
+    # 2-D path: uniform 3-class -> ln 3 whatever the labels
+    p_uni = np.full((len(hold), 3), 1 / 3)
+    y1x2_ho = np.where(y_ho > y_ao, 0, np.where(y_ho == y_ao, 1, 2))
+    check("2-D log loss of uniform 1X2 == ln 3",
+          abs(_log_loss(p_uni, y1x2_ho) - np.log(3)) < 1e-9)
+    # perfect predictions (as probabilities) are not punished
+    p_perf = np.eye(3)[y1x2_ho] * 0.999 + 0.001 / 3
+    check("2-D log loss of near-perfect preds ~ 0",
+          _log_loss(p_perf, y1x2_ho) < 0.005)
+
     teacher = synthesize_on_history(pop, hold)
     check("distillation labels shaped (n,3)", teacher.shape == (len(hold), 3),
           str(teacher.shape))
