@@ -52,34 +52,62 @@ from .model import StrengthModel, deviance, league_series
 
 @dataclass
 class MatchData:
-    """Flat arrays for one fit/evaluation frame (train or holdout)."""
+    """Flat arrays for one fit/evaluation frame (train or holdout).
+
+    `w` carries per-row recency weights (None = uniform, the legacy
+    behaviour); objective/gradient/deviance all honour them so cap-down's
+    posterior stays centred wherever the base fit was centred.
+    """
     h: np.ndarray
     a: np.ndarray
     lg: np.ndarray
     y_h: np.ndarray
     y_a: np.ndarray
     l2: float = 0.02
+    w: np.ndarray | None = None
 
     @classmethod
-    def from_frame(cls, df, model: StrengthModel, l2: float = 0.02) -> "MatchData":
+    def from_frame(cls, df, model: StrengthModel, l2: float = 0.02,
+                   half_life_days: float | None = None,
+                   ref_date=None) -> "MatchData":
         h = df["home_team"].astype(str).map(model.t2i).to_numpy(dtype=float)
         a = df["away_team"].astype(str).map(model.t2i).to_numpy(dtype=float)
         lg = league_series(df).map(model.l2i).fillna(0).to_numpy()
         ok = ~(np.isnan(h) | np.isnan(a))
+        w = None
+        if half_life_days is not None:
+            from .model import decay_weights
+            # same weights the base fit saw, on the same rows it kept
+            w = decay_weights(df["date"], half_life_days,
+                              ref_date=ref_date)[ok]
         return cls(h=h[ok].astype(np.int64), a=a[ok].astype(np.int64),
                    lg=lg[ok].astype(np.int64),
                    y_h=df["home_goals"].astype(float).to_numpy()[ok],
-                   y_a=df["away_goals"].astype(float).to_numpy()[ok], l2=l2)
+                   y_a=df["away_goals"].astype(float).to_numpy()[ok], l2=l2,
+                   w=w)
 
     def __len__(self) -> int:
         return len(self.h)
+
+    def w_sum(self) -> float:
+        """Effective sample mass — the normaliser every gradient uses."""
+        if self.w is None:
+            return float(len(self.h))
+        return max(float(self.w.sum()), 1e-9)
 
     def subsample(self, batch: int, rng: np.random.Generator) -> "MatchData":
         if batch <= 0 or batch >= len(self.h):
             return self
         idx = rng.choice(len(self.h), size=batch, replace=False)
+        w = self.w[idx] if self.w is not None else None
+        # scale so the subsample's mass matches the full frame's: the MH
+        # acceptance compares L(theta) vs L(y) on the same draw, but breed/
+        # elitism compare objectives across draws, which needs a consistent
+        # scale (uniform rows: same as before, since w_sum scales too).
+        if w is not None:
+            w = w * (self.w_sum() / max(float(w.sum()), 1e-9))
         return MatchData(self.h[idx], self.a[idx], self.lg[idx],
-                         self.y_h[idx], self.y_a[idx], self.l2)
+                         self.y_h[idx], self.y_a[idx], self.l2, w)
 
 
 # ── flat parameter vector <-> model ────────────────────────────────────────
@@ -103,7 +131,7 @@ def objective(m: StrengthModel, d: MatchData) -> float:
     """Penalised deviance — the quantity cap-down minimises (pi∝ exp(-L))."""
     if len(d) == 0:
         return 0.0
-    base = deviance(m, d.h, d.a, d.lg, d.y_h, d.y_a)
+    base = deviance(m, d.h, d.a, d.lg, d.y_h, d.y_a, w=d.w)
     pen = d.l2 * float((m.att ** 2).sum() + (m.defn ** 2).sum()
                        + (m.league_offset ** 2).sum())
     return base + pen
@@ -116,16 +144,20 @@ def gradient(m: StrengthModel, d: MatchData) -> np.ndarray:
     lam_h, lam_a = m.rates(d.h, d.a, d.lg)
     r_h = lam_h - d.y_h
     r_a = lam_a - d.y_a
+    if d.w is not None:
+        r_h = r_h * d.w
+        r_a = r_a * d.w
+    nrm = d.w_sum()
     n, nl = len(m.teams), len(m.leagues)
 
     g_att = (np.bincount(d.h, weights=r_h, minlength=n)
-             + np.bincount(d.a, weights=r_a, minlength=n)) / len(d) + d.l2 * m.att
+             + np.bincount(d.a, weights=r_a, minlength=n)) / nrm + d.l2 * m.att
     g_def = (np.bincount(d.a, weights=-r_h, minlength=n)
-             + np.bincount(d.h, weights=-r_a, minlength=n)) / len(d) + d.l2 * m.defn
-    g_off = np.bincount(d.lg, weights=r_h + r_a, minlength=nl) / len(d) \
+             + np.bincount(d.h, weights=-r_a, minlength=n)) / nrm + d.l2 * m.defn
+    g_off = np.bincount(d.lg, weights=r_h + r_a, minlength=nl) / nrm \
         + d.l2 * m.league_offset
-    g_mu = float(r_h.sum() + r_a.sum()) / len(d)
-    g_ha = float(r_h.sum()) / len(d)
+    g_mu = float(r_h.sum() + r_a.sum()) / nrm
+    g_ha = float(r_h.sum()) / nrm
 
     # Dixon-Coles xi term: d/dxi [ -log tau ]
     xi = m.xi
@@ -134,8 +166,11 @@ def gradient(m: StrengthModel, d: MatchData) -> np.ndarray:
         y_a = d.y_a.astype(int)
         c0011 = ((y_h == 0) & (y_a == 0)) | ((y_h == 1) & (y_a == 1))
         c1001 = ((y_h == 1) & (y_a == 0)) | ((y_h == 0) & (y_a == 1))
+        if d.w is not None:
+            c0011 = c0011.astype(np.float64) * d.w
+            c1001 = c1001.astype(np.float64) * d.w
         g_xi = (float(c0011.sum()) / max(1.0 - xi, 1e-6)
-                - float(c1001.sum()) / max(1.0 + xi, 1e-6)) / len(d)
+                - float(c1001.sum()) / max(1.0 + xi, 1e-6)) / nrm
     else:
         g_xi = 0.0
 

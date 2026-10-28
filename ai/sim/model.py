@@ -179,6 +179,23 @@ class StrengthModel:
         return m
 
 
+def decay_weights(dates: pd.Series, half_life_days: float,
+                  ref_date=None) -> np.ndarray:
+    """Exponential recency weights: w = 0.5 ** (age_days / half_life).
+
+    `ref_date` defaults to the newest date in `dates`, so a windowed refit
+    (realism suite) decays relative to its own window start.  Rows with
+    unparseable dates get weight 0 (they cannot be placed in time, so they
+    must not dominate a recency-weighted fit).
+    """
+    d = pd.to_datetime(dates, errors="coerce")
+    ref = pd.Timestamp(ref_date) if ref_date is not None else d.max()
+    age = (ref - d).dt.days.to_numpy(dtype=np.float64)
+    w = np.where(np.isfinite(age), np.power(2.0, -np.clip(age, 0.0, None)
+                                            / float(half_life_days)), 0.0)
+    return w
+
+
 def _build_arrays(df, teams: list[str], leagues: list[str]):
     t2i = {t: i for i, t in enumerate(teams)}
     l2i = {l: i for i, l in enumerate(leagues)}
@@ -188,27 +205,42 @@ def _build_arrays(df, teams: list[str], leagues: list[str]):
     y_h = df["home_goals"].astype(float).to_numpy()
     y_a = df["away_goals"].astype(float).to_numpy()
     ok = ~(np.isnan(h.astype(float)) | np.isnan(a.astype(float)))
-    return h[ok], a[ok], lg[ok], y_h[ok], y_a[ok]
+    return h[ok], a[ok], lg[ok], y_h[ok], y_a[ok], ok
 
 
 def fit_strengths(df, *, home_adv: float = None, l2: float = 0.02,
                   lr: float = 0.35, epochs: int = 260, xi: bool = True,
-                  seed: int = 0) -> StrengthModel:
+                  seed: int = 0, half_life_days: float | None = None,
+                  ref_date=None) -> StrengthModel:
     """Penalised-MLE team strengths by gradient descent.
 
-    `df` needs home_team, away_team, home_goals, away_goals (+ league_slug).
-    Deliberately plain numpy: no sklearn/scipy dependency, fully deterministic
-    for a given `seed`.
+    `df` needs home_team, away_team, home_goals, away_goals (+ league_slug,
+    date when half_life_days is set).  Deliberately plain numpy: no
+    sklearn/scipy dependency, fully deterministic for a given `seed`.
+
+    `half_life_days` (None = flat history, the legacy behaviour) applies
+    exponential recency weights to EVERY term of the likelihood — mu,
+    home_adv, league offsets, att/def and the xi grid search — so the whole
+    goal process is internally consistent at one time scale.  Production
+    measured a 4-year half-life strictly best for the LightGBM
+    (retrain.py: 1.00999 vs 1.01275 flat); the default in run.py mirrors
+    that measurement rather than tuning against any eval window.
     """
     # `seed` kept for API symmetry with the runner; the fit itself is a
     # deterministic gradient descent, so a given frame + epochs -> same model.
     teams = sorted(set(df["home_team"].astype(str)) | set(df["away_team"].astype(str)))
     leagues = sorted(set(league_series(df)))
     m = StrengthModel(teams, leagues)
-    h, a, lg, y_h, y_a = _build_arrays(df, teams, leagues)
+    h, a, lg, y_h, y_a, ok = _build_arrays(df, teams, leagues)
     m.n_matches = len(h)
     if len(h) == 0:
         return m
+
+    if half_life_days is not None:
+        w = decay_weights(df["date"], half_life_days, ref_date=ref_date)[ok]
+    else:
+        w = np.ones(len(h))
+    w_sum = max(float(w.sum()), 1e-9)
 
     n, nl = len(teams), len(leagues)
     if home_adv is not None:
@@ -224,8 +256,8 @@ def fit_strengths(df, *, home_adv: float = None, l2: float = 0.02,
         base = mu + off[lg]
         lam_h = np.exp(np.clip(base + ha + att[h] - dfn[a], -6, 6))
         lam_a = np.exp(np.clip(base + att[a] - dfn[h], -6, 6))
-        r_h = lam_h - y_h          # d NLL / d log-lam_h
-        r_a = lam_a - y_a
+        r_h = w * (lam_h - y_h)      # d NLL / d log-lam_h, recency-weighted
+        r_a = w * (lam_a - y_a)
 
         g_att = np.bincount(h, weights=r_h, minlength=n) + \
                 np.bincount(a, weights=r_a, minlength=n)
@@ -235,11 +267,11 @@ def fit_strengths(df, *, home_adv: float = None, l2: float = 0.02,
         g_mu = float(r_h.sum() + r_a.sum())
         g_ha = float(r_h.sum())
 
-        att -= lr * (g_att / len(h) + l2 * att)
-        dfn -= lr * (g_def / len(h) + l2 * dfn)
-        off -= lr * (g_off / len(h) + l2 * off)
-        mu -= lr * (g_mu / len(h) + 1e-4 * mu)
-        ha -= lr * (g_ha / len(h) + 1e-4 * ha)
+        att -= lr * (g_att / w_sum + l2 * att)
+        dfn -= lr * (g_def / w_sum + l2 * dfn)
+        off -= lr * (g_off / w_sum + l2 * off)
+        mu -= lr * (g_mu / w_sum + 1e-4 * mu)
+        ha -= lr * (g_ha / w_sum + 1e-4 * ha)
 
         # Identifiability: strengths are only defined up to a constant.
         att -= att.mean()
@@ -248,32 +280,43 @@ def fit_strengths(df, *, home_adv: float = None, l2: float = 0.02,
 
     m.att, m.defn, m.mu, m.home_adv, m.league_offset = att, dfn, mu, ha, off
     if xi:
-        m.xi = _fit_xi(m, h, a, lg, y_h, y_a)
+        m.xi = _fit_xi(m, h, a, lg, y_h, y_a, w=w)
     return m
 
 
-def _fit_xi(m: StrengthModel, h, a, lg, y_h, y_a) -> float:
+def _fit_xi(m: StrengthModel, h, a, lg, y_h, y_a, w=None) -> float:
     """Grid-search the Dixon-Coles correction (a cheap 1-D search)."""
     lam_h, lam_a = m.rates(h, a, lg)
     lh = np.clip(lam_h, 1e-9, None)
     la = np.clip(lam_a, 1e-9, None)
     yi, aj = y_h.astype(int), y_a.astype(int)
+    if w is None:
+        w = np.ones(len(h))
     # Poisson part is xi-independent; only log(tau) changes across the grid
-    pois = float((y_h * np.log(lh) - lh + y_a * np.log(la) - la
-                  - _LOGF[np.clip(yi, 0, 20)] - _LOGF[np.clip(aj, 0, 20)]).sum())
+    pois = float((w * (y_h * np.log(lh) - lh + y_a * np.log(la) - la
+                       - _LOGF[np.clip(yi, 0, 20)]
+                       - _LOGF[np.clip(aj, 0, 20)])).sum())
     best_xi, best_ll = 0.0, pois          # xi = 0 => log tau = 0
     for xi in (-0.12, -0.09, -0.06, -0.03, 0.03, 0.06):
-        ll = pois + float(np.log(tau_factor(yi, aj, xi)).sum())
+        ll = pois + float((w * np.log(tau_factor(yi, aj, xi))).sum())
         if ll > best_ll:
             best_ll, best_xi = ll, xi
     return best_xi
 
 
-def deviance(m: StrengthModel, h, a, lg, y_h, y_a) -> float:
-    """Poisson deviance (fit objective, lower is better) — used by cap-down."""
+def deviance(m: StrengthModel, h, a, lg, y_h, y_a, w=None) -> float:
+    """Poisson deviance (fit objective, lower is better) — used by cap-down.
+
+    `w` (None = uniform) applies the same recency weights the base fit saw,
+    so the sampler's posterior stays centred on the decayed optimum instead
+    of dragging worlds back toward the flat-history fit.
+    """
     lam_h, lam_a = m.rates(h, a, lg)
     eps = 1e-9
     term_h = lam_h - y_h * np.log(np.clip(lam_h, eps, None))
     term_a = lam_a - y_a * np.log(np.clip(lam_a, eps, None))
     t = tau_factor(y_h.astype(int), y_a.astype(int), m.xi)
-    return float((term_h + term_a).sum() - np.log(t).sum())
+    per_row = term_h + term_a - np.log(t)
+    if w is not None:
+        per_row = per_row * w
+    return float(per_row.sum())

@@ -96,6 +96,11 @@ jobs:
       # bootstrap CI, production's damp_alpha formula.
       - name: Run test_compare.py
         run: python ai/experimental/test_compare.py
+      # Stage 3 realism fixes: recency-decayed strength fit (weights through
+      # mu/home_adv/offsets/xi AND the cap-down objective) + production-
+      # aligned population filters (audit W1).
+      - name: Run test_decay.py
+        run: python ai/experimental/test_decay.py
 
   shard:
     name: shard ${{ matrix.shard }}
@@ -273,14 +278,18 @@ jobs:
       # against REAL held-out outcomes, and the acceptance rules (R1/R2/R4,
       # R3 reported) are derived in ai/sim/realism.py's docstring — never
       # relaxed after seeing a result.  --strict turns a failed window red;
-      # the report artifact is uploaded either way.
+      # the report artifact is uploaded either way.  Fresh window fits use
+      # the 4-year recency half-life (production's measured best); W0 still
+      # scores the committed recipe, which stays flat-fit until a new lab
+      # wave regenerates it.  Tag v1+ diffs against the committed v0
+      # baseline via find_previous.
       - name: Run the realism suite
         id: realism
         continue-on-error: true
         run: |
           set -o pipefail
           python ai/sim/realism.py \
-            --tag v0 --windows 4 --strict \
+            --tag v1 --windows 4 --strict --half-life 1460 \
             --recipe ai/data/sim/worlds.json | tee realism.log
 
       - name: Upload realism reports
@@ -289,16 +298,16 @@ jobs:
         with:
           name: realism-report
           path: |
-            ai/sim/reports/realism_v0.json
-            ai/sim/reports/realism_v0.md
+            ai/sim/reports/realism_v1.json
+            ai/sim/reports/realism_v1.md
           if-no-files-found: error
           retention-days: 90
 
       - name: Verdict to the step summary
         if: always()
         run: |
-          if [ -f ai/sim/reports/realism_v0.md ]; then
-            { echo '## Realism validation (mode=realism)'; sed -n '1,24p' ai/sim/reports/realism_v0.md; } >> "$GITHUB_STEP_SUMMARY"
+          if [ -f ai/sim/reports/realism_v1.md ]; then
+            { echo '## Realism validation (mode=realism)'; sed -n '1,24p' ai/sim/reports/realism_v1.md; } >> "$GITHUB_STEP_SUMMARY"
           else
             echo "::error::realism report was not produced" >> "$GITHUB_STEP_SUMMARY"
           fi

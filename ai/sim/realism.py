@@ -805,6 +805,7 @@ def run_windows(df: pd.DataFrame, *, holdout_days: int, n_windows: int,
                 recipe_path: str | None, epochs: int, capdown_worlds: int,
                 capdown_steps: int, seed: int, n_boot: int,
                 min_train: int = 5000, min_eval: int = 100,
+                half_life_days: float | None = None,
                 log=print) -> list[dict]:
     from sim.sampler import MatchData, cap_down
 
@@ -825,11 +826,19 @@ def run_windows(df: pd.DataFrame, *, holdout_days: int, n_windows: int,
                 log(f"  {name}: recipe split {r_split} >= window start "
                     f"{w['start'].date()} — would leak, refitting instead")
         if worlds is None:
-            m = fit_strengths(w["train"], epochs=epochs, seed=seed + w["k"])
+            # ref_date = window start: the fit decays relative to the moment
+            # it would have been used, never relative to data that arrives
+            # later (chronology guard).
+            m = fit_strengths(w["train"], epochs=epochs, seed=seed + w["k"],
+                              half_life_days=half_life_days,
+                              ref_date=w["start"])
             log(f"  {name}: fresh fit on {m.n_matches:,} rows "
-                f"(home_adv={np.exp(m.home_adv):.3f}, xi={m.xi:.3f})")
+                f"(home_adv={np.exp(m.home_adv):.3f}, xi={m.xi:.3f}, "
+                f"half_life={half_life_days or 'flat'}d)")
             if capdown_worlds > 0:
-                data = MatchData.from_frame(w["train"], m)
+                data = MatchData.from_frame(w["train"], m,
+                                            half_life_days=half_life_days,
+                                            ref_date=w["start"])
                 worlds = []
                 for c in range(capdown_worlds):
                     rng = np.random.default_rng(seed + 1000 * (w["k"] + 1) + c)
@@ -871,7 +880,8 @@ def _load_recipe(path: str):
 def build_report(*, tag: str, windows: list[dict], df_len: int,
                  holdout_days: int, seed: int, epochs: int,
                  capdown_worlds: int, capdown_steps: int,
-                 recipe_path: str | None, duration_s: float) -> dict:
+                 recipe_path: str | None, duration_s: float,
+                 half_life_days: float | None = None) -> dict:
     overall = all(w["verdict"]["window_pass"] for w in windows)
     report = {
         "schema": REALISM_SCHEMA,
@@ -884,6 +894,7 @@ def build_report(*, tag: str, windows: list[dict], df_len: int,
             "epochs": epochs,
             "capdown_worlds": capdown_worlds,
             "capdown_steps": capdown_steps,
+            "half_life_days": half_life_days,
             "recipe": recipe_path,
             "duration_s": round(duration_s, 1),
             "thresholds": {
@@ -1058,6 +1069,10 @@ def main() -> int:
     ap.add_argument("--epochs", type=int, default=240)
     ap.add_argument("--capdown-worlds", type=int, default=0)
     ap.add_argument("--capdown-steps", type=int, default=300)
+    ap.add_argument("--half-life", type=float, default=1460.0,
+                    help="recency half-life in days for fresh window fits "
+                         "(0 = flat history, the v0 behaviour).  Default "
+                         "1460 d = 4 years, production's measured best.")
     ap.add_argument("--n-boot", type=int, default=1000)
     ap.add_argument("--seed", type=int, default=20261028)
     ap.add_argument("--min-train", type=int, default=5000)
@@ -1076,13 +1091,17 @@ def main() -> int:
         recipe_path=args.recipe if os.path.exists(args.recipe) else None,
         epochs=args.epochs, capdown_worlds=args.capdown_worlds,
         capdown_steps=args.capdown_steps, seed=args.seed, n_boot=args.n_boot,
-        min_train=args.min_train, min_eval=args.min_eval)
+        min_train=args.min_train, min_eval=args.min_eval,
+        half_life_days=(args.half_life if args.half_life and
+                        args.half_life > 0 else None))
     report = build_report(
         tag=args.tag, windows=windows, df_len=len(df),
         holdout_days=args.holdout_days, seed=args.seed, epochs=args.epochs,
         capdown_worlds=args.capdown_worlds, capdown_steps=args.capdown_steps,
         recipe_path=args.recipe if os.path.exists(args.recipe) else None,
-        duration_s=time.time() - t0)
+        duration_s=time.time() - t0,
+        half_life_days=(args.half_life if args.half_life and
+                        args.half_life > 0 else None))
 
     prev_path = find_previous(args.out_dir, args.tag)
     comparison = None

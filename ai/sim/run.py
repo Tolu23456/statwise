@@ -45,7 +45,15 @@ from sim.simulate import (calibration_table, posterior_markets,      # noqa: E40
 
 CLEAN_GLOB = "ai/data/clean/????_matches.csv"
 USECOLS = ("date", "home_team", "away_team", "home_goals", "away_goals",
-           "league_slug", "odds_home", "odds_draw", "odds_away")
+           "league_slug", "odds_home", "odds_draw", "odds_away",
+           "is_international", "quality_score")
+# production's population (retrain._load_clean_data): club matches only,
+# quality_score >= 40, from 1993-08-01.  The lab used to fit on a looser
+# frame (372,276/5,123 vs production's 331,949/4,499 — audit W1), which
+# mis-specified home advantage (internationals play at neutral venues) and
+# is one of the two structural realism defects named in diagnosis.md §5.
+MIN_DATE = pd.Timestamp("1993-08-01")
+MIN_QUALITY = 40.0
 
 
 def load_frame(data_glob: str) -> pd.DataFrame:
@@ -61,6 +69,18 @@ def load_frame(data_glob: str) -> pd.DataFrame:
         df["league_slug"] = (df["league"] if "league" in df.columns else "all")
     df = df.dropna(subset=["date", "home_team", "away_team",
                            "home_goals", "away_goals"])
+    # ── production-aligned filters (mirrors retrain._load_clean_data) ────
+    n_raw = len(df)
+    df = df[df["date"] >= MIN_DATE]
+    if "is_international" in df.columns:
+        df = df[pd.to_numeric(df["is_international"],
+                              errors="coerce").fillna(0) == 0]
+    if "quality_score" in df.columns:
+        df = df[pd.to_numeric(df["quality_score"],
+                              errors="coerce").fillna(0) >= MIN_QUALITY]
+    print(f"  population: {len(df):,}/{n_raw:,} rows after production "
+          f"filters (club, quality>={MIN_QUALITY:.0f}, >= {MIN_DATE.date()})",
+          flush=True)
     return df.sort_values("date", kind="stable").reset_index(drop=True)
 
 
@@ -105,6 +125,12 @@ def main() -> int:
     ap.add_argument("--data-glob", default=CLEAN_GLOB)
     ap.add_argument("--holdout-days", type=int, default=180)
     ap.add_argument("--epochs", type=int, default=240)
+    ap.add_argument("--half-life", type=float, default=1460.0,
+                    help="recency half-life in days for the strength fit "
+                         "(0 = flat history, the legacy behaviour).  "
+                         "Default 1460 d = 4 years, production's measured "
+                         "best (retrain.py); do not tune against eval "
+                         "windows.")
     ap.add_argument("--worlds", type=int, default=2, help="cap-down chains this shard")
     ap.add_argument("--steps", type=int, default=300)
     ap.add_argument("--eta", type=float, default=0.02)
@@ -138,12 +164,15 @@ def main() -> int:
           f"{len(holdout):,} holdout | split {cut.date()}", flush=True)
 
     # 1. base fit on TRAIN rows only (leak-free: the holdout is untouched)
-    base = fit_strengths(train, epochs=args.epochs, seed=seed)
+    half_life = args.half_life if args.half_life and args.half_life > 0 else None
+    base = fit_strengths(train, epochs=args.epochs, seed=seed,
+                         half_life_days=half_life)
     print(f"  fit: {base.n_matches:,} matches, "
-          f"home_adv={np.exp(base.home_adv):.3f}, xi={base.xi:.3f} "
+          f"home_adv={np.exp(base.home_adv):.3f}, xi={base.xi:.3f}, "
+          f"half_life={half_life or 'flat'}d "
           f"({time.time() - t0:.0f}s)", flush=True)
 
-    train_data = MatchData.from_frame(train, base)
+    train_data = MatchData.from_frame(train, base, half_life_days=half_life)
 
     # 2. cap down — one chain per world, each seeded with its own noise
     worlds = []
@@ -237,6 +266,7 @@ def main() -> int:
             "shard": args.shard, "shards": args.shards, "seed": seed,
             "worlds": len(pop), "steps": args.steps, "sims_per_fixture": args.sims,
             "epochs": args.epochs, "holdout_days": args.holdout_days,
+            "half_life_days": half_life,
             "split_at": str(cut.date()),
             "n_train": int(len(train)), "n_holdout": int(len(holdout)),
             "n_pool": int(len(pool_known)), "simulated_outcomes": int(stats.n_sims),
