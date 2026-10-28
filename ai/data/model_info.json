@@ -1,16 +1,16 @@
 {
-  "version": 7,
-  "trained_at": "2026-10-27T19:57:03.714357Z",
-  "git_sha": "0f018efebf88",
+  "version": 8,
+  "trained_at": "2026-10-28T08:15:17.581355Z",
+  "git_sha": "d517a1292df8",
   "total_matches": 331949,
-  "duration_seconds": 211.1,
+  "duration_seconds": 279.1,
   "previous": {
-    "version": 6,
-    "trained_at": "2026-10-26T16:39:19.019968Z",
-    "git_sha": "84265f68e43e"
+    "version": 7,
+    "trained_at": "2026-10-27T19:57:03.714357Z",
+    "git_sha": "0f018efebf88"
   },
   "baseline_comparison": {
-    "baseline_version": 6,
+    "baseline_version": 7,
     "baseline_eval_log_loss": 1.01129,
     "new_eval_log_loss": 1.01129,
     "tolerance": 0.0005,
@@ -122,6 +122,16 @@
       "holdout_days": 180,
       "split_at": "2026-04-21",
       "git_sha": "0f018efebf88"
+    },
+    {
+      "version": 8,
+      "trained_at": "2026-10-28T08:15:17.581355Z",
+      "mode": "single",
+      "eval_log_loss": 1.01129,
+      "accuracy": 0.4827,
+      "holdout_days": 180,
+      "split_at": "2026-04-21",
+      "git_sha": "d517a1292df8"
     }
   ]
 }
