@@ -1,0 +1,39 @@
+name: Sync news
+
+# Syndicates football news into website/src/data/news.json so the site's
+# news section stays fresh WITHOUT Vercel rebuilds: the site reads the raw
+# file at runtime (NewsFeed.tsx), so committing it is enough. Pushes use
+# GITHUB_TOKEN, which by design does NOT trigger other workflows — no
+# deploy cascade from a headline.
+on:
+  schedule:
+    - cron: '17 */2 * * *' # every 2h at :17 — off the :00 stampede
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-news
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync from SportyTrader
+        run: python3 website/scripts/sync_news.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- website/src/data/news.json; then
+            echo "news.json unchanged — nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/src/data/news.json
+          git commit -m "chore(news): sync SportyTrader headlines [auto]"
+          git push

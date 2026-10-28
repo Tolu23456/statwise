@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Sparkles, RefreshCw } from 'lucide-react';
+import Link from 'next/link';
+import { Download, Lock, Sparkles, RefreshCw } from 'lucide-react';
 import {
   fetchUpcoming,
   formatKickoff,
@@ -14,13 +15,20 @@ import {
  * source the app renders). Client-side fetch so the static export always
  * shows current data — no redeploy needed. Refreshes every 5 minutes and
  * degrades to a friendly empty state if the network says no.
+ *
+ * Funnel: `freeCount` fixtures render in full; everything past it shows as
+ * a locked teaser (fixture visible, prediction values withheld) that links
+ * to the app download — the web is the appetiser, the app is the meal.
  */
 export function LivePredictions({
   limit = 8,
   compact = false,
+  freeCount = null,
 }: {
   limit?: number;
   compact?: boolean;
+  /** How many leading picks show real values; null = all free. */
+  freeCount?: number | null;
 }) {
   const [picks, setPicks] = useState<UpcomingPick[] | null>(null);
   const [updatedAt, setUpdatedAt] = useState<Date | null>(null);
@@ -74,10 +82,34 @@ export function LivePredictions({
   return (
     <div>
       <div className={compact ? 'grid md:grid-cols-3 gap-4' : 'space-y-4'}>
-        {picks.map(p => (
-          <PickCard key={p.id} pick={p} compact={compact} />
-        ))}
+        {picks.map((p, i) =>
+          freeCount != null && i >= freeCount ? (
+            <LockedCard key={p.id} pick={p} compact={compact} />
+          ) : (
+            <PickCard key={p.id} pick={p} compact={compact} />
+          ),
+        )}
       </div>
+      {freeCount != null && picks.length > freeCount && (
+        <div className="mt-4 rounded-xl border border-primary/30 bg-primary/5 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <div>
+            <p className="font-semibold text-white">
+              {picks.length - freeCount} more fixtures priced on the app right now
+            </p>
+            <p className="text-sm text-gray-400">
+              Full board, higher-confidence AI Picks, value alerts and booking codes — the
+              free tier inside the app gets 5 predictions every day.
+            </p>
+          </div>
+          <Link
+            href="/download"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-white text-sm font-semibold transition shrink-0"
+          >
+            <Download className="w-4 h-4" />
+            Unlock in the App
+          </Link>
+        </div>
+      )}
       {updatedAt && (
         <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
           <RefreshCw className="w-3 h-3" />
@@ -88,6 +120,46 @@ export function LivePredictions({
           })}
         </div>
       )}
+    </div>
+  );
+}
+
+/**
+ * Locked teaser — the fixture is public information so it stays visible
+ * (teams, logos, league, kickoff), but every MODEL OUTPUT (prediction,
+ * confidence, value edge, AI-Pick flag, odds) is withheld: the funnel only
+ * promises what the web is licensed to show, and never leaks hidden values
+ * in the markup.
+ */
+function LockedCard({ pick, compact }: { pick: UpcomingPick; compact: boolean }) {
+  return (
+    <div className="rounded-xl border border-border bg-card p-4 sm:p-5 relative overflow-hidden">
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-[11px] uppercase tracking-wider text-gray-500">
+          {pick.league}
+        </span>
+        <span className="text-[11px] text-gray-500">
+          {formatKickoff(pick.kickoff_time)}
+        </span>
+      </div>
+
+      <div className={`flex items-center gap-3 ${compact ? 'pr-24' : ''}`}>
+        <TeamSide logo={getTeamLogo(pick.home_team)} name={pick.home_team} align="left" />
+        <div className="flex flex-col items-center shrink-0 px-1">
+          <span className="text-xs font-semibold text-gray-500">VS</span>
+        </div>
+        <TeamSide logo={getTeamLogo(pick.away_team)} name={pick.away_team} align="right" />
+      </div>
+
+      <div className="absolute inset-y-0 right-0 w-40 sm:w-52 bg-gradient-to-l from-card via-card/95 to-transparent flex items-center justify-center">
+        <Link
+          href="/download"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/15 border border-primary/40 text-primary text-xs font-semibold hover:bg-primary/25 transition"
+        >
+          <Lock className="w-3.5 h-3.5" />
+          Unlock in App
+        </Link>
+      </div>
     </div>
   );
 }

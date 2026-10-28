@@ -1,86 +1,139 @@
-import { BarChart3, Calendar, Download, TrendingUp } from 'lucide-react'
+import { BarChart3, Download, Lock, Sparkles, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 import { LivePredictions } from '@/components/LivePredictions'
 import { AccuracyStats } from '@/components/AccuracyStats'
+import { AdSlot } from '@/components/AdSlot'
+import { FREE_PICK_COUNT } from '@/lib/siteConfig'
 
 export const metadata = {
-  title: 'Predictions - StatWise',
+  title: 'Free AI Football Predictions - StatWise',
   description:
-    'Live AI football predictions from the StatWise app: fixture board, model calls, confidence and published hit rate.',
+    'Live AI football predictions from the StatWise model: fixture board with confidence and value edge, plus a public rolling track record computed from settled picks.',
 }
+
+const WHATS_IN_APP = [
+  {
+    icon: Sparkles,
+    title: 'AI Picks with booking codes',
+    text: 'Highest-confidence, value-checked selections delivered as ready-made SportyBet Nigeria booking codes (single accumulators, no affiliate markup).',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Value-edge alerts',
+    text: 'The model flags fixtures where its blended probability beats the implied market price — the situations where historical closing-line gains concentrate.',
+  },
+  {
+    icon: Lock,
+    title: 'The rest of the board',
+    text: '25 priced fixtures daily on Premium, 75 on VIP, unlimited on VVIP — each with confidence, full analysis and market context. Free tier in the app: 5 predictions every day.',
+  },
+]
 
 export default function PredictionsPage() {
   return (
     <main className="min-h-screen">
-      <nav className="px-6 py-4 border-b border-border">
+      <nav className="px-6 py-4 border-b border-border sticky top-0 bg-background/90 backdrop-blur z-20">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold">StatWise</Link>
-          <div className="flex gap-6">
-            <Link href="/predictions" className="text-white">Predictions</Link>
-            <Link href="/download" className="text-gray-400 hover:text-white">Download</Link>
+          <Link href="/" className="text-xl font-bold inline-flex items-center gap-2">
+            <BarChart3 className="w-5 h-5 text-primary" />
+            StatWise
+          </Link>
+          <div className="flex gap-6 text-sm">
+            <Link href="/predictions" className="text-white font-semibold">
+              Predictions
+            </Link>
+            <Link href="/#pricing" className="text-gray-400 hover:text-white">
+              Pricing
+            </Link>
+            <Link href="/#news" className="text-gray-400 hover:text-white">
+              News
+            </Link>
+            <Link href="/download" className="text-primary font-semibold hover:text-primary/80">
+              Download
+            </Link>
           </div>
         </div>
       </nav>
 
       {/* Hero */}
       <section className="px-6 pt-16 pb-8 max-w-6xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
-          <BarChart3 className="w-4 h-4 text-primary" />
-          <span className="text-sm text-primary">Live from the StatWise app</span>
-        </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Predictions</h1>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-          The same fixture board the app renders — model calls, confidence and value finds,
-          updated as the model re-prices each slate.
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+          Free AI Football Predictions
+        </h1>
+        <p className="text-lg text-gray-400 mb-4 max-w-3xl mx-auto leading-relaxed">
+          This board is the real thing — the same predictions table the StatWise app renders,
+          priced by a LightGBM model trained on 331,949 matches and evaluated on a 180-day
+          chronological holdout it never saw during training. No hand-tipped exceptions, no
+          retroactive edits: settled results feed the public track record above and below.
+        </p>
+        <p className="text-sm text-gray-500 max-w-2xl mx-auto">
+          The first{' '}
+          <strong className="text-gray-300">{FREE_PICK_COUNT} fixtures</strong> below are
+          completely free — prediction, confidence and value edge included. Fixtures past that
+          are visible but locked: the app unlocks them (and its own free tier covers 5
+          predictions a day).
         </p>
       </section>
 
-      {/* Live fixture board (fetched client-side from the app's data) */}
-      <section className="px-6 pb-8 max-w-4xl mx-auto">
-        <LivePredictions limit={10} />
+      {/* Track record first — judge before you read */}
+      <section className="px-6 pb-10 max-w-6xl mx-auto">
+        <AccuracyStats />
+      </section>
+
+      <div className="max-w-6xl mx-auto px-6">
+        <AdSlot placement="top" className="mb-6" />
+      </div>
+
+      {/* The board */}
+      <section className="px-6 pb-12 max-w-6xl mx-auto">
+        <LivePredictions limit={12} freeCount={FREE_PICK_COUNT} />
+      </section>
+
+      {/* Why the app */}
+      <section className="px-6 py-12 max-w-6xl mx-auto border-t border-border">
+        <h2 className="text-3xl font-bold text-center mb-2">What the App Adds</h2>
+        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-8">
+          The web is a free window into the model. The app is the full terminal.
+        </p>
+        <div className="grid md:grid-cols-3 gap-5">
+          {WHATS_IN_APP.map(item => (
+            <div key={item.title} className="rounded-2xl border border-border bg-card p-6">
+              <item.icon className="w-6 h-6 text-primary mb-3" />
+              <h3 className="font-bold mb-2">{item.title}</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">{item.text}</p>
+            </div>
+          ))}
+        </div>
         <div className="mt-8 text-center">
           <Link
             href="/download"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary rounded-xl font-semibold hover:bg-primary/90 transition"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary hover:bg-primary/90 text-white font-semibold transition"
           >
             <Download className="w-5 h-5" />
-            Get Every Pick in the App
+            Download StatWise
           </Link>
         </div>
       </section>
 
-      {/* Analytics computed from settled app results */}
-      <section className="px-6 py-16 bg-card/50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-3">The Track Record</h2>
-          <p className="text-center text-gray-400 mb-10 max-w-2xl mx-auto">
-            Numbers computed live from settled fixtures in the app — not a hand-typed
-            marketing figure. Updated with every settled match.
-          </p>
-          <AccuracyStats />
+      <footer className="px-6 py-8 border-t border-border">
+        <div className="max-w-6xl mx-auto text-xs text-gray-500 flex flex-col sm:flex-row justify-between gap-3">
+          <span>
+            18+ · Statistical predictions for informational purposes — never stake more than
+            you can afford to lose.
+          </span>
+          <span className="flex gap-4">
+            <Link href="/privacy" className="hover:text-white">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-white">
+              Terms
+            </Link>
+            <Link href="/" className="hover:text-white">
+              Home
+            </Link>
+          </span>
         </div>
-      </section>
-
-      {/* Feature cards */}
-      <section className="px-6 py-16 max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 bg-card border border-border rounded-xl text-center">
-            <Calendar className="w-8 h-8 mx-auto mb-2 text-primary" />
-            <div className="font-semibold">Daily Updates</div>
-            <div className="text-sm text-gray-400">Fresh predictions every day</div>
-          </div>
-          <div className="p-6 bg-card border border-border rounded-xl text-center">
-            <TrendingUp className="w-8 h-8 mx-auto mb-2 text-primary" />
-            <div className="font-semibold">AI Picks</div>
-            <div className="text-sm text-gray-400">Highest confidence selections</div>
-          </div>
-          <div className="p-6 bg-card border border-border rounded-xl text-center">
-            <BarChart3 className="w-8 h-8 mx-auto mb-2 text-primary" />
-            <div className="font-semibold">Full Analysis</div>
-            <div className="text-sm text-gray-400">Detailed reasoning for every pick</div>
-          </div>
-        </div>
-      </section>
+      </footer>
     </main>
   )
 }
