@@ -1,0 +1,75 @@
+name: Audit 100k Holdout
+
+# Plan 5.14: honest large-sample test of "how well does the model do on a
+# big, unseen slice of REAL data?"  Holds out the most recent 100k matches
+# (~6.8 years), trains on everything earlier with the production recipe,
+# and reports log loss / accuracy / calibration / market gap with a 95% CI.
+#
+# READ-ONLY by construction: ai/audit_100k.py never saves a model and never
+# touches model_info.json, so this can NEVER clobber the deployed predictor —
+# it is measurement, not a retrain.  Dispatch-only (no schedule): it is a
+# diagnostic you run when you want the number, not a moving target.
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_rows:
+        description: 'Rows to hold out from the end (most recent)'
+        default: '100000'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Run 100k holdout audit
+        env:
+          AUDIT_TEST_ROWS: ${{ inputs.test_rows || '100000' }}
+          RECENCY_HALF_LIFE_DAYS: '1460'
+          # Match production's recipe so the number is comparable to the
+          # real model, not a variant.  No distillation (SYNTH off).
+          OMP_NUM_THREADS: '4'
+          MKL_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '4'
+          NUMEXPR_NUM_THREADS: '4'
+          TOKENIZERS_PARALLELISM: 'false'
+        run: |
+          set -o pipefail
+          (cd ai && python -u audit_100k.py) 2>&1 | tee audit.log
+
+      - name: Upload report + log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-100k
+          path: |
+            ai/data/audit_100k_report.json
+            audit.log
+          if-no-files-found: ignore
+
+      # Commit just the report JSON so the number is tracked over time.
+      # Never ai/models/ or model_info.json — this audit deploys nothing.
+      - name: Commit report if changed
+        if: always()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ai/data/audit_100k_report.json || true
+          if ! git diff --staged --quiet; then
+            git commit -m "Audit(100k): holdout report $(date -u +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push
+          fi
