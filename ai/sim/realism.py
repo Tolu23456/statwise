@@ -1075,12 +1075,13 @@ def main() -> int:
                     help="recency half-life in days for fresh window fits "
                          "(0 = flat history, the v0 behaviour).  Default "
                          "1460 d = 4 years, production's measured best.")
-    ap.add_argument("--l2", type=float, default=0.02,
-                    help="L2 shrinkage on att/def/league offsets.  The "
-                         "train-internal sensitivity (ai/sim/"
-                         "l2_sensitivity.py, slice disjoint from every "
-                         "eval window) recommended 0.0; adopt only after "
-                         "the full suite confirms.")
+    ap.add_argument("--l2", type=float, default=0.0,
+                    help="L2 shrinkage on att/def/league offsets.  Default "
+                         "0.0: the train-internal sensitivity "
+                         "(ai/sim/l2_sensitivity.py, slice disjoint from "
+                         "every eval window) recommended it and realism "
+                         "v2 (vs v1) verified it on the full suite "
+                         "(LL -0.007 every fresh window, no regressions).")
     ap.add_argument("--n-boot", type=int, default=1000)
     ap.add_argument("--seed", type=int, default=20261028)
     ap.add_argument("--min-train", type=int, default=5000)

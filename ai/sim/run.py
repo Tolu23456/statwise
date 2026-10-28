@@ -131,10 +131,11 @@ def main() -> int:
                          "Default 1460 d = 4 years, production's measured "
                          "best (retrain.py); do not tune against eval "
                          "windows.")
-    ap.add_argument("--l2", type=float, default=0.02,
-                    help="L2 shrinkage on att/def/league offsets (the "
-                         "historical default; see ai/sim/l2_sensitivity.py "
-                         "for the train-internal sensitivity study)")
+    ap.add_argument("--l2", type=float, default=0.0,
+                    help="L2 shrinkage on att/def/league offsets.  Default "
+                         "0.0: train-internal sensitivity recommended it "
+                         "(ai/sim/l2_sensitivity.py) and realism v2 vs v1 "
+                         "verified it on the full suite.")
     ap.add_argument("--worlds", type=int, default=2, help="cap-down chains this shard")
     ap.add_argument("--steps", type=int, default=300)
     ap.add_argument("--eta", type=float, default=0.02)
