@@ -1,10 +1,152 @@
 {
- "synced_at": "2026-10-28T09:09:02+00:00",
+ "synced_at": "2026-10-28T15:07:34+00:00",
  "sources": {
   "SportyTrader": "https://www.sportytrader.com/en/news/",
   "Sky Sports": "https://www.skysports.com/football/news"
  },
  "items": [
+  {
+   "slug": "13604361",
+   "title": "'Delaying the inevitable' or right call? Key questions as Carrick stays",
+   "url": "https://www.skysports.com/football/news/13604361/michael-carrick-why-man-utd-head-coach-will-stay-on-and-could-bruno-fernandes-play-vs-chelsea-plus-other-key-questions",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-michael-carrick-manchester-united_7383931.jpg?20261022173420",
+   "excerpt": "",
+   "published_label": "",
+   "published_iso": "",
+   "byline": ""
+  },
+  {
+   "slug": "13604280",
+   "title": "Expectation vs reality: What if Man Utd have become a mid-table team?",
+   "url": "https://www.skysports.com/football/news/13604280/michael-carrick-is-latest-man-utd-manager-under-pressure-but-has-poor-recruitment-made-them-a-mid-table-team-between-the-lines",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-man-utd-bruno-fernandes_7388485.png?20261027091001",
+   "excerpt": "",
+   "published_label": "",
+   "published_iso": "",
+   "byline": ""
+  },
+  {
+   "slug": "13604854",
+   "title": "'We're all so proud of you' - PM leads Commons praise of Kane's Ballon d'Or win",
+   "url": "https://www.skysports.com/football/video/13604854/harry-kane-wins-ballon-dor-prime-minister-leads-commons-tribute",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-pm-andy-burnham-harry_7389825.jpg?20261028135318",
+   "excerpt": "Prime Minister Andy Burnham congratulates England captain Harry Kane on winning the Ballon d'Or.",
+   "published_label": "28 October 2026 · 13:48",
+   "published_iso": "2026-10-28T13:48:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Prime Minister Andy Burnham congratulates England captain Harry Kane on winning the Ballon d'Or."
+   ]
+  },
+  {
+   "slug": "13604803",
+   "title": "Ref Watch: Arsenal's red card appeal will fail - Dowman was aggressive",
+   "url": "https://www.skysports.com/football/news/13604803/max-dowman-red-card-arsenals-appeal-against-decision-will-fail-says-former-premier-league-referee-dermot-gallagher",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-max-dowman-arsenal_7389720.jpg?20261028130824",
+   "excerpt": "Former Premier League referee Dermot Gallagher believes Arsenal's appeal against Max Dowman's red card in their shock Carabao Cup defeat to Fleetwood Town will fail.",
+   "published_label": "28 October 2026 · 13:15",
+   "published_iso": "2026-10-28T13:15:00+00:00",
+   "byline": "Sky Sports",
+   "body": [
+    "Former Premier League referee Dermot Gallagher believes Arsenal's appeal against Max Dowman's red card in their shock Carabao Cup defeat to Fleetwood Town will fail.",
+    "Dowman was sent off for violent conduct after kicking out at Harrison Neal following the defender's strong challenge on the teenager late in the fourth-round tie, which Arsenal lost on penalties.",
+    "Arsenal must submit appeal documents by 1pm on Thursday and are hopeful a decision will be made before their match at Liverpool, live on Sky Sports on Sunday.",
+    "However, when asked if he thought Arsenal's appeal would be successful, Gallagher told Sky Sports News : \"I don't, because of the aggressiveness of Dowman, and you can see the intent. I think it will fail.\" Arsenal dumped out of Carabao Cup by League Two Fleetwood Mikel Arteta explains reaction to Dowman red card amid criticism Arsenal news & transfers 🔴⚪| Arsenal fixtures & scores Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+   ]
+  },
+  {
+   "slug": "13604790",
+   "title": "'He knows what he's doing' - Ref Watch analyse Dowman red and compare to Palmer",
+   "url": "https://www.skysports.com/football/video/13604790/max-dowman-red-card-against-fleetwood-ref-watch-analyse-teenagers-red-and-compare-to-cole-palmer",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-palmer-dermot_7389706.jpg?20261028125932",
+   "excerpt": "Former Premier League referee Dermot Gallagher gives his thoughts on Max Dowman's red card against Fleetwood Town in the Carabao Cup.",
+   "published_label": "28 October 2026 · 12:27",
+   "published_iso": "2026-10-28T12:27:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Former Premier League referee Dermot Gallagher gives his thoughts on Max Dowman's red card against Fleetwood Town in the Carabao Cup."
+   ]
+  },
+  {
+   "slug": "13604765",
+   "title": "'Genuis leadership' - Robinson hails Arsenal decision to appeal Dowman red",
+   "url": "https://www.skysports.com/football/video/13604765/max-dowman-sent-off-karl-robinson-hails-arsenal-decision-to-appeal-red-card",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-karl-robinson-max_7389588.jpg?20261028113818",
+   "excerpt": "Former MK Dons manager Karl Robinson is clearly impressed with Arsenal's decision to appeal Max Dowman's red card against Fleetwood, describing it, on Sky Sports FC, as 'genius leadership'.",
+   "published_label": "28 October 2026 · 11:30",
+   "published_iso": "2026-10-28T11:30:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Former MK Dons manager Karl Robinson is clearly impressed with Arsenal's decision to appeal Max Dowman's red card against Fleetwood, describing it, on Sky Sports FC, as 'genius leadership'."
+   ]
+  },
+  {
+   "slug": "13604754",
+   "title": "'Open and frank' - Details of Carrick's talk with captain Bruno revealed",
+   "url": "https://www.skysports.com/football/video/13604754/man-utd-boss-michael-carrick-holds-clear-the-air-talks-with-captain-bruno-fernandes-unfolded",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-carrick-man-utd_7389563.jpg?20261028110935",
+   "excerpt": "Sky Sports' Rob Dorsett reveals Man Utd boss Michael Carrick and captain Bruno Fernandes have held 'clear the air' talks.",
+   "published_label": "28 October 2026 · 11:07",
+   "published_iso": "2026-10-28T11:07:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Sky Sports' Rob Dorsett reveals Man Utd boss Michael Carrick and captain Bruno Fernandes have held 'clear the air' talks."
+   ]
+  },
+  {
+   "slug": "13604744",
+   "title": "'He'll get this all the time now' - Merson's worry for Dowman after Fleetwood red",
+   "url": "https://www.skysports.com/football/video/13604744/max-dowman-red-card-paul-mersons-worry-for-arsenal-teenager-after-fleetwood-red-card",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-paul-merson-max-dowman_7389552.jpg?20261028110338",
+   "excerpt": "Paul Merson has shared his concerns for Max Dowman following the red card the teenager picked up in the League Cup defeat to Fleetwood Town.",
+   "published_label": "28 October 2026 · 10:51",
+   "published_iso": "2026-10-28T10:51:00+00:00",
+   "byline": "Sky Sports",
+   "kind": "video",
+   "body": [
+    "Paul Merson has shared his concerns for Max Dowman following the red card the teenager picked up in the League Cup defeat to Fleetwood Town."
+   ]
+  },
+  {
+   "slug": "13604738",
+   "title": "Carrick and Fernandes hold clear-the-air talks ahead of Chelsea fixture",
+   "url": "https://www.skysports.com/football/news/13604738/bruno-fernandes-man-utd-head-coach-michael-carrick-and-club-captain-hold-clear-the-air-talks-ahead-of-chelsea-fixture",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-manchester-united_7384469.jpg?20261023105612",
+   "excerpt": "Manchester United head coach Michael Carrick and captain Bruno Fernandes have met face to face to clear the air, with both vowing to refocus on turning the club's season around.",
+   "published_label": "28 October 2026 · 10:39",
+   "published_iso": "2026-10-28T10:39:00+00:00",
+   "byline": "Danyal Khan and Rob Dorsett",
+   "body": [
+    "Manchester United head coach Michael Carrick and captain Bruno Fernandes have met face to face to clear the air, with both vowing to refocus on turning the club's season around.",
+    "Fernandes was an unused substitute after being dropped for the 3-0 defeat against Bournemouth on Sunday after he criticised Carrick's tactics following the 4-1 thrashing at Como in the Champions League.",
+    "Carrick had described his reasons for dropping his captain as \"pure football\".",
+    "\"Picking the team is always a difficult decision,\" Carrick told Sky Sports . \"We've got to make what we feel is the right one for the team to try to get the performance we want.\" Michael Carrick to remain in charge of Man Utd for Chelsea trip 'Delaying the inevitable' or right call? Key questions as Michael Carrick stays Expectation vs reality: What if Man Utd have become a mid-table team? Man Utd news & transfers 🔴| Man Utd fixtures & scores"
+   ]
+  },
+  {
+   "slug": "manchester-city-vs-brighton-carabao-cup-clash-sets-up-etihad-double-header",
+   "title": "Manchester City vs Brighton: Carabao Cup Clash Sets Up Etihad Double H",
+   "url": "https://www.sportytrader.com/en/news/manchester-city-vs-brighton-carabao-cup-clash-sets-up-etihad-double-header/",
+   "source": "SportyTrader",
+   "image": "https://static.sportytrader.com/images/news/football/2027/efl-cup-liverpool-vs-chelsea-1.webp",
+   "excerpt": "Manchester City host Brighton at the Etihad Stadium on Wednesday evening in the Carabao Cup fourth round, three days before these same sides meet in the Premier League. E",
+   "published_label": "28 October 2026 · 08:00",
+   "published_iso": "2026-10-28T08:00:00+00:00",
+   "byline": "Geoffrey Ejiga"
+  },
   {
    "slug": "13604682",
    "title": "'He knows heartbreak like this!' - The biggest upsets in League Cup history",
@@ -19,6 +161,28 @@
    "body": [
     "Following Fleetwood's victory over Arsenal, take a look at some of the biggest upsets in League Cup history."
    ]
+  },
+  {
+   "slug": "liverpool-vs-chelsea-efl-cup-alonso-anfield-return-without-palmer",
+   "title": "Liverpool vs Chelsea: Can Alonso Stun Reds on Anfield Return Without P",
+   "url": "https://www.sportytrader.com/en/news/liverpool-vs-chelsea-efl-cup-alonso-anfield-return-without-palmer/",
+   "source": "SportyTrader",
+   "image": "https://static.sportytrader.com/images/news/cricket/india-vs-nz-third-t20i.webp",
+   "excerpt": "Anfield’s floodlights will provide the backdrop for a mouth-watering Carabao Cup fourth-round clash tonight. Xabi Alonso returns to familiar territory as Chelsea manager,",
+   "published_label": "28 October 2026 · 05:00",
+   "published_iso": "2026-10-28T05:00:00+00:00",
+   "byline": "Devesh Jaganath"
+  },
+  {
+   "slug": "abhishek-sharma-stars-as-india-win-t20i-series-new-zealand",
+   "title": "India Seal T20 Series Against New Zealand With Commanding Victory In W",
+   "url": "https://www.sportytrader.com/en-in/news/abhishek-sharma-stars-as-india-win-t20i-series-new-zealand/",
+   "source": "SportyTrader",
+   "image": "https://static.sportytrader.com/images/news/football/2027/fleetwood.webp",
+   "excerpt": "India took an unassailable 3-0 lead in their five-match T20I series against New Zealand by securing an impressive six-wicket victory at the Wellington Regional Stadium ye",
+   "published_label": "28 October 2026 · 04:00",
+   "published_iso": "2026-10-28T04:00:00+00:00",
+   "byline": "Devesh Jaganath"
   },
   {
    "slug": "13604637",
@@ -247,14 +411,31 @@
    ]
   },
   {
+   "slug": "13604347",
+   "title": "Carrick to remain in charge of Man Utd for Chelsea trip",
+   "url": "https://www.skysports.com/football/news/13604347/man-utd-boss-michael-carrick-to-remain-in-charge-vs-chelsea-and-given-chance-to-turn-situation-around",
+   "source": "Sky Sports",
+   "image": "https://e0.365dm.com/26/10/768x432/skysports-michael-carrick-manchester-united_7388881.png?20261027171943",
+   "excerpt": "Michael Carrick will remain in charge of Manchester United for their game against Chelsea on Saturday.",
+   "published_label": "27 October 2026 · 12:03",
+   "published_iso": "2026-10-27T12:03:00+00:00",
+   "byline": "Danyal Khan",
+   "body": [
+    "Michael Carrick will remain in charge of Manchester United for their game against Chelsea on Saturday.",
+    "The under-pressure United head coach was thought to be on the brink after Sunday's crushing 3-0 defeat at home to Bournemouth, but he and the players are being given the chance to turn the current situation around.",
+    "United's director of football, Jason Wilcox, and chief executive, Omar Berrada, were at Carrington discussing Carrick's future on Monday. It is understood they had already been considering alternatives for the head coach role.",
+    "However, Carrick took training on Tuesday and the decision has been taken to give him at least one more match. Eddie Howe and Julian Nagelsmann are among the contenders to replace him if he is sacked. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+   ]
+  },
+  {
    "slug": "fleetwood-town-vs-arsenal-the-cod-army-dare-to-dream-of-a-carabao-cup-miracle",
    "title": "Fleetwood Town vs Arsenal: The Cod Army Dare to Dream of a Carabao Cup",
    "url": "https://www.sportytrader.com/en/news/fleetwood-town-vs-arsenal-the-cod-army-dare-to-dream-of-a-carabao-cup-miracle/",
    "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/harry-kane-ballon-dor.webp",
    "excerpt": "A David vs Goliath clash is underway as Fleetwood Town, the minnows, prepare to challenge one of English football's biggest clubs, Arsenal, in the third round of the EFL",
-   "published_label": "27 October 2026 · 14:00",
-   "published_iso": "2026-10-27T14:00:00+00:00",
+   "published_label": "27 October 2026 · 08:00",
+   "published_iso": "2026-10-27T08:00:00+00:00",
    "byline": "Thobelani Moyo",
    "body": [
     "Fleetwood Town have not been at their best in the 2026-27 League Two campaign with just three wins from 13 games. The Lancashire-based outfit have no choice but to turn their attention to the EFL Cup to restore their confidence.",
@@ -270,8 +451,8 @@
    "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/michael-carrick-sack.webp",
    "excerpt": "England’s captain Harry Kane was announced as the 2026 Ballon d’Or winner last night in London. The Bayern Munich striker edged Real Madrid’s Kylian Mbappe and Barcelona’",
-   "published_label": "27 October 2026 · 12:00",
-   "published_iso": "2026-10-27T12:00:00+00:00",
+   "published_label": "27 October 2026 · 06:00",
+   "published_iso": "2026-10-27T06:00:00+00:00",
    "byline": "Devesh Jaganath",
    "body": [
     "Harry Kane has won the 2026 Ballon d’Or, becoming the first Englishman to receive football’s most prestigious individual honour since Michael Owen in 2001.",
@@ -319,8 +500,8 @@
    "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/pedro_vs_solanke_img.webp",
    "excerpt": "Manchester United suffered another crushing defeat in the Premier League on Sunday, losing 3-0 to Bournemouth at Old Trafford, which leaves them 16th in the league standi",
-   "published_label": "26 October 2026 · 10:30",
-   "published_iso": "2026-10-26T10:30:00+00:00",
+   "published_label": "26 October 2026 · 04:30",
+   "published_iso": "2026-10-26T04:30:00+00:00",
    "byline": "Devesh Jaganath",
    "body": [
     "Manchester United saw their winless run extended to eight matches on Sunday afternoon, when they were handed a 3-0 thumping by Bournemouth at Old Trafford on Matchday 8 in the Premier League.",
@@ -336,8 +517,8 @@
    "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/formula-1/2026-us-grand-prix-1.webp",
    "excerpt": "Chelsea host Tottenham at Stamford Bridge on Saturday in Premier League Gameweek 8. Xabi Alonso's side are fourth with 13 points from seven matches after back-to-back win",
-   "published_label": "24 October 2026 · 12:00",
-   "published_iso": "2026-10-24T12:00:00+00:00",
+   "published_label": "24 October 2026 · 06:00",
+   "published_iso": "2026-10-24T06:00:00+00:00",
    "byline": "Geoffrey Ejiga",
    "body": [
     "Joao Pedro scored the only goal the last time these sides met in the league, earning a 1-0 Chelsea win at the Tottenham Hotspur Stadium in the 2025-26 season.",
@@ -353,8 +534,8 @@
    "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/darts/2026-european-champs-1.webp",
    "excerpt": "The Circuit of the Americas has seen history made before, but the stakes in Austin have rarely felt greater than they do this weekend. With the 2026 United States Grand P",
-   "published_label": "24 October 2026 · 10:30",
-   "published_iso": "2026-10-24T10:30:00+00:00",
+   "published_label": "24 October 2026 · 04:30",
+   "published_iso": "2026-10-24T04:30:00+00:00",
    "byline": "Devesh Jaganath",
    "body": [
     "Andrea Kimi Antonelli is not just leading the pack ahead of the 2026 United States Grand Prix; he is on the verge of shattering a record many believed would stand for decades.",
@@ -370,8 +551,8 @@
    "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/raphinha_barca_2026.webp",
    "excerpt": "The curse of the champion is broken, but the carnage is far from over! Day 3 of the 2026 European Darts Championship is set to enter what is shaping up to be a thrilling",
-   "published_label": "24 October 2026 · 09:30",
-   "published_iso": "2026-10-24T09:30:00+00:00",
+   "published_label": "24 October 2026 · 03:30",
+   "published_iso": "2026-10-24T03:30:00+00:00",
    "byline": "Devesh Jaganath",
    "body": [
     "After an opening round in which three of the world’s top five seeds suffered shocking exits, the 2026 European Darts Championship now moves into a gruelling best-of-19-legs second round this afternoon in Dortmund.",
@@ -387,8 +568,8 @@
    "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/cricket/sa-vs-aus-2nd-test.webp",
    "excerpt": "Another weekend, another list of some of the top player props to watch out for across Europe! This time around, we’re taking a look at El Clasico, Bayern’s trip to Freibu",
-   "published_label": "23 October 2026 · 15:00",
-   "published_iso": "2026-10-23T15:00:00+00:00",
+   "published_label": "23 October 2026 · 09:00",
+   "published_iso": "2026-10-23T09:00:00+00:00",
    "byline": "Joseph King",
    "body": [
     "Raphinha has come flying out of the gates in the 2026-27 La Liga season. He’s leading the scoring charts with 12 goals, three clear of Kylian Mbappe, and has 14 goals across all competitions in just 10 appearances.",
@@ -404,8 +585,8 @@
    "source": "SportyTrader",
    "image": "https://static.sportytrader.com/images/news/football/2027/oh_hyun_gyu.webp",
    "excerpt": "South Africa delivered a commanding performance to beat Australia by an innings and 31 runs at St. George’s Park on Thursday afternoon to level the three-match Test serie",
-   "published_label": "23 October 2026 · 10:45",
-   "published_iso": "2026-10-23T10:45:00+00:00",
+   "published_label": "23 October 2026 · 04:45",
+   "published_iso": "2026-10-23T04:45:00+00:00",
    "byline": "Devesh Jaganath",
    "body": [
     "After losing the first Test in Durban, South Africa bounced back to secure an emphatic victory by an innings and 31 runs at St. George’s Park on Thursday afternoon to level the three-match Test series at 1-1 and confirm our cricket predictions .",
@@ -434,152 +615,16 @@
    "title": "Besiktas vs Crystal Palace: Can the South London club turn its fortune",
    "url": "https://www.sportytrader.com/en/news/besiktas-vs-crystal-palace-can-the-south-london-club-turn-its-fortunes-around-in-europe/",
    "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/football/2027/uel-bournemouth-vs-ac-milan.webp",
+   "image": "",
    "excerpt": "Besiktas will welcome a struggling Crystal Palace to the Tupras Stadium on matchday three of the UEFA Europa League (League Phase). It is a battle of the Eagles as the Tu",
-   "published_label": "22 October 2026 · 13:00",
-   "published_iso": "2026-10-22T13:00:00+00:00",
+   "published_label": "22 October 2026 · 07:00",
+   "published_iso": "2026-10-22T07:00:00+00:00",
    "byline": "Thobelani Moyo",
    "body": [
     "The appointment of head coach Vincenzo Italiano this year has been the right choice by the board. The 48-year-old has mounted a title charge in the Turkish Super Lig, where Besiktas sit fifth with 15 points from eight games, leaving them four points behind the top spot. His overall record has been impressive as he boasts a 75% win ratio and is averaging 2.25 points per match.",
     "Vincenzo Italiano has also guided Besiktas to two consecutive UEFA Europa League (League Phase) wins. This leaves the Black Eagles as one of ten teams that have maintained a 100% record in the competition. Their campaign began with Olympique de Marseille's visit to the Tupras Stadium. It was a walkthrough for them as they won 4-1 before edging Germany's Hoffenheim 3-2 away last week.",
     "However, they enter this clash with their confidence dented after a 2-0 away defeat to Trabzonspor in the Turkish Super Lig. That was just the second time they failed to score in eight games.",
     "Besiktas last won two straight games in the 2017-18 UEFA Champions League. Another victory here could see them improve on that record!"
-   ]
-  },
-  {
-   "slug": "bournemouth-vs-ac-milan-europa-league-matchday-3",
-   "title": "Bournemouth vs AC Milan: Cherries Favourites to Stun European Giants i",
-   "url": "https://www.sportytrader.com/en/news/bournemouth-vs-ac-milan-europa-league-matchday-3/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/football/2027/cafcl-sundowns-vs-wiliete.webp",
-   "excerpt": "Bournemouth host seven-time European champions AC Milan at the Vitality Stadium tonight. Riding a flawless start in the Europa League, the Premier League side enter tonig",
-   "published_label": "22 October 2026 · 12:30",
-   "published_iso": "2026-10-22T12:30:00+00:00",
-   "byline": "Devesh Jaganath",
-   "body": [
-    "Matchday 3 in the 2026-27 Europa League is on deck tonight with a jam-packed schedule, and one of the standout fixtures on the card comes from the Vitality Stadium, where newcomers Bournemouth will play host to European powerhouse AC Milan.",
-    "To appreciate the gravity of tonight’s clash from a Bournemouth perspective, you would have to look back to 2008, when the club did not just face relegation - they faced extinction!",
-    "Crushed by a financial crisis and forced into administration, the Cherries were relegated to the fourth tier of English football. To make matters worse, they were slapped with a devastating 17-point deduction before a ball was kicked in the 2008-09 League Two season.",
-    "Then came the turning point! On New Year’s Eve in 2008, Eddie Howe took the reins, and against all odds, he engineered the “Great Escape,” securing Football League survival on the final day of the season at Dean Court."
-   ]
-  },
-  {
-   "slug": "caf-champions-league-second-qualifying-round-sundowns-pirates",
-   "title": "CAF Champions League: Sundowns, Pirates Brace for Crucial CAFCL Showdo",
-   "url": "https://www.sportytrader.com/en-za/news/caf-champions-league-second-qualifying-round-sundowns-pirates/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/football/2027/bayern-vs-arsenal-ucl-md3.webp",
-   "excerpt": "Africa’s premier club competition, the CAF Champions League, reaches a crucial point this weekend, with 32 teams set to face off in the second leg of the second qualifyin",
-   "published_label": "22 October 2026 · 09:00",
-   "published_iso": "2026-10-22T09:00:00+00:00",
-   "byline": "Devesh Jaganath",
-   "body": [
-    "Mamelodi Sundowns face a stern test to keep their CAF Champions League title defence alive after kicking off this year’s qualifiers with a goalless draw against Angolan club Wiliete SC at Estadio Nacional de Tundavala in Lubango last week.",
-    "As discussed in our Sundowns vs Wiliete prediction , Masandawana received a bye in the opening preliminary round but struggled to create many clear openings in the first leg of this clash. The Brazilians now return to Loftus Versfeld in Pretoria this weekend with the tie hanging in the balance.",
-    "Miguel Cardoso’s preparations have been thrown off course for the decisive second-leg encounter!",
-    "Sundowns have a major injury concern ahead of the return leg, with Teboho Mokoena’s availability in serious doubt. The influential midfielder was carried off on a stretcher in the closing stages of the first leg in Angola after sustaining an ankle injury."
-   ]
-  },
-  {
-   "slug": "bayern-munich-vs-arsenal-uefa-champions-league-matchday-3",
-   "title": "Bayern Munich vs Arsenal: Rampant Reds Set To Face UCL’s Most Miserly",
-   "url": "https://www.sportytrader.com/en/news/bayern-munich-vs-arsenal-uefa-champions-league-matchday-3/",
-   "source": "SportyTrader",
-   "image": "",
-   "excerpt": "Two European giants. Two distinct footballing identities. One high-stakes Champions League showdown. Bayern Munich will take on Arsenal at the Allianz Arena tonight, Wedn",
-   "published_label": "21 October 2026 · 14:00",
-   "published_iso": "2026-10-21T14:00:00+00:00",
-   "byline": "Devesh Jaganath",
-   "body": [
-    "The Allianz Arena will be awash in red and white tonight when Bayern Munich host Arsenal in a highly anticipated UEFA Champions League MD3 clash that pits two of Europe’s leading sides’ contrasting footballing philosophies against each other.",
-    "This encounter will provide a stern examination of Vincent Kompany's new-look Bayern team, as their aggressive, free-flowing, and attack-minded approach is set to face a formidable obstacle in Arsenal’s seemingly impenetrable defence.",
-    "As discussed in our Champions League predictions for this match, Kompany faces a late selection crisis that has significantly affected his side’s engine room just hours before kick-off, with two of the team’s midfield stars ruled out and one listed as a major doubt.",
-    "The Gunners have a flawless record in the UCL this season, following up a 1-0 victory over Napoli with a 3-0 win against Lille last week. Die Roten smashed five unanswered goals past Bodo/Glimt in their opener but were held to a frustrating 3-3 draw by newcomers Viking on MD2."
-   ]
-  },
-  {
-   "slug": "aston-villa-vs-viking-perfect-home-record-meets-visitors-travel-troubles-in-champions-league-clash",
-   "title": "Aston Villa vs Viking: Perfect home record meets visitors’ travel trou",
-   "url": "https://www.sportytrader.com/en/news/aston-villa-vs-viking-perfect-home-record-meets-visitors-travel-troubles-in-champions-league-clash/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/cricket/smriti-mandhana-vs-zimbabwe.webp",
-   "excerpt": "Aston Villa have made a perfect start to the UEFA Champions League (League Phase). They enter this clash aiming to maintain their 100% record when they welcome Norwegian",
-   "published_label": "21 October 2026 · 13:00",
-   "published_iso": "2026-10-21T13:00:00+00:00",
-   "byline": "Thobelani Moyo",
-   "body": [
-    "It hasn't been one of the best starts for Aston Villa in the Premier League this season. They have struggled to get the ball rolling and currently find themselves occupying 12th place in the table with eight points. This has them four points behind the European places.",
-    "Over the weekend, a positive result was recorded. A Johan Manzambi strike in the 36th minute saw the team secure a narrow 1-0 away win over Newcastle United. It was their second win in three games, meaning they have begun to find some consistency after a difficult opening to the campaign.",
-    "Despite their domestic setbacks, the Villans have shown reliability on the European stage. Last term, Unai Emery's charges conquered Europe by winning the UEFA Europa League . That accomplishment ended a 44-year wait for major European silverware.",
-    "Now, the Birmingham outfit are competing in Europe's top tier after a one-year absence. So far, it has been an impressive start to the current campaign, with back-to-back wins that see them rubbing shoulders with the elite in the top eight. Three points here could see them occupy the top spot."
-   ]
-  },
-  {
-   "slug": "smriti-mandhana-wins-first-t20i-series-as-india-captain",
-   "title": "Smriti Mandhana Begins India Captaincy Reign With T20I Series Sweep Ov",
-   "url": "https://www.sportytrader.com/en-in/news/smriti-mandhana-wins-first-t20i-series-as-india-captain/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/football/2027/fabregas_carrick_img.webp",
-   "excerpt": "Following Harmanpreet Kaur’s decision to step down as captain of India’s Women’s national cricket team, Smriti Mandhana enjoyed an excellent start to life as the new skip",
-   "published_label": "21 October 2026 · 09:30",
-   "published_iso": "2026-10-21T09:30:00+00:00",
-   "byline": "Devesh Jaganath",
-   "body": [
-    "The Indian Women’s national team confirmed our cricket predictions by securing an emphatic 3-0 sweep against Zimbabwe on home soil in Smriti Mandhana’s first T20I series as the new team captain.",
-    "Mandhana was handed the reins after Harmanpreet Kaur, India’s longest-serving captain among both men and women, stepped down from the role across all formats two weeks ago, bringing down the curtain on a successful stint, which included leading the team to their ICC Women’s World Cup title in 2025.",
-    "India took an unassailable 2-0 lead in New Raipur on Sunday, when they thrashed Zimbabwe by nine wickets and with 67 balls to spare. Perhaps fittingly, it was Mandhana who struck the winning runs, hoisting Olinder Chare out of the park to secure the series.",
-    "On Monday in the third T20I, Mandhana opted to bat first in order to give her side’s middle order an opportunity to spend time at the crease. The move paid off, with Kaur playing the starring role, reaching her half-century off just 25 balls before finishing on an unbeaten 91. Speaking after the match, Mandhana said:"
-   ]
-  },
-  {
-   "slug": "como-vs-manchester-united-yoro-banned-as-winless-united-visit-fabregas-s-ucl-debutants",
-   "title": "Como vs Manchester United: Yoro Banned as Winless United Visit Fabrega",
-   "url": "https://www.sportytrader.com/en/news/como-vs-manchester-united-yoro-banned-as-winless-united-visit-fabregas-s-ucl-debutants/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/football/2027/isak_vs_gulacsi.webp",
-   "excerpt": "Como host Manchester United at Stadio Giuseppe Sinigaglia on Wednesday in Champions League Matchday 3. Michael Carrick's side have not won in six matches across all compe",
-   "published_label": "21 October 2026 · 09:00",
-   "published_iso": "2026-10-21T09:00:00+00:00",
-   "byline": "Geoffrey Ejiga",
-   "body": [
-    "This is the first time the two clubs have met in competitive football. It is also Como's first match against English opposition in European competition.",
-    "In truth, Manchester United have a strong recent record against Italian sides, winning 10 of their last 16 European matches against Serie A clubs and losing just two.",
-    "Their European pedigree stretches back decades, though they have never faced an opponent with quite the same story as this season's Como.",
-    "Fabregas's side are making their Champions League debut this season after finishing fourth in Serie A last term, the highest league finish in the club's history."
-   ]
-  },
-  {
-   "slug": "liverpool-vs-villarreal-frimpong-and-szoboszlai-miss-out-as-semi-final-rivals-meet-again-at-anfield",
-   "title": "Liverpool vs Villarreal: Frimpong and Szoboszlai Miss Out as Semi-Fina",
-   "url": "https://www.sportytrader.com/en/news/liverpool-vs-villarreal-frimpong-and-szoboszlai-miss-out-as-semi-final-rivals-meet-again-at-anfield/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/football/2027/man_city_epl.webp",
-   "excerpt": "Liverpool host Villarreal at Anfield on Tuesday evening in Champions League Matchday 3. Andoni Iraola's side have won both of their European matches this season, includin",
-   "published_label": "20 October 2026 · 14:00",
-   "published_iso": "2026-10-20T14:00:00+00:00",
-   "byline": "Geoffrey Ejiga",
-   "body": [
-    "The clubs have met four times in European competition, all in semi-finals, and Liverpool have won three of those four matches. Their first European tie came in the 2015-16 Europa League semi-final.",
-    "Villarreal won the first leg 1-0 at El Madrigal through Adrian Lopez's 90th-minute goal, but Liverpool turned the tie around at Anfield in the second leg.",
-    "A Bruno own goal in the seventh minute set the tone before Daniel Sturridge and Adam Lallana completed a 3-0 win that sent Liverpool through 3-1 on aggregate.",
-    "The clubs met again in the 2021-22 Champions League semi-final. Liverpool won the first leg 2-0 at Anfield through a Pervis Estupinan own goal and a Sadio Mane finish, both scored within two second-half minutes."
-   ]
-  },
-  {
-   "slug": "nba-2026-27-opening-night-tips-off-with-triple-header",
-   "title": "NBA 2026-27 Opening Night: Season Tips Off With Cracking Triple-Header",
-   "url": "https://www.sportytrader.com/en/news/nba-2026-27-opening-night-tips-off-with-triple-header/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/formula-1/mckenzie-rsa-f1-bid.webp",
-   "excerpt": "The wait is finally over! Tonight, the 2026-27 NBA season explodes into life with a historic, first-of-its-kind opening night triple-header. Fans are set to be treated to",
-   "published_label": "20 October 2026 · 12:00",
-   "published_iso": "2026-10-20T12:00:00+00:00",
-   "byline": "Devesh Jaganath",
-   "body": [
-    "The historic 2026-27 NBA opening night triple-header tips off under the afternoon lights at Little Caesars Arena, where a heavily reshaped Boston Celtics face a rising Detroit Pistons outfit ready to test its opponents' physicality in this Eastern Conference showdown.",
-    "All eyes in Boston will be on how the rotation adapts to the post-Jaylen Brown era!",
-    "Brown’s move to Philadelphia leaves Boston’s cornerstone, Jayson Tatum, carrying a heavier share of the offensive burden. He will have help from the explosive, newly acquired Paul George, while Mitchell Robinson is expected to anchor the team’s defence.",
-    "As discussed in our Detroit Pistons vs Boston Celtics prediction , aside from two-way player Devin Carter, who is ruled out with mononucleosis, the Celtics carry a clean bill of health into the regular season after a perfect 4-0 preseason campaign."
    ]
   }
  ]
