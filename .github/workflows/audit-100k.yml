@@ -5,6 +5,15 @@ name: Audit 100k Holdout
 # (~6.8 years), trains on everything earlier with the production recipe,
 # and reports log loss / accuracy / calibration / market gap with a 95% CI.
 #
+# Two arms, one workflow (dispatch with different inputs), so both run the
+# IDENTICAL script/split/env on the same commit:
+#   baseline: synth=0, out=ai/data/audit_100k_report.json
+#   sim arm:  synth=1, out=ai/data/audit_100k_synth_report.json
+# The sim arm appends Monte Carlo soft-label distillation (TRAIN rows
+# only).  Its teacher must PRE-DATE the audit split — ai/sim/distill.py's
+# freshness guard refuses a newer one and the audit then exits 1 with a
+# rejection record (never a silent fallback to the baseline).
+#
 # READ-ONLY by construction: ai/audit_100k.py never saves a model and never
 # touches model_info.json, so this can NEVER clobber the deployed predictor —
 # it is measurement, not a retrain.  Dispatch-only (no schedule): it is a
@@ -16,6 +25,18 @@ on:
       test_rows:
         description: 'Rows to hold out from the end (most recent)'
         default: '100000'
+      synth:
+        description: 'Train WITH Monte Carlo distillation (1 = sim arm, 0 = baseline)'
+        default: '0'
+      synth_recipe:
+        description: 'Teacher recipe JSON (must pre-date the audit split or the guard rejects it)'
+        default: 'ai/data/sim_audit/worlds.json'
+      synth_fraction:
+        description: 'Fraction of train rows duplicated with teacher labels'
+        default: '0.5'
+      out:
+        description: 'Report JSON path (use a DIFFERENT file per arm)'
+        default: 'ai/data/audit_100k_report.json'
 
 permissions:
   contents: write
@@ -38,9 +59,13 @@ jobs:
       - name: Run 100k holdout audit
         env:
           AUDIT_TEST_ROWS: ${{ inputs.test_rows || '100000' }}
+          AUDIT_SYNTH: ${{ inputs.synth || '0' }}
+          AUDIT_SYNTH_RECIPE: ${{ inputs.synth_recipe || 'ai/data/sim_audit/worlds.json' }}
+          AUDIT_SYNTH_FRACTION: ${{ inputs.synth_fraction || '0.5' }}
+          AUDIT_OUT: ${{ inputs.out || 'ai/data/audit_100k_report.json' }}
           RECENCY_HALF_LIFE_DAYS: '1460'
           # Match production's recipe so the number is comparable to the
-          # real model, not a variant.  No distillation (SYNTH off).
+          # real model, not a variant.  Distillation only when synth=1.
           OMP_NUM_THREADS: '4'
           MKL_NUM_THREADS: '4'
           OPENBLAS_NUM_THREADS: '4'
@@ -48,7 +73,8 @@ jobs:
           TOKENIZERS_PARALLELISM: 'false'
         run: |
           set -o pipefail
-          (cd ai && python -u audit_100k.py) 2>&1 | tee audit.log
+          # Run from the repo root: AUDIT_OUT paths are repo-root-relative.
+          python -u ai/audit_100k.py 2>&1 | tee audit.log
 
       - name: Upload report + log
         if: always()
@@ -57,6 +83,7 @@ jobs:
           name: audit-100k
           path: |
             ai/data/audit_100k_report.json
+            ai/data/audit_100k_synth_report.json
             audit.log
           if-no-files-found: ignore
 
@@ -68,6 +95,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ai/data/audit_100k_report.json || true
+          git add ai/data/audit_100k_synth_report.json || true
           if ! git diff --staged --quiet; then
             git commit -m "Audit(100k): holdout report $(date -u +%Y-%m-%d)"
             git pull --rebase origin main

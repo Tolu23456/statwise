@@ -1,0 +1,194 @@
+name: Audit Sim Teacher
+
+# Pre-split Monte Carlo teacher for the 100k audit's distillation arm
+# (audit-100k.yml with synth=1).
+#
+# Why this exists: the PUBLISHED lab recipe (ai/data/sim/worlds.json) has
+# split_at 2026-04-21 — it was trained on data through 2026 and therefore
+# SAW ~6 of the ~6.8 years of the audit holdout (audit split 2019-12-20).
+# ai/sim/distill.py's freshness guard correctly refuses to distill it into
+# the audit.  This workflow builds a legitimate teacher instead: every row
+# it ever touches is truncated to <= cutoff_date (default = the audit split
+# date), so the teacher's own out-of-time split lands INSIDE the audit's
+# TRAIN window and the guard accepts it without being bypassed.
+#
+# The heavy work uses the lab's own code UNMODIFIED (ai/sim/** is
+# read-only here): run.py fits/breeds the worlds per shard, merge.py sums
+# them into a recipe — written to ai/data/sim_audit/, never ai/data/sim/.
+# The recipe is committed so audit-100k.yml (synth=1) can consume it.
+
+on:
+  workflow_dispatch:
+    inputs:
+      shards:
+        description: 'Shards to run (max 10)'
+        default: '10'
+      cutoff_date:
+        description: 'Truncate clean data to rows <= this date (must be <= audit split 2019-12-20)'
+        default: '2019-12-20'
+      holdout_days:
+        description: 'Teacher OOT holdout window INSIDE the truncated frame'
+        default: '180'
+
+permissions:
+  contents: write
+
+jobs:
+  shard:
+    name: teacher shard ${{ matrix.shard }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    steps:
+      # Cheap early exit for matrix slots the input did not ask for.
+      - name: Decide whether this shard runs
+        id: skip
+        env:
+          SHARD: ${{ matrix.shard }}
+          SHARDS: ${{ inputs.shards }}
+        run: |
+          case "$SHARDS" in ''|*[!0-9]*) SHARDS=10 ;; esac
+          if [ "$SHARD" -ge "$SHARDS" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "shard $SHARD skipped (only $SHARDS requested)"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.skip.outputs.run == 'true'
+
+      - name: Set up Python
+        if: steps.skip.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        if: steps.skip.outputs.run == 'true'
+        run: pip install -r ai/requirements.txt
+
+      - name: Truncate clean data to the audit-train window
+        if: steps.skip.outputs.run == 'true'
+        env:
+          CUTOFF: ${{ inputs.cutoff_date }}
+        run: python ai/audit_teacher_data.py --cutoff "$CUTOFF" --out-dir simdata
+
+      - name: Run teacher shard
+        if: steps.skip.outputs.run == 'true'
+        env:
+          SHARD: ${{ matrix.shard }}
+          SHARDS: ${{ inputs.shards }}
+          HOLDOUT_DAYS: ${{ inputs.holdout_days }}
+        run: |
+          set -o pipefail
+          case "$SHARDS" in ''|*[!0-9]*) SHARDS=10 ;; esac
+          # Same lab defaults the published recipe used (epochs 240,
+          # steps 300, 2 chains, population 4); sims/synth fixtures are
+          # kept small because only the WORLDS matter for distillation.
+          python ai/sim/run.py \
+            --shard "$SHARD" --shards "$SHARDS" \
+            --data-glob 'simdata/*_matches.csv' \
+            --worlds 2 --steps 300 --sims 2000 \
+            --epochs 240 --population 4 \
+            --holdout-days "$HOLDOUT_DAYS" \
+            --synth-fixtures 300 \
+            --seed 20261025 \
+            --out "sim-shard-$SHARD.json" | tee shard.log
+
+      - name: Upload shard payload
+        if: steps.skip.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-teacher-shard-${{ matrix.shard }}
+          path: sim-shard-${{ matrix.shard }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  merge:
+    name: merge teacher recipe (pre-split)
+    needs: shard
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      - name: Download shard payloads
+        uses: actions/download-artifact@v4
+        with:
+          pattern: sim-teacher-shard-*
+          path: sim-shards
+          merge-multiple: true
+
+      - name: Truncate clean data (merge re-scores on the same frame)
+        env:
+          CUTOFF: ${{ inputs.cutoff_date }}
+        run: python ai/audit_teacher_data.py --cutoff "$CUTOFF" --out-dir simdata
+
+      # Merge = sum nothing-but-counters, store the recipe under
+      # ai/data/sim_audit/ (NEVER ai/data/sim/ — the published lab artifacts
+      # stay untouched), re-score the combined ensemble on the truncated
+      # frame's own real holdout.  --no-gate: the lab's publishable gate is
+      # reported in report.json and quoted in the audit comparison, but the
+      # distillation teacher is judged by the AUDIT, not by this gate.
+      - name: Merge shards into the pre-split recipe
+        run: |
+          set -o pipefail
+          ls -la sim-shards
+          python ai/sim/merge.py \
+            --pattern 'sim-shards/sim-shard-*.json' \
+            --out-dir ai/data/sim_audit \
+            --data-glob 'simdata/*_matches.csv' \
+            --no-gate | tee merge.log
+
+      - name: Verdict to the step summary
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          r = json.load(open("ai/data/sim_audit/worlds.json"))
+          rep = json.load(open("ai/data/sim_audit/report.json"))
+          ev = rep.get("eval", {})
+          m = r["meta"]
+          print("## Pre-split audit teacher recipe\n")
+          print(f"- recipe split_at: **{m['split_at']}** (audit split 2019-12-20 → guard accepts)")
+          print(f"- worlds: {len(r['models'])} | train rows: {m['n_train']:,} | teacher holdout: {m['n_holdout']:,}")
+          print(f"- teacher real-holdout 1X2 log loss: {ev.get('home_1x2', {}).get('log_loss')} | publishable gate: {ev.get('publishable')}")
+          PY
+
+      - name: Upload recipe + report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-teacher-recipe
+          path: ai/data/sim_audit/
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Commit recipe (only the pre-split artifacts)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ai/data/sim_audit/worlds.json
+          git add ai/data/sim_audit/report.json
+          git add ai/data/sim_audit/counters.json || true
+          if git diff --cached --quiet; then
+            echo "recipe unchanged (same seed -> same worlds)"
+          else
+            git commit -m "audit: pre-split Monte Carlo teacher recipe (distillation arm)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

@@ -21,11 +21,27 @@ Design constraints:
   - stdlib + the existing venv (no new packages);
   - heavy — runs in GitHub Actions (train-model-scale), not locally.
 
+Simulation arm (plan 5.14 companion): AUDIT_SYNTH=1 trains the SAME audit
+with Monte Carlo soft-label distillation (retrain.py Step 1.5, TRAIN rows
+only) so the two arms are apples-to-apples on the identical split.  The
+teacher recipe must PRE-DATE the audit split — ai/sim/distill.py's
+freshness guard refuses a teacher whose split_at is later than ours (it
+would have seen holdout outcomes).  When the guard rejects, this script
+writes a rejection record and exits 1: it never silently falls back to
+the baseline (that would masquerade as a sim-arm result).
+
 Usage (Actions):
     cd ai && python audit_100k.py
 Env:
-    AUDIT_TEST_ROWS  rows to hold out from the end (default 100000)
-    AUDIT_OUT        report JSON path (default data/audit_100k_report.json)
+    AUDIT_TEST_ROWS        rows to hold out from the end (default 100000)
+    AUDIT_OUT              report JSON path (default data/audit_100k_report.json)
+    AUDIT_SYNTH            '1' = train with simulation distillation (default off)
+    AUDIT_SYNTH_RECIPE     teacher recipe JSON (default data/sim_audit/worlds.json —
+                           the pre-split teacher built by audit-sim-teacher.yml;
+                           the published lab recipe ai/data/sim/worlds.json has
+                           split_at 2026-04-21 and is REJECTED by the guard here)
+    AUDIT_SYNTH_FRACTION   fraction of train rows duplicated with teacher labels (0.5)
+    AUDIT_SYNTH_SEED       sampling seed (0)
 """
 from __future__ import annotations
 
@@ -50,6 +66,22 @@ OUT_PATH = os.environ.get(
     "AUDIT_OUT", os.path.join(BASE_DIR, "data", "audit_100k_report.json")
 )
 
+# Simulation-distillation arm (off by default: the baseline control).
+SYNTH = os.environ.get("AUDIT_SYNTH", "0").strip().lower() in ("1", "true", "yes")
+SYNTH_RECIPE = os.environ.get(
+    "AUDIT_SYNTH_RECIPE",
+    os.path.join(BASE_DIR, "data", "sim_audit", "worlds.json"))
+SYNTH_FRACTION = float(os.environ.get("AUDIT_SYNTH_FRACTION", "0.5") or 0.5)
+SYNTH_SEED = int(os.environ.get("AUDIT_SYNTH_SEED", "0") or 0)
+
+
+def _resolve_recipe(path: str) -> str:
+    """Accept both repo-root-relative and ai/-relative recipe paths."""
+    if os.path.exists(path):
+        return path
+    alt = os.path.join(BASE_DIR, path)
+    return alt if os.path.exists(alt) else path
+
 
 def _ll(p, y):
     import numpy as np
@@ -66,6 +98,28 @@ def _ci95(rows: "list[float]") -> tuple[float, float]:
     se = float(a.std(ddof=1) / np.sqrt(len(a)))
     m = float(a.mean())
     return (m - 1.96 * se, m + 1.96 * se)
+
+
+def _reject_synthetic(synth_info: dict, generated_at: str) -> int:
+    """AUDIT_SYNTH=1 asked for distillation but it must not happen.
+
+    Write a rejection record (NOT a metrics report — no model was trained)
+    and exit 1 so the run is visibly red.  Silently training the baseline
+    instead would masquerade as a sim-arm result.
+    """
+    synth_info["applied"] = False
+    payload = {
+        "audit": "100k out-of-time holdout (READ-ONLY, nothing deployed)",
+        "status": "distillation-rejected",
+        "generated_at": generated_at,
+        "distillation": synth_info,
+    }
+    os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
+    with open(OUT_PATH, "w") as f:
+        json.dump(payload, f, indent=2)
+    print(f"::error::AUDIT_SYNTH=1 but distillation was rejected: "
+          f"{synth_info.get('reason')} — no model trained, see {OUT_PATH}")
+    return 1
 
 
 def main() -> int:
@@ -93,7 +147,7 @@ def main() -> int:
     split_at = dates.iloc[boundary_idx]
     print(f"[audit] dataset {n_total:,} rows | train <= {split_at.date()} "
           f"({boundary_idx:,}) | holdout {TEST_ROWS:,} "
-          f"({dates.iloc[-1].date() - split_at} span)")
+          f"({dates.iloc[-1] - split_at} span)")
 
     print("[audit] building feature state (single pass over full frame)…")
     t0f = time.time()
@@ -137,6 +191,70 @@ def main() -> int:
                           0.02).astype(np.float32)
     else:
         w_tr = None
+
+    # ── Simulation-distillation arm (AUDIT_SYNTH=1) ──────────────────────
+    # Port of retrain._distill_soft_labels for the audit path: duplicate a
+    # fraction of TRAIN rows with teacher-sampled scoreline labels (1X2 +
+    # goals/BTTS/O3.5 from the SAME draw — ai/sim/distill.py).  Two
+    # differences from retrain: (a) LOUD — a missing recipe or a failed
+    # freshness guard exits 1 with a rejection record instead of training
+    # the baseline silently; (b) split_at here is the AUDIT split, so the
+    # guard guarantees the teacher never saw any audit-holdout outcome.
+    synth_info: dict = {"requested": bool(SYNTH)}
+    if SYNTH:
+        from sim.distill import load_teacher, teacher_may_fit, sample_soft_labels
+
+        recipe_path = _resolve_recipe(SYNTH_RECIPE)
+        generated_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        synth_info.update({
+            "recipe": recipe_path,
+            "fraction": SYNTH_FRACTION,
+            "seed": SYNTH_SEED,
+            "audit_split_at": str(split_at.date()),
+        })
+        worlds, rmeta = load_teacher(recipe_path)
+        if not worlds:
+            synth_info["reason"] = f"no usable teacher recipe at {recipe_path}"
+            return _reject_synthetic(synth_info, generated_at)
+        synth_info["recipe_split_at"] = (rmeta or {}).get("split_at")
+        synth_info["teacher_worlds"] = len(worlds)
+        ok, why = teacher_may_fit(rmeta or {}, split_at)
+        synth_info["guard"] = why
+        if not ok:
+            synth_info["reason"] = f"leak guard rejected the teacher: {why}"
+            return _reject_synthetic(synth_info, generated_at)
+        _h = meta.get("home"); _a = meta.get("away"); _l = meta.get("leagues")
+        if (_h is None or _a is None or _l is None
+                or len(_h) != len(m_tr) or len(_a) != len(m_tr)
+                or len(_l) != len(m_tr)):
+            synth_info["reason"] = ("meta missing aligned home/away/leagues "
+                                    "— teacher cannot price train rows")
+            return _reject_synthetic(synth_info, generated_at)
+        idx, y_s, g_s, b_s, o_s = sample_soft_labels(
+            worlds, _h[m_tr], _a[m_tr], _l[m_tr],
+            fraction=SYNTH_FRACTION, seed=SYNTH_SEED)
+        if not len(idx):
+            synth_info["reason"] = ("sample_soft_labels produced 0 rows — the "
+                                    "recipe knows none of the train teams")
+            return _reject_synthetic(synth_info, generated_at)
+        # TRAIN side only: holdout slices above (Xh, yh, …) never see these
+        # rows; the aux labels get the TEACHER's label from the same
+        # scoreline draw (retrain.py plan-1.6 semantics).
+        synth_info["rows_before"] = int(len(yt))
+        Xt = np.concatenate([Xt, Xt[idx]])
+        yt = np.concatenate([np.asarray(yt), y_s])
+        gt = np.concatenate([np.asarray(gt), g_s])
+        w_tr = (np.concatenate([w_tr, w_tr[idx]])
+                if w_tr is not None else None)
+        if aux_tr["y_btts"] is not None:
+            aux_tr["y_btts"] = np.concatenate([aux_tr["y_btts"], b_s])
+        if aux_tr["y_o35"] is not None:
+            aux_tr["y_o35"] = np.concatenate([aux_tr["y_o35"], o_s])
+        synth_info.update({"applied": True, "rows_added": int(len(idx))})
+        print(f"[audit] distillation: +{len(idx):,} teacher-labeled "
+              f"duplicates ({synth_info['rows_before']:,} -> {Xt.shape[0]:,} "
+              f"rows, {len(worlds)} worlds, teacher split "
+              f"{synth_info['recipe_split_at']})")
 
     # Train on the EARLIER slice with the production recipe (mode=single).
     print(f"[audit] training single-mode stacks on {Xt.shape[0]:,} rows…")
@@ -243,6 +361,7 @@ def main() -> int:
         "split_at": str(split_at.date()),
         "holdout_span_days": int((dates.iloc[-1] - split_at).days),
         "mode": "single",
+        "distillation": synth_info,
         "recency_half_life_days": half_life,
         "raw_log_loss": round(ll_raw, 5),
         "isotonic_log_loss": round(ll_cal, 5),
@@ -327,6 +446,12 @@ def main() -> int:
         "=" * 64,
         f" split_at {metrics['split_at']} | train {metrics['train_rows']:,} "
         f"| holdout {metrics['holdout_rows']:,} ({metrics['holdout_span_days']}d)",
+        " distillation     " + (
+            f"ON: +{synth_info.get('rows_added', 0):,} teacher rows "
+            f"(recipe split {synth_info.get('recipe_split_at')}, "
+            f"{synth_info.get('teacher_worlds')} worlds | "
+            f"guard: {synth_info.get('guard')})"
+            if synth_info.get("applied") else "off"),
         f" eval log loss   {metrics['eval_log_loss']:.5f}  "
         f"95% CI [{lo_ci:.5f}, {hi_ci:.5f}]",
         f"   raw {ll_raw:.5f} | isotonic {ll_cal:.5f} (used={use_cal})",
