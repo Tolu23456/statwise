@@ -26,6 +26,9 @@ name: Monte Carlo Match Lab
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: 'lab = shards+merge (Monte Carlo); realism = sim-vs-real validation suite; all = both'
+        default: 'lab'
       shards:
         description: 'Shards to run (max 20 = Free-plan concurrency cap)'
         default: '20'
@@ -85,10 +88,17 @@ jobs:
       # vectorised sampler matches the exact posterior grid, waves accumulate.
       - name: Run test_sim_scale.py
         run: python ai/experimental/test_sim_scale.py
+      # Realism suite: bin lookups, chronological windows, production row
+      # filters, strict JSON serialisability of the full report.
+      - name: Run test_realism.py
+        run: python ai/experimental/test_realism.py
 
   shard:
     name: shard ${{ matrix.shard }}
     needs: tests
+    # mode=realism skips the Monte Carlo entirely (and mode=lab skips the
+    # realism suite) so one dispatch burns only the runner slots it needs.
+    if: inputs.mode == 'lab' || inputs.mode == 'all'
     runs-on: ubuntu-latest
     timeout-minutes: 180
     strategy:
@@ -164,6 +174,7 @@ jobs:
   merge:
     name: merge + real-holdout gate
     needs: shard
+    if: inputs.mode == 'lab' || inputs.mode == 'all'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -232,4 +243,64 @@ jobs:
         if: steps.merge.outcome == 'failure'
         run: |
           echo "::error::publishable gate FAILED — the ensemble did not beat the league prior on the real holdout. See the sim-report artifact."
+          exit 1
+
+  realism:
+    name: sim-vs-real realism validation
+    needs: tests
+    if: inputs.mode == 'realism' || inputs.mode == 'all'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      # Mandatory sim-vs-real suite (mission Stage 4): every window's model
+      # is trained only on rows before the window start, all comparison is
+      # against REAL held-out outcomes, and the acceptance rules (R1/R2/R4,
+      # R3 reported) are derived in ai/sim/realism.py's docstring — never
+      # relaxed after seeing a result.  --strict turns a failed window red;
+      # the report artifact is uploaded either way.
+      - name: Run the realism suite
+        id: realism
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python ai/sim/realism.py \
+            --tag v0 --windows 4 --strict \
+            --recipe ai/data/sim/worlds.json | tee realism.log
+
+      - name: Upload realism reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: realism-report
+          path: |
+            ai/sim/reports/realism_v0.json
+            ai/sim/reports/realism_v0.md
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Verdict to the step summary
+        if: always()
+        run: |
+          if [ -f ai/sim/reports/realism_v0.md ]; then
+            { echo '## Realism validation (mode=realism)'; sed -n '1,24p' ai/sim/reports/realism_v0.md; } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::realism report was not produced" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Fail when a window failed the realism rules
+        if: steps.realism.outcome == 'failure'
+        run: |
+          echo "::error::realism validation FAILED — see the realism-report artifact (rules R1/R2/R4)."
           exit 1
