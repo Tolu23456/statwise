@@ -1242,23 +1242,59 @@ fails closed with "Payments Temporarily Unavailable"); (2) add repo secret
   authenticated-only writes. Post with the upload path's actual policy
   and a live fetch of a stored object.
 
-### 5.14 100k out-of-time holdout audit (P0 — in progress, subagent)
+### 5.14 100k out-of-time holdout audit (DONE 2026-10-28, subagent)
 
-- [ ] **Record both arms when the run lands** - evidence, not vibes
-  Scaffold pushed `7efcc3f`: `ai/audit_100k.py` (READ-ONLY — never saves
-  a model, never touches model_info.json) + `audit-100k.yml`
-  (workflow_dispatch, `test_rows` default 100000). Split computed:
-  train 262,805 rows <= 2019-12-20, hold out the most recent 100k
-  (~6.8 yrs), calibrate on holdout first half / evaluate second half
-  (~50k eval rows, 95% CI on log loss, per-league + market gap).
-  Delegated to a background subagent, which must ALSO run the
-  simulation-distillation arm (SYNTH_LABELS-style training from an
-  `ai/sim` recipe — read-only there, recipe-freshness guard respected)
-  on the identical split. When both reports land: baseline vs sim side
-  by side (LL + CI, accuracy, market gap, per-league) + honest verdict
-  against the user's 91% accuracy target (market reality check: closing
-  LL ~0.998 ≈ high-50s% 1X2 accuracy — 91% is beyond any honest model;
-  the achievable frontier is beating the market LL).
+- [x] **Both arms ran + recorded** - evidence, not vibes
+  **Setup (identical across runs, paired-verified):** 331,949-row corpus,
+  train <= 2019-08-10 (232,017), holdout 99,912 (7.2 yrs), eval =
+  later **49,956 rows** (isotonic calibrated on first half of holdout,
+  both arms). The paired job (run 40677438714) retrained BOTH arms in
+  one process and reproduced each standalone number exactly → training
+  deterministic, comparison exact.
+  **Baseline arm** (`ai/data/audit_100k_report.json`, run 40672129015):
+  eval **LL 1.01581, 95% CI [1.01137, 1.02026]** | acc **49.12%** |
+  brier 0.20198 | ece 0.0113 | market closing 0.99791 (35,485 rows;
+  model standalone is +0.0179 WORSE, outside CI → significant) |
+  **blended 0.9952** (α 0.204) acc **51.15%** — beats market by −0.0027
+  (point estimate). Per-league: best primeira-liga 0.78731 (64.5%),
+  worst championship 1.13677 (40.2%).
+  **Sim arm** (`ai/data/audit_100k_synth_report.json`, run 40672133495):
+  teacher = purpose-built PRE-SPLIT teacher (`audit-sim-teacher.yml`,
+  `ai/data/sim_audit/worlds.json`, data truncated <=2019-12-20, teacher
+  saw only <= 2019-06-23 — the published lab recipe split 2026-04-21
+  would have seen 6 yrs of this holdout and the guard correctly rejects
+  it). **Leak guard ACCEPTED** ("teacher split 2019-06-23 <= retrain
+  split 2019-08-10"); fraction 0.5 seed 0 → +115,991 teacher-labeled
+  train duplicates (holdout untouched). Result: **LL 1.01463 CI
+  [1.01083, 1.01843] | acc 49.82% | ece 0.0045** (halved) | raw LL
+  1.05168 (worse uncalibrated) | blended 0.99789 (α collapsed to
+  0.058).
+  **Paired significance (same 49,956 rows):** ΔLL −0.001179, paired CI
+  [−0.004178, +0.001819], p=0.44 → **NOT significant**; accuracy
+  **+0.697 pp**, McNemar p=9e-06 → **significant**; ECE −0.0068 better;
+  blend value WORSE (α 0.20→0.06); per-league flips sign (big wins:
+  championship −0.078, premier-league −0.068, la-liga −0.063; big
+  losses: primeira-liga +0.096, eredivisie +0.059 — a teacher frozen in
+  2019 helps big stable leagues, hurts leagues whose landscape shifted).
+  **Verdict vs 91% target: NO — and 91% is not attainable by anything.**
+  On this split the market's own closing prices get **50.81% top-1
+  accuracy**; best blend 51.15%. Football 1X2 is ~50–55% predictable;
+  a model claiming 91% would be leaking. Real frontier = LL vs market:
+  baseline blend 0.9952 vs market 0.9979 = genuine small edge;
+  standalone models (~1.015) still worse than market.
+  **Recommendation: do NOT adopt distillation in this pipeline.** Real
+  but small accuracy gain + halved ECE, yet LL gain indistinguishable
+  from zero (p=0.44), raw probabilities degrade, blend edge vanishes,
+  league-dependent sign flips. If revisited: league gating / lower
+  fraction / fresher teacher — but for THIS split any teacher fresher
+  than 2019-08-10 leaks (structural, not tunable). For production
+  (split 2026-04-21) the published lab recipe remains the valid teacher
+  and `retrain-weekly.yml`'s existing `synth_labels` input the right
+  vehicle. **Production untouched: v7 stays deployed.**
+  Commits: `9def6f9` (audit synth arm + teacher workflow), `a03f100`,
+  `5af52bb` (teacher recipe, CI), `660114b`, `ab8ac28`/`031250e`
+  (report JSONs, CI), `19d828b` (paired mode + per-league mask fix),
+  `97e4ced` (pair report, CI).
 
 ### 5.15 Forum: send-path fix + sender font + seeded discussion (2026-10-28)
 
