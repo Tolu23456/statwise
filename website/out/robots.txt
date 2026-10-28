@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://statwise-flax.vercel.app/sitemap.xml
