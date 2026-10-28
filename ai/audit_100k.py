@@ -382,6 +382,18 @@ def main() -> int:
         "blended_market_log_loss": round(
             _ll(alpha_dep * p_ev[valid_c] + (1.0 - alpha_dep) * mkt_c[valid_c],
                 y_ev[valid_c]), 5) if int(valid_c.sum()) >= 50 else None,
+        # Top-1 (argmax) accuracy of the market's own implied probabilities,
+        # on the SAME eval rows — the honest yardstick for "what accuracy is
+        # even achievable on 3-way 1X2" (football outcomes are intrinsically
+        # uncertain; the market's closing prices sit around 0.99-1.00 LL).
+        "market_closing_accuracy": round(
+            float((mkt_c[valid_c].argmax(1) == y_ev[valid_c]).mean()), 4)
+        if int(valid_c.sum()) > 50 else None,
+        "blended_accuracy": round(
+            float(((alpha_dep * p_ev[valid_c]
+                    + (1.0 - alpha_dep) * mkt_c[valid_c]).argmax(1)
+                   == y_ev[valid_c]).mean()), 4)
+        if int(valid_c.sum()) > 50 else None,
         "reliability_bins": bins,
         "goals_brier": None,
         "btts_brier": None,
@@ -459,7 +471,8 @@ def main() -> int:
         f" brier           {metrics['brier']:.5f} | ece {ece:.4f} | "
         f"goals_brier {metrics['goals_brier']:.5f}",
         f" market(closing) {metrics['market_closing_log_loss']} on "
-        f"{metrics['market_closing_rows']:,} rows",
+        f"{metrics['market_closing_rows']:,} rows | "
+        f"acc {metrics['market_closing_accuracy']}",
         f" blended         {metrics['blended_market_log_loss']} "
         f"(alpha={metrics['alpha_damped']})",
         f" report -> {OUT_PATH}",
