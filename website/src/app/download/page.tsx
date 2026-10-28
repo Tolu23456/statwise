@@ -38,11 +38,11 @@ export default function DownloadPage() {
             <Link href="/predictions" className="text-gray-400 hover:text-white">
               Predictions
             </Link>
+            <Link href="/news" className="text-gray-400 hover:text-white">
+              News
+            </Link>
             <Link href="/#pricing" className="text-gray-400 hover:text-white">
               Pricing
-            </Link>
-            <Link href="/#news" className="text-gray-400 hover:text-white">
-              News
             </Link>
             <Link href="/download" className="text-primary font-semibold">
               Download

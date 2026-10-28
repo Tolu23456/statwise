@@ -1068,7 +1068,79 @@ fails closed with "Payments Temporarily Unavailable"); (2) add repo secret
   `com.statwise.app` build still passes `expo prebuild --no-install` +
   a bundle-report run after the plugin lands.
 
-### 5.6 Website: insights articles page (P1)
+### 5.12 Website funnel + AdSense + auto-news (DONE 2026-10-28)
+
+- [x] **AdSense verification blocker fixed** - three real gaps, all closed
+  Google said "Couldn't verify your site". Root cause: `next/script`
+  (`afterInteractive`) injected the snippet only AFTER JS hydration, so
+  the raw HTML Google's verification fetches contained no `<script>` tag
+  (only a `<link rel=preload>`). Now a plain async script tag is
+  server-rendered into the static export (`layout.tsx`), verified live:
+  `<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9868946535437166"
+  crossorigin="anonymous">` is in `statwise-flax.vercel.app/` HTML.
+  Also `/ads.txt` (pub-9868946535437166 DIRECT line), `/robots.txt`
+  (allow-all + sitemap pointer) and `/sitemap.xml` (5 URLs) were all
+  404 — now HTTP 200 with correct content. Re-request verification in
+  the AdSense dashboard once Google re-crawls (site re-fetches within
+  ~24h of deploy).
+- [x] **Free-prediction funnel** - web gives value, app gets the rest
+  `LivePredictions` gained `freeCount` (from
+  `siteConfig.FREE_PICK_COUNT=3`): the first 3 fixtures show full
+  prediction/confidence/value-edge; the rest render as locked teasers
+  (fixture + teams public, model outputs withheld from the markup too)
+  with an in-card "Unlock in App" + a below-grid CTA — gating logic
+  confirmed in the deployed JS chunk (`370-e21a94c92af4c209.js`).
+  Home: limit 8/free 3; `/predictions`: limit 12/free 3.
+- [x] **Much more site text + sections** - home rewritten
+  Hero with real numbers (48.3% holdout / LL 1.011 / blend 0.995 vs
+  closing 0.998 / 331,949 matches / 161 features / 7 sources / 180d
+  holdout as stat chips), free-picks section, live track record,
+  "How StatWise predicts" 4-step method copy, markets grid (1X2,
+  O/U 2.5+3.5, BTTS, AI Picks+booking codes), mid-page ad slot,
+  NewsFeed, PricingSection, 8-question FAQ, final CTA, full footer with
+  18+ disclaimer + SportyTrader attribution. `/predictions` and
+  `/download` got matching navs, expanded copy and honest state.
+- [x] **Pricing straight from the payment catalog** - zero drift
+  `PricingSection` imports `PLANS` from `statwise/lib/paymentCore.ts`
+  directly (same pure-module trick as `teamLogos`) — the site can never
+  show a price checkout wouldn't charge: ₦500/₦2,000/₦5,000 daily,
+  ₦12,000/₦45,000 monthly, free tier 5/day.
+- [x] **SportyTrader news + auto-update pipeline** - live end-to-end
+  `website/scripts/sync_news.py` (stdlib-only) scrapes `/en/news/` +
+  `/en/news/2/` listing pages for discovery, then fetches each not-yet-
+  fetched ARTICLE page (bounded, `SYNC_BODY_LIMIT`=8/run) for its lead
+  text: 4 opening paragraphs (≤1200 chars, noise-filtered — byline/date
+  lines, share widgets, JSON-LD excluded) stored as `body[]` per item.
+  Merge-by-URL carries earlier stories + their lead text (cap 30; 17
+  items seeded, all with clean text: avg 913 chars, 0 metadata-line
+  contamination); equality snapshot taken BEFORE enrichment so quiet
+  runs report `unchanged` (verified twice: stable md5, 0 lead fetches).
+  **News reads INSIDE the site**: `/news/` is a static route rendering
+  a client reader (`NewsReader.tsx`, `useSearchParams` under Suspense for
+  `output: 'export'`, basePath-aware on GitHub Pages) — list view +
+  `/news/?a=<slug>` article view with image, byline, date, opening text,
+  source credit and a "View original" link. `useNewsFeed.ts` (shared by
+  home feed + reader) renders the bundled snapshot instantly, then
+  runtime-fetches `raw.githubusercontent.com/.../news.json` (CORS `*`)
+  every 30 min so syncs reach the site WITHOUT a Vercel rebuild; all
+  navs/FAQ/footer point at `/news`, no card links off-site anymore.
+  `.github/workflows/sync-news.yml`: cron `17 */2 * * *` + dispatch,
+  commits news.json only-if-changed via GITHUB_TOKEN (pushes with the
+  default token don't trigger other workflows → no deploy cascade).
+  **First dispatch run 40646956199 → success**, committed `28f12f2`
+  (`chore(news): sync SportyTrader headlines [auto]`) — the loop works.
+- [x] **Deployed & verified** - `0e24041` pushed, Vercel build success
+  Live curl checks: `/` 143 kB HTML with all new sections (free picks,
+  pricing, FAQ, news, method, chips, OG/Twitter/keywords metadata,
+  nav), `/predictions/ /download/ /privacy/ /terms/` all 200,
+  ads.txt/robots.txt/sitemap.xml 200, news raw URL 200 + CORS `*`.
+  Local pre-flight: `VERCEL=1 npm run build` ×3 exit 0 (8 static pages).
+  Outstanding manual step: AdSense dashboard still needs a re-check
+  click once Google re-crawls, and real ad-unit slot IDs (or Auto ads)
+  must be created there for impressions to fill — `AD_SLOTS` are '0'
+  (site falls back to house ads meanwhile).
+
+### 5.13 Website: insights articles page (P1)
 
 - [ ] **/insights renders the 12-article library** - reuse `insightsCore`
   The site imports the app's `lib/insightsCore.ts` (the same

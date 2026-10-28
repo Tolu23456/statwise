@@ -42,11 +42,11 @@ export default function PredictionsPage() {
             <Link href="/predictions" className="text-white font-semibold">
               Predictions
             </Link>
+            <Link href="/news" className="text-gray-400 hover:text-white">
+              News
+            </Link>
             <Link href="/#pricing" className="text-gray-400 hover:text-white">
               Pricing
-            </Link>
-            <Link href="/#news" className="text-gray-400 hover:text-white">
-              News
             </Link>
             <Link href="/download" className="text-primary font-semibold hover:text-primary/80">
               Download

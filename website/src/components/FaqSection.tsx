@@ -30,7 +30,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Where does the news on this site come from?',
-    a: 'The news section aggregates football headlines and short teasers from SportyTrader, refreshed automatically every two hours, and every card links to the original article on their site. We never republish full articles.',
+    a: 'Football News & Insights is syndicated from SportyTrader: the sync action pulls new stories as they appear on their site (every two hours, checked automatically), including headline, image, byline, date and the opening text of each article, and renders them in our own /news reader — so you read here, not on a dozen tabs. Every story is credited to SportyTrader and links to the original article for the remainder and any late updates. We never claim their reporting as our own.',
   },
   {
     q: 'Is this betting advice?',
