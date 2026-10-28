@@ -1,0 +1,90 @@
+{
+  "audit": "100k out-of-time holdout (READ-ONLY, nothing deployed)",
+  "generated_at": "2026-10-28T10:29:05Z",
+  "dataset_rows": 331949,
+  "train_rows": 232017,
+  "holdout_rows": 99912,
+  "eval_rows": 49956,
+  "split_at": "2019-08-10",
+  "holdout_span_days": 2626,
+  "mode": "single",
+  "distillation": {
+    "requested": false
+  },
+  "recency_half_life_days": 1460.0,
+  "raw_log_loss": 1.02042,
+  "isotonic_log_loss": 1.01581,
+  "calibration_used": true,
+  "eval_log_loss": 1.01581,
+  "eval_log_loss_ci95": [
+    1.01137,
+    1.02026
+  ],
+  "accuracy": 0.4912,
+  "brier": 0.20198,
+  "ece": 0.0113,
+  "market_log_loss": 0.99835,
+  "market_rows": 35485,
+  "market_closing_log_loss": 0.99791,
+  "market_closing_rows": 35485,
+  "alpha_fitted_raw": 0.2,
+  "alpha_damped": 0.2041,
+  "blended_market_log_loss": 0.9952,
+  "market_closing_accuracy": 0.5081,
+  "blended_accuracy": 0.5115,
+  "reliability_bins": [
+    {
+      "bin": "0.3-0.4",
+      "n": 11063,
+      "confidence": 0.376,
+      "accuracy": 0.3726
+    },
+    {
+      "bin": "0.4-0.5",
+      "n": 20760,
+      "confidence": 0.4444,
+      "accuracy": 0.4411
+    },
+    {
+      "bin": "0.5-0.6",
+      "n": 9464,
+      "confidence": 0.5463,
+      "accuracy": 0.5373
+    },
+    {
+      "bin": "0.6-0.7",
+      "n": 3487,
+      "confidence": 0.6451,
+      "accuracy": 0.6074
+    },
+    {
+      "bin": "0.7-0.8",
+      "n": 2242,
+      "confidence": 0.7417,
+      "accuracy": 0.6936
+    },
+    {
+      "bin": "0.8-0.9",
+      "n": 1641,
+      "confidence": 0.8481,
+      "accuracy": 0.8062
+    },
+    {
+      "bin": "0.9-1.0",
+      "n": 1299,
+      "confidence": 0.9554,
+      "accuracy": 0.9061
+    }
+  ],
+  "goals_brier": 0.246,
+  "btts_brier": 0.24833,
+  "o35_brier": 0.20354,
+  "train_seconds": 121.2,
+  "production_reference": {
+    "note": "production 180d holdout (DIFFERENT window \u2014 context only)",
+    "eval_log_loss": 1.01129,
+    "accuracy": 0.4827,
+    "blended_market_log_loss": 0.99491,
+    "split_at": "2026-04-21"
+  }
+}
