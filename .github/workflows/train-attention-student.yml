@@ -242,30 +242,6 @@ jobs:
             fi
           fi
           echo "outcome=$outcome" >> "$GITHUB_OUTPUT"
-
-          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
-          import json, os
-          p = os.path.join("ai", "data", "model_info.json")
-          try:
-              info = json.load(open(p))
-          except Exception:
-              print("model_info.json missing"); raise SystemExit
-          cal = info.get("calibration") or {}
-          rej = info.get("last_rejected") or {}
-          print("### Gate (retrain race)")
-          print(f"- model version: **{info.get('version')}** (`{str(info.get('git_sha'))[:8}`)")
-          for k in ("mode", "eval_log_loss", "market_log_loss", "blended_market_log_loss",
-                    "accuracy", "brier", "goals_brier", "split_at"):
-              if k in cal:
-                  print(f"- {k}: {cal[k]}")
-          if rej.get("decision") == "rejected":
-              print(f"- **gate: REJECTED** (ll {rej.get('baseline_eval_log_loss')} -> "
-                    f"{rej.get('new_eval_log_loss')}, delta {rej.get('delta_log_loss')}, "
-                    f"tolerance {rej.get('tolerance')}) — deployed model kept")
-          elif info.get("version"):
-              print(f"- gate: accepted (version {info.get('version')})")
-          PY
-
           exit "$rc"
 
       - name: Upload race log
@@ -307,3 +283,34 @@ jobs:
             git pull --rebase origin main
             git push
           fi
+
+      # Summary LAST and non-blocking on purpose: an earlier run died on an
+      # f-string typo here, and because the step ran under bash -e the failure
+      # also skipped the publish steps above.  continue-on-error + always()
+      # make a summary-only failure impossible to propagate.
+      - name: Gate summary
+        if: always()
+        continue-on-error: true
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, os
+          p = os.path.join("ai", "data", "model_info.json")
+          try:
+              info = json.load(open(p))
+          except Exception:
+              print("model_info.json missing"); raise SystemExit
+          cal = info.get("calibration") or {}
+          rej = info.get("last_rejected") or {}
+          print("### Gate (retrain race)")
+          print(f"- model version: **{info.get('version')}** (`{str(info.get('git_sha'))[:8]}`)")
+          for k in ("mode", "eval_log_loss", "market_log_loss", "blended_market_log_loss",
+                    "accuracy", "brier", "goals_brier", "split_at"):
+              if k in cal:
+                  print(f"- {k}: {cal[k]}")
+          if rej.get("decision") == "rejected":
+              print(f"- **gate: REJECTED** (ll {rej.get('baseline_eval_log_loss')} -> "
+                    f"{rej.get('new_eval_log_loss')}, delta {rej.get('delta_log_loss')}, "
+                    f"tolerance {rej.get('tolerance')}) — deployed model kept")
+          elif info.get("version"):
+              print(f"- gate: accepted (version {info.get('version')})")
+          PY
