@@ -27,7 +27,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'lab = shards+merge (Monte Carlo); realism = sim-vs-real validation suite; all = both'
+        description: 'lab = shards+merge (Monte Carlo); realism = sim-vs-real validation suite; compare = deployed vs lab vs market; all = lab+realism'
         default: 'lab'
       shards:
         description: 'Shards to run (max 20 = Free-plan concurrency cap)'
@@ -92,6 +92,10 @@ jobs:
       # filters, strict JSON serialisability of the full report.
       - name: Run test_realism.py
         run: python ai/experimental/test_realism.py
+      # Compare script primitives: proper log loss, alpha grid, paired
+      # bootstrap CI, production's damp_alpha formula.
+      - name: Run test_compare.py
+        run: python ai/experimental/test_compare.py
 
   shard:
     name: shard ${{ matrix.shard }}
@@ -303,4 +307,76 @@ jobs:
         if: steps.realism.outcome == 'failure'
         run: |
           echo "::error::realism validation FAILED — see the realism-report artifact (rules R1/R2/R4)."
+          exit 1
+
+  compare:
+    name: deployed vs lab vs market comparison
+    needs: tests
+    if: inputs.mode == 'compare' || inputs.mode == 'all'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      # The deployed pickle is gitignored (predict.yml restores it the same
+      # way); the compare must score the ACTUAL production model, not a
+      # retrain, so the reproduction delta vs the stored v7 gate is
+      # meaningful.
+      - name: Restore deployed model
+        uses: actions/cache/restore@v4
+        with:
+          path: ai/models/football_predictor.pkl
+          key: statwise-model-v2-${{ github.run_id }}-${{ hashFiles('ai/model/trainer.py', 'ai/model/features.py') }}
+          restore-keys: |
+            statwise-model-v2-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: ai/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ai/requirements.txt
+
+      # One frame, one split, proper log loss for every system, paired
+      # bootstrap CIs — the apples-to-apples the lab-vs-production numbers
+      # always lacked (see ai/sim/compare_production.py's docstring).
+      - name: Compare deployed vs lab vs market
+        id: compare
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          if [ ! -f ai/models/football_predictor.pkl ]; then
+            echo "::error::deployed pickle not restored from cache — cannot compare the production model"
+            exit 1
+          fi
+          python ai/sim/compare_production.py \
+            --out-dir ai/sim/reports --tag compare_v0 | tee compare.log
+
+      - name: Upload compare reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compare-report
+          path: |
+            ai/sim/reports/compare_v0.json
+            ai/sim/reports/compare_v0.md
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Verdict to the step summary
+        if: always()
+        run: |
+          if [ -f ai/sim/reports/compare_v0.md ]; then
+            { echo '## Production comparison (mode=compare)'; sed -n '/## Verdicts/,$p' ai/sim/reports/compare_v0.md; } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::compare report was not produced" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Fail when the comparison failed to run
+        if: steps.compare.outcome == 'failure'
+        run: |
+          echo "::error::compare_production.py failed — see the compare-report artifact / job log."
           exit 1
