@@ -1,26 +1,26 @@
 {
-  "version": 8,
-  "trained_at": "2026-10-28T08:15:17.581355Z",
-  "git_sha": "d517a1292df8",
+  "version": 9,
+  "trained_at": "2026-10-29T06:16:18.184399Z",
+  "git_sha": "17a649888b46",
   "total_matches": 331949,
-  "duration_seconds": 279.1,
+  "duration_seconds": 294.2,
   "previous": {
-    "version": 7,
-    "trained_at": "2026-10-27T19:57:03.714357Z",
-    "git_sha": "0f018efebf88"
+    "version": 8,
+    "trained_at": "2026-10-28T08:15:17.581355Z",
+    "git_sha": "d517a1292df8"
   },
   "baseline_comparison": {
-    "baseline_version": 7,
+    "baseline_version": 8,
     "baseline_eval_log_loss": 1.01129,
-    "new_eval_log_loss": 1.01129,
+    "new_eval_log_loss": 1.0035,
     "tolerance": 0.0005,
     "forced": false,
     "baseline_split_at": "2026-04-21",
     "split_at_shift_days": 0,
     "split_tolerance_days": 7,
     "comparable": true,
-    "delta_log_loss": 0.0,
-    "delta_accuracy": 0.0,
+    "delta_log_loss": -0.00779,
+    "delta_accuracy": 0.0209,
     "decision": "accepted"
   },
   "calibration": {
@@ -28,29 +28,32 @@
     "holdout_days": 180,
     "holdout_matches": 2250,
     "split_at": "2026-04-21",
-    "raw_log_loss": 1.01129,
-    "isotonic_log_loss": 1.0241,
+    "raw_log_loss": 1.0035,
+    "isotonic_log_loss": 1.01354,
     "calibration_used": false,
-    "eval_log_loss": 1.01129,
+    "eval_log_loss": 1.0035,
     "market_log_loss": 0.99908,
     "market_rows": 1282,
     "market_closing_log_loss": 0.99796,
     "market_closing_rows": 1282,
-    "accuracy": 0.4827,
-    "brier": 0.20191,
-    "goals_brier": 0.24,
-    "btts_brier": 0.24461,
-    "o35_brier": 0.22545,
-    "ece": 0.0275,
+    "accuracy": 0.5036,
+    "brier": 0.2,
+    "goals_brier": 0.23798,
+    "btts_brier": 0.24414,
+    "o35_brier": 0.22409,
+    "ece": 0.0313,
     "synth_labels": {
       "enabled": false
     },
-    "alpha_default": 0.35,
-    "alpha_fitted_raw": 0.35000000000000003,
+    "alpha_default": 0.368,
+    "alpha_fitted_raw": 0.45,
     "alpha_prior": 0.35,
-    "alpha_damp_weight": 0.5618,
-    "alpha_leagues": 8,
-    "blended_market_log_loss": 0.99491
+    "alpha_damp_weight": 0.1797,
+    "alpha_leagues": 0,
+    "alpha_fit_rows": 219,
+    "alpha_reported_on": "untouched later holdout half",
+    "blended_market_log_loss": 0.99263,
+    "blended_market_log_loss_perleague": 0.99263
   },
   "history": [
     {
@@ -132,6 +135,16 @@
       "holdout_days": 180,
       "split_at": "2026-04-21",
       "git_sha": "d517a1292df8"
+    },
+    {
+      "version": 9,
+      "trained_at": "2026-10-29T06:16:18.184399Z",
+      "mode": "single",
+      "eval_log_loss": 1.0035,
+      "accuracy": 0.5036,
+      "holdout_days": 180,
+      "split_at": "2026-04-21",
+      "git_sha": "17a649888b46"
     }
   ]
 }
