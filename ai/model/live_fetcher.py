@@ -838,7 +838,54 @@ def fetch_upcoming_matches(leagues: list[str] | None = None,
             if m.get("odds_home") and not seen[mid].get("odds_home"):
                 seen[mid] = m
 
-    unique = list(seen.values())
+    # Cross-SOURCE dedup.  Sources mint their own ids (espn_123 vs
+    # fdorg_575368), so the SAME fixture survives the id pass twice and the
+    # app renders it twice — once without odds, once with.  Collapse on the
+    # fixture itself (kickoff date + normalised team names) and keep the
+    # record that carries the most data.
+    def _rank(rec: dict) -> int:
+        return (1 if rec.get("odds_home") else 0) + \
+               (1 if rec.get("kickoff_time") else 0) + \
+               (1 if rec.get("league_slug") else 0)
+
+    def _fkey(rec: dict) -> tuple | None:
+        ko = str(rec.get("kickoff_time") or "")
+        if not ko or not rec.get("home_team") or not rec.get("away_team"):
+            return None
+        date = normalize_team_name(ko[:10])   # crude but total string key
+        return (ko[:10],
+                normalize_team_name(str(rec.get("home_team"))),
+                normalize_team_name(str(rec.get("away_team"))),
+                bool(rec.get("is_neutral")))
+
+    by_id = list(seen.values())
+    seen_fix: dict[tuple, dict] = {}
+    ordered: list[dict] = []
+    for m in by_id:
+        k = _fkey(m)
+        if k is None:
+            ordered.append(m)
+            continue
+        prev = seen_fix.get(k)
+        if prev is None:
+            seen_fix[k] = m
+            continue
+        if _rank(m) > _rank(prev):
+            # keep the richer record but retain the id the rest of the
+            # pipeline (settlement, odds sync) already knows about
+            m = {**prev, **{kk: vv for kk, vv in m.items() if vv}}
+            m["match_id"] = prev.get("match_id") or m.get("match_id")
+            m["dedup_sources"] = sorted(set(
+                [s for s in str(prev.get("dedup_sources") or "").split(",") if s]
+                + [str(prev.get("source") or ""), str(m.get("source") or "")]
+                - {""}))
+        seen_fix[k] = m
+    ordered.extend(seen_fix.values())
+    if len(ordered) < len(by_id):
+        logger.info(f"Cross-source dedup removed {len(by_id) - len(ordered)} "
+                    f"duplicate fixture(s) ({len(by_id)} -> {len(ordered)})")
+
+    unique = ordered
     unique.sort(key=lambda x: x.get("kickoff_time", ""))
 
     logger.info(f"Total upcoming matches (after dedup): {len(unique)}")

@@ -198,6 +198,16 @@ def get_ai_picks() -> list[dict]:
                 stats = {}
         if not stats.get("is_ai_pick"):
             continue
+        # ── Audit C-5 ────────────────────────────────────────────────────
+        # The published accumulator lands in app_settings, which the ANON
+        # key can read (supabase-schema.sql GRANT SELECT ON app_settings TO
+        # anon).  Every selection in it must therefore be FREE tier — as soon
+        # as a premium/vip/vvip AI Pick enters the payload, the paywall's
+        # core value is handed to anonymous users for free.  `tier` is
+        # assigned by model/predictor.py (TIER_DB: 'free' | 'premium' |
+        # 'vip' | 'vvip'); missing tier is treated as free.
+        if (p.get("tier") or "free") != "free":
+            continue
         if (p.get("status") or "upcoming") != "upcoming":
             continue
         kick = p.get("kickoff_time")

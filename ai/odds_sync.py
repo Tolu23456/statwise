@@ -414,8 +414,16 @@ def _classify(name: str, event: dict) -> str | None:
 
 
 def consensus(event: dict, market: str) -> dict | None:
-    """De-vig each bookmaker, average across books -> consensus probs/odds."""
+    """De-vig each bookmaker, average across books -> consensus probs/odds.
+
+    Returns both the vig-free consensus (``probs``/``odds``) and the RAW
+    average book price (``raw_odds``).  ``odds`` alone is a *fabricated*
+    price — 1/prob after removing the overround — so it must never be
+    written into a column the model or the retrain reads as a real market
+    price; that is what ``raw_odds`` is for.
+    """
     per_book = []
+    raw_per_book: dict[str, list[float]] = {"home": [], "draw": [], "away": []}
     best: dict[str, float] = {}
     for book in event.get("bookmakers") or []:
         for mkt in book.get("markets") or []:
@@ -436,6 +444,8 @@ def consensus(event: dict, market: str) -> dict | None:
                 if ok and len(imp) == 3:
                     s = sum(imp.values())
                     per_book.append({k: v / s for k, v in imp.items()})
+                    for k, p in imp.items():
+                        raw_per_book[k].append(1.0 / p)
             elif market == "totals":
                 imp = {}
                 ok = True
@@ -523,15 +533,23 @@ def _apply_market_odds(pred: dict, h2h: dict, meta: dict) -> bool:
         except Exception:
             stats = {}
 
-    odds = h2h.get("odds") or {}
+    odds = h2h.get("odds") or {}            # de-vigged, FABRICATED price
+    raw = h2h.get("best_odds") or {}        # the real best price on offer
     probs = h2h.get("probs") or {}
-    o_h, o_d, o_a = odds.get("home"), odds.get("draw"), odds.get("away")
+    # A real price is what a bettor can actually take: the best book price.
+    # Writing the de-vigged 1/prob into the price columns fed the model a
+    # price no book offers (and 1/prob can be BELOW 1.0).
+    o_h, o_d, o_a = (raw.get("home"), raw.get("draw"), raw.get("away"))
+    if not (o_h and o_d and o_a):
+        o_h, o_d, o_a = odds.get("home"), odds.get("draw"), odds.get("away")
     if not (o_h and o_d and o_a):
         return False
 
     stats["odds_home"] = float(o_h)
     stats["odds_draw"] = float(o_d)
     stats["odds_away"] = float(o_a)
+    stats["market_probs"] = {k: round(float(v), 4) for k, v in probs.items()} \
+        if probs else stats.get("market_probs")
 
     # Value edge: our model's probability for the pick minus the market's
     # implied probability (both vig-free, because `probs` is de-vigged).
@@ -547,13 +565,18 @@ def _apply_market_odds(pred: dict, h2h: dict, meta: dict) -> bool:
     if model_prob is not None:
         market_p = probs.get(["home", "draw", "away"][idx])
         if market_p:
-            stats["value_edge"] = round(float(model_prob) - float(market_p) * 100.0, 1)
+            # percentage-POINT gap.  The old expression
+            # `model_prob - market_p * 100.0` computed a nonsense number
+            # (model_prob is 0..1, market_p was scaled by 100).
+            stats["value_edge"] = round((float(model_prob) - float(market_p)) * 100.0, 1)
 
     details = stats.get("details") or {}
     details["market"] = {
         "as_of": _iso(_now()),
         "commence_time": meta.get("commence_time"),
-        "probs": probs, "odds": odds,
+        # `probs`/`odds` are vig-free (the modelling view); `raw_odds` are the
+        # actual best book prices written to the row's price columns.
+        "probs": probs, "odds": odds, "raw_odds": raw,
         "best_odds": h2h.get("best_odds"),
         "totals": (h2h.get("totals") or {}).get("totals"),
         "bookmakers": h2h.get("books"),

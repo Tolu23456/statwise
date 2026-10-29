@@ -565,7 +565,7 @@ class FootballPredictor:
                        "wind_kmh": weather.get("wind_speed_kmh", weather.get("wind_kmh")),
                        "weather_code": weather.get("weather_code")}
         X = self.feature_pipe.build_features(
-            [{"home": home, "away": away, "league": league,
+            [{"home": home_key, "away": away_key, "league": league,
               # the fixture's own date: without it the travel/rest slots read
               # NaT (they are the only features keyed on kickoff, not "now")
               "date": match_date,
@@ -585,7 +585,7 @@ class FootballPredictor:
         # ONCE here and hand every head the same extended row; LightGBM pipes
         # never set the flag, so their serving path is byte-identical.
         if getattr(self._outcome_pipe, "needs_teacher", False):
-            X = self._outcome_pipe.extend(X, [home], [away], league)
+            X = self._outcome_pipe.extend(X, [home_key], [away_key], league)
 
         p_outcome_raw = self._outcome_pipe.predict_proba(X)[0]
         p_goals = self._goals_pipe.predict_proba(X)[0]

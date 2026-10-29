@@ -119,9 +119,24 @@ class FeaturePipeline:
             else pd.Series(['all'] * len(df), index=df.index)
         return s.fillna('all').map(canon_league)
 
-    def fit(self, df: pd.DataFrame) -> "FeaturePipeline":
+    def fit(self, df: pd.DataFrame, league_stats_mask=None) -> "FeaturePipeline":
         logger.info(f"Fitting Pico pipeline on {len(df):,} matches…")
+        # Optional mask over the league-prior rows.  League aggregates
+        # (avg_goals, attack multipliers, home_win_rate…) are global scalars
+        # read by EVERY row, so fitting them on the full frame leaks holdout
+        # outcomes into training.  Callers that hold out a window pass the
+        # pre-split mask and the priors are fit on train rows only.
+        _lg_mask = None
+        if league_stats_mask is not None and len(league_stats_mask) == len(df):
+            _lg_mask = pd.Series(np.asarray(league_stats_mask, dtype=bool),
+                                 index=df.index)
         df = df.dropna(subset=['home_team', 'away_team', 'home_goals', 'away_goals'])
+        if _lg_mask is not None:
+            _lg_rows = df.loc[_lg_mask.reindex(df.index, fill_value=False).to_numpy()]
+            if len(_lg_rows) < 100:      # degenerate mask -> fall back
+                _lg_rows = df
+        else:
+            _lg_rows = df
 
         # League mapping.  Canonicalised first: the fixture feeds spell six of
         # their competitions differently from the season CSVs (efl-championship
@@ -170,7 +185,7 @@ class FeaturePipeline:
         for t, a, d in zip(hts, att_h_bulk, def_h_bulk): self._att_elo[t] = a; self._def_elo[t] = d
         for t, a, d in zip(ats, att_a_bulk, def_a_bulk): self._att_elo[t] = a; self._def_elo[t] = d
 
-        groups = df.groupby(league_series)
+        groups = _lg_rows.groupby(self._league_col(_lg_rows))
         for slug, grp in groups:
             self._league_stats[slug] = {
                 'avg_goals': (grp['home_goals'] + grp['away_goals']).mean(),
@@ -206,15 +221,21 @@ class FeaturePipeline:
 
         all_pre_att_def = np.zeros((len(df), 4), dtype=np.float64)
         all_pre_att_def[:, 0] = self._att_pre_home; all_pre_att_def[:, 1] = self._def_pre_home; all_pre_att_def[:, 2] = self._att_pre_away; all_pre_att_def[:, 3] = self._def_pre_away
-        all_odds = df[['odds_home', 'odds_draw', 'odds_away']].fillna(0).values.astype(np.float64)
+        all_odds = df[['odds_home', 'odds_draw', 'odds_away']].fillna(0).to_numpy(dtype=np.float64)
         # Closing consensus (plan 1.4 "prefer closing odds when available"):
         # dataset_cleaner.cpp already prefers the *C columns (B365CH/AvgCH…),
         # and avg_odds_* is the cross-book average of those closing prices —
         # the same kind of consensus price odds_sync feeds at inference time.
         # Prefer it where present, fall back to the single-book price so the
         # row keeps odds instead of losing them (72% -> 48% coverage otherwise).
-        _avg = df[['avg_odds_home', 'avg_odds_draw', 'avg_odds_away']].fillna(0).values.astype(np.float64)
-        all_odds_closing = np.where(_avg > 1.01, _avg, all_odds)
+        _avg_cols = ['avg_odds_home', 'avg_odds_draw', 'avg_odds_away']
+        _avg = df.reindex(columns=_avg_cols).apply(pd.to_numeric, errors='coerce').fillna(0).to_numpy(dtype=np.float64)
+        # C++ reads `od` as row-major (`od + idx*3`).  pandas returns a
+        # Fortran-ordered block for a multi-column slice, so without the copy
+        # the bulk engine read three HOME odds from three different matches
+        # instead of one match's H/D/A prices.  ascontiguousarray is the fix.
+        all_odds_closing = np.ascontiguousarray(np.where(_avg > 1.01, _avg, all_odds))
+        all_odds = np.ascontiguousarray(all_odds)
         all_league_stats = np.zeros((len(df), 6), dtype=np.float64)
         for i, slug in enumerate(league_series):
             ls = self._league_stats.get(slug, {'avg_goals': 2.6, 'home_attack': 1.0, 'away_attack': 1.0, 'home_adv_factor': 1.25, 'home_win_rate': 0.46, 'draw_rate': 0.24})
@@ -238,7 +259,7 @@ class FeaturePipeline:
             all_squad_v[:, 5] = df['away_lineup_rating'].fillna(70).values
 
         # 1. Continuous block (160)
-        X_cont = compute_all_features_bulk_v6(np.array(all_idx, dtype=np.int32), all_gh, all_ga, all_ts, all_h_idx, all_a_idx, all_pre_elos, all_pre_att_def, all_odds, all_league_stats, np.array(flat_m, dtype=np.int32), np.array(t_ptr, dtype=np.int32), np.array(t_cnt, dtype=np.int32), self._elo_pre_home.astype(np.float64), self._elo_pre_away.astype(np.float64), all_squad_v, _LOOKBACK, self.home_advantage)
+        X_cont = compute_all_features_bulk_v6(np.array(all_idx, dtype=np.int32), all_gh, all_ga, all_ts, all_h_idx, all_a_idx, all_pre_elos, all_pre_att_def, all_odds_closing, all_league_stats, np.array(flat_m, dtype=np.int32), np.array(t_ptr, dtype=np.int32), np.array(t_cnt, dtype=np.int32), self._elo_pre_home.astype(np.float64), self._elo_pre_away.astype(np.float64), all_squad_v, _LOOKBACK, self.home_advantage)
         X_cont = np.asarray(X_cont, dtype=np.float64)
 
         # 1b. Weather at match time (slots 133-140) — enriched via ai/enrich_weather_history.py
@@ -419,7 +440,17 @@ class FeaturePipeline:
 
             mg = np.array([0, 0], dtype=np.int32)
             od = np.array([m.get('odds_home', 0), m.get('odds_draw', 0), m.get('odds_away', 0)], dtype=np.float64)
+            # Use kickoff time, not wall-clock "now": rest days / season stage
+            # must describe the fixture, and using now() made the feature
+            # depend on when the cron happened to run.
             cts = pd.Timestamp.now().timestamp()
+            if m.get('date'):
+                try:
+                    _cts_ts = pd.Timestamp(m['date'])
+                    if pd.notna(_cts_ts):
+                        cts = _cts_ts.timestamp()
+                except Exception:
+                    pass
 
             ls_d = self._league_stats.get(league, {'avg_goals': 2.6, 'home_attack': 1.0, 'away_attack': 1.0, 'home_adv_factor': 1.25, 'home_win_rate': 0.46, 'draw_rate': 0.24})
             ls = np.array([ls_d['avg_goals'], ls_d['home_attack'], ls_d['away_attack'], ls_d['home_adv_factor'], ls_d['home_win_rate'], ls_d['draw_rate']], dtype=np.float64)
@@ -444,7 +475,17 @@ class FeaturePipeline:
                 gh = h['home_goals'].values.astype(np.int32); ga = h['away_goals'].values.astype(np.int32)
                 wh = (h['home_team'] == t).values.astype(np.int32)
                 ts_ = pd.to_datetime(h['date']).values.astype(np.float64) / 1e9
-                eh = np.full(len(h), self._elo_ratings.get(t, 1500.0), dtype=np.float64)
+                # Per-match Elo of THIS team, matching the bulk training path.
+                # A constant "current rating" vector made Elo volatility
+                # identically zero at serving but non-zero in training.
+                if 'elo_home' in h and 'elo_away' in h:
+                    _eh = np.where(h['home_team'].to_numpy() == t,
+                                   pd.to_numeric(h['elo_home'], errors='coerce').to_numpy(),
+                                   pd.to_numeric(h['elo_away'], errors='coerce').to_numpy())
+                    eh = np.nan_to_num(_eh.astype(np.float64),
+                                       nan=self._elo_ratings.get(t, 1500.0))
+                else:
+                    eh = np.full(len(h), self._elo_ratings.get(t, 1500.0), dtype=np.float64)
                 return len(h), gh, ga, wh, ts_, eh
 
             nh, ghh, gah, whh, tsh, ehh = get_hist(home); na, gha, gaa, wha, tsa, eha = get_hist(away)
@@ -457,7 +498,14 @@ class FeaturePipeline:
             squad_v = np.array([m.get('home_squad_value', 0), m.get('away_squad_value', 0), m.get('home_avg_age', 25), m.get('away_avg_age', 25), m.get('home_lineup_rating', 70), m.get('away_lineup_rating', 70)], dtype=np.float64)
 
             feat = compute_all_features_v6(pe, pad, mg, od, cts, ls, nh, ghh, gah, whh, tsh, ehh, na, gha, gaa, wha, tsa, eha, n2, gh2, ga2, wh2, self.home_advantage, squad_v)
-            if feat is None: feat = np.zeros(160)
+            if feat is None:
+                # A missing libstatwise.so used to yield np.zeros(160): every
+                # prediction then ran on a blank feature row instead of failing.
+                raise RuntimeError(
+                    "libstatwise.so could not be loaded — build it with "
+                    "`make -C ai/core` before predicting. Refusing to emit "
+                    "predictions from zeroed features."
+                )
             feat = np.asarray(feat, dtype=np.float64)
             # Weather at match time (slots 133-140) — forecast from Open-Meteo via team_venues
             if feat.shape[0] >= 141:

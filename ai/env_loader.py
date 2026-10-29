@@ -30,8 +30,18 @@ def load_dotenv(path: str | os.PathLike[str] | None = None) -> bool:
         if not line or line.startswith("#") or "=" not in line:
             continue
         key, value = line.split("=", 1)
+        # `export FOO=bar` is valid in a shell rc; treat it as FOO.
+        if key.startswith("export "):
+            key = key[len("export "):]
         key = key.strip()
         if not key:
             continue
-        os.environ.setdefault(key, value.strip().strip('"').strip("'"))
+        value = value.strip()
+        # Strip a trailing comment ONLY when it is preceded by whitespace,
+        # so `FOO=https://x/#frag` keeps its fragment but `FOO=bar  # note`
+        # loses the note.
+        if " #" in value:
+            value = value.split(" #", 1)[0].rstrip()
+        value = value.strip().strip('"').strip("'")
+        os.environ.setdefault(key, value)
     return True

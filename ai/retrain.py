@@ -286,11 +286,14 @@ def run(force: bool = False) -> bool:
     # Features are built ONCE through a chronological feature state; the
     # stacking ensemble trains only on rows BEFORE the holdout window, the
     # calibrator/alpha/metrics come from the holdout (first half calibrates,
-    # second half evaluates), then Stage B refits the raw stacks on ALL rows
-    # keeping that honest calibrator.  STAGE_B=0 skips the refit (~half time).
-    # KNOWN SMALL LEAK: league-level aggregates are fit on the full frame
-    # (<1% of their signal sits inside a 90d holdout); per-row ratings are
-    # strictly chronological.
+    # second half evaluates).  STAGE_B refits the raw stacks on the TRAIN
+    # rows again and then re-fits the isotonic calibrator on the WHOLE
+    # holdout (selection already happened on the later half, so the extra
+    # calibration rows are no longer needed for evaluation).  STAGE_B=0 skips
+    # the refit (~half time).
+    # League-level aggregates are fit on pre-split rows only (see
+    # feature_pipe.fit(league_stats_mask=…)); per-row ratings are strictly
+    # chronological.
     import numpy as np
     from sklearn.isotonic import IsotonicRegression
     from sklearn.metrics import log_loss
@@ -304,7 +307,10 @@ def run(force: bool = False) -> bool:
     logger.info("Building feature state (single pass over full frame)…")
     t0f = time.time()
     predictor = FootballPredictor()
-    predictor.feature_pipe.fit(df)
+    # League priors are global scalars, so fitting them on the full frame
+    # would leak holdout outcomes (the "KNOWN SMALL LEAK" noted below).
+    # Fit them on pre-split rows only; per-row Elo/form stay chronological.
+    predictor.feature_pipe.fit(df, league_stats_mask=(dates <= split_at).to_numpy())
     X_all, y_all, g_all, d_all = predictor.feature_pipe.build_training_set(df)
     X_all = np.nan_to_num(X_all, nan=0.0, posinf=1e6, neginf=-1e6).astype(np.float32, copy=False)
     meta = getattr(predictor.feature_pipe, "last_meta", {}) or {}
@@ -394,7 +400,14 @@ def run(force: bool = False) -> bool:
         leagues_h = meta.get("leagues")
         leagues_h = leagues_h[m_ho] if leagues_h is not None else np.array(["all"] * len(Xh))
 
-        mid = max(len(yh) // 2, 100)
+        # Three chronological slices of the holdout, so the calibrator and the
+        # blend weight are never chosen on the rows that report the metrics:
+        #   [0, a_lo)   fit isotonic
+        #   [a_lo, mid) choose raw-vs-calibrated ("sel" slice) + fit alpha
+        #   [mid,  )    report every deployed metric (never used to choose)
+        n_ho = len(yh)
+        mid = max(n_ho // 2, 100)
+        a_lo = max(int(mid * 0.7), 100)
         y_ev = yh[mid:]
         o_ev = odds_h[mid:]
         o_ev_c = odds_close_h[mid:]
@@ -428,12 +441,16 @@ def run(force: bool = False) -> bool:
                 gc.collect()
                 continue
 
-            # calibrate on the EARLIER holdout half, evaluate on the LATER half
+            # Fit isotonic on [0, a_lo); choose raw-vs-calibrated on the SEPARATE
+            # [a_lo, mid) slice; report every metric on the untouched later half.
             cals = []
             for k in range(3):
                 iso = IsotonicRegression(out_of_bounds="clip")
-                iso.fit(raw_h[:mid, k], (yh[:mid] == k).astype(float))
+                iso.fit(raw_h[:a_lo, k], (yh[:a_lo] == k).astype(float))
                 cals.append(iso)
+            p_cal_sel = _apply_cal(raw_h[a_lo:mid], cals)
+            p_raw_sel = raw_h[a_lo:mid]
+            use_cal = _ll(p_cal_sel, yh[a_lo:mid]) < _ll(p_raw_sel, yh[a_lo:mid])
             p_cal = _apply_cal(raw_h[mid:], cals)
             p_raw = raw_h[mid:]
             gp = cand._goals_pipe.predict_proba(Xh[mid:])[:, 1]
@@ -450,11 +467,10 @@ def run(force: bool = False) -> bool:
                 o35_brier = float(((op - oh[mid:]) ** 2).mean())
             ll_raw = _ll(p_raw, y_ev)
             ll_cal = _ll(p_cal, y_ev)
-            # 1,440 eval rows are not enough for per-class isotonic to pay off
-            # every time — only deploy the calibrator if it wins out of sample.
-            use_cal = ll_cal < ll_raw
+            # use_cal was decided on the SEL slice, so the eval log loss below is
+            # a single arm scored out of sample, not a min() over two arms.
             p_ev = p_cal if use_cal else p_raw
-            ll_eval = min(ll_raw, ll_cal)
+            ll_eval = ll_cal if use_cal else ll_raw
             acc = float((p_ev.argmax(axis=1) == y_ev).mean())
             _btxt = (f"btts_brier={btts_brier:.5f}" if btts_brier is not None
                      else "btts_brier=n/a")
@@ -475,6 +491,7 @@ def run(force: bool = False) -> bool:
                     del best["pred"]
                 best = dict(mode=mode, pred=cand, raw=raw_h,
                             calibs=cals if use_cal else None, p_ev=p_ev,
+                            p_sel=(p_cal_sel if use_cal else p_raw_sel),
                             ll=ll_eval, ll_raw=ll_raw, ll_cal=ll_cal,
                             use_cal=use_cal, goals_brier=goals_brier,
                             btts_brier=btts_brier, o35_brier=o35_brier)
@@ -517,14 +534,16 @@ def run(force: bool = False) -> bool:
                     cals_a = []
                     for k in range(3):
                         iso = IsotonicRegression(out_of_bounds="clip")
-                        iso.fit(raw_a[:mid, k], (yh[:mid] == k).astype(float))
+                        iso.fit(raw_a[:a_lo, k], (yh[:a_lo] == k).astype(float))
                         cals_a.append(iso)
+                    use_cal_a = (_ll(_apply_cal(raw_a[a_lo:mid], cals_a), yh[a_lo:mid])
+                                 < _ll(raw_a[a_lo:mid], yh[a_lo:mid]))
                     p_cal_a = _apply_cal(raw_a[mid:], cals_a)
                     p_raw_a = raw_a[mid:]
+                    p_cal_a_sel = _apply_cal(raw_a[a_lo:mid], cals_a)
                     ll_raw_a, ll_cal_a = _ll(p_raw_a, y_ev), _ll(p_cal_a, y_ev)
-                    use_cal_a = ll_cal_a < ll_raw_a
                     p_ev_a = p_cal_a if use_cal_a else p_raw_a
-                    ll_a = min(ll_raw_a, ll_cal_a)
+                    ll_a = ll_cal_a if use_cal_a else ll_raw_a
                     goals_a = float(
                         ((cand._goals_pipe.predict_proba(Xh_e[mid:])[:, 1]
                           - gh[mid:]) ** 2).mean())
@@ -549,7 +568,10 @@ def run(force: bool = False) -> bool:
                             del best["pred"]
                         best = dict(mode="attn", pred=cand, raw=raw_a,
                                     calibs=cals_a if use_cal_a else None,
-                                    p_ev=p_ev_a, ll=ll_a, ll_raw=ll_raw_a,
+                                    p_ev=p_ev_a,
+                                    p_sel=(p_cal_a_sel if use_cal_a
+                                           else raw_a[a_lo:mid]),
+                                    ll=ll_a, ll_raw=ll_raw_a,
                                     ll_cal=ll_cal_a, use_cal=use_cal_a,
                                     goals_brier=goals_a, btts_brier=btts_a,
                                     o35_brier=o35_a)
@@ -629,21 +651,35 @@ def run(force: bool = False) -> bool:
         ALPHA_PRIOR = float(os.environ.get("ALPHA_PRIOR", "0.35") or 0.35)
         ALPHA_PRIOR_K = float(os.environ.get("ALPHA_PRIOR_K", "1000") or 1000)
 
+        # The blend weight is FIT on the sel slice and REPORTED on the eval
+        # slice — fitting and scoring alpha on the same rows made the blended
+        # headline number in-sample for the weight it reports.
+        p_sel = best.get("p_sel")
+        if p_sel is None:                      # attn candidate: raw sel slice
+            p_sel = (raw_h[a_lo:mid] if not best["use_cal"]
+                     else _apply_cal(raw_h[a_lo:mid], calibs))
+        y_sel = yh[a_lo:mid]
+        mkt_sel = _devig(odds_h[a_lo:mid])
+        mkt_sel_c = _devig(odds_close_h[a_lo:mid])
+        valid_sel = _valid_odds(odds_h[a_lo:mid])
+        valid_sel_c = _valid_odds(odds_close_h[a_lo:mid])
+        leagues_sel = leagues_h[a_lo:mid]
+
         def _best_alpha(mask):
-            m = mask & valid_c
+            m = mask & valid_sel_c
             if int(m.sum()) < 50:
                 return None
             best_a, best_ll = None, float("inf")
             for a in np.arange(0.0, 1.001, 0.05):
-                ll = _ll(a * p_ev[m] + (1.0 - a) * mkt_c[m], y_ev[m])
+                ll = _ll(a * p_sel[m] + (1.0 - a) * mkt_sel_c[m], y_sel[m])
                 if ll < best_ll:
                     best_ll, best_a = ll, float(a)
             return float(best_a)
 
         alphas: dict = {}
-        n_a = int(valid_c.sum())
+        n_a = int(valid_sel_c.sum())
         damp_w = (n_a / (n_a + ALPHA_PRIOR_K)) if n_a and ALPHA_PRIOR_K > 0 else 1.0
-        ga_raw = _best_alpha(np.ones(len(y_ev), dtype=bool))
+        ga_raw = _best_alpha(np.ones(len(y_sel), dtype=bool))
         if ga_raw is not None:
             alphas["_default"] = damp_alpha(ga_raw, n_a, ALPHA_PRIOR, ALPHA_PRIOR_K)
         n_league = 0
@@ -652,9 +688,9 @@ def run(force: bool = False) -> bool:
         # trusting it fully — measured a tie against the global alpha, so this
         # stays conservative rather than being removed.
         SHRINK_K = 300.0
-        for slug in pd.unique(leagues_h[mid:]):
-            mask = (leagues_h[mid:] == slug)
-            n_l = int((mask & valid_c).sum())
+        for slug in pd.unique(leagues_sel):
+            mask = (leagues_sel == slug)
+            n_l = int((mask & valid_sel_c).sum())
             if n_l >= 60:
                 a = _best_alpha(mask)
                 if a is not None:
@@ -667,11 +703,18 @@ def run(force: bool = False) -> bool:
         metrics["alpha_prior"] = ALPHA_PRIOR
         metrics["alpha_damp_weight"] = round(float(damp_w), 4)
         metrics["alpha_leagues"] = n_league
+        metrics["alpha_fit_rows"] = int(n_a)
+        metrics["alpha_reported_on"] = "untouched later holdout half"
         if int(valid_c.sum()) >= 50:
             m = valid_c
             a_dep = alphas.get("_default", ALPHA_PRIOR)
             metrics["blended_market_log_loss"] = round(
                 _ll(a_dep * p_ev[m] + (1.0 - a_dep) * mkt_c[m], y_ev[m]), 5)
+            # the per-league weights, actually applied as serving does
+            _p_le = np.array([alphas.get(str(lg), a_dep) for lg in leagues_h[mid:]])
+            metrics["blended_market_log_loss_perleague"] = round(
+                _ll(_p_le[m, None] * p_ev[m] + (1.0 - _p_le[m, None]) * mkt_c[m],
+                    y_ev[m]), 5)
         logger.info("[OOT] " + json.dumps(metrics))
 
         # The attention candidate never reaches Stage B: its heads ARE the
@@ -681,28 +724,35 @@ def run(force: bool = False) -> bool:
             logger.info("Stage B skipped for the attention candidate")
             stage_b = False
         if stage_b:
-            logger.info(f"Stage B: refitting '{mode}' on FULL dataset "
-                        "(keeping holdout calibrator + alphas)…")
+            logger.info(f"Stage B: refitting '{mode}' on the TRAIN rows "
+                        "and re-fitting the isotonic on the full holdout…")
             best.pop("pred", None)
             del pred_a
             gc.collect()
             t2 = time.time()
             try:
-                w_full = _recency_weights(np.ones(len(d_all), dtype=bool))
-                aux_full = {"y_btts": meta.get("y_btts"),
-                            "y_o35": meta.get("y_o35")}
-                X_all_s, y_all_s, g_all_s, w_full, _ = _distill_soft_labels(
-                    X_all, y_all, g_all, w_full, meta.get("home"),
-                    meta.get("away"), meta.get("leagues"), split_at, "stage_b",
-                    aux=aux_full)
-                predictor.fit_stacks(X_all_s, y_all_s, g_all_s, calibrate=False,
-                                     mode=mode, sample_weight=w_full,
-                                     y_btts=aux_full["y_btts"],
-                                     y_o35=aux_full["y_o35"])
+                # Train rows only.  Training on the full frame would put the
+                # holdout (which fitted both the calibrator and the alpha)
+                # back into the training set and silently invalidate both —
+                # the deployed probabilities would then be uncalibrated
+                # numbers reported as calibrated ones.
+                predictor.fit_stacks(Xt, yt, gt, calibrate=False,
+                                     mode=mode, sample_weight=w_tr,
+                                     y_btts=aux_tr["y_btts"],
+                                     y_o35=aux_tr["y_o35"])
+                if calibs is not None:
+                    # With model selection already settled, the WHOLE holdout
+                    # can now be reused for calibration (2x rows).
+                    raw_sb = predictor._outcome_pipe.predict_proba(Xh)
+                    calibs = [IsotonicRegression(out_of_bounds="clip")
+                              .fit(raw_sb[:, k], (yh == k).astype(float))
+                              for k in range(3)]
+                    metrics["stage_b_calibrator"] = "full-holdout isotonic"
             except Exception as e:
                 logger.error(f"Stage B training failed: {e}")
                 return False
             logger.info(f"Stage B train done in {time.time() - t2:.1f}s")
+            metrics["stage_b"] = True
             predictor.attach_calibration(calibs, alphas, metrics)
         else:
             logger.info(f"STAGE_B=0 — deploying the Stage A '{mode}' model as-is")

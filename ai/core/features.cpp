@@ -308,12 +308,31 @@ void compute_all_features_bulk_v6(const int* ti, int nt, const int* agh, const i
     for (int i=0; i<nt; ++i) {
         int idx=ti[i], ht=ahi[idx], at=aai[idx];
         int hh_idx[1024], ah_idx[1024]; double ehh_b[1024], eha_b[1024]; int nh=0, na=0;
-        int p_h=tmp[ht], c_h=tmc[ht];
-        for (int j=0; j<c_h && nh<1024; ++j) { int mid=tmi[p_h+j]; if(mid<idx) { hh_idx[nh]=mid; ehh_b[nh]=ahe[mid]; nh++; } else break; }
-        if (nh > lb) { int sh = nh - lb; for(int j=0; j<lb; ++j) { hh_idx[j]=hh_idx[j+sh]; ehh_b[j]=ehh_b[j+sh]; } nh = lb; }
-        int p_a=tmp[at], c_a=tmc[at];
-        for (int j=0; j<c_a && na<1024; ++j) { int mid=tmi[p_a+j]; if(mid<idx) { ah_idx[na]=mid; eha_b[na]=ahe[mid]; na++; } else break; }
-        if (na > lb) { int sh = na - lb; for(int j=0; j<lb; ++j) { ah_idx[j]=ah_idx[j+sh]; eha_b[j]=eha_b[j+sh]; } na = lb; }
+        // Keep the MOST RECENT lb matches.  The old code collected the first
+        // 1024 (i.e. the OLDEST) prior matches and only then trimmed, so any
+        // team with >1024 matches had every recent result silently dropped.
+        // tmi is ordered oldest -> newest, so find the prior-match count first
+        // and start at max(0, count - lb).
+        int p_h=tmp[ht], c_h=tmc[ht], nprior_h=0;
+        for (int j=0; j<c_h; ++j) { if(tmi[p_h+j] < idx) nprior_h++; else break; }
+        int start_h = (nprior_h > lb) ? (nprior_h - lb) : 0;
+        for (int j=start_h; j<nprior_h; ++j) {
+            int mid=tmi[p_h+j];
+            hh_idx[nh]=mid;
+            // The team's own pre-match Elo: elo_home when it was the home side,
+            // elo_away otherwise (never the opponent's rating).
+            ehh_b[nh] = (ahi[mid]==ht) ? ahe[mid] : aae[mid];
+            nh++;
+        }
+        int p_a=tmp[at], c_a=tmc[at], nprior_a=0;
+        for (int j=0; j<c_a; ++j) { if(tmi[p_a+j] < idx) nprior_a++; else break; }
+        int start_a = (nprior_a > lb) ? (nprior_a - lb) : 0;
+        for (int j=start_a; j<nprior_a; ++j) {
+            int mid=tmi[p_a+j];
+            ah_idx[na]=mid;
+            eha_b[na] = (ahi[mid]==at) ? ahe[mid] : aae[mid];
+            na++;
+        }
         int h2_idx[256], n2=0; int max_h2 = (nh < na) ? nh : na;
         for (int j=0; j<max_h2 && n2<256; ++j) { int m = (nh < na) ? hh_idx[j] : ah_idx[j]; if((ahi[m]==ht&&aai[m]==at)||(ahi[m]==at&&aai[m]==ht)) h2_idx[n2++] = m; }
         int ghh[1024], gah[1024], whh[1024]; double tsh[1024];

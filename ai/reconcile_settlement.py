@@ -178,17 +178,30 @@ def main(argv: list[str]) -> int:
                 settled += 1
                 continue
             try:
-                sb.table("predictions").update(
-                    {
-                        "actual_result": label,
-                        "home_score": hs,
-                        "away_score": as_,
-                        "status": "completed",
-                        "settled_at": now.replace(microsecond=0).isoformat()
-                        .replace("+00:00", "Z"),
-                    }
-                ).eq("id", p["id"]).execute()
-                settled += 1
+                # Status-guarded, idempotent (audit M-16): only flip rows still
+                # awaiting settlement; a concurrent run that already completed
+                # the row makes this a no-op instead of a duplicate write.
+                res = (
+                    sb.table("predictions")
+                    .update(
+                        {
+                            "actual_result": label,
+                            "home_score": hs,
+                            "away_score": as_,
+                            "status": "completed",
+                            "settled_at": now.replace(microsecond=0).isoformat()
+                            .replace("+00:00", "Z"),
+                        }
+                    )
+                    .eq("id", p["id"])
+                    .in_("status", ["upcoming", "live"])
+                    .execute()
+                )
+                if res.data:
+                    settled += 1
+                else:
+                    logger.info("  %s vs %s already settled concurrently — skipped",
+                                p.get("home_team"), p.get("away_team"))
             except Exception as e:  # noqa: BLE001
                 logger.warning("  update failed for %s: %s",
                                p.get("match_title"), e)
@@ -205,13 +218,25 @@ def main(argv: list[str]) -> int:
                 voided += 1
                 continue
             try:
-                sb.table("predictions").update(
-                    {
-                        "status": "void",
-                        "actual_result": "Unresolved",
-                    }
-                ).eq("id", p["id"]).execute()
-                voided += 1
+                # Status-guarded (audit M-16): only void rows still awaiting
+                # settlement — never overwrite a row a concurrent run resolved.
+                res = (
+                    sb.table("predictions")
+                    .update(
+                        {
+                            "status": "void",
+                            "actual_result": "Unresolved",
+                        }
+                    )
+                    .eq("id", p["id"])
+                    .in_("status", ["upcoming", "live"])
+                    .execute()
+                )
+                if res.data:
+                    voided += 1
+                else:
+                    logger.info("  %s vs %s already settled concurrently — not voided",
+                                p.get("home_team"), p.get("away_team"))
             except Exception as e:  # noqa: BLE001
                 logger.warning("  void failed for %s: %s",
                                p.get("match_title"), e)

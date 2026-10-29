@@ -4,7 +4,7 @@ upcoming matches, then pushes them to Supabase.
 Also handles backtesting: settling past predictions with actual results.
 """
 from __future__ import annotations
-import os, sys, logging, datetime
+import os, sys, json, logging, datetime
 import pandas as pd
 from typing import Optional
 
@@ -425,6 +425,38 @@ class PredictionEngine:
             logger.error("Supabase client unavailable – predictions not saved.")
             return 0
 
+        # enrich_match_details.py writes team_stats/details into the SAME
+        # JSON column.  A full-row upsert from here silently erased that
+        # enrichment on every predict run (4x/day).  One batched read first,
+        # then merge so pico's keys win and everything else survives.
+        existing: dict[str, dict] = {}
+        wanted = {str(p.get("match_id")) for p in predictions if p.get("match_id")}
+        try:
+            page = 0
+            while wanted and page < 100:
+                q = sb.table("predictions").select("match_id,stats").in_(
+                    "match_id", list(wanted)).limit(1000)
+                if page:
+                    q = q.range(page * 1000, (page + 1) * 1000 - 1)
+                got = q.execute().data or []
+                if not got:
+                    break
+                for r in got:
+                    st = r.get("stats")
+                    if isinstance(st, str):
+                        try:
+                            st = json.loads(st)
+                        except Exception:
+                            st = None
+                    existing[str(r.get("match_id"))] = st if isinstance(st, dict) else {}
+                if len(got) < 1000:
+                    break
+                page += 1
+        except Exception as e:
+            logger.warning(f"Could not read existing stats for merge ({e}) "
+                           "— enrichment keys may be overwritten this run")
+            existing = {}
+
         saved = 0
         refused = 0
         for p in predictions:
@@ -437,6 +469,11 @@ class PredictionEngine:
                         f"prob_home — model output missing, not a real prediction."
                     )
                     continue
+                prev = existing.get(str(row.get("match_id"))) or {}
+                if prev:
+                    merged = {**prev, **row["stats"]}
+                    merged["writer"] = row["stats"].get("writer", "pico")
+                    row["stats"] = merged
                 sb.table("predictions").upsert(row, on_conflict="match_id").execute()
                 saved += 1
             except Exception as e:

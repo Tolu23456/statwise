@@ -166,23 +166,39 @@ def settle(sb, dry_run: bool = False) -> int:
         return 0
 
     now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    # Bounded, paginated read: the old single `.execute()` pulled EVERY
+    # un-settled row ever written into memory at once (it grows forever if a
+    # settlement ever fails), which is how the job OOM'd/timeout'd.
+    past: list[dict] = []
     try:
-        resp = (
-            sb.table("predictions")
-            .select("id, match_id, match_title, home_team, away_team, "
-                    "league_slug, kickoff_time, prediction, status, actual_result")
-            .in_("status", ["upcoming", "live"])
-            .lt("kickoff_time", now)
-            .execute()
-        )
+        page, page_size, max_rows = 0, 1000, 20_000
+        while len(past) < max_rows:
+            resp = (
+                sb.table("predictions")
+                .select("id, match_id, match_title, home_team, away_team, "
+                        "league_slug, kickoff_time, prediction, status, actual_result")
+                .in_("status", ["upcoming", "live"])
+                .lt("kickoff_time", now)
+                .order("kickoff_time", desc=False)
+                .range(page * page_size, (page + 1) * page_size - 1)
+                .execute()
+            )
+            chunk = resp.data or []
+            past.extend(chunk)
+            if len(chunk) < page_size:
+                break
+            page += 1
     except Exception as e:  # noqa: BLE001
         logger.warning("Could not fetch past predictions: %s", e)
         return 0
 
-    past = resp.data or []
     if not past:
         logger.info("No past predictions to settle.")
         return 0
+
+    if len(past) >= 20_000:
+        logger.warning("Settlement backlog capped at %d rows this run — the "
+                       "rest will be handled on the next run.", len(past))
 
     if not dry_run and not _has_settlement_columns(sb):
         return 0
@@ -274,17 +290,35 @@ def settle(sb, dry_run: bool = False) -> int:
             continue
 
         try:
-            sb.table("predictions").update(
-                {
-                    "actual_result": label,
-                    "home_score": result.get("home_score"),
-                    "away_score": result.get("away_score"),
-                    "status": "completed",
-                    "settled_at": dt.datetime.now(dt.timezone.utc)
-                    .replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-                }
-            ).eq("id", p["id"]).execute()
-            settled += 1
+            # Status-guarded, idempotent write (audit M-16): the SELECT above
+            # already filters to upcoming/live, but between SELECT and UPDATE a
+            # concurrent settlement run (settle.yml vs. a predict cycle's inline
+            # scheduler settle) may have completed the row. The .in_() guard
+            # makes that second write a no-op instead of overwriting a fresh
+            # final score with a stale live one, and we only count rows we
+            # actually flipped (returned data non-empty).
+            res = (
+                sb.table("predictions")
+                .update(
+                    {
+                        "actual_result": label,
+                        "home_score": result.get("home_score"),
+                        "away_score": result.get("away_score"),
+                        "status": "completed",
+                        "settled_at": dt.datetime.now(dt.timezone.utc)
+                        .replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+                    }
+                )
+                .eq("id", p["id"])
+                .in_("status", ["upcoming", "live"])
+                .execute()
+            )
+            if res.data:
+                settled += 1
+            else:
+                logger.info(
+                    "  %s vs %s already settled by a concurrent run — skipped",
+                    home, away)
         except Exception as e:  # noqa: BLE001
             logger.warning("Failed to settle prediction %s: %s", p.get("match_title"), e)
 
