@@ -24,6 +24,18 @@ The audit found **7 Critical**, **12 High**, **24 Medium**, and **17 Low** issue
 > value *further* improvements for the app and the website that go beyond bug-fixing. Two
 > counts moved: High is now 12 (H-12, the NumPy F-order data-corruption bug, was found and
 > fixed during remediation), and the Medium/Low tables are unchanged in content.
+>
+> **Update 2 (2026-10-29, live-verification pass).** The Supabase migrations are no longer
+> "pending" — `supabase-audit-hardening.sql` and `supabase-native-push-migration.sql` were
+> **applied to the production project** `fwpriiugfjhtoymcbmso` and re-tested with direct
+> anon/service-role probes, so the Critical/High items above are now **verified live** (see
+> §13 for the probe table). The gated weekly retrain has also **accepted** the new model
+> (version 9), which lands the model-correctness fixes (H-1, H-2, H-12, M-1…M-15) that
+> required it. Applying the migration surfaced and closed **one real regression**: the C-2
+> anon revocation had silently broken public free-tier reads on `predictions`/`insights`,
+> fixed with a column-level grant that preserves email privacy. Everything the five bullets
+> above describe was true *as found*; each is now closed except the two out-of-band key
+> rotations, which remain the operator's to perform.
 
 The five that matter most:
 
@@ -632,69 +644,120 @@ subagent's cited code path, not a live sample.
 
 ## 13. Remediation status (post-fix pass, 2026-10-29)
 
-Every finding is bucketed into one of four states:
+Every finding is bucketed into one of five states:
 
-- **Fixed** — corrected in the working tree; no operator action needed beyond the retrain
-  noted where applicable.
+- **Fixed · verified live** — corrected in the repo, applied to the live Supabase project
+  `fwpriiugfjhtoymcbmso`, and **re-tested against production** (anon/service-role probes).
+  No operator action needed.
+- **Fixed** — corrected in the working tree and verified by test/CI; no live-DB change
+  required.
 - **Fixed · migrate** — the code/SQL fix is written (a migration file or workflow in the
-  repo) but must be **applied to the live Supabase project by hand** (the project was
-  unreachable from here). Until then the vulnerability is still live.
-- **Fixed · retrain** — corrected in the feature/training code, but the deployed `.pkl` was
-  trained on the old (wrong) features; a GitHub-Actions retrain is required for the fix to
-  reach production.
+  repo) but not yet applied to the live project. Until then the vulnerability is still live.
+- **Fixed · retrained** — corrected in the feature/training code; a gated GitHub-Actions
+  retrain has since **accepted** the new model (run `40827629667`, model version 9,
+  `delta_log_loss -0.00779`, `delta_accuracy +0.0209`), so the fix has reached production.
 - **Open** — intentionally left for a product/ops decision (listed with the reason).
+
+> **Live-verification pass (2026-10-29).** `supabase-audit-hardening.sql` (all 54 statements)
+> and `supabase-native-push-migration.sql` were applied to project `fwpriiugfjhtoymcbmso`.
+> Verified by direct anon/service-role probes:
+>
+> | Probe | Result |
+> |---|---|
+> | anon `predictions` | 200 — exactly **77 free** rows, **0 paid leaked** (ground truth 262 = 77 free / 68 premium / 47 vip / 70 vvip) |
+> | anon `insights` | 200 (RLS on) |
+> | anon `user_profiles?select=email` | 401 — emails still hidden (C-2 intact) |
+> | anon `admin_urls` / `admin_users` / `system_logs` | 401 each (C-6 intact) |
+> | anon `DELETE matches` | 401 (C-7 intact) |
+> | anon `PATCH predictions.tier` | 401 — paywall column not customer-writable (C-1 intact) |
+> | anon `booking_codes` / `ai_pick_access` | 401 (service 200) — C-5 forward infra service-only |
+> | `payment_events.expires_at` | exists, queryable (H-4/M-24) |
+> | `push_tokens` | exists (`expo_token`), anon 401 / service 200 |
+> | `expire_subscriptions()` via workflow | HTTP 200 (C-3 RPC live) |
+>
+> One **regression was found and fixed** during this pass: the C-2 revoke of anon `SELECT`
+> on `user_profiles` broke the tier-gated policies on `predictions`/`insights` (they
+> subquery `user_profiles`, and Postgres checks privileges at plan time), so anon got 401
+> even for free-tier rows — silently breaking the public marketing-site picks. Fixed with a
+> **column-level** grant, `grant select (id, current_tier) … to anon`, which lets the policy
+> *plan* while `email`/`username`/`display_name`/`is_admin` stay unreadable. Confirmed via
+> `information_schema.column_privileges` (note: `table_privileges` does **not** show
+> column-level grants) and re-tested live: free picks public, paid tiers gated, emails hidden.
 
 ### Critical
 
 | ID | Status | Note |
 |---|---|---|
-| C-1 paywall editable by customer | **Fixed · migrate** | Tier-write block + hardened `user_profiles` UPDATE policy in `supabase-audit-hardening.sql`; apply it. Client no longer writes tier fields. |
-| C-2 emails world-readable | **Fixed · migrate** | Anon SELECT on `user_profiles` revoked in the hardening migration. |
-| C-3 one purchase is permanent | **Fixed · migrate** | `expire_subscriptions()` RPC + hourly `expire-subscriptions.yml` added; apply the migration so the RPC exists. |
+| C-1 paywall editable by customer | **Fixed · verified live** | Tier-write block + hardened `user_profiles` UPDATE policy. Live probe: anon `PATCH predictions.tier` → **401**. |
+| C-2 emails world-readable | **Fixed · verified live** | Anon SELECT on `user_profiles` revoked, plus the column-level grant (`id`, `current_tier`) that keeps tier-gated policies plannable. Live probe: anon `select=email` → **401**; anon `predictions` → **200** with 0 paid leaked. |
+| C-3 one purchase is permanent | **Fixed · verified live** | `expire_subscriptions()` RPC + hourly `expire-subscriptions.yml`. Dispatched run `40826566834` → **HTTP 200**, RPC executed (not the PGRST2028 fallback). |
 | C-4 Flutterwave secret in image | **Fixed** | `.dockerignore` now excludes `**/*_key`, `.env*`, `.venv`, build outputs; `Dockerfile.frontend` rewritten to a static non-root build. **Rotate the key out-of-band.** |
-| C-5 booking code leaks paid AI Picks | **Fixed** | `sportybet_booking.py::get_ai_picks` filters to `tier == "free"`; the published accumulator can no longer carry premium/vip/vvip picks. |
-| C-6 admin tables open to anon | **Fixed · migrate** | Drop/restrict `admin_urls`/`admin_users`/`system_logs` in the hardening migration. |
-| C-7 sports data world-writable | **Fixed · migrate** | `matches`/`team_stats`/`prediction_accuracy` write policies tightened in the hardening migration. |
+| C-5 booking code leaks paid AI Picks | **Fixed** | `sportybet_booking.py::get_ai_picks` filters to `tier == "free"`; the published accumulator can no longer carry premium/vip/vvip picks. Live probe: anon `booking_codes`/`ai_pick_access` → **401**, service → 200. |
+| C-6 admin tables open to anon | **Fixed · verified live** | Live probe: anon `admin_urls`/`admin_users`/`system_logs` → **401** each. |
+| C-7 sports data world-writable | **Fixed · verified live** | Live probe: anon `DELETE matches` → **401**; read still **200** (SELECT-only, as intended). |
 
 ### High
 
 | ID | Status | Note |
 |---|---|---|
-| H-1 team names not reconciled into features | **Fixed · retrain** | `_canonical_team` now applied to home/away keys in `build_features`/`trainer.py`; retrain to benefit. |
-| H-2 C++ bulk kernel truncates to oldest 600 | **Fixed · retrain** | Lookback keeps the most recent `lb` matches + own-team pre-match Elo. |
+| H-1 team names not reconciled into features | **Fixed · retrained** | `_canonical_team` now applied to home/away keys in `build_features`/`trainer.py`. Gated retrain `40827629667` **accepted** (model v9) — fix is live. |
+| H-2 C++ bulk kernel truncates to oldest 600 | **Fixed · retrained** | Lookback keeps the most recent `lb` matches + own-team pre-match Elo. Landed via model v9. |
 | H-3 fixture job overwrites certainty tier | **Fixed** | Tier written from the model's certainty band, not the static league map. |
-| H-4 payment-queue flooding | **Fixed** | Poller caps per-run/per-user FIFO + final-verify-before-expiry; client enqueue cap (`MAX_PENDING_CHECKOUTS=3`). |
-| H-5 legacy payment RLS cross-tenant | **Fixed · migrate** | Policies dropped/tightened in the hardening migration. |
-| H-6 referral/reward rows mintable | **Fixed · migrate** | `register_referral` RPC validates amounts server-side in the hardening migration. |
+| H-4 payment-queue flooding | **Fixed · verified live** | Poller caps per-run/per-user FIFO + final-verify-before-expiry; client enqueue cap (`MAX_PENDING_CHECKOUTS=3`). Live probe: `payment_events.expires_at` **exists**. |
+| H-5 legacy payment RLS cross-tenant | **Fixed · verified live** | Policies dropped/tightened in the applied hardening migration. |
+| H-6 referral/reward rows mintable | **Fixed · verified live** | `register_referral` RPC validates amounts server-side in the applied hardening migration. |
 | H-7 live Flutterwave key exposed | **Fixed** | Same `.dockerignore`/image fix as C-4. **Rotate.** |
-| H-8 (security-subagent scope) | **Fixed · migrate** | Covered by `supabase-audit-hardening.sql` (RLS/grants); apply it. |
+| H-8 (security-subagent scope) | **Fixed · verified live** | Covered by `supabase-audit-hardening.sql`, now applied and probe-verified. |
 | H-9 schema drift across SQL files | **Open** | Consolidating into one canonical `pg_dump`-derived schema is a deliberate cleanup, not a bug fix; flagged for a follow-up. |
 | H-10 stale GitHub Pages build | **Open** | Canonicalise on Vercel (the real origin is `statwise-flax.vercel.app`); Pages left as-is pending that decision. |
 | H-11 git remote embeds a GitHub PAT | **Open · rotate** | Cannot rotate from here. Remove the credential from `.git/config` and rotate the token (use `gh auth`/SSH). |
-| H-12 NumPy F-order cross-match corruption | **Fixed · retrain** | `np.ascontiguousarray` on every odds/feature block before the ctypes kernel; reproduced-then-closed. Retrain required. |
+| H-12 NumPy F-order cross-match corruption | **Fixed · retrained** | `np.ascontiguousarray` on every odds/feature block before the ctypes kernel; reproduced-then-closed. Landed via model v9. |
 
 ### Medium / Low (by group)
 
-- **Model correctness (M-1…M-15 and related):** **Fixed · retrain** — `cts` at serving is
+- **Model correctness (M-1…M-15 and related):** **Fixed · retrained** — `cts` at serving is
   now the kickoff date, Elo-volatility fed from the per-match series, Python/C++ update rules
   aligned, `match_date=None` guarded, `avg_odds_*` reindexed, closing-odds passed to the
-  kernel, F-order (H-12) closed, `feat is None` raises. All need one CI retrain to land.
-- **Payments (M-24, H-4):** **Fixed** — stale rows get one final Flutterwave verification
-  before expiry (late bank transfers are credited, not dropped); bounded per-run caps.
+  kernel, F-order (H-12) closed, `feat is None` raises. The gated CI retrain (run
+  `40827629667`) **accepted** model version 9 — `delta_log_loss -0.00779`, `delta_accuracy
+  +0.0209`, 331,949 training rows — so these fixes are now serving. The model was published
+  to Supabase Storage (`app-assets/models/football_predictor.pkl`, 18.7 MB) and to the
+  `statwise-model-v2-*` Actions cache that `predict.yml` restores via prefix key.
+- **Payments (M-24, H-4):** **Fixed · verified live** — stale rows get one final Flutterwave
+  verification before expiry (late bank transfers are credited, not dropped); bounded
+  per-run caps. `payment_events.expires_at` confirmed present in production.
 - **CI / Docker (M-16, M-32, M-33, M-35, M-36):** **Fixed** — settlement writes are
   status-guarded/idempotent; frontend image serves a static export (no dev server);
   `ai/models` excluded from build context; model-publishing workflows share one `model-publish`
   concurrency group; odds-sync inplay/pre-match run in separate groups.
-- **Notifications / push (M-17, native conversion):** **Fixed** — web push deleted end-to-end
-  (`sw.js`, VAPID, `push_subscriptions` sender, `pywebpush` dependency); native Expo push is
-  the single path, fully paginated, with dead-token purge. Apply
-  `supabase-native-push-migration.sql` for the `push_tokens` table.
+- **Notifications / push (M-17, native conversion):** **Fixed · verified live** — web push
+  deleted end-to-end (`sw.js`, VAPID, `push_subscriptions` sender, `pywebpush` dependency);
+  native Expo push is the single path, fully paginated, with dead-token purge.
+  `supabase-native-push-migration.sql` is applied: `push_tokens` exists with `expo_token`
+  (matching `notify.py`'s `user_id,expo_token,platform` read and the app's `buildTokenRow`
+  write) and is owner-only (anon **401**, service **200**).
 - **Website (contrast, a11y, metadata, news content, timeouts):** **Fixed** — responsive
   header, real `/news` content, per-page metadata/canonical, privacy/cookie disclosure,
   contrast and alt-text fixes, fetch timeouts + size caps. Static export and `tsc` verified.
 - **Low (L-1…L-23):** mostly **Fixed** (copy, dead code, small guards) or **Open** where a
   product decision is needed; L-9 (a11y) **Partial** — contrast/alt fixed, full screen-reader
   pass still recommended.
+
+### Still requires operator action
+
+These cannot be done from an automated session and remain **open**:
+
+1. **Rotate the GitHub PAT** — a `ghp_…` token is embedded in `.git/config`'s origin URL
+   (scopes `repo, workflow, write:packages`). Rotate it in GitHub → Settings → Developer
+   settings, then switch the remote to SSH or `gh auth login`.
+2. **Rotate the Flutterwave key** (`statwise/flutterwave_key`) — it was baked into an
+   earlier image; `.dockerignore`/`Dockerfile.frontend` now prevent recurrence, but the
+   exposed key must be replaced out-of-band.
+3. **Add `statwise://login-callback`** to the Supabase Auth redirect-URL allowlist —
+   required for native PKCE deep-link sign-in on Android.
+4. *(Optional hardening)* `revoke truncate, references, trigger on public.user_profiles from anon;`
+   — anon still holds these table privileges. Not exploitable over PostgREST (it exposes no
+   TRUNCATE/REFERENCES/TRIGGER endpoint), so this is defence-in-depth only.
 
 ---
 
