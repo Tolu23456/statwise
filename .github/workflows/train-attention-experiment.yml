@@ -6,6 +6,14 @@ on:
     paths:
       - 'ai/experimental/attention/**'
       - '.github/workflows/train-attention-experiment.yml'
+  # Gate PRs with the same path filters as the push trigger above.
+  pull_request:
+    paths:
+      - 'ai/experimental/attention/**'
+      - '.github/workflows/train-attention-experiment.yml'
+
+permissions:
+  contents: read
 
 jobs:
   train:

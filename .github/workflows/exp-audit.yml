@@ -25,12 +25,17 @@ on:
         description: 'Report JSON path'
         default: ''
 
+# Least privilege: read everywhere; the exp job commits the report JSON
+# and declares `contents: write` for itself.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   exp:
     runs-on: ubuntu-latest
+    # Commits ONLY the experiment report JSON — write scoped to this job.
+    permissions:
+      contents: write
     timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4

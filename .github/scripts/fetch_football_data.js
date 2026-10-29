@@ -30,8 +30,50 @@ if (missing.length > 0) {
   process.exit(1);
 }
 
+// ── outbound-fetch hygiene ──────────────────────────────────────────────
+// Every network call gets a hard timeout and a response-size cap: CI used
+// to hang silently on a stalled socket until the job-level timeout killed
+// it (with no useful error).
+const FDORG_TIMEOUT_MS = 30_000;
+const SUPABASE_TIMEOUT_MS = 30_000;
+// A week of fixtures from football-data.org is well under 1 MiB; 10 MiB is
+// a generous ceiling that still trips long before memory becomes a problem.
+const MAX_RESPONSE_BYTES = 10 * 1024 * 1024;
+
+// Read a response body with a hard size cap (checks the declared
+// Content-Length AND the actual bytes, in case the header lies or is absent).
+async function readBoundedBody(response) {
+  const declared = Number(response.headers.get('content-length') || 0);
+  if (declared > MAX_RESPONSE_BYTES) {
+    throw new Error(
+      `response too large: content-length ${declared} > ${MAX_RESPONSE_BYTES}`,
+    );
+  }
+  const buf = await response.arrayBuffer();
+  if (buf.byteLength > MAX_RESPONSE_BYTES) {
+    throw new Error(
+      `response too large: ${buf.byteLength} bytes > ${MAX_RESPONSE_BYTES}`,
+    );
+  }
+  return buf;
+}
+
+async function readBoundedJson(response) {
+  return JSON.parse(Buffer.from(await readBoundedBody(response)).toString('utf8'));
+}
+
+async function readBoundedText(response) {
+  return Buffer.from(await readBoundedBody(response)).toString('utf8');
+}
+
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
   auth: { persistSession: false },
+  // Every supabase call is an outbound fetch too — give them a hard timeout
+  // so a hung socket fails loudly instead of stalling the whole run.
+  global: {
+    fetch: (url, init = {}) =>
+      fetch(url, { ...init, signal: AbortSignal.timeout(SUPABASE_TIMEOUT_MS) }),
+  },
 });
 
 // The app filters predictions with .in('tier', ['free','premium','vip','vvip']),
@@ -95,6 +137,9 @@ async function fetchMatches(dateFrom, dateTo) {
     const token = nextToken();
     const response = await fetch(url, {
       headers: { 'X-Auth-Token': token },
+      // Hard timeout: a stalled socket used to hang the run until the
+      // job-level timeout killed it with no diagnostic.
+      signal: AbortSignal.timeout(FDORG_TIMEOUT_MS),
     });
 
     if (response.ok) {
@@ -102,11 +147,11 @@ async function fetchMatches(dateFrom, dateTo) {
       console.log(
         `football-data.org OK with token ${token.slice(0, 8)}… (requests left this minute: ${remaining ?? 'n/a'})`,
       );
-      const data = await response.json();
+      const data = await readBoundedJson(response);
       return data.matches ?? [];
     }
 
-    const text = await response.text().catch(() => '');
+    const text = await readBoundedText(response).catch(() => '');
     lastError = new Error(
       `football-data.org API error ${response.status}: ${text.slice(0, 300)}`,
     );
@@ -187,19 +232,19 @@ async function run() {
   // Only rows the model has already produced may be touched. New fixtures are
   // inserted by the prediction pipeline (which fills every NOT NULL column).
   const ids = fixtures.map(f => f.match_id);
-  const known = new Set();
+  const known = new Map(); // match_id -> { tier, tier_required } as stored now
   const LOOKUP_CHUNK = 100;
   for (let i = 0; i < ids.length; i += LOOKUP_CHUNK) {
     const chunk = ids.slice(i, i + LOOKUP_CHUNK);
     const { data, error } = await supabase
       .from('predictions')
-      .select('match_id')
+      .select('match_id, tier, tier_required')
       .in('match_id', chunk);
     if (error) {
       console.error('Could not read existing fixtures:', error.message);
       return;
     }
-    for (const row of data ?? []) known.add(row.match_id);
+    for (const row of data ?? []) known.set(row.match_id, row);
   }
 
   const updates = fixtures.filter(f => known.has(f.match_id));
@@ -209,7 +254,24 @@ async function run() {
   );
 
   let updated = 0;
-  for (const { match_id, ...fields } of updates) {
+  let tierBackfilled = 0;
+  for (const fixture of updates) {
+    const { match_id, ...fields } = fixture;
+    const current = known.get(match_id) ?? {};
+    // This script's static league map must NEVER clobber the tier columns on
+    // rows the model pipeline already graded: tier/tier_required are
+    // certainty-driven there (predictor.py can raise/lower them per match).
+    // Only backfill them when they are currently NULL/empty (e.g. a legacy
+    // row) — never overwrite a computed value with the static default.
+    let backfilled = false;
+    for (const col of ['tier', 'tier_required']) {
+      if (fields[col] != null && fields[col] !== '' && current[col] != null && current[col] !== '') {
+        delete fields[col]; // keep the pipeline's computed value
+      } else if (fields[col] != null && (current[col] == null || current[col] === '')) {
+        backfilled = true;
+      }
+    }
+    if (backfilled) tierBackfilled += 1;
     const { error } = await supabase
       .from('predictions')
       .update(fields)
@@ -221,7 +283,7 @@ async function run() {
     }
   }
 
-  console.log(`Done. Metadata updated for ${updated}/${updates.length} fixtures.`);
+  console.log(`Done. Metadata updated for ${updated}/${updates.length} fixtures (${tierBackfilled} tier backfills on previously ungraded rows).`);
 }
 
 run().catch(err => {

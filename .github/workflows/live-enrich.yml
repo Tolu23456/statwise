@@ -26,6 +26,9 @@ on:
         default: ''
         type: string
 
+permissions:
+  contents: read
+
 concurrency:
   group: live-enrich
   # A newer tick supersedes an older one — never pile enrichment runs up.

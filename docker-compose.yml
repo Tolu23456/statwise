@@ -25,7 +25,11 @@ services:
     environment:
       - FOOTBALL_API_TOKEN=${FOOTBALL_API_TOKEN}
       - X_RAPIDAPI_KEY=${X_RAPIDAPI_KEY:-}
-      - SUPABASE_URL=${SUPABASE_URL:-https://pdrcyuzfdqjnsltqqxvr.supabase.co}
+      # No default URL: a hardcoded fallback previously pointed at a DIFFERENT
+      # Supabase project than the one the app uses (statwise/lib/supabase.ts),
+      # which could silently write predictions to the wrong database. Fail
+      # fast instead — export SUPABASE_URL (and SUPABASE_SERVICE_KEY) in .env.
+      - SUPABASE_URL=${SUPABASE_URL:?SUPABASE_URL must be set}
       - SUPABASE_SERVICE_KEY=${SUPABASE_SERVICE_KEY:-}
     volumes:
       - ai_models:/app/ai/models

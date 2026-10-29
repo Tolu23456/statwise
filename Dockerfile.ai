@@ -13,6 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ai/ ./ai/
 
+# Build the C++ feature extraction library (ai/model/cpp_bridge.py loads
+# ai/libstatwise.so at runtime). gcc/g++/make are installed above for this.
+RUN make -C ai/core
+
 RUN mkdir -p ai/data ai/models
 
 WORKDIR /app

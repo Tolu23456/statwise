@@ -51,8 +51,19 @@ on:
         description: 'Skip the in-run LightGBM reference (faster, less complete report)'
         default: 'false'
 
+# Least privilege: read everywhere; the gate job commits the gate metadata
+# and declares `contents: write` for itself.
 permissions:
-  contents: write
+  contents: read
+
+# Shared model-publish group (with retrain-weekly and train-model): only one
+# publisher may run at a time so two runs can't race on the
+# ai/data/model_info.json commit/push or the Supabase model upload.
+# cancel-in-progress is false — a queued run waits rather than killing a
+# multi-hour fit mid-flight.
+concurrency:
+  group: model-publish
+  cancel-in-progress: false
 
 jobs:
   train:
@@ -178,6 +189,10 @@ jobs:
     # which would re-skip the job on a failed train)
     if: ${{ always() && inputs.race == 'true' && needs.train.result != 'cancelled' }}
     runs-on: ubuntu-latest
+    # Commits ai/data/model_info.json after the race — the only job in this
+    # workflow that pushes.
+    permissions:
+      contents: write
     timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4

@@ -30,8 +30,10 @@ on:
         description: 'Teacher OOT holdout window INSIDE the truncated frame'
         default: '180'
 
+# Least privilege: read everywhere; the merge job below commits the recipe
+# and declares `contents: write` for itself.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   shard:
@@ -114,6 +116,9 @@ jobs:
     name: merge teacher recipe (pre-split)
     needs: shard
     runs-on: ubuntu-latest
+    # Commits ai/data/sim_audit/ — the only job in this workflow that pushes.
+    permissions:
+      contents: write
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4

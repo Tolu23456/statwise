@@ -63,8 +63,10 @@ on:
         description: 'world cap when accumulating (newest waves kept)'
         default: '240'
 
+# Least privilege: read everywhere; the merge job commits the recipe and
+# declares `contents: write` for itself.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   tests:
@@ -185,6 +187,10 @@ jobs:
     needs: shard
     if: inputs.mode == 'lab' || inputs.mode == 'all'
     runs-on: ubuntu-latest
+    # Commits ai/data/sim/ when the publishable gate passed — the only job
+    # in this workflow that pushes.
+    permissions:
+      contents: write
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4

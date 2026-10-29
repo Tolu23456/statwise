@@ -17,12 +17,26 @@ on:
         description: 'Fraction of train rows receiving a teacher-labeled duplicate'
         default: '0.5'
 
+# Least privilege: read everywhere; the retrain job commits model_info.json
+# and declares `contents: write` for itself.
 permissions:
-  contents: write
+  contents: read
+
+# Shared with every workflow that publishes a model (train-model,
+# train-attention-student): only ONE publisher may run at a time so two runs
+# can't race on the ai/data/model_info.json commit/push or the Supabase model
+# upload. cancel-in-progress is false — a queued retrain waits rather than
+# killing a 20-minute fit mid-flight.
+concurrency:
+  group: model-publish
+  cancel-in-progress: false
 
 jobs:
   retrain:
     runs-on: ubuntu-latest
+    # Commits ai/data/model_info.json — the only push in this workflow.
+    permissions:
+      contents: write
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4

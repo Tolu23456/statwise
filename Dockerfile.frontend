@@ -1,20 +1,47 @@
-FROM node:20-slim
+# Multi-stage build: deps → static web export → slim non-root runtime.
+# NOTE: keep .dockerignore in sync with what this file COPYs — the build
+# context must never contain secrets (statwise/flutterwave_key, .env*, *_key)
+# or large generated artifacts (ai/models, statwise/dist, website/.next).
+#
+# The production image serves a STATIC `expo export` build (audit M-32: it
+# used to run `expo start --web`, shipping a Metro dev server — slower, less
+# secure, and not what you want behind a public origin).
 
+# ── deps: reproducible install straight from the lockfile ───────────────
+FROM node:20-slim AS deps
 WORKDIR /app
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    git \
+# git: some npm packages resolve via git+ssh/https and need the CLI.
+RUN apt-get update && apt-get install -y --no-install-recommends git \
     && rm -rf /var/lib/apt/lists/*
-
 COPY statwise/package.json statwise/package-lock.json ./
-
 RUN npm ci --legacy-peer-deps
 
+# ── build: assemble source + export the static web bundle ───────────────
+FROM node:20-slim AS build
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+# .dockerignore excludes statwise/flutterwave_key, .env*, *_key, etc., so
+# secrets cannot ride along into the image (or its layers).
 COPY statwise/ ./
+# `expo export --platform web` writes a fully static site to ./dist
+# (web.output=static in app.json). CI=1 keeps it non-interactive.
+ENV CI=1 EXPO_NO_DEVTOOLS=1 EXPO_NO_TELEMETRY=1
+RUN npx expo export --platform web --output-dir dist
 
-ENV EXPO_NO_DEVTOOLS=1
-ENV NODE_ENV=production
+# ── runtime: serve the static export, non-root ──────────────────────────
+FROM node:20-slim AS runtime
+WORKDIR /app
+ENV NODE_ENV=production \
+    PORT=5000 \
+    STATIC_ROOT=/app/dist
+RUN useradd --create-home --uid 10001 appuser
+# Only what serving needs: the exported site + the dependency-free static
+# server. node_modules from the build (Metro, RN, expo CLI) is NOT copied —
+# the runtime image stays small and free of the dev toolchain.
+COPY --from=build --chown=appuser:appuser /app/dist ./dist
+COPY --chown=appuser:appuser statwise/scripts/serve-static.mjs ./serve-static.mjs
+USER appuser
 
 EXPOSE 5000
 
-CMD ["node", "node_modules/.bin/expo", "start", "--web", "--port", "5000", "--clear"]
+CMD ["node", "serve-static.mjs"]

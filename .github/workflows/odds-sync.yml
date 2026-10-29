@@ -29,8 +29,15 @@ on:
         default: '6'
         type: string
 
+permissions:
+  contents: read
+
+# Split per mode (audit M-36): inplay fires every 5 min and pre-match 4×/day,
+# and sharing one group meant a backlog of queued inplay runs delayed a pending
+# pre-match refresh. Each mode now serializes against ITSELF only, so the two
+# schedules never block one another.
 concurrency:
-  group: odds-sync
+  group: odds-sync-${{ github.event.inputs.mode || github.event.schedule }}
   cancel-in-progress: false
 
 jobs:

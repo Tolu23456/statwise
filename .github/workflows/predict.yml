@@ -8,6 +8,9 @@ on:
     - cron: "0 */4 * * *"   # every 4 hours
   workflow_dispatch:         # manual trigger from GitHub UI
 
+permissions:
+  contents: read
+
 concurrency:
   group: predict
   cancel-in-progress: false
@@ -47,6 +50,23 @@ jobs:
         run: |
           pip install -r ai/requirements.txt
 
+      # ai/model/cpp_bridge.py loads ai/libstatwise.so; without this build the
+      # predictor would run on (or fall back to) stale/slow paths. The
+      # Makefile no longer uses -march=native, so a .so built here is safe to
+      # run on the serving box too.
+      - name: Install build toolchain (C++ feature core)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends gcc g++ make
+
+      - name: Build C++ feature extension
+        run: |
+          make -C ai/core
+          # Prove the artifact exists AND is newer than its source — a no-op
+          # make with a stale .so would silently ship old feature code.
+          test -f ai/libstatwise.so
+          [ ai/libstatwise.so -nt ai/core/features.cpp ]
+
       - name: Run prediction cycle
         id: predict
         env:
@@ -83,17 +103,31 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
         run: python ai/sportybet_booking.py
 
-      # Settlement has its own workflow (settle.yml) too, but running it here
-      # as well means a finished match is scored right after the next predict
-      # run even if the dedicated job is paused. `if: always()` keeps it going
-      # when the predict step itself failed.
+      # Settlement is triggered from TWO places:
+      #   1. inline in ai/scheduler.py — run_prediction_cycle() calls
+      #      engine.settle_past_predictions() after every predict cycle
+      #      (i.e. it already ran inside the "Run prediction cycle" step);
+      #   2. this standalone step (ai/settle_predictions.py), and again in
+      #      the dedicated settle.yml workflow on its own 2-hourly schedule.
+      # To keep the two inline paths from racing each other on the same
+      # rows, only ONE runs by default: SETTLE_VIA=scheduler keeps the
+      # inline scheduler path (richer context, same cycle) and this step
+      # becomes a no-op. Set the SETTLE_VIA repo variable to "step" to flip
+      # the other way (skip the inline settle, run this one). settle.yml is
+      # unaffected either way — it is the authoritative scheduled pass.
       - name: Settle finished matches
         if: always() && steps.predict.outcome != 'skipped'
         continue-on-error: true
         env:
+          SETTLE_VIA: ${{ vars.SETTLE_VIA || 'scheduler' }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN || secrets.FOOTBALL_API_TOKEN || vars.FOOTBALL_DATA_TOKEN || vars.FOOTBALL_API_TOKEN }}
           FOOTBALL_DATA_TOKENS: ${{ secrets.FOOTBALL_DATA_TOKENS }}
           THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY || vars.THESPORTSDB_KEY }}
-        run: python ai/settle_predictions.py
+        run: |
+          if [ "$SETTLE_VIA" != "step" ]; then
+            echo "::notice::Duplicate settlement step skipped — settlement already ran inline in ai/scheduler.py (SETTLE_VIA=scheduler). Set the SETTLE_VIA repo variable to 'step' to run this pass instead."
+            exit 0
+          fi
+          python ai/settle_predictions.py

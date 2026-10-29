@@ -16,6 +16,9 @@ on:
         required: false
         default: 'manual'
 
+permissions:
+  contents: read
+
 jobs:
   bundle:
     runs-on: ubuntu-latest

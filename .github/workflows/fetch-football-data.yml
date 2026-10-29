@@ -11,10 +11,24 @@ on:
     branches: [main]
     paths:
       - '.github/scripts/fetch_football_data.js'
+      - '.github/scripts/package-lock.json'
+      - '.github/scripts/package.json'
+      - '.github/workflows/fetch-football-data.yml'
+  # Gate PRs that touch the fetcher too — same path filters as the push
+  # trigger above.
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/scripts/fetch_football_data.js'
+      - '.github/scripts/package-lock.json'
+      - '.github/scripts/package.json'
       - '.github/workflows/fetch-football-data.yml'
 
+permissions:
+  contents: read
+
 concurrency:
-  group: fetch-football-data
+  group: fetch-football-data-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -31,10 +45,13 @@ jobs:
         with:
           node-version: '24'   # native WebSocket (realtime-js requires Node >= 22)
           cache: npm
-          cache-dependency-path: .github/scripts/package.json
+          cache-dependency-path: .github/scripts/package-lock.json
 
       - name: Install script dependencies
-        run: npm install
+        # npm ci (not npm install): reproducible install straight from the
+        # committed lockfile — drift between package.json and the lock fails
+        # loudly here instead of silently changing production behaviour.
+        run: npm ci
         working-directory: .github/scripts
 
       - name: Fetch football data and store in Supabase

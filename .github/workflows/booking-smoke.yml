@@ -8,6 +8,9 @@ name: Booking Code Smoke Test
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 concurrency:
   group: booking-smoke
   cancel-in-progress: true

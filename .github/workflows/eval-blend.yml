@@ -22,6 +22,9 @@ on:
         required: false
         default: "180"
 
+permissions:
+  contents: read
+
 jobs:
   ablation:
     runs-on: ubuntu-latest

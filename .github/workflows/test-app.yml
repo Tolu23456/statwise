@@ -4,7 +4,8 @@ name: App tests
 # Currently:
 #   - plan 2.1 polling policy (tiered cadence, visibility and network gating)
 #   - plan 2.2 live-state helpers (freshness gating, live chips, scores)
-#   - plan 3.2 web-push helpers (base64url VAPID key, subscription row)
+#   - native push helpers (Expo token shape, row building, permission gating,
+#     notification deep-link validation — pushCore.ts, PWA web push removed)
 #   - plan 3.3 AI Picks surfacing (jsonb flag, certainty ranking/tone)
 #   - plan 3.4 error copy (no raw errors in the UI) + offline detection
 #   - plan 4.1 query cache policy (stale/gc budgets, retry bounds, keys)
@@ -12,6 +13,7 @@ name: App tests
 #   - plan 4.4 telemetry core (event caps, no-op contract, slow-query predicate)
 #   - plan 4.5 A/B experiment framework (bucketing, config, sample run)
 #   - forum feed core (background merge/reconciliation, message envelope)
+#   - payment core (plan catalog, tx_ref codec, verification adjudication)
 # Pure Node, no npm install needed.
 
 on:
@@ -21,6 +23,15 @@ on:
       - 'statwise/lib/**'
       - 'statwise/app/**'
       - '.github/workflows/test-app.yml'
+  # Gate PRs with the same path filters as the push trigger above.
+  pull_request:
+    paths:
+      - 'statwise/lib/**'
+      - 'statwise/app/**'
+      - '.github/workflows/test-app.yml'
+
+permissions:
+  contents: read
 
 jobs:
   frontend-unit-tests:
@@ -47,10 +58,10 @@ jobs:
             --outDir "$RUNNER_TEMP/livefeed-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/livefeed-test/liveFeed.test.js"
-      - name: Web-push helper tests (plan 3.2)
+      - name: Native push helper tests (Expo push)
         run: |
           npx --yes -p typescript@5.9.3 tsc \
-            statwise/lib/push.ts statwise/lib/push.test.ts \
+            statwise/lib/pushCore.ts statwise/lib/push.test.ts \
             --outDir "$RUNNER_TEMP/push-test" \
             --module commonjs --target es2019 --strict --skipLibCheck
           node "$RUNNER_TEMP/push-test/push.test.js"

@@ -14,8 +14,10 @@ on:
     - cron: '17 */2 * * *' # every 2h at :17 — off the :00 stampede
   workflow_dispatch: {}
 
+# Least privilege by default; the single sync job below (which is the one
+# that commits news.json) declares `contents: write` for itself.
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: sync-news
@@ -24,13 +26,22 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history so the rebase before push below never conflicts on
+          # an unrelated shallow boundary.
+          fetch-depth: 0
 
       - name: Sync from SportyTrader
+        timeout-minutes: 10
         run: python3 website/scripts/sync_news.py
 
       - name: Commit if changed
+        timeout-minutes: 5
         run: |
           if git diff --quiet -- website/src/data/news.json; then
             echo "news.json unchanged — nothing to commit"
@@ -40,4 +51,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add website/src/data/news.json
           git commit -m "chore(news): sync football news [auto]"
+          # main may have moved since checkout (other bots push too) —
+          # rebase our commit on top instead of getting a non-fast-forward.
+          git pull --rebase origin main
           git push

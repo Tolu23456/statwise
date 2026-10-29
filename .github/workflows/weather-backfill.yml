@@ -27,8 +27,10 @@ on:
   schedule:
     - cron: '0 4 * * 0'   # Sundays 04:00 UTC, so recent dates re-resolve
 
+# Least privilege: read everywhere; the merge job commits the sidecar and
+# declares `contents: write` for itself.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   fetch:
@@ -103,6 +105,9 @@ jobs:
     # progress committed now beats rows sitting in an artifact.
     if: ${{ always() && needs.fetch.result != 'cancelled' }}
     runs-on: ubuntu-latest
+    # Commits the weather sidecar — the only job in this workflow that pushes.
+    permissions:
+      contents: write
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4

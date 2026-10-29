@@ -41,12 +41,18 @@ on:
         description: 'Report JSON path (use a DIFFERENT file per arm)'
         default: 'ai/data/audit_100k_report.json'
 
+# Least privilege: read everywhere; the job that commits the report JSON
+# declares `contents: write` for itself below.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   audit:
     runs-on: ubuntu-latest
+    # Commits only the audit report JSON, so it is the one job that needs
+    # write — never grant this repo-wide.
+    permissions:
+      contents: write
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
