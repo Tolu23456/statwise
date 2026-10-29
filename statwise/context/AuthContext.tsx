@@ -27,23 +27,41 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        loadProfile(session.user.id);
-      } else {
-        setLoading(false);
-      }
-    });
+    let cancelled = false;
+    // getSession() rejects when secure storage is locked/corrupted or the
+    // network is down.  Without a .catch the promise never resolved into
+    // state, `loading` stayed true forever and the app rendered a blank
+    // screen with no error and no way out short of clearing app storage.
+    supabase.auth.getSession()
+      .then(({ data: { session } }) => {
+        if (cancelled) return;
+        setSession(session);
+        setUser(session?.user ?? null);
+        if (session?.user) {
+          loadProfile(session.user.id).catch(() => setLoading(false));
+        } else {
+          setLoading(false);
+        }
+      })
+      .catch((e) => {
+        // Still listen for auth state changes — the user may have a valid
+        // refresh token even if the initial read failed.
+        console.warn('[auth] initial getSession failed:', e?.message ?? e);
+        if (!cancelled) setLoading(false);
+      });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
         setSession(session);
         setUser(session?.user ?? null);
         if (session?.user) {
-          await ensureUserProfile(session.user);
-          await loadProfile(session.user.id);
+          try {
+            await ensureUserProfile(session.user);
+          } catch (e) {
+            // Never let bootstrap failure strand the user on a spinner.
+            console.warn('[auth] profile bootstrap failed:', e instanceof Error ? e.message : e);
+          }
+          await loadProfile(session.user.id).catch(() => {});
         } else {
           setProfile(null);
           setLoading(false);
@@ -51,69 +69,71 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     );
 
-    return () => subscription.unsubscribe();
+    return () => {
+      cancelled = true;
+      subscription.unsubscribe();
+    };
   }, []);
 
   async function ensureUserProfile(user: User) {
-    const { data: existing } = await supabase
+    // Read errors must NOT be treated as "profile is missing": the old code
+    // treated any failure as absence and upserted `Free Tier`, which
+    // downgraded a paying user on a transient network blip.
+    const { data: existing, error: readErr } = await supabase
       .from('user_profiles')
       .select('id')
       .eq('id', user.id)
-      .single();
+      .maybeSingle();
 
-    if (!existing) {
-      const username = user.user_metadata?.display_name || user.email?.split('@')[0] || 'User';
-      await supabase.from('user_profiles').upsert({
-        id: user.id,
-        email: user.email,
-        username,
-        display_name: username,
-        current_tier: 'Free Tier',
-        tier: 'Free Tier',
-        subscription_status: 'active',
-        notifications: true,
-        last_login: new Date().toISOString(),
-        updated_at: new Date().toISOString(),
-      }, { onConflict: 'id' });
+    if (readErr) {
+      throw new Error(`Could not read profile (${readErr.code ?? readErr.message})`);
+    }
+    if (existing) return;
 
-      const code = user.id.substring(0, 8).toUpperCase();
-      await supabase.from('referral_codes').upsert({
-        user_id: user.id,
-        code,
-        username,
-        total_referrals: 0,
-        active: true,
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString(),
-      }, { onConflict: 'user_id' });
+    const username = user.user_metadata?.display_name || user.email?.split('@')[0] || 'User';
+    // `ifNotExists` semantics: the INSERT only fires when the row is really
+    // absent.  A concurrent bootstrap (or the auth trigger) is not an error.
+    const { error: insertErr } = await supabase.from('user_profiles').upsert({
+      id: user.id,
+      email: user.email,
+      username,
+      display_name: username,
+      current_tier: 'Free Tier',
+      tier: 'Free Tier',
+      subscription_status: 'active',
+      notifications: true,
+      last_login: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    }, { onConflict: 'id' });
+    if (insertErr) {
+      throw new Error(`Could not create profile: ${insertErr.message}`);
+    }
 
-      const referredBy = user.user_metadata?.referred_by as string | undefined;
-      if (referredBy) {
-        const { data: referrerCode } = await supabase
-          .from('referral_codes')
-          .select('user_id, code, total_referrals')
-          .eq('code', referredBy.toUpperCase())
-          .eq('active', true)
-          .single();
+    const { error: codeErr } = await supabase.from('referral_codes').upsert({
+      user_id: user.id,
+      code: user.id.substring(0, 8).toUpperCase(),
+      username,
+      total_referrals: 0,
+      active: true,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    }, { onConflict: 'user_id' });
+    if (codeErr) console.warn('[auth] referral code create failed:', codeErr.message);
 
-        if (referrerCode && referrerCode.user_id !== user.id) {
-          await supabase.from('referrals').upsert({
-            referrer_id: referrerCode.user_id,
-            referred_id: user.id,
-            referral_code: referrerCode.code,
-            reward_claimed: false,
-            reward_amount: 500,
-            created_at: new Date().toISOString(),
-          }, { onConflict: 'referrer_id,referred_id' });
-
-          await supabase
-            .from('referral_codes')
-            .update({
-              total_referrals: (referrerCode.total_referrals ?? 0) + 1,
-              updated_at: new Date().toISOString(),
-            })
-            .eq('code', referrerCode.code);
-        }
+    const referredBy = user.user_metadata?.referred_by as string | undefined;
+    if (referredBy) {
+      // The counter bump goes through a SECURITY DEFINER RPC so it actually
+      // succeeds for the new user (RLS filtered the old client-side UPDATE
+      // to zero rows and supabase-js reported no error — every honest
+      // referral silently failed to count).  Requires
+      // statwise/supabase-audit-hardening.sql.
+      const { data: ok, error: refErr } = await supabase.rpc('register_referral', {
+        referrer_code: referredBy.toUpperCase(),
+      });
+      if (refErr) {
+        console.warn('[auth] referral credit failed:', refErr.message);
+      } else if (!ok) {
+        console.info('[auth] referral code not found or already credited');
       }
     }
   }

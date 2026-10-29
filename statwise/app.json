@@ -18,11 +18,15 @@
       "bundleIdentifier": "com.statwise.app"
     },
     "android": {
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#0d1117"
       },
-      "package": "com.statwise.app"
+      "package": "com.statwise.app",
+      "permissions": [
+        "POST_NOTIFICATIONS"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -32,6 +36,7 @@
     "plugins": [
       "expo-router",
       "expo-secure-store",
+      "expo-notifications",
       [
         "expo-image-picker",
         {

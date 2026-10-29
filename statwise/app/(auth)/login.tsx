@@ -5,6 +5,8 @@ import {
   ActivityIndicator, TextInput as TextInputType, Image,
 } from 'react-native';
 import { Link } from 'expo-router';
+import * as Linking from 'expo-linking';
+import * as WebBrowser from 'expo-web-browser';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Haptics from 'expo-haptics';
@@ -129,19 +131,62 @@ export default function LoginScreen() {
     setGoogleLoading(true);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     try {
-      const redirectTo = Platform.OS === 'web'
-        ? (typeof window !== 'undefined' ? window.location.origin + '/' : undefined)
-        : undefined;
-      const { error } = await supabase.auth.signInWithOAuth({
+      if (Platform.OS === 'web') {
+        // Full-page redirect: supabase-js picks the session back up from the
+        // returned URL (detectSessionInUrl: true on web).
+        const { error } = await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: typeof window !== 'undefined' ? window.location.origin + '/' : undefined,
+          },
+        });
+        if (error) {
+          setErrors({
+            general: isNetworkError(error.message)
+              ? friendlyError(error.message)
+              : 'Google sign-in failed — please try again.',
+          });
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+        }
+        return;
+      }
+
+      // Native (Android): run the consent flow in a system browser tab and
+      // carry the PKCE `?code=` back into the app via the `statwise://`
+      // scheme. Requires `statwise://login-callback` (and `statwise://**`) in
+      // Supabase Auth → URL Configuration → Redirect URLs.
+      const redirectUrl = Linking.createURL('login-callback');
+      const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
-        options: { redirectTo },
+        options: { redirectTo: redirectUrl, skipBrowserRedirect: true },
       });
-      if (error) {
-        // Network failures get the honest offline copy; anything else keeps
-        // the specific "Google sign-in failed" wording (never the raw error).
+      if (error || !data?.url) {
         setErrors({
-          general: isNetworkError(error.message)
-            ? friendlyError(error.message)
+          general: isNetworkError(error?.message ?? '')
+            ? friendlyError(error!.message)
+            : 'Google sign-in failed — please try again.',
+        });
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+        return;
+      }
+
+      const result = await WebBrowser.openAuthSessionAsync(data.url, redirectUrl);
+      if (result.type !== 'success' || !result.url) {
+        // User dismissed the tab — not an error, just stop the spinner.
+        return;
+      }
+      const codeMatch = /[?&]code=([^&]+)/.exec(result.url);
+      if (!codeMatch) {
+        setErrors({ general: 'Google sign-in was cancelled or incomplete. Please try again.' });
+        return;
+      }
+      const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(
+        decodeURIComponent(codeMatch[1]),
+      );
+      if (exchangeError) {
+        setErrors({
+          general: isNetworkError(exchangeError.message)
+            ? friendlyError(exchangeError.message)
             : 'Google sign-in failed — please try again.',
         });
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);

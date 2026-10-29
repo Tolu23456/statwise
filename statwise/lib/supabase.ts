@@ -41,7 +41,16 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     storage: ExpoSecureStoreAdapter,
     autoRefreshToken: true,
     persistSession: true,
-    detectSessionInUrl: false,
+    // PKCE is the only flow that works the same way on both platforms: the
+    // native app returns from the browser custom-tab with `?code=…` and the
+    // login screen exchanges it explicitly (`exchangeCodeForSession`), while
+    // the web build auto-exchanges the code from its own URL.
+    // detectSessionInUrl must be TRUE on web (it used to be hardcoded false,
+    // so every OAuth/magic-link return landed as a logged-out page — the
+    // session in the URL was silently dropped) and FALSE on native, where the
+    // incoming deep link is not a browser URL and must be handled by hand.
+    flowType: 'pkce',
+    detectSessionInUrl: Platform.OS === 'web',
   },
 });
 

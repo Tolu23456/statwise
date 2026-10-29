@@ -44,6 +44,19 @@ const ACCURACY_BY_TIER: Record<string, string> = {
   'VVIP Tier': '~70–80% on AI Pick matches',
 };
 
+/**
+ * Max concurrently-pending checkout rows per account (audit H-4): a burst of
+ * abandoned checkouts used to fill the verifier's per-run window and starve
+ * genuine purchases.  The server-side poller enforces the same ceiling
+ * (scripts/verify-payments.ts) — this one just fails fast for the user.
+ */
+const MAX_PENDING_CHECKOUTS = 3;
+
+/** Client-side verification polling windows (audit M-24). */
+const FAST_TICKS = 150;              // 150 × 3 s   = 7.5 min
+const SLOW_EVERY = 5;                // fetch every 5th slow tick (15 s)
+const SLOW_TICKS = 120 * SLOW_EVERY; // 120 × 15 s  = 30 min
+
 export default function SubscriptionsScreen() {
   const { scheme } = useTheme();
   const C = Colors[scheme];
@@ -121,24 +134,37 @@ export default function SubscriptionsScreen() {
   }
 
   /**
-   * Watch this checkout's verification queue. Ticks every 3 s up to ~7.5 min
-   * (past one poller cycle); transient fetch failures are swallowed and
-   * retried — they can never kill the loop or surface as errors.
+   * Watch this checkout's verification queue.
+   *
+   * Phase 1: every 3 s for 7.5 min — instant card payments plus at least two
+   * server-verifier ticks (the verifier runs every 3 min).
+   * Phase 2: every 15 s for another 30 min — a slow bank transfer keeps
+   * getting re-checked while the screen is open (audit M-24: the client used
+   * to give up at 7.5 min and declare "taking longer than usual" while the
+   * user's money was still in flight, with no further feedback).
+   * Transient fetch failures are swallowed and retried — they can never kill
+   * the loop or surface as errors.
    */
   function startPolling(plan: Plan, txRef: string) {
     stopPolling();
     let ticks = 0;
     pollTimer.current = setInterval(async () => {
       ticks += 1;
-      if (ticks > 150) {
+      if (ticks > FAST_TICKS + SLOW_TICKS) {
         stopPolling();
         setLoading(null);
         Alert.alert(
-          'Verification taking longer than usual',
-          `Your payment is being verified in the background and your plan will activate automatically.\n\nReference: ${txRef}`,
+          'Verification still in progress',
+          `We could not confirm this payment within ${Math.round((FAST_TICKS + SLOW_TICKS) * 3 / 60)} minutes.\n\n` +
+          'Verification continues in the background (up to 24 hours) — a bank transfer is credited ' +
+          'automatically as soon as Flutterwave confirms it, and your plan activates on your next visit.\n\n' +
+          `Reference: ${txRef}`,
         );
         return;
       }
+      // Slow phase: skip ticks without a network call.
+      const fast = ticks <= FAST_TICKS;
+      if (!fast && (ticks - FAST_TICKS) % SLOW_EVERY !== 0) return;
       try {
         const { data } = await supabase
           .from('payment_events')
@@ -198,6 +224,31 @@ export default function SubscriptionsScreen() {
       // 1. Queue the checkout — the verifier will only ever honour THIS ref.
       //    Fail CLOSED on error: never open a checkout nothing can verify
       //    (missing migration, offline, RLS surprise).
+      //
+      //    Queue-flood guard (audit H-4): one account could previously
+      //    insert an unbounded number of pending rows, filling the verifier's
+      //    per-run window so genuine purchases were never looked at and aged
+      //    out unpaid.  At most MAX_PENDING_CHECKOUTS may be pending per
+      //    account at once.  Fails OPEN on read errors (a broken count must
+      //    not block payments) — the poller's per-run/per-user caps are the
+      //    backstop.
+      const { count: pendingCount, error: countErr } = await supabase
+        .from('payment_events')
+        .select('id', { count: 'exact', head: true })
+        .eq('user_id', user.id)
+        .eq('status', 'pending');
+      if (countErr) {
+        console.warn('pending-checkout count check failed:', countErr.message);
+      } else if ((pendingCount ?? 0) >= MAX_PENDING_CHECKOUTS) {
+        setLoading(null);
+        Alert.alert(
+          'Checkout Already Pending',
+          'You already have a checkout awaiting verification. Give it a few minutes — ' +
+          'any payment you completed is still credited automatically.',
+        );
+        return;
+      }
+
       const { error: evErr } = await supabase.from('payment_events').insert({
         user_id: user.id,
         plan_id: plan.id,
