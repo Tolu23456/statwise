@@ -269,7 +269,20 @@ begin
   end if;
 
   revoke select on public.user_profiles from anon;
-  raise notice 'section 2 (C-2): user_profiles readable by its owner only (anon grant revoked)';
+  -- C-2 side-effect guard: the tier-gated SELECT policies on `predictions`
+  -- and `insights` (sections 7 & 10) subquery user_profiles to check the
+  -- caller's tier. Postgres validates that subquery's table privileges at
+  -- PLAN time, so a full revoke above made every anon read of predictions /
+  -- insights fail with "permission denied for table user_profiles" — killing
+  -- even the free-tier rows that must stay public (the marketing site's
+  -- live-predictions page reads them with the anon key).
+  --
+  -- A COLUMN-level grant fixes the plan while keeping C-2's real goal intact:
+  -- anon sees only id + current_tier (both non-sensitive; tier is already
+  -- leaked by the policies themselves). email, username, display_name,
+  -- phone, referral codes, counters etc. stay revoked.
+  grant select (id, current_tier) on public.user_profiles to anon;
+  raise notice 'section 2 (C-2): user_profiles readable by its owner only (anon grant revoked; anon retains column-level id,current_tier so tier-gated policies can plan)';
 end $$;
 
 -- ═══════════════════════════════════════════════════════════════════════════
