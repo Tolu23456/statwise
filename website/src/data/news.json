@@ -1,581 +1,732 @@
 {
- "synced_at": "2026-10-29T01:48:50+00:00",
- "sources": {
-  "SportyTrader": "https://www.sportytrader.com/en/news/",
-  "Sky Sports": "https://www.skysports.com/football/news"
- },
- "items": [
-  {
-   "slug": "13604032",
-   "title": "Liverpool beat Chelsea on penalties to reach last eight",
-   "url": "https://www.skysports.com/football/news/13604032/liverpool-1-1-chelsea-6-5-on-pens-wesley-fofana-misses-crucial-spot-kick-as-reds-advance-in-carabao-cup",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-liverpool-chelsea_7390278.jpg?20261028205303",
-   "excerpt": "",
-   "published_label": "",
-   "published_iso": "",
-   "byline": ""
+  "synced_at": "2026-10-29T08:30:08+00:00",
+  "sources": {
+    "SportyTrader": "https://www.sportytrader.com/en/news/",
+    "Sky Sports": "https://www.skysports.com/football/news"
   },
-  {
-   "slug": "13605140",
-   "title": "Papers: Liverpool make contact with Monaco midfielder Camara",
-   "url": "https://www.skysports.com/football/news/13605140/liverpool-transfer-news-reds-make-contact-with-lamine-camara-camp-ahead-of-proposed-january-move-for-monaco-midfielder-paper-talk",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-   "excerpt": "",
-   "published_label": "",
-   "published_iso": "",
-   "byline": ""
-  },
-  {
-   "slug": "13604015",
-   "title": "In-form Bournemouth beat Aston Villa to reach Carabao Cup quarters",
-   "url": "https://www.skysports.com/football/news/13604015/bournemouth-3-0-aston-villa-cherries-win-fifth-consecutive-game-to-reach-carabao-cup-quarter-finals",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-bournemouth-amine-adli_7390349.jpg?20261028215019",
-   "excerpt": "",
-   "published_label": "",
-   "published_iso": "",
-   "byline": ""
-  },
-  {
-   "slug": "13605122",
-   "title": "Kris Boyd felt Rangers 'stole' a point at Tynecastle!",
-   "url": "https://www.skysports.com/football/video/13605122/kris-boyd-felt-rangers-stole-a-point-at-tynecastle",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-kris-boyd-rangers_7390471.jpg?20261028231309",
-   "excerpt": "",
-   "published_label": "",
-   "published_iso": "",
-   "byline": "",
-   "kind": "video"
-  },
-  {
-   "slug": "13605118",
-   "title": "TENSION on the touchline! McInnes and Vrancken's feisty handshake",
-   "url": "https://www.skysports.com/football/video/13605118/tension-on-the-touchline-derek-mcinnes-and-wouter-vranckens-feisty-handshake",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-derek-mcinnes-hearts_7390459.jpg?20261028225954",
-   "excerpt": "",
-   "published_label": "",
-   "published_iso": "",
-   "byline": "",
-   "kind": "video"
-  },
-  {
-   "slug": "13605019",
-   "title": "'It's a little bit naughty!' - Talbi steals goal from team-mate to put Sunderland ahead",
-   "url": "https://www.skysports.com/football/video/13605019/sunderland-vs-brentford-chemsdine-talbi-taps-in-on-the-line-to-put-sunderland-ahead",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7390242.jpg?20261028203559",
-   "excerpt": "",
-   "published_label": "",
-   "published_iso": "",
-   "byline": "",
-   "kind": "video"
-  },
-  {
-   "slug": "13605017",
-   "title": "Precision from Kovacic brings Man City level",
-   "url": "https://www.skysports.com/football/video/13605017/a-wonderful-goal-precision-from-mateo-kovacic-brings-manchester-city-level",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-mateo-kovacic-b-football_7390218.jpg?20261028202016",
-   "excerpt": "",
-   "published_label": "",
-   "published_iso": "",
-   "byline": "",
-   "kind": "video"
-  },
-  {
-   "slug": "13604361",
-   "title": "'Delaying the inevitable' or right call? Key questions as Carrick stays",
-   "url": "https://www.skysports.com/football/news/13604361/michael-carrick-why-man-utd-head-coach-will-stay-on-and-could-bruno-fernandes-play-vs-chelsea-plus-other-key-questions",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-michael-carrick-manchester-united_7383931.jpg?20261022173420",
-   "excerpt": "",
-   "published_label": "",
-   "published_iso": "",
-   "byline": ""
-  },
-  {
-   "slug": "13604280",
-   "title": "Expectation vs reality: What if Man Utd have become a mid-table team?",
-   "url": "https://www.skysports.com/football/news/13604280/michael-carrick-is-latest-man-utd-manager-under-pressure-but-has-poor-recruitment-made-them-a-mid-table-team-between-the-lines",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-man-utd-bruno-fernandes_7388485.png?20261027091001",
-   "excerpt": "",
-   "published_label": "",
-   "published_iso": "",
-   "byline": ""
-  },
-  {
-   "slug": "13605147",
-   "title": "Aberdeen 0-1 Falkirk",
-   "url": "https://www.skysports.com/football/video/13605147/aberdeen-0-1-falkirk-scottish-premiership-highlights",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/ee47aa0c09136b72e1354c9f153365becbceb8d9983db55a0c91d86371c4a980_7390495.jpg?20261029010651",
-   "excerpt": "Watch highlights from Scottish Premiership match between Aberdeen and Falkirk.",
-   "published_label": "29 October 2026 · 01:03",
-   "published_iso": "2026-10-29T01:03:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Watch highlights from Scottish Premiership match between Aberdeen and Falkirk."
-   ]
-  },
-  {
-   "slug": "13605145",
-   "title": "St Johnstone 2-2 Motherwell",
-   "url": "https://www.skysports.com/football/video/13605145/st-johnstone-2-2-motherwell-scottish-premiership-highlights",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/dbbe65cd442a5e528272a3b1c5122eb7875789c38fee3cc4779a4bc46eee60d1_7390490.jpg?20261029005805",
-   "excerpt": "Watch highlights from the Scottish Premiership match between St Johnstone and Motherwell.",
-   "published_label": "29 October 2026 · 00:40",
-   "published_iso": "2026-10-29T00:40:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Watch highlights from the Scottish Premiership match between St Johnstone and Motherwell."
-   ]
-  },
-  {
-   "slug": "13605144",
-   "title": "St Mirren 1-1 Hibernian",
-   "url": "https://www.skysports.com/football/video/13605144/st-mirren-1-1-hibernian-scottish-premiership-highlights",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/3ff0bbacdb561be223f8445dbe5384fee94d4f007a5499d2a3f0ba1b6f196bc0_7390483.jpg?20261029003835",
-   "excerpt": "Watch highlights from the Scottish Premiership match between St Mirren and Hibernian.",
-   "published_label": "29 October 2026 · 00:34",
-   "published_iso": "2026-10-29T00:34:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Watch highlights from the Scottish Premiership match between St Mirren and Hibernian."
-   ]
-  },
-  {
-   "slug": "13605138",
-   "title": "O'Neill reflects on Celtic 'frustration'",
-   "url": "https://www.skysports.com/football/video/13605138/martin-oneill-celtic-boss-reflects-on-frustration-as-they-drew-at-home-with-dundee-united",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-celtic-martin-oneill_7384187.jpg?20261022225517",
-   "excerpt": "Martin O’Neill reflects on Celtic’s home draw with Dundee United, and the performances of summer signings Kasper Hogh and Haissem Hassan.",
-   "published_label": "28 October 2026 · 23:12",
-   "published_iso": "2026-10-28T23:12:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Martin O’Neill reflects on Celtic’s home draw with Dundee United, and the performances of summer signings Kasper Hogh and Haissem Hassan."
-   ]
-  },
-  {
-   "slug": "13605137",
-   "title": "Another defeat for Juventus as Genoa takes the win",
-   "url": "https://www.skysports.com/football/video/13605137/genoa-vs-juventus-serie-a-highlights",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-football-juventus_7390477.jpg?20261028235322",
-   "excerpt": "Highlights of the Serie A game between Genoa and Juventus.",
-   "published_label": "28 October 2026 · 23:12",
-   "published_iso": "2026-10-28T23:12:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Highlights of the Serie A game between Genoa and Juventus."
-   ]
-  },
-  {
-   "slug": "13604008",
-   "title": "Man City dump Brighton out of Carabao Cup after shoot-out victory",
-   "url": "https://www.skysports.com/football/news/13604008/man-city-2-2-brighton-4-3-pens-rayan-cherki-strikes-winning-penalty-as-enzo-marescas-side-progress-to-fifth-round",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-manchester-city-doku_7390355.jpg?20261028215408",
-   "excerpt": "Carabao Cup holders Manchester City needed penalties to progress past Brighton and into the quarter-finals after battling from behind to draw the game 2-2 at the Etihad.",
-   "published_label": "28 October 2026 · 21:19",
-   "published_iso": "2026-10-28T21:19:00+00:00",
-   "byline": "Laura Hunter",
-   "body": [
-    "Carabao Cup holders Manchester City needed penalties to progress past Brighton and into the quarter-finals after battling from behind to draw the game 2-2 at the Etihad.",
-    "Enzo Maresca's side never led on the night but scored four of their five penalties to win the deciding shoot-out 4-3, with Rayan Cherki striking the winner and Geronimo Rulli denying both Yasin Ayari and Lewis Dunk.",
-    "Brighton, the better side for the majority, will consider themselves unlucky to be dumped out of a competition Fabian Hurzeler had earlier professed to want to win. But City stuck to task and eventually prevailed on penalties - Hurzeler gets his chance to enact revenge when the two sides meet again in the Premier League on Saturday. As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-    "The visitors hit the front twice in the game, the opener struck by an impressive Malick Yalcouye, rounding off a slick Brighton move. There was some surprise in the stadium that the linesman's flag stayed down given Yalcouye's position on the last line, but the midfielder was given the benefit of the doubt with VAR not in operation."
-   ]
-  },
-  {
-   "slug": "13605035",
-   "title": "Wilson pulls one back from close range for Brentford against Sunderland",
-   "url": "https://www.skysports.com/football/video/13605035/callum-wilson-pulls-a-goal-back-from-close-range-for-brentford-against-sunderland",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-callum-wilson-brentford_7390277.jpg?20261028205213",
-   "excerpt": "Callum Wilson pulls a goal back from close range for Brentford against Sunderland",
-   "published_label": "28 October 2026 · 20:49",
-   "published_iso": "2026-10-28T20:49:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Callum Wilson pulls a goal back from close range for Brentford against Sunderland"
-   ]
-  },
-  {
-   "slug": "13605033",
-   "title": "Rogers puts Chelsea ahead against Liverpool from the penalty spot",
-   "url": "https://www.skysports.com/football/video/13605033/morgan-rogers-puts-chelsea-ahead-against-liverpool-from-the-penalty-spot",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-morgan-rogers-rogers_7390287.jpg?20261028205739",
-   "excerpt": "Chelsea took a first-half lead against Liverpool after Morgan Rogers converted from the penalty spot after Moises Caicedo was brought down by Ryan Gravenberch.",
-   "published_label": "28 October 2026 · 20:46",
-   "published_iso": "2026-10-28T20:46:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Chelsea took a first-half lead against Liverpool after Morgan Rogers converted from the penalty spot after Moises Caicedo was brought down by Ryan Gravenberch."
-   ]
-  },
-  {
-   "slug": "13605031",
-   "title": "Tuterov quickly doubles Sunderland's lead vs Brentford",
-   "url": "https://www.skysports.com/football/video/13605031/sunderland-vs-brentford-timur-tuterov-quickly-doubles-sunderlands-lead",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7390270.jpg?20261028204919",
-   "excerpt": "Sunderland's Timur Tuterov quickly doubles the side's lead over Brentford in their Carabao Cup match.",
-   "published_label": "28 October 2026 · 20:43",
-   "published_iso": "2026-10-28T20:43:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Sunderland's Timur Tuterov quickly doubles the side's lead over Brentford in their Carabao Cup match."
-   ]
-  },
-  {
-   "slug": "13605028",
-   "title": "Brighton retake the lead less than 90 seconds after restart!",
-   "url": "https://www.skysports.com/football/video/13605028/lightning-start-brighton-retake-the-lead-less-than-90-seconds-after-restart",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-brighton-football_7390260.jpg?20261028204407",
-   "excerpt": "Brighton retake the lead less than 90 seconds after restart against Man City.",
-   "published_label": "28 October 2026 · 20:40",
-   "published_iso": "2026-10-28T20:40:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Brighton retake the lead less than 90 seconds after restart against Man City."
-   ]
-  },
-  {
-   "slug": "13605023",
-   "title": "Fofana heads in to make it THREE for Sunderland",
-   "url": "https://www.skysports.com/football/video/13605023/sunderland-vs-brentford-malick-fofana-heads-in-to-make-it-three-for-sunderland",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7390263.jpg?20261028204526",
-   "excerpt": "Malick Fofana scores Sunderland's third of the night with a header in their Carabao Cup tie with Brentford.",
-   "published_label": "28 October 2026 · 20:32",
-   "published_iso": "2026-10-28T20:32:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Malick Fofana scores Sunderland's third of the night with a header in their Carabao Cup tie with Brentford."
-   ]
-  },
-  {
-   "slug": "13605022",
-   "title": "Would you believe it?! - Nketiah puts Palace ahead against Fulham with a deft finish",
-   "url": "https://www.skysports.com/football/video/13605022/eddie-nketiah-puts-crystal-palace-ahead-against-fulham-with-a-deft-finish",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-crystal-palace-eddie-nketiah_7390250.jpg?20261028204017",
-   "excerpt": "Eddie Nketiah puts Crystal Palace ahead against Fulham with a deft finish.",
-   "published_label": "28 October 2026 · 20:27",
-   "published_iso": "2026-10-28T20:27:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Eddie Nketiah puts Crystal Palace ahead against Fulham with a deft finish."
-   ]
-  },
-  {
-   "slug": "13605018",
-   "title": "Kelsy fires Rangers ahead at Hearts",
-   "url": "https://www.skysports.com/football/video/13605018/kevin-kelsy-fires-rangers-ahead-at-hearts",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-kevin-kelsy-rangers_7390229.jpg?20261028202640",
-   "excerpt": "Kevin Kelsy gave Rangers an early lead on Derek McInnes' return to Tynecastle.",
-   "published_label": "28 October 2026 · 20:21",
-   "published_iso": "2026-10-28T20:21:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Kevin Kelsy gave Rangers an early lead on Derek McInnes' return to Tynecastle."
-   ]
-  },
-  {
-   "slug": "13604049",
-   "title": "Chelsea continue unbeaten start in WCL after beating Roma",
-   "url": "https://www.skysports.com/football/news/13604049/wcl-chelsea-2-0-roma-blues-continue-unbeaten-start-as-ellie-carpenter-and-kadeisha-buchanan-score",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-chelsea-roma_7390179.jpg?20261028194941",
-   "excerpt": "Chelsea continued their unbeaten start in the Women's Champions League as goals from Ellie Carpenter and Kadeisha Buchanan secured a 2-0 win against Roma.",
-   "published_label": "28 October 2026 · 19:35",
-   "published_iso": "2026-10-28T19:35:00+00:00",
-   "byline": "Sky Sports",
-   "body": [
-    "Chelsea continued their unbeaten start in the Women's Champions League as goals from Ellie Carpenter and Kadeisha Buchanan secured a 2-0 win against Roma.",
-    "Eyebrows were raised when Lauren James and Alyssa Thompson were replaced at half-time in London following a wasteful first half but it paid off when substitute Ellie Carpenter squeezed home the opener, six minutes after coming on.",
-    "Melvine Malard and Sjoeke Nusken, who also appeared off the bench, squandered big chances to seal the game but a second eventually come through Buchanan with just a minute of regular time to play.",
-    "The defender rose highest in the box to nod Wieke Kaptein's cross in. Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺"
-   ]
-  },
-  {
-   "slug": "13604920",
-   "title": "Liverpool draw Bournemouth in Carabao Cup quarters",
-   "url": "https://www.skysports.com/football/news/13604920/carabao-cup-quarter-final-draw-liverpool-host-bournemouth-as-bradford-and-fleetwood-get-home-ties-against-premier-league-opposition",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/08/768x432/skysports-carabao-cup-trophy_7311954.jpg?20260801184714",
-   "excerpt": "Liverpool will play Bournemouth in the Carabao Cup quarter-finals while League One Bradford City will host Manchester City.",
-   "published_label": "28 October 2026 · 16:11",
-   "published_iso": "2026-10-28T16:11:00+00:00",
-   "byline": "Sky Sports",
-   "body": [
-    "Liverpool will play Bournemouth in the Carabao Cup quarter-finals while League One Bradford City will host Manchester City.",
-    "Fleetwood Town's reward for knocking out Premier League champions Arsenal is a home game against the winner of Everton vs Newcastle on Thursday night.",
-    "Crystal Palace will host Sunderland in an all-Premier League clash in the remaining last-eight tie. Transfer Centre LIVE! | Latest EFL news and rumours Got Sky? Watch the Carabao Cup LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream the Carabao Cup with no contract 📺",
-    "Liverpool beat Chelsea on penalties to set up a meeting with Andoni Iraola's former side Bournemouth, who went through to the quarter-finals in style with a fine 3-0 win against Aston Villa."
-   ]
-  },
-  {
-   "slug": "13604854",
-   "title": "'We're all so proud of you' - PM leads Commons praise of Kane's Ballon d'Or win",
-   "url": "https://www.skysports.com/football/video/13604854/harry-kane-wins-ballon-dor-prime-minister-leads-commons-tribute",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-pm-andy-burnham-harry_7389825.jpg?20261028135318",
-   "excerpt": "Prime Minister Andy Burnham congratulates England captain Harry Kane on winning the Ballon d'Or.",
-   "published_label": "28 October 2026 · 13:48",
-   "published_iso": "2026-10-28T13:48:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Prime Minister Andy Burnham congratulates England captain Harry Kane on winning the Ballon d'Or."
-   ]
-  },
-  {
-   "slug": "13604803",
-   "title": "Ref Watch: Arsenal's red card appeal will fail - Dowman was aggressive",
-   "url": "https://www.skysports.com/football/news/13604803/max-dowman-red-card-arsenals-appeal-against-decision-will-fail-says-former-premier-league-referee-dermot-gallagher",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-max-dowman-arsenal_7389720.jpg?20261028130824",
-   "excerpt": "Former Premier League referee Dermot Gallagher believes Arsenal's appeal against Max Dowman's red card in their shock Carabao Cup defeat to Fleetwood Town will fail.",
-   "published_label": "28 October 2026 · 13:15",
-   "published_iso": "2026-10-28T13:15:00+00:00",
-   "byline": "Sky Sports",
-   "body": [
-    "Former Premier League referee Dermot Gallagher believes Arsenal's appeal against Max Dowman's red card in their shock Carabao Cup defeat to Fleetwood Town will fail.",
-    "Dowman was sent off for violent conduct after kicking out at Harrison Neal following the defender's strong challenge on the teenager late in the fourth-round tie, which Arsenal lost on penalties.",
-    "Arsenal must submit appeal documents by 1pm on Thursday and are hopeful a decision will be made before their match at Liverpool, live on Sky Sports on Sunday.",
-    "However, when asked if he thought Arsenal's appeal would be successful, Gallagher told Sky Sports News : \"I don't, because of the aggressiveness of Dowman, and you can see the intent. I think it will fail.\" Arsenal dumped out of Carabao Cup by League Two Fleetwood Mikel Arteta explains reaction to Dowman red card amid criticism Arsenal news & transfers 🔴⚪| Arsenal fixtures & scores Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-   ]
-  },
-  {
-   "slug": "13604790",
-   "title": "'He knows what he's doing' - Ref Watch analyse Dowman red and compare to Palmer",
-   "url": "https://www.skysports.com/football/video/13604790/max-dowman-red-card-against-fleetwood-ref-watch-analyse-teenagers-red-and-compare-to-cole-palmer",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-palmer-dermot_7389706.jpg?20261028125932",
-   "excerpt": "Former Premier League referee Dermot Gallagher gives his thoughts on Max Dowman's red card against Fleetwood Town in the Carabao Cup.",
-   "published_label": "28 October 2026 · 12:27",
-   "published_iso": "2026-10-28T12:27:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Former Premier League referee Dermot Gallagher gives his thoughts on Max Dowman's red card against Fleetwood Town in the Carabao Cup."
-   ]
-  },
-  {
-   "slug": "13604765",
-   "title": "'Genuis leadership' - Robinson hails Arsenal decision to appeal Dowman red",
-   "url": "https://www.skysports.com/football/video/13604765/max-dowman-sent-off-karl-robinson-hails-arsenal-decision-to-appeal-red-card",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-karl-robinson-max_7389588.jpg?20261028113818",
-   "excerpt": "Former MK Dons manager Karl Robinson is clearly impressed with Arsenal's decision to appeal Max Dowman's red card against Fleetwood, describing it, on Sky Sports FC, as 'genius leadership'.",
-   "published_label": "28 October 2026 · 11:30",
-   "published_iso": "2026-10-28T11:30:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Former MK Dons manager Karl Robinson is clearly impressed with Arsenal's decision to appeal Max Dowman's red card against Fleetwood, describing it, on Sky Sports FC, as 'genius leadership'."
-   ]
-  },
-  {
-   "slug": "13604754",
-   "title": "'Open and frank' - Details of Carrick's talk with captain Bruno revealed",
-   "url": "https://www.skysports.com/football/video/13604754/man-utd-boss-michael-carrick-holds-clear-the-air-talks-with-captain-bruno-fernandes-unfolded",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-carrick-man-utd_7389563.jpg?20261028110935",
-   "excerpt": "Sky Sports' Rob Dorsett reveals Man Utd boss Michael Carrick and captain Bruno Fernandes have held 'clear the air' talks.",
-   "published_label": "28 October 2026 · 11:07",
-   "published_iso": "2026-10-28T11:07:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Sky Sports' Rob Dorsett reveals Man Utd boss Michael Carrick and captain Bruno Fernandes have held 'clear the air' talks."
-   ]
-  },
-  {
-   "slug": "13604744",
-   "title": "'He'll get this all the time now' - Merson's worry for Dowman after Fleetwood red",
-   "url": "https://www.skysports.com/football/video/13604744/max-dowman-red-card-paul-mersons-worry-for-arsenal-teenager-after-fleetwood-red-card",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-paul-merson-max-dowman_7389552.jpg?20261028110338",
-   "excerpt": "Paul Merson has shared his concerns for Max Dowman following the red card the teenager picked up in the League Cup defeat to Fleetwood Town.",
-   "published_label": "28 October 2026 · 10:51",
-   "published_iso": "2026-10-28T10:51:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Paul Merson has shared his concerns for Max Dowman following the red card the teenager picked up in the League Cup defeat to Fleetwood Town."
-   ]
-  },
-  {
-   "slug": "13604738",
-   "title": "Carrick and Fernandes hold clear-the-air talks ahead of Chelsea fixture",
-   "url": "https://www.skysports.com/football/news/13604738/bruno-fernandes-man-utd-head-coach-michael-carrick-and-club-captain-hold-clear-the-air-talks-ahead-of-chelsea-fixture",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-manchester-united_7384469.jpg?20261023105612",
-   "excerpt": "Manchester United head coach Michael Carrick and captain Bruno Fernandes have met face to face to clear the air, with both vowing to refocus on turning the club's season around.",
-   "published_label": "28 October 2026 · 10:39",
-   "published_iso": "2026-10-28T10:39:00+00:00",
-   "byline": "Danyal Khan and Rob Dorsett",
-   "body": [
-    "Manchester United head coach Michael Carrick and captain Bruno Fernandes have met face to face to clear the air, with both vowing to refocus on turning the club's season around.",
-    "Fernandes was an unused substitute after being dropped for the 3-0 defeat against Bournemouth on Sunday after he criticised Carrick's tactics following the 4-1 thrashing at Como in the Champions League.",
-    "Carrick had described his reasons for dropping his captain as \"pure football\".",
-    "\"Picking the team is always a difficult decision,\" Carrick told Sky Sports . \"We've got to make what we feel is the right one for the team to try to get the performance we want.\" Michael Carrick to remain in charge of Man Utd for Chelsea trip 'Delaying the inevitable' or right call? Key questions as Michael Carrick stays Expectation vs reality: What if Man Utd have become a mid-table team? Man Utd news & transfers 🔴| Man Utd fixtures & scores"
-   ]
-  },
-  {
-   "slug": "manchester-city-vs-brighton-carabao-cup-clash-sets-up-etihad-double-header",
-   "title": "Manchester City vs Brighton: Carabao Cup Clash Sets Up Etihad Double H",
-   "url": "https://www.sportytrader.com/en/news/manchester-city-vs-brighton-carabao-cup-clash-sets-up-etihad-double-header/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/football/2027/efl-cup-liverpool-vs-chelsea-1.webp",
-   "excerpt": "Manchester City host Brighton at the Etihad Stadium on Wednesday evening in the Carabao Cup fourth round, three days before these same sides meet in the Premier League. E",
-   "published_label": "28 October 2026 · 08:00",
-   "published_iso": "2026-10-28T08:00:00+00:00",
-   "byline": "Geoffrey Ejiga"
-  },
-  {
-   "slug": "13604682",
-   "title": "'He knows heartbreak like this!' - The biggest upsets in League Cup history",
-   "url": "https://www.skysports.com/football/video/13604682/round-up-of-the-biggest-upsets-in-league-cup-history",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7389365.jpg?20261028080159",
-   "excerpt": "Following Fleetwood's victory over Arsenal, take a look at some of the biggest upsets in League Cup history.",
-   "published_label": "28 October 2026 · 07:55",
-   "published_iso": "2026-10-28T07:55:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Following Fleetwood's victory over Arsenal, take a look at some of the biggest upsets in League Cup history."
-   ]
-  },
-  {
-   "slug": "liverpool-vs-chelsea-efl-cup-alonso-anfield-return-without-palmer",
-   "title": "Liverpool vs Chelsea: Can Alonso Stun Reds on Anfield Return Without P",
-   "url": "https://www.sportytrader.com/en/news/liverpool-vs-chelsea-efl-cup-alonso-anfield-return-without-palmer/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/cricket/india-vs-nz-third-t20i.webp",
-   "excerpt": "Anfield’s floodlights will provide the backdrop for a mouth-watering Carabao Cup fourth-round clash tonight. Xabi Alonso returns to familiar territory as Chelsea manager,",
-   "published_label": "28 October 2026 · 05:00",
-   "published_iso": "2026-10-28T05:00:00+00:00",
-   "byline": "Devesh Jaganath"
-  },
-  {
-   "slug": "abhishek-sharma-stars-as-india-win-t20i-series-new-zealand",
-   "title": "India Seal T20 Series Against New Zealand With Commanding Victory In W",
-   "url": "https://www.sportytrader.com/en-in/news/abhishek-sharma-stars-as-india-win-t20i-series-new-zealand/",
-   "source": "SportyTrader",
-   "image": "https://static.sportytrader.com/images/news/football/2027/fleetwood.webp",
-   "excerpt": "India took an unassailable 3-0 lead in their five-match T20I series against New Zealand by securing an impressive six-wicket victory at the Wellington Regional Stadium ye",
-   "published_label": "28 October 2026 · 04:00",
-   "published_iso": "2026-10-28T04:00:00+00:00",
-   "byline": "Devesh Jaganath"
-  },
-  {
-   "slug": "13604637",
-   "title": "Arteta explains reaction to Dowman red card amid criticism",
-   "url": "https://www.skysports.com/football/news/13604637/max-dowman-red-card-mikel-arteta-explains-what-he-said-to-16-year-old-after-sending-off-in-carabao-cup-exit-to-fleetwood-town",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-arsenal_7389264.jpg?20261027232527",
-   "excerpt": "Mikel Arteta has explained his reaction to Max Dowman as the 16-year-old went down the tunnel after being sent off in Arsenal's shock Carabao Cup exit to Fleetwood Town.",
-   "published_label": "27 October 2026 · 23:11",
-   "published_iso": "2026-10-27T23:11:00+00:00",
-   "byline": "Sam Blitz",
-   "body": [
-    "Mikel Arteta has explained his reaction to Max Dowman as the 16-year-old went down the tunnel after being sent off in Arsenal's shock Carabao Cup exit to Fleetwood Town.",
-    "Moments before Arsenal exited the competition on penalties to the League Two side, Dowman was sent off for violent conduct for kicking out at Harrison Neal after the Fleetwood defender's strong challenge on the teenager.",
-    "As Dowman headed towards the tunnel and past the dugouts, Arteta leaned in and said something to the teenager, which Paul Merson criticised, saying the Arsenal manager should have put an arm around him. Fleetwood 1-1 Arsenal (4-3 pens) - report and reaction As it happened | Teams | Stats VOTE: Is Cod Army victory the biggest cup shock of all time?",
-    "Asked what he said to Dowman, Arteta told reporters: \"It was something that we discussed before the game.\" Arteta refused to go into any more detail when pressed."
-   ]
-  },
-  {
-   "slug": "13604628",
-   "title": "Arteta's FULL reaction to Fleetwood knocking out Arsenal & Dowman red",
-   "url": "https://www.skysports.com/football/video/13604628/fleetwood-vs-arsenal-mikel-arteta-reacts-to-the-gunners-shock-loss-and-max-dowmans-red-card",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-arteta_7389242.jpg?20261027225751",
-   "excerpt": "Arsenal boss Mikel Arteta shares his thoughts following their shock Carabao Cup loss on penalties to League Two side Fleetwood Town.",
-   "published_label": "27 October 2026 · 22:52",
-   "published_iso": "2026-10-27T22:52:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Arsenal boss Mikel Arteta shares his thoughts following their shock Carabao Cup loss on penalties to League Two side Fleetwood Town."
-   ]
-  },
-  {
-   "slug": "13604626",
-   "title": "Papers: Carrick's job saved by failure to agree on replacement",
-   "url": "https://www.skysports.com/football/transfer-paper-talk/13604626/manchester-united-failure-to-agree-on-michael-carrick-s-successor-buys-under-pressure-head-coach-more-time",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-   "excerpt": "The top stories and transfer rumours from Wednesday's newspapers...",
-   "published_label": "27 October 2026 · 22:45",
-   "published_iso": "2026-10-27T22:45:00+00:00",
-   "byline": "Sky Sports",
-   "body": [
-    "The top stories and transfer rumours from Wednesday's newspapers...",
-    "Man Utd had planned on sacking Michael Carrick this week but failure to settle on a replacement has granted the head coach another stay of execution - The Sun",
-    "Pierre Sage has been given more time to turn around Crystal Palace's fortunes but he remains under huge pressure and could be dismissed if they lose against Tottenham on Saturday - The Guardian Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-    "One of Gianni Infantino's biggest critics, Prince Ali bin al-Hussein of Jordan, is facing the threat of disciplinary action from Asian football chiefs after accusing the Fifa president of hijacking an annual congress to help his re-election bid - The Times"
-   ]
-  },
-  {
-   "slug": "13604625",
-   "title": "Barnet 3-1 York",
-   "url": "https://www.skysports.com/football/video/13604625/barnet-3-1-york-league-two-highlights",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/c057890996c21e47a397e3d5dddbdd6ed63233864c47eb6093693bc080f7ee41_7389234.jpg?20261027224807",
-   "excerpt": "Highlights of the Sky Bet League Two match between Barnet and York.",
-   "published_label": "27 October 2026 · 22:42",
-   "published_iso": "2026-10-27T22:42:00+00:00",
-   "byline": "Sky Sports",
-   "kind": "video",
-   "body": [
-    "Highlights of the Sky Bet League Two match between Barnet and York."
-   ]
-  },
-  {
-   "slug": "13604016",
-   "title": "Sunderland's first-half blitz sends them past Brentford into quarters",
-   "url": "https://www.skysports.com/football/news/13604016/sunderland-3-2-brentford-jocelin-ta-bi-shines-for-black-cats-making-all-three-goals-to-reach-carabao-cup-quarter-finals",
-   "source": "Sky Sports",
-   "image": "https://e0.365dm.com/26/10/768x432/skysports-sunderland-talbi_7390227.jpg?20261028202603",
-   "excerpt": "Three goals in 13 first-half minutes saw Sunderland blitz past Brentford and into the Carabao Cup quarter-finals with a 3-2 win at the Stadium of Light.",
-   "published_label": "26 October 2026 · 13:23",
-   "published_iso": "2026-10-26T13:23:00+00:00",
-   "byline": "Ron Walker",
-   "body": [
-    "Three goals in 13 first-half minutes saw Sunderland blitz past Brentford and into the Carabao Cup quarter-finals with a 3-2 win at the Stadium of Light.",
-    "The Black Cats owed much to 21-year-old Jocelin Ta Bi for his trio of assists to turn the game on its head after Brentford had dominated the early stages - and hit the post, bar and saw a shot cleared off the line in one move at 0-0.",
-    "Ta Bi, who joined Sunderland in January but had only featured four times since, was a livewire on the right flank in that first 45 minutes and thought he had opened his account for the club with a low drive that beat Hakon Valdimarsson, only for Chemsdine Talbi to tap home on the line and claim the goal. As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-    "Bi's second assist was more intentional after dancing into the box from out wide and pulling the ball back for Timur Tutierov, who sidefooted home a quick second only three minutes later."
-   ]
-  }
- ]
+  "items": [
+    {
+      "slug": "13601855",
+      "title": "Rangers score late to snatch draw on McInnes' Hearts return",
+      "url": "https://www.skysports.com/football/news/13601855/hearts-2-2-rangers-olwethu-makhanyas-late-equaliser-rescues-draw-on-derek-mcinnes-tynecastle-return",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-rangers-hearts-makhanya_7390392.jpg?20261028221354",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13604032",
+      "title": "Liverpool beat Chelsea on penalties to reach last eight",
+      "url": "https://www.skysports.com/football/news/13604032/liverpool-1-1-chelsea-6-5-on-pens-wesley-fofana-misses-crucial-spot-kick-as-reds-advance-in-carabao-cup",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-liverpool-chelsea_7390278.jpg?20261028205303",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13605140",
+      "title": "Papers: Liverpool make contact with Monaco midfielder Camara",
+      "url": "https://www.skysports.com/football/news/13605140/liverpool-transfer-news-reds-make-contact-with-lamine-camara-camp-ahead-of-proposed-january-move-for-monaco-midfielder-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13604015",
+      "title": "In-form Bournemouth beat Aston Villa to reach Carabao Cup quarters",
+      "url": "https://www.skysports.com/football/news/13604015/bournemouth-3-0-aston-villa-cherries-win-fifth-consecutive-game-to-reach-carabao-cup-quarter-finals",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-bournemouth-amine-adli_7390349.jpg?20261028215019",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13605118",
+      "title": "TENSION on the touchline! McInnes and Vrancken's feisty handshake",
+      "url": "https://www.skysports.com/football/video/13605118/tension-on-the-touchline-derek-mcinnes-and-wouter-vranckens-feisty-handshake",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-derek-mcinnes-hearts_7390459.jpg?20261028225954",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13605019",
+      "title": "'It's a little bit naughty!' - Talbi steals goal from team-mate to put Sunderland ahead",
+      "url": "https://www.skysports.com/football/video/13605019/sunderland-vs-brentford-chemsdine-talbi-taps-in-on-the-line-to-put-sunderland-ahead",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7390242.jpg?20261028203559",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13605017",
+      "title": "Precision from Kovacic brings Man City level",
+      "url": "https://www.skysports.com/football/video/13605017/a-wonderful-goal-precision-from-mateo-kovacic-brings-manchester-city-level",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-mateo-kovacic-b-football_7390218.jpg?20261028202016",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13604361",
+      "title": "'Delaying the inevitable' or right call? Key questions as Carrick stays",
+      "url": "https://www.skysports.com/football/news/13604361/michael-carrick-why-man-utd-head-coach-will-stay-on-and-could-bruno-fernandes-play-vs-chelsea-plus-other-key-questions",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-michael-carrick-manchester-united_7383931.jpg?20261022173420",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13604280",
+      "title": "Expectation vs reality: What if Man Utd have become a mid-table team?",
+      "url": "https://www.skysports.com/football/news/13604280/michael-carrick-is-latest-man-utd-manager-under-pressure-but-has-poor-recruitment-made-them-a-mid-table-team-between-the-lines",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-man-utd-bruno-fernandes_7388485.png?20261027091001",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13605202",
+      "title": "Haaland goes VIRAL for his dance moves after Man City win!",
+      "url": "https://www.skysports.com/football/video/13605202/league-cup-erling-haaland-goes-viral-for-his-dance-moves-after-manchester-citys-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-haaland-man-city_7390602.jpg?20261029074915",
+      "excerpt": "Erling Haaland was spotted dancing on the pitch after Manchester City's penalty shoot-out win against Brighton in the Carabao Cup on Wednesday.",
+      "published_label": "29 October 2026 · 07:45",
+      "published_iso": "2026-10-29T07:45:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Erling Haaland was spotted dancing on the pitch after Manchester City's penalty shoot-out win against Brighton in the Carabao Cup on Wednesday."
+      ]
+    },
+    {
+      "slug": "13605153",
+      "title": "Dundee 3-1 Kilmarnock",
+      "url": "https://www.skysports.com/football/video/13605153/dundee-3-1-kilmarnock-scottish-premiership-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/5563a9f1ff19132a2e22bbb84d1db37dab591fe51586a1ae7761e73ae48b1500_7390510.jpg?20261029023337",
+      "excerpt": "Watch highlights from the Scottish Premiership match between Dundee and Kilmarnock.",
+      "published_label": "29 October 2026 · 02:29",
+      "published_iso": "2026-10-29T02:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Watch highlights from the Scottish Premiership match between Dundee and Kilmarnock."
+      ]
+    },
+    {
+      "slug": "13605147",
+      "title": "Aberdeen 0-1 Falkirk",
+      "url": "https://www.skysports.com/football/video/13605147/aberdeen-0-1-falkirk-scottish-premiership-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/ee47aa0c09136b72e1354c9f153365becbceb8d9983db55a0c91d86371c4a980_7390495.jpg?20261029010651",
+      "excerpt": "Watch highlights from Scottish Premiership match between Aberdeen and Falkirk.",
+      "published_label": "29 October 2026 · 01:03",
+      "published_iso": "2026-10-29T01:03:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Watch highlights from Scottish Premiership match between Aberdeen and Falkirk."
+      ]
+    },
+    {
+      "slug": "13605145",
+      "title": "St Johnstone 2-2 Motherwell",
+      "url": "https://www.skysports.com/football/video/13605145/st-johnstone-2-2-motherwell-scottish-premiership-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/dbbe65cd442a5e528272a3b1c5122eb7875789c38fee3cc4779a4bc46eee60d1_7390490.jpg?20261029005805",
+      "excerpt": "Watch highlights from the Scottish Premiership match between St Johnstone and Motherwell.",
+      "published_label": "29 October 2026 · 00:40",
+      "published_iso": "2026-10-29T00:40:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Watch highlights from the Scottish Premiership match between St Johnstone and Motherwell."
+      ]
+    },
+    {
+      "slug": "13605144",
+      "title": "St Mirren 1-1 Hibernian",
+      "url": "https://www.skysports.com/football/video/13605144/st-mirren-1-1-hibernian-scottish-premiership-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/3ff0bbacdb561be223f8445dbe5384fee94d4f007a5499d2a3f0ba1b6f196bc0_7390483.jpg?20261029003835",
+      "excerpt": "Watch highlights from the Scottish Premiership match between St Mirren and Hibernian.",
+      "published_label": "29 October 2026 · 00:34",
+      "published_iso": "2026-10-29T00:34:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Watch highlights from the Scottish Premiership match between St Mirren and Hibernian."
+      ]
+    },
+    {
+      "slug": "13605137",
+      "title": "Another defeat for Juventus as Genoa takes the win",
+      "url": "https://www.skysports.com/football/video/13605137/genoa-vs-juventus-serie-a-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-juventus_7390477.jpg?20261028235322",
+      "excerpt": "Highlights of the Serie A game between Genoa and Juventus.",
+      "published_label": "28 October 2026 · 23:12",
+      "published_iso": "2026-10-28T23:12:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Serie A game between Genoa and Juventus."
+      ]
+    },
+    {
+      "slug": "13605138",
+      "title": "O'Neill reflects on Celtic 'frustration'",
+      "url": "https://www.skysports.com/football/video/13605138/martin-oneill-celtic-boss-reflects-on-frustration-as-they-drew-at-home-with-dundee-united",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-celtic-martin-oneill_7384187.jpg?20261022225517",
+      "excerpt": "Martin O’Neill reflects on Celtic’s home draw with Dundee United, and the performances of summer signings Kasper Hogh and Haissem Hassan.",
+      "published_label": "28 October 2026 · 23:12",
+      "published_iso": "2026-10-28T23:12:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Martin O’Neill reflects on Celtic’s home draw with Dundee United, and the performances of summer signings Kasper Hogh and Haissem Hassan."
+      ]
+    },
+    {
+      "slug": "13605122",
+      "title": "Boyd believes Rangers 'stole' point at Tynecastle!",
+      "url": "https://www.skysports.com/football/video/13605122/kris-boyd-felt-rangers-stole-a-point-at-tynecastle",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-kris-boyd-rangers_7390471.jpg?20261028231309",
+      "excerpt": "Kris Boyd believes Rangers will be delighted to leave Tynecastle with a draw after being outplayed for long spells by Hearts.",
+      "published_label": "28 October 2026 · 22:49",
+      "published_iso": "2026-10-28T22:49:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Kris Boyd believes Rangers will be delighted to leave Tynecastle with a draw after being outplayed for long spells by Hearts."
+      ]
+    },
+    {
+      "slug": "13601839",
+      "title": "Hay scores twice as Dundee send Killie bottom",
+      "url": "https://www.skysports.com/football/news/13601839/dundee-3-1-kilmarnock-ash-hay-scores-twice-as-killie-drop-to-the-bottom-of-the-scottish-premiership",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-ash-hay_7390417.jpg?20261028223548",
+      "excerpt": "Ash Hay piled more pressure on Kilmarnock boss Neil McCann after netting a late brace to earn Dundee a 3-1 win at Dens Park in the William Hill Premiership.",
+      "published_label": "28 October 2026 · 21:35",
+      "published_iso": "2026-10-28T21:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Ash Hay piled more pressure on Kilmarnock boss Neil McCann after netting a late brace to earn Dundee a 3-1 win at Dens Park in the William Hill Premiership.",
+        "The Dark Blues took the lead in the first half through Joe Bevan but Killie drew level thanks to a Joe Hugill penalty with 15 minutes left.",
+        "However, Dundee snatched all three points late on with Hay netting a double. The win lifts the Dark Blues up to fourth while Killie dropped to the bottom of the table.",
+        "The hosts made just one change to the team that was beaten at St Mirren on Saturday, with former Killie defender Joe Wright coming in for the injured Owen Bevan."
+      ]
+    },
+    {
+      "slug": "13601835",
+      "title": "Krauhaus nets only goal as Falkirk beat Aberdeen",
+      "url": "https://www.skysports.com/football/news/13601835/aberdeen-0-1-falkirk-ben-krauhaus-comes-off-the-bench-to-hand-visitors-win-at-pittodrie",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-falkirk-ben-krauhaus_7390387.jpg?20261028221057",
+      "excerpt": "Substitute Ben Krauhaus netted the only goal of a low-key match at Pittodrie as Falkirk overcame lacklustre Aberdeen to move into the top half of the William Hill Premiership table.",
+      "published_label": "28 October 2026 · 21:35",
+      "published_iso": "2026-10-28T21:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Substitute Ben Krauhaus netted the only goal of a low-key match at Pittodrie as Falkirk overcame lacklustre Aberdeen to move into the top half of the William Hill Premiership table.",
+        "The on-loan Brentford midfielder netted just eight minutes after entering the fray, and his side-footed effort from the centre of the penalty area would prove decisive.",
+        "Separated by a point before the match, both teams had designs on climbing into the top six, with virus-hit Aberdeen having lost to Dundee United at the weekend to drop to ninth, while Falkirk's 3-0 win over Kilmarnock had them sat in seventh.",
+        "The Dons made two changes to the side that fell 3-2 at Tannadice, Dan Happe returning in place of Jack Milne, while Lewis Smith took over from the injured Connor Ronan. Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract"
+      ]
+    },
+    {
+      "slug": "13601842",
+      "title": "Motherwell end losing run but miss out on St Johnstone win",
+      "url": "https://www.skysports.com/football/news/13601842/st-johnstone-2-2-motherwell-visitors-end-losing-run-but-josh-campbells-stoppage-time-goal-costs-the-victory",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-motherwell-maswanhise_7390408.jpg?20261028222713",
+      "excerpt": "Motherwell ended a six-match losing streak but manager Alfred Johansson was denied a much-needed win by Josh Campbell’s stoppage-time equaliser for St Johnstone.",
+      "published_label": "28 October 2026 · 21:35",
+      "published_iso": "2026-10-28T21:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Motherwell ended a six-match losing streak but manager Alfred Johansson was denied a much-needed win by Josh Campbell’s stoppage-time equaliser for St Johnstone.",
+        "The Swede had presided over Motherwell's worst losing run since 2003 and the 2-2 draw would have felt like a body blow given the Steelmen made a strong recovery from Taylor Steven's opener against the run of play.",
+        "A virtuoso goal from Ibrahim Said brought the visitors level and they seized the initiative with Tawanda Maswanhise netting early in the second half.",
+        "Motherwell looked set to mark the 10th anniversary of the club going into fan ownership with three points but they were left with just one win in 12 games when Campbell rose unchallenged in a crowded penalty box to head home Logan Chalmers' cross. Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract"
+      ]
+    },
+    {
+      "slug": "13601844",
+      "title": "Hibs climb off foot of the table in St Mirren draw",
+      "url": "https://www.skysports.com/football/news/13601844/st-mirren-1-1-hibs-marink-reedijk-secures-first-point-as-hibernian-boss-to-move-them-off-the-foot-of-the-table",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-hibs-hibernian_7390426.jpg?20261028223957",
+      "excerpt": "Hibernian moved off the foot of the Scottish Premiership table as they drew 1-1 at St Mirren to earn Marink Reedijk his first point as manager.",
+      "published_label": "28 October 2026 · 21:35",
+      "published_iso": "2026-10-28T21:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Hibernian moved off the foot of the Scottish Premiership table as they drew 1-1 at St Mirren to earn Marink Reedijk his first point as manager.",
+        "Marko Ivezic's second-goal put Hibs ahead in Paisley but it was cancelled out by Jason Kerr's own goal.",
+        "The draw was enough for Reedijk to finally get off the mark at the fourth attempt.",
+        "It was a scrappy match of few chances until late on when both sides had chances to earn the victory but could not take them, with Hibernian goalkeeper Raphael Sallinger doing well to deny StMirren's Jake Young. Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract"
+      ]
+    },
+    {
+      "slug": "13604008",
+      "title": "Man City dump Brighton out of Carabao Cup after shoot-out victory",
+      "url": "https://www.skysports.com/football/news/13604008/man-city-2-2-brighton-4-3-pens-rayan-cherki-strikes-winning-penalty-as-enzo-marescas-side-progress-to-fifth-round",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-manchester-city-doku_7390355.jpg?20261028215408",
+      "excerpt": "Carabao Cup holders Manchester City needed penalties to progress past Brighton and into the quarter-finals after battling from behind to draw the game 2-2 at the Etihad.",
+      "published_label": "28 October 2026 · 21:19",
+      "published_iso": "2026-10-28T21:19:00+00:00",
+      "byline": "Laura Hunter",
+      "body": [
+        "Carabao Cup holders Manchester City needed penalties to progress past Brighton and into the quarter-finals after battling from behind to draw the game 2-2 at the Etihad.",
+        "Enzo Maresca's side never led on the night but scored four of their five penalties to win the deciding shoot-out 4-3, with Rayan Cherki striking the winner and Geronimo Rulli denying both Yasin Ayari and Lewis Dunk.",
+        "Brighton, the better side for the majority, will consider themselves unlucky to be dumped out of a competition Fabian Hurzeler had earlier professed to want to win. But City stuck to task and eventually prevailed on penalties - Hurzeler gets his chance to enact revenge when the two sides meet again in the Premier League on Saturday. As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "The visitors hit the front twice in the game, the opener struck by an impressive Malick Yalcouye, rounding off a slick Brighton move. There was some surprise in the stadium that the linesman's flag stayed down given Yalcouye's position on the last line, but the midfielder was given the benefit of the doubt with VAR not in operation."
+      ]
+    },
+    {
+      "slug": "13605035",
+      "title": "Wilson pulls one back from close range for Brentford against Sunderland",
+      "url": "https://www.skysports.com/football/video/13605035/callum-wilson-pulls-a-goal-back-from-close-range-for-brentford-against-sunderland",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-callum-wilson-brentford_7390277.jpg?20261028205213",
+      "excerpt": "Callum Wilson pulls a goal back from close range for Brentford against Sunderland",
+      "published_label": "28 October 2026 · 20:49",
+      "published_iso": "2026-10-28T20:49:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Callum Wilson pulls a goal back from close range for Brentford against Sunderland"
+      ]
+    },
+    {
+      "slug": "13605033",
+      "title": "Rogers puts Chelsea ahead against Liverpool from the penalty spot",
+      "url": "https://www.skysports.com/football/video/13605033/morgan-rogers-puts-chelsea-ahead-against-liverpool-from-the-penalty-spot",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-morgan-rogers-rogers_7390287.jpg?20261028205739",
+      "excerpt": "Chelsea took a first-half lead against Liverpool after Morgan Rogers converted from the penalty spot after Moises Caicedo was brought down by Ryan Gravenberch.",
+      "published_label": "28 October 2026 · 20:46",
+      "published_iso": "2026-10-28T20:46:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Chelsea took a first-half lead against Liverpool after Morgan Rogers converted from the penalty spot after Moises Caicedo was brought down by Ryan Gravenberch."
+      ]
+    },
+    {
+      "slug": "13605031",
+      "title": "Tuterov quickly doubles Sunderland's lead vs Brentford",
+      "url": "https://www.skysports.com/football/video/13605031/sunderland-vs-brentford-timur-tuterov-quickly-doubles-sunderlands-lead",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7390270.jpg?20261028204919",
+      "excerpt": "Sunderland's Timur Tuterov quickly doubles the side's lead over Brentford in their Carabao Cup match.",
+      "published_label": "28 October 2026 · 20:43",
+      "published_iso": "2026-10-28T20:43:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sunderland's Timur Tuterov quickly doubles the side's lead over Brentford in their Carabao Cup match."
+      ]
+    },
+    {
+      "slug": "13605028",
+      "title": "Brighton retake the lead less than 90 seconds after restart!",
+      "url": "https://www.skysports.com/football/video/13605028/lightning-start-brighton-retake-the-lead-less-than-90-seconds-after-restart",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-brighton-football_7390260.jpg?20261028204407",
+      "excerpt": "Brighton retake the lead less than 90 seconds after restart against Man City.",
+      "published_label": "28 October 2026 · 20:40",
+      "published_iso": "2026-10-28T20:40:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Brighton retake the lead less than 90 seconds after restart against Man City."
+      ]
+    },
+    {
+      "slug": "13605023",
+      "title": "Fofana heads in to make it THREE for Sunderland",
+      "url": "https://www.skysports.com/football/video/13605023/sunderland-vs-brentford-malick-fofana-heads-in-to-make-it-three-for-sunderland",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7390263.jpg?20261028204526",
+      "excerpt": "Malick Fofana scores Sunderland's third of the night with a header in their Carabao Cup tie with Brentford.",
+      "published_label": "28 October 2026 · 20:32",
+      "published_iso": "2026-10-28T20:32:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Malick Fofana scores Sunderland's third of the night with a header in their Carabao Cup tie with Brentford."
+      ]
+    },
+    {
+      "slug": "13605022",
+      "title": "Would you believe it?! - Nketiah puts Palace ahead against Fulham with a deft finish",
+      "url": "https://www.skysports.com/football/video/13605022/eddie-nketiah-puts-crystal-palace-ahead-against-fulham-with-a-deft-finish",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-crystal-palace-eddie-nketiah_7390250.jpg?20261028204017",
+      "excerpt": "Eddie Nketiah puts Crystal Palace ahead against Fulham with a deft finish.",
+      "published_label": "28 October 2026 · 20:27",
+      "published_iso": "2026-10-28T20:27:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Eddie Nketiah puts Crystal Palace ahead against Fulham with a deft finish."
+      ]
+    },
+    {
+      "slug": "13605018",
+      "title": "Kelsy fires Rangers ahead at Hearts",
+      "url": "https://www.skysports.com/football/video/13605018/kevin-kelsy-fires-rangers-ahead-at-hearts",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-kevin-kelsy-rangers_7390229.jpg?20261028202640",
+      "excerpt": "Kevin Kelsy gave Rangers an early lead on Derek McInnes' return to Tynecastle.",
+      "published_label": "28 October 2026 · 20:21",
+      "published_iso": "2026-10-28T20:21:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Kevin Kelsy gave Rangers an early lead on Derek McInnes' return to Tynecastle."
+      ]
+    },
+    {
+      "slug": "13604049",
+      "title": "Chelsea continue unbeaten start in WCL after beating Roma",
+      "url": "https://www.skysports.com/football/news/13604049/wcl-chelsea-2-0-roma-blues-continue-unbeaten-start-as-ellie-carpenter-and-kadeisha-buchanan-score",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-chelsea-roma_7390179.jpg?20261028194941",
+      "excerpt": "Chelsea continued their unbeaten start in the Women's Champions League as goals from Ellie Carpenter and Kadeisha Buchanan secured a 2-0 win against Roma.",
+      "published_label": "28 October 2026 · 19:35",
+      "published_iso": "2026-10-28T19:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Chelsea continued their unbeaten start in the Women's Champions League as goals from Ellie Carpenter and Kadeisha Buchanan secured a 2-0 win against Roma.",
+        "Eyebrows were raised when Lauren James and Alyssa Thompson were replaced at half-time in London following a wasteful first half but it paid off when substitute Ellie Carpenter squeezed home the opener, six minutes after coming on.",
+        "Melvine Malard and Sjoeke Nusken, who also appeared off the bench, squandered big chances to seal the game but a second eventually come through Buchanan with just a minute of regular time to play.",
+        "The defender rose highest in the box to nod Wieke Kaptein's cross in. Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13604920",
+      "title": "Liverpool draw Bournemouth in Carabao Cup quarters",
+      "url": "https://www.skysports.com/football/news/13604920/carabao-cup-quarter-final-draw-liverpool-host-bournemouth-as-bradford-and-fleetwood-learn-premier-league-opposition",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-carabao-cup-trophy_7311954.jpg?20260801184714",
+      "excerpt": "Liverpool will play Bournemouth in the Carabao Cup quarter-finals while League One Bradford City will host Manchester City.",
+      "published_label": "28 October 2026 · 16:11",
+      "published_iso": "2026-10-28T16:11:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Liverpool will play Bournemouth in the Carabao Cup quarter-finals while League One Bradford City will host Manchester City.",
+        "Fleetwood Town's reward for knocking out Premier League champions Arsenal is a home game against the winner of Everton vs Newcastle on Thursday night.",
+        "Crystal Palace will host Sunderland in an all-Premier League clash in the remaining last-eight tie. Transfer Centre LIVE! | Latest EFL news and rumours Got Sky? Watch the Carabao Cup LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream the Carabao Cup with no contract 📺",
+        "Liverpool beat Chelsea on penalties to set up a meeting with Andoni Iraola's former side Bournemouth, who went through to the quarter-finals in style with a fine 3-0 win against Aston Villa."
+      ]
+    },
+    {
+      "slug": "13604920",
+      "title": "Liverpool draw Bournemouth in Carabao Cup quarters",
+      "url": "https://www.skysports.com/football/news/13604920/carabao-cup-quarter-final-draw-liverpool-host-bournemouth-as-bradford-and-fleetwood-get-home-ties-against-premier-league-opposition",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-carabao-cup-trophy_7311954.jpg?20260801184714",
+      "excerpt": "Liverpool will play Bournemouth in the Carabao Cup quarter-finals while League One Bradford City will host Manchester City.",
+      "published_label": "28 October 2026 · 16:11",
+      "published_iso": "2026-10-28T16:11:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Liverpool will play Bournemouth in the Carabao Cup quarter-finals while League One Bradford City will host Manchester City.",
+        "Fleetwood Town's reward for knocking out Premier League champions Arsenal is a home game against the winner of Everton vs Newcastle on Thursday night.",
+        "Crystal Palace will host Sunderland in an all-Premier League clash in the remaining last-eight tie. Transfer Centre LIVE! | Latest EFL news and rumours Got Sky? Watch the Carabao Cup LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream the Carabao Cup with no contract 📺",
+        "Liverpool beat Chelsea on penalties to set up a meeting with Andoni Iraola's former side Bournemouth, who went through to the quarter-finals in style with a fine 3-0 win against Aston Villa."
+      ]
+    },
+    {
+      "slug": "13604854",
+      "title": "'We're all so proud of you' - PM leads Commons praise of Kane's Ballon d'Or win",
+      "url": "https://www.skysports.com/football/video/13604854/harry-kane-wins-ballon-dor-prime-minister-leads-commons-tribute",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-pm-andy-burnham-harry_7389825.jpg?20261028135318",
+      "excerpt": "Prime Minister Andy Burnham congratulates England captain Harry Kane on winning the Ballon d'Or.",
+      "published_label": "28 October 2026 · 13:48",
+      "published_iso": "2026-10-28T13:48:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Prime Minister Andy Burnham congratulates England captain Harry Kane on winning the Ballon d'Or."
+      ]
+    },
+    {
+      "slug": "13604803",
+      "title": "Ref Watch: Arsenal's red card appeal will fail - Dowman was aggressive",
+      "url": "https://www.skysports.com/football/news/13604803/max-dowman-red-card-arsenals-appeal-against-decision-will-fail-says-former-premier-league-referee-dermot-gallagher",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-max-dowman-arsenal_7389720.jpg?20261028130824",
+      "excerpt": "Former Premier League referee Dermot Gallagher believes Arsenal's appeal against Max Dowman's red card in their shock Carabao Cup defeat to Fleetwood Town will fail.",
+      "published_label": "28 October 2026 · 13:15",
+      "published_iso": "2026-10-28T13:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Former Premier League referee Dermot Gallagher believes Arsenal's appeal against Max Dowman's red card in their shock Carabao Cup defeat to Fleetwood Town will fail.",
+        "Dowman was sent off for violent conduct after kicking out at Harrison Neal following the defender's strong challenge on the teenager late in the fourth-round tie, which Arsenal lost on penalties.",
+        "Arsenal must submit appeal documents by 1pm on Thursday and are hopeful a decision will be made before their match at Liverpool, live on Sky Sports on Sunday.",
+        "However, when asked if he thought Arsenal's appeal would be successful, Gallagher told Sky Sports News : \"I don't, because of the aggressiveness of Dowman, and you can see the intent. I think it will fail.\" Arsenal dumped out of Carabao Cup by League Two Fleetwood Mikel Arteta explains reaction to Dowman red card amid criticism Arsenal news & transfers 🔴⚪| Arsenal fixtures & scores Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13604790",
+      "title": "'He knows what he's doing' - Ref Watch analyse Dowman red and compare to Palmer",
+      "url": "https://www.skysports.com/football/video/13604790/max-dowman-red-card-against-fleetwood-ref-watch-analyse-teenagers-red-and-compare-to-cole-palmer",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-palmer-dermot_7389706.jpg?20261028125932",
+      "excerpt": "Former Premier League referee Dermot Gallagher gives his thoughts on Max Dowman's red card against Fleetwood Town in the Carabao Cup.",
+      "published_label": "28 October 2026 · 12:27",
+      "published_iso": "2026-10-28T12:27:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Former Premier League referee Dermot Gallagher gives his thoughts on Max Dowman's red card against Fleetwood Town in the Carabao Cup."
+      ]
+    },
+    {
+      "slug": "13604765",
+      "title": "'Genuis leadership' - Robinson hails Arsenal decision to appeal Dowman red",
+      "url": "https://www.skysports.com/football/video/13604765/max-dowman-sent-off-karl-robinson-hails-arsenal-decision-to-appeal-red-card",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-karl-robinson-max_7389588.jpg?20261028113818",
+      "excerpt": "Former MK Dons manager Karl Robinson is clearly impressed with Arsenal's decision to appeal Max Dowman's red card against Fleetwood, describing it, on Sky Sports FC, as 'genius leadership'.",
+      "published_label": "28 October 2026 · 11:30",
+      "published_iso": "2026-10-28T11:30:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Former MK Dons manager Karl Robinson is clearly impressed with Arsenal's decision to appeal Max Dowman's red card against Fleetwood, describing it, on Sky Sports FC, as 'genius leadership'."
+      ]
+    },
+    {
+      "slug": "13604754",
+      "title": "'Open and frank' - Details of Carrick's talk with captain Bruno revealed",
+      "url": "https://www.skysports.com/football/video/13604754/man-utd-boss-michael-carrick-holds-clear-the-air-talks-with-captain-bruno-fernandes-unfolded",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-carrick-man-utd_7389563.jpg?20261028110935",
+      "excerpt": "Sky Sports' Rob Dorsett reveals Man Utd boss Michael Carrick and captain Bruno Fernandes have held 'clear the air' talks.",
+      "published_label": "28 October 2026 · 11:07",
+      "published_iso": "2026-10-28T11:07:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Rob Dorsett reveals Man Utd boss Michael Carrick and captain Bruno Fernandes have held 'clear the air' talks."
+      ]
+    },
+    {
+      "slug": "13604744",
+      "title": "'He'll get this all the time now' - Merson's worry for Dowman after Fleetwood red",
+      "url": "https://www.skysports.com/football/video/13604744/max-dowman-red-card-paul-mersons-worry-for-arsenal-teenager-after-fleetwood-red-card",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-paul-merson-max-dowman_7389552.jpg?20261028110338",
+      "excerpt": "Paul Merson has shared his concerns for Max Dowman following the red card the teenager picked up in the League Cup defeat to Fleetwood Town.",
+      "published_label": "28 October 2026 · 10:51",
+      "published_iso": "2026-10-28T10:51:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Paul Merson has shared his concerns for Max Dowman following the red card the teenager picked up in the League Cup defeat to Fleetwood Town."
+      ]
+    },
+    {
+      "slug": "13604738",
+      "title": "Carrick and Fernandes hold clear-the-air talks ahead of Chelsea fixture",
+      "url": "https://www.skysports.com/football/news/13604738/bruno-fernandes-man-utd-head-coach-michael-carrick-and-club-captain-hold-clear-the-air-talks-ahead-of-chelsea-fixture",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-manchester-united_7384469.jpg?20261023105612",
+      "excerpt": "Manchester United head coach Michael Carrick and captain Bruno Fernandes have met face to face to clear the air, with both vowing to refocus on turning the club's season around.",
+      "published_label": "28 October 2026 · 10:39",
+      "published_iso": "2026-10-28T10:39:00+00:00",
+      "byline": "Danyal Khan and Rob Dorsett",
+      "body": [
+        "Manchester United head coach Michael Carrick and captain Bruno Fernandes have met face to face to clear the air, with both vowing to refocus on turning the club's season around.",
+        "Fernandes was an unused substitute after being dropped for the 3-0 defeat against Bournemouth on Sunday after he criticised Carrick's tactics following the 4-1 thrashing at Como in the Champions League.",
+        "Carrick had described his reasons for dropping his captain as \"pure football\".",
+        "\"Picking the team is always a difficult decision,\" Carrick told Sky Sports . \"We've got to make what we feel is the right one for the team to try to get the performance we want.\" Michael Carrick to remain in charge of Man Utd for Chelsea trip 'Delaying the inevitable' or right call? Key questions as Michael Carrick stays Expectation vs reality: What if Man Utd have become a mid-table team? Man Utd news & transfers 🔴| Man Utd fixtures & scores"
+      ]
+    },
+    {
+      "slug": "manchester-city-vs-brighton-carabao-cup-clash-sets-up-etihad-double-header",
+      "title": "Manchester City vs Brighton: Carabao Cup Clash Sets Up Etihad Double H",
+      "url": "https://www.sportytrader.com/en/news/manchester-city-vs-brighton-carabao-cup-clash-sets-up-etihad-double-header/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/efl-cup-liverpool-vs-chelsea-1.webp",
+      "excerpt": "Manchester City host Brighton at the Etihad Stadium on Wednesday evening in the Carabao Cup fourth round, three days before these same sides meet in the Premier League. E",
+      "published_label": "28 October 2026 · 08:00",
+      "published_iso": "2026-10-28T08:00:00+00:00",
+      "byline": "Geoffrey Ejiga"
+    },
+    {
+      "slug": "13604682",
+      "title": "'He knows heartbreak like this!' - The biggest upsets in League Cup history",
+      "url": "https://www.skysports.com/football/video/13604682/round-up-of-the-biggest-upsets-in-league-cup-history",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7389365.jpg?20261028080159",
+      "excerpt": "Following Fleetwood's victory over Arsenal, take a look at some of the biggest upsets in League Cup history.",
+      "published_label": "28 October 2026 · 07:55",
+      "published_iso": "2026-10-28T07:55:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Following Fleetwood's victory over Arsenal, take a look at some of the biggest upsets in League Cup history."
+      ]
+    },
+    {
+      "slug": "liverpool-vs-chelsea-efl-cup-alonso-anfield-return-without-palmer",
+      "title": "Liverpool vs Chelsea: Can Alonso Stun Reds on Anfield Return Without P",
+      "url": "https://www.sportytrader.com/en/news/liverpool-vs-chelsea-efl-cup-alonso-anfield-return-without-palmer/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/cricket/india-vs-nz-third-t20i.webp",
+      "excerpt": "Anfield’s floodlights will provide the backdrop for a mouth-watering Carabao Cup fourth-round clash tonight. Xabi Alonso returns to familiar territory as Chelsea manager,",
+      "published_label": "28 October 2026 · 05:00",
+      "published_iso": "2026-10-28T05:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
+      "slug": "abhishek-sharma-stars-as-india-win-t20i-series-new-zealand",
+      "title": "India Seal T20 Series Against New Zealand With Commanding Victory In W",
+      "url": "https://www.sportytrader.com/en-in/news/abhishek-sharma-stars-as-india-win-t20i-series-new-zealand/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/fleetwood.webp",
+      "excerpt": "India took an unassailable 3-0 lead in their five-match T20I series against New Zealand by securing an impressive six-wicket victory at the Wellington Regional Stadium ye",
+      "published_label": "28 October 2026 · 04:00",
+      "published_iso": "2026-10-28T04:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
+      "slug": "13604637",
+      "title": "Arteta explains reaction to Dowman red card amid criticism",
+      "url": "https://www.skysports.com/football/news/13604637/max-dowman-red-card-mikel-arteta-explains-what-he-said-to-16-year-old-after-sending-off-in-carabao-cup-exit-to-fleetwood-town",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-arsenal_7389264.jpg?20261027232527",
+      "excerpt": "Mikel Arteta has explained his reaction to Max Dowman as the 16-year-old went down the tunnel after being sent off in Arsenal's shock Carabao Cup exit to Fleetwood Town.",
+      "published_label": "27 October 2026 · 23:11",
+      "published_iso": "2026-10-27T23:11:00+00:00",
+      "byline": "Sam Blitz",
+      "body": [
+        "Mikel Arteta has explained his reaction to Max Dowman as the 16-year-old went down the tunnel after being sent off in Arsenal's shock Carabao Cup exit to Fleetwood Town.",
+        "Moments before Arsenal exited the competition on penalties to the League Two side, Dowman was sent off for violent conduct for kicking out at Harrison Neal after the Fleetwood defender's strong challenge on the teenager.",
+        "As Dowman headed towards the tunnel and past the dugouts, Arteta leaned in and said something to the teenager, which Paul Merson criticised, saying the Arsenal manager should have put an arm around him. Fleetwood 1-1 Arsenal (4-3 pens) - report and reaction As it happened | Teams | Stats VOTE: Is Cod Army victory the biggest cup shock of all time?",
+        "Asked what he said to Dowman, Arteta told reporters: \"It was something that we discussed before the game.\" Arteta refused to go into any more detail when pressed."
+      ]
+    },
+    {
+      "slug": "13604628",
+      "title": "Arteta's FULL reaction to Fleetwood knocking out Arsenal & Dowman red",
+      "url": "https://www.skysports.com/football/video/13604628/fleetwood-vs-arsenal-mikel-arteta-reacts-to-the-gunners-shock-loss-and-max-dowmans-red-card",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-arteta_7389242.jpg?20261027225751",
+      "excerpt": "Arsenal boss Mikel Arteta shares his thoughts following their shock Carabao Cup loss on penalties to League Two side Fleetwood Town.",
+      "published_label": "27 October 2026 · 22:52",
+      "published_iso": "2026-10-27T22:52:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Arsenal boss Mikel Arteta shares his thoughts following their shock Carabao Cup loss on penalties to League Two side Fleetwood Town."
+      ]
+    },
+    {
+      "slug": "13604626",
+      "title": "Papers: Carrick's job saved by failure to agree on replacement",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13604626/manchester-united-failure-to-agree-on-michael-carrick-s-successor-buys-under-pressure-head-coach-more-time",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Wednesday's newspapers...",
+      "published_label": "27 October 2026 · 22:45",
+      "published_iso": "2026-10-27T22:45:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Wednesday's newspapers...",
+        "Man Utd had planned on sacking Michael Carrick this week but failure to settle on a replacement has granted the head coach another stay of execution - The Sun",
+        "Pierre Sage has been given more time to turn around Crystal Palace's fortunes but he remains under huge pressure and could be dismissed if they lose against Tottenham on Saturday - The Guardian Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "One of Gianni Infantino's biggest critics, Prince Ali bin al-Hussein of Jordan, is facing the threat of disciplinary action from Asian football chiefs after accusing the Fifa president of hijacking an annual congress to help his re-election bid - The Times"
+      ]
+    },
+    {
+      "slug": "13604625",
+      "title": "Barnet 3-1 York",
+      "url": "https://www.skysports.com/football/video/13604625/barnet-3-1-york-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/c057890996c21e47a397e3d5dddbdd6ed63233864c47eb6093693bc080f7ee41_7389234.jpg?20261027224807",
+      "excerpt": "Highlights of the Sky Bet League Two match between Barnet and York.",
+      "published_label": "27 October 2026 · 22:42",
+      "published_iso": "2026-10-27T22:42:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League Two match between Barnet and York."
+      ]
+    },
+    {
+      "slug": "fleetwood-town-vs-arsenal-the-cod-army-dare-to-dream-of-a-carabao-cup-miracle",
+      "title": "Fleetwood Town vs Arsenal: The Cod Army Dare to Dream of a Carabao Cup",
+      "url": "https://www.sportytrader.com/en/news/fleetwood-town-vs-arsenal-the-cod-army-dare-to-dream-of-a-carabao-cup-miracle/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/harry-kane-ballon-dor.webp",
+      "excerpt": "A David vs Goliath clash is underway as Fleetwood Town, the minnows, prepare to challenge one of English football's biggest clubs, Arsenal, in the third round of the EFL",
+      "published_label": "27 October 2026 · 08:00",
+      "published_iso": "2026-10-27T08:00:00+00:00",
+      "byline": "Thobelani Moyo"
+    },
+    {
+      "slug": "england-captain-harry-kane-wins-2026-ballon-d-or",
+      "title": "“A Dream Come True” - England Captain Harry Kane Wins 2026 Ballon d’Or",
+      "url": "https://www.sportytrader.com/en-gb/news/england-captain-harry-kane-wins-2026-ballon-d-or/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/michael-carrick-sack.webp",
+      "excerpt": "England’s captain Harry Kane was announced as the 2026 Ballon d’Or winner last night in London. The Bayern Munich striker edged Real Madrid’s Kylian Mbappe and Barcelona’",
+      "published_label": "27 October 2026 · 06:00",
+      "published_iso": "2026-10-27T06:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
+      "slug": "13604016",
+      "title": "Sunderland's first-half blitz sends them past Brentford into quarters",
+      "url": "https://www.skysports.com/football/news/13604016/sunderland-3-2-brentford-jocelin-ta-bi-shines-for-black-cats-making-all-three-goals-to-reach-carabao-cup-quarter-finals",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-sunderland-talbi_7390227.jpg?20261028202603",
+      "excerpt": "Three goals in 13 first-half minutes saw Sunderland blitz past Brentford and into the Carabao Cup quarter-finals with a 3-2 win at the Stadium of Light.",
+      "published_label": "26 October 2026 · 13:23",
+      "published_iso": "2026-10-26T13:23:00+00:00",
+      "byline": "Ron Walker",
+      "body": [
+        "Three goals in 13 first-half minutes saw Sunderland blitz past Brentford and into the Carabao Cup quarter-finals with a 3-2 win at the Stadium of Light.",
+        "The Black Cats owed much to 21-year-old Jocelin Ta Bi for his trio of assists to turn the game on its head after Brentford had dominated the early stages - and hit the post, bar and saw a shot cleared off the line in one move at 0-0.",
+        "Ta Bi, who joined Sunderland in January but had only featured four times since, was a livewire on the right flank in that first 45 minutes and thought he had opened his account for the club with a low drive that beat Hakon Valdimarsson, only for Chemsdine Talbi to tap home on the line and claim the goal. As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Bi's second assist was more intentional after dancing into the box from out wide and pulling the ball back for Timur Tutierov, who sidefooted home a quick second only three minutes later."
+      ]
+    }
+  ]
 }
