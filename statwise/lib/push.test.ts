@@ -1,19 +1,21 @@
 /**
- * Unit tests for the web-push helpers (plan step 3.2): base64url decoding,
- * subscription row building, support/permission gating. Pure inputs — runs
- * on plain Node, wired into CI via test-app.yml.
+ * Unit tests for the pure push helpers (native Expo push): token shape
+ * validation, row building, permission gating, notification deep-link
+ * validation.  Imports ONLY ./pushCore — that module has no imports, so this
+ * compiles and runs on plain Node with no npm install (wired into
+ * test-app.yml).
  *
- *   tsc statwise/lib/push.ts statwise/lib/push.test.ts \
+ *   tsc statwise/lib/pushCore.ts statwise/lib/push.test.ts \
  *       --outDir <dir> --module commonjs --target es2019 --strict --skipLibCheck
  *   node <dir>/push.test.js
  */
 import {
-  buildSubscriptionRow,
-  currentPermission,
+  buildTokenRow,
+  isExpoToken,
+  notificationTargetUrl,
+  notificationsEnabled,
   pushBlockReason,
-  pushSupported,
-  urlBase64ToUint8Array,
-} from './push';
+} from './pushCore';
 
 let passed = 0;
 
@@ -24,71 +26,85 @@ function check(name: string, actual: unknown, expected: unknown): void {
   passed += 1;
 }
 
-// --- support detection (Node has no window/Notification) ------------------
-check('pushSupported() false in Node', pushSupported(), false);
-check('currentPermission() unsupported in Node', currentPermission(), 'unsupported');
+// --- Expo token shape -----------------------------------------------------
+check('modern Expo token accepted', isExpoToken('ExpoPushToken[abc123]'), true);
+check('legacy ExponentPushToken accepted',
+  isExpoToken('ExponentPushToken[abc123]'), true);
+check('surrounding whitespace tolerated',
+  isExpoToken('  ExpoPushToken[abc]  '), true);
+check('arbitrary string rejected', isExpoToken('https://push.example/e'), false);
+check('empty string rejected', isExpoToken(''), false);
+check('null rejected', isExpoToken(null), false);
+check('non-string rejected', isExpoToken(12345), false);
+check('token without brackets rejected', isExpoToken('ExpoPushTokenabc'), false);
+check('unrelated bracketed value rejected',
+  isExpoToken('SomethingElse[x]'), false);
 
-// --- base64url decoding ---------------------------------------------------
-// 'AQID' is [1,2,3]; base64url variant of standard 'AQID'.
-const bytes = urlBase64ToUint8Array('AQID');
-check('urlBase64ToUint8Array decodes base64url', Array.from(bytes), [1, 2, 3]);
-// '-'/'_' variants: bytes [251, 239] = '++8' in standard, '--8' in url-safe
-// ('+' → '-'). Both must decode identically.
-check(
-  'url-safe alphabet handled (- and _)',
-  Array.from(urlBase64ToUint8Array('--8')),
-  Array.from(urlBase64ToUint8Array('++8')),
-);
-check('url-safe decode values', Array.from(urlBase64ToUint8Array('--8')), [251, 239]);
-check(
-  "url-safe '_' handled like '/'",
-  Array.from(urlBase64ToUint8Array('AQ_')),
-  Array.from(urlBase64ToUint8Array('AQ/')),
-);
-check(
-  'padding added for lengths %4 != 0',
-  Array.from(urlBase64ToUint8Array('QQ')),   // 'QQ==' -> [65]
-  [65],
-);
-check('round-trips a real VAPID-shaped key', (() => {
-  // Realistic uncompressed P-256 point: 65 bytes → 87-char base64url, starts 'B' (0x04).
-  const key = 'BDBVep_E6Q4zWH2ix-wRNluApcrvFDleg6jN8hc8YYar0PUaP2SJrtP4HUJnjLHW-yBFao-02f4jSG2St9wBJks';
-  const out = urlBase64ToUint8Array(key);
-  return out.length === 65 && out[0] === 0x04; // uncompressed EC point prefix
-})(), true);
-
-// --- subscription row building --------------------------------------------
-const row = buildSubscriptionRow(
-  'user-1',
-  { endpoint: 'https://push.example/abc', keys: { p256dh: 'p', auth: 'a' } },
-  'Mozilla/5.0',
-);
-check('row maps endpoint + keys + agent', row, {
+// --- row building ---------------------------------------------------------
+const row = buildTokenRow('user-1', 'ExpoPushToken[abc]', 'android', '2026-10-29T00:00:00.000Z');
+check('row maps user, token, platform and timestamp', row, {
   user_id: 'user-1',
-  endpoint: 'https://push.example/abc',
-  p256dh: 'p',
-  auth: 'a',
-  user_agent: 'Mozilla/5.0',
+  expo_token: 'ExpoPushToken[abc]',
+  platform: 'android',
+  updated_at: '2026-10-29T00:00:00.000Z',
 });
-const rowNoAgent = buildSubscriptionRow(
-  'u2',
-  { endpoint: 'e', keys: { p256dh: 'p', auth: 'a' } },
-  null,
-);
-check('null user agent preserved', rowNoAgent.user_agent, null);
+check('token is trimmed', buildTokenRow('u', '  ExpoPushToken[x]  ', 'android',
+  't').expo_token, 'ExpoPushToken[x]');
+check('platform is free-form (android/ios/web)',
+  buildTokenRow('u', 'ExpoPushToken[x]', 'ios', 't').platform, 'ios');
 
-// --- block reasons --------------------------------------------------------
+// --- permission gating ----------------------------------------------------
 check(
-  'unsupported reason mentions browsers',
-  /browser/.test(pushBlockReason('unsupported') ?? ''),
+  'unsupported reason on web mentions the app',
+  /Android app/.test(pushBlockReason('unsupported', 'web') ?? ''),
   true,
 );
 check(
-  'denied reason mentions browser settings',
-  /settings/.test(pushBlockReason('denied') ?? ''),
+  'unsupported reason on native mentions device',
+  /device/.test(pushBlockReason('unsupported', 'native') ?? ''),
+  true,
+);
+check('web unsupported reason differs from native',
+  pushBlockReason('unsupported', 'web') === pushBlockReason('unsupported', 'native'),
+  false,
+);
+check(
+  'denied reason mentions device settings',
+  /device settings/.test(pushBlockReason('denied') ?? ''),
   true,
 );
 check('granted has no block reason', pushBlockReason('granted'), null);
-check('default (prompt dismissed) has no permanent block reason', pushBlockReason('default'), null);
+check('default (prompt dismissed) has no permanent block reason',
+  pushBlockReason('default'), null);
+
+// --- notification opt-out -------------------------------------------------
+check('notifications default ON when profile missing', notificationsEnabled(undefined), true);
+check('notifications default ON for null profile', notificationsEnabled(null), true);
+check('notifications default ON when key absent', notificationsEnabled({}), true);
+check('explicit true keeps notifications on', notificationsEnabled({ notifications: true }), true);
+check('explicit false turns notifications off',
+  notificationsEnabled({ notifications: false }), false);
+
+// --- deep-link validation -------------------------------------------------
+const ORIGIN = 'https://statwise-flax.vercel.app';
+check('absolute same-origin https URL accepted',
+  notificationTargetUrl({ url: 'https://statwise-flax.vercel.app/picks' }, ORIGIN),
+  'https://statwise-flax.vercel.app/picks');
+check('relative path accepted',
+  notificationTargetUrl({ url: '/picks' }, ORIGIN), '/picks');
+check('javascript: URL rejected',
+  notificationTargetUrl({ url: 'javascript:alert(1)' }, ORIGIN), null);
+check('data: URL rejected',
+  notificationTargetUrl({ url: 'data:text/html,<script>x</script>' }, ORIGIN), null);
+check('http (non-TLS) URL rejected',
+  notificationTargetUrl({ url: 'http://statwise-flax.vercel.app/picks' }, ORIGIN), null);
+check('off-origin https URL rejected',
+  notificationTargetUrl({ url: 'https://evil.example/picks' }, ORIGIN), null);
+check('subdomain of the trusted origin rejected (exact origin only)',
+  notificationTargetUrl({ url: 'https://evil.statwise-flax.vercel.app/' }, ORIGIN), null);
+check('missing url rejected', notificationTargetUrl({}, ORIGIN), null);
+check('non-string url rejected', notificationTargetUrl({ url: 42 }, ORIGIN), null);
+check('null data rejected', notificationTargetUrl(null, ORIGIN), null);
+check('empty url rejected', notificationTargetUrl({ url: '   ' }, ORIGIN), null);
 
 console.log(`push.test: ${passed} checks passed`);

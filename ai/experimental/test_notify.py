@@ -1,4 +1,4 @@
-"""Checks for web push notifications (IMPROVEMENT_PLAN Step 3.2).
+"""Checks for push notifications (native Expo push + social layer).
 
 What silently breaks notifications:
 
@@ -6,10 +6,12 @@ What silently breaks notifications:
      (app_settings.notify_state) and only send unseen keys; the
      new_keys/mark_sent pair is the whole contract.
   2. Message quality — a push with an empty body or missing title is
-     worse than no push (users disable the site). All three kinds must
-     produce title+body+tag.
-  3. Dead subscriptions — browsers unsubscribe silently; 404/410 rows
-     must be purged so they never block future sends.
+     worse than no push (users disable the app). All kinds must produce
+     title+body+tag.
+  3. Web push was REMOVED with the PWA → Android conversion — the sender
+     must be Expo-native only (no VAPID key, no pywebpush, no
+     push_subscriptions reads) so a dead browser path can never shadow the
+     real one.
 
 Tiny synthetic payloads only — no network, no Supabase.
 
@@ -23,7 +25,6 @@ import sys
 
 os.environ.setdefault("SUPABASE_URL", "https://example.supabase.co")
 os.environ.setdefault("SUPABASE_SERVICE_KEY", "test-key")
-os.environ.setdefault("VAPID_PRIVATE_KEY", "test-key")
 
 AI_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, AI_DIR)
@@ -113,18 +114,45 @@ check("kickoff lead is 25 min (matches the plan's '30min before')",
 check("under-way guard is positive",
       0 < notify.KICKOFF_MIN_MINUTES < notify.KICKOFF_LEAD_MINUTES)
 
-# ── 4. sender refuses without a key (no silent fake-delivery) ─────────────
-orig = notify.VAPID_PRIVATE_KEY
-notify.VAPID_PRIVATE_KEY = ""
-ok_count, dead = notify.send_payload(
-    [{"endpoint": "e", "p256dh": "p", "auth": "a"}], {"title": "t"}, dry_run=False)
-check("no VAPID key -> zero delivered", ok_count == 0)
-notify.VAPID_PRIVATE_KEY = orig
+# ── 4. dry-run never touches the network, real sends go to Expo ──────────
+ok_count, dead = notify.send_payload([], {"title": "t"}, dry_run=True)
+check("dry-run with no devices is a clean no-op",
+      ok_count == 0 and dead == [])
 
-# dry-run must never touch the network
+# dry-run reports the device count it WOULD reach, sends nothing
 ok_count, dead = notify.send_payload(
-    [], {"title": "t"}, dry_run=True)
-check("dry-run with no subs is a clean no-op", ok_count == 0 and dead == [])
+    [{"user_id": "u1", "token": "ExponentPushToken[x]"}], {"title": "t"},
+    dry_run=True)
+check("dry-run counts target devices without sending",
+      ok_count == 1 and dead == [])
+
+# ── 4b. native (Expo) push ────────────────────────────────────────────────
+msg = notify._expo_message({"token": "ExponentPushToken[x]"},
+                           {"title": "hi", "body": "there", "url": "/picks",
+                            "tag": "picks:1"})
+check("expo message targets the token",
+      msg["to"] == "ExponentPushToken[x]")
+check("expo relative url is absolutised",
+      msg["data"]["url"].startswith("https://"), msg["data"]["url"])
+check("expo message keeps a collapse id from the tag",
+      msg["collapseId"] == "picks:1")
+check("expo message plays the default sound", msg["sound"] == "default")
+abs_msg = notify._expo_message({"token": "t"},
+                               {"title": "h", "url": "https://example.com/x"})
+check("already-absolute url left alone",
+      abs_msg["data"]["url"] == "https://example.com/x")
+check("expo ticket marks dead tokens for purge",
+      "DeviceNotRegistered" in notify.EXPO_DEAD_ERRORS)
+
+# ── 4c. audience gating is by tier rank (platform-agnostic) ──────────────
+subs_native = [
+    {"user_id": "u1", "tier_rank": 2, "platform": "expo"},
+    {"user_id": "u2", "tier_rank": 0, "platform": "expo"},
+    {"user_id": "u3", "tier_rank": 3, "platform": "expo"},
+]
+gated = notify.audience_subs(subs_native, {"min_rank": 2})
+check("min_rank gates devices by tier, not platform",
+      {s["user_id"] for s in gated} == {"u1", "u3"})
 
 # ── 5. gathering: window bounds + jsonb AI-Pick filter ─────────────────────
 # These guard two real bugs found by running against production:
@@ -175,9 +203,9 @@ try:
     notify.dt.datetime = _clock(FAKE_NOW)
     got = notify.gather_kickoff(30)
     check("kickoff window drops days-away fixtures (upper bound)",
-          [k for k, _ in got] == ["kickoff:soon"], str([k for k, _ in got]))
+          [k for k, _, _ in got] == ["kickoff:soon"], str([k for k, _, _ in got]))
     check("kickoff window drops under-way fixtures (lower bound)",
-          all(k != "kickoff:underway" for k, _ in got))
+          all(k != "kickoff:underway" for k, _, _ in got))
     check("kickoff minutes computed against the frozen clock",
           "10 min" in got[0][1]["title"], got[0][1]["title"])
 
@@ -191,8 +219,24 @@ try:
          "prediction": "Home Win", "confidence": 80, "stats": {"is_ai_pick": True}},
     ]
     got = notify.gather_picks(None)
+    # both rows are free-tier -> ONE grouped payload, keyed by rank
     check("picks: only stats.is_ai_pick rows are announced",
-          len(got) == 1 and got[0][0] == "picks:ai1,ai2", str(got[0][0] if got else None))
+          len(got) == 1 and got[0][0] == "picks:0:ai1,ai2",
+          str(got[0][0] if got else None))
+    check("picks: audience is the tier rank the pick belongs to",
+          got[0][2] == {"min_rank": 0})
+    # a vvip pick must NOT ride along with the free-tier announcement
+    _rows = [{"match_id": "ai1", "home_team": "A", "away_team": "B",
+              "prediction": "Draw", "confidence": 70,
+              "stats": {"is_ai_pick": True}},
+             {"match_id": "vip", "home_team": "C", "away_team": "D",
+              "prediction": "Home Win", "confidence": 80, "tier": "vvip",
+              "stats": {"is_ai_pick": True}}]
+    got = notify.gather_picks(None)
+    check("picks: hidden pick is not announced to lower tiers",
+          len(got) == 2 and got[0][0] == "picks:0:ai1"
+          and got[1][0] == "picks:3:vip" and got[1][2] == {"min_rank": 3},
+          str([k for k, _, _ in got]))
     _rows = []
     check("picks: empty result is an empty list (no empty push)",
           notify.gather_picks(None) == [])
@@ -208,7 +252,7 @@ try:
              _row("hit-plain", True, False)]
     got = notify.gather_settled(None)
     check("settled: correct AI Picks only (no misses, no non-AI)",
-          [k for k, _ in got] == ["settled:hit-ai"], str([k for k, _ in got]))
+          [k for k, _, _ in got] == ["settled:hit-ai"], str([k for k, _, _ in got]))
 finally:
     notify._rest = _orig_rest
     notify.dt.datetime = _orig_dt_now

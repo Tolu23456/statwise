@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput,
   Switch, Alert, ActivityIndicator, Platform, Share,
@@ -78,13 +78,24 @@ export default function ProfileScreen() {
   const [savingName, setSavingName] = useState(false);
   const [uploadingPhoto, setUploadingPhoto] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
-  // Plan 3.2: web-push enable/disable feedback (reason shown verbatim).
-  const [pushNote, setPushNote] = useState<string | null>(
-    Platform.OS === 'web' && pushSupported() && currentPermission() === 'denied'
-      ? pushBlockReason('denied')
-      : null,
-  );
+  // Native-push enable/disable feedback (reason shown verbatim).
+  const [pushNote, setPushNote] = useState<string | null>(null);
   const [pushBusy, setPushBusy] = useState(false);
+
+  // Surface a permanently-blocked notification permission on mount.
+  // currentPermission() is async — the old inline comparison
+  // (`currentPermission() === 'denied'`) compared a Promise to a string and
+  // never matched, so Android users were never told why the toggle did
+  // nothing.  Web is excluded: web push was removed with the PWA → Android
+  // conversion (pushSupported() is false there).
+  useEffect(() => {
+    let alive = true;
+    if (!pushSupported()) return () => {};
+    currentPermission().then((p) => {
+      if (alive && p === 'denied') setPushNote(pushBlockReason('denied'));
+    });
+    return () => { alive = false; };
+  }, []);
 
   const topInset = Platform.OS === 'web' ? 0 : insets.top;
   const tierColors = TierBadgeColors[profile?.current_tier ?? 'Free Tier'];
@@ -472,8 +483,11 @@ export default function ProfileScreen() {
                 if (!user) return;
                 setPushBusy(true);
                 try {
-                  // Web: also (un)register this browser for push (plan 3.2).
-                  if (Platform.OS === 'web') {
+                  // Native (Android): (un)register this install's Expo push
+                  // token so ai/notify.py can reach the device.  Web lost
+                  // push with the PWA → Android conversion, so there only
+                  // the server-side preference below is written.
+                  if (pushSupported()) {
                     if (val) {
                       const res = await registerForPush(supabase, user.id);
                       setPushNote(res.ok

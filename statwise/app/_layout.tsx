@@ -21,6 +21,35 @@ import { supabase } from '@/lib/supabase';
 import { installWebTelemetry, setEventSink } from '@/lib/telemetry';
 import { installWebAlert } from '@/lib/webAlert';
 import { startForumFeed } from '@/lib/forumFeed';
+import { configureNotificationHandler, notificationTargetUrl } from '@/lib/push';
+
+/**
+ * Origin the push payloads point at (ai/notify.py absolutises `data.url`
+ * against its SITE_BASE_URL — keep the two in sync via EXPO_PUBLIC_SITE_URL /
+ * SITE_BASE_URL).  A payload for any other origin is dropped by
+ * notificationTargetUrl and never reaches the router.
+ */
+const SITE_ORIGIN = process.env.EXPO_PUBLIC_SITE_URL || 'https://statwise-flax.vercel.app';
+
+/**
+ * Routes this app can actually open, mapped from the site URLs a payload may
+ * carry.  Anything else (unknown path, /insight-detail without params, an
+ * off-site link) lands on the home tab instead of a dead screen.
+ */
+const APP_ROUTES = new Set([
+  '/', '/insights', '/forum', '/profile', '/subscriptions', '/backtesting',
+]);
+
+function routeForNotification(target: string): string {
+  try {
+    const url = new URL(target, SITE_ORIGIN);
+    if (url.origin !== new URL(SITE_ORIGIN).origin) return '/'; // belt + braces
+    const path = url.pathname.replace(/\/+$/, '') || '/';
+    return APP_ROUTES.has(path) ? path + url.search : '/';
+  } catch {
+    return '/';
+  }
+}
 
 SplashScreen.preventAutoHideAsync();
 
@@ -63,11 +92,36 @@ function RootLayoutNav() {
   }, [session, loading, segments]);
 
   useEffect(() => {
-    if (Platform.OS === 'web' && 'Notification' in window) {
-      if (Notification.permission === 'default') {
-        Notification.requestPermission();
+    // Native push wiring: foreground presentation (the handler decides the
+    // banner/sound) and tap-to-navigate (payload `data.url`, validated
+    // same-origin and mapped onto a route that exists — a forged payload can
+    // neither leave the site nor land on a dead screen).  Web push was
+    // removed with the PWA → Android conversion, so nothing runs here on web
+    // (the old auto permission-prompt effect went with it: it asked for a
+    // permission no code used anymore).
+    if (Platform.OS === 'web') return;
+    let cancelled = false;
+    let responseSub: { remove: () => void } | undefined;
+    (async () => {
+      await configureNotificationHandler();
+      try {
+        const Notifications = await import('expo-notifications');
+        responseSub = Notifications.addNotificationResponseReceivedListener((response) => {
+          if (cancelled) return;
+          const data = response.notification.request.content.data;
+          const target = notificationTargetUrl(data, SITE_ORIGIN);
+          if (!target) return; // off-origin or malformed — ignore the tap
+          router.replace(routeForNotification(target) as never);
+        });
+      } catch (e) {
+        console.warn('[push] tap listener not installed:', e);
       }
-    }
+    })();
+    return () => {
+      cancelled = true;
+      responseSub?.remove();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

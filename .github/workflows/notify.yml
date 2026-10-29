@@ -1,6 +1,7 @@
 name: Notify
 
-# Plan step 3.2 — web push notifications + social layer (2026-10-27).
+# Push notifications + social layer (2026-10-27; native Expo push added when
+# statwise/ was converted from a PWA to an Android app).
 #
 # Six kinds, all idempotent (dedupe state in app_settings.notify_state,
 # except inbox which dedupes on the notifications table's push_sent_at):
@@ -16,9 +17,16 @@ name: Notify
 #   inbox      — reply/mention rows the DB trigger wrote, pushed to the
 #                addressee and stamped push_sent_at (rows age out at 24h)
 #
-# Requires the VAPID_PRIVATE_KEY repository secret and section 4 of
-# supabase-pending-migrations.sql (user_favorites + notifications) for the
-# social kinds. Without them the script exits 0 with a note — notifications
+# Delivery: Expo push tokens in `push_tokens`, one row per Android
+# install, sent to Expo's push API.  Works WITHOUT any secret;
+# EXPO_ACCESS_TOKEN only raises the rate limit.
+# Table: supabase-native-push-migration.sql.  Web push was removed with
+# the PWA → Android conversion (no sw.js, no VAPID key, no
+# push_subscriptions reads).
+#
+# The social kinds additionally need section 4 of
+# supabase-pending-migrations.sql (user_favorites + notifications).
+# Missing tables/secrets make that path exit 0 with a note: notifications
 # are optional, never break the app.
 
 on:
@@ -46,6 +54,9 @@ on:
         default: false
         type: boolean
 
+permissions:
+  contents: read
+
 concurrency:
   group: notify-${{ github.event.inputs.kind || 'kickoff' }}
   cancel-in-progress: true
@@ -71,7 +82,14 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
-          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          # Optional: raises Expo's push rate limit; empty falls back to
+          # anonymous push. SITE_BASE_URL pins the absolute origin native
+          # push data.url carries (must match the app's trusted origin in
+          # app/_layout.tsx — empty uses the same default on both sides).
+          # Web push (VAPID_PRIVATE_KEY) was removed with the Android
+          # conversion — nothing reads push_subscriptions any more.
+          EXPO_ACCESS_TOKEN: ${{ secrets.EXPO_ACCESS_TOKEN }}
+          SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || vars.SITE_BASE_URL }}
         run: |
           if [ -z "$SUPABASE_SERVICE_KEY" ]; then
             echo "::error::SUPABASE_SERVICE_ROLE_KEY is not configured — cannot notify."

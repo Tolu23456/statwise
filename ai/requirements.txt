@@ -12,5 +12,6 @@ schedule>=1.2
 # separately in the predict workflow.
 playwright>=1.40
 
-# Web push notifications (notify.py sender).
-pywebpush>=2.0
+# Push notifications are native (Expo) only — ai/notify.py talks to Expo's
+# HTTP push API with `requests` (already listed above). Web push was removed
+# with the PWA → Android conversion, so pywebpush/VAPID is gone.

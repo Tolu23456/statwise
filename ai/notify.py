@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Web push notification sender (IMPROVEMENT_PLAN Step 3.2 + social layer).
+Push notification sender (native Expo push + social layer).
 
-Sends browser push notifications for six events:
+Sends push notifications for six events:
 
   --kind picks      new AI Picks since the last picks run (TIER-GATED: a
                     pick only reaches users whose tier rank >= the pick's
@@ -21,11 +21,17 @@ Sends browser push notifications for six events:
 
 How it works
 ------------
-ai/notify.py reads `push_subscriptions` (one row per browser, written by
-the app's lib/push.ts) and `user_profiles` (the per-user toggle plus
-current_tier for audience gating), builds a Web Push payload and sends it
-with pywebpush + the VAPID private key from the VAPID_PRIVATE_KEY secret
-(env).
+ai/notify.py reads `push_tokens` (one row per Android install, written by
+the app's lib/push.ts after expo-notifications registers a token) and
+`user_profiles` (the per-user toggle plus current_tier for audience
+gating), builds a payload, and sends it to Expo's push API
+(https://exp.host/--/api/v2/push/send).  Tokens Expo reports as
+DeviceNotRegistered are purged from `push_tokens`.
+
+Web push was REMOVED with the PWA → Android conversion: `public/sw.js`,
+the VAPID key, and the `push_subscriptions` sender are all gone (nothing
+can register a browser endpoint anymore, so keeping the sender only added
+a secret to leak).  The `push_tokens` table is the single delivery target.
 
 Dedupe/state lives in app_settings.notify_state so runs never double-send:
 each event carries a key (e.g. "picks:2026-10-26T12:00Z:espn_123") and a
@@ -38,9 +44,9 @@ Audiences: every event carries an optional audience —
   {"min_rank": n} users with tier rank >= n (picks/kickoff/settled/odds)
 Tiers rank free=0 < premium=1 < vip=2 < vvip=3.
 
-Missing tables (migrations not run yet — user_favorites, notifications)?
-Exits 0 with a clear note — notifications are optional, nothing else may
-break. Same for a missing push_subscriptions table.
+Missing tables (migrations not run yet — push_tokens, user_favorites,
+notifications)?  Exits 0 with a clear note — notifications are optional,
+nothing else may break.
 
 Usage:
     python ai/notify.py --kind kickoff
@@ -77,9 +83,14 @@ SUPABASE_KEY = (
     or os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
     or ""
 ).strip()
-VAPID_PRIVATE_KEY = (os.environ.get("VAPID_PRIVATE_KEY") or "").strip()
-#: pywebpush needs a contact claim; the repo is the honest contact.
-VAPID_CLAIMS = {"sub": "https://github.com/Tolu23456/statwise"}
+#: Optional Expo access token (EAS Push). Anonymous push works without it at
+#: a lower rate limit; set EXPO_ACCESS_TOKEN in the repo secrets to raise it.
+EXPO_ACCESS_TOKEN = (os.environ.get("EXPO_ACCESS_TOKEN") or "").strip()
+#: Absolute site origin — native push `data.url` must be a full URL, so a
+#: relative payload path is absolutised against this before it reaches Expo.
+SITE_BASE_URL = (os.environ.get("SITE_BASE_URL")
+                 or os.environ.get("NEXT_PUBLIC_SITE_URL")
+                 or "https://statwise-flax.vercel.app").strip()
 
 #: How far ahead of kickoff the "match starting soon" alert fires.
 KICKOFF_LEAD_MINUTES = 25
@@ -137,46 +148,77 @@ def _rest(method: str, path: str, payload=None, params=None):
     return r.json() if r.text.strip() else None
 
 
-def fetch_subscriptions() -> list[dict]:
-    """All browser subscriptions joined with the user's notification pref
-    and tier (tier drives audience gating in audience_subs()).
+#: How many device rows to pull per page — an unbounded read of the token
+#: table grows forever and used to OOM the job once enough users subscribed.
+SUBS_PAGE = 1000
 
-    Returns [] with a clear log when the table doesn't exist yet.
+
+# ── native (Expo) push ─────────────────────────────────────────────────────
+# The Android app registers an Expo push token per install; ai/notify.py
+# forwards every payload to Expo's HTTP push API.  audience_subs() gates the
+# audience on `user_id`/`tier_rank`, the same filter the old web push used.
+EXPO_PUSH_URL = "https://exp.host/--/api/v2/push/send"
+EXPO_TOKENS_TABLE = "push_tokens"
+#: Expo accepts at most 100 messages per push request.
+EXPO_BATCH = 100
+
+
+def fetch_native_tokens() -> list[dict]:
+    """Expo push tokens (one row per Android install) as device dicts.
+
+    Missing table (native push migration not applied yet) → quiet [].
     """
-    try:
-        subs = _rest("GET", "push_subscriptions",
-                     params={"select": "user_id,endpoint,p256dh,auth"})
-    except FileNotFoundError:
-        logger.info("push_subscriptions table not found — run "
-                    "statwise/supabase-notifications-migration.sql. "
-                    "No notifications sent (this is fine).")
-        return []
-    except Exception as e:  # noqa: BLE001
-        logger.warning("Could not read push_subscriptions: %s", e)
-        return []
-    if not subs:
+    tokens: list[dict] = []
+    page = 0
+    while page < 500:
+        try:
+            chunk = (_rest("GET", EXPO_TOKENS_TABLE,
+                           params={"select": "user_id,expo_token,platform",
+                                   "order": "user_id.asc",
+                                   "limit": str(SUBS_PAGE),
+                                   "offset": str(page * SUBS_PAGE)}) or [])
+        except FileNotFoundError:
+            logger.info("%s table not found — run "
+                        "statwise/supabase-native-push-migration.sql. "
+                        "No native pushes (this is fine).", EXPO_TOKENS_TABLE)
+            return []
+        except Exception as e:  # noqa: BLE001
+            logger.warning("Could not read %s: %s", EXPO_TOKENS_TABLE, e)
+            return []
+        tokens.extend(chunk)
+        if len(chunk) < SUBS_PAGE:
+            break
+        page += 1
+    devices = [{"user_id": t.get("user_id"), "token": t.get("expo_token"),
+                "platform": "expo"} for t in tokens if t.get("expo_token")]
+    logger.info("%d native (Expo) push token(s).", len(devices))
+    return _with_profile_ranks(devices)
+
+
+def _with_profile_ranks(devices: list[dict]) -> list[dict]:
+    """Attach notification pref + tier rank to native token rows."""
+    if not devices:
         return []
     try:
         profiles = _rest(
             "GET", "user_profiles",
             params={"select": "id,notifications,display_name,username,current_tier",
-                    "id": f"in.({','.join(sorted({s['user_id'] for s in subs}))})"},
+                    "id": f"in.({','.join(sorted({d['user_id'] for d in devices}))})"},
         ) or []
     except Exception as e:  # noqa: BLE001
         logger.warning("Could not read user_profiles: %s", e)
-        return []
+        return devices
     by_id = {p["id"]: p for p in profiles}
     out = []
-    for s in subs:
-        prof = by_id.get(s["user_id"]) or {}
+    for d in devices:
+        prof = by_id.get(d.get("user_id")) or {}
         if prof.get("notifications") is False:
-            continue  # user turned notifications off in the profile screen
+            continue
         out.append({
-            **s,
+            **d,
             "name": prof.get("display_name") or prof.get("username") or "",
             "tier_rank": tier_rank(prof.get("current_tier")),
         })
-    logger.info("%d subscription(s) with notifications enabled.", len(out))
     return out
 
 
@@ -345,54 +387,101 @@ def inbox_message(r: dict) -> dict:
 # ── sending ────────────────────────────────────────────────────────────────
 
 def send_payload(subs: list[dict], payload: dict, dry_run: bool) -> tuple[int, list[str]]:
-    """Send one payload to every subscription. Returns (ok, dead_endpoints).
+    """Send one payload to every registered device (Expo native push).
 
-    Dead endpoints (404/410 — browser unsubscribed) are collected so the
-    caller can purge them; a stale row must never block future sends.
+    Returns ``(ok, dead_tokens)``.  Dead tokens (an Expo
+    DeviceNotRegistered / MessageTooBig ticket) are collected so the caller
+    can purge them from `push_tokens`; a stale row must never block future
+    sends to the user's other devices.
     """
     if dry_run:
         logger.info("  [dry-run] would notify %d device(s): %s",
                     len(subs), json.dumps(payload, ensure_ascii=False)[:160])
         return len(subs), []
-    if not VAPID_PRIVATE_KEY:
-        logger.error("VAPID_PRIVATE_KEY not set — cannot send. "
-                     "Set it as a repository secret (plan 3.2).")
-        return 0, []
-    from pywebpush import WebPushException, webpush  # noqa: PLC0415
 
+    return _send_expo(subs, payload)
+
+
+#: Expo per-ticket error codes that mean "this token is gone for good".
+EXPO_DEAD_ERRORS = {"DeviceNotRegistered", "InvalidCredentials",
+                    "MessageTooBig", "MessageRateExceeded"}
+
+
+def _expo_message(device: dict, payload: dict) -> dict:
+    """One Expo push ticket.  `url` is a path on the site, so it is turned
+    into an absolute https URL — Expo will not open a bare `/`."""
+    url = (payload.get("url") or "/").strip() or "/"
+    if not url.startswith(("http://", "https://")):
+        url = f"{SITE_BASE_URL.rstrip('/')}{url}"
+    return {
+        "to": device["token"],
+        "sound": "default",
+        "title": payload.get("title") or "StatWise",
+        "body": (payload.get("body") or "")[:400],
+        "data": {"url": url, "tag": payload.get("tag")},
+        # collapse by tag so a repeat alert replaces the previous one
+        "collapseId": (payload.get("tag") or "statwise")[:64],
+        "channelId": "default",
+    }
+
+
+def _send_expo(subs: list[dict], payload: dict) -> tuple[int, list[str]]:
+    """Expo push half: batched HTTP tickets, dead tokens reported for purge."""
+    if not subs:
+        return 0, []
+    import requests  # noqa: PLC0415
+
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    if EXPO_ACCESS_TOKEN:
+        headers["Authorization"] = f"Bearer {EXPO_ACCESS_TOKEN}"
     ok, dead = 0, []
-    for s in subs:
+    for start in range(0, len(subs), EXPO_BATCH):
+        batch = subs[start:start + EXPO_BATCH]
+        messages = [_expo_message(d, payload) for d in batch]
         try:
-            webpush(
-                subscription_info={
-                    "endpoint": s["endpoint"],
-                    "keys": {"p256dh": s["p256dh"], "auth": s["auth"]},
-                },
-                data=json.dumps(payload, ensure_ascii=False),
-                vapid_private_key=VAPID_PRIVATE_KEY,
-                vapid_claims=VAPID_CLAIMS,
-            )
-            ok += 1
-        except WebPushException as e:
-            status = getattr(getattr(e, "response", None), "status_code", None)
-            if status in (404, 410):
-                dead.append(s["endpoint"])
-            else:
-                logger.warning("  push failed (HTTP %s): %s", status, str(e)[:120])
+            r = requests.post(EXPO_PUSH_URL, json=messages, headers=headers,
+                              timeout=20)
         except Exception as e:  # noqa: BLE001
-            logger.warning("  push error: %s", str(e)[:120])
+            logger.warning("  expo push error: %s", str(e)[:120])
+            continue
+        if r.status_code != 200:
+            logger.warning("  expo push HTTP %s: %s", r.status_code,
+                           (r.text or "")[:120])
+            continue
+        try:
+            data = r.json()
+        except Exception:  # noqa: BLE001
+            logger.warning("  expo push returned non-JSON body")
+            continue
+        tickets = data.get("data") if isinstance(data, dict) else None
+        if not isinstance(tickets, list):
+            continue
+        for dev, t in zip(batch, tickets):
+            status = (t or {}).get("status")
+            if status == "ok":
+                ok += 1
+                continue
+            detail = ((t or {}).get("details") or {}).get("error")
+            if detail in EXPO_DEAD_ERRORS:
+                dead.append(dev.get("token"))
+            else:
+                logger.warning("  expo ticket rejected (%s): %s", status, detail)
     return ok, dead
 
 
-def purge_dead(endpoints: list[str]) -> None:
-    if not endpoints:
+def purge_dead_tokens(tokens: list[str]) -> None:
+    """Drop Expo tokens Expo reported as permanently undeliverable."""
+    if not tokens:
         return
-    try:
-        _rest("DELETE", "push_subscriptions",
-              params={"endpoint": f"in.({','.join(endpoints)})"})
-        logger.info("Purged %d dead subscription(s).", len(endpoints))
-    except Exception as e:  # noqa: BLE001
-        logger.warning("Could not purge dead subscriptions: %s", e)
+    # Chunked: a long `in.(...)` list blows past PostgREST's URL limit.
+    for start in range(0, len(tokens), 100):
+        chunk = tokens[start:start + 100]
+        try:
+            _rest("DELETE", EXPO_TOKENS_TABLE,
+                  params={"expo_token": f"in.({','.join(chunk)})"})
+        except Exception as e:  # noqa: BLE001
+            logger.warning("Could not purge dead Expo token: %s", e)
+    logger.info("Purged %d dead Expo token(s).", len(tokens))
 
 
 def stamp_inbox_pushed(row_ids: list[str]) -> None:
@@ -817,12 +906,15 @@ def main(argv: list[str]) -> int:
         return 0
     logger.info("%d new %s notification(s).", len(events), args.kind)
 
-    subs = fetch_subscriptions()
+    # Devices: the app's Expo push tokens, each carrying user_id/tier_rank
+    # so audience_subs() can gate them on entitlement.
+    subs = fetch_native_tokens()
     if not subs and not args.dry_run:
         logger.info("No subscribed devices — marking keys sent anyway.")
         return finish_early([k for k, _, _ in events])
 
-    total_ok, all_dead = 0, []
+    total_ok = 0
+    dead_tokens: list[str] = []
     inbox_stamped: list[str] = []
     for key, payload, audience in events:
         target = audience_subs(subs, audience)
@@ -836,11 +928,11 @@ def main(argv: list[str]) -> int:
             continue
         ok, dead = send_payload(target, payload, args.dry_run)
         total_ok += ok
-        all_dead.extend(dead)
+        dead_tokens.extend(dead)
         if args.kind == "inbox" and not args.dry_run and ok > 0:
             inbox_stamped.append(key.split(":", 1)[1])
 
-    purge_dead(all_dead)
+    purge_dead_tokens(dead_tokens)
     if not args.dry_run:
         if args.kind == "inbox":
             stamp_inbox_pushed(inbox_stamped)
@@ -851,8 +943,9 @@ def main(argv: list[str]) -> int:
                 apply_odds_proposal(state, odds_proposal,
                                     [k for k, _, _ in events], conditional_only=False)
             save_state(mark_sent(args.kind, [k for k, _, _ in events], state))
-    logger.info("Done. delivered=%d%s dead=%d",
-                total_ok, " (dry-run)" if args.dry_run else "", len(all_dead))
+    logger.info("Done. delivered=%d%s purged_dead_tokens=%d",
+                total_ok, " (dry-run)" if args.dry_run else "",
+                len(dead_tokens))
     return 0
 
 
