@@ -30,7 +30,10 @@ ai/data/volleyball/raw/
 
 # Generated multi-sport data artefacts
 # (weather_by_match.csv.gz is deliberately TRACKED: CI retrain joins it)
-.github/scripts/package-lock.json
+
+# Expo/React Native build artifacts (web export + Expo's local state)
+statwise/.expo/
+statwise/dist/
 
 # Runtime state written on every run (noise in diffs)
 ai/data/heartbeat.json
@@ -38,3 +41,9 @@ ai/data/odds_cache.json
 
 # Flutterwave credentials (live secrets — never commit)
 statwise/flutterwave_key
+
+# Website build artifacts (Next.js static export — Vercel/CI build these;
+# committed copies went stale and could be deployed by accident)
+website/.next/
+website/out/
+website/tsconfig.tsbuildinfo
