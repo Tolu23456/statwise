@@ -20,6 +20,9 @@ on:
     - cron: '*/3 * * * *'   # hosted checkout verification latency ≤ ~3 min
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 concurrency:
   group: verify-payments
   cancel-in-progress: true   # every action is idempotent; a cancelled run

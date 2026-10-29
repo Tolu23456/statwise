@@ -35,6 +35,9 @@ on:
         default: '72'
         type: string
 
+permissions:
+  contents: read
+
 concurrency:
   group: settle
   cancel-in-progress: false
