@@ -1,0 +1,75 @@
+name: Expire Subscriptions
+
+# Plan 5.1 — expires lapsed paid subscriptions server-side.
+#
+# A VIP/VVIP row whose period end has passed must drop back to the free tier
+# even if the user never opens the app. The expiry logic lives in the
+# `expire_subscriptions()` Postgres function (statwise/supabase-audit-hardening.sql):
+# it flips every `current_tier` whose `period_end` is in the past back to
+# 'free' and clears the period, in ONE statement (no read-modify-write race
+# with the payment poller or the app).
+#
+# This workflow is a thin hourly caller — the RPC is idempotent (re-running
+# it on an already-expired row is a no-op), so a missed or duplicated run is
+# harmless.
+#
+# If the RPC has not been created yet (migration not applied), PostgREST
+# returns PGRST2028 and this job prints a ::warning:: and exits 0 — the
+# migration is a one-time manual step, and a red scheduled job is one nobody
+# reads.
+
+on:
+  schedule:
+    - cron: '5 * * * *'   # hourly, :05 (offset from the odds/predict crons)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: expire-subscriptions
+  cancel-in-progress: true   # idempotent RPC; a cancelled run resumes next tick
+
+jobs:
+  expire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Expire lapsed subscriptions
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE || vars.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then
+            echo "::error::SUPABASE_SERVICE_ROLE_KEY is not configured — cannot expire subscriptions."
+            exit 1
+          fi
+          # Call the RPC via PostgREST with the service-role key. HTTP status
+          # decides the outcome:
+          #   2xx        -> ran (idempotent), success
+          #   PGRST2028  -> function missing (migration not applied): warn, exit 0
+          #   anything else -> real failure, go red.
+          resp="$(curl -sS -o /tmp/expire_body -w '%{http_code}' \
+            -X POST "${SUPABASE_URL%/}/rest/v1/rpc/expire_subscriptions" \
+            -H "apikey: ${SUPABASE_SERVICE_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_SERVICE_KEY}" \
+            -H "Content-Type: application/json" \
+            -d '{}')"
+          body="$(cat /tmp/expire_body 2>/dev/null || true)"
+          echo "HTTP ${resp}: ${body}"
+          case "$resp" in
+            2*)
+              echo "::notice::expire_subscriptions ran successfully."
+              ;;
+            *)
+              if printf '%s' "$body" | grep -q 'PGRST2028'; then
+                echo "::warning::expire_subscriptions RPC not found — paste statwise/supabase-audit-hardening.sql into the Supabase SQL editor, then re-run. (Safe to ignore until then.)"
+                exit 0
+              fi
+              echo "::error::expire_subscriptions failed (HTTP ${resp}): ${body}"
+              exit 1
+              ;;
+          esac
