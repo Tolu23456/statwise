@@ -76,18 +76,26 @@ export default function TabLayout() {
   const showTopNav = isWeb && width >= 600;
   const compact = isWeb && width < 860;
 
+  // Mobile always shows the tab bar; web hides it behind a top nav on wide screens.
+  const showTabBar = isWeb ? !showTopNav : true;
+
   const tabBarStyle = {
-    backgroundColor: C.tabBar,
-    borderTopColor: C.tabBarBorder,
-    borderTopWidth: 1,
+    backgroundColor: 'transparent',
+    borderTopColor: 'transparent',
+    borderTopWidth: 0,
     height: isWeb ? 84 : undefined,
     paddingBottom: isWeb ? 34 : undefined,
-    display: showTopNav ? ('none' as const) : ('flex' as const),
+    display: showTabBar ? ('flex' as const) : ('none' as const),
+    position: 'absolute' as const,
+    bottom: 0,
+    left: 0,
+    right: 0,
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: C.background }}>
       {showTopNav && <WebTopNav compact={compact} />}
+
       {/* Plan 3.4 — offline / slow-connection indicator on every tab. */}
       <OfflineBanner />
 
@@ -145,10 +153,6 @@ export default function TabLayout() {
             ),
           }}
         />
-        <Tabs.Screen name="insight-detail"   options={{ href: null }} />
-        <Tabs.Screen name="backtesting"      options={{ href: null }} />
-        <Tabs.Screen name="privacy-policy"   options={{ href: null }} />
-        <Tabs.Screen name="terms-of-service" options={{ href: null }} />
       </Tabs>
     </View>
   );

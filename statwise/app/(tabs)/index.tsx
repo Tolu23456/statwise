@@ -20,7 +20,7 @@ import { shouldShowOnboarding } from '@/lib/onboarding';
 import { LIMITS } from '@/lib/validation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatDayLabel, formatNumber, timeAgo } from '@/lib/format';
-import { aiFilterEmptyCopy, aiPicksLabel, aiPicksOf, certaintyOf, certaintyTone, isAiPick } from '@/lib/aiPicks';
+
 import { RETRY_COPY } from '@/lib/errors';
 import { QUERY_KEYS, STALE_TIME } from '@/lib/queryConfig';
 import {
@@ -141,11 +141,6 @@ export default function HomeScreen() {
 
   const [selectedLeague, setSelectedLeague] = useState('all');
   const [search, setSearch] = useState('');
-  // Plan 3.3 — prominent AI Picks filter (works together with the league tabs).
-  const [aiOnly, setAiOnly] = useState(false);
-  // Plan 3.5 — quick actions: saved matches, persisted on the device.
-  const [favorites, setFavorites] = useState<string[]>([]);
-  const [favOnly, setFavOnly] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [newPredictionsBadge, setNewPredictionsBadge] = useState(0);
   // Replays the card-entrance animation whenever the user RETURNS to the
@@ -434,22 +429,8 @@ export default function HomeScreen() {
   }, []);
 
   // Plan 3.5 — filter changes animate the feed instead of jumping.
-  const animateList = useCallback(() => {
-    try {
-      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-    } catch {
-      // platform without layout animation — the update still applies
-    }
-  }, []);
-
   const filtered = useMemo(() => {
     let list = predictions;
-    if (aiOnly) {
-      list = list.filter(isAiPick);
-    }
-    if (favOnly) {
-      list = list.filter(p => isFavorite(favorites, p.id));
-    }
     if (selectedLeague !== 'all') {
       list = list.filter(p => p.league_slug === selectedLeague);
     }
@@ -463,22 +444,10 @@ export default function HomeScreen() {
       );
     }
     return list;
-  }, [predictions, aiOnly, favOnly, favorites, selectedLeague, search]);
+  }, [predictions, selectedLeague, search]);
 
   /** How many AI Picks today (drives the filter chip's count badge). */
-  const aiCount = useMemo(() => predictions.filter(isAiPick).length, [predictions]);
 
-  /** Saved matches today (drives the favourites chip's count badge). */
-  const favCount = useMemo(
-    () => predictions.filter(p => isFavorite(favorites, p.id)).length,
-    [predictions, favorites],
-  );
-
-  /** Dedicated section: best-certainty AI Picks first, capped so it stays a strip. */
-  const aiSection = useMemo(
-    () => (aiOnly || favOnly ? [] : aiPicksOf(predictions).slice(0, 8)),
-    [predictions, aiOnly, favOnly],
-  );
 
   /** Match counts per league tab (based on the unfiltered day's list). */
   const leagueCounts = useMemo(() => {
@@ -520,51 +489,7 @@ export default function HomeScreen() {
   const topInset = Platform.OS === 'web' ? 0 : insets.top;
 
   const EmptyState = () => {
-    if (aiOnly || favOnly) {
-      const labels = [aiOnly && 'AI Picks', favOnly && 'Favourites']
-        .filter(Boolean)
-        .join(' and ');
-      // AI-filter empty copy is count-aware (lib/aiPicks.ts): a day with 0
-      // AI Picks says so with the real feed size, instead of the old generic
-      // message that read like an inverted toggle. Favourites copy unchanged.
-      const aiCopy =
-        aiOnly && !favOnly
-          ? aiFilterEmptyCopy({
-              aiCount,
-              total: predictions.length,
-              leagueNarrowed: selectedLeague !== 'all',
-              search,
-            })
-          : null;
-      return (
-        <View style={styles.empty}>
-          <Ionicons name="star-outline" size={52} color={C.textMuted} />
-          <Text style={[styles.emptyTitle, { color: C.text }]}>
-            {aiCopy ? aiCopy.title : search ? `No ${labels} found` : `No ${labels} here yet`}
-          </Text>
-          <Text style={[styles.emptyDesc, { color: C.textSecondary }]}>
-            {aiCopy
-              ? aiCopy.description
-              : search
-                ? `Nothing in ${labels} matches "${search}" — clear the search or widen the filter.`
-                : favOnly && !aiOnly
-                  ? 'Nothing you have saved shows up under this league right now. Tap the bookmark on any match to save it here.'
-                  : 'Pico only flags a match as an AI Pick when its certainty clears the bar, and only saved matches appear under Favourites. Check the league tabs or look at all predictions.'}
-          </Text>
-          <TouchableOpacity
-            style={[styles.emptyBtn, { backgroundColor: C.primaryLight }]}
-            onPress={() => {
-              setAiOnly(false);
-              setFavOnly(false);
-              setSearch('');
-              animateList();
-            }}
-          >
-            <Text style={[styles.emptyBtnText, { color: C.primary }]}>Show all predictions</Text>
-          </TouchableOpacity>
-        </View>
-      );
-    }
+    if (search) {
     if (search) {
       return (
         <View style={styles.empty}>
@@ -732,116 +657,6 @@ export default function HomeScreen() {
           </TouchableOpacity>
         )}
 
-        {/* Plan 3.3 — prominent AI Picks filter. Sits above the search box so
-            the day's highest-certainty picks are one tap away. */}
-        <TouchableOpacity
-          style={[
-            styles.aiFilterRow,
-            {
-              backgroundColor: aiOnly ? C.successLight : C.card,
-              borderColor: aiOnly ? C.success : C.border,
-            },
-          ]}
-          onPress={() => {
-            setAiOnly(v => !v);
-            animateList();
-            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-          }}
-          activeOpacity={0.85}
-          accessibilityRole="button"
-          accessibilityLabel={aiOnly ? 'Show all predictions' : 'Show AI Picks only'}
-        >
-          <View
-            style={[
-              styles.aiFilterStar,
-              { backgroundColor: aiCount > 0 ? C.success : C.inputBg },
-            ]}
-          >
-            <Ionicons name="star" size={16} color={aiCount > 0 ? '#fff' : C.textMuted} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={[styles.aiFilterTitle, { color: aiOnly ? C.success : C.text }]}>
-              AI Picks
-            </Text>
-            <Text style={[styles.aiFilterHint, { color: C.textMuted }]}>
-              {aiCount > 0
-                ? `${aiPicksLabel(aiCount)} · Pico's highest certainty`
-                : 'Pico has not flagged a high-certainty pick yet'}
-            </Text>
-          </View>
-          <View
-            style={[
-              styles.aiFilterPill,
-              { backgroundColor: aiOnly ? C.success : C.inputBg },
-            ]}
-          >
-            <Text
-              style={[styles.aiFilterPillText, { color: aiOnly ? '#fff' : C.textSecondary }]}
-            >
-              {aiOnly ? 'ON' : 'OFF'}
-            </Text>
-          </View>
-        </TouchableOpacity>
-
-        {/* Plan 3.5 — favourites quick filter. Compact chip under the AI Picks
-            row; the two stack (AI Picks ∩ Favourites ∩ league ∩ search). */}
-        <View style={styles.quickFilterRow}>
-          <TouchableOpacity
-            style={[
-              styles.favChip,
-              {
-                backgroundColor: favOnly ? C.primaryLight : C.card,
-                borderColor: favOnly ? C.primary : C.border,
-              },
-            ]}
-            onPress={() => {
-              setFavOnly(v => !v);
-              animateList();
-              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-            }}
-            activeOpacity={0.85}
-            accessibilityRole="button"
-            accessibilityLabel={favOnly ? 'Show all predictions' : 'Show saved matches only'}
-          >
-            <Ionicons
-              name={favOnly ? 'bookmark' : 'bookmark-outline'}
-              size={13}
-              color={favCount > 0 ? C.primary : C.textMuted}
-            />
-            <Text
-              style={[styles.favChipText, { color: favOnly ? C.primary : C.textSecondary }]}
-            >
-              Favourites
-            </Text>
-            <View
-              style={[
-                styles.favChipCount,
-                {
-                  backgroundColor: favOnly
-                    ? C.primary
-                    : favCount > 0
-                      ? C.inputBg
-                      : 'transparent',
-                },
-              ]}
-            >
-              <Text
-                style={[
-                  styles.favChipCountText,
-                  { color: favOnly ? '#fff' : C.textMuted },
-                ]}
-              >
-                {favCount}
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <Text style={[styles.quickFilterHint, { color: C.textMuted }]}>
-            {favCount > 0
-              ? favoritesLabel(favCount) + (favOnly ? ' · showing only these' : '')
-              : 'Tap the bookmark on any match to save it here'}
-          </Text>
-        </View>
-
         <View style={[styles.searchBar, { backgroundColor: C.inputBg, borderColor: C.border }]}>
           <Ionicons name="search-outline" size={18} color={C.placeholder} />
           <TextInput
@@ -950,70 +765,7 @@ export default function HomeScreen() {
             />
           }
           ListEmptyComponent={<EmptyState />}
-          ListHeaderComponent={
-            // Plan 3.3 — dedicated AI Picks strip. Hidden while the filter is
-            // already on (redundant) or while a search narrows the feed.
-            aiSection.length > 0 && !search.trim() ? (
-              <View style={styles.aiSection}>
-                <View style={styles.aiSectionHead}>
-                  <Ionicons name="star" size={13} color={C.success} />
-                  <Text style={[styles.aiSectionTitle, { color: C.text }]}>AI Picks today</Text>
-                  <TouchableOpacity onPress={() => setAiOnly(true)} hitSlop={8}>
-                    <Text style={[styles.aiSeeAll, { color: C.primary }]}>
-                      See all {formatNumber(aiCount)} ›
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-                <ScrollView
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  contentContainerStyle={styles.aiStrip}
-                >
-                  {aiSection.map(p => {
-                    const cert = certaintyOf(p);
-                    const tone = certaintyTone(cert);
-                    const toneColor =
-                      tone === 'high' ? C.success : tone === 'mid' ? C.warning : C.textMuted;
-                    return (
-                      <TouchableOpacity
-                        key={p.id}
-                        style={[styles.aiCard, { backgroundColor: C.card, borderColor: C.border }]}
-                        onPress={() => {
-                          setDetailMounted(true);
-                          setSelectedPrediction(p);
-                          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-                        }}
-                        activeOpacity={0.85}
-                      >
-                        <Text style={[styles.aiCardPick, { color: C.primary }]} numberOfLines={1}>
-                          {p.prediction}
-                        </Text>
-                        <Text style={[styles.aiCardTeams, { color: C.text }]} numberOfLines={2}>
-                          {p.home_team} vs {p.away_team}
-                        </Text>
-                        <View style={styles.aiCardCertRow}>
-                          <View style={[styles.aiCardBar, { backgroundColor: C.inputBg }]}>
-                            <View
-                              style={[
-                                styles.aiCardFill,
-                                {
-                                  width: `${Math.max(4, Math.min(100, cert ?? 0))}%` as any,
-                                  backgroundColor: toneColor,
-                                },
-                              ]}
-                            />
-                          </View>
-                          <Text style={[styles.aiCardCert, { color: toneColor }]}>
-                            {cert !== null ? `${Math.round(cert)}%` : '—'}
-                          </Text>
-                        </View>
-                      </TouchableOpacity>
-                    );
-                  })}
-                </ScrollView>
-              </View>
-            ) : null
-          }
+          ListHeaderComponent={null}
           ListFooterComponent={
             filtered.length > 0 ? (
               <Text style={[styles.footerNote, { color: C.textMuted }]}>
@@ -1172,44 +924,6 @@ const styles = StyleSheet.create({
   upsellIcon: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center' },
   upsellTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   upsellSub: { fontSize: 12, marginTop: 1 },
-  /* Plan 3.3 — AI Picks filter + dedicated section */
-  aiFilterRow: {
-    flexDirection: 'row', alignItems: 'center', gap: 10,
-    borderRadius: 14, borderWidth: 1.5, paddingHorizontal: 12,
-    paddingVertical: 10, marginBottom: 12,
-  },
-  aiFilterStar: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
-  aiFilterTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold', fontWeight: '700' },
-  aiFilterHint: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 1 },
-  aiFilterPill: { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 20 },
-  aiFilterPillText: { fontSize: 11, fontFamily: 'Inter_700Bold', fontWeight: '800', letterSpacing: 0.6 },
-  aiSection: { marginBottom: 14 },
-  aiSectionHead: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 8 },
-  aiSectionTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold', fontWeight: '700', flex: 1 },
-  aiSeeAll: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  aiStrip: { gap: 10, paddingRight: 4 },
-  aiCard: {
-    width: 168, borderRadius: 14, borderWidth: 1, padding: 12, gap: 6,
-  },
-  aiCardPick: { fontSize: 13, fontFamily: 'Inter_700Bold', fontWeight: '800' },
-  aiCardTeams: { fontSize: 12, fontFamily: 'Inter_500Medium', lineHeight: 16, minHeight: 32 },
-  aiCardCertRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  aiCardBar: { flex: 1, height: 5, borderRadius: 3, overflow: 'hidden' },
-  aiCardFill: { height: 5, borderRadius: 3 },
-  aiCardCert: { fontSize: 11, fontFamily: 'Inter_700Bold', fontWeight: '800', minWidth: 30, textAlign: 'right' },
-  /* Plan 3.5 — favourites quick filter */
-  quickFilterRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 12 },
-  favChip: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    paddingHorizontal: 10, paddingVertical: 6, borderRadius: 20, borderWidth: 1,
-  },
-  favChipText: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
-  favChipCount: {
-    minWidth: 18, height: 18, borderRadius: 9, paddingHorizontal: 4,
-    alignItems: 'center', justifyContent: 'center',
-  },
-  favChipCountText: { fontSize: 10, fontFamily: 'Inter_700Bold' },
-  quickFilterHint: { fontSize: 11, fontFamily: 'Inter_400Regular', flex: 1 },
   searchBar: {
     flexDirection: 'row', alignItems: 'center', gap: 8,
     borderRadius: 12, borderWidth: 1, paddingHorizontal: 12, paddingVertical: 10, marginBottom: 12,

@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Platform, TouchableOpacity, Image, Share } from 'react-native';
+import React, { useState, useRef } from 'react';
+import {
+  View, Text, StyleSheet, Platform, TouchableOpacity, Image, Share,
+  PanResponder, LayoutChangeEvent,
+} from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/colors';
@@ -70,6 +73,41 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
   // Web Share API, and says so in place of the tap hint for a couple of
   // seconds (a silent copy would look like a dead button).
   const [copied, setCopied] = useState(false);
+  const slideRef = useRef<{ width: number }>({ width: 0 });
+  const [slideProgress, setSlideProgress] = useState(0);
+  const [isSliding, setIsSliding] = useState(false);
+
+  // Slide-to-reply like WhatsApp — swipe right to reveal quick reply options
+  const slideWidth = 80;
+  const panResponder = useRef<PanResponder>().current || PanResponder.create({
+    onStartShouldSetPanResponder: () => false,
+    onMoveShouldSetPanResponder: (_, gestureState) => {
+      // Only activate on horizontal swipe from the left edge
+      return gestureState.dx > -10 && Math.abs(gestureState.dx) > Math.abs(gestureState.dy) && gestureState.dx > 0;
+    },
+    onPanResponderGrant: () => {
+      if (slideProgress === 0) setIsSliding(true);
+    },
+    onPanResponderMove: (_, gestureState) => {
+      if (!isSliding) return;
+      const progress = Math.min(gestureState.dx / slideWidth, 1);
+      setSlideProgress(progress);
+    },
+    onPanResponderRelease: (_, gestureState) => {
+      setIsSliding(false);
+      if (gestureState.dx > slideWidth * 0.5) {
+        // Complete the swipe
+        setSlideProgress(1);
+        // Show reply options briefly then reset
+        setTimeout(() => {
+          setSlideProgress(0);
+        }, 1500);
+      } else {
+        // Snap back
+        setSlideProgress(0);
+      }
+    },
+  }).current;
 
   const handleShare = async (e?: { stopPropagation?: () => void }) => {
     e?.stopPropagation?.();
@@ -194,12 +232,60 @@ export function PredictionCard({ prediction, locked = false, nextTier = 'Premium
   }
 
   /* -------------------------------- card --------------------------------- */
+  const slideBgStyle = {
+    position: 'absolute' as const,
+    left: 0,
+    top: 0,
+    bottom: 0,
+    width: slideWidth * slideProgress,
+    backgroundColor: C.success,
+    borderRadius: 16,
+    overflow: 'hidden' as const,
+  };
+
+  const replyOptionsStyle = {
+    position: 'absolute' as const,
+    left: 0,
+    top: 0,
+    bottom: 0,
+    width: slideWidth,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingRight: 16,
+    gap: 8,
+  };
+
   return (
-    <TouchableOpacity
-      activeOpacity={0.75}
-      onPress={onPress}
+    <View
       style={[styles.card, { backgroundColor: C.card, borderColor: C.border }]}
+      onLayout={(e: LayoutChangeEvent) => {
+        slideRef.current = { width: e.nativeEvent.layout.width };
+      }}
     >
+        {/* Slide-to-reply background (WhatsApp-style) */}
+        <View style={slideBgStyle} />
+        <View style={replyOptionsStyle}>
+          {slideProgress > 0.3 && (
+            <>
+              <TouchableOpacity
+                style={[styles.replyBtn, { backgroundColor: '#fff' }]}
+                onPress={() => { setSlideProgress(0); }}
+                hitSlop={10}
+              >
+                <Ionicons name="chatbubble-outline" size={14} color={C.success} />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.replyBtn, { backgroundColor: '#fff' }]}
+                onPress={() => { setSlideProgress(0); }}
+                hitSlop={10}
+              >
+                <Ionicons name="heart-outline" size={14} color={C.success} />
+              </TouchableOpacity>
+            </>
+          )}
+        </View>
+
         <View style={styles.header}>
           <View style={styles.leagueWrap}>
             <Text style={[styles.league, { color: C.primary, backgroundColor: C.primaryLight }]}>
@@ -439,6 +525,14 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 12,
     overflow: 'hidden',
+    position: 'relative',
+  },
+  replyBtn: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   lockedCard: { opacity: 0.92 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },

@@ -7,7 +7,6 @@
     "icon": "./assets/images/icon.png",
     "scheme": "statwise",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
@@ -47,7 +46,8 @@
         {
           "photosPermission": "Allow StatWise to access your photos to update your profile picture."
         }
-      ]
+      ],
+      "expo-image"
     ],
     "experiments": {
       "typedRoutes": true

@@ -1,14 +1,16 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput,
   Switch, Alert, ActivityIndicator, Platform, Share,
+  LayoutAnimation,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as ImagePicker from 'expo-image-picker';
 import * as Haptics from 'expo-haptics';
-import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
+import { Image } from 'expo-image';
+
 import { Colors, TierBadgeColors } from '@/constants/colors';
 import { supabase, ReferralCode } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
@@ -20,6 +22,18 @@ import {
   registerForPush, unregisterPush, pushSupported, currentPermission, pushBlockReason,
 } from '@/lib/push';
 import { useQuery } from '@tanstack/react-query';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { isAiPick, aiPicksLabel, aiPicksOf } from '@/lib/aiPicks';
+import {
+  FAVORITES_KEY,
+  favoritesLabel,
+  isFavorite,
+  parseFavorites,
+  serializeFavorites,
+  toggleFavorite,
+} from '@/lib/favorites';
+
+import { PREDICTION_TIER_LIMITS } from '@/lib/validation';
 
 const THEME_OPTIONS: { value: ThemeMode; icon: string; label: string }[] = [
   { value: 'system', icon: 'phone-portrait-outline', label: 'Auto' },
@@ -73,6 +87,7 @@ export default function ProfileScreen() {
   const { user, profile, signOut, refreshProfile } = useAuth();
   const router = useRouter();
 
+
   const [editingName, setEditingName] = useState(false);
   const [displayName, setDisplayName] = useState(profile?.display_name ?? '');
   const [savingName, setSavingName] = useState(false);
@@ -81,6 +96,32 @@ export default function ProfileScreen() {
   // Native-push enable/disable feedback (reason shown verbatim).
   const [pushNote, setPushNote] = useState<string | null>(null);
   const [pushBusy, setPushBusy] = useState(false);
+
+  // AI Picks & Favorites filters (moved from home screen — plan 3.3/3.5)
+  const [aiOnly, setAiOnly] = useState(false);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [favOnly, setFavOnly] = useState(false);
+  const favRef = useRef<string[]>([]);
+
+  useEffect(() => {
+    AsyncStorage.getItem(FAVORITES_KEY)
+      .then(raw => {
+        const list = parseFavorites(raw);
+        favRef.current = list;
+        setFavorites(list);
+      })
+      .catch(() => {});
+  }, []);
+
+  const onToggleFavorite = useCallback((id: string) => {
+    if (!id) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    const nowFavorite = !isFavorite(favRef.current, id);
+    const next = toggleFavorite(favRef.current, id);
+    favRef.current = next;
+    setFavorites(next);
+    AsyncStorage.setItem(FAVORITES_KEY, serializeFavorites(next)).catch(() => {});
+  }, []);
 
   // Surface a permanently-blocked notification permission on mount.
   // currentPermission() is async — the old inline comparison
@@ -546,6 +587,70 @@ export default function ProfileScreen() {
           </TouchableOpacity>
         </View>
 
+        {/* ── AI Picks Filter (Plan 3.3) ── */}
+        <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
+          <Text style={[styles.sectionTitle, { color: C.text }]}>AI Picks</Text>
+          <Text style={[styles.sectionDesc, { color: C.textSecondary }]}>
+            Pico's highest-certainty predictions, hand-picked for you.
+          </Text>
+          <TouchableOpacity
+            style={[
+              styles.filterChip,
+              {
+                backgroundColor: aiOnly ? C.success : C.inputBg,
+                borderColor: aiOnly ? C.success : C.border,
+              },
+            ]}
+            onPress={() => {
+              setAiOnly(v => !v);
+              try { LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); } catch {}
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+            }}
+            activeOpacity={0.85}
+          >
+            <Ionicons
+              name={aiOnly ? 'checkmark-circle' : 'ellipse-outline'}
+              size={20}
+              color={aiOnly ? C.success : C.textMuted}
+            />
+            <Text style={[styles.filterChipText, { color: aiOnly ? C.success : C.text }]}>
+              {aiOnly ? 'Showing AI Picks' : 'Show AI Picks only'}
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* ── Favourites (Plan 3.5) ── */}
+        <View style={[styles.section, { backgroundColor: C.card, borderColor: C.border }]}>
+          <Text style={[styles.sectionTitle, { color: C.text }]}>Favourites</Text>
+          <Text style={[styles.sectionDesc, { color: C.textSecondary }]}>
+            Matches you've saved. Tap the bookmark on any prediction to add it here.
+          </Text>
+          <TouchableOpacity
+            style={[
+              styles.filterChip,
+              {
+                backgroundColor: favOnly ? C.primary : C.inputBg,
+                borderColor: favOnly ? C.primary : C.border,
+              },
+            ]}
+            onPress={() => {
+              setFavOnly(v => !v);
+              try { LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); } catch {}
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+            }}
+            activeOpacity={0.85}
+          >
+            <Ionicons
+              name={favOnly ? 'bookmark' : 'bookmark-outline'}
+              size={20}
+              color={favOnly ? C.primary : C.textMuted}
+            />
+            <Text style={[styles.filterChipText, { color: favOnly ? C.primary : C.text }]}>
+              {favOnly ? 'Showing Favourites' : 'Show saved matches only'}
+            </Text>
+          </TouchableOpacity>
+        </View>
+
         <TouchableOpacity
           style={[styles.signOutBtn, { borderColor: C.danger, backgroundColor: C.dangerLight }]}
           onPress={handleSignOut}
@@ -638,6 +743,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   settingLabel: { flex: 1, fontSize: 15, fontFamily: 'Inter_400Regular' },
+  filterChip: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
+    borderRadius: 20, borderWidth: 1, paddingVertical: 10, paddingHorizontal: 18,
+    marginTop: 4,
+  },
+  filterChipText: {
+    fontSize: 14, fontFamily: 'Inter_500Medium',
+  },
   pushNote: {
     fontSize: 12,
     fontFamily: 'Inter_400Regular',

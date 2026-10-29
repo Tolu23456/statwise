@@ -51,15 +51,27 @@ export function subscribeNetwork(
   if (typeof window === 'undefined') return () => {};
 
   const update = () => onChange(currentNetworkState());
-  window.addEventListener('online', update);
-  window.addEventListener('offline', update);
+  try {
+    window.addEventListener('online', update);
+    window.addEventListener('offline', update);
+  } catch (e) {
+    console.debug('[network] browser events unavailable:', e);
+  }
 
   const conn = connection();
-  conn?.addEventListener?.('change', update);
+  try {
+    conn?.addEventListener?.('change', update);
+  } catch (e) {
+    console.debug('[network] connection API unavailable:', e);
+  }
 
   return () => {
-    window.removeEventListener('online', update);
-    window.removeEventListener('offline', update);
-    conn?.removeEventListener?.('change', update);
+    try {
+      window.removeEventListener('online', update);
+      window.removeEventListener('offline', update);
+    } catch { /* ignore */ }
+    try {
+      conn?.removeEventListener?.('change', update);
+    } catch { /* ignore */ }
   };
 }
