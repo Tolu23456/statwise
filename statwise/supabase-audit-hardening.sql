@@ -684,7 +684,7 @@ begin
     else
       execute format('alter table public.%I enable row level security', t);
       for p in
-        select policyname from pg_policies
+        select policyname, cmd from pg_policies
          where schemaname = 'public' and tablename = t
            and cmd in ('ALL', 'INSERT', 'UPDATE', 'DELETE')
       loop
@@ -707,7 +707,7 @@ begin
     raise notice 'section 7 (C-7): public.predictions missing — skipped';
   else
     for p in
-      select policyname from pg_policies
+      select policyname, cmd, qual from pg_policies
        where schemaname = 'public'
          and tablename = 'predictions'
          and (cmd in ('ALL', 'INSERT', 'UPDATE', 'DELETE')
