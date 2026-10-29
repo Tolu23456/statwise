@@ -55,9 +55,9 @@ export function AdSlot({
       >
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
-            <Megaphone className="w-4 h-4 text-gray-500 shrink-0" />
+            <Megaphone className="w-4 h-4 text-gray-400 shrink-0" />
             <div className="min-w-0">
-              <div className="text-[10px] uppercase tracking-widest text-gray-500">
+              <div className="text-[10px] uppercase tracking-widest text-gray-400">
                 Advertisement
               </div>
               <p className="text-sm text-gray-300 truncate">
@@ -79,7 +79,7 @@ export function AdSlot({
 
   return (
     <div className={`overflow-hidden rounded-xl ${className}`}>
-      <div className="text-[10px] uppercase tracking-widest text-gray-600 mb-1">
+      <div className="text-[10px] uppercase tracking-widest text-gray-400 mb-1">
         Advertisement
       </div>
       <ins

@@ -48,16 +48,30 @@ export type AccuracyStats = {
 /** The published window: rolling30 days of settled fixtures. */
 export const ACCURACY_WINDOW_DAYS = 30;
 
+/** Per-request budget: a stalled connection must not leave the skeleton up. */
+const REST_TIMEOUT_MS = 10_000;
+/** Response-size cap — every query here is limit-bounded, so real payloads
+ *  are far smaller; anything bigger is treated as bad input. */
+const REST_MAX_CHARS = 1_000_000;
+
 async function rest<T>(query: string): Promise<T | null> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), REST_TIMEOUT_MS);
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/predictions?${query}`, {
       headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` },
+      signal: controller.signal,
     });
     if (!res.ok) return null;
-    return (await res.json()) as T;
+    const text = await res.text();
+    if (text.length > REST_MAX_CHARS) return null; // size guard
+    return JSON.parse(text) as T;
   } catch {
-    // Network/offline — callers render their fallback, never a broken page.
+    // Network/offline/timeout/oversized — callers render their fallback,
+    // never a broken page.
     return null;
+  } finally {
+    clearTimeout(timer);
   }
 }
 

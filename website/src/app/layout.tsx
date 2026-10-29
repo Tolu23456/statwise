@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   },
   description:
     'Free AI football predictions priced by a LightGBM model trained on 331,949 matches: calibrated probabilities, confidence, value edge and a public live track record. Full board and booking codes in the StatWise app.',
+  // Home page canonical (inner pages override `alternates` with their own
+  // path via lib/seo.ts pageMetadata — same single SITE_URL constant).
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
     'football predictions',
     'AI football predictions',

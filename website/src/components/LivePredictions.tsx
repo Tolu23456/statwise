@@ -111,7 +111,7 @@ export function LivePredictions({
         </div>
       )}
       {updatedAt && (
-        <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
+        <div className="mt-4 flex items-center gap-2 text-xs text-gray-400">
           <RefreshCw className="w-3 h-3" />
           Live from the StatWise app · updated{' '}
           {updatedAt.toLocaleTimeString('en-GB', {
@@ -135,10 +135,10 @@ function LockedCard({ pick, compact }: { pick: UpcomingPick; compact: boolean })
   return (
     <div className="rounded-xl border border-border bg-card p-4 sm:p-5 relative overflow-hidden">
       <div className="flex items-center justify-between mb-3">
-        <span className="text-[11px] uppercase tracking-wider text-gray-500">
+        <span className="text-[11px] uppercase tracking-wider text-gray-400">
           {pick.league}
         </span>
-        <span className="text-[11px] text-gray-500">
+        <span className="text-[11px] text-gray-400">
           {formatKickoff(pick.kickoff_time)}
         </span>
       </div>
@@ -146,7 +146,7 @@ function LockedCard({ pick, compact }: { pick: UpcomingPick; compact: boolean })
       <div className={`flex items-center gap-3 ${compact ? 'pr-24' : ''}`}>
         <TeamSide logo={getTeamLogo(pick.home_team)} name={pick.home_team} align="left" />
         <div className="flex flex-col items-center shrink-0 px-1">
-          <span className="text-xs font-semibold text-gray-500">VS</span>
+          <span className="text-xs font-semibold text-gray-400">VS</span>
         </div>
         <TeamSide logo={getTeamLogo(pick.away_team)} name={pick.away_team} align="right" />
       </div>
@@ -172,10 +172,10 @@ function PickCard({ pick, compact }: { pick: UpcomingPick; compact: boolean }) {
   return (
     <div className="rounded-xl border border-border bg-card p-4 sm:p-5 hover:border-primary/50 transition group">
       <div className="flex items-center justify-between mb-3">
-        <span className="text-[11px] uppercase tracking-wider text-gray-500">
+        <span className="text-[11px] uppercase tracking-wider text-gray-400">
           {pick.league}
         </span>
-        <span className="text-[11px] text-gray-500">
+        <span className="text-[11px] text-gray-400">
           {formatKickoff(pick.kickoff_time)}
         </span>
       </div>
@@ -183,7 +183,7 @@ function PickCard({ pick, compact }: { pick: UpcomingPick; compact: boolean }) {
       <div className="flex items-center gap-3">
         <TeamSide logo={homeLogo} name={pick.home_team} align="left" />
         <div className="flex flex-col items-center shrink-0 px-1">
-          <span className="text-xs font-semibold text-gray-500">VS</span>
+          <span className="text-xs font-semibold text-gray-400">VS</span>
           {pick.odds != null && (
             <span className="text-[11px] text-primary mt-1">
               @{pick.odds.toFixed(2)}
@@ -209,7 +209,7 @@ function PickCard({ pick, compact }: { pick: UpcomingPick; compact: boolean }) {
           </span>
         )}
         {!compact && (
-          <span className="ml-auto text-xs text-gray-500">
+          <span className="ml-auto text-xs text-gray-400">
             confidence {pick.confidence}%
           </span>
         )}
@@ -246,7 +246,7 @@ function TeamSide({
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={logo}
-          alt=""
+          alt={`${name} logo`}
           className="w-9 h-9 shrink-0 object-contain"
           loading="lazy"
           onError={e => {
@@ -254,7 +254,10 @@ function TeamSide({
           }}
         />
       ) : (
-        <div className="w-9 h-9 shrink-0 rounded-full border border-border bg-background flex items-center justify-center text-gray-500 text-xs">
+        <div
+          className="w-9 h-9 shrink-0 rounded-full border border-border bg-background flex items-center justify-center text-gray-400 text-xs"
+          aria-hidden="true"
+        >
           ⚽
         </div>
       )}

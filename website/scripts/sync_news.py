@@ -17,8 +17,13 @@ Design constraints:
     text in its OWN /news reader, with per-story source credit;
   - stdlib only (runs on any ubuntu-latest runner, no pip);
   - merge, don't clobber: unseen items from earlier runs are kept
-    (cap 40) and carried-over items keep their already-fetched lead
+    (cap 50) and carried-over items keep their already-fetched lead
     text; per-URL dedupe across the two sources;
+  - every URL written must be http(s) (javascript:/data: and friends
+    are dropped) and titles are stripped of HTML — news.json feeds
+    href/src attributes on the site, so it is treated as untrusted;
+  - each download has a socket timeout, a total deadline and a size
+    cap, and the JSON output is capped at the 50 most recent stories;
   - the workflow only commits when this script actually changed the
     file, and pushes with GITHUB_TOKEN (which does NOT trigger other
     workflows), so news updates never cascade into Vercel rebuilds —
@@ -55,13 +60,24 @@ SOURCES = {
 }
 
 OUT = Path(__file__).resolve().parents[1] / "src" / "data" / "news.json"
-MAX_ITEMS = 40
+# Size cap on the feed: keep only the 50 most recent dated stories (dateless
+# items awaiting enrichment sort ahead of dated ones so the cap can't drop
+# them before their page has been fetched — see the sorts in main()).
+MAX_ITEMS = 50
 # Lead-text enrichment: how many STORY pages one run may download.
 # Override with SYNC_BODY_LIMIT for a one-off full backfill.
 BODY_FETCH_LIMIT = int(os.environ.get("SYNC_BODY_LIMIT", "8"))
 LEAD_PARAS = 4          # opening paragraphs stored per article
 LEAD_CHARS = 1200       # …and a hard character cap across them
 BODY_SLEEP = 0.4        # politeness gap between article requests
+
+# Per-request budgets: no single download may hang the job or blow up
+# memory. The socket timeout applies to each read, FETCH_DEADLINE caps the
+# whole request wall-clock (headers + body), FETCH_MAX_BYTES caps the body.
+FETCH_TIMEOUT = 30                 # seconds, socket-level, per read
+FETCH_DEADLINE = 60                # seconds total per request
+FETCH_MAX_BYTES = 4 * 1024 * 1024  # 4 MB per response
+FETCH_CHUNK = 64 * 1024
 UA = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/126.0 Safari/537.36 StatWiseNewsSync/1.0"
@@ -119,10 +135,46 @@ JSONLD_RE = re.compile(
 SKY_BODY_SPLIT_RE = re.compile(r"<p[^>]*>")
 
 
+def is_safe_url(value: object) -> bool:
+    """True only for http(s) URLs — javascript:, data:, vbscript: and
+    every other scheme are rejected. news.json values end up in href/src
+    attributes on the site, so this is the write-side XSS gate."""
+    return isinstance(value, str) and value.strip().lower().startswith(
+        ("http://", "https://")
+    )
+
+
 def fetch(url: str) -> str:
+    """Download one page with an explicit deadline and size cap.
+
+    Budgets: socket timeout per read (FETCH_TIMEOUT), total wall-clock
+    deadline for the whole request (FETCH_DEADLINE) and a hard cap on the
+    response body (FETCH_MAX_BYTES) — a stalled or enormous response raises
+    instead of hanging the job (callers treat any exception as "retry next
+    run"). Redirects are followed (urllib's default) but the FINAL URL must
+    still be http(s) before its body is read.
+    """
+    if not is_safe_url(url):
+        raise ValueError(f"refusing non-http(s) URL: {url!r}")
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en"})
-    with urllib.request.urlopen(req, timeout=30) as res:  # noqa: S310 (fixed https host)
-        return res.read().decode("utf-8", errors="replace")
+    deadline = time.monotonic() + FETCH_DEADLINE
+    with urllib.request.urlopen(req, timeout=FETCH_TIMEOUT) as res:  # noqa: S310
+        final = res.geturl()
+        if not is_safe_url(final):
+            raise ValueError(f"redirected to a non-http(s) URL: {final!r}")
+        chunks: list[bytes] = []
+        total = 0
+        while True:
+            if time.monotonic() > deadline:
+                raise TimeoutError(f"deadline exceeded fetching {url}")
+            chunk = res.read(FETCH_CHUNK)
+            if not chunk:
+                break
+            total += len(chunk)
+            if total > FETCH_MAX_BYTES:
+                raise ValueError(f"response over {FETCH_MAX_BYTES} bytes: {url}")
+            chunks.append(chunk)
+        return b"".join(chunks).decode("utf-8", errors="replace")
 
 
 def strip_tags(fragment: str) -> str:
@@ -137,6 +189,31 @@ def fmt_label(iso: str) -> str:
     except ValueError:
         return ""
     return dt.strftime("%d %B %Y · %H:%M")
+
+
+def sanitize_items(items: list[dict]) -> list[dict]:
+    """Final gate before URLs/text reach news.json (the site renders these
+    values into href/src attributes and headings):
+      - drop every item whose original link is not http(s) (javascript:,
+        data:, relative or garbage URLs never ship);
+      - blank the image unless it is http(s);
+      - strip any HTML tags out of the title (scraped text is untrusted).
+    Idempotent: clean items pass through unchanged, so the workflow's
+    "did anything change?" comparison keeps working across runs.
+    """
+    clean: list[dict] = []
+    for it in items:
+        if not isinstance(it, dict) or not is_safe_url(it.get("url")):
+            continue
+        title = strip_tags(str(it.get("title", "")))[:300].strip()
+        if not title:
+            continue
+        entry = {**it, "url": it["url"].strip(), "title": title}
+        entry["image"] = (
+            entry["image"].strip() if is_safe_url(entry.get("image")) else ""
+        )
+        clean.append(entry)
+    return clean
 
 
 # ------------------------------------------------------ SportyTrader fetch
@@ -461,6 +538,9 @@ def main() -> int:
     # pages but were synced earlier (they keep their lead text too).
     fresh_urls = {it["url"] for it in merged_fresh}
     merged = merged_fresh + [it for it in existing if it["url"] not in fresh_urls]
+    # Validation gate (idempotent): unsafe URLs dropped, titles de-tagged,
+    # so the sort/cap below and every downstream fetch sees clean items.
+    merged = sanitize_items(merged)
     # Dateless items (fresh Sky tiles awaiting enrichment) sort FIRST so
     # the cap can't drop stories before their page has been fetched.
     merged.sort(
@@ -477,7 +557,6 @@ def main() -> int:
     # carried-over items are shared dict refs with `existing` — comparing
     # after would mask writes (content changed but refs identical).
     unchanged_listing = existing == merged
-
     # Lead-text enrichment: download story pages for items we don't have
     # body text for yet (bounded per run, newest/dateless first since the
     # sort puts them up front; page failures retry next run since the item
@@ -516,13 +595,17 @@ def main() -> int:
         print(f"unchanged: {len(merged)} items ({len(need)} lead fetches)")
         return 0
 
+    # Re-gate after enrichment (story-page metadata such as og:image just
+    # landed in `merged`) and apply the scheme check to the source map too.
     payload = {
         "synced_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-        "sources": SOURCES,
-        "items": merged,
+        "sources": {
+            name: home for name, home in SOURCES.items() if is_safe_url(home)
+        },
+        "items": sanitize_items(merged),
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n")
+    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
     with_body = sum(1 for it in merged if it.get("body"))
     with_source = {}
     for it in merged:

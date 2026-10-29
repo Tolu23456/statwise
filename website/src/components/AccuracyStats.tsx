@@ -75,7 +75,7 @@ export function AccuracyStats({ compact = false }: { compact?: boolean }) {
       />
       {!compact && stats && stats.byType.length > 1 && (
         <div className="md:col-span-3 rounded-xl border border-border bg-card p-5">
-          <div className="text-xs uppercase tracking-wider text-gray-500 mb-4">
+          <div className="text-xs uppercase tracking-wider text-gray-400 mb-4">
             Hit rate by call · last {ACCURACY_WINDOW_DAYS} days
           </div>
           <div className="grid sm:grid-cols-3 gap-4">
@@ -93,7 +93,7 @@ export function AccuracyStats({ compact = false }: { compact?: boolean }) {
                     style={{ width: `${row.pct}%` }}
                   />
                 </div>
-                <div className="text-[11px] text-gray-600 mt-1">
+                <div className="text-[11px] text-gray-400 mt-1">
                   {row.hits}/{row.total} correct
                 </div>
               </div>
@@ -129,7 +129,7 @@ function StatTile({
       <div className="flex items-center gap-2 text-primary mb-2">
         {icon}
         <span
-          className={`uppercase tracking-wider text-gray-500 ${
+          className={`uppercase tracking-wider text-gray-400 ${
             compact ? 'text-[10px]' : 'text-xs'
           }`}
         >

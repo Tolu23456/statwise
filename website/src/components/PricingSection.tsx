@@ -44,11 +44,11 @@ export function PricingSection() {
                 <span className="text-4xl font-bold">Free</span>
               ) : (
                 <>
-                  <span className="text-gray-500 text-lg">₦</span>
+                  <span className="text-gray-400 text-lg">₦</span>
                   <span className="text-4xl font-bold">
                     {plan.price.toLocaleString('en-NG')}
                   </span>
-                  <span className="text-gray-500 text-sm">
+                  <span className="text-gray-400 text-sm">
                     /{plan.period}
                   </span>
                 </>

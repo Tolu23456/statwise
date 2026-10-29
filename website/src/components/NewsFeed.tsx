@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, Newspaper, PlayCircle, RefreshCw } from 'lucide-react';
 import { useNewsFeed } from '@/lib/useNewsFeed';
 import { NEWS_DISPLAY_COUNT } from '@/lib/siteConfig';
+import { safeUrlOrEmpty } from '@/lib/urlSafety';
 
 /**
  * Football news preview for the home page — headlines, thumbnails and
@@ -44,7 +45,7 @@ export function NewsFeed() {
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={item.image}
-                  alt=""
+                  alt={item.title}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-[1.03] transition duration-300"
                   onError={e => {
@@ -68,7 +69,7 @@ export function NewsFeed() {
               <p className="text-sm text-gray-400 line-clamp-3 flex-1">
                 {item.excerpt}
               </p>
-              <div className="flex items-center justify-between text-xs text-gray-500 pt-1 border-t border-border/60">
+              <div className="flex items-center justify-between text-xs text-gray-400 pt-1 border-t border-border/60">
                 <span>
                   {item.byline ? `by ${item.byline} · ` : ''}
                   {item.source}
@@ -82,15 +83,15 @@ export function NewsFeed() {
         ))}
       </div>
 
-      <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-500">
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-400">
         <span className="inline-flex items-center gap-2">
-          <Newspaper className="w-3.5 h-3.5" />
+          <Newspaper className="w-3.5 h-3.5" aria-hidden="true" />
           Stories from{' '}
           {sourceNames.map((name, i) => (
             <span key={name}>
               {i > 0 && (i === sourceNames.length - 1 ? ' & ' : ', ')}
               <a
-                href={sources[name]}
+                href={safeUrlOrEmpty(sources[name]) || undefined}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary underline"
