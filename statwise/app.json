@@ -28,6 +28,11 @@
         "POST_NOTIFICATIONS"
       ]
     },
+    "extra": {
+      "eas": {
+        "projectId": "40d0d9fd-d008-451b-8639-46dcf5ad6bb2"
+      }
+    },
     "web": {
       "bundler": "metro",
       "output": "static",

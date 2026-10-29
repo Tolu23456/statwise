@@ -46,6 +46,29 @@ export function pushSupported(): boolean {
 
 const nativePlatform = () => (Platform.OS === 'web' ? 'web' : 'native');
 
+/**
+ * Resolve the EAS projectId used to mint (and re-mint) Expo push tokens.
+ * `undefined` means this build has no EAS project linked, in which case
+ * `getExpoPushTokenAsync` would throw ERR_NOTIFICATIONS_NO_EXPERIENCE_ID.
+ * Kept in one place so register and unregister can never disagree — if they
+ * did, toggling push off would silently leave a live token behind.
+ */
+async function resolveProjectId(): Promise<string | undefined> {
+  const fromEnv =
+    process.env.EXPO_PUBLIC_EAS_PROJECT_ID || process.env.EXPO_PUBLIC_PROJECT_ID;
+  if (fromEnv) return fromEnv;
+  try {
+    // expo-constants exposes these on its DEFAULT export (the Constants
+    // instance), not as named exports — mirroring the lookup expo-notifications
+    // itself performs: easConfig (EAS Build) then expoConfig (app.json extra).
+    const mod = await import('expo-constants');
+    const C = mod.default ?? mod;
+    return C.easConfig?.projectId || C.expoConfig?.extra?.eas?.projectId;
+  } catch {
+    return undefined;
+  }
+}
+
 /** Current permission without prompting. Web is always 'unsupported'. */
 export async function currentPermission(): Promise<PushPermission> {
   if (!pushSupported()) return 'unsupported';
@@ -94,15 +117,21 @@ export async function getExpoPushToken(): Promise<
       };
     }
 
-    // projectId comes from app.json -> expo.extra.eas.projectId (set by EAS).
-    // Without it Expo cannot route the token, so fall back to EXPO_PUBLIC_
-    // so a local dev build still works.
-    const projectId =
-      process.env.EXPO_PUBLIC_EAS_PROJECT_ID || process.env.EXPO_PUBLIC_PROJECT_ID || undefined;
+    // projectId resolution: EXPO_PUBLIC_* dev override, else app.json ->
+    // expo.extra.eas.projectId (see resolveProjectId).  Without it Expo cannot
+    // route the token and getExpoPushTokenAsync throws, so surface an
+    // actionable reason instead of that raw error.
+    const projectId = await resolveProjectId();
 
-    const tokenResponse = await Notifications.getExpoPushTokenAsync(
-      projectId ? { projectId } : undefined,
-    );
+    if (!projectId) {
+      return {
+        ok: false,
+        reason:
+          'Push is not configured for this build (no EAS projectId). Run `eas init` in statwise/ so app.json gains expo.extra.eas.projectId, then rebuild.',
+      };
+    }
+
+    const tokenResponse = await Notifications.getExpoPushTokenAsync({ projectId });
     const token = tokenResponse.data;
     if (!isExpoToken(token)) {
       return { ok: false, reason: 'Expo returned an unexpected push token format.' };
@@ -141,16 +170,28 @@ export async function registerForPush(
   return { ok: true, token: res.token };
 }
 
-/** Remove this device's token (profile toggle off / sign-out). */
+/**
+ * Remove this device's token (profile toggle off / sign-out).
+ *
+ * Uses the SAME projectId resolution as registerForPush (resolveProjectId);
+ * calling getExpoPushTokenAsync with no projectId would throw
+ * ERR_NOTIFICATIONS_NO_EXPERIENCE_ID, which the old `.catch(() => null)`
+ * swallowed — leaving a live row in push_tokens, so "disable push" would not
+ * actually stop delivery.  Now the no-projectId case returns early instead of
+ * pretending to unregister.
+ */
 export async function unregisterPush(
   supabase: { from: (t: string) => any },
 ): Promise<void> {
   if (!pushSupported()) return;
   try {
+    const projectId = await resolveProjectId();
     const Notifications = await import('expo-notifications');
-    const token = await Notifications.getExpoPushTokenAsync()
-      .then((t) => t.data)
-      .catch(() => null);
+    const token = projectId
+      ? await Notifications.getExpoPushTokenAsync({ projectId })
+          .then((t) => t.data)
+          .catch(() => null)
+      : null;
     if (token && isExpoToken(token)) {
       await supabase.from('push_tokens').delete().eq('expo_token', token);
     }
