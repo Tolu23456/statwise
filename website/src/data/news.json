@@ -1,22 +1,10 @@
 {
-  "synced_at": "2026-10-30T19:23:46+00:00",
+  "synced_at": "2026-10-30T23:48:11+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13605761",
-      "title": "'You lack information' - Maresca's frosty reporter exchange over Chelsea red cards",
-      "url": "https://www.skysports.com/football/video/13605761/enzo-marescas-frosty-reporter-exchange-over-chelsea-red-cards-you-lack-information",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-man-city-enzo-maresca_7391873.jpg?20261030135529",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13605220",
       "title": "Toney trial date for alleged assault set for 2028",
@@ -143,6 +131,117 @@
       "byline": ""
     },
     {
+      "slug": "13605928",
+      "title": "Papers: Martinez seeking summer Man Utd departure",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13605928/lisandro-martinez-wants-to-leave-man-utd-in-the-summer-with-atletico-madrid-interested-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Saturday's newspapers... PREMIER LEAGUE",
+      "published_label": "30 October 2026 · 22:17",
+      "published_iso": "2026-10-30T22:17:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Saturday's newspapers... PREMIER LEAGUE",
+        "M an Utd defender Lisandro Martinez wants to leave a club on a free in the summer with Atletico Madrid interested - The Sun",
+        "Man Utd players were booed on the train en route to London ahead of their game against Chelsea - The Mirror",
+        "Chelsea goalkeeper Emi Martinez has revealed his hand is permanently disfigured after refusing surgery for a broken finger he feared would force him to miss the World Cup - The Sun"
+      ]
+    },
+    {
+      "slug": "13605970",
+      "title": "Brereton Diaz the match-winner as Blades edge past Wrexham",
+      "url": "https://www.skysports.com/football/video/13605970/sheffield-united-1-0-wrexham-championship-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-ben-breteton-diaz_7392334.jpg?20261030221114",
+      "excerpt": "Highlights of Sheffield United against Wrexham in the Sky Bet Championship.",
+      "published_label": "30 October 2026 · 22:05",
+      "published_iso": "2026-10-30T22:05:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of Sheffield United against Wrexham in the Sky Bet Championship."
+      ]
+    },
+    {
+      "slug": "13592701",
+      "title": "Sheff Utd win first league game against Wrexham in 44 years",
+      "url": "https://www.skysports.com/football/news/13592701/sheffield-united-1-0-wrexham-ben-brereton-diazs-goal-enough-to-earn-blades-first-league-win-against-wrexham-in-44-years",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-sheff-utd-ben-brereton_7392260.jpg?20261030204312",
+      "excerpt": "Sheffield United shook off a 44-year hoodoo by beating Wrexham 1-0 in the Championship, winning against the Welsh side in the league for the first time since October 1982.",
+      "published_label": "30 October 2026 · 22:00",
+      "published_iso": "2026-10-30T22:00:00+00:00",
+      "byline": "Charlotte Marsh",
+      "body": [
+        "Sheffield United shook off a 44-year hoodoo by beating Wrexham 1-0 in the Championship, winning against the Welsh side in the league for the first time since October 1982.",
+        "It is a fixture that is turning in to one of the great EFL contests, but after their two Championship matches last term produced 11 goals, this one registered just five shots on target.",
+        "The majority were for the Blades, with Brentford loanee Romelle Donovan central to much of the good attacking play, although it was Ben Brereton Diaz who decided it. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "He turned home a saved effort from Jordan Ayew for his third goal in three appearances against Wrexham, having scored in both games against them for Derby last season."
+      ]
+    },
+    {
+      "slug": "13605961",
+      "title": "Newport 4-1 Chesterfield",
+      "url": "https://www.skysports.com/football/video/13605961/newport-4-1-chesterfield-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/ddd7a671fd978862d331e0bbd6cd0c0a38322089c8dee49b202d5b88127b88ce_7392309.jpg?20261030214423",
+      "excerpt": "Highlights of the Sky Bet League Two match between Newport and Chesterfield.",
+      "published_label": "30 October 2026 · 21:43",
+      "published_iso": "2026-10-30T21:43:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League Two match between Newport and Chesterfield."
+      ]
+    },
+    {
+      "slug": "13592536",
+      "title": "Newport 4-1 Chesterfield",
+      "url": "https://www.skysports.com/football/news/13592536/newport-4-1-chesterfield",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "Newport cruised to a 4-1 victory over Chesterfield at Rodney Parade thanks to a first-half goal blitz.",
+      "published_label": "30 October 2026 · 21:35",
+      "published_iso": "2026-10-30T21:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Newport cruised to a 4-1 victory over Chesterfield at Rodney Parade thanks to a first-half goal blitz.",
+        "Right-back Cameron Norman got the ball rolling with a hammer of a free-kick that fizzed into the bottom corner to put County ahead in the 14th minute.",
+        "It was 2-0 four minutes later when left-back Tom Davies controlled a loose ball in the box and managed to hook a shot past Zach Hemming in the Chesterfield goal. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Harrison Biggins added a third after half an hour when he tried his luck from distance and caught out Hemming, despite his shot lacking power."
+      ]
+    },
+    {
+      "slug": "13605941",
+      "title": "Hakimi nets brilliant hat-trick as PSG fire five past Le Havre!",
+      "url": "https://www.skysports.com/football/video/13605941/le-havre-1-5-paris-saint-germain-ligue-1-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-psg-hakimi_7392301.jpg?20261030213145",
+      "excerpt": "Highlights of the Ligue 1 match between Le Havre and PSG.",
+      "published_label": "30 October 2026 · 20:41",
+      "published_iso": "2026-10-30T20:41:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Ligue 1 match between Le Havre and PSG."
+      ]
+    },
+    {
+      "slug": "13605940",
+      "title": "Brereton Diaz gives Sheff Utd deserved lead at Bramall Lane!",
+      "url": "https://www.skysports.com/football/video/13605940/sheffield-united-vs-wrexham-ben-brereton-diaz-gives-blades-the-lead-at-bramall-lane",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-sheffield-united_7392272.jpg?20261030204816",
+      "excerpt": "Ben Brereton Diaz gave Sheffield United the lead at Bramall Lane in their Championship clash with Wrexham.",
+      "published_label": "30 October 2026 · 20:39",
+      "published_iso": "2026-10-30T20:39:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Ben Brereton Diaz gave Sheffield United the lead at Bramall Lane in their Championship clash with Wrexham."
+      ]
+    },
+    {
       "slug": "13605903",
       "title": "Mac Allister vs Alisson and Konsa vs Calafiori | 'Who Am I?' Teammates Quiz",
       "url": "https://www.skysports.com/football/video/13605903/alexis-mac-allister-vs-alisson-becker-and-ezri-konsa-vs-riccardo-calafiori-who-am-i-teammates-quiz",
@@ -173,6 +272,17 @@
         "And it is so far, so good. The Bromley-based club are third in the WSL with 16 points - already seven ahead of Arsenal - and have proven their summer acquisitions were more than just big names through the door. Buy tickets HERE for London City Lionesses vs Man City WSL scores & fixtures | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
         "\"It's surprisingly good how fast we were able to assemble a lot of things, considering all the things that we have and trying to understand the different contexts that the players came from,\" he exclusively told Sky Sports ahead of Sunday's game against Manchester City."
       ]
+    },
+    {
+      "slug": "this-weekend-s-best-player-props-mbeumo-anderson-and-ryerson",
+      "title": "This Weekend’s Best Player Props: Mbeumo, Anderson and Ryerson",
+      "url": "https://www.sportytrader.com/en/news/this-weekend-s-best-player-props-mbeumo-anderson-and-ryerson/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/nff-and-fifa-committee.webp",
+      "excerpt": "In this week's look into some of the top player props across Europe, we're focusing in on two Premier League matchups as well as a mammoth Der Klassiker in the Bundesliga",
+      "published_label": "30 October 2026 · 17:00",
+      "published_iso": "2026-10-30T17:00:00+00:00",
+      "byline": "Joseph King"
     },
     {
       "slug": "13605448",
@@ -238,6 +348,21 @@
         "The Hoops started the Scottish Premiership game against Dundee United with three centre-forwards: Callum Osmand, Kasper Hogh and Camilo Duran.",
         "Then, when Celtic were 2-1 down at half-time, O'Neill took off Osmand and Hogh, moved scorer Duran into the middle and brought on wingers Jota and Hasseim Hassan. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
         "Celtic pegged back the visitors to 2-2 to remain four points clear of Rangers at the top of the table but while they are, as usual, in a strong position in the league, they have lost all three of their Europa League games."
+      ]
+    },
+    {
+      "slug": "13605761",
+      "title": "'You lack information' - Maresca's frosty reporter exchange over Chelsea red cards",
+      "url": "https://www.skysports.com/football/video/13605761/enzo-marescas-frosty-reporter-exchange-over-chelsea-red-cards-you-lack-information",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-man-city-enzo-maresca_7391873.jpg?20261030135529",
+      "excerpt": "Enzo Maresca had a frosty exchange with a reporter when discussing Chelsea's red card history whilst he was in charge of the London club.",
+      "published_label": "30 October 2026 · 13:44",
+      "published_iso": "2026-10-30T13:44:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Enzo Maresca had a frosty exchange with a reporter when discussing Chelsea's red card history whilst he was in charge of the London club."
       ]
     },
     {
@@ -612,130 +737,6 @@
         "The Old Firm sides have also failed to successfully challenge the £100,000 fine they were ordered to pay their opponents for those games.",
         "But the threat of a second match being played behind closed doors, which would have kicked in if there is any trouble at a Scottish Cup fixture before the end of next season, has been lifted. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
         "The original sanction followed their quarter-final meeting last season that ended with fans from both sides clashing on the pitch at Ibrox ."
-      ]
-    },
-    {
-      "slug": "13605317",
-      "title": "It's been 616 days: Can Spurs finally win three in a row?",
-      "url": "https://www.skysports.com/football/news/13605317/tottenham-vs-crystal-palace-have-spurs-genuinely-turned-a-corner-in-the-premier-league-under-roberto-de-zerbi",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-james-maddison-goal_7381102.jpg?20261020060641",
-      "excerpt": "By the time Saturday rolls around, it will have been 616 days since Tottenham last won three Premier League games on the bounce. Three different managers have come and gone since the feat was last achieved, none able to steer Spurs to a str…",
-      "published_label": "29 October 2026 · 15:30",
-      "published_iso": "2026-10-29T15:30:00+00:00",
-      "byline": "Laura Hunter",
-      "body": [
-        "By the time Saturday rolls around, it will have been 616 days since Tottenham last won three Premier League games on the bounce. Three different managers have come and gone since the feat was last achieved, none able to steer Spurs to a streak of more than two.",
-        "Roberto De Zerbi is the latest boss to try his hand at the hat-trick. Wins over Coventry City and Chelsea have preceded this weekend's meeting with Crystal Palace, live on Sky Sports . The elusive treble is within reach.",
-        "To right such a wrong would be a huge stepping stone for Spurs under De Zerbi. Not only would the result propel them into the top half of the table, but its potential to heal the wounded Spurs psyche would surely be invaluable.",
-        "Dr Tottenham have long been craving a healer of their own. A manager who is able to match stylistic promise with sound leadership. Many thought the pursuit of a fiery Italian known to be volatile in previous roles was a high-risk appointment, and yet the gamble had obvious growth potential. A way back from anonymity. Tottenham news & transfers ⚪ | FREE Spurs highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13605365",
-      "title": "How did Carrick deal with the questioning of his future and Bruno captaincy?",
-      "url": "https://www.skysports.com/football/video/13605365/michael-carrick-how-did-man-utd-boss-deal-with-questioning-over-his-future-and-bruno-fernandes-captaincy",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-carrick-man-utd_7391007.jpg?20261029143827",
-      "excerpt": "Sky Sports' Kaveh Solhekol reflects on Michael Carrick's press conference on Thursday and how the Manchester United boss dealt with questioning over his future and Bruno Fernandes being his captain.",
-      "published_label": "29 October 2026 · 14:27",
-      "published_iso": "2026-10-29T14:27:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Kaveh Solhekol reflects on Michael Carrick's press conference on Thursday and how the Manchester United boss dealt with questioning over his future and Bruno Fernandes being his captain."
-      ]
-    },
-    {
-      "slug": "13605355",
-      "title": "'I don't need assurances' - Carrick quizzed on future and Bruno captaincy",
-      "url": "https://www.skysports.com/football/video/13605355/michael-carrick-quizzed-on-future-and-bruno-fernandes-captaincy-i-dont-need-assurances",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-michael-carrick-bruno-fernandes_7390989.jpg?20261029141541",
-      "excerpt": "Michael Carrick has responded to questions surrounding his future at Manchester United and whether Bruno Fernandes is 'too emotional' to be captain.",
-      "published_label": "29 October 2026 · 14:06",
-      "published_iso": "2026-10-29T14:06:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Michael Carrick has responded to questions surrounding his future at Manchester United and whether Bruno Fernandes is 'too emotional' to be captain."
-      ]
-    },
-    {
-      "slug": "13605331",
-      "title": "Carrick ready to 'move forward' with Fernandes as captain",
-      "url": "https://www.skysports.com/football/news/13605331/manchester-united-michael-carrick-ready-to-move-forward-with-bruno-fernandes-as-captain-and-doesnt-require-assurances-on-his-future",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/09/768x432/skysports-football-michael-carrick_7357590.jpg?20260921063832",
-      "excerpt": "Michael Carrick says he is ready to \"move forward\" with Bruno Fernandes as Man Utd captain.",
-      "published_label": "29 October 2026 · 14:00",
-      "published_iso": "2026-10-29T14:00:00+00:00",
-      "byline": "Peter Smith",
-      "body": [
-        "Michael Carrick says he is ready to \"move forward\" with Bruno Fernandes as Man Utd captain.",
-        "Carrick benched Fernandes for Sunday's 3-0 loss to Bournemouth after the midfielder spoke out about his manager's tactics in the Champions League defeat at Como last week.",
-        "Sky Sports News reported Carrick and Fernandes held clear-the-air talks on Tuesday.",
-        "On Sunday, Carrick said the decision to name Fernandes among the subs was for \"football\" reasons and he stood by that statement on Thursday in a press conference ahead of Saturday's Premier League trip to Chelsea. Michael Carrick to remain in charge of Man Utd for Chelsea trip Michael Carrick and Bruno Fernandes hold clear-the-air talks Man Utd news & transfers 🔴| Man Utd fixtures & scores"
-      ]
-    },
-    {
-      "slug": "13605347",
-      "title": "'He's furious!' - Top 5 youngest players to see red in PL",
-      "url": "https://www.skysports.com/football/video/13605347/premier-league-top-5-youngest-players-to-receive-red-cards",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-red-cards-youngsters_7390980.jpg?20261029140010",
-      "excerpt": "Take a look at the top five youngest players to pick up a red card in the Premier League.",
-      "published_label": "29 October 2026 · 13:45",
-      "published_iso": "2026-10-29T13:45:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Take a look at the top five youngest players to pick up a red card in the Premier League."
-      ]
-    },
-    {
-      "slug": "13605299",
-      "title": "'That's amazing!' - O'Hara reacts to PL's biggest managerial bust ups!",
-      "url": "https://www.skysports.com/football/video/13605299/jamie-ohara-reacts-to-pls-biggest-managerial-bust-ups-thats-amazing",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-jamie-ohara-tottenham_7390842.jpg?20261029121052",
-      "excerpt": "Jamie O'Hara was left well entertained after watching back some of the Premier League's biggest managerial bust ups over the years!",
-      "published_label": "29 October 2026 · 11:57",
-      "published_iso": "2026-10-29T11:57:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jamie O'Hara was left well entertained after watching back some of the Premier League's biggest managerial bust ups over the years!"
-      ]
-    },
-    {
-      "slug": "13605293",
-      "title": "'It's a SHAMBLES!' - O'Hara's best bits on what's gone wrong at Man Utd",
-      "url": "https://www.skysports.com/football/video/13605293/best-bits-from-jamie-ohara-slamming-manchester-united",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-o-hara-united_7390840.jpg?20261029120723",
-      "excerpt": "Take a look at the best bits from Jamie O'Hara discussing what is going wrong at Manchester United.",
-      "published_label": "29 October 2026 · 11:52",
-      "published_iso": "2026-10-29T11:52:00+00:00",
-      "byline": "Best bits from Jamie O&#x27;Hara discussing what&#x27;s gone wrong at Manchester United",
-      "kind": "video",
-      "body": [
-        "Take a look at the best bits from Jamie O'Hara discussing what is going wrong at Manchester United."
-      ]
-    },
-    {
-      "slug": "13460568",
-      "title": "Halloween special! Players who HAUNTED former clubs... Lampard, Rooney and more!",
-      "url": "https://www.skysports.com/football/video/13460568/players-who-haunted-their-former-clubs-frank-lampard-wayne-rooney-and-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-football_7392119.jpg?20261030182201",
-      "excerpt": "Take a look at our picks of some of the players who came back to haunt their old sides, including Frank Lampard, Wayne Rooney and more.",
-      "published_label": "31 October 2025 · 07:00",
-      "published_iso": "2025-10-31T07:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Take a look at our picks of some of the players who came back to haunt their old sides, including Frank Lampard, Wayne Rooney and more."
       ]
     }
   ]
