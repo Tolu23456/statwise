@@ -1,82 +1,10 @@
 {
-  "synced_at": "2026-10-29T22:45:56+00:00",
+  "synced_at": "2026-10-30T05:50:57+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13605582",
-      "title": "Ronaldo scores perfect hat-trick!",
-      "url": "https://www.skysports.com/football/video/13605582/cristiano-ronaldo-hat-trick-leads-al-nassr-to-win-over-al-khuloud",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-cristiano-ronaldo_7391433.jpg?20261029211938",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13605546",
-      "title": "'What a night!' - Hinchcliffe reflects on Fleetwood's 'extraordinary' win over Arsenal",
-      "url": "https://www.skysports.com/football/video/13605546/essential-efl-podcast-andy-hinchcliffe-reflects-on-fleetwoods-shock-win-over-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-fleetwood-football_7391346.jpg?20261029195938",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13605549",
-      "title": "Essential EFL podcast: Middlesbrough 'comfortable' at top of Championship",
-      "url": "https://www.skysports.com/football/video/13605549/essential-efl-podcast-middlesbrough-comfortable-at-the-top-of-the-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-middlesbrough-football_7391354.jpg?20261029200407",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13605566",
-      "title": "Hackney scores his first Everton goal to put Toffees 2-0 up!",
-      "url": "https://www.skysports.com/football/video/13605566/everton-vs-newcastle-hayden-hackney-scores-his-first-everton-goal-to-put-toffees-2-0-up",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-everton-goal_7391399.jpg?20261029204534",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13605560",
-      "title": "'Brilliant finish!' - Garner puts Everton ahead against Newcastle",
-      "url": "https://www.skysports.com/football/video/13605560/everton-vs-newcastle-james-garner-scores-opening-goal-in-league-cup",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-everton-newcastle_7391401.jpg?20261029204652",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13605270",
-      "title": "'They should've built around Kane!' - O'Hara critical on Spurs' previous lack of investment",
-      "url": "https://www.skysports.com/football/video/13605270/jamie-ohara-thinks-tottenham-hotspur-should-have-been-built-around-harry-kane",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-kane-ohara-football_7390783.jpg?20261029111522",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13605284",
       "title": "Toney pleads not guilty to assault with trial set for June 2028",
@@ -215,6 +143,21 @@
       "byline": ""
     },
     {
+      "slug": "13605621",
+      "title": "'A club decision' - Moyes on Grealish's absence from Everton squad",
+      "url": "https://www.skysports.com/football/video/13605621/david-moyes-tight-lipped-overjack-grealish-s-absence-from-everton-squad",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-david-moyes-jack-grealish_7391530.jpg?20261029231957",
+      "excerpt": "In his post-match presser following Everton's victory over Newcastle in the Carabao Cup, David Moyes was tight-lipped overJack Grealish’s absence from the Everton squad.",
+      "published_label": "29 October 2026 · 23:14",
+      "published_iso": "2026-10-29T23:14:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "In his post-match presser following Everton's victory over Newcastle in the Carabao Cup, David Moyes was tight-lipped overJack Grealish’s absence from the Everton squad."
+      ]
+    },
+    {
       "slug": "13605595",
       "title": "Papers: Chelsea, Arsenal and Man Utd eye Como defender",
       "url": "https://www.skysports.com/football/news/13605595/chelsea-arsenal-and-man-utd-eye-como-defender-paper-talk",
@@ -277,6 +220,21 @@
       ]
     },
     {
+      "slug": "13605582",
+      "title": "Ronaldo scores perfect hat-trick!",
+      "url": "https://www.skysports.com/football/video/13605582/cristiano-ronaldo-hat-trick-leads-al-nassr-to-win-over-al-khuloud",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-cristiano-ronaldo_7391433.jpg?20261029211938",
+      "excerpt": "Cristiano Ronaldo scored a hat-trick to leads Al-Nassr to a win over Al-Khuloud, with Joao Felix assisting two and Sadio Mane the third.",
+      "published_label": "29 October 2026 · 21:16",
+      "published_iso": "2026-10-29T21:16:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Cristiano Ronaldo scored a hat-trick to leads Al-Nassr to a win over Al-Khuloud, with Joao Felix assisting two and Sadio Mane the third."
+      ]
+    },
+    {
       "slug": "13605579",
       "title": "Ronaldo hat-trick leads Al Nassr to victory over Al Kholood!",
       "url": "https://www.skysports.com/football/video/13605579/al-nassr-vs-al-kholood-saudi-pro-league-highlights",
@@ -289,6 +247,66 @@
       "kind": "video",
       "body": [
         "Highlights of Al Nassr against Al Kholood in the Saudi Pro League."
+      ]
+    },
+    {
+      "slug": "13605566",
+      "title": "Hackney scores his first Everton goal to put Toffees 2-0 up!",
+      "url": "https://www.skysports.com/football/video/13605566/everton-vs-newcastle-hayden-hackney-scores-his-first-everton-goal-to-put-toffees-2-0-up",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-everton-goal_7391399.jpg?20261029204534",
+      "excerpt": "Hayden Hackney scores his first Everton goal to put Toffees 2-0 up in their League Cup clash with Newcastle.",
+      "published_label": "29 October 2026 · 20:34",
+      "published_iso": "2026-10-29T20:34:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Hayden Hackney scores his first Everton goal to put Toffees 2-0 up in their League Cup clash with Newcastle."
+      ]
+    },
+    {
+      "slug": "13605560",
+      "title": "'Brilliant finish!' - Garner puts Everton ahead against Newcastle",
+      "url": "https://www.skysports.com/football/video/13605560/everton-vs-newcastle-james-garner-scores-opening-goal-in-league-cup",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-everton-newcastle_7391401.jpg?20261029204652",
+      "excerpt": "James Garner scores the opening goal in Everton's League Cup clash against Newcastle.",
+      "published_label": "29 October 2026 · 20:26",
+      "published_iso": "2026-10-29T20:26:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "James Garner scores the opening goal in Everton's League Cup clash against Newcastle."
+      ]
+    },
+    {
+      "slug": "13605549",
+      "title": "Essential EFL podcast: Middlesbrough 'comfortable' at top of Championship",
+      "url": "https://www.skysports.com/football/video/13605549/essential-efl-podcast-middlesbrough-comfortable-at-the-top-of-the-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-middlesbrough-football_7391354.jpg?20261029200407",
+      "excerpt": "Speaking on the Essential EFL podcast, Andy Hinchcliffe says that Middlesbrough are 'comfortable' at the top of the league.",
+      "published_label": "29 October 2026 · 19:55",
+      "published_iso": "2026-10-29T19:55:00+00:00",
+      "byline": "Essential EFL podcast: Middlesbrough &#x27;comfortable&#x27; at the top of the league",
+      "kind": "video",
+      "body": [
+        "Speaking on the Essential EFL podcast, Andy Hinchcliffe says that Middlesbrough are 'comfortable' at the top of the league."
+      ]
+    },
+    {
+      "slug": "13605546",
+      "title": "'What a night!' - Hinchcliffe reflects on Fleetwood's 'extraordinary' win over Arsenal",
+      "url": "https://www.skysports.com/football/video/13605546/essential-efl-podcast-andy-hinchcliffe-reflects-on-fleetwoods-shock-win-over-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-fleetwood-football_7391346.jpg?20261029195938",
+      "excerpt": "Speaking on the Essential EFL podcast, Andy Hinchcliffe reflects on Fleetwood's win over Arsenal in the Carabao Cup.",
+      "published_label": "29 October 2026 · 19:51",
+      "published_iso": "2026-10-29T19:51:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking on the Essential EFL podcast, Andy Hinchcliffe reflects on Fleetwood's win over Arsenal in the Carabao Cup."
       ]
     },
     {
@@ -466,6 +484,21 @@
       "kind": "video",
       "body": [
         "Take a look at the best bits from Jamie O'Hara discussing what is going wrong at Manchester United."
+      ]
+    },
+    {
+      "slug": "13605270",
+      "title": "'They should've built around Kane!' - O'Hara critical on Spurs' previous lack of investment",
+      "url": "https://www.skysports.com/football/video/13605270/jamie-ohara-thinks-tottenham-hotspur-should-have-been-built-around-harry-kane",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-kane-ohara-football_7390783.jpg?20261029111522",
+      "excerpt": "Jamie O'Hara thinks Spurs held Harry Kane back and should have built the team around him.",
+      "published_label": "29 October 2026 · 10:59",
+      "published_iso": "2026-10-29T10:59:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie O'Hara thinks Spurs held Harry Kane back and should have built the team around him."
       ]
     },
     {
@@ -685,33 +718,20 @@
       ]
     },
     {
-      "slug": "13605035",
-      "title": "Wilson pulls one back from close range for Brentford against Sunderland",
-      "url": "https://www.skysports.com/football/video/13605035/callum-wilson-pulls-a-goal-back-from-close-range-for-brentford-against-sunderland",
+      "slug": "13604920",
+      "title": "Liverpool draw Bournemouth & Fleetwood host Everton in Carabao Cup QFs",
+      "url": "https://www.skysports.com/football/news/13604920/carabao-cup-quarter-final-draw-liverpool-host-bournemouth-as-bradford-and-fleetwood-learn-premier-league-opposition",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-callum-wilson-brentford_7390277.jpg?20261028205213",
-      "excerpt": "Callum Wilson pulls a goal back from close range for Brentford against Sunderland",
-      "published_label": "28 October 2026 · 20:49",
-      "published_iso": "2026-10-28T20:49:00+00:00",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-carabao-cup-trophy_7311954.jpg?20260801184714",
+      "excerpt": "Liverpool will play Bournemouth in the Carabao Cup quarter-finals while League One Bradford City will host Manchester City.",
+      "published_label": "28 October 2026 · 16:11",
+      "published_iso": "2026-10-28T16:11:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Callum Wilson pulls a goal back from close range for Brentford against Sunderland"
-      ]
-    },
-    {
-      "slug": "13605033",
-      "title": "Rogers puts Chelsea ahead against Liverpool from the penalty spot",
-      "url": "https://www.skysports.com/football/video/13605033/morgan-rogers-puts-chelsea-ahead-against-liverpool-from-the-penalty-spot",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-morgan-rogers-rogers_7390287.jpg?20261028205739",
-      "excerpt": "Chelsea took a first-half lead against Liverpool after Morgan Rogers converted from the penalty spot after Moises Caicedo was brought down by Ryan Gravenberch.",
-      "published_label": "28 October 2026 · 20:46",
-      "published_iso": "2026-10-28T20:46:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Chelsea took a first-half lead against Liverpool after Morgan Rogers converted from the penalty spot after Moises Caicedo was brought down by Ryan Gravenberch."
+        "Liverpool will play Bournemouth in the Carabao Cup quarter-finals while League One Bradford City will host Manchester City.",
+        "Fleetwood Town's reward for knocking out Premier League champions Arsenal is a home game against Everton , who beat Newcastle on Thursday night.",
+        "Crystal Palace will host Sunderland in an all-Premier League clash in the remaining last-eight tie. Transfer Centre LIVE! | Latest EFL news and rumours Got Sky? Watch the Carabao Cup LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream the Carabao Cup with no contract 📺",
+        "Liverpool beat Chelsea on penalties to set up a meeting with Andoni Iraola's former side Bournemouth, who went through to the quarter-finals in style with a fine 3-0 win against Aston Villa."
       ]
     }
   ]
