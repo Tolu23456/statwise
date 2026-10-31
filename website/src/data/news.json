@@ -1,10 +1,22 @@
 {
-  "synced_at": "2026-10-31T18:34:37+00:00",
+  "synced_at": "2026-10-31T23:24:49+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13606447",
+      "title": "Sherwood: Glasner won't be at Nott'm Forest in Jan",
+      "url": "https://www.skysports.com/football/video/13606447/brentford-vs-nottingham-forest-tim-sherwood-says-oliver-glasner-wont-be-at-nottm-forest-come-january",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-sherwood_7393304.jpg?20261031194234",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13606393",
       "title": "Leicester 2-2 Stevenage",
@@ -134,6 +146,115 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13606533",
+      "title": "Moreira stars as Milan win derby thriller",
+      "url": "https://www.skysports.com/football/video/13606533/milan-3-1-inter-serie-a-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-milan-inter-serie-a_7393557.jpg?20261031231653",
+      "excerpt": "Diego Moreira scored a stunning free-kick and provided two assists as AC Milan beat Inter 3-1 in a thrilling derby at San Siro",
+      "published_label": "31 October 2026 · 22:57",
+      "published_iso": "2026-10-31T22:57:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Diego Moreira scored a stunning free-kick and provided two assists as AC Milan beat Inter 3-1 in a thrilling derby at San Siro"
+      ]
+    },
+    {
+      "slug": "13606532",
+      "title": "Yamal shines, Gordon scores as Barca hit Alaves for SIX!",
+      "url": "https://www.skysports.com/football/video/13606532/barcelona-6-1-alaves-la-liga-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-barcelona-la-liga_7393541.jpg?20261031230836",
+      "excerpt": "Lamine Yamal and Raphinha both score twice as Barcelona thrash Alaves 6-1 to stay top of LaLiga.",
+      "published_label": "31 October 2026 · 22:57",
+      "published_iso": "2026-10-31T22:57:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Lamine Yamal and Raphinha both score twice as Barcelona thrash Alaves 6-1 to stay top of LaLiga."
+      ]
+    },
+    {
+      "slug": "13606510",
+      "title": "Points shared at Villa Park as Suzuki OG spares Fulham",
+      "url": "https://www.skysports.com/football/video/13606510/aston-villa-1-1-fulham-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7393461.jpg?20261031220526",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Aston Villa and Fulham.",
+      "published_label": "31 October 2026 · 22:10",
+      "published_iso": "2026-10-31T22:10:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from the Premier League match between Aston Villa and Fulham."
+      ]
+    },
+    {
+      "slug": "13606363",
+      "title": "Suzuki makes string of saves before conceding own goal in draw with Fulham",
+      "url": "https://www.skysports.com/football/news/13606363/aston-villa-1-1-fulham-zion-suzuki-concedes-own-goal-as-nicholas-jackson-scores-after-john-mcginns-penalty-miss-in-draw-with-fulham",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-zion-suzuki-villa_7393452.jpg?20261031215834",
+      "excerpt": "Nicolas Jackson scored his eighth goal in 10 games but an error from goalkeeper Zion Suzuki meant Aston Villa had to settle for a 1-1 draw at home to Fulham.",
+      "published_label": "31 October 2026 · 21:45",
+      "published_iso": "2026-10-31T21:45:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Nicolas Jackson scored his eighth goal in 10 games but an error from goalkeeper Zion Suzuki meant Aston Villa had to settle for a 1-1 draw at home to Fulham.",
+        "Villa should have gone ahead after 15 minutes when they were awarded a penalty following a review when Sander Berge was penalised for a handball in the box as he jumped with Leon Goretzka at a corner.",
+        "With neither Emi Buendia nor Ross Barkley in the line-up, John McGinn stepped up to take the penalty but the Scotland international - who had only ever taken a penalty for Villa in a shoot-out - smashed the ball against the crossbar and over. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "The home side nearly paid a heavy price for McGinn's miss straightaway after a Fulham counter-attack, but Oscar Bobb was brilliantly denied the opener by a one-handed save from Suzuki who tipped the ball over."
+      ]
+    },
+    {
+      "slug": "13606499",
+      "title": "Suzuki OG puts Fulham level at Villa",
+      "url": "https://www.skysports.com/football/video/13606499/goal-z-suzuki-og-aston-villa-1-0-fulham",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7393433.jpg?20261031213333",
+      "excerpt": "A Zion Suzuki own goal puts Fulham level at Aston Villa.",
+      "published_label": "31 October 2026 · 21:33",
+      "published_iso": "2026-10-31T21:33:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "A Zion Suzuki own goal puts Fulham level at Aston Villa."
+      ]
+    },
+    {
+      "slug": "13606481",
+      "title": "Villa lead as Jackson strikes!",
+      "url": "https://www.skysports.com/football/video/13606481/goal-n-jackson-39-aston-villa-1-0-fulham",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7393383.jpg?20261031204719",
+      "excerpt": "Nicolas Jackson puts Villa in front in their Premier League match against Fulham.",
+      "published_label": "31 October 2026 · 20:47",
+      "published_iso": "2026-10-31T20:47:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Nicolas Jackson puts Villa in front in their Premier League match against Fulham."
+      ]
+    },
+    {
+      "slug": "13606182",
+      "title": "Spurs beat 10-man Palace to keep up Sage pressure as Eagles fall into drop zone",
+      "url": "https://www.skysports.com/football/news/13606182/tottenham-2-0-crystal-palace-jean-philippe-matetas-red-card-sees-10-man-eagles-slip-into-relegation-zone",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-jan-paul-van-hecke_7393257.jpg?20261031191310",
+      "excerpt": "Tottenham beat 10-man Crystal Palace 2-0 at home to record a third straight win and maintain the pressure on Eagles boss Pierre Sage, with his side dropping into the relegation zone.",
+      "published_label": "31 October 2026 · 19:30",
+      "published_iso": "2026-10-31T19:30:00+00:00",
+      "byline": "Declan Olley",
+      "body": [
+        "Tottenham beat 10-man Crystal Palace 2-0 at home to record a third straight win and maintain the pressure on Eagles boss Pierre Sage, with his side dropping into the relegation zone.",
+        "Jean-Philippe Mateta's 13th-minute red card was followed just 12 minutes later by Archie Gray's headed opener at a corner.",
+        "Jan Paul van Hecke's scrappy second-half rebound finish then settled the game to give Spurs three consecutive league wins for the first time since February 2025 and move Roberto De Zerbi's side up to eighth. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "But Palace's third league loss in a row, which leaves them third-bottom, came after Mateta was sent off for a late studs-up sliding tackle on Micky van de Ven's Achilles."
+      ]
     },
     {
       "slug": "13606399",
@@ -459,6 +580,23 @@
       ]
     },
     {
+      "slug": "13605884",
+      "title": "Hits and misses: Martinez sums up Man Utd disorder as Brighton dare to dream",
+      "url": "https://www.skysports.com/football/news/13605884/lisandro-martinez-red-card-sums-up-dysfunction-at-man-utd-as-brighton-post-statement-win-to-spark-title-talk-premier-league-hits-and-misses",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-hits-and-misses_7393214.jpg?20261031185319",
+      "excerpt": "Lisandro Martinez pointed the finger at technical director Jason Wilcox and the club's hierarchy in his outspoken interview after the Atletico Madrid game . But he only had himself to blame for the events leading to his red card and Chelsea…",
+      "published_label": "30 October 2026 · 19:13",
+      "published_iso": "2026-10-30T19:13:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Lisandro Martinez pointed the finger at technical director Jason Wilcox and the club's hierarchy in his outspoken interview after the Atletico Madrid game . But he only had himself to blame for the events leading to his red card and Chelsea's penalty on Sunday.",
+        "There were barely three minutes between the foul on Morgan Rogers that earned him his first yellow card of the afternoon in Manchester United's 2-0 win at Stamford Bridge and the confirmation, from referee Peter Bankes, that he would be receiving a second for needlessly raising an arm to the face of Wesley Fofana in the box. Report & highlights: Chelsea 2-0 Man Utd Live Premier League table | Watch FREE PL highlights",
+        "The defender, starting for the first time since the 1-1 draw against Leeds, was also one of the players at fault for Chelsea's opener, when Rogers glided through United's defence with bewildering ease to set the wheels in motion for United's defeat.",
+        "Martinez was not acknowledged by Michael Carrick as he trudged down the tunnel. But the United head coach did not criticise him after the game, albeit while acknowledging the double whammy of having him sent off, and conceding a penalty, was a \"big moment\" in the game."
+      ]
+    },
+    {
       "slug": "13605903",
       "title": "Mac Allister vs Alisson and Konsa vs Calafiori | 'Who Am I?' Teammates Quiz",
       "url": "https://www.skysports.com/football/video/13605903/alexis-mac-allister-vs-alisson-becker-and-ezri-konsa-vs-riccardo-calafiori-who-am-i-teammates-quiz",
@@ -597,143 +735,6 @@
         "Moments before Arsenal exited the competition on penalties to the League Two side, Dowman was sent off for violent conduct for kicking out at Harrison Neal after the Fleetwood defender's strong challenge.",
         "Arsenal appealed the red card but it was rejected meaning the youngster is suspended for the clash with Liverpool on Super Sunday . Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
         "As Dowman headed towards the tunnel and past the dugouts, Arteta leaned in and said something to the teenager, which Sky Sports' Paul Merson criticised, saying the Arsenal manager should have put an arm around him."
-      ]
-    },
-    {
-      "slug": "13605717",
-      "title": "'I LOVE the reaction!' - Bothroyd defends Dowman for having 'a bit of bite'",
-      "url": "https://www.skysports.com/football/video/13605717/jay-bothroyd-defends-max-dowman-for-having-a-bit-of-bite-against-fleetwood-i-love-the-reaction",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-jay-bothroyd-max-dowman_7391785.jpg?20261030110431",
-      "excerpt": "Jay Bothroyd has defended Max Dowman for his behaviour at Fleetwood, claiming the teenager has set a precedent that he cannot be 'bullied'.",
-      "published_label": "30 October 2026 · 10:52",
-      "published_iso": "2026-10-30T10:52:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jay Bothroyd has defended Max Dowman for his behaviour at Fleetwood, claiming the teenager has set a precedent that he cannot be 'bullied'."
-      ]
-    },
-    {
-      "slug": "13605328",
-      "title": "Why Aston Villa was the perfect destination for Jackson",
-      "url": "https://www.skysports.com/football/news/13605328/nicolas-jackson-why-aston-villa-is-perfect-club-for-senegal-striker-to-thrive-at-after-unai-emery-reunion",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-nicolas-jackson-premier-league_7390858.jpg?20261029123224",
-      "excerpt": "Nicolas Jackson's career was at a crossroads. Aston Villa were in a state of flux. The move was mutually beneficial - but the early success has exceeded expectations.",
-      "published_label": "30 October 2026 · 10:00",
-      "published_iso": "2026-10-30T10:00:00+00:00",
-      "byline": "Patrick Rowe",
-      "body": [
-        "Nicolas Jackson's career was at a crossroads. Aston Villa were in a state of flux. The move was mutually beneficial - but the early success has exceeded expectations.",
-        "His double to beat Manchester City and Enzo Maresca, the manager who sanctioned his exit from Chelsea in 2025, marked a full-circle moment. Jackson is not just recapturing his finest form, he is reaching new levels in his second stint with Unai Emery. Transfer Centre LIVE! | Aston Villa news & transfers 🦁 Aston Villa fixtures & scores | FREE Villa highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "The connection between the two stretches back to their time at Villarreal. A bridge that was never burned and a partnership that always seemed likely to be reignited further down the line.",
-        "\"Unai taught me everything about football,\" Jackson told Sky Sports in 2025. And with Emery guiding him once more, it seems as if class is back in session."
-      ]
-    },
-    {
-      "slug": "13605696",
-      "title": "'I'm a big fan!' - Forest Green Rovers squad react to unique changing room makeover!",
-      "url": "https://www.skysports.com/football/video/13605696/forest-green-rovers-squad-react-to-unique-changing-room-makeover",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-forest-green-rovers_7391736.jpg?20261030103321",
-      "excerpt": "In partnership with Plants and Flowers Foundation Holland, Forest Green Rovers have had quite the makeover to their changing room ahead of their game against Harrogate Town on Saturday.",
-      "published_label": "30 October 2026 · 09:47",
-      "published_iso": "2026-10-30T09:47:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "In partnership with Plants and Flowers Foundation Holland, Forest Green Rovers have had quite the makeover to their changing room ahead of their game against Harrogate Town on Saturday."
-      ]
-    },
-    {
-      "slug": "13604012",
-      "title": "Merson: Liverpool must beat Arsenal to be in the title race",
-      "url": "https://www.skysports.com/football/news/13604012/liverpool-vs-arsenal-andoni-iraolas-side-must-beat-the-premier-league-champions-to-be-in-the-title-race-says-paul-merson",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-merson-says-andoni-iraola_7387906.jpg?20261026133750",
-      "excerpt": "In his latest Sky Sports column, Paul Merson believes Liverpool have to beat Arsenal at Anfield on Sunday to be contenders for the Premier League title.",
-      "published_label": "30 October 2026 · 08:00",
-      "published_iso": "2026-10-30T08:00:00+00:00",
-      "byline": "Paul Merson",
-      "body": [
-        "In his latest Sky Sports column, Paul Merson believes Liverpool have to beat Arsenal at Anfield on Sunday to be contenders for the Premier League title.",
-        "Andoni Iraola's side host the champions live on Sky Sports' Super Sunday , kick-off 4.30pm, with Liverpool six points behind joint-leaders Arsenal and Man City.",
-        "Iraola managed three victories over Arteta's Arsenal in his final four meetings as Bournemouth head coach, but the Reds boss lost his first heavyweight clash at Anfield against City earlier this month. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "With Liverpool on a five-game winning run and Arsenal unbeaten in six, read below for the Magic Man's thoughts about the game of the weekend... 'If Liverpool want a title race, they have to beat Arsenal'"
-      ]
-    },
-    {
-      "slug": "13605451",
-      "title": "Why keeping Isak fit and firing is key to Iraola's Liverpool revival",
-      "url": "https://www.skysports.com/football/news/13605451/alexander-isak-why-keeping-sweden-striker-fit-and-firing-is-key-to-andoni-iraolas-liverpool-revival",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-liverpool_7390621.jpg?20261029083255",
-      "excerpt": "Liverpool's patience with Alexander Isak is starting to be rewarded, with the record-breaking £125m purchase finally resembling the most expensive striker in Premier League history.",
-      "published_label": "30 October 2026 · 08:00",
-      "published_iso": "2026-10-30T08:00:00+00:00",
-      "byline": "Richard Morgan",
-      "body": [
-        "Liverpool's patience with Alexander Isak is starting to be rewarded, with the record-breaking £125m purchase finally resembling the most expensive striker in Premier League history.",
-        "Isak's neatly-taken goal in Liverpool's 2-0 win over an in-form Brighton at Anfield on Sunday means the Swede has now registered in three straight Premier League games for first time since January 2025, when he went on an eight-match scoring streak for Newcastle. Transfer Centre LIVE! | Liverpool news & transfers 🔴 Liverpool fixtures & scores | FREE Liverpool highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "What was equally encouraging for head coach Andoni Iraola was the way Isak and fellow £100m-plus recruit Bradley Barcola, operating on the right-hand side of the front three on this occasion, linked up for his goal as the France forward broke clear before locating Isak where he is most effective - in the six-yard box, between the width of the posts.",
-        "This was always the vision of Richard Hughes and Michael Edwards, the men who brought Isak to the club last summer for that British-record fee, as well as Florian Wirtz for a similarly hefty outlay, as they looked to build on the previous season's title win by investing heavily in just one or two marquee signings, rather than follow Arsenal's approach and spread the finances out so as to build a bigger, more durable squad."
-      ]
-    },
-    {
-      "slug": "13604980",
-      "title": "'Simply stunning' - Five classic PL moments from Liverpool vs Arsenal",
-      "url": "https://www.skysports.com/football/video/13604980/five-iconic-moments-from-liverpool-and-arsenal-s-premier-league-battles",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-liverpool-pl-moments_7390212.jpg?20261028201302",
-      "excerpt": "Here are our picks for the top five moments from Premier League clashes between Liverpool and Arsenal over the years.",
-      "published_label": "30 October 2026 · 08:00",
-      "published_iso": "2026-10-30T08:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Here are our picks for the top five moments from Premier League clashes between Liverpool and Arsenal over the years."
-      ]
-    },
-    {
-      "slug": "normalisation-committee-set-to-oversee-nigerian-football-federation",
-      "title": "Normalisation Committee Set to Oversee Nigerian Football Until May 202",
-      "url": "https://www.sportytrader.com/en-ng/news/normalisation-committee-set-to-oversee-nigerian-football-federation/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/cricket/india-w-vs-zim-third-odi.webp",
-      "excerpt": "World football’s governing body has sanctioned the appointment of a Normalisation Committee to oversee the Nigeria Football Federation and manage the country’s football a",
-      "published_label": "30 October 2026 · 07:00",
-      "published_iso": "2026-10-30T07:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13604798",
-      "title": "Spooky! 11 HORROR mistakes from the PL this season!",
-      "url": "https://www.skysports.com/football/video/13604798/11-horror-mistakes-from-the-premier-league-this-season-ft-martinez-petrovic-penders-and-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-halloween-premier-league_7389683.jpg?20261028124256",
-      "excerpt": "As Halloween approaches, we take a look at some of the most horrifying mistakes so far from this Premier League season.",
-      "published_label": "30 October 2026 · 06:00",
-      "published_iso": "2026-10-30T06:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "As Halloween approaches, we take a look at some of the most horrifying mistakes so far from this Premier League season."
-      ]
-    },
-    {
-      "slug": "13605621",
-      "title": "'A club decision' - Moyes on Grealish's absence from Everton squad",
-      "url": "https://www.skysports.com/football/video/13605621/david-moyes-tight-lipped-overjack-grealish-s-absence-from-everton-squad",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-david-moyes-jack-grealish_7391530.jpg?20261029231957",
-      "excerpt": "In his post-match presser following Everton's victory over Newcastle in the Carabao Cup, David Moyes was tight-lipped overJack Grealish’s absence from the Everton squad.",
-      "published_label": "29 October 2026 · 23:14",
-      "published_iso": "2026-10-29T23:14:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "In his post-match presser following Everton's victory over Newcastle in the Carabao Cup, David Moyes was tight-lipped overJack Grealish’s absence from the Everton squad."
       ]
     }
   ]
