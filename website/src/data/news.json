@@ -1,34 +1,10 @@
 {
-  "synced_at": "2026-10-31T05:42:29+00:00",
+  "synced_at": "2026-10-31T12:30:51+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13605019",
-      "title": "'It's a little bit naughty!' - Talbi steals goal from team-mate to put Sunderland ahead",
-      "url": "https://www.skysports.com/football/video/13605019/sunderland-vs-brentford-chemsdine-talbi-taps-in-on-the-line-to-put-sunderland-ahead",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7390242.jpg?20261028203559",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13605017",
-      "title": "Precision from Kovacic brings Man City level",
-      "url": "https://www.skysports.com/football/video/13605017/a-wonderful-goal-precision-from-mateo-kovacic-brings-manchester-city-level",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-mateo-kovacic-b-football_7390218.jpg?20261028202016",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13604361",
       "title": "'Delaying the inevitable' or right call? Key questions as Carrick stays",
@@ -50,6 +26,66 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13595376",
+      "title": "In-demand Spain star Martin talks future plans: 'This is my home'",
+      "url": "https://www.skysports.com/football/news/13595376/jon-martin-interview-real-sociedad-and-spain-defender-on-why-he-is-staying-at-his-home-amid-interest-from-biggest-clubs",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-jon-martin-real-sociedad_7390675.jpg?20261029093914",
+      "excerpt": "\"I have always said that this is my home.\" That is the response when talking to Jon Martin about life at Real Sociedad. He has been linked with Real Madrid, Barcelona and some of the biggest clubs in the Premier League. But any move will no…",
+      "published_label": "31 October 2026 · 12:00",
+      "published_iso": "2026-10-31T12:00:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "\"I have always said that this is my home.\" That is the response when talking to Jon Martin about life at Real Sociedad. He has been linked with Real Madrid, Barcelona and some of the biggest clubs in the Premier League. But any move will not happen just yet.",
+        "\"I have been here since I was 12,\" Martin explains on the eve of the derby against Athletic Club. \"At the end of the day, the feeling of belonging and of wanting to be here is something I feel from inside. So, as I said, I feel this is my home. It is where I want to be.\"",
+        "The 20-year-old centre-back is aware of the excitement about him. \"I think that I am a player that people like,\" he says, rather modestly. He describes himself as grateful for the interest. In truth, it is an inevitable consequence of his performances for La Real. LaLiga: Table | Fixtures & results",
+        "Martin is a ball-playing defender with good technical ability and passing range. He made his debut for Spain in the summer and could be the long-term partner for Pau Cubarsi at the heart of the defence for the national team. A frightening prospect."
+      ]
+    },
+    {
+      "slug": "13606052",
+      "title": "'We have some issues' - Nuno gives updates on Mavropanos and Bowen",
+      "url": "https://www.skysports.com/football/video/13606052/nuno-espirito-santo-gives-updates-on-konstantinos-mavropanos-and-jarrod-bowen-we-have-some-issues",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/7efa88e82ab3ce8fc42c3d4c33c3134db499a13b2c07cd35dfad35c09e6f571c_7392510.jpg?20261031085050",
+      "excerpt": "West Ham boss Nuno Espirito Santo has given fitness updates on both Konstantinos Mavropanos and Jarrod Bowen ahead of the Championship match against West Brom on Saturday.",
+      "published_label": "31 October 2026 · 08:43",
+      "published_iso": "2026-10-31T08:43:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "West Ham boss Nuno Espirito Santo has given fitness updates on both Konstantinos Mavropanos and Jarrod Bowen ahead of the Championship match against West Brom on Saturday."
+      ]
+    },
+    {
+      "slug": "13605752",
+      "title": "Arbeloa: We've made mistakes but Fulham on right path",
+      "url": "https://www.skysports.com/football/news/13605752/alvaro-arbeloa-exclusive-fulham-head-coach-on-early-mistakes-seeing-out-games-and-getting-the-best-from-gonzalo-garcia",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-alvaro-arbeloa-fulham_7392505.jpg?20261031084348",
+      "excerpt": "Having gone winless in your first six games and conceded goals at a rate of almost two a game, there are worse ways to recover than a pair of gritty 1-0 victories.",
+      "published_label": "31 October 2026 · 08:30",
+      "published_iso": "2026-10-31T08:30:00+00:00",
+      "byline": "Ron Walker",
+      "body": [
+        "Having gone winless in your first six games and conceded goals at a rate of almost two a game, there are worse ways to recover than a pair of gritty 1-0 victories.",
+        "It is still early days in the Alvaro Arbeloa project at Fulham but the optimism a narrow but entertaining opening-weekend 3-2 defeat to Chelsea had brought from his debut in the dugout had quickly waned with such a poor run which had left them stranded bottom of the Premier League.",
+        "That openness which initially seemed a welcome tonic from the sometimes pragmatic Marco Silva era had quickly become the problem, with the Cottagers losing 3-2 again - this time to previously winless Crystal Palace - and shipping two late goals to Ipswich earlier this month to lose at Portman Road too. Transfer Centre LIVE! | Fulham news & transfers ⚪ Fulham fixtures & scores | FREE Fulham highlights ▶️ Got Sky? Watch Aston Villa vs Fulham LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Something had to change, and after six league games with his players Arbeloa felt he had seen enough to know where to start."
+      ]
+    },
+    {
+      "slug": "chelsea-vs-manchester-united-premier-league-2026-27-gameweek-9",
+      "title": "Chelsea vs Manchester United: Carrick's United Chase Third Straight Wi",
+      "url": "https://www.sportytrader.com/en/news/chelsea-vs-manchester-united-premier-league-2026-27-gameweek-9/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/united_mbeumo_2026.webp",
+      "excerpt": "Chelsea host Manchester United at Stamford Bridge on Saturday lunchtime in Premier League Gameweek 9. Xabi Alonso's Chelsea are fifth on 13 points but lost 0-2 at home to",
+      "published_label": "31 October 2026 · 04:00",
+      "published_iso": "2026-10-31T04:00:00+00:00",
+      "byline": "Geoffrey Ejiga"
     },
     {
       "slug": "13605928",
@@ -351,23 +387,6 @@
       ]
     },
     {
-      "slug": "13605451",
-      "title": "Why keeping Isak fit and firing is key to Iraola's Liverpool revival",
-      "url": "https://www.skysports.com/football/news/13605451/alexander-isak-why-keeping-sweden-striker-fit-and-firing-is-key-to-andoni-iraolas-liverpool-revival",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-liverpool_7390621.jpg?20261029083255",
-      "excerpt": "Liverpool's patience with Alexander Isak is starting to be rewarded, with the record-breaking £125m purchase finally resembling the most expensive striker in Premier League history.",
-      "published_label": "30 October 2026 · 08:00",
-      "published_iso": "2026-10-30T08:00:00+00:00",
-      "byline": "Richard Morgan",
-      "body": [
-        "Liverpool's patience with Alexander Isak is starting to be rewarded, with the record-breaking £125m purchase finally resembling the most expensive striker in Premier League history.",
-        "Isak's neatly-taken goal in Liverpool's 2-0 win over an in-form Brighton at Anfield on Sunday means the Swede has now registered in three straight Premier League games for first time since January 2025, when he went on an eight-match scoring streak for Newcastle. Transfer Centre LIVE! | Liverpool news & transfers 🔴 Liverpool fixtures & scores | FREE Liverpool highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "What was equally encouraging for head coach Andoni Iraola was the way Isak and fellow £100m-plus recruit Bradley Barcola, operating on the right-hand side of the front three on this occasion, linked up for his goal as the France forward broke clear before locating Isak where he is most effective - in the six-yard box, between the width of the posts.",
-        "This was always the vision of Richard Hughes and Michael Edwards, the men who brought Isak to the club last summer for that British-record fee, as well as Florian Wirtz for a similarly hefty outlay, as they looked to build on the previous season's title win by investing heavily in just one or two marquee signings, rather than follow Arsenal's approach and spread the finances out so as to build a bigger, more durable squad."
-      ]
-    },
-    {
       "slug": "13604012",
       "title": "Merson: Liverpool must beat Arsenal to be in the title race",
       "url": "https://www.skysports.com/football/news/13604012/liverpool-vs-arsenal-andoni-iraolas-side-must-beat-the-premier-league-champions-to-be-in-the-title-race-says-paul-merson",
@@ -382,6 +401,23 @@
         "Andoni Iraola's side host the champions live on Sky Sports' Super Sunday , kick-off 4.30pm, with Liverpool six points behind joint-leaders Arsenal and Man City.",
         "Iraola managed three victories over Arteta's Arsenal in his final four meetings as Bournemouth head coach, but the Reds boss lost his first heavyweight clash at Anfield against City earlier this month. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
         "With Liverpool on a five-game winning run and Arsenal unbeaten in six, read below for the Magic Man's thoughts about the game of the weekend... 'If Liverpool want a title race, they have to beat Arsenal'"
+      ]
+    },
+    {
+      "slug": "13605451",
+      "title": "Why keeping Isak fit and firing is key to Iraola's Liverpool revival",
+      "url": "https://www.skysports.com/football/news/13605451/alexander-isak-why-keeping-sweden-striker-fit-and-firing-is-key-to-andoni-iraolas-liverpool-revival",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-liverpool_7390621.jpg?20261029083255",
+      "excerpt": "Liverpool's patience with Alexander Isak is starting to be rewarded, with the record-breaking £125m purchase finally resembling the most expensive striker in Premier League history.",
+      "published_label": "30 October 2026 · 08:00",
+      "published_iso": "2026-10-30T08:00:00+00:00",
+      "byline": "Richard Morgan",
+      "body": [
+        "Liverpool's patience with Alexander Isak is starting to be rewarded, with the record-breaking £125m purchase finally resembling the most expensive striker in Premier League history.",
+        "Isak's neatly-taken goal in Liverpool's 2-0 win over an in-form Brighton at Anfield on Sunday means the Swede has now registered in three straight Premier League games for first time since January 2025, when he went on an eight-match scoring streak for Newcastle. Transfer Centre LIVE! | Liverpool news & transfers 🔴 Liverpool fixtures & scores | FREE Liverpool highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "What was equally encouraging for head coach Andoni Iraola was the way Isak and fellow £100m-plus recruit Bradley Barcola, operating on the right-hand side of the front three on this occasion, linked up for his goal as the France forward broke clear before locating Isak where he is most effective - in the six-yard box, between the width of the posts.",
+        "This was always the vision of Richard Hughes and Michael Edwards, the men who brought Isak to the club last summer for that British-record fee, as well as Florian Wirtz for a similarly hefty outlay, as they looked to build on the previous season's title win by investing heavily in just one or two marquee signings, rather than follow Arsenal's approach and spread the finances out so as to build a bigger, more durable squad."
       ]
     },
     {
@@ -644,6 +680,40 @@
       ]
     },
     {
+      "slug": "13605317",
+      "title": "It's been 616 days: Can Spurs finally win three in a row?",
+      "url": "https://www.skysports.com/football/news/13605317/tottenham-vs-crystal-palace-have-spurs-genuinely-turned-a-corner-in-the-premier-league-under-roberto-de-zerbi",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-james-maddison-goal_7381102.jpg?20261020060641",
+      "excerpt": "By the time Saturday rolls around, it will have been 616 days since Tottenham last won three Premier League games on the bounce. Three different managers have come and gone since the feat was last achieved, none able to steer Spurs to a str…",
+      "published_label": "29 October 2026 · 15:30",
+      "published_iso": "2026-10-29T15:30:00+00:00",
+      "byline": "Laura Hunter",
+      "body": [
+        "By the time Saturday rolls around, it will have been 616 days since Tottenham last won three Premier League games on the bounce. Three different managers have come and gone since the feat was last achieved, none able to steer Spurs to a streak of more than two.",
+        "Roberto De Zerbi is the latest boss to try his hand at the hat-trick. Wins over Coventry City and Chelsea have preceded this weekend's meeting with Crystal Palace, live on Sky Sports . The elusive treble is within reach.",
+        "To right such a wrong would be a huge stepping stone for Spurs under De Zerbi. Not only would the result propel them into the top half of the table, but its potential to heal the wounded Spurs psyche would surely be invaluable.",
+        "Dr Tottenham have long been craving a healer of their own. A manager who is able to match stylistic promise with sound leadership. Many thought the pursuit of a fiery Italian known to be volatile in previous roles was a high-risk appointment, and yet the gamble had obvious growth potential. A way back from anonymity. Tottenham news & transfers ⚪ | FREE Spurs highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13604412",
+      "title": "PL Predictions: Man Utd to deliver reaction at Chelsea",
+      "url": "https://www.skysports.com/football/news/13604412/premier-league-predictions-and-jones-knows-best-bets-liverpool-vs-arsenal-crystal-palace-vs-tottenham-and-much-more",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
+      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for a busy weekend of Premier League action. Chelsea vs Man Utd, Saturday 12.30pm",
+      "published_label": "29 October 2026 · 13:00",
+      "published_iso": "2026-10-29T13:00:00+00:00",
+      "byline": "Lewis Jones",
+      "body": [
+        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for a busy weekend of Premier League action. Chelsea vs Man Utd, Saturday 12.30pm",
+        "This has the potential to be a tough watch - and that is absolutely fine when you are getting 11/8 with Sky Bet about a game producing two goals or fewer.",
+        "Michael Carrick needs to get Manchester United into some sort of shape, with no wins in eight games across all competitions and the pressure mounting after Sunday's 3-0 home defeat to Bournemouth. Expect pragmatism over adventure at Stamford Bridge. United need a platform to build from, not another chaotic shoot-out and Carrick has reason to prioritise defensive discipline over taking risks.",
+        "The numbers support that approach, too. Away Premier League games under Carrick across his last 11-game spell have averaged just 2.15 goals."
+      ]
+    },
+    {
       "slug": "13605220",
       "title": "Toney trial date for alleged assault set for 2028",
       "url": "https://www.skysports.com/football/news/13605220/ivan-toney-trial-for-england-striker-over-alleged-assault-is-set-for-june-2028",
@@ -661,116 +731,50 @@
       ]
     },
     {
-      "slug": "13605263",
-      "title": "Van Dijk left FUMING after Chelsea new boy Emegha throws him to the floor!",
-      "url": "https://www.skysports.com/football/video/13605263/virgil-van-dijk-and-emmanuel-emegha-liverpool-defender-left-fuming-after-chelsea-new-boy-throws-him-to-the-floor",
+      "slug": "13605019",
+      "title": "'It's a little bit naughty!' - Talbi steals goal from team-mate to put Sunderland ahead",
+      "url": "https://www.skysports.com/football/video/13605019/sunderland-vs-brentford-chemsdine-talbi-taps-in-on-the-line-to-put-sunderland-ahead",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-van-dijk-liverpool_7390775.jpg?20261029110647",
-      "excerpt": "New Chelsea striker Emmanuel Emegha certainly left his mark on Virgil van Dijk in the Carabao Cup on Wednesday!",
-      "published_label": "29 October 2026 · 10:51",
-      "published_iso": "2026-10-29T10:51:00+00:00",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7390242.jpg?20261028203559",
+      "excerpt": "Sunderland's Jocelin Ta Bi shot heads for the far corner as teammate Chemsdine Talbi taps i over the line to put the home side ahead against Brentford in the Carabao Cup.",
+      "published_label": "28 October 2026 · 20:23",
+      "published_iso": "2026-10-28T20:23:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "New Chelsea striker Emmanuel Emegha certainly left his mark on Virgil van Dijk in the Carabao Cup on Wednesday!"
+        "Sunderland's Jocelin Ta Bi shot heads for the far corner as teammate Chemsdine Talbi taps i over the line to put the home side ahead against Brentford in the Carabao Cup."
       ]
     },
     {
-      "slug": "13605140",
-      "title": "Papers: Liverpool make contact with Monaco midfielder Camara",
-      "url": "https://www.skysports.com/football/news/13605140/liverpool-transfer-news-reds-make-contact-with-lamine-camara-camp-ahead-of-proposed-january-move-for-monaco-midfielder-paper-talk",
+      "slug": "13605017",
+      "title": "Precision from Kovacic brings Man City level",
+      "url": "https://www.skysports.com/football/video/13605017/a-wonderful-goal-precision-from-mateo-kovacic-brings-manchester-city-level",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Thursday's newspapers...",
-      "published_label": "28 October 2026 · 23:20",
-      "published_iso": "2026-10-28T23:20:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Thursday's newspapers...",
-        "Liverpool have made contact with Lamine Camara's camp after Chelsea emerged as the frontrunners in the race to sign Alex Scott - Daily Mirror",
-        "Ex-England winger Jadon Sancho has turned down an offer from Getafe in favour of moving to the Saudi Pro League - Marca",
-        "Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW"
-      ]
-    },
-    {
-      "slug": "13605118",
-      "title": "TENSION on the touchline! McInnes and Vrancken's feisty handshake",
-      "url": "https://www.skysports.com/football/video/13605118/tension-on-the-touchline-derek-mcinnes-and-wouter-vranckens-feisty-handshake",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-derek-mcinnes-hearts_7390459.jpg?20261028225954",
-      "excerpt": "Derek McInnes got a noisy reception on his return to Tynecastle and there was almost a flare-up on the final whistle after his handshake riled Hearts manager Wouter Vrancken.",
-      "published_label": "28 October 2026 · 22:41",
-      "published_iso": "2026-10-28T22:41:00+00:00",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-mateo-kovacic-b-football_7390218.jpg?20261028202016",
+      "excerpt": "Precision from Mateo Kovacic brings Manchester City level against Brighton.",
+      "published_label": "28 October 2026 · 20:17",
+      "published_iso": "2026-10-28T20:17:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Derek McInnes got a noisy reception on his return to Tynecastle and there was almost a flare-up on the final whistle after his handshake riled Hearts manager Wouter Vrancken."
+        "Precision from Mateo Kovacic brings Manchester City level against Brighton."
       ]
     },
     {
-      "slug": "13601855",
-      "title": "Rangers score late to snatch draw on McInnes' Hearts return",
-      "url": "https://www.skysports.com/football/news/13601855/hearts-2-2-rangers-olwethu-makhanyas-late-equaliser-rescues-draw-on-derek-mcinnes-tynecastle-return",
+      "slug": "13550693",
+      "title": "How to watch EFL live on Sky Sports",
+      "url": "https://www.skysports.com/football/news/13550693/live-efl-2026-27-fixtures-on-sky-sports-championship-league-one-league-two-games-dates-kick-off-times",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-rangers-hearts-makhanya_7390392.jpg?20261028221354",
-      "excerpt": "Rangers snatched a point on Derek McInnes' Tynecastle return as Hearts held onto their formidable unbeaten home record.",
-      "published_label": "28 October 2026 · 21:50",
-      "published_iso": "2026-10-28T21:50:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "Rangers snatched a point on Derek McInnes' Tynecastle return as Hearts held onto their formidable unbeaten home record.",
-        "The Gers boss was loudly booed by the home support as he emerged from the tunnel for his first match back in Gorgie since leaving for Ibrox in June, just weeks after the Edinburgh side were pipped to the Premiership title.",
-        "But his team silenced a pumped-up home crowd when Kevin Kelsy scored a 16th-minute opener following a lapse from Laurent Mendy. As it happened | Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
-        "The hosts emerged with renewed impetus after the break and drew level three minutes into the second half when Caludio Braga rushed in to force the ball over the line from close range."
-      ]
-    },
-    {
-      "slug": "13604032",
-      "title": "Liverpool beat Chelsea on penalties to reach last eight",
-      "url": "https://www.skysports.com/football/news/13604032/liverpool-1-1-chelsea-6-5-on-pens-wesley-fofana-misses-crucial-spot-kick-as-reds-advance-in-carabao-cup",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-liverpool-chelsea_7390278.jpg?20261028205303",
-      "excerpt": "Wesley Fofana missed the decisive spot kick as Liverpool beat Chelsea on penalties to set up a Carabao Cup quarter-final against Andoni Iraola's former side Bournemouth.",
-      "published_label": "28 October 2026 · 21:50",
-      "published_iso": "2026-10-28T21:50:00+00:00",
-      "byline": "Nick Wright",
-      "body": [
-        "Wesley Fofana missed the decisive spot kick as Liverpool beat Chelsea on penalties to set up a Carabao Cup quarter-final against Andoni Iraola's former side Bournemouth.",
-        "Fofana, whose handball gifted Liverpool their equaliser from the spot in normal time, scooped his penalty into the Kop after Giorgi Mamardashvili had denied Chelsea debutant Emmanuel Emegha.",
-        "Valentin Barco, another substitute, also missed his spot kick, sending his effort onto the post, but Ryan Gravenberch was thwarted by Mike Penders and Kostas Tsimikas fired over to keep a dramatic shoot-out going before Joe Gomez capitalised on Emegha's miss and Fofana fired over.",
-        "The goals also came from the spot in normal time, with Morgan Rogers and Cody Gakpo converting within three minutes of each other as a cagey first half burst into life before the break. As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
-      ]
-    },
-    {
-      "slug": "13604015",
-      "title": "In-form Bournemouth beat Aston Villa to reach Carabao Cup quarters",
-      "url": "https://www.skysports.com/football/news/13604015/bournemouth-3-0-aston-villa-cherries-win-fifth-consecutive-game-to-reach-carabao-cup-quarter-finals",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-bournemouth-amine-adli_7390349.jpg?20261028215019",
-      "excerpt": "Bournemouth recorded a fifth consecutive win across all competitions to reach the Carabao Cup quarter-finals with a 3-0 home win over Aston Villa.",
-      "published_label": "28 October 2026 · 21:33",
-      "published_iso": "2026-10-28T21:33:00+00:00",
+      "image": "https://e0.365dm.com/26/06/768x432/skysports-efl-efl-fixtures_7277457.jpg?20260619075719",
+      "excerpt": "Ready for the new EFL season? Every opening game across the Championship, League One and League is live on Sky Sports this weekend. Matches will be broadcast live across Sky Sports main channels or on Sky Sports+ Every EFL match which is sh…",
+      "published_label": "11 August 2026 · 13:00",
+      "published_iso": "2026-08-11T13:00:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Bournemouth recorded a fifth consecutive win across all competitions to reach the Carabao Cup quarter-finals with a 3-0 home win over Aston Villa.",
-        "Despite making eight changes, the in-form Cherries produced another exciting display to follow up wins against AC Milan and Manchester United to maintain their momentum under new boss Marco Rose.",
-        "Another tough test awaits the south-coast side after they were drawn away to 10-time League Cup winners Liverpool , with the quarter-final at Anfield taking place in the week commencing December 14.",
-        "Bournemouth and Villa produced an entertaining fourth-round clash at the Vitality Stadium as both sides had a combined 36 shots, with Amine Adli, Lewis Cook and Alvaro Rodriguez scoring the home side's goals. Liverpool draw Bournemouth in Carabao Cup quarters - full draw As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
-      ]
-    },
-    {
-      "slug": "13460568",
-      "title": "Halloween special! Players who HAUNTED former clubs... Lampard, Rooney and more!",
-      "url": "https://www.skysports.com/football/video/13460568/players-who-haunted-their-former-clubs-frank-lampard-wayne-rooney-and-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-football_7392119.jpg?20261030182201",
-      "excerpt": "Take a look at our picks of some of the players who came back to haunt their old sides, including Frank Lampard, Wayne Rooney and more.",
-      "published_label": "31 October 2025 · 07:00",
-      "published_iso": "2025-10-31T07:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Take a look at our picks of some of the players who came back to haunt their old sides, including Frank Lampard, Wayne Rooney and more."
+        "Ready for the new EFL season? Every opening game across the Championship, League One and League is live on Sky Sports this weekend. Matches will be broadcast live across Sky Sports main channels or on Sky Sports+ Every EFL match which is shown on Sky Sports will also be available on the Sky Sports app 📱. Non-Sky customers can watch the EFL with flexible contract offers on NOW",
+        "More than 1,000 games across the EFL, Carabao Cup and EFL Trophy will be broadcast on Sky Sports throughout the 26/27 season and every one of the 72 EFL clubs will be featured live on Sky more than 20 times .",
+        "Keep track below of all the confirmed live EFL games on Sky Sports, with selections announced up to January 9 2027. Championship fixtures | League One fixtures | League Two fixtures Championship latest news and transfers Essential EFL podcast - download and subscribe November live EFL games",
+        "Saturday 7 (all 12.30pm kick-off) Bristol City vs Norwich, Portsmouth vs Stoke, Wrexham vs Wolves"
       ]
     }
   ]
