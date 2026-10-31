@@ -1,89 +1,10 @@
 {
-  "synced_at": "2026-10-30T23:48:11+00:00",
+  "synced_at": "2026-10-31T05:42:29+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13605220",
-      "title": "Toney trial date for alleged assault set for 2028",
-      "url": "https://www.skysports.com/football/news/13605220/ivan-toney-trial-for-england-striker-over-alleged-assault-is-set-for-june-2028",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-ivan-toney-court_7365805.jpg?20261001141036",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13605263",
-      "title": "Van Dijk left FUMING after Chelsea new boy Emegha throws him to the floor!",
-      "url": "https://www.skysports.com/football/video/13605263/virgil-van-dijk-and-emmanuel-emegha-liverpool-defender-left-fuming-after-chelsea-new-boy-throws-him-to-the-floor",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-van-dijk-liverpool_7390775.jpg?20261029110647",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13601855",
-      "title": "Rangers score late to snatch draw on McInnes' Hearts return",
-      "url": "https://www.skysports.com/football/news/13601855/hearts-2-2-rangers-olwethu-makhanyas-late-equaliser-rescues-draw-on-derek-mcinnes-tynecastle-return",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-rangers-hearts-makhanya_7390392.jpg?20261028221354",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13604032",
-      "title": "Liverpool beat Chelsea on penalties to reach last eight",
-      "url": "https://www.skysports.com/football/news/13604032/liverpool-1-1-chelsea-6-5-on-pens-wesley-fofana-misses-crucial-spot-kick-as-reds-advance-in-carabao-cup",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-liverpool-chelsea_7390278.jpg?20261028205303",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13605140",
-      "title": "Papers: Liverpool make contact with Monaco midfielder Camara",
-      "url": "https://www.skysports.com/football/news/13605140/liverpool-transfer-news-reds-make-contact-with-lamine-camara-camp-ahead-of-proposed-january-move-for-monaco-midfielder-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13604015",
-      "title": "In-form Bournemouth beat Aston Villa to reach Carabao Cup quarters",
-      "url": "https://www.skysports.com/football/news/13604015/bournemouth-3-0-aston-villa-cherries-win-fifth-consecutive-game-to-reach-carabao-cup-quarter-finals",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-bournemouth-amine-adli_7390349.jpg?20261028215019",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13605118",
-      "title": "TENSION on the touchline! McInnes and Vrancken's feisty handshake",
-      "url": "https://www.skysports.com/football/video/13605118/tension-on-the-touchline-derek-mcinnes-and-wouter-vranckens-feisty-handshake",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-derek-mcinnes-hearts_7390459.jpg?20261028225954",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13605019",
       "title": "'It's a little bit naughty!' - Talbi steals goal from team-mate to put Sunderland ahead",
@@ -723,20 +644,133 @@
       ]
     },
     {
-      "slug": "13605309",
-      "title": "Celtic, Rangers lose appeal against stadium closure sanction after fan trouble",
-      "url": "https://www.skysports.com/football/news/13605309/celtic-and-rangers-fail-to-overturn-ban-on-supporters-at-next-home-scottish-cup-games-after-fan-trouble-at-ibrox",
+      "slug": "13605220",
+      "title": "Toney trial date for alleged assault set for 2028",
+      "url": "https://www.skysports.com/football/news/13605220/ivan-toney-trial-for-england-striker-over-alleged-assault-is-set-for-june-2028",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-celtic-rangers-fans_7333548.jpg?20260828120836",
-      "excerpt": "Celtic and Rangers have lost their appeals against a Scottish FA sanction ordering the two clubs to play their next home Scottish Cup fixtures behind closed doors.",
-      "published_label": "29 October 2026 · 16:00",
-      "published_iso": "2026-10-29T16:00:00+00:00",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-ivan-toney-court_7365805.jpg?20261001141036",
+      "excerpt": "England striker Ivan Toney will face trial over an alleged assault at a London nightclub in June 2028, during the European Championships of that summer.",
+      "published_label": "29 October 2026 · 11:00",
+      "published_iso": "2026-10-29T11:00:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Celtic and Rangers have lost their appeals against a Scottish FA sanction ordering the two clubs to play their next home Scottish Cup fixtures behind closed doors.",
-        "The Old Firm sides have also failed to successfully challenge the £100,000 fine they were ordered to pay their opponents for those games.",
-        "But the threat of a second match being played behind closed doors, which would have kicked in if there is any trouble at a Scottish Cup fixture before the end of next season, has been lifted. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
-        "The original sanction followed their quarter-final meeting last season that ended with fans from both sides clashing on the pitch at Ibrox ."
+        "England striker Ivan Toney will face trial over an alleged assault at a London nightclub in June 2028, during the European Championships of that summer.",
+        "The 30-year-old is accused of headbutting and punching Saber Da Silva during a confrontation at a nightclub in Wardour Street, central London, on December 6 last year.",
+        "Toney, who has been in the England squad for the last two major tournaments, appeared at Southwark Crown Court on Thursday morning and formally entered a not guilty plea to a charge of assault occasioning actual bodily harm.",
+        "During the five-minute hearing, a provisional trial date was set for the same court on June 12, 2028 - a few days after the start of Euro 2028 - by Judge Christopher Hehir, who told the defendant he was \"sorry\" about the delay."
+      ]
+    },
+    {
+      "slug": "13605263",
+      "title": "Van Dijk left FUMING after Chelsea new boy Emegha throws him to the floor!",
+      "url": "https://www.skysports.com/football/video/13605263/virgil-van-dijk-and-emmanuel-emegha-liverpool-defender-left-fuming-after-chelsea-new-boy-throws-him-to-the-floor",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-van-dijk-liverpool_7390775.jpg?20261029110647",
+      "excerpt": "New Chelsea striker Emmanuel Emegha certainly left his mark on Virgil van Dijk in the Carabao Cup on Wednesday!",
+      "published_label": "29 October 2026 · 10:51",
+      "published_iso": "2026-10-29T10:51:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "New Chelsea striker Emmanuel Emegha certainly left his mark on Virgil van Dijk in the Carabao Cup on Wednesday!"
+      ]
+    },
+    {
+      "slug": "13605140",
+      "title": "Papers: Liverpool make contact with Monaco midfielder Camara",
+      "url": "https://www.skysports.com/football/news/13605140/liverpool-transfer-news-reds-make-contact-with-lamine-camara-camp-ahead-of-proposed-january-move-for-monaco-midfielder-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Thursday's newspapers...",
+      "published_label": "28 October 2026 · 23:20",
+      "published_iso": "2026-10-28T23:20:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Thursday's newspapers...",
+        "Liverpool have made contact with Lamine Camara's camp after Chelsea emerged as the frontrunners in the race to sign Alex Scott - Daily Mirror",
+        "Ex-England winger Jadon Sancho has turned down an offer from Getafe in favour of moving to the Saudi Pro League - Marca",
+        "Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW"
+      ]
+    },
+    {
+      "slug": "13605118",
+      "title": "TENSION on the touchline! McInnes and Vrancken's feisty handshake",
+      "url": "https://www.skysports.com/football/video/13605118/tension-on-the-touchline-derek-mcinnes-and-wouter-vranckens-feisty-handshake",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-derek-mcinnes-hearts_7390459.jpg?20261028225954",
+      "excerpt": "Derek McInnes got a noisy reception on his return to Tynecastle and there was almost a flare-up on the final whistle after his handshake riled Hearts manager Wouter Vrancken.",
+      "published_label": "28 October 2026 · 22:41",
+      "published_iso": "2026-10-28T22:41:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Derek McInnes got a noisy reception on his return to Tynecastle and there was almost a flare-up on the final whistle after his handshake riled Hearts manager Wouter Vrancken."
+      ]
+    },
+    {
+      "slug": "13601855",
+      "title": "Rangers score late to snatch draw on McInnes' Hearts return",
+      "url": "https://www.skysports.com/football/news/13601855/hearts-2-2-rangers-olwethu-makhanyas-late-equaliser-rescues-draw-on-derek-mcinnes-tynecastle-return",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-rangers-hearts-makhanya_7390392.jpg?20261028221354",
+      "excerpt": "Rangers snatched a point on Derek McInnes' Tynecastle return as Hearts held onto their formidable unbeaten home record.",
+      "published_label": "28 October 2026 · 21:50",
+      "published_iso": "2026-10-28T21:50:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "Rangers snatched a point on Derek McInnes' Tynecastle return as Hearts held onto their formidable unbeaten home record.",
+        "The Gers boss was loudly booed by the home support as he emerged from the tunnel for his first match back in Gorgie since leaving for Ibrox in June, just weeks after the Edinburgh side were pipped to the Premiership title.",
+        "But his team silenced a pumped-up home crowd when Kevin Kelsy scored a 16th-minute opener following a lapse from Laurent Mendy. As it happened | Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
+        "The hosts emerged with renewed impetus after the break and drew level three minutes into the second half when Caludio Braga rushed in to force the ball over the line from close range."
+      ]
+    },
+    {
+      "slug": "13604032",
+      "title": "Liverpool beat Chelsea on penalties to reach last eight",
+      "url": "https://www.skysports.com/football/news/13604032/liverpool-1-1-chelsea-6-5-on-pens-wesley-fofana-misses-crucial-spot-kick-as-reds-advance-in-carabao-cup",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-liverpool-chelsea_7390278.jpg?20261028205303",
+      "excerpt": "Wesley Fofana missed the decisive spot kick as Liverpool beat Chelsea on penalties to set up a Carabao Cup quarter-final against Andoni Iraola's former side Bournemouth.",
+      "published_label": "28 October 2026 · 21:50",
+      "published_iso": "2026-10-28T21:50:00+00:00",
+      "byline": "Nick Wright",
+      "body": [
+        "Wesley Fofana missed the decisive spot kick as Liverpool beat Chelsea on penalties to set up a Carabao Cup quarter-final against Andoni Iraola's former side Bournemouth.",
+        "Fofana, whose handball gifted Liverpool their equaliser from the spot in normal time, scooped his penalty into the Kop after Giorgi Mamardashvili had denied Chelsea debutant Emmanuel Emegha.",
+        "Valentin Barco, another substitute, also missed his spot kick, sending his effort onto the post, but Ryan Gravenberch was thwarted by Mike Penders and Kostas Tsimikas fired over to keep a dramatic shoot-out going before Joe Gomez capitalised on Emegha's miss and Fofana fired over.",
+        "The goals also came from the spot in normal time, with Morgan Rogers and Cody Gakpo converting within three minutes of each other as a cagey first half burst into life before the break. As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
+      ]
+    },
+    {
+      "slug": "13604015",
+      "title": "In-form Bournemouth beat Aston Villa to reach Carabao Cup quarters",
+      "url": "https://www.skysports.com/football/news/13604015/bournemouth-3-0-aston-villa-cherries-win-fifth-consecutive-game-to-reach-carabao-cup-quarter-finals",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-bournemouth-amine-adli_7390349.jpg?20261028215019",
+      "excerpt": "Bournemouth recorded a fifth consecutive win across all competitions to reach the Carabao Cup quarter-finals with a 3-0 home win over Aston Villa.",
+      "published_label": "28 October 2026 · 21:33",
+      "published_iso": "2026-10-28T21:33:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Bournemouth recorded a fifth consecutive win across all competitions to reach the Carabao Cup quarter-finals with a 3-0 home win over Aston Villa.",
+        "Despite making eight changes, the in-form Cherries produced another exciting display to follow up wins against AC Milan and Manchester United to maintain their momentum under new boss Marco Rose.",
+        "Another tough test awaits the south-coast side after they were drawn away to 10-time League Cup winners Liverpool , with the quarter-final at Anfield taking place in the week commencing December 14.",
+        "Bournemouth and Villa produced an entertaining fourth-round clash at the Vitality Stadium as both sides had a combined 36 shots, with Amine Adli, Lewis Cook and Alvaro Rodriguez scoring the home side's goals. Liverpool draw Bournemouth in Carabao Cup quarters - full draw As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
+      ]
+    },
+    {
+      "slug": "13460568",
+      "title": "Halloween special! Players who HAUNTED former clubs... Lampard, Rooney and more!",
+      "url": "https://www.skysports.com/football/video/13460568/players-who-haunted-their-former-clubs-frank-lampard-wayne-rooney-and-more",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-football_7392119.jpg?20261030182201",
+      "excerpt": "Take a look at our picks of some of the players who came back to haunt their old sides, including Frank Lampard, Wayne Rooney and more.",
+      "published_label": "31 October 2025 · 07:00",
+      "published_iso": "2025-10-31T07:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Take a look at our picks of some of the players who came back to haunt their old sides, including Frank Lampard, Wayne Rooney and more."
       ]
     }
   ]
