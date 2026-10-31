@@ -1,10 +1,118 @@
 {
-  "synced_at": "2026-10-31T12:30:51+00:00",
+  "synced_at": "2026-10-31T18:34:37+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13606393",
+      "title": "Leicester 2-2 Stevenage",
+      "url": "https://www.skysports.com/football/video/13606393/leicester-2-2-stevenage-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/a737b2621705fba5cd00b72d06cb1ab71e7db063e237f213009329b6882a62fc_7393161.jpg?20261031182516",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13606290",
+      "title": "Trafford howler and late Adli strike help Bournemouth see off Leeds",
+      "url": "https://www.skysports.com/football/video/13606290/bournemouth-2-0-leeds-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-bournemouth-leeds_7392952.jpg?20261031170628",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13606271",
+      "title": "Ipswich fight back for draw at Hull",
+      "url": "https://www.skysports.com/football/video/13606271/hull-2-2-ipswich-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7392939.jpg?20261031170315",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13606317",
+      "title": "Coventry gain huge win over 10-man Sunderland",
+      "url": "https://www.skysports.com/football/video/13606317/coventry-3-1-sunderland-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-coventry-sunderland_7392951.jpg?20261031170603",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13606391",
+      "title": "Fleetwood 3-1 Bristol Rovers",
+      "url": "https://www.skysports.com/football/video/13606391/fleetwood-town-3-1-bristol-rovers-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/d3398053e6ebd4126e88a20bd34c9c9ae8f38fbc7cd23dfe18a74cd9adbd8995_7393155.jpg?20261031182249",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13606239",
+      "title": "Brentford topple wasteful Forest who remain in relegation zone",
+      "url": "https://www.skysports.com/football/video/13606239/brentford-2-0-nottingham-forest-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-brentford-pl_7393159.jpg?20261031182409",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13606301",
+      "title": "Brighton condemn Man City to back-to-back PL defeats",
+      "url": "https://www.skysports.com/football/video/13606301/manchester-city-0-1-brighton-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-man-c-brighton_7392987.jpg?20261031171704",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13606381",
+      "title": "MK Dons 6-1 Doncaster",
+      "url": "https://www.skysports.com/football/video/13606381/mk-dons-6-1-doncaster",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/756ba757d6e8ee7a5982864332ff7eaa38fca09769aea1632ac5f36ed1f2989c_7393133.jpg?20261031181528",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13606354",
+      "title": "Oldham 0-1 Crawley",
+      "url": "https://www.skysports.com/football/video/13606354/oldham-athletic-0-1-crawley-town-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/f1f311dec7970709b1b7753b8304df2827e6692f396b460f0a316802ba314913_7393051.jpg?20261031174648",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13604361",
       "title": "'Delaying the inevitable' or right call? Key questions as Carrick stays",
@@ -28,6 +136,136 @@
       "byline": ""
     },
     {
+      "slug": "13606399",
+      "title": "Shrewsbury 1-2 Gillingham",
+      "url": "https://www.skysports.com/football/video/13606399/shrewsbury-1-2-gillingham-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/0ec1da054d1cbda74689e89d40b2b506cfb3cefa516577e01d98c350f1af787c_7393177.jpg?20261031183117",
+      "excerpt": "Highlights of the Sky Bet League Two match between Shrewsbury and Gillingham.",
+      "published_label": "31 October 2026 · 18:29",
+      "published_iso": "2026-10-31T18:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League Two match between Shrewsbury and Gillingham."
+      ]
+    },
+    {
+      "slug": "13606395",
+      "title": "Swindon 2-1 Rotheram",
+      "url": "https://www.skysports.com/football/video/13606395/swindon-town-2-1-rotheram-united-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/0c890e1d33fc1248d1abc156863882f452b761819b2d52c1d84caf792e60fce2_7393169.jpg?20261031182747",
+      "excerpt": "Highlights of the Sky Bet League Two match between Swindon Town and Rotherham United.",
+      "published_label": "31 October 2026 · 18:25",
+      "published_iso": "2026-10-31T18:25:00+00:00",
+      "byline": "Swindon Town 2-1 Rotheram United | League Two highlights",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League Two match between Swindon Town and Rotherham United."
+      ]
+    },
+    {
+      "slug": "13606390",
+      "title": "Score against Arsenal, HORROR miss from three yards days later!",
+      "url": "https://www.skysports.com/football/video/13606390/aaron-loupalo-bi-misses-sitter-for-fleetwood",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-fleetwood-miss_7393160.jpg?20261031182419",
+      "excerpt": "Fleetwood Town's Aaron Loupalo-Bi had a horror moment as he failed to put the ball in the back of the net against Bristol Rovers.",
+      "published_label": "31 October 2026 · 18:19",
+      "published_iso": "2026-10-31T18:19:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Fleetwood Town's Aaron Loupalo-Bi had a horror moment as he failed to put the ball in the back of the net against Bristol Rovers."
+      ]
+    },
+    {
+      "slug": "13592754",
+      "title": "Fleetwood 3-1 Bristol Rovers",
+      "url": "https://www.skysports.com/football/news/13592754/x",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "Fleetwood backed up their midweek Carabao Cup exploits with a 3-1 win over Bristol Rovers at Highbury.",
+      "published_label": "31 October 2026 · 17:00",
+      "published_iso": "2026-10-31T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Fleetwood backed up their midweek Carabao Cup exploits with a 3-1 win over Bristol Rovers at Highbury.",
+        "Matt Lawlor's side, who knocked Premier League champions Arsenal out of the tournament on Tuesday night, picked up the three points thanks to goals from Aaron Loupalo-Bi, Rhys Bennett and Josh Roberston.",
+        "The Cod Army opened the scoring just after the half-hour mark through on-loan Fulham striker Loupalo-Bi when he finished neatly from just outside the area following some tidy work from Mark Helm. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "The hosts then doubled their lead seven minutes into the second period thanks to a bullet header from centre-back Rhys Bennett when he got on the end of Harrison Neal's driven cross."
+      ]
+    },
+    {
+      "slug": "13592758",
+      "title": "Shrewsbury 1-2 Gillingham",
+      "url": "https://www.skysports.com/football/news/13592758/x",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "Andy Smith scored his first goal since April to give Gillingham all three points in a 2-1 win against Shrewsbury at Croud Meadow.",
+      "published_label": "31 October 2026 · 17:00",
+      "published_iso": "2026-10-31T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Andy Smith scored his first goal since April to give Gillingham all three points in a 2-1 win against Shrewsbury at Croud Meadow.",
+        "The centre-back was first to react when a late deflected cross from sub Bradley Dack came off the bar, and Smith was well placed to convert from a few yards. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Harry Waldock had put the visitors in front after just a few minutes, netting his first senior goal in the process, only for George Lloyd to equalise around the hour mark from the penalty spot.",
+        "The Shrews were indebted to goalkeeper Will Brook, who made two outstanding saves from Ronan Hale and Conor McManus, but Smith finally found a way through for Gareth Ainsworth's side."
+      ]
+    },
+    {
+      "slug": "13593177",
+      "title": "Leicester 2-2 Stevenage",
+      "url": "https://www.skysports.com/football/news/13593177/x",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+      "excerpt": "A clever strike from Tugra Turhan frustrated Leicester by earning Stevenage a 2-2 draw at the King Power Stadium.",
+      "published_label": "31 October 2026 · 17:00",
+      "published_iso": "2026-10-31T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "A clever strike from Tugra Turhan frustrated Leicester by earning Stevenage a 2-2 draw at the King Power Stadium.",
+        "The teenager, on loan from Istanbul Basaksehir, marked his league debut for the visitors by scoring the equaliser with 12 minutes remaining after combining with fellow substitute Chem Campbell. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Russell Martin's side had led twice but could not record a fourth win in five.",
+        "Despite making a fast start, when Sammy Braybrooke netted his first senior goal for the club after only 67 seconds when Stevenage failed to deal with a Luke Thomas cross, City handed their opponents a route back into the game."
+      ]
+    },
+    {
+      "slug": "13592759",
+      "title": "Swindon 2-1 Rotherham",
+      "url": "https://www.skysports.com/football/news/13592759/swindon-2-1-rotherham",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "Joe Hungbo's brilliant free-kick sealed Swindon's 2-1 win over nine-man Rotherham.",
+      "published_label": "31 October 2026 · 17:00",
+      "published_iso": "2026-10-31T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Joe Hungbo's brilliant free-kick sealed Swindon's 2-1 win over nine-man Rotherham.",
+        "United's Jili Buyabu was sent off after just four minutes for elbowing Jack Thomson.",
+        "Matty Virtue should have netted after Tom Nichols slotted him through, but his tame shot was saved by Julian Eyestone. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Virtue then dragged a low shot wide from distance before Mitch Clark nodded wide at the back stick."
+      ]
+    },
+    {
+      "slug": "13606093",
+      "title": "Bournemouth punish Trafford horror error to sink Leeds",
+      "url": "https://www.skysports.com/football/news/13606093/bournemouth-2-0-leeds-cherries-punish-james-trafford-horror-error-to-make-it-six-wins-on-the-spin",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-bournemouth_7392764.jpg?20261031154029",
+      "excerpt": "Bournemouth made it six wins on the spin in all competitions without conceding as they beat toothless Leeds 2-0.",
+      "published_label": "31 October 2026 · 17:00",
+      "published_iso": "2026-10-31T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Bournemouth made it six wins on the spin in all competitions without conceding as they beat toothless Leeds 2-0.",
+        "Marco Rose's side have now beaten Sturm Graz, Sunderland, AC Milan, Manchester United, Aston Villa and Leeds without conceding in an extraordinary run of results.",
+        "They were given a helping hand by Leeds goalkeeper James Trafford, whose Halloween horror show gifted Bournemouth the lead as Evanilson capitalised on a hapless pass out from the back.",
+        "The response from Leeds never came as they mustered just one shot on target from their 10 attempts on goal to a backdrop of a lowly 0.61 worth of expected goals. They have now scored just twice in their last five Premier League games."
+      ]
+    },
+    {
       "slug": "13595376",
       "title": "In-demand Spain star Martin talks future plans: 'This is my home'",
       "url": "https://www.skysports.com/football/news/13595376/jon-martin-interview-real-sociedad-and-spain-defender-on-why-he-is-staying-at-his-home-amid-interest-from-biggest-clubs",
@@ -43,6 +281,17 @@
         "The 20-year-old centre-back is aware of the excitement about him. \"I think that I am a player that people like,\" he says, rather modestly. He describes himself as grateful for the interest. In truth, it is an inevitable consequence of his performances for La Real. LaLiga: Table | Fixtures & results",
         "Martin is a ball-playing defender with good technical ability and passing range. He made his debut for Spain in the summer and could be the long-term partner for Pau Cubarsi at the heart of the defence for the national team. A frightening prospect."
       ]
+    },
+    {
+      "slug": "antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix",
+      "title": "The ‘Simple’ Equation Standing Between Kimi Antonelli and F1 Champions",
+      "url": "https://www.sportytrader.com/en/news/antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/soweto-derby-2026.webp",
+      "excerpt": "Since taking over Lewis Hamilton’s legendary seat, Andrea Kimi Antonelli has spent his rookie season defying the odds, and tomorrow evening at the Autódromo Hermanos Rodr",
+      "published_label": "31 October 2026 · 10:00",
+      "published_iso": "2026-10-31T10:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13606052",
@@ -75,6 +324,17 @@
         "That openness which initially seemed a welcome tonic from the sometimes pragmatic Marco Silva era had quickly become the problem, with the Cottagers losing 3-2 again - this time to previously winless Crystal Palace - and shipping two late goals to Ipswich earlier this month to lose at Portman Road too. Transfer Centre LIVE! | Fulham news & transfers ⚪ Fulham fixtures & scores | FREE Fulham highlights ▶️ Got Sky? Watch Aston Villa vs Fulham LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
         "Something had to change, and after six league games with his players Arbeloa felt he had seen enough to know where to start."
       ]
+    },
+    {
+      "slug": "soweto-derby-headlines-psl-weekend-schedule",
+      "title": "Durban and Soweto Derby Headline High-Stakes PSL Weekend Schedule",
+      "url": "https://www.sportytrader.com/en-za/news/soweto-derby-headlines-psl-weekend-schedule/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/morgan_rogers_chelsea.webp",
+      "excerpt": "It is the most explosive Saturday on the South African football calendar, and the stakes have never been higher. The headline act of the weekend is the Soweto Derby, with",
+      "published_label": "31 October 2026 · 07:30",
+      "published_iso": "2026-10-31T07:30:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "chelsea-vs-manchester-united-premier-league-2026-27-gameweek-9",
@@ -474,307 +734,6 @@
       "kind": "video",
       "body": [
         "In his post-match presser following Everton's victory over Newcastle in the Carabao Cup, David Moyes was tight-lipped overJack Grealish’s absence from the Everton squad."
-      ]
-    },
-    {
-      "slug": "13605595",
-      "title": "Papers: Chelsea, Arsenal and Man Utd eye Como defender",
-      "url": "https://www.skysports.com/football/news/13605595/chelsea-arsenal-and-man-utd-eye-como-defender-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Friday's newspapers...",
-      "published_label": "29 October 2026 · 22:30",
-      "published_iso": "2026-10-29T22:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Friday's newspapers...",
-        "Chelsea , Arsenal and Man Utd are also keeping tabs on Como defender Jacobo Ramon, 21",
-        "Man Utd are weighing up a move in January for Leeds forward Dominic Calvert - Lewin - The Athletic",
-        "Chelsea could agree a £90m deal with Bournemouth for midfielder Alex Scott - Daily Mail Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW"
-      ]
-    },
-    {
-      "slug": "13605603",
-      "title": "Everton beat Newcastle to book place in Carabao Cup quarter-final",
-      "url": "https://www.skysports.com/football/video/13605603/everton-3-1-newcastle-united-carabao-cup-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-everton-newcastle_7391485.jpg?20261029221604",
-      "excerpt": "Highlights of the fourth-round Carabao Cup match between Everton and Newcastle United.",
-      "published_label": "29 October 2026 · 22:13",
-      "published_iso": "2026-10-29T22:13:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the fourth-round Carabao Cup match between Everton and Newcastle United."
-      ]
-    },
-    {
-      "slug": "13605594",
-      "title": "'Joelinton is raging!' - Tempers FLARE as players clash after Burn goal",
-      "url": "https://www.skysports.com/football/video/13605594/everton-vs-newcastle-joelinton-yellow-carded-after-tussle-with-jordan-pickford",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-newcastle-everton_7391474.jpg?20261029220201",
-      "excerpt": "Joelinton was yellow carded after a tussle with Jordan Pickford following Dan Burn's consolation goal in Newcastle's Carabao Cup clash with Everton.",
-      "published_label": "29 October 2026 · 21:45",
-      "published_iso": "2026-10-29T21:45:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Joelinton was yellow carded after a tussle with Jordan Pickford following Dan Burn's consolation goal in Newcastle's Carabao Cup clash with Everton."
-      ]
-    },
-    {
-      "slug": "13605583",
-      "title": "Barry finishes Everton counter to go three goals ahead!",
-      "url": "https://www.skysports.com/football/video/13605583/everton-vs-newcastle-thierno-barry-scores-evertons-third-goal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-barry-goal_7391439.jpg?20261029212840",
-      "excerpt": "Thierno Barry scores Everton's third goal after a slick counter attack.",
-      "published_label": "29 October 2026 · 21:17",
-      "published_iso": "2026-10-29T21:17:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Thierno Barry scores Everton's third goal after a slick counter attack."
-      ]
-    },
-    {
-      "slug": "13605582",
-      "title": "Ronaldo scores perfect hat-trick!",
-      "url": "https://www.skysports.com/football/video/13605582/cristiano-ronaldo-hat-trick-leads-al-nassr-to-win-over-al-khuloud",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-cristiano-ronaldo_7391433.jpg?20261029211938",
-      "excerpt": "Cristiano Ronaldo scored a hat-trick to leads Al-Nassr to a win over Al-Khuloud, with Joao Felix assisting two and Sadio Mane the third.",
-      "published_label": "29 October 2026 · 21:16",
-      "published_iso": "2026-10-29T21:16:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Cristiano Ronaldo scored a hat-trick to leads Al-Nassr to a win over Al-Khuloud, with Joao Felix assisting two and Sadio Mane the third."
-      ]
-    },
-    {
-      "slug": "13605579",
-      "title": "Ronaldo hat-trick leads Al Nassr to victory over Al Kholood!",
-      "url": "https://www.skysports.com/football/video/13605579/al-nassr-vs-al-kholood-saudi-pro-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-al-nassr-al-kholood_7391445.jpg?20261029213656",
-      "excerpt": "Highlights of Al Nassr against Al Kholood in the Saudi Pro League.",
-      "published_label": "29 October 2026 · 21:08",
-      "published_iso": "2026-10-29T21:08:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of Al Nassr against Al Kholood in the Saudi Pro League."
-      ]
-    },
-    {
-      "slug": "13605566",
-      "title": "Hackney scores his first Everton goal to put Toffees 2-0 up!",
-      "url": "https://www.skysports.com/football/video/13605566/everton-vs-newcastle-hayden-hackney-scores-his-first-everton-goal-to-put-toffees-2-0-up",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-everton-goal_7391399.jpg?20261029204534",
-      "excerpt": "Hayden Hackney scores his first Everton goal to put Toffees 2-0 up in their League Cup clash with Newcastle.",
-      "published_label": "29 October 2026 · 20:34",
-      "published_iso": "2026-10-29T20:34:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Hayden Hackney scores his first Everton goal to put Toffees 2-0 up in their League Cup clash with Newcastle."
-      ]
-    },
-    {
-      "slug": "13605560",
-      "title": "'Brilliant finish!' - Garner puts Everton ahead against Newcastle",
-      "url": "https://www.skysports.com/football/video/13605560/everton-vs-newcastle-james-garner-scores-opening-goal-in-league-cup",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-everton-newcastle_7391401.jpg?20261029204652",
-      "excerpt": "James Garner scores the opening goal in Everton's League Cup clash against Newcastle.",
-      "published_label": "29 October 2026 · 20:26",
-      "published_iso": "2026-10-29T20:26:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "James Garner scores the opening goal in Everton's League Cup clash against Newcastle."
-      ]
-    },
-    {
-      "slug": "13605549",
-      "title": "Essential EFL podcast: Middlesbrough 'comfortable' at top of Championship",
-      "url": "https://www.skysports.com/football/video/13605549/essential-efl-podcast-middlesbrough-comfortable-at-the-top-of-the-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-middlesbrough-football_7391354.jpg?20261029200407",
-      "excerpt": "Speaking on the Essential EFL podcast, Andy Hinchcliffe says that Middlesbrough are 'comfortable' at the top of the league.",
-      "published_label": "29 October 2026 · 19:55",
-      "published_iso": "2026-10-29T19:55:00+00:00",
-      "byline": "Essential EFL podcast: Middlesbrough &#x27;comfortable&#x27; at the top of the league",
-      "kind": "video",
-      "body": [
-        "Speaking on the Essential EFL podcast, Andy Hinchcliffe says that Middlesbrough are 'comfortable' at the top of the league."
-      ]
-    },
-    {
-      "slug": "13605546",
-      "title": "'What a night!' - Hinchcliffe reflects on Fleetwood's 'extraordinary' win over Arsenal",
-      "url": "https://www.skysports.com/football/video/13605546/essential-efl-podcast-andy-hinchcliffe-reflects-on-fleetwoods-shock-win-over-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-fleetwood-football_7391346.jpg?20261029195938",
-      "excerpt": "Speaking on the Essential EFL podcast, Andy Hinchcliffe reflects on Fleetwood's win over Arsenal in the Carabao Cup.",
-      "published_label": "29 October 2026 · 19:51",
-      "published_iso": "2026-10-29T19:51:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Speaking on the Essential EFL podcast, Andy Hinchcliffe reflects on Fleetwood's win over Arsenal in the Carabao Cup."
-      ]
-    },
-    {
-      "slug": "13604028",
-      "title": "Everton see off Newcastle to reach Carabao Cup quarter-final",
-      "url": "https://www.skysports.com/football/news/13604028/everton-3-1-newcastle-toffees-see-off-visitors-to-set-up-carabao-cup-quarter-final-with-fleetwood-town",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-thierno-barry_7391453.jpg?20261029214231",
-      "excerpt": "Everton are through to the quarter-finals of the Carabao Cup after seeing off Newcastle 3-1.",
-      "published_label": "29 October 2026 · 19:34",
-      "published_iso": "2026-10-29T19:34:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Everton are through to the quarter-finals of the Carabao Cup after seeing off Newcastle 3-1.",
-        "James Garner, Hayden Hackney and Thierno Barry were all on the scoresheet at the Hill Dickinson Stadium on Thursday night. Dan Burn netted a late consolation for Newcastle.",
-        "The Toffees will head to Fleetwood Town in the last eight in December, after the League Two side's epic win over Arsenal earlier in the week.",
-        "It provides Everton with a real opportunity of reaching a first cup semi-final since 2016. As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
-      ]
-    },
-    {
-      "slug": "13605512",
-      "title": "Grealish dropped by Everton after breaching club discipline",
-      "url": "https://www.skysports.com/football/news/13605512/jack-grealish-dropped-by-everton-after-breaching-club-discipline-ahead-of-newcastle-carabao-cup-tie",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-jack-grealish-everton_7391253.jpg?20261029185811",
-      "excerpt": "Everton said Jack Grealish was unavailable for their Carabao Cup fourth-round tie against Newcastle 'due to a breach of club discipline'.",
-      "published_label": "29 October 2026 · 18:45",
-      "published_iso": "2026-10-29T18:45:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Everton said Jack Grealish was unavailable for their Carabao Cup fourth-round tie against Newcastle 'due to a breach of club discipline'.",
-        "Grealish, who is on loan from Manchester City, missed Saturday's defeat at Arsenal due to illness but had started Everton's previous three Premier League matches against Ipswich, Hull City and Chelsea.",
-        "He was dropped by manager David Moyes for their cup tie at the Hill Dickinson Stadium on Thursday night after reportedly missing a training session. Transfer Centre LIVE! | Latest on YOUR PL club! Premier League fixtures & scores | FREE PL highlights ▶️",
-        "Sky Sports News reporter Keith Downie said: \"My understanding is the reason he's not involved, and the reason he has been disciplined, is because he failed to show for a training session in the build-up to tonight's cup tie.\""
-      ]
-    },
-    {
-      "slug": "13605501",
-      "title": "PSG hit back late on to deny Man City first WCL win",
-      "url": "https://www.skysports.com/football/news/13605501/man-city-1-1-psg-khadija-shaw-opener-cancelled-out-with-andree-jeglertzs-side-in-danger-of-not-making-top-four",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-alex-greenwood_7391371.jpg?20261029202217",
-      "excerpt": "Manchester City remain winless in this season's Women's Champions League after Tara Elimbi Gilbert's late strike earned Paris Saint-Germain a 1-1 draw at the Joie Stadium.",
-      "published_label": "29 October 2026 · 18:16",
-      "published_iso": "2026-10-29T18:16:00+00:00",
-      "byline": "Richard Morgan",
-      "body": [
-        "Manchester City remain winless in this season's Women's Champions League after Tara Elimbi Gilbert's late strike earned Paris Saint-Germain a 1-1 draw at the Joie Stadium.",
-        "Andree Jeglertz's side had appeared to be on course for a much-needed victory when Khadija Shaw - fresh from finishing third in this week's Ballon d'Or - converted an 85th-minute penalty to finally make the breakthrough against stubborn opponents, the Jamaica striker's 10th goal in her last 10 outings.",
-        "However, the hosts - unbeaten so far this season - then switched off to allow Gilbert to level just three minutes later to put in jeopardy their hopes of finishing in the top four of the new league phase, and with it automatic qualification for the quarter-finals without needing to go through the play-offs. As it happened | Teams | Match stats WCL fixtures | WCL table | Man City fixtures Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
-        "City do move up to 10th place in the standings, but still four points behind the likes of Chelsea and Arsenal in the top four after a third straight draw. 'Not the start Man City had envisioned'"
-      ]
-    },
-    {
-      "slug": "13605317",
-      "title": "It's been 616 days: Can Spurs finally win three in a row?",
-      "url": "https://www.skysports.com/football/news/13605317/tottenham-vs-crystal-palace-have-spurs-genuinely-turned-a-corner-in-the-premier-league-under-roberto-de-zerbi",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-james-maddison-goal_7381102.jpg?20261020060641",
-      "excerpt": "By the time Saturday rolls around, it will have been 616 days since Tottenham last won three Premier League games on the bounce. Three different managers have come and gone since the feat was last achieved, none able to steer Spurs to a str…",
-      "published_label": "29 October 2026 · 15:30",
-      "published_iso": "2026-10-29T15:30:00+00:00",
-      "byline": "Laura Hunter",
-      "body": [
-        "By the time Saturday rolls around, it will have been 616 days since Tottenham last won three Premier League games on the bounce. Three different managers have come and gone since the feat was last achieved, none able to steer Spurs to a streak of more than two.",
-        "Roberto De Zerbi is the latest boss to try his hand at the hat-trick. Wins over Coventry City and Chelsea have preceded this weekend's meeting with Crystal Palace, live on Sky Sports . The elusive treble is within reach.",
-        "To right such a wrong would be a huge stepping stone for Spurs under De Zerbi. Not only would the result propel them into the top half of the table, but its potential to heal the wounded Spurs psyche would surely be invaluable.",
-        "Dr Tottenham have long been craving a healer of their own. A manager who is able to match stylistic promise with sound leadership. Many thought the pursuit of a fiery Italian known to be volatile in previous roles was a high-risk appointment, and yet the gamble had obvious growth potential. A way back from anonymity. Tottenham news & transfers ⚪ | FREE Spurs highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13604412",
-      "title": "PL Predictions: Man Utd to deliver reaction at Chelsea",
-      "url": "https://www.skysports.com/football/news/13604412/premier-league-predictions-and-jones-knows-best-bets-liverpool-vs-arsenal-crystal-palace-vs-tottenham-and-much-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
-      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for a busy weekend of Premier League action. Chelsea vs Man Utd, Saturday 12.30pm",
-      "published_label": "29 October 2026 · 13:00",
-      "published_iso": "2026-10-29T13:00:00+00:00",
-      "byline": "Lewis Jones",
-      "body": [
-        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for a busy weekend of Premier League action. Chelsea vs Man Utd, Saturday 12.30pm",
-        "This has the potential to be a tough watch - and that is absolutely fine when you are getting 11/8 with Sky Bet about a game producing two goals or fewer.",
-        "Michael Carrick needs to get Manchester United into some sort of shape, with no wins in eight games across all competitions and the pressure mounting after Sunday's 3-0 home defeat to Bournemouth. Expect pragmatism over adventure at Stamford Bridge. United need a platform to build from, not another chaotic shoot-out and Carrick has reason to prioritise defensive discipline over taking risks.",
-        "The numbers support that approach, too. Away Premier League games under Carrick across his last 11-game spell have averaged just 2.15 goals."
-      ]
-    },
-    {
-      "slug": "13605220",
-      "title": "Toney trial date for alleged assault set for 2028",
-      "url": "https://www.skysports.com/football/news/13605220/ivan-toney-trial-for-england-striker-over-alleged-assault-is-set-for-june-2028",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-ivan-toney-court_7365805.jpg?20261001141036",
-      "excerpt": "England striker Ivan Toney will face trial over an alleged assault at a London nightclub in June 2028, during the European Championships of that summer.",
-      "published_label": "29 October 2026 · 11:00",
-      "published_iso": "2026-10-29T11:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "England striker Ivan Toney will face trial over an alleged assault at a London nightclub in June 2028, during the European Championships of that summer.",
-        "The 30-year-old is accused of headbutting and punching Saber Da Silva during a confrontation at a nightclub in Wardour Street, central London, on December 6 last year.",
-        "Toney, who has been in the England squad for the last two major tournaments, appeared at Southwark Crown Court on Thursday morning and formally entered a not guilty plea to a charge of assault occasioning actual bodily harm.",
-        "During the five-minute hearing, a provisional trial date was set for the same court on June 12, 2028 - a few days after the start of Euro 2028 - by Judge Christopher Hehir, who told the defendant he was \"sorry\" about the delay."
-      ]
-    },
-    {
-      "slug": "13605019",
-      "title": "'It's a little bit naughty!' - Talbi steals goal from team-mate to put Sunderland ahead",
-      "url": "https://www.skysports.com/football/video/13605019/sunderland-vs-brentford-chemsdine-talbi-taps-in-on-the-line-to-put-sunderland-ahead",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-carabao-cup_7390242.jpg?20261028203559",
-      "excerpt": "Sunderland's Jocelin Ta Bi shot heads for the far corner as teammate Chemsdine Talbi taps i over the line to put the home side ahead against Brentford in the Carabao Cup.",
-      "published_label": "28 October 2026 · 20:23",
-      "published_iso": "2026-10-28T20:23:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sunderland's Jocelin Ta Bi shot heads for the far corner as teammate Chemsdine Talbi taps i over the line to put the home side ahead against Brentford in the Carabao Cup."
-      ]
-    },
-    {
-      "slug": "13605017",
-      "title": "Precision from Kovacic brings Man City level",
-      "url": "https://www.skysports.com/football/video/13605017/a-wonderful-goal-precision-from-mateo-kovacic-brings-manchester-city-level",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-mateo-kovacic-b-football_7390218.jpg?20261028202016",
-      "excerpt": "Precision from Mateo Kovacic brings Manchester City level against Brighton.",
-      "published_label": "28 October 2026 · 20:17",
-      "published_iso": "2026-10-28T20:17:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Precision from Mateo Kovacic brings Manchester City level against Brighton."
-      ]
-    },
-    {
-      "slug": "13550693",
-      "title": "How to watch EFL live on Sky Sports",
-      "url": "https://www.skysports.com/football/news/13550693/live-efl-2026-27-fixtures-on-sky-sports-championship-league-one-league-two-games-dates-kick-off-times",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/06/768x432/skysports-efl-efl-fixtures_7277457.jpg?20260619075719",
-      "excerpt": "Ready for the new EFL season? Every opening game across the Championship, League One and League is live on Sky Sports this weekend. Matches will be broadcast live across Sky Sports main channels or on Sky Sports+ Every EFL match which is sh…",
-      "published_label": "11 August 2026 · 13:00",
-      "published_iso": "2026-08-11T13:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Ready for the new EFL season? Every opening game across the Championship, League One and League is live on Sky Sports this weekend. Matches will be broadcast live across Sky Sports main channels or on Sky Sports+ Every EFL match which is shown on Sky Sports will also be available on the Sky Sports app 📱. Non-Sky customers can watch the EFL with flexible contract offers on NOW",
-        "More than 1,000 games across the EFL, Carabao Cup and EFL Trophy will be broadcast on Sky Sports throughout the 26/27 season and every one of the 72 EFL clubs will be featured live on Sky more than 20 times .",
-        "Keep track below of all the confirmed live EFL games on Sky Sports, with selections announced up to January 9 2027. Championship fixtures | League One fixtures | League Two fixtures Championship latest news and transfers Essential EFL podcast - download and subscribe November live EFL games",
-        "Saturday 7 (all 12.30pm kick-off) Bristol City vs Norwich, Portsmouth vs Stoke, Wrexham vs Wolves"
       ]
     }
   ]
