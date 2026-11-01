@@ -1,10 +1,56 @@
 {
-  "synced_at": "2026-11-01T13:25:39+00:00",
+  "synced_at": "2026-11-01T18:56:59+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13606612",
+      "title": "Hibs earn historic win over Hearts to set up League Cup final with Rangers",
+      "url": "https://www.skysports.com/football/news/13606612/hearts-1-2-hibernian-jamie-mcgrath-scores-winner-as-hibs-beat-rivals-at-hampden-for-first-time-to-set-up-scottish-league-cup-final-vs-rangers",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hibs-jamie-mcgrath_7394065.jpg?20261101173558",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13606708",
+      "title": "Neville: Man Utd stuck in a rut - and it's really worrying",
+      "url": "https://www.skysports.com/football/news/13606708/manchester-united-gary-neville-says-club-are-in-a-rut-and-is-unimpressed-with-lisandro-martinez-amid-tough-run-of-games-for-michael-carricks-side",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-andrey-santos-mason-mount_7386834.jpg?20261025160630",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13606755",
+      "title": "'VAR, do your job!' - Was Timber's pull on Isak enough for a penalty?",
+      "url": "https://www.skysports.com/football/video/13606755/liverpool-vs-arsenal-carragher-sturridge-and-wright-discuss-liverpools-penalty-shout-as-timber-pulled-isaks-shirt",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-isak_7394061.jpg?20261101173304",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13606748",
+      "title": "'So close!!' - Wirtz free-kick hits the bar as Liverpool trail Arsenal",
+      "url": "https://www.skysports.com/football/video/13606748/post-f-wirtz-39-liverpool-0-1-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7394038.jpg?20261101171406",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13605389",
       "title": "Arsenal striker dilemma: Should Arteta keep faith in Havertz?",
@@ -110,6 +156,132 @@
       "byline": ""
     },
     {
+      "slug": "13606781",
+      "title": "Arsenal triumphant in historic Anfield victory",
+      "url": "https://www.skysports.com/football/video/13606781/liverpool-0-1-arsenal-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7394114.jpg?20261101183652",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Liverpool and Arsenal.",
+      "published_label": "01 November 2026 · 18:34",
+      "published_iso": "2026-11-01T18:34:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from the Premier League match between Liverpool and Arsenal."
+      ]
+    },
+    {
+      "slug": "13606658",
+      "title": "Arsenal win at Anfield for first time in 14 years to move top",
+      "url": "https://www.skysports.com/football/news/13606658/liverpool-0-1-arsenal-kai-havertz-seals-gunners-first-victory-at-anfield-for-14-years-to-move-top-of-premier-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kai-havertz-premier-league_7393984.jpg?20261101165117",
+      "excerpt": "Arsenal won at Anfield for the first time in 14 years after Kai Havertz's strike sealed a gritty 1-0 victory - but Liverpool were denied what looked to be a clear penalty.",
+      "published_label": "01 November 2026 · 18:30",
+      "published_iso": "2026-11-01T18:30:00+00:00",
+      "byline": "Laura Hunter",
+      "body": [
+        "Arsenal won at Anfield for the first time in 14 years after Kai Havertz's strike sealed a gritty 1-0 victory - but Liverpool were denied what looked to be a clear penalty.",
+        "The result opens up a three-point gap on Manchester City at the top of the Premier League - and means Mikel Arteta's side are nine clear of Liverpool.",
+        "In a battle of attrition, the only discernible difference was at the top end. Liverpool's various waves of pressure almost always led to an effort on David Raya's goal - 17 in total - but none actually forced the goalkeeper into a save.",
+        "Florian Wirtz hit the crossbar with a free-kick and Alexis Mac Allister ballooned a header over the bar unmarked, but Andoni Iraola's side failed to land a single shot on target at home for the first time on record. \"It's been a defensive masterclass from Arsenal,\" said Gary Neville."
+      ]
+    },
+    {
+      "slug": "13606772",
+      "title": "Bellingham and Mbappe on scoresheet as Real Madrid breeze past Racing Santander",
+      "url": "https://www.skysports.com/football/video/13606772/racing-santander-vs-real-madrid-laliga-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-laliga_7394097.jpg?20261101181719",
+      "excerpt": "Highlights of the LaLiga match between Racing Santander and Real Madrid.",
+      "published_label": "01 November 2026 · 18:14",
+      "published_iso": "2026-11-01T18:14:00+00:00",
+      "byline": "Racing Santander vs Real Madrid | LaLiga highlights",
+      "kind": "video",
+      "body": [
+        "Highlights of the LaLiga match between Racing Santander and Real Madrid."
+      ]
+    },
+    {
+      "slug": "13606770",
+      "title": "BRILLIANT SAVE! Alisson denies Tzolis to keep Liverpool alive",
+      "url": "https://www.skysports.com/football/video/13606770/save-alisson-73-liverpool-0-1-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7394089.jpg?20261101180817",
+      "excerpt": "Liverpool stopper Alisson produces a great save with his left hand to keep out this shot from Christos Tzolis.",
+      "published_label": "01 November 2026 · 18:06",
+      "published_iso": "2026-11-01T18:06:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Liverpool stopper Alisson produces a great save with his left hand to keep out this shot from Christos Tzolis."
+      ]
+    },
+    {
+      "slug": "13606734",
+      "title": "Chelsea flex title-winning credentials but Man City following closely",
+      "url": "https://www.skysports.com/football/news/13606734/wsl-talking-points-chelsea-flex-title-winning-credentials-with-dominant-win-at-charlton-but-man-city-are-keeping-up",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7393939.jpg?20261101160800",
+      "excerpt": "Manchester City asked the question. Chelsea answered with six goals.",
+      "published_label": "01 November 2026 · 17:55",
+      "published_iso": "2026-11-01T17:55:00+00:00",
+      "byline": "Sam Cohen and Patrick Rowe",
+      "body": [
+        "Manchester City asked the question. Chelsea answered with six goals.",
+        "Their emphatic 6-0 win at Charlton restored them to the top of the WSL on goal difference and showed just how many ways this team can hurt opponents. WSL round-up: Arsenal held by Villa as City beat London City Got Sky? Watch WSL games on your phone Not got Sky? Stream WSL games with no contract",
+        "Nathalie Bjorn opened the scoring, Melvine Malard struck twice and Ellie Carpenter also found the net before the break. Then the substitutes took over, with Aggie Beever-Jones scoring and Giulia Dragoni adding her first Chelsea goal.",
+        "That depth matters in a title race. Chelsea could withdraw Malard at half-time and still carry a threat, finishing with 34 shots and more than 70 per cent possession."
+      ]
+    },
+    {
+      "slug": "13606693",
+      "title": "Why Man Utd fans continue to stick by Carrick",
+      "url": "https://www.skysports.com/football/news/13606693/michael-carricks-man-utd-support-explained-as-fans-believe-reason-for-worst-start-in-40-years-goes-beyond-dugout",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-reporter-notebook_7393916.jpg?20261101154449",
+      "excerpt": "The last time Manchester United won a league game, schools were closed for the summer and the transfer window was still open.",
+      "published_label": "01 November 2026 · 17:30",
+      "published_iso": "2026-11-01T17:30:00+00:00",
+      "byline": "Kaveh Solhekol",
+      "body": [
+        "The last time Manchester United won a league game, schools were closed for the summer and the transfer window was still open.",
+        "When things get this bad, managers can be forgiven for heading straight down the tunnel after another defeat - especially if their side have made their worst start to a season in 40 years.",
+        "Michael Carrick did not have to think twice before heading towards the United supporters after the final whistle at Stamford Bridge following Saturday's 2-0 defeat . Neville: Man Utd stuck in a rut - and it's really worrying Carrick expects to remain in charge for Roma Man Utd fixtures: Roma up next...",
+        "Those fans had not seen their team win for almost two months, but they showed warmth, appreciation and respect for the manager who has overseen a run of nine league games without a win."
+      ]
+    },
+    {
+      "slug": "13606726",
+      "title": "Havertz fires Arsenal in front at Anfield",
+      "url": "https://www.skysports.com/football/video/13606726/goal-k-havertz-16-liverpool-0-0-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7393991.jpg?20261101165251",
+      "excerpt": "Declan Rice sends a low cross across the box to the far post, where Kai Havertz delivers the finish to put Arsenal ahead against Liverpool.",
+      "published_label": "01 November 2026 · 16:51",
+      "published_iso": "2026-11-01T16:51:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Declan Rice sends a low cross across the box to the far post, where Kai Havertz delivers the finish to put Arsenal ahead against Liverpool."
+      ]
+    },
+    {
+      "slug": "13606686",
+      "title": "Neville critical of Martinez as Man Utd worries deepen",
+      "url": "https://www.skysports.com/football/video/13606686/man-utd-latest-gary-neville-concerns-grow-over-plight-of-for-club",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-gary-neville-utd_7393914.jpg?20261101153752",
+      "excerpt": "Sky Sports' Gary Neville has his say on the current situation at Manchester United and admits he is finding the poor run of form 'really worrying '.",
+      "published_label": "01 November 2026 · 15:31",
+      "published_iso": "2026-11-01T15:31:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Gary Neville has his say on the current situation at Manchester United and admits he is finding the poor run of form 'really worrying '."
+      ]
+    },
+    {
       "slug": "13606632",
       "title": "'A Fantastic start for Falkirk!' - Ross scores after Carter-Vickers error",
       "url": "https://www.skysports.com/football/video/13606632/a-fantastic-start-for-falkirk-ross-scores-after-carter-vickers-error",
@@ -183,6 +355,17 @@
       "body": [
         "Swindon Town goalkeeper Connor Ripley had to borrow Ian Holloway's hat during their Sky Bet League two match against Rotherham!"
       ]
+    },
+    {
+      "slug": "liverpool-vs-arsenal-premier-league-arteta-anfield-curse",
+      "title": "Liverpool vs Arsenal: Can Mikel Arteta Finally Break the 14-Year Anfie",
+      "url": "https://www.sportytrader.com/en/news/liverpool-vs-arsenal-premier-league-arteta-anfield-curse/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/soweto-derby-2026.webp",
+      "excerpt": "The reigning Premier League champions enter the ultimate lion's den this weekend, as they arrive at Anfield to face Liverpool, a side they have not beaten on the road sin",
+      "published_label": "1 November 2026 · 07:00",
+      "published_iso": "2026-11-01T07:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13606068",
@@ -543,203 +726,6 @@
         "The teenager, on loan from Istanbul Basaksehir, marked his league debut for the visitors by scoring the equaliser with 12 minutes remaining after combining with fellow substitute Chem Campbell. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
         "Russell Martin's side had led twice but could not record a fourth win in five.",
         "Despite making a fast start, when Sammy Braybrooke netted his first senior goal for the club after only 67 seconds when Stevenage failed to deal with a Luke Thomas cross, City handed their opponents a route back into the game."
-      ]
-    },
-    {
-      "slug": "13592759",
-      "title": "Swindon 2-1 Rotherham",
-      "url": "https://www.skysports.com/football/news/13592759/swindon-2-1-rotherham",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "Joe Hungbo's brilliant free-kick sealed Swindon's 2-1 win over nine-man Rotherham.",
-      "published_label": "31 October 2026 · 17:00",
-      "published_iso": "2026-10-31T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Joe Hungbo's brilliant free-kick sealed Swindon's 2-1 win over nine-man Rotherham.",
-        "United's Jili Buyabu was sent off after just four minutes for elbowing Jack Thomson.",
-        "Matty Virtue should have netted after Tom Nichols slotted him through, but his tame shot was saved by Julian Eyestone. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "Virtue then dragged a low shot wide from distance before Mitch Clark nodded wide at the back stick."
-      ]
-    },
-    {
-      "slug": "13606093",
-      "title": "Bournemouth punish Trafford horror error to sink Leeds",
-      "url": "https://www.skysports.com/football/news/13606093/bournemouth-2-0-leeds-cherries-punish-james-trafford-horror-error-to-make-it-six-wins-on-the-spin",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-bournemouth_7392764.jpg?20261031154029",
-      "excerpt": "Bournemouth made it six wins on the spin in all competitions without conceding as they beat toothless Leeds 2-0.",
-      "published_label": "31 October 2026 · 17:00",
-      "published_iso": "2026-10-31T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Bournemouth made it six wins on the spin in all competitions without conceding as they beat toothless Leeds 2-0.",
-        "Marco Rose's side have now beaten Sturm Graz, Sunderland, AC Milan, Manchester United, Aston Villa and Leeds without conceding in an extraordinary run of results.",
-        "They were given a helping hand by Leeds goalkeeper James Trafford, whose Halloween horror show gifted Bournemouth the lead as Evanilson capitalised on a hapless pass out from the back.",
-        "The response from Leeds never came as they mustered just one shot on target from their 10 attempts on goal to a backdrop of a lowly 0.61 worth of expected goals. They have now scored just twice in their last five Premier League games."
-      ]
-    },
-    {
-      "slug": "13595376",
-      "title": "In-demand Spain star Martin talks future plans: 'This is my home'",
-      "url": "https://www.skysports.com/football/news/13595376/jon-martin-interview-real-sociedad-and-spain-defender-on-why-he-is-staying-at-his-home-amid-interest-from-biggest-clubs",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-jon-martin-real-sociedad_7390675.jpg?20261029093914",
-      "excerpt": "\"I have always said that this is my home.\" That is the response when talking to Jon Martin about life at Real Sociedad. He has been linked with Real Madrid, Barcelona and some of the biggest clubs in the Premier League. But any move will no…",
-      "published_label": "31 October 2026 · 12:00",
-      "published_iso": "2026-10-31T12:00:00+00:00",
-      "byline": "Adam Bate",
-      "body": [
-        "\"I have always said that this is my home.\" That is the response when talking to Jon Martin about life at Real Sociedad. He has been linked with Real Madrid, Barcelona and some of the biggest clubs in the Premier League. But any move will not happen just yet.",
-        "\"I have been here since I was 12,\" Martin explains on the eve of the derby against Athletic Club. \"At the end of the day, the feeling of belonging and of wanting to be here is something I feel from inside. So, as I said, I feel this is my home. It is where I want to be.\"",
-        "The 20-year-old centre-back is aware of the excitement about him. \"I think that I am a player that people like,\" he says, rather modestly. He describes himself as grateful for the interest. In truth, it is an inevitable consequence of his performances for La Real. LaLiga: Table | Fixtures & results",
-        "Martin is a ball-playing defender with good technical ability and passing range. He made his debut for Spain in the summer and could be the long-term partner for Pau Cubarsi at the heart of the defence for the national team. A frightening prospect."
-      ]
-    },
-    {
-      "slug": "13606052",
-      "title": "'We have some issues' - Nuno gives updates on Mavropanos and Bowen",
-      "url": "https://www.skysports.com/football/video/13606052/nuno-espirito-santo-gives-updates-on-konstantinos-mavropanos-and-jarrod-bowen-we-have-some-issues",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/7efa88e82ab3ce8fc42c3d4c33c3134db499a13b2c07cd35dfad35c09e6f571c_7392510.jpg?20261031085050",
-      "excerpt": "West Ham boss Nuno Espirito Santo has given fitness updates on both Konstantinos Mavropanos and Jarrod Bowen ahead of the Championship match against West Brom on Saturday.",
-      "published_label": "31 October 2026 · 08:43",
-      "published_iso": "2026-10-31T08:43:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "West Ham boss Nuno Espirito Santo has given fitness updates on both Konstantinos Mavropanos and Jarrod Bowen ahead of the Championship match against West Brom on Saturday."
-      ]
-    },
-    {
-      "slug": "13605752",
-      "title": "Arbeloa: We've made mistakes but Fulham on right path",
-      "url": "https://www.skysports.com/football/news/13605752/alvaro-arbeloa-exclusive-fulham-head-coach-on-early-mistakes-seeing-out-games-and-getting-the-best-from-gonzalo-garcia",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-alvaro-arbeloa-fulham_7392505.jpg?20261031084348",
-      "excerpt": "Having gone winless in your first six games and conceded goals at a rate of almost two a game, there are worse ways to recover than a pair of gritty 1-0 victories.",
-      "published_label": "31 October 2026 · 08:30",
-      "published_iso": "2026-10-31T08:30:00+00:00",
-      "byline": "Ron Walker",
-      "body": [
-        "Having gone winless in your first six games and conceded goals at a rate of almost two a game, there are worse ways to recover than a pair of gritty 1-0 victories.",
-        "It is still early days in the Alvaro Arbeloa project at Fulham but the optimism a narrow but entertaining opening-weekend 3-2 defeat to Chelsea had brought from his debut in the dugout had quickly waned with such a poor run which had left them stranded bottom of the Premier League.",
-        "That openness which initially seemed a welcome tonic from the sometimes pragmatic Marco Silva era had quickly become the problem, with the Cottagers losing 3-2 again - this time to previously winless Crystal Palace - and shipping two late goals to Ipswich earlier this month to lose at Portman Road too. Transfer Centre LIVE! | Fulham news & transfers ⚪ Fulham fixtures & scores | FREE Fulham highlights ▶️ Got Sky? Watch Aston Villa vs Fulham LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Something had to change, and after six league games with his players Arbeloa felt he had seen enough to know where to start."
-      ]
-    },
-    {
-      "slug": "soweto-derby-headlines-psl-weekend-schedule",
-      "title": "Durban and Soweto Derby Headline High-Stakes PSL Weekend Schedule",
-      "url": "https://www.sportytrader.com/en-za/news/soweto-derby-headlines-psl-weekend-schedule/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/formula-1/2026-mexico-city-gp.webp",
-      "excerpt": "It is the most explosive Saturday on the South African football calendar, and the stakes have never been higher. The headline act of the weekend is the Soweto Derby, with",
-      "published_label": "31 October 2026 · 07:30",
-      "published_iso": "2026-10-31T07:30:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix",
-      "title": "The ‘Simple’ Equation Standing Between Kimi Antonelli and F1 Champions",
-      "url": "https://www.sportytrader.com/en/news/antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/morgan_rogers_chelsea.webp",
-      "excerpt": "Since taking over Lewis Hamilton’s legendary seat, Andrea Kimi Antonelli has spent his rookie season defying the odds, and tomorrow evening at the Autódromo Hermanos Rodr",
-      "published_label": "31 October 2026 · 05:00",
-      "published_iso": "2026-10-31T05:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "chelsea-vs-manchester-united-premier-league-2026-27-gameweek-9",
-      "title": "Chelsea vs Manchester United: Carrick's United Chase Third Straight Wi",
-      "url": "https://www.sportytrader.com/en/news/chelsea-vs-manchester-united-premier-league-2026-27-gameweek-9/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/united_mbeumo_2026.webp",
-      "excerpt": "Chelsea host Manchester United at Stamford Bridge on Saturday lunchtime in Premier League Gameweek 9. Xabi Alonso's Chelsea are fifth on 13 points but lost 0-2 at home to",
-      "published_label": "31 October 2026 · 04:00",
-      "published_iso": "2026-10-31T04:00:00+00:00",
-      "byline": "Geoffrey Ejiga"
-    },
-    {
-      "slug": "13605928",
-      "title": "Papers: Martinez seeking summer Man Utd departure",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13605928/lisandro-martinez-wants-to-leave-man-utd-in-the-summer-with-atletico-madrid-interested-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Saturday's newspapers... PREMIER LEAGUE",
-      "published_label": "30 October 2026 · 22:17",
-      "published_iso": "2026-10-30T22:17:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Saturday's newspapers... PREMIER LEAGUE",
-        "M an Utd defender Lisandro Martinez wants to leave a club on a free in the summer with Atletico Madrid interested - The Sun",
-        "Man Utd players were booed on the train en route to London ahead of their game against Chelsea - The Mirror",
-        "Chelsea goalkeeper Emi Martinez has revealed his hand is permanently disfigured after refusing surgery for a broken finger he feared would force him to miss the World Cup - The Sun"
-      ]
-    },
-    {
-      "slug": "13605970",
-      "title": "Brereton Diaz the match-winner as Blades edge past Wrexham",
-      "url": "https://www.skysports.com/football/video/13605970/sheffield-united-1-0-wrexham-championship-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-ben-breteton-diaz_7392334.jpg?20261030221114",
-      "excerpt": "Highlights of Sheffield United against Wrexham in the Sky Bet Championship.",
-      "published_label": "30 October 2026 · 22:05",
-      "published_iso": "2026-10-30T22:05:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of Sheffield United against Wrexham in the Sky Bet Championship."
-      ]
-    },
-    {
-      "slug": "13592701",
-      "title": "Sheff Utd win first league game against Wrexham in 44 years",
-      "url": "https://www.skysports.com/football/news/13592701/sheffield-united-1-0-wrexham-ben-brereton-diazs-goal-enough-to-earn-blades-first-league-win-against-wrexham-in-44-years",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-sheff-utd-ben-brereton_7392260.jpg?20261030204312",
-      "excerpt": "Sheffield United shook off a 44-year hoodoo by beating Wrexham 1-0 in the Championship, winning against the Welsh side in the league for the first time since October 1982.",
-      "published_label": "30 October 2026 · 22:00",
-      "published_iso": "2026-10-30T22:00:00+00:00",
-      "byline": "Charlotte Marsh",
-      "body": [
-        "Sheffield United shook off a 44-year hoodoo by beating Wrexham 1-0 in the Championship, winning against the Welsh side in the league for the first time since October 1982.",
-        "It is a fixture that is turning in to one of the great EFL contests, but after their two Championship matches last term produced 11 goals, this one registered just five shots on target.",
-        "The majority were for the Blades, with Brentford loanee Romelle Donovan central to much of the good attacking play, although it was Ben Brereton Diaz who decided it. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "He turned home a saved effort from Jordan Ayew for his third goal in three appearances against Wrexham, having scored in both games against them for Derby last season."
-      ]
-    },
-    {
-      "slug": "13605961",
-      "title": "Newport 4-1 Chesterfield",
-      "url": "https://www.skysports.com/football/video/13605961/newport-4-1-chesterfield-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/ddd7a671fd978862d331e0bbd6cd0c0a38322089c8dee49b202d5b88127b88ce_7392309.jpg?20261030214423",
-      "excerpt": "Highlights of the Sky Bet League Two match between Newport and Chesterfield.",
-      "published_label": "30 October 2026 · 21:43",
-      "published_iso": "2026-10-30T21:43:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League Two match between Newport and Chesterfield."
-      ]
-    },
-    {
-      "slug": "13604012",
-      "title": "Merson: Liverpool must beat Arsenal to be in the title race",
-      "url": "https://www.skysports.com/football/news/13604012/liverpool-vs-arsenal-andoni-iraolas-side-must-beat-the-premier-league-champions-to-be-in-the-title-race-says-paul-merson",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-merson-says-andoni-iraola_7387906.jpg?20261026133750",
-      "excerpt": "In his latest Sky Sports column, Paul Merson believes Liverpool have to beat Arsenal at Anfield on Sunday to be contenders for the Premier League title.",
-      "published_label": "30 October 2026 · 08:00",
-      "published_iso": "2026-10-30T08:00:00+00:00",
-      "byline": "Paul Merson",
-      "body": [
-        "In his latest Sky Sports column, Paul Merson believes Liverpool have to beat Arsenal at Anfield on Sunday to be contenders for the Premier League title.",
-        "Andoni Iraola's side host the champions live on Sky Sports' Super Sunday , kick-off 4.30pm, with Liverpool six points behind joint-leaders Arsenal and Man City.",
-        "Iraola managed three victories over Arteta's Arsenal in his final four meetings as Bournemouth head coach, but the Reds boss lost his first heavyweight clash at Anfield against City earlier this month. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "With Liverpool on a five-game winning run and Arsenal unbeaten in six, read below for the Magic Man's thoughts about the game of the weekend... 'If Liverpool want a title race, they have to beat Arsenal'"
       ]
     }
   ]
