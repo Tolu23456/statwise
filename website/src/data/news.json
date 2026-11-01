@@ -1,70 +1,10 @@
 {
-  "synced_at": "2026-10-31T23:24:49+00:00",
+  "synced_at": "2026-11-01T06:06:45+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13606447",
-      "title": "Sherwood: Glasner won't be at Nott'm Forest in Jan",
-      "url": "https://www.skysports.com/football/video/13606447/brentford-vs-nottingham-forest-tim-sherwood-says-oliver-glasner-wont-be-at-nottm-forest-come-january",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-sherwood_7393304.jpg?20261031194234",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606393",
-      "title": "Leicester 2-2 Stevenage",
-      "url": "https://www.skysports.com/football/video/13606393/leicester-2-2-stevenage-league-one-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/a737b2621705fba5cd00b72d06cb1ab71e7db063e237f213009329b6882a62fc_7393161.jpg?20261031182516",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606290",
-      "title": "Trafford howler and late Adli strike help Bournemouth see off Leeds",
-      "url": "https://www.skysports.com/football/video/13606290/bournemouth-2-0-leeds-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-bournemouth-leeds_7392952.jpg?20261031170628",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606271",
-      "title": "Ipswich fight back for draw at Hull",
-      "url": "https://www.skysports.com/football/video/13606271/hull-2-2-ipswich-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7392939.jpg?20261031170315",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606317",
-      "title": "Coventry gain huge win over 10-man Sunderland",
-      "url": "https://www.skysports.com/football/video/13606317/coventry-3-1-sunderland-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-coventry-sunderland_7392951.jpg?20261031170603",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13606391",
       "title": "Fleetwood 3-1 Bristol Rovers",
@@ -148,6 +88,36 @@
       "byline": ""
     },
     {
+      "slug": "13606394",
+      "title": "REFCAM captures Man Utd's woeful defending for Rogers' goal",
+      "url": "https://www.skysports.com/football/video/13606394/refcam-captures-man-utds-woeful-defending-for-morgan-rogers-goal-in-chelsea-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-rogers-refcam-goal_7393195.jpg?20261031184249",
+      "excerpt": "The REFCAM footage of Morgan Rogers' goal for Chelsea against Manchester United highlighted the woeful defending from Michael Carrick's men.",
+      "published_label": "01 November 2026 · 00:00",
+      "published_iso": "2026-11-01T00:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "The REFCAM footage of Morgan Rogers' goal for Chelsea against Manchester United highlighted the woeful defending from Michael Carrick's men."
+      ]
+    },
+    {
+      "slug": "13606544",
+      "title": "Halloween HORROR moments in the PL! Ft. Suzuki, Mateta, Martinez & more!",
+      "url": "https://www.skysports.com/football/video/13606544/halloween-horror-moments-in-the-premier-league-ft-martinez-mateta-trafford-suzuki-and-more",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-halloween-premier-league_7393564.jpg?20261031232253",
+      "excerpt": "After an eventful set of Halloween Premier League fixtures, we look at some of the horrifying moments across the day's action, including Lisandro Martinez, Zion Suzuki and many more.",
+      "published_label": "01 November 2026 · 00:00",
+      "published_iso": "2026-11-01T00:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "After an eventful set of Halloween Premier League fixtures, we look at some of the horrifying moments across the day's action, including Lisandro Martinez, Zion Suzuki and many more."
+      ]
+    },
+    {
       "slug": "13606533",
       "title": "Moreira stars as Milan win derby thriller",
       "url": "https://www.skysports.com/football/video/13606533/milan-3-1-inter-serie-a-highlights",
@@ -190,6 +160,23 @@
       "kind": "video",
       "body": [
         "FREE TO WATCH: Highlights from the Premier League match between Aston Villa and Fulham."
+      ]
+    },
+    {
+      "slug": "13606527",
+      "title": "Papers: Carrick to be given at least two more games in charge at Man Utd",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13606527/manchester-united-michael-carrick-to-be-given-at-least-two-more-matches-in-charge-despite-overseeing-worst-run-in-nearly-40-years-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Sunday's newspapers... PREMIER LEAGUE",
+      "published_label": "31 October 2026 · 22:00",
+      "published_iso": "2026-10-31T22:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Sunday's newspapers... PREMIER LEAGUE",
+        "Michael Carrick will be given at least two more matches in charge of Manchester United, despite overseeing their worst run in nearly 40 years - The Athletic",
+        "Sunderland head coach Regis Le Bris said that the club's difficult start to the season was expected due to a busier schedule and added he believed his side are in a relegation battle - The Athletic",
+        "Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW"
       ]
     },
     {
@@ -240,6 +227,21 @@
       ]
     },
     {
+      "slug": "13606447",
+      "title": "Sherwood: Glasner won't be at Nott'm Forest in Jan",
+      "url": "https://www.skysports.com/football/video/13606447/brentford-vs-nottingham-forest-tim-sherwood-says-oliver-glasner-wont-be-at-nottm-forest-come-january",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-sherwood_7393304.jpg?20261031194234",
+      "excerpt": "On Soccer Saturday, Tim Sherwood said he does not believe Oliver Glasner will be at Nottingham Forest come January.",
+      "published_label": "31 October 2026 · 19:38",
+      "published_iso": "2026-10-31T19:38:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "On Soccer Saturday, Tim Sherwood said he does not believe Oliver Glasner will be at Nottingham Forest come January."
+      ]
+    },
+    {
       "slug": "13606182",
       "title": "Spurs beat 10-man Palace to keep up Sage pressure as Eagles fall into drop zone",
       "url": "https://www.skysports.com/football/news/13606182/tottenham-2-0-crystal-palace-jean-philippe-matetas-red-card-sees-10-man-eagles-slip-into-relegation-zone",
@@ -287,6 +289,21 @@
       ]
     },
     {
+      "slug": "13606393",
+      "title": "Leicester 2-2 Stevenage",
+      "url": "https://www.skysports.com/football/video/13606393/leicester-2-2-stevenage-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/a737b2621705fba5cd00b72d06cb1ab71e7db063e237f213009329b6882a62fc_7393161.jpg?20261031182516",
+      "excerpt": "Highlights of the Sky Bet League One match between Leicester and Stevenage.",
+      "published_label": "31 October 2026 · 18:22",
+      "published_iso": "2026-10-31T18:22:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League One match between Leicester and Stevenage."
+      ]
+    },
+    {
       "slug": "13606390",
       "title": "Score against Arsenal, HORROR miss from three yards days later!",
       "url": "https://www.skysports.com/football/video/13606390/aaron-loupalo-bi-misses-sitter-for-fleetwood",
@@ -299,6 +316,51 @@
       "kind": "video",
       "body": [
         "Fleetwood Town's Aaron Loupalo-Bi had a horror moment as he failed to put the ball in the back of the net against Bristol Rovers."
+      ]
+    },
+    {
+      "slug": "13606290",
+      "title": "Trafford howler and late Adli strike help Bournemouth see off Leeds",
+      "url": "https://www.skysports.com/football/video/13606290/bournemouth-2-0-leeds-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-bournemouth-leeds_7392952.jpg?20261031170628",
+      "excerpt": "Highlights from the Premier League match between Bournemouth and Leeds.",
+      "published_label": "31 October 2026 · 17:47",
+      "published_iso": "2026-10-31T17:47:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights from the Premier League match between Bournemouth and Leeds."
+      ]
+    },
+    {
+      "slug": "13606317",
+      "title": "Coventry gain huge win over 10-man Sunderland",
+      "url": "https://www.skysports.com/football/video/13606317/coventry-3-1-sunderland-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-coventry-sunderland_7392951.jpg?20261031170603",
+      "excerpt": "Highlights from the Premier League as Coventry faced Sunderland.",
+      "published_label": "31 October 2026 · 17:30",
+      "published_iso": "2026-10-31T17:30:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights from the Premier League as Coventry faced Sunderland."
+      ]
+    },
+    {
+      "slug": "13606271",
+      "title": "Ipswich fight back for draw at Hull",
+      "url": "https://www.skysports.com/football/video/13606271/hull-2-2-ipswich-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7392939.jpg?20261031170315",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Hull and Ipswich Town.",
+      "published_label": "31 October 2026 · 17:09",
+      "published_iso": "2026-10-31T17:09:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from the Premier League match between Hull and Ipswich Town."
       ]
     },
     {
@@ -404,17 +466,6 @@
       ]
     },
     {
-      "slug": "antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix",
-      "title": "The ‘Simple’ Equation Standing Between Kimi Antonelli and F1 Champions",
-      "url": "https://www.sportytrader.com/en/news/antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/soweto-derby-2026.webp",
-      "excerpt": "Since taking over Lewis Hamilton’s legendary seat, Andrea Kimi Antonelli has spent his rookie season defying the odds, and tomorrow evening at the Autódromo Hermanos Rodr",
-      "published_label": "31 October 2026 · 10:00",
-      "published_iso": "2026-10-31T10:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
       "slug": "13606052",
       "title": "'We have some issues' - Nuno gives updates on Mavropanos and Bowen",
       "url": "https://www.skysports.com/football/video/13606052/nuno-espirito-santo-gives-updates-on-konstantinos-mavropanos-and-jarrod-bowen-we-have-some-issues",
@@ -447,14 +498,25 @@
       ]
     },
     {
+      "slug": "antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix",
+      "title": "The ‘Simple’ Equation Standing Between Kimi Antonelli and F1 Champions",
+      "url": "https://www.sportytrader.com/en/news/antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/soweto-derby-2026.webp",
+      "excerpt": "Since taking over Lewis Hamilton’s legendary seat, Andrea Kimi Antonelli has spent his rookie season defying the odds, and tomorrow evening at the Autódromo Hermanos Rodr",
+      "published_label": "31 October 2026 · 08:00",
+      "published_iso": "2026-10-31T08:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
       "slug": "soweto-derby-headlines-psl-weekend-schedule",
       "title": "Durban and Soweto Derby Headline High-Stakes PSL Weekend Schedule",
       "url": "https://www.sportytrader.com/en-za/news/soweto-derby-headlines-psl-weekend-schedule/",
       "source": "SportyTrader",
       "image": "https://static.sportytrader.com/images/news/football/2027/morgan_rogers_chelsea.webp",
       "excerpt": "It is the most explosive Saturday on the South African football calendar, and the stakes have never been higher. The headline act of the weekend is the Soweto Derby, with",
-      "published_label": "31 October 2026 · 07:30",
-      "published_iso": "2026-10-31T07:30:00+00:00",
+      "published_label": "31 October 2026 · 05:30",
+      "published_iso": "2026-10-31T05:30:00+00:00",
       "byline": "Devesh Jaganath"
     },
     {
@@ -464,8 +526,8 @@
       "source": "SportyTrader",
       "image": "https://static.sportytrader.com/images/news/football/2027/united_mbeumo_2026.webp",
       "excerpt": "Chelsea host Manchester United at Stamford Bridge on Saturday lunchtime in Premier League Gameweek 9. Xabi Alonso's Chelsea are fifth on 13 points but lost 0-2 at home to",
-      "published_label": "31 October 2026 · 04:00",
-      "published_iso": "2026-10-31T04:00:00+00:00",
+      "published_label": "31 October 2026 · 02:00",
+      "published_iso": "2026-10-31T02:00:00+00:00",
       "byline": "Geoffrey Ejiga"
     },
     {
@@ -629,17 +691,6 @@
       ]
     },
     {
-      "slug": "this-weekend-s-best-player-props-mbeumo-anderson-and-ryerson",
-      "title": "This Weekend’s Best Player Props: Mbeumo, Anderson and Ryerson",
-      "url": "https://www.sportytrader.com/en/news/this-weekend-s-best-player-props-mbeumo-anderson-and-ryerson/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/nff-and-fifa-committee.webp",
-      "excerpt": "In this week's look into some of the top player props across Europe, we're focusing in on two Premier League matchups as well as a mammoth Der Klassiker in the Bundesliga",
-      "published_label": "30 October 2026 · 17:00",
-      "published_iso": "2026-10-30T17:00:00+00:00",
-      "byline": "Joseph King"
-    },
-    {
       "slug": "13605448",
       "title": "Carrick's last chance? The fixes Man Utd may need at Chelsea",
       "url": "https://www.skysports.com/football/news/13605448/michael-carrick-what-man-utd-boss-could-change-for-saturdays-premier-league-game-at-chelsea",
@@ -672,6 +723,17 @@
       ]
     },
     {
+      "slug": "this-weekend-s-best-player-props-mbeumo-anderson-and-ryerson",
+      "title": "This Weekend’s Best Player Props: Mbeumo, Anderson and Ryerson",
+      "url": "https://www.sportytrader.com/en/news/this-weekend-s-best-player-props-mbeumo-anderson-and-ryerson/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/nff-and-fifa-committee.webp",
+      "excerpt": "In this week's look into some of the top player props across Europe, we're focusing in on two Premier League matchups as well as a mammoth Der Klassiker in the Bundesliga",
+      "published_label": "30 October 2026 · 15:00",
+      "published_iso": "2026-10-30T15:00:00+00:00",
+      "byline": "Joseph King"
+    },
+    {
       "slug": "13605254",
       "title": "How Suzuki has wowed Villa fans since replacing Martinez",
       "url": "https://www.skysports.com/football/news/13605254/zion-suzuki-analysis-how-emi-martinezs-aston-villa-replacement-now-looks-like-a-potential-upgrade-given-his-range-of-skills",
@@ -686,55 +748,6 @@
         "Suzuki has been superb since joining from Parma in the summer. Not only has Martinez not been as missed as many anticipated, there is growing optimism that in his 24-year-old replacement, Villa have a goalkeeper who has even more facets to his game.",
         "There have been some standout displays already. Suzuki was excellent in the win over Manchester City last time out, ending their 100-per-cent Premier League record under Enzo Maresca. The contrast with Gianluigi Donnarumma at the other end was stark. Transfer Centre LIVE! | Aston Villa news & transfers 🦁 Aston Villa fixtures & scores | FREE Villa highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
         "While the Champions League winner allowed Nicolas Jackson's decider to go through him, Suzuki pulled off a series of stops, relieved pressure with his claims and looked far more composed with the ball at his feet. Only one of the two looked world class."
-      ]
-    },
-    {
-      "slug": "13605782",
-      "title": "O'Neill vows Celtic will 'sort out' striking options",
-      "url": "https://www.skysports.com/football/news/13605782/celtic-martin-oneill-vows-to-sort-out-striking-options-ahead-of-premiership-trip-to-falkirk-live-on-sky",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-callum-osmand-camilo_7391934.jpg?20261030145052",
-      "excerpt": "Martin O'Neill agrees with Celtic skipper Callum McGregor's questioning of his striking selections and insists they will \"sort it out\".",
-      "published_label": "30 October 2026 · 14:00",
-      "published_iso": "2026-10-30T14:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Martin O'Neill agrees with Celtic skipper Callum McGregor's questioning of his striking selections and insists they will \"sort it out\".",
-        "The Hoops started the Scottish Premiership game against Dundee United with three centre-forwards: Callum Osmand, Kasper Hogh and Camilo Duran.",
-        "Then, when Celtic were 2-1 down at half-time, O'Neill took off Osmand and Hogh, moved scorer Duran into the middle and brought on wingers Jota and Hasseim Hassan. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
-        "Celtic pegged back the visitors to 2-2 to remain four points clear of Rangers at the top of the table but while they are, as usual, in a strong position in the league, they have lost all three of their Europa League games."
-      ]
-    },
-    {
-      "slug": "13605761",
-      "title": "'You lack information' - Maresca's frosty reporter exchange over Chelsea red cards",
-      "url": "https://www.skysports.com/football/video/13605761/enzo-marescas-frosty-reporter-exchange-over-chelsea-red-cards-you-lack-information",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-man-city-enzo-maresca_7391873.jpg?20261030135529",
-      "excerpt": "Enzo Maresca had a frosty exchange with a reporter when discussing Chelsea's red card history whilst he was in charge of the London club.",
-      "published_label": "30 October 2026 · 13:44",
-      "published_iso": "2026-10-30T13:44:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Enzo Maresca had a frosty exchange with a reporter when discussing Chelsea's red card history whilst he was in charge of the London club."
-      ]
-    },
-    {
-      "slug": "13605766",
-      "title": "Arteta warns Dowman: This isn't Disneyland",
-      "url": "https://www.skysports.com/football/news/13605766/max-dowman-red-card-mikel-artetas-tough-love-after-dismissal-this-isnt-disneyland",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-dowman-arsenal_7389264.jpg?20261027232527",
-      "excerpt": "Mikel Arteta has gone down the tough love avenue with Max Dowman following his red card at Fleetwood, saying \"this is the Premier League, not Disneyland\" about the 16-year-old needing to control his emotions.",
-      "published_label": "30 October 2026 · 12:00",
-      "published_iso": "2026-10-30T12:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Mikel Arteta has gone down the tough love avenue with Max Dowman following his red card at Fleetwood, saying \"this is the Premier League, not Disneyland\" about the 16-year-old needing to control his emotions.",
-        "Moments before Arsenal exited the competition on penalties to the League Two side, Dowman was sent off for violent conduct for kicking out at Harrison Neal after the Fleetwood defender's strong challenge.",
-        "Arsenal appealed the red card but it was rejected meaning the youngster is suspended for the clash with Liverpool on Super Sunday . Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "As Dowman headed towards the tunnel and past the dugouts, Arteta leaned in and said something to the teenager, which Sky Sports' Paul Merson criticised, saying the Arsenal manager should have put an arm around him."
       ]
     }
   ]
