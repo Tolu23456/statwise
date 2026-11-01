@@ -1,16 +1,50 @@
 {
-  "synced_at": "2026-11-01T18:56:59+00:00",
+  "synced_at": "2026-11-01T23:36:43+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
     {
+      "slug": "13606811",
+      "title": "'Next time I will tell him to dive!' - Iraola frustrated by Isak penalty decision",
+      "url": "https://www.skysports.com/football/video/13606811/andoni-iraola-frustrated-after-alexander-isak-denied-penalty-i-will-tell-him-to-go-down-next-time",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-andoni-iraola-iraola_7394201.jpg?20261101201604",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
       "slug": "13606612",
       "title": "Hibs earn historic win over Hearts to set up League Cup final with Rangers",
       "url": "https://www.skysports.com/football/news/13606612/hearts-1-2-hibernian-jamie-mcgrath-scores-winner-as-hibs-beat-rivals-at-hampden-for-first-time-to-set-up-scottish-league-cup-final-vs-rangers",
       "source": "Sky Sports",
       "image": "https://e0.365dm.com/26/11/768x432/skysports-hibs-jamie-mcgrath_7394065.jpg?20261101173558",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13606700",
+      "title": "'This is on Martin' - Sutton blames O'Neill for Celtic struggles",
+      "url": "https://www.skysports.com/football/news/13606700/celtic-team-in-regression-under-martin-oneill-and-manager-to-blame-says-chris-sutton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sutton-celtic-oneill_7393947.jpg?20261101162024",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13606610",
+      "title": "Celtic stunned as Falkirk claim first win vs Hoops in 19 years",
+      "url": "https://www.skysports.com/football/news/13606610/falkirk-2-0-celtic-martin-oneills-hoops-denied-chance-to-go-seven-points-clear-in-scottish-premiership-by-brilliant-bairns",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-celtic-cameron-carter-vickers_7393874.jpg?20261101145844",
       "excerpt": "",
       "published_label": "",
       "published_iso": "",
@@ -26,18 +60,6 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
-    },
-    {
-      "slug": "13606755",
-      "title": "'VAR, do your job!' - Was Timber's pull on Isak enough for a penalty?",
-      "url": "https://www.skysports.com/football/video/13606755/liverpool-vs-arsenal-carragher-sturridge-and-wright-discuss-liverpools-penalty-shout-as-timber-pulled-isaks-shirt",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-isak_7394061.jpg?20261101173304",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
     },
     {
       "slug": "13606748",
@@ -156,6 +178,85 @@
       "byline": ""
     },
     {
+      "slug": "13606877",
+      "title": "Alajbegovic scores super strike in Juventus’ victory over Napoli",
+      "url": "https://www.skysports.com/football/video/13606877/juventus-vs-napoli-serie-a-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-serie-a_7394370.jpg?20261101231734",
+      "excerpt": "Highlights of the Serie A match between Juventus and Napoli.",
+      "published_label": "01 November 2026 · 23:15",
+      "published_iso": "2026-11-01T23:15:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Serie A match between Juventus and Napoli."
+      ]
+    },
+    {
+      "slug": "13606815",
+      "title": "Defensive 'masterclass' and elite Rice - how Arsenal ended Anfield torment",
+      "url": "https://www.skysports.com/football/news/13606815/arsenals-defensive-masterclass-praised-in-liverpool-win-as-jamie-carragher-salutes-world-class-declan-rice",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-arsenal_7394132.jpg?20261101231038",
+      "excerpt": "Not since 2012 - when current boss Mikel Arteta was commanding Arsenal's midfield on the pitch - had the Gunners won on Liverpool’s patch. That curse has finally been broken.",
+      "published_label": "01 November 2026 · 23:00",
+      "published_iso": "2026-11-01T23:00:00+00:00",
+      "byline": "Laura Hunter",
+      "body": [
+        "Not since 2012 - when current boss Mikel Arteta was commanding Arsenal's midfield on the pitch - had the Gunners won on Liverpool’s patch. That curse has finally been broken.",
+        "Winning at Anfield is a rarity, especially for Arsenal. But Arteta's side were ruthless at both ends of the pitch, a tactical triumph for the boss and one that underlines his side's champion mentality.",
+        "\"I love when there is something that we haven't done for many years,\" beamed the Spaniard, who praised his players for a defensive performance he called \"remarkable\". If Arteta wanted to make a statement, he succeeded. Liverpool 0-1 Arsenal - Report and highlights Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Despite being pinned back in a first half dominated by Liverpool pressure, the visitors restricted their hosts to zero accurate shots - the first time on record the Reds failed to land at least one attempt on target at home."
+      ]
+    },
+    {
+      "slug": "13606782",
+      "title": "Chelsea hit six in rout of Charlton",
+      "url": "https://www.skysports.com/football/video/13606782/charlton-athletic-0-6-chelsea-wsl-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-charlton-chelsea_7394133.jpg?20261101184839",
+      "excerpt": "Highlights of the Women's Super League match between Charlton Athletic and Chelsea.",
+      "published_label": "01 November 2026 · 20:30",
+      "published_iso": "2026-11-01T20:30:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Women's Super League match between Charlton Athletic and Chelsea."
+      ]
+    },
+    {
+      "slug": "13606793",
+      "title": "Isak's non-penalty and Madueke-Mac Allister 'headbutt' - were big calls right?",
+      "url": "https://www.skysports.com/football/news/13606793/liverpool-0-1-arsenal-alexander-isak-jurrien-timber-shirt-pull-and-noni-madueke-alexis-mac-allister-headbutt-show-good-and-bad-sides-of-var",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexis-mac-allister_7394192.jpg?20261101200054",
+      "excerpt": "There were two big flashpoints during Arsenal's 1-0 win over Liverpool, demonstrating the good and bad sides of VAR.",
+      "published_label": "01 November 2026 · 20:05",
+      "published_iso": "2026-11-01T20:05:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "There were two big flashpoints during Arsenal's 1-0 win over Liverpool, demonstrating the good and bad sides of VAR.",
+        "Kai Havertz's early goal was enough for the Gunners to win at Anfield for the first time in 14 years, but there was plenty of action elsewhere in an enthralling encounter.",
+        "Read on to find out what our Super Sunday pundits had to say and tune into Ref Watch at 11am on Monday for the views of former Premier League referee Dermot Gallagher ... Liverpool 0-1 Arsenal - Report and highlights Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺 Isak denied penalty: 'VAR, do your job'",
+        "In the first half, Alexander Isak had his shirt pulled by Jurrien Timber - but did not react to the contact."
+      ]
+    },
+    {
+      "slug": "13606788",
+      "title": "'It has to STOP! Embarrassing!' - Mac Allister slammed for clash with Madueke",
+      "url": "https://www.skysports.com/football/video/13606788/liverpool-vs-arsenal-super-sunday-panel-on-maduekes-alleged-headbutt-incident-with-mac-allister",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mac-allister-liverpool_7394148.jpg?20261101190358",
+      "excerpt": "The Super Sunday panel discuss Alexis Mac Allister's clash with Noni Madueke where the Argentine midfielder fell to the ground after a head-to-head incident with the Arsenal winger.",
+      "published_label": "01 November 2026 · 18:54",
+      "published_iso": "2026-11-01T18:54:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "The Super Sunday panel discuss Alexis Mac Allister's clash with Noni Madueke where the Argentine midfielder fell to the ground after a head-to-head incident with the Arsenal winger."
+      ]
+    },
+    {
       "slug": "13606781",
       "title": "Arsenal triumphant in historic Anfield victory",
       "url": "https://www.skysports.com/football/video/13606781/liverpool-0-1-arsenal-premier-league-highlights",
@@ -252,6 +353,21 @@
       ]
     },
     {
+      "slug": "13606755",
+      "title": "'VAR, do your job!' - Was Timber's pull on Isak enough for a penalty?",
+      "url": "https://www.skysports.com/football/video/13606755/liverpool-vs-arsenal-carragher-sturridge-and-wright-discuss-liverpools-penalty-shout-as-timber-pulled-isaks-shirt",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-isak_7394061.jpg?20261101173304",
+      "excerpt": "Jamie Carragher, Daniel Sturridge and Ian Wright discuss Liverpool's penalty shout after Jurrien Timber pulled Alexander Isak's shirt as the striker attempted to head the ball.",
+      "published_label": "01 November 2026 · 17:27",
+      "published_iso": "2026-11-01T17:27:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie Carragher, Daniel Sturridge and Ian Wright discuss Liverpool's penalty shout after Jurrien Timber pulled Alexander Isak's shirt as the striker attempted to head the ball."
+      ]
+    },
+    {
       "slug": "13606726",
       "title": "Havertz fires Arsenal in front at Anfield",
       "url": "https://www.skysports.com/football/video/13606726/goal-k-havertz-16-liverpool-0-0-arsenal",
@@ -279,6 +395,23 @@
       "kind": "video",
       "body": [
         "Sky Sports' Gary Neville has his say on the current situation at Manchester United and admits he is finding the poor run of form 'really worrying '."
+      ]
+    },
+    {
+      "slug": "13605750",
+      "title": "Russo rescues frustrated Arsenal as Man City beat London City",
+      "url": "https://www.skysports.com/football/news/13605750/wsl-round-up-alessia-russo-scores-late-equaliser-to-salvage-draw-for-arsenal-as-man-city-hold-on-to-beat-london-city",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7393850.jpg?20261101143440",
+      "excerpt": "Russo rescues point for Arsenal in frustrating afternoon vs Villa",
+      "published_label": "01 November 2026 · 14:30",
+      "published_iso": "2026-11-01T14:30:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Russo rescues point for Arsenal in frustrating afternoon vs Villa",
+        "Alessia Russo scored a late equaliser to salvage a 1-1 draw for Arsenal against Aston Villa as Renee Slegers' side failed to make their dominance count at the Emirates Stadium.",
+        "The Gunners had 27 shots in total at the Emirates but were left frustrated by a stoic defensive performance from Villa, who sat deep to preserve their lead after Chasity Grant scored with their only shot of the game in the 25th minute.",
+        "Villa defended valiantly, supported by eight saves from Akane Okuma, before Russo latched onto Stina Blackstenius' cross to head home the equaliser in the 85th minute."
       ]
     },
     {
@@ -460,6 +593,23 @@
       ]
     },
     {
+      "slug": "13606869",
+      "title": "Papers: Ten Hag warns Man Utd could be relegated",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13606869/erik-ten-hag-warns-manchester-united-could-be-relegated-after-slipping-to-17th-in-the-premier-league-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Monday's newspapers... PREMIER LEAGUE",
+      "published_label": "31 October 2026 · 22:00",
+      "published_iso": "2026-10-31T22:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Monday's newspapers... PREMIER LEAGUE",
+        "Erik ten Hag has warned Manchester United could be relegated after slipping to 17th in the table - The Sun",
+        "Premier League fans were shocked to see James Milner running in the New York Marathon - The Sun Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Fermin Lopez announced his desire to retire at Barcelona after rubbishing rumours of a potential transfer to Manchester United - Daily Mirror SCOTTISH FOOTBALL"
+      ]
+    },
+    {
       "slug": "13606527",
       "title": "Papers: Carrick to be given at least two more games in charge at Man Utd",
       "url": "https://www.skysports.com/football/transfer-paper-talk/13606527/manchester-united-michael-carrick-to-be-given-at-least-two-more-matches-in-charge-despite-overseeing-worst-run-in-nearly-40-years-paper-talk",
@@ -568,164 +718,6 @@
       "kind": "video",
       "body": [
         "Highlights of the Sky Bet League Two match between Shrewsbury and Gillingham."
-      ]
-    },
-    {
-      "slug": "13606395",
-      "title": "Swindon 2-1 Rotheram",
-      "url": "https://www.skysports.com/football/video/13606395/swindon-town-2-1-rotheram-united-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/0c890e1d33fc1248d1abc156863882f452b761819b2d52c1d84caf792e60fce2_7393169.jpg?20261031182747",
-      "excerpt": "Highlights of the Sky Bet League Two match between Swindon Town and Rotherham United.",
-      "published_label": "31 October 2026 · 18:25",
-      "published_iso": "2026-10-31T18:25:00+00:00",
-      "byline": "Swindon Town 2-1 Rotheram United | League Two highlights",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League Two match between Swindon Town and Rotherham United."
-      ]
-    },
-    {
-      "slug": "13606393",
-      "title": "Leicester 2-2 Stevenage",
-      "url": "https://www.skysports.com/football/video/13606393/leicester-2-2-stevenage-league-one-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/a737b2621705fba5cd00b72d06cb1ab71e7db063e237f213009329b6882a62fc_7393161.jpg?20261031182516",
-      "excerpt": "Highlights of the Sky Bet League One match between Leicester and Stevenage.",
-      "published_label": "31 October 2026 · 18:22",
-      "published_iso": "2026-10-31T18:22:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League One match between Leicester and Stevenage."
-      ]
-    },
-    {
-      "slug": "13606390",
-      "title": "Score against Arsenal, HORROR miss from three yards days later!",
-      "url": "https://www.skysports.com/football/video/13606390/aaron-loupalo-bi-misses-sitter-for-fleetwood",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-fleetwood-miss_7393160.jpg?20261031182419",
-      "excerpt": "Fleetwood Town's Aaron Loupalo-Bi had a horror moment as he failed to put the ball in the back of the net against Bristol Rovers.",
-      "published_label": "31 October 2026 · 18:19",
-      "published_iso": "2026-10-31T18:19:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Fleetwood Town's Aaron Loupalo-Bi had a horror moment as he failed to put the ball in the back of the net against Bristol Rovers."
-      ]
-    },
-    {
-      "slug": "13606290",
-      "title": "Trafford howler and late Adli strike help Bournemouth see off Leeds",
-      "url": "https://www.skysports.com/football/video/13606290/bournemouth-2-0-leeds-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-bournemouth-leeds_7392952.jpg?20261031170628",
-      "excerpt": "Highlights from the Premier League match between Bournemouth and Leeds.",
-      "published_label": "31 October 2026 · 17:47",
-      "published_iso": "2026-10-31T17:47:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights from the Premier League match between Bournemouth and Leeds."
-      ]
-    },
-    {
-      "slug": "13606317",
-      "title": "Coventry gain huge win over 10-man Sunderland",
-      "url": "https://www.skysports.com/football/video/13606317/coventry-3-1-sunderland-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-coventry-sunderland_7392951.jpg?20261031170603",
-      "excerpt": "Highlights from the Premier League as Coventry faced Sunderland.",
-      "published_label": "31 October 2026 · 17:30",
-      "published_iso": "2026-10-31T17:30:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights from the Premier League as Coventry faced Sunderland."
-      ]
-    },
-    {
-      "slug": "13606271",
-      "title": "Ipswich fight back for draw at Hull",
-      "url": "https://www.skysports.com/football/video/13606271/hull-2-2-ipswich-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7392939.jpg?20261031170315",
-      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Hull and Ipswich Town.",
-      "published_label": "31 October 2026 · 17:09",
-      "published_iso": "2026-10-31T17:09:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "FREE TO WATCH: Highlights from the Premier League match between Hull and Ipswich Town."
-      ]
-    },
-    {
-      "slug": "13604412",
-      "title": "PL Predictions: Can Liverpool catapult into the title race?",
-      "url": "https://www.skysports.com/football/news/13604412/premier-league-predictions-and-jones-knows-best-bets-liverpool-vs-arsenal-crystal-palace-vs-tottenham-and-much-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
-      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for a busy weekend of Premier League action. Liverpool vs Arsenal, Sunday 4.30pm, live on Sky Sports - PLAY SUPER 6! Got Sky? Watch Premier League games…",
-      "published_label": "31 October 2026 · 17:00",
-      "published_iso": "2026-10-31T17:00:00+00:00",
-      "byline": "Lewis Jones",
-      "body": [
-        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for a busy weekend of Premier League action. Liverpool vs Arsenal, Sunday 4.30pm, live on Sky Sports - PLAY SUPER 6! Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Andoni Iraola loves a tactical foul. You can often spot him applauding from the touchline when one of his players takes the decision to halt an opposition attack before it develops into something dangerous. It is a key part of his football philosophy. Stop the transition early.",
-        "That mentality has clearly travelled with him to Liverpool. His side are averaging 13.75 fouls per game in the Premier League and I like the look of backing them to keep that average ticking over against Arsenal.",
-        "This fixture has all the ingredients for a high foul count. The intensity should be obvious from the first whistle, with both sides capable of hurting each other in transition and Arsenal happy to engage in a duel-heavy game. That's their bread and butter."
-      ]
-    },
-    {
-      "slug": "13592754",
-      "title": "Fleetwood 3-1 Bristol Rovers",
-      "url": "https://www.skysports.com/football/news/13592754/x",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "Fleetwood backed up their midweek Carabao Cup exploits with a 3-1 win over Bristol Rovers at Highbury.",
-      "published_label": "31 October 2026 · 17:00",
-      "published_iso": "2026-10-31T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Fleetwood backed up their midweek Carabao Cup exploits with a 3-1 win over Bristol Rovers at Highbury.",
-        "Matt Lawlor's side, who knocked Premier League champions Arsenal out of the tournament on Tuesday night, picked up the three points thanks to goals from Aaron Loupalo-Bi, Rhys Bennett and Josh Roberston.",
-        "The Cod Army opened the scoring just after the half-hour mark through on-loan Fulham striker Loupalo-Bi when he finished neatly from just outside the area following some tidy work from Mark Helm. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "The hosts then doubled their lead seven minutes into the second period thanks to a bullet header from centre-back Rhys Bennett when he got on the end of Harrison Neal's driven cross."
-      ]
-    },
-    {
-      "slug": "13592758",
-      "title": "Shrewsbury 1-2 Gillingham",
-      "url": "https://www.skysports.com/football/news/13592758/x",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "Andy Smith scored his first goal since April to give Gillingham all three points in a 2-1 win against Shrewsbury at Croud Meadow.",
-      "published_label": "31 October 2026 · 17:00",
-      "published_iso": "2026-10-31T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Andy Smith scored his first goal since April to give Gillingham all three points in a 2-1 win against Shrewsbury at Croud Meadow.",
-        "The centre-back was first to react when a late deflected cross from sub Bradley Dack came off the bar, and Smith was well placed to convert from a few yards. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "Harry Waldock had put the visitors in front after just a few minutes, netting his first senior goal in the process, only for George Lloyd to equalise around the hour mark from the penalty spot.",
-        "The Shrews were indebted to goalkeeper Will Brook, who made two outstanding saves from Ronan Hale and Conor McManus, but Smith finally found a way through for Gareth Ainsworth's side."
-      ]
-    },
-    {
-      "slug": "13593177",
-      "title": "Leicester 2-2 Stevenage",
-      "url": "https://www.skysports.com/football/news/13593177/x",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
-      "excerpt": "A clever strike from Tugra Turhan frustrated Leicester by earning Stevenage a 2-2 draw at the King Power Stadium.",
-      "published_label": "31 October 2026 · 17:00",
-      "published_iso": "2026-10-31T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "A clever strike from Tugra Turhan frustrated Leicester by earning Stevenage a 2-2 draw at the King Power Stadium.",
-        "The teenager, on loan from Istanbul Basaksehir, marked his league debut for the visitors by scoring the equaliser with 12 minutes remaining after combining with fellow substitute Chem Campbell. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "Russell Martin's side had led twice but could not record a fourth win in five.",
-        "Despite making a fast start, when Sammy Braybrooke netted his first senior goal for the club after only 67 seconds when Stevenage failed to deal with a Luke Thomas cross, City handed their opponents a route back into the game."
       ]
     }
   ]
