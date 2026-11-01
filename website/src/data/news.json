@@ -1,10 +1,44 @@
 {
-  "synced_at": "2026-11-01T06:06:45+00:00",
+  "synced_at": "2026-11-01T13:25:39+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13605389",
+      "title": "Arsenal striker dilemma: Should Arteta keep faith in Havertz?",
+      "url": "https://www.skysports.com/football/news/13605389/arsenals-kai-havertz-in-goal-drought-so-should-mikel-arteta-keep-faith-in-him-ahead-of-viktor-gyokeres-against-liverpool",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-kai-havertz-arsenal_7391052.jpg?20261029154631",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13605451",
+      "title": "Why keeping Isak fit and firing is key to Iraola's Liverpool revival",
+      "url": "https://www.skysports.com/football/news/13605451/alexander-isak-why-keeping-sweden-striker-fit-and-firing-is-key-to-andoni-iraolas-liverpool-revival",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-liverpool_7390621.jpg?20261029083255",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13606301",
+      "title": "Brighton condemn Man City to back-to-back PL defeats",
+      "url": "https://www.skysports.com/football/video/13606301/manchester-city-0-1-brighton-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-man-c-brighton_7392987.jpg?20261031171704",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13606391",
       "title": "Fleetwood 3-1 Bristol Rovers",
@@ -23,18 +57,6 @@
       "url": "https://www.skysports.com/football/video/13606239/brentford-2-0-nottingham-forest-premier-league-highlights",
       "source": "Sky Sports",
       "image": "https://e0.365dm.com/26/10/768x432/skysports-brentford-pl_7393159.jpg?20261031182409",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606301",
-      "title": "Brighton condemn Man City to back-to-back PL defeats",
-      "url": "https://www.skysports.com/football/video/13606301/manchester-city-0-1-brighton-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-man-c-brighton_7392987.jpg?20261031171704",
       "excerpt": "",
       "published_label": "",
       "published_iso": "",
@@ -88,18 +110,95 @@
       "byline": ""
     },
     {
-      "slug": "13606394",
-      "title": "REFCAM captures Man Utd's woeful defending for Rogers' goal",
-      "url": "https://www.skysports.com/football/video/13606394/refcam-captures-man-utds-woeful-defending-for-morgan-rogers-goal-in-chelsea-win",
+      "slug": "13606632",
+      "title": "'A Fantastic start for Falkirk!' - Ross scores after Carter-Vickers error",
+      "url": "https://www.skysports.com/football/video/13606632/a-fantastic-start-for-falkirk-ross-scores-after-carter-vickers-error",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-rogers-refcam-goal_7393195.jpg?20261031184249",
-      "excerpt": "The REFCAM footage of Morgan Rogers' goal for Chelsea against Manchester United highlighted the woeful defending from Michael Carrick's men.",
-      "published_label": "01 November 2026 · 00:00",
-      "published_iso": "2026-11-01T00:00:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-scottish-premership_7393780.jpg?20261101132254",
+      "excerpt": "Ethan Ross gives Falkirk an early lead against Celtic after an error from Cameron Carter-Vickers.",
+      "published_label": "01 November 2026 · 13:13",
+      "published_iso": "2026-11-01T13:13:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "The REFCAM footage of Morgan Rogers' goal for Chelsea against Manchester United highlighted the woeful defending from Michael Carrick's men."
+        "Ethan Ross gives Falkirk an early lead against Celtic after an error from Cameron Carter-Vickers."
+      ]
+    },
+    {
+      "slug": "13606625",
+      "title": "'It doesn't get any easier!' - Carrick's United face tough Roma side next!",
+      "url": "https://www.skysports.com/football/video/13606625/it-doesnt-get-any-easier-michael-carrick-to-face-tough-roma-side",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-d_7393764.jpg?20261101124314",
+      "excerpt": "Sky Sports' Danyal Khan brings the latest update on Michael Carrick's future at Manchester United as they prepare for a vey tough test in the Champions League against Roma.",
+      "published_label": "01 November 2026 · 12:37",
+      "published_iso": "2026-11-01T12:37:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Danyal Khan brings the latest update on Michael Carrick's future at Manchester United as they prepare for a vey tough test in the Champions League against Roma."
+      ]
+    },
+    {
+      "slug": "13606617",
+      "title": "Do 'in trouble' Palace need a fresh start from Sage?",
+      "url": "https://www.skysports.com/football/video/13606617/sunday-supplement-do-crystal-palace-need-a-fresh-start-from-pierre-sage",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sunday-supplement_7393730.jpg?20261101120317",
+      "excerpt": "Sunday Supplement takes a closer look at Crystal Palace's struggles this season and discuss who may be able to turn it round if the club decide to part ways with Pierre Sage.",
+      "published_label": "01 November 2026 · 11:59",
+      "published_iso": "2026-11-01T11:59:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sunday Supplement takes a closer look at Crystal Palace's struggles this season and discuss who may be able to turn it round if the club decide to part ways with Pierre Sage."
+      ]
+    },
+    {
+      "slug": "13606605",
+      "title": "Who's to blame at Man Utd and what's the solution?",
+      "url": "https://www.skysports.com/football/video/13606605/sunday-supplement-whos-to-blame-at-manchester-utd-and-what-is-the-solution",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-carrick-man-utd_7393710.jpg?20261101105249",
+      "excerpt": "Sunday Supplement looks at the crisis at Manchester United and whether or not they are realistically in danger of relegation this season, and who is the right man to help them avoid that.",
+      "published_label": "01 November 2026 · 10:47",
+      "published_iso": "2026-11-01T10:47:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sunday Supplement looks at the crisis at Manchester United and whether or not they are realistically in danger of relegation this season, and who is the right man to help them avoid that."
+      ]
+    },
+    {
+      "slug": "13606576",
+      "title": "'Can I borrow your cap?' Keeper takes Ian Holloway's hat!",
+      "url": "https://www.skysports.com/football/video/13606576/goalkeeper-takes-ian-holloways-hat",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-s_7393638.jpg?20261101080718",
+      "excerpt": "Swindon Town goalkeeper Connor Ripley had to borrow Ian Holloway's hat during their Sky Bet League two match against Rotherham!",
+      "published_label": "01 November 2026 · 08:03",
+      "published_iso": "2026-11-01T08:03:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Swindon Town goalkeeper Connor Ripley had to borrow Ian Holloway's hat during their Sky Bet League two match against Rotherham!"
+      ]
+    },
+    {
+      "slug": "13606068",
+      "title": "How to watch Liverpool vs Arsenal",
+      "url": "https://www.skysports.com/football/news/13606068/liverpool-vs-arsenal-how-to-watch-tv-channel-live-stream-now-tv-team-news-and-score-prediction",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-liverpool-arsenal_7392535.jpg?20261031113608",
+      "excerpt": "Liverpool host Arsenal at Anfield in a huge Premier League clash on Super Sunday on November 1, live on Sky Sports .",
+      "published_label": "01 November 2026 · 07:00",
+      "published_iso": "2026-11-01T07:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Liverpool host Arsenal at Anfield in a huge Premier League clash on Super Sunday on November 1, live on Sky Sports .",
+        "Liverpool are fifth in the Premier League table following Chelsea's win on Saturday , but will climb back above the Blues with victory at Anfield.",
+        "Andoni Iraola's side are on a five-game unbeaten run in all competitions after beating Chelsea on penalties in the Carabao Cup in midweek. Liverpool vs Arsenal live updates Liverpool news & transfers 🔴 | Arsenal news & transfers 🔴⚪ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Arsenal are second in the table on goal difference, but will surpass Man City at the summit if they avoid defeat after Enzo Maresca's side lost to Brighton on Saturday."
       ]
     },
     {
@@ -115,6 +214,21 @@
       "kind": "video",
       "body": [
         "After an eventful set of Halloween Premier League fixtures, we look at some of the horrifying moments across the day's action, including Lisandro Martinez, Zion Suzuki and many more."
+      ]
+    },
+    {
+      "slug": "13606394",
+      "title": "REFCAM captures Man Utd's woeful defending for Rogers' goal",
+      "url": "https://www.skysports.com/football/video/13606394/refcam-captures-man-utds-woeful-defending-for-morgan-rogers-goal-in-chelsea-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-rogers-refcam-goal_7393195.jpg?20261031184249",
+      "excerpt": "The REFCAM footage of Morgan Rogers' goal for Chelsea against Manchester United highlighted the woeful defending from Michael Carrick's men.",
+      "published_label": "01 November 2026 · 00:00",
+      "published_iso": "2026-11-01T00:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "The REFCAM footage of Morgan Rogers' goal for Chelsea against Manchester United highlighted the woeful defending from Michael Carrick's men."
       ]
     },
     {
@@ -364,6 +478,23 @@
       ]
     },
     {
+      "slug": "13604412",
+      "title": "PL Predictions: Can Liverpool catapult into the title race?",
+      "url": "https://www.skysports.com/football/news/13604412/premier-league-predictions-and-jones-knows-best-bets-liverpool-vs-arsenal-crystal-palace-vs-tottenham-and-much-more",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
+      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for a busy weekend of Premier League action. Liverpool vs Arsenal, Sunday 4.30pm, live on Sky Sports - PLAY SUPER 6! Got Sky? Watch Premier League games…",
+      "published_label": "31 October 2026 · 17:00",
+      "published_iso": "2026-10-31T17:00:00+00:00",
+      "byline": "Lewis Jones",
+      "body": [
+        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for a busy weekend of Premier League action. Liverpool vs Arsenal, Sunday 4.30pm, live on Sky Sports - PLAY SUPER 6! Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Andoni Iraola loves a tactical foul. You can often spot him applauding from the touchline when one of his players takes the decision to halt an opposition attack before it develops into something dangerous. It is a key part of his football philosophy. Stop the transition early.",
+        "That mentality has clearly travelled with him to Liverpool. His side are averaging 13.75 fouls per game in the Premier League and I like the look of backing them to keep that average ticking over against Arsenal.",
+        "This fixture has all the ingredients for a high foul count. The intensity should be obvious from the first whistle, with both sides capable of hurting each other in transition and Arsenal happy to engage in a duel-heavy game. That's their bread and butter."
+      ]
+    },
+    {
       "slug": "13592754",
       "title": "Fleetwood 3-1 Bristol Rovers",
       "url": "https://www.skysports.com/football/news/13592754/x",
@@ -498,25 +629,25 @@
       ]
     },
     {
-      "slug": "antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix",
-      "title": "The ‘Simple’ Equation Standing Between Kimi Antonelli and F1 Champions",
-      "url": "https://www.sportytrader.com/en/news/antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/soweto-derby-2026.webp",
-      "excerpt": "Since taking over Lewis Hamilton’s legendary seat, Andrea Kimi Antonelli has spent his rookie season defying the odds, and tomorrow evening at the Autódromo Hermanos Rodr",
-      "published_label": "31 October 2026 · 08:00",
-      "published_iso": "2026-10-31T08:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
       "slug": "soweto-derby-headlines-psl-weekend-schedule",
       "title": "Durban and Soweto Derby Headline High-Stakes PSL Weekend Schedule",
       "url": "https://www.sportytrader.com/en-za/news/soweto-derby-headlines-psl-weekend-schedule/",
       "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/morgan_rogers_chelsea.webp",
+      "image": "https://static.sportytrader.com/images/news/formula-1/2026-mexico-city-gp.webp",
       "excerpt": "It is the most explosive Saturday on the South African football calendar, and the stakes have never been higher. The headline act of the weekend is the Soweto Derby, with",
-      "published_label": "31 October 2026 · 05:30",
-      "published_iso": "2026-10-31T05:30:00+00:00",
+      "published_label": "31 October 2026 · 07:30",
+      "published_iso": "2026-10-31T07:30:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
+      "slug": "antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix",
+      "title": "The ‘Simple’ Equation Standing Between Kimi Antonelli and F1 Champions",
+      "url": "https://www.sportytrader.com/en/news/antonelli-to-win-2026-f1-drivers-championship-at-mexico-city-grand-prix/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/morgan_rogers_chelsea.webp",
+      "excerpt": "Since taking over Lewis Hamilton’s legendary seat, Andrea Kimi Antonelli has spent his rookie season defying the odds, and tomorrow evening at the Autódromo Hermanos Rodr",
+      "published_label": "31 October 2026 · 05:00",
+      "published_iso": "2026-10-31T05:00:00+00:00",
       "byline": "Devesh Jaganath"
     },
     {
@@ -526,8 +657,8 @@
       "source": "SportyTrader",
       "image": "https://static.sportytrader.com/images/news/football/2027/united_mbeumo_2026.webp",
       "excerpt": "Chelsea host Manchester United at Stamford Bridge on Saturday lunchtime in Premier League Gameweek 9. Xabi Alonso's Chelsea are fifth on 13 points but lost 0-2 at home to",
-      "published_label": "31 October 2026 · 02:00",
-      "published_iso": "2026-10-31T02:00:00+00:00",
+      "published_label": "31 October 2026 · 04:00",
+      "published_iso": "2026-10-31T04:00:00+00:00",
       "byline": "Geoffrey Ejiga"
     },
     {
@@ -595,159 +726,20 @@
       ]
     },
     {
-      "slug": "13592536",
-      "title": "Newport 4-1 Chesterfield",
-      "url": "https://www.skysports.com/football/news/13592536/newport-4-1-chesterfield",
+      "slug": "13604012",
+      "title": "Merson: Liverpool must beat Arsenal to be in the title race",
+      "url": "https://www.skysports.com/football/news/13604012/liverpool-vs-arsenal-andoni-iraolas-side-must-beat-the-premier-league-champions-to-be-in-the-title-race-says-paul-merson",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "Newport cruised to a 4-1 victory over Chesterfield at Rodney Parade thanks to a first-half goal blitz.",
-      "published_label": "30 October 2026 · 21:35",
-      "published_iso": "2026-10-30T21:35:00+00:00",
-      "byline": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-merson-says-andoni-iraola_7387906.jpg?20261026133750",
+      "excerpt": "In his latest Sky Sports column, Paul Merson believes Liverpool have to beat Arsenal at Anfield on Sunday to be contenders for the Premier League title.",
+      "published_label": "30 October 2026 · 08:00",
+      "published_iso": "2026-10-30T08:00:00+00:00",
+      "byline": "Paul Merson",
       "body": [
-        "Newport cruised to a 4-1 victory over Chesterfield at Rodney Parade thanks to a first-half goal blitz.",
-        "Right-back Cameron Norman got the ball rolling with a hammer of a free-kick that fizzed into the bottom corner to put County ahead in the 14th minute.",
-        "It was 2-0 four minutes later when left-back Tom Davies controlled a loose ball in the box and managed to hook a shot past Zach Hemming in the Chesterfield goal. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "Harrison Biggins added a third after half an hour when he tried his luck from distance and caught out Hemming, despite his shot lacking power."
-      ]
-    },
-    {
-      "slug": "13605941",
-      "title": "Hakimi nets brilliant hat-trick as PSG fire five past Le Havre!",
-      "url": "https://www.skysports.com/football/video/13605941/le-havre-1-5-paris-saint-germain-ligue-1-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-psg-hakimi_7392301.jpg?20261030213145",
-      "excerpt": "Highlights of the Ligue 1 match between Le Havre and PSG.",
-      "published_label": "30 October 2026 · 20:41",
-      "published_iso": "2026-10-30T20:41:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Ligue 1 match between Le Havre and PSG."
-      ]
-    },
-    {
-      "slug": "13605940",
-      "title": "Brereton Diaz gives Sheff Utd deserved lead at Bramall Lane!",
-      "url": "https://www.skysports.com/football/video/13605940/sheffield-united-vs-wrexham-ben-brereton-diaz-gives-blades-the-lead-at-bramall-lane",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-sheffield-united_7392272.jpg?20261030204816",
-      "excerpt": "Ben Brereton Diaz gave Sheffield United the lead at Bramall Lane in their Championship clash with Wrexham.",
-      "published_label": "30 October 2026 · 20:39",
-      "published_iso": "2026-10-30T20:39:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Ben Brereton Diaz gave Sheffield United the lead at Bramall Lane in their Championship clash with Wrexham."
-      ]
-    },
-    {
-      "slug": "13605884",
-      "title": "Hits and misses: Martinez sums up Man Utd disorder as Brighton dare to dream",
-      "url": "https://www.skysports.com/football/news/13605884/lisandro-martinez-red-card-sums-up-dysfunction-at-man-utd-as-brighton-post-statement-win-to-spark-title-talk-premier-league-hits-and-misses",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-hits-and-misses_7393214.jpg?20261031185319",
-      "excerpt": "Lisandro Martinez pointed the finger at technical director Jason Wilcox and the club's hierarchy in his outspoken interview after the Atletico Madrid game . But he only had himself to blame for the events leading to his red card and Chelsea…",
-      "published_label": "30 October 2026 · 19:13",
-      "published_iso": "2026-10-30T19:13:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Lisandro Martinez pointed the finger at technical director Jason Wilcox and the club's hierarchy in his outspoken interview after the Atletico Madrid game . But he only had himself to blame for the events leading to his red card and Chelsea's penalty on Sunday.",
-        "There were barely three minutes between the foul on Morgan Rogers that earned him his first yellow card of the afternoon in Manchester United's 2-0 win at Stamford Bridge and the confirmation, from referee Peter Bankes, that he would be receiving a second for needlessly raising an arm to the face of Wesley Fofana in the box. Report & highlights: Chelsea 2-0 Man Utd Live Premier League table | Watch FREE PL highlights",
-        "The defender, starting for the first time since the 1-1 draw against Leeds, was also one of the players at fault for Chelsea's opener, when Rogers glided through United's defence with bewildering ease to set the wheels in motion for United's defeat.",
-        "Martinez was not acknowledged by Michael Carrick as he trudged down the tunnel. But the United head coach did not criticise him after the game, albeit while acknowledging the double whammy of having him sent off, and conceding a penalty, was a \"big moment\" in the game."
-      ]
-    },
-    {
-      "slug": "13605903",
-      "title": "Mac Allister vs Alisson and Konsa vs Calafiori | 'Who Am I?' Teammates Quiz",
-      "url": "https://www.skysports.com/football/video/13605903/alexis-mac-allister-vs-alisson-becker-and-ezri-konsa-vs-riccardo-calafiori-who-am-i-teammates-quiz",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-arsenal_7392159.jpg?20261030190103",
-      "excerpt": "Liverpool duo Alexis Mac Allister and Alisson Becker and Arsenal duo Ezri Konsa and Riccardo Calafiori take on the 'Who Am I?' quiz. Which of them knows their teammates the best and will come out on top?",
-      "published_label": "30 October 2026 · 18:58",
-      "published_iso": "2026-10-30T18:58:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Liverpool duo Alexis Mac Allister and Alisson Becker and Arsenal duo Ezri Konsa and Riccardo Calafiori take on the 'Who Am I?' quiz. Which of them knows their teammates the best and will come out on top?"
-      ]
-    },
-    {
-      "slug": "13605812",
-      "title": "How Maestre and LCL are succeeding ahead of 'biggest' Man City test",
-      "url": "https://www.skysports.com/football/news/13605812/london-city-lionesses-eder-maestre-explains-how-his-team-are-succeeding-in-the-wsl-ahead-of-big-man-city-test",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-wsl-womens-super-league_7390644.jpg?20261029090850",
-      "excerpt": "The sight of superstars rolling into London City Lionesses this summer was exciting for many, but there was one man who was tasked with making them a team - head coach Eder Maestre.",
-      "published_label": "30 October 2026 · 18:55",
-      "published_iso": "2026-10-30T18:55:00+00:00",
-      "byline": "Charlotte Marsh",
-      "body": [
-        "The sight of superstars rolling into London City Lionesses this summer was exciting for many, but there was one man who was tasked with making them a team - head coach Eder Maestre.",
-        "Some questioned how he was going to balance a team of such talent - both incoming and already present - most of whom are used to starting, along with Michele Kang's vision for disruption - smash the traditional big three and qualify for Europe.",
-        "And it is so far, so good. The Bromley-based club are third in the WSL with 16 points - already seven ahead of Arsenal - and have proven their summer acquisitions were more than just big names through the door. Buy tickets HERE for London City Lionesses vs Man City WSL scores & fixtures | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
-        "\"It's surprisingly good how fast we were able to assemble a lot of things, considering all the things that we have and trying to understand the different contexts that the players came from,\" he exclusively told Sky Sports ahead of Sunday's game against Manchester City."
-      ]
-    },
-    {
-      "slug": "13605448",
-      "title": "Carrick's last chance? The fixes Man Utd may need at Chelsea",
-      "url": "https://www.skysports.com/football/news/13605448/michael-carrick-what-man-utd-boss-could-change-for-saturdays-premier-league-game-at-chelsea",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-manchester-united_7391721.jpg?20261030101520",
-      "excerpt": "You would be forgiven for wondering how much longer Michael Carrick will remain in the Manchester United dugout.",
-      "published_label": "30 October 2026 · 17:00",
-      "published_iso": "2026-10-30T17:00:00+00:00",
-      "byline": "William Bitibiri",
-      "body": [
-        "You would be forgiven for wondering how much longer Michael Carrick will remain in the Manchester United dugout.",
-        "A run of eight games without a win has left Carrick searching for answers, with the performances raising as many questions as the results.",
-        "The energy and organisation of his interim spell last season has been replaced by a team struggling to find their identity.",
-        "Chelsea away is next on Saturday. Carrick needs to find solutions, and quickly. But what can he actually change?"
-      ]
-    },
-    {
-      "slug": "13605845",
-      "title": "Robinson's 'dip in form' and Rowe's absence - Arbeloa explains all",
-      "url": "https://www.skysports.com/football/video/13605845/fulham-antonee-robinsons-dip-in-form-and-emile-smith-rowes-absence-alvaro-arbeloa-explains-all",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-fulham_7392060.jpg?20261030171316",
-      "excerpt": "Fulham boss Alvaro Arbeloa has explained why Emile Smith Rowe has not featured in his last three matchday squads and discusses Antonee Robinson's 'dip in form'.",
-      "published_label": "30 October 2026 · 16:59",
-      "published_iso": "2026-10-30T16:59:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Fulham boss Alvaro Arbeloa has explained why Emile Smith Rowe has not featured in his last three matchday squads and discusses Antonee Robinson's 'dip in form'."
-      ]
-    },
-    {
-      "slug": "this-weekend-s-best-player-props-mbeumo-anderson-and-ryerson",
-      "title": "This Weekend’s Best Player Props: Mbeumo, Anderson and Ryerson",
-      "url": "https://www.sportytrader.com/en/news/this-weekend-s-best-player-props-mbeumo-anderson-and-ryerson/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/nff-and-fifa-committee.webp",
-      "excerpt": "In this week's look into some of the top player props across Europe, we're focusing in on two Premier League matchups as well as a mammoth Der Klassiker in the Bundesliga",
-      "published_label": "30 October 2026 · 15:00",
-      "published_iso": "2026-10-30T15:00:00+00:00",
-      "byline": "Joseph King"
-    },
-    {
-      "slug": "13605254",
-      "title": "How Suzuki has wowed Villa fans since replacing Martinez",
-      "url": "https://www.skysports.com/football/news/13605254/zion-suzuki-analysis-how-emi-martinezs-aston-villa-replacement-now-looks-like-a-potential-upgrade-given-his-range-of-skills",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-zion-suzuki-aston-villa_7390795.jpg?20261029112621",
-      "excerpt": "Aston Villa fans still sing about having the world's number one goalkeeper. But what started as a chant for Emiliano Martinez and morphed into defiant support for young Japanese goalkeeper Zion Suzuki has become something else. They actuall…",
-      "published_label": "30 October 2026 · 14:30",
-      "published_iso": "2026-10-30T14:30:00+00:00",
-      "byline": "Adam Bate",
-      "body": [
-        "Aston Villa fans still sing about having the world's number one goalkeeper. But what started as a chant for Emiliano Martinez and morphed into defiant support for young Japanese goalkeeper Zion Suzuki has become something else. They actually believe it.",
-        "Suzuki has been superb since joining from Parma in the summer. Not only has Martinez not been as missed as many anticipated, there is growing optimism that in his 24-year-old replacement, Villa have a goalkeeper who has even more facets to his game.",
-        "There have been some standout displays already. Suzuki was excellent in the win over Manchester City last time out, ending their 100-per-cent Premier League record under Enzo Maresca. The contrast with Gianluigi Donnarumma at the other end was stark. Transfer Centre LIVE! | Aston Villa news & transfers 🦁 Aston Villa fixtures & scores | FREE Villa highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
-        "While the Champions League winner allowed Nicolas Jackson's decider to go through him, Suzuki pulled off a series of stops, relieved pressure with his claims and looked far more composed with the ball at his feet. Only one of the two looked world class."
+        "In his latest Sky Sports column, Paul Merson believes Liverpool have to beat Arsenal at Anfield on Sunday to be contenders for the Premier League title.",
+        "Andoni Iraola's side host the champions live on Sky Sports' Super Sunday , kick-off 4.30pm, with Liverpool six points behind joint-leaders Arsenal and Man City.",
+        "Iraola managed three victories over Arteta's Arsenal in his final four meetings as Bournemouth head coach, but the Reds boss lost his first heavyweight clash at Anfield against City earlier this month. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "With Liverpool on a five-game winning run and Arsenal unbeaten in six, read below for the Magic Man's thoughts about the game of the weekend... 'If Liverpool want a title race, they have to beat Arsenal'"
       ]
     }
   ]
