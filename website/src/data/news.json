@@ -1,10 +1,46 @@
 {
-  "synced_at": "2026-11-02T06:05:06+00:00",
+  "synced_at": "2026-11-02T15:54:31+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13607038",
+      "title": "Bellingham vs Zidane: How do the Real Madrid stars' stats compare?",
+      "url": "https://www.skysports.com/football/video/13607038/jude-bellingham-how-do-real-madrid-stars-stats-compare-with-the-rest-of-europe",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jude-bellingham-real_7394753.jpg?20261102113030",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13607049",
+      "title": "'That's violent conduct!' - Should Martinez have received a straight red?",
+      "url": "https://www.skysports.com/football/video/13607049/ref-watch-debate-whether-lisandro-martinez-should-have-received-a-straight-red-against-chelsea",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ref-watch-martinez_7394787.jpg?20261102121150",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13607010",
+      "title": "'It's like a parting of the Red Sea!' - Tim & Jay slam United defence on Rogers goal",
+      "url": "https://www.skysports.com/football/video/13607010/tim-sherwood-and-jay-bothroyd-slam-manchester-united-defense-on-morgan-rogers-goal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7394702.jpg?20261102110007",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13605451",
       "title": "Why keeping Isak fit and firing is key to Iraola's Liverpool revival",
@@ -97,6 +133,143 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13607133",
+      "title": "Forest hierarchy welcome Glasner's strong words after Brentford loss",
+      "url": "https://www.skysports.com/football/news/13607133/oliver-glasner-nottingham-forest-hierarchy-welcome-strong-reaction-from-head-coach-after-brentford-defeat",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-oliver-glasner-nottingham-forest_7394978.jpg?20261102144336",
+      "excerpt": "Oliver Glasner’s strong words about his team have been welcomed by many in the Nottingham Forest hierarchy, Sky Sports News understands.",
+      "published_label": "02 November 2026 · 14:45",
+      "published_iso": "2026-11-02T14:45:00+00:00",
+      "byline": "Anton Toloui",
+      "body": [
+        "Oliver Glasner’s strong words about his team have been welcomed by many in the Nottingham Forest hierarchy, Sky Sports News understands.",
+        "Sources at the club are impressed by his determination to get Forest out of their current slump and insist it is \"business as usual\" following the criticism he levelled at some of his players.",
+        "Glasner said there would be \"no more hugs\" after his side slipped to 19th in the Premier League with Saturday's 2-0 defeat at Brentford. 'The same s*** situation' - Angry Glanser vows to change or be sacked Forest latest | Forest fixtures & scores | FREE Forest highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Having departed Crystal Palace, Glasner was hired in the summer in an attempt to bring stability to the City Ground, after they got through four different head coaches last season."
+      ]
+    },
+    {
+      "slug": "13607141",
+      "title": "Billy Sharp comes out of retirement for Rushden and Diamonds",
+      "url": "https://www.skysports.com/football/video/13607141/billy-sharp-comes-out-of-retirement-for-rushden-and-diamonds",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-rushden-and-diamonds_7394982.jpg?20261102145134",
+      "excerpt": "Billy Sharp joins the EFL Show to talk about coming out of retirement to help Rushden and Diamonds' FA Cup run.",
+      "published_label": "02 November 2026 · 14:41",
+      "published_iso": "2026-11-02T14:41:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Billy Sharp joins the EFL Show to talk about coming out of retirement to help Rushden and Diamonds' FA Cup run."
+      ]
+    },
+    {
+      "slug": "13607131",
+      "title": "Carrick not concerned with future, dressing room, or Martinez commitment ahead of Roma clash",
+      "url": "https://www.skysports.com/football/video/13607131/manchester-united-michael-carrick-not-concerned-with-martinez-commitment-and-responds-to-questions-on-future",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-carrick_7394956.jpg?20261102142821",
+      "excerpt": "Michael Carrick says he not concerned with Lisandro Martinez's commitment and responds to questions on his future.",
+      "published_label": "02 November 2026 · 14:18",
+      "published_iso": "2026-11-02T14:18:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Michael Carrick says he not concerned with Lisandro Martinez's commitment and responds to questions on his future."
+      ]
+    },
+    {
+      "slug": "13607119",
+      "title": "Player vs Gaffer: Reading's Richardson takes on Savage",
+      "url": "https://www.skysports.com/football/video/13607119/player-vs-gaffer-readings-leam-richardson-takes-on-charlie-savage",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-reading-richardson_7394965.jpg?20261102143409",
+      "excerpt": "In Player vs Gaffer, we head to Reading where boss Leam Richardson takes on Charlie Savage.",
+      "published_label": "02 November 2026 · 14:02",
+      "published_iso": "2026-11-02T14:02:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "In Player vs Gaffer, we head to Reading where boss Leam Richardson takes on Charlie Savage."
+      ]
+    },
+    {
+      "slug": "13607070",
+      "title": "Sensational! Incredible skill and finish from former Man Utd striker Weghorst!",
+      "url": "https://www.skysports.com/football/video/13607070/sensational-incredible-skill-and-finish-from-former-man-utd-striker-wout-weghorst",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wout-weghorst-football_7394844.jpg?20261102125315",
+      "excerpt": "Former Manchester United striker Wout Weghorst finishes off this stunning team goal for FC Twente.",
+      "published_label": "02 November 2026 · 12:45",
+      "published_iso": "2026-11-02T12:45:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Former Manchester United striker Wout Weghorst finishes off this stunning team goal for FC Twente."
+      ]
+    },
+    {
+      "slug": "13607031",
+      "title": "Merse: Man Utd will be in relegation zone in a month",
+      "url": "https://www.skysports.com/football/news/13607031/man-utd-will-be-in-premier-league-relegation-zone-in-december-says-paul-merson-as-michael-carricks-side-hit-by-poor-recruitment",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-graphic-michael-carrick_7394780.jpg?20261102115507",
+      "excerpt": "Paul Merson is back with his latest Sky Sports column with a damning condemnation of Manchester United's recent form and a grim prediction for their upcoming prospects.",
+      "published_label": "02 November 2026 · 11:20",
+      "published_iso": "2026-11-02T11:20:00+00:00",
+      "byline": "Paul Merson",
+      "body": [
+        "Paul Merson is back with his latest Sky Sports column with a damning condemnation of Manchester United's recent form and a grim prediction for their upcoming prospects.",
+        "United were beaten 2-0 at Chelsea on Saturday as they dropped to fourth-bottom of the Premier League, having gone almost two months without a win in all competitions and beating only Ipswich in the league this season.",
+        "Goal difference is all which currently separates them from the relegation zone ahead of Crystal Palace - but Merson believes things will get worse before they get better for Carrick and his side. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺 'Man Utd will be in bottom three in a month'",
+        "The first half at Chelsea was alright and then they shot themselves in the foot. What can Michael Carrick do about that? It doesn't matter who's sat on the bench, you could have Carlo Ancelotti, Arsene Wenger, Jose Mourinho and Sir Alex Ferguson in the dugout, and you're not winning a football match."
+      ]
+    },
+    {
+      "slug": "13607002",
+      "title": "WOW! Diomande stuns Real team-mates with sensational half-volley!",
+      "url": "https://www.skysports.com/football/video/13607002/yan-diomande-leaves-real-madrid-team-mates-stunned-with-sensational-half-volley",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-yan-diomande-real-madrid_7394684.jpg?20261102103932",
+      "excerpt": "Yan Diomande silenced the Estadio El Sardinero with this stunning half-volley in Real Madrid's 3-0 win over Racing Santander in LaLiga.",
+      "published_label": "02 November 2026 · 10:31",
+      "published_iso": "2026-11-02T10:31:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Yan Diomande silenced the Estadio El Sardinero with this stunning half-volley in Real Madrid's 3-0 win over Racing Santander in LaLiga."
+      ]
+    },
+    {
+      "slug": "13606973",
+      "title": "Could former wonderkid Silva fulfil his potential at Dortmund?",
+      "url": "https://www.skysports.com/football/news/13606973/fabio-silva-is-borussia-dortmunds-hero-in-der-klassiker-could-the-portugal-forward-fulfil-his-potential-after-all",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-fabio-silva-borussia-dortmund_7394565.jpg?20261102075105",
+      "excerpt": "While the Ballon d’Or winner Harry Kane was fluffing his lines at one end of the pitch, Fabio Silva was preparing to rewrite the script at the other. His late equaliser for Borussia Dortmund in Der Klassiker must be the most important goal…",
+      "published_label": "02 November 2026 · 10:00",
+      "published_iso": "2026-11-02T10:00:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "While the Ballon d’Or winner Harry Kane was fluffing his lines at one end of the pitch, Fabio Silva was preparing to rewrite the script at the other. His late equaliser for Borussia Dortmund in Der Klassiker must be the most important goal of his career.",
+        "It was magnificent too. The first touch was perfection to protect the ball and give him just enough space to arrow a shot into the far corner with his second. An 89th-minute equaliser away to Bayern Munich to maintain Dortmund's unbeaten record.",
+        "There is a feeling within Dortmund that he needed this as a reward for his efforts. Speaking to goalkeeper Gregor Kobel afterwards, he made the point that forwards need goals to feel good. Stealing the show from Kane could be a transformative moment.",
+        "Silva's potential has long been debated. He was just 18 when Wolves committed £30m to sign him from Porto, the club's chairman talking of a generational talent. Nominated for the Golden Boy award, this was the very definition of the precocious wonderkid. Bundesliga: Table | Fixtures & results Want to watch Bundesliga football? Latest Sky Sports deals or stream games with no contract"
+      ]
+    },
+    {
+      "slug": "4-things-we-learned-from-south-africas--test-victory-over-australia",
+      "title": "4 Things We Learned from South Africa’s Stunning Test Series Victory o",
+      "url": "https://www.sportytrader.com/en-za/news/4-things-we-learned-from-south-africas--test-victory-over-australia/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/liverpool-vs-arsenal-1.webp",
+      "excerpt": "The South African national cricket team pulled off one of the most remarkable Test and series victories in their history this past weekend, beating Australia by 176 runs",
+      "published_label": "2 November 2026 · 06:00",
+      "published_iso": "2026-11-02T06:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13606877",
@@ -566,196 +739,6 @@
       "kind": "video",
       "body": [
         "After an eventful set of Halloween Premier League fixtures, we look at some of the horrifying moments across the day's action, including Lisandro Martinez, Zion Suzuki and many more."
-      ]
-    },
-    {
-      "slug": "13606394",
-      "title": "REFCAM captures Man Utd's woeful defending for Rogers' goal",
-      "url": "https://www.skysports.com/football/video/13606394/refcam-captures-man-utds-woeful-defending-for-morgan-rogers-goal-in-chelsea-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-rogers-refcam-goal_7393195.jpg?20261031184249",
-      "excerpt": "The REFCAM footage of Morgan Rogers' goal for Chelsea against Manchester United highlighted the woeful defending from Michael Carrick's men.",
-      "published_label": "01 November 2026 · 00:00",
-      "published_iso": "2026-11-01T00:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "The REFCAM footage of Morgan Rogers' goal for Chelsea against Manchester United highlighted the woeful defending from Michael Carrick's men."
-      ]
-    },
-    {
-      "slug": "13606533",
-      "title": "Moreira stars as Milan win derby thriller",
-      "url": "https://www.skysports.com/football/video/13606533/milan-3-1-inter-serie-a-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-milan-inter-serie-a_7393557.jpg?20261031231653",
-      "excerpt": "Diego Moreira scored a stunning free-kick and provided two assists as AC Milan beat Inter 3-1 in a thrilling derby at San Siro",
-      "published_label": "31 October 2026 · 22:57",
-      "published_iso": "2026-10-31T22:57:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Diego Moreira scored a stunning free-kick and provided two assists as AC Milan beat Inter 3-1 in a thrilling derby at San Siro"
-      ]
-    },
-    {
-      "slug": "13606532",
-      "title": "Yamal shines, Gordon scores as Barca hit Alaves for SIX!",
-      "url": "https://www.skysports.com/football/video/13606532/barcelona-6-1-alaves-la-liga-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-barcelona-la-liga_7393541.jpg?20261031230836",
-      "excerpt": "Lamine Yamal and Raphinha both score twice as Barcelona thrash Alaves 6-1 to stay top of LaLiga.",
-      "published_label": "31 October 2026 · 22:57",
-      "published_iso": "2026-10-31T22:57:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Lamine Yamal and Raphinha both score twice as Barcelona thrash Alaves 6-1 to stay top of LaLiga."
-      ]
-    },
-    {
-      "slug": "13606510",
-      "title": "Points shared at Villa Park as Suzuki OG spares Fulham",
-      "url": "https://www.skysports.com/football/video/13606510/aston-villa-1-1-fulham-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7393461.jpg?20261031220526",
-      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Aston Villa and Fulham.",
-      "published_label": "31 October 2026 · 22:10",
-      "published_iso": "2026-10-31T22:10:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "FREE TO WATCH: Highlights from the Premier League match between Aston Villa and Fulham."
-      ]
-    },
-    {
-      "slug": "13606869",
-      "title": "Papers: Ten Hag warns Man Utd could be relegated",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13606869/erik-ten-hag-warns-manchester-united-could-be-relegated-after-slipping-to-17th-in-the-premier-league-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Monday's newspapers... PREMIER LEAGUE",
-      "published_label": "31 October 2026 · 22:00",
-      "published_iso": "2026-10-31T22:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Monday's newspapers... PREMIER LEAGUE",
-        "Erik ten Hag has warned Manchester United could be relegated after slipping to 17th in the table - The Sun",
-        "Premier League fans were shocked to see James Milner running in the New York Marathon - The Sun Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "Fermin Lopez announced his desire to retire at Barcelona after rubbishing rumours of a potential transfer to Manchester United - Daily Mirror SCOTTISH FOOTBALL"
-      ]
-    },
-    {
-      "slug": "13606527",
-      "title": "Papers: Carrick to be given at least two more games in charge at Man Utd",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13606527/manchester-united-michael-carrick-to-be-given-at-least-two-more-matches-in-charge-despite-overseeing-worst-run-in-nearly-40-years-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Sunday's newspapers... PREMIER LEAGUE",
-      "published_label": "31 October 2026 · 22:00",
-      "published_iso": "2026-10-31T22:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Sunday's newspapers... PREMIER LEAGUE",
-        "Michael Carrick will be given at least two more matches in charge of Manchester United, despite overseeing their worst run in nearly 40 years - The Athletic",
-        "Sunderland head coach Regis Le Bris said that the club's difficult start to the season was expected due to a busier schedule and added he believed his side are in a relegation battle - The Athletic",
-        "Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW"
-      ]
-    },
-    {
-      "slug": "13606363",
-      "title": "Suzuki makes string of saves before conceding own goal in draw with Fulham",
-      "url": "https://www.skysports.com/football/news/13606363/aston-villa-1-1-fulham-zion-suzuki-concedes-own-goal-as-nicholas-jackson-scores-after-john-mcginns-penalty-miss-in-draw-with-fulham",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-zion-suzuki-villa_7393452.jpg?20261031215834",
-      "excerpt": "Nicolas Jackson scored his eighth goal in 10 games but an error from goalkeeper Zion Suzuki meant Aston Villa had to settle for a 1-1 draw at home to Fulham.",
-      "published_label": "31 October 2026 · 21:45",
-      "published_iso": "2026-10-31T21:45:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Nicolas Jackson scored his eighth goal in 10 games but an error from goalkeeper Zion Suzuki meant Aston Villa had to settle for a 1-1 draw at home to Fulham.",
-        "Villa should have gone ahead after 15 minutes when they were awarded a penalty following a review when Sander Berge was penalised for a handball in the box as he jumped with Leon Goretzka at a corner.",
-        "With neither Emi Buendia nor Ross Barkley in the line-up, John McGinn stepped up to take the penalty but the Scotland international - who had only ever taken a penalty for Villa in a shoot-out - smashed the ball against the crossbar and over. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "The home side nearly paid a heavy price for McGinn's miss straightaway after a Fulham counter-attack, but Oscar Bobb was brilliantly denied the opener by a one-handed save from Suzuki who tipped the ball over."
-      ]
-    },
-    {
-      "slug": "13606499",
-      "title": "Suzuki OG puts Fulham level at Villa",
-      "url": "https://www.skysports.com/football/video/13606499/goal-z-suzuki-og-aston-villa-1-0-fulham",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7393433.jpg?20261031213333",
-      "excerpt": "A Zion Suzuki own goal puts Fulham level at Aston Villa.",
-      "published_label": "31 October 2026 · 21:33",
-      "published_iso": "2026-10-31T21:33:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "A Zion Suzuki own goal puts Fulham level at Aston Villa."
-      ]
-    },
-    {
-      "slug": "13606481",
-      "title": "Villa lead as Jackson strikes!",
-      "url": "https://www.skysports.com/football/video/13606481/goal-n-jackson-39-aston-villa-1-0-fulham",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-premier-league_7393383.jpg?20261031204719",
-      "excerpt": "Nicolas Jackson puts Villa in front in their Premier League match against Fulham.",
-      "published_label": "31 October 2026 · 20:47",
-      "published_iso": "2026-10-31T20:47:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Nicolas Jackson puts Villa in front in their Premier League match against Fulham."
-      ]
-    },
-    {
-      "slug": "13606447",
-      "title": "Sherwood: Glasner won't be at Nott'm Forest in Jan",
-      "url": "https://www.skysports.com/football/video/13606447/brentford-vs-nottingham-forest-tim-sherwood-says-oliver-glasner-wont-be-at-nottm-forest-come-january",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-sherwood_7393304.jpg?20261031194234",
-      "excerpt": "On Soccer Saturday, Tim Sherwood said he does not believe Oliver Glasner will be at Nottingham Forest come January.",
-      "published_label": "31 October 2026 · 19:38",
-      "published_iso": "2026-10-31T19:38:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "On Soccer Saturday, Tim Sherwood said he does not believe Oliver Glasner will be at Nottingham Forest come January."
-      ]
-    },
-    {
-      "slug": "13606182",
-      "title": "Spurs beat 10-man Palace to keep up Sage pressure as Eagles fall into drop zone",
-      "url": "https://www.skysports.com/football/news/13606182/tottenham-2-0-crystal-palace-jean-philippe-matetas-red-card-sees-10-man-eagles-slip-into-relegation-zone",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-jan-paul-van-hecke_7393257.jpg?20261031191310",
-      "excerpt": "Tottenham beat 10-man Crystal Palace 2-0 at home to record a third straight win and maintain the pressure on Eagles boss Pierre Sage, with his side dropping into the relegation zone.",
-      "published_label": "31 October 2026 · 19:30",
-      "published_iso": "2026-10-31T19:30:00+00:00",
-      "byline": "Declan Olley",
-      "body": [
-        "Tottenham beat 10-man Crystal Palace 2-0 at home to record a third straight win and maintain the pressure on Eagles boss Pierre Sage, with his side dropping into the relegation zone.",
-        "Jean-Philippe Mateta's 13th-minute red card was followed just 12 minutes later by Archie Gray's headed opener at a corner.",
-        "Jan Paul van Hecke's scrappy second-half rebound finish then settled the game to give Spurs three consecutive league wins for the first time since February 2025 and move Roberto De Zerbi's side up to eighth. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "But Palace's third league loss in a row, which leaves them third-bottom, came after Mateta was sent off for a late studs-up sliding tackle on Micky van de Ven's Achilles."
-      ]
-    },
-    {
-      "slug": "13605389",
-      "title": "Arsenal striker dilemma: Should Arteta keep faith in Havertz?",
-      "url": "https://www.skysports.com/football/news/13605389/arsenals-kai-havertz-in-goal-drought-so-should-mikel-arteta-keep-faith-in-him-ahead-of-viktor-gyokeres-against-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-kai-havertz-arsenal_7391052.jpg?20261029154631",
-      "excerpt": "Welcome to The Radar , a Sky Sports column in which Nick Wright uses a blend of data and opinion to shed light on need-to-know Premier League stories. This week:",
-      "published_label": "29 October 2026 · 15:13",
-      "published_iso": "2026-10-29T15:13:00+00:00",
-      "byline": "Nick Wright",
-      "body": [
-        "Welcome to The Radar , a Sky Sports column in which Nick Wright uses a blend of data and opinion to shed light on need-to-know Premier League stories. This week:",
-        "🔺Arsenal's striker dilemma analysed 🔺Araujo helping shore up Liverpool 🔺A player to watch this weekend Why Arteta should keep backing Havertz",
-        "While Alexander Isak heads into Sunday's game at Anfield having scored six goals for Liverpool this season, Arsenal's frontmen continue to misfire. Kai Havertz and Viktor Gyokeres haven't hit a Premier League goal between them since early September. Transfer Centre LIVE! | Arsenal news & transfers 🔴⚪ Arsenal fixtures & scores | FREE Arsenal highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest deals or stream games with no contract 📺",
-        "Havertz has been Mikel Arteta's first choice since returning from injury last season. The 27-year-old started and scored in the Champions League final against Paris Saint-Germain in May and appeared to pick up where he left off in the new campaign."
       ]
     }
   ]
