@@ -1,10 +1,82 @@
 {
-  "synced_at": "2026-11-02T15:54:31+00:00",
+  "synced_at": "2026-11-02T23:31:10+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13607305",
+      "title": "'A red card in itself' - Ramsey sent off after second yellow",
+      "url": "https://www.skysports.com/football/video/13607305/newcastles-jacob-ramsey-sent-off-after-second-yellow-against-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ramsey-red-card_7395351.jpg?20261102220335",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13607301",
+      "title": "'Brilliant' Pickford stop denies Newcastle leveller",
+      "url": "https://www.skysports.com/football/video/13607301/brilliant-jordan-pickford-stop-denies-newcastle-leveller",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-pickford_7395338.jpg?20261102215202",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13607297",
+      "title": "'How did it not go in?' - Elanga unable squeeze home equaliser",
+      "url": "https://www.skysports.com/football/video/13607297/anthony-elanga-unable-squeeze-home-equaliser-for-newcastle-against-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/image_7395331.jpg?20261102212927",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13607290",
+      "title": "Barry pounces on goalkeeping error to give Everton lead",
+      "url": "https://www.skysports.com/football/video/13607290/thierno-barry-pounces-on-goalkeeping-error-to-give-everton-lead",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-barry_7395323.jpg?20261102212301",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13607284",
+      "title": "Armstrong strike goes wide as Everton miss out on opportunity for opener vs Everton",
+      "url": "https://www.skysports.com/football/video/13607284/harrison-armstrong-strike-goes-wide-as-everton-miss-out-on-opportunity-for-opener-vs-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-newcastle_7395294.jpg?20261102205528",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13607273",
+      "title": "'From that moment my game turned' - Kane credits Jose talk in helping him reach full potential",
+      "url": "https://www.skysports.com/football/video/13607273/harry-kane-credits-jose-mourinho-on-help-him-reach-ballon-dor-potential",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-kane_7395270.jpg?20261102202319",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13607038",
       "title": "Bellingham vs Zidane: How do the Real Madrid stars' stats compare?",
@@ -133,6 +205,134 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13607327",
+      "title": "'After that performance, I can understand that' - Jaissle acknowledges fans' frustration",
+      "url": "https://www.skysports.com/football/video/13607327/matthias-jaissle-understands-fans-frustrations-after-boos-were-heard-at-both-half-time-and-after-the-full-time-whistle",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jassle-newcastle_7395404.jpg?20261102232510",
+      "excerpt": "Newcastle United boss Matthias Jaissle understands the fans’ frustrations after boos were heard at half-time and full-time, and takes responsibility for his side’s poor performance.",
+      "published_label": "02 November 2026 · 23:17",
+      "published_iso": "2026-11-02T23:17:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Newcastle United boss Matthias Jaissle understands the fans’ frustrations after boos were heard at half-time and full-time, and takes responsibility for his side’s poor performance."
+      ]
+    },
+    {
+      "slug": "13607310",
+      "title": "Papers: Kroupi and Yildiz on Arsenal's radar ahead of January window",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13607310/bournemouth-forward-junior-kroupi-and-juventus-winger-kenan-yildiz-both-in-arsenal-boss-mikel-artetas-sights-ahead-of-january-window-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Tuesday's newspapers... PREMIER LEAGUE",
+      "published_label": "02 November 2026 · 22:48",
+      "published_iso": "2026-11-02T22:48:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Tuesday's newspapers... PREMIER LEAGUE",
+        "Mikel Arteta is pushing to make a move in the January transfer window with Bournemouth forward Junior Kroupi and Juventus winger Kenan Yildiz both in Arsenal's sights - The Mirror Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Max Dowman has been labelled the \"best I have ever seen\" by former Arsenal star Alex Oxlade-Chamberlain - The Sun",
+        "Erling Haaland is purely focused on playing for Manchester City and is not concerned by the possible punishment the club faces, according to his father Alfie - The Mirror"
+      ]
+    },
+    {
+      "slug": "13607321",
+      "title": "Carra: 'Tough season' ahead for Newcastle amid 'boring' performances",
+      "url": "https://www.skysports.com/football/video/13607321/jamie-carragher-believes-there-is-a-tough-season-for-newcastle-after-boring-performances",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-carragher-newcastle_7395386.jpg?20261102224831",
+      "excerpt": "Jamie Carragher says recent Newcastle performances have been 'flat' and a 'little boring' believing they are in for a 'tough season.'",
+      "published_label": "02 November 2026 · 22:45",
+      "published_iso": "2026-11-02T22:45:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie Carragher says recent Newcastle performances have been 'flat' and a 'little boring' believing they are in for a 'tough season.'"
+      ]
+    },
+    {
+      "slug": "13607320",
+      "title": "Carragher: Boring Newcastle face a tough season ahead",
+      "url": "https://www.skysports.com/football/news/13607320/newcastle-are-flat-and-boring-jamie-carragher-warns-magpies-face-tough-premier-league-season-after-everton-defeat",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-matthias-jaissle_7395383.jpg?20261102224537",
+      "excerpt": "Jamie Carragher described Newcastle as flat and boring following their defeat to Everton on Monday Night Football and reckons Matthias Jaissle's side faces a difficult season.",
+      "published_label": "02 November 2026 · 22:35",
+      "published_iso": "2026-11-02T22:35:00+00:00",
+      "byline": "Jamie Carragher",
+      "body": [
+        "Jamie Carragher described Newcastle as flat and boring following their defeat to Everton on Monday Night Football and reckons Matthias Jaissle's side faces a difficult season.",
+        "Thierno Barry's second-half goal earned Everton a 1-0 win at St James' Park and their first away victory in the Premier League this season, as Newcastle were booed off at half-time and full-time following their fourth defeat in five games across all competitions.",
+        "Newcastle have slipped to 13th and are now four points above the bottom three, with a trip to lowly Fulham to come on Saturday. Newcastle news & transfers ⚫⚪| Newcastle fixtures & scores Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "\"I think it is going to be a tough season for them,\" said Sky Sports' Carragher. \"I felt tonight was actually more important for Newcastle than the cup game [Carabao Cup loss at Everton last week], and it was the other way round for Everton, who are desperate for a trophy."
+      ]
+    },
+    {
+      "slug": "13607313",
+      "title": "Barry goal sees Everton ease past meagre Newcastle",
+      "url": "https://www.skysports.com/football/video/13607313/newcastle-0-1-everton-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-newcastle-everton_7395353.jpg?20261102220519",
+      "excerpt": "Highlights of the Premier League match between Newcastle and Everton.",
+      "published_label": "02 November 2026 · 22:18",
+      "published_iso": "2026-11-02T22:18:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Premier League match between Newcastle and Everton."
+      ]
+    },
+    {
+      "slug": "13607311",
+      "title": "A foul or good attacking play? Barry’s goal analysed…",
+      "url": "https://www.skysports.com/football/video/13607311/newcastle-vs-everton-did-thierno-barry-foul-fabian-schar-in-build-to-goal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-barry-goal_7395367.jpg?20261102222039",
+      "excerpt": "Did Thierno Barry foul Fabian Schar in the build-up before the game's only goal?",
+      "published_label": "02 November 2026 · 22:12",
+      "published_iso": "2026-11-02T22:12:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Did Thierno Barry foul Fabian Schar in the build-up before the game's only goal?"
+      ]
+    },
+    {
+      "slug": "13605474",
+      "title": "Sorry Newcastle booed off as Everton earn first away PL win of season",
+      "url": "https://www.skysports.com/football/news/13605474/newcastle-0-1-everton-toffees-earn-first-away-league-win-of-season-as-magpies-booed-off-after-jacob-ramsey-sees-red",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-thierno-barry_7395311.jpg?20261102211356",
+      "excerpt": "Everton deservedly claimed their first away league win of the season as Thierno Barry’s second-half goal earned a 1-0 victory at a lacklustre Newcastle, who were booed off at half-time and full-time.",
+      "published_label": "02 November 2026 · 22:00",
+      "published_iso": "2026-11-02T22:00:00+00:00",
+      "byline": "Declan Olley",
+      "body": [
+        "Everton deservedly claimed their first away league win of the season as Thierno Barry’s second-half goal earned a 1-0 victory at a lacklustre Newcastle, who were booed off at half-time and full-time.",
+        "Newcastle's miserable evening deepened in stoppage time as substitute Jacob Ramsey was sent off after picking up two bookings in just 86 seconds.",
+        "The disappointing Magpies were beaten by Everton for a second time in the space of four days after their 3-1 Carabao Cup fourth-round defeat on Merseyside. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Another sorry display from Matthias Jaissle's side was underlined by Barry's 49th-minute winner, which Sky Sports commentator Andy Hinchcliffe labelled as \"truly shocking\" defending and \"terrible goalkeeping\"."
+      ]
+    },
+    {
+      "slug": "13607147",
+      "title": "Merse: Arsenal showed mark of champions at Anfield",
+      "url": "https://www.skysports.com/football/news/13607147/paul-merson-arsenal-showed-mark-of-champions-against-liverpool-in-defensive-masterclass-victory-at-anfield",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-graphic-arsenal_7395038.jpg?20261102154642",
+      "excerpt": "After Arsenal moved three points clear at the top of the Premier League with a 1-0 win at Liverpool on Super Sunday, Sky Sports pundit Paul Merson says the Gunners' victory showed the sign of champions at Anfield.",
+      "published_label": "02 November 2026 · 15:06",
+      "published_iso": "2026-11-02T15:06:00+00:00",
+      "byline": "Paul Merson",
+      "body": [
+        "After Arsenal moved three points clear at the top of the Premier League with a 1-0 win at Liverpool on Super Sunday, Sky Sports pundit Paul Merson says the Gunners' victory showed the sign of champions at Anfield.",
+        "Kai Havertz's 16th-minute winner went on to prove enough to settle the game and give Arsenal a first win at Liverpool in 14 years and their fourth straight league win. In doing so, they became the first team to deny the Reds a single shot on target in a home league match since Opta records began in 2003. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Former Arsenal midfielder Merson had tipped the Gunners to get beaten at Anfield but believes Sunday's victory showed they have the mark of champions, dispelling any doubts of a drop-off following their shock 3-0 defeat at Brighton last month... 'Arsenal showed mark of champions'",
+        "The way Arsenal defend, everyone does the right thing. When you're watching top, top players who have just won the league and still defend like they do, it's a masterclass."
+      ]
     },
     {
       "slug": "13607133",
@@ -521,224 +721,6 @@
       "kind": "video",
       "body": [
         "Declan Rice sends a low cross across the box to the far post, where Kai Havertz delivers the finish to put Arsenal ahead against Liverpool."
-      ]
-    },
-    {
-      "slug": "13606612",
-      "title": "Hibs earn historic win over Hearts to set up League Cup final with Rangers",
-      "url": "https://www.skysports.com/football/news/13606612/hearts-1-2-hibernian-jamie-mcgrath-scores-winner-as-hibs-beat-rivals-at-hampden-for-first-time-to-set-up-scottish-league-cup-final-vs-rangers",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hibs-jamie-mcgrath_7394065.jpg?20261101173558",
-      "excerpt": "Marink Reedijk secured his first win as Hibernian boss in a memorable 2-1 Scottish League Cup semi-final victory over Hearts as the Edinburgh side beat their city rivals at Barclays Hampden for the first time.",
-      "published_label": "01 November 2026 · 16:50",
-      "published_iso": "2026-11-01T16:50:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Marink Reedijk secured his first win as Hibernian boss in a memorable 2-1 Scottish League Cup semi-final victory over Hearts as the Edinburgh side beat their city rivals at Barclays Hampden for the first time.",
-        "A frenetic derby got up and running in the fourth minute when Jambos attacker Claudio Braga headed in from a corner but returning Hibs striker Martin Boyle deservedly levelled in the 19th minute with a poacher's goal.",
-        "A compelling encounter continued and midfielder Jamie McGrath put the on-top Hibees ahead three minutes before the interval, which gave the Gorgie side time to reset and put pressure on their opponents after the break. Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
-        "Although Hearts retained a threat, a stout defensive display by the Leith team means they will meet Rangers in the final at the national stadium on December 13."
-      ]
-    },
-    {
-      "slug": "13606708",
-      "title": "Neville: Man Utd stuck in a rut - and it's really worrying",
-      "url": "https://www.skysports.com/football/news/13606708/manchester-united-gary-neville-says-club-are-in-a-rut-and-is-unimpressed-with-lisandro-martinez-amid-tough-run-of-games-for-michael-carricks-side",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-andrey-santos-mason-mount_7386834.jpg?20261025160630",
-      "excerpt": "Gary Neville says Manchester United are stuck in a rut and that a difficult run of fixtures ahead makes for “really worrying” times at Old Trafford.",
-      "published_label": "01 November 2026 · 16:45",
-      "published_iso": "2026-11-01T16:45:00+00:00",
-      "byline": "Gary Neville",
-      "body": [
-        "Gary Neville says Manchester United are stuck in a rut and that a difficult run of fixtures ahead makes for “really worrying” times at Old Trafford.",
-        "Saturday's 2-0 defeat at Chelsea extended United's winless run to nine games in all competitions - their longest since 1984 - and puts them at risk of falling into the relegation zone before the next international break. Man Utd latest news - live updates 🔴 Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Head coach Michael Carrick said after the loss at Chelsea that he expects to remain in charge for Tuesday night's Champions League visit of Roma.",
-        "Describing United's current predicament, Neville said: \"It's very difficult. It feels like the club is stuck in a rut. It's stuck in a rut in terms of results, it's now nine without a win, which is obviously a really horrible run to be in at any point."
-      ]
-    },
-    {
-      "slug": "13606700",
-      "title": "'This is on Martin' - Sutton blames O'Neill for Celtic struggles",
-      "url": "https://www.skysports.com/football/news/13606700/celtic-team-in-regression-under-martin-oneill-and-manager-to-blame-says-chris-sutton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sutton-celtic-oneill_7393947.jpg?20261101162024",
-      "excerpt": "\"It's a lottery waiting for the Celtic team. Who knows what team Martin is going to pick?\"",
-      "published_label": "01 November 2026 · 15:37",
-      "published_iso": "2026-11-01T15:37:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "\"It's a lottery waiting for the Celtic team. Who knows what team Martin is going to pick?\"",
-        "Sky Sports' Chris Sutton did not hold back after his former club fell to a shock 2-0 defeat at Falkirk , insisting he is watching a \"team in regression.\"",
-        "Ethan Ross' early goal was added to by Scott Tanser's excellent finish, as Celtic's defensive frailties were exposed once again. Celtic stunned as Falkirk claim first win vs Hoops in 19 years Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
-        "The defeat leaves Celtic with a record of three wins from their past 10 outings as they failed to extend their four-point lead at the top of the table, with Besiktas next in the Europa League, where they have lost three of three."
-      ]
-    },
-    {
-      "slug": "13606686",
-      "title": "Neville critical of Martinez as Man Utd worries deepen",
-      "url": "https://www.skysports.com/football/video/13606686/man-utd-latest-gary-neville-concerns-grow-over-plight-of-for-club",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-gary-neville-utd_7393914.jpg?20261101153752",
-      "excerpt": "Sky Sports' Gary Neville has his say on the current situation at Manchester United and admits he is finding the poor run of form 'really worrying '.",
-      "published_label": "01 November 2026 · 15:31",
-      "published_iso": "2026-11-01T15:31:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Gary Neville has his say on the current situation at Manchester United and admits he is finding the poor run of form 'really worrying '."
-      ]
-    },
-    {
-      "slug": "13606610",
-      "title": "Celtic stunned as Falkirk claim first win vs Hoops in 19 years",
-      "url": "https://www.skysports.com/football/news/13606610/falkirk-2-0-celtic-martin-oneills-hoops-denied-chance-to-go-seven-points-clear-in-scottish-premiership-by-brilliant-bairns",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-celtic-cameron-carter-vickers_7393874.jpg?20261101145844",
-      "excerpt": "Falkirk claimed their first win against Celtic since 2007 as the champions missed another chance to extend their lead in the Scottish Premiership title race.",
-      "published_label": "01 November 2026 · 14:50",
-      "published_iso": "2026-11-01T14:50:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "Falkirk claimed their first win against Celtic since 2007 as the champions missed another chance to extend their lead in the Scottish Premiership title race.",
-        "Martin O'Neill made three changes as he looked for a response after Celtic's midweek draw with Dundee United, but they were outclassed by the Bairns, who extended their winning run to four matches.",
-        "Ethan Ross was gifted the opening goal just three minutes into the game. Ryan Strain sent a cross into the box and Cameron Carter-Vickers sent the ball straight to him to fire into the net. As it happened | Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
-        "Scott Bain was more than impressive against his former team, denying Camilo Duran and Hasseim Hassan before Falkirk stunned with their second, this time Scott Tanser beating Carter-Vickers before lashing the ball into the net."
-      ]
-    },
-    {
-      "slug": "13605750",
-      "title": "Russo rescues frustrated Arsenal as Man City beat London City",
-      "url": "https://www.skysports.com/football/news/13605750/wsl-round-up-alessia-russo-scores-late-equaliser-to-salvage-draw-for-arsenal-as-man-city-hold-on-to-beat-london-city",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7393850.jpg?20261101143440",
-      "excerpt": "Russo rescues point for Arsenal in frustrating afternoon vs Villa",
-      "published_label": "01 November 2026 · 14:30",
-      "published_iso": "2026-11-01T14:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Russo rescues point for Arsenal in frustrating afternoon vs Villa",
-        "Alessia Russo scored a late equaliser to salvage a 1-1 draw for Arsenal against Aston Villa as Renee Slegers' side failed to make their dominance count at the Emirates Stadium.",
-        "The Gunners had 27 shots in total at the Emirates but were left frustrated by a stoic defensive performance from Villa, who sat deep to preserve their lead after Chasity Grant scored with their only shot of the game in the 25th minute.",
-        "Villa defended valiantly, supported by eight saves from Akane Okuma, before Russo latched onto Stina Blackstenius' cross to head home the equaliser in the 85th minute."
-      ]
-    },
-    {
-      "slug": "13606632",
-      "title": "'A Fantastic start for Falkirk!' - Ross scores after Carter-Vickers error",
-      "url": "https://www.skysports.com/football/video/13606632/a-fantastic-start-for-falkirk-ross-scores-after-carter-vickers-error",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-scottish-premership_7393780.jpg?20261101132254",
-      "excerpt": "Ethan Ross gives Falkirk an early lead against Celtic after an error from Cameron Carter-Vickers.",
-      "published_label": "01 November 2026 · 13:13",
-      "published_iso": "2026-11-01T13:13:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Ethan Ross gives Falkirk an early lead against Celtic after an error from Cameron Carter-Vickers."
-      ]
-    },
-    {
-      "slug": "13606625",
-      "title": "'It doesn't get any easier!' - Carrick's United face tough Roma side next!",
-      "url": "https://www.skysports.com/football/video/13606625/it-doesnt-get-any-easier-michael-carrick-to-face-tough-roma-side",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-d_7393764.jpg?20261101124314",
-      "excerpt": "Sky Sports' Danyal Khan brings the latest update on Michael Carrick's future at Manchester United as they prepare for a vey tough test in the Champions League against Roma.",
-      "published_label": "01 November 2026 · 12:37",
-      "published_iso": "2026-11-01T12:37:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Danyal Khan brings the latest update on Michael Carrick's future at Manchester United as they prepare for a vey tough test in the Champions League against Roma."
-      ]
-    },
-    {
-      "slug": "13606617",
-      "title": "Do 'in trouble' Palace need a fresh start from Sage?",
-      "url": "https://www.skysports.com/football/video/13606617/sunday-supplement-do-crystal-palace-need-a-fresh-start-from-pierre-sage",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sunday-supplement_7393730.jpg?20261101120317",
-      "excerpt": "Sunday Supplement takes a closer look at Crystal Palace's struggles this season and discuss who may be able to turn it round if the club decide to part ways with Pierre Sage.",
-      "published_label": "01 November 2026 · 11:59",
-      "published_iso": "2026-11-01T11:59:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sunday Supplement takes a closer look at Crystal Palace's struggles this season and discuss who may be able to turn it round if the club decide to part ways with Pierre Sage."
-      ]
-    },
-    {
-      "slug": "13606605",
-      "title": "Who's to blame at Man Utd and what's the solution?",
-      "url": "https://www.skysports.com/football/video/13606605/sunday-supplement-whos-to-blame-at-manchester-utd-and-what-is-the-solution",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-carrick-man-utd_7393710.jpg?20261101105249",
-      "excerpt": "Sunday Supplement looks at the crisis at Manchester United and whether or not they are realistically in danger of relegation this season, and who is the right man to help them avoid that.",
-      "published_label": "01 November 2026 · 10:47",
-      "published_iso": "2026-11-01T10:47:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sunday Supplement looks at the crisis at Manchester United and whether or not they are realistically in danger of relegation this season, and who is the right man to help them avoid that."
-      ]
-    },
-    {
-      "slug": "13606576",
-      "title": "'Can I borrow your cap?' Keeper takes Ian Holloway's hat!",
-      "url": "https://www.skysports.com/football/video/13606576/goalkeeper-takes-ian-holloways-hat",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-s_7393638.jpg?20261101080718",
-      "excerpt": "Swindon Town goalkeeper Connor Ripley had to borrow Ian Holloway's hat during their Sky Bet League two match against Rotherham!",
-      "published_label": "01 November 2026 · 08:03",
-      "published_iso": "2026-11-01T08:03:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Swindon Town goalkeeper Connor Ripley had to borrow Ian Holloway's hat during their Sky Bet League two match against Rotherham!"
-      ]
-    },
-    {
-      "slug": "liverpool-vs-arsenal-premier-league-arteta-anfield-curse",
-      "title": "Liverpool vs Arsenal: Can Mikel Arteta Finally Break the 14-Year Anfie",
-      "url": "https://www.sportytrader.com/en/news/liverpool-vs-arsenal-premier-league-arteta-anfield-curse/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/soweto-derby-2026.webp",
-      "excerpt": "The reigning Premier League champions enter the ultimate lion's den this weekend, as they arrive at Anfield to face Liverpool, a side they have not beaten on the road sin",
-      "published_label": "1 November 2026 · 07:00",
-      "published_iso": "2026-11-01T07:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13606068",
-      "title": "How to watch Liverpool vs Arsenal",
-      "url": "https://www.skysports.com/football/news/13606068/liverpool-vs-arsenal-how-to-watch-tv-channel-live-stream-now-tv-team-news-and-score-prediction",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-liverpool-arsenal_7392535.jpg?20261031113608",
-      "excerpt": "Liverpool host Arsenal at Anfield in a huge Premier League clash on Super Sunday on November 1, live on Sky Sports .",
-      "published_label": "01 November 2026 · 07:00",
-      "published_iso": "2026-11-01T07:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Liverpool host Arsenal at Anfield in a huge Premier League clash on Super Sunday on November 1, live on Sky Sports .",
-        "Liverpool are fifth in the Premier League table following Chelsea's win on Saturday , but will climb back above the Blues with victory at Anfield.",
-        "Andoni Iraola's side are on a five-game unbeaten run in all competitions after beating Chelsea on penalties in the Carabao Cup in midweek. Liverpool vs Arsenal live updates Liverpool news & transfers 🔴 | Arsenal news & transfers 🔴⚪ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Arsenal are second in the table on goal difference, but will surpass Man City at the summit if they avoid defeat after Enzo Maresca's side lost to Brighton on Saturday."
-      ]
-    },
-    {
-      "slug": "13606544",
-      "title": "Halloween HORROR moments in the PL! Ft. Suzuki, Mateta, Martinez & more!",
-      "url": "https://www.skysports.com/football/video/13606544/halloween-horror-moments-in-the-premier-league-ft-martinez-mateta-trafford-suzuki-and-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-halloween-premier-league_7393564.jpg?20261031232253",
-      "excerpt": "After an eventful set of Halloween Premier League fixtures, we look at some of the horrifying moments across the day's action, including Lisandro Martinez, Zion Suzuki and many more.",
-      "published_label": "01 November 2026 · 00:00",
-      "published_iso": "2026-11-01T00:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "After an eventful set of Halloween Premier League fixtures, we look at some of the horrifying moments across the day's action, including Lisandro Martinez, Zion Suzuki and many more."
       ]
     }
   ]
