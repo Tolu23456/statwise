@@ -1,89 +1,10 @@
 {
-  "synced_at": "2026-11-01T23:36:43+00:00",
+  "synced_at": "2026-11-02T06:05:06+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13606811",
-      "title": "'Next time I will tell him to dive!' - Iraola frustrated by Isak penalty decision",
-      "url": "https://www.skysports.com/football/video/13606811/andoni-iraola-frustrated-after-alexander-isak-denied-penalty-i-will-tell-him-to-go-down-next-time",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-andoni-iraola-iraola_7394201.jpg?20261101201604",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606612",
-      "title": "Hibs earn historic win over Hearts to set up League Cup final with Rangers",
-      "url": "https://www.skysports.com/football/news/13606612/hearts-1-2-hibernian-jamie-mcgrath-scores-winner-as-hibs-beat-rivals-at-hampden-for-first-time-to-set-up-scottish-league-cup-final-vs-rangers",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hibs-jamie-mcgrath_7394065.jpg?20261101173558",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13606700",
-      "title": "'This is on Martin' - Sutton blames O'Neill for Celtic struggles",
-      "url": "https://www.skysports.com/football/news/13606700/celtic-team-in-regression-under-martin-oneill-and-manager-to-blame-says-chris-sutton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sutton-celtic-oneill_7393947.jpg?20261101162024",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13606610",
-      "title": "Celtic stunned as Falkirk claim first win vs Hoops in 19 years",
-      "url": "https://www.skysports.com/football/news/13606610/falkirk-2-0-celtic-martin-oneills-hoops-denied-chance-to-go-seven-points-clear-in-scottish-premiership-by-brilliant-bairns",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-celtic-cameron-carter-vickers_7393874.jpg?20261101145844",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13606708",
-      "title": "Neville: Man Utd stuck in a rut - and it's really worrying",
-      "url": "https://www.skysports.com/football/news/13606708/manchester-united-gary-neville-says-club-are-in-a-rut-and-is-unimpressed-with-lisandro-martinez-amid-tough-run-of-games-for-michael-carricks-side",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-andrey-santos-mason-mount_7386834.jpg?20261025160630",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13606748",
-      "title": "'So close!!' - Wirtz free-kick hits the bar as Liverpool trail Arsenal",
-      "url": "https://www.skysports.com/football/video/13606748/post-f-wirtz-39-liverpool-0-1-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7394038.jpg?20261101171406",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13605389",
-      "title": "Arsenal striker dilemma: Should Arteta keep faith in Havertz?",
-      "url": "https://www.skysports.com/football/news/13605389/arsenals-kai-havertz-in-goal-drought-so-should-mikel-arteta-keep-faith-in-him-ahead-of-viktor-gyokeres-against-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-kai-havertz-arsenal_7391052.jpg?20261029154631",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13605451",
       "title": "Why keeping Isak fit and firing is key to Iraola's Liverpool revival",
@@ -242,6 +163,21 @@
       ]
     },
     {
+      "slug": "13606811",
+      "title": "'Next time I will tell him to dive!' - Iraola frustrated by Isak penalty decision",
+      "url": "https://www.skysports.com/football/video/13606811/andoni-iraola-frustrated-after-alexander-isak-denied-penalty-i-will-tell-him-to-go-down-next-time",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-andoni-iraola-iraola_7394201.jpg?20261101201604",
+      "excerpt": "Speaking after the 1-0 defeat to Arsenal at Anfield, Liverpool manager Andoni Iraola suggested that Alexander Isak would have been awarded a penalty if he'd gone to ground and claimed that he'll be instructing his players to do so in future…",
+      "published_label": "01 November 2026 · 19:57",
+      "published_iso": "2026-11-01T19:57:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking after the 1-0 defeat to Arsenal at Anfield, Liverpool manager Andoni Iraola suggested that Alexander Isak would have been awarded a penalty if he'd gone to ground and claimed that he'll be instructing his players to do so in future."
+      ]
+    },
+    {
       "slug": "13606788",
       "title": "'It has to STOP! Embarrassing!' - Mac Allister slammed for clash with Madueke",
       "url": "https://www.skysports.com/football/video/13606788/liverpool-vs-arsenal-super-sunday-panel-on-maduekes-alleged-headbutt-incident-with-mac-allister",
@@ -286,6 +222,23 @@
         "The result opens up a three-point gap on Manchester City at the top of the Premier League - and means Mikel Arteta's side are nine clear of Liverpool.",
         "In a battle of attrition, the only discernible difference was at the top end. Liverpool's various waves of pressure almost always led to an effort on David Raya's goal - 17 in total - but none actually forced the goalkeeper into a save.",
         "Florian Wirtz hit the crossbar with a free-kick and Alexis Mac Allister ballooned a header over the bar unmarked, but Andoni Iraola's side failed to land a single shot on target at home for the first time on record. \"It's been a defensive masterclass from Arsenal,\" said Gary Neville."
+      ]
+    },
+    {
+      "slug": "13604412",
+      "title": "PL Predictions: Can Everton beat unconvincing Newcastle?",
+      "url": "https://www.skysports.com/football/news/13604412/premier-league-predictions-and-jones-knows-best-bets-liverpool-vs-arsenal-crystal-palace-vs-tottenham-and-much-more",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
+      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for an intriguing Monday Night Football. Newcastle vs Everton, Monday 8pm, live on Sky Sports Got Sky? Watch Premier League games LIVE on your phone 📱 N…",
+      "published_label": "01 November 2026 · 18:15",
+      "published_iso": "2026-11-01T18:15:00+00:00",
+      "byline": "Lewis Jones",
+      "body": [
+        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for an intriguing Monday Night Football. Newcastle vs Everton, Monday 8pm, live on Sky Sports Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "The betting market is yet to be convinced by Newcastle and their price to beat Everton at St James' Park tells its own story.",
+        "At 5/4 with Sky Bet, this is the biggest price they have been to win this fixture in their last six home meetings. For context, across the previous two seasons they were priced at 7/10 and even 1/4 to beat the Toffees on home soil.",
+        "So what has changed? The underlying numbers are hardly screaming that Newcastle are a team to trust with Eddie Howe gone."
       ]
     },
     {
@@ -368,6 +321,21 @@
       ]
     },
     {
+      "slug": "13606748",
+      "title": "'So close!!' - Wirtz free-kick hits the bar as Liverpool trail Arsenal",
+      "url": "https://www.skysports.com/football/video/13606748/post-f-wirtz-39-liverpool-0-1-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7394038.jpg?20261101171406",
+      "excerpt": "Liverpool come close to getting on the scoresheet as a free-kick sees Florian Wirtz smash the ball into the crossbar.",
+      "published_label": "01 November 2026 · 17:13",
+      "published_iso": "2026-11-01T17:13:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Liverpool come close to getting on the scoresheet as a free-kick sees Florian Wirtz smash the ball into the crossbar."
+      ]
+    },
+    {
       "slug": "13606726",
       "title": "Havertz fires Arsenal in front at Anfield",
       "url": "https://www.skysports.com/football/video/13606726/goal-k-havertz-16-liverpool-0-0-arsenal",
@@ -383,6 +351,57 @@
       ]
     },
     {
+      "slug": "13606612",
+      "title": "Hibs earn historic win over Hearts to set up League Cup final with Rangers",
+      "url": "https://www.skysports.com/football/news/13606612/hearts-1-2-hibernian-jamie-mcgrath-scores-winner-as-hibs-beat-rivals-at-hampden-for-first-time-to-set-up-scottish-league-cup-final-vs-rangers",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hibs-jamie-mcgrath_7394065.jpg?20261101173558",
+      "excerpt": "Marink Reedijk secured his first win as Hibernian boss in a memorable 2-1 Scottish League Cup semi-final victory over Hearts as the Edinburgh side beat their city rivals at Barclays Hampden for the first time.",
+      "published_label": "01 November 2026 · 16:50",
+      "published_iso": "2026-11-01T16:50:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Marink Reedijk secured his first win as Hibernian boss in a memorable 2-1 Scottish League Cup semi-final victory over Hearts as the Edinburgh side beat their city rivals at Barclays Hampden for the first time.",
+        "A frenetic derby got up and running in the fourth minute when Jambos attacker Claudio Braga headed in from a corner but returning Hibs striker Martin Boyle deservedly levelled in the 19th minute with a poacher's goal.",
+        "A compelling encounter continued and midfielder Jamie McGrath put the on-top Hibees ahead three minutes before the interval, which gave the Gorgie side time to reset and put pressure on their opponents after the break. Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
+        "Although Hearts retained a threat, a stout defensive display by the Leith team means they will meet Rangers in the final at the national stadium on December 13."
+      ]
+    },
+    {
+      "slug": "13606708",
+      "title": "Neville: Man Utd stuck in a rut - and it's really worrying",
+      "url": "https://www.skysports.com/football/news/13606708/manchester-united-gary-neville-says-club-are-in-a-rut-and-is-unimpressed-with-lisandro-martinez-amid-tough-run-of-games-for-michael-carricks-side",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-andrey-santos-mason-mount_7386834.jpg?20261025160630",
+      "excerpt": "Gary Neville says Manchester United are stuck in a rut and that a difficult run of fixtures ahead makes for “really worrying” times at Old Trafford.",
+      "published_label": "01 November 2026 · 16:45",
+      "published_iso": "2026-11-01T16:45:00+00:00",
+      "byline": "Gary Neville",
+      "body": [
+        "Gary Neville says Manchester United are stuck in a rut and that a difficult run of fixtures ahead makes for “really worrying” times at Old Trafford.",
+        "Saturday's 2-0 defeat at Chelsea extended United's winless run to nine games in all competitions - their longest since 1984 - and puts them at risk of falling into the relegation zone before the next international break. Man Utd latest news - live updates 🔴 Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Head coach Michael Carrick said after the loss at Chelsea that he expects to remain in charge for Tuesday night's Champions League visit of Roma.",
+        "Describing United's current predicament, Neville said: \"It's very difficult. It feels like the club is stuck in a rut. It's stuck in a rut in terms of results, it's now nine without a win, which is obviously a really horrible run to be in at any point."
+      ]
+    },
+    {
+      "slug": "13606700",
+      "title": "'This is on Martin' - Sutton blames O'Neill for Celtic struggles",
+      "url": "https://www.skysports.com/football/news/13606700/celtic-team-in-regression-under-martin-oneill-and-manager-to-blame-says-chris-sutton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sutton-celtic-oneill_7393947.jpg?20261101162024",
+      "excerpt": "\"It's a lottery waiting for the Celtic team. Who knows what team Martin is going to pick?\"",
+      "published_label": "01 November 2026 · 15:37",
+      "published_iso": "2026-11-01T15:37:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "\"It's a lottery waiting for the Celtic team. Who knows what team Martin is going to pick?\"",
+        "Sky Sports' Chris Sutton did not hold back after his former club fell to a shock 2-0 defeat at Falkirk , insisting he is watching a \"team in regression.\"",
+        "Ethan Ross' early goal was added to by Scott Tanser's excellent finish, as Celtic's defensive frailties were exposed once again. Celtic stunned as Falkirk claim first win vs Hoops in 19 years Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
+        "The defeat leaves Celtic with a record of three wins from their past 10 outings as they failed to extend their four-point lead at the top of the table, with Besiktas next in the Europa League, where they have lost three of three."
+      ]
+    },
+    {
       "slug": "13606686",
       "title": "Neville critical of Martinez as Man Utd worries deepen",
       "url": "https://www.skysports.com/football/video/13606686/man-utd-latest-gary-neville-concerns-grow-over-plight-of-for-club",
@@ -395,6 +414,23 @@
       "kind": "video",
       "body": [
         "Sky Sports' Gary Neville has his say on the current situation at Manchester United and admits he is finding the poor run of form 'really worrying '."
+      ]
+    },
+    {
+      "slug": "13606610",
+      "title": "Celtic stunned as Falkirk claim first win vs Hoops in 19 years",
+      "url": "https://www.skysports.com/football/news/13606610/falkirk-2-0-celtic-martin-oneills-hoops-denied-chance-to-go-seven-points-clear-in-scottish-premiership-by-brilliant-bairns",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-celtic-cameron-carter-vickers_7393874.jpg?20261101145844",
+      "excerpt": "Falkirk claimed their first win against Celtic since 2007 as the champions missed another chance to extend their lead in the Scottish Premiership title race.",
+      "published_label": "01 November 2026 · 14:50",
+      "published_iso": "2026-11-01T14:50:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "Falkirk claimed their first win against Celtic since 2007 as the champions missed another chance to extend their lead in the Scottish Premiership title race.",
+        "Martin O'Neill made three changes as he looked for a response after Celtic's midweek draw with Dundee United, but they were outclassed by the Bairns, who extended their winning run to four matches.",
+        "Ethan Ross was gifted the opening goal just three minutes into the game. Ryan Strain sent a cross into the box and Cameron Carter-Vickers sent the ball straight to him to fire into the net. As it happened | Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
+        "Scott Bain was more than impressive against his former team, denying Camilo Duran and Hasseim Hassan before Falkirk stunned with their second, this time Scott Tanser beating Carter-Vickers before lashing the ball into the net."
       ]
     },
     {
@@ -706,18 +742,20 @@
       ]
     },
     {
-      "slug": "13606399",
-      "title": "Shrewsbury 1-2 Gillingham",
-      "url": "https://www.skysports.com/football/video/13606399/shrewsbury-1-2-gillingham-league-two-highlights",
+      "slug": "13605389",
+      "title": "Arsenal striker dilemma: Should Arteta keep faith in Havertz?",
+      "url": "https://www.skysports.com/football/news/13605389/arsenals-kai-havertz-in-goal-drought-so-should-mikel-arteta-keep-faith-in-him-ahead-of-viktor-gyokeres-against-liverpool",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/0ec1da054d1cbda74689e89d40b2b506cfb3cefa516577e01d98c350f1af787c_7393177.jpg?20261031183117",
-      "excerpt": "Highlights of the Sky Bet League Two match between Shrewsbury and Gillingham.",
-      "published_label": "31 October 2026 · 18:29",
-      "published_iso": "2026-10-31T18:29:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-kai-havertz-arsenal_7391052.jpg?20261029154631",
+      "excerpt": "Welcome to The Radar , a Sky Sports column in which Nick Wright uses a blend of data and opinion to shed light on need-to-know Premier League stories. This week:",
+      "published_label": "29 October 2026 · 15:13",
+      "published_iso": "2026-10-29T15:13:00+00:00",
+      "byline": "Nick Wright",
       "body": [
-        "Highlights of the Sky Bet League Two match between Shrewsbury and Gillingham."
+        "Welcome to The Radar , a Sky Sports column in which Nick Wright uses a blend of data and opinion to shed light on need-to-know Premier League stories. This week:",
+        "🔺Arsenal's striker dilemma analysed 🔺Araujo helping shore up Liverpool 🔺A player to watch this weekend Why Arteta should keep backing Havertz",
+        "While Alexander Isak heads into Sunday's game at Anfield having scored six goals for Liverpool this season, Arsenal's frontmen continue to misfire. Kai Havertz and Viktor Gyokeres haven't hit a Premier League goal between them since early September. Transfer Centre LIVE! | Arsenal news & transfers 🔴⚪ Arsenal fixtures & scores | FREE Arsenal highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest deals or stream games with no contract 📺",
+        "Havertz has been Mikel Arteta's first choice since returning from injury last season. The 27-year-old started and scored in the Champions League final against Paris Saint-Germain in May and appeared to pick up where he left off in the new campaign."
       ]
     }
   ]
