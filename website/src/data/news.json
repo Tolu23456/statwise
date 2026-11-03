@@ -1,10 +1,33 @@
 {
-  "synced_at": "2026-11-03T06:49:16+00:00",
+  "synced_at": "2026-11-03T16:17:17+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13607109",
+      "title": "Penrice handed first Scotland call as McTominay returns",
+      "url": "https://www.skysports.com/football/news/13607109/scotland-james-penrice-included-in-sebastien-pocognolis-squad-with-scott-mctominay-back-for-nations-league-double-header",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-scotland_7395646.jpg?20261103104521",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13607451",
+      "title": "'He will suit our style' - Scotland boss Pocognoli on Penrice's first call-up",
+      "url": "https://www.skysports.com/football/video/13607451/scotland-james-penrice-will-suit-our-style-as-sebastien-pocognolii-stresses-importance-of-continuity",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-sebastien-pocognoli_7367562.jpg?20261003221039",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13607010",
       "title": "'It's like a parting of the Red Sea!' - Tim & Jay slam United defence on Rogers goal",
@@ -109,6 +132,133 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13607506",
+      "title": "'I'm not Mo Salah' - Barcola on £123m Liverpool move, PSG exit and more!",
+      "url": "https://www.skysports.com/football/video/13607506/bradley-barcola-on-lb123m-liverpool-move-psg-exit-and-more-im-not-mo-salah",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-barcola-pl_7395905.jpg?20261103153812",
+      "excerpt": "Bradley Barcola discusses his £123m move to Liverpool, PSG exit and more!",
+      "published_label": "03 November 2026 · 15:07",
+      "published_iso": "2026-11-03T15:07:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Bradley Barcola discusses his £123m move to Liverpool, PSG exit and more!"
+      ]
+    },
+    {
+      "slug": "13607498",
+      "title": "Win Premier League tickets with Sky Sports' FPL competition",
+      "url": "https://www.skysports.com/football/news/13607498/fantasy-premier-league-enter-sky-sports-manager-of-the-month-competition-to-win-premier-league-tickets",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-fantasy-premier-league_7395835.jpg?20261103143351",
+      "excerpt": "A new month. A new competition. A new chance to win Premier League tickets with Fantasy Premier League each month.",
+      "published_label": "03 November 2026 · 14:20",
+      "published_iso": "2026-11-03T14:20:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "A new month. A new competition. A new chance to win Premier League tickets with Fantasy Premier League each month.",
+        "This November, Sky Sports will give a pair of Premier League match tickets to their Fantasy Premier League Manager of the Month.",
+        "It doesn't matter whether you've signed up for Fantasy already this season or not, or where you are in any current leagues. Everyone starts on zero each month, so it's only your November score that counts.",
+        "All you need to do is play for this month's three \"Gameweeks\", up to and including the matches played on Sunday 29 November. Whoever gets the highest combined score in that time will be crowned Manager of the Month and win the tickets ( Terms and conditions apply )."
+      ]
+    },
+    {
+      "slug": "13607484",
+      "title": "Beauties from Bellingham, Gordon, Yamal and more! - Best goals from Europe this weekend",
+      "url": "https://www.skysports.com/football/video/13607484/best-euro-goals-03-11-26-mxf",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-euro-best-goals-goals_7395785.jpg?20261103134147",
+      "excerpt": "Check out some of the best goals from LaLiga, Serie A, Ligue 1 and Bundesliga.",
+      "published_label": "03 November 2026 · 13:30",
+      "published_iso": "2026-11-03T13:30:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Check out some of the best goals from LaLiga, Serie A, Ligue 1 and Bundesliga."
+      ]
+    },
+    {
+      "slug": "13607479",
+      "title": "Could Scott Parker be returning to West Ham? - His best goals for the Hammers!",
+      "url": "https://www.skysports.com/football/video/13607479/could-scott-parker-be-returning-to-west-ham-parkers-best-goals-for-the-hammers",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-s_7395779.jpg?20261103133252",
+      "excerpt": "With Scott Parker heavily linked with the West Ham job, watch back his best Premier League goals from his time at Upton Park.",
+      "published_label": "03 November 2026 · 13:20",
+      "published_iso": "2026-11-03T13:20:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "With Scott Parker heavily linked with the West Ham job, watch back his best Premier League goals from his time at Upton Park."
+      ]
+    },
+    {
+      "slug": "13607469",
+      "title": "FIRST PICTURES - Saliba returns to Arsenal training after injury",
+      "url": "https://www.skysports.com/football/video/13607469/arsenal-william-saliba-trains-with-arsenal-first-team-after-injury",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-saliba-arenal-arsenal_7395741.jpg?20261103130915",
+      "excerpt": "Gary Cotterill reports on William Saliba's first training session with Arsenal's first team since he injury picked up during the World Cup.",
+      "published_label": "03 November 2026 · 13:04",
+      "published_iso": "2026-11-03T13:04:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Gary Cotterill reports on William Saliba's first training session with Arsenal's first team since he injury picked up during the World Cup."
+      ]
+    },
+    {
+      "slug": "13607401",
+      "title": "Tenerife striker dies following collision during match",
+      "url": "https://www.skysports.com/football/news/13607401/tenerife-striker-jesus-de-miguel-dies-after-cardiac-arrest-following-collision-during-a-match",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-tenerife-jesus-de-miguel_7395603.jpg?20261103101208",
+      "excerpt": "Tenerife striker Jesus de Miguel died ‌on Tuesday at the age of 30, a ‌day after suffering a cardiac arrest following ​a collision during a match.",
+      "published_label": "03 November 2026 · 09:55",
+      "published_iso": "2026-11-03T09:55:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Tenerife striker Jesus de Miguel died ‌on Tuesday at the age of 30, a ‌day after suffering a cardiac arrest following ​a collision during a match.",
+        "\"Racked with pain, with ‌a lump in our throats and unable to ​believe that this is true, from CD Tenerife we communicate the tragic ​passing of Jesus de ⁠Miguel Alameda,\" the ⁠Spanish second-tier club said.",
+        "\"There are no words of comfort; there is ‌absolutely nothing that can alleviate this feeling overflowing with sadness.\"",
+        "The match ‌against FC Andorra was abandoned seven minutes into stoppage time after De Miguel collapsed following a collision with ⁠away goalkeeper Jesus Owono, who ​had rushed out of ​his area to clear a ​long ball and collided with the striker. Owono was sent off immediately."
+      ]
+    },
+    {
+      "slug": "champions-league-md4-player-props-haaland-mbappe-psg",
+      "title": "Champions League Player Props: Haaland and Mbappe Goalscorer Locks for",
+      "url": "https://www.sportytrader.com/en-gb/news/champions-league-md4-player-props-haaland-mbappe-psg/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/barca_laliga.webp",
+      "excerpt": "The UEFA Champions League returns this week with 18 mouth-watering fixtures across Europe on Tuesday and Wednesday. With teams like Man City, Real Madrid, and PSG all hav",
+      "published_label": "3 November 2026 · 07:00",
+      "published_iso": "2026-11-03T07:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
+      "slug": "barcelona-vs-aston-villa-the-past-the-pressure-and-a-camp-nou-test",
+      "title": "Barcelona vs Aston Villa: The Past, the Pressure, and a Camp Nou Test",
+      "url": "https://www.sportytrader.com/en/news/barcelona-vs-aston-villa-the-past-the-pressure-and-a-camp-nou-test/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/carrick_vs_gasperini_img.webp",
+      "excerpt": "Aston Villa's perfect start to their UEFA Champions League (League Phase) campaign faces its sternest test yet when they travel to Camp Nou to take on an attack-minded Ba",
+      "published_label": "3 November 2026 · 06:30",
+      "published_iso": "2026-11-03T06:30:00+00:00",
+      "byline": "Thobelani Moyo"
+    },
+    {
+      "slug": "manchester-united-vs-roma-champions-league-2026-27matchday-4",
+      "title": "Roma Return to the Scene of Their Worst European Nightmares, and This",
+      "url": "https://www.sportytrader.com/en/news/manchester-united-vs-roma-champions-league-2026-27matchday-4/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/cricket/sa-vs-aus-third-test.webp",
+      "excerpt": "Roma have been humiliated twice at Old Trafford in European competition. On Tuesday, they return to Manchester for Champions League Matchday 4, but the form book has neve",
+      "published_label": "3 November 2026 · 05:30",
+      "published_iso": "2026-11-03T05:30:00+00:00",
+      "byline": "Geoffrey Ejiga"
     },
     {
       "slug": "13607327",
@@ -453,6 +603,23 @@
       ]
     },
     {
+      "slug": "13607009",
+      "title": "Barcola: People are starting to understand me better - but I'm not Mo Salah",
+      "url": "https://www.skysports.com/football/news/13607009/bradley-barcola-interview-liverpool-winger-discusses-leaving-psg-settling-in-at-anfield-overcoming-the-price-tag-and-mohamed-salah-pressure",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/SKYSPORTS_5acd404f0efc3093240c6c0e21ab369855df54510c2e200ee61be1c7f123424a_7394693.jpg?20261102104226",
+      "excerpt": "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
+      "published_label": "02 November 2026 · 10:40",
+      "published_iso": "2026-11-02T10:40:00+00:00",
+      "byline": "Sam Blitz",
+      "body": [
+        "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
+        "As Sky Sports settles into a room at Liverpool's AXA training facility, a large window shows some of their big-money stars walking off one of the pitches after a recovery session. It's a sheer amount of attacking wealth.",
+        "Two of them are Alexander Isak and Florian Wirtz, who arrived in deals that could reach a combined £241m. But the jury is still out on both of them. Isak has only just started delivering his highly-anticipated goal numbers, while many believe Wirtz is yet to get going on Merseyside.",
+        "This year, Bradley Barcola - who goes from the pitch to sitting in front of the Sky Sports cameras in the training facility - is the latest marquee signing, this time for £123m. But a slow start to life at Anfield brought about familiar concerns about recent buys. Transfer Centre LIVE! | Liverpool news & transfers 🔴 Liverpool fixtures & scores | FREE Liverpool highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
       "slug": "13607002",
       "title": "WOW! Diomande stuns Real team-mates with sensational half-volley!",
       "url": "https://www.skysports.com/football/video/13607002/yan-diomande-leaves-real-madrid-team-mates-stunned-with-sensational-half-volley",
@@ -543,208 +710,18 @@
       ]
     },
     {
-      "slug": "13606793",
-      "title": "Isak's non-penalty and Madueke-Mac Allister 'headbutt' - were big calls right?",
-      "url": "https://www.skysports.com/football/news/13606793/liverpool-0-1-arsenal-alexander-isak-jurrien-timber-shirt-pull-and-noni-madueke-alexis-mac-allister-headbutt-show-good-and-bad-sides-of-var",
+      "slug": "13604904",
+      "title": "'The club helped me a lot' - Larin on Eckert's influence in Saints return",
+      "url": "https://www.skysports.com/football/video/13604904/cyle-larin-reveals-tonda-eckerts-role-in-southampton-return-and-why-his-style-of-play-suits-the-league",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexis-mac-allister_7394192.jpg?20261101200054",
-      "excerpt": "There were two big flashpoints during Arsenal's 1-0 win over Liverpool, demonstrating the good and bad sides of VAR.",
-      "published_label": "01 November 2026 · 20:05",
-      "published_iso": "2026-11-01T20:05:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "There were two big flashpoints during Arsenal's 1-0 win over Liverpool, demonstrating the good and bad sides of VAR.",
-        "Kai Havertz's early goal was enough for the Gunners to win at Anfield for the first time in 14 years, but there was plenty of action elsewhere in an enthralling encounter.",
-        "Read on to find out what our Super Sunday pundits had to say and tune into Ref Watch at 11am on Monday for the views of former Premier League referee Dermot Gallagher ... Liverpool 0-1 Arsenal - Report and highlights Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺 Isak denied penalty: 'VAR, do your job'",
-        "In the first half, Alexander Isak had his shirt pulled by Jurrien Timber - but did not react to the contact."
-      ]
-    },
-    {
-      "slug": "13606811",
-      "title": "'Next time I will tell him to dive!' - Iraola frustrated by Isak penalty decision",
-      "url": "https://www.skysports.com/football/video/13606811/andoni-iraola-frustrated-after-alexander-isak-denied-penalty-i-will-tell-him-to-go-down-next-time",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-andoni-iraola-iraola_7394201.jpg?20261101201604",
-      "excerpt": "Speaking after the 1-0 defeat to Arsenal at Anfield, Liverpool manager Andoni Iraola suggested that Alexander Isak would have been awarded a penalty if he'd gone to ground and claimed that he'll be instructing his players to do so in future…",
-      "published_label": "01 November 2026 · 19:57",
-      "published_iso": "2026-11-01T19:57:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-cyle-larin-southampton_7395906.jpg?20261103153836",
+      "excerpt": "Cyle Larin sits down with Sky Sports' Simeon Gholam to discuss Tonda Eckert's role in his Southampton return, overcoming the points deduction and why his style of play suits the Championship.",
+      "published_label": "28 October 2026 · 15:21",
+      "published_iso": "2026-10-28T15:21:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Speaking after the 1-0 defeat to Arsenal at Anfield, Liverpool manager Andoni Iraola suggested that Alexander Isak would have been awarded a penalty if he'd gone to ground and claimed that he'll be instructing his players to do so in future."
-      ]
-    },
-    {
-      "slug": "13606788",
-      "title": "'It has to STOP! Embarrassing!' - Mac Allister slammed for clash with Madueke",
-      "url": "https://www.skysports.com/football/video/13606788/liverpool-vs-arsenal-super-sunday-panel-on-maduekes-alleged-headbutt-incident-with-mac-allister",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mac-allister-liverpool_7394148.jpg?20261101190358",
-      "excerpt": "The Super Sunday panel discuss Alexis Mac Allister's clash with Noni Madueke where the Argentine midfielder fell to the ground after a head-to-head incident with the Arsenal winger.",
-      "published_label": "01 November 2026 · 18:54",
-      "published_iso": "2026-11-01T18:54:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "The Super Sunday panel discuss Alexis Mac Allister's clash with Noni Madueke where the Argentine midfielder fell to the ground after a head-to-head incident with the Arsenal winger."
-      ]
-    },
-    {
-      "slug": "13606781",
-      "title": "Arsenal triumphant in historic Anfield victory",
-      "url": "https://www.skysports.com/football/video/13606781/liverpool-0-1-arsenal-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7394114.jpg?20261101183652",
-      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Liverpool and Arsenal.",
-      "published_label": "01 November 2026 · 18:34",
-      "published_iso": "2026-11-01T18:34:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "FREE TO WATCH: Highlights from the Premier League match between Liverpool and Arsenal."
-      ]
-    },
-    {
-      "slug": "13606658",
-      "title": "Arsenal win at Anfield for first time in 14 years to move top",
-      "url": "https://www.skysports.com/football/news/13606658/liverpool-0-1-arsenal-kai-havertz-seals-gunners-first-victory-at-anfield-for-14-years-to-move-top-of-premier-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kai-havertz-premier-league_7393984.jpg?20261101165117",
-      "excerpt": "Arsenal won at Anfield for the first time in 14 years after Kai Havertz's strike sealed a gritty 1-0 victory - but Liverpool were denied what looked to be a clear penalty.",
-      "published_label": "01 November 2026 · 18:30",
-      "published_iso": "2026-11-01T18:30:00+00:00",
-      "byline": "Laura Hunter",
-      "body": [
-        "Arsenal won at Anfield for the first time in 14 years after Kai Havertz's strike sealed a gritty 1-0 victory - but Liverpool were denied what looked to be a clear penalty.",
-        "The result opens up a three-point gap on Manchester City at the top of the Premier League - and means Mikel Arteta's side are nine clear of Liverpool.",
-        "In a battle of attrition, the only discernible difference was at the top end. Liverpool's various waves of pressure almost always led to an effort on David Raya's goal - 17 in total - but none actually forced the goalkeeper into a save.",
-        "Florian Wirtz hit the crossbar with a free-kick and Alexis Mac Allister ballooned a header over the bar unmarked, but Andoni Iraola's side failed to land a single shot on target at home for the first time on record. \"It's been a defensive masterclass from Arsenal,\" said Gary Neville."
-      ]
-    },
-    {
-      "slug": "13604412",
-      "title": "PL Predictions: Can Everton beat unconvincing Newcastle?",
-      "url": "https://www.skysports.com/football/news/13604412/premier-league-predictions-and-jones-knows-best-bets-liverpool-vs-arsenal-crystal-palace-vs-tottenham-and-much-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
-      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for an intriguing Monday Night Football. Newcastle vs Everton, Monday 8pm, live on Sky Sports Got Sky? Watch Premier League games LIVE on your phone 📱 N…",
-      "published_label": "01 November 2026 · 18:15",
-      "published_iso": "2026-11-01T18:15:00+00:00",
-      "byline": "Lewis Jones",
-      "body": [
-        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight for an intriguing Monday Night Football. Newcastle vs Everton, Monday 8pm, live on Sky Sports Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "The betting market is yet to be convinced by Newcastle and their price to beat Everton at St James' Park tells its own story.",
-        "At 5/4 with Sky Bet, this is the biggest price they have been to win this fixture in their last six home meetings. For context, across the previous two seasons they were priced at 7/10 and even 1/4 to beat the Toffees on home soil.",
-        "So what has changed? The underlying numbers are hardly screaming that Newcastle are a team to trust with Eddie Howe gone."
-      ]
-    },
-    {
-      "slug": "13606772",
-      "title": "Bellingham and Mbappe on scoresheet as Real Madrid breeze past Racing Santander",
-      "url": "https://www.skysports.com/football/video/13606772/racing-santander-vs-real-madrid-laliga-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-laliga_7394097.jpg?20261101181719",
-      "excerpt": "Highlights of the LaLiga match between Racing Santander and Real Madrid.",
-      "published_label": "01 November 2026 · 18:14",
-      "published_iso": "2026-11-01T18:14:00+00:00",
-      "byline": "Racing Santander vs Real Madrid | LaLiga highlights",
-      "kind": "video",
-      "body": [
-        "Highlights of the LaLiga match between Racing Santander and Real Madrid."
-      ]
-    },
-    {
-      "slug": "13606770",
-      "title": "BRILLIANT SAVE! Alisson denies Tzolis to keep Liverpool alive",
-      "url": "https://www.skysports.com/football/video/13606770/save-alisson-73-liverpool-0-1-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7394089.jpg?20261101180817",
-      "excerpt": "Liverpool stopper Alisson produces a great save with his left hand to keep out this shot from Christos Tzolis.",
-      "published_label": "01 November 2026 · 18:06",
-      "published_iso": "2026-11-01T18:06:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Liverpool stopper Alisson produces a great save with his left hand to keep out this shot from Christos Tzolis."
-      ]
-    },
-    {
-      "slug": "13606734",
-      "title": "Chelsea flex title-winning credentials but Man City following closely",
-      "url": "https://www.skysports.com/football/news/13606734/wsl-talking-points-chelsea-flex-title-winning-credentials-with-dominant-win-at-charlton-but-man-city-are-keeping-up",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7393939.jpg?20261101160800",
-      "excerpt": "Manchester City asked the question. Chelsea answered with six goals.",
-      "published_label": "01 November 2026 · 17:55",
-      "published_iso": "2026-11-01T17:55:00+00:00",
-      "byline": "Sam Cohen and Patrick Rowe",
-      "body": [
-        "Manchester City asked the question. Chelsea answered with six goals.",
-        "Their emphatic 6-0 win at Charlton restored them to the top of the WSL on goal difference and showed just how many ways this team can hurt opponents. WSL round-up: Arsenal held by Villa as City beat London City Got Sky? Watch WSL games on your phone Not got Sky? Stream WSL games with no contract",
-        "Nathalie Bjorn opened the scoring, Melvine Malard struck twice and Ellie Carpenter also found the net before the break. Then the substitutes took over, with Aggie Beever-Jones scoring and Giulia Dragoni adding her first Chelsea goal.",
-        "That depth matters in a title race. Chelsea could withdraw Malard at half-time and still carry a threat, finishing with 34 shots and more than 70 per cent possession."
-      ]
-    },
-    {
-      "slug": "13606693",
-      "title": "Why Man Utd fans continue to stick by Carrick",
-      "url": "https://www.skysports.com/football/news/13606693/michael-carricks-man-utd-support-explained-as-fans-believe-reason-for-worst-start-in-40-years-goes-beyond-dugout",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-reporter-notebook_7393916.jpg?20261101154449",
-      "excerpt": "The last time Manchester United won a league game, schools were closed for the summer and the transfer window was still open.",
-      "published_label": "01 November 2026 · 17:30",
-      "published_iso": "2026-11-01T17:30:00+00:00",
-      "byline": "Kaveh Solhekol",
-      "body": [
-        "The last time Manchester United won a league game, schools were closed for the summer and the transfer window was still open.",
-        "When things get this bad, managers can be forgiven for heading straight down the tunnel after another defeat - especially if their side have made their worst start to a season in 40 years.",
-        "Michael Carrick did not have to think twice before heading towards the United supporters after the final whistle at Stamford Bridge following Saturday's 2-0 defeat . Neville: Man Utd stuck in a rut - and it's really worrying Carrick expects to remain in charge for Roma Man Utd fixtures: Roma up next...",
-        "Those fans had not seen their team win for almost two months, but they showed warmth, appreciation and respect for the manager who has overseen a run of nine league games without a win."
-      ]
-    },
-    {
-      "slug": "13606755",
-      "title": "'VAR, do your job!' - Was Timber's pull on Isak enough for a penalty?",
-      "url": "https://www.skysports.com/football/video/13606755/liverpool-vs-arsenal-carragher-sturridge-and-wright-discuss-liverpools-penalty-shout-as-timber-pulled-isaks-shirt",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-isak_7394061.jpg?20261101173304",
-      "excerpt": "Jamie Carragher, Daniel Sturridge and Ian Wright discuss Liverpool's penalty shout after Jurrien Timber pulled Alexander Isak's shirt as the striker attempted to head the ball.",
-      "published_label": "01 November 2026 · 17:27",
-      "published_iso": "2026-11-01T17:27:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jamie Carragher, Daniel Sturridge and Ian Wright discuss Liverpool's penalty shout after Jurrien Timber pulled Alexander Isak's shirt as the striker attempted to head the ball."
-      ]
-    },
-    {
-      "slug": "13606748",
-      "title": "'So close!!' - Wirtz free-kick hits the bar as Liverpool trail Arsenal",
-      "url": "https://www.skysports.com/football/video/13606748/post-f-wirtz-39-liverpool-0-1-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7394038.jpg?20261101171406",
-      "excerpt": "Liverpool come close to getting on the scoresheet as a free-kick sees Florian Wirtz smash the ball into the crossbar.",
-      "published_label": "01 November 2026 · 17:13",
-      "published_iso": "2026-11-01T17:13:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Liverpool come close to getting on the scoresheet as a free-kick sees Florian Wirtz smash the ball into the crossbar."
-      ]
-    },
-    {
-      "slug": "13606726",
-      "title": "Havertz fires Arsenal in front at Anfield",
-      "url": "https://www.skysports.com/football/video/13606726/goal-k-havertz-16-liverpool-0-0-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7393991.jpg?20261101165251",
-      "excerpt": "Declan Rice sends a low cross across the box to the far post, where Kai Havertz delivers the finish to put Arsenal ahead against Liverpool.",
-      "published_label": "01 November 2026 · 16:51",
-      "published_iso": "2026-11-01T16:51:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Declan Rice sends a low cross across the box to the far post, where Kai Havertz delivers the finish to put Arsenal ahead against Liverpool."
+        "Cyle Larin sits down with Sky Sports' Simeon Gholam to discuss Tonda Eckert's role in his Southampton return, overcoming the points deduction and why his style of play suits the Championship."
       ]
     }
   ]
