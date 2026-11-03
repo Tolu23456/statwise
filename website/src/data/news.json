@@ -1,106 +1,10 @@
 {
-  "synced_at": "2026-11-02T23:31:10+00:00",
+  "synced_at": "2026-11-03T06:49:16+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13607305",
-      "title": "'A red card in itself' - Ramsey sent off after second yellow",
-      "url": "https://www.skysports.com/football/video/13607305/newcastles-jacob-ramsey-sent-off-after-second-yellow-against-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ramsey-red-card_7395351.jpg?20261102220335",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13607301",
-      "title": "'Brilliant' Pickford stop denies Newcastle leveller",
-      "url": "https://www.skysports.com/football/video/13607301/brilliant-jordan-pickford-stop-denies-newcastle-leveller",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-pickford_7395338.jpg?20261102215202",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13607297",
-      "title": "'How did it not go in?' - Elanga unable squeeze home equaliser",
-      "url": "https://www.skysports.com/football/video/13607297/anthony-elanga-unable-squeeze-home-equaliser-for-newcastle-against-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/image_7395331.jpg?20261102212927",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13607290",
-      "title": "Barry pounces on goalkeeping error to give Everton lead",
-      "url": "https://www.skysports.com/football/video/13607290/thierno-barry-pounces-on-goalkeeping-error-to-give-everton-lead",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-barry_7395323.jpg?20261102212301",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13607284",
-      "title": "Armstrong strike goes wide as Everton miss out on opportunity for opener vs Everton",
-      "url": "https://www.skysports.com/football/video/13607284/harrison-armstrong-strike-goes-wide-as-everton-miss-out-on-opportunity-for-opener-vs-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-newcastle_7395294.jpg?20261102205528",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13607273",
-      "title": "'From that moment my game turned' - Kane credits Jose talk in helping him reach full potential",
-      "url": "https://www.skysports.com/football/video/13607273/harry-kane-credits-jose-mourinho-on-help-him-reach-ballon-dor-potential",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-kane_7395270.jpg?20261102202319",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13607038",
-      "title": "Bellingham vs Zidane: How do the Real Madrid stars' stats compare?",
-      "url": "https://www.skysports.com/football/video/13607038/jude-bellingham-how-do-real-madrid-stars-stats-compare-with-the-rest-of-europe",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jude-bellingham-real_7394753.jpg?20261102113030",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13607049",
-      "title": "'That's violent conduct!' - Should Martinez have received a straight red?",
-      "url": "https://www.skysports.com/football/video/13607049/ref-watch-debate-whether-lisandro-martinez-should-have-received-a-straight-red-against-chelsea",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ref-watch-martinez_7394787.jpg?20261102121150",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13607010",
       "title": "'It's like a parting of the Red Sea!' - Tim & Jay slam United defence on Rogers goal",
@@ -301,6 +205,21 @@
       ]
     },
     {
+      "slug": "13607305",
+      "title": "'A red card in itself' - Ramsey sent off after second yellow",
+      "url": "https://www.skysports.com/football/video/13607305/newcastles-jacob-ramsey-sent-off-after-second-yellow-against-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ramsey-red-card_7395351.jpg?20261102220335",
+      "excerpt": "Newcastle's Jacob Ramsey sent off after second yellow against Everton",
+      "published_label": "02 November 2026 · 22:00",
+      "published_iso": "2026-11-02T22:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Newcastle's Jacob Ramsey sent off after second yellow against Everton"
+      ]
+    },
+    {
       "slug": "13605474",
       "title": "Sorry Newcastle booed off as Everton earn first away PL win of season",
       "url": "https://www.skysports.com/football/news/13605474/newcastle-0-1-everton-toffees-earn-first-away-league-win-of-season-as-magpies-booed-off-after-jacob-ramsey-sees-red",
@@ -315,6 +234,81 @@
         "Newcastle's miserable evening deepened in stoppage time as substitute Jacob Ramsey was sent off after picking up two bookings in just 86 seconds.",
         "The disappointing Magpies were beaten by Everton for a second time in the space of four days after their 3-1 Carabao Cup fourth-round defeat on Merseyside. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
         "Another sorry display from Matthias Jaissle's side was underlined by Barry's 49th-minute winner, which Sky Sports commentator Andy Hinchcliffe labelled as \"truly shocking\" defending and \"terrible goalkeeping\"."
+      ]
+    },
+    {
+      "slug": "13607301",
+      "title": "'Brilliant' Pickford stop denies Newcastle leveller",
+      "url": "https://www.skysports.com/football/video/13607301/brilliant-jordan-pickford-stop-denies-newcastle-leveller",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-pickford_7395338.jpg?20261102215202",
+      "excerpt": "'Brilliant' Jordan Pickford stop denies Newcastle leveller",
+      "published_label": "02 November 2026 · 21:53",
+      "published_iso": "2026-11-02T21:53:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "'Brilliant' Jordan Pickford stop denies Newcastle leveller"
+      ]
+    },
+    {
+      "slug": "13607297",
+      "title": "'How did it not go in?' - Elanga unable squeeze home equaliser",
+      "url": "https://www.skysports.com/football/video/13607297/anthony-elanga-unable-squeeze-home-equaliser-for-newcastle-against-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/image_7395331.jpg?20261102212927",
+      "excerpt": "Anthony Elanga unable squeeze home equaliser for Newcastle against Everton",
+      "published_label": "02 November 2026 · 21:29",
+      "published_iso": "2026-11-02T21:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Anthony Elanga unable squeeze home equaliser for Newcastle against Everton"
+      ]
+    },
+    {
+      "slug": "13607290",
+      "title": "Barry pounces on goalkeeping error to give Everton lead",
+      "url": "https://www.skysports.com/football/video/13607290/thierno-barry-pounces-on-goalkeeping-error-to-give-everton-lead",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-barry_7395323.jpg?20261102212301",
+      "excerpt": "Thierno Barry pounces on goalkeeping error to give Everton lead.",
+      "published_label": "02 November 2026 · 21:14",
+      "published_iso": "2026-11-02T21:14:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Thierno Barry pounces on goalkeeping error to give Everton lead."
+      ]
+    },
+    {
+      "slug": "13607284",
+      "title": "Armstrong strike goes wide as Everton miss out on opportunity for opener vs Everton",
+      "url": "https://www.skysports.com/football/video/13607284/harrison-armstrong-strike-goes-wide-as-everton-miss-out-on-opportunity-for-opener-vs-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-newcastle_7395294.jpg?20261102205528",
+      "excerpt": "Everton's Harrison Armstrong strike goes wide as Everton miss out on opener opportunity against Newcastle.",
+      "published_label": "02 November 2026 · 20:52",
+      "published_iso": "2026-11-02T20:52:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Everton's Harrison Armstrong strike goes wide as Everton miss out on opener opportunity against Newcastle."
+      ]
+    },
+    {
+      "slug": "13607273",
+      "title": "'From that moment my game turned' - Kane credits Jose talk in helping him reach full potential",
+      "url": "https://www.skysports.com/football/video/13607273/harry-kane-credits-jose-mourinho-on-help-him-reach-ballon-dor-potential",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-kane_7395270.jpg?20261102202319",
+      "excerpt": "Harry Kane speaks on how Jose Mourinho helped him improve whilst he was at Tottenham.",
+      "published_label": "02 November 2026 · 20:22",
+      "published_iso": "2026-11-02T20:22:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Harry Kane speaks on how Jose Mourinho helped him improve whilst he was at Tottenham."
       ]
     },
     {
@@ -409,6 +403,36 @@
       "kind": "video",
       "body": [
         "Former Manchester United striker Wout Weghorst finishes off this stunning team goal for FC Twente."
+      ]
+    },
+    {
+      "slug": "13607049",
+      "title": "'That's violent conduct!' - Should Martinez have received a straight red?",
+      "url": "https://www.skysports.com/football/video/13607049/ref-watch-debate-whether-lisandro-martinez-should-have-received-a-straight-red-against-chelsea",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ref-watch-martinez_7394787.jpg?20261102121150",
+      "excerpt": "The Ref Watch team discuss whether Manchester United's Lisandro Martinez should have received a straight red against Chelsea for his challenge on Wesley Fofana?",
+      "published_label": "02 November 2026 · 11:53",
+      "published_iso": "2026-11-02T11:53:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "The Ref Watch team discuss whether Manchester United's Lisandro Martinez should have received a straight red against Chelsea for his challenge on Wesley Fofana?"
+      ]
+    },
+    {
+      "slug": "13607038",
+      "title": "Bellingham vs Zidane: How do the Real Madrid stars' stats compare?",
+      "url": "https://www.skysports.com/football/video/13607038/jude-bellingham-how-do-real-madrid-stars-stats-compare-with-the-rest-of-europe",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jude-bellingham-real_7394753.jpg?20261102113030",
+      "excerpt": "Sky Sports takes a closer look at how Jude Bellingham's goalscoring stats compare to the legendary Zinedine Zidane and the rest of Europe.",
+      "published_label": "02 November 2026 · 11:26",
+      "published_iso": "2026-11-02T11:26:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports takes a closer look at how Jude Bellingham's goalscoring stats compare to the legendary Zinedine Zidane and the rest of Europe."
       ]
     },
     {
