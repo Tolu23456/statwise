@@ -1,10 +1,21 @@
 {
-  "synced_at": "2026-11-03T16:17:17+00:00",
+  "synced_at": "2026-11-03T21:51:07+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13605575",
+      "title": "Esteve hoping for Champions League debut – and Haaland reunion",
+      "url": "https://www.skysports.com/football/news/13605575/maxime-esteve-interview-rb-leipzig-defender-on-his-erling-haaland-reunion-after-two-own-goals-against-man-city",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-maxime-esteve-rb-leipzig_7391409.jpg?20261029205201",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13607109",
       "title": "Penrice handed first Scotland call as McTominay returns",
@@ -134,6 +145,111 @@
       "byline": ""
     },
     {
+      "slug": "13607630",
+      "title": "Man Utd penalty drama! Dawson goes through all the emotions",
+      "url": "https://www.skysports.com/football/video/13607630/manchester-united-vs-roma-michael-dawson-reacts-to-bruno-fernandes-penalty-drama",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-dawson_7396187.jpg?20261103213244",
+      "excerpt": "Michael Dawson reacts to Bruno Fernandes's penalty goal for Manchester United in their Champions League clash with Roma.",
+      "published_label": "03 November 2026 · 21:27",
+      "published_iso": "2026-11-03T21:27:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Michael Dawson reacts to Bruno Fernandes's penalty goal for Manchester United in their Champions League clash with Roma."
+      ]
+    },
+    {
+      "slug": "13607628",
+      "title": "'Now Southampton have shown up!' - Edozie equalises for Saints",
+      "url": "https://www.skysports.com/football/video/13607628/championship-samuel-edozie-equalises-for-southampton-vs-west-brom",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396176.jpg?20261103212640",
+      "excerpt": "Samuel Edozie was on hand to finish as Southampton equalised in the second half against West Brom.",
+      "published_label": "03 November 2026 · 21:20",
+      "published_iso": "2026-11-03T21:20:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Samuel Edozie was on hand to finish as Southampton equalised in the second half against West Brom."
+      ]
+    },
+    {
+      "slug": "13607626",
+      "title": "'A thunderbolt from Makama!' - Norwich add fourth as they run riot at Derby",
+      "url": "https://www.skysports.com/football/video/13607626/a-thunderbolt-from-makama-norwich-add-fourth-as-they-run-riot-at-derby",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-makama-goal-norwich_7396175.jpg?20261103212616",
+      "excerpt": "Jovon Makama added Norwich's fourth goal at Derby with a thunderbolt from outside of the area.",
+      "published_label": "03 November 2026 · 21:16",
+      "published_iso": "2026-11-03T21:16:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jovon Makama added Norwich's fourth goal at Derby with a thunderbolt from outside of the area."
+      ]
+    },
+    {
+      "slug": "13607614",
+      "title": "Remarkable free-kick! Blackburn keeper caught out from distance!",
+      "url": "https://www.skysports.com/football/video/13607614/championship-jack-mcglynn-catches-out-blackburn-goalie-with-remarkable-free-kick",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-fre-kick_7396150.jpg?20261103210105",
+      "excerpt": "Jack McGlynn's spectacular free-kick caught out Blackburn Rovers goalkeeper Balazs Toth as Stoke City went ahead just before half-time.",
+      "published_label": "03 November 2026 · 20:47",
+      "published_iso": "2026-11-03T20:47:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jack McGlynn's spectacular free-kick caught out Blackburn Rovers goalkeeper Balazs Toth as Stoke City went ahead just before half-time."
+      ]
+    },
+    {
+      "slug": "13607613",
+      "title": "Peck scores first-half hat-trick including sublime top corner finish past five players!",
+      "url": "https://www.skysports.com/football/video/13607613/hes-taking-the-match-ball-home-sydie-peck-bags-first-half-hat-trick-for-sheffield-utd-at-preston",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-peck-sheffield-united_7396161.jpg?20261103211220",
+      "excerpt": "Sydie Peck scored a first-half hat-trick for Sheffield United as they came from behind at Preston in the Sky Bet Championship.",
+      "published_label": "03 November 2026 · 20:45",
+      "published_iso": "2026-11-03T20:45:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sydie Peck scored a first-half hat-trick for Sheffield United as they came from behind at Preston in the Sky Bet Championship."
+      ]
+    },
+    {
+      "slug": "13607606",
+      "title": "West Brom open scoring thanks to Price penalty",
+      "url": "https://www.skysports.com/football/video/13607606/championship-west-brom-open-scoring-thanks-to-isaac-price-penalty",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396122.jpg?20261103203442",
+      "excerpt": "Isaac Price's penalty saw West Brom take a first half lead over Southampton in their Championship clash.",
+      "published_label": "03 November 2026 · 20:30",
+      "published_iso": "2026-11-03T20:30:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Isaac Price's penalty saw West Brom take a first half lead over Southampton in their Championship clash."
+      ]
+    },
+    {
+      "slug": "13607593",
+      "title": "Cochrane scores screamer within the first minute!",
+      "url": "https://www.skysports.com/football/video/13607593/birminghams-alex-cochrane-goal-within-one-minute-against-millwall",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-alex-cochrane_7396092.jpg?20261103201416",
+      "excerpt": "Alex Cochrane scored within a minute against Millwall, from just under 30 yards to get an early lead for Birmingham.",
+      "published_label": "03 November 2026 · 20:07",
+      "published_iso": "2026-11-03T20:07:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Alex Cochrane scored within a minute against Millwall, from just under 30 yards to get an early lead for Birmingham."
+      ]
+    },
+    {
       "slug": "13607506",
       "title": "'I'm not Mo Salah' - Barcola on £123m Liverpool move, PSG exit and more!",
       "url": "https://www.skysports.com/football/video/13607506/bradley-barcola-on-lb123m-liverpool-move-psg-exit-and-more-im-not-mo-salah",
@@ -234,8 +350,8 @@
       "source": "SportyTrader",
       "image": "https://static.sportytrader.com/images/news/football/2027/barca_laliga.webp",
       "excerpt": "The UEFA Champions League returns this week with 18 mouth-watering fixtures across Europe on Tuesday and Wednesday. With teams like Man City, Real Madrid, and PSG all hav",
-      "published_label": "3 November 2026 · 07:00",
-      "published_iso": "2026-11-03T07:00:00+00:00",
+      "published_label": "3 November 2026 · 08:00",
+      "published_iso": "2026-11-03T08:00:00+00:00",
       "byline": "Devesh Jaganath"
     },
     {
@@ -245,8 +361,8 @@
       "source": "SportyTrader",
       "image": "https://static.sportytrader.com/images/news/football/2027/carrick_vs_gasperini_img.webp",
       "excerpt": "Aston Villa's perfect start to their UEFA Champions League (League Phase) campaign faces its sternest test yet when they travel to Camp Nou to take on an attack-minded Ba",
-      "published_label": "3 November 2026 · 06:30",
-      "published_iso": "2026-11-03T06:30:00+00:00",
+      "published_label": "3 November 2026 · 07:30",
+      "published_iso": "2026-11-03T07:30:00+00:00",
       "byline": "Thobelani Moyo"
     },
     {
@@ -256,8 +372,8 @@
       "source": "SportyTrader",
       "image": "https://static.sportytrader.com/images/news/cricket/sa-vs-aus-third-test.webp",
       "excerpt": "Roma have been humiliated twice at Old Trafford in European competition. On Tuesday, they return to Manchester for Champions League Matchday 4, but the form book has neve",
-      "published_label": "3 November 2026 · 05:30",
-      "published_iso": "2026-11-03T05:30:00+00:00",
+      "published_label": "3 November 2026 · 06:30",
+      "published_iso": "2026-11-03T06:30:00+00:00",
       "byline": "Geoffrey Ejiga"
     },
     {
@@ -586,142 +702,20 @@
       ]
     },
     {
-      "slug": "13607031",
-      "title": "Merse: Man Utd will be in relegation zone in a month",
-      "url": "https://www.skysports.com/football/news/13607031/man-utd-will-be-in-premier-league-relegation-zone-in-december-says-paul-merson-as-michael-carricks-side-hit-by-poor-recruitment",
+      "slug": "13606997",
+      "title": "West Ham close to appointing Parker as replacement for sacked Nuno",
+      "url": "https://www.skysports.com/football/news/13606997/west-ham-nuno-espirito-santo-sacked-by-hammers-with-club-sitting-in-eighth-place-in-the-championship",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-graphic-michael-carrick_7394780.jpg?20261102115507",
-      "excerpt": "Paul Merson is back with his latest Sky Sports column with a damning condemnation of Manchester United's recent form and a grim prediction for their upcoming prospects.",
-      "published_label": "02 November 2026 · 11:20",
-      "published_iso": "2026-11-02T11:20:00+00:00",
-      "byline": "Paul Merson",
-      "body": [
-        "Paul Merson is back with his latest Sky Sports column with a damning condemnation of Manchester United's recent form and a grim prediction for their upcoming prospects.",
-        "United were beaten 2-0 at Chelsea on Saturday as they dropped to fourth-bottom of the Premier League, having gone almost two months without a win in all competitions and beating only Ipswich in the league this season.",
-        "Goal difference is all which currently separates them from the relegation zone ahead of Crystal Palace - but Merson believes things will get worse before they get better for Carrick and his side. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺 'Man Utd will be in bottom three in a month'",
-        "The first half at Chelsea was alright and then they shot themselves in the foot. What can Michael Carrick do about that? It doesn't matter who's sat on the bench, you could have Carlo Ancelotti, Arsene Wenger, Jose Mourinho and Sir Alex Ferguson in the dugout, and you're not winning a football match."
-      ]
-    },
-    {
-      "slug": "13607009",
-      "title": "Barcola: People are starting to understand me better - but I'm not Mo Salah",
-      "url": "https://www.skysports.com/football/news/13607009/bradley-barcola-interview-liverpool-winger-discusses-leaving-psg-settling-in-at-anfield-overcoming-the-price-tag-and-mohamed-salah-pressure",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/SKYSPORTS_5acd404f0efc3093240c6c0e21ab369855df54510c2e200ee61be1c7f123424a_7394693.jpg?20261102104226",
-      "excerpt": "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
-      "published_label": "02 November 2026 · 10:40",
-      "published_iso": "2026-11-02T10:40:00+00:00",
-      "byline": "Sam Blitz",
-      "body": [
-        "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
-        "As Sky Sports settles into a room at Liverpool's AXA training facility, a large window shows some of their big-money stars walking off one of the pitches after a recovery session. It's a sheer amount of attacking wealth.",
-        "Two of them are Alexander Isak and Florian Wirtz, who arrived in deals that could reach a combined £241m. But the jury is still out on both of them. Isak has only just started delivering his highly-anticipated goal numbers, while many believe Wirtz is yet to get going on Merseyside.",
-        "This year, Bradley Barcola - who goes from the pitch to sitting in front of the Sky Sports cameras in the training facility - is the latest marquee signing, this time for £123m. But a slow start to life at Anfield brought about familiar concerns about recent buys. Transfer Centre LIVE! | Liverpool news & transfers 🔴 Liverpool fixtures & scores | FREE Liverpool highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13607002",
-      "title": "WOW! Diomande stuns Real team-mates with sensational half-volley!",
-      "url": "https://www.skysports.com/football/video/13607002/yan-diomande-leaves-real-madrid-team-mates-stunned-with-sensational-half-volley",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-yan-diomande-real-madrid_7394684.jpg?20261102103932",
-      "excerpt": "Yan Diomande silenced the Estadio El Sardinero with this stunning half-volley in Real Madrid's 3-0 win over Racing Santander in LaLiga.",
-      "published_label": "02 November 2026 · 10:31",
-      "published_iso": "2026-11-02T10:31:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-championship_7395597.jpg?20261103094245",
+      "excerpt": "Scott Parker is close to being appointed West Ham boss after the club sacked Nuno Espirito Santo.",
+      "published_label": "02 November 2026 · 10:04",
+      "published_iso": "2026-11-02T10:04:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Yan Diomande silenced the Estadio El Sardinero with this stunning half-volley in Real Madrid's 3-0 win over Racing Santander in LaLiga."
-      ]
-    },
-    {
-      "slug": "13606973",
-      "title": "Could former wonderkid Silva fulfil his potential at Dortmund?",
-      "url": "https://www.skysports.com/football/news/13606973/fabio-silva-is-borussia-dortmunds-hero-in-der-klassiker-could-the-portugal-forward-fulfil-his-potential-after-all",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-fabio-silva-borussia-dortmund_7394565.jpg?20261102075105",
-      "excerpt": "While the Ballon d’Or winner Harry Kane was fluffing his lines at one end of the pitch, Fabio Silva was preparing to rewrite the script at the other. His late equaliser for Borussia Dortmund in Der Klassiker must be the most important goal…",
-      "published_label": "02 November 2026 · 10:00",
-      "published_iso": "2026-11-02T10:00:00+00:00",
-      "byline": "Adam Bate",
-      "body": [
-        "While the Ballon d’Or winner Harry Kane was fluffing his lines at one end of the pitch, Fabio Silva was preparing to rewrite the script at the other. His late equaliser for Borussia Dortmund in Der Klassiker must be the most important goal of his career.",
-        "It was magnificent too. The first touch was perfection to protect the ball and give him just enough space to arrow a shot into the far corner with his second. An 89th-minute equaliser away to Bayern Munich to maintain Dortmund's unbeaten record.",
-        "There is a feeling within Dortmund that he needed this as a reward for his efforts. Speaking to goalkeeper Gregor Kobel afterwards, he made the point that forwards need goals to feel good. Stealing the show from Kane could be a transformative moment.",
-        "Silva's potential has long been debated. He was just 18 when Wolves committed £30m to sign him from Porto, the club's chairman talking of a generational talent. Nominated for the Golden Boy award, this was the very definition of the precocious wonderkid. Bundesliga: Table | Fixtures & results Want to watch Bundesliga football? Latest Sky Sports deals or stream games with no contract"
-      ]
-    },
-    {
-      "slug": "4-things-we-learned-from-south-africas--test-victory-over-australia",
-      "title": "4 Things We Learned from South Africa’s Stunning Test Series Victory o",
-      "url": "https://www.sportytrader.com/en-za/news/4-things-we-learned-from-south-africas--test-victory-over-australia/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/liverpool-vs-arsenal-1.webp",
-      "excerpt": "The South African national cricket team pulled off one of the most remarkable Test and series victories in their history this past weekend, beating Australia by 176 runs",
-      "published_label": "2 November 2026 · 06:00",
-      "published_iso": "2026-11-02T06:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13606877",
-      "title": "Alajbegovic scores super strike in Juventus’ victory over Napoli",
-      "url": "https://www.skysports.com/football/video/13606877/juventus-vs-napoli-serie-a-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-serie-a_7394370.jpg?20261101231734",
-      "excerpt": "Highlights of the Serie A match between Juventus and Napoli.",
-      "published_label": "01 November 2026 · 23:15",
-      "published_iso": "2026-11-01T23:15:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Serie A match between Juventus and Napoli."
-      ]
-    },
-    {
-      "slug": "13606815",
-      "title": "Defensive 'masterclass' and elite Rice - how Arsenal ended Anfield torment",
-      "url": "https://www.skysports.com/football/news/13606815/arsenals-defensive-masterclass-praised-in-liverpool-win-as-jamie-carragher-salutes-world-class-declan-rice",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-arsenal_7394132.jpg?20261101231038",
-      "excerpt": "Not since 2012 - when current boss Mikel Arteta was commanding Arsenal's midfield on the pitch - had the Gunners won on Liverpool’s patch. That curse has finally been broken.",
-      "published_label": "01 November 2026 · 23:00",
-      "published_iso": "2026-11-01T23:00:00+00:00",
-      "byline": "Laura Hunter",
-      "body": [
-        "Not since 2012 - when current boss Mikel Arteta was commanding Arsenal's midfield on the pitch - had the Gunners won on Liverpool’s patch. That curse has finally been broken.",
-        "Winning at Anfield is a rarity, especially for Arsenal. But Arteta's side were ruthless at both ends of the pitch, a tactical triumph for the boss and one that underlines his side's champion mentality.",
-        "\"I love when there is something that we haven't done for many years,\" beamed the Spaniard, who praised his players for a defensive performance he called \"remarkable\". If Arteta wanted to make a statement, he succeeded. Liverpool 0-1 Arsenal - Report and highlights Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "Despite being pinned back in a first half dominated by Liverpool pressure, the visitors restricted their hosts to zero accurate shots - the first time on record the Reds failed to land at least one attempt on target at home."
-      ]
-    },
-    {
-      "slug": "13606782",
-      "title": "Chelsea hit six in rout of Charlton",
-      "url": "https://www.skysports.com/football/video/13606782/charlton-athletic-0-6-chelsea-wsl-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-charlton-chelsea_7394133.jpg?20261101184839",
-      "excerpt": "Highlights of the Women's Super League match between Charlton Athletic and Chelsea.",
-      "published_label": "01 November 2026 · 20:30",
-      "published_iso": "2026-11-01T20:30:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Women's Super League match between Charlton Athletic and Chelsea."
-      ]
-    },
-    {
-      "slug": "13604904",
-      "title": "'The club helped me a lot' - Larin on Eckert's influence in Saints return",
-      "url": "https://www.skysports.com/football/video/13604904/cyle-larin-reveals-tonda-eckerts-role-in-southampton-return-and-why-his-style-of-play-suits-the-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-cyle-larin-southampton_7395906.jpg?20261103153836",
-      "excerpt": "Cyle Larin sits down with Sky Sports' Simeon Gholam to discuss Tonda Eckert's role in his Southampton return, overcoming the points deduction and why his style of play suits the Championship.",
-      "published_label": "28 October 2026 · 15:21",
-      "published_iso": "2026-10-28T15:21:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Cyle Larin sits down with Sky Sports' Simeon Gholam to discuss Tonda Eckert's role in his Southampton return, overcoming the points deduction and why his style of play suits the Championship."
+        "Scott Parker is close to being appointed West Ham boss after the club sacked Nuno Espirito Santo.",
+        "Nuno departs after back-to-back defeats left the Hammers eighth in the Championship, and Sky Sports News understands discussions with Parker, who made 129 appearances for West Ham as a player between 2007-2011, are at an advanced stage.",
+        "Saturday's 3-1 home defeat to West Brom proved to be the end of the road for Nuno, who felt the heat from the supporters at London Stadium following the loss. West Ham latest news | Championship table Transfer Centre LIVE! | Latest EFL news and rumours",
+        "Nuno has been relieved of his duties ahead of Wednesday's trip to Cardiff in the league - live on Sky Sports . West Ham, who were widely expected to go straight back up to the Premier League, sit four points off the automatic promotion spots."
       ]
     }
   ]
