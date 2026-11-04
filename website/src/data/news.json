@@ -1,10 +1,33 @@
 {
-  "synced_at": "2026-11-04T02:21:16+00:00",
+  "synced_at": "2026-11-04T12:09:33+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13607467",
+      "title": "Liverpool's unwanted record highlights creativity issue",
+      "url": "https://www.skysports.com/football/news/13607467/liverpools-unwanted-record-against-arsenal-shows-creativity-problem-under-andoni-iraola-between-the-lines",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-florian-wirtz-liverpool_7395735.png?20261103125846",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13607653",
+      "title": "Stoke jump to third with win at Blackburn",
+      "url": "https://www.skysports.com/football/video/13607653/blackburn-rovers-1-2-stoke-city-championship-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396273.jpg?20261103222301",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13595365",
       "title": "Southampton hit back to hold West Brom",
@@ -211,6 +234,130 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13607892",
+      "title": "'Spurs are back!!' - O'Hara hails Tottenham Hotspur turnaround",
+      "url": "https://www.skysports.com/football/video/13607892/sky-sports-fc-jamie-ohara-hails-spurs-turnaround",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jamie-ohara-spurs_7396759.jpg?20261104114809",
+      "excerpt": "Jamie O'Hara hails the turnaround in form at Spurs this season and says he wouldn't be surprised to see them qualify for Europe.",
+      "published_label": "04 November 2026 · 11:44",
+      "published_iso": "2026-11-04T11:44:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie O'Hara hails the turnaround in form at Spurs this season and says he wouldn't be surprised to see them qualify for Europe."
+      ]
+    },
+    {
+      "slug": "13607870",
+      "title": "'They're not good enough!' - O'Hara's brutal assessment of Man Utd despite Roma win",
+      "url": "https://www.skysports.com/football/video/13607870/jamie-oharas-brutal-assessment-of-man-utd-despite-roma-win-theyre-not-good-enough",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jamie-ohara-manchester-united_7396717.jpg?20261104105753",
+      "excerpt": "Jamie O'Hara believes that Manchester United have not hit a turning point despite the impressive 3-2 comeback against Roma in the Champions League.",
+      "published_label": "04 November 2026 · 10:41",
+      "published_iso": "2026-11-04T10:41:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie O'Hara believes that Manchester United have not hit a turning point despite the impressive 3-2 comeback against Roma in the Champions League."
+      ]
+    },
+    {
+      "slug": "13607854",
+      "title": "Wilson, Rodon recalled to Wales squad for Nations League clashes",
+      "url": "https://www.skysports.com/football/news/13607854/wales-craig-bellamy-announces-26-man-squad-for-uefa-nations-league-matches-against-norway-and-portugal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-wilson-wales_7396687.jpg?20261104102340",
+      "excerpt": "Wales boss Craig Bellamy has recalled several players, including Harry Wilson and Joe Rodon, for November's Nations League fixtures.",
+      "published_label": "04 November 2026 · 10:30",
+      "published_iso": "2026-11-04T10:30:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Wales boss Craig Bellamy has recalled several players, including Harry Wilson and Joe Rodon, for November's Nations League fixtures.",
+        "The Dragons sit third in Group A4 after beating Norway during the previous international break, but also suffering two defeats to Denmark and one against Portugal.",
+        "On Saturday November 14, they face Norway in Oslo, before a sold-out clash with Portugal at the Cardiff City Stadium on Tuesday November 17. UEFA Nations League scores & fixtures Get Sky Sports | Download the Sky Sports App",
+        "Leeds winger Wilson withdrew from the squad for the previous camp in September with a quadricep injury, while club team-mate Rodon has seemingly recovered from a hamstring injury suffered during the 1-1 draw with Brentford on August 30."
+      ]
+    },
+    {
+      "slug": "13607503",
+      "title": "Can Parker roll back the years and be a success at West Ham?",
+      "url": "https://www.skysports.com/football/news/13607503/scott-parker-to-west-ham-can-former-hammers-player-roll-back-years-and-win-premier-league-promotion-yet-again",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-parker-west-ham_7395895.jpg?20261103152611",
+      "excerpt": "As soon as news of Nuno Espirito Santo's departure was announced, only one name seemed to make sense for West Ham.",
+      "published_label": "04 November 2026 · 09:40",
+      "published_iso": "2026-11-04T09:40:00+00:00",
+      "byline": "Sam Blitz",
+      "body": [
+        "As soon as news of Nuno Espirito Santo's departure was announced, only one name seemed to make sense for West Ham.",
+        "The Hammers want to get out of the Championship. They need someone who has taken a relegated Premier League side back into the top flight in style. Scott Parker has done both on several occasions.",
+        "At Fulham, Bournemouth and Burnley, the former England international achieved tickets to the promised land with all three. Parker dealt with the high expectations of all three clubs and delivered on his promises. Scott Parker appointed West Ham head coach Transfer Centre LIVE! | West Ham news & transfers ⚒️",
+        "While his credentials at Premier League level can be fairly scrutinised, Parker knows the Championship. He knows West Ham, being named the club's player of the year three seasons in a row and won the Football Writers' Player of the Year during his time at the Hammers."
+      ]
+    },
+    {
+      "slug": "13607834",
+      "title": "Parker appointed West Ham head coach",
+      "url": "https://www.skysports.com/football/news/13607834/west-ham-scott-parker-returns-to-east-london-after-15-years-to-succeed-nuno-espirito-santo-as-hammers-manager",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-scott-parker-west-ham_7396642.jpg?20261104092427",
+      "excerpt": "West Ham have appointed Scott Parker as their new head coach.",
+      "published_label": "04 November 2026 · 09:30",
+      "published_iso": "2026-11-04T09:30:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "West Ham have appointed Scott Parker as their new head coach.",
+        "The 46-year-old has signed a two-and-a-half-year deal to succeed Nuno Espirito Santo, who was sacked on November 3 after just over 13 months in charge.",
+        "First-team coaches Steve Potts, Gerard Prenderville and Billy Lepine will assist Parker. The club say Mark Noble will also be working closely with his former team-mate. West Ham latest news | Championship table Transfer Centre LIVE! | Latest EFL news and rumours",
+        "He will take charge of Wednesday night's match against Cardiff at the Cardiff City Stadium and takes over with Hammers sitting eighth in the table, six points behind leaders Middlesbrough."
+      ]
+    },
+    {
+      "slug": "13607845",
+      "title": "Real Madrid reach verbal agreement with Man Utd teen star JJ Gabriel",
+      "url": "https://www.skysports.com/football/news/13607845/jj-gabriel-real-madrid-reach-verbal-agreement-with-man-utd-teenager-who-requested-to-leave-old-trafford",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-jj-gabriel-man-utd_7369112.jpg?20261005182930",
+      "excerpt": "Real Madrid have reached a verbal agreement with 16-year-old JJ Gabriel over a potential move to the Santiago Bernabeu.",
+      "published_label": "04 November 2026 · 09:28",
+      "published_iso": "2026-11-04T09:28:00+00:00",
+      "byline": "Danyal Khan and Dharmesh Sheth",
+      "body": [
+        "Real Madrid have reached a verbal agreement with 16-year-old JJ Gabriel over a potential move to the Santiago Bernabeu.",
+        "Gabriel is registered with Manchester United's academy until the end of the season but Real Madrid intend to sign him in January.",
+        "There is a FIFA loophole that allows European clubs to tie down young players to professional contracts if they have a European passport which Gabriel qualifies for through both parents.",
+        "Sky Sports News understands there has been no club-to-club contact over the teenager as of yet."
+      ]
+    },
+    {
+      "slug": "13607846",
+      "title": "Three HUGE positives Carrick can take from Man Utd's win vs Roma",
+      "url": "https://www.skysports.com/football/video/13607846/man-utd-3-2-as-roma-the-ythree-huge-positives-for-michael-carrick",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-dan-khan_7396648.jpg?20261104093240",
+      "excerpt": "Sky Sports Danyal Khan highlights the three positives Michael Carrick can take after their astonishing comeback victory against AS Roma in the Champions League.",
+      "published_label": "04 November 2026 · 09:28",
+      "published_iso": "2026-11-04T09:28:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports Danyal Khan highlights the three positives Michael Carrick can take after their astonishing comeback victory against AS Roma in the Champions League."
+      ]
+    },
+    {
+      "slug": "king-kohli-steers-india-to-1-0-odi-series-lead-in-rain-affected-opener-in-auckland",
+      "title": "King Kohli Steers India to 1-0 ODI Series Lead in Rain-Affected Opener",
+      "url": "https://www.sportytrader.com/en-in/news/king-kohli-steers-india-to-1-0-odi-series-lead-in-rain-affected-opener-in-auckland/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/ucl-md4-props-1.webp",
+      "excerpt": "India have taken a 1-0 lead in their five-match ODI series, beating New Zealand by five wickets via the DLS method in a rain-affected opener in Auckland this morning. Vir",
+      "published_label": "4 November 2026 · 04:30",
+      "published_iso": "2026-11-04T04:30:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13607697",
@@ -546,162 +693,20 @@
       ]
     },
     {
-      "slug": "champions-league-md4-player-props-haaland-mbappe-psg",
-      "title": "Champions League Player Props: Haaland and Mbappe Goalscorer Locks for",
-      "url": "https://www.sportytrader.com/en-gb/news/champions-league-md4-player-props-haaland-mbappe-psg/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/barca_laliga.webp",
-      "excerpt": "The UEFA Champions League returns this week with 18 mouth-watering fixtures across Europe on Tuesday and Wednesday. With teams like Man City, Real Madrid, and PSG all hav",
-      "published_label": "3 November 2026 · 07:00",
-      "published_iso": "2026-11-03T07:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "barcelona-vs-aston-villa-the-past-the-pressure-and-a-camp-nou-test",
-      "title": "Barcelona vs Aston Villa: The Past, the Pressure, and a Camp Nou Test",
-      "url": "https://www.sportytrader.com/en/news/barcelona-vs-aston-villa-the-past-the-pressure-and-a-camp-nou-test/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/carrick_vs_gasperini_img.webp",
-      "excerpt": "Aston Villa's perfect start to their UEFA Champions League (League Phase) campaign faces its sternest test yet when they travel to Camp Nou to take on an attack-minded Ba",
-      "published_label": "3 November 2026 · 06:30",
-      "published_iso": "2026-11-03T06:30:00+00:00",
-      "byline": "Thobelani Moyo"
-    },
-    {
-      "slug": "manchester-united-vs-roma-champions-league-2026-27matchday-4",
-      "title": "Roma Return to the Scene of Their Worst European Nightmares, and This",
-      "url": "https://www.sportytrader.com/en/news/manchester-united-vs-roma-champions-league-2026-27matchday-4/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/cricket/sa-vs-aus-third-test.webp",
-      "excerpt": "Roma have been humiliated twice at Old Trafford in European competition. On Tuesday, they return to Manchester for Champions League Matchday 4, but the form book has neve",
-      "published_label": "3 November 2026 · 05:30",
-      "published_iso": "2026-11-03T05:30:00+00:00",
-      "byline": "Geoffrey Ejiga"
-    },
-    {
-      "slug": "13607327",
-      "title": "'After that performance, I can understand that' - Jaissle acknowledges fans' frustration",
-      "url": "https://www.skysports.com/football/video/13607327/matthias-jaissle-understands-fans-frustrations-after-boos-were-heard-at-both-half-time-and-after-the-full-time-whistle",
+      "slug": "13606997",
+      "title": "West Ham close to appointing Parker as replacement for sacked Nuno",
+      "url": "https://www.skysports.com/football/news/13606997/west-ham-nuno-espirito-santo-sacked-by-hammers-with-club-sitting-in-eighth-place-in-the-championship",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jassle-newcastle_7395404.jpg?20261102232510",
-      "excerpt": "Newcastle United boss Matthias Jaissle understands the fans’ frustrations after boos were heard at half-time and full-time, and takes responsibility for his side’s poor performance.",
-      "published_label": "02 November 2026 · 23:17",
-      "published_iso": "2026-11-02T23:17:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Newcastle United boss Matthias Jaissle understands the fans’ frustrations after boos were heard at half-time and full-time, and takes responsibility for his side’s poor performance."
-      ]
-    },
-    {
-      "slug": "13607310",
-      "title": "Papers: Kroupi and Yildiz on Arsenal's radar ahead of January window",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13607310/bournemouth-forward-junior-kroupi-and-juventus-winger-kenan-yildiz-both-in-arsenal-boss-mikel-artetas-sights-ahead-of-january-window-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Tuesday's newspapers... PREMIER LEAGUE",
-      "published_label": "02 November 2026 · 22:48",
-      "published_iso": "2026-11-02T22:48:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-championship_7395597.jpg?20261103094245",
+      "excerpt": "Scott Parker is close to being appointed West Ham boss after the club sacked Nuno Espirito Santo.",
+      "published_label": "02 November 2026 · 10:04",
+      "published_iso": "2026-11-02T10:04:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "The top stories and transfer rumours from Tuesday's newspapers... PREMIER LEAGUE",
-        "Mikel Arteta is pushing to make a move in the January transfer window with Bournemouth forward Junior Kroupi and Juventus winger Kenan Yildiz both in Arsenal's sights - The Mirror Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "Max Dowman has been labelled the \"best I have ever seen\" by former Arsenal star Alex Oxlade-Chamberlain - The Sun",
-        "Erling Haaland is purely focused on playing for Manchester City and is not concerned by the possible punishment the club faces, according to his father Alfie - The Mirror"
-      ]
-    },
-    {
-      "slug": "13607321",
-      "title": "Carra: 'Tough season' ahead for Newcastle amid 'boring' performances",
-      "url": "https://www.skysports.com/football/video/13607321/jamie-carragher-believes-there-is-a-tough-season-for-newcastle-after-boring-performances",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-carragher-newcastle_7395386.jpg?20261102224831",
-      "excerpt": "Jamie Carragher says recent Newcastle performances have been 'flat' and a 'little boring' believing they are in for a 'tough season.'",
-      "published_label": "02 November 2026 · 22:45",
-      "published_iso": "2026-11-02T22:45:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jamie Carragher says recent Newcastle performances have been 'flat' and a 'little boring' believing they are in for a 'tough season.'"
-      ]
-    },
-    {
-      "slug": "13607320",
-      "title": "Carragher: Boring Newcastle face a tough season ahead",
-      "url": "https://www.skysports.com/football/news/13607320/newcastle-are-flat-and-boring-jamie-carragher-warns-magpies-face-tough-premier-league-season-after-everton-defeat",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-matthias-jaissle_7395383.jpg?20261102224537",
-      "excerpt": "Jamie Carragher described Newcastle as flat and boring following their defeat to Everton on Monday Night Football and reckons Matthias Jaissle's side faces a difficult season.",
-      "published_label": "02 November 2026 · 22:35",
-      "published_iso": "2026-11-02T22:35:00+00:00",
-      "byline": "Jamie Carragher",
-      "body": [
-        "Jamie Carragher described Newcastle as flat and boring following their defeat to Everton on Monday Night Football and reckons Matthias Jaissle's side faces a difficult season.",
-        "Thierno Barry's second-half goal earned Everton a 1-0 win at St James' Park and their first away victory in the Premier League this season, as Newcastle were booed off at half-time and full-time following their fourth defeat in five games across all competitions.",
-        "Newcastle have slipped to 13th and are now four points above the bottom three, with a trip to lowly Fulham to come on Saturday. Newcastle news & transfers ⚫⚪| Newcastle fixtures & scores Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "\"I think it is going to be a tough season for them,\" said Sky Sports' Carragher. \"I felt tonight was actually more important for Newcastle than the cup game [Carabao Cup loss at Everton last week], and it was the other way round for Everton, who are desperate for a trophy."
-      ]
-    },
-    {
-      "slug": "13607313",
-      "title": "Barry goal sees Everton ease past meagre Newcastle",
-      "url": "https://www.skysports.com/football/video/13607313/newcastle-0-1-everton-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-newcastle-everton_7395353.jpg?20261102220519",
-      "excerpt": "Highlights of the Premier League match between Newcastle and Everton.",
-      "published_label": "02 November 2026 · 22:18",
-      "published_iso": "2026-11-02T22:18:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Premier League match between Newcastle and Everton."
-      ]
-    },
-    {
-      "slug": "13607311",
-      "title": "A foul or good attacking play? Barry’s goal analysed…",
-      "url": "https://www.skysports.com/football/video/13607311/newcastle-vs-everton-did-thierno-barry-foul-fabian-schar-in-build-to-goal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-barry-goal_7395367.jpg?20261102222039",
-      "excerpt": "Did Thierno Barry foul Fabian Schar in the build-up before the game's only goal?",
-      "published_label": "02 November 2026 · 22:12",
-      "published_iso": "2026-11-02T22:12:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Did Thierno Barry foul Fabian Schar in the build-up before the game's only goal?"
-      ]
-    },
-    {
-      "slug": "13607305",
-      "title": "'A red card in itself' - Ramsey sent off after second yellow",
-      "url": "https://www.skysports.com/football/video/13607305/newcastles-jacob-ramsey-sent-off-after-second-yellow-against-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ramsey-red-card_7395351.jpg?20261102220335",
-      "excerpt": "Newcastle's Jacob Ramsey sent off after second yellow against Everton",
-      "published_label": "02 November 2026 · 22:00",
-      "published_iso": "2026-11-02T22:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Newcastle's Jacob Ramsey sent off after second yellow against Everton"
-      ]
-    },
-    {
-      "slug": "13605474",
-      "title": "Sorry Newcastle booed off as Everton earn first away PL win of season",
-      "url": "https://www.skysports.com/football/news/13605474/newcastle-0-1-everton-toffees-earn-first-away-league-win-of-season-as-magpies-booed-off-after-jacob-ramsey-sees-red",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-thierno-barry_7395311.jpg?20261102211356",
-      "excerpt": "Everton deservedly claimed their first away league win of the season as Thierno Barry’s second-half goal earned a 1-0 victory at a lacklustre Newcastle, who were booed off at half-time and full-time.",
-      "published_label": "02 November 2026 · 22:00",
-      "published_iso": "2026-11-02T22:00:00+00:00",
-      "byline": "Declan Olley",
-      "body": [
-        "Everton deservedly claimed their first away league win of the season as Thierno Barry’s second-half goal earned a 1-0 victory at a lacklustre Newcastle, who were booed off at half-time and full-time.",
-        "Newcastle's miserable evening deepened in stoppage time as substitute Jacob Ramsey was sent off after picking up two bookings in just 86 seconds.",
-        "The disappointing Magpies were beaten by Everton for a second time in the space of four days after their 3-1 Carabao Cup fourth-round defeat on Merseyside. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "Another sorry display from Matthias Jaissle's side was underlined by Barry's 49th-minute winner, which Sky Sports commentator Andy Hinchcliffe labelled as \"truly shocking\" defending and \"terrible goalkeeping\"."
+        "Scott Parker is close to being appointed West Ham boss after the club sacked Nuno Espirito Santo.",
+        "Nuno departs after back-to-back defeats left the Hammers eighth in the Championship, and Sky Sports News understands discussions with Parker, who made 129 appearances for West Ham as a player between 2007-2011, are at an advanced stage.",
+        "Saturday's 3-1 home defeat to West Brom proved to be the end of the road for Nuno, who felt the heat from the supporters at London Stadium following the loss. West Ham latest news | Championship table Transfer Centre LIVE! | Latest EFL news and rumours",
+        "Nuno has been relieved of his duties ahead of Wednesday's trip to Cardiff in the league - live on Sky Sports . West Ham, who were widely expected to go straight back up to the Premier League, sit four points off the automatic promotion spots."
       ]
     }
   ]
