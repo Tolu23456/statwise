@@ -1,10 +1,78 @@
 {
-  "synced_at": "2026-11-03T21:51:07+00:00",
+  "synced_at": "2026-11-04T02:21:16+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13595365",
+      "title": "Southampton hit back to hold West Brom",
+      "url": "https://www.skysports.com/football/news/13595365/west-brom-1-1-southampton-samuel-edozie-earns-point-for-saints",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-brom-southampton_7396098.jpg?20261103201704",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13595354",
+      "title": "Stoke battle to victory at Blackburn",
+      "url": "https://www.skysports.com/football/news/13595354/blackburn-1-2-stoke-city-jack-mcglynn-steers-potters-to-victory",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jack-mglynn-stoke_7396244.jpg?20261103220208",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13595358",
+      "title": "Devlin scores twice as Portsmouth beat Swansea",
+      "url": "https://www.skysports.com/football/news/13595358/portsmouth-3-1-swansea-terry-devlin-scores-twice-in-pompey-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-portsmouth-terry-devlin_7396232.jpg?20261103215821",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13595361",
+      "title": "Peck hat-trick steers Sheff Utd past Preston",
+      "url": "https://www.skysports.com/football/news/13595361/preston-2-3-sheffield-united-sydie-pecks-hat-trick-sees-blades-to-victory",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sydie-peck-sheffield-united_7396238.jpg?20261103220123",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13607655",
+      "title": "Portsmouth 3-1 Swansea",
+      "url": "https://www.skysports.com/football/video/13607655/portsmouth-3-1-swansea-city-championship-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-portsmouth-swansea_7396282.jpg?20261103223104",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13607668",
+      "title": "West Brom 1-1 Southampton",
+      "url": "https://www.skysports.com/football/video/13607668/west-bromwich-albion-1-1-southampton-championship-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396260.jpg?20261103221334",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13605575",
       "title": "Esteve hoping for Champions League debut – and Haaland reunion",
@@ -145,6 +213,89 @@
       "byline": ""
     },
     {
+      "slug": "13607697",
+      "title": "Papers: Man Utd keen on signing Man City defender Ait-Nouri",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13607697/manchester-united-keen-on-signing-manchester-city-defender-rayan-ait-nouri-who-is-open-to-crossing-divide-in-january-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Wednesday's newspapers... PREMIER LEAGUE",
+      "published_label": "03 November 2026 · 23:10",
+      "published_iso": "2026-11-03T23:10:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Wednesday's newspapers... PREMIER LEAGUE",
+        "Manchester United are keen on signing Manchester City defender Rayan Ait-Nouri, who's open to the crossing the divide in January - Daily Mirror Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "David Beckham has been backed to become the new owner of Manchester United - Daily Star",
+        "Chelsea's forgotten defender Aaron Anselmino has been called up by Argentina despite not playing ANY games this season - The Sun"
+      ]
+    },
+    {
+      "slug": "13607712",
+      "title": "'An important win for us' - Carrick 'proud' of players after CL comeback",
+      "url": "https://www.skysports.com/football/video/13607712/manchester-united-3-2-roma-michael-carrick-proud-of-players-after-champions-league-comeback",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-carrick_7396345.jpg?20261103232025",
+      "excerpt": "Manchester United's Michael Carrick hailed the second performance of his team after they came back from two goals down to beat Roma 3-2 in the Champions League.",
+      "published_label": "03 November 2026 · 23:09",
+      "published_iso": "2026-11-03T23:09:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Manchester United's Michael Carrick hailed the second performance of his team after they came back from two goals down to beat Roma 3-2 in the Champions League."
+      ]
+    },
+    {
+      "slug": "13607700",
+      "title": "Fernandes claims players don't need to save Carrick's job, but did they?",
+      "url": "https://www.skysports.com/football/news/13607700/manchester-united-3-2-roma-bruno-fernandes-claims-players-dont-need-to-save-michael-carricks-job-after-first-win-in-10-games",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bruno-man-utd_7396356.jpg?20261103234713",
+      "excerpt": "Manchester United captain Bruno Fernandes has come out in support of head coach Michael Carrick, but reiterated that the players didn't need to save his job in their 3-2 comeback win against Roma.",
+      "published_label": "03 November 2026 · 22:28",
+      "published_iso": "2026-11-03T22:28:00+00:00",
+      "byline": "Callum Bishop",
+      "body": [
+        "Manchester United captain Bruno Fernandes has come out in support of head coach Michael Carrick, but reiterated that the players didn't need to save his job in their 3-2 comeback win against Roma.",
+        "United and Carrick looked dead and buried within the first 18 minutes as the Italian side took a two-goal lead in the early exchanges.",
+        "It prompted boos and protests from supporters, who threw tennis balls onto the pitch, but the Red Devils turned things around as a Fernandes penalty and a late Matheus Cunha double gave them their first win in 54 days.",
+        "The spirit shown in the performance suggested at least some on-pitch support for Carrick, whose tenure appeared to have been hanging on by a thread ever since the 3-0 defeat to Bournemouth ."
+      ]
+    },
+    {
+      "slug": "13607206",
+      "title": "Cunha completes wild Man Utd comeback win over Roma from two down",
+      "url": "https://www.skysports.com/football/news/13607206/man-utd-3-2-roma-matheus-cunha-scores-two-and-is-sent-off-in-wild-comeback-to-end-nine-game-winless-run",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-matheus-cunha-man-utd_7396297.jpg?20261103224600",
+      "excerpt": "Manchester United produced an extraordinary comeback from two down to beat Roma 3-2 at Old Trafford and pick up their first win in 10 games.",
+      "published_label": "03 November 2026 · 22:00",
+      "published_iso": "2026-11-03T22:00:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "Manchester United produced an extraordinary comeback from two down to beat Roma 3-2 at Old Trafford and pick up their first win in 10 games.",
+        "Michael Carrick looked on the brink when his disjointed team were completely undone for Matias Soule's opener and Donyell Malen soon made it two from the penalty spot. But Matheus Cunha won one of his own, scored two and was sent off in a wild contest.",
+        "United had been booed off at the break and when Carlos Baleba had to go off early in the second half with a hamstring injury it all looked dismal for United. But when Cunha won a penalty that Bruno Fernandes scored after a retake it altered the momentum. As it happened | Teams | Stats | Latest: Man Utd Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
+        "Bryan Mbeumo struck both posts with one shot soon after and the noise inside Old Trafford was astonishing thereafter. Roma cleared one off the line and United had two more penalty shouts as the Italian side - unbeaten in Serie A - began to wobble badly."
+      ]
+    },
+    {
+      "slug": "13607527",
+      "title": "Raphinha double sees Barca power past Villa",
+      "url": "https://www.skysports.com/football/news/13607527/barcelona-3-0-aston-villa-raphinha-double-sees-barca-go-second-in-champions-league-standings",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-raphinha-barcelona_7396177.jpg?20261103212704",
+      "excerpt": "Raphinha's second-half double inspired Barcelona to a 3-0 victory against Aston Villa at the Camp Nou as Unai Emery's side saw their three-game winning run in the Champions League come to an end.",
+      "published_label": "03 November 2026 · 21:45",
+      "published_iso": "2026-11-03T21:45:00+00:00",
+      "byline": "Richard Morgan",
+      "body": [
+        "Raphinha's second-half double inspired Barcelona to a 3-0 victory against Aston Villa at the Camp Nou as Unai Emery's side saw their three-game winning run in the Champions League come to an end.",
+        "Villa boss Emery returned to his homeland on his 55th birthday and with his team in great form having lost just one of their previous nine encounters, only to come crashing down in the driving Catalan rain.",
+        "The home side have been in free-scoring form this season, averaging four goals a game and they got on the scoresheet within seven minutes. Joao Gomes laid the ball on a plate to, of all people, Lamine Yamal, for the Spain forward's 13th goal of this campaign. He also has 11 assists to his name. As it happened | Teams | Stats | Latest: Villa Champions League fixtures and results | Table | Latest: Villa",
+        "Raphinha made Villa's first game at the Nou Camp for 46 years a miserable one with a quickfire double at the start of the second half to end any hopes the visitors had of getting back into the contest as Hansi Flick's side moved above their opponents into second in the table. Key moments from the Camp Nou"
+      ]
+    },
+    {
       "slug": "13607630",
       "title": "Man Utd penalty drama! Dawson goes through all the emotions",
       "url": "https://www.skysports.com/football/video/13607630/manchester-united-vs-roma-michael-dawson-reacts-to-bruno-fernandes-penalty-drama",
@@ -187,6 +338,57 @@
       "kind": "video",
       "body": [
         "Jovon Makama added Norwich's fourth goal at Derby with a thunderbolt from outside of the area."
+      ]
+    },
+    {
+      "slug": "13595355",
+      "title": "Bolton earn narrow win at struggling Charlton",
+      "url": "https://www.skysports.com/football/news/13595355/charlton-0-1-bolton-sam-dalby-scores-trotters-winner-as-poor-run-goes-on-for-addicks",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bolton-wanderers_7396243.jpg?20261103220155",
+      "excerpt": "Sam Dalby's sixth goal of the season earned Bolton a 1-0 victory at misfiring Charlton.",
+      "published_label": "03 November 2026 · 21:15",
+      "published_iso": "2026-11-03T21:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Sam Dalby's sixth goal of the season earned Bolton a 1-0 victory at misfiring Charlton.",
+        "The result piles more pressure on Addicks boss Nathan Jones with the south-east Londoners now winless in 11 matches, and a fourth straight Championship loss dropped them to 21st in the table.",
+        "Bolton captain Josh Sheehan pulled the midfield strings during the opening 45 minutes and produced a whipped shot wide after five minutes.",
+        "Charlton had the first of the minimal openings in the first half on seven minutes. Tyreece Campbell's deep cross picked out Danny McNamara's run to the far post but the right-sided wing-back's attempt to convert was frustrated by Wanderers goalkeeper Jack Bonham."
+      ]
+    },
+    {
+      "slug": "13595367",
+      "title": "Birmingham cruise past Millwall",
+      "url": "https://www.skysports.com/football/news/13595367/birmingham-3-0-millwall-alex-cochrane-max-bird-and-jay-stansfield-net-in-blues-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-birmingham-city_7396255.jpg?20261103220851",
+      "excerpt": "Alex Cochrane scored inside a minute as Birmingham buried Millwall with a first-half goal rush to earn a 3-0 win in the Championship at St. Andrew's.",
+      "published_label": "03 November 2026 · 21:15",
+      "published_iso": "2026-11-03T21:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Alex Cochrane scored inside a minute as Birmingham buried Millwall with a first-half goal rush to earn a 3-0 win in the Championship at St. Andrew's.",
+        "Cochrane, Max Bird and Jay Stansfield netted with left-footed finishes before half-time to ease the loss of seven-goal striker August Priske with a knee problem.",
+        "It put City on their way to their sixth win in eight and extended their unbeaten Championship home start to seven games.",
+        "Cochrane netted when he lashed home a loose ball from 30 yards when Millwall failed to clear a long pass and Phil Neumann's shot hit a defender. Goalkeeper Max Crocombe was motionless on his line as Cochrane netted for the second successive game."
+      ]
+    },
+    {
+      "slug": "13607565",
+      "title": "Norwich thrash Derby to heap pressure on Eustace",
+      "url": "https://www.skysports.com/football/news/13607565/derby-0-4-norwich-more-pressure-on-john-eustace-after-rampant-canaries-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-norwich-city_7396239.jpg?20261103220135",
+      "excerpt": "Norwich piled more pressure on Derby boss John Eustace after thrashing the Championship strugglers 4-0 at Pride Park.",
+      "published_label": "03 November 2026 · 21:15",
+      "published_iso": "2026-11-03T21:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Norwich piled more pressure on Derby boss John Eustace after thrashing the Championship strugglers 4-0 at Pride Park.",
+        "On his 47th birthday, Eustace saw his side ripped apart by the pace and movement of the Canaries, who scored three times before the break.",
+        "Anthony Musaba, Paris Maghoma and Darlin Yongwa put Norwich in complete control before substitute Jovon Makama wrapped up a third straight win for the visitors and condemned Derby to a fourth defeat in five games.",
+        "Derby have won only once this season and Friday night's home game with Bolton now looks like a huge one for Eustace."
       ]
     },
     {
@@ -350,8 +552,8 @@
       "source": "SportyTrader",
       "image": "https://static.sportytrader.com/images/news/football/2027/barca_laliga.webp",
       "excerpt": "The UEFA Champions League returns this week with 18 mouth-watering fixtures across Europe on Tuesday and Wednesday. With teams like Man City, Real Madrid, and PSG all hav",
-      "published_label": "3 November 2026 · 08:00",
-      "published_iso": "2026-11-03T08:00:00+00:00",
+      "published_label": "3 November 2026 · 07:00",
+      "published_iso": "2026-11-03T07:00:00+00:00",
       "byline": "Devesh Jaganath"
     },
     {
@@ -361,8 +563,8 @@
       "source": "SportyTrader",
       "image": "https://static.sportytrader.com/images/news/football/2027/carrick_vs_gasperini_img.webp",
       "excerpt": "Aston Villa's perfect start to their UEFA Champions League (League Phase) campaign faces its sternest test yet when they travel to Camp Nou to take on an attack-minded Ba",
-      "published_label": "3 November 2026 · 07:30",
-      "published_iso": "2026-11-03T07:30:00+00:00",
+      "published_label": "3 November 2026 · 06:30",
+      "published_iso": "2026-11-03T06:30:00+00:00",
       "byline": "Thobelani Moyo"
     },
     {
@@ -372,8 +574,8 @@
       "source": "SportyTrader",
       "image": "https://static.sportytrader.com/images/news/cricket/sa-vs-aus-third-test.webp",
       "excerpt": "Roma have been humiliated twice at Old Trafford in European competition. On Tuesday, they return to Manchester for Champions League Matchday 4, but the form book has neve",
-      "published_label": "3 November 2026 · 06:30",
-      "published_iso": "2026-11-03T06:30:00+00:00",
+      "published_label": "3 November 2026 · 05:30",
+      "published_iso": "2026-11-03T05:30:00+00:00",
       "byline": "Geoffrey Ejiga"
     },
     {
@@ -500,222 +702,6 @@
         "Newcastle's miserable evening deepened in stoppage time as substitute Jacob Ramsey was sent off after picking up two bookings in just 86 seconds.",
         "The disappointing Magpies were beaten by Everton for a second time in the space of four days after their 3-1 Carabao Cup fourth-round defeat on Merseyside. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
         "Another sorry display from Matthias Jaissle's side was underlined by Barry's 49th-minute winner, which Sky Sports commentator Andy Hinchcliffe labelled as \"truly shocking\" defending and \"terrible goalkeeping\"."
-      ]
-    },
-    {
-      "slug": "13607301",
-      "title": "'Brilliant' Pickford stop denies Newcastle leveller",
-      "url": "https://www.skysports.com/football/video/13607301/brilliant-jordan-pickford-stop-denies-newcastle-leveller",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-pickford_7395338.jpg?20261102215202",
-      "excerpt": "'Brilliant' Jordan Pickford stop denies Newcastle leveller",
-      "published_label": "02 November 2026 · 21:53",
-      "published_iso": "2026-11-02T21:53:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "'Brilliant' Jordan Pickford stop denies Newcastle leveller"
-      ]
-    },
-    {
-      "slug": "13607297",
-      "title": "'How did it not go in?' - Elanga unable squeeze home equaliser",
-      "url": "https://www.skysports.com/football/video/13607297/anthony-elanga-unable-squeeze-home-equaliser-for-newcastle-against-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/image_7395331.jpg?20261102212927",
-      "excerpt": "Anthony Elanga unable squeeze home equaliser for Newcastle against Everton",
-      "published_label": "02 November 2026 · 21:29",
-      "published_iso": "2026-11-02T21:29:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Anthony Elanga unable squeeze home equaliser for Newcastle against Everton"
-      ]
-    },
-    {
-      "slug": "13607290",
-      "title": "Barry pounces on goalkeeping error to give Everton lead",
-      "url": "https://www.skysports.com/football/video/13607290/thierno-barry-pounces-on-goalkeeping-error-to-give-everton-lead",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-barry_7395323.jpg?20261102212301",
-      "excerpt": "Thierno Barry pounces on goalkeeping error to give Everton lead.",
-      "published_label": "02 November 2026 · 21:14",
-      "published_iso": "2026-11-02T21:14:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Thierno Barry pounces on goalkeeping error to give Everton lead."
-      ]
-    },
-    {
-      "slug": "13607284",
-      "title": "Armstrong strike goes wide as Everton miss out on opportunity for opener vs Everton",
-      "url": "https://www.skysports.com/football/video/13607284/harrison-armstrong-strike-goes-wide-as-everton-miss-out-on-opportunity-for-opener-vs-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-newcastle_7395294.jpg?20261102205528",
-      "excerpt": "Everton's Harrison Armstrong strike goes wide as Everton miss out on opener opportunity against Newcastle.",
-      "published_label": "02 November 2026 · 20:52",
-      "published_iso": "2026-11-02T20:52:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Everton's Harrison Armstrong strike goes wide as Everton miss out on opener opportunity against Newcastle."
-      ]
-    },
-    {
-      "slug": "13607273",
-      "title": "'From that moment my game turned' - Kane credits Jose talk in helping him reach full potential",
-      "url": "https://www.skysports.com/football/video/13607273/harry-kane-credits-jose-mourinho-on-help-him-reach-ballon-dor-potential",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-kane_7395270.jpg?20261102202319",
-      "excerpt": "Harry Kane speaks on how Jose Mourinho helped him improve whilst he was at Tottenham.",
-      "published_label": "02 November 2026 · 20:22",
-      "published_iso": "2026-11-02T20:22:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Harry Kane speaks on how Jose Mourinho helped him improve whilst he was at Tottenham."
-      ]
-    },
-    {
-      "slug": "13607147",
-      "title": "Merse: Arsenal showed mark of champions at Anfield",
-      "url": "https://www.skysports.com/football/news/13607147/paul-merson-arsenal-showed-mark-of-champions-against-liverpool-in-defensive-masterclass-victory-at-anfield",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-graphic-arsenal_7395038.jpg?20261102154642",
-      "excerpt": "After Arsenal moved three points clear at the top of the Premier League with a 1-0 win at Liverpool on Super Sunday, Sky Sports pundit Paul Merson says the Gunners' victory showed the sign of champions at Anfield.",
-      "published_label": "02 November 2026 · 15:06",
-      "published_iso": "2026-11-02T15:06:00+00:00",
-      "byline": "Paul Merson",
-      "body": [
-        "After Arsenal moved three points clear at the top of the Premier League with a 1-0 win at Liverpool on Super Sunday, Sky Sports pundit Paul Merson says the Gunners' victory showed the sign of champions at Anfield.",
-        "Kai Havertz's 16th-minute winner went on to prove enough to settle the game and give Arsenal a first win at Liverpool in 14 years and their fourth straight league win. In doing so, they became the first team to deny the Reds a single shot on target in a home league match since Opta records began in 2003. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Former Arsenal midfielder Merson had tipped the Gunners to get beaten at Anfield but believes Sunday's victory showed they have the mark of champions, dispelling any doubts of a drop-off following their shock 3-0 defeat at Brighton last month... 'Arsenal showed mark of champions'",
-        "The way Arsenal defend, everyone does the right thing. When you're watching top, top players who have just won the league and still defend like they do, it's a masterclass."
-      ]
-    },
-    {
-      "slug": "13607133",
-      "title": "Forest hierarchy welcome Glasner's strong words after Brentford loss",
-      "url": "https://www.skysports.com/football/news/13607133/oliver-glasner-nottingham-forest-hierarchy-welcome-strong-reaction-from-head-coach-after-brentford-defeat",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-oliver-glasner-nottingham-forest_7394978.jpg?20261102144336",
-      "excerpt": "Oliver Glasner’s strong words about his team have been welcomed by many in the Nottingham Forest hierarchy, Sky Sports News understands.",
-      "published_label": "02 November 2026 · 14:45",
-      "published_iso": "2026-11-02T14:45:00+00:00",
-      "byline": "Anton Toloui",
-      "body": [
-        "Oliver Glasner’s strong words about his team have been welcomed by many in the Nottingham Forest hierarchy, Sky Sports News understands.",
-        "Sources at the club are impressed by his determination to get Forest out of their current slump and insist it is \"business as usual\" following the criticism he levelled at some of his players.",
-        "Glasner said there would be \"no more hugs\" after his side slipped to 19th in the Premier League with Saturday's 2-0 defeat at Brentford. 'The same s*** situation' - Angry Glanser vows to change or be sacked Forest latest | Forest fixtures & scores | FREE Forest highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Having departed Crystal Palace, Glasner was hired in the summer in an attempt to bring stability to the City Ground, after they got through four different head coaches last season."
-      ]
-    },
-    {
-      "slug": "13607141",
-      "title": "Billy Sharp comes out of retirement for Rushden and Diamonds",
-      "url": "https://www.skysports.com/football/video/13607141/billy-sharp-comes-out-of-retirement-for-rushden-and-diamonds",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-rushden-and-diamonds_7394982.jpg?20261102145134",
-      "excerpt": "Billy Sharp joins the EFL Show to talk about coming out of retirement to help Rushden and Diamonds' FA Cup run.",
-      "published_label": "02 November 2026 · 14:41",
-      "published_iso": "2026-11-02T14:41:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Billy Sharp joins the EFL Show to talk about coming out of retirement to help Rushden and Diamonds' FA Cup run."
-      ]
-    },
-    {
-      "slug": "13607131",
-      "title": "Carrick not concerned with future, dressing room, or Martinez commitment ahead of Roma clash",
-      "url": "https://www.skysports.com/football/video/13607131/manchester-united-michael-carrick-not-concerned-with-martinez-commitment-and-responds-to-questions-on-future",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-carrick_7394956.jpg?20261102142821",
-      "excerpt": "Michael Carrick says he not concerned with Lisandro Martinez's commitment and responds to questions on his future.",
-      "published_label": "02 November 2026 · 14:18",
-      "published_iso": "2026-11-02T14:18:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Michael Carrick says he not concerned with Lisandro Martinez's commitment and responds to questions on his future."
-      ]
-    },
-    {
-      "slug": "13607119",
-      "title": "Player vs Gaffer: Reading's Richardson takes on Savage",
-      "url": "https://www.skysports.com/football/video/13607119/player-vs-gaffer-readings-leam-richardson-takes-on-charlie-savage",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-reading-richardson_7394965.jpg?20261102143409",
-      "excerpt": "In Player vs Gaffer, we head to Reading where boss Leam Richardson takes on Charlie Savage.",
-      "published_label": "02 November 2026 · 14:02",
-      "published_iso": "2026-11-02T14:02:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "In Player vs Gaffer, we head to Reading where boss Leam Richardson takes on Charlie Savage."
-      ]
-    },
-    {
-      "slug": "13607070",
-      "title": "Sensational! Incredible skill and finish from former Man Utd striker Weghorst!",
-      "url": "https://www.skysports.com/football/video/13607070/sensational-incredible-skill-and-finish-from-former-man-utd-striker-wout-weghorst",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wout-weghorst-football_7394844.jpg?20261102125315",
-      "excerpt": "Former Manchester United striker Wout Weghorst finishes off this stunning team goal for FC Twente.",
-      "published_label": "02 November 2026 · 12:45",
-      "published_iso": "2026-11-02T12:45:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Former Manchester United striker Wout Weghorst finishes off this stunning team goal for FC Twente."
-      ]
-    },
-    {
-      "slug": "13607049",
-      "title": "'That's violent conduct!' - Should Martinez have received a straight red?",
-      "url": "https://www.skysports.com/football/video/13607049/ref-watch-debate-whether-lisandro-martinez-should-have-received-a-straight-red-against-chelsea",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ref-watch-martinez_7394787.jpg?20261102121150",
-      "excerpt": "The Ref Watch team discuss whether Manchester United's Lisandro Martinez should have received a straight red against Chelsea for his challenge on Wesley Fofana?",
-      "published_label": "02 November 2026 · 11:53",
-      "published_iso": "2026-11-02T11:53:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "The Ref Watch team discuss whether Manchester United's Lisandro Martinez should have received a straight red against Chelsea for his challenge on Wesley Fofana?"
-      ]
-    },
-    {
-      "slug": "13607038",
-      "title": "Bellingham vs Zidane: How do the Real Madrid stars' stats compare?",
-      "url": "https://www.skysports.com/football/video/13607038/jude-bellingham-how-do-real-madrid-stars-stats-compare-with-the-rest-of-europe",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jude-bellingham-real_7394753.jpg?20261102113030",
-      "excerpt": "Sky Sports takes a closer look at how Jude Bellingham's goalscoring stats compare to the legendary Zinedine Zidane and the rest of Europe.",
-      "published_label": "02 November 2026 · 11:26",
-      "published_iso": "2026-11-02T11:26:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports takes a closer look at how Jude Bellingham's goalscoring stats compare to the legendary Zinedine Zidane and the rest of Europe."
-      ]
-    },
-    {
-      "slug": "13606997",
-      "title": "West Ham close to appointing Parker as replacement for sacked Nuno",
-      "url": "https://www.skysports.com/football/news/13606997/west-ham-nuno-espirito-santo-sacked-by-hammers-with-club-sitting-in-eighth-place-in-the-championship",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-championship_7395597.jpg?20261103094245",
-      "excerpt": "Scott Parker is close to being appointed West Ham boss after the club sacked Nuno Espirito Santo.",
-      "published_label": "02 November 2026 · 10:04",
-      "published_iso": "2026-11-02T10:04:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Scott Parker is close to being appointed West Ham boss after the club sacked Nuno Espirito Santo.",
-        "Nuno departs after back-to-back defeats left the Hammers eighth in the Championship, and Sky Sports News understands discussions with Parker, who made 129 appearances for West Ham as a player between 2007-2011, are at an advanced stage.",
-        "Saturday's 3-1 home defeat to West Brom proved to be the end of the road for Nuno, who felt the heat from the supporters at London Stadium following the loss. West Ham latest news | Championship table Transfer Centre LIVE! | Latest EFL news and rumours",
-        "Nuno has been relieved of his duties ahead of Wednesday's trip to Cardiff in the league - live on Sky Sports . West Ham, who were widely expected to go straight back up to the Premier League, sit four points off the automatic promotion spots."
       ]
     }
   ]
