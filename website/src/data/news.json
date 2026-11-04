@@ -1,33 +1,10 @@
 {
-  "synced_at": "2026-11-04T12:09:33+00:00",
+  "synced_at": "2026-11-04T19:46:07+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13607467",
-      "title": "Liverpool's unwanted record highlights creativity issue",
-      "url": "https://www.skysports.com/football/news/13607467/liverpools-unwanted-record-against-arsenal-shows-creativity-problem-under-andoni-iraola-between-the-lines",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-florian-wirtz-liverpool_7395735.png?20261103125846",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13607653",
-      "title": "Stoke jump to third with win at Blackburn",
-      "url": "https://www.skysports.com/football/video/13607653/blackburn-rovers-1-2-stoke-city-championship-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396273.jpg?20261103222301",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13595365",
       "title": "Southampton hit back to hold West Brom",
@@ -236,6 +213,87 @@
       "byline": ""
     },
     {
+      "slug": "13608038",
+      "title": "Goalkeeper Owono posts of 'most difficult days' after De Miguel's death from collision",
+      "url": "https://www.skysports.com/football/news/13608038/jesus-de-miguel-goalkeeper-jesus-owono-experiencing-most-difficult-days-of-my-life-after-tenerife-forwards-death-following-collision",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jesus-owono-andorra_7397054.jpg?20261104170145",
+      "excerpt": "Jesus Owono says he is going through the most difficult ‌days of his life in a statement released by his club FC Andorra on Wednesday, following the death of ‌Tenerife forward Jesus De Miguel.",
+      "published_label": "04 November 2026 · 16:57",
+      "published_iso": "2026-11-04T16:57:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Jesus Owono says he is going through the most difficult ‌days of his life in a statement released by his club FC Andorra on Wednesday, following the death of ‌Tenerife forward Jesus De Miguel.",
+        "The Tenerife forward died on Tuesday morning following a collision with Owono during a Spanish second division match on Monday.",
+        "Owono was sent off for the clash having raced from his goal and struck 30-year-old De Miguel at force, with the Tenerife player subsequently suffering a cardiac arrest after being taken into intensive care.",
+        "\"These are the most difficult days of my life,\" ‌Owono said in a statement. \"I struggle to find the words, and I find it very hard to ​process what has happened. I know there will be many questions to address, and I will face whatever comes with the utmost respect."
+      ]
+    },
+    {
+      "slug": "13608016",
+      "title": "Is Hemp the best winger in the game right now?",
+      "url": "https://www.skysports.com/football/news/13608016/wsl-lauren-hemp-did-not-make-the-ballon-dor-top-30-but-her-form-for-manchester-city-this-season-deserves-attention",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-lauren-hemp-wsl-hemp_7397070.jpg?20261104160535",
+      "excerpt": "Sky Sports columnist Laura Hunter analyses the big talking points from the sixth round of Women's Super League matches, bringing you closer to the key stories at the heart of the women's game. Why Hemp's form deserves more credit",
+      "published_label": "04 November 2026 · 16:30",
+      "published_iso": "2026-11-04T16:30:00+00:00",
+      "byline": "Laura Hunter",
+      "body": [
+        "Sky Sports columnist Laura Hunter analyses the big talking points from the sixth round of Women's Super League matches, bringing you closer to the key stories at the heart of the women's game. Why Hemp's form deserves more credit",
+        "Plenty of Manchester City's squad featured prominently in the women's Ballon d'Or final rankings last week. Khadija 'Bunny' Shaw rightly came third. Yui Hasegawa finished 11th, while Alex Greenwood and Kerstin Casparij were both named in the top 30. All such placings were a fair reflection of their current status.",
+        "But there was one glowing omission. Lauren Hemp, arguably the most in-form winger in the game right now, was curiously nowhere to be seen. It felt odd. And prompted a deeper dive into why she might have been overlooked.",
+        "Clearly Bunny Shaw is the undisputed champion of Man City's team, their top scorer and main driver of big results. Incidentally, the Jamaica international is currently on her best run of consecutive scoring starts in the league (8) and has found the net in 13 of 19 games in 2026. However, one might argue those numbers have been made more possible by the ingenuity of Hemp. Got Sky? Watch WSL games on your phone Not got Sky? Stream WSL games with no contract"
+      ]
+    },
+    {
+      "slug": "13608001",
+      "title": "Keeper defended after De Miguel's death - 'He would never intend to hurt anyone'",
+      "url": "https://www.skysports.com/football/news/13608001/jesus-de-miguel-goalkeeper-jesus-owono-defended-by-fc-andorra-team-mate-after-tenerife-forwards-death",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jesus-owono-andorra_7397054.jpg?20261104170145",
+      "excerpt": "Jesus Owono's team-mate has insisted the FC Andorra goalkeeper would never intend to hurt a fellow player following the death of Jesus de Miguel.",
+      "published_label": "04 November 2026 · 15:35",
+      "published_iso": "2026-11-04T15:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Jesus Owono's team-mate has insisted the FC Andorra goalkeeper would never intend to hurt a fellow player following the death of Jesus de Miguel.",
+        "The Tenerife forward died on Tuesday morning following a collision with Owono during a Spanish second division match on Monday.",
+        "Owono was sent off for the clash having raced from his goal and struck 30-year-old De Miguel at force, with the Tenerife player subsequently suffering a cardiac arrest.",
+        "There has been shock and grief across football following the tragic incident, while Spanish police have opened an investigation into possible involuntary manslaughter."
+      ]
+    },
+    {
+      "slug": "13607994",
+      "title": "The good news behind Manchester United's share price",
+      "url": "https://www.skysports.com/football/video/13607994/revealed-the-good-news-behind-manchester-uniteds-share-price",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kaveh-solhekol-manchester_7397048.jpg?20261104154345",
+      "excerpt": "Sky Sports' chief correspondent Kaveh Solhekol reveals the good news behind Manchester United's share price on the NY stock exchange.",
+      "published_label": "04 November 2026 · 15:30",
+      "published_iso": "2026-11-04T15:30:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' chief correspondent Kaveh Solhekol reveals the good news behind Manchester United's share price on the NY stock exchange."
+      ]
+    },
+    {
+      "slug": "13607990",
+      "title": "Should Man Utd teenager JJ Gabriel leave for Real Madrid?",
+      "url": "https://www.skysports.com/football/video/13607990/jj-gabriel-should-the-manchester-united-teenager-leave-for-real-madrid",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-real-madrid-jj-gabriel_7397049.jpg?20261104154518",
+      "excerpt": "Sky Sports' Kaveh Solhekol looks at whether JJ Gabriel should leave Manchester United for Real Madrid.",
+      "published_label": "04 November 2026 · 15:22",
+      "published_iso": "2026-11-04T15:22:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Kaveh Solhekol looks at whether JJ Gabriel should leave Manchester United for Real Madrid."
+      ]
+    },
+    {
       "slug": "13607892",
       "title": "'Spurs are back!!' - O'Hara hails Tottenham Hotspur turnaround",
       "url": "https://www.skysports.com/football/video/13607892/sky-sports-fc-jamie-ohara-hails-spurs-turnaround",
@@ -349,6 +407,28 @@
       ]
     },
     {
+      "slug": "rb-leipzig-vs-manchester-city-can-the-germans-finally-find-a-way-to-stop-haaland",
+      "title": "RB Leipzig vs Manchester City: Can the Germans Finally Find a Way to S",
+      "url": "https://www.sportytrader.com/en/news/rb-leipzig-vs-manchester-city-can-the-germans-finally-find-a-way-to-stop-haaland/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/sturm_vs_odegaard.webp",
+      "excerpt": "Manchester City travel to Germany tonight with mounting pressure after consecutive Premier League defeats to Aston Villa and Brighton. However, while the Red Bull Arena h",
+      "published_label": "4 November 2026 · 06:00",
+      "published_iso": "2026-11-04T06:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
+      "slug": "slavia-prague-vs-arsenal-slavia-s-19-year-ucl-wait-meets-unbeatable-arsenal-side",
+      "title": "Slavia Prague vs Arsenal: Slavia’s 19-Year UCL Wait Meets Unbeatable A",
+      "url": "https://www.sportytrader.com/en/news/slavia-prague-vs-arsenal-slavia-s-19-year-ucl-wait-meets-unbeatable-arsenal-side/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/cricket/india-vs-nz-odi-1.webp",
+      "excerpt": "Nineteen years. Twenty-two matches. Not one Champions League win. Slavia Prague host Arsenal at the Fortuna Arena tonight, Wednesday 4 November 2026, in a League Phase cl",
+      "published_label": "4 November 2026 · 05:30",
+      "published_iso": "2026-11-04T05:30:00+00:00",
+      "byline": "Geoffrey Ejiga"
+    },
+    {
       "slug": "king-kohli-steers-india-to-1-0-odi-series-lead-in-rain-affected-opener-in-auckland",
       "title": "King Kohli Steers India to 1-0 ODI Series Lead in Rain-Affected Opener",
       "url": "https://www.sportytrader.com/en-in/news/king-kohli-steers-india-to-1-0-odi-series-lead-in-rain-affected-opener-in-auckland/",
@@ -423,6 +503,21 @@
         "Michael Carrick looked on the brink when his disjointed team were completely undone for Matias Soule's opener and Donyell Malen soon made it two from the penalty spot. But Matheus Cunha won one of his own, scored two and was sent off in a wild contest.",
         "United had been booed off at the break and when Carlos Baleba had to go off early in the second half with a hamstring injury it all looked dismal for United. But when Cunha won a penalty that Bruno Fernandes scored after a retake it altered the momentum. As it happened | Teams | Stats | Latest: Man Utd Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
         "Bryan Mbeumo struck both posts with one shot soon after and the noise inside Old Trafford was astonishing thereafter. Roma cleared one off the line and United had two more penalty shouts as the Italian side - unbeaten in Serie A - began to wobble badly."
+      ]
+    },
+    {
+      "slug": "13607653",
+      "title": "Stoke jump to third with win at Blackburn",
+      "url": "https://www.skysports.com/football/video/13607653/blackburn-rovers-1-2-stoke-city-championship-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396273.jpg?20261103222301",
+      "excerpt": "Highlights of the Championship match between Blackburn Rovers and Stoke City.",
+      "published_label": "03 November 2026 · 21:51",
+      "published_iso": "2026-11-03T21:51:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Championship match between Blackburn Rovers and Stoke City."
       ]
     },
     {
@@ -584,129 +679,37 @@
       ]
     },
     {
-      "slug": "13607593",
-      "title": "Cochrane scores screamer within the first minute!",
-      "url": "https://www.skysports.com/football/video/13607593/birminghams-alex-cochrane-goal-within-one-minute-against-millwall",
+      "slug": "13607467",
+      "title": "Liverpool's unwanted record highlights creativity issue",
+      "url": "https://www.skysports.com/football/news/13607467/liverpools-unwanted-record-against-arsenal-shows-creativity-problem-under-andoni-iraola-between-the-lines",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-alex-cochrane_7396092.jpg?20261103201416",
-      "excerpt": "Alex Cochrane scored within a minute against Millwall, from just under 30 yards to get an early lead for Birmingham.",
-      "published_label": "03 November 2026 · 20:07",
-      "published_iso": "2026-11-03T20:07:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-florian-wirtz-liverpool_7395735.png?20261103125846",
+      "excerpt": "Liverpool set an unwanted record against Arsenal as they failed to register a shot on target for the first time in 442 Premier League home games, dating back to when records began in 2003.",
+      "published_label": "03 November 2026 · 12:55",
+      "published_iso": "2026-11-03T12:55:00+00:00",
+      "byline": "Nick Wright and Adam Smith",
       "body": [
-        "Alex Cochrane scored within a minute against Millwall, from just under 30 yards to get an early lead for Birmingham."
+        "Liverpool set an unwanted record against Arsenal as they failed to register a shot on target for the first time in 442 Premier League home games, dating back to when records began in 2003.",
+        "The ignominious statistic was confirmed by Opta, who initially credited Ronald Araujo and Alexis Mac Allister with shots on target but later ruled them as a blocked shot and overhit pass.",
+        "Liverpool's finishing was wayward. They were also incorrectly denied a penalty. But a lack of creativity was the bigger issue. Their 17 shots were worth a meagre 1.05 expected goals. It was just the latest example of them struggling to create high-quality chances. Szoboszlai and the shot location issue",
+        "Liverpool's total of 140 shots this season is the fifth-highest among Premier League sides. But they rank much lower for both goals scored and expected goals, in ninth and 11th respectively."
       ]
     },
     {
-      "slug": "13607506",
-      "title": "'I'm not Mo Salah' - Barcola on £123m Liverpool move, PSG exit and more!",
-      "url": "https://www.skysports.com/football/video/13607506/bradley-barcola-on-lb123m-liverpool-move-psg-exit-and-more-im-not-mo-salah",
+      "slug": "13607009",
+      "title": "Barcola: People are starting to understand me better - but I'm not Mo Salah",
+      "url": "https://www.skysports.com/football/news/13607009/bradley-barcola-interview-liverpool-winger-discusses-leaving-psg-settling-in-at-anfield-overcoming-the-price-tag-and-mohamed-salah-pressure",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-barcola-pl_7395905.jpg?20261103153812",
-      "excerpt": "Bradley Barcola discusses his £123m move to Liverpool, PSG exit and more!",
-      "published_label": "03 November 2026 · 15:07",
-      "published_iso": "2026-11-03T15:07:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
+      "image": "https://e0.365dm.com/26/11/768x432/SKYSPORTS_5acd404f0efc3093240c6c0e21ab369855df54510c2e200ee61be1c7f123424a_7394693.jpg?20261102104226",
+      "excerpt": "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
+      "published_label": "02 November 2026 · 10:40",
+      "published_iso": "2026-11-02T10:40:00+00:00",
+      "byline": "Sam Blitz",
       "body": [
-        "Bradley Barcola discusses his £123m move to Liverpool, PSG exit and more!"
-      ]
-    },
-    {
-      "slug": "13607498",
-      "title": "Win Premier League tickets with Sky Sports' FPL competition",
-      "url": "https://www.skysports.com/football/news/13607498/fantasy-premier-league-enter-sky-sports-manager-of-the-month-competition-to-win-premier-league-tickets",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-fantasy-premier-league_7395835.jpg?20261103143351",
-      "excerpt": "A new month. A new competition. A new chance to win Premier League tickets with Fantasy Premier League each month.",
-      "published_label": "03 November 2026 · 14:20",
-      "published_iso": "2026-11-03T14:20:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "A new month. A new competition. A new chance to win Premier League tickets with Fantasy Premier League each month.",
-        "This November, Sky Sports will give a pair of Premier League match tickets to their Fantasy Premier League Manager of the Month.",
-        "It doesn't matter whether you've signed up for Fantasy already this season or not, or where you are in any current leagues. Everyone starts on zero each month, so it's only your November score that counts.",
-        "All you need to do is play for this month's three \"Gameweeks\", up to and including the matches played on Sunday 29 November. Whoever gets the highest combined score in that time will be crowned Manager of the Month and win the tickets ( Terms and conditions apply )."
-      ]
-    },
-    {
-      "slug": "13607484",
-      "title": "Beauties from Bellingham, Gordon, Yamal and more! - Best goals from Europe this weekend",
-      "url": "https://www.skysports.com/football/video/13607484/best-euro-goals-03-11-26-mxf",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-euro-best-goals-goals_7395785.jpg?20261103134147",
-      "excerpt": "Check out some of the best goals from LaLiga, Serie A, Ligue 1 and Bundesliga.",
-      "published_label": "03 November 2026 · 13:30",
-      "published_iso": "2026-11-03T13:30:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Check out some of the best goals from LaLiga, Serie A, Ligue 1 and Bundesliga."
-      ]
-    },
-    {
-      "slug": "13607479",
-      "title": "Could Scott Parker be returning to West Ham? - His best goals for the Hammers!",
-      "url": "https://www.skysports.com/football/video/13607479/could-scott-parker-be-returning-to-west-ham-parkers-best-goals-for-the-hammers",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-s_7395779.jpg?20261103133252",
-      "excerpt": "With Scott Parker heavily linked with the West Ham job, watch back his best Premier League goals from his time at Upton Park.",
-      "published_label": "03 November 2026 · 13:20",
-      "published_iso": "2026-11-03T13:20:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "With Scott Parker heavily linked with the West Ham job, watch back his best Premier League goals from his time at Upton Park."
-      ]
-    },
-    {
-      "slug": "13607469",
-      "title": "FIRST PICTURES - Saliba returns to Arsenal training after injury",
-      "url": "https://www.skysports.com/football/video/13607469/arsenal-william-saliba-trains-with-arsenal-first-team-after-injury",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-saliba-arenal-arsenal_7395741.jpg?20261103130915",
-      "excerpt": "Gary Cotterill reports on William Saliba's first training session with Arsenal's first team since he injury picked up during the World Cup.",
-      "published_label": "03 November 2026 · 13:04",
-      "published_iso": "2026-11-03T13:04:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Gary Cotterill reports on William Saliba's first training session with Arsenal's first team since he injury picked up during the World Cup."
-      ]
-    },
-    {
-      "slug": "13607401",
-      "title": "Tenerife striker dies following collision during match",
-      "url": "https://www.skysports.com/football/news/13607401/tenerife-striker-jesus-de-miguel-dies-after-cardiac-arrest-following-collision-during-a-match",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-tenerife-jesus-de-miguel_7395603.jpg?20261103101208",
-      "excerpt": "Tenerife striker Jesus de Miguel died ‌on Tuesday at the age of 30, a ‌day after suffering a cardiac arrest following ​a collision during a match.",
-      "published_label": "03 November 2026 · 09:55",
-      "published_iso": "2026-11-03T09:55:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Tenerife striker Jesus de Miguel died ‌on Tuesday at the age of 30, a ‌day after suffering a cardiac arrest following ​a collision during a match.",
-        "\"Racked with pain, with ‌a lump in our throats and unable to ​believe that this is true, from CD Tenerife we communicate the tragic ​passing of Jesus de ⁠Miguel Alameda,\" the ⁠Spanish second-tier club said.",
-        "\"There are no words of comfort; there is ‌absolutely nothing that can alleviate this feeling overflowing with sadness.\"",
-        "The match ‌against FC Andorra was abandoned seven minutes into stoppage time after De Miguel collapsed following a collision with ⁠away goalkeeper Jesus Owono, who ​had rushed out of ​his area to clear a ​long ball and collided with the striker. Owono was sent off immediately."
-      ]
-    },
-    {
-      "slug": "13606997",
-      "title": "West Ham close to appointing Parker as replacement for sacked Nuno",
-      "url": "https://www.skysports.com/football/news/13606997/west-ham-nuno-espirito-santo-sacked-by-hammers-with-club-sitting-in-eighth-place-in-the-championship",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-championship_7395597.jpg?20261103094245",
-      "excerpt": "Scott Parker is close to being appointed West Ham boss after the club sacked Nuno Espirito Santo.",
-      "published_label": "02 November 2026 · 10:04",
-      "published_iso": "2026-11-02T10:04:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Scott Parker is close to being appointed West Ham boss after the club sacked Nuno Espirito Santo.",
-        "Nuno departs after back-to-back defeats left the Hammers eighth in the Championship, and Sky Sports News understands discussions with Parker, who made 129 appearances for West Ham as a player between 2007-2011, are at an advanced stage.",
-        "Saturday's 3-1 home defeat to West Brom proved to be the end of the road for Nuno, who felt the heat from the supporters at London Stadium following the loss. West Ham latest news | Championship table Transfer Centre LIVE! | Latest EFL news and rumours",
-        "Nuno has been relieved of his duties ahead of Wednesday's trip to Cardiff in the league - live on Sky Sports . West Ham, who were widely expected to go straight back up to the Premier League, sit four points off the automatic promotion spots."
+        "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
+        "As Sky Sports settles into a room at Liverpool's AXA training facility, a large window shows some of their big-money stars walking off one of the pitches after a recovery session. It's a sheer amount of attacking wealth.",
+        "Two of them are Alexander Isak and Florian Wirtz, who arrived in deals that could reach a combined £241m. But the jury is still out on both of them. Isak has only just started delivering his highly-anticipated goal numbers, while many believe Wirtz is yet to get going on Merseyside.",
+        "This year, Bradley Barcola - who goes from the pitch to sitting in front of the Sky Sports cameras in the training facility - is the latest marquee signing, this time for £123m. But a slow start to life at Anfield brought about familiar concerns about recent buys. Transfer Centre LIVE! | Liverpool news & transfers 🔴 Liverpool fixtures & scores | FREE Liverpool highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
       ]
     }
   ]
