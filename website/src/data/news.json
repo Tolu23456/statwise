@@ -1,33 +1,10 @@
 {
-  "synced_at": "2026-11-05T00:55:09+00:00",
+  "synced_at": "2026-11-05T09:30:16+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13608181",
-      "title": "Oxford 2-0 Reading",
-      "url": "https://www.skysports.com/football/video/13608181/oxford-2-0-reading-league-one-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/7b686424c6db266c44854e70d6aa2ec82492c536dd2a011ff3845824504df24b_7397469.jpg?20261104223030",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13595374",
-      "title": "Oxford Utd 2-0 Reading",
-      "url": "https://www.skysports.com/football/news/13595374/oxford-utd-2-0-reading",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13608160",
       "title": "Hammers produce stunning comeback in Parker's first game in charge!",
@@ -248,6 +225,70 @@
       "byline": ""
     },
     {
+      "slug": "13602662",
+      "title": "From forgettable EFL loans to Ballon d'Or winner - Kane's 'Cinderella story'",
+      "url": "https://www.skysports.com/football/news/13602662/harry-kane-wins-ballon-dor-bayern-munich-striker-completes-cinderella-story-from-efl-loans-to-worlds-best-player",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-ballon-dor-bayern-munich_7382872.jpg?20261021135151",
+      "excerpt": "From forgettable EFL loan spells to being crowned the best player in the world, it is no wonder Harry Kane’s former boss thinks of his Ballon d'Or win as a fairy tale.",
+      "published_label": "05 November 2026 · 08:23",
+      "published_iso": "2026-11-05T08:23:00+00:00",
+      "byline": "Declan Olley",
+      "body": [
+        "From forgettable EFL loan spells to being crowned the best player in the world, it is no wonder Harry Kane’s former boss thinks of his Ballon d'Or win as a fairy tale.",
+        "\"This is a Cinderella story we've never seen before,\" ex-Tottenham boss Tim Sherwood, who gave Kane his full Premier League debut, tells Sky Sports .",
+        "\"He keeps breaking records, and I keep thinking: 'Are we talking about the same kid?'",
+        "\"There was always a chance, because he felt like there was no ceiling - he would always just break through and go further."
+      ]
+    },
+    {
+      "slug": "13608258",
+      "title": "The story continues... Kane signs extension with Bayern until 2029",
+      "url": "https://www.skysports.com/football/video/13608258/the-story-continues-harry-kane-signs-extension-with-bayern-munich-until-2029",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kane-contract-bayern-munich_7397653.jpg?20261105083933",
+      "excerpt": "Harry Kane commits his future to Bayern Munich by signing a new contract extension until 2029. Credit: FC Bayern",
+      "published_label": "05 November 2026 · 08:14",
+      "published_iso": "2026-11-05T08:14:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Harry Kane commits his future to Bayern Munich by signing a new contract extension until 2029. Credit: FC Bayern"
+      ]
+    },
+    {
+      "slug": "13608255",
+      "title": "Ballon d'Or winner Kane signs new Bayern deal",
+      "url": "https://www.skysports.com/football/news/13608255/harry-kane-england-captain-signs-new-contract-at-bayern-munich-running-until-2029",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-bundesliga_7397657.jpg?20261105084605",
+      "excerpt": "The deal will see him remain with the Bundesliga giants until the summer of 2029.",
+      "published_label": "05 November 2026 · 08:13",
+      "published_iso": "2026-11-05T08:13:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The deal will see him remain with the Bundesliga giants until the summer of 2029.",
+        "Sky in Germany are reporting Kane's new salary is at least £20.9m (€25m) gross per year.",
+        "\"I feel right at home at FC Bayern,\" Kane told the club's official website.",
+        "\"I love the club, the fans and the city of Munich. We have a fantastic team and, in Vincent Kompany, a fantastic manager. It makes me very proud to be part of this club. How Bayern Munich fell in love with Harry Kane Kane becomes first Englishman to win Ballon d'Or for 25 years 'A cinderella story': Kane's journey from EFL loans to Ballon d'Or"
+      ]
+    },
+    {
+      "slug": "13608227",
+      "title": "'It's not a concern' - Maresca backs Donnarumma and praises Haaland heroics",
+      "url": "https://www.skysports.com/football/video/13608227/enzo-maresca-backs-gianluigi-donnarumma-after-recent-clean-sheet-concerns-and-praises-erling-haaland-coming-to-man-citys-rescue-to-win-the-game",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-city-maresca_7397566.jpg?20261105063723",
+      "excerpt": "Following Manchester City's thrilling 3-2 win over RB Leipzig, Enzo Maresca backs Gianluigi Donnarumma amid clean-sheet concerns and hails Erling Haaland for rescuing the win.",
+      "published_label": "05 November 2026 · 06:26",
+      "published_iso": "2026-11-05T06:26:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Following Manchester City's thrilling 3-2 win over RB Leipzig, Enzo Maresca backs Gianluigi Donnarumma amid clean-sheet concerns and hails Erling Haaland for rescuing the win."
+      ]
+    },
+    {
       "slug": "13608206",
       "title": "'Far from our standards' - Arteta critical of Arsenal's 2nd half vs Slavia Prague",
       "url": "https://www.skysports.com/football/video/13608206/slavia-prague-1-2-arsenal-mikel-arteta-critical-of-his-sides-second-half-display-in-czechia",
@@ -263,6 +304,21 @@
       ]
     },
     {
+      "slug": "13608181",
+      "title": "Oxford 2-0 Reading",
+      "url": "https://www.skysports.com/football/video/13608181/oxford-2-0-reading-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/7b686424c6db266c44854e70d6aa2ec82492c536dd2a011ff3845824504df24b_7397469.jpg?20261104223030",
+      "excerpt": "Highlights of the Sky Bet League One match between Oxford and Reading.",
+      "published_label": "04 November 2026 · 22:29",
+      "published_iso": "2026-11-04T22:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League One match between Oxford and Reading."
+      ]
+    },
+    {
       "slug": "13608176",
       "title": "Late Neave double sends Wolves second",
       "url": "https://www.skysports.com/football/video/13608176/bristol-city-1-2-wolverhampton-wanderers-championship-highlights",
@@ -275,6 +331,23 @@
       "kind": "video",
       "body": [
         "Highlights from the Sky Bet Championship match between Bristol City and Wolverhampton Wanderers."
+      ]
+    },
+    {
+      "slug": "13607404",
+      "title": "Haaland nets Man City winner to haunt RB Leipzig again",
+      "url": "https://www.skysports.com/football/news/13607404/rb-leipzig-2-3-man-city-erling-haaland-haunts-bundesliga-side-again-with-late-winner-in-champions-league-thriller",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-erling-haaland-man-city_7397445.jpg?20261104221134",
+      "excerpt": "Erling Haaland haunted RB Leipzig again to earn Manchester City a thrilling 3-2 victory in the Champions League.",
+      "published_label": "04 November 2026 · 22:00",
+      "published_iso": "2026-11-04T22:00:00+00:00",
+      "byline": "David Richardson",
+      "body": [
+        "Erling Haaland haunted RB Leipzig again to earn Manchester City a thrilling 3-2 victory in the Champions League.",
+        "Haaland netted 12 minutes from time, tapping in from Elliot Anderson's low cross, for his 13th goal in nine appearances against the Bundesliga side, his most against any opponent in his career, which returned City to winning ways after their defeat to Brighton on Saturday.",
+        "City made hard work of the tie in which they led twice, having been gifted a first-half opener when Castello Lukeba comically turned the ball into his own net after Leipzig had been on top with Christoph Baumgartner and Antonio Nusa going close. As it happened | Teams | Stats | Champions League table Man City news & transfers 🔵| Man City fixtures & scores Got Sky? Watch PL games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Gianluigi Donnarumma made a top save to deny Baumgartner at the start of the second half but seconds later the Man City goalkeeper was caught out at his near post by Ridle Baku's smart finish, the right-back tucking the ball in from a tight angle when everyone expected him to cross low into the middle."
       ]
     },
     {
@@ -295,20 +368,20 @@
       ]
     },
     {
-      "slug": "13607404",
-      "title": "Haaland nets Man City winner to haunt RB Leipzig again",
-      "url": "https://www.skysports.com/football/news/13607404/rb-leipzig-2-3-man-city-erling-haaland-haunts-bundesliga-side-again-with-late-winner-in-champions-league-thriller",
+      "slug": "13595374",
+      "title": "Oxford Utd 2-0 Reading",
+      "url": "https://www.skysports.com/football/news/13595374/oxford-utd-2-0-reading",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-erling-haaland-man-city_7397445.jpg?20261104221134",
-      "excerpt": "Erling Haaland haunted RB Leipzig again to earn Manchester City a thrilling 3-2 victory in the Champions League.",
-      "published_label": "04 November 2026 · 22:00",
-      "published_iso": "2026-11-04T22:00:00+00:00",
-      "byline": "David Richardson",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+      "excerpt": "Substitutes Gatlin O'Donkor and Mo Missanga struck twice in eight minutes to earn Oxford a 2-0 victory over local rivals Reading and a first Thames Valley derby win since 1999.",
+      "published_label": "04 November 2026 · 21:15",
+      "published_iso": "2026-11-04T21:15:00+00:00",
+      "byline": "Sky Sports",
       "body": [
-        "Erling Haaland haunted RB Leipzig again to earn Manchester City a thrilling 3-2 victory in the Champions League.",
-        "Haaland netted 12 minutes from time, tapping in from Elliot Anderson's low cross, for his 13th goal in nine appearances against the Bundesliga side, his most against any opponent in his career, which returned City to winning ways after their defeat to Brighton on Saturday.",
-        "City made hard work of the tie in which they led twice, having been gifted a first-half opener when Castello Lukeba comically turned the ball into his own net after Leipzig had been on top with Christoph Baumgartner and Antonio Nusa going close. As it happened | Teams | Stats | Champions League table Man City news & transfers 🔵| Man City fixtures & scores Got Sky? Watch PL games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "Gianluigi Donnarumma made a top save to deny Baumgartner at the start of the second half but seconds later the Man City goalkeeper was caught out at his near post by Ridle Baku's smart finish, the right-back tucking the ball in from a tight angle when everyone expected him to cross low into the middle."
+        "Substitutes Gatlin O'Donkor and Mo Missanga struck twice in eight minutes to earn Oxford a 2-0 victory over local rivals Reading and a first Thames Valley derby win since 1999.",
+        "Just minutes after coming off the bench, O'Donkor thundered a low left-footed shot from Cameron Brannagan's free-kick in off the far post to delight the home fans in a packed Kassam Stadium.",
+        "After that 71st-minute breakthrough, Missanga then turned in O'Donkor's knock-down at a corner in the 78th minute to seal the three points.",
+        "Victory extended the U's unbeaten run to 10 games and lifted Aaron Ramsey's men to third in League One."
       ]
     },
     {
@@ -360,6 +433,23 @@
         "The hosts took a 34th-minute lead when Scott Twine was fouled 25 yards out and got up to fire in an unstoppable right-footed free-kick, sending the ball curling away from Jose Sa's dive and into the top corner.",
         "But Wolves piled on the second-half pressure and were rewarded after 82 minutes when Kieran Trippier volleyed in a cross from the right, Adam Armstrong's first-time shot was saved and Neave pounced to net the rebound.",
         "Six minutes later Neave was on target again, nodding home from close range after Ladislav Krejci had headed a Trippier free-kick across goal."
+      ]
+    },
+    {
+      "slug": "13607129",
+      "title": "Liverpool suffer first CL defeat of season as Kuyt savours 'miracle' in Istanbul",
+      "url": "https://www.skysports.com/football/news/13607129/fenerbahce-3-2-liverpool-andoni-iraolas-side-lose-two-leads-in-istanbul-as-perfect-champions-league-start-ends",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-fenerbahce_7397293.jpg?20261104195615",
+      "excerpt": "Liverpool's perfect start to their Champions League campaign came to a sudden halt as they lost two leads in a 3-2 defeat to Fenerbahce in Istanbul.",
+      "published_label": "04 November 2026 · 19:40",
+      "published_iso": "2026-11-04T19:40:00+00:00",
+      "byline": "Callum Bishop",
+      "body": [
+        "Liverpool's perfect start to their Champions League campaign came to a sudden halt as they lost two leads in a 3-2 defeat to Fenerbahce in Istanbul.",
+        "Goals from 19-year-old Trey Nyoni and Alexander Isak had twice put Liverpool ahead, but poor defending saw them hold each of those leads for just four minutes before the hosts completed the comeback late on, with Andoni Iraola left to rue \"cheap\" and \"messy\" goals.",
+        "Iraola made five changes to the team that had lost to Arsenal three days prior, opting to rest several big names including Isak and Florian Wirtz. As it happened | How the teams lined up | Match stats CL fixtures and results | Table | Latest: Liverpool",
+        "One of those who remained in the starting XI was Nyoni and he wrote another chapter in his breakthrough season as his deflected volley wrong-footed Ederson and nestled in the back of the net for his first professional goal."
       ]
     },
     {
@@ -525,6 +615,21 @@
       ]
     },
     {
+      "slug": "13607846",
+      "title": "Three HUGE positives Carrick can take from Man Utd's win vs Roma",
+      "url": "https://www.skysports.com/football/video/13607846/man-utd-3-2-as-roma-the-ythree-huge-positives-for-michael-carrick",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-dan-khan_7396648.jpg?20261104093240",
+      "excerpt": "Sky Sports Danyal Khan highlights the three positives Michael Carrick can take after their astonishing comeback victory against AS Roma in the Champions League.",
+      "published_label": "04 November 2026 · 09:28",
+      "published_iso": "2026-11-04T09:28:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports Danyal Khan highlights the three positives Michael Carrick can take after their astonishing comeback victory against AS Roma in the Champions League."
+      ]
+    },
+    {
       "slug": "13607845",
       "title": "Real Madrid reach verbal agreement with Man Utd teen star JJ Gabriel",
       "url": "https://www.skysports.com/football/news/13607845/jj-gabriel-real-madrid-reach-verbal-agreement-with-man-utd-teenager-who-requested-to-leave-old-trafford",
@@ -539,21 +644,6 @@
         "Gabriel is registered with Manchester United's academy until the end of the season but Real Madrid intend to sign him in January.",
         "There is a FIFA loophole that allows European clubs to tie down young players to professional contracts if they have a European passport which Gabriel qualifies for through both parents.",
         "Sky Sports News understands there has been no club-to-club contact over the teenager as of yet."
-      ]
-    },
-    {
-      "slug": "13607846",
-      "title": "Three HUGE positives Carrick can take from Man Utd's win vs Roma",
-      "url": "https://www.skysports.com/football/video/13607846/man-utd-3-2-as-roma-the-ythree-huge-positives-for-michael-carrick",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-dan-khan_7396648.jpg?20261104093240",
-      "excerpt": "Sky Sports Danyal Khan highlights the three positives Michael Carrick can take after their astonishing comeback victory against AS Roma in the Champions League.",
-      "published_label": "04 November 2026 · 09:28",
-      "published_iso": "2026-11-04T09:28:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports Danyal Khan highlights the three positives Michael Carrick can take after their astonishing comeback victory against AS Roma in the Champions League."
       ]
     },
     {
@@ -607,101 +697,18 @@
       ]
     },
     {
-      "slug": "13607697",
-      "title": "Papers: Man Utd keen on signing Man City defender Ait-Nouri",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13607697/manchester-united-keen-on-signing-manchester-city-defender-rayan-ait-nouri-who-is-open-to-crossing-divide-in-january-paper-talk",
+      "slug": "13591355",
+      "title": "Watch the goals that won Kane the Ballon d'Or to earn him new Bayern deal",
+      "url": "https://www.skysports.com/football/video/13591355/can-the-english-goal-machine-secure-the-ballon-dor-all-of-harry-kanes-goals-from-the-2025-2026-bundesliga-season",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Wednesday's newspapers... PREMIER LEAGUE",
-      "published_label": "03 November 2026 · 23:10",
-      "published_iso": "2026-11-03T23:10:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Wednesday's newspapers... PREMIER LEAGUE",
-        "Manchester United are keen on signing Manchester City defender Rayan Ait-Nouri, who's open to the crossing the divide in January - Daily Mirror Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "David Beckham has been backed to become the new owner of Manchester United - Daily Star",
-        "Chelsea's forgotten defender Aaron Anselmino has been called up by Argentina despite not playing ANY games this season - The Sun"
-      ]
-    },
-    {
-      "slug": "13607712",
-      "title": "'An important win for us' - Carrick 'proud' of players after CL comeback",
-      "url": "https://www.skysports.com/football/video/13607712/manchester-united-3-2-roma-michael-carrick-proud-of-players-after-champions-league-comeback",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-carrick_7396345.jpg?20261103232025",
-      "excerpt": "Manchester United's Michael Carrick hailed the second performance of his team after they came back from two goals down to beat Roma 3-2 in the Champions League.",
-      "published_label": "03 November 2026 · 23:09",
-      "published_iso": "2026-11-03T23:09:00+00:00",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-harry-kane-england_7388223.jpg?20261026194653",
+      "excerpt": "We take a look at all Harry Kane's goals for Bayern Munich from the 2025/2026 Bundesliga season, as the record-setting goal scorer becomes the first English winner of the Ballon d'Or since Michael Owen in 2001.",
+      "published_label": "24 September 2026 · 10:46",
+      "published_iso": "2026-09-24T10:46:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Manchester United's Michael Carrick hailed the second performance of his team after they came back from two goals down to beat Roma 3-2 in the Champions League."
-      ]
-    },
-    {
-      "slug": "13607700",
-      "title": "Fernandes claims players don't need to save Carrick's job, but did they?",
-      "url": "https://www.skysports.com/football/news/13607700/manchester-united-3-2-roma-bruno-fernandes-claims-players-dont-need-to-save-michael-carricks-job-after-first-win-in-10-games",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bruno-man-utd_7396356.jpg?20261103234713",
-      "excerpt": "Manchester United captain Bruno Fernandes has come out in support of head coach Michael Carrick, but reiterated that the players didn't need to save his job in their 3-2 comeback win against Roma.",
-      "published_label": "03 November 2026 · 22:28",
-      "published_iso": "2026-11-03T22:28:00+00:00",
-      "byline": "Callum Bishop",
-      "body": [
-        "Manchester United captain Bruno Fernandes has come out in support of head coach Michael Carrick, but reiterated that the players didn't need to save his job in their 3-2 comeback win against Roma.",
-        "United and Carrick looked dead and buried within the first 18 minutes as the Italian side took a two-goal lead in the early exchanges.",
-        "It prompted boos and protests from supporters, who threw tennis balls onto the pitch, but the Red Devils turned things around as a Fernandes penalty and a late Matheus Cunha double gave them their first win in 54 days.",
-        "The spirit shown in the performance suggested at least some on-pitch support for Carrick, whose tenure appeared to have been hanging on by a thread ever since the 3-0 defeat to Bournemouth ."
-      ]
-    },
-    {
-      "slug": "13607206",
-      "title": "Cunha completes wild Man Utd comeback win over Roma from two down",
-      "url": "https://www.skysports.com/football/news/13607206/man-utd-3-2-roma-matheus-cunha-scores-two-and-is-sent-off-in-wild-comeback-to-end-nine-game-winless-run",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-matheus-cunha-man-utd_7396297.jpg?20261103224600",
-      "excerpt": "Manchester United produced an extraordinary comeback from two down to beat Roma 3-2 at Old Trafford and pick up their first win in 10 games.",
-      "published_label": "03 November 2026 · 22:00",
-      "published_iso": "2026-11-03T22:00:00+00:00",
-      "byline": "Adam Bate",
-      "body": [
-        "Manchester United produced an extraordinary comeback from two down to beat Roma 3-2 at Old Trafford and pick up their first win in 10 games.",
-        "Michael Carrick looked on the brink when his disjointed team were completely undone for Matias Soule's opener and Donyell Malen soon made it two from the penalty spot. But Matheus Cunha won one of his own, scored two and was sent off in a wild contest.",
-        "United had been booed off at the break and when Carlos Baleba had to go off early in the second half with a hamstring injury it all looked dismal for United. But when Cunha won a penalty that Bruno Fernandes scored after a retake it altered the momentum. As it happened | Teams | Stats | Latest: Man Utd Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
-        "Bryan Mbeumo struck both posts with one shot soon after and the noise inside Old Trafford was astonishing thereafter. Roma cleared one off the line and United had two more penalty shouts as the Italian side - unbeaten in Serie A - began to wobble badly."
-      ]
-    },
-    {
-      "slug": "13607653",
-      "title": "Stoke jump to third with win at Blackburn",
-      "url": "https://www.skysports.com/football/video/13607653/blackburn-rovers-1-2-stoke-city-championship-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396273.jpg?20261103222301",
-      "excerpt": "Highlights of the Championship match between Blackburn Rovers and Stoke City.",
-      "published_label": "03 November 2026 · 21:51",
-      "published_iso": "2026-11-03T21:51:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Championship match between Blackburn Rovers and Stoke City."
-      ]
-    },
-    {
-      "slug": "13607527",
-      "title": "Raphinha double sees Barca power past Villa",
-      "url": "https://www.skysports.com/football/news/13607527/barcelona-3-0-aston-villa-raphinha-double-sees-barca-go-second-in-champions-league-standings",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-raphinha-barcelona_7396177.jpg?20261103212704",
-      "excerpt": "Raphinha's second-half double inspired Barcelona to a 3-0 victory against Aston Villa at the Camp Nou as Unai Emery's side saw their three-game winning run in the Champions League come to an end.",
-      "published_label": "03 November 2026 · 21:45",
-      "published_iso": "2026-11-03T21:45:00+00:00",
-      "byline": "Richard Morgan",
-      "body": [
-        "Raphinha's second-half double inspired Barcelona to a 3-0 victory against Aston Villa at the Camp Nou as Unai Emery's side saw their three-game winning run in the Champions League come to an end.",
-        "Villa boss Emery returned to his homeland on his 55th birthday and with his team in great form having lost just one of their previous nine encounters, only to come crashing down in the driving Catalan rain.",
-        "The home side have been in free-scoring form this season, averaging four goals a game and they got on the scoresheet within seven minutes. Joao Gomes laid the ball on a plate to, of all people, Lamine Yamal, for the Spain forward's 13th goal of this campaign. He also has 11 assists to his name. As it happened | Teams | Stats | Latest: Villa Champions League fixtures and results | Table | Latest: Villa",
-        "Raphinha made Villa's first game at the Nou Camp for 46 years a miserable one with a quickfire double at the start of the second half to end any hopes the visitors had of getting back into the contest as Hansi Flick's side moved above their opponents into second in the table. Key moments from the Camp Nou"
+        "We take a look at all Harry Kane's goals for Bayern Munich from the 2025/2026 Bundesliga season, as the record-setting goal scorer becomes the first English winner of the Ballon d'Or since Michael Owen in 2001."
       ]
     }
   ]
