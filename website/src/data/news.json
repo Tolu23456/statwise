@@ -1,10 +1,46 @@
 {
-  "synced_at": "2026-11-05T18:02:19+00:00",
+  "synced_at": "2026-11-05T23:38:55+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13608547",
+      "title": "'He wants commitment' – Who'll make the England Nations League squad?",
+      "url": "https://www.skysports.com/football/video/13608547/wholl-make-the-england-nations-league-squad",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7398388.jpg?20261105184716",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13608555",
+      "title": "'Trophies!' - Moyes ready for next step in Everton career",
+      "url": "https://www.skysports.com/football/video/13608555/david-moyes-ready-to-for-next-step-in-everton-career",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-everton_7398398.jpg?20261105185655",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13608557",
+      "title": "Arsenal's Love Actually-inspired Christmas ad Ft. Colin Firth, Gabriel, Calafiori and Russo!",
+      "url": "https://www.skysports.com/football/video/13608557/arsenal-release-love-actually-inspired-christmas-advert-ft-colin-firth-gabriel-calafiori-and-russo",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-firth-ad_7398414.jpg?20261105190650",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13608374",
       "title": "Trophies, tears, records and rows - Ronaldo's Portugal career will divide opinion",
@@ -236,6 +272,138 @@
       "byline": ""
     },
     {
+      "slug": "13608662",
+      "title": "Papers: Deschamps turns down Man Utd offer to replace Carrick",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13608662/didier-deschamps-turns-down-manchester-united-offer-to-replace-michael-carrick-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Friday's newspapers... MAN UTD NEWS",
+      "published_label": "05 November 2026 · 23:05",
+      "published_iso": "2026-11-05T23:05:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Friday's newspapers... MAN UTD NEWS",
+        "Didier Deschamps has told Manchester United he has no interest in becoming their next manager - Daily Mirror",
+        "Manchester United co-owner Avram Glazer has claimed the club's value is not dependent on success on the pitch - The Athletic",
+        "Shea Lacey is set to be handed a full Premier League debut for Manchester United's must-win game against Aston Villa - talkSPORT Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW PREMIER LEAGUE"
+      ]
+    },
+    {
+      "slug": "13608656",
+      "title": "'Terrific win, in every aspect' - O'Neill delight as Celtic win in EL",
+      "url": "https://www.skysports.com/football/video/13608656/celtic-3-2-besiktas-martin-oneill-hails-terrific-win-to-keep-europa-league-hopes-alive",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-celtic-besiktas-camilo_7398653.jpg?20261105225801",
+      "excerpt": "Celtic manager Martin O'Neill heaps praise on his players after they came from behind to beat Besiktas to keep their Europa League campaign alive.",
+      "published_label": "05 November 2026 · 22:46",
+      "published_iso": "2026-11-05T22:46:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Celtic manager Martin O'Neill heaps praise on his players after they came from behind to beat Besiktas to keep their Europa League campaign alive."
+      ]
+    },
+    {
+      "slug": "13607043",
+      "title": "Celtic claim dramatic Europa League win against Besiktas",
+      "url": "https://www.skysports.com/football/news/13607043/celtic-3-2-besiktas-camilo-duran-and-callum-osmand-come-off-bench-to-inspire-hoops-to-first-europa-league-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-celtic-camilo-duran_7398627.jpg?20261105222544",
+      "excerpt": "Martin O'Neill's inspired substitutions saw Celtic come from behind to breathe life into their Europa League campaign with a much-needed 3-2 home victory over Besiktas.",
+      "published_label": "05 November 2026 · 22:00",
+      "published_iso": "2026-11-05T22:00:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "Martin O'Neill's inspired substitutions saw Celtic come from behind to breathe life into their Europa League campaign with a much-needed 3-2 home victory over Besiktas.",
+        "Junior Olaitan's goal - a rebound after Sam Johnstone saved his penalty - looked like condemning Celtic to a fifth consecutive European defeat for the first time in the club's history.",
+        "But the introduction of Callum Osmand, Camilo Duran and Colby Donovan just after the hour was a masterstroke from O'Neill. Teams | Stats | Europa League fixtures and results Not got Sky? Latest Sky Sports deals or stream Celtic games with no contract 📺",
+        "Osmand fired in the equaliser with his first touch before setting up Duran to round the goalkeeper and put the Hoops ahead."
+      ]
+    },
+    {
+      "slug": "13607047",
+      "title": "Yalcouye header secures narrow win for Brighton at Getafe",
+      "url": "https://www.skysports.com/football/news/13607047/getafe-0-1-brighton-malick-yalcouye-header-secures-narrow-conference-league-win-for-fabian-hurzelers-side",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-brighton-malick-yalcouye_7398604.jpg?20261105220124",
+      "excerpt": "Malick Yalcouye's second-half header secured a narrow 1-0 win for Brighton at Getafe as Fabian Hurzeler's side moved into the top eight of the Conference League.",
+      "published_label": "05 November 2026 · 22:00",
+      "published_iso": "2026-11-05T22:00:00+00:00",
+      "byline": "Patrick Rowe",
+      "body": [
+        "Malick Yalcouye's second-half header secured a narrow 1-0 win for Brighton at Getafe as Fabian Hurzeler's side moved into the top eight of the Conference League.",
+        "The Ivory Coast midfielder was one of five changes head coach Hurzeler made from the 1-0 win at Manchester City last time out and rewarded that show of faith by breaking the deadlock in the 64th minute.",
+        "Tension had been rising for the Premier League side after Jaouen Hadjam had struck the woodwork twice earlier in the game until Costinha cushioned his header back across the face of goal for Yalcouye to head home from close range. Teams | Stats | Europa League fixtures and results | Latest: Brighton Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
+        "Substitute Ibrahim Osman's chance to double the lead was missed from close range but ultimately it did not cost Brighton on the evening, as they got back to winning ways in Europe following a frustrating 0-0 draw at Jablonec last time out."
+      ]
+    },
+    {
+      "slug": "13607046",
+      "title": "Pressure ramps up on Le Bris as Sunderland beaten by Dinamo Zagreb",
+      "url": "https://www.skysports.com/football/news/13607046/sunderland-0-2-dinamo-zagreb-regis-le-bris-under-more-pressure-as-black-cats-beaten-in-the-europa-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sunderland-dinamo_7398561.jpg?20261105213242",
+      "excerpt": "Pressure is ramping up even more on Regis Le Bris as Sunderland were comfortably beaten 2-0 by Dinamo Zagreb in the Europa League to continue the Black Cats' torrid run of form.",
+      "published_label": "05 November 2026 · 21:56",
+      "published_iso": "2026-11-05T21:56:00+00:00",
+      "byline": "Sam Blitz",
+      "body": [
+        "Pressure is ramping up even more on Regis Le Bris as Sunderland were comfortably beaten 2-0 by Dinamo Zagreb in the Europa League to continue the Black Cats' torrid run of form.",
+        "Before the game, Le Bris said Sunderland have been too exposed and leaky in defence - but his team were not listening as they went in 2-0 down at half-time in front of an angry Stadium of Light.",
+        "Poor marking from a corner allowed Luka Stojkovic to volley in the first goal - then the Dinamo midfielder set up Dion Beljo with a delightful chipped pass, with his deft finish equally sweet, although the red and white defenders were all at sea in the move.",
+        "At the other end of the pitch, Sunderland were a little more unfortunate. They struck the woodwork in both halves through defenders Thomas Meunier and Kevin Danso. Heroic defending from Dinamo also denied Malick Fofana and Trai Hume in the same move with last-ditch blocks."
+      ]
+    },
+    {
+      "slug": "13608620",
+      "title": "'That's your analysis' - Sage shuts down question over Disasi omission",
+      "url": "https://www.skysports.com/football/video/13608620/crystal-palace-pierre-sage-shuts-down-question-over-axel-disasi-omission",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sage-disasi_7398560.jpg?20261105212845",
+      "excerpt": "Pierre Sage's refuses to answer question regarding Axel Disasi's omission from Crystal Palace's squad, despite reporter warning that it would appear as though he has lost control at the club.",
+      "published_label": "05 November 2026 · 21:22",
+      "published_iso": "2026-11-05T21:22:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Pierre Sage's refuses to answer question regarding Axel Disasi's omission from Crystal Palace's squad, despite reporter warning that it would appear as though he has lost control at the club."
+      ]
+    },
+    {
+      "slug": "13607111",
+      "title": "Kamada earns Palace injury-time Hoffenheim draw and offers Sage respite",
+      "url": "https://www.skysports.com/football/news/13607111/crystal-palace-1-1-hoffenheim-daichi-kamada-snatches-late-equaliser-as-10-man-eagles-ease-pressure-on-pierre-sage",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kamada-crystal-palace_7398468.jpg?20261105200252",
+      "excerpt": "Pierre Sage was handed a much-needed lifeline as Crystal Palace snatched a dramatic late 1-1 draw against Hoffenheim in the Europa League, despite playing the final stages with 10 men following Adam Wharton's dismissal.",
+      "published_label": "05 November 2026 · 20:00",
+      "published_iso": "2026-11-05T20:00:00+00:00",
+      "byline": "William Bitibiri",
+      "body": [
+        "Pierre Sage was handed a much-needed lifeline as Crystal Palace snatched a dramatic late 1-1 draw against Hoffenheim in the Europa League, despite playing the final stages with 10 men following Adam Wharton's dismissal.",
+        "Palace arrived at Selhurst Park desperate for a response after three consecutive Premier League defeats had left them in the relegation zone, with growing questions over Sage's future as manager.",
+        "But their defensive vulnerabilities were exposed once again as Alexander Prass opened the scoring for Hoffenheim in the seventh minute, his effort squirming underneath Dean Henderson after the hosts were caught on the counter. Teams | Stats | Europa League fixtures and results | Latest: Crystal Palace Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
+        "Sage's side showed some attacking promise but struggled to turn possession into clear-cut opportunities, while Hoffenheim looked dangerous whenever they broke forward."
+      ]
+    },
+    {
+      "slug": "13607027",
+      "title": "Bournemouth's super subs extend winning run with Sparta Prague victory",
+      "url": "https://www.skysports.com/football/news/13607027/sparta-prague-1-3-bournemouth-tyler-adams-evanilson-and-rayan-rescue-cherries-in-europa-league-to-extend-winning-run",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-evanilson-alvaro-rodriguez_7398470.jpg?20261105200539",
+      "excerpt": "Tyler Adams, Evanilson and Rayan came off the bench to rescue Bournemouth in the Europa League with a 3-1 turnaround victory over 10-man Sparta Prague, extending their winning run to seven matches.",
+      "published_label": "05 November 2026 · 20:00",
+      "published_iso": "2026-11-05T20:00:00+00:00",
+      "byline": "David Richardson",
+      "body": [
+        "Tyler Adams, Evanilson and Rayan came off the bench to rescue Bournemouth in the Europa League with a 3-1 turnaround victory over 10-man Sparta Prague, extending their winning run to seven matches.",
+        "Bournemouth continued their red-hot form and now sit top of the league-phase table, having made a dream start to their first European campaign with four wins.",
+        "Marco Rose made eight changes from their victory over Leeds last Saturday, but had to call upon his main men after Bournemouth fell behind to Ebrima Singhateh's wonderful solo effort in the first half. Teams | Stats | Europa League fixtures and results | Latest: Bournemouth Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
+        "The winger ran from his own half to end Bournemouth's six-game streak without conceding, just five minutes after the visitors' Lewis Cook had missed a penalty, sending his low shot against the inside of the left post after a handball decision."
+      ]
+    },
+    {
       "slug": "13607998",
       "title": "PL Predictions: Forest ready to turn promise into points vs Man City",
       "url": "https://www.skysports.com/football/news/13607998/premier-league-predictions-and-jones-knows-best-bets-nottingham-forest-vs-man-city-man-utd-vs-aston-villa-and-more",
@@ -415,6 +583,17 @@
       ]
     },
     {
+      "slug": "osimhen-lookman-miss-out-on-caf-awards-nominations",
+      "title": "Osimhen, Lookman Miss Out on CAF Awards Nominations As Hakimi Favourit",
+      "url": "https://www.sportytrader.com/en-ng/news/osimhen-lookman-miss-out-on-caf-awards-nominations/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/leipzig-vs-man-city-1.webp",
+      "excerpt": "The 2026 CAF Awards will take place on December 7 in Lagos, Nigeria, as we celebrate Africa’s leading footballers and their achievements at the club and international lev",
+      "published_label": "5 November 2026 · 08:00",
+      "published_iso": "2026-11-05T08:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
       "slug": "13608227",
       "title": "'It's not a concern' - Maresca backs Donnarumma and praises Haaland heroics",
       "url": "https://www.skysports.com/football/video/13608227/enzo-maresca-backs-gianluigi-donnarumma-after-recent-clean-sheet-concerns-and-praises-erling-haaland-coming-to-man-citys-rescue-to-win-the-game",
@@ -523,202 +702,6 @@
         "Just minutes after coming off the bench, O'Donkor thundered a low left-footed shot from Cameron Brannagan's free-kick in off the far post to delight the home fans in a packed Kassam Stadium.",
         "After that 71st-minute breakthrough, Missanga then turned in O'Donkor's knock-down at a corner in the 78th minute to seal the three points.",
         "Victory extended the U's unbeaten run to 10 games and lifted Aaron Ramsey's men to third in League One."
-      ]
-    },
-    {
-      "slug": "13595369",
-      "title": "Boro struggle without Lankshear as Wrexham beat Championship leaders",
-      "url": "https://www.skysports.com/football/news/13595369/wrexham-2-0-middlesbrough-boro-struggle-without-will-lankshear-as-league-leaders-beaten",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wrexham-fc_7397418.jpg?20261104214358",
-      "excerpt": "Championship leaders Middlesbrough suffered only their second league defeat of the season as Wrexham eased the pressure on Phil Parkinson with a much-needed 2-0 win.",
-      "published_label": "04 November 2026 · 21:15",
-      "published_iso": "2026-11-04T21:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Championship leaders Middlesbrough suffered only their second league defeat of the season as Wrexham eased the pressure on Phil Parkinson with a much-needed 2-0 win.",
-        "George Thomason rifled Wrexham in front in the 71st minute and substitute Oli Rathbone sealed it with an 84th-minute header to give Wrexham only their fourth win of the season, coming after back-to-back defeats against Blackburn and Sheffield United left the Red Dragons hovering just above the drop zone.",
-        "Boro arrived in Wales unbeaten in 11 league games, but with top scorer Will Lankshear out through injury they looked a far cry from the side who had scored 13 goals in their previous four matches.",
-        "Lankshear's return of 15 goals this season was as many as the entire Wrexham squad prior to kick-off, and his absence through injury told on the league leaders as they struggled to make much of an impression before the break."
-      ]
-    },
-    {
-      "slug": "13595370",
-      "title": "West Ham fight back from 3-0 down at Cardiff in Parker's first game",
-      "url": "https://www.skysports.com/football/news/13595370/cardiff-3-3-west-ham-hammers-fight-back-for-point-in-scott-parkers-first-game-in-charge",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-scott-parker-jarrod-bowen_7397458.jpg?20261104221919",
-      "excerpt": "Scott Parker saw his West Ham side recover from three goals down to draw 3-3 at Cardiff in a thrilling first game in charge.",
-      "published_label": "04 November 2026 · 21:15",
-      "published_iso": "2026-11-04T21:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Scott Parker saw his West Ham side recover from three goals down to draw 3-3 at Cardiff in a thrilling first game in charge.",
-        "Jack Moylan's first hat-trick in English football had Cardiff in cruise control at half-time and Hammers fans venting their anger.",
-        "But the Hammers - inspired by captain Jarrod Bowen - fought back in incredible fashion as Divine Mukasa, Arne Engels and Max Kilman netted to secure a point.",
-        "Parker was confirmed as Hammers boss on Wednesday morning - just 24 hours after Nuno Espirito Santo's departure - but it was a tough watch for the former England midfielder initially as Moylan had Cardiff 3-0 ahead inside 39 minutes. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13595372",
-      "title": "Wolves hit back to beat Bristol City after late Neave double",
-      "url": "https://www.skysports.com/football/news/13595372/bristol-city-1-2-wolves-substitute-sean-neave-scores-late-double-to-earn-turnaround-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sean-neave-wolves_7397432.jpg?20261104215544",
-      "excerpt": "Substitute Sean Neave scored a late brace as Wolves came from behind to secure a 2-1 Sky Bet Championship win over Bristol City at Ashton Gate.",
-      "published_label": "04 November 2026 · 21:15",
-      "published_iso": "2026-11-04T21:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Substitute Sean Neave scored a late brace as Wolves came from behind to secure a 2-1 Sky Bet Championship win over Bristol City at Ashton Gate.",
-        "The hosts took a 34th-minute lead when Scott Twine was fouled 25 yards out and got up to fire in an unstoppable right-footed free-kick, sending the ball curling away from Jose Sa's dive and into the top corner.",
-        "But Wolves piled on the second-half pressure and were rewarded after 82 minutes when Kieran Trippier volleyed in a cross from the right, Adam Armstrong's first-time shot was saved and Neave pounced to net the rebound.",
-        "Six minutes later Neave was on target again, nodding home from close range after Ladislav Krejci had headed a Trippier free-kick across goal."
-      ]
-    },
-    {
-      "slug": "13607129",
-      "title": "Liverpool suffer first CL defeat of season as Kuyt savours 'miracle' in Istanbul",
-      "url": "https://www.skysports.com/football/news/13607129/fenerbahce-3-2-liverpool-andoni-iraolas-side-lose-two-leads-in-istanbul-as-perfect-champions-league-start-ends",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-fenerbahce_7397293.jpg?20261104195615",
-      "excerpt": "Liverpool's perfect start to their Champions League campaign came to a sudden halt as they lost two leads in a 3-2 defeat to Fenerbahce in Istanbul.",
-      "published_label": "04 November 2026 · 19:40",
-      "published_iso": "2026-11-04T19:40:00+00:00",
-      "byline": "Callum Bishop",
-      "body": [
-        "Liverpool's perfect start to their Champions League campaign came to a sudden halt as they lost two leads in a 3-2 defeat to Fenerbahce in Istanbul.",
-        "Goals from 19-year-old Trey Nyoni and Alexander Isak had twice put Liverpool ahead, but poor defending saw them hold each of those leads for just four minutes before the hosts completed the comeback late on, with Andoni Iraola left to rue \"cheap\" and \"messy\" goals.",
-        "Iraola made five changes to the team that had lost to Arsenal three days prior, opting to rest several big names including Isak and Florian Wirtz. As it happened | How the teams lined up | Match stats CL fixtures and results | Table | Latest: Liverpool",
-        "One of those who remained in the starting XI was Nyoni and he wrote another chapter in his breakthrough season as his deflected volley wrong-footed Ederson and nestled in the back of the net for his first professional goal."
-      ]
-    },
-    {
-      "slug": "13608038",
-      "title": "Goalkeeper Owono posts of 'most difficult days' after De Miguel's death from collision",
-      "url": "https://www.skysports.com/football/news/13608038/jesus-de-miguel-goalkeeper-jesus-owono-experiencing-most-difficult-days-of-my-life-after-tenerife-forwards-death-following-collision",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jesus-owono-andorra_7397054.jpg?20261104170145",
-      "excerpt": "Jesus Owono says he is going through the most difficult ‌days of his life in a statement released by his club FC Andorra on Wednesday, following the death of ‌Tenerife forward Jesus De Miguel.",
-      "published_label": "04 November 2026 · 16:57",
-      "published_iso": "2026-11-04T16:57:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Jesus Owono says he is going through the most difficult ‌days of his life in a statement released by his club FC Andorra on Wednesday, following the death of ‌Tenerife forward Jesus De Miguel.",
-        "The Tenerife forward died on Tuesday morning following a collision with Owono during a Spanish second division match on Monday.",
-        "Owono was sent off for the clash having raced from his goal and struck 30-year-old De Miguel at force, with the Tenerife player subsequently suffering a cardiac arrest after being taken into intensive care.",
-        "\"These are the most difficult days of my life,\" ‌Owono said in a statement. \"I struggle to find the words, and I find it very hard to ​process what has happened. I know there will be many questions to address, and I will face whatever comes with the utmost respect."
-      ]
-    },
-    {
-      "slug": "13608016",
-      "title": "Is Hemp the best winger in the game right now?",
-      "url": "https://www.skysports.com/football/news/13608016/wsl-lauren-hemp-did-not-make-the-ballon-dor-top-30-but-her-form-for-manchester-city-this-season-deserves-attention",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-lauren-hemp-wsl-hemp_7397070.jpg?20261104160535",
-      "excerpt": "Sky Sports columnist Laura Hunter analyses the big talking points from the sixth round of Women's Super League matches, bringing you closer to the key stories at the heart of the women's game. Why Hemp's form deserves more credit",
-      "published_label": "04 November 2026 · 16:30",
-      "published_iso": "2026-11-04T16:30:00+00:00",
-      "byline": "Laura Hunter",
-      "body": [
-        "Sky Sports columnist Laura Hunter analyses the big talking points from the sixth round of Women's Super League matches, bringing you closer to the key stories at the heart of the women's game. Why Hemp's form deserves more credit",
-        "Plenty of Manchester City's squad featured prominently in the women's Ballon d'Or final rankings last week. Khadija 'Bunny' Shaw rightly came third. Yui Hasegawa finished 11th, while Alex Greenwood and Kerstin Casparij were both named in the top 30. All such placings were a fair reflection of their current status.",
-        "But there was one glowing omission. Lauren Hemp, arguably the most in-form winger in the game right now, was curiously nowhere to be seen. It felt odd. And prompted a deeper dive into why she might have been overlooked.",
-        "Clearly Bunny Shaw is the undisputed champion of Man City's team, their top scorer and main driver of big results. Incidentally, the Jamaica international is currently on her best run of consecutive scoring starts in the league (8) and has found the net in 13 of 19 games in 2026. However, one might argue those numbers have been made more possible by the ingenuity of Hemp. Got Sky? Watch WSL games on your phone Not got Sky? Stream WSL games with no contract"
-      ]
-    },
-    {
-      "slug": "13608001",
-      "title": "Keeper defended after De Miguel's death - 'He would never intend to hurt anyone'",
-      "url": "https://www.skysports.com/football/news/13608001/jesus-de-miguel-goalkeeper-jesus-owono-defended-by-fc-andorra-team-mate-after-tenerife-forwards-death",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jesus-owono-andorra_7397054.jpg?20261104170145",
-      "excerpt": "Jesus Owono's team-mate has insisted the FC Andorra goalkeeper would never intend to hurt a fellow player following the death of Jesus de Miguel.",
-      "published_label": "04 November 2026 · 15:35",
-      "published_iso": "2026-11-04T15:35:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Jesus Owono's team-mate has insisted the FC Andorra goalkeeper would never intend to hurt a fellow player following the death of Jesus de Miguel.",
-        "The Tenerife forward died on Tuesday morning following a collision with Owono during a Spanish second division match on Monday.",
-        "Owono was sent off for the clash having raced from his goal and struck 30-year-old De Miguel at force, with the Tenerife player subsequently suffering a cardiac arrest.",
-        "There has been shock and grief across football following the tragic incident, while Spanish police have opened an investigation into possible involuntary manslaughter."
-      ]
-    },
-    {
-      "slug": "13607994",
-      "title": "The good news behind Manchester United's share price",
-      "url": "https://www.skysports.com/football/video/13607994/revealed-the-good-news-behind-manchester-uniteds-share-price",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kaveh-solhekol-manchester_7397048.jpg?20261104154345",
-      "excerpt": "Sky Sports' chief correspondent Kaveh Solhekol reveals the good news behind Manchester United's share price on the NY stock exchange.",
-      "published_label": "04 November 2026 · 15:30",
-      "published_iso": "2026-11-04T15:30:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' chief correspondent Kaveh Solhekol reveals the good news behind Manchester United's share price on the NY stock exchange."
-      ]
-    },
-    {
-      "slug": "13607990",
-      "title": "Should Man Utd teenager JJ Gabriel leave for Real Madrid?",
-      "url": "https://www.skysports.com/football/video/13607990/jj-gabriel-should-the-manchester-united-teenager-leave-for-real-madrid",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-real-madrid-jj-gabriel_7397049.jpg?20261104154518",
-      "excerpt": "Sky Sports' Kaveh Solhekol looks at whether JJ Gabriel should leave Manchester United for Real Madrid.",
-      "published_label": "04 November 2026 · 15:22",
-      "published_iso": "2026-11-04T15:22:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Kaveh Solhekol looks at whether JJ Gabriel should leave Manchester United for Real Madrid."
-      ]
-    },
-    {
-      "slug": "13607892",
-      "title": "'Spurs are back!!' - O'Hara hails Tottenham Hotspur turnaround",
-      "url": "https://www.skysports.com/football/video/13607892/sky-sports-fc-jamie-ohara-hails-spurs-turnaround",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jamie-ohara-spurs_7396759.jpg?20261104114809",
-      "excerpt": "Jamie O'Hara hails the turnaround in form at Spurs this season and says he wouldn't be surprised to see them qualify for Europe.",
-      "published_label": "04 November 2026 · 11:44",
-      "published_iso": "2026-11-04T11:44:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jamie O'Hara hails the turnaround in form at Spurs this season and says he wouldn't be surprised to see them qualify for Europe."
-      ]
-    },
-    {
-      "slug": "13607870",
-      "title": "'They're not good enough!' - O'Hara's brutal assessment of Man Utd despite Roma win",
-      "url": "https://www.skysports.com/football/video/13607870/jamie-oharas-brutal-assessment-of-man-utd-despite-roma-win-theyre-not-good-enough",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jamie-ohara-manchester-united_7396717.jpg?20261104105753",
-      "excerpt": "Jamie O'Hara believes that Manchester United have not hit a turning point despite the impressive 3-2 comeback against Roma in the Champions League.",
-      "published_label": "04 November 2026 · 10:41",
-      "published_iso": "2026-11-04T10:41:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jamie O'Hara believes that Manchester United have not hit a turning point despite the impressive 3-2 comeback against Roma in the Champions League."
-      ]
-    },
-    {
-      "slug": "13607854",
-      "title": "Wilson, Rodon recalled to Wales squad for Nations League clashes",
-      "url": "https://www.skysports.com/football/news/13607854/wales-craig-bellamy-announces-26-man-squad-for-uefa-nations-league-matches-against-norway-and-portugal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-wilson-wales_7396687.jpg?20261104102340",
-      "excerpt": "Wales boss Craig Bellamy has recalled several players, including Harry Wilson and Joe Rodon, for November's Nations League fixtures.",
-      "published_label": "04 November 2026 · 10:30",
-      "published_iso": "2026-11-04T10:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Wales boss Craig Bellamy has recalled several players, including Harry Wilson and Joe Rodon, for November's Nations League fixtures.",
-        "The Dragons sit third in Group A4 after beating Norway during the previous international break, but also suffering two defeats to Denmark and one against Portugal.",
-        "On Saturday November 14, they face Norway in Oslo, before a sold-out clash with Portugal at the Cardiff City Stadium on Tuesday November 17. UEFA Nations League scores & fixtures Get Sky Sports | Download the Sky Sports App",
-        "Leeds winger Wilson withdrew from the squad for the previous camp in September with a quadricep injury, while club team-mate Rodon has seemingly recovered from a hamstring injury suffered during the 1-1 draw with Brentford on August 30."
       ]
     }
   ]
