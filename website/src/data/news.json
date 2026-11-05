@@ -1,10 +1,45 @@
 {
-  "synced_at": "2026-11-04T19:46:07+00:00",
+  "synced_at": "2026-11-05T00:55:09+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13608181",
+      "title": "Oxford 2-0 Reading",
+      "url": "https://www.skysports.com/football/video/13608181/oxford-2-0-reading-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/7b686424c6db266c44854e70d6aa2ec82492c536dd2a011ff3845824504df24b_7397469.jpg?20261104223030",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13595374",
+      "title": "Oxford Utd 2-0 Reading",
+      "url": "https://www.skysports.com/football/news/13595374/oxford-utd-2-0-reading",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13608160",
+      "title": "Hammers produce stunning comeback in Parker's first game in charge!",
+      "url": "https://www.skysports.com/football/video/13608160/cardiff-3-3-west-ham-championship-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-ham_7397433.jpg?20261104215807",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13595365",
       "title": "Southampton hit back to hold West Brom",
@@ -211,6 +246,121 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13608206",
+      "title": "'Far from our standards' - Arteta critical of Arsenal's 2nd half vs Slavia Prague",
+      "url": "https://www.skysports.com/football/video/13608206/slavia-prague-1-2-arsenal-mikel-arteta-critical-of-his-sides-second-half-display-in-czechia",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mikel-arteta-arsenal_7397532.jpg?20261104235102",
+      "excerpt": "Following his side's narrow victory against Slavia Prague, Arsenal boss Mikel Arteta says his side's performance was far from their 'normal standard'.",
+      "published_label": "04 November 2026 · 23:48",
+      "published_iso": "2026-11-04T23:48:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Following his side's narrow victory against Slavia Prague, Arsenal boss Mikel Arteta says his side's performance was far from their 'normal standard'."
+      ]
+    },
+    {
+      "slug": "13608176",
+      "title": "Late Neave double sends Wolves second",
+      "url": "https://www.skysports.com/football/video/13608176/bristol-city-1-2-wolverhampton-wanderers-championship-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wolves-bristol-city_7397451.jpg?20261104221622",
+      "excerpt": "Highlights from the Sky Bet Championship match between Bristol City and Wolverhampton Wanderers.",
+      "published_label": "04 November 2026 · 22:15",
+      "published_iso": "2026-11-04T22:15:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights from the Sky Bet Championship match between Bristol City and Wolverhampton Wanderers."
+      ]
+    },
+    {
+      "slug": "13607452",
+      "title": "'Sloppy' Arsenal survive second-half scare to beat Slavia Prague",
+      "url": "https://www.skysports.com/football/news/13607452/slavia-prague-1-2-arsenal-noni-madueke-and-viktor-gyokeres-on-target-as-gunners-survive-second-half-scare",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-slavia_7397339.jpg?20261104204759",
+      "excerpt": "Arsenal survived a second-half fightback from Slavia Prague to win 2-1 at the Fortuna Arena and continue their unbeaten start to the season in the Champions League.",
+      "published_label": "04 November 2026 · 22:00",
+      "published_iso": "2026-11-04T22:00:00+00:00",
+      "byline": "Nick Wright",
+      "body": [
+        "Arsenal survived a second-half fightback from Slavia Prague to win 2-1 at the Fortuna Arena and continue their unbeaten start to the season in the Champions League.",
+        "The Gunners, runners-up last term, appeared on course for an emphatic victory after scoring twice through Noni Madueke and Viktor Gyokeres in a one-sided first half.",
+        "But Slavia roared back into the contest in the second period and gave Arsenal a scare as Wiktor Nowak's late goal from close range set up a nervous finale for Mikel Arteta's side. As it happened | How the teams lined up | Match stats Champions League fixtures and results | Table | Latest: Arsenal",
+        "Arsenal hung on to claim their third win in four Champions League games but needed a goal-line clearance from Gabriel Magalhaes and several saves from David Raya, who brilliantly pushed an Oskar Kubiak header against the post shortly before Slavia's goal."
+      ]
+    },
+    {
+      "slug": "13607404",
+      "title": "Haaland nets Man City winner to haunt RB Leipzig again",
+      "url": "https://www.skysports.com/football/news/13607404/rb-leipzig-2-3-man-city-erling-haaland-haunts-bundesliga-side-again-with-late-winner-in-champions-league-thriller",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-erling-haaland-man-city_7397445.jpg?20261104221134",
+      "excerpt": "Erling Haaland haunted RB Leipzig again to earn Manchester City a thrilling 3-2 victory in the Champions League.",
+      "published_label": "04 November 2026 · 22:00",
+      "published_iso": "2026-11-04T22:00:00+00:00",
+      "byline": "David Richardson",
+      "body": [
+        "Erling Haaland haunted RB Leipzig again to earn Manchester City a thrilling 3-2 victory in the Champions League.",
+        "Haaland netted 12 minutes from time, tapping in from Elliot Anderson's low cross, for his 13th goal in nine appearances against the Bundesliga side, his most against any opponent in his career, which returned City to winning ways after their defeat to Brighton on Saturday.",
+        "City made hard work of the tie in which they led twice, having been gifted a first-half opener when Castello Lukeba comically turned the ball into his own net after Leipzig had been on top with Christoph Baumgartner and Antonio Nusa going close. As it happened | Teams | Stats | Champions League table Man City news & transfers 🔵| Man City fixtures & scores Got Sky? Watch PL games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Gianluigi Donnarumma made a top save to deny Baumgartner at the start of the second half but seconds later the Man City goalkeeper was caught out at his near post by Ridle Baku's smart finish, the right-back tucking the ball in from a tight angle when everyone expected him to cross low into the middle."
+      ]
+    },
+    {
+      "slug": "13595369",
+      "title": "Boro struggle without Lankshear as Wrexham beat Championship leaders",
+      "url": "https://www.skysports.com/football/news/13595369/wrexham-2-0-middlesbrough-boro-struggle-without-will-lankshear-as-league-leaders-beaten",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wrexham-fc_7397418.jpg?20261104214358",
+      "excerpt": "Championship leaders Middlesbrough suffered only their second league defeat of the season as Wrexham eased the pressure on Phil Parkinson with a much-needed 2-0 win.",
+      "published_label": "04 November 2026 · 21:15",
+      "published_iso": "2026-11-04T21:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Championship leaders Middlesbrough suffered only their second league defeat of the season as Wrexham eased the pressure on Phil Parkinson with a much-needed 2-0 win.",
+        "George Thomason rifled Wrexham in front in the 71st minute and substitute Oli Rathbone sealed it with an 84th-minute header to give Wrexham only their fourth win of the season, coming after back-to-back defeats against Blackburn and Sheffield United left the Red Dragons hovering just above the drop zone.",
+        "Boro arrived in Wales unbeaten in 11 league games, but with top scorer Will Lankshear out through injury they looked a far cry from the side who had scored 13 goals in their previous four matches.",
+        "Lankshear's return of 15 goals this season was as many as the entire Wrexham squad prior to kick-off, and his absence through injury told on the league leaders as they struggled to make much of an impression before the break."
+      ]
+    },
+    {
+      "slug": "13595370",
+      "title": "West Ham fight back from 3-0 down at Cardiff in Parker's first game",
+      "url": "https://www.skysports.com/football/news/13595370/cardiff-3-3-west-ham-hammers-fight-back-for-point-in-scott-parkers-first-game-in-charge",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-scott-parker-jarrod-bowen_7397458.jpg?20261104221919",
+      "excerpt": "Scott Parker saw his West Ham side recover from three goals down to draw 3-3 at Cardiff in a thrilling first game in charge.",
+      "published_label": "04 November 2026 · 21:15",
+      "published_iso": "2026-11-04T21:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Scott Parker saw his West Ham side recover from three goals down to draw 3-3 at Cardiff in a thrilling first game in charge.",
+        "Jack Moylan's first hat-trick in English football had Cardiff in cruise control at half-time and Hammers fans venting their anger.",
+        "But the Hammers - inspired by captain Jarrod Bowen - fought back in incredible fashion as Divine Mukasa, Arne Engels and Max Kilman netted to secure a point.",
+        "Parker was confirmed as Hammers boss on Wednesday morning - just 24 hours after Nuno Espirito Santo's departure - but it was a tough watch for the former England midfielder initially as Moylan had Cardiff 3-0 ahead inside 39 minutes. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13595372",
+      "title": "Wolves hit back to beat Bristol City after late Neave double",
+      "url": "https://www.skysports.com/football/news/13595372/bristol-city-1-2-wolves-substitute-sean-neave-scores-late-double-to-earn-turnaround-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sean-neave-wolves_7397432.jpg?20261104215544",
+      "excerpt": "Substitute Sean Neave scored a late brace as Wolves came from behind to secure a 2-1 Sky Bet Championship win over Bristol City at Ashton Gate.",
+      "published_label": "04 November 2026 · 21:15",
+      "published_iso": "2026-11-04T21:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Substitute Sean Neave scored a late brace as Wolves came from behind to secure a 2-1 Sky Bet Championship win over Bristol City at Ashton Gate.",
+        "The hosts took a 34th-minute lead when Scott Twine was fouled 25 yards out and got up to fire in an unstoppable right-footed free-kick, sending the ball curling away from Jose Sa's dive and into the top corner.",
+        "But Wolves piled on the second-half pressure and were rewarded after 82 minutes when Kieran Trippier volleyed in a cross from the right, Adam Armstrong's first-time shot was saved and Neave pounced to net the rebound.",
+        "Six minutes later Neave was on target again, nodding home from close range after Ladislav Krejci had headed a Trippier free-kick across goal."
+      ]
     },
     {
       "slug": "13608038",
@@ -440,6 +590,23 @@
       "byline": "Devesh Jaganath"
     },
     {
+      "slug": "13608204",
+      "title": "Papers: Arteta using NASA to help fix Arsenal's injury woes",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13608204/mikel-arteta-is-using-nasa-to-help-fix-arsenals-injury-woes-with-google-and-apple-helping-too-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Thursday's newspapers... PREMIER LEAGUE",
+      "published_label": "03 November 2026 · 23:10",
+      "published_iso": "2026-11-03T23:10:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Thursday's newspapers... PREMIER LEAGUE",
+        "Mikel Arteta has used NASA to tackle Arsenal' s injury woes - with Google and Apple joining the fight - Daily Mail",
+        "Liverpool owners Fenway Sports Group have held talks about buying a majority stake in the Cadillac Formula 1 team - The Sun Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Xavi Simons is due to to start training with his Spurs team-mates later this month - about two months earlier than expected - after rupturing ACL in April - The Times MAN UTD NEWS"
+      ]
+    },
+    {
       "slug": "13607697",
       "title": "Papers: Man Utd keen on signing Man City defender Ait-Nouri",
       "url": "https://www.skysports.com/football/transfer-paper-talk/13607697/manchester-united-keen-on-signing-manchester-city-defender-rayan-ait-nouri-who-is-open-to-crossing-divide-in-january-paper-talk",
@@ -535,181 +702,6 @@
         "Villa boss Emery returned to his homeland on his 55th birthday and with his team in great form having lost just one of their previous nine encounters, only to come crashing down in the driving Catalan rain.",
         "The home side have been in free-scoring form this season, averaging four goals a game and they got on the scoresheet within seven minutes. Joao Gomes laid the ball on a plate to, of all people, Lamine Yamal, for the Spain forward's 13th goal of this campaign. He also has 11 assists to his name. As it happened | Teams | Stats | Latest: Villa Champions League fixtures and results | Table | Latest: Villa",
         "Raphinha made Villa's first game at the Nou Camp for 46 years a miserable one with a quickfire double at the start of the second half to end any hopes the visitors had of getting back into the contest as Hansi Flick's side moved above their opponents into second in the table. Key moments from the Camp Nou"
-      ]
-    },
-    {
-      "slug": "13607630",
-      "title": "Man Utd penalty drama! Dawson goes through all the emotions",
-      "url": "https://www.skysports.com/football/video/13607630/manchester-united-vs-roma-michael-dawson-reacts-to-bruno-fernandes-penalty-drama",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-dawson_7396187.jpg?20261103213244",
-      "excerpt": "Michael Dawson reacts to Bruno Fernandes's penalty goal for Manchester United in their Champions League clash with Roma.",
-      "published_label": "03 November 2026 · 21:27",
-      "published_iso": "2026-11-03T21:27:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Michael Dawson reacts to Bruno Fernandes's penalty goal for Manchester United in their Champions League clash with Roma."
-      ]
-    },
-    {
-      "slug": "13607628",
-      "title": "'Now Southampton have shown up!' - Edozie equalises for Saints",
-      "url": "https://www.skysports.com/football/video/13607628/championship-samuel-edozie-equalises-for-southampton-vs-west-brom",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396176.jpg?20261103212640",
-      "excerpt": "Samuel Edozie was on hand to finish as Southampton equalised in the second half against West Brom.",
-      "published_label": "03 November 2026 · 21:20",
-      "published_iso": "2026-11-03T21:20:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Samuel Edozie was on hand to finish as Southampton equalised in the second half against West Brom."
-      ]
-    },
-    {
-      "slug": "13607626",
-      "title": "'A thunderbolt from Makama!' - Norwich add fourth as they run riot at Derby",
-      "url": "https://www.skysports.com/football/video/13607626/a-thunderbolt-from-makama-norwich-add-fourth-as-they-run-riot-at-derby",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-makama-goal-norwich_7396175.jpg?20261103212616",
-      "excerpt": "Jovon Makama added Norwich's fourth goal at Derby with a thunderbolt from outside of the area.",
-      "published_label": "03 November 2026 · 21:16",
-      "published_iso": "2026-11-03T21:16:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jovon Makama added Norwich's fourth goal at Derby with a thunderbolt from outside of the area."
-      ]
-    },
-    {
-      "slug": "13595355",
-      "title": "Bolton earn narrow win at struggling Charlton",
-      "url": "https://www.skysports.com/football/news/13595355/charlton-0-1-bolton-sam-dalby-scores-trotters-winner-as-poor-run-goes-on-for-addicks",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bolton-wanderers_7396243.jpg?20261103220155",
-      "excerpt": "Sam Dalby's sixth goal of the season earned Bolton a 1-0 victory at misfiring Charlton.",
-      "published_label": "03 November 2026 · 21:15",
-      "published_iso": "2026-11-03T21:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Sam Dalby's sixth goal of the season earned Bolton a 1-0 victory at misfiring Charlton.",
-        "The result piles more pressure on Addicks boss Nathan Jones with the south-east Londoners now winless in 11 matches, and a fourth straight Championship loss dropped them to 21st in the table.",
-        "Bolton captain Josh Sheehan pulled the midfield strings during the opening 45 minutes and produced a whipped shot wide after five minutes.",
-        "Charlton had the first of the minimal openings in the first half on seven minutes. Tyreece Campbell's deep cross picked out Danny McNamara's run to the far post but the right-sided wing-back's attempt to convert was frustrated by Wanderers goalkeeper Jack Bonham."
-      ]
-    },
-    {
-      "slug": "13595367",
-      "title": "Birmingham cruise past Millwall",
-      "url": "https://www.skysports.com/football/news/13595367/birmingham-3-0-millwall-alex-cochrane-max-bird-and-jay-stansfield-net-in-blues-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-birmingham-city_7396255.jpg?20261103220851",
-      "excerpt": "Alex Cochrane scored inside a minute as Birmingham buried Millwall with a first-half goal rush to earn a 3-0 win in the Championship at St. Andrew's.",
-      "published_label": "03 November 2026 · 21:15",
-      "published_iso": "2026-11-03T21:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Alex Cochrane scored inside a minute as Birmingham buried Millwall with a first-half goal rush to earn a 3-0 win in the Championship at St. Andrew's.",
-        "Cochrane, Max Bird and Jay Stansfield netted with left-footed finishes before half-time to ease the loss of seven-goal striker August Priske with a knee problem.",
-        "It put City on their way to their sixth win in eight and extended their unbeaten Championship home start to seven games.",
-        "Cochrane netted when he lashed home a loose ball from 30 yards when Millwall failed to clear a long pass and Phil Neumann's shot hit a defender. Goalkeeper Max Crocombe was motionless on his line as Cochrane netted for the second successive game."
-      ]
-    },
-    {
-      "slug": "13607565",
-      "title": "Norwich thrash Derby to heap pressure on Eustace",
-      "url": "https://www.skysports.com/football/news/13607565/derby-0-4-norwich-more-pressure-on-john-eustace-after-rampant-canaries-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-norwich-city_7396239.jpg?20261103220135",
-      "excerpt": "Norwich piled more pressure on Derby boss John Eustace after thrashing the Championship strugglers 4-0 at Pride Park.",
-      "published_label": "03 November 2026 · 21:15",
-      "published_iso": "2026-11-03T21:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Norwich piled more pressure on Derby boss John Eustace after thrashing the Championship strugglers 4-0 at Pride Park.",
-        "On his 47th birthday, Eustace saw his side ripped apart by the pace and movement of the Canaries, who scored three times before the break.",
-        "Anthony Musaba, Paris Maghoma and Darlin Yongwa put Norwich in complete control before substitute Jovon Makama wrapped up a third straight win for the visitors and condemned Derby to a fourth defeat in five games.",
-        "Derby have won only once this season and Friday night's home game with Bolton now looks like a huge one for Eustace."
-      ]
-    },
-    {
-      "slug": "13607614",
-      "title": "Remarkable free-kick! Blackburn keeper caught out from distance!",
-      "url": "https://www.skysports.com/football/video/13607614/championship-jack-mcglynn-catches-out-blackburn-goalie-with-remarkable-free-kick",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-fre-kick_7396150.jpg?20261103210105",
-      "excerpt": "Jack McGlynn's spectacular free-kick caught out Blackburn Rovers goalkeeper Balazs Toth as Stoke City went ahead just before half-time.",
-      "published_label": "03 November 2026 · 20:47",
-      "published_iso": "2026-11-03T20:47:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jack McGlynn's spectacular free-kick caught out Blackburn Rovers goalkeeper Balazs Toth as Stoke City went ahead just before half-time."
-      ]
-    },
-    {
-      "slug": "13607613",
-      "title": "Peck scores first-half hat-trick including sublime top corner finish past five players!",
-      "url": "https://www.skysports.com/football/video/13607613/hes-taking-the-match-ball-home-sydie-peck-bags-first-half-hat-trick-for-sheffield-utd-at-preston",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-peck-sheffield-united_7396161.jpg?20261103211220",
-      "excerpt": "Sydie Peck scored a first-half hat-trick for Sheffield United as they came from behind at Preston in the Sky Bet Championship.",
-      "published_label": "03 November 2026 · 20:45",
-      "published_iso": "2026-11-03T20:45:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sydie Peck scored a first-half hat-trick for Sheffield United as they came from behind at Preston in the Sky Bet Championship."
-      ]
-    },
-    {
-      "slug": "13607606",
-      "title": "West Brom open scoring thanks to Price penalty",
-      "url": "https://www.skysports.com/football/video/13607606/championship-west-brom-open-scoring-thanks-to-isaac-price-penalty",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396122.jpg?20261103203442",
-      "excerpt": "Isaac Price's penalty saw West Brom take a first half lead over Southampton in their Championship clash.",
-      "published_label": "03 November 2026 · 20:30",
-      "published_iso": "2026-11-03T20:30:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Isaac Price's penalty saw West Brom take a first half lead over Southampton in their Championship clash."
-      ]
-    },
-    {
-      "slug": "13607467",
-      "title": "Liverpool's unwanted record highlights creativity issue",
-      "url": "https://www.skysports.com/football/news/13607467/liverpools-unwanted-record-against-arsenal-shows-creativity-problem-under-andoni-iraola-between-the-lines",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-florian-wirtz-liverpool_7395735.png?20261103125846",
-      "excerpt": "Liverpool set an unwanted record against Arsenal as they failed to register a shot on target for the first time in 442 Premier League home games, dating back to when records began in 2003.",
-      "published_label": "03 November 2026 · 12:55",
-      "published_iso": "2026-11-03T12:55:00+00:00",
-      "byline": "Nick Wright and Adam Smith",
-      "body": [
-        "Liverpool set an unwanted record against Arsenal as they failed to register a shot on target for the first time in 442 Premier League home games, dating back to when records began in 2003.",
-        "The ignominious statistic was confirmed by Opta, who initially credited Ronald Araujo and Alexis Mac Allister with shots on target but later ruled them as a blocked shot and overhit pass.",
-        "Liverpool's finishing was wayward. They were also incorrectly denied a penalty. But a lack of creativity was the bigger issue. Their 17 shots were worth a meagre 1.05 expected goals. It was just the latest example of them struggling to create high-quality chances. Szoboszlai and the shot location issue",
-        "Liverpool's total of 140 shots this season is the fifth-highest among Premier League sides. But they rank much lower for both goals scored and expected goals, in ninth and 11th respectively."
-      ]
-    },
-    {
-      "slug": "13607009",
-      "title": "Barcola: People are starting to understand me better - but I'm not Mo Salah",
-      "url": "https://www.skysports.com/football/news/13607009/bradley-barcola-interview-liverpool-winger-discusses-leaving-psg-settling-in-at-anfield-overcoming-the-price-tag-and-mohamed-salah-pressure",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/SKYSPORTS_5acd404f0efc3093240c6c0e21ab369855df54510c2e200ee61be1c7f123424a_7394693.jpg?20261102104226",
-      "excerpt": "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
-      "published_label": "02 November 2026 · 10:40",
-      "published_iso": "2026-11-02T10:40:00+00:00",
-      "byline": "Sam Blitz",
-      "body": [
-        "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
-        "As Sky Sports settles into a room at Liverpool's AXA training facility, a large window shows some of their big-money stars walking off one of the pitches after a recovery session. It's a sheer amount of attacking wealth.",
-        "Two of them are Alexander Isak and Florian Wirtz, who arrived in deals that could reach a combined £241m. But the jury is still out on both of them. Isak has only just started delivering his highly-anticipated goal numbers, while many believe Wirtz is yet to get going on Merseyside.",
-        "This year, Bradley Barcola - who goes from the pitch to sitting in front of the Sky Sports cameras in the training facility - is the latest marquee signing, this time for £123m. But a slow start to life at Anfield brought about familiar concerns about recent buys. Transfer Centre LIVE! | Liverpool news & transfers 🔴 Liverpool fixtures & scores | FREE Liverpool highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
       ]
     }
   ]
