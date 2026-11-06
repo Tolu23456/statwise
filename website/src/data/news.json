@@ -1,80 +1,10 @@
 {
-  "synced_at": "2026-11-05T23:38:55+00:00",
+  "synced_at": "2026-11-06T06:47:22+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13608547",
-      "title": "'He wants commitment' – Who'll make the England Nations League squad?",
-      "url": "https://www.skysports.com/football/video/13608547/wholl-make-the-england-nations-league-squad",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7398388.jpg?20261105184716",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13608555",
-      "title": "'Trophies!' - Moyes ready for next step in Everton career",
-      "url": "https://www.skysports.com/football/video/13608555/david-moyes-ready-to-for-next-step-in-everton-career",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-everton_7398398.jpg?20261105185655",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13608557",
-      "title": "Arsenal's Love Actually-inspired Christmas ad Ft. Colin Firth, Gabriel, Calafiori and Russo!",
-      "url": "https://www.skysports.com/football/video/13608557/arsenal-release-love-actually-inspired-christmas-advert-ft-colin-firth-gabriel-calafiori-and-russo",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-firth-ad_7398414.jpg?20261105190650",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13608374",
-      "title": "Trophies, tears, records and rows - Ronaldo's Portugal career will divide opinion",
-      "url": "https://www.skysports.com/football/news/13608374/cristiano-ronaldo-portugal-captains-retirement-ends-extraordinary-record-breaking-international-career-which-will-be-debated-for-years-to-come",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/25/06/768x432/skysports-ronaldo-cristiano_6937091.jpg?20250608231811",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13608160",
-      "title": "Hammers produce stunning comeback in Parker's first game in charge!",
-      "url": "https://www.skysports.com/football/video/13608160/cardiff-3-3-west-ham-championship-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-ham_7397433.jpg?20261104215807",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13595365",
-      "title": "Southampton hit back to hold West Brom",
-      "url": "https://www.skysports.com/football/news/13595365/west-brom-1-1-southampton-samuel-edozie-earns-point-for-saints",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-brom-southampton_7396098.jpg?20261103201704",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13595354",
       "title": "Stoke battle to victory at Blackburn",
@@ -272,6 +202,23 @@
       "byline": ""
     },
     {
+      "slug": "13608665",
+      "title": "Hearts bruised by Thun in self-inflicted Conference League defeat",
+      "url": "https://www.skysports.com/football/news/13608665/thun-3-1-hearts-wouter-vranckens-side-bruised-by-self-inflicted-conference-league-defeat",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hearts-thun-conference-league_7398663.jpg?20261105233147",
+      "excerpt": "Depleted Hearts' Conference League bruising was almost totally self-inflicted in a 3-1 defeat by Thun in Switzerland.",
+      "published_label": "05 November 2026 · 23:40",
+      "published_iso": "2026-11-05T23:40:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Depleted Hearts' Conference League bruising was almost totally self-inflicted in a 3-1 defeat by Thun in Switzerland.",
+        "Belgian boss Wouter Vrancken was without 10 players through various ailments and the Scottish team were dealt another blow in the 22nd minute when defender Jamie McCart put through his own goal in calamitous fashion.",
+        "Thun doubled their lead in the 33rd minute through striker Brighton Labeau after more poor defending, this time from skipper Stephen Kingsley - who went off later with an injury - and then Furkan Dursun grabbed a third in the 56th minute before Jambos defender Stuart Findlay reduced the deficit in the 82nd minute with a header. Conference League fixtures and results Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
+        "Hearts are left with one Conference League point out of nine following a 1-1 home draw against Nordsjaelland and a 2-0 defeat away to Trabzonspor."
+      ]
+    },
+    {
       "slug": "13608662",
       "title": "Papers: Deschamps turns down Man Utd offer to replace Carrick",
       "url": "https://www.skysports.com/football/transfer-paper-talk/13608662/didier-deschamps-turns-down-manchester-united-offer-to-replace-michael-carrick-paper-talk",
@@ -404,6 +351,51 @@
       ]
     },
     {
+      "slug": "13608557",
+      "title": "Arsenal's Love Actually-inspired Christmas ad Ft. Colin Firth, Gabriel, Calafiori and Russo!",
+      "url": "https://www.skysports.com/football/video/13608557/arsenal-release-love-actually-inspired-christmas-advert-ft-colin-firth-gabriel-calafiori-and-russo",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-firth-ad_7398414.jpg?20261105190650",
+      "excerpt": "Arsenal release Love Actually-inspired Christmas advert, featuring Colin Firth, Gabriel, Calafiori and Russo!",
+      "published_label": "05 November 2026 · 19:01",
+      "published_iso": "2026-11-05T19:01:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Arsenal release Love Actually-inspired Christmas advert, featuring Colin Firth, Gabriel, Calafiori and Russo!"
+      ]
+    },
+    {
+      "slug": "13608555",
+      "title": "'Trophies!' - Moyes ready for next step in Everton career",
+      "url": "https://www.skysports.com/football/video/13608555/david-moyes-ready-to-for-next-step-in-everton-career",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-everton_7398398.jpg?20261105185655",
+      "excerpt": "Everton boss David Moyes looks back on his time with Everton and explains where he wants to take the club within his career.",
+      "published_label": "05 November 2026 · 18:53",
+      "published_iso": "2026-11-05T18:53:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Everton boss David Moyes looks back on his time with Everton and explains where he wants to take the club within his career."
+      ]
+    },
+    {
+      "slug": "13608547",
+      "title": "'He wants commitment' – Who'll make the England Nations League squad?",
+      "url": "https://www.skysports.com/football/video/13608547/wholl-make-the-england-nations-league-squad",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7398388.jpg?20261105184716",
+      "excerpt": "Rob Dorsett takes a look at who Thomas Tuchel will be wanting to pick for England’s upcoming Nations League fixtures against Croatia and Spain.",
+      "published_label": "05 November 2026 · 18:36",
+      "published_iso": "2026-11-05T18:36:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Rob Dorsett takes a look at who Thomas Tuchel will be wanting to pick for England’s upcoming Nations League fixtures against Croatia and Spain."
+      ]
+    },
+    {
       "slug": "13607998",
       "title": "PL Predictions: Forest ready to turn promise into points vs Man City",
       "url": "https://www.skysports.com/football/news/13607998/premier-league-predictions-and-jones-knows-best-bets-nottingham-forest-vs-man-city-man-utd-vs-aston-villa-and-more",
@@ -531,6 +523,40 @@
         "🔺Estevao ready for more minutes? 🔺Gross sums up Brighton's intensity 🔺A player to watch this weekend Is Estevao ready to explode?",
         "In the period between firing past Senne Lammens and having his goal ruled out by VAR, Estevao went over to the touchline to embrace Xabi Alonso. He had been made to wait for a first Premier League start of the season. But clearly there are no hard feelings. Transfer Centre LIVE! | Chelsea news & transfers 🔵 Chelsea fixtures & scores | FREE Chelsea highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest deals or stream games with no contract 📺",
         "Estevao's peripheral role in the opening months of the campaign frustrated Chelsea supporters, who felt his return to the side against Manchester United was overdue. On the evidence of his performance, he is determined to make up for lost time."
+      ]
+    },
+    {
+      "slug": "13608374",
+      "title": "Trophies, tears, records and rows - Ronaldo's Portugal career will divide opinion",
+      "url": "https://www.skysports.com/football/news/13608374/cristiano-ronaldo-portugal-captains-retirement-ends-extraordinary-record-breaking-international-career-which-will-be-debated-for-years-to-come",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/25/06/768x432/skysports-ronaldo-cristiano_6937091.jpg?20250608231811",
+      "excerpt": "Trophies, tears, records and rows, Cristiano Ronaldo's international career had it all.",
+      "published_label": "05 November 2026 · 12:53",
+      "published_iso": "2026-11-05T12:53:00+00:00",
+      "byline": "Peter Smith",
+      "body": [
+        "Trophies, tears, records and rows, Cristiano Ronaldo's international career had it all.",
+        "For 23 years he passionately wore the Portugal shirt. The debates about his achievements and legacy representing his country will go on for even longer.",
+        "They will primarily focus on two questions. In his pomp, should he have lifted Portugal to greater heights? And in his final years, did he hold the team back from their full potential?",
+        "What shouldn't be lost in the analysis - when Ronaldo's record will inevitably be weighed up against that of his great rival (and World Cup winner) Lionel Messi - is that across his unmatched 234 caps, Ronaldo's brilliance helped deliver glory days."
+      ]
+    },
+    {
+      "slug": "13607957",
+      "title": "'Carrick needs Bruno – but Villa could expose United'",
+      "url": "https://www.skysports.com/football/news/13607957/man-utd-paul-merson-says-michael-carrick-needs-bruno-fernandes-on-side-and-matheus-cunha-to-be-consistent",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-cunha-bruno-fernandes_7396952.jpg?20261104141113",
+      "excerpt": "Paul Merson says Michael Carrick needs Bruno Fernandes in his side and has challenged Matheus Cunha to find greater consistency after Manchester United's dramatic 3-2 comeback win over Roma.",
+      "published_label": "05 November 2026 · 11:45",
+      "published_iso": "2026-11-05T11:45:00+00:00",
+      "byline": "Paul Merson",
+      "body": [
+        "Paul Merson says Michael Carrick needs Bruno Fernandes in his side and has challenged Matheus Cunha to find greater consistency after Manchester United's dramatic 3-2 comeback win over Roma.",
+        "United showed plenty of character to recover from two goals down in the Champions League on Tuesday, earning their first win in 10 games, but Merson believes the result should not disguise the problems that remain under Carrick. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Merson also questioned whether United can carry that momentum into Sunday's Premier League clash with Aston Villa, live on Sky Sports. 'You need Bruno on your side'",
+        "\"I think Bruno Fernandes has to play for Manchester United. He's their best player, and when you're going through a difficult period, you need your best players on the pitch."
       ]
     },
     {
@@ -671,37 +697,35 @@
       ]
     },
     {
-      "slug": "13607452",
-      "title": "'Sloppy' Arsenal survive second-half scare to beat Slavia Prague",
-      "url": "https://www.skysports.com/football/news/13607452/slavia-prague-1-2-arsenal-noni-madueke-and-viktor-gyokeres-on-target-as-gunners-survive-second-half-scare",
+      "slug": "13608160",
+      "title": "Hammers produce stunning comeback in Parker's first game in charge!",
+      "url": "https://www.skysports.com/football/video/13608160/cardiff-3-3-west-ham-championship-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-slavia_7397339.jpg?20261104204759",
-      "excerpt": "Arsenal survived a second-half fightback from Slavia Prague to win 2-1 at the Fortuna Arena and continue their unbeaten start to the season in the Champions League.",
-      "published_label": "04 November 2026 · 22:00",
-      "published_iso": "2026-11-04T22:00:00+00:00",
-      "byline": "Nick Wright",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-ham_7397433.jpg?20261104215807",
+      "excerpt": "Highlights from the Sky Bet Championship match between Cardiff and West Ham.",
+      "published_label": "04 November 2026 · 21:53",
+      "published_iso": "2026-11-04T21:53:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
       "body": [
-        "Arsenal survived a second-half fightback from Slavia Prague to win 2-1 at the Fortuna Arena and continue their unbeaten start to the season in the Champions League.",
-        "The Gunners, runners-up last term, appeared on course for an emphatic victory after scoring twice through Noni Madueke and Viktor Gyokeres in a one-sided first half.",
-        "But Slavia roared back into the contest in the second period and gave Arsenal a scare as Wiktor Nowak's late goal from close range set up a nervous finale for Mikel Arteta's side. As it happened | How the teams lined up | Match stats Champions League fixtures and results | Table | Latest: Arsenal",
-        "Arsenal hung on to claim their third win in four Champions League games but needed a goal-line clearance from Gabriel Magalhaes and several saves from David Raya, who brilliantly pushed an Oskar Kubiak header against the post shortly before Slavia's goal."
+        "Highlights from the Sky Bet Championship match between Cardiff and West Ham."
       ]
     },
     {
-      "slug": "13595374",
-      "title": "Oxford Utd 2-0 Reading",
-      "url": "https://www.skysports.com/football/news/13595374/oxford-utd-2-0-reading",
+      "slug": "13595365",
+      "title": "Southampton hit back to hold West Brom",
+      "url": "https://www.skysports.com/football/news/13595365/west-brom-1-1-southampton-samuel-edozie-earns-point-for-saints",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
-      "excerpt": "Substitutes Gatlin O'Donkor and Mo Missanga struck twice in eight minutes to earn Oxford a 2-0 victory over local rivals Reading and a first Thames Valley derby win since 1999.",
-      "published_label": "04 November 2026 · 21:15",
-      "published_iso": "2026-11-04T21:15:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-brom-southampton_7396098.jpg?20261103201704",
+      "excerpt": "Samuel Edozie's second-half equaliser ensured Southampton and West Brom shared the points from a 1-1 draw at The Hawthorns.",
+      "published_label": "03 November 2026 · 21:15",
+      "published_iso": "2026-11-03T21:15:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Substitutes Gatlin O'Donkor and Mo Missanga struck twice in eight minutes to earn Oxford a 2-0 victory over local rivals Reading and a first Thames Valley derby win since 1999.",
-        "Just minutes after coming off the bench, O'Donkor thundered a low left-footed shot from Cameron Brannagan's free-kick in off the far post to delight the home fans in a packed Kassam Stadium.",
-        "After that 71st-minute breakthrough, Missanga then turned in O'Donkor's knock-down at a corner in the 78th minute to seal the three points.",
-        "Victory extended the U's unbeaten run to 10 games and lifted Aaron Ramsey's men to third in League One."
+        "Samuel Edozie's second-half equaliser ensured Southampton and West Brom shared the points from a 1-1 draw at The Hawthorns.",
+        "Both teams started the season in promising fashion and taking a point apiece means the sides continue their respective unbeaten runs after a game of two halves.",
+        "West Brom completely dominated the first half as Southampton failed to register a single shot in the opening 45 and Isaac Price notched from the penalty spot to give the hosts a deserved half-time lead for his fifth goal of the season.",
+        "For all the hosts' dominance, Tonda Eckert's side turned the tables in the second period and found an equaliser through Edozie."
       ]
     }
   ]
