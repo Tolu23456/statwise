@@ -1,10 +1,33 @@
 {
-  "synced_at": "2026-11-06T15:55:54+00:00",
+  "synced_at": "2026-11-06T21:30:13+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13608932",
+      "title": "Was Mourinho upset by Ronaldo retirement circumstances?",
+      "url": "https://www.skysports.com/football/video/13608932/jose-mourinho-what-did-real-madrid-boss-mean-by-cristiano-ronaldo-retirement-comments",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jose-mourinho-real-madrid_7399235.jpg?20261106162303",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13608473",
+      "title": "Man Utd's next generation can rescue Carrick",
+      "url": "https://www.skysports.com/football/news/13608473/manchester-united-reporter-notebook-shea-lacey-and-old-trafford-young-guns-offer-michael-carrick-hope-of-unlikely-revival",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-reporter-notebook_7398217.jpg?20261105160829",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13608882",
       "title": "Iraola: We must sacrifice control for creativity to fix scoring woes",
@@ -224,6 +247,111 @@
       "byline": ""
     },
     {
+      "slug": "13609080",
+      "title": "WHAT A TURNAROUND! Barry scores second inside four minutes!",
+      "url": "https://www.skysports.com/football/video/13609080/goal-t-barry-61-everton-2-1-coventry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/image_7399567.jpg?20261106212540",
+      "excerpt": "Barry scores his second of the match inside four minutes to give Everton the lead.",
+      "published_label": "06 November 2026 · 21:25",
+      "published_iso": "2026-11-06T21:25:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Barry scores his second of the match inside four minutes to give Everton the lead."
+      ]
+    },
+    {
+      "slug": "13609077",
+      "title": "Barry quickly levels for Everton",
+      "url": "https://www.skysports.com/football/video/13609077/goal-t-barry-56-everton-1-1-coventry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-barry-goal_7399568.jpg?20261106212608",
+      "excerpt": "Barry levels the score for Everton just five minutes after Coventry's opener",
+      "published_label": "06 November 2026 · 21:19",
+      "published_iso": "2026-11-06T21:19:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Barry levels the score for Everton just five minutes after Coventry's opener"
+      ]
+    },
+    {
+      "slug": "13609075",
+      "title": "Gboho's clever flick opens the scoring for Coventry!",
+      "url": "https://www.skysports.com/football/video/13609075/goal-y-gboho-52-everton-0-1-coventry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-cov_7399563.jpg?20261106212156",
+      "excerpt": "Gboho's clever flick hands Coventry the opener",
+      "published_label": "06 November 2026 · 21:16",
+      "published_iso": "2026-11-06T21:16:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Gboho's clever flick hands Coventry the opener"
+      ]
+    },
+    {
+      "slug": "13609076",
+      "title": "Derby County stun Bolton with two quick goals to start the second half!",
+      "url": "https://www.skysports.com/football/video/13609076/derby-county-stun-bolton-with-two-quick-goals-to-start-the-second-half",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-s_7399560.jpg?20261106212118",
+      "excerpt": "Derby County scored two goals in four minutes to take the lead against Bolton.",
+      "published_label": "06 November 2026 · 21:16",
+      "published_iso": "2026-11-06T21:16:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Derby County scored two goals in four minutes to take the lead against Bolton."
+      ]
+    },
+    {
+      "slug": "13609074",
+      "title": "Coventry denied penalty by VAR after Mykolenko foul deemed as outside the box",
+      "url": "https://www.skysports.com/football/video/13609074/block-v-mykolenko-everton-0-0-coventry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-pen-cov_7399556.jpg?20261106211617",
+      "excerpt": "Coventry denied a penalty by VAR after Mykolenko foul deemed as outside the box.",
+      "published_label": "06 November 2026 · 21:13",
+      "published_iso": "2026-11-06T21:13:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Coventry denied a penalty by VAR after Mykolenko foul deemed as outside the box."
+      ]
+    },
+    {
+      "slug": "13609059",
+      "title": "Should hair pull have resulted in penalty or red card?",
+      "url": "https://www.skysports.com/football/video/13609059/block-j-tarkowski-everton-0-0-coventry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-tark_7399513.jpg?20261106205057",
+      "excerpt": "Should Tarkowski have seen red for a hair pull during Everton's Premier League match against Coventry.",
+      "published_label": "06 November 2026 · 20:48",
+      "published_iso": "2026-11-06T20:48:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Should Tarkowski have seen red for a hair pull during Everton's Premier League match against Coventry."
+      ]
+    },
+    {
+      "slug": "13609056",
+      "title": "Ruben Rodrigues fires Bolton in front against lacklustre Derby!",
+      "url": "https://www.skysports.com/football/video/13609056/ruben-rodrigues-fires-bolton-in-front-against-lacklustre-derby-county",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-e_7399517.jpg?20261106205315",
+      "excerpt": "Ruben Rodrigues scores the opening goal of the Sky Bet Championship match between Derby County and Bolton Wanderers.",
+      "published_label": "06 November 2026 · 20:45",
+      "published_iso": "2026-11-06T20:45:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Ruben Rodrigues scores the opening goal of the Sky Bet Championship match between Derby County and Bolton Wanderers."
+      ]
+    },
+    {
       "slug": "13608887",
       "title": "Carrick: Not impossible Man Utd can achieve Ferguson success again",
       "url": "https://www.skysports.com/football/news/13608887/michael-carrick-manchester-united-boss-says-its-possible-the-club-can-emulate-sir-alex-fergusons-success-at-old-trafford",
@@ -318,6 +446,17 @@
       ]
     },
     {
+      "slug": "this-weekend-s-best-player-props-alvarez-douvikas-doku-and-mcburnie",
+      "title": "This Weekend's Best Player Props: Alvarez, Douvikas, Doku and McBurnie",
+      "url": "https://www.sportytrader.com/en/news/this-weekend-s-best-player-props-alvarez-douvikas-doku-and-mcburnie/",
+      "source": "SportyTrader",
+      "image": "",
+      "excerpt": "Four player props from La Liga, Serie A and the Premier League this weekend, covering two goalscorers, a fouls line and a bonus booking at long odds. Let's get into it!",
+      "published_label": "6 November 2026 · 13:00",
+      "published_iso": "2026-11-06T13:00:00+00:00",
+      "byline": "Joseph King"
+    },
+    {
       "slug": "13608819",
       "title": "'It's not personal' - Tuchel explains Palmer exclusion",
       "url": "https://www.skysports.com/football/news/13608819/england-squad-thomas-tuchel-makes-statement-with-cole-palmer-exclusion-but-insists-its-not-personal",
@@ -350,6 +489,34 @@
         "There was not huge optimism at the start of the season when Everton sold Iliman Ndiaye and were unable to make the signings they had hoped for late in the transfer window. \"We had a difficult summer,\" concedes Moyes. But it has been a better autumn. Transfer Centre LIVE! | Everton news & transfers 🔵 Everton fixtures & scores | FREE Everton highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
         "\"I think the players have done a great job in getting ourselves into this position.\" But how about some credit for the manager too? Everton were at a low ebb when he took over last year, but Moyes has more than stabilised, raising the standards at the club again."
       ]
+    },
+    {
+      "slug": "13608758",
+      "title": "'I could have carried on' - Coady announces retirement at 33",
+      "url": "https://www.skysports.com/football/news/13608758/conor-coady-former-wolves-everton-leicester-defender-retires-at-the-age-of-33",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-conor-coady-wrexham_7398876.jpg?20261106095718",
+      "excerpt": "Conor Coady has announced his retirement from professional football at the age of 33.",
+      "published_label": "06 November 2026 · 10:00",
+      "published_iso": "2026-11-06T10:00:00+00:00",
+      "byline": "Dan Long",
+      "body": [
+        "Conor Coady has announced his retirement from professional football at the age of 33.",
+        "Speaking on Sky Sports News, Coady said: \"I'm really proud to have played this unbelievable game for so long. I think I'm ready and there.",
+        "\"The last couple of years have been tough, I've been obsessed with playing football for so long that when I haven't, it's hard. But I'm super, super proud with how the last 15 year have gone.",
+        "\"Physically I'm absolutely fine, I feel good and I feel strong. I could have carried on playing, but I want to look forward to the next bit. I could have carried on playing and sat on the bench, but I've been sat on the bench for the last couple of years and I've found it tough. It happens and comes to everyone.\""
+      ]
+    },
+    {
+      "slug": "members-area-discover-sportytrader-s-pick-of-the-day",
+      "title": "Members’ Area: discover SportyTrader’s pick of the day!",
+      "url": "https://www.sportytrader.com/en/news/members-area-discover-sportytrader-s-pick-of-the-day/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/rugby/nations-championship-r4.webp",
+      "excerpt": "Fancy taking your betting to the next level? Discover our tip of the day! From today, everyone registered in the SportyTrader members’ area can enjoy this exclusive benef",
+      "published_label": "6 November 2026 · 10:00",
+      "published_iso": "2026-11-06T10:00:00+00:00",
+      "byline": "Cydias Aujard"
     },
     {
       "slug": "nations-championship-round-4-italy-vs-south-africa-rassie-team-news",
@@ -524,200 +691,6 @@
       "kind": "video",
       "body": [
         "Arsenal release Love Actually-inspired Christmas advert, featuring Colin Firth, Gabriel, Calafiori and Russo!"
-      ]
-    },
-    {
-      "slug": "13608555",
-      "title": "'Trophies!' - Moyes ready for next step in Everton career",
-      "url": "https://www.skysports.com/football/video/13608555/david-moyes-ready-to-for-next-step-in-everton-career",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-everton_7398398.jpg?20261105185655",
-      "excerpt": "Everton boss David Moyes looks back on his time with Everton and explains where he wants to take the club within his career.",
-      "published_label": "05 November 2026 · 18:53",
-      "published_iso": "2026-11-05T18:53:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Everton boss David Moyes looks back on his time with Everton and explains where he wants to take the club within his career."
-      ]
-    },
-    {
-      "slug": "13608547",
-      "title": "'He wants commitment' – Who'll make the England Nations League squad?",
-      "url": "https://www.skysports.com/football/video/13608547/wholl-make-the-england-nations-league-squad",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7398388.jpg?20261105184716",
-      "excerpt": "Rob Dorsett takes a look at who Thomas Tuchel will be wanting to pick for England’s upcoming Nations League fixtures against Croatia and Spain.",
-      "published_label": "05 November 2026 · 18:36",
-      "published_iso": "2026-11-05T18:36:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Rob Dorsett takes a look at who Thomas Tuchel will be wanting to pick for England’s upcoming Nations League fixtures against Croatia and Spain."
-      ]
-    },
-    {
-      "slug": "13607998",
-      "title": "PL Predictions: Forest ready to turn promise into points vs Man City",
-      "url": "https://www.skysports.com/football/news/13607998/premier-league-predictions-and-jones-knows-best-bets-nottingham-forest-vs-man-city-man-utd-vs-aston-villa-and-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
-      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight across the Premier League weekend. Everton vs Coventry, Friday 8pm, live on Sky Sports Got Sky? Watch Premier League games LIVE on your phone 📱 Not got…",
-      "published_label": "05 November 2026 · 17:40",
-      "published_iso": "2026-11-05T17:40:00+00:00",
-      "byline": "Lewis Jones",
-      "body": [
-        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight across the Premier League weekend. Everton vs Coventry, Friday 8pm, live on Sky Sports Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "There is something about Friday Night Football that seems to bring the goals out in the Premier League. Perhaps it is the occasion, perhaps it is the freedom that comes with being the only game on the schedule, but the numbers make for compelling reading if you are looking for an entertaining evening.",
-        "Across the last 17 Friday Night Football fixtures, games have averaged a whopping 3.76 goals per match. That is almost a full goal per game above the usual league average, while 12 of those 17 encounters have seen over 2.5 goals land.",
-        "That is a trend worth respecting, particularly when the price is 10/11 for over 2.5 goals and both teams to score with Sky Bet here."
-      ]
-    },
-    {
-      "slug": "13608514",
-      "title": "The ultimate set-piece threat - All 18 of Twine's free-kick goals!",
-      "url": "https://www.skysports.com/football/video/13608514/all-18-of-scott-twines-free-kick-goals",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-twine-football_7398316.jpg?20261105173144",
-      "excerpt": "Watch all 18 of Scott Twine's direct free-kick goals scored since December 2020 in the EFL, 10 more than any other player in that time!",
-      "published_label": "05 November 2026 · 17:26",
-      "published_iso": "2026-11-05T17:26:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Watch all 18 of Scott Twine's direct free-kick goals scored since December 2020 in the EFL, 10 more than any other player in that time!"
-      ]
-    },
-    {
-      "slug": "13608482",
-      "title": "'Champions League is the objective' - Kane has eye set on Europe's top prize",
-      "url": "https://www.skysports.com/football/video/13608482/harry-kane-contract-england-captain-says-champions-league-is-his-aim-with-bayern-munich",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-kane-bayern_7398226.jpg?20261105161548",
-      "excerpt": "Harry Kane explains why he has extended his contract at Bayern Munich and how his ambition is to win the Champions League.",
-      "published_label": "05 November 2026 · 16:12",
-      "published_iso": "2026-11-05T16:12:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Harry Kane explains why he has extended his contract at Bayern Munich and how his ambition is to win the Champions League."
-      ]
-    },
-    {
-      "slug": "13608436",
-      "title": "Palmer to return? Mainoo recall? Tuchel's England squad dilemmas",
-      "url": "https://www.skysports.com/football/news/13608436/england-squad-cole-palmer-to-return-kobbie-mainoo-recall-thomas-tuchels-big-selection-dilemmas-analysed",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-cole-palmer-england_7398142.jpg?20261105152017",
-      "excerpt": "Cole Palmer's form for Chelsea ought to make him a shoo-in for England’s final international squad of 2026. The question is whether Thomas Tuchel has lost patience with him.",
-      "published_label": "05 November 2026 · 16:00",
-      "published_iso": "2026-11-05T16:00:00+00:00",
-      "byline": "Rob Dorsett",
-      "body": [
-        "Cole Palmer's form for Chelsea ought to make him a shoo-in for England’s final international squad of 2026. The question is whether Thomas Tuchel has lost patience with him.",
-        "Palmer was hugely disappointed when he was overlooked for the World Cup in the summer after a stop-start season due to injury, and he withdrew from the last England camp in September and October because of a minor fitness issue.",
-        "The 24-year-old has been unavailable for selection due to injury three times since Tuchel took over, and he has withdrawn from two further squads after being named. He has only played three times for his country since the German coach took the reins in January 2025.",
-        "Latest England news | England fixtures Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺 Get Sky Sports on WhatsApp | Sky Bet"
-      ]
-    },
-    {
-      "slug": "13608424",
-      "title": "Glasner wanted to 'shake things up' with outburst",
-      "url": "https://www.skysports.com/football/news/13608424/oliver-glasner-nottingham-forest-head-coach-says-post-brentford-outburst-was-meant-positively",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-oliver-glasner-nottingham-forest_7398122.jpg?20261105151101",
-      "excerpt": "Oliver Glasner says he meant for his post-Brentford outburst to be positive and a catalyst for change at Nottingham Forest.",
-      "published_label": "05 November 2026 · 15:15",
-      "published_iso": "2026-11-05T15:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Oliver Glasner says he meant for his post-Brentford outburst to be positive and a catalyst for change at Nottingham Forest.",
-        "The head coach went on two explosive rants to Sky Sports and in his post-match press conference after defeat at the Gtech Community Stadium which left Forest 19th in the league.",
-        "Among other things, Glasner said: \"We have to accept it's not good enough. If we lose four of the last five games, it's not good enough. And that's why for me, it's now time that we change things, that I change things, and that's what I will do.",
-        "\"I feel now maybe I made too many compromises in some stuff, and it's always compromises. It's a clear way. I will tell [the players] what we want to do, what we have to do, and if the players buy in, I think we can have a turnaround, and if not, the sixth manager [since the start of last season] will come in.\" Forest hierarchy welcome Oliver Glasner's strong words after Brentford loss Forest latest | Forest fixtures & scores | FREE Forest highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13608441",
-      "title": "Infantino faces fight for FIFA presidency as first challenger emerges",
-      "url": "https://www.skysports.com/football/news/13608441/gianni-infantino-fifa-president-faces-challenge-from-japan-fa-chief-kohzo-tashima-in-2027-election",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kohzo-tashima-gianni-infantino_7398127.jpg?20261105151346",
-      "excerpt": "Gianni Infantino is facing his first serious challenger for the FIFA presidency after Japanese football chief Kohzo Tashima announced his intention to stand in March's election.",
-      "published_label": "05 November 2026 · 14:57",
-      "published_iso": "2026-11-05T14:57:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Gianni Infantino is facing his first serious challenger for the FIFA presidency after Japanese football chief Kohzo Tashima announced his intention to stand in March's election.",
-        "Tashima, a member of the FIFA Council and honorary president of the Japan Football Association (JFA), will have the backing of his national association and is expected to secure the five endorsements required to become an official candidate.",
-        "UEFA is working to prevent Infantino from securing another term and is expected to overwhelmingly back Tashima if he emerges as the incumbent's only challenger. Infantino abandons plans to sell off stake in World Cup Pressure to resign increases on Infantino with news he received £1.3m in 2024",
-        "In that scenario, the Japanese could also attract support from anti-Infantino factions within the Asian Football Confederation (AFC) and CONCACAF."
-      ]
-    },
-    {
-      "slug": "13608401",
-      "title": "When Hull and Geovanni STUNNED Arsenal at the Emirates!",
-      "url": "https://www.skysports.com/football/video/13608401/arsenal-1-2-hull-when-hull-and-geovanni-stunned-arsenal-at-the-emirates",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hull-arsenal_7398020.jpg?20261105140449",
-      "excerpt": "Ahead of Hull's visit to Arsenal on Saturday, take a look back when the Tigers stunned the Gunners in their first ever visit to the Emirates, courtesy of a screamer from Geovanni.",
-      "published_label": "05 November 2026 · 13:46",
-      "published_iso": "2026-11-05T13:46:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Ahead of Hull's visit to Arsenal on Saturday, take a look back when the Tigers stunned the Gunners in their first ever visit to the Emirates, courtesy of a screamer from Geovanni."
-      ]
-    },
-    {
-      "slug": "13608399",
-      "title": "Is Estevao ready to explode?",
-      "url": "https://www.skysports.com/football/news/13608399/estevao-ready-for-move-chelsea-minutes-under-xabi-alonso-after-reminder-of-his-threat-against-man-utd-the-radar",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-estevao-chelsea_7398086.png?20261105144503",
-      "excerpt": "Welcome to The Radar , a Sky Sports column in which Nick Wright uses a blend of data and opinion to shed light on need-to-know Premier League stories. This week:",
-      "published_label": "05 November 2026 · 13:42",
-      "published_iso": "2026-11-05T13:42:00+00:00",
-      "byline": "Nick Wright",
-      "body": [
-        "Welcome to The Radar , a Sky Sports column in which Nick Wright uses a blend of data and opinion to shed light on need-to-know Premier League stories. This week:",
-        "🔺Estevao ready for more minutes? 🔺Gross sums up Brighton's intensity 🔺A player to watch this weekend Is Estevao ready to explode?",
-        "In the period between firing past Senne Lammens and having his goal ruled out by VAR, Estevao went over to the touchline to embrace Xabi Alonso. He had been made to wait for a first Premier League start of the season. But clearly there are no hard feelings. Transfer Centre LIVE! | Chelsea news & transfers 🔵 Chelsea fixtures & scores | FREE Chelsea highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest deals or stream games with no contract 📺",
-        "Estevao's peripheral role in the opening months of the campaign frustrated Chelsea supporters, who felt his return to the side against Manchester United was overdue. On the evidence of his performance, he is determined to make up for lost time."
-      ]
-    },
-    {
-      "slug": "13608374",
-      "title": "Trophies, tears, records and rows - Ronaldo's Portugal career will divide opinion",
-      "url": "https://www.skysports.com/football/news/13608374/cristiano-ronaldo-portugal-captains-retirement-ends-extraordinary-record-breaking-international-career-which-will-be-debated-for-years-to-come",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/25/06/768x432/skysports-ronaldo-cristiano_6937091.jpg?20250608231811",
-      "excerpt": "Trophies, tears, records and rows, Cristiano Ronaldo's international career had it all.",
-      "published_label": "05 November 2026 · 12:53",
-      "published_iso": "2026-11-05T12:53:00+00:00",
-      "byline": "Peter Smith",
-      "body": [
-        "Trophies, tears, records and rows, Cristiano Ronaldo's international career had it all.",
-        "For 23 years he passionately wore the Portugal shirt. The debates about his achievements and legacy representing his country will go on for even longer.",
-        "They will primarily focus on two questions. In his pomp, should he have lifted Portugal to greater heights? And in his final years, did he hold the team back from their full potential?",
-        "What shouldn't be lost in the analysis - when Ronaldo's record will inevitably be weighed up against that of his great rival (and World Cup winner) Lionel Messi - is that across his unmatched 234 caps, Ronaldo's brilliance helped deliver glory days."
-      ]
-    },
-    {
-      "slug": "13607957",
-      "title": "'Carrick needs Bruno – but Villa could expose United'",
-      "url": "https://www.skysports.com/football/news/13607957/man-utd-paul-merson-says-michael-carrick-needs-bruno-fernandes-on-side-and-matheus-cunha-to-be-consistent",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-cunha-bruno-fernandes_7396952.jpg?20261104141113",
-      "excerpt": "Paul Merson says Michael Carrick needs Bruno Fernandes in his side and has challenged Matheus Cunha to find greater consistency after Manchester United's dramatic 3-2 comeback win over Roma.",
-      "published_label": "05 November 2026 · 11:45",
-      "published_iso": "2026-11-05T11:45:00+00:00",
-      "byline": "Paul Merson",
-      "body": [
-        "Paul Merson says Michael Carrick needs Bruno Fernandes in his side and has challenged Matheus Cunha to find greater consistency after Manchester United's dramatic 3-2 comeback win over Roma.",
-        "United showed plenty of character to recover from two goals down in the Champions League on Tuesday, earning their first win in 10 games, but Merson believes the result should not disguise the problems that remain under Carrick. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Merson also questioned whether United can carry that momentum into Sunday's Premier League clash with Aston Villa, live on Sky Sports. 'You need Bruno on your side'",
-        "\"I think Bruno Fernandes has to play for Manchester United. He's their best player, and when you're going through a difficult period, you need your best players on the pitch."
       ]
     }
   ]
