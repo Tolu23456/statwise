@@ -1,10 +1,32 @@
 {
-  "synced_at": "2026-11-06T06:47:22+00:00",
+  "synced_at": "2026-11-06T15:55:54+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13608882",
+      "title": "Iraola: We must sacrifice control for creativity to fix scoring woes",
+      "url": "https://www.skysports.com/football/news/13608882/liverpool-andoni-iraola-demands-creativity-over-control-to-solve-premier-league-scoring-problems",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-liverpool_7399134.jpg?20261106145228",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13607467",
+      "title": "Liverpool's unwanted record highlights creativity issue",
+      "url": "https://www.skysports.com/football/news/13607467/liverpools-unwanted-record-against-arsenal-shows-creativity-problem-under-andoni-iraola-between-the-lines",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-florian-wirtz-liverpool_7395735.png?20261103125846",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13595354",
       "title": "Stoke battle to victory at Blackburn",
@@ -200,6 +222,145 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13608887",
+      "title": "Carrick: Not impossible Man Utd can achieve Ferguson success again",
+      "url": "https://www.skysports.com/football/news/13608887/michael-carrick-manchester-united-boss-says-its-possible-the-club-can-emulate-sir-alex-fergusons-success-at-old-trafford",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7399116.jpg?20261106143020",
+      "excerpt": "Michael Carrick believes Manchester United can reach the heights achieved under Sir Alex Ferguson but is not expecting the same level of patience.",
+      "published_label": "06 November 2026 · 15:40",
+      "published_iso": "2026-11-06T15:40:00+00:00",
+      "byline": "William Bitibiri",
+      "body": [
+        "Michael Carrick believes Manchester United can reach the heights achieved under Sir Alex Ferguson but is not expecting the same level of patience.",
+        "Friday marks 40 years since Ferguson was appointed United manager on November 6, 1986. It is an anniversary that comes at a particularly significant moment for the club, with Carrick's position in charge still facing intense scrutiny.",
+        "United's dramatic 3-2 comeback victory over Roma in midweek offered Carrick some much-needed breathing space after a nine-game winless run, but Sunday's Premier League clash against Aston Villa, live on Sky, represents another significant test. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "The timing of Ferguson's anniversary also provides an opportunity to reflect on the scale of the task facing United."
+      ]
+    },
+    {
+      "slug": "13608915",
+      "title": "Can Roma win be a comparison to Sir Alex's 'Mark Robins' turning point?",
+      "url": "https://www.skysports.com/football/video/13608915/manchester-united-can-roma-win-be-a-comparison-to-sir-alexs-mark-robins-turning-point",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-carrick-ferguson_7399193.jpg?20261106154335",
+      "excerpt": "Michael Carrick responds to whether the Roma win can be a comparison to Sir Alex Ferguson's 'Mark Robins' turning point goal back in 1990?",
+      "published_label": "06 November 2026 · 15:29",
+      "published_iso": "2026-11-06T15:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Michael Carrick responds to whether the Roma win can be a comparison to Sir Alex Ferguson's 'Mark Robins' turning point goal back in 1990?"
+      ]
+    },
+    {
+      "slug": "13608893",
+      "title": "Emery questioned on new Villa contract",
+      "url": "https://www.skysports.com/football/video/13608893/unai-emery-questioned-on-new-contract-at-aston-villa",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-unai-emery-aston-villa_7399136.jpg?20261106145309",
+      "excerpt": "Aston Villa boss Unai Emery was questioned on the possibility of signing a new contract with the club.",
+      "published_label": "06 November 2026 · 14:36",
+      "published_iso": "2026-11-06T14:36:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Aston Villa boss Unai Emery was questioned on the possibility of signing a new contract with the club."
+      ]
+    },
+    {
+      "slug": "13608892",
+      "title": "'We're very happy with Cole' - Alonso on Palmer's attitude",
+      "url": "https://www.skysports.com/football/video/13608892/were-very-happy-with-cole-xabi-alonso-on-cole-palmers-attitude",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-palmer-alonso_7399132.jpg?20261106145126",
+      "excerpt": "Chelsea boss Xabi Alonso swerved questions about Cole Palmer's hunger to play for England after he was left out of Thomas Tuchel's side once again.",
+      "published_label": "06 November 2026 · 14:27",
+      "published_iso": "2026-11-06T14:27:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Chelsea boss Xabi Alonso swerved questions about Cole Palmer's hunger to play for England after he was left out of Thomas Tuchel's side once again."
+      ]
+    },
+    {
+      "slug": "13608890",
+      "title": "Jobe joins brother Jude with England to showcase his own talent",
+      "url": "https://www.skysports.com/football/news/13608890/england-jobe-bellingham-has-the-chance-to-showcase-his-own-talent-alongside-brother-jude-in-thomas-tuchels-squad",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jude-jobe-bellingham_7399118.jpg?20261106143239",
+      "excerpt": "\"He's coming on his own merit,\" said Thomas Tuchel, after extolling the strengths of Jobe Bellingham.",
+      "published_label": "06 November 2026 · 14:24",
+      "published_iso": "2026-11-06T14:24:00+00:00",
+      "byline": "Peter Smith",
+      "body": [
+        "\"He's coming on his own merit,\" said Thomas Tuchel, after extolling the strengths of Jobe Bellingham.",
+        "Jude Bellingham's younger brother - as is currently the go-to preface to any description of Jobe - couldn't hide his delight when he got the call from Tuchel to say he was being promoted from U21s captain to be included in the England senior squad.",
+        "\"It's an incredible achievement for the family, for both brothers to be called up by their national team,\" Tuchel said on Friday, after revealing his squad for the Nations League games with Croatia and Spain. \"I saw his excitement straightaway in his smile.\"",
+        "But Tuchel was also right to highlight the individual qualities of 21-year-old Jobe and the different attributes he can offer the national team, in a different position to his brother. England squad talking points as Tuchel makes Palmer statement | 'It's not personal' - Tuchel explains Palmer exclusion Latest England news | England fixtures Nations League fixtures | Nations League tables"
+      ]
+    },
+    {
+      "slug": "13608883",
+      "title": "Five takeaways from Tuchel's England squad announcement",
+      "url": "https://www.skysports.com/football/video/13608883/five-takeaways-from-tuchels-england-squad-announcement",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-tuchel-bellingham_7399120.jpg?20261106143550",
+      "excerpt": "Rob Dorsett gives us his five takeaways from Thomas Tuchel's Nations League England squad announcement.",
+      "published_label": "06 November 2026 · 14:13",
+      "published_iso": "2026-11-06T14:13:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Rob Dorsett gives us his five takeaways from Thomas Tuchel's Nations League England squad announcement."
+      ]
+    },
+    {
+      "slug": "13608819",
+      "title": "'It's not personal' - Tuchel explains Palmer exclusion",
+      "url": "https://www.skysports.com/football/news/13608819/england-squad-thomas-tuchel-makes-statement-with-cole-palmer-exclusion-but-insists-its-not-personal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-cole-palmer-thomas-tuchel_7398977.jpg?20261106114403",
+      "excerpt": "Thomas Tuchel has insisted Cole Palmer's absence from the England squad isn't \"personal\" - but sent out an emphatic statement with the Chelsea star's exclusion.",
+      "published_label": "06 November 2026 · 11:54",
+      "published_iso": "2026-11-06T11:54:00+00:00",
+      "byline": "Peter Smith",
+      "body": [
+        "Thomas Tuchel has insisted Cole Palmer's absence from the England squad isn't \"personal\" - but sent out an emphatic statement with the Chelsea star's exclusion.",
+        "Palmer is in form and a check from the England medical staff with Chelsea confirmed he is fit and ready to play this weekend. But Tuchel has prioritised players who were available and delivered in the previous international break.",
+        "Tuchel made headlines in September when he said Palmer misses too many opportunities to impress him, following the attacker's withdrawal due to injury.",
+        "During Tuchel's tenure Palmer has been unavailable for selection because of injury three times and has withdrawn from a further two squads. For the November Nations League games with Croatia and Spain , the England boss is putting his trust in the players who have shown him up close what they can do. Latest England news | England fixtures Nations League fixtures | Nations League tables"
+      ]
+    },
+    {
+      "slug": "13605773",
+      "title": "Moyes opens up on Everton trophy target and his longevity ahead of landmark game",
+      "url": "https://www.skysports.com/football/news/13605773/david-moyes-interview-everton-manager-targeting-trophies-as-he-equals-harry-cattericks-record-for-games-managed",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/04/768x432/skysports-david-moyes_7220906.jpg?20260415171844",
+      "excerpt": "Everton are seventh in the Premier League table with the chance to move above Liverpool into fifth if they can beat Coventry at home. They are also into a Carabao Cup quarter-final against Fleetwood. This has been a promising start for Davi…",
+      "published_label": "06 November 2026 · 11:00",
+      "published_iso": "2026-11-06T11:00:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "Everton are seventh in the Premier League table with the chance to move above Liverpool into fifth if they can beat Coventry at home. They are also into a Carabao Cup quarter-final against Fleetwood. This has been a promising start for David Moyes.",
+        "\"When you start to talk about quarter-finals, it sounds good,\" Moyes tells Sky Sports . \"Every Evertonian wants a cup run because we have been so long since we have been near lifting any trophies. My expectations are that I want us to be challenging.\"",
+        "There was not huge optimism at the start of the season when Everton sold Iliman Ndiaye and were unable to make the signings they had hoped for late in the transfer window. \"We had a difficult summer,\" concedes Moyes. But it has been a better autumn. Transfer Centre LIVE! | Everton news & transfers 🔵 Everton fixtures & scores | FREE Everton highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
+        "\"I think the players have done a great job in getting ourselves into this position.\" But how about some credit for the manager too? Everton were at a low ebb when he took over last year, but Moyes has more than stabilised, raising the standards at the club again."
+      ]
+    },
+    {
+      "slug": "nations-championship-round-4-italy-vs-south-africa-rassie-team-news",
+      "title": "Ruthless Rassie: Springboks Unleash Big Guns Against Italy in Nations",
+      "url": "https://www.sportytrader.com/en-za/news/nations-championship-round-4-italy-vs-south-africa-rassie-team-news/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/caf-awards-2026-nominees.webp",
+      "excerpt": "South Africa head coach Rassie Erasmus is leaving absolutely nothing to chance, naming a ruthless, full-strength Springbok lineup to demolish Italy in tomorrow’s Nations",
+      "published_label": "6 November 2026 · 05:00",
+      "published_iso": "2026-11-06T05:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13608665",
@@ -557,175 +718,6 @@
         "United showed plenty of character to recover from two goals down in the Champions League on Tuesday, earning their first win in 10 games, but Merson believes the result should not disguise the problems that remain under Carrick. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
         "Merson also questioned whether United can carry that momentum into Sunday's Premier League clash with Aston Villa, live on Sky Sports. 'You need Bruno on your side'",
         "\"I think Bruno Fernandes has to play for Manchester United. He's their best player, and when you're going through a difficult period, you need your best players on the pitch."
-      ]
-    },
-    {
-      "slug": "13602662",
-      "title": "From forgettable EFL loans to Ballon d'Or winner - Kane's 'Cinderella story'",
-      "url": "https://www.skysports.com/football/news/13602662/harry-kane-wins-ballon-dor-bayern-munich-striker-completes-cinderella-story-from-efl-loans-to-worlds-best-player",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-ballon-dor-bayern-munich_7382872.jpg?20261021135151",
-      "excerpt": "From forgettable EFL loan spells to being crowned the best player in the world, it is no wonder Harry Kane’s former boss thinks of his Ballon d'Or win as a fairy tale.",
-      "published_label": "05 November 2026 · 08:23",
-      "published_iso": "2026-11-05T08:23:00+00:00",
-      "byline": "Declan Olley",
-      "body": [
-        "From forgettable EFL loan spells to being crowned the best player in the world, it is no wonder Harry Kane’s former boss thinks of his Ballon d'Or win as a fairy tale.",
-        "\"This is a Cinderella story we've never seen before,\" ex-Tottenham boss Tim Sherwood, who gave Kane his full Premier League debut, tells Sky Sports .",
-        "\"He keeps breaking records, and I keep thinking: 'Are we talking about the same kid?'",
-        "\"There was always a chance, because he felt like there was no ceiling - he would always just break through and go further."
-      ]
-    },
-    {
-      "slug": "13608258",
-      "title": "The story continues... Kane signs extension with Bayern until 2029",
-      "url": "https://www.skysports.com/football/video/13608258/the-story-continues-harry-kane-signs-extension-with-bayern-munich-until-2029",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kane-contract-bayern-munich_7397653.jpg?20261105083933",
-      "excerpt": "Harry Kane commits his future to Bayern Munich by signing a new contract extension until 2029. Credit: FC Bayern",
-      "published_label": "05 November 2026 · 08:14",
-      "published_iso": "2026-11-05T08:14:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Harry Kane commits his future to Bayern Munich by signing a new contract extension until 2029. Credit: FC Bayern"
-      ]
-    },
-    {
-      "slug": "13608255",
-      "title": "Ballon d'Or winner Kane signs new Bayern deal",
-      "url": "https://www.skysports.com/football/news/13608255/harry-kane-england-captain-signs-new-contract-at-bayern-munich-running-until-2029",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-bundesliga_7397657.jpg?20261105084605",
-      "excerpt": "The deal will see him remain with the Bundesliga giants until the summer of 2029.",
-      "published_label": "05 November 2026 · 08:13",
-      "published_iso": "2026-11-05T08:13:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The deal will see him remain with the Bundesliga giants until the summer of 2029.",
-        "Sky in Germany are reporting Kane's new salary is at least £20.9m (€25m) gross per year.",
-        "\"I feel right at home at FC Bayern,\" Kane told the club's official website.",
-        "\"I love the club, the fans and the city of Munich. We have a fantastic team and, in Vincent Kompany, a fantastic manager. It makes me very proud to be part of this club. How Bayern Munich fell in love with Harry Kane Kane becomes first Englishman to win Ballon d'Or for 25 years 'A cinderella story': Kane's journey from EFL loans to Ballon d'Or"
-      ]
-    },
-    {
-      "slug": "osimhen-lookman-miss-out-on-caf-awards-nominations",
-      "title": "Osimhen, Lookman Miss Out on CAF Awards Nominations As Hakimi Favourit",
-      "url": "https://www.sportytrader.com/en-ng/news/osimhen-lookman-miss-out-on-caf-awards-nominations/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/leipzig-vs-man-city-1.webp",
-      "excerpt": "The 2026 CAF Awards will take place on December 7 in Lagos, Nigeria, as we celebrate Africa’s leading footballers and their achievements at the club and international lev",
-      "published_label": "5 November 2026 · 08:00",
-      "published_iso": "2026-11-05T08:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13608227",
-      "title": "'It's not a concern' - Maresca backs Donnarumma and praises Haaland heroics",
-      "url": "https://www.skysports.com/football/video/13608227/enzo-maresca-backs-gianluigi-donnarumma-after-recent-clean-sheet-concerns-and-praises-erling-haaland-coming-to-man-citys-rescue-to-win-the-game",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-city-maresca_7397566.jpg?20261105063723",
-      "excerpt": "Following Manchester City's thrilling 3-2 win over RB Leipzig, Enzo Maresca backs Gianluigi Donnarumma amid clean-sheet concerns and hails Erling Haaland for rescuing the win.",
-      "published_label": "05 November 2026 · 06:26",
-      "published_iso": "2026-11-05T06:26:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Following Manchester City's thrilling 3-2 win over RB Leipzig, Enzo Maresca backs Gianluigi Donnarumma amid clean-sheet concerns and hails Erling Haaland for rescuing the win."
-      ]
-    },
-    {
-      "slug": "13608206",
-      "title": "'Far from our standards' - Arteta critical of Arsenal's 2nd half vs Slavia Prague",
-      "url": "https://www.skysports.com/football/video/13608206/slavia-prague-1-2-arsenal-mikel-arteta-critical-of-his-sides-second-half-display-in-czechia",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mikel-arteta-arsenal_7397532.jpg?20261104235102",
-      "excerpt": "Following his side's narrow victory against Slavia Prague, Arsenal boss Mikel Arteta says his side's performance was far from their 'normal standard'.",
-      "published_label": "04 November 2026 · 23:48",
-      "published_iso": "2026-11-04T23:48:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Following his side's narrow victory against Slavia Prague, Arsenal boss Mikel Arteta says his side's performance was far from their 'normal standard'."
-      ]
-    },
-    {
-      "slug": "13608181",
-      "title": "Oxford 2-0 Reading",
-      "url": "https://www.skysports.com/football/video/13608181/oxford-2-0-reading-league-one-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/7b686424c6db266c44854e70d6aa2ec82492c536dd2a011ff3845824504df24b_7397469.jpg?20261104223030",
-      "excerpt": "Highlights of the Sky Bet League One match between Oxford and Reading.",
-      "published_label": "04 November 2026 · 22:29",
-      "published_iso": "2026-11-04T22:29:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League One match between Oxford and Reading."
-      ]
-    },
-    {
-      "slug": "13608176",
-      "title": "Late Neave double sends Wolves second",
-      "url": "https://www.skysports.com/football/video/13608176/bristol-city-1-2-wolverhampton-wanderers-championship-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wolves-bristol-city_7397451.jpg?20261104221622",
-      "excerpt": "Highlights from the Sky Bet Championship match between Bristol City and Wolverhampton Wanderers.",
-      "published_label": "04 November 2026 · 22:15",
-      "published_iso": "2026-11-04T22:15:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights from the Sky Bet Championship match between Bristol City and Wolverhampton Wanderers."
-      ]
-    },
-    {
-      "slug": "13607404",
-      "title": "Haaland nets Man City winner to haunt RB Leipzig again",
-      "url": "https://www.skysports.com/football/news/13607404/rb-leipzig-2-3-man-city-erling-haaland-haunts-bundesliga-side-again-with-late-winner-in-champions-league-thriller",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-erling-haaland-man-city_7397445.jpg?20261104221134",
-      "excerpt": "Erling Haaland haunted RB Leipzig again to earn Manchester City a thrilling 3-2 victory in the Champions League.",
-      "published_label": "04 November 2026 · 22:00",
-      "published_iso": "2026-11-04T22:00:00+00:00",
-      "byline": "David Richardson",
-      "body": [
-        "Erling Haaland haunted RB Leipzig again to earn Manchester City a thrilling 3-2 victory in the Champions League.",
-        "Haaland netted 12 minutes from time, tapping in from Elliot Anderson's low cross, for his 13th goal in nine appearances against the Bundesliga side, his most against any opponent in his career, which returned City to winning ways after their defeat to Brighton on Saturday.",
-        "City made hard work of the tie in which they led twice, having been gifted a first-half opener when Castello Lukeba comically turned the ball into his own net after Leipzig had been on top with Christoph Baumgartner and Antonio Nusa going close. As it happened | Teams | Stats | Champions League table Man City news & transfers 🔵| Man City fixtures & scores Got Sky? Watch PL games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "Gianluigi Donnarumma made a top save to deny Baumgartner at the start of the second half but seconds later the Man City goalkeeper was caught out at his near post by Ridle Baku's smart finish, the right-back tucking the ball in from a tight angle when everyone expected him to cross low into the middle."
-      ]
-    },
-    {
-      "slug": "13608160",
-      "title": "Hammers produce stunning comeback in Parker's first game in charge!",
-      "url": "https://www.skysports.com/football/video/13608160/cardiff-3-3-west-ham-championship-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-ham_7397433.jpg?20261104215807",
-      "excerpt": "Highlights from the Sky Bet Championship match between Cardiff and West Ham.",
-      "published_label": "04 November 2026 · 21:53",
-      "published_iso": "2026-11-04T21:53:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights from the Sky Bet Championship match between Cardiff and West Ham."
-      ]
-    },
-    {
-      "slug": "13595365",
-      "title": "Southampton hit back to hold West Brom",
-      "url": "https://www.skysports.com/football/news/13595365/west-brom-1-1-southampton-samuel-edozie-earns-point-for-saints",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-brom-southampton_7396098.jpg?20261103201704",
-      "excerpt": "Samuel Edozie's second-half equaliser ensured Southampton and West Brom shared the points from a 1-1 draw at The Hawthorns.",
-      "published_label": "03 November 2026 · 21:15",
-      "published_iso": "2026-11-03T21:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Samuel Edozie's second-half equaliser ensured Southampton and West Brom shared the points from a 1-1 draw at The Hawthorns.",
-        "Both teams started the season in promising fashion and taking a point apiece means the sides continue their respective unbeaten runs after a game of two halves.",
-        "West Brom completely dominated the first half as Southampton failed to register a single shot in the opening 45 and Isaac Price notched from the penalty spot to give the hosts a deserved half-time lead for his fifth goal of the season.",
-        "For all the hosts' dominance, Tonda Eckert's side turned the tables in the second period and found an equaliser through Edozie."
       ]
     }
   ]
