@@ -1,44 +1,10 @@
 {
-  "synced_at": "2026-11-07T01:56:57+00:00",
+  "synced_at": "2026-11-07T08:48:34+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13607998",
-      "title": "PL Predictions: How will your team fare this weekend?",
-      "url": "https://www.skysports.com/football/news/13607998/premier-league-predictions-and-jones-knows-best-bets-nottingham-forest-vs-man-city-man-utd-vs-aston-villa-and-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13607009",
-      "title": "Barcola: People are starting to understand me better - but I'm not Mo Salah",
-      "url": "https://www.skysports.com/football/news/13607009/bradley-barcola-interview-liverpool-winger-discusses-leaving-psg-settling-in-at-anfield-overcoming-the-price-tag-and-mohamed-salah-pressure",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/SKYSPORTS_5acd404f0efc3093240c6c0e21ab369855df54510c2e200ee61be1c7f123424a_7394693.jpg?20261102104226",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13609087",
-      "title": "Dewsbury-Hall scores Everton's third with superb strike!",
-      "url": "https://www.skysports.com/football/video/13609087/goal-k-dewsbury-hall-81-everton-3-1-coventry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kdh-goal_7399586.jpg?20261106214722",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13608932",
       "title": "Was Mourinho upset by Ronaldo retirement circumstances?",
@@ -281,6 +247,51 @@
       "byline": ""
     },
     {
+      "slug": "13609167",
+      "title": "Bundesliga bangers as Hamburg beat Borussia Monchengladbach",
+      "url": "https://www.skysports.com/football/video/13609167/hamburg-3-1-borussia-monchengladbach-bundesliga-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hamburg-monchengladbach_7399732.jpg?20261107083629",
+      "excerpt": "Highlights of the Bundesliga match between Hamburg and Borussia Monchengladbach.",
+      "published_label": "07 November 2026 · 08:28",
+      "published_iso": "2026-11-07T08:28:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Bundesliga match between Hamburg and Borussia Monchengladbach."
+      ]
+    },
+    {
+      "slug": "13609161",
+      "title": "The Cole Palmer Awards - An alternative look at 2026 with Chelsea star",
+      "url": "https://www.skysports.com/football/video/13609161/the-cole-palmer-awards-an-alternative-look-at-2026-with-chelsea-star",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-cole-palmer-awards_7399726.jpg?20261107082451",
+      "excerpt": "Take a look at an awards ceremony with a difference - as Cole Palmer dishes out his awards for 2026 for Saturday Social.",
+      "published_label": "07 November 2026 · 08:09",
+      "published_iso": "2026-11-07T08:09:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Take a look at an awards ceremony with a difference - as Cole Palmer dishes out his awards for 2026 for Saturday Social."
+      ]
+    },
+    {
+      "slug": "13609160",
+      "title": "'The goals will come' - Tzolis confident of making his mark at Arsenal",
+      "url": "https://www.skysports.com/football/video/13609160/arsenal-latest-christos-tzolis-confident-that-goals-will-come",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-christos-tzolis-arsenal_7399722.jpg?20261107081804",
+      "excerpt": "Arsenal's Christos Tzolis says he's confident the goals will come despite failing to score for Arsenal since his summer move from Club Brugge.",
+      "published_label": "07 November 2026 · 08:08",
+      "published_iso": "2026-11-07T08:08:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Arsenal's Christos Tzolis says he's confident the goals will come despite failing to score for Arsenal since his summer move from Club Brugge."
+      ]
+    },
+    {
       "slug": "13609067",
       "title": "Lampard: VAR didn't do its job",
       "url": "https://www.skysports.com/football/news/13609067/everton-3-1-coventry-frank-lampard-says-var-didnt-do-its-job-after-three-incidents-went-against-sky-blues-in-premier-league-defeat",
@@ -406,6 +417,21 @@
         "It was just a second win all season, a first home win at Pride Park, and a first victory in 11 games on Friday night.",
         "They still find themselves four points adrift of safety, but will be feeling far better heading into the international break. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
         "It looked like it was going to be another bad night for Derby as Bolton dominated the first half and took the lead just before the break through Ruben Rodrigues."
+      ]
+    },
+    {
+      "slug": "13609087",
+      "title": "Dewsbury-Hall scores Everton's third with superb strike!",
+      "url": "https://www.skysports.com/football/video/13609087/goal-k-dewsbury-hall-81-everton-3-1-coventry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kdh-goal_7399586.jpg?20261106214722",
+      "excerpt": "Dewsbury-Hall all but wins it for Everton with superb strike against Coventry in the Premier League.",
+      "published_label": "06 November 2026 · 21:44",
+      "published_iso": "2026-11-06T21:44:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Dewsbury-Hall all but wins it for Everton with superb strike against Coventry in the Premier League."
       ]
     },
     {
@@ -608,76 +634,71 @@
       ]
     },
     {
-      "slug": "this-weekend-s-best-player-props-alvarez-douvikas-doku-and-mcburnie",
-      "title": "This Weekend's Best Player Props: Alvarez, Douvikas, Doku and McBurnie",
-      "url": "https://www.sportytrader.com/en/news/this-weekend-s-best-player-props-alvarez-douvikas-doku-and-mcburnie/",
-      "source": "SportyTrader",
-      "image": "",
-      "excerpt": "Four player props from La Liga, Serie A and the Premier League this weekend, covering two goalscorers, a fouls line and a bonus booking at long odds. Let's get into it!",
-      "published_label": "6 November 2026 · 13:00",
-      "published_iso": "2026-11-06T13:00:00+00:00",
-      "byline": "Joseph King"
-    },
-    {
-      "slug": "13608819",
-      "title": "'It's not personal' - Tuchel explains Palmer exclusion",
-      "url": "https://www.skysports.com/football/news/13608819/england-squad-thomas-tuchel-makes-statement-with-cole-palmer-exclusion-but-insists-its-not-personal",
+      "slug": "13608738",
+      "title": "England squad talking points as Tuchel makes Palmer statement",
+      "url": "https://www.skysports.com/football/news/13608738/cole-palmer-omission-a-statement-by-thomas-tuchel-as-ben-white-recalled-despite-boos-england-squad-talking-points",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-cole-palmer-thomas-tuchel_7398977.jpg?20261106114403",
-      "excerpt": "Thomas Tuchel has insisted Cole Palmer's absence from the England squad isn't \"personal\" - but sent out an emphatic statement with the Chelsea star's exclusion.",
-      "published_label": "06 November 2026 · 11:54",
-      "published_iso": "2026-11-06T11:54:00+00:00",
-      "byline": "Peter Smith",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-cole-palmer-thomas-tuchel_7398972.jpg?20261106114109",
+      "excerpt": "England face their final two Nations League games this month, knowing a point against Croatia will seal a place in the competition's quarter-finals.",
+      "published_label": "06 November 2026 · 09:12",
+      "published_iso": "2026-11-06T09:12:00+00:00",
+      "byline": "Sky Sports",
       "body": [
-        "Thomas Tuchel has insisted Cole Palmer's absence from the England squad isn't \"personal\" - but sent out an emphatic statement with the Chelsea star's exclusion.",
-        "Palmer is in form and a check from the England medical staff with Chelsea confirmed he is fit and ready to play this weekend. But Tuchel has prioritised players who were available and delivered in the previous international break.",
-        "Tuchel made headlines in September when he said Palmer misses too many opportunities to impress him, following the attacker's withdrawal due to injury.",
-        "During Tuchel's tenure Palmer has been unavailable for selection because of injury three times and has withdrawn from a further two squads. For the November Nations League games with Croatia and Spain , the England boss is putting his trust in the players who have shown him up close what they can do. Latest England news | England fixtures Nations League fixtures | Nations League tables"
+        "England face their final two Nations League games this month, knowing a point against Croatia will seal a place in the competition's quarter-finals.",
+        "They host Croatia at Wembley on Thursday November 12 before going to Madrid to take on world champions Spain on November 15 and Thomas Tuchel has made some big calls in his squad . Palmer exclusion a statement from Tuchel",
+        "Cole Palmer is fit. He's in form. So, this is a statement exclusion from England boss Thomas Tuchel. An emphatic message to Palmer and other players about what is required to earn a spot in this group and stay there.",
+        "\"We trust the team who was with us and had such an excellent camp [last time],\" said Tuchel, when announcing his squad. \"If you're in camp, if you're good and the team is flying you have every right to stay with us. You contributed in the right manner, in an excellent way.\""
       ]
     },
     {
-      "slug": "13605773",
-      "title": "Moyes opens up on Everton trophy target and his longevity ahead of landmark game",
-      "url": "https://www.skysports.com/football/news/13605773/david-moyes-interview-everton-manager-targeting-trophies-as-he-equals-harry-cattericks-record-for-games-managed",
+      "slug": "13607998",
+      "title": "PL Predictions: How will your team fare this weekend?",
+      "url": "https://www.skysports.com/football/news/13607998/premier-league-predictions-and-jones-knows-best-bets-nottingham-forest-vs-man-city-man-utd-vs-aston-villa-and-more",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/04/768x432/skysports-david-moyes_7220906.jpg?20260415171844",
-      "excerpt": "Everton are seventh in the Premier League table with the chance to move above Liverpool into fifth if they can beat Coventry at home. They are also into a Carabao Cup quarter-final against Fleetwood. This has been a promising start for Davi…",
-      "published_label": "06 November 2026 · 11:00",
-      "published_iso": "2026-11-06T11:00:00+00:00",
-      "byline": "Adam Bate",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
+      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight across the Premier League weekend. Leeds vs Tottenham, Saturday 12.30pm",
+      "published_label": "05 November 2026 · 17:40",
+      "published_iso": "2026-11-05T17:40:00+00:00",
+      "byline": "Lewis Jones",
       "body": [
-        "Everton are seventh in the Premier League table with the chance to move above Liverpool into fifth if they can beat Coventry at home. They are also into a Carabao Cup quarter-final against Fleetwood. This has been a promising start for David Moyes.",
-        "\"When you start to talk about quarter-finals, it sounds good,\" Moyes tells Sky Sports . \"Every Evertonian wants a cup run because we have been so long since we have been near lifting any trophies. My expectations are that I want us to be challenging.\"",
-        "There was not huge optimism at the start of the season when Everton sold Iliman Ndiaye and were unable to make the signings they had hoped for late in the transfer window. \"We had a difficult summer,\" concedes Moyes. But it has been a better autumn. Transfer Centre LIVE! | Everton news & transfers 🔵 Everton fixtures & scores | FREE Everton highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
-        "\"I think the players have done a great job in getting ourselves into this position.\" But how about some credit for the manager too? Everton were at a low ebb when he took over last year, but Moyes has more than stabilised, raising the standards at the club again."
+        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight across the Premier League weekend. Leeds vs Tottenham, Saturday 12.30pm",
+        "There is a decent chance referee John Brooks will be reaching for his pocket at Elland Road.",
+        "Brooks is one of the busiest officials with his cards in the Premier League. Since the start of last season, no referee has given more penalties or shown more red cards, while only Stuart Attwell has averaged more bookings per 90 minutes. Brooks is dishing out 4.75 cards per game. That's a healthy starting point for an over 4.5 cards bet which can be backed here at 5/6 with Sky Bet.",
+        "The kick-off time adds another layer of appeal. The last 17 Premier League matches to start at 12.30pm on a Saturday have averaged 4.8 cards per game, with six of the last seven clearing this line. It's another trend worth respecting, particularly when the man in charge has such a strong appetite for disciplinary action."
       ]
     },
     {
-      "slug": "members-area-discover-sportytrader-s-pick-of-the-day",
-      "title": "Members’ Area: discover SportyTrader’s pick of the day!",
-      "url": "https://www.sportytrader.com/en/news/members-area-discover-sportytrader-s-pick-of-the-day/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/rugby/nations-championship-r4.webp",
-      "excerpt": "Fancy taking your betting to the next level? Discover our tip of the day! From today, everyone registered in the SportyTrader members’ area can enjoy this exclusive benef",
-      "published_label": "6 November 2026 · 10:00",
-      "published_iso": "2026-11-06T10:00:00+00:00",
-      "byline": "Cydias Aujard"
+      "slug": "13608016",
+      "title": "Is Hemp the best winger in the game right now?",
+      "url": "https://www.skysports.com/football/news/13608016/wsl-lauren-hemp-did-not-make-the-ballon-dor-top-30-but-her-form-for-manchester-city-this-season-deserves-attention",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-lauren-hemp-wsl-hemp_7397070.jpg?20261104160535",
+      "excerpt": "Sky Sports columnist Laura Hunter analyses the big talking points from the sixth round of Women's Super League matches, bringing you closer to the key stories at the heart of the women's game. Why Hemp's form deserves more credit",
+      "published_label": "04 November 2026 · 16:30",
+      "published_iso": "2026-11-04T16:30:00+00:00",
+      "byline": "Laura Hunter",
+      "body": [
+        "Sky Sports columnist Laura Hunter analyses the big talking points from the sixth round of Women's Super League matches, bringing you closer to the key stories at the heart of the women's game. Why Hemp's form deserves more credit",
+        "Plenty of Manchester City's squad featured prominently in the women's Ballon d'Or final rankings last week. Khadija 'Bunny' Shaw rightly came third. Yui Hasegawa finished 11th, while Alex Greenwood and Kerstin Casparij were both named in the top 30. All such placings were a fair reflection of their current status.",
+        "But there was one glowing omission. Lauren Hemp, arguably the most in-form winger in the game right now, was curiously nowhere to be seen. It felt odd. And prompted a deeper dive into why she might have been overlooked.",
+        "Clearly Bunny Shaw is the undisputed champion of Man City's team, their top scorer and main driver of big results. Incidentally, the Jamaica international is currently on her best run of consecutive scoring starts in the league (8) and has found the net in 13 of 19 games in 2026. However, one might argue those numbers have been made more possible by the ingenuity of Hemp. Got Sky? Watch WSL games on your phone Not got Sky? Stream WSL games with no contract"
+      ]
     },
     {
-      "slug": "13608758",
-      "title": "'I could have carried on' - Coady announces retirement at 33",
-      "url": "https://www.skysports.com/football/news/13608758/conor-coady-former-wolves-everton-leicester-defender-retires-at-the-age-of-33",
+      "slug": "13607009",
+      "title": "Barcola: People are starting to understand me better - but I'm not Mo Salah",
+      "url": "https://www.skysports.com/football/news/13607009/bradley-barcola-interview-liverpool-winger-discusses-leaving-psg-settling-in-at-anfield-overcoming-the-price-tag-and-mohamed-salah-pressure",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-conor-coady-wrexham_7398876.jpg?20261106095718",
-      "excerpt": "Conor Coady has announced his retirement from professional football at the age of 33.",
-      "published_label": "06 November 2026 · 10:00",
-      "published_iso": "2026-11-06T10:00:00+00:00",
-      "byline": "Dan Long",
+      "image": "https://e0.365dm.com/26/11/768x432/SKYSPORTS_5acd404f0efc3093240c6c0e21ab369855df54510c2e200ee61be1c7f123424a_7394693.jpg?20261102104226",
+      "excerpt": "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
+      "published_label": "02 November 2026 · 10:40",
+      "published_iso": "2026-11-02T10:40:00+00:00",
+      "byline": "Sam Blitz",
       "body": [
-        "Conor Coady has announced his retirement from professional football at the age of 33.",
-        "Speaking on Sky Sports News, Coady said: \"I'm really proud to have played this unbelievable game for so long. I think I'm ready and there.",
-        "\"The last couple of years have been tough, I've been obsessed with playing football for so long that when I haven't, it's hard. But I'm super, super proud with how the last 15 year have gone.",
-        "\"Physically I'm absolutely fine, I feel good and I feel strong. I could have carried on playing, but I want to look forward to the next bit. I could have carried on playing and sat on the bench, but I've been sat on the bench for the last couple of years and I've found it tough. It happens and comes to everyone.\""
+        "Big money signings can take time to get going at their new club. There are plenty at Liverpool who can testify to that.",
+        "As Sky Sports settles into a room at Liverpool's AXA training facility, a large window shows some of their big-money stars walking off one of the pitches after a recovery session. It's a sheer amount of attacking wealth.",
+        "Two of them are Alexander Isak and Florian Wirtz, who arrived in deals that could reach a combined £241m. But the jury is still out on both of them. Isak has only just started delivering his highly-anticipated goal numbers, while many believe Wirtz is yet to get going on Merseyside.",
+        "This year, Bradley Barcola - who goes from the pitch to sitting in front of the Sky Sports cameras in the training facility - is the latest marquee signing, this time for £123m. But a slow start to life at Anfield brought about familiar concerns about recent buys. Transfer Centre LIVE! | Liverpool news & transfers 🔴 Liverpool fixtures & scores | FREE Liverpool highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
       ]
     }
   ]
