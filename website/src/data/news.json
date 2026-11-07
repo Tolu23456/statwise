@@ -1,10 +1,33 @@
 {
-  "synced_at": "2026-11-07T16:27:19+00:00",
+  "synced_at": "2026-11-07T21:51:51+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13609514",
+      "title": "Kane bags two assists in Bayern’s win over Mainz",
+      "url": "https://www.skysports.com/football/video/13609514/mainz-vs-bayern-munich-bundesliga-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-bundesliga_7400431.jpg?20261107190103",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13592979",
+      "title": "Cardiff hit back to claim astonishing 5-4 win over shellshocked Burnley",
+      "url": "https://www.skysports.com/football/news/13592979/cardiff-5-4-burnley-bluebirds-hit-back-from-4-1-down-to-claim-astonishing-comeback-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-cardiff-burnley_7400066.jpg?20261107160401",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13608932",
       "title": "Was Mourinho upset by Ronaldo retirement circumstances?",
@@ -247,6 +270,136 @@
       "byline": ""
     },
     {
+      "slug": "13609547",
+      "title": "'No one can challenge Arsenal!' - Can City overturn poor form to mount title push?",
+      "url": "https://www.skysports.com/football/video/13609547/can-anyone-stop-arsenal-from-retaining-their-premier-league-title",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-city-redknapp_7400517.jpg?20261107203856",
+      "excerpt": "Jamie Redknapp and Micah Richards discuss Manchester City's 3-1 loss to Nottingham Forest and whether they can still challenge Arsenal for the Premier League title.",
+      "published_label": "07 November 2026 · 20:34",
+      "published_iso": "2026-11-07T20:34:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie Redknapp and Micah Richards discuss Manchester City's 3-1 loss to Nottingham Forest and whether they can still challenge Arsenal for the Premier League title."
+      ]
+    },
+    {
+      "slug": "13609127",
+      "title": "Hits and misses: Could Konsa hold off Saliba's return?",
+      "url": "https://www.skysports.com/football/news/13609127/could-arsenals-ezri-konsa-hold-off-william-saliba-from-reuniting-partnership-with-gabriel-premier-league-hits-and-misses",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ezri-konsa-oli-mcburnie_7400464.jpg?20261107194812",
+      "excerpt": "Arsenal did not produce a vintage attacking display against Hull but defensively there were few faults. Their seventh clean sheet in 10 Premier League games, and 10th in 16 overall, owed a lot to their centre-backs. Gabriel and Ezri Konsa e…",
+      "published_label": "07 November 2026 · 20:20",
+      "published_iso": "2026-11-07T20:20:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Arsenal did not produce a vintage attacking display against Hull but defensively there were few faults. Their seventh clean sheet in 10 Premier League games, and 10th in 16 overall, owed a lot to their centre-backs. Gabriel and Ezri Konsa excelled again.",
+        "William Saliba's impending return will put pressure on Konsa to retain his place but on current form he may keep hold of the shirt. Highlights from his display included a last-ditch block on Mohamed Ali-Cho when was suddenly exposed on the break. Arsenal 1-0 Hull - Match report and highlights As it happened | Teams | Stats",
+        "There was no self-congratulation afterwards. Instead he berated the referee for a perceived Hull foul, then got on with business. By the end of the game, he had won all seven of his duels and completed all but two of his 53 passes, a picture of composure.",
+        "He continues to make an immense contribution since his arrival at the club. Arsenal had one early scare when Elliot Stroud forced a save from David Raya but it is now 444 minutes without conceding a goal in the Premier League for the Gunners."
+      ]
+    },
+    {
+      "slug": "13605738",
+      "title": "Hibs hammer Aberdeen as fans turn on Robinson",
+      "url": "https://www.skysports.com/football/news/13605738/aberdeen-0-4-hibernian-fans-turn-on-head-coach-stephen-robinson-as-hibs-climb-off-scottish-premiership-bottom",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-callum-wright-hibernian_7400501.jpg?20261107202147",
+      "excerpt": "Aberdeen supporters turned on head coach Stephen Robinson as their side were hammered 4-0 by Hibernian, who climbed off the foot of the Scottish Premiership table and above their hosts on goal difference.",
+      "published_label": "07 November 2026 · 19:40",
+      "published_iso": "2026-11-07T19:40:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Aberdeen supporters turned on head coach Stephen Robinson as their side were hammered 4-0 by Hibernian, who climbed off the foot of the Scottish Premiership table and above their hosts on goal difference.",
+        "Former Don Jamie McGrath opened the scoring with a superb strike just before the hour, and substitute Callum Wright lashed a second into an empty net with 10 minutes remaining.",
+        "Nicky Cadden and Thibault Klidje added late counters to round off an emphatic win at Pittodrie. Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
+        "The sides had experienced differing outcomes in last week's Premier Sports Cup semi-finals, with Hibs coming from behind to beat Edinburgh rivals Hearts 2-1, while Aberdeen suffered a late defeat to Rangers."
+      ]
+    },
+    {
+      "slug": "13609523",
+      "title": "Delightful Delap stars as Forest shock Man City",
+      "url": "https://www.skysports.com/football/video/13609523/nottingham-forest-3-1-manchester-city-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7400455.jpg?20261107193914",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Nottingham Forest and Manchester City.",
+      "published_label": "07 November 2026 · 19:37",
+      "published_iso": "2026-11-07T19:37:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from the Premier League match between Nottingham Forest and Manchester City."
+      ]
+    },
+    {
+      "slug": "13593200",
+      "title": "Forest end goal drought to make it three defeats in a row for Man City",
+      "url": "https://www.skysports.com/football/news/13593200/nottingham-forest-3-1-man-city-liam-delap-ends-city-ground-goal-drought-as-city-lose-three-on-the-bounce",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-liam-delap-nottingham-forest_7400474.jpg?20261107195655",
+      "excerpt": "Liam Delap scored two as Nottingham Forest ended their goal drought in style to beat Manchester City 3-1 at the City Ground.",
+      "published_label": "07 November 2026 · 19:30",
+      "published_iso": "2026-11-07T19:30:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "Liam Delap scored two as Nottingham Forest ended their goal drought in style to beat Manchester City 3-1 at the City Ground.",
+        "City had suffered back-to-back Premier League defeats but few could have expected Oliver Glasner's side to expose them this emphatically given that Forest were goalless let alone winless at home this season. Instead, their intensity was too much for City.",
+        "Forest fans had to wait almost six months and watch eight-and-a-half hours of football here without seeing their side score, but it was a stunner when it came. Jair Cunha tracked Josko Gvardiol, dispossessed him and ran through to score with his left foot. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "That came in the sixth minute but Glasner's side were two up 12 minutes later, this time Xaver Schlager beating former Forest man Elliot Anderson to the ball in midfield and sending the powerhouse Delap through to lash in just his second goal for the club."
+      ]
+    },
+    {
+      "slug": "13609517",
+      "title": "'That one was a BELTER!' - Delap makes it THREE for Forest",
+      "url": "https://www.skysports.com/football/video/13609517/goal-l-delap-73-nottm-forest-2-1-manchester-city",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7400448.jpg?20261107192109",
+      "excerpt": "Liam Delap puts the home side 3-1 up against Manchester City - with Forest boss Oliver Glasner running to join the goalscorer for the celebrations.",
+      "published_label": "07 November 2026 · 19:10",
+      "published_iso": "2026-11-07T19:10:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Liam Delap puts the home side 3-1 up against Manchester City - with Forest boss Oliver Glasner running to join the goalscorer for the celebrations."
+      ]
+    },
+    {
+      "slug": "13593193",
+      "title": "Arsenal go six points clear with Hull win amid VAR drama",
+      "url": "https://www.skysports.com/football/news/13593193/arsenal-1-0-hull-city-martin-odegaard-breaks-tigers-resistance-to-clinch-victory-for-premier-league-champions",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-martin-odegaard-arsenal_7400167.jpg?20261107164456",
+      "excerpt": "Martin Odegaard's goal clinched a 1-0 win over Hull to send Arsenal six points clear at the top of the Premier League table.",
+      "published_label": "07 November 2026 · 17:00",
+      "published_iso": "2026-11-07T17:00:00+00:00",
+      "byline": "Nick Wright",
+      "body": [
+        "Martin Odegaard's goal clinched a 1-0 win over Hull to send Arsenal six points clear at the top of the Premier League table.",
+        "Hull defended resolutely for over an hour at the Emirates Stadium but the pressure told when Odegaard reacted quickest to convert a rebound after Konstantinos Tzolakis had saved from Noni Madueke.",
+        "Arsenal struggled to create clear openings for much of the contest and lacked cutting edge in the first half as Kai Havertz wasted a one-on-one chance and Christos Tzolis spurned opportunities.",
+        "The hosts were also controversially denied a penalty following a VAR check when Havertz was adjudged to have been offside as his shirt was pulled by Nobel Mendy near the end of the first period. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
+      ]
+    },
+    {
+      "slug": "13592975",
+      "title": "Stansfield scores twice as Birmingham beat 10-man Swansea to go top",
+      "url": "https://www.skysports.com/football/news/13592975/birmingham-2-1-swansea-jay-stansfield-scores-twice-as-blues-go-top-of-the-championship",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-birmingham-city_7400136.jpg?20261107162608",
+      "excerpt": "Jay Stansfield grabbed a late winner to fire Birmingham top of the Championship with a 2-1 win over 10-man Swansea.",
+      "published_label": "07 November 2026 · 16:45",
+      "published_iso": "2026-11-07T16:45:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Jay Stansfield grabbed a late winner to fire Birmingham top of the Championship with a 2-1 win over 10-man Swansea.",
+        "Stansfield struck three minutes from time after a Christoph Klarer own goal had cancelled out his first-half opener for the Blues.",
+        "Ryan Allsop saved Ross Stewart's early Swansea penalty after the referee felt Jenson Seelt had been shoved over by Alex Cochrane from the first corner of the match.",
+        "Goncalo Franco headed against the post as Swansea continued to dominate the early exchanges."
+      ]
+    },
+    {
       "slug": "13609300",
       "title": "'It's the right process!' - Merse and Dean react to VAR overturning Arsenal penalty",
       "url": "https://www.skysports.com/football/video/13609300/paul-merson-and-mike-dean-react-to-var-scrubbing-off-arsenal-pen-against-hull-city",
@@ -405,6 +558,17 @@
       ]
     },
     {
+      "slug": "carling-knockout-cup-2026",
+      "title": "Carling Knockout Cup: Pirates and Sundowns Lock Down Final Four Spots",
+      "url": "https://www.sportytrader.com/en-za/news/carling-knockout-cup-2026/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/2026-brazilian-gp.webp",
+      "excerpt": "South African football’s heavyweights are continuing to flex their muscle, with Mamelodi Sundowns and defending champions Orlando Pirates becoming the first two teams to",
+      "published_label": "7 November 2026 · 08:00",
+      "published_iso": "2026-11-07T08:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
       "slug": "brazilian-grand-prix-2026",
       "title": "Max Verstappen Outraged Over Red Bull Faults Ahead of Brazil Fightback",
       "url": "https://www.sportytrader.com/en/news/brazilian-grand-prix-2026/",
@@ -524,177 +688,6 @@
         "Everton's only available striker scored his ninth and 10th goals of the season in similar fashion - nodding in two headers at the back post after Yann Gboho had given Coventry the lead at the start of an epic second half.",
         "But that was only one part of the story, as officiating controversy dominated the game. In the first half, James Tarkowski avoided punishment for an apparent hair pull on Caleb Yirenkyi in the penalty box. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
         "VAR Tim Wood checked and cleared Tarkowski's challenge on the Coventry midfielder - and the technology was needed again after half-time."
-      ]
-    },
-    {
-      "slug": "13595375",
-      "title": "Derby ease pressure on boss Eustace with comeback win over Bolton",
-      "url": "https://www.skysports.com/football/news/13595375/derby-3-1-bolton-rams-hit-back-to-claim-a-vital-win-and-ease-pressure-on-john-eustace",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-derby-county_7399551.jpg?20261106211450",
-      "excerpt": "Derby eased the building pressure on boss John Eustace as they hit back to beat Bolton 2-1 in the Championship.",
-      "published_label": "06 November 2026 · 21:45",
-      "published_iso": "2026-11-06T21:45:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Derby eased the building pressure on boss John Eustace as they hit back to beat Bolton 2-1 in the Championship.",
-        "It was just a second win all season, a first home win at Pride Park, and a first victory in 11 games on Friday night.",
-        "They still find themselves four points adrift of safety, but will be feeling far better heading into the international break. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "It looked like it was going to be another bad night for Derby as Bolton dominated the first half and took the lead just before the break through Ruben Rodrigues."
-      ]
-    },
-    {
-      "slug": "13609087",
-      "title": "Dewsbury-Hall scores Everton's third with superb strike!",
-      "url": "https://www.skysports.com/football/video/13609087/goal-k-dewsbury-hall-81-everton-3-1-coventry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kdh-goal_7399586.jpg?20261106214722",
-      "excerpt": "Dewsbury-Hall all but wins it for Everton with superb strike against Coventry in the Premier League.",
-      "published_label": "06 November 2026 · 21:44",
-      "published_iso": "2026-11-06T21:44:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Dewsbury-Hall all but wins it for Everton with superb strike against Coventry in the Premier League."
-      ]
-    },
-    {
-      "slug": "13609080",
-      "title": "WHAT A TURNAROUND! Barry scores second inside four minutes!",
-      "url": "https://www.skysports.com/football/video/13609080/goal-t-barry-61-everton-2-1-coventry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/image_7399567.jpg?20261106212540",
-      "excerpt": "Barry scores his second of the match inside four minutes to give Everton the lead.",
-      "published_label": "06 November 2026 · 21:25",
-      "published_iso": "2026-11-06T21:25:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Barry scores his second of the match inside four minutes to give Everton the lead."
-      ]
-    },
-    {
-      "slug": "13609077",
-      "title": "Barry quickly levels for Everton",
-      "url": "https://www.skysports.com/football/video/13609077/goal-t-barry-56-everton-1-1-coventry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-barry-goal_7399568.jpg?20261106212608",
-      "excerpt": "Barry levels the score for Everton just five minutes after Coventry's opener",
-      "published_label": "06 November 2026 · 21:19",
-      "published_iso": "2026-11-06T21:19:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Barry levels the score for Everton just five minutes after Coventry's opener"
-      ]
-    },
-    {
-      "slug": "13609076",
-      "title": "Derby County stun Bolton with two quick goals to start the second half!",
-      "url": "https://www.skysports.com/football/video/13609076/derby-county-stun-bolton-with-two-quick-goals-to-start-the-second-half",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-s_7399560.jpg?20261106212118",
-      "excerpt": "Derby County scored two goals in four minutes to take the lead against Bolton.",
-      "published_label": "06 November 2026 · 21:16",
-      "published_iso": "2026-11-06T21:16:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Derby County scored two goals in four minutes to take the lead against Bolton."
-      ]
-    },
-    {
-      "slug": "13609075",
-      "title": "Gboho's clever flick opens the scoring for Coventry!",
-      "url": "https://www.skysports.com/football/video/13609075/goal-y-gboho-52-everton-0-1-coventry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-cov_7399563.jpg?20261106212156",
-      "excerpt": "Gboho's clever flick hands Coventry the opener",
-      "published_label": "06 November 2026 · 21:16",
-      "published_iso": "2026-11-06T21:16:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Gboho's clever flick hands Coventry the opener"
-      ]
-    },
-    {
-      "slug": "13609074",
-      "title": "Coventry denied penalty by VAR after Mykolenko foul deemed as outside the box",
-      "url": "https://www.skysports.com/football/video/13609074/block-v-mykolenko-everton-0-0-coventry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-pen-cov_7399556.jpg?20261106211617",
-      "excerpt": "Coventry denied a penalty by VAR after Mykolenko foul deemed as outside the box.",
-      "published_label": "06 November 2026 · 21:13",
-      "published_iso": "2026-11-06T21:13:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Coventry denied a penalty by VAR after Mykolenko foul deemed as outside the box."
-      ]
-    },
-    {
-      "slug": "13609059",
-      "title": "Should hair pull have resulted in penalty or red card?",
-      "url": "https://www.skysports.com/football/video/13609059/block-j-tarkowski-everton-0-0-coventry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-tark_7399513.jpg?20261106205057",
-      "excerpt": "Should Tarkowski have seen red for a hair pull during Everton's Premier League match against Coventry.",
-      "published_label": "06 November 2026 · 20:48",
-      "published_iso": "2026-11-06T20:48:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Should Tarkowski have seen red for a hair pull during Everton's Premier League match against Coventry."
-      ]
-    },
-    {
-      "slug": "13609056",
-      "title": "Ruben Rodrigues fires Bolton in front against lacklustre Derby!",
-      "url": "https://www.skysports.com/football/video/13609056/ruben-rodrigues-fires-bolton-in-front-against-lacklustre-derby-county",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-f-e_7399517.jpg?20261106205315",
-      "excerpt": "Ruben Rodrigues scores the opening goal of the Sky Bet Championship match between Derby County and Bolton Wanderers.",
-      "published_label": "06 November 2026 · 20:45",
-      "published_iso": "2026-11-06T20:45:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Ruben Rodrigues scores the opening goal of the Sky Bet Championship match between Derby County and Bolton Wanderers."
-      ]
-    },
-    {
-      "slug": "13608887",
-      "title": "Carrick: Not impossible Man Utd can achieve Ferguson success again",
-      "url": "https://www.skysports.com/football/news/13608887/michael-carrick-manchester-united-boss-says-its-possible-the-club-can-emulate-sir-alex-fergusons-success-at-old-trafford",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7399116.jpg?20261106143020",
-      "excerpt": "Michael Carrick believes Manchester United can reach the heights achieved under Sir Alex Ferguson but is not expecting the same level of patience.",
-      "published_label": "06 November 2026 · 15:40",
-      "published_iso": "2026-11-06T15:40:00+00:00",
-      "byline": "William Bitibiri",
-      "body": [
-        "Michael Carrick believes Manchester United can reach the heights achieved under Sir Alex Ferguson but is not expecting the same level of patience.",
-        "Friday marks 40 years since Ferguson was appointed United manager on November 6, 1986. It is an anniversary that comes at a particularly significant moment for the club, with Carrick's position in charge still facing intense scrutiny.",
-        "United's dramatic 3-2 comeback victory over Roma in midweek offered Carrick some much-needed breathing space after a nine-game winless run, but Sunday's Premier League clash against Aston Villa, live on Sky, represents another significant test. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "The timing of Ferguson's anniversary also provides an opportunity to reflect on the scale of the task facing United."
-      ]
-    },
-    {
-      "slug": "13550693",
-      "title": "How to watch EFL live on Sky Sports",
-      "url": "https://www.skysports.com/football/news/13550693/live-efl-2026-27-fixtures-on-sky-sports-championship-league-one-league-two-games-dates-kick-off-times",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/06/768x432/skysports-efl-efl-fixtures_7277457.jpg?20260619075719",
-      "excerpt": "Ready for the new EFL season? Every opening game across the Championship, League One and League is live on Sky Sports this weekend. Matches will be broadcast live across Sky Sports main channels or on Sky Sports+ Every EFL match which is sh…",
-      "published_label": "11 August 2026 · 13:00",
-      "published_iso": "2026-08-11T13:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Ready for the new EFL season? Every opening game across the Championship, League One and League is live on Sky Sports this weekend. Matches will be broadcast live across Sky Sports main channels or on Sky Sports+ Every EFL match which is shown on Sky Sports will also be available on the Sky Sports app 📱. Non-Sky customers can watch the EFL with flexible contract offers on NOW",
-        "More than 1,000 games across the EFL, Carabao Cup and EFL Trophy will be broadcast on Sky Sports throughout the 26/27 season and every one of the 72 EFL clubs will be featured live on Sky more than 20 times .",
-        "Keep track below of all the confirmed live EFL games on Sky Sports, with selections announced up to January 9 2027. Championship fixtures | League One fixtures | League Two fixtures Championship latest news and transfers Essential EFL podcast - download and subscribe November live EFL games",
-        "Saturday 14 L2: Exeter vs Cheltenham, 12.30pm L2: Fleetwood vs Tranmere, 5.30pm"
       ]
     }
   ]
