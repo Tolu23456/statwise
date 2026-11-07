@@ -1,10 +1,44 @@
 {
-  "synced_at": "2026-11-06T21:30:13+00:00",
+  "synced_at": "2026-11-07T01:56:57+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13607998",
+      "title": "PL Predictions: How will your team fare this weekend?",
+      "url": "https://www.skysports.com/football/news/13607998/premier-league-predictions-and-jones-knows-best-bets-nottingham-forest-vs-man-city-man-utd-vs-aston-villa-and-more",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13607009",
+      "title": "Barcola: People are starting to understand me better - but I'm not Mo Salah",
+      "url": "https://www.skysports.com/football/news/13607009/bradley-barcola-interview-liverpool-winger-discusses-leaving-psg-settling-in-at-anfield-overcoming-the-price-tag-and-mohamed-salah-pressure",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/SKYSPORTS_5acd404f0efc3093240c6c0e21ab369855df54510c2e200ee61be1c7f123424a_7394693.jpg?20261102104226",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13609087",
+      "title": "Dewsbury-Hall scores Everton's third with superb strike!",
+      "url": "https://www.skysports.com/football/video/13609087/goal-k-dewsbury-hall-81-everton-3-1-coventry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kdh-goal_7399586.jpg?20261106214722",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13608932",
       "title": "Was Mourinho upset by Ronaldo retirement circumstances?",
@@ -247,6 +281,134 @@
       "byline": ""
     },
     {
+      "slug": "13609067",
+      "title": "Lampard: VAR didn't do its job",
+      "url": "https://www.skysports.com/football/news/13609067/everton-3-1-coventry-frank-lampard-says-var-didnt-do-its-job-after-three-incidents-went-against-sky-blues-in-premier-league-defeat",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-frank-lampard-coventry_7399658.jpg?20261106231845",
+      "excerpt": "Coventry boss Frank Lampard says VAR 'didn't do its job' in his side's defeat to Everton as three reviews controversially went against his side.",
+      "published_label": "06 November 2026 · 23:20",
+      "published_iso": "2026-11-06T23:20:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Coventry boss Frank Lampard says VAR 'didn't do its job' in his side's defeat to Everton as three reviews controversially went against his side.",
+        "Two penalty appeals and a possible handball for Everton's second goal were all reviewed by VAR officials Timothy Wood and Gary Beswick, but nothing was given. They were also not awarded on-field by referee Stuart Attwell.",
+        "Coventry opened the scoring after the two penalty appeals, but were ultimately beaten 3-1 on Merseyside on Friday Night Football.",
+        "Lampard told Sky Sports: \"I hate to sound like a moaner. It's a football match and if you win the game, that can happen here. I've worked here and know the momentum swings in the game. Everton 3-1 Coventry - Report and highlights Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
+      ]
+    },
+    {
+      "slug": "13609122",
+      "title": "Redknapp slams 'rubbish' VAR as Coventry miss out on two pen appeals",
+      "url": "https://www.skysports.com/football/video/13609122/redknapp-var-rubbish-cov-pen-shouts-mxf",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-redknapp-coventry-pen-appeals_7399651.jpg?20261106225724",
+      "excerpt": "Jamie Redknapp believes Coventry can feel hard done by after two appeals were waved away following VAR checks, with former Sky Blues striker Callum Wilson agreeing they could have made the difference.",
+      "published_label": "06 November 2026 · 22:45",
+      "published_iso": "2026-11-06T22:45:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie Redknapp believes Coventry can feel hard done by after two appeals were waved away following VAR checks, with former Sky Blues striker Callum Wilson agreeing they could have made the difference."
+      ]
+    },
+    {
+      "slug": "13609030",
+      "title": "Papers: Man Utd handed boost in pursuit of Barcelona left-back Alejandro Balde",
+      "url": "https://www.skysports.com/football/news/13609030/man-utd-handed-boost-in-pursuit-of-barcelona-left-back-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Saturday's newspapers...",
+      "published_label": "06 November 2026 · 22:30",
+      "published_iso": "2026-11-06T22:30:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Saturday's newspapers...",
+        "Man Utd have been handed a major boost in their bid to sign Barcelona left-back Alejandro Balde, 23 - The Standard",
+        "Man Utd, however, are not convinced that Eddie Howe is the man to replace Michael Carrick - Independent",
+        "Real Madrid are planning to offer an easier transition to the first team for 16-year-old JJ Gabriel than he would have given at Man Utd - Marca Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW"
+      ]
+    },
+    {
+      "slug": "13609116",
+      "title": "'VAR didn't do its job' - Lampard fumes after THREE big decisions go against Coventry",
+      "url": "https://www.skysports.com/football/video/13609116/everton-vs-coventry-frank-lampard-left-unhappy-with-var-after-3-1-loss-to-toffees",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-lampard-coventry_7399630.jpg?20261106223153",
+      "excerpt": "Coventry boss Frank Lampard feels his side were hard done by as they had two penalty appeals turned down as well as conceding their third to a potential handball by Everton's Thierno Barry.",
+      "published_label": "06 November 2026 · 22:29",
+      "published_iso": "2026-11-06T22:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Coventry boss Frank Lampard feels his side were hard done by as they had two penalty appeals turned down as well as conceding their third to a potential handball by Everton's Thierno Barry."
+      ]
+    },
+    {
+      "slug": "13609103",
+      "title": "Derby come from behind to beat Bolton in thrilling Championship tie!",
+      "url": "https://www.skysports.com/football/video/13609103/derby-county-3-1-bolton-wanderers-championship-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-g-s_7399607.jpg?20261106221440",
+      "excerpt": "Highlights of the Sky Bet Championship match between Derby County and Bolton Wanderers.",
+      "published_label": "06 November 2026 · 22:09",
+      "published_iso": "2026-11-06T22:09:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet Championship match between Derby County and Bolton Wanderers."
+      ]
+    },
+    {
+      "slug": "13609101",
+      "title": "Barry shines with four-minute double as Everton come back to beat Coventry",
+      "url": "https://www.skysports.com/football/video/13609101/everton-3-1-coventry-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hlts-pl_7399601.jpg?20261106220645",
+      "excerpt": "FREE TO WATCH: Highlights from Everton’s match against Coventry in the Premier League.",
+      "published_label": "06 November 2026 · 22:02",
+      "published_iso": "2026-11-06T22:02:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from Everton’s match against Coventry in the Premier League."
+      ]
+    },
+    {
+      "slug": "13593174",
+      "title": "Barry leads Everton comeback win vs Coventry - who suffer triple VAR woe",
+      "url": "https://www.skysports.com/football/news/13593174/everton-3-1-coventry-thierno-barry-gets-two-goals-and-an-assist-in-comeback-win-as-coventry-see-three-var-incidents-go-against-them",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-thierno-barry-everton_7399579.jpg?20261106214109",
+      "excerpt": "Thierno Barry continued his fine form as his two goals and an assist fired Everton to a comeback 3-1 win over Coventry - who had three big VAR calls go against them on Merseyside.",
+      "published_label": "06 November 2026 · 22:00",
+      "published_iso": "2026-11-06T22:00:00+00:00",
+      "byline": "Sam Blitz",
+      "body": [
+        "Thierno Barry continued his fine form as his two goals and an assist fired Everton to a comeback 3-1 win over Coventry - who had three big VAR calls go against them on Merseyside.",
+        "Everton's only available striker scored his ninth and 10th goals of the season in similar fashion - nodding in two headers at the back post after Yann Gboho had given Coventry the lead at the start of an epic second half.",
+        "But that was only one part of the story, as officiating controversy dominated the game. In the first half, James Tarkowski avoided punishment for an apparent hair pull on Caleb Yirenkyi in the penalty box. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "VAR Tim Wood checked and cleared Tarkowski's challenge on the Coventry midfielder - and the technology was needed again after half-time."
+      ]
+    },
+    {
+      "slug": "13595375",
+      "title": "Derby ease pressure on boss Eustace with comeback win over Bolton",
+      "url": "https://www.skysports.com/football/news/13595375/derby-3-1-bolton-rams-hit-back-to-claim-a-vital-win-and-ease-pressure-on-john-eustace",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-derby-county_7399551.jpg?20261106211450",
+      "excerpt": "Derby eased the building pressure on boss John Eustace as they hit back to beat Bolton 2-1 in the Championship.",
+      "published_label": "06 November 2026 · 21:45",
+      "published_iso": "2026-11-06T21:45:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Derby eased the building pressure on boss John Eustace as they hit back to beat Bolton 2-1 in the Championship.",
+        "It was just a second win all season, a first home win at Pride Park, and a first victory in 11 games on Friday night.",
+        "They still find themselves four points adrift of safety, but will be feeling far better heading into the international break. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "It looked like it was going to be another bad night for Derby as Bolton dominated the first half and took the lead just before the break through Ruben Rodrigues."
+      ]
+    },
+    {
       "slug": "13609080",
       "title": "WHAT A TURNAROUND! Barry scores second inside four minutes!",
       "url": "https://www.skysports.com/football/video/13609080/goal-t-barry-61-everton-2-1-coventry",
@@ -277,21 +439,6 @@
       ]
     },
     {
-      "slug": "13609075",
-      "title": "Gboho's clever flick opens the scoring for Coventry!",
-      "url": "https://www.skysports.com/football/video/13609075/goal-y-gboho-52-everton-0-1-coventry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-cov_7399563.jpg?20261106212156",
-      "excerpt": "Gboho's clever flick hands Coventry the opener",
-      "published_label": "06 November 2026 · 21:16",
-      "published_iso": "2026-11-06T21:16:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Gboho's clever flick hands Coventry the opener"
-      ]
-    },
-    {
       "slug": "13609076",
       "title": "Derby County stun Bolton with two quick goals to start the second half!",
       "url": "https://www.skysports.com/football/video/13609076/derby-county-stun-bolton-with-two-quick-goals-to-start-the-second-half",
@@ -304,6 +451,21 @@
       "kind": "video",
       "body": [
         "Derby County scored two goals in four minutes to take the lead against Bolton."
+      ]
+    },
+    {
+      "slug": "13609075",
+      "title": "Gboho's clever flick opens the scoring for Coventry!",
+      "url": "https://www.skysports.com/football/video/13609075/goal-y-gboho-52-everton-0-1-coventry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-cov_7399563.jpg?20261106212156",
+      "excerpt": "Gboho's clever flick hands Coventry the opener",
+      "published_label": "06 November 2026 · 21:16",
+      "published_iso": "2026-11-06T21:16:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Gboho's clever flick hands Coventry the opener"
       ]
     },
     {
@@ -491,6 +653,17 @@
       ]
     },
     {
+      "slug": "members-area-discover-sportytrader-s-pick-of-the-day",
+      "title": "Members’ Area: discover SportyTrader’s pick of the day!",
+      "url": "https://www.sportytrader.com/en/news/members-area-discover-sportytrader-s-pick-of-the-day/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/rugby/nations-championship-r4.webp",
+      "excerpt": "Fancy taking your betting to the next level? Discover our tip of the day! From today, everyone registered in the SportyTrader members’ area can enjoy this exclusive benef",
+      "published_label": "6 November 2026 · 10:00",
+      "published_iso": "2026-11-06T10:00:00+00:00",
+      "byline": "Cydias Aujard"
+    },
+    {
       "slug": "13608758",
       "title": "'I could have carried on' - Coady announces retirement at 33",
       "url": "https://www.skysports.com/football/news/13608758/conor-coady-former-wolves-everton-leicester-defender-retires-at-the-age-of-33",
@@ -505,192 +678,6 @@
         "Speaking on Sky Sports News, Coady said: \"I'm really proud to have played this unbelievable game for so long. I think I'm ready and there.",
         "\"The last couple of years have been tough, I've been obsessed with playing football for so long that when I haven't, it's hard. But I'm super, super proud with how the last 15 year have gone.",
         "\"Physically I'm absolutely fine, I feel good and I feel strong. I could have carried on playing, but I want to look forward to the next bit. I could have carried on playing and sat on the bench, but I've been sat on the bench for the last couple of years and I've found it tough. It happens and comes to everyone.\""
-      ]
-    },
-    {
-      "slug": "members-area-discover-sportytrader-s-pick-of-the-day",
-      "title": "Members’ Area: discover SportyTrader’s pick of the day!",
-      "url": "https://www.sportytrader.com/en/news/members-area-discover-sportytrader-s-pick-of-the-day/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/rugby/nations-championship-r4.webp",
-      "excerpt": "Fancy taking your betting to the next level? Discover our tip of the day! From today, everyone registered in the SportyTrader members’ area can enjoy this exclusive benef",
-      "published_label": "6 November 2026 · 10:00",
-      "published_iso": "2026-11-06T10:00:00+00:00",
-      "byline": "Cydias Aujard"
-    },
-    {
-      "slug": "nations-championship-round-4-italy-vs-south-africa-rassie-team-news",
-      "title": "Ruthless Rassie: Springboks Unleash Big Guns Against Italy in Nations",
-      "url": "https://www.sportytrader.com/en-za/news/nations-championship-round-4-italy-vs-south-africa-rassie-team-news/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/caf-awards-2026-nominees.webp",
-      "excerpt": "South Africa head coach Rassie Erasmus is leaving absolutely nothing to chance, naming a ruthless, full-strength Springbok lineup to demolish Italy in tomorrow’s Nations",
-      "published_label": "6 November 2026 · 05:00",
-      "published_iso": "2026-11-06T05:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13608665",
-      "title": "Hearts bruised by Thun in self-inflicted Conference League defeat",
-      "url": "https://www.skysports.com/football/news/13608665/thun-3-1-hearts-wouter-vranckens-side-bruised-by-self-inflicted-conference-league-defeat",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hearts-thun-conference-league_7398663.jpg?20261105233147",
-      "excerpt": "Depleted Hearts' Conference League bruising was almost totally self-inflicted in a 3-1 defeat by Thun in Switzerland.",
-      "published_label": "05 November 2026 · 23:40",
-      "published_iso": "2026-11-05T23:40:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Depleted Hearts' Conference League bruising was almost totally self-inflicted in a 3-1 defeat by Thun in Switzerland.",
-        "Belgian boss Wouter Vrancken was without 10 players through various ailments and the Scottish team were dealt another blow in the 22nd minute when defender Jamie McCart put through his own goal in calamitous fashion.",
-        "Thun doubled their lead in the 33rd minute through striker Brighton Labeau after more poor defending, this time from skipper Stephen Kingsley - who went off later with an injury - and then Furkan Dursun grabbed a third in the 56th minute before Jambos defender Stuart Findlay reduced the deficit in the 82nd minute with a header. Conference League fixtures and results Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
-        "Hearts are left with one Conference League point out of nine following a 1-1 home draw against Nordsjaelland and a 2-0 defeat away to Trabzonspor."
-      ]
-    },
-    {
-      "slug": "13608662",
-      "title": "Papers: Deschamps turns down Man Utd offer to replace Carrick",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13608662/didier-deschamps-turns-down-manchester-united-offer-to-replace-michael-carrick-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Friday's newspapers... MAN UTD NEWS",
-      "published_label": "05 November 2026 · 23:05",
-      "published_iso": "2026-11-05T23:05:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Friday's newspapers... MAN UTD NEWS",
-        "Didier Deschamps has told Manchester United he has no interest in becoming their next manager - Daily Mirror",
-        "Manchester United co-owner Avram Glazer has claimed the club's value is not dependent on success on the pitch - The Athletic",
-        "Shea Lacey is set to be handed a full Premier League debut for Manchester United's must-win game against Aston Villa - talkSPORT Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW PREMIER LEAGUE"
-      ]
-    },
-    {
-      "slug": "13608656",
-      "title": "'Terrific win, in every aspect' - O'Neill delight as Celtic win in EL",
-      "url": "https://www.skysports.com/football/video/13608656/celtic-3-2-besiktas-martin-oneill-hails-terrific-win-to-keep-europa-league-hopes-alive",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-celtic-besiktas-camilo_7398653.jpg?20261105225801",
-      "excerpt": "Celtic manager Martin O'Neill heaps praise on his players after they came from behind to beat Besiktas to keep their Europa League campaign alive.",
-      "published_label": "05 November 2026 · 22:46",
-      "published_iso": "2026-11-05T22:46:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Celtic manager Martin O'Neill heaps praise on his players after they came from behind to beat Besiktas to keep their Europa League campaign alive."
-      ]
-    },
-    {
-      "slug": "13607043",
-      "title": "Celtic claim dramatic Europa League win against Besiktas",
-      "url": "https://www.skysports.com/football/news/13607043/celtic-3-2-besiktas-camilo-duran-and-callum-osmand-come-off-bench-to-inspire-hoops-to-first-europa-league-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-celtic-camilo-duran_7398627.jpg?20261105222544",
-      "excerpt": "Martin O'Neill's inspired substitutions saw Celtic come from behind to breathe life into their Europa League campaign with a much-needed 3-2 home victory over Besiktas.",
-      "published_label": "05 November 2026 · 22:00",
-      "published_iso": "2026-11-05T22:00:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "Martin O'Neill's inspired substitutions saw Celtic come from behind to breathe life into their Europa League campaign with a much-needed 3-2 home victory over Besiktas.",
-        "Junior Olaitan's goal - a rebound after Sam Johnstone saved his penalty - looked like condemning Celtic to a fifth consecutive European defeat for the first time in the club's history.",
-        "But the introduction of Callum Osmand, Camilo Duran and Colby Donovan just after the hour was a masterstroke from O'Neill. Teams | Stats | Europa League fixtures and results Not got Sky? Latest Sky Sports deals or stream Celtic games with no contract 📺",
-        "Osmand fired in the equaliser with his first touch before setting up Duran to round the goalkeeper and put the Hoops ahead."
-      ]
-    },
-    {
-      "slug": "13607047",
-      "title": "Yalcouye header secures narrow win for Brighton at Getafe",
-      "url": "https://www.skysports.com/football/news/13607047/getafe-0-1-brighton-malick-yalcouye-header-secures-narrow-conference-league-win-for-fabian-hurzelers-side",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-brighton-malick-yalcouye_7398604.jpg?20261105220124",
-      "excerpt": "Malick Yalcouye's second-half header secured a narrow 1-0 win for Brighton at Getafe as Fabian Hurzeler's side moved into the top eight of the Conference League.",
-      "published_label": "05 November 2026 · 22:00",
-      "published_iso": "2026-11-05T22:00:00+00:00",
-      "byline": "Patrick Rowe",
-      "body": [
-        "Malick Yalcouye's second-half header secured a narrow 1-0 win for Brighton at Getafe as Fabian Hurzeler's side moved into the top eight of the Conference League.",
-        "The Ivory Coast midfielder was one of five changes head coach Hurzeler made from the 1-0 win at Manchester City last time out and rewarded that show of faith by breaking the deadlock in the 64th minute.",
-        "Tension had been rising for the Premier League side after Jaouen Hadjam had struck the woodwork twice earlier in the game until Costinha cushioned his header back across the face of goal for Yalcouye to head home from close range. Teams | Stats | Europa League fixtures and results | Latest: Brighton Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
-        "Substitute Ibrahim Osman's chance to double the lead was missed from close range but ultimately it did not cost Brighton on the evening, as they got back to winning ways in Europe following a frustrating 0-0 draw at Jablonec last time out."
-      ]
-    },
-    {
-      "slug": "13607046",
-      "title": "Pressure ramps up on Le Bris as Sunderland beaten by Dinamo Zagreb",
-      "url": "https://www.skysports.com/football/news/13607046/sunderland-0-2-dinamo-zagreb-regis-le-bris-under-more-pressure-as-black-cats-beaten-in-the-europa-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sunderland-dinamo_7398561.jpg?20261105213242",
-      "excerpt": "Pressure is ramping up even more on Regis Le Bris as Sunderland were comfortably beaten 2-0 by Dinamo Zagreb in the Europa League to continue the Black Cats' torrid run of form.",
-      "published_label": "05 November 2026 · 21:56",
-      "published_iso": "2026-11-05T21:56:00+00:00",
-      "byline": "Sam Blitz",
-      "body": [
-        "Pressure is ramping up even more on Regis Le Bris as Sunderland were comfortably beaten 2-0 by Dinamo Zagreb in the Europa League to continue the Black Cats' torrid run of form.",
-        "Before the game, Le Bris said Sunderland have been too exposed and leaky in defence - but his team were not listening as they went in 2-0 down at half-time in front of an angry Stadium of Light.",
-        "Poor marking from a corner allowed Luka Stojkovic to volley in the first goal - then the Dinamo midfielder set up Dion Beljo with a delightful chipped pass, with his deft finish equally sweet, although the red and white defenders were all at sea in the move.",
-        "At the other end of the pitch, Sunderland were a little more unfortunate. They struck the woodwork in both halves through defenders Thomas Meunier and Kevin Danso. Heroic defending from Dinamo also denied Malick Fofana and Trai Hume in the same move with last-ditch blocks."
-      ]
-    },
-    {
-      "slug": "13608620",
-      "title": "'That's your analysis' - Sage shuts down question over Disasi omission",
-      "url": "https://www.skysports.com/football/video/13608620/crystal-palace-pierre-sage-shuts-down-question-over-axel-disasi-omission",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sage-disasi_7398560.jpg?20261105212845",
-      "excerpt": "Pierre Sage's refuses to answer question regarding Axel Disasi's omission from Crystal Palace's squad, despite reporter warning that it would appear as though he has lost control at the club.",
-      "published_label": "05 November 2026 · 21:22",
-      "published_iso": "2026-11-05T21:22:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Pierre Sage's refuses to answer question regarding Axel Disasi's omission from Crystal Palace's squad, despite reporter warning that it would appear as though he has lost control at the club."
-      ]
-    },
-    {
-      "slug": "13607111",
-      "title": "Kamada earns Palace injury-time Hoffenheim draw and offers Sage respite",
-      "url": "https://www.skysports.com/football/news/13607111/crystal-palace-1-1-hoffenheim-daichi-kamada-snatches-late-equaliser-as-10-man-eagles-ease-pressure-on-pierre-sage",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kamada-crystal-palace_7398468.jpg?20261105200252",
-      "excerpt": "Pierre Sage was handed a much-needed lifeline as Crystal Palace snatched a dramatic late 1-1 draw against Hoffenheim in the Europa League, despite playing the final stages with 10 men following Adam Wharton's dismissal.",
-      "published_label": "05 November 2026 · 20:00",
-      "published_iso": "2026-11-05T20:00:00+00:00",
-      "byline": "William Bitibiri",
-      "body": [
-        "Pierre Sage was handed a much-needed lifeline as Crystal Palace snatched a dramatic late 1-1 draw against Hoffenheim in the Europa League, despite playing the final stages with 10 men following Adam Wharton's dismissal.",
-        "Palace arrived at Selhurst Park desperate for a response after three consecutive Premier League defeats had left them in the relegation zone, with growing questions over Sage's future as manager.",
-        "But their defensive vulnerabilities were exposed once again as Alexander Prass opened the scoring for Hoffenheim in the seventh minute, his effort squirming underneath Dean Henderson after the hosts were caught on the counter. Teams | Stats | Europa League fixtures and results | Latest: Crystal Palace Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
-        "Sage's side showed some attacking promise but struggled to turn possession into clear-cut opportunities, while Hoffenheim looked dangerous whenever they broke forward."
-      ]
-    },
-    {
-      "slug": "13607027",
-      "title": "Bournemouth's super subs extend winning run with Sparta Prague victory",
-      "url": "https://www.skysports.com/football/news/13607027/sparta-prague-1-3-bournemouth-tyler-adams-evanilson-and-rayan-rescue-cherries-in-europa-league-to-extend-winning-run",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-evanilson-alvaro-rodriguez_7398470.jpg?20261105200539",
-      "excerpt": "Tyler Adams, Evanilson and Rayan came off the bench to rescue Bournemouth in the Europa League with a 3-1 turnaround victory over 10-man Sparta Prague, extending their winning run to seven matches.",
-      "published_label": "05 November 2026 · 20:00",
-      "published_iso": "2026-11-05T20:00:00+00:00",
-      "byline": "David Richardson",
-      "body": [
-        "Tyler Adams, Evanilson and Rayan came off the bench to rescue Bournemouth in the Europa League with a 3-1 turnaround victory over 10-man Sparta Prague, extending their winning run to seven matches.",
-        "Bournemouth continued their red-hot form and now sit top of the league-phase table, having made a dream start to their first European campaign with four wins.",
-        "Marco Rose made eight changes from their victory over Leeds last Saturday, but had to call upon his main men after Bournemouth fell behind to Ebrima Singhateh's wonderful solo effort in the first half. Teams | Stats | Europa League fixtures and results | Latest: Bournemouth Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
-        "The winger ran from his own half to end Bournemouth's six-game streak without conceding, just five minutes after the visitors' Lewis Cook had missed a penalty, sending his low shot against the inside of the left post after a handball decision."
-      ]
-    },
-    {
-      "slug": "13608557",
-      "title": "Arsenal's Love Actually-inspired Christmas ad Ft. Colin Firth, Gabriel, Calafiori and Russo!",
-      "url": "https://www.skysports.com/football/video/13608557/arsenal-release-love-actually-inspired-christmas-advert-ft-colin-firth-gabriel-calafiori-and-russo",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-firth-ad_7398414.jpg?20261105190650",
-      "excerpt": "Arsenal release Love Actually-inspired Christmas advert, featuring Colin Firth, Gabriel, Calafiori and Russo!",
-      "published_label": "05 November 2026 · 19:01",
-      "published_iso": "2026-11-05T19:01:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Arsenal release Love Actually-inspired Christmas advert, featuring Colin Firth, Gabriel, Calafiori and Russo!"
       ]
     }
   ]
