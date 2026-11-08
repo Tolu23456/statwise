@@ -1,10 +1,57 @@
 {
-  "synced_at": "2026-11-08T09:00:07+00:00",
+  "synced_at": "2026-11-08T16:40:51+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13609776",
+      "title": "Palace pull off amazing late comeback to beat Charlton",
+      "url": "https://www.skysports.com/football/video/13609776/crystal-palace-3-2-charlton-womens-super-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7401074.jpg?20261108160426",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13609640",
+      "title": "Papers: Carrick's future uncertain as Man Utd ponder international break change",
+      "url": "https://www.skysports.com/football/news/13609640/michael-carricks-man-utd-future-uncertain-as-club-ponder-international-break-change-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13609784",
+      "title": "Bournemouth claim eighth win in a row despite late Ipswich scare",
+      "url": "https://www.skysports.com/football/video/13609784/ipswich-town-1-2-bournemouth-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ipswich-hlts_7401097.jpg?20261108160923",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13609797",
+      "title": "Isak scores deflected goal to give Liverpool a third at Palace",
+      "url": "https://www.skysports.com/football/video/13609797/goal-a-isak-crystal-palace-0-3-liverpool",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-isak_7401116.jpg?20261108161449",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13609320",
       "title": "Lucky escape? Bogle unpunished for studs challenge on Tel",
@@ -248,6 +295,117 @@
       "byline": ""
     },
     {
+      "slug": "13609804",
+      "title": "Three massive points for Sunderland as Chelsea suffer shock defeat",
+      "url": "https://www.skysports.com/football/video/13609804/sunderland-1-0-chelsea-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7401076.jpg?20261108160610",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Sunderland and Chelsea.",
+      "published_label": "08 November 2026 · 16:26",
+      "published_iso": "2026-11-08T16:26:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from the Premier League match between Sunderland and Chelsea."
+      ]
+    },
+    {
+      "slug": "13609803",
+      "title": "London City put four past Birmingham in comfortable victory",
+      "url": "https://www.skysports.com/football/video/13609803/london-city-lionesses-4-1-birmingham-city-women-s-super-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7401146.jpg?20261108162658",
+      "excerpt": "Highlights of the Women’s Super League match between London City Lionesses and Birmingham City.",
+      "published_label": "08 November 2026 · 16:25",
+      "published_iso": "2026-11-08T16:25:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Women’s Super League match between London City Lionesses and Birmingham City."
+      ]
+    },
+    {
+      "slug": "13609786",
+      "title": "Gomez stunner helps Brighton beat 10-man Brentford as Thiago sent off",
+      "url": "https://www.skysports.com/football/video/13609786/brighton-2-0-brentford-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-brighton-brentford_7401063.jpg?20261108155942",
+      "excerpt": "Highlights from the Premier League match between Brighton and Brentford.",
+      "published_label": "08 November 2026 · 16:07",
+      "published_iso": "2026-11-08T16:07:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights from the Premier League match between Brighton and Brentford."
+      ]
+    },
+    {
+      "slug": "13609778",
+      "title": "Spurs come back from behind to take three points against Brighton",
+      "url": "https://www.skysports.com/football/video/13609778/tottenham-hotspur-vs-brighton-women-s-super-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7401082.jpg?20261108160636",
+      "excerpt": "Highlights of the Women’s Super League match between Tottenham Hotspur and Brighton.",
+      "published_label": "08 November 2026 · 16:02",
+      "published_iso": "2026-11-08T16:02:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Women’s Super League match between Tottenham Hotspur and Brighton."
+      ]
+    },
+    {
+      "slug": "13593219",
+      "title": "Tepid Chelsea beaten by Sunderland who move off bottom",
+      "url": "https://www.skysports.com/football/news/13593219/sunderland-1-0-chelsea-enzo-le-fees-penalty-lifts-black-cats-off-bottom-of-table-as-xabi-alonsos-side-show-more-inconsistency",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-enzo-le-fee-sunderland_7400955.jpg?20261108144350",
+      "excerpt": "Chelsea put in a tepid performance as Sunderland lifted themselves off the bottom of the Premier League table with a 1-0 win that eases the pressure on under-fire manager Regis Le Bris.",
+      "published_label": "08 November 2026 · 16:00",
+      "published_iso": "2026-11-08T16:00:00+00:00",
+      "byline": "Sam Blitz",
+      "body": [
+        "Chelsea put in a tepid performance as Sunderland lifted themselves off the bottom of the Premier League table with a 1-0 win that eases the pressure on under-fire manager Regis Le Bris.",
+        "Xabi Alonso's side were second-best throughout. None of their midfield attack won a duel or a tackle in the opening 20 minutes, while Sunderland's fight was best shown through Brian Brobbey's efforts up front.",
+        "The Dutch international smashed his way through Chelsea centre-backs Wesley Fofana and Levi Colwill in a brutal first half - coming close to scoring twice, before eventually getting his rewards.",
+        "Ten minutes before half-time, he rolled past Colwill with immense strength to win a penalty, which Enzo Le Fee converted. Colwill was then taken off at half-time. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
+      ]
+    },
+    {
+      "slug": "13593217",
+      "title": "Bournemouth win at Ipswich to record eight straight victories",
+      "url": "https://www.skysports.com/football/news/13593217/ipswich-1-2-bournemouth-evanilson-scores-again-as-cherries-make-it-eight-wins-in-a-row",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-evanilson-bournemouth_7400911.jpg?20261108141439",
+      "excerpt": "Bournemouth made it eight wins in a row in all competitions as they continued their charge up the Premier League table with a 2-1 win at Ipswich.",
+      "published_label": "08 November 2026 · 16:00",
+      "published_iso": "2026-11-08T16:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Bournemouth made it eight wins in a row in all competitions as they continued their charge up the Premier League table with a 2-1 win at Ipswich.",
+        "Evanilson scored for the fifth Premier League game running when taking advantage of a shocking error from Ipswich goalkeeper Christian Walton, who tried to dribble around the striker.",
+        "Bournemouth arrived in Suffolk eager to complete an almost perfect month since the last international break with another three points and Alex Scott returned to the bench in another boost for Marco Rose.",
+        "Ipswich started the second half in nightmare fashion in a very sloppy overall performance, with the Cherries given a helping hand to score again after 27 seconds."
+      ]
+    },
+    {
+      "slug": "13593210",
+      "title": "Sage in big trouble as Palace hit rock-bottom after defeat to Liverpool",
+      "url": "https://www.skysports.com/football/news/13593210/crystal-palace-1-3-liverpool-pierre-sage-in-big-trouble-as-eagles-hit-rock-bottom-in-premier-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-liverpool_7401069.jpg?20261108160204",
+      "excerpt": "Liverpool beat Crystal Palace 3-1 at Selhurst Park to inflict a fourth consecutive Premier League defeat on the hosts and leave Pierre Sage in a perilous position with his side bottom of the table.",
+      "published_label": "08 November 2026 · 15:50",
+      "published_iso": "2026-11-08T15:50:00+00:00",
+      "byline": "Zinny Boswell",
+      "body": [
+        "Liverpool beat Crystal Palace 3-1 at Selhurst Park to inflict a fourth consecutive Premier League defeat on the hosts and leave Pierre Sage in a perilous position with his side bottom of the table.",
+        "Eddie Nketiah pulled a goal back from the spot for Palace with the last kick of the game, but the damage was already done after Alexis Mac Allister and Florian Wirtz struck for Liverpool either side of half time before Alexander Isak added a third late on.",
+        "Liverpool secured a much-needed result following back-to-back defeats at Arsenal and Fenerbahce. The victory, their first for three games in all competitions, moves Liverpool up to fourth in the table. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Goalkeeper Alisson Becker, arguably Liverpool's most important player, kept his side in the game, producing important saves to keep out Daichi Kamada and Adam Wharton in a first half that also saw Palace hit the bar through Yeremy Pino. He ended the match with six saves."
+      ]
+    },
+    {
       "slug": "13609640",
       "title": "Papers: Carrick's future uncertain as Man Utd ponder international break change",
       "url": "https://www.skysports.com/football/transfer-paper-talk/13609640/michael-carricks-man-utd-future-uncertain-as-club-ponder-international-break-change-paper-talk",
@@ -263,6 +421,17 @@
         "Carrick has not been told he is certain to be in charge of United after their Premier League fixture with Aston Villa on Sunday - The Sun",
         "Man Utd are not sold on former Newcastle boss Eddie Howe as a potential replacement for Carrick at Old Trafford - Independent Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Premier League"
       ]
+    },
+    {
+      "slug": "wta-finals-2026-rybakina-pulls-out-hours-before-the-start-and-sabalenka-s-path-to-a-first-title-has-never-looked-clearer",
+      "title": "WTA Finals 2026: Rybakina Pulls Out Hours Before the Start, and Sabale",
+      "url": "https://www.sportytrader.com/en/news/wta-finals-2026-rybakina-pulls-out-hours-before-the-start-and-sabalenka-s-path-to-a-first-title-has-never-looked-clearer/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/2026-carling-cup-1.webp",
+      "excerpt": "Elena Rybakina has withdrawn from the WTA Finals with a viral illness. Sabalenka, twice a losing finalist, is the new favourite at the venue where she won in March. But f",
+      "published_label": "8 November 2026 · 04:00",
+      "published_iso": "2026-11-08T04:00:00+00:00",
+      "byline": "Geoffrey Ejiga"
     },
     {
       "slug": "13609596",
@@ -500,219 +669,16 @@
       ]
     },
     {
-      "slug": "13593193",
-      "title": "Arsenal go six points clear with Hull win amid VAR drama",
-      "url": "https://www.skysports.com/football/news/13593193/arsenal-1-0-hull-city-martin-odegaard-breaks-tigers-resistance-to-clinch-victory-for-premier-league-champions",
+      "slug": "13565655",
+      "title": "Live Premier League table - Man Utd need win to move out of drop zone",
+      "url": "https://www.skysports.com/football/news/13565655/live-premier-league-table-2026-27-season-standings",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-martin-odegaard-arsenal_7400167.jpg?20261107164456",
-      "excerpt": "Martin Odegaard's goal clinched a 1-0 win over Hull to send Arsenal six points clear at the top of the Premier League table.",
-      "published_label": "07 November 2026 · 17:00",
-      "published_iso": "2026-11-07T17:00:00+00:00",
-      "byline": "Nick Wright",
-      "body": [
-        "Martin Odegaard's goal clinched a 1-0 win over Hull to send Arsenal six points clear at the top of the Premier League table.",
-        "Hull defended resolutely for over an hour at the Emirates Stadium but the pressure told when Odegaard reacted quickest to convert a rebound after Konstantinos Tzolakis had saved from Noni Madueke.",
-        "Arsenal struggled to create clear openings for much of the contest and lacked cutting edge in the first half as Kai Havertz wasted a one-on-one chance and Christos Tzolis spurned opportunities.",
-        "The hosts were also controversially denied a penalty following a VAR check when Havertz was adjudged to have been offside as his shirt was pulled by Nobel Mendy near the end of the first period. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
-      ]
-    },
-    {
-      "slug": "13592975",
-      "title": "Stansfield scores twice as Birmingham beat 10-man Swansea to go top",
-      "url": "https://www.skysports.com/football/news/13592975/birmingham-2-1-swansea-jay-stansfield-scores-twice-as-blues-go-top-of-the-championship",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-birmingham-city_7400136.jpg?20261107162608",
-      "excerpt": "Jay Stansfield grabbed a late winner to fire Birmingham top of the Championship with a 2-1 win over 10-man Swansea.",
-      "published_label": "07 November 2026 · 16:45",
-      "published_iso": "2026-11-07T16:45:00+00:00",
+      "image": "https://e0.365dm.com/26/06/768x432/skysports-premier-league-badges_7270622.jpg?20261019161317",
+      "excerpt": "",
+      "published_label": "21 July 2026 · 14:00",
+      "published_iso": "2026-07-21T14:00:00+00:00",
       "byline": "Sky Sports",
-      "body": [
-        "Jay Stansfield grabbed a late winner to fire Birmingham top of the Championship with a 2-1 win over 10-man Swansea.",
-        "Stansfield struck three minutes from time after a Christoph Klarer own goal had cancelled out his first-half opener for the Blues.",
-        "Ryan Allsop saved Ross Stewart's early Swansea penalty after the referee felt Jenson Seelt had been shoved over by Alex Cochrane from the first corner of the match.",
-        "Goncalo Franco headed against the post as Swansea continued to dominate the early exchanges."
-      ]
-    },
-    {
-      "slug": "13609300",
-      "title": "'It's the right process!' - Merse and Dean react to VAR overturning Arsenal penalty",
-      "url": "https://www.skysports.com/football/video/13609300/paul-merson-and-mike-dean-react-to-var-scrubbing-off-arsenal-pen-against-hull-city",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7400069.jpg?20261107160505",
-      "excerpt": "Mike Dean and Paul Merson react to VAR overturning a penalty for Arsenal as Kai Havertz is found to be offside.",
-      "published_label": "07 November 2026 · 15:54",
-      "published_iso": "2026-11-07T15:54:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Mike Dean and Paul Merson react to VAR overturning a penalty for Arsenal as Kai Havertz is found to be offside."
-      ]
-    },
-    {
-      "slug": "13609258",
-      "title": "Bronze own goal sees Chelsea held by Everton",
-      "url": "https://www.skysports.com/football/video/13609258/chelsea-1-1-everton-wsl-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-hls_7399970.jpg?20261107150321",
-      "excerpt": "Highlights of the Women's Super League match between Chelsea and Everton.",
-      "published_label": "07 November 2026 · 14:51",
-      "published_iso": "2026-11-07T14:51:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Women's Super League match between Chelsea and Everton."
-      ]
-    },
-    {
-      "slug": "13593186",
-      "title": "Leeds deservedly beat Spurs after Bogle escapes red card",
-      "url": "https://www.skysports.com/football/news/13593186/leeds-1-0-tottenham-noah-okafors-winner-ends-whites-five-game-winless-run-after-jayden-bogle-escapes-red-card",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-noah-okafor-leeds-united_7399895.jpg?20261107141948",
-      "excerpt": "Substitute Noah Okafor’s late winner gave Leeds a 1-0 home victory over Tottenham after Whites defender Jayden Bogle controversially escaped a first-half red card.",
-      "published_label": "07 November 2026 · 14:30",
-      "published_iso": "2026-11-07T14:30:00+00:00",
-      "byline": "Declan Olley",
-      "body": [
-        "Substitute Noah Okafor’s late winner gave Leeds a 1-0 home victory over Tottenham after Whites defender Jayden Bogle controversially escaped a first-half red card.",
-        "Leeds were deserved victors to earn their first win in six games as Spurs saw their three-game winning run ended - but were left fuming over the Bogle decision.",
-        "The Leeds right wing-back caught Mathys Tel on his Achilles, which was awarded a foul but not punished further by referee John Brooks. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "A four-minute VAR review then ensued, but Tony Harrington opted against an on-field review, with the challenge only deemed \"reckless\" as Tel was forced off injured as a result of it."
-      ]
-    },
-    {
-      "slug": "13592972",
-      "title": "Stoke battle back to win at Portsmouth",
-      "url": "https://www.skysports.com/football/news/13592972/portsmouth-1-2-stoke-jack-mcglynn-and-ben-wilmot-score-as-potters-hit-back-for-victory",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jack-mcglynn-stoke-city_7399913.jpg?20261107143006",
-      "excerpt": "Jack McGlynn and Ben Wilmot scored as Stoke hit back to beat Portsmouth 2-1 and maintain their impressive Championship form.",
-      "published_label": "07 November 2026 · 14:10",
-      "published_iso": "2026-11-07T14:10:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Jack McGlynn and Ben Wilmot scored as Stoke hit back to beat Portsmouth 2-1 and maintain their impressive Championship form.",
-        "Tyrese Shade netted his Portsmouth goal with a lovely bending finish to put the hosts in front, but the Potters turned a tame first half around to make it five away wins in a row.",
-        "McGlynn capitalised on goalkeeper Nicolas Schmid's failure to hold on to a cross before Wilmot headed home a rebound.",
-        "The match was only two minutes old when referee Ben Speedie paused the action after Stoke wing-back Junior Tchamadeu reported a comment made to him from the stands while he prepared to take a throw-in."
-      ]
-    },
-    {
-      "slug": "13592973",
-      "title": "Wrexham hit back to hold Wolves",
-      "url": "https://www.skysports.com/football/news/13592973/wrexham-1-1-wolves-lewis-obrien-earns-a-point-for-the-red-dragons",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-lewis-o-brien-wrexham_7399815.jpg?20261107131041",
-      "excerpt": "Lewis O'Brien's first goal of the season earned Wrexham a 1-1 draw and prevented Wolves going top of the SkyBet Championship.",
-      "published_label": "07 November 2026 · 14:10",
-      "published_iso": "2026-11-07T14:10:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Lewis O'Brien's first goal of the season earned Wrexham a 1-1 draw and prevented Wolves going top of the SkyBet Championship.",
-        "Wolves have never won at the Racecourse Ground but Adam Armstrong's latest strike after 25 minutes suggested they might register a history-making victory.",
-        "Instead, O'Brien equalised for Phil Parkinson's side two minutes later though the visitors still extended their unbeaten run to six matches.",
-        "Wrexham co-owners Ryan Reynolds and Rob McElhenney were in attendance for only this seventh league meeting between the sides in 102 years and first since 1988. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13592971",
-      "title": "Norwich thump five past Bristol City as home fans turn on Skubala",
-      "url": "https://www.skysports.com/football/news/13592971/bristol-city-0-5-norwich-canaries-thump-five-past-struggling-robins-to-heap-pressure-on-boss-michael-skubala",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mathias-kvistgaarden_7399917.jpg?20261107143044",
-      "excerpt": "Bristol City fans turned on manager Michael Skubala as Norwich made it nine goals in successive away victories with a 5-0 Sky Bet Championship win at Ashton Gate.",
-      "published_label": "07 November 2026 · 14:10",
-      "published_iso": "2026-11-07T14:10:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Bristol City fans turned on manager Michael Skubala as Norwich made it nine goals in successive away victories with a 5-0 Sky Bet Championship win at Ashton Gate.",
-        "The Canaries took a 22nd-minute lead when Paris Maghoma picked up the ball 40 yards out and ran forward unchallenged before placing a low right-footed shot past Brad Collins from the left side of the box.",
-        "It was 2-0 in the 53rd minute, Jason Knight's mistimed header inside his own penalty area directing the ball to Harry Darling who coolly nodded it over Collins' despairing dive.",
-        "Three minutes later Maghoma turned provider, pulling a low cross back for Andre Brooks to fire home a third. There were still 20 minutes left when substitute Jovon Makama turned in an Anthony Musaba cross. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13607192",
-      "title": "What's gone so wrong so quickly at Crystal Palace?",
-      "url": "https://www.skysports.com/football/news/13607192/pierre-sage-under-pressure-how-crystal-palace-and-last-seasons-ligue-1-manager-of-the-year-are-both-suffering",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-crystal-palace_7395914.jpg?20261103154515",
-      "excerpt": "As Pierre Sage waited to receive the Coupe de France trophy as the victorious manager of RC Lens last May, he turned to his staff and said: \"Do you realise where we are?\"",
-      "published_label": "07 November 2026 · 08:00",
-      "published_iso": "2026-11-07T08:00:00+00:00",
-      "byline": "Ron Walker",
-      "body": [
-        "As Pierre Sage waited to receive the Coupe de France trophy as the victorious manager of RC Lens last May, he turned to his staff and said: \"Do you realise where we are?\"",
-        "Sage had just led the club to a first French Cup title in its history while plotting a course to finish second in Ligue 1, its joint-best league position in over two decades - all in his first season in charge.",
-        "Having managed only 56 professional games prior to joining the club, he had become the rising star of French football almost overnight.",
-        "Less than six months on, the 47-year-old may be glad he took that moment to embrace the good times. Transfer Centre LIVE! | Crystal Palace news & transfers 🦅 Palace fixtures & scores | FREE Palace highlights ▶️ Got Sky? Watch Crystal Palace vs Liverpool LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13609101",
-      "title": "Barry shines with four-minute double as Everton come back to beat Coventry",
-      "url": "https://www.skysports.com/football/video/13609101/everton-3-1-coventry-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hlts-pl_7399601.jpg?20261106220645",
-      "excerpt": "FREE TO WATCH: Highlights from Everton’s match against Coventry in the Premier League.",
-      "published_label": "06 November 2026 · 22:02",
-      "published_iso": "2026-11-06T22:02:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "FREE TO WATCH: Highlights from Everton’s match against Coventry in the Premier League."
-      ]
-    },
-    {
-      "slug": "13608887",
-      "title": "Carrick: 'Not impossible' Man Utd can achieve Ferguson success again",
-      "url": "https://www.skysports.com/football/news/13608887/michael-carrick-manchester-united-boss-says-its-possible-the-club-can-emulate-sir-alex-fergusons-success-at-old-trafford",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7399116.jpg?20261106143020",
-      "excerpt": "Michael Carrick believes Manchester United can reach the heights achieved under Sir Alex Ferguson but is not expecting the same level of patience.",
-      "published_label": "06 November 2026 · 15:40",
-      "published_iso": "2026-11-06T15:40:00+00:00",
-      "byline": "William Bitibiri",
-      "body": [
-        "Michael Carrick believes Manchester United can reach the heights achieved under Sir Alex Ferguson but is not expecting the same level of patience.",
-        "Friday marks 40 years since Ferguson was appointed United manager on November 6, 1986. It is an anniversary that comes at a particularly significant moment for the club, with Carrick's position in charge still facing intense scrutiny.",
-        "United's dramatic 3-2 comeback victory over Roma in midweek offered Carrick some much-needed breathing space after a nine-game winless run, but Sunday's Premier League clash against Aston Villa, live on Sky, represents another significant test. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "The timing of Ferguson's anniversary also provides an opportunity to reflect on the scale of the task facing United."
-      ]
-    },
-    {
-      "slug": "13608473",
-      "title": "Man Utd's next generation can rescue Carrick",
-      "url": "https://www.skysports.com/football/news/13608473/manchester-united-reporter-notebook-shea-lacey-and-old-trafford-young-guns-offer-michael-carrick-hope-of-unlikely-revival",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-reporter-notebook_7398217.jpg?20261105160829",
-      "excerpt": "Being at Old Trafford on Tuesday night was quite incredible.",
-      "published_label": "06 November 2026 · 09:00",
-      "published_iso": "2026-11-06T09:00:00+00:00",
-      "byline": "Danyal Khan",
-      "body": [
-        "Being at Old Trafford on Tuesday night was quite incredible.",
-        "Whether the feeling proves short-lived or sparks something bigger for Michael Carrick and Manchester United remains to be seen, but it was important to see a stadium that has been starved of moments to celebrate this season roaring again.",
-        "There was plenty to dissect from the comeback win over Roma , but one of the biggest positives for Carrick was the impressive 15-minute cameo from 19-year-old Shea Lacey.",
-        "Lacey came on with the drive, confidence and quality to take responsibility and push United forward. His inch-perfect pass to Matheus Cunha was pivotal in setting up the winner. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13607467",
-      "title": "Liverpool's unwanted record highlights creativity issue",
-      "url": "https://www.skysports.com/football/news/13607467/liverpools-unwanted-record-against-arsenal-shows-creativity-problem-under-andoni-iraola-between-the-lines",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-florian-wirtz-liverpool_7395735.png?20261103125846",
-      "excerpt": "Liverpool set an unwanted record against Arsenal as they failed to register a shot on target for the first time in 442 Premier League home games, dating back to when records began in 2003.",
-      "published_label": "03 November 2026 · 12:55",
-      "published_iso": "2026-11-03T12:55:00+00:00",
-      "byline": "Nick Wright and Adam Smith",
-      "body": [
-        "Liverpool set an unwanted record against Arsenal as they failed to register a shot on target for the first time in 442 Premier League home games, dating back to when records began in 2003.",
-        "The ignominious statistic was confirmed by Opta, who initially credited Ronald Araujo and Alexis Mac Allister with shots on target but later ruled them as a blocked shot and overhit pass.",
-        "Liverpool's finishing was wayward. They were also incorrectly denied a penalty. But a lack of creativity was the bigger issue. Their 17 shots were worth a meagre 1.05 expected goals. It was just the latest example of them struggling to create high-quality chances. Szoboszlai and the shot location issue",
-        "Liverpool's total of 140 shots this season is the fifth-highest among Premier League sides. But they rank much lower for both goals scored and expected goals, in ninth and 11th respectively."
-      ]
+      "body": []
     }
   ]
 }
