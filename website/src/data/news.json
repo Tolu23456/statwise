@@ -1,10 +1,22 @@
 {
-  "synced_at": "2026-11-08T01:27:08+00:00",
+  "synced_at": "2026-11-08T09:00:07+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13609320",
+      "title": "Lucky escape? Bogle unpunished for studs challenge on Tel",
+      "url": "https://www.skysports.com/football/video/13609320/was-jaden-bogle-fortunate-to-avoid-punishment-following-this-challenge-on-mathys-tel",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bogle-tackle-tel_7400231.jpg?20261107171429",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13592979",
       "title": "Cardiff hit back to claim astonishing 5-4 win over shellshocked Burnley",
@@ -29,33 +41,11 @@
       "kind": "video"
     },
     {
-      "slug": "13608473",
-      "title": "Man Utd's next generation can rescue Carrick",
-      "url": "https://www.skysports.com/football/news/13608473/manchester-united-reporter-notebook-shea-lacey-and-old-trafford-young-guns-offer-michael-carrick-hope-of-unlikely-revival",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-reporter-notebook_7398217.jpg?20261105160829",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
       "slug": "13608882",
       "title": "Iraola: We must sacrifice control for creativity to fix scoring woes",
       "url": "https://www.skysports.com/football/news/13608882/liverpool-andoni-iraola-demands-creativity-over-control-to-solve-premier-league-scoring-problems",
       "source": "Sky Sports",
       "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-liverpool_7399134.jpg?20261106145228",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13607467",
-      "title": "Liverpool's unwanted record highlights creativity issue",
-      "url": "https://www.skysports.com/football/news/13607467/liverpools-unwanted-record-against-arsenal-shows-creativity-problem-under-andoni-iraola-between-the-lines",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-florian-wirtz-liverpool_7395735.png?20261103125846",
       "excerpt": "",
       "published_label": "",
       "published_iso": "",
@@ -256,6 +246,23 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13609640",
+      "title": "Papers: Carrick's future uncertain as Man Utd ponder international break change",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13609640/michael-carricks-man-utd-future-uncertain-as-club-ponder-international-break-change-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Sunday's newspapers... Manchester United",
+      "published_label": "08 November 2026 · 08:00",
+      "published_iso": "2026-11-08T08:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Sunday's newspapers... Manchester United",
+        "Michael Carrick is carrying on as normal - but Manchester United are poised to use the international break to look at a change - Sunday Mirror",
+        "Carrick has not been told he is certain to be in charge of United after their Premier League fixture with Aston Villa on Sunday - The Sun",
+        "Man Utd are not sold on former Newcastle boss Eddie Howe as a potential replacement for Carrick at Old Trafford - Independent Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Premier League"
+      ]
     },
     {
       "slug": "13609596",
@@ -463,6 +470,36 @@
       ]
     },
     {
+      "slug": "13609257",
+      "title": "Leeds end Spurs’ winning run in VAR controversy filled match",
+      "url": "https://www.skysports.com/football/video/13609257/leeds-1-0-tottenham-hotspur-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-leeds-spurs_7399976.jpg?20261107150751",
+      "excerpt": "FREE TO WATCH: Highlights from Leeds’s match against Tottenham Hotspur in the Premier League.",
+      "published_label": "07 November 2026 · 17:15",
+      "published_iso": "2026-11-07T17:15:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from Leeds’s match against Tottenham Hotspur in the Premier League."
+      ]
+    },
+    {
+      "slug": "13609384",
+      "title": "Late goals as Fulham draw with Newcastle",
+      "url": "https://www.skysports.com/football/video/13609384/fulham-1-1-newcastle-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7400207.jpg?20261107170618",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Fulham and Newcastle United.",
+      "published_label": "07 November 2026 · 17:10",
+      "published_iso": "2026-11-07T17:10:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from the Premier League match between Fulham and Newcastle United."
+      ]
+    },
+    {
       "slug": "13593193",
       "title": "Arsenal go six points clear with Hull win amid VAR drama",
       "url": "https://www.skysports.com/football/news/13593193/arsenal-1-0-hull-city-martin-odegaard-breaks-tigers-resistance-to-clinch-victory-for-premier-league-champions",
@@ -595,102 +632,86 @@
       ]
     },
     {
-      "slug": "13609225",
-      "title": "Inevitable! Bunny Shaw scores perfect hat-trick vs West Ham!",
-      "url": "https://www.skysports.com/football/video/13609225/manchester-city-vs-west-ham-bunny-shaw-scores-incredible-perfect-hat-trick",
+      "slug": "13607192",
+      "title": "What's gone so wrong so quickly at Crystal Palace?",
+      "url": "https://www.skysports.com/football/news/13607192/pierre-sage-under-pressure-how-crystal-palace-and-last-seasons-ligue-1-manager-of-the-year-are-both-suffering",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bunny-shaw-man-city_7399993.jpg?20261107151956",
-      "excerpt": "Bunny Shaw scored a hat-trick in the WSL fixture between Manchester City and West Ham.",
-      "published_label": "07 November 2026 · 13:49",
-      "published_iso": "2026-11-07T13:49:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Bunny Shaw scored a hat-trick in the WSL fixture between Manchester City and West Ham."
-      ]
-    },
-    {
-      "slug": "13609167",
-      "title": "Bundesliga bangers as Hamburg beat Borussia Monchengladbach",
-      "url": "https://www.skysports.com/football/video/13609167/hamburg-3-1-borussia-monchengladbach-bundesliga-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hamburg-monchengladbach_7399732.jpg?20261107083629",
-      "excerpt": "Highlights of the Bundesliga match between Hamburg and Borussia Monchengladbach.",
-      "published_label": "07 November 2026 · 08:28",
-      "published_iso": "2026-11-07T08:28:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Bundesliga match between Hamburg and Borussia Monchengladbach."
-      ]
-    },
-    {
-      "slug": "13609161",
-      "title": "The Cole Palmer Awards - An alternative look at 2026 with Chelsea star",
-      "url": "https://www.skysports.com/football/video/13609161/the-cole-palmer-awards-an-alternative-look-at-2026-with-chelsea-star",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-cole-palmer-awards_7399726.jpg?20261107082451",
-      "excerpt": "Take a look at an awards ceremony with a difference - as Cole Palmer dishes out his awards for 2026 for Saturday Social.",
-      "published_label": "07 November 2026 · 08:09",
-      "published_iso": "2026-11-07T08:09:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Take a look at an awards ceremony with a difference - as Cole Palmer dishes out his awards for 2026 for Saturday Social."
-      ]
-    },
-    {
-      "slug": "13609160",
-      "title": "'The goals will come' - Tzolis confident of making his mark at Arsenal",
-      "url": "https://www.skysports.com/football/video/13609160/arsenal-latest-christos-tzolis-confident-that-goals-will-come",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-christos-tzolis-arsenal_7399722.jpg?20261107081804",
-      "excerpt": "Arsenal's Christos Tzolis says he's confident the goals will come despite failing to score for Arsenal since his summer move from Club Brugge.",
-      "published_label": "07 November 2026 · 08:08",
-      "published_iso": "2026-11-07T08:08:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Arsenal's Christos Tzolis says he's confident the goals will come despite failing to score for Arsenal since his summer move from Club Brugge."
-      ]
-    },
-    {
-      "slug": "carling-knockout-cup-2026",
-      "title": "Carling Knockout Cup: Pirates and Sundowns Lock Down Final Four Spots",
-      "url": "https://www.sportytrader.com/en-za/news/carling-knockout-cup-2026/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/2026-brazilian-gp.webp",
-      "excerpt": "South African football’s heavyweights are continuing to flex their muscle, with Mamelodi Sundowns and defending champions Orlando Pirates becoming the first two teams to",
-      "published_label": "7 November 2026 · 08:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-crystal-palace_7395914.jpg?20261103154515",
+      "excerpt": "As Pierre Sage waited to receive the Coupe de France trophy as the victorious manager of RC Lens last May, he turned to his staff and said: \"Do you realise where we are?\"",
+      "published_label": "07 November 2026 · 08:00",
       "published_iso": "2026-11-07T08:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "brazilian-grand-prix-2026",
-      "title": "Max Verstappen Outraged Over Red Bull Faults Ahead of Brazil Fightback",
-      "url": "https://www.sportytrader.com/en/news/brazilian-grand-prix-2026/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/julian_alvarez_atleti.webp",
-      "excerpt": "Max Verstappen has completely blown his top in São Paulo, unloading a furious tirade over several Red Bull mechanical faults as he prepares for a gruelling back-of-the-gr",
-      "published_label": "7 November 2026 · 07:00",
-      "published_iso": "2026-11-07T07:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13607998",
-      "title": "PL Predictions: How will your team fare this weekend?",
-      "url": "https://www.skysports.com/football/news/13607998/premier-league-predictions-and-jones-knows-best-bets-nottingham-forest-vs-man-city-man-utd-vs-aston-villa-and-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
-      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight across the Premier League weekend. Brighton vs Brentford, Sunday 2pm, live on Sky Sports Got Sky? Watch Premier League games LIVE on your phone 📱 Not go…",
-      "published_label": "05 November 2026 · 17:40",
-      "published_iso": "2026-11-05T17:40:00+00:00",
-      "byline": "Lewis Jones",
+      "byline": "Ron Walker",
       "body": [
-        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight across the Premier League weekend. Brighton vs Brentford, Sunday 2pm, live on Sky Sports Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Can beating Manchester City away from home actually be a curse?",
-        "There is a curious trend developing with the last five teams outside of Arsenal and Liverpool to win a Premier League game at the Etihad all failing to win their next fixture. Brighton now have to navigate that potential banana skin against a Brentford side who are proving remarkably reliable in front of goal.",
-        "Keith Andrews' team are the only side to have scored in all nine Premier League games this season, finding the net 16 times. Stretch that record across the summer break and Brentford have now scored in 11 consecutive league matches. Their attacking consistency makes them an awkward opponent for a Brighton side who may still be riding the emotional high of their Etihad triumph and feeling a bit of fatigue from their European adventures."
+        "As Pierre Sage waited to receive the Coupe de France trophy as the victorious manager of RC Lens last May, he turned to his staff and said: \"Do you realise where we are?\"",
+        "Sage had just led the club to a first French Cup title in its history while plotting a course to finish second in Ligue 1, its joint-best league position in over two decades - all in his first season in charge.",
+        "Having managed only 56 professional games prior to joining the club, he had become the rising star of French football almost overnight.",
+        "Less than six months on, the 47-year-old may be glad he took that moment to embrace the good times. Transfer Centre LIVE! | Crystal Palace news & transfers 🦅 Palace fixtures & scores | FREE Palace highlights ▶️ Got Sky? Watch Crystal Palace vs Liverpool LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13609101",
+      "title": "Barry shines with four-minute double as Everton come back to beat Coventry",
+      "url": "https://www.skysports.com/football/video/13609101/everton-3-1-coventry-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hlts-pl_7399601.jpg?20261106220645",
+      "excerpt": "FREE TO WATCH: Highlights from Everton’s match against Coventry in the Premier League.",
+      "published_label": "06 November 2026 · 22:02",
+      "published_iso": "2026-11-06T22:02:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from Everton’s match against Coventry in the Premier League."
+      ]
+    },
+    {
+      "slug": "13608887",
+      "title": "Carrick: 'Not impossible' Man Utd can achieve Ferguson success again",
+      "url": "https://www.skysports.com/football/news/13608887/michael-carrick-manchester-united-boss-says-its-possible-the-club-can-emulate-sir-alex-fergusons-success-at-old-trafford",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7399116.jpg?20261106143020",
+      "excerpt": "Michael Carrick believes Manchester United can reach the heights achieved under Sir Alex Ferguson but is not expecting the same level of patience.",
+      "published_label": "06 November 2026 · 15:40",
+      "published_iso": "2026-11-06T15:40:00+00:00",
+      "byline": "William Bitibiri",
+      "body": [
+        "Michael Carrick believes Manchester United can reach the heights achieved under Sir Alex Ferguson but is not expecting the same level of patience.",
+        "Friday marks 40 years since Ferguson was appointed United manager on November 6, 1986. It is an anniversary that comes at a particularly significant moment for the club, with Carrick's position in charge still facing intense scrutiny.",
+        "United's dramatic 3-2 comeback victory over Roma in midweek offered Carrick some much-needed breathing space after a nine-game winless run, but Sunday's Premier League clash against Aston Villa, live on Sky, represents another significant test. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "The timing of Ferguson's anniversary also provides an opportunity to reflect on the scale of the task facing United."
+      ]
+    },
+    {
+      "slug": "13608473",
+      "title": "Man Utd's next generation can rescue Carrick",
+      "url": "https://www.skysports.com/football/news/13608473/manchester-united-reporter-notebook-shea-lacey-and-old-trafford-young-guns-offer-michael-carrick-hope-of-unlikely-revival",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-reporter-notebook_7398217.jpg?20261105160829",
+      "excerpt": "Being at Old Trafford on Tuesday night was quite incredible.",
+      "published_label": "06 November 2026 · 09:00",
+      "published_iso": "2026-11-06T09:00:00+00:00",
+      "byline": "Danyal Khan",
+      "body": [
+        "Being at Old Trafford on Tuesday night was quite incredible.",
+        "Whether the feeling proves short-lived or sparks something bigger for Michael Carrick and Manchester United remains to be seen, but it was important to see a stadium that has been starved of moments to celebrate this season roaring again.",
+        "There was plenty to dissect from the comeback win over Roma , but one of the biggest positives for Carrick was the impressive 15-minute cameo from 19-year-old Shea Lacey.",
+        "Lacey came on with the drive, confidence and quality to take responsibility and push United forward. His inch-perfect pass to Matheus Cunha was pivotal in setting up the winner. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13607467",
+      "title": "Liverpool's unwanted record highlights creativity issue",
+      "url": "https://www.skysports.com/football/news/13607467/liverpools-unwanted-record-against-arsenal-shows-creativity-problem-under-andoni-iraola-between-the-lines",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-florian-wirtz-liverpool_7395735.png?20261103125846",
+      "excerpt": "Liverpool set an unwanted record against Arsenal as they failed to register a shot on target for the first time in 442 Premier League home games, dating back to when records began in 2003.",
+      "published_label": "03 November 2026 · 12:55",
+      "published_iso": "2026-11-03T12:55:00+00:00",
+      "byline": "Nick Wright and Adam Smith",
+      "body": [
+        "Liverpool set an unwanted record against Arsenal as they failed to register a shot on target for the first time in 442 Premier League home games, dating back to when records began in 2003.",
+        "The ignominious statistic was confirmed by Opta, who initially credited Ronald Araujo and Alexis Mac Allister with shots on target but later ruled them as a blocked shot and overhit pass.",
+        "Liverpool's finishing was wayward. They were also incorrectly denied a penalty. But a lack of creativity was the bigger issue. Their 17 shots were worth a meagre 1.05 expected goals. It was just the latest example of them struggling to create high-quality chances. Szoboszlai and the shot location issue",
+        "Liverpool's total of 140 shots this season is the fifth-highest among Premier League sides. But they rank much lower for both goals scored and expected goals, in ninth and 11th respectively."
       ]
     }
   ]
