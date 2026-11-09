@@ -1,69 +1,10 @@
 {
-  "synced_at": "2026-11-08T22:06:17+00:00",
+  "synced_at": "2026-11-09T01:44:39+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13609930",
-      "title": "Carrick has spiky exchange with Sky reporter | Keane: He's like a politician!",
-      "url": "https://www.skysports.com/football/video/13609930/hes-like-a-politician-roy-keane-warns-michael-carrick-to-act-fast",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-carrick-keane_7401490.jpg?20261108192549",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13609937",
-      "title": "Villa boss Emery explains why he went down tunnel before full-time",
-      "url": "https://www.skysports.com/football/news/13609937/unai-emery-aston-villa-boss-reveals-why-he-went-down-old-trafford-tunnel-before-full-time-in-eight-goal-thriller-at-man-utd",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-unai-emery-aston-villa_7401498.jpg?20261108193125",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13609978",
-      "title": "Inter's early double seals win over Como",
-      "url": "https://www.skysports.com/football/video/13609978/inter-milan-vs-como-serie-a-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-inter_7401599.jpg?20261108202945",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13609889",
-      "title": "O'Neill provides Baur injury update after Celtic win",
-      "url": "https://www.skysports.com/football/video/13609889/martin-oneill-celtic-boss-delighted-with-1-0-win-over-kilmarnock-and-gives-mika-baur-injury-update",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-martin-oneill-celtic_7401362.jpg?20261108182748",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13609963",
-      "title": "'Would you join Man Utd now?!' - Keane & Young on Utd's appeal in sharp decline",
-      "url": "https://www.skysports.com/football/video/13609963/ashley-young-and-roy-keane-discuss-manchester-uniteds-lack-of-appeal-for-players",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-keane-young_7401577.jpg?20261108200415",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13609916",
       "title": "'MORE questions?!' - Emery left VERY animated after Villa's late collapse",
@@ -377,6 +318,21 @@
       "byline": ""
     },
     {
+      "slug": "13610017",
+      "title": "Fermin double leads Barcelona to comeback victory over Atletico",
+      "url": "https://www.skysports.com/football/video/13610017/atletico-madrid-1-2-barcelona-la-liga-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-la-liga_7401711.jpg?20261108224338",
+      "excerpt": "Highlights of the La Liga match between Atletico Madrid and Barcelona.",
+      "published_label": "08 November 2026 · 23:00",
+      "published_iso": "2026-11-08T23:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the La Liga match between Atletico Madrid and Barcelona."
+      ]
+    },
+    {
       "slug": "13609990",
       "title": "Frank leading candidate for Palace job with Sage likely to be sacked",
       "url": "https://www.skysports.com/football/news/13609990/thomas-frank-former-spurs-and-brentford-boss-leading-contender-to-take-over-at-crystal-palace-if-pierre-sage-is-sacked",
@@ -424,6 +380,21 @@
       ]
     },
     {
+      "slug": "13609978",
+      "title": "Inter's early double seals win over Como",
+      "url": "https://www.skysports.com/football/video/13609978/inter-milan-vs-como-serie-a-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-inter_7401599.jpg?20261108202945",
+      "excerpt": "Highlights of the Serie A match between Inter Milan and Como.",
+      "published_label": "08 November 2026 · 20:28",
+      "published_iso": "2026-11-08T20:28:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Serie A match between Inter Milan and Como."
+      ]
+    },
+    {
       "slug": "13609975",
       "title": "UNSEEN FOOTAGE! Emery storms down the tunnel after Man Utd equaliser",
       "url": "https://www.skysports.com/football/video/13609975/unai-emery-left-fuming-as-he-storms-down-the-tunnel-after-patrick-dorgus-late-leveller",
@@ -436,6 +407,21 @@
       "kind": "video",
       "body": [
         "Unseen footage captures Aston Villa boss Unai Emery storming down the touchline after Patrick Dorgu's late equaliser for Manchester United, before the full-time whistle had even blown."
+      ]
+    },
+    {
+      "slug": "13609963",
+      "title": "'Would you join Man Utd now?!' - Keane & Young on Utd's appeal in sharp decline",
+      "url": "https://www.skysports.com/football/video/13609963/ashley-young-and-roy-keane-discuss-manchester-uniteds-lack-of-appeal-for-players",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-keane-young_7401577.jpg?20261108200415",
+      "excerpt": "Former Manchester United players Roy Keane and Ashley Young discuss whether top players would still consider joining the club as their bad form continues, after a rich history of United attracting some of the world's best talent.",
+      "published_label": "08 November 2026 · 19:53",
+      "published_iso": "2026-11-08T19:53:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Former Manchester United players Roy Keane and Ashley Young discuss whether top players would still consider joining the club as their bad form continues, after a rich history of United attracting some of the world's best talent."
       ]
     },
     {
@@ -471,6 +457,53 @@
       ]
     },
     {
+      "slug": "13609937",
+      "title": "Villa boss Emery explains why he went down tunnel before full-time",
+      "url": "https://www.skysports.com/football/news/13609937/unai-emery-aston-villa-boss-reveals-why-he-went-down-old-trafford-tunnel-before-full-time-in-eight-goal-thriller-at-man-utd",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-unai-emery-aston-villa_7401498.jpg?20261108193125",
+      "excerpt": "A prickly Unai Emery claimed he headed down the Old Trafford tunnel after Manchester United's late equaliser against his Aston Villa side because he thought the match was about to end.",
+      "published_label": "08 November 2026 · 19:25",
+      "published_iso": "2026-11-08T19:25:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "A prickly Unai Emery claimed he headed down the Old Trafford tunnel after Manchester United's late equaliser against his Aston Villa side because he thought the match was about to end.",
+        "Villa threw away two separate two-goal leads to draw 4-4 with United in a Super Sunday thriller - but the 97th-minute equaliser from Michael Carrick's side, scored by Patrick Dorgu, brought about a strange reaction from Emery.",
+        "The Villa manager was seen walking down the tunnel before the full-time whistle, with the match continuing for another two minutes before it ended. Man Utd 4-4 Aston Villa - Match report and highlights As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Villa have complained about the legitimacy of United's fourth goal - with United goalkeeper Senne Lammens accused of impeding with Villa counterpart Zion Suzuki as he competed with Dorgu for the corner."
+      ]
+    },
+    {
+      "slug": "13609930",
+      "title": "Carrick has spiky exchange with Sky reporter | Keane: He's like a politician!",
+      "url": "https://www.skysports.com/football/video/13609930/hes-like-a-politician-roy-keane-warns-michael-carrick-to-act-fast",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-carrick-keane_7401490.jpg?20261108192549",
+      "excerpt": "Roy Keane says under-pressure Man Utd boss Michael Carrick 'talks a lot but doesn't say much' and needs to 'get moving' on improving the team after watching his former side earn a late 4-4 draw against Aston Villa.",
+      "published_label": "08 November 2026 · 19:17",
+      "published_iso": "2026-11-08T19:17:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Roy Keane says under-pressure Man Utd boss Michael Carrick 'talks a lot but doesn't say much' and needs to 'get moving' on improving the team after watching his former side earn a late 4-4 draw against Aston Villa."
+      ]
+    },
+    {
+      "slug": "13609889",
+      "title": "O'Neill provides Baur injury update after Celtic win",
+      "url": "https://www.skysports.com/football/video/13609889/martin-oneill-celtic-boss-delighted-with-1-0-win-over-kilmarnock-and-gives-mika-baur-injury-update",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-martin-oneill-celtic_7401362.jpg?20261108182748",
+      "excerpt": "Celtic manager Martin O'Neill describes a 'difficult afternoon' for the hosts, who beat Kilmarnock 1-0 to restore their four-point lead at the top of the Scottish Premiership.",
+      "published_label": "08 November 2026 · 18:22",
+      "published_iso": "2026-11-08T18:22:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Celtic manager Martin O'Neill describes a 'difficult afternoon' for the hosts, who beat Kilmarnock 1-0 to restore their four-point lead at the top of the Scottish Premiership."
+      ]
+    },
+    {
       "slug": "13605755",
       "title": "Celtic restore four-point Premiership lead with narrow win against Kilmarnock",
       "url": "https://www.skysports.com/football/news/13605755/celtic-1-0-kilmarnock-liam-scales-restores-hoops-four-point-premiership-lead-with-winner-against-struggling-killie",
@@ -485,6 +518,23 @@
         "Liam Scales hooked Camilo Duran cross into the top corner in the 26th minute as they head into the international break after back-to-back wins.",
         "Celtic - and Kasper Hogh in particular - otherwise had a frustrating day in front of goal, with Benjamin Nygren missing a second-half penalty. As it happened | Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
         "After a silence for Remembrance Sunday was cut short after boos from the stands, Kilmarnock came close."
+      ]
+    },
+    {
+      "slug": "13609830",
+      "title": "Hits and misses: Alisson back to his best while Chelsea go back to square one",
+      "url": "https://www.skysports.com/football/news/13609830/liverpool-goalkeeper-alisson-back-to-his-best-while-chelsea-go-back-to-square-one-premier-league-hits-and-misses",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hits_7401417.jpg?20261108185308",
+      "excerpt": "Liverpool hit three at Palace, with three £100m+ players - Florian Wirtz, Alexander Isak and, with an assist, Bradley Barcola - involved in the goals. But it was their goalkeeper Alisson who was Liverpool's best performer.",
+      "published_label": "08 November 2026 · 16:58",
+      "published_iso": "2026-11-08T16:58:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Liverpool hit three at Palace, with three £100m+ players - Florian Wirtz, Alexander Isak and, with an assist, Bradley Barcola - involved in the goals. But it was their goalkeeper Alisson who was Liverpool's best performer.",
+        "Crystal Palace will be so frustrated because on another day, the narrative could have swung their way. But the brilliant Brazilian delivered in key moments in the game. Crystal Palace 1-3 Liverpool - Match report & highlights As it happened | Teams | Stats",
+        "His save from Daichi Kamada's volley was an exceptional reaction stop. Two minutes later Liverpool took the lead.",
+        "Alisson was then at full stretch to push away Adam Wharton's header to ensure Liverpool went into the break with the advantage. And on 77 minutes, with the score 2-0, he prevented Yeremy Pino from setting up a grandstand finish by shutting down the angle to save the one-on-one."
       ]
     },
     {
@@ -616,46 +666,20 @@
       ]
     },
     {
-      "slug": "13609640",
-      "title": "Papers: Carrick's future uncertain as Man Utd ponder international break change",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13609640/michael-carricks-man-utd-future-uncertain-as-club-ponder-international-break-change-paper-talk",
+      "slug": "13610018",
+      "title": "Papers: Carrick will not resign after draw leaves Man Utd in drop zone",
+      "url": "https://www.skysports.com/football/news/13610018/michael-carrick-will-not-resign-at-manchester-united-after-draw-leaves-side-one-place-off-bottom-paper-talk",
       "source": "Sky Sports",
       "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Sunday's newspapers... Manchester United",
-      "published_label": "08 November 2026 · 08:00",
-      "published_iso": "2026-11-08T08:00:00+00:00",
+      "excerpt": "The top stories and transfer rumours from Monday's newspapers... Manchester United",
+      "published_label": "06 November 2026 · 22:30",
+      "published_iso": "2026-11-06T22:30:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "The top stories and transfer rumours from Sunday's newspapers... Manchester United",
-        "Michael Carrick is carrying on as normal - but Manchester United are poised to use the international break to look at a change - Sunday Mirror",
-        "Carrick has not been told he is certain to be in charge of United after their Premier League fixture with Aston Villa on Sunday - The Sun",
-        "Man Utd are not sold on former Newcastle boss Eddie Howe as a potential replacement for Carrick at Old Trafford - Independent Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Premier League"
-      ]
-    },
-    {
-      "slug": "wta-finals-2026-rybakina-pulls-out-hours-before-the-start-and-sabalenka-s-path-to-a-first-title-has-never-looked-clearer",
-      "title": "WTA Finals 2026: Rybakina Pulls Out Hours Before the Start, and Sabale",
-      "url": "https://www.sportytrader.com/en/news/wta-finals-2026-rybakina-pulls-out-hours-before-the-start-and-sabalenka-s-path-to-a-first-title-has-never-looked-clearer/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/2026-carling-cup-1.webp",
-      "excerpt": "Elena Rybakina has withdrawn from the WTA Finals with a viral illness. Sabalenka, twice a losing finalist, is the new favourite at the venue where she won in March. But f",
-      "published_label": "8 November 2026 · 04:00",
-      "published_iso": "2026-11-08T04:00:00+00:00",
-      "byline": "Geoffrey Ejiga"
-    },
-    {
-      "slug": "13609596",
-      "title": "Rangers close gap at top of table with win over St Mirren",
-      "url": "https://www.skysports.com/football/video/13609596/st-mirren-0-2-rangers-scottish-premiership-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-rangers-st-mirren_7400637.jpg?20261107225603",
-      "excerpt": "Highlights of the Scottish Premiership match between St Mirren and Rangers.",
-      "published_label": "08 November 2026 · 00:01",
-      "published_iso": "2026-11-08T00:01:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Scottish Premiership match between St Mirren and Rangers."
+        "The top stories and transfer rumours from Monday's newspapers... Manchester United",
+        "A tetchy Michael Carrick dismissed a suggestion he could resign as head coach for the good of the team after Sunday's chaotic 4-4 draw with Aston Villa left Manchester United in the relegation zone heading into the international window - The Guardian",
+        "Michael Carrick will not walk away from his job at Manchester United - despite being in the relegation zone heading into the international break - The Star Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Crystal Palace",
+        "Thomas Frank is the leading contender to become Crystal Palace manager if the club decide to sack Pierre Sage - The Times and Guardian Rugby Union"
       ]
     }
   ]
