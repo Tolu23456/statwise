@@ -1,68 +1,10 @@
 {
-  "synced_at": "2026-11-09T01:44:39+00:00",
+  "synced_at": "2026-11-09T09:49:00+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13609916",
-      "title": "'MORE questions?!' - Emery left VERY animated after Villa's late collapse",
-      "url": "https://www.skysports.com/football/video/13609916/aston-villa-boss-unai-emery-left-very-agitated-after-their-late-collapse-to-man-utd",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-villa-emery_7401463.jpg?20261108191622",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13593226",
-      "title": "Man Utd score two in stoppage-time to salvage 4-4 draw with Villa",
-      "url": "https://www.skysports.com/football/news/13593226/man-utd-4-4-aston-villa-patrick-dorgu-levels-in-the-96th-minute-as-united-come-from-two-down-twice-to-earn-incredible-draw",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-patrick-dorgu-man-utd_7401391.jpg?20261108184410",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13609776",
-      "title": "Palace pull off amazing late comeback to beat Charlton",
-      "url": "https://www.skysports.com/football/video/13609776/crystal-palace-3-2-charlton-womens-super-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7401074.jpg?20261108160426",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13609640",
-      "title": "Papers: Carrick's future uncertain as Man Utd ponder international break change",
-      "url": "https://www.skysports.com/football/news/13609640/michael-carricks-man-utd-future-uncertain-as-club-ponder-international-break-change-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13609784",
-      "title": "Bournemouth claim eighth win in a row despite late Ipswich scare",
-      "url": "https://www.skysports.com/football/video/13609784/ipswich-town-1-2-bournemouth-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ipswich-hlts_7401097.jpg?20261108160923",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13609797",
       "title": "Isak scores deflected goal to give Liverpool a third at Palace",
@@ -318,6 +260,23 @@
       "byline": ""
     },
     {
+      "slug": "13607213",
+      "title": "Euro Debrief: Kane has become the king of assists",
+      "url": "https://www.skysports.com/football/news/13607213/harry-kane-is-bayern-munichs-assist-king-barcelona-win-at-atletico-madrid-and-inter-close-gap-on-lazio-all-in-the-euro-debrief",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-euro-debrief-harry-kane_7401725.jpg?20261108232322",
+      "excerpt": "Welcome to The Euro Debrief , the Sky Sports column in which Adam Bate rounds up some of the key stories from the latest matches across the continent. This week: Kane is the assist king Barcelona win in Madrid Inter close gap on Lazio Eleve…",
+      "published_label": "09 November 2026 · 09:30",
+      "published_iso": "2026-11-09T09:30:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "Welcome to The Euro Debrief , the Sky Sports column in which Adam Bate rounds up some of the key stories from the latest matches across the continent. This week: Kane is the assist king Barcelona win in Madrid Inter close gap on Lazio Eleven in a row for PSG Weghorst denies Ajax Bundesliga: Kane is assist king",
+        "Whisper it but Harry Kane has gone four games without scoring a goal. That has only happened once before in his Bayern Munich career and in that sequence he went off at half-time in one game and came on as a second-half substitute in another. Drought!",
+        "It is not an issue for Kane or club because the England captain laid on both goals for his team-mates in a 2-1 win at Mainz that maintains Bayern's place at the top of the Bundesliga table. The Ballon d'Or winner has become the competition's king of assists this season.",
+        "His square pass set up the first for Joshua Kimmich and his lay-off left Lennart Karl with the simplest of tasks for the second. Following on from his lofted assist for Konrad Laimer to score against Atletico Madrid in midweek, it is a growing element of Kane's game."
+      ]
+    },
+    {
       "slug": "13610017",
       "title": "Fermin double leads Barcelona to comeback victory over Atletico",
       "url": "https://www.skysports.com/football/video/13610017/atletico-madrid-1-2-barcelona-la-liga-highlights",
@@ -330,6 +289,23 @@
       "kind": "video",
       "body": [
         "Highlights of the La Liga match between Atletico Madrid and Barcelona."
+      ]
+    },
+    {
+      "slug": "13610018",
+      "title": "Papers: Pochettino favourite to replace Carrick at Man Utd",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13610018/michael-carrick-will-not-resign-at-manchester-united-after-draw-leaves-side-one-place-off-bottom-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Monday's newspapers...",
+      "published_label": "08 November 2026 · 22:30",
+      "published_iso": "2026-11-08T22:30:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Monday's newspapers...",
+        "Mauricio Pochettino is the new favourite to replace Michael Carrick at Manchester United - The Standard",
+        "Thomas Tuchel is braced for England withdrawals, with Marc Guehi a doubt after being subbed off for Man City - Daily Mirror",
+        "FC Andorra goalkeeper Jesus Owono is reportedly \"devastated\" following the death of Tenerife forward Jesus de Miguel and is \"locked in his house and disconnected from the world\" - The Athletic"
       ]
     },
     {
@@ -489,6 +465,53 @@
       ]
     },
     {
+      "slug": "13609916",
+      "title": "'MORE questions?!' - Emery left VERY animated after Villa's late collapse",
+      "url": "https://www.skysports.com/football/video/13609916/aston-villa-boss-unai-emery-left-very-agitated-after-their-late-collapse-to-man-utd",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-villa-emery_7401463.jpg?20261108191622",
+      "excerpt": "Aston Villa boss Unai Emery explains his decision to walk down the tunnel at Old Trafford after Manchester United nabbed their 96th minute equaliser.",
+      "published_label": "08 November 2026 · 19:02",
+      "published_iso": "2026-11-08T19:02:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Aston Villa boss Unai Emery explains his decision to walk down the tunnel at Old Trafford after Manchester United nabbed their 96th minute equaliser."
+      ]
+    },
+    {
+      "slug": "13609907",
+      "title": "Man Utd rescue draw in EIGHT-goal thriller against Villa",
+      "url": "https://www.skysports.com/football/video/13609907/manchester-united-4-4-aston-villa-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7401407.jpg?20261108184941",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Manchester United and Aston Villa.",
+      "published_label": "08 November 2026 · 18:49",
+      "published_iso": "2026-11-08T18:49:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from the Premier League match between Manchester United and Aston Villa."
+      ]
+    },
+    {
+      "slug": "13593226",
+      "title": "Man Utd score two in stoppage-time to salvage 4-4 draw with Villa",
+      "url": "https://www.skysports.com/football/news/13593226/man-utd-4-4-aston-villa-patrick-dorgu-levels-in-the-96th-minute-as-united-come-from-two-down-twice-to-earn-incredible-draw",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-patrick-dorgu-man-utd_7401391.jpg?20261108184410",
+      "excerpt": "Manchester United scored twice in stoppage-time to salvage an incredible 4-4 draw with Aston Villa at Old Trafford that still leaves them in the relegation zone.",
+      "published_label": "08 November 2026 · 18:30",
+      "published_iso": "2026-11-08T18:30:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "Manchester United scored twice in stoppage-time to salvage an incredible 4-4 draw with Aston Villa at Old Trafford that still leaves them in the relegation zone.",
+        "Under-pressure boss Michael Carrick saw his side go 2-0 down inside four minutes but they fought back to level before half-time only to disintegrate defensively again early in the second half. Many had departed when they launched their latest improbable comeback.",
+        "Joshua Zirkzee swept in what looked like a consolation goal in the 92nd minute and when Zion Suzuki flapped at one final corner, Patrick Dorgu headed into the net to stun Villa. United still have not won a Premier League game since August but it was Unai Emery fuming. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Villa were rampant at the start, Alysson beating Senne Lammens on the angle inside a minute before the same player's shot proved too hot for the goalkeeper to handle and presented Nicolas Jackson with the chance to put United two down after four minutes."
+      ]
+    },
+    {
       "slug": "13609889",
       "title": "O'Neill provides Baur injury update after Celtic win",
       "url": "https://www.skysports.com/football/video/13609889/martin-oneill-celtic-boss-delighted-with-1-0-win-over-kilmarnock-and-gives-mika-baur-injury-update",
@@ -600,6 +623,21 @@
       ]
     },
     {
+      "slug": "13609784",
+      "title": "Bournemouth claim eighth win in a row despite late Ipswich scare",
+      "url": "https://www.skysports.com/football/video/13609784/ipswich-town-1-2-bournemouth-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ipswich-hlts_7401097.jpg?20261108160923",
+      "excerpt": "FREE TO WATCH: Highlights from Ipswich Town’s match against Bournemouth in the Premier League.",
+      "published_label": "08 November 2026 · 16:06",
+      "published_iso": "2026-11-08T16:06:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from Ipswich Town’s match against Bournemouth in the Premier League."
+      ]
+    },
+    {
       "slug": "13609778",
       "title": "Spurs come back from behind to take three points against Brighton",
       "url": "https://www.skysports.com/football/video/13609778/tottenham-hotspur-vs-brighton-women-s-super-league-highlights",
@@ -612,6 +650,21 @@
       "kind": "video",
       "body": [
         "Highlights of the Women’s Super League match between Tottenham Hotspur and Brighton."
+      ]
+    },
+    {
+      "slug": "13609776",
+      "title": "Palace pull off amazing late comeback to beat Charlton",
+      "url": "https://www.skysports.com/football/video/13609776/crystal-palace-3-2-charlton-womens-super-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7401074.jpg?20261108160426",
+      "excerpt": "Highlights of the Women's Super League match between Crystal Palace and Charlton.",
+      "published_label": "08 November 2026 · 16:00",
+      "published_iso": "2026-11-08T16:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Women's Super League match between Crystal Palace and Charlton."
       ]
     },
     {
@@ -632,54 +685,20 @@
       ]
     },
     {
-      "slug": "13593217",
-      "title": "Bournemouth win at Ipswich to record eight straight victories",
-      "url": "https://www.skysports.com/football/news/13593217/ipswich-1-2-bournemouth-evanilson-scores-again-as-cherries-make-it-eight-wins-in-a-row",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-evanilson-bournemouth_7400911.jpg?20261108141439",
-      "excerpt": "Bournemouth made it eight wins in a row in all competitions as they continued their charge up the Premier League table with a 2-1 win at Ipswich.",
-      "published_label": "08 November 2026 · 16:00",
-      "published_iso": "2026-11-08T16:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Bournemouth made it eight wins in a row in all competitions as they continued their charge up the Premier League table with a 2-1 win at Ipswich.",
-        "Evanilson scored for the fifth Premier League game running when taking advantage of a shocking error from Ipswich goalkeeper Christian Walton, who tried to dribble around the striker.",
-        "Bournemouth arrived in Suffolk eager to complete an almost perfect month since the last international break with another three points and Alex Scott returned to the bench in another boost for Marco Rose.",
-        "Ipswich started the second half in nightmare fashion in a very sloppy overall performance, with the Cherries given a helping hand to score again after 27 seconds."
-      ]
-    },
-    {
-      "slug": "13593210",
-      "title": "Sage in big trouble as Palace hit rock-bottom after defeat to Liverpool",
-      "url": "https://www.skysports.com/football/news/13593210/crystal-palace-1-3-liverpool-pierre-sage-in-big-trouble-as-eagles-hit-rock-bottom-in-premier-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-liverpool_7401069.jpg?20261108160204",
-      "excerpt": "Liverpool beat Crystal Palace 3-1 at Selhurst Park to inflict a fourth consecutive Premier League defeat on the hosts and leave Pierre Sage in a perilous position with his side bottom of the table.",
-      "published_label": "08 November 2026 · 15:50",
-      "published_iso": "2026-11-08T15:50:00+00:00",
-      "byline": "Zinny Boswell",
-      "body": [
-        "Liverpool beat Crystal Palace 3-1 at Selhurst Park to inflict a fourth consecutive Premier League defeat on the hosts and leave Pierre Sage in a perilous position with his side bottom of the table.",
-        "Eddie Nketiah pulled a goal back from the spot for Palace with the last kick of the game, but the damage was already done after Alexis Mac Allister and Florian Wirtz struck for Liverpool either side of half time before Alexander Isak added a third late on.",
-        "Liverpool secured a much-needed result following back-to-back defeats at Arsenal and Fenerbahce. The victory, their first for three games in all competitions, moves Liverpool up to fourth in the table. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "Goalkeeper Alisson Becker, arguably Liverpool's most important player, kept his side in the game, producing important saves to keep out Daichi Kamada and Adam Wharton in a first half that also saw Palace hit the bar through Yeremy Pino. He ended the match with six saves."
-      ]
-    },
-    {
-      "slug": "13610018",
-      "title": "Papers: Carrick will not resign after draw leaves Man Utd in drop zone",
-      "url": "https://www.skysports.com/football/news/13610018/michael-carrick-will-not-resign-at-manchester-united-after-draw-leaves-side-one-place-off-bottom-paper-talk",
+      "slug": "13609640",
+      "title": "Papers: Carrick's future uncertain as Man Utd ponder international break change",
+      "url": "https://www.skysports.com/football/news/13609640/michael-carricks-man-utd-future-uncertain-as-club-ponder-international-break-change-paper-talk",
       "source": "Sky Sports",
       "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Monday's newspapers... Manchester United",
-      "published_label": "06 November 2026 · 22:30",
-      "published_iso": "2026-11-06T22:30:00+00:00",
+      "excerpt": "The top stories and transfer rumours from Sunday's newspapers... Manchester United",
+      "published_label": "08 November 2026 · 08:00",
+      "published_iso": "2026-11-08T08:00:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "The top stories and transfer rumours from Monday's newspapers... Manchester United",
-        "A tetchy Michael Carrick dismissed a suggestion he could resign as head coach for the good of the team after Sunday's chaotic 4-4 draw with Aston Villa left Manchester United in the relegation zone heading into the international window - The Guardian",
-        "Michael Carrick will not walk away from his job at Manchester United - despite being in the relegation zone heading into the international break - The Star Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Crystal Palace",
-        "Thomas Frank is the leading contender to become Crystal Palace manager if the club decide to sack Pierre Sage - The Times and Guardian Rugby Union"
+        "The top stories and transfer rumours from Sunday's newspapers... Manchester United",
+        "Michael Carrick is carrying on as normal - but Manchester United are poised to use the international break to look at a change - Sunday Mirror",
+        "Carrick has not been told he is certain to be in charge of United after their Premier League fixture with Aston Villa on Sunday - The Sun",
+        "Man Utd are not sold on former Newcastle boss Eddie Howe as a potential replacement for Carrick at Old Trafford - Independent Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Premier League"
       ]
     }
   ]
