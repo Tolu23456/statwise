@@ -1,10 +1,56 @@
 {
-  "synced_at": "2026-11-10T12:40:05+00:00",
+  "synced_at": "2026-11-10T20:49:54+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13610708",
+      "title": "Jacob Murphy goal!",
+      "url": "https://www.skysports.com/football/video/13610708/jacob-murphy-goal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/image_7403288.jpg?20261110164634",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13610700",
+      "title": "Sky pledges backing for Equal Sport Project",
+      "url": "https://www.skysports.com/football/news/13610700/sky-backs-equal-sport-projects-pledges-to-improve-equality-through-five-shared-ambitions-across-industry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sky-sport_7403327.png?20261110170058",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13610675",
+      "title": "Man Utd Q&A: Carrick, Poch, INEOS and more answered",
+      "url": "https://www.skysports.com/football/news/13610675/man-utd-q-and-a-michael-carrick-mauricio-pochettino-ineos-and-more-kaveh-solhekol-answers-your-questions",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-pl-united_7387131.jpg?20261025194558",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13610595",
+      "title": "'Her ability isn't just based on goals' - How crucial is Russo's good form for Arsenal?",
+      "url": "https://www.skysports.com/football/video/13610595/pitch-to-pod-how-crucial-is-alessia-russos-good-form-for-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7403148.jpg?20261110133706",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13467058",
       "title": "'I'm still in the right!' - The inside story of Austin's viral VAR rant 8 years on!😡",
@@ -260,6 +306,115 @@
       "byline": ""
     },
     {
+      "slug": "13610765",
+      "title": "Northampton error gifts Gillingham goal",
+      "url": "https://www.skysports.com/football/video/13610765/northampton-vs-gillingham-error-at-the-back-for-the-cobblers-results-in-gift-for-the-gills-in-the-efl-trophy",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-northampton-playing-out-from-the-back_7403420.jpg?20261110203702",
+      "excerpt": "A huge error passing out from the back by Northampton gifts a goal to Gillingham.",
+      "published_label": "10 November 2026 · 20:35",
+      "published_iso": "2026-11-10T20:35:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "A huge error passing out from the back by Northampton gifts a goal to Gillingham."
+      ]
+    },
+    {
+      "slug": "13610763",
+      "title": "‘He won’t want to see that back!’ - Goalkeeping error leads to Swindon goal",
+      "url": "https://www.skysports.com/football/video/13610763/he-won-t-want-to-see-that-back-plymouth-goalkeeping-error-leads-to-swindon-goal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-plymouth-swindon_7403417.jpg?20261110203155",
+      "excerpt": "Plymouth’s James Storer had a moment he won’t want to watch back after his error led to allowed Antwoine Hackford to get on the scoresheet for Swindon.",
+      "published_label": "10 November 2026 · 20:14",
+      "published_iso": "2026-11-10T20:14:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Plymouth’s James Storer had a moment he won’t want to watch back after his error led to allowed Antwoine Hackford to get on the scoresheet for Swindon."
+      ]
+    },
+    {
+      "slug": "13610755",
+      "title": "Leicester punished after comedy of errors leads to Walsall goal!",
+      "url": "https://www.skysports.com/football/video/13610755/leicester-city-punished-after-comedy-of-errors-leads-to-walsall-goal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-walsall-leicester_7403409.jpg?20261110200801",
+      "excerpt": "Leicester City were punished after a comedy of errors at the back led to Walsall’s Andy Dallas scoring the game’s opener despite hitting the post from his initial effort.",
+      "published_label": "10 November 2026 · 19:48",
+      "published_iso": "2026-11-10T19:48:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Leicester City were punished after a comedy of errors at the back led to Walsall’s Andy Dallas scoring the game’s opener despite hitting the post from his initial effort."
+      ]
+    },
+    {
+      "slug": "13610414",
+      "title": "Chelsea frustrated at Hacken in WCL",
+      "url": "https://www.skysports.com/football/news/13610414/hacken-0-0-chelsea-blues-frustrated-but-stay-unbeaten-in-wcl",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hacken-chelsea-womens-champions-league_7403369.jpg?20261110181944",
+      "excerpt": "Chelsea remain unbeaten in the Women’s Champions League but they were frustrated in a goalless draw at BK Hacken.",
+      "published_label": "10 November 2026 · 19:00",
+      "published_iso": "2026-11-10T19:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Chelsea remain unbeaten in the Women’s Champions League but they were frustrated in a goalless draw at BK Hacken.",
+        "The Blues dominated in Gothenburg against the Swedish side, but Sonia Bompastor's side could not find a way through.",
+        "Twice Chelsea had the ball in the net in the first half. After just five minutes Wieke Kaptein was celebrating after steering in from a corner, but the whistle was blown with Lexi Potter deemed to be offside and tangling with the goalkeeper. As it happened | Teams | Match stats Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
+        "On 28 minutes, Melvine Malard raced through on goal and produced a brilliant angled finish, only for her effort to be ruled out for offside after straying beyond the last defender."
+      ]
+    },
+    {
+      "slug": "13610695",
+      "title": "McTominay: I needed heart shocked ahead of World Cup opener",
+      "url": "https://www.skysports.com/football/video/13610695/scott-mctominay-scotland-midfielder-reveals-heart-shock-procedure-before-world-cup-opener-and-disappointment-from-finals",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mctominay-scotland_7403281.jpg?20261110163823",
+      "excerpt": "Scott McTominay reveals he needed to have his heart shocked before Scotland's World Cup opener against Haiti due to an irregular heartbeat, and says the tournament in the USA was the most disappointing time in his career.",
+      "published_label": "10 November 2026 · 16:09",
+      "published_iso": "2026-11-10T16:09:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Scott McTominay reveals he needed to have his heart shocked before Scotland's World Cup opener against Haiti due to an irregular heartbeat, and says the tournament in the USA was the most disappointing time in his career."
+      ]
+    },
+    {
+      "slug": "13610728",
+      "title": "McTominay had heart 'shocked' two days before Scotland's World Cup opener",
+      "url": "https://www.skysports.com/football/news/13610728/scott-mctominay-scotland-midfielder-had-heart-shocked-two-days-before-world-cup-opener-against-haiti",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mctominay-scotland_7403281.jpg?20261110163823",
+      "excerpt": "Scott McTominay has revealed he needed to have his heart “shocked” two days before Scotland's World Cup opener against Haiti.",
+      "published_label": "10 November 2026 · 16:00",
+      "published_iso": "2026-11-10T16:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Scott McTominay has revealed he needed to have his heart “shocked” two days before Scotland's World Cup opener against Haiti.",
+        "The Napoli midfielder underwent a cardiac ablation procedure in Manchester in September to treat a mild, benign heart arrhythmia that first came to light after the Scots arrived in the United States in early June and then continued to affect him in August while back in Italy playing for his club.",
+        "At the time, the Scotland camp, clearly keen to keep McTominay's situation under wraps, said the 29-year-old had missed training in the lead-up to the World Cup due to a stomach complaint. Penrice handed first Scotland call as McTominay returns Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
+        "But, speaking at a press conference at Hampden on Tuesday, the former Manchester United player said: \"I had to go and get the shock on my heart two days before the Haiti game.\""
+      ]
+    },
+    {
+      "slug": "13610690",
+      "title": "Pocognoli reveals McTominay return importance and his 'captains group' role",
+      "url": "https://www.skysports.com/football/video/13610690/scott-mctominay-sebastien-pocognoli-reveals-importance-of-scotland-midfielders-return-and-his-captains-group-role",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mctominay-scotland_7403282.jpg?20261110163850",
+      "excerpt": "Scotland head coach Sebastien Pocognoli discusses the importance of Scott McTominay's return and his role in the captains group.",
+      "published_label": "10 November 2026 · 15:53",
+      "published_iso": "2026-11-10T15:53:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Scotland head coach Sebastien Pocognoli discusses the importance of Scott McTominay's return and his role in the captains group."
+      ]
+    },
+    {
       "slug": "13610614",
       "title": "'You can't make a house on a puddle' - Merse criticises INEOS transfer poilcy",
       "url": "https://www.skysports.com/football/video/13610614/manchester-united-paul-merson-criticises-ineos-transfer-policy-and-how-its-affected-michael-carricks-job-as-head-coach",
@@ -388,6 +543,17 @@
       ]
     },
     {
+      "slug": "thomas-tuchel-forced-into-england-reshuffle-following-konsa-injury-and-guehi-withdrawal",
+      "title": "Thomas Tuchel Forced into England Reshuffle Following Konsa Injury and",
+      "url": "https://www.sportytrader.com/en-gb/news/thomas-tuchel-forced-into-england-reshuffle-following-konsa-injury-and-guehi-withdrawal/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/uwcl-chelsea-and-man-city.webp",
+      "excerpt": "Thomas Tuchel’s plans for England’s Nations League fixtures have suffered a significant setback after a double defensive blow ahead of Thursday’s meeting against Croatia",
+      "published_label": "10 November 2026 · 06:30",
+      "published_iso": "2026-11-10T06:30:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
       "slug": "uwcl-matchday-4-chelsea-and-man-city",
       "title": "UWCL Matchday 4: Chelsea and Man City Unbeaten European Records Face B",
       "url": "https://www.sportytrader.com/en/news/uwcl-matchday-4-chelsea-and-man-city/",
@@ -513,190 +679,6 @@
         "It follows their 4-0 defeat to Hibernian on Saturday, which came just a week after the Pittodrie club lost their League Cup semi-final to Rangers.",
         "The Dons have lost seven of their 12 Premiership matches this season, including four of their last five. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
         "Fans inside Pittodrie called for his sacking during their defeat to Hibs, with the 51-year-old admitting the performance was not good enough, and ultimately bringing to an end his eight-month stint at the club."
-      ]
-    },
-    {
-      "slug": "13610249",
-      "title": "The DAMNING stats behind Man Utd's historically bad start to the season",
-      "url": "https://www.skysports.com/football/video/13610249/manchester-united-the-damning-stats-behind-man-utds-historically-bad-start-to-the-season",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-man-utd_7402287.jpg?20261109153030",
-      "excerpt": "Sky Sports' Adam Binnie shares six stats that show Manchester United's troubles so far this season.",
-      "published_label": "09 November 2026 · 15:10",
-      "published_iso": "2026-11-09T15:10:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Adam Binnie shares six stats that show Manchester United's troubles so far this season."
-      ]
-    },
-    {
-      "slug": "13610244",
-      "title": "Parkin: West Ham lack Championship 'nous' in tough away days",
-      "url": "https://www.skysports.com/football/video/13610244/efl-show-sam-parkin-west-ham-lack-championship-nouse-in-tough-away-days",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-ham-parker-bowen_7402339.jpg?20261109163338",
-      "excerpt": "Talking on the EFL Show Sam Parkin feels West Ham lack some Championship 'nouse' in the tough away days but backs Scott Parker if given time.",
-      "published_label": "09 November 2026 · 15:06",
-      "published_iso": "2026-11-09T15:06:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Talking on the EFL Show Sam Parkin feels West Ham lack some Championship 'nouse' in the tough away days but backs Scott Parker if given time."
-      ]
-    },
-    {
-      "slug": "13610134",
-      "title": "The key questions for Man Utd and Carrick after history-making bad start",
-      "url": "https://www.skysports.com/football/news/13610134/manchester-united-the-key-questions-with-michael-carricks-future-still-up-in-the-air-at-old-trafford",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7402160.jpg?20261109132606",
-      "excerpt": "The future of Michael Carrick at Manchester United remains a mystery following the dramatic 4-4 draw with Aston Villa on Sunday.",
-      "published_label": "09 November 2026 · 15:00",
-      "published_iso": "2026-11-09T15:00:00+00:00",
-      "byline": "Rob Dorsett, Danyal Khan and Kaveh Solhekol",
-      "body": [
-        "The future of Michael Carrick at Manchester United remains a mystery following the dramatic 4-4 draw with Aston Villa on Sunday.",
-        "Ahead of what is bound to be a pivotal international break for Carrick's tenure , Sky Sports answers the key questions surrounding the state of play at Old Trafford. Do Man Utd bosses know where to go with Carrick?",
-        "It's unclear if Manchester United's bosses know exactly where they go from here. They will not rush a decision over Carrick's future.",
-        "For several weeks, they have been assessing exactly that and considering whether or not to make a change, but they haven't made a decision yet."
-      ]
-    },
-    {
-      "slug": "13610186",
-      "title": "Banger after banger! 💥 The best goals from across Europe",
-      "url": "https://www.skysports.com/football/video/13610186/banger-after-banger-best-goals-from-across-europe",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goals-europe_7402170.jpg?20261109132845",
-      "excerpt": "Check out the best goals from across Europe this weekend.",
-      "published_label": "09 November 2026 · 12:59",
-      "published_iso": "2026-11-09T12:59:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Check out the best goals from across Europe this weekend."
-      ]
-    },
-    {
-      "slug": "13610140",
-      "title": "'Should've been ruled out!' - Did Lammens foul Suzuki for Man Utd's late equaliser?",
-      "url": "https://www.skysports.com/football/video/13610140/ref-watch-should-manchester-uniteds-late-equaliser-against-aston-villa-have-been-disallowed-because-of-contact-on-zion-suzuki",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ref-watch-dermot_7402024.jpg?20261109111949",
-      "excerpt": "The Ref Watch panel debate whether or not Manchester United's late equaliser against Aston Villa in their 4-4 draw should have been disallowed because of contact on Zion Suzuki.",
-      "published_label": "09 November 2026 · 11:11",
-      "published_iso": "2026-11-09T11:11:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "The Ref Watch panel debate whether or not Manchester United's late equaliser against Aston Villa in their 4-4 draw should have been disallowed because of contact on Zion Suzuki."
-      ]
-    },
-    {
-      "slug": "13607213",
-      "title": "Euro Debrief: Kane has become the king of assists",
-      "url": "https://www.skysports.com/football/news/13607213/harry-kane-is-bayern-munichs-assist-king-barcelona-win-at-atletico-madrid-and-inter-close-gap-on-lazio-all-in-the-euro-debrief",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-euro-debrief-harry-kane_7401725.jpg?20261108232322",
-      "excerpt": "Welcome to The Euro Debrief , the Sky Sports column in which Adam Bate rounds up some of the key stories from the latest matches across the continent. This week: Kane is the assist king Barcelona win in Madrid Inter close gap on Lazio Eleve…",
-      "published_label": "09 November 2026 · 09:30",
-      "published_iso": "2026-11-09T09:30:00+00:00",
-      "byline": "Adam Bate",
-      "body": [
-        "Welcome to The Euro Debrief , the Sky Sports column in which Adam Bate rounds up some of the key stories from the latest matches across the continent. This week: Kane is the assist king Barcelona win in Madrid Inter close gap on Lazio Eleven in a row for PSG Weghorst denies Ajax Bundesliga: Kane is assist king",
-        "Whisper it but Harry Kane has gone four games without scoring a goal. That has only happened once before in his Bayern Munich career and in that sequence he went off at half-time in one game and came on as a second-half substitute in another. Drought!",
-        "It is not an issue for Kane or club because the England captain laid on both goals for his team-mates in a 2-1 win at Mainz that maintains Bayern's place at the top of the Bundesliga table. The Ballon d'Or winner has become the competition's king of assists this season.",
-        "His square pass set up the first for Joshua Kimmich and his lay-off left Lennart Karl with the simplest of tasks for the second. Following on from his lofted assist for Konrad Laimer to score against Atletico Madrid in midweek, it is a growing element of Kane's game."
-      ]
-    },
-    {
-      "slug": "williams-reflects-on-sundowns-caf-super-cup-defeat",
-      "title": "“We've got to reflect as a team” - Williams Reflects on Sundowns CAF S",
-      "url": "https://www.sportytrader.com/en-za/news/williams-reflects-on-sundowns-caf-super-cup-defeat/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/tennis/sabalenka_finals_img.webp",
-      "excerpt": "Mamelodi Sundowns suffered a painful 3-1 defeat to USM Alger in the CAF Super Cup at Loftus Versfeld on Sunday. The Brazilians were made to pay for their sloppiness by th",
-      "published_label": "9 November 2026 · 06:30",
-      "published_iso": "2026-11-09T06:30:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13610017",
-      "title": "Fermin double leads Barcelona to comeback victory over Atletico",
-      "url": "https://www.skysports.com/football/video/13610017/atletico-madrid-1-2-barcelona-la-liga-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-la-liga_7401711.jpg?20261108224338",
-      "excerpt": "Highlights of the La Liga match between Atletico Madrid and Barcelona.",
-      "published_label": "08 November 2026 · 23:00",
-      "published_iso": "2026-11-08T23:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the La Liga match between Atletico Madrid and Barcelona."
-      ]
-    },
-    {
-      "slug": "13610018",
-      "title": "Papers: Pochettino favourite to replace Carrick at Man Utd",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13610018/michael-carrick-will-not-resign-at-manchester-united-after-draw-leaves-side-one-place-off-bottom-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Monday's newspapers...",
-      "published_label": "08 November 2026 · 22:30",
-      "published_iso": "2026-11-08T22:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Monday's newspapers...",
-        "Mauricio Pochettino is the new favourite to replace Michael Carrick at Manchester United - The Standard",
-        "Thomas Tuchel is braced for England withdrawals, with Marc Guehi a doubt after being subbed off for Man City - Daily Mirror",
-        "FC Andorra goalkeeper Jesus Owono is reportedly \"devastated\" following the death of Tenerife forward Jesus de Miguel and is \"locked in his house and disconnected from the world\" - The Athletic"
-      ]
-    },
-    {
-      "slug": "13609990",
-      "title": "Frank leading candidate for Palace job with Sage likely to be sacked",
-      "url": "https://www.skysports.com/football/news/13609990/thomas-frank-former-spurs-and-brentford-boss-leading-contender-to-take-over-at-crystal-palace-if-pierre-sage-is-sacked",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-frank-crystal-palace_7401633.jpg?20261108205851",
-      "excerpt": "Thomas Frank has emerged as a leading candidate to take over as Crystal Palace manager if the Eagles decide to sack Pierre Sage.",
-      "published_label": "08 November 2026 · 20:56",
-      "published_iso": "2026-11-08T20:56:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Thomas Frank has emerged as a leading candidate to take over as Crystal Palace manager if the Eagles decide to sack Pierre Sage.",
-        "Other candidates that Palace are interested in include Frank Lampard , Sean Dyche , Vitor Pereira , Kim Hellberg , Vitor Matos and Tony Popovic.",
-        "No decision has been taken at Palace yet, but Sage is likely to lose his position following a seventh league defeat of the season.",
-        "Frank is amongst a list of names that Palace considered in the summer. The former Brentford boss is expected to be among the frontrunners if as expected the club decide to make a managerial change. Transfer Centre LIVE! | Crystal Palace news & transfers 🦅 Palace fixtures & scores | FREE Palace highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13609982",
-      "title": "Celtic 1-0 Kilmarnock",
-      "url": "https://www.skysports.com/football/video/13609982/celtic-1-0-kilmarnock-scottish-premiership-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/481cc9915678a706f58be21eb950dfafe749c29f2cfd48cffeadd037f162473b_7401619.jpg?20261108203833",
-      "excerpt": "Watch highlights from the Scottish Premiership match between Celtic and Kilmarnock.",
-      "published_label": "08 November 2026 · 20:36",
-      "published_iso": "2026-11-08T20:36:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Watch highlights from the Scottish Premiership match between Celtic and Kilmarnock."
-      ]
-    },
-    {
-      "slug": "13609979",
-      "title": "Hearts 2-5 Falkirk",
-      "url": "https://www.skysports.com/football/video/13609979/hearts-2-5-falkirk-scottish-premiership-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/ff5b41d97674e158e2802145b68f0b24e01b06e4cb520a7596041fd5ffaf2f19_7401607.jpg?20261108203312",
-      "excerpt": "Highlights from the Scottish Premiership match between Hearts and Falkirk.",
-      "published_label": "08 November 2026 · 20:30",
-      "published_iso": "2026-11-08T20:30:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights from the Scottish Premiership match between Hearts and Falkirk."
       ]
     }
   ]
