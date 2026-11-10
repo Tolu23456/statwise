@@ -1,10 +1,34 @@
 {
-  "synced_at": "2026-11-10T04:07:46+00:00",
+  "synced_at": "2026-11-10T12:40:05+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13467058",
+      "title": "'I'm still in the right!' - The inside story of Austin's viral VAR rant 8 years on!😡",
+      "url": "https://www.skysports.com/football/video/13467058/charlie-austins-viral-parklife-rant-about-var-when-southampton-draw-1-1-with-watford-in-2018",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/25/11/768x432/skysports-charlie-austin-rant_7076563.jpg?20251108232339",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13610502",
+      "title": "'Could've got him for nothing' - How Man Utd missed BIG chance to appoint Poch",
+      "url": "https://www.skysports.com/football/video/13610502/manchester-united-latest-how-much-could-manchester-united-have-to-spend-to-appoint-mauricio-pochettino",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7402833.jpg?20261110092549",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13592979",
       "title": "Cardiff hit back to claim astonishing 5-4 win over shellshocked Burnley",
@@ -234,6 +258,145 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13610614",
+      "title": "'You can't make a house on a puddle' - Merse criticises INEOS transfer poilcy",
+      "url": "https://www.skysports.com/football/video/13610614/manchester-united-paul-merson-criticises-ineos-transfer-policy-and-how-its-affected-michael-carricks-job-as-head-coach",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7403047.jpg?20261110123406",
+      "excerpt": "Paul Merson speaks on INEOS transfer windows and believes they gotten it 'the wrong round', leading to poor results this Premier League season.",
+      "published_label": "10 November 2026 · 12:32",
+      "published_iso": "2026-11-10T12:32:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Paul Merson speaks on INEOS transfer windows and believes they gotten it 'the wrong round', leading to poor results this Premier League season."
+      ]
+    },
+    {
+      "slug": "13610603",
+      "title": "'Problems are much more serious' - What will come from INEOS' meeting in Monaco?",
+      "url": "https://www.skysports.com/football/video/13610603/explained-what-can-we-expect-from-ineos-planned-meeting-in-monaco-on-wednesday",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7403029.jpg?20261110122328",
+      "excerpt": "Sky Sports correspondent Kaveh Solhekol speaks on the scheduled meeting between Sir Jim Ratcliffe, Jason Wilcox and Omar Berrada in Monaco on Wednesday regarding the potential sacking of Michael Carrick.",
+      "published_label": "10 November 2026 · 12:18",
+      "published_iso": "2026-11-10T12:18:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports correspondent Kaveh Solhekol speaks on the scheduled meeting between Sir Jim Ratcliffe, Jason Wilcox and Omar Berrada in Monaco on Wednesday regarding the potential sacking of Michael Carrick."
+      ]
+    },
+    {
+      "slug": "13610313",
+      "title": "Lure of the Championship - Why foreign coaches are drawn to England's second tier",
+      "url": "https://www.skysports.com/football/news/13610313/foreign-coaches-in-the-championship-why-working-in-englands-second-tier-is-a-target-for-top-managers-from-abroad",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-vitor-campelos_7402016.jpg?20261109111209",
+      "excerpt": "The focus is often on the lack of opportunities for British coaches but look at it another way and it is remarkable that 16 of the clubs in the sixth-richest league in European football – two thirds of them – are currently being coached by…",
+      "published_label": "10 November 2026 · 12:00",
+      "published_iso": "2026-11-10T12:00:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "The focus is often on the lack of opportunities for British coaches but look at it another way and it is remarkable that 16 of the clubs in the sixth-richest league in European football – two thirds of them – are currently being coached by men from the British Isles.",
+        "This is the famous Championship, offering raucous crowds, potential riches and a route to the Premier League. That is what has drawn the other eight - coaches from Belgium, Italy, France, Germany, Sweden, Switzerland and two from Portugal - with more waiting.",
+        "Each of these men are first-time managers in English football and while not all of them will find success here, the odds are in favour of at least one of them being able to call themselves a Premier League manager once the Championship season is concluded.",
+        "Top coaches are alive to the possibilities in England's second tier. It was a privilege to attend two games with Portuguese coach Vitor Campelos recently to gain a greater appreciation not just of the game here but its appeal to those working elsewhere."
+      ]
+    },
+    {
+      "slug": "13610565",
+      "title": "'That is wild?!' - Why did Shaw not make the FIFPRO Women's World 11?",
+      "url": "https://www.skysports.com/football/video/13610565/pitch-to-pod-why-did-khadija-shaw-not-make-fifpro-womens-world-11",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7402974.jpg?20261110114154",
+      "excerpt": "Speaking on Pitch to Pod, Jordan Nobbs and Nikita Parris discuss Bunny Shaw not making the women's FIFPRO World XI and look at what makes her such a valuable striker.",
+      "published_label": "10 November 2026 · 11:20",
+      "published_iso": "2026-11-10T11:20:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking on Pitch to Pod, Jordan Nobbs and Nikita Parris discuss Bunny Shaw not making the women's FIFPRO World XI and look at what makes her such a valuable striker."
+      ]
+    },
+    {
+      "slug": "13610412",
+      "title": "Poch open to Man Utd talks with Carrick's position increasingly in doubt",
+      "url": "https://www.skysports.com/football/news/13610412/michael-carrick-future-man-utd-head-coach-position-increasingly-in-doubt-with-mauricio-pochettino-open-to-talks",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7402897.jpg?20261110104010",
+      "excerpt": "Michael Carrick's position as Manchester United head coach is looking increasingly in doubt, with Mauricio Pochettino open to a discussion if he were approached by the club.",
+      "published_label": "10 November 2026 · 10:24",
+      "published_iso": "2026-11-10T10:24:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Michael Carrick's position as Manchester United head coach is looking increasingly in doubt, with Mauricio Pochettino open to a discussion if he were approached by the club.",
+        "CEO Omar Berrada and Wilcox are due to meet minority owner Sir Jim Ratcliffe in Monaco for a scheduled meeting on Wednesday, with the duo to discuss the findings of their season review and give their recommendations on Carrick's future, while also assessing their options.",
+        "Sky Sports News has been told that, as yet, no final decision has been taken on Carrick's Old Trafford future.",
+        "With Pochettino open to talks with United, it is thought the cost of buying him out of his contract with his current job as USA head coach would be around £7m."
+      ]
+    },
+    {
+      "slug": "13610538",
+      "title": "'I was League One at 23!' - Rangers' Penrice on 'slow rise' to Scotland call",
+      "url": "https://www.skysports.com/football/video/13610538/james-penrice-rangers-and-scotland-defender-on-slow-rise-from-part-time-football-to-international-call-up",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-james-penrice-rangers_7400856.jpg?20261108132745",
+      "excerpt": "Rangers defender James Penrice on his \"slow rise\" from part-time football to his first Scotland call-up for the upcoming Nations League double-header.",
+      "published_label": "10 November 2026 · 10:13",
+      "published_iso": "2026-11-10T10:13:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Rangers defender James Penrice on his \"slow rise\" from part-time football to his first Scotland call-up for the upcoming Nations League double-header."
+      ]
+    },
+    {
+      "slug": "13610138",
+      "title": "Merson: If Chelsea don't get Champions League it's a massive failure",
+      "url": "https://www.skysports.com/football/news/13610138/chelsea-not-showing-the-consistency-to-get-champions-league-football-this-season-says-paul-merson",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-chelsea_7402109.jpg?20261109122921",
+      "excerpt": "In his latest Sky Sports column, Paul Merson gives his view on Chelsea's defeat to Sunderland - as Xabi Alonso's inconsistent start to life at Stamford Bridge continues.",
+      "published_label": "10 November 2026 · 10:00",
+      "published_iso": "2026-11-10T10:00:00+00:00",
+      "byline": "Paul Merson",
+      "body": [
+        "In his latest Sky Sports column, Paul Merson gives his view on Chelsea's defeat to Sunderland - as Xabi Alonso's inconsistent start to life at Stamford Bridge continues.",
+        "Chelsea were poor in their loss to Regis Le Bris' side - who started the day bottom of the Premier League with just five points and one goal at home scored all season - and went down 1-0 thanks to Enzo Le Fee's first-half penalty.",
+        "As a result, Chelsea remain fifth in the Premier League table but in-form sides Everton and Bournemouth are now breathing down their necks. Transfer Centre LIVE! | Chelsea news & transfers 🔵 Chelsea fixtures & scores | FREE Chelsea highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Defeat to Leeds in their next game would move them behind the Whites as well, while their December schedule is tricky with Liverpool, Manchester City and Aston Villa all to play the Blues before Christmas."
+      ]
+    },
+    {
+      "slug": "13610154",
+      "title": "Tough-tackling Schlager proves his worth for Forest",
+      "url": "https://www.skysports.com/football/news/13610154/xaver-schlager-at-nottingham-forest-tough-tackling-replacement-for-elliot-anderson-proves-his-worth-to-new-club",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-nottingham-forest_7402005.jpg?20261109110447",
+      "excerpt": "Xaver Schlager has been quietly impressive for Nottingham Forest this season but what was missing was that big moment. It came in the 3-1 win over Manchester City on Saturday when he dispossessed Elliot Anderson for Liam Delap's first goal.",
+      "published_label": "10 November 2026 · 10:00",
+      "published_iso": "2026-11-10T10:00:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "Xaver Schlager has been quietly impressive for Nottingham Forest this season but what was missing was that big moment. It came in the 3-1 win over Manchester City on Saturday when he dispossessed Elliot Anderson for Liam Delap's first goal.",
+        "The free transfer from Leipzig nipped in ahead of the £116m man that he has replaced in Forest's midfield and set Delap on the way to doubling the lead. Schlager is no Anderson but he has his own qualities and they made the difference at the weekend.",
+        "\"It was a top team performance and it was a top performance by Xaver Schlager,\" said Forest boss Oliver Glasner in the press conference afterwards. He pointed out that \"it must have been a fantastic performance\" because City's midfielders are world-class. Transfer Centre LIVE! | Forest news & transfers 🔴⚪ Forest fixtures & scores | FREE Forest highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
+        "Schlager was better. \"He is so smart, anticipating and getting balls, one of the most for interceptions in the league. And he was physically so strong in his 50-50 balls. He always stayed on his feet and won these balls, because he can then play forward.\""
+      ]
+    },
+    {
+      "slug": "uwcl-matchday-4-chelsea-and-man-city",
+      "title": "UWCL Matchday 4: Chelsea and Man City Unbeaten European Records Face B",
+      "url": "https://www.sportytrader.com/en/news/uwcl-matchday-4-chelsea-and-man-city/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/williams-caf-super-cup.webp",
+      "excerpt": "Sonia Bompastor’s Chelsea face a stern test to keep their unbeaten record in the UEFA Women’s Champions League intact when they travel to Gothenburg to face Hacken this e",
+      "published_label": "10 November 2026 · 06:00",
+      "published_iso": "2026-11-10T06:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13610412",
@@ -534,175 +697,6 @@
       "kind": "video",
       "body": [
         "Highlights from the Scottish Premiership match between Hearts and Falkirk."
-      ]
-    },
-    {
-      "slug": "13609978",
-      "title": "Inter's early double seals win over Como",
-      "url": "https://www.skysports.com/football/video/13609978/inter-milan-vs-como-serie-a-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-inter_7401599.jpg?20261108202945",
-      "excerpt": "Highlights of the Serie A match between Inter Milan and Como.",
-      "published_label": "08 November 2026 · 20:28",
-      "published_iso": "2026-11-08T20:28:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Serie A match between Inter Milan and Como."
-      ]
-    },
-    {
-      "slug": "13609975",
-      "title": "UNSEEN FOOTAGE! Emery storms down the tunnel after Man Utd equaliser",
-      "url": "https://www.skysports.com/football/video/13609975/unai-emery-left-fuming-as-he-storms-down-the-tunnel-after-patrick-dorgus-late-leveller",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-emery-storms-off_7401606.jpg?20261108203219",
-      "excerpt": "Unseen footage captures Aston Villa boss Unai Emery storming down the touchline after Patrick Dorgu's late equaliser for Manchester United, before the full-time whistle had even blown.",
-      "published_label": "08 November 2026 · 20:17",
-      "published_iso": "2026-11-08T20:17:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Unseen footage captures Aston Villa boss Unai Emery storming down the touchline after Patrick Dorgu's late equaliser for Manchester United, before the full-time whistle had even blown."
-      ]
-    },
-    {
-      "slug": "13609963",
-      "title": "'Would you join Man Utd now?!' - Keane & Young on Utd's appeal in sharp decline",
-      "url": "https://www.skysports.com/football/video/13609963/ashley-young-and-roy-keane-discuss-manchester-uniteds-lack-of-appeal-for-players",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-keane-young_7401577.jpg?20261108200415",
-      "excerpt": "Former Manchester United players Roy Keane and Ashley Young discuss whether top players would still consider joining the club as their bad form continues, after a rich history of United attracting some of the world's best talent.",
-      "published_label": "08 November 2026 · 19:53",
-      "published_iso": "2026-11-08T19:53:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Former Manchester United players Roy Keane and Ashley Young discuss whether top players would still consider joining the club as their bad form continues, after a rich history of United attracting some of the world's best talent."
-      ]
-    },
-    {
-      "slug": "13609927",
-      "title": "Man Utd in relegation zone but boss Carrick 'expects' to stay on",
-      "url": "https://www.skysports.com/football/news/13609927/michael-carrick-manchester-united-boss-expects-to-stay-on-despite-club-sitting-in-relegation-zone-after-aston-villa-draw",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-manchester-united_7401513.jpg?20261108195314",
-      "excerpt": "Under-pressure Manchester United boss Michael Carrick \"expects\" to stay on despite his side sitting in the relegation zone after Sunday's dramatic 4-4 home draw against Aston Villa.",
-      "published_label": "08 November 2026 · 19:40",
-      "published_iso": "2026-11-08T19:40:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Under-pressure Manchester United boss Michael Carrick \"expects\" to stay on despite his side sitting in the relegation zone after Sunday's dramatic 4-4 home draw against Aston Villa.",
-        "Man Utd scored twice in stoppage time to rescue an unlikely point against Villa, but the draw leaves Carrick's side third-bottom and a point from safety.",
-        "Man Utd's 18th-place position is their lowest after 10 top-flight games since 1986/87, when they were 20th. Man Utd 4-4 Aston Villa - Match report and highlights Man Utd news & transfers 🔴 | Man Utd fixtures & scores Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "The draw against Villa extends Man Utd's winless run in the league to eight games - a club record in the Premier League era - raising further doubts over Carrick's position heading into the two-week November international break."
-      ]
-    },
-    {
-      "slug": "13609948",
-      "title": "'Ownership haven't got a clue' - Neville's damning verdict on Utd's leadership",
-      "url": "https://www.skysports.com/football/video/13609948/gary-nevilles-damning-verdict-on-manchester-utds-leadership",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-gary-neville-man-utd_7401574.jpg?20261108200322",
-      "excerpt": "Sky Sports' Gary Neville, speaking on NBC, delivered a scathing assessment of Manchester United's leadership, questioning the team's recruitment and structure.",
-      "published_label": "08 November 2026 · 19:38",
-      "published_iso": "2026-11-08T19:38:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Gary Neville, speaking on NBC, delivered a scathing assessment of Manchester United's leadership, questioning the team's recruitment and structure."
-      ]
-    },
-    {
-      "slug": "13609937",
-      "title": "Villa boss Emery explains why he went down tunnel before full-time",
-      "url": "https://www.skysports.com/football/news/13609937/unai-emery-aston-villa-boss-reveals-why-he-went-down-old-trafford-tunnel-before-full-time-in-eight-goal-thriller-at-man-utd",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-unai-emery-aston-villa_7401498.jpg?20261108193125",
-      "excerpt": "A prickly Unai Emery claimed he headed down the Old Trafford tunnel after Manchester United's late equaliser against his Aston Villa side because he thought the match was about to end.",
-      "published_label": "08 November 2026 · 19:25",
-      "published_iso": "2026-11-08T19:25:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "A prickly Unai Emery claimed he headed down the Old Trafford tunnel after Manchester United's late equaliser against his Aston Villa side because he thought the match was about to end.",
-        "Villa threw away two separate two-goal leads to draw 4-4 with United in a Super Sunday thriller - but the 97th-minute equaliser from Michael Carrick's side, scored by Patrick Dorgu, brought about a strange reaction from Emery.",
-        "The Villa manager was seen walking down the tunnel before the full-time whistle, with the match continuing for another two minutes before it ended. Man Utd 4-4 Aston Villa - Match report and highlights As it happened | Teams | Stats Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "Villa have complained about the legitimacy of United's fourth goal - with United goalkeeper Senne Lammens accused of impeding with Villa counterpart Zion Suzuki as he competed with Dorgu for the corner."
-      ]
-    },
-    {
-      "slug": "13609930",
-      "title": "Carrick has spiky exchange with Sky reporter | Keane: He's like a politician!",
-      "url": "https://www.skysports.com/football/video/13609930/hes-like-a-politician-roy-keane-warns-michael-carrick-to-act-fast",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-carrick-keane_7401490.jpg?20261108192549",
-      "excerpt": "Roy Keane says under-pressure Man Utd boss Michael Carrick 'talks a lot but doesn't say much' and needs to 'get moving' on improving the team after watching his former side earn a late 4-4 draw against Aston Villa.",
-      "published_label": "08 November 2026 · 19:17",
-      "published_iso": "2026-11-08T19:17:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Roy Keane says under-pressure Man Utd boss Michael Carrick 'talks a lot but doesn't say much' and needs to 'get moving' on improving the team after watching his former side earn a late 4-4 draw against Aston Villa."
-      ]
-    },
-    {
-      "slug": "13609916",
-      "title": "'MORE questions?!' - Emery left VERY animated after Villa's late collapse",
-      "url": "https://www.skysports.com/football/video/13609916/aston-villa-boss-unai-emery-left-very-agitated-after-their-late-collapse-to-man-utd",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-villa-emery_7401463.jpg?20261108191622",
-      "excerpt": "Aston Villa boss Unai Emery explains his decision to walk down the tunnel at Old Trafford after Manchester United nabbed their 96th minute equaliser.",
-      "published_label": "08 November 2026 · 19:02",
-      "published_iso": "2026-11-08T19:02:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Aston Villa boss Unai Emery explains his decision to walk down the tunnel at Old Trafford after Manchester United nabbed their 96th minute equaliser."
-      ]
-    },
-    {
-      "slug": "13609804",
-      "title": "Three massive points for Sunderland as Chelsea suffer shock defeat",
-      "url": "https://www.skysports.com/football/video/13609804/sunderland-1-0-chelsea-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7401076.jpg?20261108160610",
-      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Sunderland and Chelsea.",
-      "published_label": "08 November 2026 · 16:26",
-      "published_iso": "2026-11-08T16:26:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "FREE TO WATCH: Highlights from the Premier League match between Sunderland and Chelsea."
-      ]
-    },
-    {
-      "slug": "13609797",
-      "title": "Isak scores deflected goal to give Liverpool a third at Palace",
-      "url": "https://www.skysports.com/football/video/13609797/goal-a-isak-crystal-palace-0-3-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-isak_7401116.jpg?20261108161449",
-      "excerpt": "Isak scores deflected goal to give Liverpool a third at Crystal Palace in the Premier League.",
-      "published_label": "08 November 2026 · 16:13",
-      "published_iso": "2026-11-08T16:13:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Isak scores deflected goal to give Liverpool a third at Crystal Palace in the Premier League."
-      ]
-    },
-    {
-      "slug": "13609320",
-      "title": "Lucky escape? Bogle unpunished for studs challenge on Tel",
-      "url": "https://www.skysports.com/football/video/13609320/was-jaden-bogle-fortunate-to-avoid-punishment-following-this-challenge-on-mathys-tel",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bogle-tackle-tel_7400231.jpg?20261107171429",
-      "excerpt": "Jaden Bogle escaped a booking after appearing to catch Tottenham's Mathys Tel on the ankle with the studs of his trailing leg, with the forward forced off injured shortly afterwards.",
-      "published_label": "08 November 2026 · 00:00",
-      "published_iso": "2026-11-08T00:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jaden Bogle escaped a booking after appearing to catch Tottenham's Mathys Tel on the ankle with the studs of his trailing leg, with the forward forced off injured shortly afterwards."
       ]
     }
   ]
