@@ -1,46 +1,10 @@
 {
-  "synced_at": "2026-11-09T20:44:56+00:00",
+  "synced_at": "2026-11-10T04:07:46+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13610249",
-      "title": "The DAMNING stats behind Man Utd's historically bad start to the season",
-      "url": "https://www.skysports.com/football/video/13610249/manchester-united-the-damning-stats-behind-man-utds-historically-bad-start-to-the-season",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-man-utd_7402287.jpg?20261109153030",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13609797",
-      "title": "Isak scores deflected goal to give Liverpool a third at Palace",
-      "url": "https://www.skysports.com/football/video/13609797/goal-a-isak-crystal-palace-0-3-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-isak_7401116.jpg?20261108161449",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13609320",
-      "title": "Lucky escape? Bogle unpunished for studs challenge on Tel",
-      "url": "https://www.skysports.com/football/video/13609320/was-jaden-bogle-fortunate-to-avoid-punishment-following-this-challenge-on-mathys-tel",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bogle-tackle-tel_7400231.jpg?20261107171429",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13592979",
       "title": "Cardiff hit back to claim astonishing 5-4 win over shellshocked Burnley",
@@ -272,6 +236,57 @@
       "byline": ""
     },
     {
+      "slug": "13610412",
+      "title": "Carrick position increasingly in doubt as hierarchy mulls over his future",
+      "url": "https://www.skysports.com/football/news/13610412/michael-carrick-future-man-utd-head-coach-position-increasingly-in-doubt-but-no-final-decision-made",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-michael-carrick-man-utd_7386919.jpg?20261025163701",
+      "excerpt": "Michael Carrick's position as Manchester United head coach is looking increasingly in doubt, but Sky Sports News has been told as yet, no final decision has been taken about his future.",
+      "published_label": "09 November 2026 · 23:04",
+      "published_iso": "2026-11-09T23:04:00+00:00",
+      "byline": "Sky Sports News&#x27; Rob Dorsett and Danyal Khan",
+      "body": [
+        "Michael Carrick's position as Manchester United head coach is looking increasingly in doubt, but Sky Sports News has been told as yet, no final decision has been taken about his future.",
+        "As reported earlier on Monday, the club is carrying out a full review of the team's performance so far this season, led by director of football Jason Wilcox, with a plan for a decision to be made before the end of this international break.",
+        "Carrick was given a reprieve following the 3-0 home defeat to Bournemouth a fortnight ago, with the bosses keen to give him a further three matches to try to turn the team's fortunes around.",
+        "But the pressure has continued to mount on Carrick after an eighth straight Premier League match without a win. There are now real doubts about whether he will be in charge of the team which goes to Anfield to play Liverpool the weekend after next."
+      ]
+    },
+    {
+      "slug": "13610409",
+      "title": "Papers: Poch would consider PL return to join Man Utd",
+      "url": "https://www.skysports.com/football/news/13610409/mauricio-pochettino-would-consider-manchester-united-job-if-michael-carrick-is-sacked-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Tuesday's newspapers... MICHAEL CARRICK",
+      "published_label": "09 November 2026 · 23:00",
+      "published_iso": "2026-11-09T23:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Tuesday's newspapers... MICHAEL CARRICK",
+        "Mauricio Pochettino would consider a Premier League return with Manchester United - The Sun",
+        "Manchester United are expected to relieve Michael Carrick of his duties as head coach, with United States head coach Mauricio Pochettino expected to figure highly among the candidates while former Newcastle United head coach Eddie Howe and Julian Nagelsmann , most recently in charge of Germany, have admirers at the club - The Athletic Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Manchester United are moving towards sacking Michael Carrick , though no final decision has been made by Jason Wilcox, the director of football, who is leading the review after the head coach was given the Chelsea, Roma and Aston Villa games to turn results around - The Guardian"
+      ]
+    },
+    {
+      "slug": "13610387",
+      "title": "Birmingham announce shock Brady departure",
+      "url": "https://www.skysports.com/football/news/13610387/tom-brady-leaves-birmingham-nfl-legend-and-minority-owner-makes-shock-departure-after-three-years",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/02/768x432/skysports-tom-brady-new-england-patriots_7156782.jpg?20260205195057",
+      "excerpt": "Birmingham have announced the shock departure of NFL legend Tom Brady as minority owner with the Bluenoses sitting top of the Championship table.",
+      "published_label": "09 November 2026 · 21:26",
+      "published_iso": "2026-11-09T21:26:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Birmingham have announced the shock departure of NFL legend Tom Brady as minority owner with the Bluenoses sitting top of the Championship table.",
+        "In a statement, the club said: \"Birmingham City Football Club expresses its sincere gratitude to Tom Brady for his involvement with and unwavering support for the club over the last three years.",
+        "\"It was truly amazing to have someone with Tom's experience and passion associated with the club, and the club looks forward to continuing to build on that foundation from the training ground to the Birmingham community.\" Got Sky? Watch EFL games LIVE on your phone Not got Sky? Latest Sky Sports deals or stream EFL games with no contract📺 Live Championship table | Latest Championship predicted table from the Sky Sports supercomputer Give the Sky Sports Essential EFL podcast a follow 👉",
+        "Brady, a seven-time Super Bowl champion in his playing days, bought a minority stake in the club in August 2023 during its takeover by an American capital management firm but saw the club relegated in his first season after the surprise sacking of John Eustace."
+      ]
+    },
+    {
       "slug": "13610349",
       "title": "SIX times Manchester United have equalised in the last minute!",
       "url": "https://www.skysports.com/football/video/13610349/premier-league-six-times-manchester-united-have-equalised-in-the-last-minute",
@@ -338,6 +353,21 @@
       ]
     },
     {
+      "slug": "13610249",
+      "title": "The DAMNING stats behind Man Utd's historically bad start to the season",
+      "url": "https://www.skysports.com/football/video/13610249/manchester-united-the-damning-stats-behind-man-utds-historically-bad-start-to-the-season",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-man-utd_7402287.jpg?20261109153030",
+      "excerpt": "Sky Sports' Adam Binnie shares six stats that show Manchester United's troubles so far this season.",
+      "published_label": "09 November 2026 · 15:10",
+      "published_iso": "2026-11-09T15:10:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Adam Binnie shares six stats that show Manchester United's troubles so far this season."
+      ]
+    },
+    {
       "slug": "13610244",
       "title": "Parkin: West Ham lack Championship 'nous' in tough away days",
       "url": "https://www.skysports.com/football/video/13610244/efl-show-sam-parkin-west-ham-lack-championship-nouse-in-tough-away-days",
@@ -382,6 +412,21 @@
       "kind": "video",
       "body": [
         "Check out the best goals from across Europe this weekend."
+      ]
+    },
+    {
+      "slug": "13610140",
+      "title": "'Should've been ruled out!' - Did Lammens foul Suzuki for Man Utd's late equaliser?",
+      "url": "https://www.skysports.com/football/video/13610140/ref-watch-should-manchester-uniteds-late-equaliser-against-aston-villa-have-been-disallowed-because-of-contact-on-zion-suzuki",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ref-watch-dermot_7402024.jpg?20261109111949",
+      "excerpt": "The Ref Watch panel debate whether or not Manchester United's late equaliser against Aston Villa in their 4-4 draw should have been disallowed because of contact on Zion Suzuki.",
+      "published_label": "09 November 2026 · 11:11",
+      "published_iso": "2026-11-09T11:11:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "The Ref Watch panel debate whether or not Manchester United's late equaliser against Aston Villa in their 4-4 draw should have been disallowed because of contact on Zion Suzuki."
       ]
     },
     {
@@ -616,82 +661,48 @@
       ]
     },
     {
-      "slug": "13609907",
-      "title": "Man Utd rescue draw in EIGHT-goal thriller against Villa",
-      "url": "https://www.skysports.com/football/video/13609907/manchester-united-4-4-aston-villa-premier-league-highlights",
+      "slug": "13609804",
+      "title": "Three massive points for Sunderland as Chelsea suffer shock defeat",
+      "url": "https://www.skysports.com/football/video/13609804/sunderland-1-0-chelsea-premier-league-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7401407.jpg?20261108184941",
-      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Manchester United and Aston Villa.",
-      "published_label": "08 November 2026 · 18:49",
-      "published_iso": "2026-11-08T18:49:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7401076.jpg?20261108160610",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Sunderland and Chelsea.",
+      "published_label": "08 November 2026 · 16:26",
+      "published_iso": "2026-11-08T16:26:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "FREE TO WATCH: Highlights from the Premier League match between Manchester United and Aston Villa."
+        "FREE TO WATCH: Highlights from the Premier League match between Sunderland and Chelsea."
       ]
     },
     {
-      "slug": "13593226",
-      "title": "Man Utd score two in stoppage-time to salvage 4-4 draw with Villa",
-      "url": "https://www.skysports.com/football/news/13593226/man-utd-4-4-aston-villa-patrick-dorgu-levels-in-the-96th-minute-as-united-come-from-two-down-twice-to-earn-incredible-draw",
+      "slug": "13609797",
+      "title": "Isak scores deflected goal to give Liverpool a third at Palace",
+      "url": "https://www.skysports.com/football/video/13609797/goal-a-isak-crystal-palace-0-3-liverpool",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-patrick-dorgu-man-utd_7401391.jpg?20261108184410",
-      "excerpt": "Manchester United scored twice in stoppage-time to salvage an incredible 4-4 draw with Aston Villa at Old Trafford that still leaves them in the relegation zone.",
-      "published_label": "08 November 2026 · 18:30",
-      "published_iso": "2026-11-08T18:30:00+00:00",
-      "byline": "Adam Bate",
-      "body": [
-        "Manchester United scored twice in stoppage-time to salvage an incredible 4-4 draw with Aston Villa at Old Trafford that still leaves them in the relegation zone.",
-        "Under-pressure boss Michael Carrick saw his side go 2-0 down inside four minutes but they fought back to level before half-time only to disintegrate defensively again early in the second half. Many had departed when they launched their latest improbable comeback.",
-        "Joshua Zirkzee swept in what looked like a consolation goal in the 92nd minute and when Zion Suzuki flapped at one final corner, Patrick Dorgu headed into the net to stun Villa. United still have not won a Premier League game since August but it was Unai Emery fuming. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "Villa were rampant at the start, Alysson beating Senne Lammens on the angle inside a minute before the same player's shot proved too hot for the goalkeeper to handle and presented Nicolas Jackson with the chance to put United two down after four minutes."
-      ]
-    },
-    {
-      "slug": "13609889",
-      "title": "O'Neill provides Baur injury update after Celtic win",
-      "url": "https://www.skysports.com/football/video/13609889/martin-oneill-celtic-boss-delighted-with-1-0-win-over-kilmarnock-and-gives-mika-baur-injury-update",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-martin-oneill-celtic_7401362.jpg?20261108182748",
-      "excerpt": "Celtic manager Martin O'Neill describes a 'difficult afternoon' for the hosts, who beat Kilmarnock 1-0 to restore their four-point lead at the top of the Scottish Premiership.",
-      "published_label": "08 November 2026 · 18:22",
-      "published_iso": "2026-11-08T18:22:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-isak_7401116.jpg?20261108161449",
+      "excerpt": "Isak scores deflected goal to give Liverpool a third at Crystal Palace in the Premier League.",
+      "published_label": "08 November 2026 · 16:13",
+      "published_iso": "2026-11-08T16:13:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Celtic manager Martin O'Neill describes a 'difficult afternoon' for the hosts, who beat Kilmarnock 1-0 to restore their four-point lead at the top of the Scottish Premiership."
+        "Isak scores deflected goal to give Liverpool a third at Crystal Palace in the Premier League."
       ]
     },
     {
-      "slug": "13605755",
-      "title": "Celtic restore four-point Premiership lead with narrow win against Kilmarnock",
-      "url": "https://www.skysports.com/football/news/13605755/celtic-1-0-kilmarnock-liam-scales-restores-hoops-four-point-premiership-lead-with-winner-against-struggling-killie",
+      "slug": "13609320",
+      "title": "Lucky escape? Bogle unpunished for studs challenge on Tel",
+      "url": "https://www.skysports.com/football/video/13609320/was-jaden-bogle-fortunate-to-avoid-punishment-following-this-challenge-on-mathys-tel",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-liam-scales-celtic_7401332.jpg?20261108180223",
-      "excerpt": "Celtic restored their four-point lead at the top of the Scottish Premiership with a narrow win against struggling Kilmarnock.",
-      "published_label": "08 November 2026 · 17:50",
-      "published_iso": "2026-11-08T17:50:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "Celtic restored their four-point lead at the top of the Scottish Premiership with a narrow win against struggling Kilmarnock.",
-        "Liam Scales hooked Camilo Duran cross into the top corner in the 26th minute as they head into the international break after back-to-back wins.",
-        "Celtic - and Kasper Hogh in particular - otherwise had a frustrating day in front of goal, with Benjamin Nygren missing a second-half penalty. As it happened | Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
-        "After a silence for Remembrance Sunday was cut short after boos from the stands, Kilmarnock came close."
-      ]
-    },
-    {
-      "slug": "13609814",
-      "title": "Liverpool win at Palace as pressure continues to mount on Sage",
-      "url": "https://www.skysports.com/football/video/13609814/crystal-palace-1-3-liverpool-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-palace_7401170.jpg?20261108163909",
-      "excerpt": "FREE TO WATCH: Highlights from Crystal Palace’s match against Liverpool in the Premier League.",
-      "published_label": "08 November 2026 · 16:38",
-      "published_iso": "2026-11-08T16:38:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bogle-tackle-tel_7400231.jpg?20261107171429",
+      "excerpt": "Jaden Bogle escaped a booking after appearing to catch Tottenham's Mathys Tel on the ankle with the studs of his trailing leg, with the forward forced off injured shortly afterwards.",
+      "published_label": "08 November 2026 · 00:00",
+      "published_iso": "2026-11-08T00:00:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "FREE TO WATCH: Highlights from Crystal Palace’s match against Liverpool in the Premier League."
+        "Jaden Bogle escaped a booking after appearing to catch Tottenham's Mathys Tel on the ankle with the studs of his trailing leg, with the forward forced off injured shortly afterwards."
       ]
     }
   ]
