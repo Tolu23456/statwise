@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-11-10T20:49:54+00:00",
+  "synced_at": "2026-11-11T01:56:40+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
@@ -11,40 +11,6 @@
       "url": "https://www.skysports.com/football/video/13610708/jacob-murphy-goal",
       "source": "Sky Sports",
       "image": "https://e0.365dm.com/26/11/768x432/image_7403288.jpg?20261110164634",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13610700",
-      "title": "Sky pledges backing for Equal Sport Project",
-      "url": "https://www.skysports.com/football/news/13610700/sky-backs-equal-sport-projects-pledges-to-improve-equality-through-five-shared-ambitions-across-industry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sky-sport_7403327.png?20261110170058",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13610675",
-      "title": "Man Utd Q&A: Carrick, Poch, INEOS and more answered",
-      "url": "https://www.skysports.com/football/news/13610675/man-utd-q-and-a-michael-carrick-mauricio-pochettino-ineos-and-more-kaveh-solhekol-answers-your-questions",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-pl-united_7387131.jpg?20261025194558",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13610595",
-      "title": "'Her ability isn't just based on goals' - How crucial is Russo's good form for Arsenal?",
-      "url": "https://www.skysports.com/football/video/13610595/pitch-to-pod-how-crucial-is-alessia-russos-good-form-for-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7403148.jpg?20261110133706",
       "excerpt": "",
       "published_label": "",
       "published_iso": "",
@@ -306,6 +272,53 @@
       "byline": ""
     },
     {
+      "slug": "13610742",
+      "title": "Papers: Berrada and Wilcox set to remain at Old Trafford",
+      "url": "https://www.skysports.com/football/news/13610742/omar-berrada-and-jason-wilcox-set-to-remain-at-man-utd-with-michael-carricks-future-in-doubt-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Wednesday's newspapers... MICHAEL CARRICK",
+      "published_label": "10 November 2026 · 22:44",
+      "published_iso": "2026-11-10T22:44:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Wednesday's newspapers... MICHAEL CARRICK",
+        "Manchester United chiefs Omar Berrada and Jason Wilcox are set to remain at the club even if Michael Carrick is sacked - The Telegraph",
+        "If Michael Carrick continued at Manchester United , the club could look to appoint additional coaching support and Bayern Munich assistant Aaron Danks is one option that was considered in the summer - BBC",
+        "Kieran McKenna still has admirers at Manchester United if Michael Carrick is sacked but the club are unlikely to turn to the young coach given the situation at Old Trafford - ESPN Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW PREMIER LEAGUE"
+      ]
+    },
+    {
+      "slug": "13610793",
+      "title": "Courtois talks 'amazing' Bellingham and 'matured' Mourinho",
+      "url": "https://www.skysports.com/football/video/13610793/real-madrid-thibaut-courtois-talks-amazing-jude-bellingham-and-matured-jose-mourinho",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-courtois_7403494.jpg?20261110223544",
+      "excerpt": "Speaking at a web summit in Lisbon, Thibaut Courtois discusses team-mate Jude Bellingham and head coach Jose Mourinho.",
+      "published_label": "10 November 2026 · 22:29",
+      "published_iso": "2026-11-10T22:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking at a web summit in Lisbon, Thibaut Courtois discusses team-mate Jude Bellingham and head coach Jose Mourinho."
+      ]
+    },
+    {
+      "slug": "13610783",
+      "title": "Chesterfield progress in EFL Trophy after goal fest at Mansfield",
+      "url": "https://www.skysports.com/football/video/13610783/mansfield-town-3-5-chesterfield-efl-trophy-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-chesterfield-mansfield_7403470.jpg?20261110220154",
+      "excerpt": "Highlights of the EFL Trophy match between Mansfield Town and Chesterfield.",
+      "published_label": "10 November 2026 · 21:55",
+      "published_iso": "2026-11-10T21:55:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the EFL Trophy match between Mansfield Town and Chesterfield."
+      ]
+    },
+    {
       "slug": "13610765",
       "title": "Northampton error gifts Gillingham goal",
       "url": "https://www.skysports.com/football/video/13610765/northampton-vs-gillingham-error-at-the-back-for-the-cobblers-results-in-gift-for-the-gills-in-the-efl-trophy",
@@ -368,6 +381,23 @@
       ]
     },
     {
+      "slug": "13610700",
+      "title": "Sky pledges backing for Equal Sport Project",
+      "url": "https://www.skysports.com/football/news/13610700/sky-backs-equal-sport-projects-pledges-to-improve-equality-through-five-shared-ambitions-across-industry",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sky-sport_7403327.png?20261110170058",
+      "excerpt": "Sky Sports is proud to support Equal Sport Project, which aims to accelerate progress towards equality across sport through five shared ambitions.",
+      "published_label": "10 November 2026 · 17:24",
+      "published_iso": "2026-11-10T17:24:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Sky Sports is proud to support Equal Sport Project, which aims to accelerate progress towards equality across sport through five shared ambitions.",
+        "The Equal Sport Project unites sport in the UK behind five shared ambitions for women and men across sport - from local leisure centres to the biggest stadiums, and from grassroots pitches to boardrooms.",
+        "Major sporting organisations from across the UK's sporting landscape - including the FA, RFU, Youth Sport Trust, England Netball, UK Sport, LTA, Women's Sport Trust, Women in Sport, Team GB and Sport England - have made specific pledges to drive progress and help turn these ambitions into reality. Brands and broadcasters are also playing their part, signalling growing support for the movement across the wider sporting industry.",
+        "The rest of the industry is also being asked to commit support and pledges as the project seeks to gain momentum in the months and years to come."
+      ]
+    },
+    {
       "slug": "13610695",
       "title": "McTominay: I needed heart shocked ahead of World Cup opener",
       "url": "https://www.skysports.com/football/video/13610695/scott-mctominay-scotland-midfielder-reveals-heart-shock-procedure-before-world-cup-opener-and-disappointment-from-finals",
@@ -415,6 +445,23 @@
       ]
     },
     {
+      "slug": "13610675",
+      "title": "Man Utd Q&A: Carrick, Poch, INEOS and more answered",
+      "url": "https://www.skysports.com/football/news/13610675/man-utd-q-and-a-michael-carrick-mauricio-pochettino-ineos-and-more-kaveh-solhekol-answers-your-questions",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-football-pl-united_7387131.jpg?20261025194558",
+      "excerpt": "Kaveh Solhekol has answered your latest questions on Manchester United, with Michael Carrick's future up in the air, the club in the relegation zone and more issues behind the scenes.",
+      "published_label": "10 November 2026 · 15:00",
+      "published_iso": "2026-11-10T15:00:00+00:00",
+      "byline": "Kaveh Solhekol",
+      "body": [
+        "Kaveh Solhekol has answered your latest questions on Manchester United, with Michael Carrick's future up in the air, the club in the relegation zone and more issues behind the scenes.",
+        "Answering your questions live on Sky Sports News, the chief correspondent discussed a range of topics on the situation at Old Trafford.",
+        "Read on for his answers in the latest Q&A... Transfer Centre LIVE! | Latest on YOUR PL club! Premier League fixtures & scores | FREE PL highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺 Will Man Utd ever be sold?",
+        "Mikey asks: Will the board sell the club? Changing the manager will make no difference. How can United actually improve?"
+      ]
+    },
+    {
       "slug": "13610614",
       "title": "'You can't make a house on a puddle' - Merse criticises INEOS transfer poilcy",
       "url": "https://www.skysports.com/football/video/13610614/manchester-united-paul-merson-criticises-ineos-transfer-policy-and-how-its-affected-michael-carricks-job-as-head-coach",
@@ -459,6 +506,21 @@
         "This is the famous Championship, offering raucous crowds, potential riches and a route to the Premier League. That is what has drawn the other eight - coaches from Belgium, Italy, France, Germany, Sweden, Switzerland and two from Portugal - with more waiting.",
         "Each of these men are first-time managers in English football and while not all of them will find success here, the odds are in favour of at least one of them being able to call themselves a Premier League manager once the Championship season is concluded.",
         "Top coaches are alive to the possibilities in England's second tier. It was a privilege to attend two games with Portuguese coach Vitor Campelos recently to gain a greater appreciation not just of the game here but its appeal to those working elsewhere."
+      ]
+    },
+    {
+      "slug": "13610595",
+      "title": "'Her ability isn't just based on goals' - How crucial is Russo's good form for Arsenal?",
+      "url": "https://www.skysports.com/football/video/13610595/pitch-to-pod-how-crucial-is-alessia-russos-good-form-for-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7403148.jpg?20261110133706",
+      "excerpt": "Speaking on Pitch to Pod Jordan Nobbs and Nikita Parris discuss how crucial Alessia Russo's good form is for a struggling Arsenal squad.",
+      "published_label": "10 November 2026 · 11:57",
+      "published_iso": "2026-11-10T11:57:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking on Pitch to Pod Jordan Nobbs and Nikita Parris discuss how crucial Alessia Russo's good form is for a struggling Arsenal squad."
       ]
     },
     {
@@ -599,6 +661,23 @@
       ]
     },
     {
+      "slug": "13610421",
+      "title": "City claim first win of European campaign in Inter thrashing",
+      "url": "https://www.skysports.com/football/news/13610421/inter-1-4-man-city-andree-jeglertzs-side-secure-first-win-of-european-campaign-ahead-of-huge-wsl-clash-with-chelsea",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-city_7403449.jpg?20261110213156",
+      "excerpt": "Manchester City kept their hopes of securing a Champions League top-four finish alive with a convincing comeback victory over Inter Milan.",
+      "published_label": "09 November 2026 · 21:55",
+      "published_iso": "2026-11-09T21:55:00+00:00",
+      "byline": "Callum Bishop",
+      "body": [
+        "Manchester City kept their hopes of securing a Champions League top-four finish alive with a convincing comeback victory over Inter Milan.",
+        "Three draws from the first three league phase games left Andree Jeglertz's side at risk of missing out on a seeded spot in the play-off round, let alone automatic qualification for the last eight. However, an Aoba Fujino brace set them on their way to a 4-1 victory in Monza.",
+        "With a WSL clash against Chelsea on the horizon, Jeglertz opted to leave key players Khadija 'Bunny' Shaw and Lauren Hemp on the bench. That decision came under scrutiny when Inter full-back Elisa Bartoli headed the hosts into a shock lead before the half-hour mark. As it happened | Teams | Match stats Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
+        "City were quick to respond, however, as Laura Blindkilde Brown's pinpoint pass found Fujino's run, with the Japanese forward drawing the visitors level and opening the floodgates. The 22-year-old then completed the turnaround before half-time, and from that point onwards, there was only ever going to be one winner."
+      ]
+    },
+    {
       "slug": "13610387",
       "title": "Birmingham announce shock Brady departure",
       "url": "https://www.skysports.com/football/news/13610387/tom-brady-leaves-birmingham-nfl-legend-and-minority-owner-makes-shock-departure-after-three-years",
@@ -613,72 +692,6 @@
         "In a statement, the club said: \"Birmingham City Football Club expresses its sincere gratitude to Tom Brady for his involvement with and unwavering support for the club over the last three years.",
         "\"It was truly amazing to have someone with Tom's experience and passion associated with the club, and the club looks forward to continuing to build on that foundation from the training ground to the Birmingham community.\" Got Sky? Watch EFL games LIVE on your phone Not got Sky? Latest Sky Sports deals or stream EFL games with no contract📺 Live Championship table | Latest Championship predicted table from the Sky Sports supercomputer Give the Sky Sports Essential EFL podcast a follow 👉",
         "Brady, a seven-time Super Bowl champion in his playing days, bought a minority stake in the club in August 2023 during its takeover by an American capital management firm but saw the club relegated in his first season after the surprise sacking of John Eustace."
-      ]
-    },
-    {
-      "slug": "13610349",
-      "title": "SIX times Manchester United have equalised in the last minute!",
-      "url": "https://www.skysports.com/football/video/13610349/premier-league-six-times-manchester-united-have-equalised-in-the-last-minute",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-last-minute_7402440.jpg?20261109185919",
-      "excerpt": "After Patrick Dorgu rescued a point for Manchester United against Aston Villa on Sunday, take a look at five other times the Red Devils have snatched a point in the last minute.",
-      "published_label": "09 November 2026 · 18:48",
-      "published_iso": "2026-11-09T18:48:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "After Patrick Dorgu rescued a point for Manchester United against Aston Villa on Sunday, take a look at five other times the Red Devils have snatched a point in the last minute."
-      ]
-    },
-    {
-      "slug": "13610309",
-      "title": "Ballon d'Or winner Kane not named in FIFPRO World 11",
-      "url": "https://www.skysports.com/football/news/13610309/fifpro-world-11-ballon-dor-winner-harry-kane-not-voted-by-fellow-professionals-to-be-named-in-team-of-the-year",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-harry-kane-ballon_7390748.jpg?20261029104829",
-      "excerpt": "Ballon d'Or winner Harry Kane has not been named in the FIFPRO World 11.",
-      "published_label": "09 November 2026 · 17:10",
-      "published_iso": "2026-11-09T17:10:00+00:00",
-      "byline": "Callum Bishop",
-      "body": [
-        "Ballon d'Or winner Harry Kane has not been named in the FIFPRO World 11.",
-        "Over 18,000 professional footballers have chosen their best men's team, with the final 11 being chosen from a group of 26 selected finalists.",
-        "Kane, who won the Ballon d'Or ahead of Real Madrid's Kylian Mbappe by one of the smallest margins in history, was among the 26 finalists but did not make the final team.",
-        "Mbappe, Manchester City's Erling Haaland, Barcelona's Lamine Yamal and Inter Miami's Lionel Messi were named in a Kane-less front four, which also excluded Cristiano Ronaldo and Michael Olise."
-      ]
-    },
-    {
-      "slug": "13610315",
-      "title": "Man Utd will not rush decision on Carrick future",
-      "url": "https://www.skysports.com/football/news/13610315/michael-carrick-future-man-utd-will-not-rush-decision-over-head-coachs-tenure-despite-dropping-into-relegation-zone",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-carrick-man-utd_7402013.jpg?20261109111116",
-      "excerpt": "Manchester United's bosses will not rush a decision over Michael Carrick's future after their 4-4 draw with Aston Villa which leaves them in the relegation zone.",
-      "published_label": "09 November 2026 · 16:52",
-      "published_iso": "2026-11-09T16:52:00+00:00",
-      "byline": "Sky Sports News&#x27; Rob Dorsett and Danyal Khan",
-      "body": [
-        "Manchester United's bosses will not rush a decision over Michael Carrick's future after their 4-4 draw with Aston Villa which leaves them in the relegation zone.",
-        "Sky Sports News understands the club's hierarchy are planning to use the international break to fully evaluate the season so far and reassess their options.",
-        "Carrick and the players have all had Monday off after rescuing a late point against Villa on Sunday, but the head coach and his staff are due back into Carrington on Tuesday.",
-        "With most players away on international duty and no first-team training sessions planned in the coming days, that has bought some breathing space for a full re-evaluation of the season. Analysis: What now for Man Utd and Michael Carrick? Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13605319",
-      "title": "Aberdeen sack Robinson",
-      "url": "https://www.skysports.com/football/news/13605319/stephen-robinson-aberdeen-sack-head-coach-with-club-11th-in-scottish-premiership-after-hibs-defeat",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-robinson-aberdeen_7402374.jpg?20261109172811",
-      "excerpt": "Aberdeen have sacked Stephen Robinson with the club sitting 11th in the Scottish Premiership.",
-      "published_label": "09 November 2026 · 16:00",
-      "published_iso": "2026-11-09T16:00:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "Aberdeen have sacked Stephen Robinson with the club sitting 11th in the Scottish Premiership.",
-        "It follows their 4-0 defeat to Hibernian on Saturday, which came just a week after the Pittodrie club lost their League Cup semi-final to Rangers.",
-        "The Dons have lost seven of their 12 Premiership matches this season, including four of their last five. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
-        "Fans inside Pittodrie called for his sacking during their defeat to Hibs, with the 51-year-old admitting the performance was not good enough, and ultimately bringing to an end his eight-month stint at the club."
       ]
     }
   ]
