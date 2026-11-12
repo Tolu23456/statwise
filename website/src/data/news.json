@@ -1,34 +1,10 @@
 {
-  "synced_at": "2026-11-12T00:45:03+00:00",
+  "synced_at": "2026-11-12T09:51:17+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13611018",
-      "title": "FIVE things Pochettino will need to sort out at Man Utd",
-      "url": "https://www.skysports.com/football/video/13611018/manchester-utd-latest-five-things-mauricio-pochettino-will-need-to-sort-at-old-trafford",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7403933.jpg?20261111134855",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13610477",
-      "title": "What we know about Carrick's future at Man Utd",
-      "url": "https://www.skysports.com/football/video/13610477/manchester-utd-latest-what-we-know-about-michael-carricks-future",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-carrick-man-utd_7402734.jpg?20261110082639",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13610708",
       "title": "Jacob Murphy goal!",
@@ -40,17 +16,6 @@
       "published_iso": "",
       "byline": "",
       "kind": "video"
-    },
-    {
-      "slug": "13592979",
-      "title": "Cardiff hit back to claim astonishing 5-4 win over shellshocked Burnley",
-      "url": "https://www.skysports.com/football/news/13592979/cardiff-5-4-burnley-bluebirds-hit-back-from-4-1-down-to-claim-astonishing-comeback-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-cardiff-burnley_7400066.jpg?20261107160401",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
     },
     {
       "slug": "13608932",
@@ -272,6 +237,21 @@
       "byline": ""
     },
     {
+      "slug": "13611311",
+      "title": "Carrick waves to cameras as he arrives at Man Utd training ground",
+      "url": "https://www.skysports.com/football/video/13611311/manchester-utd-manager-latest-michael-carrick-arrives-at-carrington-training-ground",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-carrick-manchester_7404589.jpg?20261112081539",
+      "excerpt": "Manchester United manager Michael Carrick waves at cameras as he arrives at the Carrington training ground, with questions still surrounding his future at the cub.",
+      "published_label": "12 November 2026 · 08:11",
+      "published_iso": "2026-11-12T08:11:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Manchester United manager Michael Carrick waves at cameras as he arrives at the Carrington training ground, with questions still surrounding his future at the cub."
+      ]
+    },
+    {
       "slug": "13611225",
       "title": "Papers: Arsenal, Chelsea and Liverpool chase Bournemouth star Scott",
       "url": "https://www.skysports.com/football/transfer-paper-talk/13611225/arsenal-chelsea-and-liverpool-chase-bournemouth-star-alex-scott-paper-talk",
@@ -477,6 +457,21 @@
       ]
     },
     {
+      "slug": "13611018",
+      "title": "Five things Pochettino will need to sort out at Man Utd",
+      "url": "https://www.skysports.com/football/video/13611018/manchester-utd-latest-five-things-mauricio-pochettino-will-need-to-sort-at-old-trafford",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7403933.jpg?20261111134855",
+      "excerpt": "Sky Sports' Nick Wright looks at the FIVE things that Mauricio Pochettino will have to address if and when he replaces Michael Carrick as the manager of Manchester United.",
+      "published_label": "11 November 2026 · 13:30",
+      "published_iso": "2026-11-11T13:30:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Nick Wright looks at the FIVE things that Mauricio Pochettino will have to address if and when he replaces Michael Carrick as the manager of Manchester United."
+      ]
+    },
+    {
       "slug": "13611004",
       "title": "Is Pochettino a short-term fix? Man Utd pursuit of Carrick replacement questioned",
       "url": "https://www.skysports.com/football/news/13611004/mauricio-pochettino-manchester-uniteds-approach-for-former-tottenham-and-chelsea-boss-questioned",
@@ -506,6 +501,23 @@
       "kind": "video",
       "body": [
         "Sky Sports chief correspondent Kaveh Solhekol discusses whether the club has let Michael Carrick down as they agree a deal in principle with Mauricio Pochettino to take over as head coach if Carrick is sacked."
+      ]
+    },
+    {
+      "slug": "13610549",
+      "title": "Big underdogs once more, can Arsenal beat Barcelona again?",
+      "url": "https://www.skysports.com/football/news/13610549/barcelona-vs-arsenal-can-gunners-learn-from-2025-womens-champions-league-victory-ahead-of-league-phase-meeting-on-thursday",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/25/05/768x432/skysports-arsenal-champions-league_6926362.jpg?20250524193507",
+      "excerpt": "Arsenal face Barcelona in the Women's Champions League this week - the first time the two have met since the 2025 final when the Gunners were victorious against all odds.",
+      "published_label": "11 November 2026 · 10:30",
+      "published_iso": "2026-11-11T10:30:00+00:00",
+      "byline": "Charlotte Marsh",
+      "body": [
+        "Arsenal face Barcelona in the Women's Champions League this week - the first time the two have met since the 2025 final when the Gunners were victorious against all odds.",
+        "Renee Slegers had taken charge on a permanent basis just four months before, and the showpiece finale in Lisbon - which Arsenal won 1-0 - was by far her greatest tactical victory and arguably Arsenal's most complete performance of her tenure.",
+        "\"It's one of the proudest moments. That performance was immense and it had so many facets to it... We've studied Barcelona and we're in the here and now. This is a new game, a new moment,\" she said in her pre-match press conference. Transfer Centre LIVE! | WSL latest news and transfers Women's Champions League table | Fixtures and scores Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
+        "Slegers could do with a replica on Thursday. The Gunners boss is under pressure to produce results after yet another struggling start to the season. They are already six points behind the top three in the WSL, and 12 points from league leaders Manchester City."
       ]
     },
     {
@@ -573,6 +585,23 @@
       ]
     },
     {
+      "slug": "13610251",
+      "title": "England's best? Record-breaking Ballon d'Or winner Kane set for Wembley celebration",
+      "url": "https://www.skysports.com/football/news/13610251/harry-kane-ballon-dor-winner-set-for-wembley-celebration-of-england-record",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-kane-england_7402951.jpg?20261110112316",
+      "excerpt": "Harry Kane is set to become England's most-capped player ever on Thursday night - will it also be time to crown him the country's greatest?",
+      "published_label": "11 November 2026 · 08:00",
+      "published_iso": "2026-11-11T08:00:00+00:00",
+      "byline": "Peter Smith",
+      "body": [
+        "Harry Kane is set to become England's most-capped player ever on Thursday night - will it also be time to crown him the country's greatest?",
+        "Kane's Ballon d'Or triumph last month coronated him as the world's best for the past year. Whether he should have the all-time No 1 spot for his country makes for a fascinating debate - not least with the weight of a World Cup win on the side of historic icons such as Bobby Charlton (another Ballon d'Or winner) and Bobby Moore (another captain fantastic).",
+        "But, minus the big team triumph, Kane's individual case is compelling.",
+        "Interestingly, Sky Sports readers went for Kane when we asked the question following his 125th cap for the Three Lions in October. Kane took 49 per cent of the vote from almost 100,000 respondents."
+      ]
+    },
+    {
       "slug": "afcon-2027-qualifiers-can-super-eagles-redeem-themselves-against-tanzania",
       "title": "Can Super Eagles Redeem Themselves Against Tanzania Post Guinea-Bissau",
       "url": "https://www.sportytrader.com/en-ng/news/afcon-2027-qualifiers-can-super-eagles-redeem-themselves-against-tanzania/",
@@ -631,65 +660,52 @@
       ]
     },
     {
-      "slug": "13610765",
-      "title": "Northampton error gifts Gillingham goal",
-      "url": "https://www.skysports.com/football/video/13610765/northampton-vs-gillingham-error-at-the-back-for-the-cobblers-results-in-gift-for-the-gills-in-the-efl-trophy",
+      "slug": "13610477",
+      "title": "What we know about Carrick's future at Man Utd",
+      "url": "https://www.skysports.com/football/video/13610477/manchester-utd-latest-what-we-know-about-michael-carricks-future",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-northampton-playing-out-from-the-back_7403420.jpg?20261110203702",
-      "excerpt": "A huge error passing out from the back by Northampton gifts a goal to Gillingham.",
-      "published_label": "10 November 2026 · 20:35",
-      "published_iso": "2026-11-10T20:35:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-carrick-man-utd_7402734.jpg?20261110082639",
+      "excerpt": "Sky Sports provides an update on Michael Carrick's future at Manchester United with a departure from the club looking most likely.",
+      "published_label": "10 November 2026 · 08:23",
+      "published_iso": "2026-11-10T08:23:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "A huge error passing out from the back by Northampton gifts a goal to Gillingham."
+        "Sky Sports provides an update on Michael Carrick's future at Manchester United with a departure from the club looking most likely."
       ]
     },
     {
-      "slug": "13610763",
-      "title": "‘He won’t want to see that back!’ - Goalkeeping error leads to Swindon goal",
-      "url": "https://www.skysports.com/football/video/13610763/he-won-t-want-to-see-that-back-plymouth-goalkeeping-error-leads-to-swindon-goal",
+      "slug": "13592979",
+      "title": "Cardiff hit back to claim astonishing 5-4 win over shellshocked Burnley",
+      "url": "https://www.skysports.com/football/news/13592979/cardiff-5-4-burnley-bluebirds-hit-back-from-4-1-down-to-claim-astonishing-comeback-win",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-plymouth-swindon_7403417.jpg?20261110203155",
-      "excerpt": "Plymouth’s James Storer had a moment he won’t want to watch back after his error led to allowed Antwoine Hackford to get on the scoresheet for Swindon.",
-      "published_label": "10 November 2026 · 20:14",
-      "published_iso": "2026-11-10T20:14:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-cardiff-burnley_7400066.jpg?20261107160401",
+      "excerpt": "Cardiff came from 4-1 down to snatch a dramatic 5-4 win against Burnley in a second successive goal-fest in the Welsh capital.",
+      "published_label": "07 November 2026 · 16:45",
+      "published_iso": "2026-11-07T16:45:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Plymouth’s James Storer had a moment he won’t want to watch back after his error led to allowed Antwoine Hackford to get on the scoresheet for Swindon."
+        "Cardiff came from 4-1 down to snatch a dramatic 5-4 win against Burnley in a second successive goal-fest in the Welsh capital.",
+        "The Bluebirds had seen a 3-0 lead wiped out by West Ham to drop two points in midweek, but it was their turn to come from behind here as the Clarets' miserable season continued.",
+        "The visitors came into the game in the final relegation spot having won just one of their opening 14 league games, while Cardiff started the clash having suffered only one defeat in their last five games, despite Wednesday's second-half capitulation.",
+        "The Bluebirds started brightly, with midweek hat-trick hero Jack Moylan sending an effort narrowly over the crossbar from 10 yards from a Joel Bagan delivery."
       ]
     },
     {
-      "slug": "13610755",
-      "title": "Leicester punished after comedy of errors leads to Walsall goal!",
-      "url": "https://www.skysports.com/football/video/13610755/leicester-city-punished-after-comedy-of-errors-leads-to-walsall-goal",
+      "slug": "13608890",
+      "title": "Jobe joins brother Jude with England to showcase his own talent",
+      "url": "https://www.skysports.com/football/news/13608890/england-jobe-bellingham-has-the-chance-to-showcase-his-own-talent-alongside-brother-jude-in-thomas-tuchels-squad",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-walsall-leicester_7403409.jpg?20261110200801",
-      "excerpt": "Leicester City were punished after a comedy of errors at the back led to Walsall’s Andy Dallas scoring the game’s opener despite hitting the post from his initial effort.",
-      "published_label": "10 November 2026 · 19:48",
-      "published_iso": "2026-11-10T19:48:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jude-jobe-bellingham_7399118.jpg?20261106143239",
+      "excerpt": "\"He's coming on his own merit,\" said Thomas Tuchel, after extolling the strengths of Jobe Bellingham.",
+      "published_label": "06 November 2026 · 14:24",
+      "published_iso": "2026-11-06T14:24:00+00:00",
+      "byline": "Peter Smith",
       "body": [
-        "Leicester City were punished after a comedy of errors at the back led to Walsall’s Andy Dallas scoring the game’s opener despite hitting the post from his initial effort."
-      ]
-    },
-    {
-      "slug": "13610414",
-      "title": "Chelsea frustrated at Hacken in WCL",
-      "url": "https://www.skysports.com/football/news/13610414/hacken-0-0-chelsea-blues-frustrated-but-stay-unbeaten-in-wcl",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hacken-chelsea-womens-champions-league_7403369.jpg?20261110181944",
-      "excerpt": "Chelsea remain unbeaten in the Women’s Champions League but they were frustrated in a goalless draw at BK Hacken.",
-      "published_label": "10 November 2026 · 19:00",
-      "published_iso": "2026-11-10T19:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Chelsea remain unbeaten in the Women’s Champions League but they were frustrated in a goalless draw at BK Hacken.",
-        "The Blues dominated in Gothenburg against the Swedish side, but Sonia Bompastor's side could not find a way through.",
-        "Twice Chelsea had the ball in the net in the first half. After just five minutes Wieke Kaptein was celebrating after steering in from a corner, but the whistle was blown with Lexi Potter deemed to be offside and tangling with the goalkeeper. As it happened | Teams | Match stats Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
-        "On 28 minutes, Melvine Malard raced through on goal and produced a brilliant angled finish, only for her effort to be ruled out for offside after straying beyond the last defender."
+        "\"He's coming on his own merit,\" said Thomas Tuchel, after extolling the strengths of Jobe Bellingham.",
+        "Jude Bellingham's younger brother - as is currently the go-to preface to any description of Jobe - couldn't hide his delight when he got the call from Tuchel to say he was being promoted from U21s captain to be included in the England senior squad.",
+        "\"It's an incredible achievement for the family, for both brothers to be called up by their national team,\" Tuchel said on Friday, after revealing his squad for the Nations League games with Croatia and Spain. \"I saw his excitement straightaway in his smile.\"",
+        "But Tuchel was also right to highlight the individual qualities of 21-year-old Jobe and the different attributes he can offer the national team, in a different position to his brother. England squad talking points as Tuchel makes Palmer statement | 'It's not personal' - Tuchel explains Palmer exclusion Latest England news | England fixtures Nations League fixtures | Nations League tables"
       ]
     }
   ]
