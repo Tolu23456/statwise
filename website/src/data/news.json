@@ -1,10 +1,33 @@
 {
-  "synced_at": "2026-11-12T09:51:17+00:00",
+  "synced_at": "2026-11-12T18:20:23+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13611598",
+      "title": "Sharp: I'm quietly confident Sheffield Utd will make play-offs!",
+      "url": "https://www.skysports.com/football/video/13611598/billy-sharp-im-quietly-confident-sheffield-united-will-make-championship-play-offs",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-championship_7405201.jpg?20261112160340",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13611544",
+      "title": "Robertson on verge of history, but insists Sir Kenny will always be 'the greatest'",
+      "url": "https://www.skysports.com/football/news/13611544/andy-robertson-scotland-captain-on-reaching-sir-kenny-dalglishs-caps-record-hell-always-be-the-greatest",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-robertson-andy-andrew_7405079.jpg?20261112142630",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13610708",
       "title": "Jacob Murphy goal!",
@@ -237,6 +260,145 @@
       "byline": ""
     },
     {
+      "slug": "13611668",
+      "title": "'Always felt like he would get the job' - Carra sets minimum expectation for Poch",
+      "url": "https://www.skysports.com/football/video/13611668/jamie-carragher-explains-why-pochettino-is-the-right-man-for-man-utd-and-sets-minimum-expectations-for-the-season",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-carra-poch-man-utd_7405317.jpg?20261112181823",
+      "excerpt": "Jamie Carragher believes Mauricio Pochettino is the right man for Manchester United, revealing he always expected him to get the job eventually. He also sets out the minimum expectations Argentine must meet by the end of the season.",
+      "published_label": "12 November 2026 · 18:09",
+      "published_iso": "2026-11-12T18:09:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie Carragher believes Mauricio Pochettino is the right man for Manchester United, revealing he always expected him to get the job eventually. He also sets out the minimum expectations Argentine must meet by the end of the season."
+      ]
+    },
+    {
+      "slug": "13611658",
+      "title": "Inside details of Man Utd's pursuit of Poch - and why he stood out",
+      "url": "https://www.skysports.com/football/video/13611658/inside-details-of-man-utds-continued-pursuit-of-mauricio-pochettino",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-pochettino_7405290.jpg?20261112174904",
+      "excerpt": "Sky Sports' Rob Dorsett reveals the inside details of Man Utd's pursuit for Team USA head coach Mauricio Pochettino.",
+      "published_label": "12 November 2026 · 17:39",
+      "published_iso": "2026-11-12T17:39:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Rob Dorsett reveals the inside details of Man Utd's pursuit for Team USA head coach Mauricio Pochettino."
+      ]
+    },
+    {
+      "slug": "13611648",
+      "title": "Have England improved since the World Cup? Your England questions answered!",
+      "url": "https://www.skysports.com/football/video/13611648/have-england-improved-since-the-world-cup-your-england-questions-answered",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-rob-dorsett-england-q-a_7405275.jpg?20261112173301",
+      "excerpt": "Sky Sports' Rob Dorsett answers viewers' questions ahead of Harry Kane becoming England's all-time appearance holder against Croatia, including how they could replace the talisman when he calls it a day.",
+      "published_label": "12 November 2026 · 17:14",
+      "published_iso": "2026-11-12T17:14:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Rob Dorsett answers viewers' questions ahead of Harry Kane becoming England's all-time appearance holder against Croatia, including how they could replace the talisman when he calls it a day."
+      ]
+    },
+    {
+      "slug": "13611545",
+      "title": "UEFA Nations League: All you need to know",
+      "url": "https://www.skysports.com/football/news/13611545/uefa-nations-league-format-rules-promotion-and-relegation-explained-and-how-it-affects-euro-2028-qualifying",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-uefa-nations-league_7405130.jpg?20261112145558",
+      "excerpt": "The UEFA Nations League is back for its fifth edition, with 54 European countries competing for silverware, promotion and a potentially crucial route to Euro 2028.",
+      "published_label": "12 November 2026 · 17:09",
+      "published_iso": "2026-11-12T17:09:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The UEFA Nations League is back for its fifth edition, with 54 European countries competing for silverware, promotion and a potentially crucial route to Euro 2028.",
+        "Portugal are the defending champions after beating Spain on penalties in the 2025 final , while England are looking to win the competition for the first time under Thomas Tuchel.",
+        "But there is more than a trophy at stake. Results can determine which division teams compete in during the next campaign, while performances could also have a significant impact on qualification for the European championship.",
+        "From how the format works to the promotion and relegation rules, here's everything you need to know about the UEFA Nations League. England latest news 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Nations League scores & fixtures What is the UEFA Nations League?"
+      ]
+    },
+    {
+      "slug": "13611631",
+      "title": "Inside Man Utd's pursuit of Pochettino",
+      "url": "https://www.skysports.com/football/news/13611631/mauricio-pochettino-to-manchester-united-how-uniteds-pursuit-of-former-tottenham-and-chelsea-manager-unfolded",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7403964.jpg?20261111142338",
+      "excerpt": "Manchester United's bosses met Mauricio Pochettino two years ago, Sky Sports News can reveal, shortly after he was sacked by Chelsea, and considered him as a possible replacement for Erik ten Hag.",
+      "published_label": "12 November 2026 · 17:00",
+      "published_iso": "2026-11-12T17:00:00+00:00",
+      "byline": "Rob Dorsett",
+      "body": [
+        "Manchester United's bosses met Mauricio Pochettino two years ago, Sky Sports News can reveal, shortly after he was sacked by Chelsea, and considered him as a possible replacement for Erik ten Hag.",
+        "However, the decision was taken in 2024 that the timing wasn't right for either side.",
+        "United are close to completing a deal for the Argentine to take over from Michael Carrick in time for the Premier League game against Liverpool at Anfield a week on Sunday.",
+        "Pochettino is a coach who has long been admired at Old Trafford. Before the INEOS takeover, he was considered for the role by the previous regime, who ultimately decided to go with Ten Hag instead."
+      ]
+    },
+    {
+      "slug": "13611627",
+      "title": "'I'm surprised they're top' - Can 'Dark Horses' Birmingham win the Championship?",
+      "url": "https://www.skysports.com/football/video/13611627/essential-efl-podcast-billy-sharp-and-luke-chambers-discuss-if-dark-horses-birmingham-can-win-the-championship-title",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-birmingham-championship_7405232.jpg?20261112162402",
+      "excerpt": "Speaking on the Essential EFL Podcast, Billy Sharp and Luke Chambers discuss if Birmingham can go on to win the Championship title.",
+      "published_label": "12 November 2026 · 16:06",
+      "published_iso": "2026-11-12T16:06:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking on the Essential EFL Podcast, Billy Sharp and Luke Chambers discuss if Birmingham can go on to win the Championship title."
+      ]
+    },
+    {
+      "slug": "13611501",
+      "title": "Neville 'disgusted' at Man Utd's treatment of Carrick",
+      "url": "https://www.skysports.com/football/news/13611501/gary-neville-man-utds-treatment-of-michael-carrick-disgusting-as-mauricio-pochettino-prepares-to-take-over-at-old-trafford",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-michael-carrick-manchester-united_7383931.jpg?20261022173420",
+      "excerpt": "Sky Sports' Gary Neville has described Manchester United's treatment of Michael Carrick as \"disgusting\" after the club legend was sacked as head coach, with Mauricio Pochettino set to succeed him at Old Trafford.",
+      "published_label": "12 November 2026 · 14:49",
+      "published_iso": "2026-11-12T14:49:00+00:00",
+      "byline": "Gary Neville",
+      "body": [
+        "Sky Sports' Gary Neville has described Manchester United's treatment of Michael Carrick as \"disgusting\" after the club legend was sacked as head coach, with Mauricio Pochettino set to succeed him at Old Trafford.",
+        "Neville believes United have handled the situation poorly, with Carrick taking training in Manchester while club executives met in Monaco on Wednesday and pursued Pochettino as his replacement .",
+        "Sky Sports News understands a full agreement in principle has been reached between United and Pochettino. Talks between the club and US Soccer Federation are at the paperwork and regulatory processes stage.",
+        "Neville also warned the incoming head coach that the club's problems run much deeper than the manager, insisting Pochettino must take control of recruitment and demand significant investment. Carrick sacked by Man Utd | Is Pochettino a short-term fix? Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13606106",
+      "title": "Carrick sacked as Man Utd reach full agreement with Pochettino",
+      "url": "https://www.skysports.com/football/news/13606106/man-utd-sack-michael-carrick-with-mauricio-pochettino-set-to-be-appointed-after-worst-start-to-premier-league-season",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/09/768x432/skysports-carrick-manchester-united_7354663.jpg?20260917143449",
+      "excerpt": "Michael Carrick has been sacked as Manchester United head coach with Mauricio Pochettino lined up to replace him.",
+      "published_label": "12 November 2026 · 10:27",
+      "published_iso": "2026-11-12T10:27:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Michael Carrick has been sacked as Manchester United head coach with Mauricio Pochettino lined up to replace him.",
+        "Carrick departs less than six months after signing a two-year contract having overseen the club's worst start to a Premier League season with United in the relegation zone after picking up one win in 10 matches.",
+        "In a statement on Thursday morning, shortly after Carrick left the training ground, United said they reached \"the extremely difficult conclusion that a change is necessary in order to achieve our ambitions\". Man Utd live updates - react to Carrick news The damning stats that made Carrick reign untenable Why have Man Utd had only two 'successful' managers?",
+        "United, who reached a full agreement with USA head coach Pochettino , say they intend to appoint a permanent successor \"as quickly as possible\". He is set to be the eighth permanent appointment since Sir Alex Ferguson retired in 2013."
+      ]
+    },
+    {
+      "slug": "south-africa-vs-kenya-afcon-2027-mosimane-mccarthy",
+      "title": "Pitso vs Benni: Bafana’s All-Time Top Scorer Returns to Soweto for AFC",
+      "url": "https://www.sportytrader.com/en-za/news/south-africa-vs-kenya-afcon-2027-mosimane-mccarthy/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/pajor_vs_russo_img.webp",
+      "excerpt": "Two of South African football’s most recognisable names will be in opposite dugouts in Soweto on Friday night as former Bafana Bafana striker and record goalscorer Benni",
+      "published_label": "12 November 2026 · 08:30",
+      "published_iso": "2026-11-12T08:30:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
       "slug": "13611311",
       "title": "Carrick waves to cameras as he arrives at Man Utd training ground",
       "url": "https://www.skysports.com/football/video/13611311/manchester-utd-manager-latest-michael-carrick-arrives-at-carrington-training-ground",
@@ -250,6 +412,28 @@
       "body": [
         "Manchester United manager Michael Carrick waves at cameras as he arrives at the Carrington training ground, with questions still surrounding his future at the cub."
       ]
+    },
+    {
+      "slug": "barcelona-vs-arsenal-at-camp-nou-nineteen-goals-a-final-rematch-and-the-hero-of-lisbon-is-doubtful",
+      "title": "Barcelona vs Arsenal at Camp Nou: Nineteen Goals, a Final Rematch, and",
+      "url": "https://www.sportytrader.com/en/news/barcelona-vs-arsenal-at-camp-nou-nineteen-goals-a-final-rematch-and-the-hero-of-lisbon-is-doubtful/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/unl-england-vs-croatia-1.webp",
+      "excerpt": "Arsenal stunned Barcelona in last year's Champions League final. Barcelona have scored 19 goals in three league phase matches since winning the trophy back. Now the woman",
+      "published_label": "12 November 2026 · 06:00",
+      "published_iso": "2026-11-12T06:00:00+00:00",
+      "byline": "Geoffrey Ejiga"
+    },
+    {
+      "slug": "england-vs-croatia-uefa-nations-league-matchday-5",
+      "title": "England vs Croatia: Can Wounded Visitors Get Revenge for 7-0 Rijeka Ni",
+      "url": "https://www.sportytrader.com/en/news/england-vs-croatia-uefa-nations-league-matchday-5/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/afcon-qualifers-nigeria-vs-tanzania.webp",
+      "excerpt": "Wembley sets the stage for a battle of national pride tonight as England welcome Croatia for a crucial 2026-27 UEFA Nations League Group A3 encounter under the famous arc",
+      "published_label": "12 November 2026 · 06:00",
+      "published_iso": "2026-11-12T06:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13611225",
@@ -501,211 +685,6 @@
       "kind": "video",
       "body": [
         "Sky Sports chief correspondent Kaveh Solhekol discusses whether the club has let Michael Carrick down as they agree a deal in principle with Mauricio Pochettino to take over as head coach if Carrick is sacked."
-      ]
-    },
-    {
-      "slug": "13610549",
-      "title": "Big underdogs once more, can Arsenal beat Barcelona again?",
-      "url": "https://www.skysports.com/football/news/13610549/barcelona-vs-arsenal-can-gunners-learn-from-2025-womens-champions-league-victory-ahead-of-league-phase-meeting-on-thursday",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/25/05/768x432/skysports-arsenal-champions-league_6926362.jpg?20250524193507",
-      "excerpt": "Arsenal face Barcelona in the Women's Champions League this week - the first time the two have met since the 2025 final when the Gunners were victorious against all odds.",
-      "published_label": "11 November 2026 · 10:30",
-      "published_iso": "2026-11-11T10:30:00+00:00",
-      "byline": "Charlotte Marsh",
-      "body": [
-        "Arsenal face Barcelona in the Women's Champions League this week - the first time the two have met since the 2025 final when the Gunners were victorious against all odds.",
-        "Renee Slegers had taken charge on a permanent basis just four months before, and the showpiece finale in Lisbon - which Arsenal won 1-0 - was by far her greatest tactical victory and arguably Arsenal's most complete performance of her tenure.",
-        "\"It's one of the proudest moments. That performance was immense and it had so many facets to it... We've studied Barcelona and we're in the here and now. This is a new game, a new moment,\" she said in her pre-match press conference. Transfer Centre LIVE! | WSL latest news and transfers Women's Champions League table | Fixtures and scores Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
-        "Slegers could do with a replica on Thursday. The Gunners boss is under pressure to produce results after yet another struggling start to the season. They are already six points behind the top three in the WSL, and 12 points from league leaders Manchester City."
-      ]
-    },
-    {
-      "slug": "13610578",
-      "title": "Man Utd's Pochettino pursuit comes full circle - but would it work?",
-      "url": "https://www.skysports.com/football/news/13610578/manchester-united-and-mauricio-pochettino-would-argentine-be-the-perfect-fit-or-just-another-manager-to-fall-foul-of-old-trafford-chaos",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7403070.jpg?20261110124607",
-      "excerpt": "Mauricio Pochettino and Manchester United have a well-established history. One where paths might have crossed long before now, numerous times, but somehow never managed to converge.",
-      "published_label": "11 November 2026 · 09:00",
-      "published_iso": "2026-11-11T09:00:00+00:00",
-      "byline": "Laura Hunter",
-      "body": [
-        "Mauricio Pochettino and Manchester United have a well-established history. One where paths might have crossed long before now, numerous times, but somehow never managed to converge.",
-        "Could it be that we are finally to bear witness to the culmination of this elaborate 10-year dance of incompatible circumstances?",
-        "The Old Trafford hierarchy have always admired Pochettino from afar. He was on their radar while at Tottenham and again when it was clear his time at PSG was coming to an end. The Argentine was eventually lured back to the Premier League, but instead returned to London, signing with Chelsea.",
-        "All along this journey of complicated courtship United were at play. There have been many sliding doors moments. At the time news broke of Chelsea's interest in Pochettino in 2023, United, coached by Erik ten Hag, had just been ripped to shreds by Sevilla. Man Utd close to agreeing Poch deal if they sack Carrick Man Utd Q&A: Carrick, Poch INEOS and more Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13610862",
-      "title": "Man Utd close to agreeing Poch deal as Carrick reports for work",
-      "url": "https://www.skysports.com/football/news/13610862/mauricio-pochettino-man-utd-close-to-agreeing-deal-with-michael-carricks-potential-successor-ahead-of-monaco-meeting",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7402897.jpg?20261110104010",
-      "excerpt": "Manchester United are close to agreeing a deal with Mauricio Pochettino to become their next head coach if they decide to sack Michael Carrick.",
-      "published_label": "11 November 2026 · 08:28",
-      "published_iso": "2026-11-11T08:28:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Manchester United are close to agreeing a deal with Mauricio Pochettino to become their next head coach if they decide to sack Michael Carrick.",
-        "USA boss Pochettino is being lined up as Carrick's successor with United preparing for a potential parting of ways.",
-        "Carrick reported to United's Carrington training ground on Wednesday morning at around 7.45am before it emerged that talks with Pochettino are advanced. Have your say: Would Mauricio Pochettino be the right appointment? Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Sky Sports News understands United would have to pay around £7m to buy out Pochettino from his newly-signed contract with the USA but this is not thought to be an issue for the club."
-      ]
-    },
-    {
-      "slug": "13610854",
-      "title": "'He's got a terrific record' - What could Pochettino bring to Man Utd?",
-      "url": "https://www.skysports.com/football/video/13610854/mauricio-pochettino-what-could-ex-chelsea-and-spurs-boss-bring-to-manchester-united",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-football_7403632.jpg?20261111082649",
-      "excerpt": "Sky Sports News' Dave Reed looks at what Mauricio Pochettino could bring to Manchester United if appointed as their next boss.",
-      "published_label": "11 November 2026 · 08:18",
-      "published_iso": "2026-11-11T08:18:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports News' Dave Reed looks at what Mauricio Pochettino could bring to Manchester United if appointed as their next boss."
-      ]
-    },
-    {
-      "slug": "13610853",
-      "title": "Carrick arrives at Carrington ahead of summit talks to decide future",
-      "url": "https://www.skysports.com/football/video/13610853/manchester-united-michael-carrick-arrives-at-carrington-ahead-of-summit-talks-to-decide-future",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-carrick-michael_7403619.jpg?20261111081203",
-      "excerpt": "Michael Carrick was spotted arriving at Manchester United's training ground early this morning as Sir Jim Ratcliffe, Jason Wilcox and Omar Berrada are set to discuss his future as head coach at the club.",
-      "published_label": "11 November 2026 · 08:06",
-      "published_iso": "2026-11-11T08:06:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Michael Carrick was spotted arriving at Manchester United's training ground early this morning as Sir Jim Ratcliffe, Jason Wilcox and Omar Berrada are set to discuss his future as head coach at the club."
-      ]
-    },
-    {
-      "slug": "13610251",
-      "title": "England's best? Record-breaking Ballon d'Or winner Kane set for Wembley celebration",
-      "url": "https://www.skysports.com/football/news/13610251/harry-kane-ballon-dor-winner-set-for-wembley-celebration-of-england-record",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-kane-england_7402951.jpg?20261110112316",
-      "excerpt": "Harry Kane is set to become England's most-capped player ever on Thursday night - will it also be time to crown him the country's greatest?",
-      "published_label": "11 November 2026 · 08:00",
-      "published_iso": "2026-11-11T08:00:00+00:00",
-      "byline": "Peter Smith",
-      "body": [
-        "Harry Kane is set to become England's most-capped player ever on Thursday night - will it also be time to crown him the country's greatest?",
-        "Kane's Ballon d'Or triumph last month coronated him as the world's best for the past year. Whether he should have the all-time No 1 spot for his country makes for a fascinating debate - not least with the weight of a World Cup win on the side of historic icons such as Bobby Charlton (another Ballon d'Or winner) and Bobby Moore (another captain fantastic).",
-        "But, minus the big team triumph, Kane's individual case is compelling.",
-        "Interestingly, Sky Sports readers went for Kane when we asked the question following his 125th cap for the Three Lions in October. Kane took 49 per cent of the vote from almost 100,000 respondents."
-      ]
-    },
-    {
-      "slug": "afcon-2027-qualifiers-can-super-eagles-redeem-themselves-against-tanzania",
-      "title": "Can Super Eagles Redeem Themselves Against Tanzania Post Guinea-Bissau",
-      "url": "https://www.sportytrader.com/en-ng/news/afcon-2027-qualifiers-can-super-eagles-redeem-themselves-against-tanzania/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/konsa-guehi-england.webp",
-      "excerpt": "Eric Chelle faces a crucial test of his tactical approach as the under-pressure Super Eagles seek to respond to their disappointing 3-0 defeat against Guinea-Bissau when",
-      "published_label": "11 November 2026 · 06:30",
-      "published_iso": "2026-11-11T06:30:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13610742",
-      "title": "Papers: Berrada and Wilcox set to remain at Old Trafford",
-      "url": "https://www.skysports.com/football/news/13610742/omar-berrada-and-jason-wilcox-set-to-remain-at-man-utd-with-michael-carricks-future-in-doubt-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Wednesday's newspapers... MICHAEL CARRICK",
-      "published_label": "10 November 2026 · 22:44",
-      "published_iso": "2026-11-10T22:44:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Wednesday's newspapers... MICHAEL CARRICK",
-        "Manchester United chiefs Omar Berrada and Jason Wilcox are set to remain at the club even if Michael Carrick is sacked - The Telegraph",
-        "If Michael Carrick continued at Manchester United , the club could look to appoint additional coaching support and Bayern Munich assistant Aaron Danks is one option that was considered in the summer - BBC",
-        "Kieran McKenna still has admirers at Manchester United if Michael Carrick is sacked but the club are unlikely to turn to the young coach given the situation at Old Trafford - ESPN Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW PREMIER LEAGUE"
-      ]
-    },
-    {
-      "slug": "13610793",
-      "title": "Courtois talks 'amazing' Bellingham and 'matured' Mourinho",
-      "url": "https://www.skysports.com/football/video/13610793/real-madrid-thibaut-courtois-talks-amazing-jude-bellingham-and-matured-jose-mourinho",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-courtois_7403494.jpg?20261110223544",
-      "excerpt": "Speaking at a web summit in Lisbon, Thibaut Courtois discusses team-mate Jude Bellingham and head coach Jose Mourinho.",
-      "published_label": "10 November 2026 · 22:29",
-      "published_iso": "2026-11-10T22:29:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Speaking at a web summit in Lisbon, Thibaut Courtois discusses team-mate Jude Bellingham and head coach Jose Mourinho."
-      ]
-    },
-    {
-      "slug": "13610783",
-      "title": "Chesterfield progress in EFL Trophy after goal fest at Mansfield",
-      "url": "https://www.skysports.com/football/video/13610783/mansfield-town-3-5-chesterfield-efl-trophy-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-chesterfield-mansfield_7403470.jpg?20261110220154",
-      "excerpt": "Highlights of the EFL Trophy match between Mansfield Town and Chesterfield.",
-      "published_label": "10 November 2026 · 21:55",
-      "published_iso": "2026-11-10T21:55:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the EFL Trophy match between Mansfield Town and Chesterfield."
-      ]
-    },
-    {
-      "slug": "13610477",
-      "title": "What we know about Carrick's future at Man Utd",
-      "url": "https://www.skysports.com/football/video/13610477/manchester-utd-latest-what-we-know-about-michael-carricks-future",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-michael-carrick-man-utd_7402734.jpg?20261110082639",
-      "excerpt": "Sky Sports provides an update on Michael Carrick's future at Manchester United with a departure from the club looking most likely.",
-      "published_label": "10 November 2026 · 08:23",
-      "published_iso": "2026-11-10T08:23:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports provides an update on Michael Carrick's future at Manchester United with a departure from the club looking most likely."
-      ]
-    },
-    {
-      "slug": "13592979",
-      "title": "Cardiff hit back to claim astonishing 5-4 win over shellshocked Burnley",
-      "url": "https://www.skysports.com/football/news/13592979/cardiff-5-4-burnley-bluebirds-hit-back-from-4-1-down-to-claim-astonishing-comeback-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-cardiff-burnley_7400066.jpg?20261107160401",
-      "excerpt": "Cardiff came from 4-1 down to snatch a dramatic 5-4 win against Burnley in a second successive goal-fest in the Welsh capital.",
-      "published_label": "07 November 2026 · 16:45",
-      "published_iso": "2026-11-07T16:45:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Cardiff came from 4-1 down to snatch a dramatic 5-4 win against Burnley in a second successive goal-fest in the Welsh capital.",
-        "The Bluebirds had seen a 3-0 lead wiped out by West Ham to drop two points in midweek, but it was their turn to come from behind here as the Clarets' miserable season continued.",
-        "The visitors came into the game in the final relegation spot having won just one of their opening 14 league games, while Cardiff started the clash having suffered only one defeat in their last five games, despite Wednesday's second-half capitulation.",
-        "The Bluebirds started brightly, with midweek hat-trick hero Jack Moylan sending an effort narrowly over the crossbar from 10 yards from a Joel Bagan delivery."
-      ]
-    },
-    {
-      "slug": "13608890",
-      "title": "Jobe joins brother Jude with England to showcase his own talent",
-      "url": "https://www.skysports.com/football/news/13608890/england-jobe-bellingham-has-the-chance-to-showcase-his-own-talent-alongside-brother-jude-in-thomas-tuchels-squad",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jude-jobe-bellingham_7399118.jpg?20261106143239",
-      "excerpt": "\"He's coming on his own merit,\" said Thomas Tuchel, after extolling the strengths of Jobe Bellingham.",
-      "published_label": "06 November 2026 · 14:24",
-      "published_iso": "2026-11-06T14:24:00+00:00",
-      "byline": "Peter Smith",
-      "body": [
-        "\"He's coming on his own merit,\" said Thomas Tuchel, after extolling the strengths of Jobe Bellingham.",
-        "Jude Bellingham's younger brother - as is currently the go-to preface to any description of Jobe - couldn't hide his delight when he got the call from Tuchel to say he was being promoted from U21s captain to be included in the England senior squad.",
-        "\"It's an incredible achievement for the family, for both brothers to be called up by their national team,\" Tuchel said on Friday, after revealing his squad for the Nations League games with Croatia and Spain. \"I saw his excitement straightaway in his smile.\"",
-        "But Tuchel was also right to highlight the individual qualities of 21-year-old Jobe and the different attributes he can offer the national team, in a different position to his brother. England squad talking points as Tuchel makes Palmer statement | 'It's not personal' - Tuchel explains Palmer exclusion Latest England news | England fixtures Nations League fixtures | Nations League tables"
       ]
     }
   ]
