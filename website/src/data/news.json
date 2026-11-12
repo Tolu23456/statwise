@@ -1,46 +1,10 @@
 {
-  "synced_at": "2026-11-11T17:53:54+00:00",
+  "synced_at": "2026-11-12T00:45:03+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13610980",
-      "title": "'It doesn't look good' - Have Man Utd let Carrick down?",
-      "url": "https://www.skysports.com/football/video/13610980/manchester-united-have-club-let-michael-carrick-down",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-carrick-michale_7403858.jpg?20261111122842",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13611064",
-      "title": "Kane applauded by journalists as he enters England press conference",
-      "url": "https://www.skysports.com/football/video/13611064/harry-kane-applauded-by-journalists-as-he-enters-england-press-conference",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7404037.jpg?20261111145537",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13611036",
-      "title": "Tuchel to field strong side against Croatia in 'beautiful occasion' for Kane",
-      "url": "https://www.skysports.com/football/video/13611036/england-thomas-tuchel-says-he-will-field-a-strong-side-against-croatia-in-beautiful-night-for-harry-kane",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-kane-tuchel_7403958.jpg?20261111141355",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13611018",
       "title": "FIVE things Pochettino will need to sort out at Man Utd",
@@ -308,6 +272,85 @@
       "byline": ""
     },
     {
+      "slug": "13611225",
+      "title": "Papers: Arsenal, Chelsea and Liverpool chase Bournemouth star Scott",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13611225/arsenal-chelsea-and-liverpool-chase-bournemouth-star-alex-scott-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Thursday's newspapers...",
+      "published_label": "11 November 2026 · 21:50",
+      "published_iso": "2026-11-11T21:50:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Thursday's newspapers...",
+        "Arsenal , Chelsea and Liverpool have all contacted Bournemouth about a move for midfielder Alex Scott - The I Paper",
+        "US Soccer are expected to make Pep Guardiola a top target to replace Mauricio Pochettino if the USA coach leaves for Manchester United - The Athletic",
+        "Chelsea , along with Spanish giants Real Madrid and Atletico Madrid are keeping tabs on the situation with Arsenal midfielder Martin Zubimendi about a possible move in January - Independent Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW"
+      ]
+    },
+    {
+      "slug": "13611203",
+      "title": "'Unfinished business!' - Tuchel to stay at England regardless of interest elsewhere",
+      "url": "https://www.skysports.com/football/video/13611203/theres-unfinished-business-tuchel-wants-to-stay-at-england-regardless-of-interest-elsewhere",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-t-e_7404336.jpg?20261111193739",
+      "excerpt": "Thomas Tuchel says he will stay as England until the 2028 Euros and then figure out his future from there where he says he is 'open to anything'.",
+      "published_label": "11 November 2026 · 19:35",
+      "published_iso": "2026-11-11T19:35:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Thomas Tuchel says he will stay as England until the 2028 Euros and then figure out his future from there where he says he is 'open to anything'."
+      ]
+    },
+    {
+      "slug": "13611191",
+      "title": "Tuchel committed to England - but plotting club return after Three Lions stint",
+      "url": "https://www.skysports.com/football/news/13611191/thomas-tuchel-committed-to-england-until-euro-2028-but-keen-on-club-return-in-future",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-thomas-tuchel-england_7404354.jpg?20261111200745",
+      "excerpt": "Thomas Tuchel revealed he has no release clause in his England contract but is committed to leading them until Euro 2028 at least - even if a big club comes calling.",
+      "published_label": "11 November 2026 · 19:30",
+      "published_iso": "2026-11-11T19:30:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Thomas Tuchel revealed he has no release clause in his England contract but is committed to leading them until Euro 2028 at least - even if a big club comes calling.",
+        "The Three Lions boss was asked the question amid Mauricio Pochettino agreeing a deal in principle with Manchester United to replace Michael Carrick, who is expected to be sacked in the coming days. The USA manager has a £7m buyout clause in his deal.",
+        "\"No release clause,\" confirmed Tuchel, who signed his current contract in February. \"And there's no intention. I signed the contract - I want to stay until the Euros. I want to do the Euros. We have unfinished business.\" Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Tuchel was then asked if there was \"zero chance\" he would leave England if a big club came in for him between now and the 2028 Euros, which will be hosted in England. The manager said: \"Yeah, I would say so.\""
+      ]
+    },
+    {
+      "slug": "13611192",
+      "title": "'It's A LOT!' - How much have Man Utd spent on replacing managers since Ferguson?",
+      "url": "https://www.skysports.com/football/video/13611192/how-much-have-manchester-united-spent-on-replacing-managers-since-sir-alex-ferguson-left",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-united_7404311.jpg?20261111185837",
+      "excerpt": "Sky Sports News reporter Adam Binnie takes a look at how much Manchester United have spent replacing managers since the summer of 2013 when Sir Alex Ferguson left the club.",
+      "published_label": "11 November 2026 · 18:54",
+      "published_iso": "2026-11-11T18:54:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports News reporter Adam Binnie takes a look at how much Manchester United have spent replacing managers since the summer of 2013 when Sir Alex Ferguson left the club."
+      ]
+    },
+    {
+      "slug": "13611187",
+      "title": "'He's slow to get started!' - Would Pochettino struggle early on at Man Utd?",
+      "url": "https://www.skysports.com/football/video/13611187/hes-slow-to-get-started-is-mauricio-pochettino-going-to-struggle-early-on-at-manchester-united",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7404317.jpg?20261111190929",
+      "excerpt": "Sky Sports News reporter Adam Binnie explains how Mauricio Pochettino often struggles early on at new clubs as he nears closer to an appointment at Manchester United.",
+      "published_label": "11 November 2026 · 18:31",
+      "published_iso": "2026-11-11T18:31:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports News reporter Adam Binnie explains how Mauricio Pochettino often struggles early on at new clubs as he nears closer to an appointment at Manchester United."
+      ]
+    },
+    {
       "slug": "13611079",
       "title": "Could King really become 'one of the best players in the world'?",
       "url": "https://www.skysports.com/football/news/13611079/josh-king-the-making-of-the-rising-star-tipped-to-become-one-of-worlds-best-players-after-england-call-up",
@@ -389,6 +432,21 @@
       ]
     },
     {
+      "slug": "13611064",
+      "title": "Kane applauded by journalists as he enters England press conference",
+      "url": "https://www.skysports.com/football/video/13611064/harry-kane-applauded-by-journalists-as-he-enters-england-press-conference",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7404037.jpg?20261111145537",
+      "excerpt": "England captain Harry Kane was applauded by the media for his Ballon d'Or success as he entered Wednesday's press conference ahead of the Nations League game against Croatia.",
+      "published_label": "11 November 2026 · 14:41",
+      "published_iso": "2026-11-11T14:41:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "England captain Harry Kane was applauded by the media for his Ballon d'Or success as he entered Wednesday's press conference ahead of the Nations League game against Croatia."
+      ]
+    },
+    {
       "slug": "13611054",
       "title": "'That's what we came for!' - The BEST PL dance celebs: Barry, Lingard, Crouch and more!",
       "url": "https://www.skysports.com/football/video/13611054/the-best-premier-league-dance-celebrations-thierno-barry-jesse-lingard-peter-crouch-and-more",
@@ -401,6 +459,21 @@
       "kind": "video",
       "body": [
         "As Thierno Barry's dance celebrations take the world by storm, here's our picks of the best ever Premier League dance celebrations, including Jesse Lingard, Peter Crouch and more."
+      ]
+    },
+    {
+      "slug": "13611036",
+      "title": "Tuchel to field strong side against Croatia in 'beautiful occasion' for Kane",
+      "url": "https://www.skysports.com/football/video/13611036/england-thomas-tuchel-says-he-will-field-a-strong-side-against-croatia-in-beautiful-night-for-harry-kane",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-kane-tuchel_7403958.jpg?20261111141355",
+      "excerpt": "Thomas Tuchel says he will field a strong side against Croatia in a 'beautiful' night for Harry Kane as he presents the Ballon d'Or to the England fans.",
+      "published_label": "11 November 2026 · 13:55",
+      "published_iso": "2026-11-11T13:55:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Thomas Tuchel says he will field a strong side against Croatia in a 'beautiful' night for Harry Kane as he presents the Ballon d'Or to the England fans."
       ]
     },
     {
@@ -418,6 +491,21 @@
         "United have struck an agreement with the US National team to replace Carrick with Mauricio Pochettino , Solhekol believes Pochettino wouldn't be the top target for any other top clubs. Man Utd strike Poch agreement as Carrick takes training Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
         "\"I think he's a very good manager, but would he be in the frame to get the Liverpool job if that was available?",
         "\"Would he be in the frame to get the Arsenal job if that was available? Bayern Munich, Barcelona, Real Madrid, would they be looking at Mauricio Pochettino?"
+      ]
+    },
+    {
+      "slug": "13610980",
+      "title": "'It doesn't look good' - Have Man Utd let Carrick down?",
+      "url": "https://www.skysports.com/football/video/13610980/manchester-united-have-club-let-michael-carrick-down",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-carrick-michale_7403858.jpg?20261111122842",
+      "excerpt": "Sky Sports chief correspondent Kaveh Solhekol discusses whether the club has let Michael Carrick down as they agree a deal in principle with Mauricio Pochettino to take over as head coach if Carrick is sacked.",
+      "published_label": "11 November 2026 · 12:11",
+      "published_iso": "2026-11-11T12:11:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports chief correspondent Kaveh Solhekol discusses whether the club has let Michael Carrick down as they agree a deal in principle with Mauricio Pochettino to take over as head coach if Carrick is sacked."
       ]
     },
     {
@@ -602,87 +690,6 @@
         "The Blues dominated in Gothenburg against the Swedish side, but Sonia Bompastor's side could not find a way through.",
         "Twice Chelsea had the ball in the net in the first half. After just five minutes Wieke Kaptein was celebrating after steering in from a corner, but the whistle was blown with Lexi Potter deemed to be offside and tangling with the goalkeeper. As it happened | Teams | Match stats Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
         "On 28 minutes, Melvine Malard raced through on goal and produced a brilliant angled finish, only for her effort to be ruled out for offside after straying beyond the last defender."
-      ]
-    },
-    {
-      "slug": "13610700",
-      "title": "Sky pledges backing for Equal Sport Project",
-      "url": "https://www.skysports.com/football/news/13610700/sky-backs-equal-sport-projects-pledges-to-improve-equality-through-five-shared-ambitions-across-industry",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sky-sport_7403327.png?20261110170058",
-      "excerpt": "Sky Sports is proud to support Equal Sport Project, which aims to accelerate progress towards equality across sport through five shared ambitions.",
-      "published_label": "10 November 2026 · 17:24",
-      "published_iso": "2026-11-10T17:24:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Sky Sports is proud to support Equal Sport Project, which aims to accelerate progress towards equality across sport through five shared ambitions.",
-        "The Equal Sport Project unites sport in the UK behind five shared ambitions for women and men across sport - from local leisure centres to the biggest stadiums, and from grassroots pitches to boardrooms.",
-        "Major sporting organisations from across the UK's sporting landscape - including the FA, RFU, Youth Sport Trust, England Netball, UK Sport, LTA, Women's Sport Trust, Women in Sport, Team GB and Sport England - have made specific pledges to drive progress and help turn these ambitions into reality. Brands and broadcasters are also playing their part, signalling growing support for the movement across the wider sporting industry.",
-        "The rest of the industry is also being asked to commit support and pledges as the project seeks to gain momentum in the months and years to come."
-      ]
-    },
-    {
-      "slug": "13610695",
-      "title": "McTominay: I needed heart shocked ahead of World Cup opener",
-      "url": "https://www.skysports.com/football/video/13610695/scott-mctominay-scotland-midfielder-reveals-heart-shock-procedure-before-world-cup-opener-and-disappointment-from-finals",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mctominay-scotland_7403281.jpg?20261110163823",
-      "excerpt": "Scott McTominay reveals he needed to have his heart shocked before Scotland's World Cup opener against Haiti due to an irregular heartbeat, and says the tournament in the USA was the most disappointing time in his career.",
-      "published_label": "10 November 2026 · 16:09",
-      "published_iso": "2026-11-10T16:09:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Scott McTominay reveals he needed to have his heart shocked before Scotland's World Cup opener against Haiti due to an irregular heartbeat, and says the tournament in the USA was the most disappointing time in his career."
-      ]
-    },
-    {
-      "slug": "13610728",
-      "title": "McTominay had heart 'shocked' two days before Scotland's World Cup opener",
-      "url": "https://www.skysports.com/football/news/13610728/scott-mctominay-scotland-midfielder-had-heart-shocked-two-days-before-world-cup-opener-against-haiti",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mctominay-scotland_7403281.jpg?20261110163823",
-      "excerpt": "Scott McTominay has revealed he needed to have his heart “shocked” two days before Scotland's World Cup opener against Haiti.",
-      "published_label": "10 November 2026 · 16:00",
-      "published_iso": "2026-11-10T16:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Scott McTominay has revealed he needed to have his heart “shocked” two days before Scotland's World Cup opener against Haiti.",
-        "The Napoli midfielder underwent a cardiac ablation procedure in Manchester in September to treat a mild, benign heart arrhythmia that first came to light after the Scots arrived in the United States in early June and then continued to affect him in August while back in Italy playing for his club.",
-        "At the time, the Scotland camp, clearly keen to keep McTominay's situation under wraps, said the 29-year-old had missed training in the lead-up to the World Cup due to a stomach complaint. Penrice handed first Scotland call as McTominay returns Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
-        "But, speaking at a press conference at Hampden on Tuesday, the former Manchester United player said: \"I had to go and get the shock on my heart two days before the Haiti game.\""
-      ]
-    },
-    {
-      "slug": "13610690",
-      "title": "Pocognoli reveals McTominay return importance and his 'captains group' role",
-      "url": "https://www.skysports.com/football/video/13610690/scott-mctominay-sebastien-pocognoli-reveals-importance-of-scotland-midfielders-return-and-his-captains-group-role",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mctominay-scotland_7403282.jpg?20261110163850",
-      "excerpt": "Scotland head coach Sebastien Pocognoli discusses the importance of Scott McTominay's return and his role in the captains group.",
-      "published_label": "10 November 2026 · 15:53",
-      "published_iso": "2026-11-10T15:53:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Scotland head coach Sebastien Pocognoli discusses the importance of Scott McTominay's return and his role in the captains group."
-      ]
-    },
-    {
-      "slug": "13608890",
-      "title": "Jobe joins brother Jude with England to showcase his own talent",
-      "url": "https://www.skysports.com/football/news/13608890/england-jobe-bellingham-has-the-chance-to-showcase-his-own-talent-alongside-brother-jude-in-thomas-tuchels-squad",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jude-jobe-bellingham_7399118.jpg?20261106143239",
-      "excerpt": "\"He's coming on his own merit,\" said Thomas Tuchel, after extolling the strengths of Jobe Bellingham.",
-      "published_label": "06 November 2026 · 14:24",
-      "published_iso": "2026-11-06T14:24:00+00:00",
-      "byline": "Peter Smith",
-      "body": [
-        "\"He's coming on his own merit,\" said Thomas Tuchel, after extolling the strengths of Jobe Bellingham.",
-        "Jude Bellingham's younger brother - as is currently the go-to preface to any description of Jobe - couldn't hide his delight when he got the call from Tuchel to say he was being promoted from U21s captain to be included in the England senior squad.",
-        "\"It's an incredible achievement for the family, for both brothers to be called up by their national team,\" Tuchel said on Friday, after revealing his squad for the Nations League games with Croatia and Spain. \"I saw his excitement straightaway in his smile.\"",
-        "But Tuchel was also right to highlight the individual qualities of 21-year-old Jobe and the different attributes he can offer the national team, in a different position to his brother. England squad talking points as Tuchel makes Palmer statement | 'It's not personal' - Tuchel explains Palmer exclusion Latest England news | England fixtures Nations League fixtures | Nations League tables"
       ]
     }
   ]
