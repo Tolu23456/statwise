@@ -1,10 +1,22 @@
 {
-  "synced_at": "2026-11-12T18:20:23+00:00",
+  "synced_at": "2026-11-13T01:05:47+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13611488",
+      "title": "Neville: I've always wanted Pochettino – but he has to take control of recruitment",
+      "url": "https://www.skysports.com/football/video/13611488/gary-neville-i-ve-always-wanted-pochettino-but-has-to-take-control-of-recruitment",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-neville-potchettino_7404975.jpg?20261112124837",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13611598",
       "title": "Sharp: I'm quietly confident Sheffield Utd will make play-offs!",
@@ -260,6 +272,85 @@
       "byline": ""
     },
     {
+      "slug": "13611751",
+      "title": "England player ratings: Who impressed and who struggled in Croatia win?",
+      "url": "https://www.skysports.com/football/video/13611751/england-vs-croatia-england-player-ratings-as-tuchels-reach-the-nations-league-quarters-finals",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-player-ratings_7405514.jpg?20261113000741",
+      "excerpt": "David Reed and Pete Smith deliver their England player ratings following the Three Lions’ 2-1 victory over Croatia, as Harry Kane makes history on a record-breaking night and England secure their place in the Nations League quarter-finals.",
+      "published_label": "12 November 2026 · 23:53",
+      "published_iso": "2026-11-12T23:53:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "David Reed and Pete Smith deliver their England player ratings following the Three Lions’ 2-1 victory over Croatia, as Harry Kane makes history on a record-breaking night and England secure their place in the Nations League quarter-finals."
+      ]
+    },
+    {
+      "slug": "13611748",
+      "title": "'We got the job done' - Tuchel relishing Spain clash after Croatia win",
+      "url": "https://www.skysports.com/football/video/13611748/thomas-tuchel-reacts-as-kane-makes-england-history-and-three-lions-book-nations-league-quarter-final-spot-ahead-of-spain-clash",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-tuchel-england_7405507.jpg?20261112233810",
+      "excerpt": "Thomas Tuchel reacts to England’s 2-1 win over Croatia and their Nations League quarter-final qualification, plus Harry Kane breaking the Three Lions’ appearance record, while looking ahead to Sunday’s showdown with Spain.",
+      "published_label": "12 November 2026 · 23:26",
+      "published_iso": "2026-11-12T23:26:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Thomas Tuchel reacts to England’s 2-1 win over Croatia and their Nations League quarter-final qualification, plus Harry Kane breaking the Three Lions’ appearance record, while looking ahead to Sunday’s showdown with Spain."
+      ]
+    },
+    {
+      "slug": "13611745",
+      "title": "Pochettino agrees two-and-a-half-year deal to become Man Utd boss",
+      "url": "https://www.skysports.com/football/news/13611745/mauricio-pochettino-manchester-united-agree-two-and-a-half-year-deal-with-usa-manager-to-replace-michael-carrick",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7403710.jpg?20261111102937",
+      "excerpt": "Manchester United and Mauricio Pochettino have agreed a deal for him to become the club's next head coach.",
+      "published_label": "12 November 2026 · 23:00",
+      "published_iso": "2026-11-12T23:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Manchester United and Mauricio Pochettino have agreed a deal for him to become the club's next head coach.",
+        "Pochettino is expected to sign a two-and-half-year contract at Old Trafford, replacing Michael Carrick, who was sacked earlier on Thursday .",
+        "Pochettino - who had a £7m release clause in his USA contract - will take charge of United after overseeing the USA's games against Haiti on Saturday and Wednesday. Man Utd live updates The damning stats that made Carrick reign untenable Why have Man Utd had only two 'successful' managers?",
+        "The formal announcement of Pochettino's appointed is expected on Friday, with the Argentine set to be United's eighth permanent appointment since Sir Alex Ferguson retired in 2013."
+      ]
+    },
+    {
+      "slug": "13611736",
+      "title": "'Special moment' - Kane delighted to break cap record and has no plans to stop",
+      "url": "https://www.skysports.com/football/video/13611736/harry-kane-delighted-to-become-englands-record-cap-holder-and-wants-to-play-for-the-three-lions-as-long-as-possible",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-kane-england_7405480.jpg?20261112223422",
+      "excerpt": "Harry Kane reacts to surpassing Peter Shilton to become England’s record appearance holder and says he wants to represent his country for as long as possible.",
+      "published_label": "12 November 2026 · 22:29",
+      "published_iso": "2026-11-12T22:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Harry Kane reacts to surpassing Peter Shilton to become England’s record appearance holder and says he wants to represent his country for as long as possible."
+      ]
+    },
+    {
+      "slug": "13611732",
+      "title": "Papers: Manchester clubs to battle it out for Gusto",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13611732/bruno-fernandes-rejects-second-manchester-united-contract-offer-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Friday's newspapers...",
+      "published_label": "12 November 2026 · 21:00",
+      "published_iso": "2026-11-12T21:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Friday's newspapers...",
+        "Manchester United and Manchester City are set to battle it out for Chelsea defender Malo Gusto - TalkSport",
+        "Bruno Fernandes has turned down a second contract offer from Manchester United - The Athletic",
+        "The EFL has told its clubs to stop making jokes on their social media accounts about contentious disciplinary cases, as they risk inflaming disputes and damaging the brand - The Athletic"
+      ]
+    },
+    {
       "slug": "13611668",
       "title": "'Always felt like he would get the job' - Carra sets minimum expectation for Poch",
       "url": "https://www.skysports.com/football/video/13611668/jamie-carragher-explains-why-pochettino-is-the-right-man-for-man-utd-and-sets-minimum-expectations-for-the-season",
@@ -354,6 +445,23 @@
       ]
     },
     {
+      "slug": "13611570",
+      "title": "Kane the hero on historic night as England book Nations League QF spot",
+      "url": "https://www.skysports.com/football/news/13611570/england-2-1-croatia-harry-kane-scores-winner-as-he-become-three-lions-record-appearance-maker-to-book-nations-league-quarter-final",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-harry-kane_7405434.jpg?20261112213640",
+      "excerpt": "Record-breaker Harry Kane scored from the spot to seal England's place in the Nations League quarter-finals with a 2-1 victory over Croatia, capping a memorable Wembley night as the captain became his country's most-capped player.",
+      "published_label": "12 November 2026 · 15:12",
+      "published_iso": "2026-11-12T15:12:00+00:00",
+      "byline": "Peter Smith",
+      "body": [
+        "Record-breaker Harry Kane scored from the spot to seal England's place in the Nations League quarter-finals with a 2-1 victory over Croatia, capping a memorable Wembley night as the captain became his country's most-capped player.",
+        "There was an inevitability about Kane hitting the net on his 126th appearance. There had been pre-match tributes and accolades as the Ballon d'Or holder passed the mark of legendary goalkeeper Peter Shilton and once again Kane was England's match winner with his second-half spot-kick. That's 92 goals now in England colours for the record scorer. As it happened | Match stats | England fixtures Nations League scores & news | Tables | Sky Bet",
+        "The win means England will now have the chance to win Nations League Group A3 and be seeded for the quarter-finals - but they will have to be far better than this if they are to beat table-toppers and world champions Spain in Madrid on Sunday.",
+        "England thumped Croatia 7-0 last month but this was a performance far shy of that previous display, lacking intensity and final-third spark for long periods, and littered with jittery moments at the back."
+      ]
+    },
+    {
       "slug": "13611501",
       "title": "Neville 'disgusted' at Man Utd's treatment of Carrick",
       "url": "https://www.skysports.com/football/news/13611501/gary-neville-man-utds-treatment-of-michael-carrick-disgusting-as-mauricio-pochettino-prepares-to-take-over-at-old-trafford",
@@ -385,6 +493,40 @@
         "Carrick departs less than six months after signing a two-year contract having overseen the club's worst start to a Premier League season with United in the relegation zone after picking up one win in 10 matches.",
         "In a statement on Thursday morning, shortly after Carrick left the training ground, United said they reached \"the extremely difficult conclusion that a change is necessary in order to achieve our ambitions\". Man Utd live updates - react to Carrick news The damning stats that made Carrick reign untenable Why have Man Utd had only two 'successful' managers?",
         "United, who reached a full agreement with USA head coach Pochettino , say they intend to appoint a permanent successor \"as quickly as possible\". He is set to be the eighth permanent appointment since Sir Alex Ferguson retired in 2013."
+      ]
+    },
+    {
+      "slug": "13611419",
+      "title": "Kane makes history with record 126th England cap",
+      "url": "https://www.skysports.com/football/news/13611419/harry-kane-england-captain-breaks-three-lions-appearance-record-by-winning-126th-senior-cap-vs-croatia-at-wembley",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7403635.jpg?20261111083100",
+      "excerpt": "Harry Kane has broken the record for the most senior England caps by a single player in history.",
+      "published_label": "12 November 2026 · 10:16",
+      "published_iso": "2026-11-12T10:16:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Harry Kane has broken the record for the most senior England caps by a single player in history.",
+        "The Three Lions captain led the line for Thursday's Nations League game against Croatia, making his 126th appearance for his country in the process and scoring his 92nd goal to win the game at Wembley .",
+        "He bypassed the record previously held by goalkeeper Peter Shilton, who earned 125 caps between 1970 and 1990.",
+        "Shilton paid tribute to Kane on the pitch ahead of kick-off, with Prince William and visiting captain Luka Modric also honouring the England skipper before the game."
+      ]
+    },
+    {
+      "slug": "13611731",
+      "title": "'Overwhelming' - Record-breaker Kane celebrates 'amazing' Wembley night",
+      "url": "https://www.skysports.com/football/news/13611731/harry-kane-england-captain-reflects-on-overwhelming-wembley-reception-after-ballon-dor-win-and-record-breaking-appearance-against-croatia",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-harry-kane_7405425.jpg?20261112212020",
+      "excerpt": "Harry Kane says the reaction to his Ballon d'Or win and record appearance for England has been \"overwhelming\".",
+      "published_label": "12 November 2026 · 10:16",
+      "published_iso": "2026-11-12T10:16:00+00:00",
+      "byline": "Peter Smith",
+      "body": [
+        "Harry Kane says the reaction to his Ballon d'Or win and record appearance for England has been \"overwhelming\".",
+        "The Three Lions captain walked out at Wembley on Thursday to a huge tifo celebrating his 126th international appearance and received awards from former record holder Peter Shilton, Prince William and Croatia captain Luka Modric, as well as presenting his Ballon d'Or trophy to the crowd.",
+        "Kane then went on to strike the winning penalty for England in a 2-1 Nations League triumph which sealed their place in the quarter-finals of the competition. They can top the group and be seeded for the last-eight draw if they beat Spain in Madrid on Sunday.",
+        "\"It was incredible. Everything was amazing,\" said Kane in a post-match press conference. \"Thank you to everyone who organised [the tributes], with the tifo and presentations. Thank you to Luka [Modric] and Croatia for their gift. England 2-1 Croatia - Match report | As it happened Latest England news | England fixtures Nations League fixtures | Nations League tables"
       ]
     },
     {
@@ -546,145 +688,6 @@
         "Michael Carrick took training on Wednesday and officially remains United boss.",
         "He is likely to be relieved of his duties before the end of the week, once Omar Berrada, the chief executive, and Jason Wilcox, the director of football, have returned from their meeting with co-owner Sir Jim Ratcliffe in Monaco on Wednesday.",
         "Pochettino is then expected to be confirmed as Carrick's replacement sometime afterwards. Is Pochettino a short-term fix? Man Utd pursuit of replacement questioned Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13611159",
-      "title": "Man Utd manager latest: Why Pochettino arrival could be delayed",
-      "url": "https://www.skysports.com/football/video/13611159/man-utd-latest-michael-carrick-still-in-charge-as-mauricio-pochettinos-arrival-could-be-delayed",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-fd-s_7404229.jpg?20261111162250",
-      "excerpt": "Sky Sports' Danyal Khan brings the latest update from Manchester United around Michael Carrick and Mauricio Pochettino.",
-      "published_label": "11 November 2026 · 16:20",
-      "published_iso": "2026-11-11T16:20:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Danyal Khan brings the latest update from Manchester United around Michael Carrick and Mauricio Pochettino."
-      ]
-    },
-    {
-      "slug": "13610856",
-      "title": "Kane targets biggest team prizes ahead of record-breaking England cap",
-      "url": "https://www.skysports.com/football/news/13610856/england-harry-kane-targets-european-championships-world-cup-and-champions-league-to-add-biggest-team-prizes-to-ballon-dor",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-harry-kane-england_7370153.jpg?20261007064514",
-      "excerpt": "Harry Kane will become England's record appearance maker on Thursday night - but the Ballon d'Or winner now has his sights set on the biggest team trophies in football.",
-      "published_label": "11 November 2026 · 15:29",
-      "published_iso": "2026-11-11T15:29:00+00:00",
-      "byline": "Peter Smith",
-      "body": [
-        "Harry Kane will become England's record appearance maker on Thursday night - but the Ballon d'Or winner now has his sights set on the biggest team trophies in football.",
-        "England captain Kane will win his 126th cap for his country against Croatia in the Nations League at Wembley. The landmark moment comes just weeks after he was crowned the best player in the world.",
-        "But while the striker has ended his long wait for team glory with back-to-back Bundesliga titles at Bayern Munich, as well as a German Cup, he is now eager to kick on again and land the most prestigious prizes for club and country.",
-        "\"To win a team trophy with England, a major trophy, is my biggest dream,\" he said in a press conference on Wednesday when asked what comes next for him. \"That's always been my biggest dream, to win a European Championship or a World Cup, or both, hopefully, but I know how difficult that is. Extremely motivated to do that."
-      ]
-    },
-    {
-      "slug": "13611071",
-      "title": "'I can't speak highly enough of him' - Kane on Pochettino amid Man Utd links",
-      "url": "https://www.skysports.com/football/video/13611071/harry-kane-on-mauricio-pochettino-amid-manchester-united-links",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kane-potchettino_7404051.jpg?20261111150710",
-      "excerpt": "Harry Kane talks about former Tottenham Hotspur manager Mauricio Pochettino amid links to Manchester United.",
-      "published_label": "11 November 2026 · 15:03",
-      "published_iso": "2026-11-11T15:03:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Harry Kane talks about former Tottenham Hotspur manager Mauricio Pochettino amid links to Manchester United."
-      ]
-    },
-    {
-      "slug": "13611064",
-      "title": "Kane applauded by journalists as he enters England press conference",
-      "url": "https://www.skysports.com/football/video/13611064/harry-kane-applauded-by-journalists-as-he-enters-england-press-conference",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7404037.jpg?20261111145537",
-      "excerpt": "England captain Harry Kane was applauded by the media for his Ballon d'Or success as he entered Wednesday's press conference ahead of the Nations League game against Croatia.",
-      "published_label": "11 November 2026 · 14:41",
-      "published_iso": "2026-11-11T14:41:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "England captain Harry Kane was applauded by the media for his Ballon d'Or success as he entered Wednesday's press conference ahead of the Nations League game against Croatia."
-      ]
-    },
-    {
-      "slug": "13611054",
-      "title": "'That's what we came for!' - The BEST PL dance celebs: Barry, Lingard, Crouch and more!",
-      "url": "https://www.skysports.com/football/video/13611054/the-best-premier-league-dance-celebrations-thierno-barry-jesse-lingard-peter-crouch-and-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-dance-barry_7404039.jpg?20261111145800",
-      "excerpt": "As Thierno Barry's dance celebrations take the world by storm, here's our picks of the best ever Premier League dance celebrations, including Jesse Lingard, Peter Crouch and more.",
-      "published_label": "11 November 2026 · 14:31",
-      "published_iso": "2026-11-11T14:31:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "As Thierno Barry's dance celebrations take the world by storm, here's our picks of the best ever Premier League dance celebrations, including Jesse Lingard, Peter Crouch and more."
-      ]
-    },
-    {
-      "slug": "13611036",
-      "title": "Tuchel to field strong side against Croatia in 'beautiful occasion' for Kane",
-      "url": "https://www.skysports.com/football/video/13611036/england-thomas-tuchel-says-he-will-field-a-strong-side-against-croatia-in-beautiful-night-for-harry-kane",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-kane-tuchel_7403958.jpg?20261111141355",
-      "excerpt": "Thomas Tuchel says he will field a strong side against Croatia in a 'beautiful' night for Harry Kane as he presents the Ballon d'Or to the England fans.",
-      "published_label": "11 November 2026 · 13:55",
-      "published_iso": "2026-11-11T13:55:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Thomas Tuchel says he will field a strong side against Croatia in a 'beautiful' night for Harry Kane as he presents the Ballon d'Or to the England fans."
-      ]
-    },
-    {
-      "slug": "13611018",
-      "title": "Five things Pochettino will need to sort out at Man Utd",
-      "url": "https://www.skysports.com/football/video/13611018/manchester-utd-latest-five-things-mauricio-pochettino-will-need-to-sort-at-old-trafford",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7403933.jpg?20261111134855",
-      "excerpt": "Sky Sports' Nick Wright looks at the FIVE things that Mauricio Pochettino will have to address if and when he replaces Michael Carrick as the manager of Manchester United.",
-      "published_label": "11 November 2026 · 13:30",
-      "published_iso": "2026-11-11T13:30:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Nick Wright looks at the FIVE things that Mauricio Pochettino will have to address if and when he replaces Michael Carrick as the manager of Manchester United."
-      ]
-    },
-    {
-      "slug": "13611004",
-      "title": "Is Pochettino a short-term fix? Man Utd pursuit of Carrick replacement questioned",
-      "url": "https://www.skysports.com/football/news/13611004/mauricio-pochettino-manchester-uniteds-approach-for-former-tottenham-and-chelsea-boss-questioned",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/09/768x432/skysports-mauricio-pochettino_7346135.jpg?20260909143140",
-      "excerpt": "Sky Sports News' Kaveh Solhekol has questioned Manchester United's pursuit of Mauricio Pochettino, suggesting there are better options available.",
-      "published_label": "11 November 2026 · 12:44",
-      "published_iso": "2026-11-11T12:44:00+00:00",
-      "byline": "Kaveh Solhekol",
-      "body": [
-        "Sky Sports News' Kaveh Solhekol has questioned Manchester United's pursuit of Mauricio Pochettino, suggesting there are better options available.",
-        "United have struck an agreement with the US National team to replace Carrick with Mauricio Pochettino , Solhekol believes Pochettino wouldn't be the top target for any other top clubs. Man Utd strike Poch agreement as Carrick takes training Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "\"I think he's a very good manager, but would he be in the frame to get the Liverpool job if that was available?",
-        "\"Would he be in the frame to get the Arsenal job if that was available? Bayern Munich, Barcelona, Real Madrid, would they be looking at Mauricio Pochettino?"
-      ]
-    },
-    {
-      "slug": "13610980",
-      "title": "'It doesn't look good' - Have Man Utd let Carrick down?",
-      "url": "https://www.skysports.com/football/video/13610980/manchester-united-have-club-let-michael-carrick-down",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-carrick-michale_7403858.jpg?20261111122842",
-      "excerpt": "Sky Sports chief correspondent Kaveh Solhekol discusses whether the club has let Michael Carrick down as they agree a deal in principle with Mauricio Pochettino to take over as head coach if Carrick is sacked.",
-      "published_label": "11 November 2026 · 12:11",
-      "published_iso": "2026-11-11T12:11:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports chief correspondent Kaveh Solhekol discusses whether the club has let Michael Carrick down as they agree a deal in principle with Mauricio Pochettino to take over as head coach if Carrick is sacked."
       ]
     }
   ]
