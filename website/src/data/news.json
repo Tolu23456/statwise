@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-11-13T17:46:15+00:00",
+  "synced_at": "2026-11-13T23:35:02+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
@@ -16,17 +16,6 @@
       "published_iso": "",
       "byline": "",
       "kind": "video"
-    },
-    {
-      "slug": "13610882",
-      "title": "Man Utd appoint Pochettino as head coach",
-      "url": "https://www.skysports.com/football/news/13610882/mauricio-pochettino-appointed-as-manchester-united-head-coach-after-michael-carricks-sacking-at-old-trafford",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-pochettino-mauricio_7405773.png?20261113122444",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
     },
     {
       "slug": "13611913",
@@ -272,6 +261,102 @@
       "byline": ""
     },
     {
+      "slug": "13612087",
+      "title": "‘Helps build a winning culture’ – Pocognoli pleased with first Hampden win",
+      "url": "https://www.skysports.com/football/video/13612087/sebastien-pocognoli-pleased-after-first-home-win-with-scotland-helps-build-a-winning-culture",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-pocognoli-scotland_7406206.jpg?20261113232439",
+      "excerpt": "Sebastien Pocognoli was pleased after his first home win with Scotland against North Macedonia in the Nations League, hoping that it will 'helps build a winning culture'.",
+      "published_label": "13 November 2026 · 23:15",
+      "published_iso": "2026-11-13T23:15:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sebastien Pocognoli was pleased after his first home win with Scotland against North Macedonia in the Nations League, hoping that it will 'helps build a winning culture'."
+      ]
+    },
+    {
+      "slug": "13612084",
+      "title": "‘He deserves it’ – McGinn hails Robertson after matching Dalglish’s caps record",
+      "url": "https://www.skysports.com/football/video/13612084/john-mcginn-hails-andy-robertson-after-matching-kenny-dalglish-s-caps-record",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-scotland-football_7406188.jpg?20261113230151",
+      "excerpt": "John McGinn hails Andy Robertson after he matched Kenny Dalglish’s caps record against North Macedonia.",
+      "published_label": "13 November 2026 · 22:59",
+      "published_iso": "2026-11-13T22:59:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "John McGinn hails Andy Robertson after he matched Kenny Dalglish’s caps record against North Macedonia."
+      ]
+    },
+    {
+      "slug": "13611965",
+      "title": "Papers: Man Utd eyeing move for Como star Paz",
+      "url": "https://www.skysports.com/football/news/13611965/man-utd-transfer-news-como-star-nico-paz-emerges-as-target-ahead-of-summer-transfer-window-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Saturday's newspapers... MANCHESTER UNITED",
+      "published_label": "13 November 2026 · 22:51",
+      "published_iso": "2026-11-13T22:51:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Saturday's newspapers... MANCHESTER UNITED",
+        "Manchester United are monitoring Como star Nico Paz ahead of a potential move next summer - The Sun",
+        "Manchester United remain hopeful that they can convince captain Bruno Fernandes to sign a new deal at the club - The Sun",
+        "Manchester United players were \"confused and bemused\" by the club leaving Michael Carrick in limbo before finally sacking him today - The Sun Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW FOOTBALL"
+      ]
+    },
+    {
+      "slug": "13611991",
+      "title": "Dowman breaks record after making England U21s debut in loss to Portugal",
+      "url": "https://www.skysports.com/football/news/13611991/england-0-1-portugal-max-dowman-makes-debut-off-the-bench-as-u21s-suffer-defeat-in-friendly",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-max-dowman-england_7406122.jpg?20261113220317",
+      "excerpt": "Max Dowman broke Jude Bellingham's record to become the youngest player to represent England at U21 level but could not stop Lee Carsley's side from falling to a 1-0 loss against Portugal.",
+      "published_label": "13 November 2026 · 22:00",
+      "published_iso": "2026-11-13T22:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Max Dowman broke Jude Bellingham's record to become the youngest player to represent England at U21 level but could not stop Lee Carsley's side from falling to a 1-0 loss against Portugal.",
+        "Dowman, aged 16, 10 months and 13 days, stepped off the bench with around half an hour remaining to make his debut, but Moreira's first half strike secured the victory for Portugal on the evening.",
+        "Lee Carsley's side have now suffered successive defeats for the first time since March 2021 following their loss to the Republic of Ireland in their last European Championship qualifying match in October. As it happened | Teams | Stats Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
+        "England's preparations for next year's tournament did not get off to an ideal start as Bayer Leverkusen forward Moreira put the visitors ahead at the break."
+      ]
+    },
+    {
+      "slug": "13611417",
+      "title": "McGinn double seals win for ragged Scotland",
+      "url": "https://www.skysports.com/football/news/13611417/scotland-2-1-north-macedonia-john-mcginn-scores-double-as-hosts-toil-in-nations-league-encounter",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-john-mcginn-scotland_7406088.jpg?20261113211951",
+      "excerpt": "John McGinn's double rescued Scotland as they toiled to a 2-1 win over North Macedonia to keep their Nations League promotion hopes alive.",
+      "published_label": "13 November 2026 · 21:35",
+      "published_iso": "2026-11-13T21:35:00+00:00",
+      "byline": "Allan Valente",
+      "body": [
+        "John McGinn's double rescued Scotland as they toiled to a 2-1 win over North Macedonia to keep their Nations League promotion hopes alive.",
+        "The hosts were booed off at half-time with the game goalless but there was a sense of relief - rather than joy - at the final whistle after McGinn's penalty secured the three points after Elmin Rastoder's header cancelled out the Aston Villa midfielder's opener. As it happened | Teams | Stats Nations League scores & news | Tables Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
+        "The win means Scotland can still finish second in Group B1 after Slovenia were held by Switzerland, but will have to win in St Gallen on Monday and hope North Macedonia do them a favour in their final game.",
+        "Scotland boss Sebastien Pocognoli secured his first win at Hampden on a night when skipper Andy Robertson earned his 102nd cap to equal the appearance record held by Sir Kenny Dalglish."
+      ]
+    },
+    {
+      "slug": "13612024",
+      "title": "How's your football knowledge? Jobe impresses naming Ballon d'Or winners",
+      "url": "https://www.skysports.com/football/video/13612024/jobe-bellingham-shows-off-his-football-knowledge-naming-ballon-dor-winners",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jobe-bellingham-england_7406031.jpg?20261113194535",
+      "excerpt": "Jobe Bellingham shows off his football knowledge naming Ballon d'Or winners. X Credit: @England.",
+      "published_label": "13 November 2026 · 19:42",
+      "published_iso": "2026-11-13T19:42:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jobe Bellingham shows off his football knowledge naming Ballon d'Or winners. X Credit: @England."
+      ]
+    },
+    {
       "slug": "13611887",
       "title": "Tearful Pochettino admits he 'couldn't say no to Man Utd'",
       "url": "https://www.skysports.com/football/news/13611887/mauricio-pochettino-new-man-utd-head-coach-in-tears-as-he-labels-leaving-usmnt-toughest-decision-of-career",
@@ -346,6 +431,23 @@
       "kind": "video",
       "body": [
         "Jay Bothroyd's selects who will be on Mauricio Pochettino's whiteboard as he decides who should stay and go at Manchester United."
+      ]
+    },
+    {
+      "slug": "13610882",
+      "title": "Man Utd appoint Pochettino as head coach",
+      "url": "https://www.skysports.com/football/news/13610882/mauricio-pochettino-appointed-as-manchester-united-head-coach-after-michael-carricks-sacking-at-old-trafford",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-pochettino-mauricio_7405773.png?20261113122444",
+      "excerpt": "Mauricio Pochettino has been appointed as the new Manchester United head coach, following the sacking of Michael Carrick.",
+      "published_label": "13 November 2026 · 12:00",
+      "published_iso": "2026-11-13T12:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Mauricio Pochettino has been appointed as the new Manchester United head coach, following the sacking of Michael Carrick.",
+        "Pochettino will begin the role on Wednesday, after taking charge of the USA's fixtures against Haiti, having signed a deal signed until the summer of 2029.",
+        "He is set to meet his new players and take training for the first time on Thursday and his first match in charge will be against Liverpool at Anfield on Sunday November 22, live on Sky Sports.",
+        "Sky Sports News understands United have to pay around £7.4m to buy Pochettino out of his newly-signed contract with the USA. What does a Mauricio Pochettino team look like? Man Utd's Mauricio Pochettino pursuit comes full circle - but will it work? Why have Man Utd only had two 'successful' managers? Man Utd news & transfers 🔴| Man Utd fixtures & scores"
       ]
     },
     {
@@ -582,106 +684,6 @@
       "kind": "video",
       "body": [
         "Speaking on The Essential EFL Podcast, Billy Sharp backs his former club, Sheffield United, to make the play-offs after a mixed start to the season."
-      ]
-    },
-    {
-      "slug": "13611570",
-      "title": "Kane the hero on historic night as England book Nations League QF spot",
-      "url": "https://www.skysports.com/football/news/13611570/england-2-1-croatia-harry-kane-scores-winner-as-he-become-three-lions-record-appearance-maker-to-book-nations-league-quarter-final",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-harry-kane_7405434.jpg?20261112213640",
-      "excerpt": "Record-breaker Harry Kane scored from the spot to seal England's place in the Nations League quarter-finals with a 2-1 victory over Croatia, capping a memorable Wembley night as the captain became his country's most-capped player.",
-      "published_label": "12 November 2026 · 15:12",
-      "published_iso": "2026-11-12T15:12:00+00:00",
-      "byline": "Peter Smith",
-      "body": [
-        "Record-breaker Harry Kane scored from the spot to seal England's place in the Nations League quarter-finals with a 2-1 victory over Croatia, capping a memorable Wembley night as the captain became his country's most-capped player.",
-        "There was an inevitability about Kane hitting the net on his 126th appearance. There had been pre-match tributes and accolades as the Ballon d'Or holder passed the mark of legendary goalkeeper Peter Shilton and once again Kane was England's match winner with his second-half spot-kick. That's 92 goals now in England colours for the record scorer. As it happened | Match stats | England fixtures Nations League scores & news | Tables | Sky Bet",
-        "The win means England will now have the chance to win Nations League Group A3 and be seeded for the quarter-finals - but they will have to be far better than this if they are to beat table-toppers and world champions Spain in Madrid on Sunday.",
-        "England thumped Croatia 7-0 last month but this was a performance far shy of that previous display, lacking intensity and final-third spark for long periods, and littered with jittery moments at the back."
-      ]
-    },
-    {
-      "slug": "13611544",
-      "title": "Robertson on verge of history, but insists Sir Kenny will always be 'the greatest'",
-      "url": "https://www.skysports.com/football/news/13611544/andy-robertson-scotland-captain-on-reaching-sir-kenny-dalglishs-caps-record-hell-always-be-the-greatest",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-robertson-andy-andrew_7405079.jpg?20261112142630",
-      "excerpt": "Scotland captain Andy Robertson is on the brink of becoming Scotland's record caps holder, but he will always regard Sir Kenny Dalglish as \"the greatest\".",
-      "published_label": "12 November 2026 · 15:00",
-      "published_iso": "2026-11-12T15:00:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "Scotland captain Andy Robertson is on the brink of becoming Scotland's record caps holder, but he will always regard Sir Kenny Dalglish as \"the greatest\".",
-        "It is 40 years since Dalglish won his 102nd and final Scotland cap in a 3-0 win over Luxembourg at Hampden Park, and on Friday Robertson will equal that number against North Macedonia.",
-        "The 32-year-old will then surpass that record on Monday if he plays in the final Nations League game against Switzerland in St Gallen. Penrice handed first Scotland call as McTominay returns Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
-        "\"In terms of number, I'll stand side by side by him but I don't want to forget and I don't want people to forget how important this man has been for our country,\" Robertson said when asked about matching the 75-year-old's record."
-      ]
-    },
-    {
-      "slug": "13611886",
-      "title": "Neville: Pochettino needs control of Man Utd recruitment",
-      "url": "https://www.skysports.com/football/news/13611886/gary-neville-mauricio-pochettino-needs-control-of-manchester-united-recruitment",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/09/768x432/skysports-mauricio-pochettino_7346131.jpg?20260909143053",
-      "excerpt": "Sky Sports' Gary Neville says it will be key for Mauricio Pochettino to take a leading role in Manchester United's recruitment plans for the upcoming transfer window and beyond if he is to achieve success at Old Trafford.",
-      "published_label": "12 November 2026 · 14:49",
-      "published_iso": "2026-11-12T14:49:00+00:00",
-      "byline": "Gary Neville",
-      "body": [
-        "Sky Sports' Gary Neville says it will be key for Mauricio Pochettino to take a leading role in Manchester United's recruitment plans for the upcoming transfer window and beyond if he is to achieve success at Old Trafford.",
-        "Pochettino has been appointed as successor to the sacked Michael Carrick and will take over with United in the Premier League relegation zone after making their worst-ever start to the competition after 10 games.",
-        "Neville is a long-term admirer of Pochettino but says the Argentine will need to oversee a substantial overhaul of the club's squad if he is to significantly improve United's fortunes.",
-        "\"I'm hoping Mauricio Pochettino has done a couple of things on the way in and I'm hoping he protects himself on his contract because he'll need to,\" Neville told Sky Sports News."
-      ]
-    },
-    {
-      "slug": "13611501",
-      "title": "Neville 'disgusted' at Man Utd's treatment of Carrick",
-      "url": "https://www.skysports.com/football/news/13611501/gary-neville-man-utds-treatment-of-michael-carrick-disgusting-as-mauricio-pochettino-prepares-to-take-over-at-old-trafford",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-michael-carrick-manchester-united_7383931.jpg?20261022173420",
-      "excerpt": "Sky Sports' Gary Neville has described Manchester United's treatment of Michael Carrick as \"disgusting\" after the club legend was sacked as head coach, with Mauricio Pochettino set to succeed him at Old Trafford.",
-      "published_label": "12 November 2026 · 14:49",
-      "published_iso": "2026-11-12T14:49:00+00:00",
-      "byline": "Gary Neville",
-      "body": [
-        "Sky Sports' Gary Neville has described Manchester United's treatment of Michael Carrick as \"disgusting\" after the club legend was sacked as head coach, with Mauricio Pochettino set to succeed him at Old Trafford.",
-        "Neville believes United have handled the situation poorly, with Carrick taking training in Manchester while club executives met in Monaco on Wednesday and pursued Pochettino as his replacement .",
-        "Sky Sports News understands a full agreement in principle has been reached between United and Pochettino. Talks between the club and US Soccer Federation are at the paperwork and regulatory processes stage.",
-        "Neville also warned the incoming head coach that the club's problems run much deeper than the manager, insisting Pochettino must take control of recruitment and demand significant investment. Carrick sacked by Man Utd | Is Pochettino a short-term fix? Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13611491",
-      "title": "'I'm shocked it's come this early' - Neville saddened by Carrick sacking",
-      "url": "https://www.skysports.com/football/video/13611491/manchester-utd-latest-gary-neville-saddened-by-michael-carrick-sacking",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-gary-neville-michael_7404988.jpg?20261112125936",
-      "excerpt": "Sky Sports' Gary Neville says he is shocked that Michael Carrick has been sacked by Manchester Utd at such an early stage of the season.",
-      "published_label": "12 November 2026 · 12:54",
-      "published_iso": "2026-11-12T12:54:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Gary Neville says he is shocked that Michael Carrick has been sacked by Manchester Utd at such an early stage of the season."
-      ]
-    },
-    {
-      "slug": "13611443",
-      "title": "What does a Pochettino team look like?",
-      "url": "https://www.skysports.com/football/news/13611443/mauricio-pochettino-to-man-utd-what-does-a-pochettino-team-look-like-and-how-will-he-set-up-struggling-red-devils",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7405659.jpg?20261113093243",
-      "excerpt": "Mauricio Pochettino has been named Manchester United's new manager following the sacking of Michael Carrick, so what can supporters actually expect on the pitch?",
-      "published_label": "12 November 2026 · 10:59",
-      "published_iso": "2026-11-12T10:59:00+00:00",
-      "byline": "Nick Wright",
-      "body": [
-        "Mauricio Pochettino has been named Manchester United's new manager following the sacking of Michael Carrick, so what can supporters actually expect on the pitch?",
-        "The 54-year-old, who led the United States to the last 16 of the World Cup in his most recent role, is returning to England after previous spells in charge of Southampton, Spurs and Chelsea.",
-        "Starting with his Southampton tenure, and including his 18-month spell as Paris Saint-Germain head coach, we look at how he has set his team up in each role - and ponder what he might do at United. Tactical blueprint at Southampton?",
-        "A 4-2-3-1 formation quickly became established as Pochettino's favoured choice at Southampton, where he maintained a similar shape to his predecessor Nigel Adkins but with a dramatically different playing style emphasising pressing high up the pitch. The damning stats that made Michael Carrick's reign untenable Why have Man Utd had only two 'successful' managers?"
       ]
     }
   ]
