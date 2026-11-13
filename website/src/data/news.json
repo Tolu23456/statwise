@@ -1,45 +1,10 @@
 {
-  "synced_at": "2026-11-13T01:05:47+00:00",
+  "synced_at": "2026-11-13T09:31:36+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13611488",
-      "title": "Neville: I've always wanted Pochettino – but he has to take control of recruitment",
-      "url": "https://www.skysports.com/football/video/13611488/gary-neville-i-ve-always-wanted-pochettino-but-has-to-take-control-of-recruitment",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-neville-potchettino_7404975.jpg?20261112124837",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13611598",
-      "title": "Sharp: I'm quietly confident Sheffield Utd will make play-offs!",
-      "url": "https://www.skysports.com/football/video/13611598/billy-sharp-im-quietly-confident-sheffield-united-will-make-championship-play-offs",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-championship_7405201.jpg?20261112160340",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13611544",
-      "title": "Robertson on verge of history, but insists Sir Kenny will always be 'the greatest'",
-      "url": "https://www.skysports.com/football/news/13611544/andy-robertson-scotland-captain-on-reaching-sir-kenny-dalglishs-caps-record-hell-always-be-the-greatest",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-robertson-andy-andrew_7405079.jpg?20261112142630",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13610708",
       "title": "Jacob Murphy goal!",
@@ -51,29 +16,6 @@
       "published_iso": "",
       "byline": "",
       "kind": "video"
-    },
-    {
-      "slug": "13608932",
-      "title": "Was Mourinho upset by Ronaldo retirement circumstances?",
-      "url": "https://www.skysports.com/football/video/13608932/jose-mourinho-what-did-real-madrid-boss-mean-by-cristiano-ronaldo-retirement-comments",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jose-mourinho-real-madrid_7399235.jpg?20261106162303",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13608882",
-      "title": "Iraola: We must sacrifice control for creativity to fix scoring woes",
-      "url": "https://www.skysports.com/football/news/13608882/liverpool-andoni-iraola-demands-creativity-over-control-to-solve-premier-league-scoring-problems",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-liverpool_7399134.jpg?20261106145228",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
     },
     {
       "slug": "13595354",
@@ -272,6 +214,21 @@
       "byline": ""
     },
     {
+      "slug": "13611798",
+      "title": "'Closest I'll ever get' - Burn, Hall on Kane's Ballon d'Or and 126th England cap",
+      "url": "https://www.skysports.com/football/video/13611798/dan-burn-and-lewis-hall-discuss-harry-kanes-ballon-dor-and-126th-england-cap",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-burn-hall_7405605.jpg?20261113075712",
+      "excerpt": "Dan Burn and Lewis Hall discuss Harry Kane's Ballon d'Or and becoming England's most capped player with 126 matches played for the Three Lions.",
+      "published_label": "13 November 2026 · 07:50",
+      "published_iso": "2026-11-13T07:50:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Dan Burn and Lewis Hall discuss Harry Kane's Ballon d'Or and becoming England's most capped player with 126 matches played for the Three Lions."
+      ]
+    },
+    {
       "slug": "13611751",
       "title": "England player ratings: Who impressed and who struggled in Croatia win?",
       "url": "https://www.skysports.com/football/video/13611751/england-vs-croatia-england-player-ratings-as-tuchels-reach-the-nations-league-quarters-finals",
@@ -445,6 +402,21 @@
       ]
     },
     {
+      "slug": "13611598",
+      "title": "Sharp: I'm quietly confident Sheffield Utd will make play-offs!",
+      "url": "https://www.skysports.com/football/video/13611598/billy-sharp-im-quietly-confident-sheffield-united-will-make-championship-play-offs",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-championship_7405201.jpg?20261112160340",
+      "excerpt": "Speaking on The Essential EFL Podcast, Billy Sharp backs his former club, Sheffield United, to make the play-offs after a mixed start to the season.",
+      "published_label": "12 November 2026 · 15:44",
+      "published_iso": "2026-11-12T15:44:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking on The Essential EFL Podcast, Billy Sharp backs his former club, Sheffield United, to make the play-offs after a mixed start to the season."
+      ]
+    },
+    {
       "slug": "13611570",
       "title": "Kane the hero on historic night as England book Nations League QF spot",
       "url": "https://www.skysports.com/football/news/13611570/england-2-1-croatia-harry-kane-scores-winner-as-he-become-three-lions-record-appearance-maker-to-book-nations-league-quarter-final",
@@ -459,6 +431,23 @@
         "There was an inevitability about Kane hitting the net on his 126th appearance. There had been pre-match tributes and accolades as the Ballon d'Or holder passed the mark of legendary goalkeeper Peter Shilton and once again Kane was England's match winner with his second-half spot-kick. That's 92 goals now in England colours for the record scorer. As it happened | Match stats | England fixtures Nations League scores & news | Tables | Sky Bet",
         "The win means England will now have the chance to win Nations League Group A3 and be seeded for the quarter-finals - but they will have to be far better than this if they are to beat table-toppers and world champions Spain in Madrid on Sunday.",
         "England thumped Croatia 7-0 last month but this was a performance far shy of that previous display, lacking intensity and final-third spark for long periods, and littered with jittery moments at the back."
+      ]
+    },
+    {
+      "slug": "13611544",
+      "title": "Robertson on verge of history, but insists Sir Kenny will always be 'the greatest'",
+      "url": "https://www.skysports.com/football/news/13611544/andy-robertson-scotland-captain-on-reaching-sir-kenny-dalglishs-caps-record-hell-always-be-the-greatest",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-robertson-andy-andrew_7405079.jpg?20261112142630",
+      "excerpt": "Scotland captain Andy Robertson is on the brink of becoming Scotland's record caps holder, but he will always regard Sir Kenny Dalglish as \"the greatest\".",
+      "published_label": "12 November 2026 · 15:00",
+      "published_iso": "2026-11-12T15:00:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "Scotland captain Andy Robertson is on the brink of becoming Scotland's record caps holder, but he will always regard Sir Kenny Dalglish as \"the greatest\".",
+        "It is 40 years since Dalglish won his 102nd and final Scotland cap in a 3-0 win over Luxembourg at Hampden Park, and on Friday Robertson will equal that number against North Macedonia.",
+        "The 32-year-old will then surpass that record on Monday if he plays in the final Nations League game against Switzerland in St Gallen. Penrice handed first Scotland call as McTominay returns Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
+        "\"In terms of number, I'll stand side by side by him but I don't want to forget and I don't want people to forget how important this man has been for our country,\" Robertson said when asked about matching the 75-year-old's record."
       ]
     },
     {
@@ -479,6 +468,36 @@
       ]
     },
     {
+      "slug": "13611491",
+      "title": "'I'm shocked it's come this early' - Neville saddened by Carrick sacking",
+      "url": "https://www.skysports.com/football/video/13611491/manchester-utd-latest-gary-neville-saddened-by-michael-carrick-sacking",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-gary-neville-michael_7404988.jpg?20261112125936",
+      "excerpt": "Sky Sports' Gary Neville says he is shocked that Michael Carrick has been sacked by Manchester Utd at such an early stage of the season.",
+      "published_label": "12 November 2026 · 12:54",
+      "published_iso": "2026-11-12T12:54:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Gary Neville says he is shocked that Michael Carrick has been sacked by Manchester Utd at such an early stage of the season."
+      ]
+    },
+    {
+      "slug": "13611488",
+      "title": "Neville: I've always wanted Pochettino – but he has to take control of recruitment",
+      "url": "https://www.skysports.com/football/video/13611488/gary-neville-i-ve-always-wanted-pochettino-but-has-to-take-control-of-recruitment",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-neville-potchettino_7404975.jpg?20261112124837",
+      "excerpt": "Gary Neville says he has always wanted Mauricio Pochettino as Manchester United manager but he has to take control of recruitment.",
+      "published_label": "12 November 2026 · 12:44",
+      "published_iso": "2026-11-12T12:44:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Gary Neville says he has always wanted Mauricio Pochettino as Manchester United manager but he has to take control of recruitment."
+      ]
+    },
+    {
       "slug": "13606106",
       "title": "Carrick sacked as Man Utd reach full agreement with Pochettino",
       "url": "https://www.skysports.com/football/news/13606106/man-utd-sack-michael-carrick-with-mauricio-pochettino-set-to-be-appointed-after-worst-start-to-premier-league-season",
@@ -496,23 +515,6 @@
       ]
     },
     {
-      "slug": "13611419",
-      "title": "Kane makes history with record 126th England cap",
-      "url": "https://www.skysports.com/football/news/13611419/harry-kane-england-captain-breaks-three-lions-appearance-record-by-winning-126th-senior-cap-vs-croatia-at-wembley",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7403635.jpg?20261111083100",
-      "excerpt": "Harry Kane has broken the record for the most senior England caps by a single player in history.",
-      "published_label": "12 November 2026 · 10:16",
-      "published_iso": "2026-11-12T10:16:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Harry Kane has broken the record for the most senior England caps by a single player in history.",
-        "The Three Lions captain led the line for Thursday's Nations League game against Croatia, making his 126th appearance for his country in the process and scoring his 92nd goal to win the game at Wembley .",
-        "He bypassed the record previously held by goalkeeper Peter Shilton, who earned 125 caps between 1970 and 1990.",
-        "Shilton paid tribute to Kane on the pitch ahead of kick-off, with Prince William and visiting captain Luka Modric also honouring the England skipper before the game."
-      ]
-    },
-    {
       "slug": "13611731",
       "title": "'Overwhelming' - Record-breaker Kane celebrates 'amazing' Wembley night",
       "url": "https://www.skysports.com/football/news/13611731/harry-kane-england-captain-reflects-on-overwhelming-wembley-reception-after-ballon-dor-win-and-record-breaking-appearance-against-croatia",
@@ -527,6 +529,23 @@
         "The Three Lions captain walked out at Wembley on Thursday to a huge tifo celebrating his 126th international appearance and received awards from former record holder Peter Shilton, Prince William and Croatia captain Luka Modric, as well as presenting his Ballon d'Or trophy to the crowd.",
         "Kane then went on to strike the winning penalty for England in a 2-1 Nations League triumph which sealed their place in the quarter-finals of the competition. They can top the group and be seeded for the last-eight draw if they beat Spain in Madrid on Sunday.",
         "\"It was incredible. Everything was amazing,\" said Kane in a post-match press conference. \"Thank you to everyone who organised [the tributes], with the tifo and presentations. Thank you to Luka [Modric] and Croatia for their gift. England 2-1 Croatia - Match report | As it happened Latest England news | England fixtures Nations League fixtures | Nations League tables"
+      ]
+    },
+    {
+      "slug": "13611419",
+      "title": "Kane makes history with record 126th England cap",
+      "url": "https://www.skysports.com/football/news/13611419/harry-kane-england-captain-breaks-three-lions-appearance-record-by-winning-126th-senior-cap-vs-croatia-at-wembley",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7403635.jpg?20261111083100",
+      "excerpt": "Harry Kane has broken the record for the most senior England caps by a single player in history.",
+      "published_label": "12 November 2026 · 10:16",
+      "published_iso": "2026-11-12T10:16:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Harry Kane has broken the record for the most senior England caps by a single player in history.",
+        "The Three Lions captain led the line for Thursday's Nations League game against Croatia, making his 126th appearance for his country in the process and scoring his 92nd goal to win the game at Wembley .",
+        "He bypassed the record previously held by goalkeeper Peter Shilton, who earned 125 caps between 1970 and 1990.",
+        "Shilton paid tribute to Kane on the pitch ahead of kick-off, with Prince William and visiting captain Luka Modric also honouring the England skipper before the game."
       ]
     },
     {
@@ -657,37 +676,35 @@
       ]
     },
     {
-      "slug": "13611079",
-      "title": "Could King really become 'one of the best players in the world'?",
-      "url": "https://www.skysports.com/football/news/13611079/josh-king-the-making-of-the-rising-star-tipped-to-become-one-of-worlds-best-players-after-england-call-up",
+      "slug": "13608932",
+      "title": "Was Mourinho upset by Ronaldo retirement circumstances?",
+      "url": "https://www.skysports.com/football/video/13608932/jose-mourinho-what-did-real-madrid-boss-mean-by-cristiano-ronaldo-retirement-comments",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-fulham-josh-king_7403634.jpg?20261111082838",
-      "excerpt": "Josh King was always one of the best players in his age group. \"Nationally,\" clarifies Charlie Turnbull, his coach in Fulham's academy for five seasons between his U10 and U14 years, to Sky Sports . But there was another quality that set hi…",
-      "published_label": "11 November 2026 · 17:22",
-      "published_iso": "2026-11-11T17:22:00+00:00",
-      "byline": "Nick Wright",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jose-mourinho-real-madrid_7399235.jpg?20261106162303",
+      "excerpt": "Real Madrid boss Jose Mourinho gives his thoughts on Cristiano Ronaldo's retirement from international football.",
+      "published_label": "06 November 2026 · 15:57",
+      "published_iso": "2026-11-06T15:57:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
       "body": [
-        "Josh King was always one of the best players in his age group. \"Nationally,\" clarifies Charlie Turnbull, his coach in Fulham's academy for five seasons between his U10 and U14 years, to Sky Sports . But there was another quality that set him apart.",
-        "\"One of the most outstanding things about Josh is that whenever the level went up, whenever there was a pressure game, he loved it,\" adds Turnbull. \"He loved it when things got hard. He loved it when there was a little bit of extra pressure.",
-        "\"He wanted it. He wanted to feel like the pressure was on him and the responsibility was on him to produce for the team. He enjoyed that. You always saw the best of Josh when the ante was up. I never once saw him not deliver in those circumstances.",
-        "\"We would play tournaments in France, Spain and Portugal, against the giants of Europe, and afterwards the staff from each club would have to pick the best player they'd seen across the weekend. I remember Josh winning that accolade more than once.\""
+        "Real Madrid boss Jose Mourinho gives his thoughts on Cristiano Ronaldo's retirement from international football."
       ]
     },
     {
-      "slug": "13610949",
-      "title": "Man Utd strike Pochettino agreement with Carrick set to depart",
-      "url": "https://www.skysports.com/football/news/13610949/mauricio-pochettino-man-utd-strike-agreement-with-michael-carricks-potential-successor",
+      "slug": "13608882",
+      "title": "Iraola: We must sacrifice control for creativity to fix scoring woes",
+      "url": "https://www.skysports.com/football/news/13608882/liverpool-andoni-iraola-demands-creativity-over-control-to-solve-premier-league-scoring-problems",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7403861.png?20261111123427",
-      "excerpt": "Manchester United have reached a verbal agreement in principle with Mauricio Pochettino to take over as head coach.",
-      "published_label": "11 November 2026 · 17:00",
-      "published_iso": "2026-11-11T17:00:00+00:00",
-      "byline": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-liverpool_7399134.jpg?20261106145228",
+      "excerpt": "Liverpool must sacrifice control in games in order to fix their creativity problems, Andoni Iraola has demanded ahead of their weekend trip to Crystal Palace, live on Sky Sports .",
+      "published_label": "06 November 2026 · 15:00",
+      "published_iso": "2026-11-06T15:00:00+00:00",
+      "byline": "Ron Walker",
       "body": [
-        "Manchester United have reached a verbal agreement in principle with Mauricio Pochettino to take over as head coach.",
-        "Michael Carrick took training on Wednesday and officially remains United boss.",
-        "He is likely to be relieved of his duties before the end of the week, once Omar Berrada, the chief executive, and Jason Wilcox, the director of football, have returned from their meeting with co-owner Sir Jim Ratcliffe in Monaco on Wednesday.",
-        "Pochettino is then expected to be confirmed as Carrick's replacement sometime afterwards. Is Pochettino a short-term fix? Man Utd pursuit of replacement questioned Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+        "Liverpool must sacrifice control in games in order to fix their creativity problems, Andoni Iraola has demanded ahead of their weekend trip to Crystal Palace, live on Sky Sports .",
+        "The Reds have created the second-fewest big chances in the Premier League this season and scored only four goals in five home games, their joint-fewest at this stage of a season in their history.",
+        "They set an unwanted record against Arsenal last weekend , failing to register a shot on target in a home Premier League game for the first time in more than 440 games since Opta records began in 2003.",
+        "Iraola arrived at Anfield last summer with a reputation for front-foot, direct football but has had difficulties imposing his philosophy on his new players in the first three months of the season, and now wants them to take more risks to turn their domination into clear-cut opportunities."
       ]
     }
   ]
