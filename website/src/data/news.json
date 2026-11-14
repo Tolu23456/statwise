@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-11-13T23:35:02+00:00",
+  "synced_at": "2026-11-14T06:24:23+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
@@ -18,41 +18,6 @@
       "kind": "video"
     },
     {
-      "slug": "13611913",
-      "title": "Redknapp: Man Utd squad fitness the number one job for Pochettino",
-      "url": "https://www.skysports.com/football/video/13611913/jamie-redknapp-mauricio-pochettino-needs-to-start-by-getting-manchester-united-squad-fit",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7405858.jpg?20261113141616",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13610560",
-      "title": "How do Arsenal rediscover the 'fear factor' at the Emirates?",
-      "url": "https://www.skysports.com/football/news/13610560/arsenal-vs-london-city-lionesses-have-renee-slegers-side-lost-the-fear-factor-of-playing-at-the-emirates-stadium",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7403170.jpg?20261110135743",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13611821",
-      "title": "Meet the only unbeaten team in men's football across Scotland and England!",
-      "url": "https://www.skysports.com/football/video/13611821/ross-county-meet-the-only-unbeaten-team-in-mens-professional-football-across-scotland-and-england",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ross-county-scottish-football_7405838.jpg?20261113134640",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
       "slug": "13610708",
       "title": "Jacob Murphy goal!",
       "url": "https://www.skysports.com/football/video/13610708/jacob-murphy-goal",
@@ -63,28 +28,6 @@
       "published_iso": "",
       "byline": "",
       "kind": "video"
-    },
-    {
-      "slug": "13595354",
-      "title": "Stoke battle to victory at Blackburn",
-      "url": "https://www.skysports.com/football/news/13595354/blackburn-1-2-stoke-city-jack-mcglynn-steers-potters-to-victory",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jack-mglynn-stoke_7396244.jpg?20261103220208",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13595358",
-      "title": "Devlin scores twice as Portsmouth beat Swansea",
-      "url": "https://www.skysports.com/football/news/13595358/portsmouth-3-1-swansea-terry-devlin-scores-twice-in-pompey-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-portsmouth-terry-devlin_7396232.jpg?20261103215821",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
     },
     {
       "slug": "13595361",
@@ -389,6 +332,21 @@
       ]
     },
     {
+      "slug": "13611913",
+      "title": "Redknapp: Man Utd squad fitness the number one job for Pochettino",
+      "url": "https://www.skysports.com/football/video/13611913/jamie-redknapp-mauricio-pochettino-needs-to-start-by-getting-manchester-united-squad-fit",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7405858.jpg?20261113141616",
+      "excerpt": "Jamie Redknapp feels Mauricio Pochettino first job will be to get the Manchester United squad fit as well as improving the back four.",
+      "published_label": "13 November 2026 · 13:57",
+      "published_iso": "2026-11-13T13:57:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie Redknapp feels Mauricio Pochettino first job will be to get the Manchester United squad fit as well as improving the back four."
+      ]
+    },
+    {
       "slug": "13611911",
       "title": "The HECTIC schedule Pochettino will face ahead of new life at Man Utd!",
       "url": "https://www.skysports.com/football/video/13611911/from-usa-to-manchester-utd-mauricio-pochettinos-hectic-schedule-explained",
@@ -434,6 +392,23 @@
       ]
     },
     {
+      "slug": "13610560",
+      "title": "How do Arsenal rediscover the 'fear factor' at the Emirates?",
+      "url": "https://www.skysports.com/football/news/13610560/arsenal-vs-london-city-lionesses-have-renee-slegers-side-lost-the-fear-factor-of-playing-at-the-emirates-stadium",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7403170.jpg?20261110135743",
+      "excerpt": "When Arsenal don't win at the Emirates Stadium, it's a big deal. But after four attempts, Renee Slegers' side are still yet to win at home in the Women's Super League. That's a crisis.",
+      "published_label": "13 November 2026 · 12:00",
+      "published_iso": "2026-11-13T12:00:00+00:00",
+      "byline": "Sam Blitz",
+      "body": [
+        "When Arsenal don't win at the Emirates Stadium, it's a big deal. But after four attempts, Renee Slegers' side are still yet to win at home in the Women's Super League. That's a crisis.",
+        "The lack of home wins has cut the Gunners adrift from the WSL title race. But more worryingly, the message is getting round the league that Arsenal are not as invincible as before in their 60,000-seater stadium.",
+        "\"Many players have said it's one of the hardest places to go to in the WSL,\" said Nikita Parris to Sky Sports' Pitch to Pod show. WSL scores & fixtures | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract",
+        "\"And at the moment, teams are taking points off them at home. Teams feel like when they go there, they have a chance."
+      ]
+    },
+    {
       "slug": "13610882",
       "title": "Man Utd appoint Pochettino as head coach",
       "url": "https://www.skysports.com/football/news/13610882/mauricio-pochettino-appointed-as-manchester-united-head-coach-after-michael-carricks-sacking-at-old-trafford",
@@ -448,6 +423,21 @@
         "Pochettino will begin the role on Wednesday, after taking charge of the USA's fixtures against Haiti, having signed a deal signed until the summer of 2029.",
         "He is set to meet his new players and take training for the first time on Thursday and his first match in charge will be against Liverpool at Anfield on Sunday November 22, live on Sky Sports.",
         "Sky Sports News understands United have to pay around £7.4m to buy Pochettino out of his newly-signed contract with the USA. What does a Mauricio Pochettino team look like? Man Utd's Mauricio Pochettino pursuit comes full circle - but will it work? Why have Man Utd only had two 'successful' managers? Man Utd news & transfers 🔴| Man Utd fixtures & scores"
+      ]
+    },
+    {
+      "slug": "13611821",
+      "title": "Meet the only unbeaten team in men's football across Scotland and England!",
+      "url": "https://www.skysports.com/football/video/13611821/ross-county-meet-the-only-unbeaten-team-in-mens-professional-football-across-scotland-and-england",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ross-county-scottish-football_7405838.jpg?20261113134640",
+      "excerpt": "Meet the only unbeaten team in men's professional football across Scotland and England, Ross County.",
+      "published_label": "13 November 2026 · 09:02",
+      "published_iso": "2026-11-13T09:02:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Meet the only unbeaten team in men's professional football across Scotland and England, Ross County."
       ]
     },
     {
@@ -672,18 +662,54 @@
       ]
     },
     {
-      "slug": "13611598",
-      "title": "Sharp: I'm quietly confident Sheffield Utd will make play-offs!",
-      "url": "https://www.skysports.com/football/video/13611598/billy-sharp-im-quietly-confident-sheffield-united-will-make-championship-play-offs",
+      "slug": "13611443",
+      "title": "What does a Pochettino team look like?",
+      "url": "https://www.skysports.com/football/news/13611443/mauricio-pochettino-to-man-utd-what-does-a-pochettino-team-look-like-and-how-will-he-set-up-struggling-red-devils",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-championship_7405201.jpg?20261112160340",
-      "excerpt": "Speaking on The Essential EFL Podcast, Billy Sharp backs his former club, Sheffield United, to make the play-offs after a mixed start to the season.",
-      "published_label": "12 November 2026 · 15:44",
-      "published_iso": "2026-11-12T15:44:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7405659.jpg?20261113093243",
+      "excerpt": "Mauricio Pochettino has been named Manchester United's new manager following the sacking of Michael Carrick, so what can supporters actually expect on the pitch?",
+      "published_label": "12 November 2026 · 10:59",
+      "published_iso": "2026-11-12T10:59:00+00:00",
+      "byline": "Nick Wright",
       "body": [
-        "Speaking on The Essential EFL Podcast, Billy Sharp backs his former club, Sheffield United, to make the play-offs after a mixed start to the season."
+        "Mauricio Pochettino has been named Manchester United's new manager following the sacking of Michael Carrick, so what can supporters actually expect on the pitch?",
+        "The 54-year-old, who led the United States to the last 16 of the World Cup in his most recent role, is returning to England after previous spells in charge of Southampton, Spurs and Chelsea.",
+        "Starting with his Southampton tenure, and including his 18-month spell as Paris Saint-Germain head coach, we look at how he has set his team up in each role - and ponder what he might do at United. Tactical blueprint at Southampton?",
+        "A 4-2-3-1 formation quickly became established as Pochettino's favoured choice at Southampton, where he maintained a similar shape to his predecessor Nigel Adkins but with a dramatically different playing style emphasising pressing high up the pitch. The damning stats that made Michael Carrick's reign untenable Why have Man Utd had only two 'successful' managers?"
+      ]
+    },
+    {
+      "slug": "13595354",
+      "title": "Stoke battle to victory at Blackburn",
+      "url": "https://www.skysports.com/football/news/13595354/blackburn-1-2-stoke-city-jack-mcglynn-steers-potters-to-victory",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jack-mglynn-stoke_7396244.jpg?20261103220208",
+      "excerpt": "Jack McGlynn scored an audacious free-kick as Stoke held off a late Blackburn comeback to win 2-1 in the Championship.",
+      "published_label": "03 November 2026 · 21:15",
+      "published_iso": "2026-11-03T21:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Jack McGlynn scored an audacious free-kick as Stoke held off a late Blackburn comeback to win 2-1 in the Championship.",
+        "After weathering early Blackburn pressure, McGlynn caught everyone off guard in the 43rd minute, finding the net with a spectacular set piece from the left instead of the expected cross to notch his fourth of the campaign.",
+        "Substitute Moussa Baradji's own goal in the 68th minute gave the Potters a deserved cushion as they seemed set for a comfortable victory.",
+        "But Andri Gudjohnsen's tap-in halved the deficit in the 87th minute and the Icelandic forward thought he had equalised three minutes later when skilfully steering a header into the far corner but referee Andrew Kitchen penalised the striker for a push, much to the fury of the Rovers fans and coaching staff."
+      ]
+    },
+    {
+      "slug": "13595358",
+      "title": "Devlin scores twice as Portsmouth beat Swansea",
+      "url": "https://www.skysports.com/football/news/13595358/portsmouth-3-1-swansea-terry-devlin-scores-twice-in-pompey-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-portsmouth-terry-devlin_7396232.jpg?20261103215821",
+      "excerpt": "Terry Devlin's double denied Swansea the chance to take top spot in the Championship as in-form Portsmouth won 3-1 at Fratton Park.",
+      "published_label": "03 November 2026 · 21:15",
+      "published_iso": "2026-11-03T21:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Terry Devlin's double denied Swansea the chance to take top spot in the Championship as in-form Portsmouth won 3-1 at Fratton Park.",
+        "Devlin's first-half goal looked like it was going to be enough for Pompey but Zan Vipotnik, the Championship's top scorer last season, won and converted an 85th-minute penalty to set up a blockbuster finale.",
+        "Devlin's smart finish from a corner in the second minute of stoppage time and Tommy Waddingham's strike six minutes later made sure Pompey made it six without defeat, and Middlesbrough - who play on Wednesday - remained at the summit.",
+        "The first-half rhythm settled into one where the Swans had nearly all of the ball - ending up with 62 per cent possession - but Pompey had far more shots."
       ]
     }
   ]
