@@ -1,10 +1,90 @@
 {
-  "synced_at": "2026-11-14T15:05:48+00:00",
+  "synced_at": "2026-11-14T20:43:41+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13612155",
+      "title": "Wales beaten in Norway as threat of Nations League relegation grows",
+      "url": "https://www.skysports.com/football/news/13612155/norway-3-1-wales-craig-bellamys-side-suffer-defeat-in-oslo-with-threat-of-nations-league-relegation-now-looming",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-antonio-nusa-football_7406630.jpg?20261114182536",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13612313",
+      "title": "Swindon 1-4 Grimsby",
+      "url": "https://www.skysports.com/football/video/13612313/swindon-1-4-grimsby-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/c50d7ccfe0aa68bd13b76b8f7bda377d5c221f1eff8ebaf5024f572d6176e997_7406649.jpg?20261114185112",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13610285",
+      "title": "Port Vale 4-2 Accrington",
+      "url": "https://www.skysports.com/football/news/13610285/port-vale-4-2-accrington",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13610283",
+      "title": "Colchester 2-0 Gillingham",
+      "url": "https://www.skysports.com/football/news/13610283/colchester-2-0-gillingham",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13610286",
+      "title": "Crewe 2-2 Newport",
+      "url": "https://www.skysports.com/football/news/13610286/crewe-2-2-newport",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13612307",
+      "title": "Port Vale 4-2 Accrington",
+      "url": "https://www.skysports.com/football/video/13612307/port-vale-4-2-accrington-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/ce0045b774539bce916f1906ae1cf262890257b250d73ef93079a780bb113422_7406636.jpg?20261114183203",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13612302",
+      "title": "Crewe 2-2 Newport",
+      "url": "https://www.skysports.com/football/video/13612302/crewe-v-newport-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/a7d241270c3479578e184a5e2c34b37b027c2f300212b8cc1f11e093bd130d4d_7406622.jpg?20261114181453",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13612163",
       "title": "Hit or Miss? How has Man City's midfield trio performed this season?",
@@ -216,6 +296,113 @@
       "byline": ""
     },
     {
+      "slug": "13612337",
+      "title": "'I never talked about racism in Spain!' - Tuchel fumes at reporter",
+      "url": "https://www.skysports.com/football/video/13612337/nations-league-thomas-tuchel-tells-reporter-i-never-talked-about-racism-in-spain",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-nationsleague_7406696.jpg?20261114201243",
+      "excerpt": "England manager Thomas Tuchel expressed his displeasure when asked whether his team could face racist abuse from the crowd during Sunday's clash with Spain.",
+      "published_label": "14 November 2026 · 20:08",
+      "published_iso": "2026-11-14T20:08:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "England manager Thomas Tuchel expressed his displeasure when asked whether his team could face racist abuse from the crowd during Sunday's clash with Spain."
+      ]
+    },
+    {
+      "slug": "13612335",
+      "title": "'We've got more gears to go through' - Rice confident England can challenge Spain",
+      "url": "https://www.skysports.com/football/video/13612335/nations-league-declan-rice-says-england-have-more-gears-to-go-through-ahead-of-spain-clash",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-nationsleague_7406692.jpg?20261114200306",
+      "excerpt": "Declan Rice believes Spain's challenge will bring out the best in England as they seek to top their Nations League group.",
+      "published_label": "14 November 2026 · 19:56",
+      "published_iso": "2026-11-14T19:56:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Declan Rice believes Spain's challenge will bring out the best in England as they seek to top their Nations League group."
+      ]
+    },
+    {
+      "slug": "13612334",
+      "title": "'Biggest test in world football' - Tuchel relishing Spain clash in Nations League",
+      "url": "https://www.skysports.com/football/video/13612334/nations-league-thomas-tuchel-says-spain-represent-the-biggest-test-in-world-football",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-nationsleague_7406687.jpg?20261114195307",
+      "excerpt": "Speaking ahead of Sunday's clash with Spain in the Nations League, England manager Thomas Tuchel believes their opponents are the 'biggest test in world football'.",
+      "published_label": "14 November 2026 · 19:44",
+      "published_iso": "2026-11-14T19:44:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking ahead of Sunday's clash with Spain in the Nations League, England manager Thomas Tuchel believes their opponents are the 'biggest test in world football'."
+      ]
+    },
+    {
+      "slug": "13612287",
+      "title": "Chelsea beat Man City to go top of WSL",
+      "url": "https://www.skysports.com/football/video/13612287/chelsea-1-0-manchester-city-wsl-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-chelsea-man-city_7406600.jpg?20261114174239",
+      "excerpt": "Highlights of the Women's Super League match between Chelsea and Manchester City.",
+      "published_label": "14 November 2026 · 19:40",
+      "published_iso": "2026-11-14T19:40:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Women's Super League match between Chelsea and Manchester City."
+      ]
+    },
+    {
+      "slug": "13612328",
+      "title": "Rooney heads home late Fleetwood winner to grab three points",
+      "url": "https://www.skysports.com/football/video/13612328/fleetwood-1-0-tranmere-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-efl_7406676.jpg?20261114193719",
+      "excerpt": "Highlights of the Sky Bet League Two match between Fleetwood and Tranmere.",
+      "published_label": "14 November 2026 · 19:36",
+      "published_iso": "2026-11-14T19:36:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League Two match between Fleetwood and Tranmere."
+      ]
+    },
+    {
+      "slug": "13612319",
+      "title": "Liverpool end drought with Brighton thumping",
+      "url": "https://www.skysports.com/football/video/13612319/brighton-0-3-liverpool-womens-super-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7406660.jpg?20261114191024",
+      "excerpt": "Highlights of the Women's Super League match between Brighton and Liverpool.",
+      "published_label": "14 November 2026 · 19:06",
+      "published_iso": "2026-11-14T19:06:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Women's Super League match between Brighton and Liverpool."
+      ]
+    },
+    {
+      "slug": "13612238",
+      "title": "Trafford to start in Spain - but what are Tuchel's other selection issues?",
+      "url": "https://www.skysports.com/football/news/13612238/spain-vs-england-james-trafford-set-to-replace-jordan-pickford-as-goalkeeper-and-how-does-thomas-tuchel-stop-lamine-yamal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-trafford-pickford_7406536.jpg?20261114162602",
+      "excerpt": "Against the best team in the world, Thomas Tuchel's defensive decisions will be key. And he has many to make.",
+      "published_label": "14 November 2026 · 16:02",
+      "published_iso": "2026-11-14T16:02:00+00:00",
+      "byline": "Rob Dorsett",
+      "body": [
+        "Against the best team in the world, Thomas Tuchel's defensive decisions will be key. And he has many to make.",
+        "The England head coach said before Croatia at Wembley on Thursday that he was quite happy to go full-strength in both matches, despite the three-day gap, and he was true to his word. All the big guns were out for Harry Kane's big night.",
+        "Barring unexpected late injury or illness, the best player in the world will lead the line against the world champions. Morgan Rogers should start at right wing, Anthony Gordon left wing. England's Madrid maestro Jude Bellingham will play No 10, and Elliot Anderson and Declan Rice will form the double pivot. England latest news | Fixtures England 2-1 Croatia - Match report and reaction Nations League scores & news | Tables | Sky Bet",
+        "But behind that is where Tuchel and his assistant Anthony Barry will be pondering their options. Do England have a new No 1?"
+      ]
+    },
+    {
       "slug": "13612213",
       "title": "Manchester United take three points against Crystal Palace",
       "url": "https://www.skysports.com/football/video/13612213/manchester-united-2-0-crystal-palace-womens-super-league-highlights",
@@ -306,6 +493,34 @@
       "body": [
         "Lakyle Samuel scored a ridiculous long-range goal for Exeter vs Cheltenham, but did he mean it?"
       ]
+    },
+    {
+      "slug": "13612152",
+      "title": "Big tactical calls and restricting Shaw - How Chelsea got better of Man City",
+      "url": "https://www.skysports.com/football/news/13612152/chelsea-1-0-man-city-sandy-baltimores-winner-sees-blues-leapfrog-10-player-champions-at-top-of-the-womens-super-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7406453.jpg?20261114142505",
+      "excerpt": "Chelsea leapfrogged champions Manchester City at the top of the Women's Super League table with a 1-0 victory at Stamford Bridge thanks to Sandy Baltimore's bullet first-half strike.",
+      "published_label": "14 November 2026 · 10:54",
+      "published_iso": "2026-11-14T10:54:00+00:00",
+      "byline": "Sam Blitz",
+      "body": [
+        "Chelsea leapfrogged champions Manchester City at the top of the Women's Super League table with a 1-0 victory at Stamford Bridge thanks to Sandy Baltimore's bullet first-half strike.",
+        "City were beaten for the first time this season having been clumsy all day - from a lacklustre first half, to wayward finishing in the second to goalkeeper Ayaka Yamashita's straight red card for a professional foul. The race for the WSL title is on.",
+        "Chelsea deserved the points - they were more at it than City on the day. They had the better of the first half with Ellie Carpenter, Melvine Malard and Alyssa Thompson all going close - before Baltimore smashed the Blues in front with a fierce finish from inside the box before half-time. As it happened | Teams | Stats Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
+        "City have rescued six points from losing positions so far this season but were off colour in their pursuit of a route back."
+      ]
+    },
+    {
+      "slug": "new-zealand-vs-india-odi-series-decider",
+      "title": "Can India Survive New Zealand’s Bay Oval Ambush to Seal ODI Series?",
+      "url": "https://www.sportytrader.com/en-in/news/new-zealand-vs-india-odi-series-decider/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/rugby/france-vs-rsa-nations-championship-1.webp",
+      "excerpt": "Shreyas Iyer’s rattled India side faces a massive psychological and tactical test tomorrow at Bay Oval in Mount Maunganui. The Men in Blue crumbled to a humiliating 244-r",
+      "published_label": "14 November 2026 · 07:00",
+      "published_iso": "2026-11-14T07:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13612087",
@@ -463,246 +678,6 @@
       "kind": "video",
       "body": [
         "Sky Sports's Rob Dorsett explains why the new Manchester United head coach, Mauricio Pochettino, has a VERY busy few days ahead of him."
-      ]
-    },
-    {
-      "slug": "13611884",
-      "title": "'Difficult for Arsenal' - Has the Emirates lost it's fear factor this season?",
-      "url": "https://www.skysports.com/football/video/13611884/pitch-to-pod-has-the-emirates-lost-its-fear-factor-this-season",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7405869.jpg?20261113143939",
-      "excerpt": "Speaking on Pitch to Pod, Jordan Nobbs and Nikita Parris discuss why the Emirates this season isn't as daunting as it once was and why this is really affecting Arsenal.",
-      "published_label": "13 November 2026 · 12:32",
-      "published_iso": "2026-11-13T12:32:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Speaking on Pitch to Pod, Jordan Nobbs and Nikita Parris discuss why the Emirates this season isn't as daunting as it once was and why this is really affecting Arsenal."
-      ]
-    },
-    {
-      "slug": "13611882",
-      "title": "Bothroyd selects who should stay and go at Man Utd",
-      "url": "https://www.skysports.com/football/video/13611882/jay-bothroyds-selects-who-should-stay-and-go-at-manchester-united",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-united_7405791.jpg?20261113124729",
-      "excerpt": "Jay Bothroyd's selects who will be on Mauricio Pochettino's whiteboard as he decides who should stay and go at Manchester United.",
-      "published_label": "13 November 2026 · 12:29",
-      "published_iso": "2026-11-13T12:29:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jay Bothroyd's selects who will be on Mauricio Pochettino's whiteboard as he decides who should stay and go at Manchester United."
-      ]
-    },
-    {
-      "slug": "13610560",
-      "title": "How do Arsenal rediscover the 'fear factor' at the Emirates?",
-      "url": "https://www.skysports.com/football/news/13610560/arsenal-vs-london-city-lionesses-have-renee-slegers-side-lost-the-fear-factor-of-playing-at-the-emirates-stadium",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7403170.jpg?20261110135743",
-      "excerpt": "When Arsenal don't win at the Emirates Stadium, it's a big deal. But after four attempts, Renee Slegers' side are still yet to win at home in the Women's Super League. That's a crisis.",
-      "published_label": "13 November 2026 · 12:00",
-      "published_iso": "2026-11-13T12:00:00+00:00",
-      "byline": "Sam Blitz",
-      "body": [
-        "When Arsenal don't win at the Emirates Stadium, it's a big deal. But after four attempts, Renee Slegers' side are still yet to win at home in the Women's Super League. That's a crisis.",
-        "The lack of home wins has cut the Gunners adrift from the WSL title race. But more worryingly, the message is getting round the league that Arsenal are not as invincible as before in their 60,000-seater stadium.",
-        "\"Many players have said it's one of the hardest places to go to in the WSL,\" said Nikita Parris to Sky Sports' Pitch to Pod show. WSL scores & fixtures | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract",
-        "\"And at the moment, teams are taking points off them at home. Teams feel like when they go there, they have a chance."
-      ]
-    },
-    {
-      "slug": "13610882",
-      "title": "Man Utd appoint Pochettino as head coach",
-      "url": "https://www.skysports.com/football/news/13610882/mauricio-pochettino-appointed-as-manchester-united-head-coach-after-michael-carricks-sacking-at-old-trafford",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-pochettino-mauricio_7405773.png?20261113122444",
-      "excerpt": "Mauricio Pochettino has been appointed as the new Manchester United head coach, following the sacking of Michael Carrick.",
-      "published_label": "13 November 2026 · 12:00",
-      "published_iso": "2026-11-13T12:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Mauricio Pochettino has been appointed as the new Manchester United head coach, following the sacking of Michael Carrick.",
-        "Pochettino will begin the role on Wednesday, after taking charge of the USA's fixtures against Haiti, having signed a deal signed until the summer of 2029.",
-        "He is set to meet his new players and take training for the first time on Thursday and his first match in charge will be against Liverpool at Anfield on Sunday November 22, live on Sky Sports.",
-        "Sky Sports News understands United have to pay around £7.4m to buy Pochettino out of his newly-signed contract with the USA. What does a Mauricio Pochettino team look like? Man Utd's Mauricio Pochettino pursuit comes full circle - but will it work? Why have Man Utd only had two 'successful' managers? Man Utd news & transfers 🔴| Man Utd fixtures & scores"
-      ]
-    },
-    {
-      "slug": "13611821",
-      "title": "Meet the only unbeaten team in men's football across Scotland and England!",
-      "url": "https://www.skysports.com/football/video/13611821/ross-county-meet-the-only-unbeaten-team-in-mens-professional-football-across-scotland-and-england",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ross-county-scottish-football_7405838.jpg?20261113134640",
-      "excerpt": "Meet the only unbeaten team in men's professional football across Scotland and England, Ross County.",
-      "published_label": "13 November 2026 · 09:02",
-      "published_iso": "2026-11-13T09:02:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Meet the only unbeaten team in men's professional football across Scotland and England, Ross County."
-      ]
-    },
-    {
-      "slug": "13611021",
-      "title": "Man City are 'messier', but are they more dangerous than ever?",
-      "url": "https://www.skysports.com/football/news/13611021/chelsea-vs-man-city-mary-fowler-reveals-her-sides-latest-evolution-as-we-ask-are-city-more-dangerous-than-ever",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-city-women-wsl_7404059.jpg?20261111151804",
-      "excerpt": "Trying to find a chink in Manchester City's armour is like looking for a needle in a haystack. If it does exist, it's barely detectable. Andree Jeglertz's impact has been profound in that sense.",
-      "published_label": "13 November 2026 · 09:00",
-      "published_iso": "2026-11-13T09:00:00+00:00",
-      "byline": "Laura Hunter",
-      "body": [
-        "Trying to find a chink in Manchester City's armour is like looking for a needle in a haystack. If it does exist, it's barely detectable. Andree Jeglertz's impact has been profound in that sense.",
-        "City did not need to revolutionise the way they worked to reach this point, only the way they thought. Before Jeglertz, title talk was taboo. Under him it's mandated to such an extent it's written on the walls of their training base.",
-        "Because how does one learn the habits of a champion if the subject is not part of the everyday playbook? The Swede never considered the Women's Super League title aspirational, even in year one. How can it be at a club like Manchester City? All the tools are there.",
-        "Except of course winning silverware is not always the reserve of the club's with the best resources and most versatile talent. Nor should it be. That is what keeps football exciting. And, crucially here, what drives City's group to want to reinvent ways football matches can be won no matter the circumstance. WSL scores & fixtures | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract"
-      ]
-    },
-    {
-      "slug": "13611487",
-      "title": "In a clash of the top two, should Chelsea be considered underdogs?",
-      "url": "https://www.skysports.com/football/news/13611487/do-chelsea-go-into-this-weekends-top-of-the-table-wsl-clash-with-manchester-city-as-underdogs",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-chelsea-women-wsl_7405065.jpg?20261112141816",
-      "excerpt": "To consider Chelsea as underdogs in domestic competition feels alien. To a club so endowed with silverware and success over such a long period, it's like a dirty word. Something reserved for opponents, not them.",
-      "published_label": "13 November 2026 · 09:00",
-      "published_iso": "2026-11-13T09:00:00+00:00",
-      "byline": "Laura Hunter",
-      "body": [
-        "To consider Chelsea as underdogs in domestic competition feels alien. To a club so endowed with silverware and success over such a long period, it's like a dirty word. Something reserved for opponents, not them.",
-        "But reality bites hard. The Blues lost their title to league and cup double winners Manchester City last term, in a season where they also suffered their second heaviest WSL defeat ever to the eventual champions.",
-        "That statement 5-1 drubbing back in February was the most obvious illustration of the gap that had appeared between superpowers. City were everything Chelsea used to be; a team relentlessly driven by title-winning standards. Every decision deliberately constructed to give them control and assert dominance.",
-        "This is the first WSL season to feature two unbeaten teams after nine matchdays since 2020-21. The table reads that Manchester City have the edge, but a deeper dive into the data presents a more nuanced case. WSL scores & fixtures | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract"
-      ]
-    },
-    {
-      "slug": "france-return-to-stade-de-france-seeking-revenge-for-world-cup-heartbreak-against-boks",
-      "title": "France Return to Stade de France Seeking Revenge for World Cup Heartbr",
-      "url": "https://www.sportytrader.com/en-za/news/france-return-to-stade-de-france-seeking-revenge-for-world-cup-heartbreak-against-boks/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/basketball/jay_huff.webp",
-      "excerpt": "An absolute blockbuster awaits in the Nations Championship in Saint-Denis tonight, as Fabien Galthié’s Les Bleus step back inside the Stade de France seeking revenge for",
-      "published_label": "13 November 2026 · 08:00",
-      "published_iso": "2026-11-13T08:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13611798",
-      "title": "'Closest I'll ever get' - Burn, Hall on Kane's Ballon d'Or and 126th England cap",
-      "url": "https://www.skysports.com/football/video/13611798/dan-burn-and-lewis-hall-discuss-harry-kanes-ballon-dor-and-126th-england-cap",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-burn-hall_7405605.jpg?20261113075712",
-      "excerpt": "Dan Burn and Lewis Hall discuss Harry Kane's Ballon d'Or and becoming England's most capped player with 126 matches played for the Three Lions.",
-      "published_label": "13 November 2026 · 07:50",
-      "published_iso": "2026-11-13T07:50:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Dan Burn and Lewis Hall discuss Harry Kane's Ballon d'Or and becoming England's most capped player with 126 matches played for the Three Lions."
-      ]
-    },
-    {
-      "slug": "nba-cup-group-stage-teams-face-crucial-tests-in-third-cup-night",
-      "title": "NBA Cup Group Stage: Teams Face Crucial Tests In Third Cup Night",
-      "url": "https://www.sportytrader.com/en/news/nba-cup-group-stage-teams-face-crucial-tests-in-third-cup-night/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/robertson_scotland_img.webp",
-      "excerpt": "The 2026 Emirates NBA Cup continues on Friday with nine enticing fixtures across the Eastern and Western Conferences set to grace our screens. At SportyTrader, we take a",
-      "published_label": "13 November 2026 · 07:30",
-      "published_iso": "2026-11-13T07:30:00+00:00",
-      "byline": "Thobelani Moyo"
-    },
-    {
-      "slug": "scotland-vs-north-macedonia-robertson-eyes-all-time-record-against-goalless-macedonia",
-      "title": "Scotland vs North Macedonia: Robertson Eyes All-Time Record Against Go",
-      "url": "https://www.sportytrader.com/en/news/scotland-vs-north-macedonia-robertson-eyes-all-time-record-against-goalless-macedonia/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/pitso-and-benni.webp",
-      "excerpt": "Andy Robertson is one cap from equalling Kenny Dalglish's all-time Scotland record. And he’ll be eyeing that historic game against a North Macedonia side who have lost al",
-      "published_label": "13 November 2026 · 05:00",
-      "published_iso": "2026-11-13T05:00:00+00:00",
-      "byline": "Geoffrey Ejiga"
-    },
-    {
-      "slug": "13611751",
-      "title": "England player ratings: Who impressed and who struggled in Croatia win?",
-      "url": "https://www.skysports.com/football/video/13611751/england-vs-croatia-england-player-ratings-as-tuchels-reach-the-nations-league-quarters-finals",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-player-ratings_7405514.jpg?20261113000741",
-      "excerpt": "David Reed and Pete Smith deliver their England player ratings following the Three Lions’ 2-1 victory over Croatia, as Harry Kane makes history on a record-breaking night and England secure their place in the Nations League quarter-finals.",
-      "published_label": "12 November 2026 · 23:53",
-      "published_iso": "2026-11-12T23:53:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "David Reed and Pete Smith deliver their England player ratings following the Three Lions’ 2-1 victory over Croatia, as Harry Kane makes history on a record-breaking night and England secure their place in the Nations League quarter-finals."
-      ]
-    },
-    {
-      "slug": "13611748",
-      "title": "'We got the job done' - Tuchel relishing Spain clash after Croatia win",
-      "url": "https://www.skysports.com/football/video/13611748/thomas-tuchel-reacts-as-kane-makes-england-history-and-three-lions-book-nations-league-quarter-final-spot-ahead-of-spain-clash",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-tuchel-england_7405507.jpg?20261112233810",
-      "excerpt": "Thomas Tuchel reacts to England’s 2-1 win over Croatia and their Nations League quarter-final qualification, plus Harry Kane breaking the Three Lions’ appearance record, while looking ahead to Sunday’s showdown with Spain.",
-      "published_label": "12 November 2026 · 23:26",
-      "published_iso": "2026-11-12T23:26:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Thomas Tuchel reacts to England’s 2-1 win over Croatia and their Nations League quarter-final qualification, plus Harry Kane breaking the Three Lions’ appearance record, while looking ahead to Sunday’s showdown with Spain."
-      ]
-    },
-    {
-      "slug": "13611745",
-      "title": "Pochettino agrees two-and-a-half-year deal to become Man Utd boss",
-      "url": "https://www.skysports.com/football/news/13611745/mauricio-pochettino-manchester-united-agree-two-and-a-half-year-deal-with-usa-manager-to-replace-michael-carrick",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7403710.jpg?20261111102937",
-      "excerpt": "Manchester United and Mauricio Pochettino have agreed a deal for him to become the club's next head coach.",
-      "published_label": "12 November 2026 · 23:00",
-      "published_iso": "2026-11-12T23:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Manchester United and Mauricio Pochettino have agreed a deal for him to become the club's next head coach.",
-        "Pochettino is expected to sign a two-and-half-year contract at Old Trafford, replacing Michael Carrick, who was sacked earlier on Thursday .",
-        "Pochettino - who had a £7m release clause in his USA contract - will take charge of United after overseeing the USA's games against Haiti on Saturday and Wednesday. Man Utd live updates The damning stats that made Carrick reign untenable Why have Man Utd had only two 'successful' managers?",
-        "The formal announcement of Pochettino's appointed is expected on Friday, with the Argentine set to be United's eighth permanent appointment since Sir Alex Ferguson retired in 2013."
-      ]
-    },
-    {
-      "slug": "13611736",
-      "title": "'Special moment' - Kane delighted to break cap record and has no plans to stop",
-      "url": "https://www.skysports.com/football/video/13611736/harry-kane-delighted-to-become-englands-record-cap-holder-and-wants-to-play-for-the-three-lions-as-long-as-possible",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-kane-england_7405480.jpg?20261112223422",
-      "excerpt": "Harry Kane reacts to surpassing Peter Shilton to become England’s record appearance holder and says he wants to represent his country for as long as possible.",
-      "published_label": "12 November 2026 · 22:29",
-      "published_iso": "2026-11-12T22:29:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Harry Kane reacts to surpassing Peter Shilton to become England’s record appearance holder and says he wants to represent his country for as long as possible."
-      ]
-    },
-    {
-      "slug": "13611732",
-      "title": "Papers: Manchester clubs to battle it out for Gusto",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13611732/bruno-fernandes-rejects-second-manchester-united-contract-offer-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Friday's newspapers...",
-      "published_label": "12 November 2026 · 21:00",
-      "published_iso": "2026-11-12T21:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Friday's newspapers...",
-        "Manchester United and Manchester City are set to battle it out for Chelsea defender Malo Gusto - TalkSport",
-        "Bruno Fernandes has turned down a second contract offer from Manchester United - The Athletic",
-        "The EFL has told its clubs to stop making jokes on their social media accounts about contentious disciplinary cases, as they risk inflaming disputes and damaging the brand - The Athletic"
       ]
     }
   ]
