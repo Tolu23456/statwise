@@ -1,10 +1,57 @@
 {
-  "synced_at": "2026-11-15T09:27:17+00:00",
+  "synced_at": "2026-11-15T17:12:42+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13612479",
+      "title": "Scott 'delighted' as Celtic come back to beat Rangers",
+      "url": "https://www.skysports.com/football/video/13612479/celtic-head-coach-grant-scott-thoroughly-delighted-after-hoops-end-rangers-swpl-winning-run",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/a22abfd0eb147edf18fe4907162866f2f9a6491839814e290a143764bf24001f_7407041.jpg?20261115142921",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13612475",
+      "title": "Celtic complete comeback win to close gap on rivals Rangers at top of SWPL",
+      "url": "https://www.skysports.com/football/video/13612475/celtic-2-1-rangers-scottish-womens-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-swpl-rangers_7407026.jpg?20261115140308",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13612473",
+      "title": "'What a strike that is!' - Handley STUNNER seals win for Celtic in SWPL Old Firm derby",
+      "url": "https://www.skysports.com/football/video/13612473/swpl-addison-hanley-nets-celtic-winner-with-incredible-goal-vs-rangers",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-swpl-rangers_7407019.jpg?20261115134917",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13612415",
+      "title": "Papers: Fernandes wants to see if Poch is 'real deal' before signing new contract",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13612415/x-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13611996",
       "title": "Will Maguire and Shaw feature in Pochettino’s plans?",
@@ -202,6 +249,122 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13612525",
+      "title": "London City Lionesses hit back minutes after Arsenal take the lead!",
+      "url": "https://www.skysports.com/football/video/13612525/wsl-london-city-lionesses-hit-back-minutes-after-arsenal-take-the-lead",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-lcl-arsenal_7407161.jpg?20261115165417",
+      "excerpt": "London City Lionesses were not behind for long as Isobel Goodwin cancelled out Frida Maanum's opener.",
+      "published_label": "15 November 2026 · 16:48",
+      "published_iso": "2026-11-15T16:48:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "London City Lionesses were not behind for long as Isobel Goodwin cancelled out Frida Maanum's opener."
+      ]
+    },
+    {
+      "slug": "13612517",
+      "title": "Villa move into top half after Second City derby win",
+      "url": "https://www.skysports.com/football/video/13612517/aston-villa-1-0-birmingham-city-wsl-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-villa-birmingham_7407134.jpg?20261115161432",
+      "excerpt": "Highlights of the Women's Super League match between Aston Villa and Birmingham City.",
+      "published_label": "15 November 2026 · 16:16",
+      "published_iso": "2026-11-15T16:16:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Women's Super League match between Aston Villa and Birmingham City."
+      ]
+    },
+    {
+      "slug": "13612511",
+      "title": "Charlton remain winless as Asseyi leads Hammers to victory",
+      "url": "https://www.skysports.com/football/video/13612511/west-ham-2-0-charlton-wsl-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-ham-charlton_7407132.jpg?20261115160956",
+      "excerpt": "Highlights of the Women's Super League match between Charlton and West Ham.",
+      "published_label": "15 November 2026 · 15:58",
+      "published_iso": "2026-11-15T15:58:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Women's Super League match between Charlton and West Ham."
+      ]
+    },
+    {
+      "slug": "13612502",
+      "title": "'Absolutely perfect!' - West Ham's Asseyi doubles tally with sensational free-kick",
+      "url": "https://www.skysports.com/football/video/13612502/womens-super-league-viviane-asseyi-doubles-her-tally-with-sensational-free-kick",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-ham-football_7407091.jpg?20261115152638",
+      "excerpt": "West Ham are cruising against Charlton as Viviane Asseyi doubled her tally with a sensational free-kick.",
+      "published_label": "15 November 2026 · 15:18",
+      "published_iso": "2026-11-15T15:18:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "West Ham are cruising against Charlton as Viviane Asseyi doubled her tally with a sensational free-kick."
+      ]
+    },
+    {
+      "slug": "13612500",
+      "title": "'More than a yellow!' Plymouth's Curtis escapes red card after WILD challenge",
+      "url": "https://www.skysports.com/football/video/13612500/plymouth-argyles-ronan-curtis-only-receives-yellow-after-wild-challenge",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sheff-weds-plymouth_7407094.jpg?20261115152903",
+      "excerpt": "Plymouth's Ronan Curtis only received a yellow card after this wild challenge in their match against Sheffield Wednesday.",
+      "published_label": "15 November 2026 · 15:16",
+      "published_iso": "2026-11-15T15:16:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Plymouth's Ronan Curtis only received a yellow card after this wild challenge in their match against Sheffield Wednesday."
+      ]
+    },
+    {
+      "slug": "13612497",
+      "title": "‘Never a foul in a million years!’ – Controversy as Villa have goal ruled out",
+      "url": "https://www.skysports.com/football/video/13612497/that-is-never-a-foul-in-a-million-years-controversy-as-aston-villa-have-goal-ruled-out-against-birmingham",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-villa-disallowed-goal_7407068.jpg?20261115150516",
+      "excerpt": "There was controversy at Villa Park as the hosts appeared to have a perfectly good goal ruled out in the Second City derby against Birmingham.",
+      "published_label": "15 November 2026 · 15:08",
+      "published_iso": "2026-11-15T15:08:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "There was controversy at Villa Park as the hosts appeared to have a perfectly good goal ruled out in the Second City derby against Birmingham."
+      ]
+    },
+    {
+      "slug": "13612486",
+      "title": "Rangers boss 'furious' after SWPL loss to Celtic",
+      "url": "https://www.skysports.com/football/video/13612486/rangers-head-coach-leanne-crichton-furious-after-defeat-to-celtic",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/0b67947d6690cad370b080d37c342db24f7d75fe96406f077b6f35830ed6ec6b_7407044.jpg?20261115143158",
+      "excerpt": "Rangers head coach Leanne Crichton reflects on her side’s 2-1 defeat to Celtic, ending their 100% start to the SWPL season.",
+      "published_label": "15 November 2026 · 14:29",
+      "published_iso": "2026-11-15T14:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Rangers head coach Leanne Crichton reflects on her side’s 2-1 defeat to Celtic, ending their 100% start to the SWPL season."
+      ]
+    },
+    {
+      "slug": "spain-vs-england-uefa-nations-league-matchday-6",
+      "title": "Spain vs England: Can Tuchel’s Three Lions End La Roja’s Invincible St",
+      "url": "https://www.sportytrader.com/en/news/spain-vs-england-uefa-nations-league-matchday-6/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/tennis/zverev_vs_jodar_img.webp",
+      "excerpt": "International football’s ultimate juggernaut faces a stern test in Madrid tonight as Thomas Tuchel’s England attempt to shatter Spain’s remarkable 43-game unbeaten streak",
+      "published_label": "15 November 2026 · 07:00",
+      "published_iso": "2026-11-15T07:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13612154",
@@ -518,202 +681,20 @@
       "byline": "Geoffrey Ejiga"
     },
     {
-      "slug": "13612213",
-      "title": "Manchester United take three points against Crystal Palace",
-      "url": "https://www.skysports.com/football/video/13612213/manchester-united-2-0-crystal-palace-womens-super-league-highlights",
+      "slug": "13611876",
+      "title": "Who could England face in Nations League quarter-finals?",
+      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-united-wsl_7406477.jpg?20261114144904",
-      "excerpt": "Highlights of the Women's Super League match between Manchester United and Crystal Palace.",
-      "published_label": "14 November 2026 · 14:43",
-      "published_iso": "2026-11-14T14:43:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Women's Super League match between Manchester United and Crystal Palace."
-      ]
-    },
-    {
-      "slug": "13612207",
-      "title": "Terland slots home Man Utd's second against Palace",
-      "url": "https://www.skysports.com/football/video/13612207/wsl-elisabeth-terland-slots-home-manchester-uniteds-second-against-crystal-palace",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-manchester-united_7406462.jpg?20261114143310",
-      "excerpt": "Elisabeth Terland slots home Manchester United's second against Crystal Palace after a beautiful piece of play.",
-      "published_label": "14 November 2026 · 14:29",
-      "published_iso": "2026-11-14T14:29:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Elisabeth Terland slots home Manchester United's second against Crystal Palace after a beautiful piece of play."
-      ]
-    },
-    {
-      "slug": "13612206",
-      "title": "Samuel screamer gives Exeter the edge against Cheltenham",
-      "url": "https://www.skysports.com/football/video/13612206/exeter-city-1-0-cheltenham-town-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-exeter-cheltenham_7406463.jpg?20261114143326",
-      "excerpt": "Highlights of the Sky Bet League Two match between Exeter City 1-0 Cheltenham Town.",
-      "published_label": "14 November 2026 · 14:28",
-      "published_iso": "2026-11-14T14:28:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League Two match between Exeter City 1-0 Cheltenham Town."
-      ]
-    },
-    {
-      "slug": "13610292",
-      "title": "Exeter 1-0 Cheltenham",
-      "url": "https://www.skysports.com/football/news/13610292/exeter-vs-cheltenham",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "Lakyle Samuel's first professional goal was enough for Exeter to see off Cheltenham 1-0 at St James Park in Sky Bet League Two.",
-      "published_label": "14 November 2026 · 14:00",
-      "published_iso": "2026-11-14T14:00:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-morgan-rogers_7405404.jpg?20261112201743",
+      "excerpt": "England have sealed their place in the Nations League quarter-finals after beating Croatia at Wembley - but who will they play in the last eight in March? Top spot still up for grabs - and could be key",
+      "published_label": "13 November 2026 · 11:56",
+      "published_iso": "2026-11-13T11:56:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Lakyle Samuel's first professional goal was enough for Exeter to see off Cheltenham 1-0 at St James Park in Sky Bet League Two.",
-        "Whether the on-loan Manchester City defender meant it or not only he will know, but his spectacular 51st-minute cross-shot settled an even contest between two sides pushing for promotion.",
-        "Exeter fashioned the first opening in the 10th minute when Jack Fitzwater's clearance fell invitingly for Anthony Scully, but he failed to get the ball under control and get a shot away when in on goal. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "The Robins should have gone in front in the 18th minute when Pierce Sweeney's knockdown found Shaun McWilliams, but he smashed his shot against the top of the crossbar and out of the ground."
-      ]
-    },
-    {
-      "slug": "13612199",
-      "title": "Le Tissier scores screamer to put Man Utd ahead against Palace",
-      "url": "https://www.skysports.com/football/video/13612199/wsl-maya-le-tissier-scores-screamer-to-put-manchester-united-ahead-against-crystal-palace",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-manchester-united_7406437.jpg?20261114140637",
-      "excerpt": "Maya Le Tissier scores a screamer to put Manchester United ahead against Crystal Palace on her 150th appearance.",
-      "published_label": "14 November 2026 · 14:00",
-      "published_iso": "2026-11-14T14:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Maya Le Tissier scores a screamer to put Manchester United ahead against Crystal Palace on her 150th appearance."
-      ]
-    },
-    {
-      "slug": "13612198",
-      "title": "'Did he mean it? Doesn't matter!' - Watch this ridiculous long-range goal 😱",
-      "url": "https://www.skysports.com/football/video/13612198/exeter-city-vs-cheltenham-town-did-he-mean-it-lakyle-samuel-puts-exeter-in-front-with-sensational-fluke",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-exeter-efl_7406434.jpg?20261114140434",
-      "excerpt": "Lakyle Samuel scored a ridiculous long-range goal for Exeter vs Cheltenham, but did he mean it?",
-      "published_label": "14 November 2026 · 13:57",
-      "published_iso": "2026-11-14T13:57:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Lakyle Samuel scored a ridiculous long-range goal for Exeter vs Cheltenham, but did he mean it?"
-      ]
-    },
-    {
-      "slug": "13612163",
-      "title": "Hit or Miss? How has Man City's midfield trio performed this season?",
-      "url": "https://www.skysports.com/football/video/13612163/saturday-social-how-has-man-citys-midfield-trio-performed-this-season",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hit-or-miss-man-city_7406352.jpg?20261114114553",
-      "excerpt": "Julien Laurens discusses whether Man City's new midfield signings have been a hit or a miss on Saturday Social.",
-      "published_label": "14 November 2026 · 11:44",
-      "published_iso": "2026-11-14T11:44:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Julien Laurens discusses whether Man City's new midfield signings have been a hit or a miss on Saturday Social."
-      ]
-    },
-    {
-      "slug": "13612152",
-      "title": "Big tactical calls and restricting Shaw - How Chelsea got better of Man City",
-      "url": "https://www.skysports.com/football/news/13612152/chelsea-1-0-man-city-sandy-baltimores-winner-sees-blues-leapfrog-10-player-champions-at-top-of-the-womens-super-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7406453.jpg?20261114142505",
-      "excerpt": "Chelsea leapfrogged champions Manchester City at the top of the Women's Super League table with a 1-0 victory at Stamford Bridge thanks to Sandy Baltimore's bullet first-half strike.",
-      "published_label": "14 November 2026 · 10:54",
-      "published_iso": "2026-11-14T10:54:00+00:00",
-      "byline": "Sam Blitz",
-      "body": [
-        "Chelsea leapfrogged champions Manchester City at the top of the Women's Super League table with a 1-0 victory at Stamford Bridge thanks to Sandy Baltimore's bullet first-half strike.",
-        "City were beaten for the first time this season having been clumsy all day - from a lacklustre first half, to wayward finishing in the second to goalkeeper Ayaka Yamashita's straight red card for a professional foul. The race for the WSL title is on.",
-        "Chelsea deserved the points - they were more at it than City on the day. They had the better of the first half with Ellie Carpenter, Melvine Malard and Alyssa Thompson all going close - before Baltimore smashed the Blues in front with a fierce finish from inside the box before half-time. As it happened | Teams | Stats Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
-        "City have rescued six points from losing positions so far this season but were off colour in their pursuit of a route back."
-      ]
-    },
-    {
-      "slug": "new-zealand-vs-india-odi-series-decider",
-      "title": "Can India Survive New Zealand’s Bay Oval Ambush to Seal ODI Series?",
-      "url": "https://www.sportytrader.com/en-in/news/new-zealand-vs-india-odi-series-decider/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/rugby/france-vs-rsa-nations-championship-1.webp",
-      "excerpt": "Shreyas Iyer’s rattled India side faces a massive psychological and tactical test tomorrow at Bay Oval in Mount Maunganui. The Men in Blue crumbled to a humiliating 244-r",
-      "published_label": "14 November 2026 · 07:00",
-      "published_iso": "2026-11-14T07:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13612087",
-      "title": "‘Helps build a winning culture’ – Pocognoli pleased with first Hampden win",
-      "url": "https://www.skysports.com/football/video/13612087/sebastien-pocognoli-pleased-after-first-home-win-with-scotland-helps-build-a-winning-culture",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-pocognoli-scotland_7406206.jpg?20261113232439",
-      "excerpt": "Sebastien Pocognoli was pleased after his first home win with Scotland against North Macedonia in the Nations League, hoping that it will 'helps build a winning culture'.",
-      "published_label": "13 November 2026 · 23:15",
-      "published_iso": "2026-11-13T23:15:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sebastien Pocognoli was pleased after his first home win with Scotland against North Macedonia in the Nations League, hoping that it will 'helps build a winning culture'."
-      ]
-    },
-    {
-      "slug": "13612084",
-      "title": "‘He deserves it’ – McGinn hails Robertson after matching Dalglish’s caps record",
-      "url": "https://www.skysports.com/football/video/13612084/john-mcginn-hails-andy-robertson-after-matching-kenny-dalglish-s-caps-record",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-scotland-football_7406188.jpg?20261113230151",
-      "excerpt": "John McGinn hails Andy Robertson after he matched Kenny Dalglish’s caps record against North Macedonia.",
-      "published_label": "13 November 2026 · 22:59",
-      "published_iso": "2026-11-13T22:59:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "John McGinn hails Andy Robertson after he matched Kenny Dalglish’s caps record against North Macedonia."
-      ]
-    },
-    {
-      "slug": "13610560",
-      "title": "How do Arsenal rediscover the 'fear factor' at the Emirates?",
-      "url": "https://www.skysports.com/football/news/13610560/arsenal-vs-london-city-lionesses-have-renee-slegers-side-lost-the-fear-factor-of-playing-at-the-emirates-stadium",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7403170.jpg?20261110135743",
-      "excerpt": "When Arsenal don't win at the Emirates Stadium, it's a big deal. But after four attempts, Renee Slegers' side are still yet to win at home in the Women's Super League. That's a crisis.",
-      "published_label": "13 November 2026 · 12:00",
-      "published_iso": "2026-11-13T12:00:00+00:00",
-      "byline": "Sam Blitz",
-      "body": [
-        "When Arsenal don't win at the Emirates Stadium, it's a big deal. But after four attempts, Renee Slegers' side are still yet to win at home in the Women's Super League. That's a crisis.",
-        "The lack of home wins has cut the Gunners adrift from the WSL title race. But more worryingly, the message is getting round the league that Arsenal are not as invincible as before in their 60,000-seater stadium.",
-        "\"Many players have said it's one of the hardest places to go to in the WSL,\" said Nikita Parris to Sky Sports' Pitch to Pod show. WSL scores & fixtures | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract",
-        "\"And at the moment, teams are taking points off them at home. Teams feel like when they go there, they have a chance."
-      ]
-    },
-    {
-      "slug": "13610697",
-      "title": "How to watch Ronaldinho's return!",
-      "url": "https://www.skysports.com/football/news/13610697/ronaldinho-returns-how-to-watch-brazilian-icons-comeback-live-on-sky-sports",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ronaldinho-returns_7403243.png?20261110155336",
-      "excerpt": "Ronaldinho is set to return to professional football for the first time in over a decade, and you can watch it exclusively on Sky Sports!",
-      "published_label": "11 November 2026 · 15:00",
-      "published_iso": "2026-11-11T15:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Ronaldinho is set to return to professional football for the first time in over a decade, and you can watch it exclusively on Sky Sports!",
-        "The 46-year-old will make his comeback for Serie C side Ravenna FC when they take on Forli FC on Sunday November 15.",
-        "And you can witness the return for free on the Sky Sports Football YouTube channel , with kick-off at 4.30pm GMT.",
-        "The Ballon d'Or and World Cup winner last played for Brazilian club Fluminense in 2015, but was unveiled by the Italian side in June. Watch Ronaldinho's return live on the Sky Sports Football YouTube channel Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+        "England have sealed their place in the Nations League quarter-finals after beating Croatia at Wembley - but who will they play in the last eight in March? Top spot still up for grabs - and could be key",
+        "England are currently second in Nations League Group A3 behind Spain, trailing the world champions by three points.",
+        "Thomas Tuchel's side lost to Spain at Wembley at the start of this campaign and have their final match of the group stage in Madrid on Sunday.",
+        "Both sides are assured of a quarter-final place but a win for England will mean they finish top of the group. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables"
       ]
     }
   ]
