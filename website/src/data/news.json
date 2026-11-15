@@ -1,79 +1,10 @@
 {
-  "synced_at": "2026-11-15T01:56:24+00:00",
+  "synced_at": "2026-11-15T09:27:17+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13610285",
-      "title": "Port Vale 4-2 Accrington",
-      "url": "https://www.skysports.com/football/news/13610285/port-vale-4-2-accrington",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13610283",
-      "title": "Colchester 2-0 Gillingham",
-      "url": "https://www.skysports.com/football/news/13610283/colchester-2-0-gillingham",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13610286",
-      "title": "Crewe 2-2 Newport",
-      "url": "https://www.skysports.com/football/news/13610286/crewe-2-2-newport",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13612307",
-      "title": "Port Vale 4-2 Accrington",
-      "url": "https://www.skysports.com/football/video/13612307/port-vale-4-2-accrington-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/ce0045b774539bce916f1906ae1cf262890257b250d73ef93079a780bb113422_7406636.jpg?20261114183203",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13612302",
-      "title": "Crewe 2-2 Newport",
-      "url": "https://www.skysports.com/football/video/13612302/crewe-v-newport-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/a7d241270c3479578e184a5e2c34b37b027c2f300212b8cc1f11e093bd130d4d_7406622.jpg?20261114181453",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13612163",
-      "title": "Hit or Miss? How has Man City's midfield trio performed this season?",
-      "url": "https://www.skysports.com/football/video/13612163/saturday-social-how-has-man-citys-midfield-trio-performed-this-season",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hit-or-miss-man-city_7406352.jpg?20261114114553",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13611996",
       "title": "Will Maguire and Shaw feature in Pochettino’s plans?",
@@ -461,6 +392,87 @@
       ]
     },
     {
+      "slug": "13612307",
+      "title": "Port Vale 4-2 Accrington",
+      "url": "https://www.skysports.com/football/video/13612307/port-vale-4-2-accrington-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/ce0045b774539bce916f1906ae1cf262890257b250d73ef93079a780bb113422_7406636.jpg?20261114183203",
+      "excerpt": "Highlights of the Sky Bet League One match between Port Vale and Accrington.",
+      "published_label": "14 November 2026 · 18:25",
+      "published_iso": "2026-11-14T18:25:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League One match between Port Vale and Accrington."
+      ]
+    },
+    {
+      "slug": "13612302",
+      "title": "Crewe 2-2 Newport",
+      "url": "https://www.skysports.com/football/video/13612302/crewe-v-newport-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/a7d241270c3479578e184a5e2c34b37b027c2f300212b8cc1f11e093bd130d4d_7406622.jpg?20261114181453",
+      "excerpt": "Highlights of the Sky Bet League Two match between Crewe and Newport.",
+      "published_label": "14 November 2026 · 18:10",
+      "published_iso": "2026-11-14T18:10:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League Two match between Crewe and Newport."
+      ]
+    },
+    {
+      "slug": "13610285",
+      "title": "Port Vale 4-2 Accrington",
+      "url": "https://www.skysports.com/football/news/13610285/port-vale-4-2-accrington",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "Jaheim Headley's double helped Port Vale to a 4-2 home win over Accrington in League Two.",
+      "published_label": "14 November 2026 · 17:00",
+      "published_iso": "2026-11-14T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Jaheim Headley's double helped Port Vale to a 4-2 home win over Accrington in League Two.",
+        "Vale deservedly led on eight minutes, Headley scoring from close range after excellent work by Max Watters.",
+        "Kyle Dempsey doubled Vale's lead after 27 minutes, firing in after skipping past two challenges, though goalkeeper Louie Moulden may feel he should have saved it. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Moulden did redeem himself with two fine saves, getting to a fierce Jordan Lawrence-Gabriel effort and, at the end of the half, tipping over a Dempsey shot."
+      ]
+    },
+    {
+      "slug": "13610283",
+      "title": "Colchester 2-0 Gillingham",
+      "url": "https://www.skysports.com/football/news/13610283/colchester-2-0-gillingham",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "Colchester ended their 10-game winless run in League Two with a 2-0 home victory over Gillingham.",
+      "published_label": "14 November 2026 · 17:00",
+      "published_iso": "2026-11-14T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Colchester ended their 10-game winless run in League Two with a 2-0 home victory over Gillingham.",
+        "Jack Payne's penalty just after the hour mark was added to by Harry Anderson to give United a first league win since August that moved them out of the relegation zone.",
+        "Colchester's Jay Williams and Teddy Bishop both went close early on, while at the other end goalkeeper Thimothee Lo-Tutala did well to foil Sheldon Kendall. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Colchester almost went ahead just before half-time when Anderson's low strike was pushed away by Gills keeper Ollie Wright."
+      ]
+    },
+    {
+      "slug": "13610286",
+      "title": "Crewe 2-2 Newport",
+      "url": "https://www.skysports.com/football/news/13610286/crewe-2-2-newport",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "Jordan Stephenson's last-minute header salvaged Crewe a point from a 2-2 draw with Newport.",
+      "published_label": "14 November 2026 · 17:00",
+      "published_iso": "2026-11-14T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Jordan Stephenson's last-minute header salvaged Crewe a point from a 2-2 draw with Newport.",
+        "The visitors appeared to be heading for a comfortable victory until close-range efforts from Charlie McNeill and Stephenson, who seized on a cross from Matus Holicek, pegged them back in the last quarter of an hour.",
+        "Hayden Mullins' side were gifted a third-minute opener when a mix-up between Luke Offord and Ian Lawlor dealing with a cross, saw Offord clip the ball past his own goalkeeper. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Dan Sassi extended the lead 11 minutes before the interval when he broke from his marker to glance a header into the far corner from Matty Jacob's corner."
+      ]
+    },
+    {
       "slug": "13610291",
       "title": "Fleetwood 1-0 Tranmere",
       "url": "https://www.skysports.com/football/news/13610291/fleetwood-1-0-tranmere",
@@ -598,6 +610,21 @@
       ]
     },
     {
+      "slug": "13612163",
+      "title": "Hit or Miss? How has Man City's midfield trio performed this season?",
+      "url": "https://www.skysports.com/football/video/13612163/saturday-social-how-has-man-citys-midfield-trio-performed-this-season",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hit-or-miss-man-city_7406352.jpg?20261114114553",
+      "excerpt": "Julien Laurens discusses whether Man City's new midfield signings have been a hit or a miss on Saturday Social.",
+      "published_label": "14 November 2026 · 11:44",
+      "published_iso": "2026-11-14T11:44:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Julien Laurens discusses whether Man City's new midfield signings have been a hit or a miss on Saturday Social."
+      ]
+    },
+    {
       "slug": "13612152",
       "title": "Big tactical calls and restricting Shaw - How Chelsea got better of Man City",
       "url": "https://www.skysports.com/football/news/13612152/chelsea-1-0-man-city-sandy-baltimores-winner-sees-blues-leapfrog-10-player-champions-at-top-of-the-womens-super-league",
@@ -656,37 +683,37 @@
       ]
     },
     {
-      "slug": "13611965",
-      "title": "Papers: Man Utd eyeing move for Como star Paz",
-      "url": "https://www.skysports.com/football/news/13611965/man-utd-transfer-news-como-star-nico-paz-emerges-as-target-ahead-of-summer-transfer-window-paper-talk",
+      "slug": "13610560",
+      "title": "How do Arsenal rediscover the 'fear factor' at the Emirates?",
+      "url": "https://www.skysports.com/football/news/13610560/arsenal-vs-london-city-lionesses-have-renee-slegers-side-lost-the-fear-factor-of-playing-at-the-emirates-stadium",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Saturday's newspapers... MANCHESTER UNITED",
-      "published_label": "13 November 2026 · 22:51",
-      "published_iso": "2026-11-13T22:51:00+00:00",
-      "byline": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7403170.jpg?20261110135743",
+      "excerpt": "When Arsenal don't win at the Emirates Stadium, it's a big deal. But after four attempts, Renee Slegers' side are still yet to win at home in the Women's Super League. That's a crisis.",
+      "published_label": "13 November 2026 · 12:00",
+      "published_iso": "2026-11-13T12:00:00+00:00",
+      "byline": "Sam Blitz",
       "body": [
-        "The top stories and transfer rumours from Saturday's newspapers... MANCHESTER UNITED",
-        "Manchester United are monitoring Como star Nico Paz ahead of a potential move next summer - The Sun",
-        "Manchester United remain hopeful that they can convince captain Bruno Fernandes to sign a new deal at the club - The Sun",
-        "Manchester United players were \"confused and bemused\" by the club leaving Michael Carrick in limbo before finally sacking him today - The Sun Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW FOOTBALL"
+        "When Arsenal don't win at the Emirates Stadium, it's a big deal. But after four attempts, Renee Slegers' side are still yet to win at home in the Women's Super League. That's a crisis.",
+        "The lack of home wins has cut the Gunners adrift from the WSL title race. But more worryingly, the message is getting round the league that Arsenal are not as invincible as before in their 60,000-seater stadium.",
+        "\"Many players have said it's one of the hardest places to go to in the WSL,\" said Nikita Parris to Sky Sports' Pitch to Pod show. WSL scores & fixtures | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract",
+        "\"And at the moment, teams are taking points off them at home. Teams feel like when they go there, they have a chance."
       ]
     },
     {
-      "slug": "13611876",
-      "title": "Who could England face in Nations League quarter-finals?",
-      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
+      "slug": "13610697",
+      "title": "How to watch Ronaldinho's return!",
+      "url": "https://www.skysports.com/football/news/13610697/ronaldinho-returns-how-to-watch-brazilian-icons-comeback-live-on-sky-sports",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-morgan-rogers_7405404.jpg?20261112201743",
-      "excerpt": "England have sealed their place in the Nations League quarter-finals after beating Croatia at Wembley - but who will they play in the last eight in March? Top spot still up for grabs - and could be key",
-      "published_label": "13 November 2026 · 11:56",
-      "published_iso": "2026-11-13T11:56:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ronaldinho-returns_7403243.png?20261110155336",
+      "excerpt": "Ronaldinho is set to return to professional football for the first time in over a decade, and you can watch it exclusively on Sky Sports!",
+      "published_label": "11 November 2026 · 15:00",
+      "published_iso": "2026-11-11T15:00:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "England have sealed their place in the Nations League quarter-finals after beating Croatia at Wembley - but who will they play in the last eight in March? Top spot still up for grabs - and could be key",
-        "England are currently second in Nations League Group A3 behind Spain, trailing the world champions by three points.",
-        "Thomas Tuchel's side lost to Spain at Wembley at the start of this campaign and have their final match of the group stage in Madrid on Sunday.",
-        "Both sides are assured of a quarter-final place but a win for England will mean they finish top of the group. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables"
+        "Ronaldinho is set to return to professional football for the first time in over a decade, and you can watch it exclusively on Sky Sports!",
+        "The 46-year-old will make his comeback for Serie C side Ravenna FC when they take on Forli FC on Sunday November 15.",
+        "And you can witness the return for free on the Sky Sports Football YouTube channel , with kick-off at 4.30pm GMT.",
+        "The Ballon d'Or and World Cup winner last played for Brazilian club Fluminense in 2015, but was unveiled by the Italian side in June. Watch Ronaldinho's return live on the Sky Sports Football YouTube channel Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
       ]
     }
   ]
