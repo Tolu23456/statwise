@@ -1,22 +1,10 @@
 {
-  "synced_at": "2026-11-15T17:12:42+00:00",
+  "synced_at": "2026-11-15T22:48:57+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13612479",
-      "title": "Scott 'delighted' as Celtic come back to beat Rangers",
-      "url": "https://www.skysports.com/football/video/13612479/celtic-head-coach-grant-scott-thoroughly-delighted-after-hoops-end-rangers-swpl-winning-run",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/a22abfd0eb147edf18fe4907162866f2f9a6491839814e290a143764bf24001f_7407041.jpg?20261115142921",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13612475",
       "title": "Celtic complete comeback win to close gap on rivals Rangers at top of SWPL",
@@ -251,6 +239,115 @@
       "byline": ""
     },
     {
+      "slug": "13612625",
+      "title": "Tuchel: Performance on the highest level - England's best so far",
+      "url": "https://www.skysports.com/football/video/13612625/thomas-tuchel-englands-best-performance-so-far-after-victory-of-world-champions-spain",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7407407.jpg?20261115223319",
+      "excerpt": "Thomas Tuchel believes victory over world champions Spain was England's best performance so far under his leadership.",
+      "published_label": "15 November 2026 · 22:23",
+      "published_iso": "2026-11-15T22:23:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Thomas Tuchel believes victory over world champions Spain was England's best performance so far under his leadership."
+      ]
+    },
+    {
+      "slug": "13612606",
+      "title": "Klopp: Infantino worse than Blatter",
+      "url": "https://www.skysports.com/football/video/13612606/jurgan-klopp-fifa-president-gianni-infantino-worse-than-predecessor-sepp-blatter",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-infantino-klopp-football_7407378.jpg?20261115220853",
+      "excerpt": "Jurgan Klopp criticises FIFA president Gianni Infantino and believes he has done a worse job than his predecessor Sepp Blatter.",
+      "published_label": "15 November 2026 · 21:52",
+      "published_iso": "2026-11-15T21:52:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jurgan Klopp criticises FIFA president Gianni Infantino and believes he has done a worse job than his predecessor Sepp Blatter."
+      ]
+    },
+    {
+      "slug": "13611877",
+      "title": "Ten-man England hold on to claim famous win over Spain",
+      "url": "https://www.skysports.com/football/news/13611877/spain-2-3-england-three-lions-hold-on-for-famous-win-after-elliot-anderson-red-card-to-top-nations-league-group-a3",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ezri-konsa-england_7407324.jpg?20261115211138",
+      "excerpt": "England withstood a Spain fightback after Elliot Anderson's red card to secure a famous 3-2 victory and finish above the world champions at the top of their Nations League group.",
+      "published_label": "15 November 2026 · 21:45",
+      "published_iso": "2026-11-15T21:45:00+00:00",
+      "byline": "Nick Wright",
+      "body": [
+        "England withstood a Spain fightback after Elliot Anderson's red card to secure a famous 3-2 victory and finish above the world champions at the top of their Nations League group.",
+        "Thomas Tuchel's side were sensational for an hour in Madrid, taking the lead when Harry Kane scored a penalty at the end of the first half and then adding quickfire goals from Ezri Konsa and Ben White.",
+        "But a one-sided game was turned on its head when Elliot Anderson was sent off for a last-man foul on Lamine Yamal following Jarell Quansah's error, allowing Mikel Oyarzabal to score from the spot.",
+        "Spain reduced the deficit to one goal when substitute Nico Williams converted Lamine Yamal's cross after Anthony Gordon had been dispossessed, but England clung on thanks to James Trafford. Who could England play in the Nations League last eight? As it happened | Match stats | England fixtures Nations League scores & news | Tables | Sky Bet"
+      ]
+    },
+    {
+      "slug": "13612596",
+      "title": "'What a shot that is!' - Crabtree nails mega 146 against Evans",
+      "url": "https://www.skysports.com/football/video/13612596/grand-slam-of-darts-2026-cam-crabtree-nails-mega-146-against-ricky-evans",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/darts-sky-sports-ricky-evans_7407348.jpg?20261115213359",
+      "excerpt": "Cam Crabtree nailed a mega 146 checkout against Ricky Evans during their Group K clash at the 2026 Grand Slam of Darts.",
+      "published_label": "15 November 2026 · 21:27",
+      "published_iso": "2026-11-15T21:27:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Cam Crabtree nailed a mega 146 checkout against Ricky Evans during their Group K clash at the 2026 Grand Slam of Darts."
+      ]
+    },
+    {
+      "slug": "13612566",
+      "title": "'She's been fantastic' - Bright heaps praise on player of the match Earps",
+      "url": "https://www.skysports.com/football/video/13612566/wsl-millie-bright-heaps-praise-on-player-of-the-match-mary-earps",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-earps-bright_7407273.jpg?20261115185206",
+      "excerpt": "Mary Earps reflects on a hard-earned point for the London City Lionesses, as former England teammate Millie Bright heaped praise on the goalkeeper.",
+      "published_label": "15 November 2026 · 18:48",
+      "published_iso": "2026-11-15T18:48:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Mary Earps reflects on a hard-earned point for the London City Lionesses, as former England teammate Millie Bright heaped praise on the goalkeeper."
+      ]
+    },
+    {
+      "slug": "13612562",
+      "title": "Earps stars as London City frustrate Arsenal to seal point at Emirates",
+      "url": "https://www.skysports.com/football/video/13612562/arsenal-1-1-london-city-lionesses-wsl-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-lcl-wsl_7407250.jpg?20261115182624",
+      "excerpt": "Highlights of the Women's Super League match between Arsenal and London City Lionesses.",
+      "published_label": "15 November 2026 · 18:37",
+      "published_iso": "2026-11-15T18:37:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Women's Super League match between Arsenal and London City Lionesses."
+      ]
+    },
+    {
+      "slug": "13612437",
+      "title": "Arsenal's wait for home WSL win goes on after Earps masterclass",
+      "url": "https://www.skysports.com/football/news/13612437/arsenal-1-1-london-city-lionesses-gunners-remain-winless-at-home-in-the-wsl-after-inspired-mary-earps-denies-them-victory",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7407153.jpg?20261115164523",
+      "excerpt": "Arsenal's wait for a home WSL win continues as they drew 1-1 against London City Lionesses on Sunday - their fifth draw in a row at the Emirates this season - with an inspired Mary Earps denying the Gunners victory.",
+      "published_label": "15 November 2026 · 18:30",
+      "published_iso": "2026-11-15T18:30:00+00:00",
+      "byline": "Charlotte Marsh",
+      "body": [
+        "Arsenal's wait for a home WSL win continues as they drew 1-1 against London City Lionesses on Sunday - their fifth draw in a row at the Emirates this season - with an inspired Mary Earps denying the Gunners victory.",
+        "While the result extends Arsenal's unbeaten home run to 24 league matches, it is becoming an increasing concern and a spectre on the shoulder that the Gunners have been unable to secure three points at the Emirates this year.",
+        "Giving her view to Sky Sports after the game, Renee Slegers - managing her 50th Arsenal game - said: \"We spent more time than we normally do without the ball; partly the game plan and partly them asking questions of us on the pitch.",
+        "\"We create big chances, could have done more with those. That's the frustrating part. This is the fifth [home game] and we couldn't give the fans the win. Unfortunately we couldn't do it for them.\""
+      ]
+    },
+    {
       "slug": "13612525",
       "title": "London City Lionesses hit back minutes after Arsenal take the lead!",
       "url": "https://www.skysports.com/football/video/13612525/wsl-london-city-lionesses-hit-back-minutes-after-arsenal-take-the-lead",
@@ -353,6 +450,21 @@
       "kind": "video",
       "body": [
         "Rangers head coach Leanne Crichton reflects on her side’s 2-1 defeat to Celtic, ending their 100% start to the SWPL season."
+      ]
+    },
+    {
+      "slug": "13612479",
+      "title": "Scott 'delighted' as Celtic come back to beat Rangers",
+      "url": "https://www.skysports.com/football/video/13612479/celtic-head-coach-grant-scott-thoroughly-delighted-after-hoops-end-rangers-swpl-winning-run",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/a22abfd0eb147edf18fe4907162866f2f9a6491839814e290a143764bf24001f_7407041.jpg?20261115142921",
+      "excerpt": "Celtic head coach Grant Scott is 'thoroughly delighted' with their 2-1 win over Rangers.",
+      "published_label": "15 November 2026 · 14:09",
+      "published_iso": "2026-11-15T14:09:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Celtic head coach Grant Scott is 'thoroughly delighted' with their 2-1 win over Rangers."
       ]
     },
     {
@@ -582,119 +694,6 @@
       "kind": "video",
       "body": [
         "Highlights of the Sky Bet League Two match between Crewe and Newport."
-      ]
-    },
-    {
-      "slug": "13610285",
-      "title": "Port Vale 4-2 Accrington",
-      "url": "https://www.skysports.com/football/news/13610285/port-vale-4-2-accrington",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "Jaheim Headley's double helped Port Vale to a 4-2 home win over Accrington in League Two.",
-      "published_label": "14 November 2026 · 17:00",
-      "published_iso": "2026-11-14T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Jaheim Headley's double helped Port Vale to a 4-2 home win over Accrington in League Two.",
-        "Vale deservedly led on eight minutes, Headley scoring from close range after excellent work by Max Watters.",
-        "Kyle Dempsey doubled Vale's lead after 27 minutes, firing in after skipping past two challenges, though goalkeeper Louie Moulden may feel he should have saved it. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "Moulden did redeem himself with two fine saves, getting to a fierce Jordan Lawrence-Gabriel effort and, at the end of the half, tipping over a Dempsey shot."
-      ]
-    },
-    {
-      "slug": "13610283",
-      "title": "Colchester 2-0 Gillingham",
-      "url": "https://www.skysports.com/football/news/13610283/colchester-2-0-gillingham",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "Colchester ended their 10-game winless run in League Two with a 2-0 home victory over Gillingham.",
-      "published_label": "14 November 2026 · 17:00",
-      "published_iso": "2026-11-14T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Colchester ended their 10-game winless run in League Two with a 2-0 home victory over Gillingham.",
-        "Jack Payne's penalty just after the hour mark was added to by Harry Anderson to give United a first league win since August that moved them out of the relegation zone.",
-        "Colchester's Jay Williams and Teddy Bishop both went close early on, while at the other end goalkeeper Thimothee Lo-Tutala did well to foil Sheldon Kendall. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "Colchester almost went ahead just before half-time when Anderson's low strike was pushed away by Gills keeper Ollie Wright."
-      ]
-    },
-    {
-      "slug": "13610286",
-      "title": "Crewe 2-2 Newport",
-      "url": "https://www.skysports.com/football/news/13610286/crewe-2-2-newport",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "Jordan Stephenson's last-minute header salvaged Crewe a point from a 2-2 draw with Newport.",
-      "published_label": "14 November 2026 · 17:00",
-      "published_iso": "2026-11-14T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Jordan Stephenson's last-minute header salvaged Crewe a point from a 2-2 draw with Newport.",
-        "The visitors appeared to be heading for a comfortable victory until close-range efforts from Charlie McNeill and Stephenson, who seized on a cross from Matus Holicek, pegged them back in the last quarter of an hour.",
-        "Hayden Mullins' side were gifted a third-minute opener when a mix-up between Luke Offord and Ian Lawlor dealing with a cross, saw Offord clip the ball past his own goalkeeper. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "Dan Sassi extended the lead 11 minutes before the interval when he broke from his marker to glance a header into the far corner from Matty Jacob's corner."
-      ]
-    },
-    {
-      "slug": "13610291",
-      "title": "Fleetwood 1-0 Tranmere",
-      "url": "https://www.skysports.com/football/news/13610291/fleetwood-1-0-tranmere",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
-      "excerpt": "Captain Shaun Rooney's 82nd-minute winner earned a 1-0 Sky Bet League Two win for Carabao Cup quarter-finalists Fleetwood over Tranmere.",
-      "published_label": "14 November 2026 · 17:00",
-      "published_iso": "2026-11-14T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Captain Shaun Rooney's 82nd-minute winner earned a 1-0 Sky Bet League Two win for Carabao Cup quarter-finalists Fleetwood over Tranmere.",
-        "Rooney converted an Andy Cannon corner, which was just reward for the home side's second-half dominance.",
-        "The Fylde Coast outfit had not beaten Rovers since 2019, going four league games since then without a goal until the skipper's late intervention.",
-        "The Cod Army's three points lifted them up to 11th in the table, two points adrift of the play-offs."
-      ]
-    },
-    {
-      "slug": "13612238",
-      "title": "Trafford to start in Spain - but what are Tuchel's other selection issues?",
-      "url": "https://www.skysports.com/football/news/13612238/spain-vs-england-james-trafford-set-to-replace-jordan-pickford-as-goalkeeper-and-how-does-thomas-tuchel-stop-lamine-yamal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-trafford-pickford_7406536.jpg?20261114162602",
-      "excerpt": "Against the best team in the world, Thomas Tuchel's defensive decisions will be key. And he has many to make.",
-      "published_label": "14 November 2026 · 16:02",
-      "published_iso": "2026-11-14T16:02:00+00:00",
-      "byline": "Rob Dorsett",
-      "body": [
-        "Against the best team in the world, Thomas Tuchel's defensive decisions will be key. And he has many to make.",
-        "The England head coach said before Croatia at Wembley on Thursday that he was quite happy to go full-strength in both matches, despite the three-day gap, and he was true to his word. All the big guns were out for Harry Kane's big night.",
-        "Barring unexpected late injury or illness, the best player in the world will lead the line against the world champions. Morgan Rogers should start at right wing, Anthony Gordon left wing. England's Madrid maestro Jude Bellingham will play No 10, and Elliot Anderson and Declan Rice will form the double pivot. England latest news | Fixtures England 2-1 Croatia - Match report and reaction Nations League scores & news | Tables | Sky Bet",
-        "But behind that is where Tuchel and his assistant Anthony Barry will be pondering their options. Do England have a new No 1?"
-      ]
-    },
-    {
-      "slug": "nitto-atp-finals-kickoff-sinner-is-out-djokovic-didn-t-qualify-the-atp-finals-start-sunday",
-      "title": "Nitto ATP Finals kickoff: Sinner Is Out. Djokovic Didn't Qualify. The",
-      "url": "https://www.sportytrader.com/en/news/nitto-atp-finals-kickoff-sinner-is-out-djokovic-didn-t-qualify-the-atp-finals-start-sunday/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/cricket/nz-vs-ind-fifth-odi.webp",
-      "excerpt": "The two-time defending champion hasn't played since July. The seven-time champion couldn't qualify. So four debutants fill the vacuum in Turin, and the youngest was playi",
-      "published_label": "14 November 2026 · 15:00",
-      "published_iso": "2026-11-14T15:00:00+00:00",
-      "byline": "Geoffrey Ejiga"
-    },
-    {
-      "slug": "13611876",
-      "title": "Who could England face in Nations League quarter-finals?",
-      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-morgan-rogers_7405404.jpg?20261112201743",
-      "excerpt": "England have sealed their place in the Nations League quarter-finals after beating Croatia at Wembley - but who will they play in the last eight in March? Top spot still up for grabs - and could be key",
-      "published_label": "13 November 2026 · 11:56",
-      "published_iso": "2026-11-13T11:56:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "England have sealed their place in the Nations League quarter-finals after beating Croatia at Wembley - but who will they play in the last eight in March? Top spot still up for grabs - and could be key",
-        "England are currently second in Nations League Group A3 behind Spain, trailing the world champions by three points.",
-        "Thomas Tuchel's side lost to Spain at Wembley at the start of this campaign and have their final match of the group stage in Madrid on Sunday.",
-        "Both sides are assured of a quarter-final place but a win for England will mean they finish top of the group. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables"
       ]
     }
   ]
