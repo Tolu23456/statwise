@@ -1,33 +1,10 @@
 {
-  "synced_at": "2026-11-14T20:43:41+00:00",
+  "synced_at": "2026-11-15T01:56:24+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13612155",
-      "title": "Wales beaten in Norway as threat of Nations League relegation grows",
-      "url": "https://www.skysports.com/football/news/13612155/norway-3-1-wales-craig-bellamys-side-suffer-defeat-in-oslo-with-threat-of-nations-league-relegation-now-looming",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-antonio-nusa-football_7406630.jpg?20261114182536",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13612313",
-      "title": "Swindon 1-4 Grimsby",
-      "url": "https://www.skysports.com/football/video/13612313/swindon-1-4-grimsby-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/c50d7ccfe0aa68bd13b76b8f7bda377d5c221f1eff8ebaf5024f572d6176e997_7406649.jpg?20261114185112",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13610285",
       "title": "Port Vale 4-2 Accrington",
@@ -296,6 +273,72 @@
       "byline": ""
     },
     {
+      "slug": "13612154",
+      "title": "Devlin nets first international goal as Northern Ireland beat Ukraine",
+      "url": "https://www.skysports.com/football/news/13612154/northern-ireland-1-0-ukraine-terry-devlin-scores-first-international-goal-to-keep-michael-oneills-side-top-of-the-table",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-terry-devlin-northern-ireland_7406742.jpg?20261114215916",
+      "excerpt": "Terry Devlin's first international goal kept Northern Ireland top of their Nations League group as a 1-0 win over Ukraine set up a promotion decider away to Hungary on Tuesday.",
+      "published_label": "14 November 2026 · 21:35",
+      "published_iso": "2026-11-14T21:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Terry Devlin's first international goal kept Northern Ireland top of their Nations League group as a 1-0 win over Ukraine set up a promotion decider away to Hungary on Tuesday.",
+        "The 23-year-old Devlin has been in the goals for Portsmouth this term with four, and opened his Northern Ireland account with a fine strike in the 68th minute as he left Ukraine goalkeeper Anatoliy Trubin flat-footed with a shot from distance. How the teams lined up | Match stats Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Pierce Charles then made a superb save to deny Danylo Sikan at the death and preserve Northern Ireland's fifth straight clean sheet - the first time they have achieved that since 2017 - and ensure they remain the only side in the competition yet to concede.",
+        "The three points put Northern Ireland back on top of Group B2 after Hungary's 2-0 win over Georgia earlier in the afternoon, and ruled Ukraine out of contention as they lost three straight matches for the first time in six years."
+      ]
+    },
+    {
+      "slug": "13612156",
+      "title": "Kalajdzic scores late as Republic of Ireland taste defeat in Austria",
+      "url": "https://www.skysports.com/football/news/13612156/austria-1-0-republic-of-ireland-sasa-kalajdzic-deals-late-blow-as-heimir-hallgrimssons-side-suffer-nations-league-defeat",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-austria-republic-of-ireland_7406735.jpg?20261114215208",
+      "excerpt": "Sasa Kalajdzic dealt the Republic of Ireland a late blow in Linz with the only goal in Austria's 1-0 Nations League victory at the Raiffeisen Arena.",
+      "published_label": "14 November 2026 · 21:35",
+      "published_iso": "2026-11-14T21:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Sasa Kalajdzic dealt the Republic of Ireland a late blow in Linz with the only goal in Austria's 1-0 Nations League victory at the Raiffeisen Arena.",
+        "The result ensured that, no matter how the closing contests in Group B play out, Austria sealed promotion to League A. How the teams lined up | Match stats Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Ireland enter Tuesday's critical home clash at the Aviva Stadium in third place, with one point fewer than their final opponents, Kosovo.",
+        "Heimir Hallgrimsson's men were not without chances, but only Kalajdzic made one count when he broke the deadlock in the 79th minute."
+      ]
+    },
+    {
+      "slug": "13612345",
+      "title": "Explained: Why is Tuchel unhappy with media over anti-racism questions?",
+      "url": "https://www.skysports.com/football/video/13612345/nations-league-racism-row-threatens-to-overshadow-englands-clash-with-spain",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-nationsleague_7406724.jpg?20261114212859",
+      "excerpt": "Sky Sports News' Rob Dorsett outlines why the build-up to England's Nations League contest with Spain has been dominated by questions over anti-racism protocols.",
+      "published_label": "14 November 2026 · 21:21",
+      "published_iso": "2026-11-14T21:21:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports News' Rob Dorsett outlines why the build-up to England's Nations League contest with Spain has been dominated by questions over anti-racism protocols."
+      ]
+    },
+    {
+      "slug": "13612301",
+      "title": "Tuchel unhappy as anti-racism protocol questions overshadow Spain clash",
+      "url": "https://www.skysports.com/football/news/13612301/thomas-tuchel-england-boss-unhappy-as-anti-racism-protocol-questions-overshadow-nations-league-test-in-spain",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-thomas-tuchel-england_7406703.jpg?20261114203201",
+      "excerpt": "Thomas Tuchel insisted his words had been \"twisted\" as questions over anti-racism protocols overshadowed the build-up to England's Nations League showdown in Madrid.",
+      "published_label": "14 November 2026 · 21:00",
+      "published_iso": "2026-11-14T21:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Thomas Tuchel insisted his words had been \"twisted\" as questions over anti-racism protocols overshadowed the build-up to England's Nations League showdown in Madrid.",
+        "Tuchel was asked after England's win over Croatia on Thursday how he and England would react if racist abuse occurred during Sunday's game against Spain.",
+        "The head coach responded by saying he would \"maybe take five minutes\" to remind his players of the anti-racism protocols. Tuchel also said \"we will not expect\" any abuse to occur in Madrid.",
+        "The game is England's first visit to the Spanish capital since 2004, when the match was marred by racist abuse directed at England's black players. England latest news | Fixtures Who could England face in Nations League quarters? Nations League scores & news | Tables | Sky Bet"
+      ]
+    },
+    {
       "slug": "13612337",
       "title": "'I never talked about racism in Spain!' - Tuchel fumes at reporter",
       "url": "https://www.skysports.com/football/video/13612337/nations-league-thomas-tuchel-tells-reporter-i-never-talked-about-racism-in-spain",
@@ -386,6 +429,55 @@
       ]
     },
     {
+      "slug": "13612155",
+      "title": "Wales beaten in Norway as threat of Nations League relegation grows",
+      "url": "https://www.skysports.com/football/news/13612155/norway-3-1-wales-craig-bellamys-side-suffer-defeat-in-oslo-with-threat-of-nations-league-relegation-now-looming",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-antonio-nusa-football_7406630.jpg?20261114182536",
+      "excerpt": "Wales suffered a 3-1 defeat to Norway in Oslo despite a spirited performance, as the threat of relegation to the second tier of the Nations League now looms over Craig Bellamy's side.",
+      "published_label": "14 November 2026 · 19:00",
+      "published_iso": "2026-11-14T19:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Wales suffered a 3-1 defeat to Norway in Oslo despite a spirited performance, as the threat of relegation to the second tier of the Nations League now looms over Craig Bellamy's side.",
+        "Wales looked the better side in the first half and had chances to take the lead, most notably through Daniel James on three occasions, before they unravelled after half-time. How the teams lined up | Match stats Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Antonio Nusa showed why he is often referred to as the Norwegian Neymar as he broke the deadlock with his fine strike into the bottom left corner before substitute Andreas Schjelderup tapped home Erling Haaland's pass to give the hosts a commanding lead.",
+        "David Brooks' sublime chipped finish sparked hopes of a comeback but Haaland's penalty, after Connor Roberts pushed Schjelderup down in the box, punctured the late momentum they had gathered."
+      ]
+    },
+    {
+      "slug": "13612313",
+      "title": "Swindon 1-4 Grimsby",
+      "url": "https://www.skysports.com/football/video/13612313/swindon-1-4-grimsby-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/c50d7ccfe0aa68bd13b76b8f7bda377d5c221f1eff8ebaf5024f572d6176e997_7406649.jpg?20261114185112",
+      "excerpt": "Highlights of the Sky Bet League One match between Swindon and Grimsby.",
+      "published_label": "14 November 2026 · 18:49",
+      "published_iso": "2026-11-14T18:49:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League One match between Swindon and Grimsby."
+      ]
+    },
+    {
+      "slug": "13610291",
+      "title": "Fleetwood 1-0 Tranmere",
+      "url": "https://www.skysports.com/football/news/13610291/fleetwood-1-0-tranmere",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "Captain Shaun Rooney's 82nd-minute winner earned a 1-0 Sky Bet League Two win for Carabao Cup quarter-finalists Fleetwood over Tranmere.",
+      "published_label": "14 November 2026 · 17:00",
+      "published_iso": "2026-11-14T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Captain Shaun Rooney's 82nd-minute winner earned a 1-0 Sky Bet League Two win for Carabao Cup quarter-finalists Fleetwood over Tranmere.",
+        "Rooney converted an Andy Cannon corner, which was just reward for the home side's second-half dominance.",
+        "The Fylde Coast outfit had not beaten Rovers since 2019, going four league games since then without a goal until the skipper's late intervention.",
+        "The Cod Army's three points lifted them up to 11th in the table, two points adrift of the play-offs."
+      ]
+    },
+    {
       "slug": "13612238",
       "title": "Trafford to start in Spain - but what are Tuchel's other selection issues?",
       "url": "https://www.skysports.com/football/news/13612238/spain-vs-england-james-trafford-set-to-replace-jordan-pickford-as-goalkeeper-and-how-does-thomas-tuchel-stop-lamine-yamal",
@@ -401,6 +493,17 @@
         "Barring unexpected late injury or illness, the best player in the world will lead the line against the world champions. Morgan Rogers should start at right wing, Anthony Gordon left wing. England's Madrid maestro Jude Bellingham will play No 10, and Elliot Anderson and Declan Rice will form the double pivot. England latest news | Fixtures England 2-1 Croatia - Match report and reaction Nations League scores & news | Tables | Sky Bet",
         "But behind that is where Tuchel and his assistant Anthony Barry will be pondering their options. Do England have a new No 1?"
       ]
+    },
+    {
+      "slug": "nitto-atp-finals-kickoff-sinner-is-out-djokovic-didn-t-qualify-the-atp-finals-start-sunday",
+      "title": "Nitto ATP Finals kickoff: Sinner Is Out. Djokovic Didn't Qualify. The",
+      "url": "https://www.sportytrader.com/en/news/nitto-atp-finals-kickoff-sinner-is-out-djokovic-didn-t-qualify-the-atp-finals-start-sunday/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/cricket/nz-vs-ind-fifth-odi.webp",
+      "excerpt": "The two-time defending champion hasn't played since July. The seven-time champion couldn't qualify. So four debutants fill the vacuum in Turin, and the youngest was playi",
+      "published_label": "14 November 2026 · 15:00",
+      "published_iso": "2026-11-14T15:00:00+00:00",
+      "byline": "Geoffrey Ejiga"
     },
     {
       "slug": "13612213",
@@ -570,114 +673,20 @@
       ]
     },
     {
-      "slug": "13611991",
-      "title": "Dowman breaks record after making England U21s debut in loss to Portugal",
-      "url": "https://www.skysports.com/football/news/13611991/england-0-1-portugal-max-dowman-makes-debut-off-the-bench-as-u21s-suffer-defeat-in-friendly",
+      "slug": "13611876",
+      "title": "Who could England face in Nations League quarter-finals?",
+      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-max-dowman-england_7406122.jpg?20261113220317",
-      "excerpt": "Max Dowman broke Jude Bellingham's record to become the youngest player to represent England at U21 level but could not stop Lee Carsley's side from falling to a 1-0 loss against Portugal.",
-      "published_label": "13 November 2026 · 22:00",
-      "published_iso": "2026-11-13T22:00:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-morgan-rogers_7405404.jpg?20261112201743",
+      "excerpt": "England have sealed their place in the Nations League quarter-finals after beating Croatia at Wembley - but who will they play in the last eight in March? Top spot still up for grabs - and could be key",
+      "published_label": "13 November 2026 · 11:56",
+      "published_iso": "2026-11-13T11:56:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Max Dowman broke Jude Bellingham's record to become the youngest player to represent England at U21 level but could not stop Lee Carsley's side from falling to a 1-0 loss against Portugal.",
-        "Dowman, aged 16, 10 months and 13 days, stepped off the bench with around half an hour remaining to make his debut, but Moreira's first half strike secured the victory for Portugal on the evening.",
-        "Lee Carsley's side have now suffered successive defeats for the first time since March 2021 following their loss to the Republic of Ireland in their last European Championship qualifying match in October. As it happened | Teams | Stats Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
-        "England's preparations for next year's tournament did not get off to an ideal start as Bayer Leverkusen forward Moreira put the visitors ahead at the break."
-      ]
-    },
-    {
-      "slug": "13611417",
-      "title": "McGinn double seals win for ragged Scotland",
-      "url": "https://www.skysports.com/football/news/13611417/scotland-2-1-north-macedonia-john-mcginn-scores-double-as-hosts-toil-in-nations-league-encounter",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-john-mcginn-scotland_7406088.jpg?20261113211951",
-      "excerpt": "John McGinn's double rescued Scotland as they toiled to a 2-1 win over North Macedonia to keep their Nations League promotion hopes alive.",
-      "published_label": "13 November 2026 · 21:35",
-      "published_iso": "2026-11-13T21:35:00+00:00",
-      "byline": "Allan Valente",
-      "body": [
-        "John McGinn's double rescued Scotland as they toiled to a 2-1 win over North Macedonia to keep their Nations League promotion hopes alive.",
-        "The hosts were booed off at half-time with the game goalless but there was a sense of relief - rather than joy - at the final whistle after McGinn's penalty secured the three points after Elmin Rastoder's header cancelled out the Aston Villa midfielder's opener. As it happened | Teams | Stats Nations League scores & news | Tables Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
-        "The win means Scotland can still finish second in Group B1 after Slovenia were held by Switzerland, but will have to win in St Gallen on Monday and hope North Macedonia do them a favour in their final game.",
-        "Scotland boss Sebastien Pocognoli secured his first win at Hampden on a night when skipper Andy Robertson earned his 102nd cap to equal the appearance record held by Sir Kenny Dalglish."
-      ]
-    },
-    {
-      "slug": "13612024",
-      "title": "How's your football knowledge? Jobe impresses naming Ballon d'Or winners",
-      "url": "https://www.skysports.com/football/video/13612024/jobe-bellingham-shows-off-his-football-knowledge-naming-ballon-dor-winners",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jobe-bellingham-england_7406031.jpg?20261113194535",
-      "excerpt": "Jobe Bellingham shows off his football knowledge naming Ballon d'Or winners. X Credit: @England.",
-      "published_label": "13 November 2026 · 19:42",
-      "published_iso": "2026-11-13T19:42:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jobe Bellingham shows off his football knowledge naming Ballon d'Or winners. X Credit: @England."
-      ]
-    },
-    {
-      "slug": "13611887",
-      "title": "Tearful Pochettino admits he 'couldn't say no to Man Utd'",
-      "url": "https://www.skysports.com/football/news/13611887/mauricio-pochettino-new-man-utd-head-coach-in-tears-as-he-labels-leaving-usmnt-toughest-decision-of-career",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettinp_7405898.jpg?20261113153009",
-      "excerpt": "An emotional Mauricio Pochettino said that leaving his role with the United States was the \"toughest decision of his career\" but admitted he couldn't turn down the chance to become head coach of Manchester United.",
-      "published_label": "13 November 2026 · 15:00",
-      "published_iso": "2026-11-13T15:00:00+00:00",
-      "byline": "Callum Bishop",
-      "body": [
-        "An emotional Mauricio Pochettino said that leaving his role with the United States was the \"toughest decision of his career\" but admitted he couldn't turn down the chance to become head coach of Manchester United.",
-        "Pochettino has been appointed as Michael Carrick's replacement at Old Trafford having signed a deal until the summer of 2029. It comes mere months after extending his stay with the USMNT until the 2030 World Cup.",
-        "The Argentine will begin his new role on November 18, after taking charge of the USA's two fixtures against Haiti.",
-        "Speaking in his pre-match press conference before his penultimate game, Pochettino broke down in tears as he explained his decision. What will Pochettino's Man Utd team look like? Inside Man Utd's pursuit of Poch | Will it work? Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️"
-      ]
-    },
-    {
-      "slug": "13611928",
-      "title": "Pochettino left in tears on leaving US job - 'Most difficult decision'",
-      "url": "https://www.skysports.com/football/video/13611928/mauricio-pochettino-left-in-tears-on-leaving-us-job-most-difficult-decision",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-pochettino-man-utd_7405890.jpg?20261113150042",
-      "excerpt": "New Manchester United boss Mauricio Pochettino was very emotional when thanking the US Soccer Federation.",
-      "published_label": "13 November 2026 · 14:49",
-      "published_iso": "2026-11-13T14:49:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "New Manchester United boss Mauricio Pochettino was very emotional when thanking the US Soccer Federation."
-      ]
-    },
-    {
-      "slug": "13611913",
-      "title": "Redknapp: Man Utd squad fitness the number one job for Pochettino",
-      "url": "https://www.skysports.com/football/video/13611913/jamie-redknapp-mauricio-pochettino-needs-to-start-by-getting-manchester-united-squad-fit",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7405858.jpg?20261113141616",
-      "excerpt": "Jamie Redknapp feels Mauricio Pochettino first job will be to get the Manchester United squad fit as well as improving the back four.",
-      "published_label": "13 November 2026 · 13:57",
-      "published_iso": "2026-11-13T13:57:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jamie Redknapp feels Mauricio Pochettino first job will be to get the Manchester United squad fit as well as improving the back four."
-      ]
-    },
-    {
-      "slug": "13611911",
-      "title": "The HECTIC schedule Pochettino will face ahead of new life at Man Utd!",
-      "url": "https://www.skysports.com/football/video/13611911/from-usa-to-manchester-utd-mauricio-pochettinos-hectic-schedule-explained",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7405857.jpg?20261113141506",
-      "excerpt": "Sky Sports's Rob Dorsett explains why the new Manchester United head coach, Mauricio Pochettino, has a VERY busy few days ahead of him.",
-      "published_label": "13 November 2026 · 13:48",
-      "published_iso": "2026-11-13T13:48:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports's Rob Dorsett explains why the new Manchester United head coach, Mauricio Pochettino, has a VERY busy few days ahead of him."
+        "England have sealed their place in the Nations League quarter-finals after beating Croatia at Wembley - but who will they play in the last eight in March? Top spot still up for grabs - and could be key",
+        "England are currently second in Nations League Group A3 behind Spain, trailing the world champions by three points.",
+        "Thomas Tuchel's side lost to Spain at Wembley at the start of this campaign and have their final match of the group stage in Madrid on Sunday.",
+        "Both sides are assured of a quarter-final place but a win for England will mean they finish top of the group. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables"
       ]
     }
   ]
