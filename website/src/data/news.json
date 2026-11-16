@@ -1,22 +1,10 @@
 {
-  "synced_at": "2026-11-15T22:48:57+00:00",
+  "synced_at": "2026-11-16T06:31:00+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13612475",
-      "title": "Celtic complete comeback win to close gap on rivals Rangers at top of SWPL",
-      "url": "https://www.skysports.com/football/video/13612475/celtic-2-1-rangers-scottish-womens-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-swpl-rangers_7407026.jpg?20261115140308",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13612473",
       "title": "'What a strike that is!' - Handley STUNNER seals win for Celtic in SWPL Old Firm derby",
@@ -239,6 +227,53 @@
       "byline": ""
     },
     {
+      "slug": "13612650",
+      "title": "Redemption for Tuchel in 'Miracle in Madrid' - Spain vs England Verdict",
+      "url": "https://www.skysports.com/football/video/13612650/redemption-for-thomas-tuchel-in-miracle-in-madrid-spain-vs-england-verdict",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-konsa-white_7407466.jpg?20261116003749",
+      "excerpt": "Rob Dorsett gives his verdict on England's 'statement victory over Spain in the Nations League.",
+      "published_label": "16 November 2026 · 00:28",
+      "published_iso": "2026-11-16T00:28:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Rob Dorsett gives his verdict on England's 'statement victory over Spain in the Nations League."
+      ]
+    },
+    {
+      "slug": "13612645",
+      "title": "Kane: Parading World Cup made us more hungry against Spain",
+      "url": "https://www.skysports.com/football/video/13612645/harry-kane-parading-world-cup-made-us-more-hungry-against-spain",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kane-football-england_7407455.jpg?20261116000146",
+      "excerpt": "Harry Kane says Spain parading the World Cup before kick-off made England more hungry after claiming top spot in the Nations League.",
+      "published_label": "15 November 2026 · 23:52",
+      "published_iso": "2026-11-15T23:52:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Harry Kane says Spain parading the World Cup before kick-off made England more hungry after claiming top spot in the Nations League."
+      ]
+    },
+    {
+      "slug": "13612630",
+      "title": "Papers: Guardiola to reject USA approach to replace Pochettino",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13612630/pep-guardiola-usa-approach-to-replace-mauricio-pochettino-to-be-rejected-by-ex-man-city-boss-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Monday's newspapers... INTERNATIONAL FOOTBALL",
+      "published_label": "15 November 2026 · 22:45",
+      "published_iso": "2026-11-15T22:45:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Monday's newspapers... INTERNATIONAL FOOTBALL",
+        "Pep Guardiola will resist any attempts by the United States to hire him as their head coach following the departure of Mauricio Pochettino - The Telegraph Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW PREMIER LEAGUE",
+        "Fulham central defender Calvin Bassey is expected to feature prominently on Mauricio Pochettino's list of Manchester United targets for the January transfer window - The Telegraph EUROPEAN FOOTBALL",
+        "Paris FC are eyeing a return to the Parc des Princes, with Paris Saint-Germain's future in the iconic arena uncertain - The Sun RUGBY UNION"
+      ]
+    },
+    {
       "slug": "13612625",
       "title": "Tuchel: Performance on the highest level - England's best so far",
       "url": "https://www.skysports.com/football/video/13612625/thomas-tuchel-englands-best-performance-so-far-after-victory-of-world-champions-spain",
@@ -251,6 +286,55 @@
       "kind": "video",
       "body": [
         "Thomas Tuchel believes victory over world champions Spain was England's best performance so far under his leadership."
+      ]
+    },
+    {
+      "slug": "13612624",
+      "title": "Is Trafford England's new No 1 after Spain heroics?",
+      "url": "https://www.skysports.com/football/news/13612624/james-trafford-has-leeds-goalkeeper-overtaken-jordan-pickford-as-englands-no-1-after-starring-display-against-spain",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-james-trafford-exri-konsa_7407447.jpg?20261115233939",
+      "excerpt": "Do England have a new No 1? Thomas Tuchel insists not. \"There's no No 1,\" he said. But Jordan Pickford might have his work cut out to wrestle the shirt back from James Trafford on the evidence of his performance in England's 3-2 win over Sp…",
+      "published_label": "15 November 2026 · 22:20",
+      "published_iso": "2026-11-15T22:20:00+00:00",
+      "byline": "Nick Wright",
+      "body": [
+        "Do England have a new No 1? Thomas Tuchel insists not. \"There's no No 1,\" he said. But Jordan Pickford might have his work cut out to wrestle the shirt back from James Trafford on the evidence of his performance in England's 3-2 win over Spain.",
+        "It felt significant that he started in the first place. Pickford has been England's undisputed first choice for a decade; an outstanding servant to the national team whose total of 94 caps puts him behind only Peter Shilton among the most-capped goalkeepers.",
+        "But this was undoubtedly England's biggest test of their Nations League campaign and Tuchel opted for Trafford, encouraged by his displays at home to Spain and away to Czech Republic in September. \"He had a brilliant match,\" he added afterwards.",
+        "If it is a changing of the guard, then it is being handled carefully. \"I think it's smart management,\" said Sky Sports' Roy Keane before kick-off in Madrid. \"This is the perfect time for Trafford to come in, against top players, and show what he's capable of doing.\" Talking points as Thomas Tuchel learns Argentina lesson Spain 2-3 England - Match report and Thomas Tuchel's verdict Who could England play in the Nations League last eight? As it happened | Match stats | England fixtures"
+      ]
+    },
+    {
+      "slug": "13612611",
+      "title": "England talking points: Tuchel learns Argentina lesson as full-backs shine",
+      "url": "https://www.skysports.com/football/news/13612611/spain-2-3-england-talking-points-thomas-tuchel-learns-lessons-from-argentina-as-harry-kane-ben-white-and-lewis-hall-shine",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-tuchel-england_7407412.jpg?20261115224539",
+      "excerpt": "After England beat Spain in their own back yard in a statement result, we look at the main talking points from a memorable moment in Madrid... Bold England show their strengths with front-foot approach",
+      "published_label": "15 November 2026 · 21:52",
+      "published_iso": "2026-11-15T21:52:00+00:00",
+      "byline": "Peter Smith and Sam Blitz",
+      "body": [
+        "After England beat Spain in their own back yard in a statement result, we look at the main talking points from a memorable moment in Madrid... Bold England show their strengths with front-foot approach",
+        "England's football DNA has been in focus this autumn. In Madrid, we saw the English style at its best. From the first whistle, England were boldly on the front foot, overwhelming Spain with pace, power and directness.",
+        "They snapped into tackles and gave short shrift to their opponents when they called for fouls. It was physical, it was aggressive. It was certainly not England trying to replicate the Spanish style. Spain 2-3 England - Match report and reaction As it happened | Match stats | England fixtures Nations League scores & news | Tables | Sky Bet",
+        "The set-piece routine for the second goal was a reflection of how those phases have risen in importance in the Premier League and fittingly saw two Arsenal players combine to score it. Then, when down to 10 men, there was fight, heart and commitment to get over the line."
+      ]
+    },
+    {
+      "slug": "13612606",
+      "title": "Klopp: Infantino worse than Blatter",
+      "url": "https://www.skysports.com/football/video/13612606/jurgen-klopp-fifa-president-gianni-infantino-worse-than-predecessor-sepp-blatter",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-infantino-klopp-football_7407378.jpg?20261115220853",
+      "excerpt": "Jurgen Klopp criticises FIFA president Gianni Infantino and believes he has done a worse job than his predecessor Sepp Blatter.",
+      "published_label": "15 November 2026 · 21:52",
+      "published_iso": "2026-11-15T21:52:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jurgen Klopp criticises FIFA president Gianni Infantino and believes he has done a worse job than his predecessor Sepp Blatter."
       ]
     },
     {
@@ -468,6 +552,21 @@
       ]
     },
     {
+      "slug": "13612475",
+      "title": "Celtic complete comeback win to close gap on rivals Rangers at top of SWPL",
+      "url": "https://www.skysports.com/football/video/13612475/celtic-2-1-rangers-scottish-womens-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-swpl-rangers_7407026.jpg?20261115140308",
+      "excerpt": "Highlights of the Scottish Women's Premier League match between Celtic and Rangers.",
+      "published_label": "15 November 2026 · 14:00",
+      "published_iso": "2026-11-15T14:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Scottish Women's Premier League match between Celtic and Rangers."
+      ]
+    },
+    {
       "slug": "spain-vs-england-uefa-nations-league-matchday-6",
       "title": "Spain vs England: Can Tuchel’s Three Lions End La Roja’s Invincible St",
       "url": "https://www.sportytrader.com/en/news/spain-vs-england-uefa-nations-league-matchday-6/",
@@ -590,110 +689,20 @@
       ]
     },
     {
-      "slug": "13612287",
-      "title": "Chelsea beat Man City to go top of WSL",
-      "url": "https://www.skysports.com/football/video/13612287/chelsea-1-0-manchester-city-wsl-highlights",
+      "slug": "13611876",
+      "title": "Who could England face in Nations League quarter-finals?",
+      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-chelsea-man-city_7406600.jpg?20261114174239",
-      "excerpt": "Highlights of the Women's Super League match between Chelsea and Manchester City.",
-      "published_label": "14 November 2026 · 19:40",
-      "published_iso": "2026-11-14T19:40:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Women's Super League match between Chelsea and Manchester City."
-      ]
-    },
-    {
-      "slug": "13612328",
-      "title": "Rooney heads home late Fleetwood winner to grab three points",
-      "url": "https://www.skysports.com/football/video/13612328/fleetwood-1-0-tranmere-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-efl_7406676.jpg?20261114193719",
-      "excerpt": "Highlights of the Sky Bet League Two match between Fleetwood and Tranmere.",
-      "published_label": "14 November 2026 · 19:36",
-      "published_iso": "2026-11-14T19:36:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League Two match between Fleetwood and Tranmere."
-      ]
-    },
-    {
-      "slug": "13612319",
-      "title": "Liverpool end drought with Brighton thumping",
-      "url": "https://www.skysports.com/football/video/13612319/brighton-0-3-liverpool-womens-super-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7406660.jpg?20261114191024",
-      "excerpt": "Highlights of the Women's Super League match between Brighton and Liverpool.",
-      "published_label": "14 November 2026 · 19:06",
-      "published_iso": "2026-11-14T19:06:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Women's Super League match between Brighton and Liverpool."
-      ]
-    },
-    {
-      "slug": "13612155",
-      "title": "Wales beaten in Norway as threat of Nations League relegation grows",
-      "url": "https://www.skysports.com/football/news/13612155/norway-3-1-wales-craig-bellamys-side-suffer-defeat-in-oslo-with-threat-of-nations-league-relegation-now-looming",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-antonio-nusa-football_7406630.jpg?20261114182536",
-      "excerpt": "Wales suffered a 3-1 defeat to Norway in Oslo despite a spirited performance, as the threat of relegation to the second tier of the Nations League now looms over Craig Bellamy's side.",
-      "published_label": "14 November 2026 · 19:00",
-      "published_iso": "2026-11-14T19:00:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bellingham-kane-england_7407369.jpg?20261115215740",
+      "excerpt": "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
+      "published_label": "13 November 2026 · 11:56",
+      "published_iso": "2026-11-13T11:56:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Wales suffered a 3-1 defeat to Norway in Oslo despite a spirited performance, as the threat of relegation to the second tier of the Nations League now looms over Craig Bellamy's side.",
-        "Wales looked the better side in the first half and had chances to take the lead, most notably through Daniel James on three occasions, before they unravelled after half-time. How the teams lined up | Match stats Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "Antonio Nusa showed why he is often referred to as the Norwegian Neymar as he broke the deadlock with his fine strike into the bottom left corner before substitute Andreas Schjelderup tapped home Erling Haaland's pass to give the hosts a commanding lead.",
-        "David Brooks' sublime chipped finish sparked hopes of a comeback but Haaland's penalty, after Connor Roberts pushed Schjelderup down in the box, punctured the late momentum they had gathered."
-      ]
-    },
-    {
-      "slug": "13612313",
-      "title": "Swindon 1-4 Grimsby",
-      "url": "https://www.skysports.com/football/video/13612313/swindon-1-4-grimsby-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/c50d7ccfe0aa68bd13b76b8f7bda377d5c221f1eff8ebaf5024f572d6176e997_7406649.jpg?20261114185112",
-      "excerpt": "Highlights of the Sky Bet League One match between Swindon and Grimsby.",
-      "published_label": "14 November 2026 · 18:49",
-      "published_iso": "2026-11-14T18:49:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League One match between Swindon and Grimsby."
-      ]
-    },
-    {
-      "slug": "13612307",
-      "title": "Port Vale 4-2 Accrington",
-      "url": "https://www.skysports.com/football/video/13612307/port-vale-4-2-accrington-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/ce0045b774539bce916f1906ae1cf262890257b250d73ef93079a780bb113422_7406636.jpg?20261114183203",
-      "excerpt": "Highlights of the Sky Bet League One match between Port Vale and Accrington.",
-      "published_label": "14 November 2026 · 18:25",
-      "published_iso": "2026-11-14T18:25:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League One match between Port Vale and Accrington."
-      ]
-    },
-    {
-      "slug": "13612302",
-      "title": "Crewe 2-2 Newport",
-      "url": "https://www.skysports.com/football/video/13612302/crewe-v-newport-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/a7d241270c3479578e184a5e2c34b37b027c2f300212b8cc1f11e093bd130d4d_7406622.jpg?20261114181453",
-      "excerpt": "Highlights of the Sky Bet League Two match between Crewe and Newport.",
-      "published_label": "14 November 2026 · 18:10",
-      "published_iso": "2026-11-14T18:10:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League Two match between Crewe and Newport."
+        "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
+        "England's win over Spain in Madrid means they have finished top of the group.",
+        "That matters as the winners of the Nations League tier A groups are seeded for the quarter-final draw. They will play teams which have finished runners-up in other groups. They will also play the second leg of their quarter-final at home. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables Who could England face in the quarter-finals?",
+        "Belgium finished runners-up in Group A1, so they are a potential last-eight opponent for England."
       ]
     }
   ]
