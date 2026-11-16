@@ -1,10 +1,44 @@
 {
-  "synced_at": "2026-11-16T06:31:00+00:00",
+  "synced_at": "2026-11-16T18:33:35+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13612859",
+      "title": "Has Tuchel learnt from Argentina disaster and fixed England's 'DNA problem'?",
+      "url": "https://www.skysports.com/football/video/13612859/thomas-tuchel-has-england-boss-learnt-from-argentina-disaster-and-fixed-dna-problem",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-thomas-tuchel_7407807.jpg?20261116143006",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13612488",
+      "title": "Still England's best? Bronze and Earps' performances analysed",
+      "url": "https://www.skysports.com/football/news/13612488/lucy-bronze-leads-chelsea-to-biggest-wsl-win-of-season-over-man-city-as-mary-earps-gives-arsenal-another-headache-at-home",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bronze-earps-wsl_7407645.jpg?20261116095757",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13550693",
+      "title": "How to watch EFL live on Sky Sports",
+      "url": "https://www.skysports.com/football/news/13550693/live-efl-2026-27-fixtures-on-sky-sports-championship-league-one-league-two-games-dates-kick-off-times",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/06/768x432/skysports-efl-efl-fixtures_7277457.jpg?20260619075719",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13612473",
       "title": "'What a strike that is!' - Handley STUNNER seals win for Celtic in SWPL Old Firm derby",
@@ -225,6 +259,152 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13612957",
+      "title": "Can Frank keep Palace up? How his Brentford numbers could translate at the Eagles",
+      "url": "https://www.skysports.com/football/video/13612957/can-thomas-frank-steer-crystal-palace-to-safety-what-his-brentford-stats-tell-us",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-thomas-frank-crystal-palace_7408012.jpg?20261116180130",
+      "excerpt": "Sky Sports’ Kaveh Solhekol and Dave Reed analyse Thomas Frank’s arrival at Crystal Palace, his challenge to keep the Eagles in the Premier League and whether or not his Brentford success can be replicated at Selhurst Park.",
+      "published_label": "16 November 2026 · 17:54",
+      "published_iso": "2026-11-16T17:54:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports’ Kaveh Solhekol and Dave Reed analyse Thomas Frank’s arrival at Crystal Palace, his challenge to keep the Eagles in the Premier League and whether or not his Brentford success can be replicated at Selhurst Park."
+      ]
+    },
+    {
+      "slug": "13610988",
+      "title": "Frank appointed Crystal Palace manager",
+      "url": "https://www.skysports.com/football/news/13610988/thomas-frank-crystal-palace-appoint-former-spurs-and-brentford-boss-as-pierre-sages-successor-at-selhurst-park",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-thomas-frank-crystal-palace_7408022.png?20261116181511",
+      "excerpt": "Crystal Palace have appointed Thomas Frank as their new manager.",
+      "published_label": "16 November 2026 · 17:00",
+      "published_iso": "2026-11-16T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Crystal Palace have appointed Thomas Frank as their new manager.",
+        "The Dane replaces Pierre Sage, who was dismissed on November 12 following a seventh league defeat of the season to Liverpool.",
+        "Frank has signed a deal until the summer of 2029 - and took charge of his first training session as Palace boss on Monday.",
+        "Palace chairman Steve Parish said of Frank: \"He has a proven track record of both creating winning teams and improving players making him the perfect fit for our club. How did Pierre Sage's Crystal Palace tenure unravelled so quickly? Transfer Centre LIVE! | Crystal Palace news & transfers 🦅 Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13612929",
+      "title": "'It's driving me mad!' - Why Bouaddi should be starting for Man City",
+      "url": "https://www.skysports.com/football/video/13612929/transfer-talk-why-ayyoub-bouaddi-is-the-answer-to-enzo-marescas-problems-at-man-city",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bouaddi-transfer-talk_7407972.jpg?20261116171620",
+      "excerpt": "The Transfer Talk podcast panel discuss Ayyoub Bouaddi's lack of game time for Manchester City and why he should play more for Enzo Maresca's side in midfield.",
+      "published_label": "16 November 2026 · 16:57",
+      "published_iso": "2026-11-16T16:57:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "The Transfer Talk podcast panel discuss Ayyoub Bouaddi's lack of game time for Manchester City and why he should play more for Enzo Maresca's side in midfield."
+      ]
+    },
+    {
+      "slug": "13612928",
+      "title": "Can Frank forget his Spurs shambles and save Crystal Palace?",
+      "url": "https://www.skysports.com/football/video/13612928/transfer-talk-is-thomas-frank-the-right-fit-for-crystal-palace",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-frank-transfer-talk_7407964.jpg?20261116171351",
+      "excerpt": "Speaking on the Transfer Talk podcast, Michael Bridge discusses what went wrong for Thomas Frank at Tottenham Hotspur as the Dane has been announced as the new manager of Crystal Palace.",
+      "published_label": "16 November 2026 · 16:53",
+      "published_iso": "2026-11-16T16:53:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking on the Transfer Talk podcast, Michael Bridge discusses what went wrong for Thomas Frank at Tottenham Hotspur as the Dane has been announced as the new manager of Crystal Palace."
+      ]
+    },
+    {
+      "slug": "13612916",
+      "title": "Your questions on Man Utd transfers and ownership answered!",
+      "url": "https://www.skysports.com/football/video/13612916/kaveh-solhekol-q-and-a-manchester-united-ownership-and-january-transfer-plans",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kaveh-man-utd-qa_7407925.jpg?20261116162451",
+      "excerpt": "Kaveh Solhekol answers the key questions surrounding Manchester United’s ownership involving the Glazers and potential plans for the January transfer window.",
+      "published_label": "16 November 2026 · 16:08",
+      "published_iso": "2026-11-16T16:08:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Kaveh Solhekol answers the key questions surrounding Manchester United’s ownership involving the Glazers and potential plans for the January transfer window."
+      ]
+    },
+    {
+      "slug": "13612908",
+      "title": "Tyler: England have golden opportunity to win Euro 2028",
+      "url": "https://www.skysports.com/football/news/13612908/england-have-golden-opportunity-to-win-euro-2028-says-martin-tyler-as-legendary-commentator-reflects-on-50-year-career",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-martin-tyler_7407904.jpg?20261116160546",
+      "excerpt": "Martin Tyler is more convinced than ever he will finally get the chance to commentate on England winning a major international trophy after watching Thomas Tuchel's side's 3-2 Uefa Nations League victory in Spain",
+      "published_label": "16 November 2026 · 15:45",
+      "published_iso": "2026-11-16T15:45:00+00:00",
+      "byline": "Richard Morgan",
+      "body": [
+        "Martin Tyler is more convinced than ever he will finally get the chance to commentate on England winning a major international trophy after watching Thomas Tuchel's side's 3-2 Uefa Nations League victory in Spain",
+        "The legendary football commentator, whose new book 'Tales from the Gantry: Letters from a Lifetime in Football' was published on Monday, knows a thing or two about England teams, good and bad, having called over 350 Three Lions internationals while attending an astonishing 13 World Cup finals during a decorated 53-year career that is still going today.",
+        "The book is \"historical\", says Tyler. \"It is what I was thinking about in football that week. There's 110 different essays, half a dozen of them were letters from America.",
+        "\"I wrote 500 words a week for two and a half years. It starts early in 2004 and finishes in July 2026.\" Talking points as Thomas Tuchel learns Argentina lesson Spain 2-3 England - Match report and Thomas Tuchel's verdict Who could England play in the Nations League last eight? As it happened | Match stats | England fixtures"
+      ]
+    },
+    {
+      "slug": "13612902",
+      "title": "Pochettino confirms coaching team has already arrived in Manchester",
+      "url": "https://www.skysports.com/football/video/13612902/mauricio-pochettino-confirms-coaching-team-has-already-arrived-in-manchester",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-football_7407895.jpg?20261116155140",
+      "excerpt": "Mauricio Pochettino has confirmed that members of his coaching team have arrived in Manchester already, despite the Argentine remaining with the US national team ahead of the game against Haiti on Wednesday.",
+      "published_label": "16 November 2026 · 15:37",
+      "published_iso": "2026-11-16T15:37:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Mauricio Pochettino has confirmed that members of his coaching team have arrived in Manchester already, despite the Argentine remaining with the US national team ahead of the game against Haiti on Wednesday."
+      ]
+    },
+    {
+      "slug": "13612783",
+      "title": "Trafford's stop vs Port Vale he branded his best ever save after Spain heroics!",
+      "url": "https://www.skysports.com/football/video/13612783/james-traffords-save-against-port-vale-for-bolton-in-2022",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-trafford-football_7407709.jpg?20261116115144",
+      "excerpt": "James Trafford's stunning save against Port Vale for Bolton in 2022 that he says is better than his double stop against Spain.",
+      "published_label": "16 November 2026 · 11:47",
+      "published_iso": "2026-11-16T11:47:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "James Trafford's stunning save against Port Vale for Bolton in 2022 that he says is better than his double stop against Spain."
+      ]
+    },
+    {
+      "slug": "switzerland-vs-scotland-can-sebastien-pocognoli-pull-off-a-st-gallen-miracle",
+      "title": "Switzerland vs Scotland: Can Sébastien Pocognoli Pull off a St. Gallen",
+      "url": "https://www.sportytrader.com/en/news/switzerland-vs-scotland-can-sebastien-pocognoli-pull-off-a-st-gallen-miracle/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/tanzania-vs-nigeria-afcon-md4.webp",
+      "excerpt": "Scotland travel to St. Gallen tonight for a Group B1 showdown, knowing their UEFA Nations League promotion hopes hang by a thread. Appointed in August as Steve Clarke’s s",
+      "published_label": "16 November 2026 · 07:00",
+      "published_iso": "2026-11-16T07:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
+      "slug": "tanzania-vs-nigeria-afcon-2027-osimhen-lookman-out",
+      "title": "Osimhen, Lookman Out! Nigeria Forced to Survive Zanzibar Trip Without",
+      "url": "https://www.sportytrader.com/en-ng/news/tanzania-vs-nigeria-afcon-2027-osimhen-lookman-out/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/spain-vs-england-unl-md6.webp",
+      "excerpt": "Nigeria head to Zanzibar’s Amaan Stadium tomorrow afternoon for one of the toughest tests of Eric Chelle’s reign. Following Friday’s hard-fought 3-1 victory over Tanzania",
+      "published_label": "16 November 2026 · 06:00",
+      "published_iso": "2026-11-16T06:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13612650",
@@ -504,205 +684,6 @@
       "kind": "video",
       "body": [
         "Plymouth's Ronan Curtis only received a yellow card after this wild challenge in their match against Sheffield Wednesday."
-      ]
-    },
-    {
-      "slug": "13612497",
-      "title": "‘Never a foul in a million years!’ – Controversy as Villa have goal ruled out",
-      "url": "https://www.skysports.com/football/video/13612497/that-is-never-a-foul-in-a-million-years-controversy-as-aston-villa-have-goal-ruled-out-against-birmingham",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-villa-disallowed-goal_7407068.jpg?20261115150516",
-      "excerpt": "There was controversy at Villa Park as the hosts appeared to have a perfectly good goal ruled out in the Second City derby against Birmingham.",
-      "published_label": "15 November 2026 · 15:08",
-      "published_iso": "2026-11-15T15:08:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "There was controversy at Villa Park as the hosts appeared to have a perfectly good goal ruled out in the Second City derby against Birmingham."
-      ]
-    },
-    {
-      "slug": "13612486",
-      "title": "Rangers boss 'furious' after SWPL loss to Celtic",
-      "url": "https://www.skysports.com/football/video/13612486/rangers-head-coach-leanne-crichton-furious-after-defeat-to-celtic",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/0b67947d6690cad370b080d37c342db24f7d75fe96406f077b6f35830ed6ec6b_7407044.jpg?20261115143158",
-      "excerpt": "Rangers head coach Leanne Crichton reflects on her side’s 2-1 defeat to Celtic, ending their 100% start to the SWPL season.",
-      "published_label": "15 November 2026 · 14:29",
-      "published_iso": "2026-11-15T14:29:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Rangers head coach Leanne Crichton reflects on her side’s 2-1 defeat to Celtic, ending their 100% start to the SWPL season."
-      ]
-    },
-    {
-      "slug": "13612479",
-      "title": "Scott 'delighted' as Celtic come back to beat Rangers",
-      "url": "https://www.skysports.com/football/video/13612479/celtic-head-coach-grant-scott-thoroughly-delighted-after-hoops-end-rangers-swpl-winning-run",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/a22abfd0eb147edf18fe4907162866f2f9a6491839814e290a143764bf24001f_7407041.jpg?20261115142921",
-      "excerpt": "Celtic head coach Grant Scott is 'thoroughly delighted' with their 2-1 win over Rangers.",
-      "published_label": "15 November 2026 · 14:09",
-      "published_iso": "2026-11-15T14:09:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Celtic head coach Grant Scott is 'thoroughly delighted' with their 2-1 win over Rangers."
-      ]
-    },
-    {
-      "slug": "13612475",
-      "title": "Celtic complete comeback win to close gap on rivals Rangers at top of SWPL",
-      "url": "https://www.skysports.com/football/video/13612475/celtic-2-1-rangers-scottish-womens-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-swpl-rangers_7407026.jpg?20261115140308",
-      "excerpt": "Highlights of the Scottish Women's Premier League match between Celtic and Rangers.",
-      "published_label": "15 November 2026 · 14:00",
-      "published_iso": "2026-11-15T14:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Scottish Women's Premier League match between Celtic and Rangers."
-      ]
-    },
-    {
-      "slug": "spain-vs-england-uefa-nations-league-matchday-6",
-      "title": "Spain vs England: Can Tuchel’s Three Lions End La Roja’s Invincible St",
-      "url": "https://www.sportytrader.com/en/news/spain-vs-england-uefa-nations-league-matchday-6/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/tennis/zverev_vs_jodar_img.webp",
-      "excerpt": "International football’s ultimate juggernaut faces a stern test in Madrid tonight as Thomas Tuchel’s England attempt to shatter Spain’s remarkable 43-game unbeaten streak",
-      "published_label": "15 November 2026 · 07:00",
-      "published_iso": "2026-11-15T07:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13612154",
-      "title": "Devlin nets first international goal as Northern Ireland beat Ukraine",
-      "url": "https://www.skysports.com/football/news/13612154/northern-ireland-1-0-ukraine-terry-devlin-scores-first-international-goal-to-keep-michael-oneills-side-top-of-the-table",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-terry-devlin-northern-ireland_7406742.jpg?20261114215916",
-      "excerpt": "Terry Devlin's first international goal kept Northern Ireland top of their Nations League group as a 1-0 win over Ukraine set up a promotion decider away to Hungary on Tuesday.",
-      "published_label": "14 November 2026 · 21:35",
-      "published_iso": "2026-11-14T21:35:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Terry Devlin's first international goal kept Northern Ireland top of their Nations League group as a 1-0 win over Ukraine set up a promotion decider away to Hungary on Tuesday.",
-        "The 23-year-old Devlin has been in the goals for Portsmouth this term with four, and opened his Northern Ireland account with a fine strike in the 68th minute as he left Ukraine goalkeeper Anatoliy Trubin flat-footed with a shot from distance. How the teams lined up | Match stats Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "Pierce Charles then made a superb save to deny Danylo Sikan at the death and preserve Northern Ireland's fifth straight clean sheet - the first time they have achieved that since 2017 - and ensure they remain the only side in the competition yet to concede.",
-        "The three points put Northern Ireland back on top of Group B2 after Hungary's 2-0 win over Georgia earlier in the afternoon, and ruled Ukraine out of contention as they lost three straight matches for the first time in six years."
-      ]
-    },
-    {
-      "slug": "13612156",
-      "title": "Kalajdzic scores late as Republic of Ireland taste defeat in Austria",
-      "url": "https://www.skysports.com/football/news/13612156/austria-1-0-republic-of-ireland-sasa-kalajdzic-deals-late-blow-as-heimir-hallgrimssons-side-suffer-nations-league-defeat",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-austria-republic-of-ireland_7406735.jpg?20261114215208",
-      "excerpt": "Sasa Kalajdzic dealt the Republic of Ireland a late blow in Linz with the only goal in Austria's 1-0 Nations League victory at the Raiffeisen Arena.",
-      "published_label": "14 November 2026 · 21:35",
-      "published_iso": "2026-11-14T21:35:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Sasa Kalajdzic dealt the Republic of Ireland a late blow in Linz with the only goal in Austria's 1-0 Nations League victory at the Raiffeisen Arena.",
-        "The result ensured that, no matter how the closing contests in Group B play out, Austria sealed promotion to League A. How the teams lined up | Match stats Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "Ireland enter Tuesday's critical home clash at the Aviva Stadium in third place, with one point fewer than their final opponents, Kosovo.",
-        "Heimir Hallgrimsson's men were not without chances, but only Kalajdzic made one count when he broke the deadlock in the 79th minute."
-      ]
-    },
-    {
-      "slug": "13612345",
-      "title": "Explained: Why is Tuchel unhappy with media over anti-racism questions?",
-      "url": "https://www.skysports.com/football/video/13612345/nations-league-racism-row-threatens-to-overshadow-englands-clash-with-spain",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-nationsleague_7406724.jpg?20261114212859",
-      "excerpt": "Sky Sports News' Rob Dorsett outlines why the build-up to England's Nations League contest with Spain has been dominated by questions over anti-racism protocols.",
-      "published_label": "14 November 2026 · 21:21",
-      "published_iso": "2026-11-14T21:21:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports News' Rob Dorsett outlines why the build-up to England's Nations League contest with Spain has been dominated by questions over anti-racism protocols."
-      ]
-    },
-    {
-      "slug": "13612301",
-      "title": "Tuchel unhappy as anti-racism protocol questions overshadow Spain clash",
-      "url": "https://www.skysports.com/football/news/13612301/thomas-tuchel-england-boss-unhappy-as-anti-racism-protocol-questions-overshadow-nations-league-test-in-spain",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-thomas-tuchel-england_7406703.jpg?20261114203201",
-      "excerpt": "Thomas Tuchel insisted his words had been \"twisted\" as questions over anti-racism protocols overshadowed the build-up to England's Nations League showdown in Madrid.",
-      "published_label": "14 November 2026 · 21:00",
-      "published_iso": "2026-11-14T21:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Thomas Tuchel insisted his words had been \"twisted\" as questions over anti-racism protocols overshadowed the build-up to England's Nations League showdown in Madrid.",
-        "Tuchel was asked after England's win over Croatia on Thursday how he and England would react if racist abuse occurred during Sunday's game against Spain.",
-        "The head coach responded by saying he would \"maybe take five minutes\" to remind his players of the anti-racism protocols. Tuchel also said \"we will not expect\" any abuse to occur in Madrid.",
-        "The game is England's first visit to the Spanish capital since 2004, when the match was marred by racist abuse directed at England's black players. England latest news | Fixtures Who could England face in Nations League quarters? Nations League scores & news | Tables | Sky Bet"
-      ]
-    },
-    {
-      "slug": "13612337",
-      "title": "'I never talked about racism in Spain!' - Tuchel fumes at reporter",
-      "url": "https://www.skysports.com/football/video/13612337/nations-league-thomas-tuchel-tells-reporter-i-never-talked-about-racism-in-spain",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-nationsleague_7406696.jpg?20261114201243",
-      "excerpt": "England manager Thomas Tuchel expressed his displeasure when asked whether his team could face racist abuse from the crowd during Sunday's clash with Spain.",
-      "published_label": "14 November 2026 · 20:08",
-      "published_iso": "2026-11-14T20:08:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "England manager Thomas Tuchel expressed his displeasure when asked whether his team could face racist abuse from the crowd during Sunday's clash with Spain."
-      ]
-    },
-    {
-      "slug": "13612335",
-      "title": "'We've got more gears to go through' - Rice confident England can challenge Spain",
-      "url": "https://www.skysports.com/football/video/13612335/nations-league-declan-rice-says-england-have-more-gears-to-go-through-ahead-of-spain-clash",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-nationsleague_7406692.jpg?20261114200306",
-      "excerpt": "Declan Rice believes Spain's challenge will bring out the best in England as they seek to top their Nations League group.",
-      "published_label": "14 November 2026 · 19:56",
-      "published_iso": "2026-11-14T19:56:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Declan Rice believes Spain's challenge will bring out the best in England as they seek to top their Nations League group."
-      ]
-    },
-    {
-      "slug": "13612334",
-      "title": "'Biggest test in world football' - Tuchel relishing Spain clash in Nations League",
-      "url": "https://www.skysports.com/football/video/13612334/nations-league-thomas-tuchel-says-spain-represent-the-biggest-test-in-world-football",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-nationsleague_7406687.jpg?20261114195307",
-      "excerpt": "Speaking ahead of Sunday's clash with Spain in the Nations League, England manager Thomas Tuchel believes their opponents are the 'biggest test in world football'.",
-      "published_label": "14 November 2026 · 19:44",
-      "published_iso": "2026-11-14T19:44:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Speaking ahead of Sunday's clash with Spain in the Nations League, England manager Thomas Tuchel believes their opponents are the 'biggest test in world football'."
-      ]
-    },
-    {
-      "slug": "13611876",
-      "title": "Who could England face in Nations League quarter-finals?",
-      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bellingham-kane-england_7407369.jpg?20261115215740",
-      "excerpt": "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
-      "published_label": "13 November 2026 · 11:56",
-      "published_iso": "2026-11-13T11:56:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
-        "England's win over Spain in Madrid means they have finished top of the group.",
-        "That matters as the winners of the Nations League tier A groups are seeded for the quarter-final draw. They will play teams which have finished runners-up in other groups. They will also play the second leg of their quarter-final at home. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables Who could England face in the quarter-finals?",
-        "Belgium finished runners-up in Group A1, so they are a potential last-eight opponent for England."
       ]
     }
   ]
