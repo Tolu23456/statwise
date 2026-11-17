@@ -1,27 +1,61 @@
 {
-  "synced_at": "2026-11-17T02:56:35+00:00",
+  "synced_at": "2026-11-17T13:27:49+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
     {
-      "slug": "13596475",
-      "title": "Rice: More to come from Arsenal's £105m 'bargain'",
-      "url": "https://www.skysports.com/football/news/13596475/declan-rice-arsenals-total-player-and-lb105m-bargain-can-unlock-more-levels-after-agreeing-new-contract",
+      "slug": "11837781",
+      "title": "Greatest PL goals | Liverpool v Man Utd",
+      "url": "https://www.skysports.com/football/video/11837781/man-utd-vs-liverpool-greatest-goals",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-arsenal_7371338.jpg?20261008143645",
+      "image": "https://e0.365dm.com/25/10/768x432/skysports-liverpool-manchester-united_7050710.jpg?20251014121121",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13612813",
+      "title": "'I didn't want to look back on my career with regret' - the journey of Aaron Connolly",
+      "url": "https://www.skysports.com/football/news/13612813/aaron-connolly-leyton-orient-midfielder-reflects-on-eventful-career-path-from-brighton-premier-league-debut-goals-to-set-backs-and-comebacks",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-league-one-leyton-orient_7402752.jpg?20261110084249",
       "excerpt": "",
       "published_label": "",
       "published_iso": "",
       "byline": ""
     },
     {
-      "slug": "13612984",
-      "title": "Wales have a free hit against Ronaldo-less Portugal",
-      "url": "https://www.skysports.com/football/news/13612984/wales-vs-portugal-no-cristiano-ronaldo-for-the-visitors-as-craig-bellamys-side-have-a-free-hit-in-final-nations-league-encounter",
+      "slug": "13613120",
+      "title": "What is going wrong for Pocognoli and Scotland?",
+      "url": "https://www.skysports.com/football/news/13613120/scotland-what-s-going-wrong-for-head-coach-sebastien-pocognoli-and-can-he-turn-things-around",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/06/768x432/skysports-craig-bellamy-wales_7263098.jpg?20260601163126",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sebastien-pocognoli_7408472.jpg?20261117101348",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13613146",
+      "title": "Mowbray steps down from Blackburn due to health issues",
+      "url": "https://www.skysports.com/football/news/13613146/tony-mowbray-steps-down-as-blackburn-rovers-head-coach-due-to-health-issues",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-tony-mowbray-blackburn_7408470.jpg?20261117101155",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13596475",
+      "title": "Rice: More to come from Arsenal's £105m 'bargain'",
+      "url": "https://www.skysports.com/football/news/13596475/declan-rice-arsenals-total-player-and-lb105m-bargain-can-unlock-more-levels-after-agreeing-new-contract",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-arsenal_7371338.jpg?20261008143645",
       "excerpt": "",
       "published_label": "",
       "published_iso": "",
@@ -271,6 +305,120 @@
       "byline": ""
     },
     {
+      "slug": "13613212",
+      "title": "Wiegman talks call-ups for Toone, Goodwin and reasons for extending contract",
+      "url": "https://www.skysports.com/football/video/13613212/sarina-wiegman-discusses-call-ups-for-ella-toone-and-izzy-goodwin-and-reasons-for-extending-contract",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wiegman-england-women_7408657.jpg?20261117125722",
+      "excerpt": "Sarina Wiegman discusses call-ups for Ella Toone and Izzy Goodwin, plus her reasons for extending her contract ahead of England's clash with Ukraine.",
+      "published_label": "17 November 2026 · 12:44",
+      "published_iso": "2026-11-17T12:44:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sarina Wiegman discusses call-ups for Ella Toone and Izzy Goodwin, plus her reasons for extending her contract ahead of England's clash with Ukraine."
+      ]
+    },
+    {
+      "slug": "13613206",
+      "title": "'Causes defenders so many problems!' - Why Goodwin deserves Lionesses call-up",
+      "url": "https://www.skysports.com/football/video/13613206/pitch-to-pod-why-isobel-goodwin-deserves-lionesses-call-up",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wsl_7408672.jpg?20261117132108",
+      "excerpt": "Speaking on Pitch to Pod, Jordan Nobbs and Nikita Parris discuss why Isobel Goodwin deserves the call-up for the Lionesses from Sarina Wiegman.",
+      "published_label": "17 November 2026 · 12:37",
+      "published_iso": "2026-11-17T12:37:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking on Pitch to Pod, Jordan Nobbs and Nikita Parris discuss why Isobel Goodwin deserves the call-up for the Lionesses from Sarina Wiegman."
+      ]
+    },
+    {
+      "slug": "13613194",
+      "title": "Sky Sports Championship Team of the Season so far: Who makes the cut?",
+      "url": "https://www.skysports.com/football/video/13613194/sky-sports-championship-team-of-the-season-so-far-who-makes-the-cut-based-on-the-power-rankings",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-champ-tots-so-far_7408626.jpg?20261117123619",
+      "excerpt": "Sky Sports EFL editor Simeon Gholam takes us through the Sky Sports Championship team of the season so far according the power rankings.",
+      "published_label": "17 November 2026 · 12:26",
+      "published_iso": "2026-11-17T12:26:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports EFL editor Simeon Gholam takes us through the Sky Sports Championship team of the season so far according the power rankings."
+      ]
+    },
+    {
+      "slug": "13613189",
+      "title": "'Too good to turn down!' | Frank gives first interview as new Palace boss",
+      "url": "https://www.skysports.com/football/video/13613189/thomas-frank-gives-first-interview-as-new-crystal-palace-boss",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-thomas-frank_7408607.jpg?20261117122525",
+      "excerpt": "Thomas Frank speaks for the first time since becoming the new Crystal Palace boss.",
+      "published_label": "17 November 2026 · 12:16",
+      "published_iso": "2026-11-17T12:16:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Thomas Frank speaks for the first time since becoming the new Crystal Palace boss."
+      ]
+    },
+    {
+      "slug": "13613091",
+      "title": "Toone, Beever-Jones return for Lionesses ahead of WC play-off",
+      "url": "https://www.skysports.com/football/news/13613091/england-women-ella-toone-and-aggie-beever-jones-back-for-lionesses-as-chloe-kelly-and-lauren-james-miss-out-through-injury",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/05/768x432/skysports-ella-toone-england-women_7252965.jpg?20260519105727",
+      "excerpt": "Sarina Wiegman has named 25 players for England’s decisive FIFA Women’s World Cup play-off against Ukraine, with Ella Toone and Aggie Beever-Jones returning to the squad.",
+      "published_label": "17 November 2026 · 11:00",
+      "published_iso": "2026-11-17T11:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Sarina Wiegman has named 25 players for England’s decisive FIFA Women’s World Cup play-off against Ukraine, with Ella Toone and Aggie Beever-Jones returning to the squad.",
+        "Toone was initially excluded from the camp to face Greece in October with Wiegman saying that she had not \"played to her potential\". She earned a recall following an injury to Lucy Bronze, having impressed with her reaction to the setback.",
+        "Chloe Kelly was also a notable absence from the last squad, but this time misses out due to a hamstring problem that has kept her out since the end of September.",
+        "Beever-Jones returns having last featured for the Lionesses in their 6-1 victory over Ukraine back in March. She takes the place of Chelsea team-mate Lauren James who is sidelined. Grace Clinton also earns a recall. Lionesses cruise into second round of WC play-offs | WCQ fixtures and results Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
+      ]
+    },
+    {
+      "slug": "13613157",
+      "title": "'He's evolved over 10 years' - Why Poch won't be the same coach he was at Spurs",
+      "url": "https://www.skysports.com/football/video/13613157/transfer-talk-why-mauricio-pochettino-wont-be-the-same-coach-he-was-at-tottenham-hotspur",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-julien-laurens_7408527.jpg?20261117111719",
+      "excerpt": "Speaking on the Transfer Talk podcast, Julien Laurens reflects on Mauricio Pochettino's evolution as a coach over the last decade and why he won't be the same coach he was from his time at Spurs with Manchester United.",
+      "published_label": "17 November 2026 · 10:43",
+      "published_iso": "2026-11-17T10:43:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Speaking on the Transfer Talk podcast, Julien Laurens reflects on Mauricio Pochettino's evolution as a coach over the last decade and why he won't be the same coach he was from his time at Spurs with Manchester United."
+      ]
+    },
+    {
+      "slug": "wales-vs-portugal-the-finale-that-sees-two-nations-seeking-redemption-in-the-uefa-nations-league",
+      "title": "Wales vs. Portugal: The Finale That Sees Two Nations Seeking Redemptio",
+      "url": "https://www.sportytrader.com/en/news/wales-vs-portugal-the-finale-that-sees-two-nations-seeking-redemption-in-the-uefa-nations-league/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/kenya-vs-rsa-afcon-md4.webp",
+      "excerpt": "Portugal have no room for error heading into the final matchday of the UEFA Nations League. This Group A4 clash could see the Selecao relinquish their position at the top",
+      "published_label": "17 November 2026 · 05:00",
+      "published_iso": "2026-11-17T05:00:00+00:00",
+      "byline": "Thobelani Moyo"
+    },
+    {
+      "slug": "pitso-vs-benni-round-2-kenya-face-south-africa-afcon-2027",
+      "title": "Pitso vs Benni Round 2: Bafana Eye Redemption Against Kenya in Nairobi",
+      "url": "https://www.sportytrader.com/en-za/news/pitso-vs-benni-round-2-kenya-face-south-africa-afcon-2027/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/switzerland-vs-scotland-unl-md6.webp",
+      "excerpt": "Pitso Mosimane’s Bafana Bafana will lock horns with Benni McCarthy’s Kenya in Nairobi tonight, with the visitors seeking an immediate response after the fearless Harambee",
+      "published_label": "17 November 2026 · 03:30",
+      "published_iso": "2026-11-17T03:30:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
       "slug": "13613049",
       "title": "Mum's the word! Portugal boss responds to criticism from CR7's MOTHER!",
       "url": "https://www.skysports.com/football/video/13613049/portugal-head-coach-jorge-jesus-hits-back-at-criticism-from-cristiano-ronaldos-mother",
@@ -334,6 +482,23 @@
         "Sky Sports News has been told his new deal will bring him in line with Bukayo Saka, who is the highest-paid player at the Emirates.",
         "Rice and his representatives have been in negotiations for several months, with the club keen to tie down one of their most important players, even though he still has 18 months left on his existing contract, with a further year's option in the club's favour. Transfer Centre LIVE! | Arsenal news & transfers 🔴⚪ Arsenal fixtures & scores | FREE Arsenal highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
         "Rice was named Arsenal's Player of the Year last season when they won the Premier League title and this new deal will take him into his early 30s."
+      ]
+    },
+    {
+      "slug": "13612984",
+      "title": "Wales have free hit against Ronaldo-less Portugal",
+      "url": "https://www.skysports.com/football/news/13612984/wales-vs-portugal-no-cristiano-ronaldo-for-the-visitors-as-craig-bellamys-side-have-a-free-hit-in-final-nations-league-encounter",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/06/768x432/skysports-craig-bellamy-wales_7263098.jpg?20260601163126",
+      "excerpt": "The Cardiff City Stadium sold out very quickly when the Nations League fixtures threw up a Wales vs Portugal game for the final match of Group D.",
+      "published_label": "16 November 2026 · 19:28",
+      "published_iso": "2026-11-16T19:28:00+00:00",
+      "byline": "Geraint Hughes",
+      "body": [
+        "The Cardiff City Stadium sold out very quickly when the Nations League fixtures threw up a Wales vs Portugal game for the final match of Group D.",
+        "Mark the date, November 17, 2026 - it could have been the last time to see Cristiano Ronaldo play on UK soil.",
+        "A mouthwatering occasion to witness one of the greats of the game as the curtain slowly falls on his illustrious international career and also see just how far Wales are progressing after a full campaign in League A of the Nations League, a full campaign among the heavyweights of European football. Norway 3-1 Wales - report and reaction Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "As we all know, that's not how it's panned out! After Ronaldo's appearance against Wales in Lisbon at the start of the Nations League, he's not featured since - and he's now called time on his Portugal career amid some controversy."
       ]
     },
     {
@@ -493,200 +658,20 @@
       ]
     },
     {
-      "slug": "switzerland-vs-scotland-can-sebastien-pocognoli-pull-off-a-st-gallen-miracle",
-      "title": "Switzerland vs Scotland: Can Sébastien Pocognoli Pull off a St. Gallen",
-      "url": "https://www.sportytrader.com/en/news/switzerland-vs-scotland-can-sebastien-pocognoli-pull-off-a-st-gallen-miracle/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/tanzania-vs-nigeria-afcon-md4.webp",
-      "excerpt": "Scotland travel to St. Gallen tonight for a Group B1 showdown, knowing their UEFA Nations League promotion hopes hang by a thread. Appointed in August as Steve Clarke’s s",
-      "published_label": "16 November 2026 · 07:00",
-      "published_iso": "2026-11-16T07:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "tanzania-vs-nigeria-afcon-2027-osimhen-lookman-out",
-      "title": "Osimhen, Lookman Out! Nigeria Forced to Survive Zanzibar Trip Without",
-      "url": "https://www.sportytrader.com/en-ng/news/tanzania-vs-nigeria-afcon-2027-osimhen-lookman-out/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/spain-vs-england-unl-md6.webp",
-      "excerpt": "Nigeria head to Zanzibar’s Amaan Stadium tomorrow afternoon for one of the toughest tests of Eric Chelle’s reign. Following Friday’s hard-fought 3-1 victory over Tanzania",
-      "published_label": "16 November 2026 · 06:00",
-      "published_iso": "2026-11-16T06:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13612650",
-      "title": "Redemption for Tuchel in 'Miracle in Madrid' - Spain vs England Verdict",
-      "url": "https://www.skysports.com/football/video/13612650/redemption-for-thomas-tuchel-in-miracle-in-madrid-spain-vs-england-verdict",
+      "slug": "13611876",
+      "title": "Who could England face in Nations League quarter-finals?",
+      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-konsa-white_7407466.jpg?20261116003749",
-      "excerpt": "Rob Dorsett gives his verdict on England's 'statement victory over Spain in the Nations League.",
-      "published_label": "16 November 2026 · 00:28",
-      "published_iso": "2026-11-16T00:28:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Rob Dorsett gives his verdict on England's 'statement victory over Spain in the Nations League."
-      ]
-    },
-    {
-      "slug": "13612645",
-      "title": "Kane: Parading World Cup made us more hungry against Spain",
-      "url": "https://www.skysports.com/football/video/13612645/harry-kane-parading-world-cup-made-us-more-hungry-against-spain",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kane-football-england_7407455.jpg?20261116000146",
-      "excerpt": "Harry Kane says Spain parading the World Cup before kick-off made England more hungry after claiming top spot in the Nations League.",
-      "published_label": "15 November 2026 · 23:52",
-      "published_iso": "2026-11-15T23:52:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Harry Kane says Spain parading the World Cup before kick-off made England more hungry after claiming top spot in the Nations League."
-      ]
-    },
-    {
-      "slug": "13613047",
-      "title": "Papers: Timber, Raya and Hincapie to sign new Arsenal contracts",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13613047/jurrien-timber-david-raya-and-piero-hincapie-to-extend-arsenal-contracts-alongside-declan-rice-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Tuesday's newspapers... ARSENAL CONTRACTS",
-      "published_label": "15 November 2026 · 22:45",
-      "published_iso": "2026-11-15T22:45:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bellingham-kane-england_7407369.jpg?20261115215740",
+      "excerpt": "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
+      "published_label": "13 November 2026 · 11:56",
+      "published_iso": "2026-11-13T11:56:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "The top stories and transfer rumours from Tuesday's newspapers... ARSENAL CONTRACTS",
-        "Jurrien Timber has agreed a new contract with Arsenal - The Athletic",
-        "David Raya and Piero Hincapie are very close to renewing their contracts with Arsenal - ESPN Deportes Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW MAN UTD",
-        "Manchester United have laid on a private jet for Mauricio Pochettino to fly straight to England in the early hours of Wednesday morning after he finishes work as US national team coach - Daily Mail"
-      ]
-    },
-    {
-      "slug": "13612630",
-      "title": "Papers: Guardiola to reject USA approach to replace Pochettino",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13612630/pep-guardiola-usa-approach-to-replace-mauricio-pochettino-to-be-rejected-by-ex-man-city-boss-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Monday's newspapers... INTERNATIONAL FOOTBALL",
-      "published_label": "15 November 2026 · 22:45",
-      "published_iso": "2026-11-15T22:45:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Monday's newspapers... INTERNATIONAL FOOTBALL",
-        "Pep Guardiola will resist any attempts by the United States to hire him as their head coach following the departure of Mauricio Pochettino - The Telegraph Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW PREMIER LEAGUE",
-        "Fulham central defender Calvin Bassey is expected to feature prominently on Mauricio Pochettino's list of Manchester United targets for the January transfer window - The Telegraph EUROPEAN FOOTBALL",
-        "Paris FC are eyeing a return to the Parc des Princes, with Paris Saint-Germain's future in the iconic arena uncertain - The Sun RUGBY UNION"
-      ]
-    },
-    {
-      "slug": "13612625",
-      "title": "Tuchel: Performance on the highest level - England's best so far",
-      "url": "https://www.skysports.com/football/video/13612625/thomas-tuchel-englands-best-performance-so-far-after-victory-of-world-champions-spain",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-england_7407407.jpg?20261115223319",
-      "excerpt": "Thomas Tuchel believes victory over world champions Spain was England's best performance so far under his leadership.",
-      "published_label": "15 November 2026 · 22:23",
-      "published_iso": "2026-11-15T22:23:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Thomas Tuchel believes victory over world champions Spain was England's best performance so far under his leadership."
-      ]
-    },
-    {
-      "slug": "13612624",
-      "title": "Is Trafford England's new No 1 after Spain heroics?",
-      "url": "https://www.skysports.com/football/news/13612624/james-trafford-has-leeds-goalkeeper-overtaken-jordan-pickford-as-englands-no-1-after-starring-display-against-spain",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-james-trafford-exri-konsa_7407447.jpg?20261115233939",
-      "excerpt": "Do England have a new No 1? Thomas Tuchel insists not. \"There's no No 1,\" he said. But Jordan Pickford might have his work cut out to wrestle the shirt back from James Trafford on the evidence of his performance in England's 3-2 win over Sp…",
-      "published_label": "15 November 2026 · 22:20",
-      "published_iso": "2026-11-15T22:20:00+00:00",
-      "byline": "Nick Wright",
-      "body": [
-        "Do England have a new No 1? Thomas Tuchel insists not. \"There's no No 1,\" he said. But Jordan Pickford might have his work cut out to wrestle the shirt back from James Trafford on the evidence of his performance in England's 3-2 win over Spain.",
-        "It felt significant that he started in the first place. Pickford has been England's undisputed first choice for a decade; an outstanding servant to the national team whose total of 94 caps puts him behind only Peter Shilton among the most-capped goalkeepers.",
-        "But this was undoubtedly England's biggest test of their Nations League campaign and Tuchel opted for Trafford, encouraged by his displays at home to Spain and away to Czech Republic in September. \"He had a brilliant match,\" he added afterwards.",
-        "If it is a changing of the guard, then it is being handled carefully. \"I think it's smart management,\" said Sky Sports' Roy Keane before kick-off in Madrid. \"This is the perfect time for Trafford to come in, against top players, and show what he's capable of doing.\" Talking points as Thomas Tuchel learns Argentina lesson Spain 2-3 England - Match report and Thomas Tuchel's verdict Who could England play in the Nations League last eight? As it happened | Match stats | England fixtures"
-      ]
-    },
-    {
-      "slug": "13612611",
-      "title": "England talking points: Tuchel learns Argentina lesson as full-backs shine",
-      "url": "https://www.skysports.com/football/news/13612611/spain-2-3-england-talking-points-thomas-tuchel-learns-lessons-from-argentina-as-harry-kane-ben-white-and-lewis-hall-shine",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-tuchel-england_7407412.jpg?20261115224539",
-      "excerpt": "After England beat Spain in their own back yard in a statement result, we look at the main talking points from a memorable moment in Madrid... Bold England show their strengths with front-foot approach",
-      "published_label": "15 November 2026 · 21:52",
-      "published_iso": "2026-11-15T21:52:00+00:00",
-      "byline": "Peter Smith and Sam Blitz",
-      "body": [
-        "After England beat Spain in their own back yard in a statement result, we look at the main talking points from a memorable moment in Madrid... Bold England show their strengths with front-foot approach",
-        "England's football DNA has been in focus this autumn. In Madrid, we saw the English style at its best. From the first whistle, England were boldly on the front foot, overwhelming Spain with pace, power and directness.",
-        "They snapped into tackles and gave short shrift to their opponents when they called for fouls. It was physical, it was aggressive. It was certainly not England trying to replicate the Spanish style. Spain 2-3 England - Match report and reaction As it happened | Match stats | England fixtures Nations League scores & news | Tables | Sky Bet",
-        "The set-piece routine for the second goal was a reflection of how those phases have risen in importance in the Premier League and fittingly saw two Arsenal players combine to score it. Then, when down to 10 men, there was fight, heart and commitment to get over the line."
-      ]
-    },
-    {
-      "slug": "13612606",
-      "title": "Klopp: Infantino worse than Blatter",
-      "url": "https://www.skysports.com/football/video/13612606/jurgen-klopp-fifa-president-gianni-infantino-worse-than-predecessor-sepp-blatter",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-infantino-klopp-football_7407378.jpg?20261115220853",
-      "excerpt": "Jurgen Klopp criticises FIFA president Gianni Infantino and believes he has done a worse job than his predecessor Sepp Blatter.",
-      "published_label": "15 November 2026 · 21:52",
-      "published_iso": "2026-11-15T21:52:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jurgen Klopp criticises FIFA president Gianni Infantino and believes he has done a worse job than his predecessor Sepp Blatter."
-      ]
-    },
-    {
-      "slug": "13612606",
-      "title": "Klopp: Infantino worse than Blatter",
-      "url": "https://www.skysports.com/football/video/13612606/jurgan-klopp-fifa-president-gianni-infantino-worse-than-predecessor-sepp-blatter",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-infantino-klopp-football_7407378.jpg?20261115220853",
-      "excerpt": "Jurgan Klopp criticises FIFA president Gianni Infantino and believes he has done a worse job than his predecessor Sepp Blatter.",
-      "published_label": "15 November 2026 · 21:52",
-      "published_iso": "2026-11-15T21:52:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jurgan Klopp criticises FIFA president Gianni Infantino and believes he has done a worse job than his predecessor Sepp Blatter."
-      ]
-    },
-    {
-      "slug": "13611877",
-      "title": "Ten-man England hold on to claim famous win over Spain",
-      "url": "https://www.skysports.com/football/news/13611877/spain-2-3-england-three-lions-hold-on-for-famous-win-after-elliot-anderson-red-card-to-top-nations-league-group-a3",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ezri-konsa-england_7407324.jpg?20261115211138",
-      "excerpt": "England withstood a Spain fightback after Elliot Anderson's red card to secure a famous 3-2 victory and finish above the world champions at the top of their Nations League group.",
-      "published_label": "15 November 2026 · 21:45",
-      "published_iso": "2026-11-15T21:45:00+00:00",
-      "byline": "Nick Wright",
-      "body": [
-        "England withstood a Spain fightback after Elliot Anderson's red card to secure a famous 3-2 victory and finish above the world champions at the top of their Nations League group.",
-        "Thomas Tuchel's side were sensational for an hour in Madrid, taking the lead when Harry Kane scored a penalty at the end of the first half and then adding quickfire goals from Ezri Konsa and Ben White.",
-        "But a one-sided game was turned on its head when Elliot Anderson was sent off for a last-man foul on Lamine Yamal following Jarell Quansah's error, allowing Mikel Oyarzabal to score from the spot.",
-        "Spain reduced the deficit to one goal when substitute Nico Williams converted Lamine Yamal's cross after Anthony Gordon had been dispossessed, but England clung on thanks to James Trafford. Who could England play in the Nations League last eight? As it happened | Match stats | England fixtures Nations League scores & news | Tables | Sky Bet"
-      ]
-    },
-    {
-      "slug": "13381699",
-      "title": "'Bend it like Declan!' | The best of Rice's whipped finishes",
-      "url": "https://www.skysports.com/football/video/13381699/bend-it-like-declan-the-best-of-declan-rices-trademark-whipped-finish-in-the-premier-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/25/06/768x432/skysports-declan-rice-arsenal_6939480.jpg?20250611163125",
-      "excerpt": "The best first-time whipped finishes by Arsenal's Declan Rice in the Premier League.",
-      "published_label": "16 June 2025 · 08:00",
-      "published_iso": "2025-06-16T08:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "The best first-time whipped finishes by Arsenal's Declan Rice in the Premier League."
+        "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
+        "England's win over Spain in Madrid means they have finished top of the group.",
+        "That matters as the winners of the Nations League tier A groups are seeded for the quarter-final draw. They will play teams which have finished runners-up in other groups. They will also play the second leg of their quarter-final at home. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables Who could England face in the quarter-finals?",
+        "Belgium finished runners-up in Group A1, so they are a potential last-eight opponent for England. Netherlands are another potential opponent as they finished second in Group A2 following their 5-0 loss to Germany , who topped the group."
       ]
     }
   ]
