@@ -1,10 +1,22 @@
 {
-  "synced_at": "2026-11-17T13:27:49+00:00",
+  "synced_at": "2026-11-17T22:25:17+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13613354",
+      "title": "Why keeping Rice, Raya and Odegaard is so important for Arsenal",
+      "url": "https://www.skysports.com/football/video/13613354/arsenal-why-keeping-declan-rice-david-raya-and-martin-odegaard-is-so-important",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-david-raya-declan-rice_7408996.jpg?20261117183754",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "11837781",
       "title": "Greatest PL goals | Liverpool v Man Utd",
@@ -305,6 +317,136 @@
       "byline": ""
     },
     {
+      "slug": "13613414",
+      "title": "Northern Ireland promoted to Nations League top tier with draw in Hungary",
+      "url": "https://www.skysports.com/football/news/13613414/hungary-1-1-northern-ireland-justin-devennys-superb-strike-fires-michael-oneills-side-into-top-tier-of-nations-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-northern-ireland_7409115.jpg?20261117215219",
+      "excerpt": "Justin Devenny's superb strike saw Northern Ireland earn promotion to the top tier of the Nations League with a hard-fought 1-1 draw away to closest challengers Hungary in Budapest.",
+      "published_label": "17 November 2026 · 21:49",
+      "published_iso": "2026-11-17T21:49:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Justin Devenny's superb strike saw Northern Ireland earn promotion to the top tier of the Nations League with a hard-fought 1-1 draw away to closest challengers Hungary in Budapest.",
+        "Barnabas Varga ended Northern Ireland's proud record of not having conceded in this campaign when he fired the hosts in front after 35 minutes - a goal that also sent Hungary to the top of the group. How the teams lined up | Stats Nations League tables",
+        "But moments after Isaac Price had hit the post for Michael O'Neill's young side, Devenny smashed the ball into the top left-hand corner in the 65th minute to restore Northern Ireland's one-point advantage as group leaders.",
+        "The visitors were on the back foot for much of the first half, with Hungary captain Dominik Szoboszlai hitting the post, but O'Neill, serving a touchline ban in the stands as former captain Steven Davis led things from the touchline, orchestrated key substitutions."
+      ]
+    },
+    {
+      "slug": "13613407",
+      "title": "Parrott fires Republic of Ireland into Nations League play-offs",
+      "url": "https://www.skysports.com/football/news/13613407/republic-of-ireland-3-0-kosovo-troy-parrot-scores-twice-to-send-heimir-hallgrimssons-side-into-the-nations-league-play-offs",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ireland-kosovo_7409108.jpg?20261117214636",
+      "excerpt": "Troy Parrott fired the Republic of Ireland into a Nations League play-off berth with two penalties in their 3-0 victory over 10-man Kosovo at the Aviva Stadium in Dublin.",
+      "published_label": "17 November 2026 · 21:44",
+      "published_iso": "2026-11-17T21:44:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Troy Parrott fired the Republic of Ireland into a Nations League play-off berth with two penalties in their 3-0 victory over 10-man Kosovo at the Aviva Stadium in Dublin.",
+        "The result ensured the Republic finished runners-up in group B3, and also propelled the Euro 2028 co-hosts into a coveted pot-two seeding for next month's qualifying draw for that competition. How the teams lined up | Stats Nations League tables",
+        "Tuesday night's contest turned on its head in the 26th minute, when Kreshnik Hajrizi was sent off for handling the ball off the line, and Parrott took advantage with a top-corner finish.",
+        "The Real Betis striker doubled the Republic's lead from the spot five minutes after the restart, and Jack Moylan added a 75th-minute cushion to keep alive the hosts' hopes of booking a place in League A for the first time through the March play-off."
+      ]
+    },
+    {
+      "slug": "13613404",
+      "title": "Wales beaten by 10-man Portugal as Neto scores but is sent off",
+      "url": "https://www.skysports.com/football/news/13613404/wales-2-3-portugal-craig-bellamys-side-lose-final-nations-league-group-a4-match-as-pedro-neto-sent-off",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wales-portugal_7409090.jpg?20261117212441",
+      "excerpt": "Wales ended their Nations League group campaign with a 3-2 defeat against 10-man Portugal in Cardiff after Chelsea's Pedro Neto was sent off.",
+      "published_label": "17 November 2026 · 21:40",
+      "published_iso": "2026-11-17T21:40:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Wales ended their Nations League group campaign with a 3-2 defeat against 10-man Portugal in Cardiff after Chelsea's Pedro Neto was sent off.",
+        "Although there was little riding on the contest, with Wales guaranteed a League A relegation/promotion play-off in March and Portugal having qualified for the quarter-finals, the two sides produced an entertaining spectacle.",
+        "Portugal skipper Bruno Fernandes blasted the opener after 11 minutes, but that was immediately wiped out by David Brooks' ninth goal for Wales. As it happened | Teams | Stats Nations League tables",
+        "Sorba Thomas broke free to put Wales ahead before the break, but again there was a quickfire response as Neto pounced to restore parity."
+      ]
+    },
+    {
+      "slug": "13613396",
+      "title": "Will Arsenal reach 100 points this Premier League season?",
+      "url": "https://www.skysports.com/football/video/13613396/arsenal-can-the-gunners-reach-legendary-status-by-breaking-manchester-citys-centurion-points-tally",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7409078.jpg?20261117210021",
+      "excerpt": "On the Premier League Show, the possibility of Arsenal reaching the landmark 100-point tally at the end of the season is discussed.",
+      "published_label": "17 November 2026 · 20:57",
+      "published_iso": "2026-11-17T20:57:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "On the Premier League Show, the possibility of Arsenal reaching the landmark 100-point tally at the end of the season is discussed."
+      ]
+    },
+    {
+      "slug": "13613375",
+      "title": "Barnes: Bruno return and Arsenal test just what we need",
+      "url": "https://www.skysports.com/football/video/13613375/harvey-barnes-we-need-bruno-guimaraes-reunion-and-arsenal-test-right-now",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-newcastle-arsena_7409036.jpg?20261117194505",
+      "excerpt": "Harvey Barnes insists that the return of Bruno Guimaraes to St James' Park, along with the visit of champions Arsenal, is just what Newcastle need to kickstart their season.",
+      "published_label": "17 November 2026 · 19:28",
+      "published_iso": "2026-11-17T19:28:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Harvey Barnes insists that the return of Bruno Guimaraes to St James' Park, along with the visit of champions Arsenal, is just what Newcastle need to kickstart their season."
+      ]
+    },
+    {
+      "slug": "13613370",
+      "title": "Henderson: I'm trying to make an impact on and off the pitch",
+      "url": "https://www.skysports.com/football/video/13613370/chelsea-jordan-henderson-reflects-on-the-responsibility-and-impact-he-has-made-in-the-chelsea-squad",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-chelsea-premier-league_7409014.jpg?20261117190254",
+      "excerpt": "Jordan Henderson explains how he is trying to make an impact on and off the pitch at Chelsea.",
+      "published_label": "17 November 2026 · 19:00",
+      "published_iso": "2026-11-17T19:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jordan Henderson explains how he is trying to make an impact on and off the pitch at Chelsea."
+      ]
+    },
+    {
+      "slug": "13613361",
+      "title": "JJ Gabriel says goodbye to Man Utd with Real Madrid move close",
+      "url": "https://www.skysports.com/football/news/13613361/jj-gabriel-transfer-news-manchester-united-teenager-announces-departure-from-club-amid-real-madrid-agreement",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-laliga_7396670.jpg?20261104095651",
+      "excerpt": "JJ Gabriel has announced he is leaving Manchester United as he looks forward to his \"next chapter\" at Real Madrid.",
+      "published_label": "17 November 2026 · 18:29",
+      "published_iso": "2026-11-17T18:29:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "JJ Gabriel has announced he is leaving Manchester United as he looks forward to his \"next chapter\" at Real Madrid.",
+        "Sky Sports News revealed earlier this month that Real have reached an agreement to sign the 16-year-old prodigy from United.",
+        "One source has told Sky Sports News a deal to take Gabriel to Real Madrid could be finalised in the next two to three days.",
+        "Gabriel is registered with Manchester United's academy until the end of the season but Real Madrid are intending to sign him in January. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13613275",
+      "title": "Rooney contemplated suicide at ‘lowest point’ of Man Utd career",
+      "url": "https://www.skysports.com/football/news/13613275/wayne-rooney-says-he-contemplated-suicide-during-lowest-point-of-manchester-united-career",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wayne-rooney_7403894.jpg?20261117152853",
+      "excerpt": "Wayne Rooney has revealed there was a period in his Manchester United career where he contemplated suicide.",
+      "published_label": "17 November 2026 · 14:36",
+      "published_iso": "2026-11-17T14:36:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Wayne Rooney has revealed there was a period in his Manchester United career where he contemplated suicide.",
+        "The former England striker revealed that, despite enjoying success on the pitch, he was struggling with his mental health off it. Newly married and a father to eldest son Kai, Rooney would sometimes spend two days drinking at home.",
+        "Speaking on the Life at the Midpoint with Gabby Logan podcast, he admitted that, at his lowest point, he had contemplated taking his own life.",
+        "\"I can look back and say I was selfish, but I knew I was going through something which I was really struggling to deal with. Then I didn't want Kai seeing me like that, so that's why I'd hide away as well,\" Rooney said."
+      ]
+    },
+    {
       "slug": "13613212",
       "title": "Wiegman talks call-ups for Toone, Goodwin and reasons for extending contract",
       "url": "https://www.skysports.com/football/video/13613212/sarina-wiegman-discusses-call-ups-for-ella-toone-and-izzy-goodwin-and-reasons-for-extending-contract",
@@ -531,147 +673,6 @@
       "kind": "video",
       "body": [
         "Sky Sports’ Kaveh Solhekol and Dave Reed analyse Thomas Frank’s arrival at Crystal Palace, his challenge to keep the Eagles in the Premier League and whether or not his Brentford success can be replicated at Selhurst Park."
-      ]
-    },
-    {
-      "slug": "13610988",
-      "title": "Frank appointed Crystal Palace manager",
-      "url": "https://www.skysports.com/football/news/13610988/thomas-frank-crystal-palace-appoint-former-spurs-and-brentford-boss-as-pierre-sages-successor-at-selhurst-park",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-thomas-frank-crystal-palace_7408022.png?20261116181511",
-      "excerpt": "Crystal Palace have appointed Thomas Frank as their new manager.",
-      "published_label": "16 November 2026 · 17:00",
-      "published_iso": "2026-11-16T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Crystal Palace have appointed Thomas Frank as their new manager.",
-        "The Dane replaces Pierre Sage, who was dismissed on November 12 following a seventh league defeat of the season to Liverpool.",
-        "Frank has signed a deal until the summer of 2029 - and took charge of his first training session as Palace boss on Monday.",
-        "Palace chairman Steve Parish said of Frank: \"He has a proven track record of both creating winning teams and improving players making him the perfect fit for our club. How did Pierre Sage's Crystal Palace tenure unravelled so quickly? Transfer Centre LIVE! | Crystal Palace news & transfers 🦅 Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13612929",
-      "title": "'It's driving me mad!' - Why Bouaddi should be starting for Man City",
-      "url": "https://www.skysports.com/football/video/13612929/transfer-talk-why-ayyoub-bouaddi-is-the-answer-to-enzo-marescas-problems-at-man-city",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bouaddi-transfer-talk_7407972.jpg?20261116171620",
-      "excerpt": "The Transfer Talk podcast panel discuss Ayyoub Bouaddi's lack of game time for Manchester City and why he should play more for Enzo Maresca's side in midfield.",
-      "published_label": "16 November 2026 · 16:57",
-      "published_iso": "2026-11-16T16:57:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "The Transfer Talk podcast panel discuss Ayyoub Bouaddi's lack of game time for Manchester City and why he should play more for Enzo Maresca's side in midfield."
-      ]
-    },
-    {
-      "slug": "13612928",
-      "title": "Can Frank forget his Spurs shambles and save Crystal Palace?",
-      "url": "https://www.skysports.com/football/video/13612928/transfer-talk-is-thomas-frank-the-right-fit-for-crystal-palace",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-frank-transfer-talk_7407964.jpg?20261116171351",
-      "excerpt": "Speaking on the Transfer Talk podcast, Michael Bridge discusses what went wrong for Thomas Frank at Tottenham Hotspur as the Dane has been announced as the new manager of Crystal Palace.",
-      "published_label": "16 November 2026 · 16:53",
-      "published_iso": "2026-11-16T16:53:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Speaking on the Transfer Talk podcast, Michael Bridge discusses what went wrong for Thomas Frank at Tottenham Hotspur as the Dane has been announced as the new manager of Crystal Palace."
-      ]
-    },
-    {
-      "slug": "13612916",
-      "title": "Your questions on Man Utd transfers and ownership answered!",
-      "url": "https://www.skysports.com/football/video/13612916/kaveh-solhekol-q-and-a-manchester-united-ownership-and-january-transfer-plans",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kaveh-man-utd-qa_7407925.jpg?20261116162451",
-      "excerpt": "Kaveh Solhekol answers the key questions surrounding Manchester United’s ownership involving the Glazers and potential plans for the January transfer window.",
-      "published_label": "16 November 2026 · 16:08",
-      "published_iso": "2026-11-16T16:08:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Kaveh Solhekol answers the key questions surrounding Manchester United’s ownership involving the Glazers and potential plans for the January transfer window."
-      ]
-    },
-    {
-      "slug": "13612908",
-      "title": "Tyler: England have golden opportunity to win Euro 2028",
-      "url": "https://www.skysports.com/football/news/13612908/england-have-golden-opportunity-to-win-euro-2028-says-martin-tyler-as-legendary-commentator-reflects-on-50-year-career",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-martin-tyler_7407904.jpg?20261116160546",
-      "excerpt": "Martin Tyler is more convinced than ever he will finally get the chance to commentate on England winning a major international trophy after watching Thomas Tuchel's side's 3-2 Uefa Nations League victory in Spain",
-      "published_label": "16 November 2026 · 15:45",
-      "published_iso": "2026-11-16T15:45:00+00:00",
-      "byline": "Richard Morgan",
-      "body": [
-        "Martin Tyler is more convinced than ever he will finally get the chance to commentate on England winning a major international trophy after watching Thomas Tuchel's side's 3-2 Uefa Nations League victory in Spain",
-        "The legendary football commentator, whose new book 'Tales from the Gantry: Letters from a Lifetime in Football' was published on Monday, knows a thing or two about England teams, good and bad, having called over 350 Three Lions internationals while attending an astonishing 13 World Cup finals during a decorated 53-year career that is still going today.",
-        "The book is \"historical\", says Tyler. \"It is what I was thinking about in football that week. There's 110 different essays, half a dozen of them were letters from America.",
-        "\"I wrote 500 words a week for two and a half years. It starts early in 2004 and finishes in July 2026.\" Talking points as Thomas Tuchel learns Argentina lesson Spain 2-3 England - Match report and Thomas Tuchel's verdict Who could England play in the Nations League last eight? As it happened | Match stats | England fixtures"
-      ]
-    },
-    {
-      "slug": "13612902",
-      "title": "Pochettino confirms coaching team has already arrived in Manchester",
-      "url": "https://www.skysports.com/football/video/13612902/mauricio-pochettino-confirms-coaching-team-has-already-arrived-in-manchester",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-football_7407895.jpg?20261116155140",
-      "excerpt": "Mauricio Pochettino has confirmed that members of his coaching team have arrived in Manchester already, despite the Argentine remaining with the US national team ahead of the game against Haiti on Wednesday.",
-      "published_label": "16 November 2026 · 15:37",
-      "published_iso": "2026-11-16T15:37:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Mauricio Pochettino has confirmed that members of his coaching team have arrived in Manchester already, despite the Argentine remaining with the US national team ahead of the game against Haiti on Wednesday."
-      ]
-    },
-    {
-      "slug": "13612859",
-      "title": "Has Tuchel learnt from Argentina disaster and fixed England's 'DNA problem'?",
-      "url": "https://www.skysports.com/football/video/13612859/thomas-tuchel-has-england-boss-learnt-from-argentina-disaster-and-fixed-dna-problem",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-thomas-tuchel_7407807.jpg?20261116143006",
-      "excerpt": "Sky Sports' David Reed breaks down whether Thomas Tuchel has already fixed England's 'DNA problem'.",
-      "published_label": "16 November 2026 · 14:22",
-      "published_iso": "2026-11-16T14:22:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' David Reed breaks down whether Thomas Tuchel has already fixed England's 'DNA problem'."
-      ]
-    },
-    {
-      "slug": "13612783",
-      "title": "Trafford's stop vs Port Vale he branded his best ever save after Spain heroics!",
-      "url": "https://www.skysports.com/football/video/13612783/james-traffords-save-against-port-vale-for-bolton-in-2022",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-trafford-football_7407709.jpg?20261116115144",
-      "excerpt": "James Trafford's stunning save against Port Vale for Bolton in 2022 that he says is better than his double stop against Spain.",
-      "published_label": "16 November 2026 · 11:47",
-      "published_iso": "2026-11-16T11:47:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "James Trafford's stunning save against Port Vale for Bolton in 2022 that he says is better than his double stop against Spain."
-      ]
-    },
-    {
-      "slug": "13611876",
-      "title": "Who could England face in Nations League quarter-finals?",
-      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bellingham-kane-england_7407369.jpg?20261115215740",
-      "excerpt": "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
-      "published_label": "13 November 2026 · 11:56",
-      "published_iso": "2026-11-13T11:56:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
-        "England's win over Spain in Madrid means they have finished top of the group.",
-        "That matters as the winners of the Nations League tier A groups are seeded for the quarter-final draw. They will play teams which have finished runners-up in other groups. They will also play the second leg of their quarter-final at home. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables Who could England face in the quarter-finals?",
-        "Belgium finished runners-up in Group A1, so they are a potential last-eight opponent for England. Netherlands are another potential opponent as they finished second in Group A2 following their 5-0 loss to Germany , who topped the group."
       ]
     }
   ]
