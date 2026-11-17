@@ -1,21 +1,31 @@
 {
-  "synced_at": "2026-11-16T18:33:35+00:00",
+  "synced_at": "2026-11-17T02:56:35+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
     {
-      "slug": "13612859",
-      "title": "Has Tuchel learnt from Argentina disaster and fixed England's 'DNA problem'?",
-      "url": "https://www.skysports.com/football/video/13612859/thomas-tuchel-has-england-boss-learnt-from-argentina-disaster-and-fixed-dna-problem",
+      "slug": "13596475",
+      "title": "Rice: More to come from Arsenal's £105m 'bargain'",
+      "url": "https://www.skysports.com/football/news/13596475/declan-rice-arsenals-total-player-and-lb105m-bargain-can-unlock-more-levels-after-agreeing-new-contract",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-thomas-tuchel_7407807.jpg?20261116143006",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-arsenal_7371338.jpg?20261008143645",
       "excerpt": "",
       "published_label": "",
       "published_iso": "",
-      "byline": "",
-      "kind": "video"
+      "byline": ""
+    },
+    {
+      "slug": "13612984",
+      "title": "Wales have a free hit against Ronaldo-less Portugal",
+      "url": "https://www.skysports.com/football/news/13612984/wales-vs-portugal-no-cristiano-ronaldo-for-the-visitors-as-craig-bellamys-side-have-a-free-hit-in-final-nations-league-encounter",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/06/768x432/skysports-craig-bellamy-wales_7263098.jpg?20260601163126",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
     },
     {
       "slug": "13612488",
@@ -261,6 +271,89 @@
       "byline": ""
     },
     {
+      "slug": "13613049",
+      "title": "Mum's the word! Portugal boss responds to criticism from CR7's MOTHER!",
+      "url": "https://www.skysports.com/football/video/13613049/portugal-head-coach-jorge-jesus-hits-back-at-criticism-from-cristiano-ronaldos-mother",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-nations-league-ronaldo_7408253.jpg?20261116230730",
+      "excerpt": "Portugal boss Jorge Jesus responded to comments from Cristiano Ronaldo’s mother, Dolores Aveiro, as the fallout from the 41-year-old’s international exit continued in Wales on Monday.",
+      "published_label": "16 November 2026 · 22:54",
+      "published_iso": "2026-11-16T22:54:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Portugal boss Jorge Jesus responded to comments from Cristiano Ronaldo’s mother, Dolores Aveiro, as the fallout from the 41-year-old’s international exit continued in Wales on Monday."
+      ]
+    },
+    {
+      "slug": "13612913",
+      "title": "Robertson makes history with record 103rd Scotland cap",
+      "url": "https://www.skysports.com/football/news/13612913/andy-robertson-scotland-captain-breaks-national-appearance-record-by-winning-103rd-senior-cap-vs-switzerland",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-scotland_7402989.jpg?20261110115123",
+      "excerpt": "Andy Robertson has broken the record for the most senior Scotland men's team caps, surpassing the feat held by Sir Kenny Dalglish for 40 years.",
+      "published_label": "16 November 2026 · 22:30",
+      "published_iso": "2026-11-16T22:30:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Andy Robertson has broken the record for the most senior Scotland men's team caps, surpassing the feat held by Sir Kenny Dalglish for 40 years.",
+        "The Scotland captain made his 103rd appearance for the national side in Monday's 4-0 defeat to Switzerland in the Nations League.",
+        "He has bypassed the record set by Dalglish, who earned 102 caps between 1971 and 1986. Record-breaker Robertson speaks out after Scotland's bad loss to Switzerland Latest Scotland news | Scotland fixtures Nations League scores & news | Tables",
+        "Before hitting the milestone, Robertson insisted he will always regard Dalglish as \"the greatest\" ."
+      ]
+    },
+    {
+      "slug": "13612895",
+      "title": "Record-breaker Robertson speaks out after Scotland's bad loss to Switzerland",
+      "url": "https://www.skysports.com/football/news/13612895/switzerland-4-0-scotland-andy-robertson-breaks-caps-record-as-scots-fall-to-heavy-nations-league-defeat",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-scotland-robertson_7408181.jpg?20261116215135",
+      "excerpt": "Andy Robertson created Scotland history, then delivered a scathing assessment of their Nations League collapse against Switzerland.",
+      "published_label": "16 November 2026 · 21:35",
+      "published_iso": "2026-11-16T21:35:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "Andy Robertson created Scotland history, then delivered a scathing assessment of their Nations League collapse against Switzerland.",
+        "On the night he became the men's record appearance holder with 103 caps, Sebastien Pocognoli came under pressure with a bruising 4-0 defeat in St Gallen.",
+        "\"That cannot happen in international football,\" he told BBC Scotland after the match. As it happened | Teams | Stats Nations League scores & news | Tables Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
+        "\"I don't think you've got time in international football, you have to do it. These supporters who travel everywhere, are they going to give us time? No. Are the people inside Hampden going to give us time? No. Are the people outside Hampden, who are going to be critical and rightly so? No."
+      ]
+    },
+    {
+      "slug": "13612986",
+      "title": "Rice verbally agrees new Arsenal contract",
+      "url": "https://www.skysports.com/football/news/13612986/declan-rice-contract-arsenal-midfielder-verbally-agrees-new-lb320-000-a-week-deal-with-the-premier-league-champions",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-declan-rice-arsenal_7383215.jpg?20261021214729",
+      "excerpt": "Declan Rice has verbally agreed terms on a new long-term contract at Arsenal, Sky Sports News can reveal.",
+      "published_label": "16 November 2026 · 21:12",
+      "published_iso": "2026-11-16T21:12:00+00:00",
+      "byline": "Rob Dorsett",
+      "body": [
+        "Declan Rice has verbally agreed terms on a new long-term contract at Arsenal, Sky Sports News can reveal.",
+        "Sky Sports News has been told his new deal will bring him in line with Bukayo Saka, who is the highest-paid player at the Emirates.",
+        "Rice and his representatives have been in negotiations for several months, with the club keen to tie down one of their most important players, even though he still has 18 months left on his existing contract, with a further year's option in the club's favour. Transfer Centre LIVE! | Arsenal news & transfers 🔴⚪ Arsenal fixtures & scores | FREE Arsenal highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Rice was named Arsenal's Player of the Year last season when they won the Premier League title and this new deal will take him into his early 30s."
+      ]
+    },
+    {
+      "slug": "13612978",
+      "title": "'Outstanding' Dowman scores historic winner as England U21s beat France",
+      "url": "https://www.skysports.com/football/news/13612978/england-under-21s-3-2-france-under-21s-max-dowman-becomes-three-lions-youngest-ever-u21-scorer-with-dramatic-winner",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-dowman-england_7408188.jpg?20261116220011",
+      "excerpt": "Max Dowman became England Under-21s' youngest ever goalscorer by grabbing a late winner in a 3-2 victory over France at Ashton Gate.",
+      "published_label": "16 November 2026 · 19:07",
+      "published_iso": "2026-11-16T19:07:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Max Dowman became England Under-21s' youngest ever goalscorer by grabbing a late winner in a 3-2 victory over France at Ashton Gate.",
+        "The 16-year-old Arsenal prodigy became England's youngest Under-21s player last week in the defeat to Portugal - but made even more history by popping up with an 89th-minute winner on his second appearance, as he played the entire game. How the teams lined up | Match stats",
+        "At 16 years and 320 days old, Dowman is the youngest-ever goalscorer for England at this level. The previous record was held by current England men's senior star Jude Bellingham - who broke the record aged 17 years and 67 days against Kosovo in September 2020.",
+        "\"We see how good on the ball he is but he was outstanding off the ball,\" said England U21s boss Lee Carsley. \"You have to keep reminding yourself about his age."
+      ]
+    },
+    {
       "slug": "13612957",
       "title": "Can Frank keep Palace up? How his Brentford numbers could translate at the Eagles",
       "url": "https://www.skysports.com/football/video/13612957/can-thomas-frank-steer-crystal-palace-to-safety-what-his-brentford-stats-tell-us",
@@ -370,6 +463,21 @@
       ]
     },
     {
+      "slug": "13612859",
+      "title": "Has Tuchel learnt from Argentina disaster and fixed England's 'DNA problem'?",
+      "url": "https://www.skysports.com/football/video/13612859/thomas-tuchel-has-england-boss-learnt-from-argentina-disaster-and-fixed-dna-problem",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-thomas-tuchel_7407807.jpg?20261116143006",
+      "excerpt": "Sky Sports' David Reed breaks down whether Thomas Tuchel has already fixed England's 'DNA problem'.",
+      "published_label": "16 November 2026 · 14:22",
+      "published_iso": "2026-11-16T14:22:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' David Reed breaks down whether Thomas Tuchel has already fixed England's 'DNA problem'."
+      ]
+    },
+    {
       "slug": "13612783",
       "title": "Trafford's stop vs Port Vale he branded his best ever save after Spain heroics!",
       "url": "https://www.skysports.com/football/video/13612783/james-traffords-save-against-port-vale-for-bolton-in-2022",
@@ -434,6 +542,23 @@
       "kind": "video",
       "body": [
         "Harry Kane says Spain parading the World Cup before kick-off made England more hungry after claiming top spot in the Nations League."
+      ]
+    },
+    {
+      "slug": "13613047",
+      "title": "Papers: Timber, Raya and Hincapie to sign new Arsenal contracts",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13613047/jurrien-timber-david-raya-and-piero-hincapie-to-extend-arsenal-contracts-alongside-declan-rice-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Tuesday's newspapers... ARSENAL CONTRACTS",
+      "published_label": "15 November 2026 · 22:45",
+      "published_iso": "2026-11-15T22:45:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Tuesday's newspapers... ARSENAL CONTRACTS",
+        "Jurrien Timber has agreed a new contract with Arsenal - The Athletic",
+        "David Raya and Piero Hincapie are very close to renewing their contracts with Arsenal - ESPN Deportes Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW MAN UTD",
+        "Manchester United have laid on a private jet for Mauricio Pochettino to fly straight to England in the early hours of Wednesday morning after he finishes work as US national team coach - Daily Mail"
       ]
     },
     {
@@ -550,140 +675,18 @@
       ]
     },
     {
-      "slug": "13612596",
-      "title": "'What a shot that is!' - Crabtree nails mega 146 against Evans",
-      "url": "https://www.skysports.com/football/video/13612596/grand-slam-of-darts-2026-cam-crabtree-nails-mega-146-against-ricky-evans",
+      "slug": "13381699",
+      "title": "'Bend it like Declan!' | The best of Rice's whipped finishes",
+      "url": "https://www.skysports.com/football/video/13381699/bend-it-like-declan-the-best-of-declan-rices-trademark-whipped-finish-in-the-premier-league",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/darts-sky-sports-ricky-evans_7407348.jpg?20261115213359",
-      "excerpt": "Cam Crabtree nailed a mega 146 checkout against Ricky Evans during their Group K clash at the 2026 Grand Slam of Darts.",
-      "published_label": "15 November 2026 · 21:27",
-      "published_iso": "2026-11-15T21:27:00+00:00",
+      "image": "https://e0.365dm.com/25/06/768x432/skysports-declan-rice-arsenal_6939480.jpg?20250611163125",
+      "excerpt": "The best first-time whipped finishes by Arsenal's Declan Rice in the Premier League.",
+      "published_label": "16 June 2025 · 08:00",
+      "published_iso": "2025-06-16T08:00:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Cam Crabtree nailed a mega 146 checkout against Ricky Evans during their Group K clash at the 2026 Grand Slam of Darts."
-      ]
-    },
-    {
-      "slug": "13612566",
-      "title": "'She's been fantastic' - Bright heaps praise on player of the match Earps",
-      "url": "https://www.skysports.com/football/video/13612566/wsl-millie-bright-heaps-praise-on-player-of-the-match-mary-earps",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-earps-bright_7407273.jpg?20261115185206",
-      "excerpt": "Mary Earps reflects on a hard-earned point for the London City Lionesses, as former England teammate Millie Bright heaped praise on the goalkeeper.",
-      "published_label": "15 November 2026 · 18:48",
-      "published_iso": "2026-11-15T18:48:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Mary Earps reflects on a hard-earned point for the London City Lionesses, as former England teammate Millie Bright heaped praise on the goalkeeper."
-      ]
-    },
-    {
-      "slug": "13612562",
-      "title": "Earps stars as London City frustrate Arsenal to seal point at Emirates",
-      "url": "https://www.skysports.com/football/video/13612562/arsenal-1-1-london-city-lionesses-wsl-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-lcl-wsl_7407250.jpg?20261115182624",
-      "excerpt": "Highlights of the Women's Super League match between Arsenal and London City Lionesses.",
-      "published_label": "15 November 2026 · 18:37",
-      "published_iso": "2026-11-15T18:37:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Women's Super League match between Arsenal and London City Lionesses."
-      ]
-    },
-    {
-      "slug": "13612437",
-      "title": "Arsenal's wait for home WSL win goes on after Earps masterclass",
-      "url": "https://www.skysports.com/football/news/13612437/arsenal-1-1-london-city-lionesses-gunners-remain-winless-at-home-in-the-wsl-after-inspired-mary-earps-denies-them-victory",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-womens-super-league_7407153.jpg?20261115164523",
-      "excerpt": "Arsenal's wait for a home WSL win continues as they drew 1-1 against London City Lionesses on Sunday - their fifth draw in a row at the Emirates this season - with an inspired Mary Earps denying the Gunners victory.",
-      "published_label": "15 November 2026 · 18:30",
-      "published_iso": "2026-11-15T18:30:00+00:00",
-      "byline": "Charlotte Marsh",
-      "body": [
-        "Arsenal's wait for a home WSL win continues as they drew 1-1 against London City Lionesses on Sunday - their fifth draw in a row at the Emirates this season - with an inspired Mary Earps denying the Gunners victory.",
-        "While the result extends Arsenal's unbeaten home run to 24 league matches, it is becoming an increasing concern and a spectre on the shoulder that the Gunners have been unable to secure three points at the Emirates this year.",
-        "Giving her view to Sky Sports after the game, Renee Slegers - managing her 50th Arsenal game - said: \"We spent more time than we normally do without the ball; partly the game plan and partly them asking questions of us on the pitch.",
-        "\"We create big chances, could have done more with those. That's the frustrating part. This is the fifth [home game] and we couldn't give the fans the win. Unfortunately we couldn't do it for them.\""
-      ]
-    },
-    {
-      "slug": "13612525",
-      "title": "London City Lionesses hit back minutes after Arsenal take the lead!",
-      "url": "https://www.skysports.com/football/video/13612525/wsl-london-city-lionesses-hit-back-minutes-after-arsenal-take-the-lead",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-lcl-arsenal_7407161.jpg?20261115165417",
-      "excerpt": "London City Lionesses were not behind for long as Isobel Goodwin cancelled out Frida Maanum's opener.",
-      "published_label": "15 November 2026 · 16:48",
-      "published_iso": "2026-11-15T16:48:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "London City Lionesses were not behind for long as Isobel Goodwin cancelled out Frida Maanum's opener."
-      ]
-    },
-    {
-      "slug": "13612517",
-      "title": "Villa move into top half after Second City derby win",
-      "url": "https://www.skysports.com/football/video/13612517/aston-villa-1-0-birmingham-city-wsl-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-villa-birmingham_7407134.jpg?20261115161432",
-      "excerpt": "Highlights of the Women's Super League match between Aston Villa and Birmingham City.",
-      "published_label": "15 November 2026 · 16:16",
-      "published_iso": "2026-11-15T16:16:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Women's Super League match between Aston Villa and Birmingham City."
-      ]
-    },
-    {
-      "slug": "13612511",
-      "title": "Charlton remain winless as Asseyi leads Hammers to victory",
-      "url": "https://www.skysports.com/football/video/13612511/west-ham-2-0-charlton-wsl-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-ham-charlton_7407132.jpg?20261115160956",
-      "excerpt": "Highlights of the Women's Super League match between Charlton and West Ham.",
-      "published_label": "15 November 2026 · 15:58",
-      "published_iso": "2026-11-15T15:58:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Women's Super League match between Charlton and West Ham."
-      ]
-    },
-    {
-      "slug": "13612502",
-      "title": "'Absolutely perfect!' - West Ham's Asseyi doubles tally with sensational free-kick",
-      "url": "https://www.skysports.com/football/video/13612502/womens-super-league-viviane-asseyi-doubles-her-tally-with-sensational-free-kick",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-ham-football_7407091.jpg?20261115152638",
-      "excerpt": "West Ham are cruising against Charlton as Viviane Asseyi doubled her tally with a sensational free-kick.",
-      "published_label": "15 November 2026 · 15:18",
-      "published_iso": "2026-11-15T15:18:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "West Ham are cruising against Charlton as Viviane Asseyi doubled her tally with a sensational free-kick."
-      ]
-    },
-    {
-      "slug": "13612500",
-      "title": "'More than a yellow!' Plymouth's Curtis escapes red card after WILD challenge",
-      "url": "https://www.skysports.com/football/video/13612500/plymouth-argyles-ronan-curtis-only-receives-yellow-after-wild-challenge",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sheff-weds-plymouth_7407094.jpg?20261115152903",
-      "excerpt": "Plymouth's Ronan Curtis only received a yellow card after this wild challenge in their match against Sheffield Wednesday.",
-      "published_label": "15 November 2026 · 15:16",
-      "published_iso": "2026-11-15T15:16:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Plymouth's Ronan Curtis only received a yellow card after this wild challenge in their match against Sheffield Wednesday."
+        "The best first-time whipped finishes by Arsenal's Declan Rice in the Premier League."
       ]
     }
   ]
