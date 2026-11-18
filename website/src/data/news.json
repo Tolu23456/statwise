@@ -1,10 +1,22 @@
 {
-  "synced_at": "2026-11-18T07:29:59+00:00",
+  "synced_at": "2026-11-18T17:15:52+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13613572",
+      "title": "'They're frustrated!' – JJ Gabriel's departure causes upset at Man Utd",
+      "url": "https://www.skysports.com/football/video/13613572/why-jj-gabriel-s-departure-has-caused-upset-at-manchester-united",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7409562.jpg?20261118123457",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13613146",
       "title": "Mowbray steps down from Blackburn due to health issues",
@@ -271,6 +283,117 @@
       "byline": ""
     },
     {
+      "slug": "13613154",
+      "title": "Fernandes tumbles as new No 1 is crowned: Sky Sports' top 25 Premier League players",
+      "url": "https://www.skysports.com/football/news/13613154/bruno-fernandes-tumbles-as-new-no-1-is-crowned-sky-sports-ranks-the-premier-leagues-top-25-players-right-now",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-graphic-erling-haaland_7408870.jpg?20261117153443",
+      "excerpt": "Bruno Fernandes has been dethroned as the king of the Premier League in a major shake-up to the top 25 Premier League players.",
+      "published_label": "18 November 2026 · 17:00",
+      "published_iso": "2026-11-18T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Bruno Fernandes has been dethroned as the king of the Premier League in a major shake-up to the top 25 Premier League players.",
+        "We asked our reporters and journalists to rank a longlist of 40 of the best players in the competition right now and took an average of their answers to produce the Sky Sports top 25.",
+        "The champions Arsenal the best represented, accounting for nine of the top 25. But which player takes top spot? And how do the rankings below compare to our last vote at the start of the season ? Sky Sports top 25 Premier League players revealed LIVE! How we ranked the top 25 in March - who are the movers? Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Get Sky Sports or stream with no contract on NOW 📺 The top 25 revealed... 25. Alisson 24. Bruno Guimaraes 23. Riccardo Calafiori 22. Morgan Gibbs-White 21. Jeremy Doku 20. Antoine Semenyo 19. Ezri Konsa 18. Dominik Szoboszlai 17. Pascal Gross 16. Moises Caicedo 15. Virgil van Dijk 14. Bukayo Saka 13. Cole Palmer 12. Alexander Isak 11. Bruno Fernandes The top 10 10. Martin Odegaard",
+        "Arsenal's conductor. The man who makes Mikel Arteta's attacking orchestra sing. When Odegaard finds his rhythm, so do the champions. 9. Joao Pedro"
+      ]
+    },
+    {
+      "slug": "13613585",
+      "title": "The secrets of Brentford's success",
+      "url": "https://www.skysports.com/football/news/13613585/how-brentford-plan-to-develop-the-best-young-talent-and-break-into-the-premier-league-elite",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-igor-thiago-premier-league_7392886.jpg?20261031164456",
+      "excerpt": "'Data wizards'. 'Great recruiters'. 'Punching above their weight' - Brentford have come to be known for all these things in recent years. Now, having established themselves in the Premier League, they have become bolder about wanting to mix…",
+      "published_label": "18 November 2026 · 17:00",
+      "published_iso": "2026-11-18T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "'Data wizards'. 'Great recruiters'. 'Punching above their weight' - Brentford have come to be known for all these things in recent years. Now, having established themselves in the Premier League, they have become bolder about wanting to mix it with the big clubs and break into Europe.",
+        "But how do Brentford get to that next level? In their view, the answer could come via the academy.",
+        "In April, Brentford was awarded Category 1 status - the highest classification available - and their aim is to now transform into a system that is not only known for strong first-team recruitment but also one that produces academy graduates.",
+        "Speaking exclusively to Sky Sports News from under a brand-new dome being constructed to house the academy teams, sporting director Phil Giles and technical director Lee Dykes opened up about their roadmap to make Brentford one of the elites. Brentford fixtures All the latest Brentford news and gossip"
+      ]
+    },
+    {
+      "slug": "13613629",
+      "title": "Premier League Top 25 - Sky Sports writers give their HOT TAKES",
+      "url": "https://www.skysports.com/football/video/13613629/sky-sports-writers-give-their-hot-takes-on-the-premier-leagues-top-25-players",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hot-takes_7409686.jpg?20261118152022",
+      "excerpt": "The Sky Sports Digital team have given their HOT TAKES on the Premier League's Top 25 players...",
+      "published_label": "18 November 2026 · 17:00",
+      "published_iso": "2026-11-18T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "The Sky Sports Digital team have given their HOT TAKES on the Premier League's Top 25 players..."
+      ]
+    },
+    {
+      "slug": "13613613",
+      "title": "The Premier League's Top 10 Players",
+      "url": "https://www.skysports.com/football/video/13613613/the-premier-leagues-top-10-players",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-pl-top_7409685.jpg?20261118151852",
+      "excerpt": "Who are the best players in the Premier League right now? We asked the Sky Sports reporters and journalists to rank the contenders - find out the top ten.",
+      "published_label": "18 November 2026 · 17:00",
+      "published_iso": "2026-11-18T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Who are the best players in the Premier League right now? We asked the Sky Sports reporters and journalists to rank the contenders - find out the top ten."
+      ]
+    },
+    {
+      "slug": "13613587",
+      "title": "Poch arrives in Manchester as Utd era begins",
+      "url": "https://www.skysports.com/football/video/13613587/mauricio-pochettino-arrives-in-manchester-as-mancester-united-era-begins",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7409601.jpg?20261118131932",
+      "excerpt": "Mauricio Pochettino is seen arriving in Manchester for his new era at Old Trafford.",
+      "published_label": "18 November 2026 · 13:10",
+      "published_iso": "2026-11-18T13:10:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Mauricio Pochettino is seen arriving in Manchester for his new era at Old Trafford."
+      ]
+    },
+    {
+      "slug": "13613567",
+      "title": "'Marvellous!' - Mata's top FIVE goals in the Premier League",
+      "url": "https://www.skysports.com/football/video/13613567/juan-matas-top-five-goals-in-the-premier-league-for-chelsea-and-manchester-united",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7409563.jpg?20261118123543",
+      "excerpt": "Upon Juan Mata's retirement from football, relive his best five goals in the Premier League for both Chelsea and Manchester United.",
+      "published_label": "18 November 2026 · 12:23",
+      "published_iso": "2026-11-18T12:23:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Upon Juan Mata's retirement from football, relive his best five goals in the Premier League for both Chelsea and Manchester United."
+      ]
+    },
+    {
+      "slug": "13613260",
+      "title": "Man Utd expected to back Poch in January transfer window",
+      "url": "https://www.skysports.com/football/news/13613260/man-utd-transfer-news-calvin-bassey-and-jarrad-branthwaite-among-targets-with-mauricio-pochettino-set-to-be-backed-in-january",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-transfers_7408772.jpg?20261117144218",
+      "excerpt": "Manchester United head coach Mauricio Pochettino is expected to be backed in the January transfer window as the club aim to address their disappointing start to the season.",
+      "published_label": "18 November 2026 · 12:00",
+      "published_iso": "2026-11-18T12:00:00+00:00",
+      "byline": "Danyal Khan",
+      "body": [
+        "Manchester United head coach Mauricio Pochettino is expected to be backed in the January transfer window as the club aim to address their disappointing start to the season.",
+        "A left-back, centre-back and forward are areas the club are looking to potentially strengthen in January with Pochettino expected to have input on targets they will pursue.",
+        "Despite the club's hierarchy feeling the team should be further up the table, there is also an acknowledgement that they could have further strengthened the squad in the summer in areas where they lacked depth.",
+        "Sky Sports News understands Manchester United already had plans to move in the upcoming window under former head coach Michael Carrick, before he was sacked last month following United's worst start to a league season for 40 years."
+      ]
+    },
+    {
       "slug": "13613466",
       "title": "'You need to run together!' - Pochettino's first message to Man Utd players",
       "url": "https://www.skysports.com/football/video/13613466/mauricio-pochettinos-gives-his-first-message-to-manchester-united-players",
@@ -284,6 +407,17 @@
       "body": [
         "Mauricio Pochettino gives his last press conference as US Men's National Team head coach but makes his first plea for his new home at Manchester United."
       ]
+    },
+    {
+      "slug": "new-zealand-vs-india-first-test-basin-reserve",
+      "title": "Shubman Gill’s New-Look India Hoping to End Their 17-Year New Zealand",
+      "url": "https://www.sportytrader.com/en-in/news/new-zealand-vs-india-first-test-basin-reserve/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/daniel_james.webp",
+      "excerpt": "Buoyed by their white-ball success of their tour to New Zealand, Shubman Gill’s youthful Indian team now prepares to brave Wellington’s blustery conditions tomorrow in th",
+      "published_label": "18 November 2026 · 06:00",
+      "published_iso": "2026-11-18T06:00:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13613431",
@@ -540,155 +674,18 @@
       ]
     },
     {
-      "slug": "13613091",
-      "title": "Toone, Beever-Jones return for Lionesses ahead of WC play-off",
-      "url": "https://www.skysports.com/football/news/13613091/england-women-ella-toone-and-aggie-beever-jones-back-for-lionesses-as-chloe-kelly-and-lauren-james-miss-out-through-injury",
+      "slug": "12824296",
+      "title": "Liverpool vs Man Utd: Memorable Anfield Moments!",
+      "url": "https://www.skysports.com/football/video/12824296/liverpool-vs-manchester-united-memorable-anfield-moments",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/05/768x432/skysports-ella-toone-england-women_7252965.jpg?20260519105727",
-      "excerpt": "Sarina Wiegman has named 25 players for England’s decisive FIFA Women’s World Cup play-off against Ukraine, with Ella Toone and Aggie Beever-Jones returning to the squad.",
-      "published_label": "17 November 2026 · 11:00",
-      "published_iso": "2026-11-17T11:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Sarina Wiegman has named 25 players for England’s decisive FIFA Women’s World Cup play-off against Ukraine, with Ella Toone and Aggie Beever-Jones returning to the squad.",
-        "Toone was initially excluded from the camp to face Greece in October with Wiegman saying that she had not \"played to her potential\". She earned a recall following an injury to Lucy Bronze, having impressed with her reaction to the setback.",
-        "Chloe Kelly was also a notable absence from the last squad, but this time misses out due to a hamstring problem that has kept her out since the end of September.",
-        "Beever-Jones returns having last featured for the Lionesses in their 6-1 victory over Ukraine back in March. She takes the place of Chelsea team-mate Lauren James who is sidelined. Grace Clinton also earns a recall. Lionesses cruise into second round of WC play-offs | WCQ fixtures and results Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
-      ]
-    },
-    {
-      "slug": "13613157",
-      "title": "'He's evolved over 10 years' - Why Poch won't be the same coach he was at Spurs",
-      "url": "https://www.skysports.com/football/video/13613157/transfer-talk-why-mauricio-pochettino-wont-be-the-same-coach-he-was-at-tottenham-hotspur",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-julien-laurens_7408527.jpg?20261117111719",
-      "excerpt": "Speaking on the Transfer Talk podcast, Julien Laurens reflects on Mauricio Pochettino's evolution as a coach over the last decade and why he won't be the same coach he was from his time at Spurs with Manchester United.",
-      "published_label": "17 November 2026 · 10:43",
-      "published_iso": "2026-11-17T10:43:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-anfield-liverpool_7409561.jpg?20261118123428",
+      "excerpt": "We take a look back at some memorable moments between Liverpool and Manchester United at Anfield.",
+      "published_label": "15 December 2023 · 06:00",
+      "published_iso": "2023-12-15T06:00:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Speaking on the Transfer Talk podcast, Julien Laurens reflects on Mauricio Pochettino's evolution as a coach over the last decade and why he won't be the same coach he was from his time at Spurs with Manchester United."
-      ]
-    },
-    {
-      "slug": "13612813",
-      "title": "'I didn't want to look back on my career with regret' - the journey of Aaron Connolly",
-      "url": "https://www.skysports.com/football/news/13612813/aaron-connolly-leyton-orient-midfielder-reflects-on-eventful-career-path-from-brighton-premier-league-debut-goals-to-set-backs-and-comebacks",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-league-one-leyton-orient_7402752.jpg?20261110084249",
-      "excerpt": "It is easy to forget that Aaron Connolly is still only 26, considering everything he has already experienced.",
-      "published_label": "17 November 2026 · 10:00",
-      "published_iso": "2026-11-17T10:00:00+00:00",
-      "byline": "Simeon Gholam",
-      "body": [
-        "It is easy to forget that Aaron Connolly is still only 26, considering everything he has already experienced.",
-        "Just over seven years have passed since that magical full Premier League debut, scoring twice for Brighton against Spurs at the age of 19 in 2019.",
-        "In the time since, there have been injuries that have damaged his progress in football and obstacles in his life beyond the pitch.",
-        "\"It's been tough,\" Connolly - now at Leyton Orient - tells Sky Sports . \"It's probably been well documented that I haven't dealt with setbacks very well before."
-      ]
-    },
-    {
-      "slug": "13613120",
-      "title": "What is going wrong for Pocognoli and Scotland?",
-      "url": "https://www.skysports.com/football/news/13613120/scotland-what-s-going-wrong-for-head-coach-sebastien-pocognoli-and-can-he-turn-things-around",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sebastien-pocognoli_7408472.jpg?20261117101348",
-      "excerpt": "A year is a long time in football and that is certainly the case when it comes to Scotland's fortunes.",
-      "published_label": "17 November 2026 · 08:54",
-      "published_iso": "2026-11-17T08:54:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "A year is a long time in football and that is certainly the case when it comes to Scotland's fortunes.",
-        "From a historic night against Denmark as the long wait to return to the World Cup finally ended, to a bruising 4-0 defeat to Switzerland at the end of a frustrating Nations League campaign. The contrast is stark.",
-        "A second-half collapse against a second-string Swiss side in St Gallen condemned the Scots to their heaviest loss since their 5-1 thrashing by Germany at Euro 2024. Record-breaker Robertson speaks out after Scotland's bad loss to Switzerland Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
-        "After also leading Scotland to back-to-back Euros, Steve Clarke was always going to be a hard act to follow. After just six games, some of the Tartan Army have already seen enough from Sebastien Pocognoli."
-      ]
-    },
-    {
-      "slug": "wales-vs-portugal-the-finale-that-sees-two-nations-seeking-redemption-in-the-uefa-nations-league",
-      "title": "Wales vs. Portugal: The Finale That Sees Two Nations Seeking Redemptio",
-      "url": "https://www.sportytrader.com/en/news/wales-vs-portugal-the-finale-that-sees-two-nations-seeking-redemption-in-the-uefa-nations-league/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/kenya-vs-rsa-afcon-md4.webp",
-      "excerpt": "Portugal have no room for error heading into the final matchday of the UEFA Nations League. This Group A4 clash could see the Selecao relinquish their position at the top",
-      "published_label": "17 November 2026 · 05:00",
-      "published_iso": "2026-11-17T05:00:00+00:00",
-      "byline": "Thobelani Moyo"
-    },
-    {
-      "slug": "pitso-vs-benni-round-2-kenya-face-south-africa-afcon-2027",
-      "title": "Pitso vs Benni Round 2: Bafana Eye Redemption Against Kenya in Nairobi",
-      "url": "https://www.sportytrader.com/en-za/news/pitso-vs-benni-round-2-kenya-face-south-africa-afcon-2027/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/switzerland-vs-scotland-unl-md6.webp",
-      "excerpt": "Pitso Mosimane’s Bafana Bafana will lock horns with Benni McCarthy’s Kenya in Nairobi tonight, with the visitors seeking an immediate response after the fearless Harambee",
-      "published_label": "17 November 2026 · 03:30",
-      "published_iso": "2026-11-17T03:30:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13613049",
-      "title": "Mum's the word! Portugal boss responds to criticism from CR7's MOTHER!",
-      "url": "https://www.skysports.com/football/video/13613049/portugal-head-coach-jorge-jesus-hits-back-at-criticism-from-cristiano-ronaldos-mother",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-nations-league-ronaldo_7408253.jpg?20261116230730",
-      "excerpt": "Portugal boss Jorge Jesus responded to comments from Cristiano Ronaldo’s mother, Dolores Aveiro, as the fallout from the 41-year-old’s international exit continued in Wales on Monday.",
-      "published_label": "16 November 2026 · 22:54",
-      "published_iso": "2026-11-16T22:54:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Portugal boss Jorge Jesus responded to comments from Cristiano Ronaldo’s mother, Dolores Aveiro, as the fallout from the 41-year-old’s international exit continued in Wales on Monday."
-      ]
-    },
-    {
-      "slug": "13612913",
-      "title": "Robertson makes history with record 103rd Scotland cap",
-      "url": "https://www.skysports.com/football/news/13612913/andy-robertson-scotland-captain-breaks-national-appearance-record-by-winning-103rd-senior-cap-vs-switzerland",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-scotland_7402989.jpg?20261110115123",
-      "excerpt": "Andy Robertson has broken the record for the most senior Scotland men's team caps, surpassing the feat held by Sir Kenny Dalglish for 40 years.",
-      "published_label": "16 November 2026 · 22:30",
-      "published_iso": "2026-11-16T22:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Andy Robertson has broken the record for the most senior Scotland men's team caps, surpassing the feat held by Sir Kenny Dalglish for 40 years.",
-        "The Scotland captain made his 103rd appearance for the national side in Monday's 4-0 defeat to Switzerland in the Nations League.",
-        "He has bypassed the record set by Dalglish, who earned 102 caps between 1971 and 1986. Record-breaker Robertson speaks out after Scotland's bad loss to Switzerland Latest Scotland news | Scotland fixtures Nations League scores & news | Tables",
-        "Before hitting the milestone, Robertson insisted he will always regard Dalglish as \"the greatest\" ."
-      ]
-    },
-    {
-      "slug": "13612895",
-      "title": "Record-breaker Robertson speaks out after Scotland's bad loss to Switzerland",
-      "url": "https://www.skysports.com/football/news/13612895/switzerland-4-0-scotland-andy-robertson-breaks-caps-record-as-scots-fall-to-heavy-nations-league-defeat",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-scotland-robertson_7408181.jpg?20261116215135",
-      "excerpt": "Andy Robertson created Scotland history, then delivered a scathing assessment of their Nations League collapse against Switzerland.",
-      "published_label": "16 November 2026 · 21:35",
-      "published_iso": "2026-11-16T21:35:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "Andy Robertson created Scotland history, then delivered a scathing assessment of their Nations League collapse against Switzerland.",
-        "On the night he became the men's record appearance holder with 103 caps, Sebastien Pocognoli came under pressure with a bruising 4-0 defeat in St Gallen.",
-        "\"That cannot happen in international football,\" he told BBC Scotland after the match. As it happened | Teams | Stats Nations League scores & news | Tables Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
-        "\"I don't think you've got time in international football, you have to do it. These supporters who travel everywhere, are they going to give us time? No. Are the people inside Hampden going to give us time? No. Are the people outside Hampden, who are going to be critical and rightly so? No."
-      ]
-    },
-    {
-      "slug": "11837781",
-      "title": "Greatest PL goals | Liverpool v Man Utd",
-      "url": "https://www.skysports.com/football/video/11837781/man-utd-vs-liverpool-greatest-goals",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/25/10/768x432/skysports-liverpool-manchester-united_7050710.jpg?20251014121121",
-      "excerpt": "Ahead of the Super Sunday clash between Liverpool and Manchester United, we look back at some of the greatest Premier League goals between the two rival clubs.",
-      "published_label": "29 August 2024 · 16:00",
-      "published_iso": "2024-08-29T16:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Ahead of the Super Sunday clash between Liverpool and Manchester United, we look back at some of the greatest Premier League goals between the two rival clubs."
+        "We take a look back at some memorable moments between Liverpool and Manchester United at Anfield."
       ]
     }
   ]
