@@ -1,56 +1,10 @@
 {
-  "synced_at": "2026-11-17T22:25:17+00:00",
+  "synced_at": "2026-11-18T07:29:59+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13613354",
-      "title": "Why keeping Rice, Raya and Odegaard is so important for Arsenal",
-      "url": "https://www.skysports.com/football/video/13613354/arsenal-why-keeping-declan-rice-david-raya-and-martin-odegaard-is-so-important",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-david-raya-declan-rice_7408996.jpg?20261117183754",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "11837781",
-      "title": "Greatest PL goals | Liverpool v Man Utd",
-      "url": "https://www.skysports.com/football/video/11837781/man-utd-vs-liverpool-greatest-goals",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/25/10/768x432/skysports-liverpool-manchester-united_7050710.jpg?20251014121121",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13612813",
-      "title": "'I didn't want to look back on my career with regret' - the journey of Aaron Connolly",
-      "url": "https://www.skysports.com/football/news/13612813/aaron-connolly-leyton-orient-midfielder-reflects-on-eventful-career-path-from-brighton-premier-league-debut-goals-to-set-backs-and-comebacks",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-league-one-leyton-orient_7402752.jpg?20261110084249",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13613120",
-      "title": "What is going wrong for Pocognoli and Scotland?",
-      "url": "https://www.skysports.com/football/news/13613120/scotland-what-s-going-wrong-for-head-coach-sebastien-pocognoli-and-can-he-turn-things-around",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sebastien-pocognoli_7408472.jpg?20261117101348",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13613146",
       "title": "Mowbray steps down from Blackburn due to health issues",
@@ -317,6 +271,70 @@
       "byline": ""
     },
     {
+      "slug": "13613466",
+      "title": "'You need to run together!' - Pochettino's first message to Man Utd players",
+      "url": "https://www.skysports.com/football/video/13613466/mauricio-pochettinos-gives-his-first-message-to-manchester-united-players",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7409250.jpg?20261118072425",
+      "excerpt": "Mauricio Pochettino gives his last press conference as US Men's National Team head coach but makes his first plea for his new home at Manchester United.",
+      "published_label": "18 November 2026 · 07:15",
+      "published_iso": "2026-11-18T07:15:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Mauricio Pochettino gives his last press conference as US Men's National Team head coach but makes his first plea for his new home at Manchester United."
+      ]
+    },
+    {
+      "slug": "13613431",
+      "title": "Bellamy unfazed by Portugal loss and remains in high spirits",
+      "url": "https://www.skysports.com/football/video/13613431/wales-craig-bellamy-remains-positive-despite-loss-to-portugal-in-nations-league-group-stages",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wales_7409163.jpg?20261117231653",
+      "excerpt": "Craig Bellamy speaks after Wales' loss in the Nations League group stage to Portugal.",
+      "published_label": "17 November 2026 · 23:13",
+      "published_iso": "2026-11-17T23:13:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Craig Bellamy speaks after Wales' loss in the Nations League group stage to Portugal."
+      ]
+    },
+    {
+      "slug": "13613427",
+      "title": "Papers: Poch to appoint Man Utd's first-ever female coach",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13613427/man-utd-boss-mauricio-pochettino-to-appoint-clubs-first-ever-female-coach-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Wednesday's newspapers... PREMIER LEAGUE",
+      "published_label": "17 November 2026 · 22:58",
+      "published_iso": "2026-11-17T22:58:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Wednesday's newspapers... PREMIER LEAGUE",
+        "Manchester United are set to make history by hiring their very first-ever female coach, with Mauricio Pochettino bringing over strength and conditioning coach Silvia Tuya with him - The Sun",
+        "Arsenal will face competition from Barcelona and Paris Saint-Germain for Bournemouth attacker Eli Junior Kroupi - The Sun Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Matthias Jaissle's hopes of an Ivan Toney reunion have been dashed, but he still wants a proven striker to spark Newcastle's season into life - The Sun"
+      ]
+    },
+    {
+      "slug": "13611876",
+      "title": "The three teams England could face in the Nations League quarter-finals",
+      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bellingham-kane-england_7407369.jpg?20261115215740",
+      "excerpt": "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
+      "published_label": "17 November 2026 · 22:00",
+      "published_iso": "2026-11-17T22:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
+        "England's win over Spain in Madrid means they have finished top of the group.",
+        "That matters as the winners of the Nations League tier A groups are seeded for the quarter-final draw. They will play teams which have finished runners-up in other groups. They will also play the second leg of their quarter-final at home. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables Who could England face in the quarter-finals?",
+        "Belgium finished runners-up in Group A1, so they are a potential last-eight opponent for England."
+      ]
+    },
+    {
       "slug": "13613414",
       "title": "Northern Ireland promoted to Nations League top tier with draw in Hungary",
       "url": "https://www.skysports.com/football/news/13613414/hungary-1-1-northern-ireland-justin-devennys-superb-strike-fires-michael-oneills-side-into-top-tier-of-nations-league",
@@ -430,6 +448,21 @@
       ]
     },
     {
+      "slug": "13613354",
+      "title": "Why keeping Rice, Raya and Odegaard is so important for Arsenal",
+      "url": "https://www.skysports.com/football/video/13613354/arsenal-why-keeping-declan-rice-david-raya-and-martin-odegaard-is-so-important",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-david-raya-declan-rice_7408996.jpg?20261117183754",
+      "excerpt": "Former England defender Danny Mills explains how Arsenal will approach the renewals of some key personnel in the coming months.",
+      "published_label": "17 November 2026 · 18:08",
+      "published_iso": "2026-11-17T18:08:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Former England defender Danny Mills explains how Arsenal will approach the renewals of some key personnel in the coming months."
+      ]
+    },
+    {
       "slug": "13613275",
       "title": "Rooney contemplated suicide at ‘lowest point’ of Man Utd career",
       "url": "https://www.skysports.com/football/news/13613275/wayne-rooney-says-he-contemplated-suicide-during-lowest-point-of-manchester-united-career",
@@ -539,6 +572,40 @@
       ]
     },
     {
+      "slug": "13612813",
+      "title": "'I didn't want to look back on my career with regret' - the journey of Aaron Connolly",
+      "url": "https://www.skysports.com/football/news/13612813/aaron-connolly-leyton-orient-midfielder-reflects-on-eventful-career-path-from-brighton-premier-league-debut-goals-to-set-backs-and-comebacks",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-efl-league-one-leyton-orient_7402752.jpg?20261110084249",
+      "excerpt": "It is easy to forget that Aaron Connolly is still only 26, considering everything he has already experienced.",
+      "published_label": "17 November 2026 · 10:00",
+      "published_iso": "2026-11-17T10:00:00+00:00",
+      "byline": "Simeon Gholam",
+      "body": [
+        "It is easy to forget that Aaron Connolly is still only 26, considering everything he has already experienced.",
+        "Just over seven years have passed since that magical full Premier League debut, scoring twice for Brighton against Spurs at the age of 19 in 2019.",
+        "In the time since, there have been injuries that have damaged his progress in football and obstacles in his life beyond the pitch.",
+        "\"It's been tough,\" Connolly - now at Leyton Orient - tells Sky Sports . \"It's probably been well documented that I haven't dealt with setbacks very well before."
+      ]
+    },
+    {
+      "slug": "13613120",
+      "title": "What is going wrong for Pocognoli and Scotland?",
+      "url": "https://www.skysports.com/football/news/13613120/scotland-what-s-going-wrong-for-head-coach-sebastien-pocognoli-and-can-he-turn-things-around",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sebastien-pocognoli_7408472.jpg?20261117101348",
+      "excerpt": "A year is a long time in football and that is certainly the case when it comes to Scotland's fortunes.",
+      "published_label": "17 November 2026 · 08:54",
+      "published_iso": "2026-11-17T08:54:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "A year is a long time in football and that is certainly the case when it comes to Scotland's fortunes.",
+        "From a historic night against Denmark as the long wait to return to the World Cup finally ended, to a bruising 4-0 defeat to Switzerland at the end of a frustrating Nations League campaign. The contrast is stark.",
+        "A second-half collapse against a second-string Swiss side in St Gallen condemned the Scots to their heaviest loss since their 5-1 thrashing by Germany at Euro 2024. Record-breaker Robertson speaks out after Scotland's bad loss to Switzerland Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺",
+        "After also leading Scotland to back-to-back Euros, Steve Clarke was always going to be a hard act to follow. After just six games, some of the Tartan Army have already seen enough from Sebastien Pocognoli."
+      ]
+    },
+    {
       "slug": "wales-vs-portugal-the-finale-that-sees-two-nations-seeking-redemption-in-the-uefa-nations-league",
       "title": "Wales vs. Portugal: The Finale That Sees Two Nations Seeking Redemptio",
       "url": "https://www.sportytrader.com/en/news/wales-vs-portugal-the-finale-that-sees-two-nations-seeking-redemption-in-the-uefa-nations-league/",
@@ -610,69 +677,18 @@
       ]
     },
     {
-      "slug": "13612986",
-      "title": "Rice verbally agrees new Arsenal contract",
-      "url": "https://www.skysports.com/football/news/13612986/declan-rice-contract-arsenal-midfielder-verbally-agrees-new-lb320-000-a-week-deal-with-the-premier-league-champions",
+      "slug": "11837781",
+      "title": "Greatest PL goals | Liverpool v Man Utd",
+      "url": "https://www.skysports.com/football/video/11837781/man-utd-vs-liverpool-greatest-goals",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-declan-rice-arsenal_7383215.jpg?20261021214729",
-      "excerpt": "Declan Rice has verbally agreed terms on a new long-term contract at Arsenal, Sky Sports News can reveal.",
-      "published_label": "16 November 2026 · 21:12",
-      "published_iso": "2026-11-16T21:12:00+00:00",
-      "byline": "Rob Dorsett",
-      "body": [
-        "Declan Rice has verbally agreed terms on a new long-term contract at Arsenal, Sky Sports News can reveal.",
-        "Sky Sports News has been told his new deal will bring him in line with Bukayo Saka, who is the highest-paid player at the Emirates.",
-        "Rice and his representatives have been in negotiations for several months, with the club keen to tie down one of their most important players, even though he still has 18 months left on his existing contract, with a further year's option in the club's favour. Transfer Centre LIVE! | Arsenal news & transfers 🔴⚪ Arsenal fixtures & scores | FREE Arsenal highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Rice was named Arsenal's Player of the Year last season when they won the Premier League title and this new deal will take him into his early 30s."
-      ]
-    },
-    {
-      "slug": "13612984",
-      "title": "Wales have free hit against Ronaldo-less Portugal",
-      "url": "https://www.skysports.com/football/news/13612984/wales-vs-portugal-no-cristiano-ronaldo-for-the-visitors-as-craig-bellamys-side-have-a-free-hit-in-final-nations-league-encounter",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/06/768x432/skysports-craig-bellamy-wales_7263098.jpg?20260601163126",
-      "excerpt": "The Cardiff City Stadium sold out very quickly when the Nations League fixtures threw up a Wales vs Portugal game for the final match of Group D.",
-      "published_label": "16 November 2026 · 19:28",
-      "published_iso": "2026-11-16T19:28:00+00:00",
-      "byline": "Geraint Hughes",
-      "body": [
-        "The Cardiff City Stadium sold out very quickly when the Nations League fixtures threw up a Wales vs Portugal game for the final match of Group D.",
-        "Mark the date, November 17, 2026 - it could have been the last time to see Cristiano Ronaldo play on UK soil.",
-        "A mouthwatering occasion to witness one of the greats of the game as the curtain slowly falls on his illustrious international career and also see just how far Wales are progressing after a full campaign in League A of the Nations League, a full campaign among the heavyweights of European football. Norway 3-1 Wales - report and reaction Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "As we all know, that's not how it's panned out! After Ronaldo's appearance against Wales in Lisbon at the start of the Nations League, he's not featured since - and he's now called time on his Portugal career amid some controversy."
-      ]
-    },
-    {
-      "slug": "13612978",
-      "title": "'Outstanding' Dowman scores historic winner as England U21s beat France",
-      "url": "https://www.skysports.com/football/news/13612978/england-under-21s-3-2-france-under-21s-max-dowman-becomes-three-lions-youngest-ever-u21-scorer-with-dramatic-winner",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-dowman-england_7408188.jpg?20261116220011",
-      "excerpt": "Max Dowman became England Under-21s' youngest ever goalscorer by grabbing a late winner in a 3-2 victory over France at Ashton Gate.",
-      "published_label": "16 November 2026 · 19:07",
-      "published_iso": "2026-11-16T19:07:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Max Dowman became England Under-21s' youngest ever goalscorer by grabbing a late winner in a 3-2 victory over France at Ashton Gate.",
-        "The 16-year-old Arsenal prodigy became England's youngest Under-21s player last week in the defeat to Portugal - but made even more history by popping up with an 89th-minute winner on his second appearance, as he played the entire game. How the teams lined up | Match stats",
-        "At 16 years and 320 days old, Dowman is the youngest-ever goalscorer for England at this level. The previous record was held by current England men's senior star Jude Bellingham - who broke the record aged 17 years and 67 days against Kosovo in September 2020.",
-        "\"We see how good on the ball he is but he was outstanding off the ball,\" said England U21s boss Lee Carsley. \"You have to keep reminding yourself about his age."
-      ]
-    },
-    {
-      "slug": "13612957",
-      "title": "Can Frank keep Palace up? How his Brentford numbers could translate at the Eagles",
-      "url": "https://www.skysports.com/football/video/13612957/can-thomas-frank-steer-crystal-palace-to-safety-what-his-brentford-stats-tell-us",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-thomas-frank-crystal-palace_7408012.jpg?20261116180130",
-      "excerpt": "Sky Sports’ Kaveh Solhekol and Dave Reed analyse Thomas Frank’s arrival at Crystal Palace, his challenge to keep the Eagles in the Premier League and whether or not his Brentford success can be replicated at Selhurst Park.",
-      "published_label": "16 November 2026 · 17:54",
-      "published_iso": "2026-11-16T17:54:00+00:00",
+      "image": "https://e0.365dm.com/25/10/768x432/skysports-liverpool-manchester-united_7050710.jpg?20251014121121",
+      "excerpt": "Ahead of the Super Sunday clash between Liverpool and Manchester United, we look back at some of the greatest Premier League goals between the two rival clubs.",
+      "published_label": "29 August 2024 · 16:00",
+      "published_iso": "2024-08-29T16:00:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Sky Sports’ Kaveh Solhekol and Dave Reed analyse Thomas Frank’s arrival at Crystal Palace, his challenge to keep the Eagles in the Premier League and whether or not his Brentford success can be replicated at Selhurst Park."
+        "Ahead of the Super Sunday clash between Liverpool and Manchester United, we look back at some of the greatest Premier League goals between the two rival clubs."
       ]
     }
   ]
