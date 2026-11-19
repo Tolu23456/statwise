@@ -1,10 +1,56 @@
 {
-  "synced_at": "2026-11-19T10:21:52+00:00",
+  "synced_at": "2026-11-19T20:38:28+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13613996",
+      "title": "McInnes provides fitness update on key duo as criticism addressed",
+      "url": "https://www.skysports.com/football/video/13613996/rangers-derek-mcinnes-provides-fitness-update-on-lawrence-shankland-cammy-devlin-and-another-duo-as-criticism-addressed",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mcinnes-rangers_7410583.jpg?20261119145134",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13613875",
+      "title": "Assessing Iraola's Liverpool start",
+      "url": "https://www.skysports.com/football/news/13613875/andoni-iraolas-liverpool-start-assessed-creating-chaos-going-direct-and-fixing-leaky-defence",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-liverpool_7410291.jpg?20261119104807",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13613998",
+      "title": "McInnes: Pocognoli pile-on has been 'outrageous'",
+      "url": "https://www.skysports.com/football/video/13613998/derek-mcinnes-criticism-towards-scotland-head-coach-sebastien-pocognoli-outrageous-amid-tough-start",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/09/768x432/skysports-sebastien-pocognoli_7364727.jpg?20260930084937",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13613832",
+      "title": "Man Utd announce financial results as revenue and wages rise",
+      "url": "https://www.skysports.com/football/news/13613832/man-utd-latest-financial-results-revealed-as-revenue-and-wages-increase",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/09/768x432/skysports-ratcliffe-berrada_7359340.jpg?20260923124639",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13596475",
       "title": "Rice: More to come from Arsenal's £105m 'bargain'",
@@ -260,6 +306,134 @@
       "byline": ""
     },
     {
+      "slug": "13614117",
+      "title": "England handed suspended away ticket ban for fans' chants in Spain",
+      "url": "https://www.skysports.com/football/news/13614117/england-handed-suspended-away-ticket-ban-and-fine-by-uefa-for-fans-racist-and-or-discriminatory-behaviour-in-spain",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-spain-nations_7410817.jpg?20261119184822",
+      "excerpt": "England have been given a suspended away ticket ban by UEFA for \"racist and/or discriminatory behaviour\" by their fans during the 3-2 win over Spain in Madrid.",
+      "published_label": "19 November 2026 · 18:36",
+      "published_iso": "2026-11-19T18:36:00+00:00",
+      "byline": "Anthony Joseph",
+      "body": [
+        "England have been given a suspended away ticket ban by UEFA for \"racist and/or discriminatory behaviour\" by their fans during the 3-2 win over Spain in Madrid.",
+        "The punishment is a one-match ban and is suspended for a \"probationary period\" of two years.",
+        "Sky Sports News understands the punishment is for anti-Catholic and anti-Irish chanting during the Nations League match.",
+        "A spokesperson for The FA told Sky Sports News : \" We will not tolerate this unacceptable and deeply offensive chanting, and will work with the police who attend all England home and away matches to identify the perpetrators and take the necessary action.\""
+      ]
+    },
+    {
+      "slug": "13614107",
+      "title": "What playing style can Man Utd fans expect from Pochettino?",
+      "url": "https://www.skysports.com/football/video/13614107/premier-league-what-playing-style-can-manchester-utd-fans-expect-from-mauricio-pochettino",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-utd_7410816.jpg?20261119184115",
+      "excerpt": "Sky Sports' Adam Binnie analyses the philosophy of Mauricio Pochettino based on his previous roles and explains what Manchester United fans can expect from him.",
+      "published_label": "19 November 2026 · 18:18",
+      "published_iso": "2026-11-19T18:18:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Adam Binnie analyses the philosophy of Mauricio Pochettino based on his previous roles and explains what Manchester United fans can expect from him."
+      ]
+    },
+    {
+      "slug": "13611640",
+      "title": "PL Predictions: How will your club fare this weekend?",
+      "url": "https://www.skysports.com/football/news/13611640/premier-league-predictions-and-jones-knows-best-bets-newcastle-vs-arsenal-liverpool-vs-manchester-united-and-much-more",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
+      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight as the Premier League returns from the international break. Manchester City vs Fulham, Saturday 12.30pm",
+      "published_label": "19 November 2026 · 18:00",
+      "published_iso": "2026-11-19T18:00:00+00:00",
+      "byline": "Lewis Jones",
+      "body": [
+        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight as the Premier League returns from the international break. Manchester City vs Fulham, Saturday 12.30pm",
+        "This 12.30pm kick-off slot has been particularly fruitful for goals backers in the game after the November international break. Perhaps it's the disrupted defensive structures or simply players taking a little longer to rediscover their rhythm. Whatever the reason, the goals tend to flow.",
+        "The last 15 fixtures played in this slot immediately after an international break have averaged a whopping 3.5 goals per game. All 15 have cleared the over 1.5 goals line, while 11 have produced three or more goals.",
+        "There's another layer to this argument, too. The Premier League is currently running below expectation in the goals department. We're seeing 2.73 goals per game despite the underlying expected goals data suggesting that figure should be closer to 2.92. Pochettino begins Man Utd tenure with testing trip to Liverpool - Premier League Talking Points Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺 Premier League predictor - predict the fixtures each gameweek"
+      ]
+    },
+    {
+      "slug": "13614066",
+      "title": "Frick targets top-six at Aberdeen as 'heavy metal football' explained!",
+      "url": "https://www.skysports.com/football/video/13614066/mario-frick-aberdeen-head-coach-reveals-top-six-target-as-heavy-metal-football-explained",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/8287d2ce8bade4b908d85064e9a316cea501c36507669a740cda3b72b498b134_7410726.jpg?20261119165215",
+      "excerpt": "New Aberdeen head coach Mario Frick reveals his top-six target after taking over at Pittodrie as his 'heavy metal' football style is explained.",
+      "published_label": "19 November 2026 · 16:50",
+      "published_iso": "2026-11-19T16:50:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "New Aberdeen head coach Mario Frick reveals his top-six target after taking over at Pittodrie as his 'heavy metal' football style is explained."
+      ]
+    },
+    {
+      "slug": "13614059",
+      "title": "PL board members given extra legal protection amid threat of actions linked to City case",
+      "url": "https://www.skysports.com/football/video/13614059/premier-league-board-members-given-extra-legal-protection-amid-threat-of-actions-linked-to-man-city-case",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kaveh-man-city_7410783.jpg?20261119175318",
+      "excerpt": "Eighteen clubs are reported to have supported changes to the league's articles at a clubs meeting in central London on Thursday, which extend protections provided to individual board members to enable them to freely carry out their duties.",
+      "published_label": "19 November 2026 · 16:25",
+      "published_iso": "2026-11-19T16:25:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Eighteen clubs are reported to have supported changes to the league's articles at a clubs meeting in central London on Thursday, which extend protections provided to individual board members to enable them to freely carry out their duties."
+      ]
+    },
+    {
+      "slug": "13614053",
+      "title": "Bevington: Frick the 'unanimous' choice after as Dons' 'global search' process revealed",
+      "url": "https://www.skysports.com/football/video/13614053/aberdeen-mario-frick-the-unanimous-choice-after-as-dons-global-search-process-revealed-by-ceo-adrian-bevington",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/53c51063df9a253e909a2a7f59a5840ac349f47fafc38364c02a2b521f03d7f6_7410720.jpg?20261119164238",
+      "excerpt": "Aberdeen CEO Adrian Bevington discusses the 'global search' process to appoint Mario Frick as the club's head coach and why he was the 'unanimous' choice.",
+      "published_label": "19 November 2026 · 16:19",
+      "published_iso": "2026-11-19T16:19:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Aberdeen CEO Adrian Bevington discusses the 'global search' process to appoint Mario Frick as the club's head coach and why he was the 'unanimous' choice."
+      ]
+    },
+    {
+      "slug": "13614031",
+      "title": "PL clubs vote to cover legal costs of board members if Man City sponsors sue",
+      "url": "https://www.skysports.com/football/news/13614031/premier-league-clubs-vote-to-cover-legal-costs-if-man-city-sponsors-sue-competitions-board-members",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/09/768x432/skysports-premier-league-trophy_7361300.jpg?20260925172954",
+      "excerpt": "Premier League clubs have voted to cover the legal costs of their five board members if they are sued individually by Manchester City's sponsors.",
+      "published_label": "19 November 2026 · 15:26",
+      "published_iso": "2026-11-19T15:26:00+00:00",
+      "byline": "Kaveh Solhekol",
+      "body": [
+        "Premier League clubs have voted to cover the legal costs of their five board members if they are sued individually by Manchester City's sponsors.",
+        "In September, an independent commission found City guilty of breaking more than one hundred of the Premier League's financial rules between 2009 and 2018.",
+        "City are appealing after the commission found they had entered into \"sham\" contracts with sponsors. Premier League fixtures & scores | FREE PL highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Two of City's sponsors, Etihad Airways and Etisalat, have threatened the Premier League with legal action."
+      ]
+    },
+    {
+      "slug": "13613844",
+      "title": "Frick targets Premiership top-six for Aberdeen with 'heavy metal football'",
+      "url": "https://www.skysports.com/football/news/13613844/mario-frick-aberdeens-new-head-coach-targets-scottish-premiership-top-six-with-heavy-metal-football",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mario-frick-aberdeen_7410719.jpg?20261119164048",
+      "excerpt": "Aberdeen's new head coach Mario Frick will not just be happy with Scottish Premiership survival this season, insisting he wants a top-six finish.",
+      "published_label": "19 November 2026 · 15:00",
+      "published_iso": "2026-11-19T15:00:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "Aberdeen's new head coach Mario Frick will not just be happy with Scottish Premiership survival this season, insisting he wants a top-six finish.",
+        "The 52-year-old takes over with the side sitting 11th in the table following Stephen Robinson's dismissal after their 4-0 defeat at Hibernian before the international break.",
+        "Frick, who played 125 times for Liechtenstein, previously took charge of the national youth teams in his homeland before spells with Vaduz and Luzern, helping the latter to avoid relegation. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
+        "\"I had a very long career as a professional, so I know the pressure and I'm always optimist,\" he said."
+      ]
+    },
+    {
       "slug": "13612583",
       "title": "Seven years on from the sack at Spurs what sort of coach is Pochettino now?",
       "url": "https://www.skysports.com/football/news/13612583/mauricio-pochettino-at-man-utd-seven-years-on-from-the-sack-at-spurs-what-sort-of-coach-is-he-now-we-will-soon-find-out",
@@ -339,6 +513,17 @@
       "body": [
         "David Reed runs through who will be assisting Mauricio Pochettino as his backroom staff at Manchester United."
       ]
+    },
+    {
+      "slug": "england-secure-odi-series-win-as-sandpapergate-takes-fresh-twist",
+      "title": "England Secure ODI Series Win Over Australia as Sandpapergate Takes Fr",
+      "url": "https://www.sportytrader.com/en-gb/news/england-secure-odi-series-win-as-sandpapergate-takes-fresh-twist/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/cricket/nz-vs-ind-first-test-2026.webp",
+      "excerpt": "Harry Brook’s ruthless England side wrapped up an impressive 2-1 ODI series victory over Australia in Hobart yesterday, but their emphatic 97-run triumph was completely o",
+      "published_label": "19 November 2026 · 07:30",
+      "published_iso": "2026-11-19T07:30:00+00:00",
+      "byline": "Devesh Jaganath"
     },
     {
       "slug": "13613702",
@@ -498,209 +683,6 @@
       "kind": "video",
       "body": [
         "The Sky Sports Digital team have given their HOT TAKES on the Premier League's Top 25 players..."
-      ]
-    },
-    {
-      "slug": "13613613",
-      "title": "The Premier League's Top 10 Players",
-      "url": "https://www.skysports.com/football/video/13613613/the-premier-leagues-top-10-players",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-pl-top_7409685.jpg?20261118151852",
-      "excerpt": "Who are the best players in the Premier League right now? We asked the Sky Sports reporters and journalists to rank the contenders - find out the top ten.",
-      "published_label": "18 November 2026 · 17:00",
-      "published_iso": "2026-11-18T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Who are the best players in the Premier League right now? We asked the Sky Sports reporters and journalists to rank the contenders - find out the top ten."
-      ]
-    },
-    {
-      "slug": "13613587",
-      "title": "Poch arrives in Manchester as Utd era begins",
-      "url": "https://www.skysports.com/football/video/13613587/mauricio-pochettino-arrives-in-manchester-as-mancester-united-era-begins",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7409601.jpg?20261118131932",
-      "excerpt": "Mauricio Pochettino is seen arriving in Manchester for his new era at Old Trafford.",
-      "published_label": "18 November 2026 · 13:10",
-      "published_iso": "2026-11-18T13:10:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Mauricio Pochettino is seen arriving in Manchester for his new era at Old Trafford."
-      ]
-    },
-    {
-      "slug": "13613572",
-      "title": "'They're frustrated!' – JJ Gabriel's departure causes upset at Man Utd",
-      "url": "https://www.skysports.com/football/video/13613572/why-jj-gabriel-s-departure-has-caused-upset-at-manchester-united",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7409562.jpg?20261118123457",
-      "excerpt": "Sky Sports’ Dan Khan discusses JJ Gabriel’s departure from Manchester United and why the club have been left disappointed with how the farewell has come about.",
-      "published_label": "18 November 2026 · 12:32",
-      "published_iso": "2026-11-18T12:32:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports’ Dan Khan discusses JJ Gabriel’s departure from Manchester United and why the club have been left disappointed with how the farewell has come about."
-      ]
-    },
-    {
-      "slug": "13613567",
-      "title": "'Marvellous!' - Mata's top FIVE goals in the Premier League",
-      "url": "https://www.skysports.com/football/video/13613567/juan-matas-top-five-goals-in-the-premier-league-for-chelsea-and-manchester-united",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7409563.jpg?20261118123543",
-      "excerpt": "Upon Juan Mata's retirement from football, relive his best five goals in the Premier League for both Chelsea and Manchester United.",
-      "published_label": "18 November 2026 · 12:23",
-      "published_iso": "2026-11-18T12:23:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Upon Juan Mata's retirement from football, relive his best five goals in the Premier League for both Chelsea and Manchester United."
-      ]
-    },
-    {
-      "slug": "13613260",
-      "title": "Man Utd expected to back Poch in January transfer window",
-      "url": "https://www.skysports.com/football/news/13613260/man-utd-transfer-news-calvin-bassey-and-jarrad-branthwaite-among-targets-with-mauricio-pochettino-set-to-be-backed-in-january",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-transfers_7408772.jpg?20261117144218",
-      "excerpt": "Manchester United head coach Mauricio Pochettino is expected to be backed in the January transfer window as the club aim to address their disappointing start to the season.",
-      "published_label": "18 November 2026 · 12:00",
-      "published_iso": "2026-11-18T12:00:00+00:00",
-      "byline": "Danyal Khan",
-      "body": [
-        "Manchester United head coach Mauricio Pochettino is expected to be backed in the January transfer window as the club aim to address their disappointing start to the season.",
-        "A left-back, centre-back and forward are areas the club are looking to potentially strengthen in January with Pochettino expected to have input on targets they will pursue.",
-        "Despite the club's hierarchy feeling the team should be further up the table, there is also an acknowledgement that they could have further strengthened the squad in the summer in areas where they lacked depth.",
-        "Sky Sports News understands Manchester United already had plans to move in the upcoming window under former head coach Michael Carrick, before he was sacked last month following United's worst start to a league season for 40 years."
-      ]
-    },
-    {
-      "slug": "13613466",
-      "title": "'You need to run together!' - Pochettino's first message to Man Utd players",
-      "url": "https://www.skysports.com/football/video/13613466/mauricio-pochettinos-gives-his-first-message-to-manchester-united-players",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7409250.jpg?20261118072425",
-      "excerpt": "Mauricio Pochettino gives his last press conference as US Men's National Team head coach but makes his first plea for his new home at Manchester United.",
-      "published_label": "18 November 2026 · 07:15",
-      "published_iso": "2026-11-18T07:15:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Mauricio Pochettino gives his last press conference as US Men's National Team head coach but makes his first plea for his new home at Manchester United."
-      ]
-    },
-    {
-      "slug": "new-zealand-vs-india-first-test-basin-reserve",
-      "title": "Shubman Gill’s New-Look India Hoping to End Their 17-Year New Zealand",
-      "url": "https://www.sportytrader.com/en-in/news/new-zealand-vs-india-first-test-basin-reserve/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/daniel_james.webp",
-      "excerpt": "Buoyed by their white-ball success of their tour to New Zealand, Shubman Gill’s youthful Indian team now prepares to brave Wellington’s blustery conditions tomorrow in th",
-      "published_label": "18 November 2026 · 06:00",
-      "published_iso": "2026-11-18T06:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13613431",
-      "title": "Bellamy unfazed by Portugal loss and remains in high spirits",
-      "url": "https://www.skysports.com/football/video/13613431/wales-craig-bellamy-remains-positive-despite-loss-to-portugal-in-nations-league-group-stages",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-wales_7409163.jpg?20261117231653",
-      "excerpt": "Craig Bellamy speaks after Wales' loss in the Nations League group stage to Portugal.",
-      "published_label": "17 November 2026 · 23:13",
-      "published_iso": "2026-11-17T23:13:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Craig Bellamy speaks after Wales' loss in the Nations League group stage to Portugal."
-      ]
-    },
-    {
-      "slug": "13613766",
-      "title": "Papers: Pochettino could help Man Utd's pursuit of Paz",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13613766/manchester-united-pursuit-of-nico-paz-boosted-by-mauricio-pochettino-arrival-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Thursday's newspapers... PREMIER LEAGUE",
-      "published_label": "17 November 2026 · 22:58",
-      "published_iso": "2026-11-17T22:58:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Thursday's newspapers... PREMIER LEAGUE",
-        "Mauricio Pochettino's arrival at Man Utd could help them sign Como star Nico Paz, although Real Madrid retain an 80m Euro option to re-sign the midfielder in 2027 - The Sun Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "Middlesbrough boss Kim Hellberg is convinced Will Lankshear will stick with the Championship side in the January transfer window despite interest from Premier League sides - The Sun CHAMPIONS LEAGUE",
-        "Aston Villa have been told their Champions League clash with Galatasaray on Tuesday will still take place despite the worrying state of the pitch in Turkey - Daily Mail BUNDESLIGA"
-      ]
-    },
-    {
-      "slug": "13613427",
-      "title": "Papers: Poch to appoint Man Utd's first-ever female coach",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13613427/man-utd-boss-mauricio-pochettino-to-appoint-clubs-first-ever-female-coach-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Wednesday's newspapers... PREMIER LEAGUE",
-      "published_label": "17 November 2026 · 22:58",
-      "published_iso": "2026-11-17T22:58:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Wednesday's newspapers... PREMIER LEAGUE",
-        "Manchester United are set to make history by hiring their very first-ever female coach, with Mauricio Pochettino bringing over strength and conditioning coach Silvia Tuya with him - The Sun",
-        "Arsenal will face competition from Barcelona and Paris Saint-Germain for Bournemouth attacker Eli Junior Kroupi - The Sun Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "Matthias Jaissle's hopes of an Ivan Toney reunion have been dashed, but he still wants a proven striker to spark Newcastle's season into life - The Sun"
-      ]
-    },
-    {
-      "slug": "13611876",
-      "title": "The three teams England could face in the Nations League quarter-finals",
-      "url": "https://www.skysports.com/football/news/13611876/nations-league-2026-27-england-into-quarter-finals-but-who-will-they-play-in-last-eight-in-march",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bellingham-kane-england_7407369.jpg?20261115215740",
-      "excerpt": "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
-      "published_label": "17 November 2026 · 22:00",
-      "published_iso": "2026-11-17T22:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "England have topped their group in the Nations League after an incredible win over Spain - but who will they play in the last eight in March? Why taking top spot could be key...",
-        "England's win over Spain in Madrid means they have finished top of the group.",
-        "That matters as the winners of the Nations League tier A groups are seeded for the quarter-final draw. They will play teams which have finished runners-up in other groups. They will also play the second leg of their quarter-final at home. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables Who could England face in the quarter-finals?",
-        "Belgium finished runners-up in Group A1, so they are a potential last-eight opponent for England."
-      ]
-    },
-    {
-      "slug": "13613414",
-      "title": "Northern Ireland promoted to Nations League top tier with draw in Hungary",
-      "url": "https://www.skysports.com/football/news/13613414/hungary-1-1-northern-ireland-justin-devennys-superb-strike-fires-michael-oneills-side-into-top-tier-of-nations-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-northern-ireland_7409115.jpg?20261117215219",
-      "excerpt": "Justin Devenny's superb strike saw Northern Ireland earn promotion to the top tier of the Nations League with a hard-fought 1-1 draw away to closest challengers Hungary in Budapest.",
-      "published_label": "17 November 2026 · 21:49",
-      "published_iso": "2026-11-17T21:49:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Justin Devenny's superb strike saw Northern Ireland earn promotion to the top tier of the Nations League with a hard-fought 1-1 draw away to closest challengers Hungary in Budapest.",
-        "Barnabas Varga ended Northern Ireland's proud record of not having conceded in this campaign when he fired the hosts in front after 35 minutes - a goal that also sent Hungary to the top of the group. How the teams lined up | Stats Nations League tables",
-        "But moments after Isaac Price had hit the post for Michael O'Neill's young side, Devenny smashed the ball into the top left-hand corner in the 65th minute to restore Northern Ireland's one-point advantage as group leaders.",
-        "The visitors were on the back foot for much of the first half, with Hungary captain Dominik Szoboszlai hitting the post, but O'Neill, serving a touchline ban in the stands as former captain Steven Davis led things from the touchline, orchestrated key substitutions."
-      ]
-    },
-    {
-      "slug": "13613146",
-      "title": "Mowbray steps down from Blackburn due to health issues",
-      "url": "https://www.skysports.com/football/news/13613146/tony-mowbray-steps-down-as-blackburn-rovers-head-coach-due-to-health-issues",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-tony-mowbray-blackburn_7408470.jpg?20261117101155",
-      "excerpt": "Tony Mowbray has stepped down from his role as Blackburn Rovers head coach due to health issues.",
-      "published_label": "17 November 2026 · 10:00",
-      "published_iso": "2026-11-17T10:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Tony Mowbray has stepped down from his role as Blackburn Rovers head coach due to health issues.",
-        "The 62-year-old returned to football at West Brom last year following his recovery from bowel cancer, before taking charge at Blackburn in June.",
-        "In a statement, Mowbray said: \"Unfortunately, due to health issues, I have to step back from my role as head coach of Blackburn Rovers.",
-        "\"I'm immensely proud of this group of players. Their dedication and professionalism have given us some memorable performances and wins, and I've loved working with them."
       ]
     }
   ]
