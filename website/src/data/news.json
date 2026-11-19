@@ -1,33 +1,10 @@
 {
-  "synced_at": "2026-11-19T00:23:45+00:00",
+  "synced_at": "2026-11-19T10:21:52+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13613674",
-      "title": "Sporting stars' biggest glow-ups in last 13 years",
-      "url": "https://www.skysports.com/football/video/13613674/gta-vi-launch-day-sporting-stars-biggest-glow-ups-between-2013-and-2026",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-gta-vi-sport_7409753.jpg?20261118171439",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13613146",
-      "title": "Mowbray steps down from Blackburn due to health issues",
-      "url": "https://www.skysports.com/football/news/13613146/tony-mowbray-steps-down-as-blackburn-rovers-head-coach-due-to-health-issues",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-tony-mowbray-blackburn_7408470.jpg?20261117101155",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13596475",
       "title": "Rice: More to come from Arsenal's £105m 'bargain'",
@@ -281,6 +258,117 @@
       "published_label": "",
       "published_iso": "",
       "byline": ""
+    },
+    {
+      "slug": "13612583",
+      "title": "Seven years on from the sack at Spurs what sort of coach is Pochettino now?",
+      "url": "https://www.skysports.com/football/news/13612583/mauricio-pochettino-at-man-utd-seven-years-on-from-the-sack-at-spurs-what-sort-of-coach-is-he-now-we-will-soon-find-out",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7405659.jpg?20261113093243",
+      "excerpt": "What Mauricio Pochettino achieved with Tottenham Hotspur in the previous decade looks even more impressive now than it did at the time. Manchester United really should have turned to the popular Argentine coach years ago.",
+      "published_label": "19 November 2026 · 10:00",
+      "published_iso": "2026-11-19T10:00:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "What Mauricio Pochettino achieved with Tottenham Hotspur in the previous decade looks even more impressive now than it did at the time. Manchester United really should have turned to the popular Argentine coach years ago.",
+        "In his five full seasons in charge, Spurs were in the Premier League's top five each time - a run that has never been bettered in their history. He took the club above Arsenal for the first time in a generation and into a Champions League final for the first time ever.",
+        "Silverware was missing, much to the amusement of his critics, but the charges against Manchester City serve as a reminder that he was playing with the deck stacked against him. He overachieved and it is his thrilling football that endures in the memory.",
+        "The arc of history has bent towards his intense style of play. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13613559",
+      "title": "Man City have problems - is Fernandez their most obvious?",
+      "url": "https://www.skysports.com/football/news/13613559/man-city-vs-fulham-has-enzo-fernandez-given-enzo-maresca-a-problem-in-midfield-and-how-does-he-fix-the-imbalance",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-city_7409613.jpg?20261118134750",
+      "excerpt": "Enzo Maresca is being forced to work within an unprecedented set of circumstances this season. Up until recently, his fixation on football matters served to quieten the noise around the club. But now the anomalous nature of Manchester City'…",
+      "published_label": "19 November 2026 · 09:00",
+      "published_iso": "2026-11-19T09:00:00+00:00",
+      "byline": "Laura Hunter",
+      "body": [
+        "Enzo Maresca is being forced to work within an unprecedented set of circumstances this season. Up until recently, his fixation on football matters served to quieten the noise around the club. But now the anomalous nature of Manchester City's situation is apparent on and off the pitch.",
+        "Maresca began with seven straight wins in all competitions. He has since suffered a hat-trick of Premier League defeats. Concerns over performance levels in certain phases existed from the start but have come into sharper focus as results have nosedived.",
+        "Stylistically, City are far too open; just as easy to play through as play over. Only Newcastle (20) have faced more shots from fast breaks since the start of term than City's 17, conceding two goals from such situations in defeat to Nottingham Forest before the international break. Man City fixtures & scores | FREE Man City highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Transition moments have been City's kryptonite long before the Maresca era. However their current setup leaves them vulnerable to the problem persisting - or worsening. The make-up of Elliot Anderson in a double pivot with Enzo Fernandez is a poor stylistic fit if Rayan Cherki is selected as the other central player. It's too easy to overrun."
+      ]
+    },
+    {
+      "slug": "13613667",
+      "title": "'One HELL of a save!' - Raya's best Premier League saves for Arsenal",
+      "url": "https://www.skysports.com/football/video/13613667/david-rayas-best-saves-for-arsenal-in-the-premier-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-david-raya-arsenal_7409771.jpg?20261118175207",
+      "excerpt": "Watch a collection of David Raya's best Premier League saves for Arsenal",
+      "published_label": "19 November 2026 · 09:00",
+      "published_iso": "2026-11-19T09:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Watch a collection of David Raya's best Premier League saves for Arsenal"
+      ]
+    },
+    {
+      "slug": "13613208",
+      "title": "Premier League talking points: Trial by Anfield as Poch begins Man Utd tenure",
+      "url": "https://www.skysports.com/football/news/13613208/mauricio-pochettino-begins-man-utd-tenure-with-testing-trip-to-liverpool-premier-league-talking-points",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league_7408877.jpg?20261117153906",
+      "excerpt": "The Premier League is back after the recent international break and the Sky Sports football writers dissect all the major talking points ahead of another busy weekend's action. Man City vs Fulham: Cottagers ideal opponents to get City back…",
+      "published_label": "19 November 2026 · 08:00",
+      "published_iso": "2026-11-19T08:00:00+00:00",
+      "byline": "Sky Sports Football",
+      "body": [
+        "The Premier League is back after the recent international break and the Sky Sports football writers dissect all the major talking points ahead of another busy weekend's action. Man City vs Fulham: Cottagers ideal opponents to get City back to winning ways",
+        "Are Man City in crisis heading into Saturday lunchtime's clash against Fulham, with Enzo Maresca's side having lost their previous three Premier League contests to lose top spot to Arsenal?",
+        "Those trio of reverses against Aston Villa, Brighton and, just prior to the international break, Nottingham Forest, mean City have now lost as many times as in their previous 36 league outings.",
+        "Since the start of 2007-08, though, City have only been beaten in four successive top-flight games on two occasions, in August 2008 and December 2024, and it would take a massive leap of faith to suggest Fulham are the team to inflict such ignominy on them this weekend."
+      ]
+    },
+    {
+      "slug": "13613830",
+      "title": "Recognise any faces? Who's who in Pochettino's Man Utd backroom staff",
+      "url": "https://www.skysports.com/football/video/13613830/who-is-in-mauricio-pochettino-backroom-staff-at-manchester-united",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-united_7410133.jpg?20261119074741",
+      "excerpt": "David Reed runs through who will be assisting Mauricio Pochettino as his backroom staff at Manchester United.",
+      "published_label": "19 November 2026 · 07:44",
+      "published_iso": "2026-11-19T07:44:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "David Reed runs through who will be assisting Mauricio Pochettino as his backroom staff at Manchester United."
+      ]
+    },
+    {
+      "slug": "13613702",
+      "title": "'Age is not a barrier' - Meet the youngest manager in SPFL history",
+      "url": "https://www.skysports.com/football/video/13613702/martin-fellowes-dumbarton-head-coach-on-becoming-the-youngest-manager-in-spfl-history-age-is-not-a-barrier",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/image_7409810.jpg?20261118190306",
+      "excerpt": "Martin Fellowes discusses his journey to becoming the youngest manager in SPFL history after being appointed Dumbarton head coach at the age of 28.",
+      "published_label": "19 November 2026 · 07:00",
+      "published_iso": "2026-11-19T07:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Martin Fellowes discusses his journey to becoming the youngest manager in SPFL history after being appointed Dumbarton head coach at the age of 28."
+      ]
+    },
+    {
+      "slug": "13613674",
+      "title": "GTA VI launch day! Sporting stars' biggest glow-ups in last 13 years",
+      "url": "https://www.skysports.com/football/video/13613674/gta-vi-launch-day-sporting-stars-biggest-glow-ups-between-2013-and-2026",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-gta-vi-sport_7409753.jpg?20261118171439",
+      "excerpt": "On Grand Theft Auto VI launch day, watch sporting stars' biggest glow-ups in the last 13 years between game releases.",
+      "published_label": "19 November 2026 · 06:00",
+      "published_iso": "2026-11-19T06:00:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "On Grand Theft Auto VI launch day, watch sporting stars' biggest glow-ups in the last 13 years between game releases."
+      ]
     },
     {
       "slug": "13613600",
@@ -599,99 +687,20 @@
       ]
     },
     {
-      "slug": "13613407",
-      "title": "Parrott fires Republic of Ireland into Nations League play-offs",
-      "url": "https://www.skysports.com/football/news/13613407/republic-of-ireland-3-0-kosovo-troy-parrot-scores-twice-to-send-heimir-hallgrimssons-side-into-the-nations-league-play-offs",
+      "slug": "13613146",
+      "title": "Mowbray steps down from Blackburn due to health issues",
+      "url": "https://www.skysports.com/football/news/13613146/tony-mowbray-steps-down-as-blackburn-rovers-head-coach-due-to-health-issues",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ireland-kosovo_7409108.jpg?20261117214636",
-      "excerpt": "Troy Parrott fired the Republic of Ireland into a Nations League play-off berth with two penalties in their 3-0 victory over 10-man Kosovo at the Aviva Stadium in Dublin.",
-      "published_label": "17 November 2026 · 21:44",
-      "published_iso": "2026-11-17T21:44:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-tony-mowbray-blackburn_7408470.jpg?20261117101155",
+      "excerpt": "Tony Mowbray has stepped down from his role as Blackburn Rovers head coach due to health issues.",
+      "published_label": "17 November 2026 · 10:00",
+      "published_iso": "2026-11-17T10:00:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Troy Parrott fired the Republic of Ireland into a Nations League play-off berth with two penalties in their 3-0 victory over 10-man Kosovo at the Aviva Stadium in Dublin.",
-        "The result ensured the Republic finished runners-up in group B3, and also propelled the Euro 2028 co-hosts into a coveted pot-two seeding for next month's qualifying draw for that competition. How the teams lined up | Stats Nations League tables",
-        "Tuesday night's contest turned on its head in the 26th minute, when Kreshnik Hajrizi was sent off for handling the ball off the line, and Parrott took advantage with a top-corner finish.",
-        "The Real Betis striker doubled the Republic's lead from the spot five minutes after the restart, and Jack Moylan added a 75th-minute cushion to keep alive the hosts' hopes of booking a place in League A for the first time through the March play-off."
-      ]
-    },
-    {
-      "slug": "13613404",
-      "title": "Wales beaten by 10-man Portugal as Neto scores but is sent off",
-      "url": "https://www.skysports.com/football/news/13613404/wales-2-3-portugal-craig-bellamys-side-lose-final-nations-league-group-a4-match-as-pedro-neto-sent-off",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wales-portugal_7409090.jpg?20261117212441",
-      "excerpt": "Wales ended their Nations League group campaign with a 3-2 defeat against 10-man Portugal in Cardiff after Chelsea's Pedro Neto was sent off.",
-      "published_label": "17 November 2026 · 21:40",
-      "published_iso": "2026-11-17T21:40:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Wales ended their Nations League group campaign with a 3-2 defeat against 10-man Portugal in Cardiff after Chelsea's Pedro Neto was sent off.",
-        "Although there was little riding on the contest, with Wales guaranteed a League A relegation/promotion play-off in March and Portugal having qualified for the quarter-finals, the two sides produced an entertaining spectacle.",
-        "Portugal skipper Bruno Fernandes blasted the opener after 11 minutes, but that was immediately wiped out by David Brooks' ninth goal for Wales. As it happened | Teams | Stats Nations League tables",
-        "Sorba Thomas broke free to put Wales ahead before the break, but again there was a quickfire response as Neto pounced to restore parity."
-      ]
-    },
-    {
-      "slug": "13613396",
-      "title": "Will Arsenal reach 100 points this Premier League season?",
-      "url": "https://www.skysports.com/football/video/13613396/arsenal-can-the-gunners-reach-legendary-status-by-breaking-manchester-citys-centurion-points-tally",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7409078.jpg?20261117210021",
-      "excerpt": "On the Premier League Show, the possibility of Arsenal reaching the landmark 100-point tally at the end of the season is discussed.",
-      "published_label": "17 November 2026 · 20:57",
-      "published_iso": "2026-11-17T20:57:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "On the Premier League Show, the possibility of Arsenal reaching the landmark 100-point tally at the end of the season is discussed."
-      ]
-    },
-    {
-      "slug": "13613375",
-      "title": "Barnes: Bruno return and Arsenal test just what we need",
-      "url": "https://www.skysports.com/football/video/13613375/harvey-barnes-we-need-bruno-guimaraes-reunion-and-arsenal-test-right-now",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-newcastle-arsena_7409036.jpg?20261117194505",
-      "excerpt": "Harvey Barnes insists that the return of Bruno Guimaraes to St James' Park, along with the visit of champions Arsenal, is just what Newcastle need to kickstart their season.",
-      "published_label": "17 November 2026 · 19:28",
-      "published_iso": "2026-11-17T19:28:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Harvey Barnes insists that the return of Bruno Guimaraes to St James' Park, along with the visit of champions Arsenal, is just what Newcastle need to kickstart their season."
-      ]
-    },
-    {
-      "slug": "13613370",
-      "title": "Henderson: I'm trying to make an impact on and off the pitch",
-      "url": "https://www.skysports.com/football/video/13613370/chelsea-jordan-henderson-reflects-on-the-responsibility-and-impact-he-has-made-in-the-chelsea-squad",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-chelsea-premier-league_7409014.jpg?20261117190254",
-      "excerpt": "Jordan Henderson explains how he is trying to make an impact on and off the pitch at Chelsea.",
-      "published_label": "17 November 2026 · 19:00",
-      "published_iso": "2026-11-17T19:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jordan Henderson explains how he is trying to make an impact on and off the pitch at Chelsea."
-      ]
-    },
-    {
-      "slug": "13613361",
-      "title": "JJ Gabriel says goodbye to Man Utd with Real Madrid move close",
-      "url": "https://www.skysports.com/football/news/13613361/jj-gabriel-transfer-news-manchester-united-teenager-announces-departure-from-club-amid-real-madrid-agreement",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-laliga_7396670.jpg?20261104095651",
-      "excerpt": "JJ Gabriel has announced he is leaving Manchester United as he looks forward to his \"next chapter\" at Real Madrid.",
-      "published_label": "17 November 2026 · 18:29",
-      "published_iso": "2026-11-17T18:29:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "JJ Gabriel has announced he is leaving Manchester United as he looks forward to his \"next chapter\" at Real Madrid.",
-        "Sky Sports News revealed earlier this month that Real have reached an agreement to sign the 16-year-old prodigy from United.",
-        "One source has told Sky Sports News a deal to take Gabriel to Real Madrid could be finalised in the next two to three days.",
-        "Gabriel is registered with Manchester United's academy until the end of the season but Real Madrid are intending to sign him in January. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+        "Tony Mowbray has stepped down from his role as Blackburn Rovers head coach due to health issues.",
+        "The 62-year-old returned to football at West Brom last year following his recovery from bowel cancer, before taking charge at Blackburn in June.",
+        "In a statement, Mowbray said: \"Unfortunately, due to health issues, I have to step back from my role as head coach of Blackburn Rovers.",
+        "\"I'm immensely proud of this group of players. Their dedication and professionalism have given us some memorable performances and wins, and I've loved working with them."
       ]
     }
   ]
