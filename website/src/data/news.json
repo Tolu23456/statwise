@@ -1,56 +1,10 @@
 {
-  "synced_at": "2026-11-19T20:38:28+00:00",
+  "synced_at": "2026-11-20T03:16:05+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13613996",
-      "title": "McInnes provides fitness update on key duo as criticism addressed",
-      "url": "https://www.skysports.com/football/video/13613996/rangers-derek-mcinnes-provides-fitness-update-on-lawrence-shankland-cammy-devlin-and-another-duo-as-criticism-addressed",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mcinnes-rangers_7410583.jpg?20261119145134",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13613875",
-      "title": "Assessing Iraola's Liverpool start",
-      "url": "https://www.skysports.com/football/news/13613875/andoni-iraolas-liverpool-start-assessed-creating-chaos-going-direct-and-fixing-leaky-defence",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-liverpool_7410291.jpg?20261119104807",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13613998",
-      "title": "McInnes: Pocognoli pile-on has been 'outrageous'",
-      "url": "https://www.skysports.com/football/video/13613998/derek-mcinnes-criticism-towards-scotland-head-coach-sebastien-pocognoli-outrageous-amid-tough-start",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/09/768x432/skysports-sebastien-pocognoli_7364727.jpg?20260930084937",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13613832",
-      "title": "Man Utd announce financial results as revenue and wages rise",
-      "url": "https://www.skysports.com/football/news/13613832/man-utd-latest-financial-results-revealed-as-revenue-and-wages-increase",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/09/768x432/skysports-ratcliffe-berrada_7359340.jpg?20260923124639",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13596475",
       "title": "Rice: More to come from Arsenal's £105m 'bargain'",
@@ -306,6 +260,55 @@
       "byline": ""
     },
     {
+      "slug": "13614174",
+      "title": "How Poch's first Man Utd training session was LEAKED online by drone footage!",
+      "url": "https://www.skysports.com/football/video/13614174/mauricio-pochettinos-first-manchester-united-training-session-leaked-by-drone-flying-over-carrington",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/ssn-man-u-spy_7410968.jpg?20261119220041",
+      "excerpt": "Sky Sports' football correspondent Rob Dorsett explains the extraordinary story that Mauricio Pochettino's first Manchester United training session has been leaked after a drone flew over Carrington.",
+      "published_label": "19 November 2026 · 21:43",
+      "published_iso": "2026-11-19T21:43:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' football correspondent Rob Dorsett explains the extraordinary story that Mauricio Pochettino's first Manchester United training session has been leaked after a drone flew over Carrington."
+      ]
+    },
+    {
+      "slug": "13614177",
+      "title": "Arsenal outclassed in defeat to dominant Lyon",
+      "url": "https://www.skysports.com/football/news/13614177/arsenal-women-0-2-lyon-women-gunners-automatic-champions-league-qualification-hopes-hanging-by-a-thread",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-russo-lyon_7410922.jpg?20261119204640",
+      "excerpt": "Arsenal’s hopes of automatic qualification to the Women’s Champions League quarter-finals are hanging by a thread after they were beaten 2-0 at home by a dominant Lyon in foggy conditions.",
+      "published_label": "19 November 2026 · 21:28",
+      "published_iso": "2026-11-19T21:28:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Arsenal’s hopes of automatic qualification to the Women’s Champions League quarter-finals are hanging by a thread after they were beaten 2-0 at home by a dominant Lyon in foggy conditions.",
+        "The French side, who beat Arsenal in the semi-finals last season, got the better of the Gunners again at Meadow Park on Thursday night with goals from Jule Brand and Melchie Dumornay in each half sealing the victory.",
+        "Arsenal barely laid a glove on Lyon - who are yet to concede a goal in this season's Champions League - and now sit eighth in the standings, three points adrift of fourth-placed Chelsea, after their first loss in five league phase matches. As it happened | Teams | Stats Women's Champions League table | Scores & Fixtures Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
+        "Emily Fox registered Arsenal's only shot on target of the game deep in stoppage-time and the home side could easily have conceded a few more had Marie-Antoinette Katoto not spurned two big opportunities."
+      ]
+    },
+    {
+      "slug": "13614159",
+      "title": "Drone footage of Pochettino's first Man Utd training session leaked online",
+      "url": "https://www.skysports.com/football/news/13614159/manchester-united-drone-footage-of-mauricio-pochettinos-first-training-session-leaked-online",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-united_7410943.png?20261119212913",
+      "excerpt": "Mauricio Pochettino’s first Manchester United training session today has been leaked online in a major security breach.",
+      "published_label": "19 November 2026 · 20:28",
+      "published_iso": "2026-11-19T20:28:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Mauricio Pochettino’s first Manchester United training session today has been leaked online in a major security breach.",
+        "The 12-minute drone footage over their Carrington training ground was uploaded onto YouTube.",
+        "It shows Pochettino doing various tactical drills with his new team as they prepare for their clash with Liverpool at Anfield on Sunday. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "United have signs around the Carrington area warning that use of drones are \"strictly prohibited\" and anyone caught \"will be reported for prosecution and subject to civil action\"."
+      ]
+    },
+    {
       "slug": "13614117",
       "title": "England handed suspended away ticket ban for fans' chants in Spain",
       "url": "https://www.skysports.com/football/news/13614117/england-handed-suspended-away-ticket-ban-and-fine-by-uefa-for-fans-racist-and-or-discriminatory-behaviour-in-spain",
@@ -431,6 +434,70 @@
         "The 52-year-old takes over with the side sitting 11th in the table following Stephen Robinson's dismissal after their 4-0 defeat at Hibernian before the international break.",
         "Frick, who played 125 times for Liechtenstein, previously took charge of the national youth teams in his homeland before spells with Vaduz and Luzern, helping the latter to avoid relegation. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
         "\"I had a very long career as a professional, so I know the pressure and I'm always optimist,\" he said."
+      ]
+    },
+    {
+      "slug": "13613998",
+      "title": "McInnes: Pocognoli pile-on has been 'outrageous'",
+      "url": "https://www.skysports.com/football/video/13613998/derek-mcinnes-criticism-towards-scotland-head-coach-sebastien-pocognoli-outrageous-amid-tough-start",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/09/768x432/skysports-sebastien-pocognoli_7364727.jpg?20260930084937",
+      "excerpt": "Rangers manager Derek McInnes says the criticism directed towards Scotland head coach Sebastien Pocognoli has been 'outrageous' amid a tough start as national team boss.",
+      "published_label": "19 November 2026 · 14:37",
+      "published_iso": "2026-11-19T14:37:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Rangers manager Derek McInnes says the criticism directed towards Scotland head coach Sebastien Pocognoli has been 'outrageous' amid a tough start as national team boss."
+      ]
+    },
+    {
+      "slug": "13613996",
+      "title": "McInnes provides fitness update on key duo as criticism addressed",
+      "url": "https://www.skysports.com/football/video/13613996/rangers-derek-mcinnes-provides-fitness-update-on-lawrence-shankland-cammy-devlin-and-another-duo-as-criticism-addressed",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mcinnes-rangers_7410583.jpg?20261119145134",
+      "excerpt": "Rangers manager Derek McInnes provides a fitness update on Lawrence Shankland, Cammy Devlin and another duo as criticism is addressed ahead of their Motherwell trip.",
+      "published_label": "19 November 2026 · 14:36",
+      "published_iso": "2026-11-19T14:36:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Rangers manager Derek McInnes provides a fitness update on Lawrence Shankland, Cammy Devlin and another duo as criticism is addressed ahead of their Motherwell trip."
+      ]
+    },
+    {
+      "slug": "13613832",
+      "title": "Man Utd announce financial results as revenue and wages rise",
+      "url": "https://www.skysports.com/football/news/13613832/man-utd-latest-financial-results-revealed-as-revenue-and-wages-increase",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/09/768x432/skysports-ratcliffe-berrada_7359340.jpg?20260923124639",
+      "excerpt": "Manchester United have released their latest financial results, with revenue and wages increasing.",
+      "published_label": "19 November 2026 · 14:35",
+      "published_iso": "2026-11-19T14:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Manchester United have released their latest financial results, with revenue and wages increasing.",
+        "The first quarter fiscal 2027 report covered three months up to September 30. It included the summer transfer window but not the sacking of Michael Carrick and subsequent hiring of Mauricio Pochettino.",
+        "It does include the club's return to the Champions League. However, only one of these matches were at home - a 4-0 win against Sabah. They played four further games at Old Trafford, and three away. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Manchester United's total revenues rose 4.1 per cent to £146.1m compared to the same period last year, while wages are up 8.6 per cent to £79.9m."
+      ]
+    },
+    {
+      "slug": "13613875",
+      "title": "Assessing Iraola's Liverpool start",
+      "url": "https://www.skysports.com/football/news/13613875/andoni-iraolas-liverpool-start-assessed-creating-chaos-going-direct-and-fixing-leaky-defence",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-liverpool_7410291.jpg?20261119104807",
+      "excerpt": "Liverpool head coach Andoni Iraola asked for judgements on his tenure to wait until after the November international break - we assess how the Basque is faring so far in his new role ahead of the visit of Manchester United in the Premier Le…",
+      "published_label": "19 November 2026 · 13:00",
+      "published_iso": "2026-11-19T13:00:00+00:00",
+      "byline": "Richard Morgan",
+      "body": [
+        "Liverpool head coach Andoni Iraola asked for judgements on his tenure to wait until after the November international break - we assess how the Basque is faring so far in his new role ahead of the visit of Manchester United in the Premier League on Super Sunday.",
+        "Iraola has been in charge at Anfield for less than six months after replacing Arne Slot in June following Liverpool's dismal Premier League title defence last season under the Dutchman.",
+        "The then champions could only manage an underwhelming fifth-place finish, 24 points worse off than when winning the league in 2024-25, with Slot paying with his job as a result. Between The Lines: Liverpool's unwanted record highlights creativity issue Got Sky? Watch Liverpool vs Man Utd LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "Iraola was identified as the man to not only get Liverpool back to winning ways, but to also do it in a 'heavy-metal' front-footed fashion that would get fans off their seats again after what he had achieved in three hugely successful campaigns at Bournemouth."
       ]
     },
     {
@@ -622,67 +689,20 @@
       ]
     },
     {
-      "slug": "13613691",
-      "title": "Hasselbaink: It might be time to sell Bruno",
-      "url": "https://www.skysports.com/football/video/13613691/should-man-utd-sell-bruno-fernandes-jimmy-floyd-hasselbaink-thinks-it-might-be-tim",
+      "slug": "13614185",
+      "title": "Papers: Fulham pushing to extend contract of Man Utd target",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13614185/fulham-pushing-to-extend-contract-of-man-utd-target-calvin-bassey-paper-talk",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hasselbaink-jimmy_7409801.jpg?20261118184819",
-      "excerpt": "Jimmy Floyd Hasselbaink feels it might be time for Manchester United to sell Bruno Fernandes.",
-      "published_label": "18 November 2026 · 18:34",
-      "published_iso": "2026-11-18T18:34:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jimmy Floyd Hasselbaink feels it might be time for Manchester United to sell Bruno Fernandes."
-      ]
-    },
-    {
-      "slug": "13613154",
-      "title": "Fernandes tumbles as new No 1 is crowned: Sky Sports' top 25 Premier League players",
-      "url": "https://www.skysports.com/football/news/13613154/bruno-fernandes-tumbles-as-new-no-1-is-crowned-sky-sports-ranks-the-premier-leagues-top-25-players-right-now",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-graphic-erling-haaland_7408870.jpg?20261117153443",
-      "excerpt": "Bruno Fernandes has been dethroned as the king of the Premier League in a major shake-up to the top 25 Premier League players.",
-      "published_label": "18 November 2026 · 17:00",
-      "published_iso": "2026-11-18T17:00:00+00:00",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Friday's newspapers... PREMIER LEAGUE",
+      "published_label": "17 November 2026 · 22:58",
+      "published_iso": "2026-11-17T22:58:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Bruno Fernandes has been dethroned as the king of the Premier League in a major shake-up to the top 25 Premier League players.",
-        "We asked our reporters and journalists to rank a longlist of 40 of the best players in the competition right now and took an average of their answers to produce the Sky Sports top 25.",
-        "The champions Arsenal the best represented, accounting for nine of the top 25. But which player takes top spot? And how do the rankings below compare to our last vote at the start of the season ? Sky Sports top 25 Premier League players revealed LIVE! How we ranked the top 25 in March - who are the movers? Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Get Sky Sports or stream with no contract on NOW 📺 The top 25 revealed... 25. Alisson 24. Bruno Guimaraes 23. Riccardo Calafiori 22. Morgan Gibbs-White 21. Jeremy Doku 20. Antoine Semenyo 19. Ezri Konsa 18. Dominik Szoboszlai 17. Pascal Gross 16. Moises Caicedo 15. Virgil van Dijk 14. Bukayo Saka 13. Cole Palmer 12. Alexander Isak 11. Bruno Fernandes The top 10 10. Martin Odegaard",
-        "Arsenal's conductor. The man who makes Mikel Arteta's attacking orchestra sing. When Odegaard finds his rhythm, so do the champions. 9. Joao Pedro"
-      ]
-    },
-    {
-      "slug": "13613585",
-      "title": "The secrets of Brentford's success",
-      "url": "https://www.skysports.com/football/news/13613585/how-brentford-plan-to-develop-the-best-young-talent-and-break-into-the-premier-league-elite",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-igor-thiago-premier-league_7392886.jpg?20261031164456",
-      "excerpt": "'Data wizards'. 'Great recruiters'. 'Punching above their weight' - Brentford have come to be known for all these things in recent years. Now, having established themselves in the Premier League, they have become bolder about wanting to mix…",
-      "published_label": "18 November 2026 · 17:00",
-      "published_iso": "2026-11-18T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "'Data wizards'. 'Great recruiters'. 'Punching above their weight' - Brentford have come to be known for all these things in recent years. Now, having established themselves in the Premier League, they have become bolder about wanting to mix it with the big clubs and break into Europe.",
-        "But how do Brentford get to that next level? In their view, the answer could come via the academy.",
-        "In April, Brentford was awarded Category 1 status - the highest classification available - and their aim is to now transform into a system that is not only known for strong first-team recruitment but also one that produces academy graduates.",
-        "Speaking exclusively to Sky Sports News from under a brand-new dome being constructed to house the academy teams, sporting director Phil Giles and technical director Lee Dykes opened up about their roadmap to make Brentford one of the elites. Brentford fixtures All the latest Brentford news and gossip"
-      ]
-    },
-    {
-      "slug": "13613629",
-      "title": "Premier League Top 25 - Sky Sports writers give their HOT TAKES",
-      "url": "https://www.skysports.com/football/video/13613629/sky-sports-writers-give-their-hot-takes-on-the-premier-leagues-top-25-players",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hot-takes_7409686.jpg?20261118152022",
-      "excerpt": "The Sky Sports Digital team have given their HOT TAKES on the Premier League's Top 25 players...",
-      "published_label": "18 November 2026 · 17:00",
-      "published_iso": "2026-11-18T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "The Sky Sports Digital team have given their HOT TAKES on the Premier League's Top 25 players..."
+        "The top stories and transfer rumours from Friday's newspapers... PREMIER LEAGUE",
+        "Fulham are pushing to extend Calvin Bassey's contract, with the centre-back the subject of interest from Manchester United - The Athletic Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Manchester United have issued stadium bans to four supporters who threw tennis balls onto the Old Trafford pitch in a protest against the club's ownership during November's Champions League tie against Roma - The Athletic",
+        "Apollo Global Management scrapped a planned $2bn loan to Manchester City's owner after an independent commission found the football club guilty of breaching the Premier League's financial rules - Financial Times"
       ]
     }
   ]
