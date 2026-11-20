@@ -1,10 +1,116 @@
 {
-  "synced_at": "2026-11-20T12:54:30+00:00",
+  "synced_at": "2026-11-20T21:50:09+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13614406",
+      "title": "'I understand fan frustration' - De Zerbi addresses Mudryk's viral Arsenal comment",
+      "url": "https://www.skysports.com/football/video/13614406/tottenham-hotspur-roberto-de-zerbi-addresses-mykhailo-mudryk-viral-podcast-comments",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-de-zerbi-mudryk-tottenham_7411575.jpg?20261120155256",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614395",
+      "title": "Celtic suffer Baur injury blow",
+      "url": "https://www.skysports.com/football/news/13614395/mika-baur-celtic-midfielder-ruled-out-for-considerable-period-with-ankle-ligament-damage",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mika-baur-celtic_7401363.jpg?20261108182820",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13614400",
+      "title": "Pochettino's first press conference - best bits",
+      "url": "https://www.skysports.com/football/video/13614400/manchester-utd-the-best-bits-of-mauricio-pochettinos-first-press-conference",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-pl_7411622.jpg?20261120171432",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614384",
+      "title": "Maresca defends Fernandes form and wishes Pochettino well",
+      "url": "https://www.skysports.com/football/video/13614384/marseca-on-fernandes-and-poch",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-city-maresca_7411502.jpg?20261120144245",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614312",
+      "title": "Berrada on Carrick, Poch, defending club leadership and transfers",
+      "url": "https://www.skysports.com/football/news/13614312/omar-berrada-interview-manchester-united-chief-executive-on-michael-carrick-mauricio-pochettino-recent-transfer-activity-and-the-club-hierarchy",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7411463.jpg?20261120140859",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13614377",
+      "title": "'It's a blow, he was on fire' - Celtic's O'Neill reacts to Baur injury",
+      "url": "https://www.skysports.com/football/video/13614377/mika-baur-celtics-martin-oneill-reveals-midfielders-injury-timeline-its-a-blow-he-was-on-fire",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mika-baur-celtic_7411500.jpg?20261120144122",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614372",
+      "title": "'We take the criticism' - Berrada talks Carrick, Pochettino and future of Man Utd",
+      "url": "https://www.skysports.com/football/video/13614372/manchester-utd-ceo-omar-berrada-talks-michael-carrick-mauricio-pochettino-and-future-of-club",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-omar-berrada-manchester_7411490.jpg?20261120143330",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614369",
+      "title": "'We need to deal this time without him' - Alonso talks scoring struggles in Joao Pedro's absence",
+      "url": "https://www.skysports.com/football/video/13614369/chelsea-boss-xabi-alonso-talks-scoring-struggles-in-joao-pedros-absence",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-chelsea-joao-pedro_7411486.jpg?20261120143215",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614358",
+      "title": "'It shouldn't be legal' - Iraola shows sympathy for drone footage of Man Utd training",
+      "url": "https://www.skysports.com/football/video/13614358/liverpool-latest-andoni-iraola-shows-sympathy-for-drone-footage-of-man-utd-training",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-andoni-iraola-liverpool_7411443.jpg?20261120134729",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13614265",
       "title": "How every Man Utd boss post-Fergie fared against Liverpool on first game in charge",
@@ -306,6 +412,130 @@
       "byline": ""
     },
     {
+      "slug": "13614513",
+      "title": "'What are you going to find?' - Poch condemns 'dangerous' drone footage",
+      "url": "https://www.skysports.com/football/video/13614513/mauricio-pochettino-condemns-dangerous-drone-footage-of-manchester-united-training",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-man-united_7411817.jpg?20261120205937",
+      "excerpt": "Following leaked drone footage of Mauricio Pochettino's first training session, the Manchester United boss questioned why someone would want to film and share the clips online.",
+      "published_label": "20 November 2026 · 20:27",
+      "published_iso": "2026-11-20T20:27:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Following leaked drone footage of Mauricio Pochettino's first training session, the Manchester United boss questioned why someone would want to film and share the clips online."
+      ]
+    },
+    {
+      "slug": "13614512",
+      "title": "'It's been an incredible journey!' - Van Dijk uncertain on Liverpool future",
+      "url": "https://www.skysports.com/football/video/13614512/virgil-van-dijk-admits-hes-uncertain-if-hell-still-be-a-liverpool-player-come-next-season",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/sky-sports-premier-league-liverpool_7411809.jpg?20261120204658",
+      "excerpt": "Virgil van Dijk opens up about his Liverpool future, admitting that he's not sure if he'll be there next season.",
+      "published_label": "20 November 2026 · 20:27",
+      "published_iso": "2026-11-20T20:27:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Virgil van Dijk opens up about his Liverpool future, admitting that he's not sure if he'll be there next season."
+      ]
+    },
+    {
+      "slug": "13614508",
+      "title": "Van Dijk uncertain on Liverpool future",
+      "url": "https://www.skysports.com/football/news/13614508/liverpool-virgil-van-dijk-uncertain-on-anfield-future-beyond-the-summer-but-believes-he-can-play-for-many-more-years",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-van-dijk_7411788.jpg?20261120202101",
+      "excerpt": "Liverpool captain Virgil van Dijk believes he can keeping playing for \"many more years\" - but says he does not yet know whether that will be at Anfield next season.",
+      "published_label": "20 November 2026 · 20:15",
+      "published_iso": "2026-11-20T20:15:00+00:00",
+      "byline": "Harriet Prior (interview) | Peter Smith (words)",
+      "body": [
+        "Liverpool captain Virgil van Dijk believes he can keeping playing for \"many more years\" - but says he does not yet know whether that will be at Anfield next season.",
+        "The 35-year-old centre-back, who has won two Premier League titles and the Champions League during his time at Liverpool, is out of contract in the summer.",
+        "He told Sky Sports that, currently, he is uncertain on what will happen beyond this campaign.",
+        "\"The main thing for me is that I feel good and I'm looking after myself and I still have many more years in my opinion,\" he said."
+      ]
+    },
+    {
+      "slug": "13614363",
+      "title": "Drones, data and Bruno - Pochettino on his early Man Utd challenges",
+      "url": "https://www.skysports.com/football/news/13614363/mauricio-pochettino-manchester-united-head-coach-discusses-drone-footage-his-approach-to-data-and-bruno-fernandes-ahead-of-first-game",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7411581.jpg?20261120160159",
+      "excerpt": "Mauricio Pochettino has questioned what could have been gained from the drone footage of a Manchester United training session ahead of his first game in charge against Liverpool.",
+      "published_label": "20 November 2026 · 20:00",
+      "published_iso": "2026-11-20T20:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Mauricio Pochettino has questioned what could have been gained from the drone footage of a Manchester United training session ahead of his first game in charge against Liverpool.",
+        "A 12-minute video taken over United's Carrington training ground showed the Argentine overseeing various tactical drills with his new team as they prepared for a trip to Anfield on Sunday, live on Sky Sports.",
+        "The operator has since apologised and taken down the video, but footage has been viewed over eight million times on reposts from other X accounts and has since been reuploaded by several other YouTube channels, collectively attracting hundreds of thousands of views.",
+        "Sky Sports News understands the club do not plan on taking legal action, but will not rule out doing so in the future if further incidents occur, and Pochettino questioned the motivation behind the filming."
+      ]
+    },
+    {
+      "slug": "13614498",
+      "title": "How has Fernandez's role impacted Man City's recent defeats?",
+      "url": "https://www.skysports.com/football/video/13614498/how-has-enzo-fernandezs-role-and-positioning-impacted-manchester-citys-recent-defeats",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-enzo-man-city_7411775.jpg?20261120200410",
+      "excerpt": "Sky Sports' David Reed and Steven Caulker break down Enzo Fernandez's involvement in Manchester City's three-straight defeats, especially last time out at Nottingham Forest.",
+      "published_label": "20 November 2026 · 19:56",
+      "published_iso": "2026-11-20T19:56:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' David Reed and Steven Caulker break down Enzo Fernandez's involvement in Manchester City's three-straight defeats, especially last time out at Nottingham Forest."
+      ]
+    },
+    {
+      "slug": "13614478",
+      "title": "The stats behind Guimaraes' Arsenal career so far",
+      "url": "https://www.skysports.com/football/video/13614478/hell-grow-into-the-season-the-stats-behind-bruno-guimaraes-arsenal-career-so-far",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bruno-g-arsenal_7411741.jpg?20261120194447",
+      "excerpt": "Sky Sports' Dave Reed takes a deep dive into the stats behind Bruno Guimaraes' Arsenal career so far.",
+      "published_label": "20 November 2026 · 19:28",
+      "published_iso": "2026-11-20T19:28:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Dave Reed takes a deep dive into the stats behind Bruno Guimaraes' Arsenal career so far."
+      ]
+    },
+    {
+      "slug": "13614472",
+      "title": "Arteta delighted to see Arsenal dominate Sky Sports' top 25 PL players list!",
+      "url": "https://www.skysports.com/football/video/13614472/mikel-arteta-delighted-to-see-arsenal-dominate-sky-sports-top-25-premier-league-players-list",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-arsenal_7411714.jpg?20261120191706",
+      "excerpt": "Mikel Arteta believes that five Arsenal players making the top 10 of Sky Sports' ranking of the top 25 players in the Premier League is a 'testament' to how consistent they've been over the last few years.",
+      "published_label": "20 November 2026 · 19:08",
+      "published_iso": "2026-11-20T19:08:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Mikel Arteta believes that five Arsenal players making the top 10 of Sky Sports' ranking of the top 25 players in the Premier League is a 'testament' to how consistent they've been over the last few years."
+      ]
+    },
+    {
+      "slug": "13614423",
+      "title": "Five things we learned from Poch's first Man Utd press conference",
+      "url": "https://www.skysports.com/football/video/13614423/5-things-we-learnt-from-mauricio-pochettinos-first-manchester-united-press-conference",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-man-utd_7411598.jpg?20261120162733",
+      "excerpt": "Sky Sports News football correspondent Rob Dorsett provides insight on the five key takeaways from Mauricio Pochettino's first Manchester United press conference.",
+      "published_label": "20 November 2026 · 16:24",
+      "published_iso": "2026-11-20T16:24:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports News football correspondent Rob Dorsett provides insight on the five key takeaways from Mauricio Pochettino's first Manchester United press conference."
+      ]
+    },
+    {
       "slug": "13614340",
       "title": "Inquest into death of Sheffield United Cusack to resume next month",
       "url": "https://www.skysports.com/football/news/13614340/maddy-cusack-inquest-into-death-of-sheffield-united-women-midfielder-to-resume-in-december",
@@ -420,281 +650,6 @@
         "Despite being Newcastle's key man, the Brazilian endured a slow start to life at Arsenal. An early-season injury did not help, nor did the early-season form of Myles Lewis-Skelly in the Brazilian's absence.",
         "But now he is back in the North East as a first-choice option, having impressed in Arsenal's recent league wins over Liverpool and Hull, while also scoring crucial goals against Sunderland and Leeds.",
         "\"He's still not there,\" said Arteta after the 1-0 win over Hull last time out. \"He's much better, he's hitting serious levels now, but we can still take the player to another level.\""
-      ]
-    },
-    {
-      "slug": "13614280",
-      "title": "Celtic look to keep Rangers at bay in title race as Frick starts Aberdeen rebuild",
-      "url": "https://www.skysports.com/football/news/13614280/scottish-premiership-derek-mcinnes-rangers-on-sky-celtic-lead-the-way-as-aberdeen-begin-mario-frick-era",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-scottish-premiership_7411255.jpg?20261120100401",
-      "excerpt": "The Scottish Premiership returns after the international break and with it comes the guaranteed drama.",
-      "published_label": "20 November 2026 · 09:00",
-      "published_iso": "2026-11-20T09:00:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "The Scottish Premiership returns after the international break and with it comes the guaranteed drama.",
-        "Celtic know any slip-ups could hand Old Firm rivals Rangers the opportunity to edge closer at top of the table again.",
-        "There is a new man in charge at Aberdeen, with Mario Frick handed the challenge of turning the Dons' dismal season around.",
-        "Here, we take a look at the big talking points ahead of the weekend… Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone McInnes determined to avoid 'disjointed' Rangers return"
-      ]
-    },
-    {
-      "slug": "13614174",
-      "title": "How Poch's first Man Utd training session was LEAKED online by drone footage!",
-      "url": "https://www.skysports.com/football/video/13614174/mauricio-pochettinos-first-manchester-united-training-session-leaked-by-drone-flying-over-carrington",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/ssn-man-u-spy_7410968.jpg?20261119220041",
-      "excerpt": "Sky Sports' football correspondent Rob Dorsett explains the extraordinary story that Mauricio Pochettino's first Manchester United training session has been leaked after a drone flew over Carrington.",
-      "published_label": "19 November 2026 · 21:43",
-      "published_iso": "2026-11-19T21:43:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' football correspondent Rob Dorsett explains the extraordinary story that Mauricio Pochettino's first Manchester United training session has been leaked after a drone flew over Carrington."
-      ]
-    },
-    {
-      "slug": "13614177",
-      "title": "Arsenal outclassed in defeat to dominant Lyon",
-      "url": "https://www.skysports.com/football/news/13614177/arsenal-women-0-2-lyon-women-gunners-automatic-champions-league-qualification-hopes-hanging-by-a-thread",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-russo-lyon_7410922.jpg?20261119204640",
-      "excerpt": "Arsenal’s hopes of automatic qualification to the Women’s Champions League quarter-finals are hanging by a thread after they were beaten 2-0 at home by a dominant Lyon in foggy conditions.",
-      "published_label": "19 November 2026 · 21:28",
-      "published_iso": "2026-11-19T21:28:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Arsenal’s hopes of automatic qualification to the Women’s Champions League quarter-finals are hanging by a thread after they were beaten 2-0 at home by a dominant Lyon in foggy conditions.",
-        "The French side, who beat Arsenal in the semi-finals last season, got the better of the Gunners again at Meadow Park on Thursday night with goals from Jule Brand and Melchie Dumornay in each half sealing the victory.",
-        "Arsenal barely laid a glove on Lyon - who are yet to concede a goal in this season's Champions League - and now sit eighth in the standings, three points adrift of fourth-placed Chelsea, after their first loss in five league phase matches. As it happened | Teams | Stats Women's Champions League table | Scores & Fixtures Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
-        "Emily Fox registered Arsenal's only shot on target of the game deep in stoppage-time and the home side could easily have conceded a few more had Marie-Antoinette Katoto not spurned two big opportunities."
-      ]
-    },
-    {
-      "slug": "13614159",
-      "title": "Drone footage of Pochettino's first Man Utd training session leaked online",
-      "url": "https://www.skysports.com/football/news/13614159/manchester-united-drone-footage-of-mauricio-pochettinos-first-training-session-leaked-online",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-united_7410943.png?20261119212913",
-      "excerpt": "Mauricio Pochettino’s first Manchester United training session today has been leaked online in a major security breach.",
-      "published_label": "19 November 2026 · 20:28",
-      "published_iso": "2026-11-19T20:28:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Mauricio Pochettino’s first Manchester United training session today has been leaked online in a major security breach.",
-        "The 12-minute drone footage over their Carrington training ground was uploaded onto YouTube.",
-        "It shows Pochettino doing various tactical drills with his new team as they prepare for their clash with Liverpool at Anfield on Sunday. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "United have signs around the Carrington area warning that use of drones are \"strictly prohibited\" and anyone caught \"will be reported for prosecution and subject to civil action\"."
-      ]
-    },
-    {
-      "slug": "13614117",
-      "title": "England handed suspended away ticket ban for fans' chants in Spain",
-      "url": "https://www.skysports.com/football/news/13614117/england-handed-suspended-away-ticket-ban-and-fine-by-uefa-for-fans-racist-and-or-discriminatory-behaviour-in-spain",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-england-spain-nations_7410817.jpg?20261119184822",
-      "excerpt": "England have been given a suspended away ticket ban by UEFA for \"racist and/or discriminatory behaviour\" by their fans during the 3-2 win over Spain in Madrid.",
-      "published_label": "19 November 2026 · 18:36",
-      "published_iso": "2026-11-19T18:36:00+00:00",
-      "byline": "Anthony Joseph",
-      "body": [
-        "England have been given a suspended away ticket ban by UEFA for \"racist and/or discriminatory behaviour\" by their fans during the 3-2 win over Spain in Madrid.",
-        "The punishment is a one-match ban and is suspended for a \"probationary period\" of two years.",
-        "Sky Sports News understands the punishment is for anti-Catholic and anti-Irish chanting during the Nations League match.",
-        "A spokesperson for The FA told Sky Sports News : \" We will not tolerate this unacceptable and deeply offensive chanting, and will work with the police who attend all England home and away matches to identify the perpetrators and take the necessary action.\""
-      ]
-    },
-    {
-      "slug": "13614107",
-      "title": "What playing style can Man Utd fans expect from Pochettino?",
-      "url": "https://www.skysports.com/football/video/13614107/premier-league-what-playing-style-can-manchester-utd-fans-expect-from-mauricio-pochettino",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-utd_7410816.jpg?20261119184115",
-      "excerpt": "Sky Sports' Adam Binnie analyses the philosophy of Mauricio Pochettino based on his previous roles and explains what Manchester United fans can expect from him.",
-      "published_label": "19 November 2026 · 18:18",
-      "published_iso": "2026-11-19T18:18:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Adam Binnie analyses the philosophy of Mauricio Pochettino based on his previous roles and explains what Manchester United fans can expect from him."
-      ]
-    },
-    {
-      "slug": "13611640",
-      "title": "PL Predictions: How will your club fare this weekend?",
-      "url": "https://www.skysports.com/football/news/13611640/premier-league-predictions-and-jones-knows-best-bets-newcastle-vs-arsenal-liverpool-vs-manchester-united-and-much-more",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-predictions_7385438.jpg?20261024123906",
-      "excerpt": "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight as the Premier League returns from the international break. Manchester City vs Fulham, Saturday 12.30pm",
-      "published_label": "19 November 2026 · 18:00",
-      "published_iso": "2026-11-19T18:00:00+00:00",
-      "byline": "Lewis Jones",
-      "body": [
-        "Our top tipster Lewis Jones, aka Jones Knows, provides his analysis and betting insight as the Premier League returns from the international break. Manchester City vs Fulham, Saturday 12.30pm",
-        "This 12.30pm kick-off slot has been particularly fruitful for goals backers in the game after the November international break. Perhaps it's the disrupted defensive structures or simply players taking a little longer to rediscover their rhythm. Whatever the reason, the goals tend to flow.",
-        "The last 15 fixtures played in this slot immediately after an international break have averaged a whopping 3.5 goals per game. All 15 have cleared the over 1.5 goals line, while 11 have produced three or more goals.",
-        "There's another layer to this argument, too. The Premier League is currently running below expectation in the goals department. We're seeing 2.73 goals per game despite the underlying expected goals data suggesting that figure should be closer to 2.92. Pochettino begins Man Utd tenure with testing trip to Liverpool - Premier League Talking Points Got Sky? Watch now on the Sky Sports app 📱 Not got Sky? Get instant access with no contract 📺 Premier League predictor - predict the fixtures each gameweek"
-      ]
-    },
-    {
-      "slug": "13614066",
-      "title": "Frick targets top-six at Aberdeen as 'heavy metal football' explained!",
-      "url": "https://www.skysports.com/football/video/13614066/mario-frick-aberdeen-head-coach-reveals-top-six-target-as-heavy-metal-football-explained",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/8287d2ce8bade4b908d85064e9a316cea501c36507669a740cda3b72b498b134_7410726.jpg?20261119165215",
-      "excerpt": "New Aberdeen head coach Mario Frick reveals his top-six target after taking over at Pittodrie as his 'heavy metal' football style is explained.",
-      "published_label": "19 November 2026 · 16:50",
-      "published_iso": "2026-11-19T16:50:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "New Aberdeen head coach Mario Frick reveals his top-six target after taking over at Pittodrie as his 'heavy metal' football style is explained."
-      ]
-    },
-    {
-      "slug": "13614059",
-      "title": "PL board members given extra legal protection amid threat of actions linked to City case",
-      "url": "https://www.skysports.com/football/video/13614059/premier-league-board-members-given-extra-legal-protection-amid-threat-of-actions-linked-to-man-city-case",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kaveh-man-city_7410783.jpg?20261119175318",
-      "excerpt": "Eighteen clubs are reported to have supported changes to the league's articles at a clubs meeting in central London on Thursday, which extend protections provided to individual board members to enable them to freely carry out their duties.",
-      "published_label": "19 November 2026 · 16:25",
-      "published_iso": "2026-11-19T16:25:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Eighteen clubs are reported to have supported changes to the league's articles at a clubs meeting in central London on Thursday, which extend protections provided to individual board members to enable them to freely carry out their duties."
-      ]
-    },
-    {
-      "slug": "13614053",
-      "title": "Bevington: Frick the 'unanimous' choice after as Dons' 'global search' process revealed",
-      "url": "https://www.skysports.com/football/video/13614053/aberdeen-mario-frick-the-unanimous-choice-after-as-dons-global-search-process-revealed-by-ceo-adrian-bevington",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/53c51063df9a253e909a2a7f59a5840ac349f47fafc38364c02a2b521f03d7f6_7410720.jpg?20261119164238",
-      "excerpt": "Aberdeen CEO Adrian Bevington discusses the 'global search' process to appoint Mario Frick as the club's head coach and why he was the 'unanimous' choice.",
-      "published_label": "19 November 2026 · 16:19",
-      "published_iso": "2026-11-19T16:19:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Aberdeen CEO Adrian Bevington discusses the 'global search' process to appoint Mario Frick as the club's head coach and why he was the 'unanimous' choice."
-      ]
-    },
-    {
-      "slug": "13614031",
-      "title": "PL clubs vote to cover legal costs of board members if Man City sponsors sue",
-      "url": "https://www.skysports.com/football/news/13614031/premier-league-clubs-vote-to-cover-legal-costs-if-man-city-sponsors-sue-competitions-board-members",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/09/768x432/skysports-premier-league-trophy_7361300.jpg?20260925172954",
-      "excerpt": "Premier League clubs have voted to cover the legal costs of their five board members if they are sued individually by Manchester City's sponsors.",
-      "published_label": "19 November 2026 · 15:26",
-      "published_iso": "2026-11-19T15:26:00+00:00",
-      "byline": "Kaveh Solhekol",
-      "body": [
-        "Premier League clubs have voted to cover the legal costs of their five board members if they are sued individually by Manchester City's sponsors.",
-        "In September, an independent commission found City guilty of breaking more than one hundred of the Premier League's financial rules between 2009 and 2018.",
-        "City are appealing after the commission found they had entered into \"sham\" contracts with sponsors. Premier League fixtures & scores | FREE PL highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Two of City's sponsors, Etihad Airways and Etisalat, have threatened the Premier League with legal action."
-      ]
-    },
-    {
-      "slug": "13613844",
-      "title": "Frick targets Premiership top-six for Aberdeen with 'heavy metal football'",
-      "url": "https://www.skysports.com/football/news/13613844/mario-frick-aberdeens-new-head-coach-targets-scottish-premiership-top-six-with-heavy-metal-football",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mario-frick-aberdeen_7410719.jpg?20261119164048",
-      "excerpt": "Aberdeen's new head coach Mario Frick will not just be happy with Scottish Premiership survival this season, insisting he wants a top-six finish.",
-      "published_label": "19 November 2026 · 15:00",
-      "published_iso": "2026-11-19T15:00:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "Aberdeen's new head coach Mario Frick will not just be happy with Scottish Premiership survival this season, insisting he wants a top-six finish.",
-        "The 52-year-old takes over with the side sitting 11th in the table following Stephen Robinson's dismissal after their 4-0 defeat at Hibernian before the international break.",
-        "Frick, who played 125 times for Liechtenstein, previously took charge of the national youth teams in his homeland before spells with Vaduz and Luzern, helping the latter to avoid relegation. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
-        "\"I had a very long career as a professional, so I know the pressure and I'm always optimist,\" he said."
-      ]
-    },
-    {
-      "slug": "13613998",
-      "title": "McInnes: Pocognoli pile-on has been 'outrageous'",
-      "url": "https://www.skysports.com/football/video/13613998/derek-mcinnes-criticism-towards-scotland-head-coach-sebastien-pocognoli-outrageous-amid-tough-start",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/09/768x432/skysports-sebastien-pocognoli_7364727.jpg?20260930084937",
-      "excerpt": "Rangers manager Derek McInnes says the criticism directed towards Scotland head coach Sebastien Pocognoli has been 'outrageous' amid a tough start as national team boss.",
-      "published_label": "19 November 2026 · 14:37",
-      "published_iso": "2026-11-19T14:37:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Rangers manager Derek McInnes says the criticism directed towards Scotland head coach Sebastien Pocognoli has been 'outrageous' amid a tough start as national team boss."
-      ]
-    },
-    {
-      "slug": "13613996",
-      "title": "McInnes provides fitness update on key duo as criticism addressed",
-      "url": "https://www.skysports.com/football/video/13613996/rangers-derek-mcinnes-provides-fitness-update-on-lawrence-shankland-cammy-devlin-and-another-duo-as-criticism-addressed",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mcinnes-rangers_7410583.jpg?20261119145134",
-      "excerpt": "Rangers manager Derek McInnes provides a fitness update on Lawrence Shankland, Cammy Devlin and another duo as criticism is addressed ahead of their Motherwell trip.",
-      "published_label": "19 November 2026 · 14:36",
-      "published_iso": "2026-11-19T14:36:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Rangers manager Derek McInnes provides a fitness update on Lawrence Shankland, Cammy Devlin and another duo as criticism is addressed ahead of their Motherwell trip."
-      ]
-    },
-    {
-      "slug": "13613832",
-      "title": "Man Utd announce financial results as revenue and wages rise",
-      "url": "https://www.skysports.com/football/news/13613832/man-utd-latest-financial-results-revealed-as-revenue-and-wages-increase",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/09/768x432/skysports-ratcliffe-berrada_7359340.jpg?20260923124639",
-      "excerpt": "Manchester United have released their latest financial results, with revenue and wages increasing.",
-      "published_label": "19 November 2026 · 14:35",
-      "published_iso": "2026-11-19T14:35:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Manchester United have released their latest financial results, with revenue and wages increasing.",
-        "The first quarter fiscal 2027 report covered three months up to September 30. It included the summer transfer window but not the sacking of Michael Carrick and subsequent hiring of Mauricio Pochettino.",
-        "It does include the club's return to the Champions League. However, only one of these matches were at home - a 4-0 win against Sabah. They played four further games at Old Trafford, and three away. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Manchester United's total revenues rose 4.1 per cent to £146.1m compared to the same period last year, while wages are up 8.6 per cent to £79.9m."
-      ]
-    },
-    {
-      "slug": "13613875",
-      "title": "Assessing Iraola's Liverpool start",
-      "url": "https://www.skysports.com/football/news/13613875/andoni-iraolas-liverpool-start-assessed-creating-chaos-going-direct-and-fixing-leaky-defence",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-liverpool_7410291.jpg?20261119104807",
-      "excerpt": "Liverpool head coach Andoni Iraola asked for judgements on his tenure to wait until after the November international break - we assess how the Basque is faring so far in his new role ahead of the visit of Manchester United in the Premier Le…",
-      "published_label": "19 November 2026 · 13:00",
-      "published_iso": "2026-11-19T13:00:00+00:00",
-      "byline": "Richard Morgan",
-      "body": [
-        "Liverpool head coach Andoni Iraola asked for judgements on his tenure to wait until after the November international break - we assess how the Basque is faring so far in his new role ahead of the visit of Manchester United in the Premier League on Super Sunday.",
-        "Iraola has been in charge at Anfield for less than six months after replacing Arne Slot in June following Liverpool's dismal Premier League title defence last season under the Dutchman.",
-        "The then champions could only manage an underwhelming fifth-place finish, 24 points worse off than when winning the league in 2024-25, with Slot paying with his job as a result. Between The Lines: Liverpool's unwanted record highlights creativity issue Got Sky? Watch Liverpool vs Man Utd LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "Iraola was identified as the man to not only get Liverpool back to winning ways, but to also do it in a 'heavy-metal' front-footed fashion that would get fans off their seats again after what he had achieved in three hugely successful campaigns at Bournemouth."
-      ]
-    },
-    {
-      "slug": "13612583",
-      "title": "Seven years on from the sack at Spurs what sort of coach is Pochettino now?",
-      "url": "https://www.skysports.com/football/news/13612583/mauricio-pochettino-at-man-utd-seven-years-on-from-the-sack-at-spurs-what-sort-of-coach-is-he-now-we-will-soon-find-out",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7405659.jpg?20261113093243",
-      "excerpt": "What Mauricio Pochettino achieved with Tottenham Hotspur in the previous decade looks even more impressive now than it did at the time. Manchester United really should have turned to the popular Argentine coach years ago.",
-      "published_label": "19 November 2026 · 10:00",
-      "published_iso": "2026-11-19T10:00:00+00:00",
-      "byline": "Adam Bate",
-      "body": [
-        "What Mauricio Pochettino achieved with Tottenham Hotspur in the previous decade looks even more impressive now than it did at the time. Manchester United really should have turned to the popular Argentine coach years ago.",
-        "In his five full seasons in charge, Spurs were in the Premier League's top five each time - a run that has never been bettered in their history. He took the club above Arsenal for the first time in a generation and into a Champions League final for the first time ever.",
-        "Silverware was missing, much to the amusement of his critics, but the charges against Manchester City serve as a reminder that he was playing with the deck stacked against him. He overachieved and it is his thrilling football that endures in the memory.",
-        "The arc of history has bent towards his intense style of play. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺"
       ]
     }
   ]
