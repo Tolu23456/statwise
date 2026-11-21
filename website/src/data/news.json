@@ -1,10 +1,94 @@
 {
-  "synced_at": "2026-11-21T12:39:58+00:00",
+  "synced_at": "2026-11-21T20:32:00+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13615002",
+      "title": "Crawley 2-1 Fleetwood",
+      "url": "https://www.skysports.com/football/video/13615002/crawley-town-2-1-fleetwood-town-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/e75b8d20cee44e3473321b6a50538e3afa7c1cce4bdcde73acb69955158394b4_7412866.jpg?20261121193343",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614994",
+      "title": "York 0-0 Walsall",
+      "url": "https://www.skysports.com/football/video/13614994/york-0-0-walsall-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/214b89684c3ffb1ea5f179dde380982f608badd8a00ea04a0cfb1c542ff028f2_7412863.jpg?20261121193201",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614993",
+      "title": "Northampton 3-2 Rochdale",
+      "url": "https://www.skysports.com/football/video/13614993/northampton-3-2-rochdale-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/852fa05211bf145ddd39fdc357f1c7ae42ae4461f52774e9a3df325b2c311455_7412844.jpg?20261121191909",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614991",
+      "title": "London City Lionesses 6-2 Crystal Palace",
+      "url": "https://www.skysports.com/football/video/13614991/london-city-lionesses-6-2-crystal-palace-womens-super-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-london_7412841.jpg?20261121191601",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614987",
+      "title": "Huddersfield 0-1 Leicester",
+      "url": "https://www.skysports.com/football/video/13614987/huddersfield-town-0-1-leicester-city-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/3abc56d466f46374b61264b50d388289834835c465fed9d99bcc15d004bdfd0b_7412837.jpg?20261121191519",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614989",
+      "title": "Sensational goal from Madueke as Gunners quickly level",
+      "url": "https://www.skysports.com/football/video/13614989/goal-n-madueke-78-newcastle-2-1-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7412838.jpg?20261121191525",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13614986",
+      "title": "Mansfield 1-1 MK Dons",
+      "url": "https://www.skysports.com/football/video/13614986/mansfield-town-1-1-mk-dons-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/33cda4c9fba5a8153ec92b8ef380bbd84696a21358d880ebaf029dba68de99c5_7412825.jpg?20261121190348",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13614369",
       "title": "'We need to deal this time without him' - Alonso talks scoring struggles in Joao Pedro's absence",
@@ -330,6 +414,130 @@
       "byline": ""
     },
     {
+      "slug": "13615037",
+      "title": "'A MASSIVE blow!' - Wright worried for Arsenal after Raya injury",
+      "url": "https://www.skysports.com/football/video/13615037/newcastle-2-2-arsenal-how-big-of-a-blow-to-arsenals-season-will-david-rayas-injury-be",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-raya_7412958.jpg?20261121202310",
+      "excerpt": "Ian Wright and Jamie Redknapp discuss David Raya's injury against Newcastle United and how much of a worry it will be for Arsenal.",
+      "published_label": "21 November 2026 · 20:18",
+      "published_iso": "2026-11-21T20:18:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Ian Wright and Jamie Redknapp discuss David Raya's injury against Newcastle United and how much of a worry it will be for Arsenal."
+      ]
+    },
+    {
+      "slug": "13615034",
+      "title": "Fernandez fires Rangers into early lead against Motherwell!",
+      "url": "https://www.skysports.com/football/video/13615034/emmanuel-fernandez-scores-early-opener-for-rangers-against-motherwell",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-rnagers-goal_7412940.jpg?20261121201405",
+      "excerpt": "Emmanuel Fernandez fires Rangers ahead after just eight minutes against Motherwell.",
+      "published_label": "21 November 2026 · 20:12",
+      "published_iso": "2026-11-21T20:12:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Emmanuel Fernandez fires Rangers ahead after just eight minutes against Motherwell."
+      ]
+    },
+    {
+      "slug": "13615022",
+      "title": "How on earth has he scored from there?!",
+      "url": "https://www.skysports.com/football/video/13615022/ollie-norwoods-incredible-tight-angle-free-kick",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ollie-norwood_7412915.jpg?20261121195232",
+      "excerpt": "Stockport's Ollie Norwood scores an incredible free-kick from one of the tightest angles possible!",
+      "published_label": "21 November 2026 · 19:49",
+      "published_iso": "2026-11-21T19:49:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Stockport's Ollie Norwood scores an incredible free-kick from one of the tightest angles possible!"
+      ]
+    },
+    {
+      "slug": "13615004",
+      "title": "Arsenal rescue a draw at Newcastle",
+      "url": "https://www.skysports.com/football/video/13615004/newcastle-2-2-arsenal-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7412860.jpg?20261121193125",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Newcastle and Arsenal.",
+      "published_label": "21 November 2026 · 19:35",
+      "published_iso": "2026-11-21T19:35:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from the Premier League match between Newcastle and Arsenal."
+      ]
+    },
+    {
+      "slug": "13615001",
+      "title": "PSG survive late Nice scare in five-goal thriller",
+      "url": "https://www.skysports.com/football/video/13615001/nice-2-3-psg-ligue-1-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ligue-1-psg_7412914.jpg?20261121195223",
+      "excerpt": "Highlights of the Ligue 1 match between Nice and Paris Saint-Germain.",
+      "published_label": "21 November 2026 · 19:30",
+      "published_iso": "2026-11-21T19:30:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Ligue 1 match between Nice and Paris Saint-Germain."
+      ]
+    },
+    {
+      "slug": "13614954",
+      "title": "OH NO! Price's Panenka goes horribly wrong!",
+      "url": "https://www.skysports.com/football/video/13614954/isaac-prices-panenka-penalty-saved-despite-swansea-goalkeeper-diving-the-wrong-way",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-panenka-wba_7412874.jpg?20261121193723",
+      "excerpt": "West Brom's Isaac Price won't want to watch his sees his attempted Panenka penalty saved by Swansea goalkeeper Lawrence Vigouroux.",
+      "published_label": "21 November 2026 · 18:02",
+      "published_iso": "2026-11-21T18:02:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "West Brom's Isaac Price won't want to watch his sees his attempted Panenka penalty saved by Swansea goalkeeper Lawrence Vigouroux."
+      ]
+    },
+    {
+      "slug": "13611970",
+      "title": "Arsenal's winning run ended by Newcastle in thrilling draw",
+      "url": "https://www.skysports.com/football/news/13611970/newcastle-2-2-arsenal-noni-madueke-grabs-gunners-a-point-after-stunning-toon-comeback",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-malick-thiaw-newcastle_7412895.jpg?20261121194652",
+      "excerpt": "Arsenal's four-game winning Premier League run without conceding was ended by Newcastle in a frantic 2-2 draw.",
+      "published_label": "21 November 2026 · 18:00",
+      "published_iso": "2026-11-21T18:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Arsenal's four-game winning Premier League run without conceding was ended by Newcastle in a frantic 2-2 draw.",
+        "For 45 minutes, this looked like another routine victory for Mikel Arteta's winning machine. Arsenal were dominant, controlling the tempo and suffocating Newcastle with their relentless pressure as Eberechi Eze's opener was exactly what the league leaders deserved.",
+        "But football showed yet again it's a game of two halves as Matthias Jaissle produced a tactical masterstroke to change the momentum of the game.",
+        "The Newcastle boss made a triple substitution that completely transformed the contest. Suddenly, Newcastle were bolder, braver and playing with intensity."
+      ]
+    },
+    {
+      "slug": "13614659",
+      "title": "Hits and misses: Problems for passive Man City as Chelsea bullied again",
+      "url": "https://www.skysports.com/football/news/13614659/problems-for-passive-man-city-as-chelsea-are-bullied-by-leeds-premier-league-hits-and-misses",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hits_7412868.jpg?20261121193532",
+      "excerpt": "Enzo Maresca had insisted after the defeat to Nottingham Forest that there was no overarching theme to their losing run. But the results are a recurring problem. They at least mustered a draw at home to Fulham but the performance was not co…",
+      "published_label": "21 November 2026 · 11:23",
+      "published_iso": "2026-11-21T11:23:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Enzo Maresca had insisted after the defeat to Nottingham Forest that there was no overarching theme to their losing run. But the results are a recurring problem. They at least mustered a draw at home to Fulham but the performance was not convincing.",
+        "Against Forest, Maresca highlighted lost duels as an issue, most conspicuously for Liam Delap's first goal when Elliot Anderson came out second best against Xaver Schlager. His team selection hinted at an attempt to address that with Ayyoub Bouaddi included.",
+        "But City still looked too easy to play through. Fulham managed it time and time again. Perhaps it is the lack of pressing from the front that is part of the problem, as much as a lack of defensive cover in midfield. Erling Haaland certainly seemed reluctant to do so. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "The fans were groaning in frustration at how comfortable Fulham looked right from the start and their tolerance for what might be deemed a passive possession game is declining. Maresca's controlled approach is not bringing the control that he needs. Adam Bate Fulham end losing streak against Man City"
+      ]
+    },
+    {
       "slug": "13614655",
       "title": "Kane vows to be back for ‘business end of season’ after ankle surgery",
       "url": "https://www.skysports.com/football/news/13614655/harry-kane-england-and-bayern-munich-striker-vows-to-be-back-for-business-end-of-season-after-ankle-surgery",
@@ -362,6 +570,17 @@
       ]
     },
     {
+      "slug": "this-weekend-s-best-player-props-isak-oskarsson-and-thuram",
+      "title": "This Weekend’s Best Player Props: Isak, Oskarsson and Thuram!",
+      "url": "https://www.sportytrader.com/en/news/this-weekend-s-best-player-props-isak-oskarsson-and-thuram/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/hall_vs_bruno.webp",
+      "excerpt": "Three Sunday picks from the Premier League, La Liga and Serie A, and we’re focusing on the strikers this time around! We’re taking a look at two in-form goalscorers with",
+      "published_label": "21 November 2026 · 08:00",
+      "published_iso": "2026-11-21T08:00:00+00:00",
+      "byline": "Joseph King"
+    },
+    {
       "slug": "13614619",
       "title": "How Kane sustained ankle injury - 'He'll be out for a long time'",
       "url": "https://www.skysports.com/football/video/13614619/harry-kane-forced-off-with-suspected-ankle-ligament-tear-as-england-captain-faces-three-months-out",
@@ -375,6 +594,17 @@
       "body": [
         "Harry Kane suffered a suspected ankle ligament tear during a Bundesliga clash with FC Koln, forcing him off in the 19th minute. He is reportedly expected to be sidelined for around three months."
       ]
+    },
+    {
+      "slug": "newcastle-vs-arsenal-guimaraes-left-newcastle-as-captain-he-comes-back-five-points-clear-at-the-top",
+      "title": "Newcastle vs Arsenal: Guimaraes Left Newcastle as Captain. He Comes Ba",
+      "url": "https://www.sportytrader.com/en/news/newcastle-vs-arsenal-guimaraes-left-newcastle-as-captain-he-comes-back-five-points-clear-at-the-top/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/rugby/ireland-vs-rsa-unl.webp",
+      "excerpt": "Newcastle sold Bruno Guimaraes to Arsenal for £75 million in August. Tonight he walks back into St James' Park for the first time, five points clear at the top of the Pre",
+      "published_label": "21 November 2026 · 05:00",
+      "published_iso": "2026-11-21T05:00:00+00:00",
+      "byline": "Geoffrey Ejiga"
     },
     {
       "slug": "ireland-vs-south-africa-nations-championship-2026",
@@ -397,273 +627,6 @@
       "published_label": "21 November 2026 · 04:00",
       "published_iso": "2026-11-21T04:00:00+00:00",
       "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "13614555",
-      "title": "Papers: Osimhen ready to listen to Man Utd offers",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13614555/x-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Saturday's newspapers... PREMIER LEAGUE",
-      "published_label": "20 November 2026 · 23:30",
-      "published_iso": "2026-11-20T23:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Saturday's newspapers... PREMIER LEAGUE",
-        "Victor Osimhen is ready to listen to offers from Manchester United after the Premier League giants renewed their interest in the Nigerian striker - The Sun",
-        "Ivan Toney is emerging as a potential January target for Crystal Palace - talkSPORT Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
-        "Antonio Conte has seemingly suggested that Manchester United are afraid of winning after they shunned his appointment - talkSPORT"
-      ]
-    },
-    {
-      "slug": "13614569",
-      "title": "Kane injured as Bayern held by Koln in frustrating draw at the Allianz",
-      "url": "https://www.skysports.com/football/video/13614569/bayern-munich-1-1-koln-bundesliga-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bayern-koln_7411913.jpg?20261120231315",
-      "excerpt": "Highlights of the Bundesliga match between Bayern Munich and Koln.",
-      "published_label": "20 November 2026 · 23:08",
-      "published_iso": "2026-11-20T23:08:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Bundesliga match between Bayern Munich and Koln."
-      ]
-    },
-    {
-      "slug": "13614559",
-      "title": "Kane set to miss three months with ankle injury",
-      "url": "https://www.skysports.com/football/news/13614559/harry-kane-england-and-bayern-munich-striker-set-to-miss-three-months-with-ankle-injury",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-kane-bayern-munich_7411889.jpg?20261120222213",
-      "excerpt": "Harry Kane is expected to be sidelined for three months after suffering an ankle injury during Bayern Munich's Bundesliga game with Cologne on Friday.",
-      "published_label": "20 November 2026 · 22:26",
-      "published_iso": "2026-11-20T22:26:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Harry Kane is expected to be sidelined for three months after suffering an ankle injury during Bayern Munich's Bundesliga game with Cologne on Friday.",
-        "Sky Germany report Bayern sporting director Max Eberl confirmed shortly after the 1-1 draw that Kane had suffered a \"syndesmosis ligament tear\" - also known as a high ankle sprain.",
-        "The Ballon d'Or winner - who became England's most-capped player last week - was seeking a first goal in five matches for the Bundesliga leaders. How Bayern Munich fell in love with Harry Kane Kane becomes first Englishman to win Ballon d'Or for 25 years 'A cinderella story': Kane's journey from EFL loans to Ballon d'Or",
-        "However, as he looked to latch on to Michael Olise's deflected low cross at the back post, Cologne full-back Joel Schmied got to the ball first and clattered into Kane's left leg in his follow through."
-      ]
-    },
-    {
-      "slug": "13614562",
-      "title": "Ronaldo scores and misses penalty as Al Nassr lose to Toney's Al Ahli",
-      "url": "https://www.skysports.com/football/video/13614562/al-ahli-3-1-al-nassr-saudi-pro-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-saudi-pro-league_7411904.jpg?20261120224442",
-      "excerpt": "Highlights of Al Nassr against Al Ahli in the Saudi Pro League.",
-      "published_label": "20 November 2026 · 22:24",
-      "published_iso": "2026-11-20T22:24:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of Al Nassr against Al Ahli in the Saudi Pro League."
-      ]
-    },
-    {
-      "slug": "13614554",
-      "title": "Barnsley 1-2 Sheffield Wednesday",
-      "url": "https://www.skysports.com/football/video/13614554/barnsley-1-2-sheffield-wednesday-league-one-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/025ba543e71cda2d67f8e52ae6e73324a1bc4b5fbc91c806d10a067b0fd5d25c_7411880.jpg?20261120221329",
-      "excerpt": "Highlights of the Sky Bet League One match between Barnsley and Sheffield Wednesday.",
-      "published_label": "20 November 2026 · 22:07",
-      "published_iso": "2026-11-20T22:07:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League One match between Barnsley and Sheffield Wednesday."
-      ]
-    },
-    {
-      "slug": "13611580",
-      "title": "Barnsley 1-2 Sheffield Wednesday",
-      "url": "https://www.skysports.com/football/news/13611580/barnsley-vs-sheffield-wednesday",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
-      "excerpt": "A rapid-fire Jamal Lowe double set Sheffield Wednesday up for a 2-1 win at neighbours Barnsley.",
-      "published_label": "20 November 2026 · 22:00",
-      "published_iso": "2026-11-20T22:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "A rapid-fire Jamal Lowe double set Sheffield Wednesday up for a 2-1 win at neighbours Barnsley.",
-        "Sloppy defending from the hosts cost them on a night where fans protested against the club's ownership as their winless streak extended to 10 league games.",
-        "Wednesday went in front with their first attack of the game on nine minutes when Liam Cooper headed Barry Bannan's free-kick back across goal and Lowe slotted home. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "Lowe doubled the tally on 14 minutes in easy fashion when he was found by Bannan and then drove into the bottom corner from the edge of the box."
-      ]
-    },
-    {
-      "slug": "13614513",
-      "title": "'What are you going to find?' - Poch condemns 'dangerous' drone footage",
-      "url": "https://www.skysports.com/football/video/13614513/mauricio-pochettino-condemns-dangerous-drone-footage-of-manchester-united-training",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-man-united_7411817.jpg?20261120205937",
-      "excerpt": "Following leaked drone footage of Mauricio Pochettino's first training session, the Manchester United boss questioned why someone would want to film and share the clips online.",
-      "published_label": "20 November 2026 · 20:27",
-      "published_iso": "2026-11-20T20:27:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Following leaked drone footage of Mauricio Pochettino's first training session, the Manchester United boss questioned why someone would want to film and share the clips online."
-      ]
-    },
-    {
-      "slug": "13614512",
-      "title": "'It's been an incredible journey!' - Van Dijk uncertain on Liverpool future",
-      "url": "https://www.skysports.com/football/video/13614512/virgil-van-dijk-admits-hes-uncertain-if-hell-still-be-a-liverpool-player-come-next-season",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/sky-sports-premier-league-liverpool_7411809.jpg?20261120204658",
-      "excerpt": "Virgil van Dijk opens up about his Liverpool future, admitting that he's not sure if he'll be there next season.",
-      "published_label": "20 November 2026 · 20:27",
-      "published_iso": "2026-11-20T20:27:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Virgil van Dijk opens up about his Liverpool future, admitting that he's not sure if he'll be there next season."
-      ]
-    },
-    {
-      "slug": "13614508",
-      "title": "Van Dijk uncertain on Liverpool future",
-      "url": "https://www.skysports.com/football/news/13614508/liverpool-virgil-van-dijk-uncertain-on-anfield-future-beyond-the-summer-but-believes-he-can-play-for-many-more-years",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-van-dijk_7411788.jpg?20261120202101",
-      "excerpt": "Liverpool captain Virgil van Dijk believes he can keeping playing for \"many more years\" - but says he does not yet know whether that will be at Anfield next season.",
-      "published_label": "20 November 2026 · 20:15",
-      "published_iso": "2026-11-20T20:15:00+00:00",
-      "byline": "Harriet Prior (interview) | Peter Smith (words)",
-      "body": [
-        "Liverpool captain Virgil van Dijk believes he can keeping playing for \"many more years\" - but says he does not yet know whether that will be at Anfield next season.",
-        "The 35-year-old centre-back, who has won two Premier League titles and the Champions League during his time at Liverpool, is out of contract in the summer.",
-        "He told Sky Sports that, currently, he is uncertain on what will happen beyond this campaign.",
-        "\"The main thing for me is that I feel good and I'm looking after myself and I still have many more years in my opinion,\" he said."
-      ]
-    },
-    {
-      "slug": "13614363",
-      "title": "Drones, data and Bruno - Pochettino on his early Man Utd challenges",
-      "url": "https://www.skysports.com/football/news/13614363/mauricio-pochettino-manchester-united-head-coach-discusses-drone-footage-his-approach-to-data-and-bruno-fernandes-ahead-of-first-game",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7411581.jpg?20261120160159",
-      "excerpt": "Mauricio Pochettino has questioned what could have been gained from the drone footage of a Manchester United training session ahead of his first game in charge against Liverpool.",
-      "published_label": "20 November 2026 · 20:00",
-      "published_iso": "2026-11-20T20:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Mauricio Pochettino has questioned what could have been gained from the drone footage of a Manchester United training session ahead of his first game in charge against Liverpool.",
-        "A 12-minute video taken over United's Carrington training ground showed the Argentine overseeing various tactical drills with his new team as they prepared for a trip to Anfield on Sunday, live on Sky Sports.",
-        "The operator has since apologised and taken down the video, but footage has been viewed over eight million times on reposts from other X accounts and has since been reuploaded by several other YouTube channels, collectively attracting hundreds of thousands of views.",
-        "Sky Sports News understands the club do not plan on taking legal action, but will not rule out doing so in the future if further incidents occur, and Pochettino questioned the motivation behind the filming."
-      ]
-    },
-    {
-      "slug": "13614498",
-      "title": "How has Fernandez's role impacted Man City's recent defeats?",
-      "url": "https://www.skysports.com/football/video/13614498/how-has-enzo-fernandezs-role-and-positioning-impacted-manchester-citys-recent-defeats",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-enzo-man-city_7411775.jpg?20261120200410",
-      "excerpt": "Sky Sports' David Reed and Steven Caulker break down Enzo Fernandez's involvement in Manchester City's three-straight defeats, especially last time out at Nottingham Forest.",
-      "published_label": "20 November 2026 · 19:56",
-      "published_iso": "2026-11-20T19:56:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' David Reed and Steven Caulker break down Enzo Fernandez's involvement in Manchester City's three-straight defeats, especially last time out at Nottingham Forest."
-      ]
-    },
-    {
-      "slug": "13614478",
-      "title": "The stats behind Guimaraes' Arsenal career so far",
-      "url": "https://www.skysports.com/football/video/13614478/hell-grow-into-the-season-the-stats-behind-bruno-guimaraes-arsenal-career-so-far",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bruno-g-arsenal_7411741.jpg?20261120194447",
-      "excerpt": "Sky Sports' Dave Reed takes a deep dive into the stats behind Bruno Guimaraes' Arsenal career so far.",
-      "published_label": "20 November 2026 · 19:28",
-      "published_iso": "2026-11-20T19:28:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Dave Reed takes a deep dive into the stats behind Bruno Guimaraes' Arsenal career so far."
-      ]
-    },
-    {
-      "slug": "13614400",
-      "title": "Pochettino's first press conference - best bits",
-      "url": "https://www.skysports.com/football/video/13614400/manchester-utd-the-best-bits-of-mauricio-pochettinos-first-press-conference",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-pl_7411622.jpg?20261120171432",
-      "excerpt": "Watch the best bits of Mauricio Pochettino's first press conference as Manchester United head coach.",
-      "published_label": "20 November 2026 · 15:15",
-      "published_iso": "2026-11-20T15:15:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Watch the best bits of Mauricio Pochettino's first press conference as Manchester United head coach."
-      ]
-    },
-    {
-      "slug": "13614384",
-      "title": "Maresca defends Fernandes form and wishes Pochettino well",
-      "url": "https://www.skysports.com/football/video/13614384/marseca-on-fernandes-and-poch",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-city-maresca_7411502.jpg?20261120144245",
-      "excerpt": "Enzo Maresca defends Enzo Fernandes' form for Manchester City and wishes Mauricio Pochettino well at Manchester United.",
-      "published_label": "20 November 2026 · 14:36",
-      "published_iso": "2026-11-20T14:36:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Enzo Maresca defends Enzo Fernandes' form for Manchester City and wishes Mauricio Pochettino well at Manchester United."
-      ]
-    },
-    {
-      "slug": "13614312",
-      "title": "Berrada on Carrick, Poch, defending club leadership and transfers",
-      "url": "https://www.skysports.com/football/news/13614312/omar-berrada-interview-manchester-united-chief-executive-on-michael-carrick-mauricio-pochettino-recent-transfer-activity-and-the-club-hierarchy",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7411463.jpg?20261120140859",
-      "excerpt": "In a turbulent time at Manchester United, chief executive Omar Berrada has sat down exclusively with Sky Sports about United's start to the season, the decision to change head coach and facing fan criticism about the club's leadership.",
-      "published_label": "20 November 2026 · 14:36",
-      "published_iso": "2026-11-20T14:36:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "In a turbulent time at Manchester United, chief executive Omar Berrada has sat down exclusively with Sky Sports about United's start to the season, the decision to change head coach and facing fan criticism about the club's leadership.",
-        "With United in the relegation zone, the club sacked Michael Carrick during the November international break and replaced him with Mauricio Pochettino, who will take charge of his first game away at arch-rivals Liverpool, live on Sky Sports, this Sunday.",
-        "The change in head coach has followed a tumultuous opening few months of the campaign, with Lisandro Martinez also taking aim at the club's technical director Jason Wilcox for not preparing the team well enough in the transfer window, while Fernandes also criticised Carrick and his coaching staff's methods.",
-        "In this exclusive sit-down interview with Sky Sports' Patrick Davison, Berrada discusses: How the club accepts that a lot of the criticism at the club's leadership is fair, but some of it crosses the line Not only why Carrick was sacked, but why United stuck with him in the summer Why Pochettino is the right man going forwards and the \"buzz\" he has brought so far How the club are defiant they have improved the United squad, despite criticism over their transfer activity How captain Bruno Fernandes' contract talks are going and why JJ Gabriel left the club His involvement in the Manchester City charges"
-      ]
-    },
-    {
-      "slug": "13614377",
-      "title": "'It's a blow, he was on fire' - Celtic's O'Neill reacts to Baur injury",
-      "url": "https://www.skysports.com/football/video/13614377/mika-baur-celtics-martin-oneill-reveals-midfielders-injury-timeline-its-a-blow-he-was-on-fire",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mika-baur-celtic_7411500.jpg?20261120144122",
-      "excerpt": "Celtic manager Martin O'Neill reveals midfielder Mika Baur faces a long spell out after picking up an ankle injury in their win against Kilmarnock.",
-      "published_label": "20 November 2026 · 14:31",
-      "published_iso": "2026-11-20T14:31:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Celtic manager Martin O'Neill reveals midfielder Mika Baur faces a long spell out after picking up an ankle injury in their win against Kilmarnock."
-      ]
-    },
-    {
-      "slug": "13614372",
-      "title": "'We take the criticism' - Berrada talks Carrick, Pochettino and future of Man Utd",
-      "url": "https://www.skysports.com/football/video/13614372/manchester-utd-ceo-omar-berrada-talks-michael-carrick-mauricio-pochettino-and-future-of-club",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-omar-berrada-manchester_7411490.jpg?20261120143330",
-      "excerpt": "Manchester Utd chief executive Omar Berrada talks exclusively to Sky Sports about the dismissal of Michael Carrick, the appointment of Mauricio Pochettino and has a message for the fans about the future of club.",
-      "published_label": "20 November 2026 · 14:19",
-      "published_iso": "2026-11-20T14:19:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Manchester Utd chief executive Omar Berrada talks exclusively to Sky Sports about the dismissal of Michael Carrick, the appointment of Mauricio Pochettino and has a message for the fans about the future of club."
-      ]
     }
   ]
 }
