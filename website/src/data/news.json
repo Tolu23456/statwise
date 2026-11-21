@@ -1,69 +1,10 @@
 {
-  "synced_at": "2026-11-21T03:14:01+00:00",
+  "synced_at": "2026-11-21T12:39:58+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13614400",
-      "title": "Pochettino's first press conference - best bits",
-      "url": "https://www.skysports.com/football/video/13614400/manchester-utd-the-best-bits-of-mauricio-pochettinos-first-press-conference",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-pl_7411622.jpg?20261120171432",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614384",
-      "title": "Maresca defends Fernandes form and wishes Pochettino well",
-      "url": "https://www.skysports.com/football/video/13614384/marseca-on-fernandes-and-poch",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-city-maresca_7411502.jpg?20261120144245",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614312",
-      "title": "Berrada on Carrick, Poch, defending club leadership and transfers",
-      "url": "https://www.skysports.com/football/news/13614312/omar-berrada-interview-manchester-united-chief-executive-on-michael-carrick-mauricio-pochettino-recent-transfer-activity-and-the-club-hierarchy",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7411463.jpg?20261120140859",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13614377",
-      "title": "'It's a blow, he was on fire' - Celtic's O'Neill reacts to Baur injury",
-      "url": "https://www.skysports.com/football/video/13614377/mika-baur-celtics-martin-oneill-reveals-midfielders-injury-timeline-its-a-blow-he-was-on-fire",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mika-baur-celtic_7411500.jpg?20261120144122",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614372",
-      "title": "'We take the criticism' - Berrada talks Carrick, Pochettino and future of Man Utd",
-      "url": "https://www.skysports.com/football/video/13614372/manchester-utd-ceo-omar-berrada-talks-michael-carrick-mauricio-pochettino-and-future-of-club",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-omar-berrada-manchester_7411490.jpg?20261120143330",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13614369",
       "title": "'We need to deal this time without him' - Alonso talks scoring struggles in Joao Pedro's absence",
@@ -389,6 +330,75 @@
       "byline": ""
     },
     {
+      "slug": "13614655",
+      "title": "Kane vows to be back for ‘business end of season’ after ankle surgery",
+      "url": "https://www.skysports.com/football/news/13614655/harry-kane-england-and-bayern-munich-striker-vows-to-be-back-for-business-end-of-season-after-ankle-surgery",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-kane-bayern-munich_7411889.jpg?20261120222213",
+      "excerpt": "Harry Kane is targeting the \"business end of the season\" after undergoing surgery on a torn ligament in his left ankle.",
+      "published_label": "21 November 2026 · 11:20",
+      "published_iso": "2026-11-21T11:20:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Harry Kane is targeting the \"business end of the season\" after undergoing surgery on a torn ligament in his left ankle.",
+        "Bayern Munich said the operation on the injury, sustained in Friday's 1-1 draw with Cologne, was a success but the 33-year-old is expected to be out for months as a result.",
+        "Kane wrote on social media: \"The highs and lows of life! Obviously very disappointed to get this injury but as always it's an opportunity to show resilience and improvement going into 2027. How Bayern Munich fell in love with Harry Kane Kane becomes first Englishman to win Ballon d'Or for 25 years 'A cinderella story': Kane's journey from EFL loans to Ballon d'Or",
+        "\"I'll be back fresh and ready to go for the business end of the season!"
+      ]
+    },
+    {
+      "slug": "13614646",
+      "title": "Suzuki reveals his keepie-uppie struggle - The most asked questions answered",
+      "url": "https://www.skysports.com/football/video/13614646/zion-suzuki-answers-the-internet-s-most-asked-questions-fan-q-and-a",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-zion-suzuki-aston-villa_7412111.jpg?20261121095657",
+      "excerpt": "Aston Villa goalkeeper Zion Suzuki tackles the internet’s most asked questions, from meeting Prince William to making Champions League history and revealing what inspired his Premier League move.",
+      "published_label": "21 November 2026 · 09:53",
+      "published_iso": "2026-11-21T09:53:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Aston Villa goalkeeper Zion Suzuki tackles the internet’s most asked questions, from meeting Prince William to making Champions League history and revealing what inspired his Premier League move."
+      ]
+    },
+    {
+      "slug": "13614619",
+      "title": "How Kane sustained ankle injury - 'He'll be out for a long time'",
+      "url": "https://www.skysports.com/football/video/13614619/harry-kane-forced-off-with-suspected-ankle-ligament-tear-as-england-captain-faces-three-months-out",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-kane-injury-bundesliga_7412058.jpg?20261121072810",
+      "excerpt": "Harry Kane suffered a suspected ankle ligament tear during a Bundesliga clash with FC Koln, forcing him off in the 19th minute. He is reportedly expected to be sidelined for around three months.",
+      "published_label": "21 November 2026 · 07:15",
+      "published_iso": "2026-11-21T07:15:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Harry Kane suffered a suspected ankle ligament tear during a Bundesliga clash with FC Koln, forcing him off in the 19th minute. He is reportedly expected to be sidelined for around three months."
+      ]
+    },
+    {
+      "slug": "ireland-vs-south-africa-nations-championship-2026",
+      "title": "No Rassie, No Wiese: Can the Bruised Springboks Conquer Dublin in Nati",
+      "url": "https://www.sportytrader.com/en-za/news/ireland-vs-south-africa-nations-championship-2026/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/formula-1/2026-las-vegas-gp.webp",
+      "excerpt": "The Springboks walk into a hostile Aviva Stadium tonight, having endured one of the most turbulent weeks in recent rugby memory. Still stinging from last weekend’s 21-19",
+      "published_label": "21 November 2026 · 05:00",
+      "published_iso": "2026-11-21T05:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
+      "slug": "las-vegas-gp-2026-max-verstappen-george-russell",
+      "title": "Verstappen and Russell Set for Collision Course in Las Vegas Grand Pri",
+      "url": "https://www.sportytrader.com/en/news/las-vegas-gp-2026-max-verstappen-george-russell/",
+      "source": "SportyTrader",
+      "image": "https://static.sportytrader.com/images/news/football/2027/2026-carling-knockout-semi-finals.webp",
+      "excerpt": "When the lights go out at the 2026 Las Vegas Grand Prix on Sunday, Formula 1 fans will see a fierce rivalry resume on the front row. Newly crowned world champion Kimi Ant",
+      "published_label": "21 November 2026 · 04:00",
+      "published_iso": "2026-11-21T04:00:00+00:00",
+      "byline": "Devesh Jaganath"
+    },
+    {
       "slug": "13614555",
       "title": "Papers: Osimhen ready to listen to Man Utd offers",
       "url": "https://www.skysports.com/football/transfer-paper-talk/13614555/x-paper-talk",
@@ -579,82 +589,80 @@
       ]
     },
     {
-      "slug": "13614472",
-      "title": "Arteta delighted to see Arsenal dominate Sky Sports' top 25 PL players list!",
-      "url": "https://www.skysports.com/football/video/13614472/mikel-arteta-delighted-to-see-arsenal-dominate-sky-sports-top-25-premier-league-players-list",
+      "slug": "13614400",
+      "title": "Pochettino's first press conference - best bits",
+      "url": "https://www.skysports.com/football/video/13614400/manchester-utd-the-best-bits-of-mauricio-pochettinos-first-press-conference",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-arsenal_7411714.jpg?20261120191706",
-      "excerpt": "Mikel Arteta believes that five Arsenal players making the top 10 of Sky Sports' ranking of the top 25 players in the Premier League is a 'testament' to how consistent they've been over the last few years.",
-      "published_label": "20 November 2026 · 19:08",
-      "published_iso": "2026-11-20T19:08:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-pl_7411622.jpg?20261120171432",
+      "excerpt": "Watch the best bits of Mauricio Pochettino's first press conference as Manchester United head coach.",
+      "published_label": "20 November 2026 · 15:15",
+      "published_iso": "2026-11-20T15:15:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Mikel Arteta believes that five Arsenal players making the top 10 of Sky Sports' ranking of the top 25 players in the Premier League is a 'testament' to how consistent they've been over the last few years."
+        "Watch the best bits of Mauricio Pochettino's first press conference as Manchester United head coach."
       ]
     },
     {
-      "slug": "13614423",
-      "title": "Five things we learned from Poch's first Man Utd press conference",
-      "url": "https://www.skysports.com/football/video/13614423/5-things-we-learnt-from-mauricio-pochettinos-first-manchester-united-press-conference",
+      "slug": "13614384",
+      "title": "Maresca defends Fernandes form and wishes Pochettino well",
+      "url": "https://www.skysports.com/football/video/13614384/marseca-on-fernandes-and-poch",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-man-utd_7411598.jpg?20261120162733",
-      "excerpt": "Sky Sports News football correspondent Rob Dorsett provides insight on the five key takeaways from Mauricio Pochettino's first Manchester United press conference.",
-      "published_label": "20 November 2026 · 16:24",
-      "published_iso": "2026-11-20T16:24:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-city-maresca_7411502.jpg?20261120144245",
+      "excerpt": "Enzo Maresca defends Enzo Fernandes' form for Manchester City and wishes Mauricio Pochettino well at Manchester United.",
+      "published_label": "20 November 2026 · 14:36",
+      "published_iso": "2026-11-20T14:36:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Sky Sports News football correspondent Rob Dorsett provides insight on the five key takeaways from Mauricio Pochettino's first Manchester United press conference."
+        "Enzo Maresca defends Enzo Fernandes' form for Manchester City and wishes Mauricio Pochettino well at Manchester United."
       ]
     },
     {
-      "slug": "13614395",
-      "title": "Celtic suffer Baur injury blow",
-      "url": "https://www.skysports.com/football/news/13614395/mika-baur-celtic-midfielder-ruled-out-for-considerable-period-with-ankle-ligament-damage",
+      "slug": "13614312",
+      "title": "Berrada on Carrick, Poch, defending club leadership and transfers",
+      "url": "https://www.skysports.com/football/news/13614312/omar-berrada-interview-manchester-united-chief-executive-on-michael-carrick-mauricio-pochettino-recent-transfer-activity-and-the-club-hierarchy",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mika-baur-celtic_7401363.jpg?20261108182820",
-      "excerpt": "Celtic midfielder Mika Baur faces a lengthy period on the sidelines with an ankle injury.",
-      "published_label": "20 November 2026 · 15:30",
-      "published_iso": "2026-11-20T15:30:00+00:00",
-      "byline": "Alison Conroy",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-manchester-united_7411463.jpg?20261120140859",
+      "excerpt": "In a turbulent time at Manchester United, chief executive Omar Berrada has sat down exclusively with Sky Sports about United's start to the season, the decision to change head coach and facing fan criticism about the club's leadership.",
+      "published_label": "20 November 2026 · 14:36",
+      "published_iso": "2026-11-20T14:36:00+00:00",
+      "byline": "Sky Sports",
       "body": [
-        "Celtic midfielder Mika Baur faces a lengthy period on the sidelines with an ankle injury.",
-        "The German midfielder, who signed from Paderborn in the summer, is facing around ten weeks on the sidelines with the injury.",
-        "He left Celtic Park on crutches after he was forced off during their 1-0 win against Kilmarnock before the international break. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
-        "Manager Martin O'Neill said: \"He'll be out for some considerable time. It's a real shame, he was playing great for us.\""
+        "In a turbulent time at Manchester United, chief executive Omar Berrada has sat down exclusively with Sky Sports about United's start to the season, the decision to change head coach and facing fan criticism about the club's leadership.",
+        "With United in the relegation zone, the club sacked Michael Carrick during the November international break and replaced him with Mauricio Pochettino, who will take charge of his first game away at arch-rivals Liverpool, live on Sky Sports, this Sunday.",
+        "The change in head coach has followed a tumultuous opening few months of the campaign, with Lisandro Martinez also taking aim at the club's technical director Jason Wilcox for not preparing the team well enough in the transfer window, while Fernandes also criticised Carrick and his coaching staff's methods.",
+        "In this exclusive sit-down interview with Sky Sports' Patrick Davison, Berrada discusses: How the club accepts that a lot of the criticism at the club's leadership is fair, but some of it crosses the line Not only why Carrick was sacked, but why United stuck with him in the summer Why Pochettino is the right man going forwards and the \"buzz\" he has brought so far How the club are defiant they have improved the United squad, despite criticism over their transfer activity How captain Bruno Fernandes' contract talks are going and why JJ Gabriel left the club His involvement in the Manchester City charges"
       ]
     },
     {
-      "slug": "13614406",
-      "title": "'I understand fan frustration' - De Zerbi addresses Mudryk's viral Arsenal comment",
-      "url": "https://www.skysports.com/football/video/13614406/tottenham-hotspur-roberto-de-zerbi-addresses-mykhailo-mudryk-viral-podcast-comments",
+      "slug": "13614377",
+      "title": "'It's a blow, he was on fire' - Celtic's O'Neill reacts to Baur injury",
+      "url": "https://www.skysports.com/football/video/13614377/mika-baur-celtics-martin-oneill-reveals-midfielders-injury-timeline-its-a-blow-he-was-on-fire",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-de-zerbi-mudryk-tottenham_7411575.jpg?20261120155256",
-      "excerpt": "Roberto De Zerbi says he understands Tottenham Hotspur fans' frustrations over Mykhailo Mudryk comments on a podcast and says he just has to show his qualities.",
-      "published_label": "20 November 2026 · 15:29",
-      "published_iso": "2026-11-20T15:29:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mika-baur-celtic_7411500.jpg?20261120144122",
+      "excerpt": "Celtic manager Martin O'Neill reveals midfielder Mika Baur faces a long spell out after picking up an ankle injury in their win against Kilmarnock.",
+      "published_label": "20 November 2026 · 14:31",
+      "published_iso": "2026-11-20T14:31:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Roberto De Zerbi says he understands Tottenham Hotspur fans' frustrations over Mykhailo Mudryk comments on a podcast and says he just has to show his qualities."
+        "Celtic manager Martin O'Neill reveals midfielder Mika Baur faces a long spell out after picking up an ankle injury in their win against Kilmarnock."
       ]
     },
     {
-      "slug": "13614340",
-      "title": "Inquest into death of Sheffield United Cusack to resume next month",
-      "url": "https://www.skysports.com/football/news/13614340/maddy-cusack-inquest-into-death-of-sheffield-united-women-midfielder-to-resume-in-december",
+      "slug": "13614372",
+      "title": "'We take the criticism' - Berrada talks Carrick, Pochettino and future of Man Utd",
+      "url": "https://www.skysports.com/football/video/13614372/manchester-utd-ceo-omar-berrada-talks-michael-carrick-mauricio-pochettino-and-future-of-club",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/01/768x432/skysports-cusack-maddy-sheffield_7127622.png?20260105235610",
-      "excerpt": "An inquest into the death of Sheffield United midfielder Maddy Cusack will resume next month after there was a delay to obtain more information about her time at the club.",
-      "published_label": "20 November 2026 · 12:40",
-      "published_iso": "2026-11-20T12:40:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-omar-berrada-manchester_7411490.jpg?20261120143330",
+      "excerpt": "Manchester Utd chief executive Omar Berrada talks exclusively to Sky Sports about the dismissal of Michael Carrick, the appointment of Mauricio Pochettino and has a message for the fans about the future of club.",
+      "published_label": "20 November 2026 · 14:19",
+      "published_iso": "2026-11-20T14:19:00+00:00",
       "byline": "Sky Sports",
+      "kind": "video",
       "body": [
-        "An inquest into the death of Sheffield United midfielder Maddy Cusack will resume next month after there was a delay to obtain more information about her time at the club.",
-        "Cusack's family sent a written complaint to United within a week after she died, outlining issues they alleged stemmed from her time working under her coach Jonathan Morgan.",
-        "The 27-year-old was found unresponsive at her home in Horsley, Derbyshire, on September 20 2023, after Morgan made comments about her weight and relationship with another player, Chesterfield Coroner's Court heard.",
-        "Assistant coroner Sophie Cartwright KC heard eight days of evidence from Morgan, Cusack's parents, her former team-mates, and members of staff from United, before the inquest was adjourned in July to get more evidence from the club."
+        "Manchester Utd chief executive Omar Berrada talks exclusively to Sky Sports about the dismissal of Michael Carrick, the appointment of Mauricio Pochettino and has a message for the fans about the future of club."
       ]
     }
   ]
