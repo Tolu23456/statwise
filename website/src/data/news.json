@@ -1,33 +1,10 @@
 {
-  "synced_at": "2026-11-20T21:50:09+00:00",
+  "synced_at": "2026-11-21T03:14:01+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13614406",
-      "title": "'I understand fan frustration' - De Zerbi addresses Mudryk's viral Arsenal comment",
-      "url": "https://www.skysports.com/football/video/13614406/tottenham-hotspur-roberto-de-zerbi-addresses-mykhailo-mudryk-viral-podcast-comments",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-de-zerbi-mudryk-tottenham_7411575.jpg?20261120155256",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614395",
-      "title": "Celtic suffer Baur injury blow",
-      "url": "https://www.skysports.com/football/news/13614395/mika-baur-celtic-midfielder-ruled-out-for-considerable-period-with-ankle-ligament-damage",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mika-baur-celtic_7401363.jpg?20261108182820",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13614400",
       "title": "Pochettino's first press conference - best bits",
@@ -412,6 +389,102 @@
       "byline": ""
     },
     {
+      "slug": "13614555",
+      "title": "Papers: Osimhen ready to listen to Man Utd offers",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13614555/x-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Saturday's newspapers... PREMIER LEAGUE",
+      "published_label": "20 November 2026 · 23:30",
+      "published_iso": "2026-11-20T23:30:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Saturday's newspapers... PREMIER LEAGUE",
+        "Victor Osimhen is ready to listen to offers from Manchester United after the Premier League giants renewed their interest in the Nigerian striker - The Sun",
+        "Ivan Toney is emerging as a potential January target for Crystal Palace - talkSPORT Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW",
+        "Antonio Conte has seemingly suggested that Manchester United are afraid of winning after they shunned his appointment - talkSPORT"
+      ]
+    },
+    {
+      "slug": "13614569",
+      "title": "Kane injured as Bayern held by Koln in frustrating draw at the Allianz",
+      "url": "https://www.skysports.com/football/video/13614569/bayern-munich-1-1-koln-bundesliga-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bayern-koln_7411913.jpg?20261120231315",
+      "excerpt": "Highlights of the Bundesliga match between Bayern Munich and Koln.",
+      "published_label": "20 November 2026 · 23:08",
+      "published_iso": "2026-11-20T23:08:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Bundesliga match between Bayern Munich and Koln."
+      ]
+    },
+    {
+      "slug": "13614559",
+      "title": "Kane set to miss three months with ankle injury",
+      "url": "https://www.skysports.com/football/news/13614559/harry-kane-england-and-bayern-munich-striker-set-to-miss-three-months-with-ankle-injury",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-kane-bayern-munich_7411889.jpg?20261120222213",
+      "excerpt": "Harry Kane is expected to be sidelined for three months after suffering an ankle injury during Bayern Munich's Bundesliga game with Cologne on Friday.",
+      "published_label": "20 November 2026 · 22:26",
+      "published_iso": "2026-11-20T22:26:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Harry Kane is expected to be sidelined for three months after suffering an ankle injury during Bayern Munich's Bundesliga game with Cologne on Friday.",
+        "Sky Germany report Bayern sporting director Max Eberl confirmed shortly after the 1-1 draw that Kane had suffered a \"syndesmosis ligament tear\" - also known as a high ankle sprain.",
+        "The Ballon d'Or winner - who became England's most-capped player last week - was seeking a first goal in five matches for the Bundesliga leaders. How Bayern Munich fell in love with Harry Kane Kane becomes first Englishman to win Ballon d'Or for 25 years 'A cinderella story': Kane's journey from EFL loans to Ballon d'Or",
+        "However, as he looked to latch on to Michael Olise's deflected low cross at the back post, Cologne full-back Joel Schmied got to the ball first and clattered into Kane's left leg in his follow through."
+      ]
+    },
+    {
+      "slug": "13614562",
+      "title": "Ronaldo scores and misses penalty as Al Nassr lose to Toney's Al Ahli",
+      "url": "https://www.skysports.com/football/video/13614562/al-ahli-3-1-al-nassr-saudi-pro-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-saudi-pro-league_7411904.jpg?20261120224442",
+      "excerpt": "Highlights of Al Nassr against Al Ahli in the Saudi Pro League.",
+      "published_label": "20 November 2026 · 22:24",
+      "published_iso": "2026-11-20T22:24:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of Al Nassr against Al Ahli in the Saudi Pro League."
+      ]
+    },
+    {
+      "slug": "13614554",
+      "title": "Barnsley 1-2 Sheffield Wednesday",
+      "url": "https://www.skysports.com/football/video/13614554/barnsley-1-2-sheffield-wednesday-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/025ba543e71cda2d67f8e52ae6e73324a1bc4b5fbc91c806d10a067b0fd5d25c_7411880.jpg?20261120221329",
+      "excerpt": "Highlights of the Sky Bet League One match between Barnsley and Sheffield Wednesday.",
+      "published_label": "20 November 2026 · 22:07",
+      "published_iso": "2026-11-20T22:07:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League One match between Barnsley and Sheffield Wednesday."
+      ]
+    },
+    {
+      "slug": "13611580",
+      "title": "Barnsley 1-2 Sheffield Wednesday",
+      "url": "https://www.skysports.com/football/news/13611580/barnsley-vs-sheffield-wednesday",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/768x432/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+      "excerpt": "A rapid-fire Jamal Lowe double set Sheffield Wednesday up for a 2-1 win at neighbours Barnsley.",
+      "published_label": "20 November 2026 · 22:00",
+      "published_iso": "2026-11-20T22:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "A rapid-fire Jamal Lowe double set Sheffield Wednesday up for a 2-1 win at neighbours Barnsley.",
+        "Sloppy defending from the hosts cost them on a night where fans protested against the club's ownership as their winless streak extended to 10 league games.",
+        "Wednesday went in front with their first attack of the game on nine minutes when Liam Cooper headed Barry Bannan's free-kick back across goal and Lowe slotted home. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Lowe doubled the tally on 14 minutes in easy fashion when he was found by Bannan and then drove into the bottom corner from the edge of the box."
+      ]
+    },
+    {
       "slug": "13614513",
       "title": "'What are you going to find?' - Poch condemns 'dangerous' drone footage",
       "url": "https://www.skysports.com/football/video/13614513/mauricio-pochettino-condemns-dangerous-drone-footage-of-manchester-united-training",
@@ -536,6 +609,38 @@
       ]
     },
     {
+      "slug": "13614395",
+      "title": "Celtic suffer Baur injury blow",
+      "url": "https://www.skysports.com/football/news/13614395/mika-baur-celtic-midfielder-ruled-out-for-considerable-period-with-ankle-ligament-damage",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mika-baur-celtic_7401363.jpg?20261108182820",
+      "excerpt": "Celtic midfielder Mika Baur faces a lengthy period on the sidelines with an ankle injury.",
+      "published_label": "20 November 2026 · 15:30",
+      "published_iso": "2026-11-20T15:30:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "Celtic midfielder Mika Baur faces a lengthy period on the sidelines with an ankle injury.",
+        "The German midfielder, who signed from Paderborn in the summer, is facing around ten weeks on the sidelines with the injury.",
+        "He left Celtic Park on crutches after he was forced off during their 1-0 win against Kilmarnock before the international break. Scottish Premiership fixtures | Table | Live on Sky Sports Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
+        "Manager Martin O'Neill said: \"He'll be out for some considerable time. It's a real shame, he was playing great for us.\""
+      ]
+    },
+    {
+      "slug": "13614406",
+      "title": "'I understand fan frustration' - De Zerbi addresses Mudryk's viral Arsenal comment",
+      "url": "https://www.skysports.com/football/video/13614406/tottenham-hotspur-roberto-de-zerbi-addresses-mykhailo-mudryk-viral-podcast-comments",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-de-zerbi-mudryk-tottenham_7411575.jpg?20261120155256",
+      "excerpt": "Roberto De Zerbi says he understands Tottenham Hotspur fans' frustrations over Mykhailo Mudryk comments on a podcast and says he just has to show his qualities.",
+      "published_label": "20 November 2026 · 15:29",
+      "published_iso": "2026-11-20T15:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Roberto De Zerbi says he understands Tottenham Hotspur fans' frustrations over Mykhailo Mudryk comments on a podcast and says he just has to show his qualities."
+      ]
+    },
+    {
       "slug": "13614340",
       "title": "Inquest into death of Sheffield United Cusack to resume next month",
       "url": "https://www.skysports.com/football/news/13614340/maddy-cusack-inquest-into-death-of-sheffield-united-women-midfielder-to-resume-in-december",
@@ -550,106 +655,6 @@
         "Cusack's family sent a written complaint to United within a week after she died, outlining issues they alleged stemmed from her time working under her coach Jonathan Morgan.",
         "The 27-year-old was found unresponsive at her home in Horsley, Derbyshire, on September 20 2023, after Morgan made comments about her weight and relationship with another player, Chesterfield Coroner's Court heard.",
         "Assistant coroner Sophie Cartwright KC heard eight days of evidence from Morgan, Cusack's parents, her former team-mates, and members of staff from United, before the inquest was adjourned in July to get more evidence from the club."
-      ]
-    },
-    {
-      "slug": "13614334",
-      "title": "Eckert signs new Saints deal despite 'Spygate' controversy",
-      "url": "https://www.skysports.com/football/news/13614334/southampton-boss-tonda-eckert-given-contract-extension-despite-spygate-controversy",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/05/768x432/skysports-tonda-eckert-southampton_7254559.jpg?20260521084229",
-      "excerpt": "Southampton boss Tonda Eckert has been handed a contract extension through to 2029.",
-      "published_label": "20 November 2026 · 12:30",
-      "published_iso": "2026-11-20T12:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Southampton boss Tonda Eckert has been handed a contract extension through to 2029.",
-        "Saints were kicked out of the Championship play-off final and docked four points this season having admitted three breaches of EFL regulations after being caught spying on semi-final opponents Middlesbrough and two other teams.",
-        "Eckert accepted full responsibility and was charged by the FA with three breaches of Rule E3.1 in relation to \"misconduct\", which hung over Southampton and their manager heading into the new campaign. Southampton fixtures Got Sky? Watch EFL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "However, the club has stuck by their man with Southampton owner Dragan Solak saying at the time of the punishment: \"We are confident the manager has learned from this matter, and a suspended sentence allows him to continue in his role.\""
-      ]
-    },
-    {
-      "slug": "13614324",
-      "title": "England's road to the 2027 Nations League final revealed",
-      "url": "https://www.skysports.com/football/news/13614324/englands-nations-league-2027-route-to-the-final-norway-quarter-final-draw-potential-belgium-or-germany-semi-final-and-dates",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-thomas-tuchel-england_7407578.jpg?20261116081535",
-      "excerpt": "England are three wins away from being crowned Nations League champions after the draw mapped out their route to the 2027 final.",
-      "published_label": "20 November 2026 · 12:00",
-      "published_iso": "2026-11-20T12:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "England are three wins away from being crowned Nations League champions after the draw mapped out their route to the 2027 final.",
-        "Thomas Tuchel's side will face Norway in the quarter-finals , with a semi-final against either Belgium or Germany awaiting them should they progress.",
-        "The Three Lions secured top spot in their group with an impressive 3-2 victory over Spain in Madrid, earning themselves a seeded position for the knockout stages and the advantage of playing the second leg of their quarter-final at home. Nations League quarter-final and semi-final draw Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables England first take on Norway",
-        "England will travel to face Erling Haaland and Martin Odegaard's side in the first leg between March 25 and 27, before welcoming them to Wembley for the return fixture between March 28 and 30."
-      ]
-    },
-    {
-      "slug": "13614281",
-      "title": "England to face Norway in Nations League last eight",
-      "url": "https://www.skysports.com/football/news/13614281/nations-league-quarter-finals-england-to-face-norway-in-the-last-eight-with-a-potential-semi-final-tie-with-germany-waiting",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-englan-england-players_7407371.jpg?20261115220250",
-      "excerpt": "England will take on Erling Haaland and Norway in the Nations League quarter-finals.",
-      "published_label": "20 November 2026 · 11:30",
-      "published_iso": "2026-11-20T11:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "England will take on Erling Haaland and Norway in the Nations League quarter-finals.",
-        "Thomas Tuchel's side finished top of their group thanks to their dramatic 3-2 win over Spain at the Metropolitano Stadium, while Norway finished second behind Portugal in Group D.",
-        "The two sides met in the 2026 World Cup quarter-finals, with a Jude Bellingham goal in extra-time sending the Three Lions through to the last four. Nations League: All you need to know Latest England news | England fixtures Nations League fixtures | Nations League tables",
-        "Should England progress, they will meet Belgium or Germany in the semi-finals. The other two quarter-final ties have seen world champions Spain drawn with France and Netherlands take on Portugal."
-      ]
-    },
-    {
-      "slug": "13614319",
-      "title": "Semenyo withdraws support for prosecution of Liverpool fan in racial abuse case",
-      "url": "https://www.skysports.com/football/news/13614319/antoine-semenyo-manchester-city-forward-withdraws-support-for-prosecution-of-liverpool-fan-in-racial-abuse-case",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-semenyo-manchester-city_7376976.jpg?20261014223334",
-      "excerpt": "A Liverpool fan accused of racially abusing Antoine Semenyo has been found not guilty after the Manchester City forward withdrew his support for the prosecution.",
-      "published_label": "20 November 2026 · 11:24",
-      "published_iso": "2026-11-20T11:24:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "A Liverpool fan accused of racially abusing Antoine Semenyo has been found not guilty after the Manchester City forward withdrew his support for the prosecution.",
-        "Semenyo was due to give evidence at Liverpool Magistrates' Court on Friday in the trial of Mark Mogan, 47, who was accused of shouting abuse during the Premier League match between Liverpool and Semenyo's former club Bournemouth at Anfield on August 15 last year.",
-        "But Simon Jones, prosecuting, said: \"Following recent contact made with Mr Semenyo, he has indicated he is no longer supportive of proceedings and the prosecution do not consider it is appropriate to compel him.",
-        "\"In those circumstances we offer no further evidence in the case.\""
-      ]
-    },
-    {
-      "slug": "13614298",
-      "title": "Drones: Are they legal and how can you stop them?",
-      "url": "https://www.skysports.com/football/video/13614298/explained-what-the-rules-about-the-use-of-drones",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-drone-man-utd-rules_7411289.jpg?20261120104742",
-      "excerpt": "Drone expert Jon Hurndall explains the rules behind the use of Drones and whether or not filming Manchester United training was breaking the law.",
-      "published_label": "20 November 2026 · 10:43",
-      "published_iso": "2026-11-20T10:43:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Drone expert Jon Hurndall explains the rules behind the use of Drones and whether or not filming Manchester United training was breaking the law."
-      ]
-    },
-    {
-      "slug": "13612946",
-      "title": "Guimaraes growing at Arsenal - but Arteta still wants more",
-      "url": "https://www.skysports.com/football/news/13612946/bruno-guimaraes-arsenal-midfielder-is-growing-in-stature-but-mikel-arteta-still-wants-more-from-brazilian-ahead-of-newcastle-return",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-arsenal_7411193.jpg?20261120082419",
-      "excerpt": "It's all eyes on Bruno Guimaraes this Saturday. The Newcastle hero who captained the team to cup success returns in Arsenal colours. And he returns as a growing cog in the Gunners' system.",
-      "published_label": "20 November 2026 · 09:38",
-      "published_iso": "2026-11-20T09:38:00+00:00",
-      "byline": "Sam Blitz",
-      "body": [
-        "It's all eyes on Bruno Guimaraes this Saturday. The Newcastle hero who captained the team to cup success returns in Arsenal colours. And he returns as a growing cog in the Gunners' system.",
-        "Despite being Newcastle's key man, the Brazilian endured a slow start to life at Arsenal. An early-season injury did not help, nor did the early-season form of Myles Lewis-Skelly in the Brazilian's absence.",
-        "But now he is back in the North East as a first-choice option, having impressed in Arsenal's recent league wins over Liverpool and Hull, while also scoring crucial goals against Sunderland and Leeds.",
-        "\"He's still not there,\" said Arteta after the 1-0 win over Hull last time out. \"He's much better, he's hitting serious levels now, but we can still take the player to another level.\""
       ]
     }
   ]
