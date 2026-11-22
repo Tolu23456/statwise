@@ -1,10 +1,57 @@
 {
-  "synced_at": "2026-11-21T20:32:00+00:00",
+  "synced_at": "2026-11-22T02:14:52+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13610574",
+      "title": "Hearts put eight goals past 10-man Dundee in thumping win",
+      "url": "https://www.skysports.com/football/news/13610574/dundee-0-8-hearts-ruthless-jambos-return-to-winning-ways-with-scottish-premiership-demolition-at-dens-park",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hearts-pieree-landry_7412945.jpg?20261121201715",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13614988",
+      "title": "'Concerned, baffling' | PASSIONATE examination of Scotland's start under Pocognoli",
+      "url": "https://www.skysports.com/football/video/13614988/sebastien-pocognolis-scotland-start-analysed-by-james-mcfadden-kris-boyd-and-andy-halliday",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/02adac1a7e5cb11fc7cd9aae2a113af33fb83f7d1e26b9c8fbe5b3aa52b263d8_7412955.jpg?20261121202201",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615042",
+      "title": "Rangers dominance undone by Girdwood-Reich equaliser!",
+      "url": "https://www.skysports.com/football/video/13615042/kofi-girdwood-reich-equalises-for-motherwell-against-rangers-from-their-first-corner",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-motherwell-goal_7412962.jpg?20261121202932",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615026",
+      "title": "Falkirk 2-1 St Johnstone",
+      "url": "https://www.skysports.com/football/video/13615026/falkirk-2-1-st-johnstone-scottish-premiership-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/3fd21c36fa06994859a156dce2a61867a737752772935c90841ed019281f44a1_7412939.jpg?20261121201351",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13615002",
       "title": "Crawley 2-1 Fleetwood",
@@ -414,6 +461,117 @@
       "byline": ""
     },
     {
+      "slug": "13615078",
+      "title": "Dundee 0-8 Hearts",
+      "url": "https://www.skysports.com/football/video/13615078/dundee-0-8-hearts-scottish-premiership-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/06dc46fef9829b2d304ea3ded45f85d07777231fab21158cab40a335e2d8e15c_7413057.jpg?20261121230647",
+      "excerpt": "Highlights from the Scottish Premiership match between Dundee and Hearts",
+      "published_label": "21 November 2026 · 23:50",
+      "published_iso": "2026-11-21T23:50:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights from the Scottish Premiership match between Dundee and Hearts"
+      ]
+    },
+    {
+      "slug": "13615038",
+      "title": "Hibernian 0-4 Dundee United",
+      "url": "https://www.skysports.com/football/video/13615038/hibernian-0-4-dundee-united-scottish-premiership-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/688c2e5289322a933cb852bab111b9799fa5fa4e9c12e83f7f81f78f6fb3938a_7412996.jpg?20261121210124",
+      "excerpt": "Watch highlights from the Scottish Premiership match between Hibernian and Dundee United.",
+      "published_label": "21 November 2026 · 23:50",
+      "published_iso": "2026-11-21T23:50:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Watch highlights from the Scottish Premiership match between Hibernian and Dundee United."
+      ]
+    },
+    {
+      "slug": "13615047",
+      "title": "Kilmarnock 2-4 Aberdeen",
+      "url": "https://www.skysports.com/football/video/13615047/kilmarnock-2-4-aberdeen-scottish-premiership-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/0356c36c2b57bf1b1ee71348f0803caea8cd09eb9ed357928760e52d019993b3_7412990.jpg?20261121205524",
+      "excerpt": "Watch highlights from the Scottish Premiership match between Kilmarnock and Aberdeen.",
+      "published_label": "21 November 2026 · 23:50",
+      "published_iso": "2026-11-21T23:50:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Watch highlights from the Scottish Premiership match between Kilmarnock and Aberdeen."
+      ]
+    },
+    {
+      "slug": "13615058",
+      "title": "De Zerbi compares Williams-Barnett to Lamine Yamal - who is Spurs teen?",
+      "url": "https://www.skysports.com/football/news/13615058/luca-williams-barnett-tottenham-boss-roberto-de-zerbi-compares-teenager-to-lamine-yamal-after-ipswich-heroics",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-tottenham-spurs-luca-williams-barnett_7412663.jpg?20261121173422",
+      "excerpt": "Tottenham boss Roberto De Zerbi was not surprised by a dazzling full-debut display from “special” talent Luca Williams-Barnett and compared the 18-year-old to Barcelona’s Lamine Yamal after Saturday’s 2-0 win over Ipswich.",
+      "published_label": "21 November 2026 · 22:15",
+      "published_iso": "2026-11-21T22:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Tottenham boss Roberto De Zerbi was not surprised by a dazzling full-debut display from “special” talent Luca Williams-Barnett and compared the 18-year-old to Barcelona’s Lamine Yamal after Saturday’s 2-0 win over Ipswich.",
+        "De Zerbi turned to the highly rated Spurs academy graduate after two bright cameos and he delivered, scoring on his first Premier League start after 15 minutes before a mazy run set up Dominic Solanke at the start of the second half.",
+        "After Williams-Barnett made his senior debut at the age of 16 last season, the clamour for the teenager to play has only increased during a difficult last 12 months, and De Zerbi decided 10 days ago to include him in the starting line-up against Ipswich.",
+        "Tottenham 2-0 Ipswich - Match report & highlights Transfer Centre LIVE! | Tottenham news & transfers ⚪ Spurs fixtures & scores | FREE Spurs highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract"
+      ]
+    },
+    {
+      "slug": "13615061",
+      "title": "LATE DRAMA! Naderi snatches Rangers winner!",
+      "url": "https://www.skysports.com/football/video/13615061/ryan-naderi-scores-dramatic-89th-minute-winner-for-rangers-against-motherwell",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-rangers-goal_7413014.jpg?20261121215436",
+      "excerpt": "Ryan Naderi's deflected 89th-minute strike seals a dramatic 2-1 victory for Rangers against Motherwell.",
+      "published_label": "21 November 2026 · 21:52",
+      "published_iso": "2026-11-21T21:52:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Ryan Naderi's deflected 89th-minute strike seals a dramatic 2-1 victory for Rangers against Motherwell."
+      ]
+    },
+    {
+      "slug": "13610588",
+      "title": "Naderi strike snatches late win for Rangers at Motherwell",
+      "url": "https://www.skysports.com/football/news/13610588/motherwell-1-2-rangers-ryan-naderi-strikes-late-to-snatch-scottish-premiership-victory-at-fir-park",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ryan-naderi-rangers_7413015.jpg?20261121215843",
+      "excerpt": "Ryan Naderi was the hero for Rangers as he scrambled a late winner against Motherwell to keep up the pressure in the Scottish Premiership title race.",
+      "published_label": "21 November 2026 · 21:50",
+      "published_iso": "2026-11-21T21:50:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "Ryan Naderi was the hero for Rangers as he scrambled a late winner against Motherwell to keep up the pressure in the Scottish Premiership title race.",
+        "After Celtic's impressive 4-1 win against St Mirren, Rangers knew a win was vital to remain within touching distance of their Old Firm rivals at the top of the table.",
+        "Emmanuel Fernandez gave them the perfect start, nodding in from a corner to put them in front at Fir Park. As it happened | Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
+        "But Jake Girdwood-Reich struck his first Motherwell goal against the run of play before the break."
+      ]
+    },
+    {
+      "slug": "13615040",
+      "title": "How 'complacent' Arsenal unravelled at Newcastle - and their key lesson",
+      "url": "https://www.skysports.com/football/news/13615040/arsenal-escape-with-2-2-draw-at-newcastle-after-complacent-second-half-almost-proves-costly-for-defending-champions",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-bruno-guimaraes-sean-steur_7412718.jpg?20261121175724",
+      "excerpt": "From \"exceptional\" to \"complacent\" - Arsenal's drop-off in the second half at Newcastle was extraordinary.",
+      "published_label": "21 November 2026 · 20:21",
+      "published_iso": "2026-11-21T20:21:00+00:00",
+      "byline": "Peter Smith",
+      "body": [
+        "From \"exceptional\" to \"complacent\" - Arsenal's drop-off in the second half at Newcastle was extraordinary.",
+        "Noni Madueke's equaliser at least rescued a point, but after completely dominating the first half at St James' Park Mikel Arteta says his team have learnt a harsh lesson about the need to deliver a complete performance in the Premier League.",
+        "Credit has to go to Newcastle, who were energised by Matthias Jaissle's triple substitution at half-time, with Tino Livramento, Jacob Ramsey and Anthony Elanga bringing intensity. Harvey Barnes and Malick Thiaw brought the goals. But the Premier League champions were their own worst enemy and, in the end, were fortunate to get away with their lead at the top of the table improved - for now.",
+        "With Man City dropping points again on Saturday and surprise-package Brighton still to play on Sunday, Arsenal remain firmly in the box seat. But Arteta is eager to drive even higher standards in his squad this season as he builds on last year's success - and he was far from impressed with how his team allowed Newcastle back into the game."
+      ]
+    },
+    {
       "slug": "13615037",
       "title": "'A MASSIVE blow!' - Wright worried for Arsenal after Raya injury",
       "url": "https://www.skysports.com/football/video/13615037/newcastle-2-2-arsenal-how-big-of-a-blow-to-arsenals-season-will-david-rayas-injury-be",
@@ -459,174 +617,21 @@
       ]
     },
     {
-      "slug": "13615004",
-      "title": "Arsenal rescue a draw at Newcastle",
-      "url": "https://www.skysports.com/football/video/13615004/newcastle-2-2-arsenal-premier-league-highlights",
+      "slug": "13614992",
+      "title": "Alonso: Chelsea are fragile and need to be tougher",
+      "url": "https://www.skysports.com/football/news/13614992/chelsea-are-fragile-and-need-to-toughen-up-says-manager-xabi-alonso-after-humiliating-defeat-to-leeds-united",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7412860.jpg?20261121193125",
-      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Newcastle and Arsenal.",
-      "published_label": "21 November 2026 · 19:35",
-      "published_iso": "2026-11-21T19:35:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "FREE TO WATCH: Highlights from the Premier League match between Newcastle and Arsenal."
-      ]
-    },
-    {
-      "slug": "13615001",
-      "title": "PSG survive late Nice scare in five-goal thriller",
-      "url": "https://www.skysports.com/football/video/13615001/nice-2-3-psg-ligue-1-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ligue-1-psg_7412914.jpg?20261121195223",
-      "excerpt": "Highlights of the Ligue 1 match between Nice and Paris Saint-Germain.",
-      "published_label": "21 November 2026 · 19:30",
-      "published_iso": "2026-11-21T19:30:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Ligue 1 match between Nice and Paris Saint-Germain."
-      ]
-    },
-    {
-      "slug": "13614954",
-      "title": "OH NO! Price's Panenka goes horribly wrong!",
-      "url": "https://www.skysports.com/football/video/13614954/isaac-prices-panenka-penalty-saved-despite-swansea-goalkeeper-diving-the-wrong-way",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-panenka-wba_7412874.jpg?20261121193723",
-      "excerpt": "West Brom's Isaac Price won't want to watch his sees his attempted Panenka penalty saved by Swansea goalkeeper Lawrence Vigouroux.",
-      "published_label": "21 November 2026 · 18:02",
-      "published_iso": "2026-11-21T18:02:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "West Brom's Isaac Price won't want to watch his sees his attempted Panenka penalty saved by Swansea goalkeeper Lawrence Vigouroux."
-      ]
-    },
-    {
-      "slug": "13611970",
-      "title": "Arsenal's winning run ended by Newcastle in thrilling draw",
-      "url": "https://www.skysports.com/football/news/13611970/newcastle-2-2-arsenal-noni-madueke-grabs-gunners-a-point-after-stunning-toon-comeback",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-malick-thiaw-newcastle_7412895.jpg?20261121194652",
-      "excerpt": "Arsenal's four-game winning Premier League run without conceding was ended by Newcastle in a frantic 2-2 draw.",
-      "published_label": "21 November 2026 · 18:00",
-      "published_iso": "2026-11-21T18:00:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-cole-palmer-chelsea_7412951.jpg?20261121201852",
+      "excerpt": "Chelsea manager Xabi Alonso said his side are \"fragile\" and need to be \"tougher\" after being embarrassed by Leeds United.",
+      "published_label": "21 November 2026 · 19:13",
+      "published_iso": "2026-11-21T19:13:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Arsenal's four-game winning Premier League run without conceding was ended by Newcastle in a frantic 2-2 draw.",
-        "For 45 minutes, this looked like another routine victory for Mikel Arteta's winning machine. Arsenal were dominant, controlling the tempo and suffocating Newcastle with their relentless pressure as Eberechi Eze's opener was exactly what the league leaders deserved.",
-        "But football showed yet again it's a game of two halves as Matthias Jaissle produced a tactical masterstroke to change the momentum of the game.",
-        "The Newcastle boss made a triple substitution that completely transformed the contest. Suddenly, Newcastle were bolder, braver and playing with intensity."
+        "Chelsea manager Xabi Alonso said his side are \"fragile\" and need to be \"tougher\" after being embarrassed by Leeds United.",
+        "Noah Okafor's double helped Leeds to a stunning 4-1 victory, their first at Stamford Bridge since 1999, increasing the pressure on Alonso, whose team have lost three of their last four Premier League matches and slipped to eighth.",
+        "Chelsea took the lead through Emmanuel Emegha after Moises Caicedo went off injured, but once Leeds deservedly equalised through Noah Okafor, the home side never looked likely to recover. Chelsea 1-4 Leeds - report and analysis Chelsea news & transfers 🔵| Chelsea fixtures & scores Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "\"We are in a fragile moment mentally,\" said Alonso. \"When we receive a punch, we didn't recover that strong, that tough enough and today that was my feeling.\""
       ]
-    },
-    {
-      "slug": "13614659",
-      "title": "Hits and misses: Problems for passive Man City as Chelsea bullied again",
-      "url": "https://www.skysports.com/football/news/13614659/problems-for-passive-man-city-as-chelsea-are-bullied-by-leeds-premier-league-hits-and-misses",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hits_7412868.jpg?20261121193532",
-      "excerpt": "Enzo Maresca had insisted after the defeat to Nottingham Forest that there was no overarching theme to their losing run. But the results are a recurring problem. They at least mustered a draw at home to Fulham but the performance was not co…",
-      "published_label": "21 November 2026 · 11:23",
-      "published_iso": "2026-11-21T11:23:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Enzo Maresca had insisted after the defeat to Nottingham Forest that there was no overarching theme to their losing run. But the results are a recurring problem. They at least mustered a draw at home to Fulham but the performance was not convincing.",
-        "Against Forest, Maresca highlighted lost duels as an issue, most conspicuously for Liam Delap's first goal when Elliot Anderson came out second best against Xaver Schlager. His team selection hinted at an attempt to address that with Ayyoub Bouaddi included.",
-        "But City still looked too easy to play through. Fulham managed it time and time again. Perhaps it is the lack of pressing from the front that is part of the problem, as much as a lack of defensive cover in midfield. Erling Haaland certainly seemed reluctant to do so. Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "The fans were groaning in frustration at how comfortable Fulham looked right from the start and their tolerance for what might be deemed a passive possession game is declining. Maresca's controlled approach is not bringing the control that he needs. Adam Bate Fulham end losing streak against Man City"
-      ]
-    },
-    {
-      "slug": "13614655",
-      "title": "Kane vows to be back for ‘business end of season’ after ankle surgery",
-      "url": "https://www.skysports.com/football/news/13614655/harry-kane-england-and-bayern-munich-striker-vows-to-be-back-for-business-end-of-season-after-ankle-surgery",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-harry-kane-bayern-munich_7411889.jpg?20261120222213",
-      "excerpt": "Harry Kane is targeting the \"business end of the season\" after undergoing surgery on a torn ligament in his left ankle.",
-      "published_label": "21 November 2026 · 11:20",
-      "published_iso": "2026-11-21T11:20:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Harry Kane is targeting the \"business end of the season\" after undergoing surgery on a torn ligament in his left ankle.",
-        "Bayern Munich said the operation on the injury, sustained in Friday's 1-1 draw with Cologne, was a success but the 33-year-old is expected to be out for months as a result.",
-        "Kane wrote on social media: \"The highs and lows of life! Obviously very disappointed to get this injury but as always it's an opportunity to show resilience and improvement going into 2027. How Bayern Munich fell in love with Harry Kane Kane becomes first Englishman to win Ballon d'Or for 25 years 'A cinderella story': Kane's journey from EFL loans to Ballon d'Or",
-        "\"I'll be back fresh and ready to go for the business end of the season!"
-      ]
-    },
-    {
-      "slug": "13614646",
-      "title": "Suzuki reveals his keepie-uppie struggle - The most asked questions answered",
-      "url": "https://www.skysports.com/football/video/13614646/zion-suzuki-answers-the-internet-s-most-asked-questions-fan-q-and-a",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-zion-suzuki-aston-villa_7412111.jpg?20261121095657",
-      "excerpt": "Aston Villa goalkeeper Zion Suzuki tackles the internet’s most asked questions, from meeting Prince William to making Champions League history and revealing what inspired his Premier League move.",
-      "published_label": "21 November 2026 · 09:53",
-      "published_iso": "2026-11-21T09:53:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Aston Villa goalkeeper Zion Suzuki tackles the internet’s most asked questions, from meeting Prince William to making Champions League history and revealing what inspired his Premier League move."
-      ]
-    },
-    {
-      "slug": "this-weekend-s-best-player-props-isak-oskarsson-and-thuram",
-      "title": "This Weekend’s Best Player Props: Isak, Oskarsson and Thuram!",
-      "url": "https://www.sportytrader.com/en/news/this-weekend-s-best-player-props-isak-oskarsson-and-thuram/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/hall_vs_bruno.webp",
-      "excerpt": "Three Sunday picks from the Premier League, La Liga and Serie A, and we’re focusing on the strikers this time around! We’re taking a look at two in-form goalscorers with",
-      "published_label": "21 November 2026 · 08:00",
-      "published_iso": "2026-11-21T08:00:00+00:00",
-      "byline": "Joseph King"
-    },
-    {
-      "slug": "13614619",
-      "title": "How Kane sustained ankle injury - 'He'll be out for a long time'",
-      "url": "https://www.skysports.com/football/video/13614619/harry-kane-forced-off-with-suspected-ankle-ligament-tear-as-england-captain-faces-three-months-out",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-kane-injury-bundesliga_7412058.jpg?20261121072810",
-      "excerpt": "Harry Kane suffered a suspected ankle ligament tear during a Bundesliga clash with FC Koln, forcing him off in the 19th minute. He is reportedly expected to be sidelined for around three months.",
-      "published_label": "21 November 2026 · 07:15",
-      "published_iso": "2026-11-21T07:15:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Harry Kane suffered a suspected ankle ligament tear during a Bundesliga clash with FC Koln, forcing him off in the 19th minute. He is reportedly expected to be sidelined for around three months."
-      ]
-    },
-    {
-      "slug": "newcastle-vs-arsenal-guimaraes-left-newcastle-as-captain-he-comes-back-five-points-clear-at-the-top",
-      "title": "Newcastle vs Arsenal: Guimaraes Left Newcastle as Captain. He Comes Ba",
-      "url": "https://www.sportytrader.com/en/news/newcastle-vs-arsenal-guimaraes-left-newcastle-as-captain-he-comes-back-five-points-clear-at-the-top/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/rugby/ireland-vs-rsa-unl.webp",
-      "excerpt": "Newcastle sold Bruno Guimaraes to Arsenal for £75 million in August. Tonight he walks back into St James' Park for the first time, five points clear at the top of the Pre",
-      "published_label": "21 November 2026 · 05:00",
-      "published_iso": "2026-11-21T05:00:00+00:00",
-      "byline": "Geoffrey Ejiga"
-    },
-    {
-      "slug": "ireland-vs-south-africa-nations-championship-2026",
-      "title": "No Rassie, No Wiese: Can the Bruised Springboks Conquer Dublin in Nati",
-      "url": "https://www.sportytrader.com/en-za/news/ireland-vs-south-africa-nations-championship-2026/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/formula-1/2026-las-vegas-gp.webp",
-      "excerpt": "The Springboks walk into a hostile Aviva Stadium tonight, having endured one of the most turbulent weeks in recent rugby memory. Still stinging from last weekend’s 21-19",
-      "published_label": "21 November 2026 · 05:00",
-      "published_iso": "2026-11-21T05:00:00+00:00",
-      "byline": "Devesh Jaganath"
-    },
-    {
-      "slug": "las-vegas-gp-2026-max-verstappen-george-russell",
-      "title": "Verstappen and Russell Set for Collision Course in Las Vegas Grand Pri",
-      "url": "https://www.sportytrader.com/en/news/las-vegas-gp-2026-max-verstappen-george-russell/",
-      "source": "SportyTrader",
-      "image": "https://static.sportytrader.com/images/news/football/2027/2026-carling-knockout-semi-finals.webp",
-      "excerpt": "When the lights go out at the 2026 Las Vegas Grand Prix on Sunday, Formula 1 fans will see a fierce rivalry resume on the front row. Newly crowned world champion Kimi Ant",
-      "published_label": "21 November 2026 · 04:00",
-      "published_iso": "2026-11-21T04:00:00+00:00",
-      "byline": "Devesh Jaganath"
     }
   ]
 }
