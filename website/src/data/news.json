@@ -1,10 +1,116 @@
 {
-  "synced_at": "2026-11-22T17:50:02+00:00",
+  "synced_at": "2026-11-22T23:36:49+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13615411",
+      "title": "Gary Neville on Man Utd hitting a new low after Liverpool defeat",
+      "url": "https://www.skysports.com/football/video/13615411/man-utd-gary-neville-s-damning-assessment-after-liverpool-defeat",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-gary-neville-man-utd_7413889.jpg?20261122193809",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615404",
+      "title": "‘The damage is done, it’s so painful’ – Poch reacts to humbling defeat to Liverpool",
+      "url": "https://www.skysports.com/football/video/13615404/the-damage-is-done-it-s-so-painful-pochettino-reacts-to-man-utd-s-humbling-defeat-to-liverpool",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-postmatch-man-utd_7413862.jpg?20261122190838",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615398",
+      "title": "'No chance!' - Mainoo unimpressed by early Yoro red card decision",
+      "url": "https://www.skysports.com/football/video/13615398/liverpool-4-0-man-utd-kobbie-mainoo-unimpressed-with-leny-yoros-red-card-decision",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mainoo-man-utd_7413855.jpg?20261122185519",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615396",
+      "title": "Liverpool's fab four as they thrash 10-man Man Utd",
+      "url": "https://www.skysports.com/football/video/13615396/liverpool-4-0-manchester-united-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413818.jpg?20261122183437",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615315",
+      "title": "Punishing start for Pochettino as size of Man Utd mess made clear",
+      "url": "https://www.skysports.com/football/news/13615315/mauricio-pochettino-made-mistakes-in-man-utd-s-4-0-defeat-to-liverpool-but-the-size-of-the-mess-he-has-inherited-is-clear",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7413802.jpg?20261122181812",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13615388",
+      "title": "'I feel like swearing!' - Keane on Man Utd's heavy loss to Liverpool",
+      "url": "https://www.skysports.com/football/video/13615388/roy-keanes-post-match-takedown-of-man-utd-after-4-0-defeat-at-liverpool",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-keane-man-utd_7413826.jpg?20261122183718",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13611979",
+      "title": "Nightmare start for Pochettino as Liverpool rout 10-man Man Utd",
+      "url": "https://www.skysports.com/football/news/13611979/liverpool-4-0-man-utd-mauricio-pochettino-endures-nightmare-start-as-leny-yoros-early-red-card-sparks-collapse",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-rio-ngumoha-liverpool_7413795.jpg?20261122181605",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13615381",
+      "title": "Glorious goal from Munoz as Liverpool go FOUR up against Man Utd",
+      "url": "https://www.skysports.com/football/video/13615381/goal-v-munoz-82-liverpool-4-0-manchester-utd",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413801.jpg?20261122181749",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615373",
+      "title": "'The pace of this lad is FRIGHTENING! - Rio makes it THREE for Liverpool",
+      "url": "https://www.skysports.com/football/video/13615373/goal-r-ngumoha-66-liverpool-3-0-manchester-utd",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413773.jpg?20261122180320",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13611975",
       "title": "McBurnie's late double stuns 10-man Brighton after Tzolakis heroics",
@@ -392,231 +498,127 @@
       "byline": ""
     },
     {
-      "slug": "13607451",
-      "title": "'He will suit our style' - Scotland boss Pocognoli on Penrice's first call-up",
-      "url": "https://www.skysports.com/football/video/13607451/scotland-james-penrice-will-suit-our-style-as-sebastien-pocognolii-stresses-importance-of-continuity",
+      "slug": "13615470",
+      "title": "Atletico keep up pace with La Liga top 2 with 3-0 win at Getafe",
+      "url": "https://www.skysports.com/football/video/13615470/getafe-0-3-atletico-madrid-la-liga-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-sebastien-pocognoli_7367562.jpg?20261003221039",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13607010",
-      "title": "'It's like a parting of the Red Sea!' - Tim & Jay slam United defence on Rogers goal",
-      "url": "https://www.skysports.com/football/video/13607010/tim-sherwood-and-jay-bothroyd-slam-manchester-united-defense-on-morgan-rogers-goal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7394702.jpg?20261102110007",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13605451",
-      "title": "Why keeping Isak fit and firing is key to Iraola's Liverpool revival",
-      "url": "https://www.skysports.com/football/news/13605451/alexander-isak-why-keeping-sweden-striker-fit-and-firing-is-key-to-andoni-iraolas-liverpool-revival",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-liverpool_7390621.jpg?20261029083255",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13606301",
-      "title": "Brighton condemn Man City to back-to-back PL defeats",
-      "url": "https://www.skysports.com/football/video/13606301/manchester-city-0-1-brighton-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-man-c-brighton_7392987.jpg?20261031171704",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606391",
-      "title": "Fleetwood 3-1 Bristol Rovers",
-      "url": "https://www.skysports.com/football/video/13606391/fleetwood-town-3-1-bristol-rovers-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/d3398053e6ebd4126e88a20bd34c9c9ae8f38fbc7cd23dfe18a74cd9adbd8995_7393155.jpg?20261031182249",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606239",
-      "title": "Brentford topple wasteful Forest who remain in relegation zone",
-      "url": "https://www.skysports.com/football/video/13606239/brentford-2-0-nottingham-forest-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-brentford-pl_7393159.jpg?20261031182409",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606381",
-      "title": "MK Dons 6-1 Doncaster",
-      "url": "https://www.skysports.com/football/video/13606381/mk-dons-6-1-doncaster",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/756ba757d6e8ee7a5982864332ff7eaa38fca09769aea1632ac5f36ed1f2989c_7393133.jpg?20261031181528",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13606354",
-      "title": "Oldham 0-1 Crawley",
-      "url": "https://www.skysports.com/football/video/13606354/oldham-athletic-0-1-crawley-town-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/f1f311dec7970709b1b7753b8304df2827e6692f396b460f0a316802ba314913_7393051.jpg?20261031174648",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13604361",
-      "title": "'Delaying the inevitable' or right call? Key questions as Carrick stays",
-      "url": "https://www.skysports.com/football/news/13604361/michael-carrick-why-man-utd-head-coach-will-stay-on-and-could-bruno-fernandes-play-vs-chelsea-plus-other-key-questions",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-michael-carrick-manchester-united_7383931.jpg?20261022173420",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13615358",
-      "title": "Comms Cam: Carra and Nev’s Liverpool vs Man Utd first half reactions!",
-      "url": "https://www.skysports.com/football/video/13615358/liverpool-vs-man-utd-jamie-carragher-and-gary-neville-s-liverpool-vs-man-utd-first-half-reactions",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413750.jpg?20261122174347",
-      "excerpt": "Take a look at Jamie Carragher and Gary Neville’s first half reactions from Liverpool vs Manchester United.",
-      "published_label": "22 November 2026 · 17:40",
-      "published_iso": "2026-11-22T17:40:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-atletico-madrid-getafe_7414053.jpg?20261122224543",
+      "excerpt": "Highlights of the La Liga match between Getafe and Atletico Madrid.",
+      "published_label": "22 November 2026 · 23:00",
+      "published_iso": "2026-11-22T23:00:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Take a look at Jamie Carragher and Gary Neville’s first half reactions from Liverpool vs Manchester United."
+        "Highlights of the La Liga match between Getafe and Atletico Madrid."
       ]
     },
     {
-      "slug": "13615326",
-      "title": "Arsenal booed after another home WSL draw as Man Utd beat Blues",
-      "url": "https://www.skysports.com/football/news/13615326/wsl-arsenal-draw-again-at-home-man-utd-leave-it-late-to-beat-birmingham-and-charlton-earn-first-point-of-season",
+      "slug": "13615430",
+      "title": "Gary Neville calls for Man Utd to spend on defenders this January",
+      "url": "https://www.skysports.com/football/video/13615430/gary-neville-calls-for-man-utd-to-spend-on-defenders-this-january-transfer-window",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-alessia-russo-ines-belloumou_7413577.jpg?20261122152453",
-      "excerpt": "Arsenal were booed by their fans after they held to a sixth successive draw at home, drawing 0-0 with West Ham in the Women's Super League.",
-      "published_label": "22 November 2026 · 17:15",
-      "published_iso": "2026-11-22T17:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Arsenal were booed by their fans after they held to a sixth successive draw at home, drawing 0-0 with West Ham in the Women's Super League.",
-        "The Hammers avoided defeat to the Gunners for the first time to pile the pressure on Renee Slegers and her side, who now have just 15 points after 11 games and sit in sixth.",
-        "Arsenal had 22 shots in total, with 67 per cent possession, but did not create one big chance throughout. Man City 1-3 Tottenham - Match report and highlights WSL latest news and transfers | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
-        "The best chance of the game came through substitute Kyra Cooney-Cross when her shot struck the post following a big deflection."
-      ]
-    },
-    {
-      "slug": "13615336",
-      "title": "Brilliant finish as Wirtz doubles Liverpool's lead",
-      "url": "https://www.skysports.com/football/video/13615336/goal-f-wirtz-13-liverpool-2-0-manchester-utd",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-wirtz-goal_7413689.jpg?20261122164929",
-      "excerpt": "Florian Wirtz scores Liverpool's second against 10-man Manchester United.",
-      "published_label": "22 November 2026 · 16:52",
-      "published_iso": "2026-11-22T16:52:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7413955.jpg?20261122204340",
+      "excerpt": "Gary Neville discusses why Manchester United need to invest in their defence this January transfer window.",
+      "published_label": "22 November 2026 · 20:30",
+      "published_iso": "2026-11-22T20:30:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Florian Wirtz scores Liverpool's second against 10-man Manchester United."
+        "Gary Neville discusses why Manchester United need to invest in their defence this January transfer window."
       ]
     },
     {
-      "slug": "13615333",
-      "title": "Szoboszlai free-kick opens scoring for Liverpool",
-      "url": "https://www.skysports.com/football/video/13615333/goal-d-szoboszlai-liverpool-1-0-manchester-utd",
+      "slug": "13615429",
+      "title": "Gary Neville Podcast react to Yoro's red against Liverpool",
+      "url": "https://www.skysports.com/football/video/13615429/gary-neville-podcast-react-to-leny-yoros-red-against-liverpool",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-liverpool_7413690.jpg?20261122164950",
-      "excerpt": "Dominik Szoboszlai's free-kick opens the scoring for Liverpool against Manchester United in the Premier League.",
-      "published_label": "22 November 2026 · 16:49",
-      "published_iso": "2026-11-22T16:49:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/sky-sports-football-manchester-united_7413950.jpg?20261122204112",
+      "excerpt": "Gary Neville and Jamie Carragher react to Leny Yoro's sending off early on in Manchester United's 4-0 loss to Liverpool.",
+      "published_label": "22 November 2026 · 20:28",
+      "published_iso": "2026-11-22T20:28:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Dominik Szoboszlai's free-kick opens the scoring for Liverpool against Manchester United in the Premier League."
+        "Gary Neville and Jamie Carragher react to Leny Yoro's sending off early on in Manchester United's 4-0 loss to Liverpool."
       ]
     },
     {
-      "slug": "13615332",
-      "title": "Comms Cam: Carra and Nev react to Yoro early sending off!",
-      "url": "https://www.skysports.com/football/video/13615332/liverpool-vs-man-utd-carra-and-nev-react-to-leny-yoro-early-sending-off",
+      "slug": "13615413",
+      "title": "Gary Neville on De Ligt selection and 'negligent' Man Utd",
+      "url": "https://www.skysports.com/football/news/13615413/liverpool-4-0-man-utd-gary-neville-on-matthijs-de-ligt-selection-and-negligent-red-devils",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413699.jpg?20261122165504",
-      "excerpt": "Jamie Carragher and Gary Neville react to Leny Yoro's early sending off against Liverpool which saw Dominik Szoboszlai convert a free-kick to go 1-0 up.",
-      "published_label": "22 November 2026 · 16:48",
-      "published_iso": "2026-11-22T16:48:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7413726.jpg?20261122171838",
+      "excerpt": "Gary Neville accused Manchester United's hierarchy of negligence for failing to strengthen their back line as their 4-0 loss to Liverpool left them with the worst defensive record in Europe.",
+      "published_label": "22 November 2026 · 20:25",
+      "published_iso": "2026-11-22T20:25:00+00:00",
+      "byline": "Gary Neville",
       "body": [
-        "Jamie Carragher and Gary Neville react to Leny Yoro's early sending off against Liverpool which saw Dominik Szoboszlai convert a free-kick to go 1-0 up."
+        "Gary Neville accused Manchester United's hierarchy of negligence for failing to strengthen their back line as their 4-0 loss to Liverpool left them with the worst defensive record in Europe.",
+        "Liverpool ran riot after Leny Yoro's eighth-minute red card at Anfield as goals from Dominik Szoboszlai, Florian Wirtz, Rio Ngumoha and Victor Munoz ensured Mauricio Pochettino suffered a horror start to his Manchester United tenure.",
+        "United have now conceded 34 goals in all competitions this term. It is the highest total of any side across Europe's top-five leagues. The result keeps them second from bottom in the Premier League.",
+        "\"It's negligent,\" said Sky Sports pundit Neville. Match report | As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
       ]
     },
     {
-      "slug": "13615331",
-      "title": "Yoro sees red eight minutes into Poch's Man Utd reign",
-      "url": "https://www.skysports.com/football/video/13615331/off-l-yoro-8-liverpool-0-0-manchester-utd",
+      "slug": "13615426",
+      "title": "'I've never seen it so bad!' - Are Man Utd in a relegation fight?",
+      "url": "https://www.skysports.com/football/video/13615426/are-manchester-united-in-a-relegation-fight-super-sunday-panel-discuss",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413683.jpg?20261122164707",
-      "excerpt": "Manchester United's Leny Yoro is shown a straight red card just seven minutes into the match at Anfield after bringing down Alexander Isak just outside of the box.",
-      "published_label": "22 November 2026 · 16:45",
-      "published_iso": "2026-11-22T16:45:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-super-sunday_7413935.jpg?20261122202349",
+      "excerpt": "The Super Sunday panel discuss Manchester United's woes and whether the club are actually in a relegation fight this season.",
+      "published_label": "22 November 2026 · 20:13",
+      "published_iso": "2026-11-22T20:13:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Manchester United's Leny Yoro is shown a straight red card just seven minutes into the match at Anfield after bringing down Alexander Isak just outside of the box."
+        "The Super Sunday panel discuss Manchester United's woes and whether the club are actually in a relegation fight this season."
       ]
     },
     {
-      "slug": "13615328",
-      "title": "Woltemade and Kolo Muani on target as Juve thrash Venezia",
-      "url": "https://www.skysports.com/football/video/13615328/juventus-4-0-venezia-serie-a-highlights",
+      "slug": "13615424",
+      "title": "Magic Milan thrash Frosinone 5-1 in Serie A",
+      "url": "https://www.skysports.com/football/video/13615424/ac-milan-5-1-frosinone-serie-a-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-juventus-venezia_7413678.jpg?20261122164115",
-      "excerpt": "Highlights of the Serie A match between Juventus and Venezia.",
-      "published_label": "22 November 2026 · 16:35",
-      "published_iso": "2026-11-22T16:35:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-ac-milan-frosinone_7413934.jpg?20261122202329",
+      "excerpt": "Watch highlights from the Serie A match between AC Milan and Frosinone.",
+      "published_label": "22 November 2026 · 20:10",
+      "published_iso": "2026-11-22T20:10:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Highlights of the Serie A match between Juventus and Venezia."
+        "Watch highlights from the Serie A match between AC Milan and Frosinone."
       ]
     },
     {
-      "slug": "13615325",
-      "title": "Late McBurnie double sees Hull stun in-form Brighton",
-      "url": "https://www.skysports.com/football/video/13615325/hull-city-2-0-brighton-premier-league-highlights",
+      "slug": "13615415",
+      "title": "'Wake up, wake up!' - Gary Neville's plea to Man Utd's defenders",
+      "url": "https://www.skysports.com/football/video/13615415/liverpool-4-0-man-utd-gary-nevilles-passionate-plea-to-man-utds-defending",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hull-city_7413672.jpg?20261122163318",
-      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Hull City and Brighton.",
-      "published_label": "22 November 2026 · 16:31",
-      "published_iso": "2026-11-22T16:31:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-neville-man-utd_7413900.jpg?20261122200028",
+      "excerpt": "Gary Neville makes a passionate plea to Manchester United's defenders after their 4-0 defeat at Liverpool.",
+      "published_label": "22 November 2026 · 19:51",
+      "published_iso": "2026-11-22T19:51:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "FREE TO WATCH: Highlights from the Premier League match between Hull City and Brighton."
+        "Gary Neville makes a passionate plea to Manchester United's defenders after their 4-0 defeat at Liverpool."
+      ]
+    },
+    {
+      "slug": "13615402",
+      "title": "'No chance!' - Poch and Mainoo fume at 'unfair' Yoro red card",
+      "url": "https://www.skysports.com/football/news/13615402/leny-yoro-red-card-man-utd-boss-mauricio-pochettino-and-kobbie-mainoo-angry-at-sending-off-for-foul-on-liverpools-alexander-isak",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-leny-yoro-alexander-isak_7413680.jpg?20261122164441",
+      "excerpt": "Mauricio Pochettino felt Manchester United were given an \"unfair\" red card in their 4-0 defeat at Liverpool - with Kobbie Mainoo replying \"no chance\" when asked whether Leny Yoro should have been sent off.",
+      "published_label": "22 November 2026 · 18:58",
+      "published_iso": "2026-11-22T18:58:00+00:00",
+      "byline": "Sam Blitz",
+      "body": [
+        "Mauricio Pochettino felt Manchester United were given an \"unfair\" red card in their 4-0 defeat at Liverpool - with Kobbie Mainoo replying \"no chance\" when asked whether Leny Yoro should have been sent off.",
+        "Pochettino's first United game started in dismal fashion as Yoro was given his marching orders in the eighth minute for bringing down Alexander Isak as the last defender outside the box.",
+        "Dominik Szoboszlai then scored from the resulting free-kick and Florian Wirtz doubled the lead after 13 minutes. Rio Ngumoha and Victor Munoz put gloss on the scoreline after half-time. Liverpool 4-0 Man Utd - report and reaction Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "However, Yoro's sending off was doused in controversy as Isak took a heavy touch into United goalkeeper Senne Lammens before going down under the challenge."
       ]
     }
   ]
