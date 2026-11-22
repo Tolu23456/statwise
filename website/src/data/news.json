@@ -1,10 +1,117 @@
 {
-  "synced_at": "2026-11-22T09:51:37+00:00",
+  "synced_at": "2026-11-22T17:50:02+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13611975",
+      "title": "McBurnie's late double stuns 10-man Brighton after Tzolakis heroics",
+      "url": "https://www.skysports.com/football/news/13611975/hull-city-2-0-brighton-oli-mcburnies-late-double-stuns-seagulls-after-konstantinos-tzolakis-goalkeeping-heroics",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-oli-mcburnie-hull-city_7413617.jpg?20261122155755",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13615300",
+      "title": "Charlton hold Villa to get their first point of the season",
+      "url": "https://www.skysports.com/football/video/13615300/charlton-athletic-1-1-aston-villa-womens-super-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-womens-super-league_7413636.jpg?20261122160508",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615299",
+      "title": "2-0 down, Yamal misses pen, but Barcelona STILL beat Villarreal",
+      "url": "https://www.skysports.com/football/video/13615299/barcelona-3-2-villarreal-la-liga-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-barcelona-villarreal_7413635.jpg?20261122160427",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615304",
+      "title": "Early own goal hands Brighton win at Everton",
+      "url": "https://www.skysports.com/football/video/13615304/everton-0-1-brighton-and-hove-albion-wsl-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-brighton_7413634.jpg?20261122160401",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615305",
+      "title": "McBurnie 'bursts Brighton's bubble' with quick second in injury time!",
+      "url": "https://www.skysports.com/football/video/13615305/goal-o-mcburnie-90-5-hull-2-0-brighton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413647.jpg?20261122161022",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615302",
+      "title": "'Astonishing!' - McBurnie grabs late goal for Hull",
+      "url": "https://www.skysports.com/football/video/13615302/goal-o-mcburnie-90-2-hull-1-0-brighton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413632.jpg?20261122160311",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615297",
+      "title": "Costinha sees second yellow following foul on Thomas!",
+      "url": "https://www.skysports.com/football/video/13615297/off-costinha-89-hull-0-0-brighton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hull-city_7413618.jpg?20261122155900",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615291",
+      "title": "'Where's that going?!' - Thomas hits bar with cross for Hull",
+      "url": "https://www.skysports.com/football/video/13615291/post-s-thomas-hull-0-0-brighton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hull-city_7413601.jpg?20261122154741",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615279",
+      "title": "FULL INTERVIEW: Man Utd CEO Omar Berrada talks exclusively to Sky Sports",
+      "url": "https://www.skysports.com/football/video/13615279/manchester-united-ceo-omar-berrada-talks-exclusively-to-sky-sports-full-interview",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-omar-berrada-manchester_7413587.jpg?20261122153322",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13614994",
       "title": "York 0-0 Walsall",
@@ -391,264 +498,125 @@
       "byline": ""
     },
     {
-      "slug": "13604280",
-      "title": "Expectation vs reality: What if Man Utd have become a mid-table team?",
-      "url": "https://www.skysports.com/football/news/13604280/michael-carrick-is-latest-man-utd-manager-under-pressure-but-has-poor-recruitment-made-them-a-mid-table-team-between-the-lines",
+      "slug": "13615358",
+      "title": "Comms Cam: Carra and Nev’s Liverpool vs Man Utd first half reactions!",
+      "url": "https://www.skysports.com/football/video/13615358/liverpool-vs-man-utd-jamie-carragher-and-gary-neville-s-liverpool-vs-man-utd-first-half-reactions",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-man-utd-bruno-fernandes_7388485.png?20261027091001",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13615160",
-      "title": "McTominay's sensational strike helps Napoli edge past Torino",
-      "url": "https://www.skysports.com/football/video/13615160/napoli-1-0-torino-serie-a-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mctominay-napoli_7413262.jpg?20261122083707",
-      "excerpt": "Highlights of Napoli against Torino in Serie A.",
-      "published_label": "22 November 2026 · 08:25",
-      "published_iso": "2026-11-22T08:25:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413750.jpg?20261122174347",
+      "excerpt": "Take a look at Jamie Carragher and Gary Neville’s first half reactions from Liverpool vs Manchester United.",
+      "published_label": "22 November 2026 · 17:40",
+      "published_iso": "2026-11-22T17:40:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Highlights of Napoli against Torino in Serie A."
+        "Take a look at Jamie Carragher and Gary Neville’s first half reactions from Liverpool vs Manchester United."
       ]
     },
     {
-      "slug": "13615140",
-      "title": "Bellingham stars as Real Madrid produce dramatic late comeback against Celta Vigo",
-      "url": "https://www.skysports.com/football/video/13615140/real-madrid-2-1-celta-vigo-la-liga-highlights",
+      "slug": "13615326",
+      "title": "Arsenal booed after another home WSL draw as Man Utd beat Blues",
+      "url": "https://www.skysports.com/football/news/13615326/wsl-arsenal-draw-again-at-home-man-utd-leave-it-late-to-beat-birmingham-and-charlton-earn-first-point-of-season",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-real-la-liga_7413211.jpg?20261122072756",
-      "excerpt": "Highlights of the La Liga match between Real Madrid and Celta Vigo.",
-      "published_label": "22 November 2026 · 07:20",
-      "published_iso": "2026-11-22T07:20:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-alessia-russo-ines-belloumou_7413577.jpg?20261122152453",
+      "excerpt": "Arsenal were booed by their fans after they held to a sixth successive draw at home, drawing 0-0 with West Ham in the Women's Super League.",
+      "published_label": "22 November 2026 · 17:15",
+      "published_iso": "2026-11-22T17:15:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Arsenal were booed by their fans after they held to a sixth successive draw at home, drawing 0-0 with West Ham in the Women's Super League.",
+        "The Hammers avoided defeat to the Gunners for the first time to pile the pressure on Renee Slegers and her side, who now have just 15 points after 11 games and sit in sixth.",
+        "Arsenal had 22 shots in total, with 67 per cent possession, but did not create one big chance throughout. Man City 1-3 Tottenham - Match report and highlights WSL latest news and transfers | FREE WSL highlights Got Sky? Watch WSL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream WSL games with no contract 📺",
+        "The best chance of the game came through substitute Kyra Cooney-Cross when her shot struck the post following a big deflection."
+      ]
+    },
+    {
+      "slug": "13615336",
+      "title": "Brilliant finish as Wirtz doubles Liverpool's lead",
+      "url": "https://www.skysports.com/football/video/13615336/goal-f-wirtz-13-liverpool-2-0-manchester-utd",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-liverpool-wirtz-goal_7413689.jpg?20261122164929",
+      "excerpt": "Florian Wirtz scores Liverpool's second against 10-man Manchester United.",
+      "published_label": "22 November 2026 · 16:52",
+      "published_iso": "2026-11-22T16:52:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Highlights of the La Liga match between Real Madrid and Celta Vigo."
+        "Florian Wirtz scores Liverpool's second against 10-man Manchester United."
       ]
     },
     {
-      "slug": "13614990",
-      "title": "Fernandes: Man Utd have offered new deal but now is not time for talks",
-      "url": "https://www.skysports.com/football/news/13614990/bruno-fernandes-man-utd-captain-confirms-contract-offer-but-says-negotiations-are-on-hold",
+      "slug": "13615333",
+      "title": "Szoboszlai free-kick opens scoring for Liverpool",
+      "url": "https://www.skysports.com/football/video/13615333/goal-d-szoboszlai-liverpool-1-0-manchester-utd",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bruno-fernandes-manchester-united_7412899.jpg?20261121194818",
-      "excerpt": "Bruno Fernandes exclusively told Sky Sports that Manchester United have offered him a new contract but he has put discussions on hold as he insists the club's priority must be returning to winning ways.",
-      "published_label": "22 November 2026 · 07:00",
-      "published_iso": "2026-11-22T07:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Bruno Fernandes exclusively told Sky Sports that Manchester United have offered him a new contract but he has put discussions on hold as he insists the club's priority must be returning to winning ways.",
-        "Fernandes has rejected two contract offers from United , Sky Sports News understands, with his current deal due to expire at the end of the season. The club's initial proposal was made in the summer when discussions first began over a new deal, but was turned down by the Portuguese, who signed his last contract in August 2024.",
-        "United hold an option to extend the 32-year-old's stay at Old Trafford by a further year, which would also prevent him from speaking to foreign clubs in January over the possibility of a free transfer. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "The United captain, who has repeatedly been linked with a move away from Old Trafford, confirmed an offer has been made but dismissed suggestions that negotiations are ongoing or that he has demanded more money or an extended deal."
-      ]
-    },
-    {
-      "slug": "13615026",
-      "title": "Falkirk 2-1 St Johnstone",
-      "url": "https://www.skysports.com/football/video/13615026/falkirk-2-1-st-johnstone-scottish-premiership-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/3fd21c36fa06994859a156dce2a61867a737752772935c90841ed019281f44a1_7412939.jpg?20261121201351",
-      "excerpt": "Highlights from the Scottish Premiership match between Falkirk and St Johnstone.",
-      "published_label": "21 November 2026 · 23:50",
-      "published_iso": "2026-11-21T23:50:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-liverpool_7413690.jpg?20261122164950",
+      "excerpt": "Dominik Szoboszlai's free-kick opens the scoring for Liverpool against Manchester United in the Premier League.",
+      "published_label": "22 November 2026 · 16:49",
+      "published_iso": "2026-11-22T16:49:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Highlights from the Scottish Premiership match between Falkirk and St Johnstone."
+        "Dominik Szoboszlai's free-kick opens the scoring for Liverpool against Manchester United in the Premier League."
       ]
     },
     {
-      "slug": "13615078",
-      "title": "Dundee 0-8 Hearts",
-      "url": "https://www.skysports.com/football/video/13615078/dundee-0-8-hearts-scottish-premiership-highlights",
+      "slug": "13615332",
+      "title": "Comms Cam: Carra and Nev react to Yoro early sending off!",
+      "url": "https://www.skysports.com/football/video/13615332/liverpool-vs-man-utd-carra-and-nev-react-to-leny-yoro-early-sending-off",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/06dc46fef9829b2d304ea3ded45f85d07777231fab21158cab40a335e2d8e15c_7413057.jpg?20261121230647",
-      "excerpt": "Highlights from the Scottish Premiership match between Dundee and Hearts",
-      "published_label": "21 November 2026 · 23:50",
-      "published_iso": "2026-11-21T23:50:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413699.jpg?20261122165504",
+      "excerpt": "Jamie Carragher and Gary Neville react to Leny Yoro's early sending off against Liverpool which saw Dominik Szoboszlai convert a free-kick to go 1-0 up.",
+      "published_label": "22 November 2026 · 16:48",
+      "published_iso": "2026-11-22T16:48:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Highlights from the Scottish Premiership match between Dundee and Hearts"
+        "Jamie Carragher and Gary Neville react to Leny Yoro's early sending off against Liverpool which saw Dominik Szoboszlai convert a free-kick to go 1-0 up."
       ]
     },
     {
-      "slug": "13615038",
-      "title": "Hibernian 0-4 Dundee United",
-      "url": "https://www.skysports.com/football/video/13615038/hibernian-0-4-dundee-united-scottish-premiership-highlights",
+      "slug": "13615331",
+      "title": "Yoro sees red eight minutes into Poch's Man Utd reign",
+      "url": "https://www.skysports.com/football/video/13615331/off-l-yoro-8-liverpool-0-0-manchester-utd",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/688c2e5289322a933cb852bab111b9799fa5fa4e9c12e83f7f81f78f6fb3938a_7412996.jpg?20261121210124",
-      "excerpt": "Watch highlights from the Scottish Premiership match between Hibernian and Dundee United.",
-      "published_label": "21 November 2026 · 23:50",
-      "published_iso": "2026-11-21T23:50:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413683.jpg?20261122164707",
+      "excerpt": "Manchester United's Leny Yoro is shown a straight red card just seven minutes into the match at Anfield after bringing down Alexander Isak just outside of the box.",
+      "published_label": "22 November 2026 · 16:45",
+      "published_iso": "2026-11-22T16:45:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Watch highlights from the Scottish Premiership match between Hibernian and Dundee United."
+        "Manchester United's Leny Yoro is shown a straight red card just seven minutes into the match at Anfield after bringing down Alexander Isak just outside of the box."
       ]
     },
     {
-      "slug": "13615047",
-      "title": "Kilmarnock 2-4 Aberdeen",
-      "url": "https://www.skysports.com/football/video/13615047/kilmarnock-2-4-aberdeen-scottish-premiership-highlights",
+      "slug": "13615328",
+      "title": "Woltemade and Kolo Muani on target as Juve thrash Venezia",
+      "url": "https://www.skysports.com/football/video/13615328/juventus-4-0-venezia-serie-a-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/0356c36c2b57bf1b1ee71348f0803caea8cd09eb9ed357928760e52d019993b3_7412990.jpg?20261121205524",
-      "excerpt": "Watch highlights from the Scottish Premiership match between Kilmarnock and Aberdeen.",
-      "published_label": "21 November 2026 · 23:50",
-      "published_iso": "2026-11-21T23:50:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-juventus-venezia_7413678.jpg?20261122164115",
+      "excerpt": "Highlights of the Serie A match between Juventus and Venezia.",
+      "published_label": "22 November 2026 · 16:35",
+      "published_iso": "2026-11-22T16:35:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Watch highlights from the Scottish Premiership match between Kilmarnock and Aberdeen."
+        "Highlights of the Serie A match between Juventus and Venezia."
       ]
     },
     {
-      "slug": "13615058",
-      "title": "De Zerbi compares Williams-Barnett to Lamine Yamal - who is Spurs teen?",
-      "url": "https://www.skysports.com/football/news/13615058/luca-williams-barnett-tottenham-boss-roberto-de-zerbi-compares-teenager-to-lamine-yamal-after-ipswich-heroics",
+      "slug": "13615325",
+      "title": "Late McBurnie double sees Hull stun in-form Brighton",
+      "url": "https://www.skysports.com/football/video/13615325/hull-city-2-0-brighton-premier-league-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-tottenham-spurs-luca-williams-barnett_7412663.jpg?20261121173422",
-      "excerpt": "Tottenham boss Roberto De Zerbi was not surprised by a dazzling full-debut display from “special” talent Luca Williams-Barnett and compared the 18-year-old to Barcelona’s Lamine Yamal after Saturday’s 2-0 win over Ipswich.",
-      "published_label": "21 November 2026 · 22:15",
-      "published_iso": "2026-11-21T22:15:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Tottenham boss Roberto De Zerbi was not surprised by a dazzling full-debut display from “special” talent Luca Williams-Barnett and compared the 18-year-old to Barcelona’s Lamine Yamal after Saturday’s 2-0 win over Ipswich.",
-        "De Zerbi turned to the highly rated Spurs academy graduate after two bright cameos and he delivered, scoring on his first Premier League start after 15 minutes before a mazy run set up Dominic Solanke at the start of the second half.",
-        "After Williams-Barnett made his senior debut at the age of 16 last season, the clamour for the teenager to play has only increased during a difficult last 12 months, and De Zerbi decided 10 days ago to include him in the starting line-up against Ipswich.",
-        "Tottenham 2-0 Ipswich - Match report & highlights Transfer Centre LIVE! | Tottenham news & transfers ⚪ Spurs fixtures & scores | FREE Spurs highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract"
-      ]
-    },
-    {
-      "slug": "13615061",
-      "title": "LATE DRAMA! Naderi snatches Rangers winner!",
-      "url": "https://www.skysports.com/football/video/13615061/ryan-naderi-scores-dramatic-89th-minute-winner-for-rangers-against-motherwell",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-rangers-goal_7413014.jpg?20261121215436",
-      "excerpt": "Ryan Naderi's deflected 89th-minute strike seals a dramatic 2-1 victory for Rangers against Motherwell.",
-      "published_label": "21 November 2026 · 21:52",
-      "published_iso": "2026-11-21T21:52:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hull-city_7413672.jpg?20261122163318",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Hull City and Brighton.",
+      "published_label": "22 November 2026 · 16:31",
+      "published_iso": "2026-11-22T16:31:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Ryan Naderi's deflected 89th-minute strike seals a dramatic 2-1 victory for Rangers against Motherwell."
-      ]
-    },
-    {
-      "slug": "13610588",
-      "title": "Naderi strike snatches late win for Rangers at Motherwell",
-      "url": "https://www.skysports.com/football/news/13610588/motherwell-1-2-rangers-ryan-naderi-strikes-late-to-snatch-scottish-premiership-victory-at-fir-park",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ryan-naderi-rangers_7413015.jpg?20261121215843",
-      "excerpt": "Ryan Naderi was the hero for Rangers as he scrambled a late winner against Motherwell to keep up the pressure in the Scottish Premiership title race.",
-      "published_label": "21 November 2026 · 21:50",
-      "published_iso": "2026-11-21T21:50:00+00:00",
-      "byline": "Alison Conroy",
-      "body": [
-        "Ryan Naderi was the hero for Rangers as he scrambled a late winner against Motherwell to keep up the pressure in the Scottish Premiership title race.",
-        "After Celtic's impressive 4-1 win against St Mirren, Rangers knew a win was vital to remain within touching distance of their Old Firm rivals at the top of the table.",
-        "Emmanuel Fernandez gave them the perfect start, nodding in from a corner to put them in front at Fir Park. As it happened | Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
-        "But Jake Girdwood-Reich struck his first Motherwell goal against the run of play before the break."
-      ]
-    },
-    {
-      "slug": "13615042",
-      "title": "Rangers dominance undone by Girdwood-Reich equaliser!",
-      "url": "https://www.skysports.com/football/video/13615042/kofi-girdwood-reich-equalises-for-motherwell-against-rangers-from-their-first-corner",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-motherwell-goal_7412962.jpg?20261121202932",
-      "excerpt": "Jake Girdwood-Reich scores from Motherwell's first corner of the game to level against Rangers after 21 minutes.",
-      "published_label": "21 November 2026 · 20:27",
-      "published_iso": "2026-11-21T20:27:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Jake Girdwood-Reich scores from Motherwell's first corner of the game to level against Rangers after 21 minutes."
-      ]
-    },
-    {
-      "slug": "13615040",
-      "title": "How 'complacent' Arsenal unravelled at Newcastle - and their key lesson",
-      "url": "https://www.skysports.com/football/news/13615040/arsenal-escape-with-2-2-draw-at-newcastle-after-complacent-second-half-almost-proves-costly-for-defending-champions",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bruno-guimaraes-sean-steur_7412718.jpg?20261121175724",
-      "excerpt": "From \"exceptional\" to \"complacent\" - Arsenal's drop-off in the second half at Newcastle was extraordinary.",
-      "published_label": "21 November 2026 · 20:21",
-      "published_iso": "2026-11-21T20:21:00+00:00",
-      "byline": "Peter Smith",
-      "body": [
-        "From \"exceptional\" to \"complacent\" - Arsenal's drop-off in the second half at Newcastle was extraordinary.",
-        "Noni Madueke's equaliser at least rescued a point, but after completely dominating the first half at St James' Park Mikel Arteta says his team have learnt a harsh lesson about the need to deliver a complete performance in the Premier League.",
-        "Credit has to go to Newcastle, who were energised by Matthias Jaissle's triple substitution at half-time, with Tino Livramento, Jacob Ramsey and Anthony Elanga bringing intensity. Harvey Barnes and Malick Thiaw brought the goals. But the Premier League champions were their own worst enemy and, in the end, were fortunate to get away with their lead at the top of the table improved - for now.",
-        "With Man City dropping points again on Saturday and surprise-package Brighton still to play on Sunday, Arsenal remain firmly in the box seat. But Arteta is eager to drive even higher standards in his squad this season as he builds on last year's success - and he was far from impressed with how his team allowed Newcastle back into the game."
-      ]
-    },
-    {
-      "slug": "13615037",
-      "title": "'A MASSIVE blow!' - Wright worried for Arsenal after Raya injury",
-      "url": "https://www.skysports.com/football/video/13615037/newcastle-2-2-arsenal-how-big-of-a-blow-to-arsenals-season-will-david-rayas-injury-be",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-raya_7412958.jpg?20261121202310",
-      "excerpt": "Ian Wright and Jamie Redknapp discuss David Raya's injury against Newcastle United and how much of a worry it will be for Arsenal.",
-      "published_label": "21 November 2026 · 20:18",
-      "published_iso": "2026-11-21T20:18:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Ian Wright and Jamie Redknapp discuss David Raya's injury against Newcastle United and how much of a worry it will be for Arsenal."
-      ]
-    },
-    {
-      "slug": "13610574",
-      "title": "Hearts put eight goals past 10-man Dundee in thumping win",
-      "url": "https://www.skysports.com/football/news/13610574/dundee-0-8-hearts-ruthless-jambos-return-to-winning-ways-with-scottish-premiership-demolition-at-dens-park",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-hearts-pieree-landry_7412945.jpg?20261121201715",
-      "excerpt": "Hearts returned to winning ways in spectacular style as they destroyed 10-man Dundee 8-0 at Dens.",
-      "published_label": "21 November 2026 · 19:35",
-      "published_iso": "2026-11-21T19:35:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Hearts returned to winning ways in spectacular style as they destroyed 10-man Dundee 8-0 at Dens.",
-        "The Jam Tarts went into the game on the back of a run of three straight defeats but they ran riot against the Dark Blues, netting four in the first half thanks to Sabah Kerjota, a Pierre Landry Kabore double and an own goal by Ryan Finnigan.",
-        "Dundee were reduced to 10 men after the break with Owen Bevan shown a straight red card before Claudio Braga, Sabri Guendouz, Kerjota with his second and Stuart Findlay blew Dundee away with four more goals. Teams | Stats Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
-        "Hearts made the most of their first big chance in the 23rd minute. A long kick-out by Jam Tarts keeper Beau Reus caused havoc, with Dundee defender Bevan trying to clear under pressure from Braga but instead he sent the ball directly to Kerjota, who chested down before clinically firing past Owen Goodman."
-      ]
-    },
-    {
-      "slug": "13615002",
-      "title": "Crawley 2-1 Fleetwood",
-      "url": "https://www.skysports.com/football/video/13615002/crawley-town-2-1-fleetwood-town-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/e75b8d20cee44e3473321b6a50538e3afa7c1cce4bdcde73acb69955158394b4_7412866.jpg?20261121193343",
-      "excerpt": "Highlights of the Sky Bet League Two match between Crawley Town and Fleetwood Town.",
-      "published_label": "21 November 2026 · 19:31",
-      "published_iso": "2026-11-21T19:31:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Highlights of the Sky Bet League Two match between Crawley Town and Fleetwood Town."
-      ]
-    },
-    {
-      "slug": "13614988",
-      "title": "'Concerned, baffling' | PASSIONATE examination of Scotland's start under Pocognoli",
-      "url": "https://www.skysports.com/football/video/13614988/sebastien-pocognolis-scotland-start-analysed-by-james-mcfadden-kris-boyd-and-andy-halliday",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/02adac1a7e5cb11fc7cd9aae2a113af33fb83f7d1e26b9c8fbe5b3aa52b263d8_7412955.jpg?20261121202201",
-      "excerpt": "Sebastien Pocognoli's start as Scotland head coach is analysed by James McFadden, Kris Boyd and Andy Halliday.",
-      "published_label": "21 November 2026 · 19:12",
-      "published_iso": "2026-11-21T19:12:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sebastien Pocognoli's start as Scotland head coach is analysed by James McFadden, Kris Boyd and Andy Halliday."
+        "FREE TO WATCH: Highlights from the Premier League match between Hull City and Brighton."
       ]
     }
   ]
