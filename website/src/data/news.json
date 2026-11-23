@@ -1,10 +1,103 @@
 {
-  "synced_at": "2026-11-23T07:40:19+00:00",
+  "synced_at": "2026-11-23T20:14:33+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13615718",
+      "title": "Rangers' McInnes wary of Frick's Aberdeen ahead of clash, live on Sky",
+      "url": "https://www.skysports.com/football/news/13615718/rangers-vs-aberdeen-derek-mcinnes-ready-for-different-dons-challenge-under-mario-frick-live-on-sky",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-rangers-derek-mcinnes_7414629.jpg?20261123164655",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13615723",
+      "title": "'Jacquet's making Van Dijk look good!' - Will Liverpool offer captain a new deal?",
+      "url": "https://www.skysports.com/football/video/13615723/transfer-talk-should-virgil-van-dijk-be-offered-a-new-contract-at-liverpool",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-van-dijk-jacquet_7414615.jpg?20261123163006",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615717",
+      "title": "Explained: What would relegation cost Man Utd?",
+      "url": "https://www.skysports.com/football/video/13615717/man-utd-are-red-devils-really-in-relegation-danger-and-what-could-it-cost-them",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-pochettino-man-utd_7414624.jpg?20261123164032",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615709",
+      "title": "'Hello mate' - HILARIOUS moment as Arteta answers Sky reporter's phone",
+      "url": "https://www.skysports.com/football/video/13615709/watch-hilarious-moment-arsenal-manager-mikel-arteta-answers-sky-reprters-phone",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mikel-arteta-sky_7414597.jpg?20261123161033",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615701",
+      "title": "'In a relegation fight' - Carra explains why Man Utd have 'scrap on their hands'",
+      "url": "https://www.skysports.com/football/video/13615701/jamie-carragher-explains-why-man-utd-have-scrap-on-their-hands-in-a-relegation-fight",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-carragher_7414591.jpg?20261123160340",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615555",
+      "title": "UK confirmed as 2035 Women's World Cup hosts - which stadiums will be used?",
+      "url": "https://www.skysports.com/football/news/13615555/womens-world-cup-uk-announced-as-2035-hosts-as-costa-rica-jamaica-mexico-and-usa-host-in-2031",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/25/04/768x432/skysports-women-world-cup-england_6874715.jpg?20250403093156",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13615679",
+      "title": "Player vs Gaffer: Connolly takes on Wellens at Leyton Orient",
+      "url": "https://www.skysports.com/football/video/13615679/player-vs-gaffer-aaron-connolly-takes-on-richie-wellens-at-leyton-orient",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-leyton-orient-football_7414510.jpg?20261123144526",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615438",
+      "title": "Raya injury 'not too serious' says relieved Arteta",
+      "url": "https://www.skysports.com/football/news/13615438/david-raya-injury-arsenal-goalkeeper-avoids-surgery-and-blow-is-not-as-bad-as-first-feared-says-mikel-arteta",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-david-raya-arsenal_7412827.jpg?20261121190915",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13615373",
       "title": "'The pace of this lad is FRIGHTENING! - Rio makes it THREE for Liverpool",
@@ -405,245 +498,129 @@
       "byline": ""
     },
     {
-      "slug": "13607109",
-      "title": "Penrice handed first Scotland call as McTominay returns",
-      "url": "https://www.skysports.com/football/news/13607109/scotland-james-penrice-included-in-sebastien-pocognolis-squad-with-scott-mctominay-back-for-nations-league-double-header",
+      "slug": "13615552",
+      "title": "Are Man Utd genuinely in a relegation battle?",
+      "url": "https://www.skysports.com/football/news/13615552/are-manchester-united-in-a-relegation-battle-gary-neville-and-jamie-carragher-assess-their-survival-chances",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-scotland_7395646.jpg?20261103104521",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-united_7414626.jpg?20261123164222",
+      "excerpt": "What started as a blip has become a problem far more systemic for Man Utd.",
+      "published_label": "23 November 2026 · 19:45",
+      "published_iso": "2026-11-23T19:45:00+00:00",
+      "byline": "Ron Walker",
+      "body": [
+        "What started as a blip has become a problem far more systemic for Man Utd.",
+        "\"If the name wasn't Man Utd and you're watching their performances, you'd say they are a team in a relegation fight. They're conceding lots of goals, a comedy of errors, red cards - they've won one game all season,\" said Sky Sports' Jamie Carragher.",
+        "Only Ipswich beaten in 11 attempts, the worst defence in Europe - and a 4-0 hammering at Liverpool on Sunday to wipe the gloss off Mauricio Pochettino's arrival within 12 first-half minutes.",
+        "Carragher added: \"This Manchester United back four can't cope with pace. They're a million miles off it in terms of coming up against what they are in the Premier League.\""
+      ]
     },
     {
-      "slug": "13615470",
-      "title": "Atletico keep up pace with La Liga top 2 with 3-0 win at Getafe",
-      "url": "https://www.skysports.com/football/video/13615470/getafe-0-3-atletico-madrid-la-liga-highlights",
+      "slug": "13615774",
+      "title": "'A million miles off!' - Carra pinpoints Man Utd defensive weakness vs Liverpool",
+      "url": "https://www.skysports.com/football/video/13615774/mnf-jamie-carragher-pinpoints-man-utd-defensive-weakness-against-liverpool",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-atletico-madrid-getafe_7414053.jpg?20261122224543",
-      "excerpt": "Highlights of the La Liga match between Getafe and Atletico Madrid.",
-      "published_label": "22 November 2026 · 23:00",
-      "published_iso": "2026-11-22T23:00:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-mnf_7414750.jpg?20261123194830",
+      "excerpt": "Jamie Carragher pinpoints Manchester United's defensive weakness during their 4-0 Premier League defeat to Liverpool.",
+      "published_label": "23 November 2026 · 19:38",
+      "published_iso": "2026-11-23T19:38:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Highlights of the La Liga match between Getafe and Atletico Madrid."
+        "Jamie Carragher pinpoints Manchester United's defensive weakness during their 4-0 Premier League defeat to Liverpool."
       ]
     },
     {
-      "slug": "13615430",
-      "title": "Gary Neville calls for Man Utd to spend on defenders this January",
-      "url": "https://www.skysports.com/football/video/13615430/gary-neville-calls-for-man-utd-to-spend-on-defenders-this-january-transfer-window",
+      "slug": "13615767",
+      "title": "Carra: Chelsea must sign centre-back or achieve nothing",
+      "url": "https://www.skysports.com/football/news/13615767/chelsea-must-sign-centre-back-or-will-achieve-nothing-with-levi-colwill-and-wesley-fofana-says-jamie-carragher",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-manchester-united_7413955.jpg?20261122204340",
-      "excerpt": "Gary Neville discusses why Manchester United need to invest in their defence this January transfer window.",
-      "published_label": "22 November 2026 · 20:30",
-      "published_iso": "2026-11-22T20:30:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-chelsea-wesley-fofana_7414745.jpg?20261123193045",
+      "excerpt": "Jamie Carragher believes Chelsea must sign a dominant centre-back or they will have \"no chance of achieving anything\".",
+      "published_label": "23 November 2026 · 19:37",
+      "published_iso": "2026-11-23T19:37:00+00:00",
+      "byline": "Jamie Carragher",
+      "body": [
+        "Jamie Carragher believes Chelsea must sign a dominant centre-back or they will have \"no chance of achieving anything\".",
+        "Chelsea have conceded 20 goals in 11 Premier League games this season and were thrashed 4-1 at home to Leeds on Saturday, which has put pressure on new manager Xabi Alonso, with his side sitting eighth and already 12 points behind leaders Arsenal.",
+        "Leeds overpowered Chelsea with their physicality, as Dominic Calvert-Lewin bullied centre-backs Levi Colwill and Wesley Fofana, exposing their weak defence the same way Sunderland's Brian Brobbey did in their 1-0 win before the international break.",
+        "Merson: My worry is that Liverpool thought Alonso wasn't good enough Chelsea news & transfers 🔵 Chelsea fixtures & scores Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13615773",
+      "title": "'Two novices. They'll never work!' - Carra, Alderweireld slam Chelsea centre-backs",
+      "url": "https://www.skysports.com/football/video/13615773/jamie-carragher-and-toby-alderweireld-slam-chelsea-centre-backs-two-novices-theyll-never-work",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-chelsea-cbs_7414753.jpg?20261123195452",
+      "excerpt": "Jamie Carragher and Toby Alderweireld slam Chelsea centre-backs after their performance in the Blues' 4-1 loss to Leeds in the Premier League.",
+      "published_label": "23 November 2026 · 19:19",
+      "published_iso": "2026-11-23T19:19:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Gary Neville discusses why Manchester United need to invest in their defence this January transfer window."
+        "Jamie Carragher and Toby Alderweireld slam Chelsea centre-backs after their performance in the Blues' 4-1 loss to Leeds in the Premier League."
       ]
     },
     {
-      "slug": "13615429",
-      "title": "Gary Neville Podcast react to Yoro's red against Liverpool",
-      "url": "https://www.skysports.com/football/video/13615429/gary-neville-podcast-react-to-leny-yoros-red-against-liverpool",
+      "slug": "13615765",
+      "title": "'He has unfinished business' - Alderweireld backs Poch to succeed at Man Utd",
+      "url": "https://www.skysports.com/football/video/13615765/toby-alderweireld-tips-mauricio-pochettino-for-man-utd-success-but-warns-changes-are-needed-after-nightmare-liverpool-start",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/sky-sports-football-manchester-united_7413950.jpg?20261122204112",
-      "excerpt": "Gary Neville and Jamie Carragher react to Leny Yoro's sending off early on in Manchester United's 4-0 loss to Liverpool.",
-      "published_label": "22 November 2026 · 20:28",
-      "published_iso": "2026-11-22T20:28:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-poch_7414730.jpg?20261123190236",
+      "excerpt": "Toby Alderweireld backs former Spurs boss Mauricio Pochettino to turn things around at Manchester United despite a nightmare start against Liverpool, while highlighting fitness concerns and the need for signings that fit his demands.",
+      "published_label": "23 November 2026 · 18:52",
+      "published_iso": "2026-11-23T18:52:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Gary Neville and Jamie Carragher react to Leny Yoro's sending off early on in Manchester United's 4-0 loss to Liverpool."
+        "Toby Alderweireld backs former Spurs boss Mauricio Pochettino to turn things around at Manchester United despite a nightmare start against Liverpool, while highlighting fitness concerns and the need for signings that fit his demands."
       ]
     },
     {
-      "slug": "13615413",
-      "title": "Gary Neville on De Ligt selection and 'negligent' Man Utd",
-      "url": "https://www.skysports.com/football/news/13615413/liverpool-4-0-man-utd-gary-neville-on-matthijs-de-ligt-selection-and-negligent-red-devils",
+      "slug": "13577716",
+      "title": "How Northampton are trying to rebuild following takeover involving Pato",
+      "url": "https://www.skysports.com/football/news/13577716/chris-hogg-interview-northampton-boss-out-to-change-culture-after-relegation-as-takeover-involving-pato-offers-hope",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7413726.jpg?20261122171838",
-      "excerpt": "Gary Neville accused Manchester United's hierarchy of negligence for failing to strengthen their back line as their 4-0 loss to Liverpool left them with the worst defensive record in Europe.",
-      "published_label": "22 November 2026 · 20:25",
-      "published_iso": "2026-11-22T20:25:00+00:00",
-      "byline": "Gary Neville",
-      "body": [
-        "Gary Neville accused Manchester United's hierarchy of negligence for failing to strengthen their back line as their 4-0 loss to Liverpool left them with the worst defensive record in Europe.",
-        "Liverpool ran riot after Leny Yoro's eighth-minute red card at Anfield as goals from Dominik Szoboszlai, Florian Wirtz, Rio Ngumoha and Victor Munoz ensured Mauricio Pochettino suffered a horror start to his Manchester United tenure.",
-        "United have now conceded 34 goals in all competitions this term. It is the highest total of any side across Europe's top-five leagues. The result keeps them second from bottom in the Premier League.",
-        "\"It's negligent,\" said Sky Sports pundit Neville. Match report | As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
-      ]
-    },
-    {
-      "slug": "13615426",
-      "title": "'I've never seen it so bad!' - Are Man Utd in a relegation fight?",
-      "url": "https://www.skysports.com/football/video/13615426/are-manchester-united-in-a-relegation-fight-super-sunday-panel-discuss",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-super-sunday_7413935.jpg?20261122202349",
-      "excerpt": "The Super Sunday panel discuss Manchester United's woes and whether the club are actually in a relegation fight this season.",
-      "published_label": "22 November 2026 · 20:13",
-      "published_iso": "2026-11-22T20:13:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "The Super Sunday panel discuss Manchester United's woes and whether the club are actually in a relegation fight this season."
-      ]
-    },
-    {
-      "slug": "13615424",
-      "title": "Magic Milan thrash Frosinone 5-1 in Serie A",
-      "url": "https://www.skysports.com/football/video/13615424/ac-milan-5-1-frosinone-serie-a-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-ac-milan-frosinone_7413934.jpg?20261122202329",
-      "excerpt": "Watch highlights from the Serie A match between AC Milan and Frosinone.",
-      "published_label": "22 November 2026 · 20:10",
-      "published_iso": "2026-11-22T20:10:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Watch highlights from the Serie A match between AC Milan and Frosinone."
-      ]
-    },
-    {
-      "slug": "13615415",
-      "title": "'Wake up, wake up!' - Gary Neville's plea to Man Utd's defenders",
-      "url": "https://www.skysports.com/football/video/13615415/liverpool-4-0-man-utd-gary-nevilles-passionate-plea-to-man-utds-defending",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-neville-man-utd_7413900.jpg?20261122200028",
-      "excerpt": "Gary Neville makes a passionate plea to Manchester United's defenders after their 4-0 defeat at Liverpool.",
-      "published_label": "22 November 2026 · 19:51",
-      "published_iso": "2026-11-22T19:51:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Gary Neville makes a passionate plea to Manchester United's defenders after their 4-0 defeat at Liverpool."
-      ]
-    },
-    {
-      "slug": "13615411",
-      "title": "Gary Neville on Man Utd hitting a new low after Liverpool defeat",
-      "url": "https://www.skysports.com/football/video/13615411/man-utd-gary-neville-s-damning-assessment-after-liverpool-defeat",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-gary-neville-man-utd_7413889.jpg?20261122193809",
-      "excerpt": "Gary Neville reacted to Manchester United’s heavy defeat to rivals Liverpool and said it’s tiring watching them and he wonders how low it can get.",
-      "published_label": "22 November 2026 · 19:29",
-      "published_iso": "2026-11-22T19:29:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Gary Neville reacted to Manchester United’s heavy defeat to rivals Liverpool and said it’s tiring watching them and he wonders how low it can get."
-      ]
-    },
-    {
-      "slug": "13615404",
-      "title": "‘The damage is done, it’s so painful’ – Poch reacts to humbling defeat to Liverpool",
-      "url": "https://www.skysports.com/football/video/13615404/the-damage-is-done-it-s-so-painful-pochettino-reacts-to-man-utd-s-humbling-defeat-to-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-postmatch-man-utd_7413862.jpg?20261122190838",
-      "excerpt": "Mauricio Pochettino spoke to Pat Davison after Man Utd’s 4-0 defeat to Liverpool and described the result as 'so painful' and said the players are hurting.",
-      "published_label": "22 November 2026 · 19:03",
-      "published_iso": "2026-11-22T19:03:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Mauricio Pochettino spoke to Pat Davison after Man Utd’s 4-0 defeat to Liverpool and described the result as 'so painful' and said the players are hurting."
-      ]
-    },
-    {
-      "slug": "13615398",
-      "title": "'No chance!' - Mainoo unimpressed by early Yoro red card decision",
-      "url": "https://www.skysports.com/football/video/13615398/liverpool-4-0-man-utd-kobbie-mainoo-unimpressed-with-leny-yoros-red-card-decision",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mainoo-man-utd_7413855.jpg?20261122185519",
-      "excerpt": "Manchester United midfielder Kobbie Mainoo speaks about Leny Yoro's early red card against Liverpool and believes the defender's sending off was incorrect.",
-      "published_label": "22 November 2026 · 18:48",
-      "published_iso": "2026-11-22T18:48:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Manchester United midfielder Kobbie Mainoo speaks about Leny Yoro's early red card against Liverpool and believes the defender's sending off was incorrect."
-      ]
-    },
-    {
-      "slug": "13615396",
-      "title": "Liverpool's fab four as they thrash 10-man Man Utd",
-      "url": "https://www.skysports.com/football/video/13615396/liverpool-4-0-manchester-united-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413818.jpg?20261122183437",
-      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Liverpool and Manchester United.",
-      "published_label": "22 November 2026 · 18:43",
-      "published_iso": "2026-11-22T18:43:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "FREE TO WATCH: Highlights from the Premier League match between Liverpool and Manchester United."
-      ]
-    },
-    {
-      "slug": "13615388",
-      "title": "'I feel like swearing!' - Keane on Man Utd's heavy loss to Liverpool",
-      "url": "https://www.skysports.com/football/video/13615388/roy-keanes-post-match-takedown-of-man-utd-after-4-0-defeat-at-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-keane-man-utd_7413826.jpg?20261122183718",
-      "excerpt": "Roy Keane shares his thoughts on Manchester United after their 4-0 loss to Liverpool and his disbelief at their 'lack of fight'.",
-      "published_label": "22 November 2026 · 18:35",
-      "published_iso": "2026-11-22T18:35:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Roy Keane shares his thoughts on Manchester United after their 4-0 loss to Liverpool and his disbelief at their 'lack of fight'."
-      ]
-    },
-    {
-      "slug": "13611979",
-      "title": "Nightmare start for Pochettino as Liverpool rout 10-man Man Utd",
-      "url": "https://www.skysports.com/football/news/13611979/liverpool-4-0-man-utd-mauricio-pochettino-endures-nightmare-start-as-leny-yoros-early-red-card-sparks-collapse",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-rio-ngumoha-liverpool_7413795.jpg?20261122181605",
-      "excerpt": "Mauricio Pochettino endured a horror start to his Manchester United tenure as his 10-man side were thrashed 4-0 by Liverpool at Anfield following Leny Yoro's early sending off.",
-      "published_label": "22 November 2026 · 18:25",
-      "published_iso": "2026-11-22T18:25:00+00:00",
-      "byline": "Nick Wright",
-      "body": [
-        "Mauricio Pochettino endured a horror start to his Manchester United tenure as his 10-man side were thrashed 4-0 by Liverpool at Anfield following Leny Yoro's early sending off.",
-        "Yoro saw red in the eighth minute when he was adjudged to have made a last-man foul on Alexander Isak, with Dominik Szoboszlai slamming home the resulting free-kick.",
-        "The decision was contentious, with Isak having seemingly lost control of the ball when he was fouled, but the double blow left the visitors in disarray and Florian Wirtz added an acrobatic second only two minutes and 46 seconds after the opener.",
-        "Liverpool fans taunted Pochettino with chants of 'you're getting sacked in the morning' following the second goal. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
-      ]
-    },
-    {
-      "slug": "13615381",
-      "title": "Glorious goal from Munoz as Liverpool go FOUR up against Man Utd",
-      "url": "https://www.skysports.com/football/video/13615381/goal-v-munoz-82-liverpool-4-0-manchester-utd",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413801.jpg?20261122181749",
-      "excerpt": "Victor Munoz nets Liverpool's fourth against Manchester United at Anfield.",
-      "published_label": "22 November 2026 · 18:19",
-      "published_iso": "2026-11-22T18:19:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Victor Munoz nets Liverpool's fourth against Manchester United at Anfield."
-      ]
-    },
-    {
-      "slug": "13615315",
-      "title": "Punishing start for Pochettino as size of Man Utd mess made clear",
-      "url": "https://www.skysports.com/football/news/13615315/mauricio-pochettino-made-mistakes-in-man-utd-s-4-0-defeat-to-liverpool-but-the-size-of-the-mess-he-has-inherited-is-clear",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7413802.jpg?20261122181812",
-      "excerpt": "Well, they ran. They had to because there were only 10 of them for all but the first seven minutes. If running were the only problem then this mess might soon be solvable. But Manchester United's 4-0 defeat to Liverpool at Anfield highlight…",
-      "published_label": "22 November 2026 · 16:15",
-      "published_iso": "2026-11-22T16:15:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-chris-hogg-northampton-town_7414363.jpg?20261123120232",
+      "excerpt": "They do say the night is darkest before the dawn and that is the great hope at Northampton Town right now. After one of the worst seasons in their history, there were international headlines when a consortium featuring Pato took over in Sep…",
+      "published_label": "23 November 2026 · 18:00",
+      "published_iso": "2026-11-23T18:00:00+00:00",
       "byline": "Adam Bate",
       "body": [
-        "Well, they ran. They had to because there were only 10 of them for all but the first seven minutes. If running were the only problem then this mess might soon be solvable. But Manchester United's 4-0 defeat to Liverpool at Anfield highlighted more flaws than that.",
-        "Dismal defending, confused combinations, conceding in clusters, confidence long departed. And that all evident in the first quarter of an hour of what was never a contest. This is the only team in the Premier League without a win since August for a reason.",
-        "Welcome to Manchester United, Mauricio Pochettino. The new boss might be only days into a contract that runs until 2029, but it has not taken him long to see the mess he has inherited. Liverpool had this match won in 13 minutes. Unlucky for Pochettino. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "And yet, even at this early stage of his reign, the Argentine cannot escape blame entirely. The decision to give Matthijs de Ligt his first Premier League start in almost a year was exposed as an error immediately. He was partially culpable for Leny Yoro's red card."
+        "They do say the night is darkest before the dawn and that is the great hope at Northampton Town right now. After one of the worst seasons in their history, there were international headlines when a consortium featuring Pato took over in September.",
+        "The former Brazil forward brings a bit of glamour to the Cobblers and their Shoe Army will welcome that. But for Chris Hogg, in his first job as a manager, the day-to-day challenge of turning this struggling football club around continues - and it is hard work.",
+        "While the long-term prospects have improved off the pitch, Northampton's revival was always likely to be difficult after such a miserable relegation. It was a dismal season at Sixfields. The campaign completely unravelled, ending with 12 consecutive defeats. Transfer Centre LIVE! | Latest League Two news and rumours League Two table | League Two scores & fixtures Got Sky? Watch EFL games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
+        "Dropping down a division was never going to make the problems go away. \"Relegated teams have found it difficult in League Two. I was very aware of that,\" Hogg tells Sky Sports . It needed an overhaul, a radical shift in mentality. \"Boys with experience of winning.\""
+      ]
+    },
+    {
+      "slug": "13615751",
+      "title": "How valuable was Bruno G to Newcastle's success?",
+      "url": "https://www.skysports.com/football/video/13615751/premier-league-show-how-important-was-bruno-guimaraes-to-newcastles-success-and-how-will-he-improve-at-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7414694.jpg?20261123180112",
+      "excerpt": "Former Newcastle coach Graeme Jones speaks highly on Bruno Guimaraes and his importance to Newcastle's success during his time at the club.",
+      "published_label": "23 November 2026 · 17:57",
+      "published_iso": "2026-11-23T17:57:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Former Newcastle coach Graeme Jones speaks highly on Bruno Guimaraes and his importance to Newcastle's success during his time at the club."
+      ]
+    },
+    {
+      "slug": "13615741",
+      "title": "Relegation bound? How do Man Utd in 26/27 compare to Spurs in 25/26?",
+      "url": "https://www.skysports.com/football/video/13615741/premier-league-show-is-relegation-a-serious-threat-for-manchester-united-this-season",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7414670.jpg?20261123173443",
+      "excerpt": "On the Premier League Show, Adam Binnie breaks down Manchester United's points tally this season compared to Tottenham's in 2025/26 and the big possibility of a potential relegation.",
+      "published_label": "23 November 2026 · 17:27",
+      "published_iso": "2026-11-23T17:27:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "On the Premier League Show, Adam Binnie breaks down Manchester United's points tally this season compared to Tottenham's in 2025/26 and the big possibility of a potential relegation."
       ]
     }
   ]
