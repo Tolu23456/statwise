@@ -1,110 +1,28 @@
 {
-  "synced_at": "2026-11-22T23:36:49+00:00",
+  "synced_at": "2026-11-23T07:40:19+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
     {
-      "slug": "13615411",
-      "title": "Gary Neville on Man Utd hitting a new low after Liverpool defeat",
-      "url": "https://www.skysports.com/football/video/13615411/man-utd-gary-neville-s-damning-assessment-after-liverpool-defeat",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-gary-neville-man-utd_7413889.jpg?20261122193809",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615404",
-      "title": "‘The damage is done, it’s so painful’ – Poch reacts to humbling defeat to Liverpool",
-      "url": "https://www.skysports.com/football/video/13615404/the-damage-is-done-it-s-so-painful-pochettino-reacts-to-man-utd-s-humbling-defeat-to-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-postmatch-man-utd_7413862.jpg?20261122190838",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615398",
-      "title": "'No chance!' - Mainoo unimpressed by early Yoro red card decision",
-      "url": "https://www.skysports.com/football/video/13615398/liverpool-4-0-man-utd-kobbie-mainoo-unimpressed-with-leny-yoros-red-card-decision",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mainoo-man-utd_7413855.jpg?20261122185519",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615396",
-      "title": "Liverpool's fab four as they thrash 10-man Man Utd",
-      "url": "https://www.skysports.com/football/video/13615396/liverpool-4-0-manchester-united-premier-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413818.jpg?20261122183437",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615315",
-      "title": "Punishing start for Pochettino as size of Man Utd mess made clear",
-      "url": "https://www.skysports.com/football/news/13615315/mauricio-pochettino-made-mistakes-in-man-utd-s-4-0-defeat-to-liverpool-but-the-size-of-the-mess-he-has-inherited-is-clear",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7413802.jpg?20261122181812",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13615388",
-      "title": "'I feel like swearing!' - Keane on Man Utd's heavy loss to Liverpool",
-      "url": "https://www.skysports.com/football/video/13615388/roy-keanes-post-match-takedown-of-man-utd-after-4-0-defeat-at-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-keane-man-utd_7413826.jpg?20261122183718",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13611979",
-      "title": "Nightmare start for Pochettino as Liverpool rout 10-man Man Utd",
-      "url": "https://www.skysports.com/football/news/13611979/liverpool-4-0-man-utd-mauricio-pochettino-endures-nightmare-start-as-leny-yoros-early-red-card-sparks-collapse",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-rio-ngumoha-liverpool_7413795.jpg?20261122181605",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13615381",
-      "title": "Glorious goal from Munoz as Liverpool go FOUR up against Man Utd",
-      "url": "https://www.skysports.com/football/video/13615381/goal-v-munoz-82-liverpool-4-0-manchester-utd",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413801.jpg?20261122181749",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
       "slug": "13615373",
       "title": "'The pace of this lad is FRIGHTENING! - Rio makes it THREE for Liverpool",
       "url": "https://www.skysports.com/football/video/13615373/goal-r-ngumoha-66-liverpool-3-0-manchester-utd",
       "source": "Sky Sports",
       "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413773.jpg?20261122180320",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615358",
+      "title": "Comms Cam: The best bits from Liverpool vs Man Utd!",
+      "url": "https://www.skysports.com/football/video/13615358/liverpool-vs-man-utd-jamie-carragher-and-gary-neville-s-liverpool-vs-man-utd-first-half-reactions",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413825.jpg?20261122183711",
       "excerpt": "",
       "published_label": "",
       "published_iso": "",
@@ -605,20 +523,127 @@
       ]
     },
     {
-      "slug": "13615402",
-      "title": "'No chance!' - Poch and Mainoo fume at 'unfair' Yoro red card",
-      "url": "https://www.skysports.com/football/news/13615402/leny-yoro-red-card-man-utd-boss-mauricio-pochettino-and-kobbie-mainoo-angry-at-sending-off-for-foul-on-liverpools-alexander-isak",
+      "slug": "13615411",
+      "title": "Gary Neville on Man Utd hitting a new low after Liverpool defeat",
+      "url": "https://www.skysports.com/football/video/13615411/man-utd-gary-neville-s-damning-assessment-after-liverpool-defeat",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-leny-yoro-alexander-isak_7413680.jpg?20261122164441",
-      "excerpt": "Mauricio Pochettino felt Manchester United were given an \"unfair\" red card in their 4-0 defeat at Liverpool - with Kobbie Mainoo replying \"no chance\" when asked whether Leny Yoro should have been sent off.",
-      "published_label": "22 November 2026 · 18:58",
-      "published_iso": "2026-11-22T18:58:00+00:00",
-      "byline": "Sam Blitz",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-gary-neville-man-utd_7413889.jpg?20261122193809",
+      "excerpt": "Gary Neville reacted to Manchester United’s heavy defeat to rivals Liverpool and said it’s tiring watching them and he wonders how low it can get.",
+      "published_label": "22 November 2026 · 19:29",
+      "published_iso": "2026-11-22T19:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
       "body": [
-        "Mauricio Pochettino felt Manchester United were given an \"unfair\" red card in their 4-0 defeat at Liverpool - with Kobbie Mainoo replying \"no chance\" when asked whether Leny Yoro should have been sent off.",
-        "Pochettino's first United game started in dismal fashion as Yoro was given his marching orders in the eighth minute for bringing down Alexander Isak as the last defender outside the box.",
-        "Dominik Szoboszlai then scored from the resulting free-kick and Florian Wirtz doubled the lead after 13 minutes. Rio Ngumoha and Victor Munoz put gloss on the scoreline after half-time. Liverpool 4-0 Man Utd - report and reaction Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "However, Yoro's sending off was doused in controversy as Isak took a heavy touch into United goalkeeper Senne Lammens before going down under the challenge."
+        "Gary Neville reacted to Manchester United’s heavy defeat to rivals Liverpool and said it’s tiring watching them and he wonders how low it can get."
+      ]
+    },
+    {
+      "slug": "13615404",
+      "title": "‘The damage is done, it’s so painful’ – Poch reacts to humbling defeat to Liverpool",
+      "url": "https://www.skysports.com/football/video/13615404/the-damage-is-done-it-s-so-painful-pochettino-reacts-to-man-utd-s-humbling-defeat-to-liverpool",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-postmatch-man-utd_7413862.jpg?20261122190838",
+      "excerpt": "Mauricio Pochettino spoke to Pat Davison after Man Utd’s 4-0 defeat to Liverpool and described the result as 'so painful' and said the players are hurting.",
+      "published_label": "22 November 2026 · 19:03",
+      "published_iso": "2026-11-22T19:03:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Mauricio Pochettino spoke to Pat Davison after Man Utd’s 4-0 defeat to Liverpool and described the result as 'so painful' and said the players are hurting."
+      ]
+    },
+    {
+      "slug": "13615398",
+      "title": "'No chance!' - Mainoo unimpressed by early Yoro red card decision",
+      "url": "https://www.skysports.com/football/video/13615398/liverpool-4-0-man-utd-kobbie-mainoo-unimpressed-with-leny-yoros-red-card-decision",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mainoo-man-utd_7413855.jpg?20261122185519",
+      "excerpt": "Manchester United midfielder Kobbie Mainoo speaks about Leny Yoro's early red card against Liverpool and believes the defender's sending off was incorrect.",
+      "published_label": "22 November 2026 · 18:48",
+      "published_iso": "2026-11-22T18:48:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Manchester United midfielder Kobbie Mainoo speaks about Leny Yoro's early red card against Liverpool and believes the defender's sending off was incorrect."
+      ]
+    },
+    {
+      "slug": "13615396",
+      "title": "Liverpool's fab four as they thrash 10-man Man Utd",
+      "url": "https://www.skysports.com/football/video/13615396/liverpool-4-0-manchester-united-premier-league-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413818.jpg?20261122183437",
+      "excerpt": "FREE TO WATCH: Highlights from the Premier League match between Liverpool and Manchester United.",
+      "published_label": "22 November 2026 · 18:43",
+      "published_iso": "2026-11-22T18:43:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "FREE TO WATCH: Highlights from the Premier League match between Liverpool and Manchester United."
+      ]
+    },
+    {
+      "slug": "13615388",
+      "title": "'I feel like swearing!' - Keane on Man Utd's heavy loss to Liverpool",
+      "url": "https://www.skysports.com/football/video/13615388/roy-keanes-post-match-takedown-of-man-utd-after-4-0-defeat-at-liverpool",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-keane-man-utd_7413826.jpg?20261122183718",
+      "excerpt": "Roy Keane shares his thoughts on Manchester United after their 4-0 loss to Liverpool and his disbelief at their 'lack of fight'.",
+      "published_label": "22 November 2026 · 18:35",
+      "published_iso": "2026-11-22T18:35:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Roy Keane shares his thoughts on Manchester United after their 4-0 loss to Liverpool and his disbelief at their 'lack of fight'."
+      ]
+    },
+    {
+      "slug": "13611979",
+      "title": "Nightmare start for Pochettino as Liverpool rout 10-man Man Utd",
+      "url": "https://www.skysports.com/football/news/13611979/liverpool-4-0-man-utd-mauricio-pochettino-endures-nightmare-start-as-leny-yoros-early-red-card-sparks-collapse",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-rio-ngumoha-liverpool_7413795.jpg?20261122181605",
+      "excerpt": "Mauricio Pochettino endured a horror start to his Manchester United tenure as his 10-man side were thrashed 4-0 by Liverpool at Anfield following Leny Yoro's early sending off.",
+      "published_label": "22 November 2026 · 18:25",
+      "published_iso": "2026-11-22T18:25:00+00:00",
+      "byline": "Nick Wright",
+      "body": [
+        "Mauricio Pochettino endured a horror start to his Manchester United tenure as his 10-man side were thrashed 4-0 by Liverpool at Anfield following Leny Yoro's early sending off.",
+        "Yoro saw red in the eighth minute when he was adjudged to have made a last-man foul on Alexander Isak, with Dominik Szoboszlai slamming home the resulting free-kick.",
+        "The decision was contentious, with Isak having seemingly lost control of the ball when he was fouled, but the double blow left the visitors in disarray and Florian Wirtz added an acrobatic second only two minutes and 46 seconds after the opener.",
+        "Liverpool fans taunted Pochettino with chants of 'you're getting sacked in the morning' following the second goal. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺"
+      ]
+    },
+    {
+      "slug": "13615381",
+      "title": "Glorious goal from Munoz as Liverpool go FOUR up against Man Utd",
+      "url": "https://www.skysports.com/football/video/13615381/goal-v-munoz-82-liverpool-4-0-manchester-utd",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413801.jpg?20261122181749",
+      "excerpt": "Victor Munoz nets Liverpool's fourth against Manchester United at Anfield.",
+      "published_label": "22 November 2026 · 18:19",
+      "published_iso": "2026-11-22T18:19:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Victor Munoz nets Liverpool's fourth against Manchester United at Anfield."
+      ]
+    },
+    {
+      "slug": "13615315",
+      "title": "Punishing start for Pochettino as size of Man Utd mess made clear",
+      "url": "https://www.skysports.com/football/news/13615315/mauricio-pochettino-made-mistakes-in-man-utd-s-4-0-defeat-to-liverpool-but-the-size-of-the-mess-he-has-inherited-is-clear",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-mauricio-pochettino_7413802.jpg?20261122181812",
+      "excerpt": "Well, they ran. They had to because there were only 10 of them for all but the first seven minutes. If running were the only problem then this mess might soon be solvable. But Manchester United's 4-0 defeat to Liverpool at Anfield highlight…",
+      "published_label": "22 November 2026 · 16:15",
+      "published_iso": "2026-11-22T16:15:00+00:00",
+      "byline": "Adam Bate",
+      "body": [
+        "Well, they ran. They had to because there were only 10 of them for all but the first seven minutes. If running were the only problem then this mess might soon be solvable. But Manchester United's 4-0 defeat to Liverpool at Anfield highlighted more flaws than that.",
+        "Dismal defending, confused combinations, conceding in clusters, confidence long departed. And that all evident in the first quarter of an hour of what was never a contest. This is the only team in the Premier League without a win since August for a reason.",
+        "Welcome to Manchester United, Mauricio Pochettino. The new boss might be only days into a contract that runs until 2029, but it has not taken him long to see the mess he has inherited. Liverpool had this match won in 13 minutes. Unlucky for Pochettino. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "And yet, even at this early stage of his reign, the Argentine cannot escape blame entirely. The decision to give Matthijs de Ligt his first Premier League start in almost a year was exposed as an error immediately. He was partially culpable for Leny Yoro's red card."
       ]
     }
   ]
