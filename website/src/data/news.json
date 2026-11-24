@@ -1,10 +1,82 @@
 {
-  "synced_at": "2026-11-23T20:14:33+00:00",
+  "synced_at": "2026-11-24T04:49:34+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13615825",
+      "title": "WHAT A STRIKE! Janelt rifles rocket for Brentford’s third",
+      "url": "https://www.skysports.com/football/video/13615825/goal-v-janelt-67-brentford-3-0-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-brentford_7414883.jpg?20261123214545",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615812",
+      "title": "'I love the owners' - KDB speaks on Man City ahead of Etihad return",
+      "url": "https://www.skysports.com/football/video/13615812/kevin-de-bruyne-shares-his-affection-with-manchester-city-ahead-of-return-to-the-etihad-with-napoli",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-man-city_7414855.jpg?20261123213435",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615787",
+      "title": "RED CARD! VAR controversy as Tarkowski sent off after review",
+      "url": "https://www.skysports.com/football/video/13615787/off-j-tarkowski-40-brentford-2-0-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-var-everton_7414788.jpg?20261123204745",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615786",
+      "title": "Lewis-Potter scores second for Brentford just four minutes after opener!",
+      "url": "https://www.skysports.com/football/video/13615786/goal-k-lewis-potter-25-brentford-2-0-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-brentford_7414784.jpg?20261123203801",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615785",
+      "title": "Lewis-Potter's deflected strike puts Brentford ahead",
+      "url": "https://www.skysports.com/football/video/13615785/goal-k-lewis-potter-23-brentford-1-0-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-brentford_7414782.jpg?20261123203249",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615780",
+      "title": "Kayode squanders big chance for Brentford",
+      "url": "https://www.skysports.com/football/video/13615780/shot-m-kayode-19-brentford-0-0-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-chance-brentford_7414773.jpg?20261123202606",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13615718",
       "title": "Rangers' McInnes wary of Frick's Aberdeen ahead of clash, live on Sky",
@@ -428,199 +500,127 @@
       "byline": ""
     },
     {
-      "slug": "13611996",
-      "title": "Will Maguire and Shaw feature in Pochettino’s plans?",
-      "url": "https://www.skysports.com/football/video/13611996/will-harry-maguire-and-luke-shaw-feature-in-pochettino-s-plans",
+      "slug": "13615847",
+      "title": "Are Saliba and Gabriel the best CB pairing ever? Carra makes bold claim...",
+      "url": "https://www.skysports.com/football/video/13615847/mnf-could-saliba-and-gabriel-top-list-of-best-cb-pairings-carra-makes-bold-claim-on-arsenal-duo",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-luke-shaw-harry-maguire_7405981.jpg?20261113174218",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13610708",
-      "title": "Jacob Murphy goal!",
-      "url": "https://www.skysports.com/football/video/13610708/jacob-murphy-goal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/image_7403288.jpg?20261110164634",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13595361",
-      "title": "Peck hat-trick steers Sheff Utd past Preston",
-      "url": "https://www.skysports.com/football/news/13595361/preston-2-3-sheffield-united-sydie-pecks-hat-trick-sees-blades-to-victory",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sydie-peck-sheffield-united_7396238.jpg?20261103220123",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13607655",
-      "title": "Portsmouth 3-1 Swansea",
-      "url": "https://www.skysports.com/football/video/13607655/portsmouth-3-1-swansea-city-championship-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-portsmouth-swansea_7396282.jpg?20261103223104",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13607668",
-      "title": "West Brom 1-1 Southampton",
-      "url": "https://www.skysports.com/football/video/13607668/west-bromwich-albion-1-1-southampton-championship-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-championship_7396260.jpg?20261103221334",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13605575",
-      "title": "Esteve hoping for Champions League debut – and Haaland reunion",
-      "url": "https://www.skysports.com/football/news/13605575/maxime-esteve-interview-rb-leipzig-defender-on-his-erling-haaland-reunion-after-two-own-goals-against-man-city",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-maxime-esteve-rb-leipzig_7391409.jpg?20261029205201",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13615552",
-      "title": "Are Man Utd genuinely in a relegation battle?",
-      "url": "https://www.skysports.com/football/news/13615552/are-manchester-united-in-a-relegation-battle-gary-neville-and-jamie-carragher-assess-their-survival-chances",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-united_7414626.jpg?20261123164222",
-      "excerpt": "What started as a blip has become a problem far more systemic for Man Utd.",
-      "published_label": "23 November 2026 · 19:45",
-      "published_iso": "2026-11-23T19:45:00+00:00",
-      "byline": "Ron Walker",
-      "body": [
-        "What started as a blip has become a problem far more systemic for Man Utd.",
-        "\"If the name wasn't Man Utd and you're watching their performances, you'd say they are a team in a relegation fight. They're conceding lots of goals, a comedy of errors, red cards - they've won one game all season,\" said Sky Sports' Jamie Carragher.",
-        "Only Ipswich beaten in 11 attempts, the worst defence in Europe - and a 4-0 hammering at Liverpool on Sunday to wipe the gloss off Mauricio Pochettino's arrival within 12 first-half minutes.",
-        "Carragher added: \"This Manchester United back four can't cope with pace. They're a million miles off it in terms of coming up against what they are in the Premier League.\""
-      ]
-    },
-    {
-      "slug": "13615774",
-      "title": "'A million miles off!' - Carra pinpoints Man Utd defensive weakness vs Liverpool",
-      "url": "https://www.skysports.com/football/video/13615774/mnf-jamie-carragher-pinpoints-man-utd-defensive-weakness-against-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-mnf_7414750.jpg?20261123194830",
-      "excerpt": "Jamie Carragher pinpoints Manchester United's defensive weakness during their 4-0 Premier League defeat to Liverpool.",
-      "published_label": "23 November 2026 · 19:38",
-      "published_iso": "2026-11-23T19:38:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-william-magalhaes_7414940.jpg?20261123231118",
+      "excerpt": "Jamie Carragher makes a bold claim that Arsenal duo William Saliba and Gabriel could top the list for the best centre-back partnership in Premier League history.",
+      "published_label": "23 November 2026 · 22:58",
+      "published_iso": "2026-11-23T22:58:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Jamie Carragher pinpoints Manchester United's defensive weakness during their 4-0 Premier League defeat to Liverpool."
+        "Jamie Carragher makes a bold claim that Arsenal duo William Saliba and Gabriel could top the list for the best centre-back partnership in Premier League history."
       ]
     },
     {
-      "slug": "13615767",
-      "title": "Carra: Chelsea must sign centre-back or achieve nothing",
-      "url": "https://www.skysports.com/football/news/13615767/chelsea-must-sign-centre-back-or-will-achieve-nothing-with-levi-colwill-and-wesley-fofana-says-jamie-carragher",
+      "slug": "13615837",
+      "title": "Papers: Brentford defender emerges as Man Utd target as January budget revealed",
+      "url": "https://www.skysports.com/football/news/13615837/man-utd-transfer-news-brentford-defender-nathan-collins-emerges-as-january-target-paper-talk",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-chelsea-wesley-fofana_7414745.jpg?20261123193045",
-      "excerpt": "Jamie Carragher believes Chelsea must sign a dominant centre-back or they will have \"no chance of achieving anything\".",
-      "published_label": "23 November 2026 · 19:37",
-      "published_iso": "2026-11-23T19:37:00+00:00",
-      "byline": "Jamie Carragher",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Tuesday's newspapers... MANCHESTER UNITED",
+      "published_label": "23 November 2026 · 22:40",
+      "published_iso": "2026-11-23T22:40:00+00:00",
+      "byline": "Sky Sports",
       "body": [
-        "Jamie Carragher believes Chelsea must sign a dominant centre-back or they will have \"no chance of achieving anything\".",
-        "Chelsea have conceded 20 goals in 11 Premier League games this season and were thrashed 4-1 at home to Leeds on Saturday, which has put pressure on new manager Xabi Alonso, with his side sitting eighth and already 12 points behind leaders Arsenal.",
-        "Leeds overpowered Chelsea with their physicality, as Dominic Calvert-Lewin bullied centre-backs Levi Colwill and Wesley Fofana, exposing their weak defence the same way Sunderland's Brian Brobbey did in their 1-0 win before the international break.",
-        "Merson: My worry is that Liverpool thought Alonso wasn't good enough Chelsea news & transfers 🔵 Chelsea fixtures & scores Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+        "The top stories and transfer rumours from Tuesday's newspapers... MANCHESTER UNITED",
+        "Brentford defender Nathan Collins has emerged as a strong candidate for Man Utd ahead of Calvin Bassey , who is expected to sign a new contract with Fulham , and Everton's Jarrad Branthwaite, who is valued at over £70million - Daily Mail",
+        "Mauricio Pochettino will have less than £50m to buy Man Utd out of trouble in the January transfer window - Daily Mail",
+        "Man Utd boss Mauricio Pochettino is only expected to make two new signings in January, even if one of them is a loan deal - Daily Mail"
       ]
     },
     {
-      "slug": "13615773",
-      "title": "'Two novices. They'll never work!' - Carra, Alderweireld slam Chelsea centre-backs",
-      "url": "https://www.skysports.com/football/video/13615773/jamie-carragher-and-toby-alderweireld-slam-chelsea-centre-backs-two-novices-theyll-never-work",
+      "slug": "13615843",
+      "title": "Moyes: We dropped below our standards in Brentford defeat",
+      "url": "https://www.skysports.com/football/video/13615843/david-moyes-everton-dropped-below-our-standards-in-brentford-defeat",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-chelsea-cbs_7414753.jpg?20261123195452",
-      "excerpt": "Jamie Carragher and Toby Alderweireld slam Chelsea centre-backs after their performance in the Blues' 4-1 loss to Leeds in the Premier League.",
-      "published_label": "23 November 2026 · 19:19",
-      "published_iso": "2026-11-23T19:19:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/3cd1bdd09b3661a09bf12effc82d28fc8957ce04a01c44813e1a62ec71b32c77_7414927.jpg?20261123224616",
+      "excerpt": "David Moyes says his side dropped below their standards in 4-0 defeat to Brentford.",
+      "published_label": "23 November 2026 · 22:39",
+      "published_iso": "2026-11-23T22:39:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Jamie Carragher and Toby Alderweireld slam Chelsea centre-backs after their performance in the Blues' 4-1 loss to Leeds in the Premier League."
+        "David Moyes says his side dropped below their standards in 4-0 defeat to Brentford."
       ]
     },
     {
-      "slug": "13615765",
-      "title": "'He has unfinished business' - Alderweireld backs Poch to succeed at Man Utd",
-      "url": "https://www.skysports.com/football/video/13615765/toby-alderweireld-tips-mauricio-pochettino-for-man-utd-success-but-warns-changes-are-needed-after-nightmare-liverpool-start",
+      "slug": "13615842",
+      "title": "Andrews: People need to get real after going sixth in league",
+      "url": "https://www.skysports.com/football/video/13615842/keith-andrews-people-need-to-get-real-after-going-6th-in-league",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-poch_7414730.jpg?20261123190236",
-      "excerpt": "Toby Alderweireld backs former Spurs boss Mauricio Pochettino to turn things around at Manchester United despite a nightmare start against Liverpool, while highlighting fitness concerns and the need for signings that fit his demands.",
-      "published_label": "23 November 2026 · 18:52",
-      "published_iso": "2026-11-23T18:52:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/eaaa36cc17646112c3496368ea66312e7f5de8496f6ac63e7c2e2df453473d10_7414926.jpg?20261123224359",
+      "excerpt": "Keith Andrews says people need to get real after going 6th in the league following a resounding 4-0 win against Everton.",
+      "published_label": "23 November 2026 · 22:38",
+      "published_iso": "2026-11-23T22:38:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Toby Alderweireld backs former Spurs boss Mauricio Pochettino to turn things around at Manchester United despite a nightmare start against Liverpool, while highlighting fitness concerns and the need for signings that fit his demands."
+        "Keith Andrews says people need to get real after going 6th in the league following a resounding 4-0 win against Everton."
       ]
     },
     {
-      "slug": "13577716",
-      "title": "How Northampton are trying to rebuild following takeover involving Pato",
-      "url": "https://www.skysports.com/football/news/13577716/chris-hogg-interview-northampton-boss-out-to-change-culture-after-relegation-as-takeover-involving-pato-offers-hope",
+      "slug": "13615839",
+      "title": "Was Tarkowski's controversial red card correct? Carra: It was a 90s tackle!",
+      "url": "https://www.skysports.com/football/video/13615839/was-james-tarkowskis-controversial-red-card-for-foul-yehor-yarmolyuk-correct-decision",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-chris-hogg-northampton-town_7414363.jpg?20261123120232",
-      "excerpt": "They do say the night is darkest before the dawn and that is the great hope at Northampton Town right now. After one of the worst seasons in their history, there were international headlines when a consortium featuring Pato took over in Sep…",
-      "published_label": "23 November 2026 · 18:00",
-      "published_iso": "2026-11-23T18:00:00+00:00",
-      "byline": "Adam Bate",
-      "body": [
-        "They do say the night is darkest before the dawn and that is the great hope at Northampton Town right now. After one of the worst seasons in their history, there were international headlines when a consortium featuring Pato took over in September.",
-        "The former Brazil forward brings a bit of glamour to the Cobblers and their Shoe Army will welcome that. But for Chris Hogg, in his first job as a manager, the day-to-day challenge of turning this struggling football club around continues - and it is hard work.",
-        "While the long-term prospects have improved off the pitch, Northampton's revival was always likely to be difficult after such a miserable relegation. It was a dismal season at Sixfields. The campaign completely unravelled, ending with 12 consecutive defeats. Transfer Centre LIVE! | Latest League Two news and rumours League Two table | League Two scores & fixtures Got Sky? Watch EFL games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
-        "Dropping down a division was never going to make the problems go away. \"Relegated teams have found it difficult in League Two. I was very aware of that,\" Hogg tells Sky Sports . It needed an overhaul, a radical shift in mentality. \"Boys with experience of winning.\""
-      ]
-    },
-    {
-      "slug": "13615751",
-      "title": "How valuable was Bruno G to Newcastle's success?",
-      "url": "https://www.skysports.com/football/video/13615751/premier-league-show-how-important-was-bruno-guimaraes-to-newcastles-success-and-how-will-he-improve-at-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7414694.jpg?20261123180112",
-      "excerpt": "Former Newcastle coach Graeme Jones speaks highly on Bruno Guimaraes and his importance to Newcastle's success during his time at the club.",
-      "published_label": "23 November 2026 · 17:57",
-      "published_iso": "2026-11-23T17:57:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-red-card-football_7414920.jpg?20261123223355",
+      "excerpt": "Jamie Carragher and Toby Alderweireld debate James Tarkowski's controversial red card for a foul Yehor Yarmolyuk.",
+      "published_label": "23 November 2026 · 22:25",
+      "published_iso": "2026-11-23T22:25:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Former Newcastle coach Graeme Jones speaks highly on Bruno Guimaraes and his importance to Newcastle's success during his time at the club."
+        "Jamie Carragher and Toby Alderweireld debate James Tarkowski's controversial red card for a foul Yehor Yarmolyuk."
       ]
     },
     {
-      "slug": "13615741",
-      "title": "Relegation bound? How do Man Utd in 26/27 compare to Spurs in 25/26?",
-      "url": "https://www.skysports.com/football/video/13615741/premier-league-show-is-relegation-a-serious-threat-for-manchester-united-this-season",
+      "slug": "13615838",
+      "title": "Janelt scores rocket as Brentford thrash 10-man Everton to move sixth!",
+      "url": "https://www.skysports.com/football/video/13615838/brentford-4-0-everton-premier-league-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7414670.jpg?20261123173443",
-      "excerpt": "On the Premier League Show, Adam Binnie breaks down Manchester United's points tally this season compared to Tottenham's in 2025/26 and the big possibility of a potential relegation.",
-      "published_label": "23 November 2026 · 17:27",
-      "published_iso": "2026-11-23T17:27:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-pl-hlts_7414919.jpg?20261123222612",
+      "excerpt": "FREE TO WATCH: Highlights from Brentford’s match against Everton in the Premier League.",
+      "published_label": "23 November 2026 · 22:21",
+      "published_iso": "2026-11-23T22:21:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "On the Premier League Show, Adam Binnie breaks down Manchester United's points tally this season compared to Tottenham's in 2025/26 and the big possibility of a potential relegation."
+        "FREE TO WATCH: Highlights from Brentford’s match against Everton in the Premier League."
+      ]
+    },
+    {
+      "slug": "13615832",
+      "title": "Carvalho converts from Brentford corner to make it four!",
+      "url": "https://www.skysports.com/football/video/13615832/goal-f-carvalho-90-brentford-4-0-everton",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-brentford_7414903.jpg?20261123220558",
+      "excerpt": "Carvalho converts from a Brentford corner to make it four against Everton in the Premier League.",
+      "published_label": "23 November 2026 · 22:02",
+      "published_iso": "2026-11-23T22:02:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Carvalho converts from a Brentford corner to make it four against Everton in the Premier League."
+      ]
+    },
+    {
+      "slug": "13611984",
+      "title": "Lewis-Potter scores twice as Brentford thump four past 10-man Everton",
+      "url": "https://www.skysports.com/football/news/13611984/brentford-4-0-everton-keane-lewis-potter-scores-twice-as-bees-romp-past-10-man-toffees",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-lewis-potter-outarra_7414942.jpg?20261123231353",
+      "excerpt": "Keane Lewis-Potter’s first-half double set Brentford on their way to a comprehensive 4-0 Premier League win over 10-man Everton.",
+      "published_label": "23 November 2026 · 21:30",
+      "published_iso": "2026-11-23T21:30:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Keane Lewis-Potter’s first-half double set Brentford on their way to a comprehensive 4-0 Premier League win over 10-man Everton.",
+        "For David Moyes it was a record-setting night to forget. His 593rd game in charge of Everton, more than any other Toffees manager, ended in misery, as James Tarkowski's red card at 2-0 down left them with no hope of a comeback at the Gtech Community Stadium on Monday night. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Vitaly Janelt added a third for Brentford, while Fabio Carvalho came off the bench to score a fourth, as they moved up to sixth in the table, a point above Everton who slipped to ninth.",
+        "It was a deserved breakthrough for Brentford midway through the first half. A lovely touch from Jaidon Anthony teed up Lewis-Potter, who saw his strike deflect past Jordan Pickford."
       ]
     }
   ]
