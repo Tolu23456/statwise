@@ -1,10 +1,115 @@
 {
-  "synced_at": "2026-11-24T04:49:34+00:00",
+  "synced_at": "2026-11-24T17:46:43+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13616026",
+      "title": "Millwall hit with partial stadium closure for discriminatory chanting",
+      "url": "https://www.skysports.com/football/video/13616026/millwall-hit-with-partial-stadium-closure-for-discriminatory-chanting",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-millwall-fairbrother_7415417.jpg?20261124153817",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616010",
+      "title": "Could Man Utd really be relegated this season?",
+      "url": "https://www.skysports.com/football/video/13616010/explained-could-manchester-united-really-be-relegated-this-season",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-walker-pochettino_7415397.jpg?20261124151712",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616003",
+      "title": "Explained: How Senegal have won the 2025 AFCON title... again!",
+      "url": "https://www.skysports.com/football/video/13616003/afcon-how-senegal-have-won-the-2025-afcon-title-again",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-afcon-senegal-morocco_7415368.jpg?20261124145447",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615545",
+      "title": "Senegal confirmed AFCON 2025 champions after appeal",
+      "url": "https://www.skysports.com/football/news/13615545/senegal-crowned-afcon-2025-champions-by-court-of-arbitration-for-sport-following-appeal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sadio-mane_7415365.jpg?20261124145012",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13615754",
+      "title": "Millwall first club hit with partial closure over discriminatory chants",
+      "url": "https://www.skysports.com/football/news/13615754/millwall-forced-to-partially-close-the-den-after-commission-proves-fa-charges-of-discriminatory-chanting",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-the-den-millwall_7414741.jpg?20261123192207",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13615993",
+      "title": "'I missed the call playing bowling!' - Goodwin recalls England call-up",
+      "url": "https://www.skysports.com/football/video/13615993/izzy-goodwin-recalls-england-call-up-i-missed-the-call-playing-bowling",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-goodwin_7415326.jpg?20261124135723",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615985",
+      "title": "'Huge boost' - Luke Shaw returns to Man Utd training",
+      "url": "https://www.skysports.com/football/video/13615985/luke-shaw-returns-to-manchester-united-training-ahead-of-borussia-dortmund-clash",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/football-manchester-united_7415312.jpg?20261124134919",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13615973",
+      "title": "Barnet midfielder charged with rape",
+      "url": "https://www.skysports.com/football/news/13615973/barnet-midfielder-isiah-noel-williams-charged-with-three-counts-of-rape-and-one-count-of-engaging-in-sexual-communication-with-a-child",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-barnet-stock-gv-file-pic_7415268.jpg?20261124125521",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13615979",
+      "title": "Explained: Why Crystal Palace Women have been deducted three points",
+      "url": "https://www.skysports.com/football/video/13615979/explained-why-crystal-palace-women-were-deducted-three-points-for-substitution",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-crystal-palace_7415277.jpg?20261124131034",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13615825",
       "title": "WHAT A STRIKE! Janelt rifles rocket for Brentford’s third",
@@ -398,229 +503,131 @@
       "kind": "video"
     },
     {
-      "slug": "13614265",
-      "title": "How every Man Utd boss post-Fergie fared against Liverpool on first game in charge",
-      "url": "https://www.skysports.com/football/video/13614265/how-every-manchester-united-boss-began-against-liverpool-in-the-premier-league-since-sir-alex-ferguson",
+      "slug": "13616062",
+      "title": "Explained: How did Man Utd successfully appeal Yoro's red card?",
+      "url": "https://www.skysports.com/football/video/13616062/explained-how-did-manchester-united-successfully-appeal-leny-yoros-red-card-picked-up-against-liverpool",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-managers_7411199.jpg?20261120083036",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614275",
-      "title": "Deal or no deal? Arteta asks to phone a friend when questioned on player contracts",
-      "url": "https://www.skysports.com/football/video/13614275/atreta-deal-or-no-deal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/arteta-football-arsenal_7411242.jpg?20261120094734",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614271",
-      "title": "Drone operator takes down Man Utd footage and issues apology",
-      "url": "https://www.skysports.com/football/news/13614271/manchester-united-drone-operator-removes-training-footage-of-mauricio-pochettinos-first-training-session-and-apologises",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-manchester-united_7410943.png?20261119212913",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13614140",
-      "title": "How West Ham striker's testicular cancer tragedy is educating next generation",
-      "url": "https://www.skysports.com/football/news/13614140/how-the-story-of-dylan-tombides-is-helping-educate-fifa-u17-world-cup-players-about-testicular-cancer",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-dylan-tombides-australia_7410880.jpg?20261119214153",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13596475",
-      "title": "Rice: More to come from Arsenal's £105m 'bargain'",
-      "url": "https://www.skysports.com/football/news/13596475/declan-rice-arsenals-total-player-and-lb105m-bargain-can-unlock-more-levels-after-agreeing-new-contract",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/10/768x432/skysports-premier-league-arsenal_7371338.jpg?20261008143645",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13612488",
-      "title": "Still England's best? Bronze and Earps' performances analysed",
-      "url": "https://www.skysports.com/football/news/13612488/lucy-bronze-leads-chelsea-to-biggest-wsl-win-of-season-over-man-city-as-mary-earps-gives-arsenal-another-headache-at-home",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bronze-earps-wsl_7407645.jpg?20261116095757",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13550693",
-      "title": "How to watch EFL live on Sky Sports",
-      "url": "https://www.skysports.com/football/news/13550693/live-efl-2026-27-fixtures-on-sky-sports-championship-league-one-league-two-games-dates-kick-off-times",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/06/768x432/skysports-efl-efl-fixtures_7277457.jpg?20260619075719",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13612473",
-      "title": "'What a strike that is!' - Handley STUNNER seals win for Celtic in SWPL Old Firm derby",
-      "url": "https://www.skysports.com/football/video/13612473/swpl-addison-hanley-nets-celtic-winner-with-incredible-goal-vs-rangers",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-swpl-rangers_7407019.jpg?20261115134917",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13612415",
-      "title": "Papers: Fernandes wants to see if Poch is 'real deal' before signing new contract",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13612415/x-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13615847",
-      "title": "Are Saliba and Gabriel the best CB pairing ever? Carra makes bold claim...",
-      "url": "https://www.skysports.com/football/video/13615847/mnf-could-saliba-and-gabriel-top-list-of-best-cb-pairings-carra-makes-bold-claim-on-arsenal-duo",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-william-magalhaes_7414940.jpg?20261123231118",
-      "excerpt": "Jamie Carragher makes a bold claim that Arsenal duo William Saliba and Gabriel could top the list for the best centre-back partnership in Premier League history.",
-      "published_label": "23 November 2026 · 22:58",
-      "published_iso": "2026-11-23T22:58:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-yoro_7415510.jpg?20261124171942",
+      "excerpt": "Sky Sports News’ Kaveh Solhekol explains how Manchester United successfully appealed Leny Yoro's red card, that the defender had picked up against Liverpool.",
+      "published_label": "24 November 2026 · 17:16",
+      "published_iso": "2026-11-24T17:16:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Jamie Carragher makes a bold claim that Arsenal duo William Saliba and Gabriel could top the list for the best centre-back partnership in Premier League history."
+        "Sky Sports News’ Kaveh Solhekol explains how Manchester United successfully appealed Leny Yoro's red card, that the defender had picked up against Liverpool."
       ]
     },
     {
-      "slug": "13615837",
-      "title": "Papers: Brentford defender emerges as Man Utd target as January budget revealed",
-      "url": "https://www.skysports.com/football/news/13615837/man-utd-transfer-news-brentford-defender-nathan-collins-emerges-as-january-target-paper-talk",
+      "slug": "13616058",
+      "title": "How 'quick check' and unseen angle saw Timber's Isak shirt-pull go unpunished",
+      "url": "https://www.skysports.com/football/news/13616058/jurrien-timbers-shirt-pull-on-alexander-isak-ref-chief-howard-webb-admits-quick-check-in-arsenals-win-at-liverpool",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Tuesday's newspapers... MANCHESTER UNITED",
-      "published_label": "23 November 2026 · 22:40",
-      "published_iso": "2026-11-23T22:40:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-jurrien-timber_7403744.jpg?20261111105128",
+      "excerpt": "Referees’ chief Howard Webb admitted it was a “quick check” by VAR for Arsenal defender Jurrien Timber’s unpunished shirt-pull on Liverpool striker Alexander Isak in the Gunners’ win at Anfield.",
+      "published_label": "24 November 2026 · 17:13",
+      "published_iso": "2026-11-24T17:13:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "The top stories and transfer rumours from Tuesday's newspapers... MANCHESTER UNITED",
-        "Brentford defender Nathan Collins has emerged as a strong candidate for Man Utd ahead of Calvin Bassey , who is expected to sign a new contract with Fulham , and Everton's Jarrad Branthwaite, who is valued at over £70million - Daily Mail",
-        "Mauricio Pochettino will have less than £50m to buy Man Utd out of trouble in the January transfer window - Daily Mail",
-        "Man Utd boss Mauricio Pochettino is only expected to make two new signings in January, even if one of them is a loan deal - Daily Mail"
+        "Referees’ chief Howard Webb admitted it was a “quick check” by VAR for Arsenal defender Jurrien Timber’s unpunished shirt-pull on Liverpool striker Alexander Isak in the Gunners’ win at Anfield.",
+        "Earlier this month, the Premier League's Key Match Incidents Panel ruled Liverpool should have been awarded a penalty for Timber's shirt tug on Isak inside the box at a cross.",
+        "Upon a review of the incident on Match Officials Mic'd Up , it was revealed that VAR Stuart Attwell spotted the shirt-pull offence but decided it was \"all fine\" 11 seconds later.",
+        "KMI panel: Liverpool incorrectly denied penalty for Timber shirt pull on Isak Latest on YOUR PL club! | PL fixtures | FREE PL highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract"
       ]
     },
     {
-      "slug": "13615843",
-      "title": "Moyes: We dropped below our standards in Brentford defeat",
-      "url": "https://www.skysports.com/football/video/13615843/david-moyes-everton-dropped-below-our-standards-in-brentford-defeat",
+      "slug": "13616033",
+      "title": "Ref chief Webb backs process around Yoro sending off despite successful appeal",
+      "url": "https://www.skysports.com/football/news/13616033/leny-yoro-red-card-ref-chief-howard-webb-backs-process-that-saw-man-utd-defender-sent-off-at-liverpool",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/3cd1bdd09b3661a09bf12effc82d28fc8957ce04a01c44813e1a62ec71b32c77_7414927.jpg?20261123224616",
-      "excerpt": "David Moyes says his side dropped below their standards in 4-0 defeat to Brentford.",
-      "published_label": "23 November 2026 · 22:39",
-      "published_iso": "2026-11-23T22:39:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-leny-yoro-alexander-isak_7413691.jpg?20261122165102",
+      "excerpt": "Referees' chief Howard Webb has backed the process of the officials who sent off Manchester United defender Leny Yoro at Liverpool - despite the red card being overturned on appeal.",
+      "published_label": "24 November 2026 · 17:00",
+      "published_iso": "2026-11-24T17:00:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "David Moyes says his side dropped below their standards in 4-0 defeat to Brentford."
+        "Referees' chief Howard Webb has backed the process of the officials who sent off Manchester United defender Leny Yoro at Liverpool - despite the red card being overturned on appeal.",
+        "Yoro, sent off after eight minutes of Sunday's 4-0 defeat at Anfield , was due to face a one-match ban for denying an obvious goalscoring opportunity when he brought down Alexander Isak outside the box and he was in on goal.",
+        "However, United have had the suspension lifted after a successful claim of wrongful dismissal, the FA said on Tuesday. The independent commission will publish the written reasons in \"due course\". Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
+        "In the latest edition of Match Officials Mic'd Up, Webb, chief refereeing officer at Pro Ref, described the on-field decision from referee Samuel Barrott as \"decisive\" and said the point of contention was around whether Isak would beat United goalkeeper Senne Lammens to the ball."
       ]
     },
     {
-      "slug": "13615842",
-      "title": "Andrews: People need to get real after going sixth in league",
-      "url": "https://www.skysports.com/football/video/13615842/keith-andrews-people-need-to-get-real-after-going-6th-in-league",
+      "slug": "13616037",
+      "title": "'All fine' - Listen to 'quick' VAR check on Timber's Isak shirt-pull",
+      "url": "https://www.skysports.com/football/video/13616037/match-officials-micd-up-listen-to-quick-var-check-on-jurrien-timbers-alexander-isak-shirt-pull",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/eaaa36cc17646112c3496368ea66312e7f5de8496f6ac63e7c2e2df453473d10_7414926.jpg?20261123224359",
-      "excerpt": "Keith Andrews says people need to get real after going 6th in the league following a resounding 4-0 win against Everton.",
-      "published_label": "23 November 2026 · 22:38",
-      "published_iso": "2026-11-23T22:38:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Keith Andrews says people need to get real after going 6th in the league following a resounding 4-0 win against Everton."
-      ]
-    },
-    {
-      "slug": "13615839",
-      "title": "Was Tarkowski's controversial red card correct? Carra: It was a 90s tackle!",
-      "url": "https://www.skysports.com/football/video/13615839/was-james-tarkowskis-controversial-red-card-for-foul-yehor-yarmolyuk-correct-decision",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-red-card-football_7414920.jpg?20261123223355",
-      "excerpt": "Jamie Carragher and Toby Alderweireld debate James Tarkowski's controversial red card for a foul Yehor Yarmolyuk.",
-      "published_label": "23 November 2026 · 22:25",
-      "published_iso": "2026-11-23T22:25:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-micd-up-timber-isak_7415446.jpg?20261124161916",
+      "excerpt": "Speaking on Match Officials Mic'd Up Howard Webb and Michael Owen review the key incident between Jurrien Timber and Alexander Isak at Anfield earlier in November.",
+      "published_label": "24 November 2026 · 17:00",
+      "published_iso": "2026-11-24T17:00:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Jamie Carragher and Toby Alderweireld debate James Tarkowski's controversial red card for a foul Yehor Yarmolyuk."
+        "Speaking on Match Officials Mic'd Up Howard Webb and Michael Owen review the key incident between Jurrien Timber and Alexander Isak at Anfield earlier in November."
       ]
     },
     {
-      "slug": "13615838",
-      "title": "Janelt scores rocket as Brentford thrash 10-man Everton to move sixth!",
-      "url": "https://www.skysports.com/football/video/13615838/brentford-4-0-everton-premier-league-highlights",
+      "slug": "13616024",
+      "title": "Listen in! The VAR audio that supported Yoro's red card decision at Anfield",
+      "url": "https://www.skysports.com/football/video/13616024/match-officials-micd-up-the-var-audio-that-supported-leny-yoros-red-card-decision-at-anfield",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-pl-hlts_7414919.jpg?20261123222612",
-      "excerpt": "FREE TO WATCH: Highlights from Brentford’s match against Everton in the Premier League.",
-      "published_label": "23 November 2026 · 22:21",
-      "published_iso": "2026-11-23T22:21:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-var-micd-up-football_7415422.jpg?20261124154655",
+      "excerpt": "Speaking on Match Officials Mic'd Up, Howard Webb and Michael Owen take a look at the VAR process from Anfield after Leny Yoro was given a red card in the eighth minute.",
+      "published_label": "24 November 2026 · 17:00",
+      "published_iso": "2026-11-24T17:00:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "FREE TO WATCH: Highlights from Brentford’s match against Everton in the Premier League."
+        "Speaking on Match Officials Mic'd Up, Howard Webb and Michael Owen take a look at the VAR process from Anfield after Leny Yoro was given a red card in the eighth minute."
       ]
     },
     {
-      "slug": "13615832",
-      "title": "Carvalho converts from Brentford corner to make it four!",
-      "url": "https://www.skysports.com/football/video/13615832/goal-f-carvalho-90-brentford-4-0-everton",
+      "slug": "13616021",
+      "title": "Yoro red card overturned after successful Man Utd appeal",
+      "url": "https://www.skysports.com/football/news/13616021/leny-yoros-red-card-for-manchester-united-against-liverpool-overturned-following-successful-appeal",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-brentford_7414903.jpg?20261123220558",
-      "excerpt": "Carvalho converts from a Brentford corner to make it four against Everton in the Premier League.",
-      "published_label": "23 November 2026 · 22:02",
-      "published_iso": "2026-11-23T22:02:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-leny-yoro-alexander-isak_7413680.jpg?20261122164441",
+      "excerpt": "Leny Yoro's red card against Liverpool has been overturned following a successful appeal from Manchester United.",
+      "published_label": "24 November 2026 · 17:00",
+      "published_iso": "2026-11-24T17:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Leny Yoro's red card against Liverpool has been overturned following a successful appeal from Manchester United.",
+        "Mauricio Pochettino's side lost 4-0 at Anfield in the Argentine's first game in charge, and his plans went up in smoke when Yoro was dismissed after eight minutes for bundling over Alexander Isak as the striker ran through on goal.",
+        "Yoro was set to serve a one-match suspension but it has now been removed after United successfully lodged an appeal for wrongful dismissal. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
+        "The 21-year-old will now be available to face Brentford on Saturday at Old Trafford."
+      ]
+    },
+    {
+      "slug": "13616051",
+      "title": "'He'll have a very big future' - Marmoush backs 'confident' Williams-Barnet",
+      "url": "https://www.skysports.com/football/video/13616051/hell-have-a-very-big-future-omar-marmoush-backs-confident-spurs-academy-graduate-luca-williams-barnet",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-marmoush-spurs_7415484.jpg?20261124165822",
+      "excerpt": "Omar Marmoush says Spurs academy graduate Luca Williams-Barnet will have a 'big future' ahead of him and admits the young midfielders' confidence is only going to help the teenager.",
+      "published_label": "24 November 2026 · 16:51",
+      "published_iso": "2026-11-24T16:51:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Carvalho converts from a Brentford corner to make it four against Everton in the Premier League."
+        "Omar Marmoush says Spurs academy graduate Luca Williams-Barnet will have a 'big future' ahead of him and admits the young midfielders' confidence is only going to help the teenager."
       ]
     },
     {
-      "slug": "13611984",
-      "title": "Lewis-Potter scores twice as Brentford thump four past 10-man Everton",
-      "url": "https://www.skysports.com/football/news/13611984/brentford-4-0-everton-keane-lewis-potter-scores-twice-as-bees-romp-past-10-man-toffees",
+      "slug": "13615995",
+      "title": "Berrada admits Man Utd transfer spending will be limited by stadium plans",
+      "url": "https://www.skysports.com/football/news/13615995/man-utd-transfer-spending-to-be-limited-by-new-stadium-plans-in-the-short-term-according-to-chief-executive-omar-berrada",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-lewis-potter-outarra_7414942.jpg?20261123231353",
-      "excerpt": "Keane Lewis-Potter’s first-half double set Brentford on their way to a comprehensive 4-0 Premier League win over 10-man Everton.",
-      "published_label": "23 November 2026 · 21:30",
-      "published_iso": "2026-11-23T21:30:00+00:00",
+      "image": "https://e0.365dm.com/26/06/768x432/skysports-omar-berrada-man-utd_7265413.jpg?20260604164618",
+      "excerpt": "Manchester United chief executive Omar Berrada admits plans to build a new 100,000-seater stadium will limit transfer spending in upcoming windows.",
+      "published_label": "24 November 2026 · 16:00",
+      "published_iso": "2026-11-24T16:00:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Keane Lewis-Potter’s first-half double set Brentford on their way to a comprehensive 4-0 Premier League win over 10-man Everton.",
-        "For David Moyes it was a record-setting night to forget. His 593rd game in charge of Everton, more than any other Toffees manager, ended in misery, as James Tarkowski's red card at 2-0 down left them with no hope of a comeback at the Gtech Community Stadium on Monday night. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "Vitaly Janelt added a third for Brentford, while Fabio Carvalho came off the bench to score a fourth, as they moved up to sixth in the table, a point above Everton who slipped to ninth.",
-        "It was a deserved breakthrough for Brentford midway through the first half. A lovely touch from Jaidon Anthony teed up Lewis-Potter, who saw his strike deflect past Jordan Pickford."
+        "Manchester United chief executive Omar Berrada admits plans to build a new 100,000-seater stadium will limit transfer spending in upcoming windows.",
+        "United are currently second bottom in the Premier League after a damaging start to the season which has seen Michael Carrick sacked as head coach and his replacement Mauricio Pochettino lose his first game in charge 4-0 at arch rivals Liverpool on Sunday.",
+        "Sky Sports News understands United plan to back Pochettino in January in a bid to turn the season around amid growing concerns that the club are genuinely in a relegation battle.",
+        "But Berrada's comments suggest that some funds will be held back for the stadium plans which have been opposed by match going fans this season. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
       ]
     }
   ]
