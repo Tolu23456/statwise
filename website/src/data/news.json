@@ -1,10 +1,128 @@
 {
-  "synced_at": "2026-11-24T17:46:43+00:00",
+  "synced_at": "2026-11-25T02:30:31+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13616146",
+      "title": "Blades leave it late to draw with Saints",
+      "url": "https://www.skysports.com/football/video/13616146/sheffield-united-1-1-southampton-championship-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sheff-southampton_7415794.jpg?20261124224017",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616216",
+      "title": "'Where would Rangers be without Naderi?' - Boyd hails forward after Aberdeen strike",
+      "url": "https://www.skysports.com/football/video/13616216/spfl-kris-boyd-hails-rangers-forward-ryan-naderi-after-aberdeen-strike",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-spfl-rangers_7415793.jpg?20261124224007",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616218",
+      "title": "Blackpool 1-1 Leicester",
+      "url": "https://www.skysports.com/football/video/13616218/blackpool-1-1-leicester-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/3358778d870ef413fabd7a523cad4b42c8ec635ebfa925563c382e0ea2403acb_7415788.jpg?20261124223825",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616215",
+      "title": "Stevenage 0-0 Sheffield Wednesday",
+      "url": "https://www.skysports.com/football/video/13616215/stevenage-0-0-sheffield-wednesday-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/a65922799242f41bc5e0d255ebb359504bb39cb3f8374114fa0fa1de923ec3bd_7415787.jpg?20261124223812",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616207",
+      "title": "Poch cites Eze as he questions Barcola role in Szoboszlai goal - is he right?",
+      "url": "https://www.skysports.com/football/video/13616207/mauricio-pochettino-questions-bradley-barcola-impact-on-dominik-szoboszlai-goal-and-makes-eberechi-eze-comparison",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-poch-man-uited_7415789.jpg?20261124223850",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616213",
+      "title": "Bradford City 3-0 Barnsley",
+      "url": "https://www.skysports.com/football/video/13616213/bradford-city-3-0-barnsley-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/51b7dad63aa3cdbc1e3946fbc22553133ffcc74e926e3f951c945099c6827bcd_7415774.jpg?20261124223143",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13610596",
+      "title": "Hibernian finally register home win after battling past Dundee",
+      "url": "https://www.skysports.com/football/news/13610596/hibernian-2-1-dundee-goals-from-martin-boyle-and-chris-cadden-secure-hibs-win-at-easter-road-for-first-time-in-eight-months",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-hibs-dundee_7415758.jpg?20261124222004",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13616211",
+      "title": "Crawley 0-0 Barnet",
+      "url": "https://www.skysports.com/football/video/13616211/crawley-town-0-0-barnet-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/f7b92c84841d67b88ecab7a63b980400979e54bdf61444bff358fd67c6091358_7415770.jpg?20261124222445",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616210",
+      "title": "Bromley 1-1 Wycombe",
+      "url": "https://www.skysports.com/football/video/13616210/bromley-1-1-wycombe-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/32eec1a9e396cff963dd36da70aec323abe40a16e01de1355c49457f4141fedd_7415767.jpg?20261124222341",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13610591",
+      "title": "Rangers edge Aberdeen in five-goal thriller to cut Celtic's Premiership lead",
+      "url": "https://www.skysports.com/football/news/13610591/rangers-3-2-aberdeen-gers-beat-dons-in-five-goal-thriller-to-cut-celtics-premiership-lead-to-one-point",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-rangers-aberdeen_7415736.jpg?20261124220106",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13616026",
       "title": "Millwall hit with partial stadium closure for discriminatory chanting",
@@ -383,251 +501,129 @@
       "kind": "video"
     },
     {
-      "slug": "13615291",
-      "title": "'Where's that going?!' - Thomas hits bar with cross for Hull",
-      "url": "https://www.skysports.com/football/video/13615291/post-s-thomas-hull-0-0-brighton",
+      "slug": "13616250",
+      "title": "Hibernian 2-1 Dundee",
+      "url": "https://www.skysports.com/football/video/13616250/hibernian-2-1-dundee-scottish-premiership-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hull-city_7413601.jpg?20261122154741",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615279",
-      "title": "FULL INTERVIEW: Man Utd CEO Omar Berrada talks exclusively to Sky Sports",
-      "url": "https://www.skysports.com/football/video/13615279/manchester-united-ceo-omar-berrada-talks-exclusively-to-sky-sports-full-interview",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-omar-berrada-manchester_7413587.jpg?20261122153322",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614994",
-      "title": "York 0-0 Walsall",
-      "url": "https://www.skysports.com/football/video/13614994/york-0-0-walsall-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/214b89684c3ffb1ea5f179dde380982f608badd8a00ea04a0cfb1c542ff028f2_7412863.jpg?20261121193201",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614993",
-      "title": "Northampton 3-2 Rochdale",
-      "url": "https://www.skysports.com/football/video/13614993/northampton-3-2-rochdale-league-two-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/852fa05211bf145ddd39fdc357f1c7ae42ae4461f52774e9a3df325b2c311455_7412844.jpg?20261121191909",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614991",
-      "title": "London City Lionesses 6-2 Crystal Palace",
-      "url": "https://www.skysports.com/football/video/13614991/london-city-lionesses-6-2-crystal-palace-womens-super-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-london_7412841.jpg?20261121191601",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614987",
-      "title": "Huddersfield 0-1 Leicester",
-      "url": "https://www.skysports.com/football/video/13614987/huddersfield-town-0-1-leicester-city-league-one-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/3abc56d466f46374b61264b50d388289834835c465fed9d99bcc15d004bdfd0b_7412837.jpg?20261121191519",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614989",
-      "title": "Sensational goal from Madueke as Gunners quickly level",
-      "url": "https://www.skysports.com/football/video/13614989/goal-n-madueke-78-newcastle-2-1-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7412838.jpg?20261121191525",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614986",
-      "title": "Mansfield 1-1 MK Dons",
-      "url": "https://www.skysports.com/football/video/13614986/mansfield-town-1-1-mk-dons-league-one-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/33cda4c9fba5a8153ec92b8ef380bbd84696a21358d880ebaf029dba68de99c5_7412825.jpg?20261121190348",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614369",
-      "title": "'We need to deal this time without him' - Alonso talks scoring struggles in Joao Pedro's absence",
-      "url": "https://www.skysports.com/football/video/13614369/chelsea-boss-xabi-alonso-talks-scoring-struggles-in-joao-pedros-absence",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-chelsea-joao-pedro_7411486.jpg?20261120143215",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13614358",
-      "title": "'It shouldn't be legal' - Iraola shows sympathy for drone footage of Man Utd training",
-      "url": "https://www.skysports.com/football/video/13614358/liverpool-latest-andoni-iraola-shows-sympathy-for-drone-footage-of-man-utd-training",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-andoni-iraola-liverpool_7411443.jpg?20261120134729",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13616062",
-      "title": "Explained: How did Man Utd successfully appeal Yoro's red card?",
-      "url": "https://www.skysports.com/football/video/13616062/explained-how-did-manchester-united-successfully-appeal-leny-yoros-red-card-picked-up-against-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-yoro_7415510.jpg?20261124171942",
-      "excerpt": "Sky Sports News’ Kaveh Solhekol explains how Manchester United successfully appealed Leny Yoro's red card, that the defender had picked up against Liverpool.",
-      "published_label": "24 November 2026 · 17:16",
-      "published_iso": "2026-11-24T17:16:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/e70fb22236f38d76b8e718b75f730a87914314fe45974286793bbff9f28986d0_7415864.jpg?20261125000014",
+      "excerpt": "Watch highlights from the Scottish Premiership match between Hibernian and Dundee.",
+      "published_label": "24 November 2026 · 23:56",
+      "published_iso": "2026-11-24T23:56:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Sky Sports News’ Kaveh Solhekol explains how Manchester United successfully appealed Leny Yoro's red card, that the defender had picked up against Liverpool."
+        "Watch highlights from the Scottish Premiership match between Hibernian and Dundee."
       ]
     },
     {
-      "slug": "13616058",
-      "title": "How 'quick check' and unseen angle saw Timber's Isak shirt-pull go unpunished",
-      "url": "https://www.skysports.com/football/news/13616058/jurrien-timbers-shirt-pull-on-alexander-isak-ref-chief-howard-webb-admits-quick-check-in-arsenals-win-at-liverpool",
+      "slug": "13616249",
+      "title": "'It's a good result...we move on' - Maresca satisfied with score-draw vs Napoli",
+      "url": "https://www.skysports.com/football/video/13616249/enzo-maresca-satisfied-with-manchester-citys-score-draw-vs-napoli-in-the-champions-league",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-jurrien-timber_7403744.jpg?20261111105128",
-      "excerpt": "Referees’ chief Howard Webb admitted it was a “quick check” by VAR for Arsenal defender Jurrien Timber’s unpunished shirt-pull on Liverpool striker Alexander Isak in the Gunners’ win at Anfield.",
-      "published_label": "24 November 2026 · 17:13",
-      "published_iso": "2026-11-24T17:13:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Referees’ chief Howard Webb admitted it was a “quick check” by VAR for Arsenal defender Jurrien Timber’s unpunished shirt-pull on Liverpool striker Alexander Isak in the Gunners’ win at Anfield.",
-        "Earlier this month, the Premier League's Key Match Incidents Panel ruled Liverpool should have been awarded a penalty for Timber's shirt tug on Isak inside the box at a cross.",
-        "Upon a review of the incident on Match Officials Mic'd Up , it was revealed that VAR Stuart Attwell spotted the shirt-pull offence but decided it was \"all fine\" 11 seconds later.",
-        "KMI panel: Liverpool incorrectly denied penalty for Timber shirt pull on Isak Latest on YOUR PL club! | PL fixtures | FREE PL highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract"
-      ]
-    },
-    {
-      "slug": "13616033",
-      "title": "Ref chief Webb backs process around Yoro sending off despite successful appeal",
-      "url": "https://www.skysports.com/football/news/13616033/leny-yoro-red-card-ref-chief-howard-webb-backs-process-that-saw-man-utd-defender-sent-off-at-liverpool",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-leny-yoro-alexander-isak_7413691.jpg?20261122165102",
-      "excerpt": "Referees' chief Howard Webb has backed the process of the officials who sent off Manchester United defender Leny Yoro at Liverpool - despite the red card being overturned on appeal.",
-      "published_label": "24 November 2026 · 17:00",
-      "published_iso": "2026-11-24T17:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Referees' chief Howard Webb has backed the process of the officials who sent off Manchester United defender Leny Yoro at Liverpool - despite the red card being overturned on appeal.",
-        "Yoro, sent off after eight minutes of Sunday's 4-0 defeat at Anfield , was due to face a one-match ban for denying an obvious goalscoring opportunity when he brought down Alexander Isak outside the box and he was in on goal.",
-        "However, United have had the suspension lifted after a successful claim of wrongful dismissal, the FA said on Tuesday. The independent commission will publish the written reasons in \"due course\". Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
-        "In the latest edition of Match Officials Mic'd Up, Webb, chief refereeing officer at Pro Ref, described the on-field decision from referee Samuel Barrott as \"decisive\" and said the point of contention was around whether Isak would beat United goalkeeper Senne Lammens to the ball."
-      ]
-    },
-    {
-      "slug": "13616037",
-      "title": "'All fine' - Listen to 'quick' VAR check on Timber's Isak shirt-pull",
-      "url": "https://www.skysports.com/football/video/13616037/match-officials-micd-up-listen-to-quick-var-check-on-jurrien-timbers-alexander-isak-shirt-pull",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-micd-up-timber-isak_7415446.jpg?20261124161916",
-      "excerpt": "Speaking on Match Officials Mic'd Up Howard Webb and Michael Owen review the key incident between Jurrien Timber and Alexander Isak at Anfield earlier in November.",
-      "published_label": "24 November 2026 · 17:00",
-      "published_iso": "2026-11-24T17:00:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-maresca-haaland_7415860.jpg?20261124233951",
+      "excerpt": "Following his side's chaotic 2-2 draw against Napoli, Manchester City boss Enzo Maresca says the point is a 'good result'.",
+      "published_label": "24 November 2026 · 23:35",
+      "published_iso": "2026-11-24T23:35:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Speaking on Match Officials Mic'd Up Howard Webb and Michael Owen review the key incident between Jurrien Timber and Alexander Isak at Anfield earlier in November."
+        "Following his side's chaotic 2-2 draw against Napoli, Manchester City boss Enzo Maresca says the point is a 'good result'."
       ]
     },
     {
-      "slug": "13616024",
-      "title": "Listen in! The VAR audio that supported Yoro's red card decision at Anfield",
-      "url": "https://www.skysports.com/football/video/13616024/match-officials-micd-up-the-var-audio-that-supported-leny-yoros-red-card-decision-at-anfield",
+      "slug": "13616238",
+      "title": "Papers: Chelsea will push to sign Bournemouth's Scott in January",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13616238/chelsea-transfer-news-blues-will-push-to-sign-bournemouth-midfielder-alex-scott-in-january-paper-talk",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-var-micd-up-football_7415422.jpg?20261124154655",
-      "excerpt": "Speaking on Match Officials Mic'd Up, Howard Webb and Michael Owen take a look at the VAR process from Anfield after Leny Yoro was given a red card in the eighth minute.",
-      "published_label": "24 November 2026 · 17:00",
-      "published_iso": "2026-11-24T17:00:00+00:00",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Tuesday's newspapers... CHELSEA",
+      "published_label": "24 November 2026 · 23:02",
+      "published_iso": "2026-11-24T23:02:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Tuesday's newspapers... CHELSEA",
+        "Chelsea will push to sign Bournemouth and England midfielder Alex Scott in the January transfer window - The Mirror",
+        "Maxence Lacroix is hoping to give Xabi Alonso a boost by returning from injury before the end of the year as the Chelsea manager attempts to turn back the clock to win over worried supporters - The Telegraph",
+        "Wesley Fofana has laughed off his penalty miss against Liverpool in an unauthorised interview that risks upsetting Chelsea and sparking a backlash from unhappy supporters - The Times Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW PREMIER LEAGUE"
+      ]
+    },
+    {
+      "slug": "13616236",
+      "title": "'Brilliant performance' - Arteta 'pleased' with Arsenal's display vs Dortmund",
+      "url": "https://www.skysports.com/football/video/13616236/brilliant-performance-mikel-arteta-pleased-with-arsenals-display-vs-borussia-dortmund",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-arteta-arsenal_7415841.jpg?20261124230802",
+      "excerpt": "Following his side's 1-1 Champions League draw against Borussia Dortmund, Mikel Arteta, says Arsenal should be pleased with their performance, but admits that The Gunners' finishing could be better.",
+      "published_label": "24 November 2026 · 22:59",
+      "published_iso": "2026-11-24T22:59:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Speaking on Match Officials Mic'd Up, Howard Webb and Michael Owen take a look at the VAR process from Anfield after Leny Yoro was given a red card in the eighth minute."
+        "Following his side's 1-1 Champions League draw against Borussia Dortmund, Mikel Arteta, says Arsenal should be pleased with their performance, but admits that The Gunners' finishing could be better."
       ]
     },
     {
-      "slug": "13616021",
-      "title": "Yoro red card overturned after successful Man Utd appeal",
-      "url": "https://www.skysports.com/football/news/13616021/leny-yoros-red-card-for-manchester-united-against-liverpool-overturned-following-successful-appeal",
+      "slug": "13616234",
+      "title": "Arsenal showing bluntless in attack - but Man City have problems too",
+      "url": "https://www.skysports.com/football/news/13616234/arsenal-and-manchester-citys-problems-analysed-as-both-set-to-meet-in-bumper-premier-league-clash-this-weekend",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-leny-yoro-alexander-isak_7413680.jpg?20261122164441",
-      "excerpt": "Leny Yoro's red card against Liverpool has been overturned following a successful appeal from Manchester United.",
-      "published_label": "24 November 2026 · 17:00",
-      "published_iso": "2026-11-24T17:00:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-city-manchester_7415805.jpg?20261124224824",
+      "excerpt": "Arsenal face Manchester City in a blockbuster Premier League contest this weekend, but in recent days and months, both teams have issues to overcome.",
+      "published_label": "24 November 2026 · 22:54",
+      "published_iso": "2026-11-24T22:54:00+00:00",
+      "byline": "Sam Blitz at the Emirates Stadium, Adam Bate at the Etihad Stadium",
+      "body": [
+        "Arsenal face Manchester City in a blockbuster Premier League contest this weekend, but in recent days and months, both teams have issues to overcome.",
+        "Arsenal have drawn back-to-back games against Newcastle and Borussia Dortmund, with Mikel Arteta's side throwing away comfortable half-time leads in both matches.",
+        "City, meanwhile, come into the game on a run of just one win in their last six Premier League and Champions League matches. Transfer Centre LIVE! | Latest on YOUR PL club! Premier League fixtures & scores | FREE PL highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
+        "The game could have a huge impact on the Premier League title race, with Arsenal hoping to open up a nine-point lead over Enzo Maresca's side, who in turn could close the gap to the reigning champions to just three points with a win."
+      ]
+    },
+    {
+      "slug": "13616226",
+      "title": "'You question everything' - Haaland lays City's frustrations bare",
+      "url": "https://www.skysports.com/football/news/13616226/erling-haaland-frustrated-with-manchester-city-form-when-you-dont-win-you-question-everything",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-haaland-manchester-city_7415835.jpg?20261124230423",
+      "excerpt": "Erling Haaland has admitted Manchester City's poor form is affecting the players, admitting \"when you don't win, you question everything\" after they were held 2-2 at home by Napoli in the Champions League.",
+      "published_label": "24 November 2026 · 22:51",
+      "published_iso": "2026-11-24T22:51:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "Leny Yoro's red card against Liverpool has been overturned following a successful appeal from Manchester United.",
-        "Mauricio Pochettino's side lost 4-0 at Anfield in the Argentine's first game in charge, and his plans went up in smoke when Yoro was dismissed after eight minutes for bundling over Alexander Isak as the striker ran through on goal.",
-        "Yoro was set to serve a one-match suspension but it has now been removed after United successfully lodged an appeal for wrongful dismissal. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 No Sky? Latest Sky Sports deals or stream with no contract 📺",
-        "The 21-year-old will now be available to face Brentford on Saturday at Old Trafford."
+        "Erling Haaland has admitted Manchester City's poor form is affecting the players, admitting \"when you don't win, you question everything\" after they were held 2-2 at home by Napoli in the Champions League.",
+        "Rayan Cherki's late strike salvaged a draw but Enzo Maresca's side again struggled to find their fluency.",
+        "The draw leaves City in sixth spot in the Champions League table but they are likely to drop out of the top eight by Wednesday evening and have now gone 10 games without a clean sheet. Maresca's men look vulnerable ahead of the trip to Arsenal on Sunday, live on Sky Sports. Match report: Man City 2-2 Napoli As it happened | How the teams lined up | Match stats Champions League fixtures and results | Table | Latest: Man City",
+        "Haaland speaking to TNT Sports said: \"We tried to push but we couldn't. It's not good enough. We let them in too easily and were unable to control or attack the game as we want. Football can be so difficult and easy. When you win games everything is easy and you know exactly what to do, when you don't win you start to question everything. The perfect thing would be to don't think, but it's difficult in these moments."
       ]
     },
     {
-      "slug": "13616051",
-      "title": "'He'll have a very big future' - Marmoush backs 'confident' Williams-Barnet",
-      "url": "https://www.skysports.com/football/video/13616051/hell-have-a-very-big-future-omar-marmoush-backs-confident-spurs-academy-graduate-luca-williams-barnet",
+      "slug": "13616224",
+      "title": "'We were so naive at times' - McInnes slams Rangers performance despite win",
+      "url": "https://www.skysports.com/football/video/13616224/spfl-derek-mcinnes-says-rangers-were-so-naive-at-times-in-aberdeen-win",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-marmoush-spurs_7415484.jpg?20261124165822",
-      "excerpt": "Omar Marmoush says Spurs academy graduate Luca Williams-Barnet will have a 'big future' ahead of him and admits the young midfielders' confidence is only going to help the teenager.",
-      "published_label": "24 November 2026 · 16:51",
-      "published_iso": "2026-11-24T16:51:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-spfl-rangers_7415811.jpg?20261124225132",
+      "excerpt": "Despite beating Aberdeen 3-2, Rangers manager Derek McInnes was left frustrated with their performance.",
+      "published_label": "24 November 2026 · 22:48",
+      "published_iso": "2026-11-24T22:48:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Omar Marmoush says Spurs academy graduate Luca Williams-Barnet will have a 'big future' ahead of him and admits the young midfielders' confidence is only going to help the teenager."
+        "Despite beating Aberdeen 3-2, Rangers manager Derek McInnes was left frustrated with their performance."
       ]
     },
     {
-      "slug": "13615995",
-      "title": "Berrada admits Man Utd transfer spending will be limited by stadium plans",
-      "url": "https://www.skysports.com/football/news/13615995/man-utd-transfer-spending-to-be-limited-by-new-stadium-plans-in-the-short-term-according-to-chief-executive-omar-berrada",
+      "slug": "13616214",
+      "title": "Outrageous! Sunderland U21s Jones scores halfway line screamer!",
+      "url": "https://www.skysports.com/football/video/13616214/sunderland-u21s-jayden-jones-scores-from-near-halfway-line",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/06/768x432/skysports-omar-berrada-man-utd_7265413.jpg?20260604164618",
-      "excerpt": "Manchester United chief executive Omar Berrada admits plans to build a new 100,000-seater stadium will limit transfer spending in upcoming windows.",
-      "published_label": "24 November 2026 · 16:00",
-      "published_iso": "2026-11-24T16:00:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-jayden-jones-sunderland_7415806.jpg?20261124224819",
+      "excerpt": "Jayden Jones scored from near the halfway line for Sunderland Under-21s against Salford City in the EFL Trophy.",
+      "published_label": "24 November 2026 · 22:32",
+      "published_iso": "2026-11-24T22:32:00+00:00",
       "byline": "Sky Sports",
+      "kind": "video",
       "body": [
-        "Manchester United chief executive Omar Berrada admits plans to build a new 100,000-seater stadium will limit transfer spending in upcoming windows.",
-        "United are currently second bottom in the Premier League after a damaging start to the season which has seen Michael Carrick sacked as head coach and his replacement Mauricio Pochettino lose his first game in charge 4-0 at arch rivals Liverpool on Sunday.",
-        "Sky Sports News understands United plan to back Pochettino in January in a bid to turn the season around amid growing concerns that the club are genuinely in a relegation battle.",
-        "But Berrada's comments suggest that some funds will be held back for the stadium plans which have been opposed by match going fans this season. Transfer Centre LIVE! | Man Utd news & transfers 🔴 Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+        "Jayden Jones scored from near the halfway line for Sunderland Under-21s against Salford City in the EFL Trophy."
       ]
     }
   ]
