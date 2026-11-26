@@ -1,10 +1,125 @@
 {
-  "synced_at": "2026-11-25T14:23:20+00:00",
+  "synced_at": "2026-11-26T00:21:32+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13610529",
+      "title": "West Brom battle to win at Bolton",
+      "url": "https://www.skysports.com/football/news/13610529/bolton-wanderers-1-3-west-bromwich-albion-aune-heggebo-nets-twice-in-baggies-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-brom_7416584.jpg?20261125212346",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13616484",
+      "title": "Poch denied first Man Utd win by Lammens howler at Sporting",
+      "url": "https://www.skysports.com/football/news/13616484/sporting-2-2-man-utd-mauricio-pochettino-denied-first-win-by-senne-lammens-howler-in-champions-league",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sanne-lammens-sporting_7416617.jpg?20261125221019",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13616517",
+      "title": "Isak and Wirtz power Liverpool to easy victory at Club Brugge",
+      "url": "https://www.skysports.com/football/news/13616517/club-brugge-0-3-liverpool-alexander-isak-and-florian-wirtz-on-target-in-dominant-champions-league-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-liverpool_7416550.jpg?20261125203911",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13616577",
+      "title": "'Can't believe it!' - Morrison stunned by Man Utd disallowed goal after Lammens error",
+      "url": "https://www.skysports.com/football/video/13616577/sporting-lisbon-vs-manchester-united-clinton-morrison-stunned-by-disallowed-goal-after-senne-lammens-error",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-clinton-morrison_7416612.jpg?20261125220238",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13610528",
+      "title": "Burnley break winless home record as Birmingham win at Turf Moor",
+      "url": "https://www.skysports.com/football/news/13610528/burnley-0-2-birmingham-city-august-priske-nets-as-blues-ease-past-struggling-clarets",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-birmingham-city_7416526.jpg?20261125200137",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13616560",
+      "title": "Papers: Liverpool agree deal to sign Senegal teenager Ndiaye",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13616560/liverpool-transfer-news-sidy-barhama-ndiaye-agrees-deal-to-sign-for-reds-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13616567",
+      "title": "'A strike to savour!' - Sykes screamer pulls one back for Millwall at Stoke",
+      "url": "https://www.skysports.com/football/video/13616567/stoke-vs-millwall-mark-sykes-scores-a-screamer-to-pull-one-back-for-the-lions",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-efl_7416605.jpg?20261125214908",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616555",
+      "title": "Strangest goal ever?! Morrison reacts to BIZARRE Bruno goal!",
+      "url": "https://www.skysports.com/football/video/13616555/porting-lisbon-vs-manchester-united-clinton-morrison-reacts-to-bizarre-bruno-fernandes-goal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-clinton-morrison_7416581.jpg?20261125212014",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616551",
+      "title": "Banel own-goal doubles Birmingham's lead over Burnley",
+      "url": "https://www.skysports.com/football/video/13616551/burnley-vs-birmingham-banel-own-goal-doubles-blues-lead-over-clarets",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-efl_7416573.jpg?20261125211009",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616547",
+      "title": "'Where's he going?!' - Morrison reacts to Man Utd double penalty drama!",
+      "url": "https://www.skysports.com/football/video/13616547/sporing-lisbon-vs-manchester-united-clinton-morrison-reacts-to-double-penalty-drama",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-clinton-morrison_7416567.jpg?20261125210531",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
     {
       "slug": "13616146",
       "title": "Blades leave it late to draw with Saints",
@@ -383,245 +498,129 @@
       "kind": "video"
     },
     {
-      "slug": "13615438",
-      "title": "Raya injury 'not too serious' says relieved Arteta",
-      "url": "https://www.skysports.com/football/news/13615438/david-raya-injury-arsenal-goalkeeper-avoids-surgery-and-blow-is-not-as-bad-as-first-feared-says-mikel-arteta",
+      "slug": "13616619",
+      "title": "Pochettino: Impossible to understand why Amad goal was ruled out",
+      "url": "https://www.skysports.com/football/video/13616619/sporting-liston-2-2-manchester-united-mauricio-pochettino-left-baffled-by-disallowed-amad-diallo-goal",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-david-raya-arsenal_7412827.jpg?20261121190915",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13615373",
-      "title": "'The pace of this lad is FRIGHTENING! - Rio makes it THREE for Liverpool",
-      "url": "https://www.skysports.com/football/video/13615373/goal-r-ngumoha-66-liverpool-3-0-manchester-utd",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413773.jpg?20261122180320",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615358",
-      "title": "Comms Cam: The best bits from Liverpool vs Man Utd!",
-      "url": "https://www.skysports.com/football/video/13615358/liverpool-vs-man-utd-jamie-carragher-and-gary-neville-s-liverpool-vs-man-utd-first-half-reactions",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413825.jpg?20261122183711",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13611975",
-      "title": "McBurnie's late double stuns 10-man Brighton after Tzolakis heroics",
-      "url": "https://www.skysports.com/football/news/13611975/hull-city-2-0-brighton-oli-mcburnies-late-double-stuns-seagulls-after-konstantinos-tzolakis-goalkeeping-heroics",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-oli-mcburnie-hull-city_7413617.jpg?20261122155755",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13615300",
-      "title": "Charlton hold Villa to get their first point of the season",
-      "url": "https://www.skysports.com/football/video/13615300/charlton-athletic-1-1-aston-villa-womens-super-league-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-womens-super-league_7413636.jpg?20261122160508",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615299",
-      "title": "2-0 down, Yamal misses pen, but Barcelona STILL beat Villarreal",
-      "url": "https://www.skysports.com/football/video/13615299/barcelona-3-2-villarreal-la-liga-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-barcelona-villarreal_7413635.jpg?20261122160427",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615304",
-      "title": "Early own goal hands Brighton win at Everton",
-      "url": "https://www.skysports.com/football/video/13615304/everton-0-1-brighton-and-hove-albion-wsl-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-everton-brighton_7413634.jpg?20261122160401",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615305",
-      "title": "McBurnie 'bursts Brighton's bubble' with quick second in injury time!",
-      "url": "https://www.skysports.com/football/video/13615305/goal-o-mcburnie-90-5-hull-2-0-brighton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413647.jpg?20261122161022",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615302",
-      "title": "'Astonishing!' - McBurnie grabs late goal for Hull",
-      "url": "https://www.skysports.com/football/video/13615302/goal-o-mcburnie-90-2-hull-1-0-brighton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-premier-league_7413632.jpg?20261122160311",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615297",
-      "title": "Costinha sees second yellow following foul on Thomas!",
-      "url": "https://www.skysports.com/football/video/13615297/off-costinha-89-hull-0-0-brighton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-premier-league-hull-city_7413618.jpg?20261122155900",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13616368",
-      "title": "'Front three aren't Man Utd standard' – Merson calls for squad overhaul",
-      "url": "https://www.skysports.com/football/video/13616368/front-three-aren-t-manchester-united-standard-paul-merson-calls-for-midfield-and-attack-overhaul",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-merson_7416204.jpg?20261125132029",
-      "excerpt": "Paul Merson says it is not just Manchester United's defence that needs work, suggesting the club needs to reinvest in midfield and attack, too.",
-      "published_label": "25 November 2026 · 13:08",
-      "published_iso": "2026-11-25T13:08:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-amd-poch_7416706.jpg?20261125235733",
+      "excerpt": "Manchester United boss Mauricio Pochettino insists it's 'difficult to understand' why Amad Diallo's goal was ruled out for a foul on Sporting Lisbon keeper Kaique.",
+      "published_label": "25 November 2026 · 23:41",
+      "published_iso": "2026-11-25T23:41:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Paul Merson says it is not just Manchester United's defence that needs work, suggesting the club needs to reinvest in midfield and attack, too."
+        "Manchester United boss Mauricio Pochettino insists it's 'difficult to understand' why Amad Diallo's goal was ruled out for a foul on Sporting Lisbon keeper Kaique."
       ]
     },
     {
-      "slug": "13616361",
-      "title": "Merse: If City get beat at Arsenal they've got no chance of title",
-      "url": "https://www.skysports.com/football/video/13616361/paul-merson-if-manchester-city-get-beat-at-arsenal-theyve-got-no-chance-of-title",
+      "slug": "13616618",
+      "title": "Carra: Lammens confidence worrying but Poch will feel Man Utd were robbed",
+      "url": "https://www.skysports.com/football/news/13616618/man-utd-goalkeeper-senne-lammens-criticised-for-howler-in-sporting-draw-by-jamie-carragher",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-merson-city-premier-league_7416185.jpg?20261125124825",
-      "excerpt": "Paul Merson believes that Manchester City have to win at the Emirates against Arsenal if they want to win the Premier League.",
-      "published_label": "25 November 2026 · 12:35",
-      "published_iso": "2026-11-25T12:35:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-senne-lammens-man-utd_7416704.jpg?20261125235511",
+      "excerpt": "Jamie Carragher says Manchester United goalkeeper Senne Lammens' confidence is a cause for concern after his howler cost Mauricio Pochettino a first win since taking charge.",
+      "published_label": "25 November 2026 · 23:10",
+      "published_iso": "2026-11-25T23:10:00+00:00",
+      "byline": "Jamie Carragher",
+      "body": [
+        "Jamie Carragher says Manchester United goalkeeper Senne Lammens' confidence is a cause for concern after his howler cost Mauricio Pochettino a first win since taking charge.",
+        "It was a nightmare performance for Lammens, who unnecessarily gave away the penalty for Luis Suarez's opener just 75 seconds after saving the Sporting striker's poorly taken first spot-kick.",
+        "Lammens, 24, then spilled a routine cross late in the second half which allowed Suarez to equalise for 2-2, denying United a first away win of the season and first away Champions League win for five years.",
+        "The Belgium international, signed from Club Brugge last summer, restored calm between the sticks last season after Andre Onana's calamitous spell as No 1, but has had a poor start to his second season at Old Trafford. As it happened | Teams | Stats Champions League fixtures and results | Table Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13616596",
+      "title": "Watford woes continue under new boss",
+      "url": "https://www.skysports.com/football/video/13616596/watford-0-1-blackburn-championship-highlight",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-watford-blackburn_7416651.jpg?20261125222920",
+      "excerpt": "Highlights of the Sky Bet Championship match between Watford and Blackburn Rovers.",
+      "published_label": "25 November 2026 · 22:28",
+      "published_iso": "2026-11-25T22:28:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Paul Merson believes that Manchester City have to win at the Emirates against Arsenal if they want to win the Premier League."
+        "Highlights of the Sky Bet Championship match between Watford and Blackburn Rovers."
       ]
     },
     {
-      "slug": "13616350",
-      "title": "Explained: Why Sterling has been given a suspended jail sentence",
-      "url": "https://www.skysports.com/football/video/13616350/raheem-sterling-why-former-england-star-has-been-given-a-suspended-jail-sentence",
+      "slug": "13616591",
+      "title": "Burnley set unwanted record with 24-game winless home run",
+      "url": "https://www.skysports.com/football/video/13616591/burnley-0-2-birmingham-city-championship-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-raheem-sterling-football_7416144.jpg?20261125122307",
-      "excerpt": "Sky Sports' Geraint Hughes gives the latest as Raheem Sterling is given a suspended 12-month jail sentence for dangerous driving.",
-      "published_label": "25 November 2026 · 12:12",
-      "published_iso": "2026-11-25T12:12:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-burnley-birmingham_7416652.jpg?20261125222955",
+      "excerpt": "Highlights of the Sky Bet Championship match between Burnley and Birmingham City.",
+      "published_label": "25 November 2026 · 22:21",
+      "published_iso": "2026-11-25T22:21:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Sky Sports' Geraint Hughes gives the latest as Raheem Sterling is given a suspended 12-month jail sentence for dangerous driving."
+        "Highlights of the Sky Bet Championship match between Burnley and Birmingham City."
       ]
     },
     {
-      "slug": "13616028",
-      "title": "Sterling's career was defined by comebacks - this could be one too many",
-      "url": "https://www.skysports.com/football/news/13616028/raheem-sterling-enjoyed-a-wonderful-premier-league-career-but-regularly-attracted-controversy-is-there-any-way-back",
+      "slug": "13616587",
+      "title": "Hirst brace keeps Stoke joint top",
+      "url": "https://www.skysports.com/football/video/13616587/stoke-city-2-1-millwall-championship-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-raheem-sterling-rise_7415377.jpg?20261124150848",
-      "excerpt": "There once existed a time where Raheem Sterling was an unstoppable force. A player with a uniquely abstract running style, he still somehow evoked effortless poise when moving with the ball. A glider across a pitch.",
-      "published_label": "25 November 2026 · 11:30",
-      "published_iso": "2026-11-25T11:30:00+00:00",
-      "byline": "Laura Hunter",
-      "body": [
-        "There once existed a time where Raheem Sterling was an unstoppable force. A player with a uniquely abstract running style, he still somehow evoked effortless poise when moving with the ball. A glider across a pitch.",
-        "Sterling played a dominant role in Manchester City's most definitive era, one led by the greatest tactical mind of a generation. But this forward exuded genius of his own.",
-        "A teenage prodigy that climbed his way to the very top of the game, Sterling was driven by his origin story rather than burdened by it. At his height, he drew comparisons to Lionel Messi and Cristiano Ronaldo as a player capable of \"winning the race\", according to Barcelona great Xavi, to become the world's next best thing. Raheem Sterling handed suspended prison sentence England latest news",
-        "His 82 international caps pointed towards a boundless trajectory; England's most impactful player on their run to the Euro 2020 final. In an alternate world, he would still be part of Thomas Tuchel's England set-up now, the coach being a key advocate for the move that took Sterling from Man City to Chelsea in 2022. He was still only 27."
-      ]
-    },
-    {
-      "slug": "13616290",
-      "title": "Sterling given suspended jail sentence for dangerous driving",
-      "url": "https://www.skysports.com/football/news/13616290/raheem-sterling-former-england-international-given-suspended-12-month-jail-sentence-for-dangerous-driving",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-raheem-sterling-court_7415997.jpg?20261125093231",
-      "excerpt": "Former England player Raheem Sterling has been given a suspended 12-month jail sentence for dangerous driving and possession of nitrous oxide after a crash involving a Lamborghini on the motorway.",
-      "published_label": "25 November 2026 · 11:30",
-      "published_iso": "2026-11-25T11:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Former England player Raheem Sterling has been given a suspended 12-month jail sentence for dangerous driving and possession of nitrous oxide after a crash involving a Lamborghini on the motorway.",
-        "Sterling pleaded guilty at Basingstoke Magistrates' Court in September to driving a Lamborghini Urus dangerously on the M25, the M3, the A327 and Minley Road before he crashed on May 28. The sentence is suspended for 18 months.",
-        "He has also been handed a two-year driving ban and must undertake 100 hours of unpaid community work. Sterling will have to re-take a driving test to hold a licence. Raheem Sterling's career was defined by comebacks - this could be one too many",
-        "The 31-year-old admitted possession of six nitrous oxide cannisters for wrongful inhalation, a class C drug, and failing to provide a specimen."
-      ]
-    },
-    {
-      "slug": "13616280",
-      "title": "Is Bellingham surpassing Zidane? The numbers compared",
-      "url": "https://www.skysports.com/football/video/13616280/is-jude-bellingham-surpassing-zinedine-zidane-the-numbers-compared",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-jude-football_7415981.jpg?20261125091124",
-      "excerpt": "Is Jude Bellingham better than Zinedine Zidane? We take a loo at the stats.",
-      "published_label": "25 November 2026 · 07:18",
-      "published_iso": "2026-11-25T07:18:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-stoke-millwall_7416642.jpg?20261125222512",
+      "excerpt": "Highlights of the Sky Bet Championship match between Stoke City and Millwall.",
+      "published_label": "25 November 2026 · 22:15",
+      "published_iso": "2026-11-25T22:15:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Is Jude Bellingham better than Zinedine Zidane? We take a loo at the stats."
+        "Highlights of the Sky Bet Championship match between Stoke City and Millwall."
       ]
     },
     {
-      "slug": "13616270",
-      "title": "Who impressed? Arsenal player ratings from 'frustrating' Dortmund draw",
-      "url": "https://www.skysports.com/football/video/13616270/arsenal-vs-borussia-dortmund-gunners-player-ratings-from-champions-league-draw-at-emirates",
+      "slug": "13616584",
+      "title": "West Brom win at Bolton to keep pace with leaders",
+      "url": "https://www.skysports.com/football/video/13616584/bolton-wanderers-1-3-west-bromwich-albion-championship-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-arsenal-football_7415896.jpg?20261125063306",
-      "excerpt": "Sky Sports' Gary Cotterill, Nick Wright and Sam Blitz give their player ratings for Arsenal after Mikel Arteta's side drew Borussia Dortmund in the Champions League.",
-      "published_label": "25 November 2026 · 06:27",
-      "published_iso": "2026-11-25T06:27:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-brom-bolton_7416649.jpg?20261125222858",
+      "excerpt": "Highlights of the Sky Bet Championship match between Bolton Wanderers and West Bromwich Albion",
+      "published_label": "25 November 2026 · 22:07",
+      "published_iso": "2026-11-25T22:07:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Sky Sports' Gary Cotterill, Nick Wright and Sam Blitz give their player ratings for Arsenal after Mikel Arteta's side drew Borussia Dortmund in the Champions League."
+        "Highlights of the Sky Bet Championship match between Bolton Wanderers and West Bromwich Albion"
       ]
     },
     {
-      "slug": "13616249",
-      "title": "'It's a good result...we move on' - Maresca satisfied with performance vs Napoli",
-      "url": "https://www.skysports.com/football/video/13616249/enzo-maresca-satisfied-with-manchester-citys-performance-vs-napoli-in-the-champions-league",
+      "slug": "13610526",
+      "title": "Cantwell penalty steers Blackburn past Watford",
+      "url": "https://www.skysports.com/football/news/13610526/watford-0-1-blackburn-todd-cantwell-penalty-steers-rovers-to-victory",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-maresca-haaland_7415860.jpg?20261124233951",
-      "excerpt": "Following his side's chaotic 2-2 draw against Napoli, Manchester City boss Enzo Maresca says the point is a 'good result'.",
-      "published_label": "24 November 2026 · 23:35",
-      "published_iso": "2026-11-24T23:35:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-blackburn-rovers_7416594.jpg?20261125214200",
+      "excerpt": "New head coach Edward Iordanescu watched from the stands as Todd Cantwell's penalty condemned struggling Watford to a 1-0 defeat against resilient Blackburn.",
+      "published_label": "25 November 2026 · 21:35",
+      "published_iso": "2026-11-25T21:35:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Following his side's chaotic 2-2 draw against Napoli, Manchester City boss Enzo Maresca says the point is a 'good result'."
+        "New head coach Edward Iordanescu watched from the stands as Todd Cantwell's penalty condemned struggling Watford to a 1-0 defeat against resilient Blackburn.",
+        "The former Romania national team coach, who had just flown in after signing a contract of undisclosed length, was introduced to a sparsely-populated Vicarage Road, to polite applause, 10 minutes before kick-off.",
+        "On the evidence of Watford's third home defeat of the season, he will have his work cut out to steer them away from the Championship's relegation quicksands.",
+        "By the time Iordanescu slips into the cockpit at Derby on Saturday, he will be the sixth different head coach, including interims, to take charge of Watford in 2026 after Javi Gracia, Charlie Daniels, Ed Still, Alessio Dionisi and Adrian Mariappa, who was holding the fort here."
+      ]
+    },
+    {
+      "slug": "13610527",
+      "title": "In-form Stoke see off Millwall to make it five wins on the bounce",
+      "url": "https://www.skysports.com/football/news/13610527/stoke-city-2-1-millwall-potters-beat-lions-to-make-it-five-wins-a-in-row",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-stoke-city_7416585.jpg?20261125212401",
+      "excerpt": "George Hirst bagged a brace as Stoke secured a fifth successive Championship win by beating Millwall 2-1 at the bet365 Stadium.",
+      "published_label": "25 November 2026 · 21:35",
+      "published_iso": "2026-11-25T21:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "George Hirst bagged a brace as Stoke secured a fifth successive Championship win by beating Millwall 2-1 at the bet365 Stadium.",
+        "The Scotland international scored just his second goal for the Potters in the 1-0 win over Birmingham on Saturday and doubled his tally for the season to take Stoke back into the automatic promotion places.",
+        "Mark Sykes' stunning strike halved the deficit in the final 10 minutes, but Stoke held on to claim an 11th win in their last 14 outings.",
+        "The defeat was Millwall's fourth in a row, coming a day after it was announced they had been ordered to play a future match in front of a partially closed stadium for offensive chanting."
       ]
     }
   ]
