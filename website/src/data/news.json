@@ -1,77 +1,10 @@
 {
-  "synced_at": "2026-11-26T00:21:32+00:00",
+  "synced_at": "2026-11-26T10:55:02+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13610529",
-      "title": "West Brom battle to win at Bolton",
-      "url": "https://www.skysports.com/football/news/13610529/bolton-wanderers-1-3-west-bromwich-albion-aune-heggebo-nets-twice-in-baggies-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-brom_7416584.jpg?20261125212346",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13616484",
-      "title": "Poch denied first Man Utd win by Lammens howler at Sporting",
-      "url": "https://www.skysports.com/football/news/13616484/sporting-2-2-man-utd-mauricio-pochettino-denied-first-win-by-senne-lammens-howler-in-champions-league",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-sanne-lammens-sporting_7416617.jpg?20261125221019",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13616517",
-      "title": "Isak and Wirtz power Liverpool to easy victory at Club Brugge",
-      "url": "https://www.skysports.com/football/news/13616517/club-brugge-0-3-liverpool-alexander-isak-and-florian-wirtz-on-target-in-dominant-champions-league-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-liverpool_7416550.jpg?20261125203911",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13616577",
-      "title": "'Can't believe it!' - Morrison stunned by Man Utd disallowed goal after Lammens error",
-      "url": "https://www.skysports.com/football/video/13616577/sporting-lisbon-vs-manchester-united-clinton-morrison-stunned-by-disallowed-goal-after-senne-lammens-error",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-clinton-morrison_7416612.jpg?20261125220238",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13610528",
-      "title": "Burnley break winless home record as Birmingham win at Turf Moor",
-      "url": "https://www.skysports.com/football/news/13610528/burnley-0-2-birmingham-city-august-priske-nets-as-blues-ease-past-struggling-clarets",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-birmingham-city_7416526.jpg?20261125200137",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13616560",
-      "title": "Papers: Liverpool agree deal to sign Senegal teenager Ndiaye",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13616560/liverpool-transfer-news-sidy-barhama-ndiaye-agrees-deal-to-sign-for-reds-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13616567",
       "title": "'A strike to savour!' - Sykes screamer pulls one back for Millwall at Stoke",
@@ -498,6 +431,36 @@
       "kind": "video"
     },
     {
+      "slug": "13616752",
+      "title": "'He's been poor this season' - Can Lammens be Man Utd's long-term first choice keeper?",
+      "url": "https://www.skysports.com/football/video/13616752/amie-ohara-questions-whether-senne-lammens-can-be-man-utds-long-term-no-1-after-drop-off-in-form",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-lammens-ohara_7416940.jpg?20261126104937",
+      "excerpt": "Jamie O'Hara says he was impressed by Senne Lammens in his first season at Manchester United, but believes his performances have dropped off this term and questions whether the Belgian can be the club's long-term goalkeeper.",
+      "published_label": "26 November 2026 · 10:40",
+      "published_iso": "2026-11-26T10:40:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Jamie O'Hara says he was impressed by Senne Lammens in his first season at Manchester United, but believes his performances have dropped off this term and questions whether the Belgian can be the club's long-term goalkeeper."
+      ]
+    },
+    {
+      "slug": "13616675",
+      "title": "'Poch feels let down by ref decisions' - Three things we learnt from Sporting vs Man Utd",
+      "url": "https://www.skysports.com/football/video/13616675/sporting-lisbon-vs-manchester-united-three-things-we-learnt-from-sporting-vs-man-utd",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-man-utd-champions-league_7416843.jpg?20261126082754",
+      "excerpt": "Sky Sports' Danyal Khan gives three things we learnt from Manchester United's 2-2 draw away to Sporting Lisbon in the Champions League on Wednesday.",
+      "published_label": "26 November 2026 · 08:20",
+      "published_iso": "2026-11-26T08:20:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Danyal Khan gives three things we learnt from Manchester United's 2-2 draw away to Sporting Lisbon in the Champions League on Wednesday."
+      ]
+    },
+    {
       "slug": "13616619",
       "title": "Pochettino: Impossible to understand why Amad goal was ruled out",
       "url": "https://www.skysports.com/football/video/13616619/sporting-liston-2-2-manchester-united-mauricio-pochettino-left-baffled-by-disallowed-amad-diallo-goal",
@@ -590,37 +553,103 @@
       ]
     },
     {
-      "slug": "13610526",
-      "title": "Cantwell penalty steers Blackburn past Watford",
-      "url": "https://www.skysports.com/football/news/13610526/watford-0-1-blackburn-todd-cantwell-penalty-steers-rovers-to-victory",
+      "slug": "13616484",
+      "title": "Poch denied first Man Utd win by Lammens howler at Sporting",
+      "url": "https://www.skysports.com/football/news/13616484/sporting-2-2-man-utd-mauricio-pochettino-denied-first-win-by-senne-lammens-howler-in-champions-league",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-blackburn-rovers_7416594.jpg?20261125214200",
-      "excerpt": "New head coach Edward Iordanescu watched from the stands as Todd Cantwell's penalty condemned struggling Watford to a 1-0 defeat against resilient Blackburn.",
-      "published_label": "25 November 2026 · 21:35",
-      "published_iso": "2026-11-25T21:35:00+00:00",
-      "byline": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-sanne-lammens-sporting_7416617.jpg?20261125221019",
+      "excerpt": "Mauricio Pochettino was denied a first victory as Manchester United head coach by a goalkeeping howler from Senne Lammens in an incident-packed 2-2 draw with Sporting in the Champions League as Youri Tielemans was sent off late on.",
+      "published_label": "25 November 2026 · 22:00",
+      "published_iso": "2026-11-25T22:00:00+00:00",
+      "byline": "Zinny Boswell",
       "body": [
-        "New head coach Edward Iordanescu watched from the stands as Todd Cantwell's penalty condemned struggling Watford to a 1-0 defeat against resilient Blackburn.",
-        "The former Romania national team coach, who had just flown in after signing a contract of undisclosed length, was introduced to a sparsely-populated Vicarage Road, to polite applause, 10 minutes before kick-off.",
-        "On the evidence of Watford's third home defeat of the season, he will have his work cut out to steer them away from the Championship's relegation quicksands.",
-        "By the time Iordanescu slips into the cockpit at Derby on Saturday, he will be the sixth different head coach, including interims, to take charge of Watford in 2026 after Javi Gracia, Charlie Daniels, Ed Still, Alessio Dionisi and Adrian Mariappa, who was holding the fort here."
+        "Mauricio Pochettino was denied a first victory as Manchester United head coach by a goalkeeping howler from Senne Lammens in an incident-packed 2-2 draw with Sporting in the Champions League as Youri Tielemans was sent off late on.",
+        "United looked to be on course for a first away win of the season after captain Bruno Fernandes scored two goals in the first five minutes of the second half - the second courtesy of a divot on the pitch - only for Lammens to spill the ball in the box for Luis Suarez to equalise with his second goal of the game.",
+        "Pochettino thought United had gone back in front for a second time shortly after Lammens' error when Sporting goalkeeper Kaique punched into his own net at a corner. However, it was ruled out following an on-field review for a foul by substitute Patrick Dorgu.",
+        "United were also aggrieved by a decision to rule out a goal by Amad before the break for an alleged foul by Tielemans that resulted in the first of his two bookings. Sky Sports' Dan Khan described the decision as \"genuinely one of the worst decisions I've seen live.\" As it happened | Teams | Stats Champions League fixtures and results | Table Man Utd fixtures & scores | FREE Man Utd highlights ▶️ Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
       ]
     },
     {
-      "slug": "13610527",
-      "title": "In-form Stoke see off Millwall to make it five wins on the bounce",
-      "url": "https://www.skysports.com/football/news/13610527/stoke-city-2-1-millwall-potters-beat-lions-to-make-it-five-wins-a-in-row",
+      "slug": "13616577",
+      "title": "'Can't believe it!' - Morrison stunned by Man Utd disallowed goal after Lammens error",
+      "url": "https://www.skysports.com/football/video/13616577/sporting-lisbon-vs-manchester-united-clinton-morrison-stunned-by-disallowed-goal-after-senne-lammens-error",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-stoke-city_7416585.jpg?20261125212401",
-      "excerpt": "George Hirst bagged a brace as Stoke secured a fifth successive Championship win by beating Millwall 2-1 at the bet365 Stadium.",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-clinton-morrison_7416612.jpg?20261125220238",
+      "excerpt": "Clinton Morrison watches on in amazement as Manchester United's late winner against Sporting Liston is ruled out",
+      "published_label": "25 November 2026 · 21:56",
+      "published_iso": "2026-11-25T21:56:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Clinton Morrison watches on in amazement as Manchester United's late winner against Sporting Liston is ruled out"
+      ]
+    },
+    {
+      "slug": "13616517",
+      "title": "Isak and Wirtz power Liverpool to easy victory at Club Brugge",
+      "url": "https://www.skysports.com/football/news/13616517/club-brugge-0-3-liverpool-alexander-isak-and-florian-wirtz-on-target-in-dominant-champions-league-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-alexander-isak-liverpool_7416550.jpg?20261125203911",
+      "excerpt": "Liverpool recovered from their shock defeat to Fenerbahce in their last Champions League outing to beat Club Brugge 3-0 and improve their chances of a top-eight league phase finish.",
+      "published_label": "25 November 2026 · 21:50",
+      "published_iso": "2026-11-25T21:50:00+00:00",
+      "byline": "Laura Hunter",
+      "body": [
+        "Liverpool recovered from their shock defeat to Fenerbahce in their last Champions League outing to beat Club Brugge 3-0 and improve their chances of a top-eight league phase finish.",
+        "Andoni Iraola's side have had no problem scoring goals in Europe, but faced issues keeping them out. Brugge were most obliging hosts in that respect, a far cry from the regularly free-scoring side that have so far averaged 2.75 goals per game and beaten Inter Milan at the San Siro.",
+        "Felix Lemarechal was the home side's greatest threat. But Alexander Isak was far more decisive, netting the opener following Yann Sommer's misplaced pass before rounding off the scoring in the second half with a deft chip to beat the goalkeeper. Sandwiched between was a superb strike from the in-form Florian Wirtz, set up by a surging run from Rio Ngumoha.",
+        "Brugge got better, Lemarechal twice forced Alisson into saves and Nicolo Tresoldi, who has scored the same number of Champions League goals as Erling Haaland this term, also called the Brazilian into action. But Liverpool were creatively superior. Momentum is building. As it happened | Teams | Stats Champions League fixtures and results | Table Liverpool scores and fixtures | FREE PL highlights▶️ Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺"
+      ]
+    },
+    {
+      "slug": "13616560",
+      "title": "Papers: Liverpool agree deal to sign Senegal teenager Ndiaye",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13616560/liverpool-transfer-news-sidy-barhama-ndiaye-agrees-deal-to-sign-for-reds-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/768x432/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Thursday's newspapers... Premier League",
+      "published_label": "25 November 2026 · 21:40",
+      "published_iso": "2026-11-25T21:40:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Thursday's newspapers... Premier League",
+        "Liverpool have agreed a deal to sign highly-rated Senegalese wonderkid Sidy Barhama Ndiaye - The Sun",
+        "Premier League officials are 'shocked and furious' after the FA overturned Manchester United defender Leny Yoro's red card at Liverpool - despite the competition's own independent panel unanimously backing the dismissal - Daily Mail",
+        "Former Manchester United star Alejandro Garnacho appears to have thrown another social media strop after deleting all trace of Aston Villa on his Instagram - The Sun"
+      ]
+    },
+    {
+      "slug": "13610529",
+      "title": "West Brom battle to win at Bolton",
+      "url": "https://www.skysports.com/football/news/13610529/bolton-wanderers-1-3-west-bromwich-albion-aune-heggebo-nets-twice-in-baggies-win",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-west-brom_7416584.jpg?20261125212346",
+      "excerpt": "Norwegian duo Aune Heggebo and Felix Horn Myhre scored the goals as West Brom boosted their promotion push with a 3-1 Sky Bet Championship win at Bolton.",
       "published_label": "25 November 2026 · 21:35",
       "published_iso": "2026-11-25T21:35:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "George Hirst bagged a brace as Stoke secured a fifth successive Championship win by beating Millwall 2-1 at the bet365 Stadium.",
-        "The Scotland international scored just his second goal for the Potters in the 1-0 win over Birmingham on Saturday and doubled his tally for the season to take Stoke back into the automatic promotion places.",
-        "Mark Sykes' stunning strike halved the deficit in the final 10 minutes, but Stoke held on to claim an 11th win in their last 14 outings.",
-        "The defeat was Millwall's fourth in a row, coming a day after it was announced they had been ordered to play a future match in front of a partially closed stadium for offensive chanting."
+        "Norwegian duo Aune Heggebo and Felix Horn Myhre scored the goals as West Brom boosted their promotion push with a 3-1 Sky Bet Championship win at Bolton.",
+        "Hot-shot Heggebo gave James Morrison's in-form visitors a 21st-minute lead which was cancelled out by substitute Ruben Rodrigues' 63rd-minute penalty.",
+        "But West Brom, without injured top scorer Isaac Price, finished strongly, with Myhre's fifth goal since his summer move from Brann restoring Albion's lead after 75 minutes.",
+        "And Heggebo, back in the starting line-up after last Saturday's draw with Swansea, sealed a fifth win in eight unbeaten games with a penalty seven minutes from time."
+      ]
+    },
+    {
+      "slug": "13610528",
+      "title": "Burnley break winless home record as Birmingham win at Turf Moor",
+      "url": "https://www.skysports.com/football/news/13610528/burnley-0-2-birmingham-city-august-priske-nets-as-blues-ease-past-struggling-clarets",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-birmingham-city_7416526.jpg?20261125200137",
+      "excerpt": "Burnley set a new record for the longest home run without a league win as Birmingham reaffirmed their Sky Bet Championship promotion credentials with a 2-0 victory at Turf Moor thanks to August Priske's strike and Jaydon Banel's own goal.",
+      "published_label": "25 November 2026 · 21:35",
+      "published_iso": "2026-11-25T21:35:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Burnley set a new record for the longest home run without a league win as Birmingham reaffirmed their Sky Bet Championship promotion credentials with a 2-0 victory at Turf Moor thanks to August Priske's strike and Jaydon Banel's own goal.",
+        "It is now 24 games since the Clarets last celebrated three points in front of their own fans, a nightmare run that has now stretched to 403 days. It represents the worst sequence in the history of English football.",
+        "Burnley, relegated from the Premier League last season, remain firmly ensconced in the drop zone. Coach Fabio Celestini has picked up just three points in the five games he has taken charge off since succeeding Nicky Hayen last month and his team were jeered off at the end.",
+        "For City, however, it was a timely return to form following the 1-0 defeat at Stoke on Saturday. This was a seventh win in nine for Chris Davies' team and they are just two places and two points off the automatic promotion spots."
       ]
     }
   ]
