@@ -1,10 +1,93 @@
 {
-  "synced_at": "2026-11-27T13:58:05+00:00",
+  "synced_at": "2026-11-27T22:43:06+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13617352",
+      "title": "Lifeline for Chelsea! Emegha issues immediate response",
+      "url": "https://www.skysports.com/football/video/13617352/goal-e-emegha-54-nottm-forest-2-1-chelsea",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617349",
+      "title": "Gibbs-White penalty doubles Forest lead over Chelsea",
+      "url": "https://www.skysports.com/football/video/13617349/goal-m-gibbs-white-pen-nottm-forest-2-0-chelsea",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617329",
+      "title": "'It's a WORLDIE!' - Igor Jesus shocks Chelsea with stunning volley",
+      "url": "https://www.skysports.com/football/video/13617329/goal-i-jesus-5-nottm-forest-1-0-chelsea",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617316",
+      "title": "O'Neill expects 'very difficult' Hearts test amid 'tough' run of fixtures",
+      "url": "https://www.skysports.com/football/video/13617316/martin-oneill-celtic-manager-expects-a-very-difficult-trip-to-hearts-amid-a-tough-run-of-fixtures",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617272",
+      "title": "Arteta: I'm convinced we're going to beat Man City on Sunday",
+      "url": "https://www.skysports.com/football/video/13617272/mikel-arteta-im-convinced-were-going-to-win-man-city-on-sunday",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617266",
+      "title": "'Sad day at Arsenal' - Slegers sacked just 18 months after Champions League glory",
+      "url": "https://www.skysports.com/football/video/13617266/renee-slegers-sacked-just-18-months-after-champions-league-glory-a-sad-day-at-arsenal",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13616425",
+      "title": "Why is Championship cheat code Parker finding life tough at West Ham?",
+      "url": "https://www.skysports.com/football/news/13616425/why-scott-parker-has-been-unable-to-halt-west-ham-s-slide-in-the-early-weeks-of-his-tenure-after-inheriting-significant-problems",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13617148",
       "title": "'No chance he leaves' - Arbeloa shuts down Bassey to Man Utd links",
@@ -414,207 +497,127 @@
       "byline": ""
     },
     {
-      "slug": "13615979",
-      "title": "Explained: Why Crystal Palace Women have been deducted three points",
-      "url": "https://www.skysports.com/football/video/13615979/explained-why-crystal-palace-women-were-deducted-three-points-for-substitution",
+      "slug": "13617385",
+      "title": "'We're low on confidence'- Alonso discusses difficult spell after Forest loss",
+      "url": "https://www.skysports.com/football/video/13617385/nottm-forest-3-2-chelsea-xabi-alonso-discusses-low-on-confidence-blues-after-another-loss",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-wsl-crystal-palace_7415277.jpg?20261124131034",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615825",
-      "title": "WHAT A STRIKE! Janelt rifles rocket for Brentford’s third",
-      "url": "https://www.skysports.com/football/video/13615825/goal-v-janelt-67-brentford-3-0-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-brentford_7414883.jpg?20261123214545",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615812",
-      "title": "'I love the owners' - KDB speaks on Man City ahead of Etihad return",
-      "url": "https://www.skysports.com/football/video/13615812/kevin-de-bruyne-shares-his-affection-with-manchester-city-ahead-of-return-to-the-etihad-with-napoli",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-man-city_7414855.jpg?20261123213435",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615787",
-      "title": "RED CARD! VAR controversy as Tarkowski sent off after review",
-      "url": "https://www.skysports.com/football/video/13615787/off-j-tarkowski-40-brentford-2-0-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-var-everton_7414788.jpg?20261123204745",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615786",
-      "title": "Lewis-Potter scores second for Brentford just four minutes after opener!",
-      "url": "https://www.skysports.com/football/video/13615786/goal-k-lewis-potter-25-brentford-2-0-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-brentford_7414784.jpg?20261123203801",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615785",
-      "title": "Lewis-Potter's deflected strike puts Brentford ahead",
-      "url": "https://www.skysports.com/football/video/13615785/goal-k-lewis-potter-23-brentford-1-0-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-goal-brentford_7414782.jpg?20261123203249",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615780",
-      "title": "Kayode squanders big chance for Brentford",
-      "url": "https://www.skysports.com/football/video/13615780/shot-m-kayode-19-brentford-0-0-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-chance-brentford_7414773.jpg?20261123202606",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13617207",
-      "title": "'Only one way to enjoy it; win!' - Iraola relishing first Merseyside derby",
-      "url": "https://www.skysports.com/football/video/13617207/liverpool-andoni-iraola-previews-merseyside-derby-against-everton",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-iraola-liverpool_7417858.jpg?20261127135353",
-      "excerpt": "Liverpool boss Andoni Iraola looks ahead to the Merseyside derby against Everton in the Premier League.",
-      "published_label": "27 November 2026 · 13:50",
-      "published_iso": "2026-11-27T13:50:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-chelsea-alonso_7418316.jpg?20261127222742",
+      "excerpt": "Chelsea boss Xabi Alonso reflects on his side's 3-2 away defeat to Nottingham Forest and explains how he aims to drag the Blues out of their poor form.",
+      "published_label": "27 November 2026 · 22:23",
+      "published_iso": "2026-11-27T22:23:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Liverpool boss Andoni Iraola looks ahead to the Merseyside derby against Everton in the Premier League."
+        "Chelsea boss Xabi Alonso reflects on his side's 3-2 away defeat to Nottingham Forest and explains how he aims to drag the Blues out of their poor form."
       ]
     },
     {
-      "slug": "13617206",
-      "title": "'Tough situation to accept!' - De Zerbi confirms Savio out for 'several weeks'",
-      "url": "https://www.skysports.com/football/video/13617206/roberto-de-zerbi-confirms-savio-out-with-hamstring-injury-for-several-weeks",
+      "slug": "13616414",
+      "title": "Southampton sink Middlesbrough in ill-tempered first meeting since 'Spygate'",
+      "url": "https://www.skysports.com/football/news/13616414/southampton-middlesbrough",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-premier-league-spurs_7417857.jpg?20261127135326",
-      "excerpt": "Tottenham Hotspur boss Roberto De Zerbi confirms that Savio will be out with hamstring injury for 'several weeks'.",
-      "published_label": "27 November 2026 · 13:46",
-      "published_iso": "2026-11-27T13:46:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-finn-azaz-southampton_7418262.jpg?20261127214801",
+      "excerpt": "Southampton's unbeaten start to the season at St Mary's continued as they beat leaders Middlesbrough 2-0.",
+      "published_label": "27 November 2026 · 22:00",
+      "published_iso": "2026-11-27T22:00:00+00:00",
+      "byline": "Dan Long",
       "body": [
-        "Tottenham Hotspur boss Roberto De Zerbi confirms that Savio will be out with hamstring injury for 'several weeks'."
+        "Southampton's unbeaten start to the season at St Mary's continued as they beat leaders Middlesbrough 2-0.",
+        "Six-and-a-half months on from 'Spygate' - which dominated the headlines during last season's play-offs - Saints emerged victorious, as they did in the semi-final second leg, in an ill-tempered affair that saw 10 yellow cards brandished to players and two to coaching staff.",
+        "Had it not been for the four-point penalty imposed on them as a result, Friday night's win would have sent them to the top of the Sky Bet Championship. As it happened | Teams | Stats Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "But goals from Ryan Manning and Finn Azaz - who goaded his former club's fans as he celebrated - put them within touching distance of the summit."
       ]
     },
     {
-      "slug": "13617204",
-      "title": "'All is positive' - Pochettino reflectn on first eight days at Man Utd",
-      "url": "https://www.skysports.com/football/video/13617204/mancheter-united-latest-mauricio-pochettino-says-first-eight-days-have-been-positive",
+      "slug": "13617366",
+      "title": "Manning and Azaz lead Saints to victory in feisty 'Spygate' reunion",
+      "url": "https://www.skysports.com/football/video/13617366/southampton-2-0-middlesbrough-championship-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-man-utd-poch-pochettino_7417856.jpg?20261127135006",
-      "excerpt": "When asked how his first eight days in charge of Manchester United have been, Mauricio Pochettino has described them as 'positive'.",
-      "published_label": "27 November 2026 · 13:41",
-      "published_iso": "2026-11-27T13:41:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-saints_7418278.jpg?20261127215904",
+      "excerpt": "Highlights of the Sky Bet Championship match between Southampton and Middlesbrough.",
+      "published_label": "27 November 2026 · 21:55",
+      "published_iso": "2026-11-27T21:55:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "When asked how his first eight days in charge of Manchester United have been, Mauricio Pochettino has described them as 'positive'."
+        "Highlights of the Sky Bet Championship match between Southampton and Middlesbrough."
       ]
     },
     {
-      "slug": "13617202",
-      "title": "How 'Spygate' dominated Southampton vs Middlesbrough last time out!",
-      "url": "https://www.skysports.com/football/video/13617202/how-spygate-dominated-southampton-vs-middlesbrough-last-time-out",
+      "slug": "13617364",
+      "title": "Emegha gives Chelsea late hope at Forest",
+      "url": "https://www.skysports.com/football/video/13617364/goal-e-emegha-89-nottm-forest-3-2-chelsea",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-southampton-football_7417851.jpg?20261127134714",
-      "excerpt": "Ahead of their Championship clash on Sky Sports on Friday night, take a look at how the 'Spygate' saga dominated headlines surrounding Southampton and Middlesbrough's last fixture in May.",
-      "published_label": "27 November 2026 · 13:30",
-      "published_iso": "2026-11-27T13:30:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-emegha-chelsea_7418272.jpg?20261127215455",
+      "excerpt": "Emmanuel Emegha gives Chelsea late hope at Nottingham Forest.",
+      "published_label": "27 November 2026 · 21:51",
+      "published_iso": "2026-11-27T21:51:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Ahead of their Championship clash on Sky Sports on Friday night, take a look at how the 'Spygate' saga dominated headlines surrounding Southampton and Middlesbrough's last fixture in May."
+        "Emmanuel Emegha gives Chelsea late hope at Nottingham Forest."
       ]
     },
     {
-      "slug": "13617199",
-      "title": "Fernandes sits out of Man Utd training as precautionary measure",
-      "url": "https://www.skysports.com/football/video/13617199/man-utd-training-bruno-fernandes-sits-out-as-precautionary-measure",
+      "slug": "13613199",
+      "title": "Forest beat Chelsea to heap pressure on Alonso as Fofana is booed",
+      "url": "https://www.skysports.com/football/news/13613199/nottingham-forest-3-2-chelsea-morgan-gibbs-white-brace-heaps-pressure-on-xabi-alonso-as-wesley-fofana-is-booed",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-manchester-united_7417836.jpg?20261127132429",
-      "excerpt": "Sky Sports Dan Khan has the latest from Manchester United's training ground as Bruno Fernandes sits out with a light illness as a precautionary measure.",
-      "published_label": "27 November 2026 · 13:21",
-      "published_iso": "2026-11-27T13:21:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-morgan-gibbs-white_7418255.jpg?20261127214157",
+      "excerpt": "Morgan Gibbs-White scored two in Nottingham Forest’s 3-2 win over Chelsea at the City Ground as the crisis deepened for Xabi Alonso.",
+      "published_label": "27 November 2026 · 21:45",
+      "published_iso": "2026-11-27T21:45:00+00:00",
+      "byline": "Adam Bate",
       "body": [
-        "Sky Sports Dan Khan has the latest from Manchester United's training ground as Bruno Fernandes sits out with a light illness as a precautionary measure."
+        "Morgan Gibbs-White scored two in Nottingham Forest’s 3-2 win over Chelsea at the City Ground as the crisis deepened for Xabi Alonso.",
+        "Igor Jesus volleyed Forest in front inside five minutes of what was a dismal first half for Chelsea and they never recovered parity. Wesley Fofana - booed by his own supporters throughout - conceded a penalty early in the second half that Gibbs-White converted.",
+        "Emmanuel Emegha did come off the bench to pull one back soon afterwards but another goal from the Forest captain better reflected the superiority of Oliver Glasner's side even if Emagha's second in the 89th minute made for a surprisingly nervy finale. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "Forest began the evening beside the Trent with only goal difference keeping them out of the relegation zone, but victory lifts them clear of the bottom six. The spotlight now falls on Chelsea, who missed the chance to climb back into the top five."
       ]
     },
     {
-      "slug": "13617187",
-      "title": "What will 2035 World Cup mean for women's football in the UK?",
-      "url": "https://www.skysports.com/football/video/13617187/what-will-2035-world-cup-mean-for-womens-football-in-the-uk",
+      "slug": "13617359",
+      "title": "Azaz does a full Adebayor to celebrate in front of Boro fans!",
+      "url": "https://www.skysports.com/football/video/13617359/southampton-v-middlesbrough-saints-second-causes-chaos-after-azaz-goads-boro-fans",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-anton-world-cup_7417842.png?20261127133426",
-      "excerpt": "Sky Sports' Anton Toloui analyses the impact of the 2035 Women's World Cup coming to the UK on women's football.",
-      "published_label": "27 November 2026 · 12:37",
-      "published_iso": "2026-11-27T12:37:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-saints_7418259.jpg?20261127214518",
+      "excerpt": "Finn Azaz does his best Emmanuel Adebayor impression to celebrate in front of Middlesbrough supporters after scoring for Southampton.",
+      "published_label": "27 November 2026 · 21:42",
+      "published_iso": "2026-11-27T21:42:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Sky Sports' Anton Toloui analyses the impact of the 2035 Women's World Cup coming to the UK on women's football."
+        "Finn Azaz does his best Emmanuel Adebayor impression to celebrate in front of Middlesbrough supporters after scoring for Southampton."
       ]
     },
     {
-      "slug": "13617160",
-      "title": "Who is the Premier League's best bargain?",
-      "url": "https://www.skysports.com/football/video/13617160/black-friday-whos-the-premier-leagues-best-bargain",
+      "slug": "13617356",
+      "title": "'Advantage restored!' - Gibbs-White puts Forest in command",
+      "url": "https://www.skysports.com/football/video/13617356/goal-m-gibbs-white-72-nottm-forest-3-1-chelsea",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-premier-league-best_7417741.jpg?20261127111213",
-      "excerpt": "Black Friday is all about snapping up a good deal. Sky Sports FC takes a closer look at which Premier League players could be regarded as the best bargain.",
-      "published_label": "27 November 2026 · 11:01",
-      "published_iso": "2026-11-27T11:01:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-gibbs-white-forest_7418250.jpg?20261127213617",
+      "excerpt": "Morgan Gibbs-White nets again to put Nottingham Forest within sight of victory over Chelsea.",
+      "published_label": "27 November 2026 · 21:34",
+      "published_iso": "2026-11-27T21:34:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Black Friday is all about snapping up a good deal. Sky Sports FC takes a closer look at which Premier League players could be regarded as the best bargain."
+        "Morgan Gibbs-White nets again to put Nottingham Forest within sight of victory over Chelsea."
       ]
     },
     {
-      "slug": "13617155",
-      "title": "McInnes reveals Naderi interest ahead of Rangers move as new Ibrox deal discussed",
-      "url": "https://www.skysports.com/football/video/13617155/ryan-naderi-rangers-boss-derek-mcinnes-reveals-interest-in-striker-ahead-of-ibrox-move-as-new-deal-discussed",
+      "slug": "13617353",
+      "title": "Crowd ERUPTS as Saints make breakthrough against Middlesbrough!",
+      "url": "https://www.skysports.com/football/video/13617353/southampton-v-middlesbrough-crowd-erupt-as-saints-make-breakthrough",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-naderi-rangers-ryan_7417719.jpg?20261127103614",
-      "excerpt": "Rangers boss Derek McInnes reveals the interest in striker Ryan Naderi ahead of his Ibrox move in January, as a new deal is discussed.",
-      "published_label": "27 November 2026 · 10:49",
-      "published_iso": "2026-11-27T10:49:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-saints_7418242.jpg?20261127212423",
+      "excerpt": "Ryan Manning opens the scoring for Southampton in the second half of the Championship game against Middlesbrough.",
+      "published_label": "27 November 2026 · 21:21",
+      "published_iso": "2026-11-27T21:21:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Rangers boss Derek McInnes reveals the interest in striker Ryan Naderi ahead of his Ibrox move in January, as a new deal is discussed."
+        "Ryan Manning opens the scoring for Southampton in the second half of the Championship game against Middlesbrough."
       ]
     }
   ]
