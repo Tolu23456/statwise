@@ -1,21 +1,10 @@
 {
-  "synced_at": "2026-11-26T21:32:59+00:00",
+  "synced_at": "2026-11-27T04:16:06+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13616913",
-      "title": "Calvert-Lewin signs new Leeds deal",
-      "url": "https://www.skysports.com/football/news/13616913/dominic-calvert-lewis-leeds-striker-signs-new-deal-until-2029-with-premier-league-club",
-      "source": "Sky Sports",
-      "image": "",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
     {
       "slug": "13616909",
       "title": "Explained: Why Fofana is apologising after viral interview",
@@ -499,6 +488,104 @@
       "kind": "video"
     },
     {
+      "slug": "13617040",
+      "title": "'We want to aim high' - Frank ambitious to continue Palace's Europa run",
+      "url": "https://www.skysports.com/football/video/13617040/thomas-frank-ambitious-to-continue-crystal-palaces-europa-league-run",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-crystal-palace_7417545.jpg?20261126233223",
+      "excerpt": "Crystal Palace head coach Thomas Frank reflects on Chis sides victory over Real Sociedad in the Europa League and how this win will help boost confidence and morale in the changing room.",
+      "published_label": "26 November 2026 · 23:29",
+      "published_iso": "2026-11-26T23:29:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Crystal Palace head coach Thomas Frank reflects on Chis sides victory over Real Sociedad in the Europa League and how this win will help boost confidence and morale in the changing room."
+      ]
+    },
+    {
+      "slug": "13617015",
+      "title": "Huddersfield hold on to beat Doncaster in Yorkshire derby",
+      "url": "https://www.skysports.com/football/video/13617015/doncaster-rovers-2-3-huddersfield-town-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/2048x1152/fa74beba64286230ce50ac21da88cd29ed6011f07b6f9fa5e835e7e98b3269e5_7417485.jpg?20261126221132",
+      "excerpt": "Highlights of the Sky Bet League One match between Doncaster Rovers and Huddersfield Town.",
+      "published_label": "26 November 2026 · 22:06",
+      "published_iso": "2026-11-26T22:06:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Highlights of the Sky Bet League One match between Doncaster Rovers and Huddersfield Town."
+      ]
+    },
+    {
+      "slug": "13610514",
+      "title": "Huddersfield level at the top after defying red card to beat Doncaster",
+      "url": "https://www.skysports.com/football/news/13610514/doncaster-2-3-huddersfield-terriers-level-at-the-top-of-league-one-after-defying-red-card-to-beat-donny",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/23/01/2048x1152/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+      "excerpt": "Ten-man Huddersfield moved level at the top of League One with a 3-2 win at Doncaster.",
+      "published_label": "26 November 2026 · 22:00",
+      "published_iso": "2026-11-26T22:00:00+00:00",
+      "byline": "PA Media",
+      "body": [
+        "Ten-man Huddersfield moved level at the top of League One with a 3-2 win at Doncaster.",
+        "Goals from Cameron Humphreys, Joe Taylor and Ilias Bronkhorst delivered the win despite Town seeing Bali Mumba dismissed before half-time for two bookable offences. The second came when conceding a penalty from which Isaac Hutchinson netted to give Doncaster hope. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Captain Humphreys slotted in from an Ashley Fletcher pass to give Huddersfield a fifth-minute lead.",
+        "Town were dominant and took advantage of more poor Doncaster defending with Taylor volleying in from 15 yards on 21 minutes."
+      ]
+    },
+    {
+      "slug": "13617033",
+      "title": "Vrancken proud of Hearts players despite last-gasp defeat to Monaco",
+      "url": "https://www.skysports.com/football/news/13617033/hearts-2-3-monaco-wouter-vrancken-proud-of-players-despite-last-gasp-conference-league-defeat",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-wouter-vrancken-hearts_7417524.jpg?20261126225203",
+      "excerpt": "Wouter Vrancken expressed pride in his Hearts team after an agonising 3-2 defeat at home to Monaco left their Conference League hopes hanging by a thread.",
+      "published_label": "26 November 2026 · 22:00",
+      "published_iso": "2026-11-26T22:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Wouter Vrancken expressed pride in his Hearts team after an agonising 3-2 defeat at home to Monaco left their Conference League hopes hanging by a thread.",
+        "The Jambos looked on course to pick up their second league-phase point after stunning first-half strikes from Jordi Altena and Sabah Kerjota either side of goals from visiting pair Folarin Balogun and Edian Diop.",
+        "But in the fourth and final minute of added time, injury-hit Hearts were denied what would have been a hugely commendable result when USA forward Balogun found space in the box to slot home and maintain Monaco's perfect record in the competition. Conference League fixtures and results Watch FREE Scottish Prem highlights | Latest Scottish Prem news | Latest scores Not got Sky? Latest Sky Sports deals or stream the Scottish Prem with no contract",
+        "\"The biggest thing is, of course, to be really proud of the performance we put on the park today, because it's against a really good side,\" said Vrancken, keen to reiterate that his team remains without several key players."
+      ]
+    },
+    {
+      "slug": "13616717",
+      "title": "Duran scores late Celtic winner to keep Europa League hopes alive",
+      "url": "https://www.skysports.com/football/news/13616717/torreense-1-2-celtic-camilo-duran-comes-off-bench-to-score-late-winner-and-keep-hoops-europa-league-hopes-alive",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-camilo-duran-celtic_7417468.jpg?20261126215611",
+      "excerpt": "Camilo Duran came off the bench to keep Celtic's Europa League hopes alive with a vital win against Torreense.",
+      "published_label": "26 November 2026 · 22:00",
+      "published_iso": "2026-11-26T22:00:00+00:00",
+      "byline": "Alison Conroy",
+      "body": [
+        "Camilo Duran came off the bench to keep Celtic's Europa League hopes alive with a vital win against Torreense.",
+        "The Colombian striker peeled away to the back post to meet a cross from fellow substitute James Forrest, guiding a downward header into the net in the 85th minute.",
+        "Duran's 15th goal of the season secured a 2-1 victory over the Portuguese second-tier side and moved Celtic on to six points in the Europa League. His latest decisive contribution follows a match-winning double off the bench in the Hoops' comeback victory over Besiktas last time out. Teams | Stats | Europa League fixtures and results Not got Sky? Latest Sky Sports deals or stream Celtic games with no contract 📺",
+        "Celtic took the lead in the ninth minute when Javi Vazquez turned Jota's cross into his own net, with Hyun-jun Yang lurking behind him."
+      ]
+    },
+    {
+      "slug": "13616782",
+      "title": "Frank earns first Palace win with late comeback against Sociedad",
+      "url": "https://www.skysports.com/football/news/13616782/crystal-palace-2-1-real-sociedad-thomas-frank-earns-first-win-as-eagles-boss-with-europa-league-comeback-victory",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-thomas-frank-crystal-palace_7417513.jpg?20261126223357",
+      "excerpt": "Thomas Frank earned his first win as Crystal Palace manager, coming from behind to beat Real Sociedad 2-1 in the Europa League.",
+      "published_label": "26 November 2026 · 22:00",
+      "published_iso": "2026-11-26T22:00:00+00:00",
+      "byline": "Charlotte Marsh",
+      "body": [
+        "Thomas Frank earned his first win as Crystal Palace manager, coming from behind to beat Real Sociedad 2-1 in the Europa League.",
+        "The Dane lost his opening game to Coventry at the weekend, but saw the heart and fight he will need from his side as they picked up their second win in the competition this season.",
+        "For 70 minutes, Sociedad dominated at Selhurst Park, with Dean Henderson needed to make a string of saves. They finally made the breakthrough when Chelsea loanee Mamadou Sarr tapped home from Job Ochieng's cross. Teams | Stats | Europa League fixtures and results Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
+        "But the game turned out of nowhere as Crystal Palace were awarded a penalty and Jon Martin was sent off. He picked up a second yellow card for holding Jean-Philippe Mateta round the middle, with the striker expertly dispatching the spot kick to level for the Eagles."
+      ]
+    },
+    {
       "slug": "13616988",
       "title": "Pep on Ronaldo's international retirement: Cristiano must leave the way he deserves",
       "url": "https://www.skysports.com/football/video/13616988/pep-guardiola-on-ronaldos-international-retirement-cristiano-must-leave-the-way-he-deserves",
@@ -514,120 +601,37 @@
       ]
     },
     {
-      "slug": "13616716",
-      "title": "Bournemouth make European history after coming from behind to beat Celta Vigo",
-      "url": "https://www.skysports.com/football/news/13616716/celta-vigo-1-2-bournemouth-rayan-gets-winner-as-cherries-become-first-english-side-ever-to-win-first-five-games-in-major-european-competition",
+      "slug": "13616913",
+      "title": "Calvert-Lewin signs new Leeds deal",
+      "url": "https://www.skysports.com/football/news/13616913/dominic-calvert-lewis-leeds-striker-signs-new-deal-until-2029-with-premier-league-club",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-bournemouth-rayan_7417392.jpg?20261126193347",
-      "excerpt": "Bournemouth continued their magnificent run of form with a 2-1 victory against Celta Vigo, creating two bits of history in the process.",
-      "published_label": "26 November 2026 · 20:00",
-      "published_iso": "2026-11-26T20:00:00+00:00",
-      "byline": "Dev Trehan",
-      "body": [
-        "Bournemouth continued their magnificent run of form with a 2-1 victory against Celta Vigo, creating two bits of history in the process.",
-        "It was a club-record-extending 10th successive win for Bournemouth in all competitions, with the victory also marking the first time an English club have won their first five matches in major European competition. Teams | Stats | Europa League fixtures and results Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
-        "Veteran former Liverpool striker Iago Aspas put the home side in front in style in the first half, before Bournemouth were reduced to 10 men when Bafode Diakite was sent off for a late challenge.",
-        "But Alvaro Rodriguez equalised early in the second half, with substitute Rayan coming on to score a late winner to give Bournemouth an unlikely win."
-      ]
-    },
-    {
-      "slug": "13616958",
-      "title": "Hemmings unfazed by rise at Villa and eager to take next step",
-      "url": "https://www.skysports.com/football/news/13616958/george-hemmings-exclusive-aston-villa-prospect-unfazed-by-rapid-rise-in-unai-emerys-squad-as-he-eyes-next-step",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-george-hemmings-aston-villa_7417380.jpg?20261126192314",
-      "excerpt": "Two days after being thrown into a cauldron in Istanbul during Aston Villa's loss to Galatasaray in the Champions League, George Hemmings strolls into the media centre at Bodymoor Heath, sliders on, looking entirely at home in the senior su…",
-      "published_label": "26 November 2026 · 19:09",
-      "published_iso": "2026-11-26T19:09:00+00:00",
-      "byline": "Patrick Rowe",
-      "body": [
-        "Two days after being thrown into a cauldron in Istanbul during Aston Villa's loss to Galatasaray in the Champions League, George Hemmings strolls into the media centre at Bodymoor Heath, sliders on, looking entirely at home in the senior surroundings that should be new to him.",
-        "The nineteen-year-old is quiet and reserved to start but soon settled into proceedings when quizzed on that atmosphere and what the experience was like.",
-        "\"It was mad,\" he says with a smile on his face. \"When we had the ball, you couldn't hear anything but whistling.\" Transfer Centre LIVE! | Aston Villa news & transfers 🦁 Aston Villa fixtures & scores | FREE Villa highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺",
-        "The mentality to take to an occasion such as that is largely expected by prospects in the modern game. A lofty standard set by the likes of Max Dowman and Rio Ngumoha."
-      ]
-    },
-    {
-      "slug": "13616785",
-      "title": "Eckert: Time to 'close the chapter' on Spygate ahead of Boro reunion",
-      "url": "https://www.skysports.com/football/news/13616785/tonda-eckert-southampton-boss-wants-to-close-the-chapter-on-spygate-ahead-of-middlesbrough-reunion",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/2048x1152/skysports-tonda-eckert-southampton_7324138.jpg?20260817143551",
-      "excerpt": "\"I think we've experienced a little bit more in the last 12 months than normal.\"",
-      "published_label": "26 November 2026 · 19:00",
-      "published_iso": "2026-11-26T19:00:00+00:00",
-      "byline": "Mark McAdam",
-      "body": [
-        "\"I think we've experienced a little bit more in the last 12 months than normal.\"",
-        "It may be the understatement of the century, but it's not a huge surprise considering Tonda Eckert is a relatively understated man.",
-        "The storm of 'Spygate' is over, but the aftershock is still being felt. Southampton are sixth in the table, seven points behind leaders Middlesbrough ahead of their reunion on Friday night - live on Sky Sports .",
-        "Were it not for the four-point deduction, the gap would be smaller. Were it not for the entire controversy, the Saints would possibly be in the Premier League right now. Transfer Centre LIVE! | Latest EFL news and rumours Got Sky? Watch EFL games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺"
-      ]
-    },
-    {
-      "slug": "13616947",
-      "title": "'We can compete with top teams' - Vuskovic confident in Brighton's good form",
-      "url": "https://www.skysports.com/football/video/13616947/luka-vuskovic-confident-in-brightons-good-form",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-brighton_7417354.jpg?20261126184445",
-      "excerpt": "Luka Vuskovic discusses how his family impacted his footballing career, why he moved to Brighton and what he believes the club can achieve this season.",
-      "published_label": "26 November 2026 · 18:37",
-      "published_iso": "2026-11-26T18:37:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Luka Vuskovic discusses how his family impacted his footballing career, why he moved to Brighton and what he believes the club can achieve this season."
-      ]
-    },
-    {
-      "slug": "13616945",
-      "title": "SFA to deliver revised proposal after young player vote delayed",
-      "url": "https://www.skysports.com/football/news/13616945/scottish-fa-summit-governing-body-to-deliver-new-plan-for-youth-development-as-spfl-vote-delayed",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-hampden-park-sfa_7417351.jpg?20261126184407",
-      "excerpt": "The Scottish FA will continue to consult with SPFL clubs about youth development after initial plans failed to reach a member vote.",
-      "published_label": "26 November 2026 · 18:18",
-      "published_iso": "2026-11-26T18:18:00+00:00",
+      "image": "https://e0.365dm.com/26/10/2048x1152/skysports-dominic-calvert-lewin_7379902.jpg?20261107121130",
+      "excerpt": "Dominic Calvert-Lewin has signed a new deal at Leeds, keeping him at the club until the summer of 2029.",
+      "published_label": "26 November 2026 · 18:00",
+      "published_iso": "2026-11-26T18:00:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "The Scottish FA will continue to consult with SPFL clubs about youth development after initial plans failed to reach a member vote.",
-        "At a summit in September, Scottish football's governing body proposed financial incentives and penalties along with quotas , in a bid to get more homegrown talent playing for Scottish clubs.",
-        "Initially, the plans were to have been voted on at an SFA general meeting in October and the SPFL's annual meeting this month. Scottish FA summit: SPFL clubs to be offered incentives to play more homegrown youth talent Got Sky? Watch Scottish Premiership games on your phone Not got Sky? Stream Scottish Premiership games flexibly on your phone",
-        "But the SFA are now aiming to put refreshed proposals to the clubs early in the new year, with the plan to implement them for the start of the 2027-28 season."
+        "Dominic Calvert-Lewin has signed a new deal at Leeds, keeping him at the club until the summer of 2029.",
+        "Sky Sports News has been reporting that he was expected to commit his future to the club, which has now been confirmed.",
+        "Calvert-Lewin joined Leeds on a free transfer in the summer of 2025 after leaving Everton. He scored 15 goals across all competitions last season, and has scored six this season. He scored in a 4-1 win against Chelsea on Saturday.",
+        "Since he joined Leeds, Calvert-Lewin is the highest-scoring Englishman in the Premier League (19) - three ahead of his next closest countrymen, Morgan Gibbs-White and Ollie Watkins."
       ]
     },
     {
-      "slug": "13616881",
-      "title": "Chelsea Q&A: Are Blues in crisis? What next for Fofana after viral interview?",
-      "url": "https://www.skysports.com/football/news/13616881/chelsea-q-and-a-your-questions-answered-on-wesley-fofana-transfers-danny-welbeck-estevao-and-more",
+      "slug": "13616711",
+      "title": "Sunderland held by Jagiellonia as banned travelling fans ejected",
+      "url": "https://www.skysports.com/football/news/13616711/sunderland-1-1-jagiellonia-bialystok-black-cats-maintain-europa-league-play-off-push-with-draw",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-chelsea-wesley-fofana_7417301.png?20261126174459",
-      "excerpt": "After Chelsea fell to back-to-back losses with a 4-1 humiliation by Leeds at Stamford Bridge last Saturday, Sky Sports News reporter James Savundra examines the latest developments at Stamford Bridge.",
-      "published_label": "26 November 2026 · 15:55",
-      "published_iso": "2026-11-26T15:55:00+00:00",
+      "image": "https://e0.365dm.com/26/11/768x432/skysports-timur-tutierov-sunderland_7417480.jpg?20261126220852",
+      "excerpt": "Sunderland have expressed their disappointment after some Jagiellonia Bialystok fans were in attendance in home areas during their 1-1 Europa League draw at the Stadium of Light.",
+      "published_label": "26 November 2026 · 09:48",
+      "published_iso": "2026-11-26T09:48:00+00:00",
       "byline": "Sky Sports",
       "body": [
-        "After Chelsea fell to back-to-back losses with a 4-1 humiliation by Leeds at Stamford Bridge last Saturday, Sky Sports News reporter James Savundra examines the latest developments at Stamford Bridge.",
-        "As well as suffering a third defeat in four Premier League games, Chelsea and manager Xabi Alonso also faced the added frustration of defender Wesley Fofana giving an unauthorised interview this week, in which he laughed off his penalty miss in last month's Carabao Cup defeat to Liverpool and revealed he had contemplated retiring during his time at Stamford Bridge.",
-        "Here, Savundra addresses Fofana's future, Joao Pedro's injury, transfer plans and much more... Transfer Centre LIVE! | Chelsea news & transfers 🔵 Chelsea fixtures & scores | FREE Chelsea highlights ▶️ Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Latest Sky Sports deals or stream PL games with no contract 📺 Will Fofana face disciplinary action?",
-        "Jake: Is Fofana expected to face any disciplinary action for his impromptu interview? Some of the things said in that were unacceptable from a footballer, especially one involved in as much off-the-pitch controversy as him."
-      ]
-    },
-    {
-      "slug": "13616743",
-      "title": "Osman stars as Brighton bounce back with Conference League win",
-      "url": "https://www.skysports.com/football/news/13616743/brighton-4-0-cs-universitatea-craiova-ibrahim-osman-stars-as-seagulls-bounce-back-with-conference-league-win",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-brighton-ibrahim-osman_7417345.jpg?20261126183808",
-      "excerpt": "Ibrahim Osman scored his first Brighton goals as his side returned to winning ways by cruising to a 4-0 success over 10-man Universitatea Craiova in the Conference League.",
-      "published_label": "26 November 2026 · 10:30",
-      "published_iso": "2026-11-26T10:30:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Ibrahim Osman scored his first Brighton goals as his side returned to winning ways by cruising to a 4-0 success over 10-man Universitatea Craiova in the Conference League.",
-        "Talk of the high-flying Seagulls potentially being shock Premier League title contenders this season was dampened slightly by Sunday's surprise 2-0 defeat at Hull.",
-        "Winger Osman finished a flowing move to set Albion on course to avoid a further unexpected defeat before Maxim De Cuyper superbly curled home his fifth goal of the campaign to double the lead. Teams | Stats | Live Conference League table | Conference League fixtures & results Brighton news & transfers 🔵⚪ | Brighton fixtures & scores Not got Sky? Latest Sky Sports deals or stream Premier League games with no contract 📺",
-        "Romanian champions Craiova were left with little hope of a comeback at the Amex Stadium when defender Vladimir Screciu was sent off in the 39th minute for stamping on the ankle of Matt O'Riley."
+        "Sunderland have expressed their disappointment after some Jagiellonia Bialystok fans were in attendance in home areas during their 1-1 Europa League draw at the Stadium of Light.",
+        "A UEFA away supporter ban had been imposed on Jagiellonia for Thursday's fixture on Wearside.",
+        "However, in the opening minutes of the match, police and stewards were seen attending to some disruption in a home area in the ground. As it happened | Match stats | Teams Europa League live table",
+        "A club statement said: \"Sunderland AFC is disappointed that a number of Jagiellonia Bialystok supporters were present in home areas of the Stadium of Light during tonight's UEFA Europa League fixture."
       ]
     }
   ]
