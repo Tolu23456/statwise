@@ -1,10 +1,116 @@
 {
-  "synced_at": "2026-11-28T07:49:53+00:00",
+  "synced_at": "2026-11-28T16:53:48+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
+    {
+      "slug": "13617528",
+      "title": "Bristol Rovers 1-3 Tranmere Rovers",
+      "url": "https://www.skysports.com/football/news/13617528/bristol-rovers-1-3-tranmere-rovers",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
+    {
+      "slug": "13617522",
+      "title": "Blackburn 1-0 Charlton",
+      "url": "https://www.skysports.com/football/video/13617522/blackburn-rovers-1-0-charlton-athletic-championship-highlights",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617526",
+      "title": "MK Dons 0-0 Notts County",
+      "url": "https://www.skysports.com/football/video/13617526/mk-dons-0-0-notts-county-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617523",
+      "title": "Exeter 0-0 Crawley",
+      "url": "https://www.skysports.com/football/video/13617523/exeter-0-0-crawley-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617516",
+      "title": "Bristol Rovers 1-3 Tranmere Rovers",
+      "url": "https://www.skysports.com/football/video/13617516/bristol-rovers-1-3-tranmere-rovers-league-two-highlights",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617520",
+      "title": "Lincoln 0-0 Wolves",
+      "url": "https://www.skysports.com/football/video/13617520/lincoln-0-0-wolves-championship-highlights",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617502",
+      "title": "Have you ever seen this?! Preston goal disallowed in BIZARRE circumstances!",
+      "url": "https://www.skysports.com/football/video/13617502/what-happened-next-preston-goal-disallowed-in-bizarre-circumstances",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617515",
+      "title": "Peterborough 1-2 Cambridge",
+      "url": "https://www.skysports.com/football/video/13617515/peterborough-1-2-cambridge-league-one-highlights",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": "",
+      "kind": "video"
+    },
+    {
+      "slug": "13617455",
+      "title": "Cole in talks to become Bristol Rovers boss as pressure mounts on Evans",
+      "url": "https://www.skysports.com/football/news/13617455/ashley-cole-in-talks-to-take-over-at-bristol-rovers-as-pressure-mounts-on-steve-evans-after-defeat-to-tranmere",
+      "source": "Sky Sports",
+      "image": "",
+      "excerpt": "",
+      "published_label": "",
+      "published_iso": "",
+      "byline": ""
+    },
     {
       "slug": "13616425",
       "title": "Why is Championship cheat code Parker finding life tough at West Ham?",
@@ -390,256 +496,135 @@
       "byline": ""
     },
     {
-      "slug": "13615993",
-      "title": "'I missed the call playing bowling!' - Goodwin recalls England call-up",
-      "url": "https://www.skysports.com/football/video/13615993/izzy-goodwin-recalls-england-call-up-i-missed-the-call-playing-bowling",
+      "slug": "13617579",
+      "title": "'They're in trouble' - Merse reacts to Brentford's goals at Man Utd",
+      "url": "https://www.skysports.com/football/video/13617579/manchester-utd-vs-brentford-paul-merson-reacts-to-both-goals-from-the-visitors",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-football-goodwin_7415326.jpg?20261124135723",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615985",
-      "title": "'Huge boost' - Luke Shaw returns to Man Utd training",
-      "url": "https://www.skysports.com/football/video/13615985/luke-shaw-returns-to-manchester-united-training-ahead-of-borussia-dortmund-clash",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/football-manchester-united_7415312.jpg?20261124134919",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13615973",
-      "title": "Barnet midfielder charged with rape",
-      "url": "https://www.skysports.com/football/news/13615973/barnet-midfielder-isiah-noel-williams-charged-with-three-counts-of-rape-and-one-count-of-engaging-in-sexual-communication-with-a-child",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/768x432/skysports-barnet-stock-gv-file-pic_7415268.jpg?20261124125521",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": ""
-    },
-    {
-      "slug": "13617391",
-      "title": "What went wrong for Alonso's Chelsea at Forest?",
-      "url": "https://www.skysports.com/football/news/13617391/xabi-alonso-called-for-chelsea-to-get-back-to-fundamentals-before-slipping-to-new-low-at-nottingham-forest",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-chelsea-forest_7418332.jpg?20261127231744",
-      "excerpt": "Xabi Alonso called for his Chelsea side to get back to the fundamentals before kick-off - and then watched on as they were outworked and outclassed on their way to a miserable 3-2 defeat at Nottingham Forest.",
-      "published_label": "27 November 2026 · 23:40",
-      "published_iso": "2026-11-27T23:40:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "Xabi Alonso called for his Chelsea side to get back to the fundamentals before kick-off - and then watched on as they were outworked and outclassed on their way to a miserable 3-2 defeat at Nottingham Forest.",
-        "\"Everyone in the club and team, we need to stick together and go through this moment. We have to deal with it and we are responsible,\" Alonso told Sky Sports after the game, which marked their third successive defeat in the Premier League.",
-        "\"It is a difficult moment for everyone at the club. For the team and the fans. Disappointed to lose again but we need to keep trying to find solutions. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "\"We can't stop. We are low in confidence. At this level you need to hold results and not concede so much. That is why we are losing.\""
-      ]
-    },
-    {
-      "slug": "13617280",
-      "title": "Papers: Man Utd in running for Paz, but Champions League key",
-      "url": "https://www.skysports.com/football/transfer-paper-talk/13617280/manchester-united-transfer-news-red-devils-still-in-running-for-comos-nico-paz-paper-talk",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/08/2048x1152/skysports-paper-talk-football_7317647.jpg?20260809160824",
-      "excerpt": "The top stories and transfer rumours from Saturday's newspapers... Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Premier League",
-      "published_label": "27 November 2026 · 23:00",
-      "published_iso": "2026-11-27T23:00:00+00:00",
-      "byline": "Sky Sports",
-      "body": [
-        "The top stories and transfer rumours from Saturday's newspapers... Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Premier League",
-        "Manchester United are still among the favourites to sign Como midfielder Nico Paz , 22, who has said he does not want to return to former club Real Madrid - but Champions League qualification could be a factor in the Argentine's decision - The Athletic",
-        "Matthias Jaissle is desperate for Newcastle to lock down Tino Livramento to a new deal like Lewis Hall - the Sun",
-        "Chelsea defender Wesley Fofana was roundly booed by his own fans during the match against Nottingham Forest - the Mirror"
-      ]
-    },
-    {
-      "slug": "13617385",
-      "title": "'We're low on confidence'- Alonso discusses difficult spell after Forest loss",
-      "url": "https://www.skysports.com/football/video/13617385/nottm-forest-3-2-chelsea-xabi-alonso-discusses-low-on-confidence-blues-after-another-loss",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-chelsea-alonso_7418316.jpg?20261127222742",
-      "excerpt": "Chelsea boss Xabi Alonso reflects on his side's 3-2 away defeat to Nottingham Forest and explains how he aims to drag the Blues out of their poor form.",
-      "published_label": "27 November 2026 · 22:23",
-      "published_iso": "2026-11-27T22:23:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-paul-merson-man-utd_7418741.jpg?20261128154348",
+      "excerpt": "Paul Merson reacts to all three goals as Manchester United fall 3-0 behind in Mauricio Pochettino's first game in charge at Old Trafford.",
+      "published_label": "28 November 2026 · 15:37",
+      "published_iso": "2026-11-28T15:37:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Chelsea boss Xabi Alonso reflects on his side's 3-2 away defeat to Nottingham Forest and explains how he aims to drag the Blues out of their poor form."
+        "Paul Merson reacts to all three goals as Manchester United fall 3-0 behind in Mauricio Pochettino's first game in charge at Old Trafford."
       ]
     },
     {
-      "slug": "13616414",
-      "title": "Southampton sink Middlesbrough in ill-tempered first meeting since 'Spygate'",
-      "url": "https://www.skysports.com/football/news/13616414/southampton-middlesbrough",
+      "slug": "13617537",
+      "title": "Late Field volley rescues point for Norwich",
+      "url": "https://www.skysports.com/football/video/13617537/preston-1-1-norwich-city-championship-highlights",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-finn-azaz-southampton_7418262.jpg?20261127214801",
-      "excerpt": "Southampton's unbeaten start to the season at St Mary's continued as they beat leaders Middlesbrough 2-0.",
-      "published_label": "27 November 2026 · 22:00",
-      "published_iso": "2026-11-27T22:00:00+00:00",
-      "byline": "Dan Long",
-      "body": [
-        "Southampton's unbeaten start to the season at St Mary's continued as they beat leaders Middlesbrough 2-0.",
-        "Six-and-a-half months on from 'Spygate' - which dominated the headlines during last season's play-offs - Saints emerged victorious, as they did in the semi-final second leg, in an ill-tempered affair that saw 10 yellow cards brandished to players and two to coaching staff.",
-        "Had it not been for the four-point penalty imposed on them as a result, Friday night's win would have sent them to the top of the Sky Bet Championship. As it happened | Teams | Stats Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
-        "But goals from Ryan Manning and Finn Azaz - who goaded his former club's fans as he celebrated - put them within touching distance of the summit."
-      ]
-    },
-    {
-      "slug": "13617366",
-      "title": "Manning and Azaz lead Saints to victory in feisty 'Spygate' reunion",
-      "url": "https://www.skysports.com/football/video/13617366/southampton-2-0-middlesbrough-championship-highlights",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-saints_7418278.jpg?20261127215904",
-      "excerpt": "Highlights of the Sky Bet Championship match between Southampton and Middlesbrough.",
-      "published_label": "27 November 2026 · 21:55",
-      "published_iso": "2026-11-27T21:55:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-preston-norwich-highlights_7418652.jpg?20261128145344",
+      "excerpt": "Highlights of the Sky Bet Championship match between Preston and Norwich City.",
+      "published_label": "28 November 2026 · 14:42",
+      "published_iso": "2026-11-28T14:42:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Highlights of the Sky Bet Championship match between Southampton and Middlesbrough."
+        "Highlights of the Sky Bet Championship match between Preston and Norwich City."
       ]
     },
     {
-      "slug": "13617364",
-      "title": "Emegha gives Chelsea late hope at Forest",
-      "url": "https://www.skysports.com/football/video/13617364/goal-e-emegha-89-nottm-forest-3-2-chelsea",
+      "slug": "13617558",
+      "title": "Exeter City 0-0 Crawley",
+      "url": "https://www.skysports.com/football/news/13617558/exeter-city-0-0-crawley",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-emegha-chelsea_7418272.jpg?20261127215455",
-      "excerpt": "Emmanuel Emegha gives Chelsea late hope at Nottingham Forest.",
-      "published_label": "27 November 2026 · 21:51",
-      "published_iso": "2026-11-27T21:51:00+00:00",
+      "image": "https://e0.365dm.com/23/01/2048x1152/skysports-efl-league-two-gholam_6025971.jpg?20230116150032",
+      "excerpt": "Exeter failed to make the most of their dominance as they were held to a goalless draw at home by Crawley Town in League Two.",
+      "published_label": "28 November 2026 · 14:00",
+      "published_iso": "2026-11-28T14:00:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Emmanuel Emegha gives Chelsea late hope at Nottingham Forest."
+        "Exeter failed to make the most of their dominance as they were held to a goalless draw at home by Crawley Town in League Two.",
+        "Exeter's Ethan Sutherland curled a free kick narrowly wide from 20 yards and George Birch failed to make connection to a Sutherland cross as Exeter stated their intent from the start.",
+        "Josh Gordon was then denied by a superb stop from Crawley goalkeeper Vito Mannone, low down to his left before Birch dragged another effort wide from distance. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Crawley's first effort came five minutes before half-time when Dylan Morgan's shot deflected high, but it was a half devoid of clear-cut opportunities."
       ]
     },
     {
-      "slug": "13613199",
-      "title": "Forest beat Chelsea to heap pressure on Alonso as Fofana is booed",
-      "url": "https://www.skysports.com/football/news/13613199/nottingham-forest-3-2-chelsea-morgan-gibbs-white-brace-heaps-pressure-on-xabi-alonso-as-wesley-fofana-is-booed",
+      "slug": "13617556",
+      "title": "MK Dons 0-0 Notts County",
+      "url": "https://www.skysports.com/football/news/13617556/mk-dons-0-0-notts-county",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-morgan-gibbs-white_7418255.jpg?20261127214157",
-      "excerpt": "Morgan Gibbs-White scored two in Nottingham Forest’s 3-2 win over Chelsea at the City Ground as the crisis deepened for Xabi Alonso.",
-      "published_label": "27 November 2026 · 21:45",
-      "published_iso": "2026-11-27T21:45:00+00:00",
-      "byline": "Adam Bate",
-      "body": [
-        "Morgan Gibbs-White scored two in Nottingham Forest’s 3-2 win over Chelsea at the City Ground as the crisis deepened for Xabi Alonso.",
-        "Igor Jesus volleyed Forest in front inside five minutes of what was a dismal first half for Chelsea and they never recovered parity. Wesley Fofana - booed by his own supporters throughout - conceded a penalty early in the second half that Gibbs-White converted.",
-        "Emmanuel Emegha did come off the bench to pull one back soon afterwards but another goal from the Forest captain better reflected the superiority of Oliver Glasner's side even if Emagha's second in the 89th minute made for a surprisingly nervy finale. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
-        "Forest began the evening beside the Trent with only goal difference keeping them out of the relegation zone, but victory lifts them clear of the bottom six. The spotlight now falls on Chelsea, who missed the chance to climb back into the top five."
-      ]
-    },
-    {
-      "slug": "13617359",
-      "title": "Azaz does a full Adebayor to celebrate in front of Boro fans!",
-      "url": "https://www.skysports.com/football/video/13617359/southampton-v-middlesbrough-saints-second-causes-chaos-after-azaz-goads-boro-fans",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-saints_7418259.jpg?20261127214518",
-      "excerpt": "Finn Azaz does his best Emmanuel Adebayor impression to celebrate in front of Middlesbrough supporters after scoring for Southampton.",
-      "published_label": "27 November 2026 · 21:42",
-      "published_iso": "2026-11-27T21:42:00+00:00",
+      "image": "https://e0.365dm.com/23/01/2048x1152/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+      "excerpt": "MK Dons and 10-man Notts County played out a goalless draw at Stadium MK in League One.",
+      "published_label": "28 November 2026 · 14:00",
+      "published_iso": "2026-11-28T14:00:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Finn Azaz does his best Emmanuel Adebayor impression to celebrate in front of Middlesbrough supporters after scoring for Southampton."
+        "MK Dons and 10-man Notts County played out a goalless draw at Stadium MK in League One.",
+        "County's Daniel Kanu was sent off for a headbutt just after the hour mark, but neither side were at their fluent best as the game ended all square.",
+        "The draw extended MK Dons' unbeaten run to six league games, while the Magpies have lost just one of their last five. Watch FREE League Two highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "A tight first half yielded few opportunities. MK Dons' best opportunity saw Magpies goalkeeper James Belshaw deny Alex Gilbey's attempt, while the visitors saw Luka Smyth volley wide and James Gibbons' cross-shot hit the post."
       ]
     },
     {
-      "slug": "13617352",
-      "title": "Lifeline for Chelsea! Emegha issues immediate response",
-      "url": "https://www.skysports.com/football/video/13617352/goal-e-emegha-54-nottm-forest-2-1-chelsea",
+      "slug": "13617551",
+      "title": "Peterborough 1-2 Cambridge",
+      "url": "https://www.skysports.com/football/news/13617551/peterborough-1-2-cambridge",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-emmanuel-emegha-chelsea_7418237.jpg?20261127212050",
-      "excerpt": "Emmanuel Emegha gets Chelsea back in it at Nottingham Forest.",
-      "published_label": "27 November 2026 · 21:16",
-      "published_iso": "2026-11-27T21:16:00+00:00",
+      "image": "https://e0.365dm.com/23/01/2048x1152/skysports-efl-league-one-gholam_6025969.jpg?20230116150021",
+      "excerpt": "Ben Knight netted a late winner as Cambridge earned the bragging rights with their first away league derby-day victory at Peterborough since 1990 as they triumphed 2-1 at the Weston Homes Stadium.",
+      "published_label": "28 November 2026 · 14:00",
+      "published_iso": "2026-11-28T14:00:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Emmanuel Emegha gets Chelsea back in it at Nottingham Forest."
+        "Ben Knight netted a late winner as Cambridge earned the bragging rights with their first away league derby-day victory at Peterborough since 1990 as they triumphed 2-1 at the Weston Homes Stadium.",
+        "The pressure continued to pile on Posh boss Robbie Savage after his side squandered a 1-0 lead as their woeful run stretched to just one win in nine in all competitions.",
+        "Visiting goalkeeper Jake Eastwood did well to tip Harry Ashfield's flick from a long throw over the bar and produced an even better save to push the same player's low strike past a post in the 15th minute. Watch FREE League One highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Harry Leonard fired Posh in front with his 11th goal of the season after he was sent on his way by Harrison Jones in the 33rd minute."
       ]
     },
     {
-      "slug": "13617349",
-      "title": "Gibbs-White penalty doubles Forest lead over Chelsea",
-      "url": "https://www.skysports.com/football/video/13617349/goal-m-gibbs-white-pen-nottm-forest-2-0-chelsea",
+      "slug": "13616450",
+      "title": "Chaotic and controversial - Norwich rescue point at Preston",
+      "url": "https://www.skysports.com/football/news/13616450/preston-1-1-norwich-sam-field-rescues-point-for-canaries-as-philippe-clement-sent-off-in-game-with-referee-drama",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-gibbs-white-chelsea_7418229.jpg?20261127211534",
-      "excerpt": "Morgan Gibbs-White slots home a penalty to give Nottingham Forest a 2-0 lead over Chelsea.",
-      "published_label": "27 November 2026 · 21:13",
-      "published_iso": "2026-11-27T21:13:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-efl-championship_7418595.jpg?20261128142008",
+      "excerpt": "Sam Field's late equaliser ensured Norwich left Deepdale with a deserved share of the spoils in a 1-1 draw with Preston on a chaotic afternoon involving referee drama and plenty of cards shown.",
+      "published_label": "28 November 2026 · 14:00",
+      "published_iso": "2026-11-28T14:00:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Morgan Gibbs-White slots home a penalty to give Nottingham Forest a 2-0 lead over Chelsea."
+        "Sam Field's late equaliser ensured Norwich left Deepdale with a deserved share of the spoils in a 1-1 draw with Preston on a chaotic afternoon involving referee drama and plenty of cards shown.",
+        "The 28-year-old's 86th-minute drive from the edge of the area found the net via a bounce and a slight deflection, cancelling out a penalty 12 minutes earlier from Delano Burgzorg.",
+        "The substitute converted from the spot after Ben Chrisene had upended Alfie Devine as he tried to latch on to Andrija Vukcevic's teasing cross. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Preston were happy to let Norwich have the ball and the Canaries took until the 20th minute to engineer a meaningful chance as Anthony Musaba's first-time effort from Kellen Fisher's low centre was deflected just over the bar by Stanley Mills."
       ]
     },
     {
-      "slug": "13617329",
-      "title": "'It's a WORLDIE!' - Igor Jesus shocks Chelsea with stunning volley",
-      "url": "https://www.skysports.com/football/video/13617329/goal-i-jesus-5-nottm-forest-1-0-chelsea",
+      "slug": "13616442",
+      "title": "Wolves held by managerless Lincoln",
+      "url": "https://www.skysports.com/football/news/13616442/lincoln-0-0-wolves-managerless-imps-end-run-of-five-straight-defeats-to-claim-valuable-point",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-igor-jesus-chelsea_7418186.jpg?20261127201816",
-      "excerpt": "Igor Jesus volleys home a stunning opener to give Nottingham Forest the lead against Chelsea.",
-      "published_label": "27 November 2026 · 20:10",
-      "published_iso": "2026-11-27T20:10:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-lincoln-wolves_7418655.jpg?20261128145446",
+      "excerpt": "Lincoln ended a run of five straight defeats as they held high-flying Wolves to a 0-0 stalemate to earn a valuable Championship point.",
+      "published_label": "28 November 2026 · 14:00",
+      "published_iso": "2026-11-28T14:00:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Igor Jesus volleys home a stunning opener to give Nottingham Forest the lead against Chelsea."
+        "Lincoln ended a run of five straight defeats as they held high-flying Wolves to a 0-0 stalemate to earn a valuable Championship point.",
+        "The Imps had sacked head coaches Tom Shaw and Chris Cohen in midweek, and the players turned in a gutsy display for interim boss Shaun Pearson, more than matching Wolves throughout.",
+        "And they were a coat of paint from snatching a surprise victory, with Ben House's second-half strike hitting the crossbar as Wanderers laboured in the pouring rain. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "Pearson made four changes to the side that were hammered 4-0 at Charlton in midweek, a defeat that prompted the dismissal of Shaw and Cohen, while Wolves recalled skipper Toti Gomes, one of three changes to their starting XI."
       ]
     },
     {
-      "slug": "13617316",
-      "title": "O'Neill expects 'very difficult' Hearts test amid 'tough' run of fixtures",
-      "url": "https://www.skysports.com/football/video/13617316/martin-oneill-celtic-manager-expects-a-very-difficult-trip-to-hearts-amid-a-tough-run-of-fixtures",
+      "slug": "13616430",
+      "title": "Montgomery strikes to earn 10-man Blackburn win over Charlton",
+      "url": "https://www.skysports.com/football/news/13616430/blackburn-1-0-charlton-kristi-montgomery-strikes-late-to-give-10-man-rovers",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-martin-oneill-celtic_7418157.jpg?20261127193638",
-      "excerpt": "Celtic manager Martin O'Neill expects a very difficult trip to Hearts amid a tough run of fixtures.",
-      "published_label": "27 November 2026 · 19:20",
-      "published_iso": "2026-11-27T19:20:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-blackburn-charlton_7418645.jpg?20261128144625",
+      "excerpt": "Kristi Montgomery struck late to give 10-man Blackburn a deserved 1-0 win over Charlton.",
+      "published_label": "28 November 2026 · 14:00",
+      "published_iso": "2026-11-28T14:00:00+00:00",
       "byline": "Sky Sports",
-      "kind": "video",
       "body": [
-        "Celtic manager Martin O'Neill expects a very difficult trip to Hearts amid a tough run of fixtures."
-      ]
-    },
-    {
-      "slug": "13617272",
-      "title": "Arteta: I'm convinced we're going to beat Man City on Sunday",
-      "url": "https://www.skysports.com/football/video/13617272/mikel-arteta-im-convinced-were-going-to-win-man-city-on-sunday",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-arteta-arsenal_7418037.jpg?20261127171545",
-      "excerpt": "Arsenal head coach Mikel Arteta believes his side will beat Manchester City on Sunday in the Premier League.",
-      "published_label": "27 November 2026 · 17:09",
-      "published_iso": "2026-11-27T17:09:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Arsenal head coach Mikel Arteta believes his side will beat Manchester City on Sunday in the Premier League."
-      ]
-    },
-    {
-      "slug": "13617266",
-      "title": "'Sad day at Arsenal' - Slegers sacked just 18 months after Champions League glory",
-      "url": "https://www.skysports.com/football/video/13617266/renee-slegers-sacked-just-18-months-after-champions-league-glory-a-sad-day-at-arsenal",
-      "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-renee-slegers-arsenal-women_7418018.jpg?20261127164655",
-      "excerpt": "Sky Sports' Anton Toloui explains why Renee Slegers has been sacked by Arsenal following a poor start to the Women's Super League season.",
-      "published_label": "27 November 2026 · 16:33",
-      "published_iso": "2026-11-27T16:33:00+00:00",
-      "byline": "Sky Sports",
-      "kind": "video",
-      "body": [
-        "Sky Sports' Anton Toloui explains why Renee Slegers has been sacked by Arsenal following a poor start to the Women's Super League season."
+        "Kristi Montgomery struck late to give 10-man Blackburn a deserved 1-0 win over Charlton.",
+        "In their first home game since Tony Mowbray stepped back, the hosts put in a dominant and gutsy display which epitomised their manager, for whom the whole stadium paused to applaud in the fourth minute.",
+        "They were frustrated for much of the afternoon as a combination of Arthur Okonkwo, the woodwork and wasteful finishing looked to thwart them. Watch FREE Championship highlights | Latest EFL news and rumours Not got Sky? Latest Sky Sports deals or stream EFL games with no contract 📺",
+        "But Montgomery's stunning curling effort in the 77th minute - his second of the season - gave them a win and they held on despite Sean McLoughlin's straight red card eight minutes from the end."
       ]
     }
   ]
