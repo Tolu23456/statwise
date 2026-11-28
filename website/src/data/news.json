@@ -1,82 +1,10 @@
 {
-  "synced_at": "2026-11-27T22:43:06+00:00",
+  "synced_at": "2026-11-28T07:49:53+00:00",
   "sources": {
     "SportyTrader": "https://www.sportytrader.com/en/news/",
     "Sky Sports": "https://www.skysports.com/football/news"
   },
   "items": [
-    {
-      "slug": "13617352",
-      "title": "Lifeline for Chelsea! Emegha issues immediate response",
-      "url": "https://www.skysports.com/football/video/13617352/goal-e-emegha-54-nottm-forest-2-1-chelsea",
-      "source": "Sky Sports",
-      "image": "",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13617349",
-      "title": "Gibbs-White penalty doubles Forest lead over Chelsea",
-      "url": "https://www.skysports.com/football/video/13617349/goal-m-gibbs-white-pen-nottm-forest-2-0-chelsea",
-      "source": "Sky Sports",
-      "image": "",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13617329",
-      "title": "'It's a WORLDIE!' - Igor Jesus shocks Chelsea with stunning volley",
-      "url": "https://www.skysports.com/football/video/13617329/goal-i-jesus-5-nottm-forest-1-0-chelsea",
-      "source": "Sky Sports",
-      "image": "",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13617316",
-      "title": "O'Neill expects 'very difficult' Hearts test amid 'tough' run of fixtures",
-      "url": "https://www.skysports.com/football/video/13617316/martin-oneill-celtic-manager-expects-a-very-difficult-trip-to-hearts-amid-a-tough-run-of-fixtures",
-      "source": "Sky Sports",
-      "image": "",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13617272",
-      "title": "Arteta: I'm convinced we're going to beat Man City on Sunday",
-      "url": "https://www.skysports.com/football/video/13617272/mikel-arteta-im-convinced-were-going-to-win-man-city-on-sunday",
-      "source": "Sky Sports",
-      "image": "",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
-    {
-      "slug": "13617266",
-      "title": "'Sad day at Arsenal' - Slegers sacked just 18 months after Champions League glory",
-      "url": "https://www.skysports.com/football/video/13617266/renee-slegers-sacked-just-18-months-after-champions-league-glory-a-sad-day-at-arsenal",
-      "source": "Sky Sports",
-      "image": "",
-      "excerpt": "",
-      "published_label": "",
-      "published_iso": "",
-      "byline": "",
-      "kind": "video"
-    },
     {
       "slug": "13616425",
       "title": "Why is Championship cheat code Parker finding life tough at West Ham?",
@@ -497,6 +425,40 @@
       "byline": ""
     },
     {
+      "slug": "13617391",
+      "title": "What went wrong for Alonso's Chelsea at Forest?",
+      "url": "https://www.skysports.com/football/news/13617391/xabi-alonso-called-for-chelsea-to-get-back-to-fundamentals-before-slipping-to-new-low-at-nottingham-forest",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-chelsea-forest_7418332.jpg?20261127231744",
+      "excerpt": "Xabi Alonso called for his Chelsea side to get back to the fundamentals before kick-off - and then watched on as they were outworked and outclassed on their way to a miserable 3-2 defeat at Nottingham Forest.",
+      "published_label": "27 November 2026 · 23:40",
+      "published_iso": "2026-11-27T23:40:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "Xabi Alonso called for his Chelsea side to get back to the fundamentals before kick-off - and then watched on as they were outworked and outclassed on their way to a miserable 3-2 defeat at Nottingham Forest.",
+        "\"Everyone in the club and team, we need to stick together and go through this moment. We have to deal with it and we are responsible,\" Alonso told Sky Sports after the game, which marked their third successive defeat in the Premier League.",
+        "\"It is a difficult moment for everyone at the club. For the team and the fans. Disappointed to lose again but we need to keep trying to find solutions. As it happened | Teams | Stats Live Premier League table | Watch FREE PL highlights Got Sky? Watch Premier League games LIVE on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW 📺",
+        "\"We can't stop. We are low in confidence. At this level you need to hold results and not concede so much. That is why we are losing.\""
+      ]
+    },
+    {
+      "slug": "13617280",
+      "title": "Papers: Man Utd in running for Paz, but Champions League key",
+      "url": "https://www.skysports.com/football/transfer-paper-talk/13617280/manchester-united-transfer-news-red-devils-still-in-running-for-comos-nico-paz-paper-talk",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/08/2048x1152/skysports-paper-talk-football_7317647.jpg?20260809160824",
+      "excerpt": "The top stories and transfer rumours from Saturday's newspapers... Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Premier League",
+      "published_label": "27 November 2026 · 23:00",
+      "published_iso": "2026-11-27T23:00:00+00:00",
+      "byline": "Sky Sports",
+      "body": [
+        "The top stories and transfer rumours from Saturday's newspapers... Transfer Centre LIVE! | Latest on YOUR PL club! Got Sky? Watch LIVE football on your phone 📱 Not got Sky? Get Sky Sports or stream with no contract on NOW Premier League",
+        "Manchester United are still among the favourites to sign Como midfielder Nico Paz , 22, who has said he does not want to return to former club Real Madrid - but Champions League qualification could be a factor in the Argentine's decision - The Athletic",
+        "Matthias Jaissle is desperate for Newcastle to lock down Tino Livramento to a new deal like Lewis Hall - the Sun",
+        "Chelsea defender Wesley Fofana was roundly booed by his own fans during the match against Nottingham Forest - the Mirror"
+      ]
+    },
+    {
       "slug": "13617385",
       "title": "'We're low on confidence'- Alonso discusses difficult spell after Forest loss",
       "url": "https://www.skysports.com/football/video/13617385/nottm-forest-3-2-chelsea-xabi-alonso-discusses-low-on-confidence-blues-after-another-loss",
@@ -591,33 +553,93 @@
       ]
     },
     {
-      "slug": "13617356",
-      "title": "'Advantage restored!' - Gibbs-White puts Forest in command",
-      "url": "https://www.skysports.com/football/video/13617356/goal-m-gibbs-white-72-nottm-forest-3-1-chelsea",
+      "slug": "13617352",
+      "title": "Lifeline for Chelsea! Emegha issues immediate response",
+      "url": "https://www.skysports.com/football/video/13617352/goal-e-emegha-54-nottm-forest-2-1-chelsea",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-gibbs-white-forest_7418250.jpg?20261127213617",
-      "excerpt": "Morgan Gibbs-White nets again to put Nottingham Forest within sight of victory over Chelsea.",
-      "published_label": "27 November 2026 · 21:34",
-      "published_iso": "2026-11-27T21:34:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-emmanuel-emegha-chelsea_7418237.jpg?20261127212050",
+      "excerpt": "Emmanuel Emegha gets Chelsea back in it at Nottingham Forest.",
+      "published_label": "27 November 2026 · 21:16",
+      "published_iso": "2026-11-27T21:16:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Morgan Gibbs-White nets again to put Nottingham Forest within sight of victory over Chelsea."
+        "Emmanuel Emegha gets Chelsea back in it at Nottingham Forest."
       ]
     },
     {
-      "slug": "13617353",
-      "title": "Crowd ERUPTS as Saints make breakthrough against Middlesbrough!",
-      "url": "https://www.skysports.com/football/video/13617353/southampton-v-middlesbrough-crowd-erupt-as-saints-make-breakthrough",
+      "slug": "13617349",
+      "title": "Gibbs-White penalty doubles Forest lead over Chelsea",
+      "url": "https://www.skysports.com/football/video/13617349/goal-m-gibbs-white-pen-nottm-forest-2-0-chelsea",
       "source": "Sky Sports",
-      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-saints_7418242.jpg?20261127212423",
-      "excerpt": "Ryan Manning opens the scoring for Southampton in the second half of the Championship game against Middlesbrough.",
-      "published_label": "27 November 2026 · 21:21",
-      "published_iso": "2026-11-27T21:21:00+00:00",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-gibbs-white-chelsea_7418229.jpg?20261127211534",
+      "excerpt": "Morgan Gibbs-White slots home a penalty to give Nottingham Forest a 2-0 lead over Chelsea.",
+      "published_label": "27 November 2026 · 21:13",
+      "published_iso": "2026-11-27T21:13:00+00:00",
       "byline": "Sky Sports",
       "kind": "video",
       "body": [
-        "Ryan Manning opens the scoring for Southampton in the second half of the Championship game against Middlesbrough."
+        "Morgan Gibbs-White slots home a penalty to give Nottingham Forest a 2-0 lead over Chelsea."
+      ]
+    },
+    {
+      "slug": "13617329",
+      "title": "'It's a WORLDIE!' - Igor Jesus shocks Chelsea with stunning volley",
+      "url": "https://www.skysports.com/football/video/13617329/goal-i-jesus-5-nottm-forest-1-0-chelsea",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-igor-jesus-chelsea_7418186.jpg?20261127201816",
+      "excerpt": "Igor Jesus volleys home a stunning opener to give Nottingham Forest the lead against Chelsea.",
+      "published_label": "27 November 2026 · 20:10",
+      "published_iso": "2026-11-27T20:10:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Igor Jesus volleys home a stunning opener to give Nottingham Forest the lead against Chelsea."
+      ]
+    },
+    {
+      "slug": "13617316",
+      "title": "O'Neill expects 'very difficult' Hearts test amid 'tough' run of fixtures",
+      "url": "https://www.skysports.com/football/video/13617316/martin-oneill-celtic-manager-expects-a-very-difficult-trip-to-hearts-amid-a-tough-run-of-fixtures",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-martin-oneill-celtic_7418157.jpg?20261127193638",
+      "excerpt": "Celtic manager Martin O'Neill expects a very difficult trip to Hearts amid a tough run of fixtures.",
+      "published_label": "27 November 2026 · 19:20",
+      "published_iso": "2026-11-27T19:20:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Celtic manager Martin O'Neill expects a very difficult trip to Hearts amid a tough run of fixtures."
+      ]
+    },
+    {
+      "slug": "13617272",
+      "title": "Arteta: I'm convinced we're going to beat Man City on Sunday",
+      "url": "https://www.skysports.com/football/video/13617272/mikel-arteta-im-convinced-were-going-to-win-man-city-on-sunday",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-football-arteta-arsenal_7418037.jpg?20261127171545",
+      "excerpt": "Arsenal head coach Mikel Arteta believes his side will beat Manchester City on Sunday in the Premier League.",
+      "published_label": "27 November 2026 · 17:09",
+      "published_iso": "2026-11-27T17:09:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Arsenal head coach Mikel Arteta believes his side will beat Manchester City on Sunday in the Premier League."
+      ]
+    },
+    {
+      "slug": "13617266",
+      "title": "'Sad day at Arsenal' - Slegers sacked just 18 months after Champions League glory",
+      "url": "https://www.skysports.com/football/video/13617266/renee-slegers-sacked-just-18-months-after-champions-league-glory-a-sad-day-at-arsenal",
+      "source": "Sky Sports",
+      "image": "https://e0.365dm.com/26/11/2048x1152/skysports-renee-slegers-arsenal-women_7418018.jpg?20261127164655",
+      "excerpt": "Sky Sports' Anton Toloui explains why Renee Slegers has been sacked by Arsenal following a poor start to the Women's Super League season.",
+      "published_label": "27 November 2026 · 16:33",
+      "published_iso": "2026-11-27T16:33:00+00:00",
+      "byline": "Sky Sports",
+      "kind": "video",
+      "body": [
+        "Sky Sports' Anton Toloui explains why Renee Slegers has been sacked by Arsenal following a poor start to the Women's Super League season."
       ]
     }
   ]
